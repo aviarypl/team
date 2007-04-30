@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE overlay SYSTEM "chrome://gzl-poczta/locale/gzl-poczta.dtd">
+
+<overlay id="gzl-poczta-overlay"
+         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+  <script type="application/x-javascript" src="chrome://gzl-poczta/content/gzl-poczta-prefs.js"></script>		 
+  <script type="application/x-javascript" src="chrome://gzl-poczta/content/gzl-poczta.js"></script>
+  <statusbar id="status-bar">
+    <statusbarpanel context="gzl-poczta-contextmenu"
+                  onclick="GzlPoczta.goToMailHome();" 
+				  label="&gzl.poczta.defText;" 
+                  id="gzlPocztaSB" insertafter="statusbar-resizerpanel"
+                  logged-in="false" newMail="false">
+    </statusbarpanel>
+  </statusbar>
+
+  <script type="application/x-javascript"><![CDATA[
+  	GzlPoczta.runNotifier();
+  ]]></script>
+  
+</overlay>

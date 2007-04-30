@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<!DOCTYPE dialog SYSTEM "chrome://gzl-poczta/locale/gzl-poczta.dtd">
+
+<dialog 
+         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+	 ondialogaccept="GzlPoczta_acceptPrefWindow()"
+	 buttons="accept, cancel"
+	 title="&gzl.poczta.prefsTitle;"
+	 id="gzl-poczta-prefs"
+>
+
+  <script type="application/x-javascript" src="chrome://gzl-poczta/content/gzl-poczta-prefs.js"></script>
+  <script type="application/x-javascript" src="chrome://gzl-poczta/content/gzl-poczta-prefwindow.js"></script>
+
+  <groupbox>
+
+    <caption label="&gzl.poczta.prefsSub;"/>
+
+    <hbox class="indent" align="center">
+      <label value="&gzl.poczta.prefsUsername;"
+             accesskey="&gzl.poczta.prefsUsername.accesskey;"
+             control="gzlUsername"
+ 	     style="width: &gzl.poczta.prefsLabelsWidth;"
+      />
+      <textbox id="gzlUsername" value=""/>
+    </hbox>
+
+    <hbox class="indent" align="center">
+      <label value="&gzl.poczta.prefsPassword;"
+             accesskey="&gzl.poczta.prefsPassword.accesskey;"
+             control="gzlPass"
+ 	     style="width: &gzl.poczta.prefsLabelsWidth;"
+      />
+      <textbox id="gzlPass" value="" type="password" />
+    </hbox>
+
+  </groupbox>
+
+  <script type="application/x-javascript"><![CDATA[
+	GzlPoczta_setupPrefWindow();
+  ]]>
+  </script>
+
+</dialog>
