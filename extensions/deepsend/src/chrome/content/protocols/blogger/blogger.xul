@@ -37,7 +37,7 @@
 	
 	<commandset id="deepestsendercommands">
 		<command id="cmd_history" oncommand="OpenHistory();" label="&history;"/>
-		<command id="cmd_opeblog" oncommand="alert('akuku');" />
+		<command id="cmd_openblog" oncommand="alert('akuku');" label="Onomatopeja"  />
 	</commandset>
 	
 	<keyset id="deepestsenderkeys">
@@ -50,13 +50,14 @@
 			<menu id="file_menu">
 				<menupopup id="dsmenu_file_popup">
 					<menuitem id="menu_history" command="cmd_history" key="key_history"/>
+					
 					<menuseparator/>
 				</menupopup>
 			</menu>
+			<menu id="menu_Edit" />
 			<menu id="tools_menu">
 				<menupopup id="dsmenu_tools_popup"> 
-					<!-- //wd -->
-					<menuitem id="menu_openblog" label="&openblog;" command="cmd_openblog"/>
+					<menuitem id="menu_openblog" command="cmd_openblog"/>
 					<menuseparator/>
 				</menupopup>
 			</menu>
