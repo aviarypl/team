@@ -1,0 +1,135 @@
+<?xml version="1.0"?>
+<!DOCTYPE overlay [
+	<!ENTITY % menuoverlayDTD SYSTEM "chrome://deepestsender/locale/lib/menuoverlay.dtd">
+	%menuoverlayDTD;
+	<!ENTITY % commonDTD SYSTEM "chrome://deepestsender/locale/common.dtd">
+	%commonDTD;
+]>
+
+
+<overlay id="dsMenuoverlay"
+	xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+	<script type="application/x-javascript" src="chrome://global/content/globalOverlay.js"/>
+	<script type="application/x-javascript" src="menuoverlay.js"/>
+	<script type="application/x-javascript" src="util.js"/>
+
+	<commandset id="deepestsendercommands">
+		<command id="cmd_open"		     oncommand="dsDraft.loadDraftFrom();" label="&openCmd.label;"/>
+		<command id="cmd_save" 		     oncommand="dsDraft.saveDraftTo();" label="&saveCmd.label;"/>
+		<command id="cmd_saveas"            oncommand="dsDraft.saveDraftAs();" label="&saveAsCmd.label;"/>
+		<command id="cmd_print"             oncommand="dsMidas.printWindow();" label="&printCmd.label;"/>
+		<command id="cmd_logout"            oncommand="Logout();" label="&menubit.Logout.label;"/>
+		<command id="cmd_undo"              oncommand="ds_undo();" label="&undoCmd.label;"/>
+		<command id="cmd_redo"              oncommand="ds_redo();" label="&redoCmd.label;"/>
+		<command id="cmd_cut"               oncommand="ds_cut();" label="&cutCmd.label;"/>
+		<command id="cmd_copy"              oncommand="ds_copy();" label="&copyCmd.label;"/>
+		<command id="cmd_paste"             oncommand="ds_paste();"  label="&pasteCmd.label;"/>
+		<command id="cmd_pasteNoFormatting" oncommand="ds_pastenoformatting();" label="&pasteNoFormatting.label;"/>
+		<command id="cmd_delete"            oncommand="ds_delete();" label="&deleteCmd.label;"/>
+		<command id="cmd_selectAll"         oncommand="ds_selectAll();" label="&selectAllCmd.label;"/>
+		<command id="cmd_spell"             label="&CheckSpelling.label;" disabled="true" oncommand="suiteSpellCheck();"/>
+		<command id="cmd_options"           oncommand="ShowOptions()"/>
+		<command id="cmd_help"              oncommand="window.openDialog('chrome://deepestsender/content/help.xul', 'dshelp', 'chrome,resizable,titlebar,dialog=no')" label="&menubit.HelpContents.label;"/>;
+		<command id="cmd_bold"              oncommand="dsMidas.doRichEditCommand('bold');"/>
+		<command id="cmd_italic"            oncommand="dsMidas.doRichEditCommand('italic');"/>
+		<command id="cmd_underline"         oncommand="dsMidas.doRichEditCommand('underline');"/>
+		<command id="cmd_link"              oncommand="dsMidas.addLink();"/>
+		<command id="cmd_insertimage"       oncommand="dsMidas.addImage();"/>
+		<command id="cmd_ul"                oncommand="dsMidas.doRichEditCommand('insertunorderedlist');"/>
+		<command id="cmd_ol"                oncommand="dsMidas.doRichEditCommand('insertorderedlist');"/>
+		<command id="cmd_outdent"           oncommand="dsMidas.doRichEditCommand('outdent');"/>
+		<command id="cmd_indent"            oncommand="dsMidas.doRichEditCommand('indent');"/>
+		<command id="cmd_jleft"             oncommand="dsMidas.doRichEditCommand('justifyleft');"/>
+		<command id="cmd_jcenter"           oncommand="dsMidas.doRichEditCommand('justifycenter');"/>
+		<command id="cmd_jright"            oncommand="dsMidas.doRichEditCommand('justifyright');"/>
+		<command id="cmd_justify"           oncommand="dsMidas.doRichEditCommand('justifyfull');"/>
+
+	</commandset>
+
+	<keyset id="deepestsenderkeys">
+		<key id="key_open"        key="&openCmd.key;"       modifiers="accel" command="cmd_open"/>
+		<key id="key_save"        key="&saveCmd.key;"       modifiers="accel" command="cmd_save"/>
+		<key id="key_print"       key="&printCmd.key;"      modifiers="accel" command="cmd_print"/>
+		<key id="key_logout"      key="&key_logout.key;"    modifiers="accel" command="cmd_logout"/>
+		<key id="key_undo"        key="&undoCmd.key;"       modifiers="accel" command="cmd_undo"/>
+		<key id="key_redo"        key="&redoCmd.key;"       modifiers="accel" command="cmd_redo"/>
+		<key id="key_cut"         key="&cutCmd.key;"        modifiers="accel" command="cmd_cut"/>
+		<key id="key_copy"        key="&copyCmd.key;"       modifiers="accel" command="cmd_copy"/>
+		<key id="key_paste"       key="&pasteCmd.key;"      modifiers="accel" command="cmd_paste"/>
+		<key id="key_delete"      key="&deleteCmd.key;"     modifiers="accel" command="cmd_delete"/>
+		<key id="key_selectAll"   key="&selectAllCmd.key;"  modifiers="accel" command="cmd_selectAll"/>
+		<key id="key_spell"       keycode="&key_spell.key;"                   command="cmd_spell"/>
+		<key id="key_help"        keycode="&key_help.key;"                    command="cmd_help"/>
+		<key id="key_bold"        key="&key_bold.key;"      modifiers="accel" command="cmd_bold"/>
+		<key id="key_italic"      key="&key_italic.key;"    modifiers="accel" command="cmd_italic"/>
+		<key id="key_underline"   key="&key_underline.key;" modifiers="accel" command="cmd_underline"/>
+		<key id="key_link"        key="&key_link.key;" modifiers="accel" command="cmd_link"/>
+	</keyset>
+
+	<popup id="messagemenu" onpopupshowing="goUpdateGlobalEditMenuItems();dsMidas.theSpellcheck._doPopupItemEnabling(this);" onpopuphiding="dsMidas.theSpellcheck._doPopupItemDisabling(this);">
+		<menuitem label="&spellcheck.noSuggestions;" id="spell-no-suggestions" disabled="true"/>
+		<menuitem label="&spellcheck.addToDictionary;" id="spell-add-to-dictionary" oncommand="dsMidas.theSpellcheck.addToDictionary();"/>
+		<menuseparator id="spell-suggestions-separator"/>
+		<menuitem label="&CheckSpelling.label;" type="checkbox"  id="spell-check-enabled" oncommand="dsMidas.theSpellcheck.toggleEnabled(this.getAttribute('checked'));"/>
+		<menu label="&spellcheck.dictionaries;"  id="spell-dictionaries">
+			<menupopup id="spell-dictionaries-menu" onpopupshowing="event.stopPropagation();" onpopuphiding="event.stopPropagation();"/>
+		</menu>
+		<menuseparator id="spell-check-separator"/>
+		<menuitem id="cMenu_undo"   command="cmd_undo"  key="key_undo"/>
+		<menuitem id="cMenu_redo"   command="cmd_redo" key="key_redo"/>
+		<menuseparator id="undoredo-separator"/>
+		<menuitem id="cMenu_cut"    command="cmd_cut" key="key_cut"/>
+		<menuitem id="cMenu_copy"   command="cmd_copy" key="key_copy"/>
+		<menuitem id="cMenu_paste"  command="cmd_paste" key="key_paste"/>
+		<menuitem id="cMenu_pasteNoFormatting" command="cmd_pasteNoFormatting"/>
+		<menuitem id="cMenu_delete" command="cmd_delete" key="key_delete"/>
+		<menuseparator id="edit-separator"/>
+		<menuitem id="cMenu_selectAll" command="cmd_selectAll" key="key_selectAll"/>
+		<menuseparator id="spell-separator"/>
+		<menuitem id="cMenu_spell" command="cmd_spell" key="key_spell"/>
+	</popup>
+
+	<toolbox id="menubox">
+		<menubar id="menubit">
+			<menu id="file_menu" label="&fileMenu.label;" accesskey="&fileMenu.accesskey;">
+				<menupopup id="dsmenu_file_popup">
+					<menuitem id="menu_open" command="cmd_open" key="key_open" insertbefore="menu_history"/>
+					<menuitem id="menu_save" command="cmd_save" key="key_save" insertbefore="menu_history"/>
+					<menuitem id="menu_saveas" command="cmd_saveas" insertbefore="menu_history"/>
+					<menuitem id="menu_print" command="cmd_print" key="key_print" insertbefore="menu_history"/>
+					<menuseparator insertbefore="menu_history"/>
+					<menuitem id="menu_logout"  command="cmd_logout" key="key_logout"/>
+				</menupopup>
+			</menu>
+			<menu id="menu_Edit" label="&editMenu.label;" accesskey="&editMenu.accesskey;">
+				<menupopup id="dsmenu_edit_popup" onpopupshowing="goUpdateGlobalEditMenuItems();">
+					<menuitem id="menu_undo"  command="cmd_undo"   key="key_undo"/>
+					<menuitem id="menu_redo"  command="cmd_redo"   key="key_redo"/>
+					<menuseparator/>
+					<menuitem id="menu_cut" command="cmd_cut"    key="key_cut"/>
+					<menuitem id="menu_copy" command="cmd_copy"   key="key_copy"/>
+					<menuitem id="menu_paste" command="cmd_paste"  key="key_paste"/>
+					<menuitem id="menu_pasteNoFormatting" command="cmd_pasteNoFormatting"/>
+					<menuitem id="menu_delete" command="cmd_delete" key="key_delete"/>
+					<menuseparator/>
+					<menuitem id="menu_selectAll" command="cmd_selectAll" key="key_selectAll"/>
+				</menupopup>
+			</menu>
+			<menu id="tools_menu" label="&tasksMenu.label;" accesskey="&tasksMenu.accesskey;">
+				<menupopup id="dsmenu_tools_popup"> 
+					<menuitem id="menu_options" label="&options;" command="cmd_options"/>
+					<menuseparator/>
+					<menuitem id="menu_spell" command="cmd_spell" key="key_spell"/>
+				</menupopup>
+			</menu>
+			<menu id="helpmenu" label="&helpMenu.label;" accesskey="&helpMenu.accesskey;">
+				<menupopup id="dsmenu_help_popup">
+					<menuitem command="cmd_help" key="key_help"/>
+					<menuseparator/>
+					<menuitem label="&menubit.About.label;" oncommand="window.openDialog('chrome://deepestsender/content/about.xul','about','chrome,modal');"/>
+				</menupopup>
+			</menu>
+		</menubar>
+	</toolbox>
+</overlay>

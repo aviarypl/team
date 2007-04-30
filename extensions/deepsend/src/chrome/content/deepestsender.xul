@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xml-stylesheet href="chrome://deepestsender/skin/deepestsender.css"?>
+
+<!DOCTYPE window [
+	<!ENTITY % deepestsenderDTD SYSTEM "chrome://deepestsender/locale/deepestsender.dtd">
+	%deepestsenderDTD;
+	<!ENTITY % commonDTD SYSTEM "chrome://deepestsender/locale/common.dtd">
+	%commonDTD;
+]>
+
+<window id="deepestsender" title="&deepestsender;"
+	xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+	onload="setTimeout('Init();',1);"
+	windowtype="deepestsender:login"
+	persist="screenX screenY width height"
+	width="600"
+	height="500">
+
+	<stringbundle id="commonbundle" src="chrome://deepestsender/locale/common.properties"/>
+	<stringbundle id="dsbundle" src="chrome://deepestsender/locale/deepestsender.properties"/>
+	<stringbundle id="atombundle" src="chrome://deepestsender/locale/protocols/atom.properties"/>
+	<stringbundle id="livejournalbundle" src="chrome://deepestsender/locale/protocols/livejournal.properties"/>
+	<stringbundle id="bloggerbundle" src="chrome://deepestsender/locale/protocols/blogger.properties"/>
+	<stringbundle id="metabundle" src="chrome://deepestsender/locale/protocols/metaweblog.properties"/>
+	
+	<script type="application/x-javascript" src="lib/util.js"/>
+	<script type="application/x-javascript" src="lib/io.js"/>
+	<script type="application/x-javascript" src="lib/passwords.js"/>
+	<script type="application/x-javascript" src="lib/xmlrpc.js"/>
+	<script type="application/x-javascript" src="lib/prefutils.js"/>
+	<script type="application/x-javascript" src="deepestsender.js"/>
+	<script type="application/x-javascript" src="protocols/livejournal.js"/>
+	<script type="application/x-javascript" src="protocols/blogger.js"/>
+	<script type="application/x-javascript" src="protocols/metaweblog.js"/>
+	<script type="application/x-javascript" src="lib/md5.js"/>
+	
+	<keyset>
+		<!--<key id="loginkey" command="dologin"/>-->
+		<key id="key_help" keycode="&key_help.key;" command="cmd_help"/>
+	</keyset>
+	
+	<commandset>
+		<command id="cmd_help" oncommand="window.openDialog('chrome://deepestsender/content/help.xul', 'dshelp', 'chrome,resizable,titlebar,dialog=no')"/>;
+		<command id="dologin" oncommand="Login();"/>
+	</commandset>
+	
+	<deck id="mainwindow" flex="1">
+		<vbox align="center" pack="center" flex="1" id="loginbox">
+			<groupbox align="center">
+				<caption label="&deepestsender;"/>
+				<box orient="horizontal" id="logingroup">
+				<vbox align="center" pack="center">
+					<image id="logo"/>
+				</vbox>
+				<vbox pack="center">
+					<hbox align="center" id="accountshbox">
+						<menulist id="accounts" flex="1" oncommand="ChangedAccount(this);">
+							<menupopup>
+								<menuitem label="&accounts.newaccount.label;" class="menuitem-iconic icons"/>
+							</menupopup>
+						</menulist>
+					</hbox>
+					<hbox align="center">
+						<label control="username" value="&username.label.value;"/>
+						<textbox id="username" flex="1"/>
+					</hbox>
+					<hbox align="center">
+						<label control="password" value="&password.label.value;"/>
+						<textbox id="password" type="password" flex="1"/>
+					</hbox>
+					<checkbox id="rememberpassword" checked="false" label="&rememberpassword.label;" oncommand="ToggleAutoLogin(this.checked)"/>
+					<checkbox id="autologin" checked="false" label="&autologin.label;" disabled="true"/>
+					<checkbox id="offline" checked="false" label="&offline.label;"/>
+					<button label="&loginbutton.label;" command="dologin" id="loginbutton"/>
+					<hbox pack="center">
+						<button label="&delete;" oncommand="DeleteAccount(document.getElementById('accounts').value);" id="deletebutton" flex="1"/>
+						<button label="&options;" oncommand="Options();" id="optionsbutton" flex="1"/>
+					</hbox>
+					<progressmeter mode="determined" value="0" id="loginprogress"/>
+				</vbox>
+				</box>
+				<label id="status" value="&status.value;"/>
+			</groupbox>
+		</vbox>
+		<iframe flex="1" id="dsPostFrame" src="lib/blank.xul"/>
+	</deck>
+</window>
+

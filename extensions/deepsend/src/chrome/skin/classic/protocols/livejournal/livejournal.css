@@ -1,0 +1,153 @@
+.bdayuser {
+	font-weight: bold;
+	cursor: pointer;
+}
+
+.bdayicon {
+	list-style-image: url(chrome://deepestsender/skin/images/ljuser.png);
+}
+
+#userpic {
+	cursor: pointer;
+}
+
+.ljuser, .ljcomm {
+	font-weight: bold;
+}
+
+.ljuser:before {
+	content: url(chrome://deepestsender/skin/images/ljuser.png);
+	vertical-align: bottom;
+	border: 0px;
+}
+
+.ljcomm:before {
+	content: url(chrome://deepestsender/skin/images/ljcomm.png);
+	vertical-align:bottom;
+	border: 0px;
+}
+
+.DS_lj-cut_Title {
+	font-weight:bold;
+	text-decoration: underline;
+	color:#000000;
+}
+
+span.DS_lj-cut_Title {
+	cursor:pointer;
+}
+
+span.DS_lj-cut_Title:hover {
+	color:#ff0000;
+}
+
+a.DS_lj-cut_Title_Start span, a.DS_lj-cut_Title_End span, span.DS_lj-cut_Title_Start, span.DS_lj-cut_Title_End {
+	font-weight:bold;
+	color:#000000;
+}
+
+a.DS_lj-cut_Title_Start span:before, span.DS_lj-cut_Title_Start:before {
+	content: "( ";
+}
+
+a.DS_lj-cut_Title_End span:after, span.DS_lj-cut_Title_End:after {
+	content: " )";
+}
+
+a.DS_lj-cut_Body_Start, a.DS_lj-cut_Body_End {
+	position:relative;
+	text-decoration:none;
+	padding-left: 2px;
+	padding-right: 2px;
+	vertical-align:middle;
+}
+
+a.DS_lj-cut_Body_Start:before {
+	content:url(chrome://deepestsender/skin/images/ljcut-start.png);
+}
+
+a.DS_lj-cut_Body_End:before {
+	content:url(chrome://deepestsender/skin/images/ljcut-end.png);
+}
+
+a.DS_lj-cut_Body_Start span, a.DS_lj-cut_Body_End span {
+	display:none;
+	position:absolute;
+	top:2em;
+}
+
+a.DS_lj-cut_Body_Start:hover span, .DS_lj-cut_Body_End:hover span, #DS_lj-cut_Toggle:hover span {
+	display:block;
+	background-color:#cccccc;
+	border:1px solid #333333;
+	-moz-border-radius:4px;
+	padding:0 2px 0 2px;
+	color:#333333;
+	font-family:sans-serif;
+	font-weight:normal;
+	font-size:.7em;
+}
+
+.dssmall {
+	width: 20px;
+	height: 20px;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+.DS_subject {
+	display:block;
+	font-weight:bold;
+	font-style:italic;
+	margin-bottom:14px;
+}
+
+.DS_no_subject {
+	color:#ff0000;
+}
+
+.DS_lj-cut {
+	display:inline;
+}
+
+#DS_lj-cut_Toggle {
+	position:fixed;
+	display:block;
+	text-decoration:none;
+	top:0px;
+	right:0px;
+	width:31px;
+	height:26px;
+	z-index:30;
+	padding:0;
+}
+
+* html #DS_lj-cut_Toggle {
+	position:absolute;
+}
+
+#DS_lj-cut_Toggle:before {
+	content:url(chrome://deepestsender/skin/images/ljcut.png);
+}
+
+#DS_lj-cut_Toggle span {
+	position:fixed;
+	top:27px;
+	right:0px;
+	display:none;
+}
+
+#DS_lj-cut_Toggle span:hover {
+	display:block;
+}
+
+#DS_lj-cut_Subject_Spacer {
+	float:right;
+	width:31px;
+	height:26px;
+}
+
+#moods[value="nomood"], #taglist[empty="true"], #music[empty="true"], #location[empty="true"], .empty  {
+	text-align: center !important;
+	color: GrayText !important;
+}

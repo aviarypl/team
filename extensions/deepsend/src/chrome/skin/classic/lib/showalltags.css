@@ -1,0 +1,68 @@
+div:before{content: '<div>';}
+div:after{content: '</div>';}
+span:before{content: '<span>';}
+span:after{content: '</span>';}
+a:before{content: '<a>';}
+a:after{content: '</a>';}
+h1:before{content: '<h1>';}
+h1:after{content: '</h1>';}
+h2:before{content: '<h2>';}
+h2:after{content: '</h2>';}
+h3:before{content: '<h3>';}
+h3:after{content: '</h3>';}
+h4:before{content: '<h4>';}
+h4:after{content: '</h4>';}
+h5:before{content: '<h5>';}
+h5:after{content: '</h5>';}
+h6:before{content: '<h6>';}
+h6:after{content: '</h6>';}
+p:before{content: '<p>';}
+p:after{content: '</p>';}
+blockquote:before{content: '<blockquote>';}
+blockquote:after{content: '</blockquote>';}
+pre:before{content: '<pre>';}
+pre:after{content: '</pre>';}
+br:before{content:'<br>';}
+img:before{content:'<img>';}
+span.DS_lj-user, span.DS_lj-comm {
+	font-weight:normal;
+}
+span.DS_lj-user a, span.DS_lj-comm a {
+	color:#000000;
+	text-decoration:none;
+}
+span.DS_lj-user img, span.DS_lj-comm img{display:none;}
+span.DS_lj-user:before{content: '<lj user="';}
+span.DS_lj-comm:before{content: '<lj comm="';}
+span.DS_lj-user:after, span.DS_lj-comm:after{content: '">';}
+span.DS_lj-user a:before, span.DS_lj-comm a:before{content: '';}
+span.DS_lj-user a:after, span.DS_lj-comm a:after{content: '';}
+a.DS_lj-cut_Title {
+	font-weight:normal;
+	text-decoration:none;
+}
+a.DS_lj-cut_Body_Start, a.DS_lj-cut_Body_End {
+	vertical-align:inherit;
+	padding:0;
+}
+a.DS_lj-cut_Body_Start:hover span, a.DS_lj-cut_Body_End:hover span {
+	display:none;
+}
+a.DS_lj-cut_Title_Start:before{content: '<lj-cut text="';}
+a.DS_lj-cut_Title_Start:after{content: '';}
+a.DS_lj-cut_Title_Start span:before{content: '';}
+a.DS_lj-cut_Title_Start span:after{content: '';}
+a.DS_lj-cut_Title:before{content: '';}
+a.DS_lj-cut_Title:after{content: '';}
+a.DS_lj-cut_Title_End:before{content: '">';}
+a.DS_lj-cut_Title_End:after{content: '';}
+a.DS_lj-cut_Title_End span:before{content: '';}
+a.DS_lj-cut_Title_End span:after{content: '';}
+a.DS_lj-cut_Body_Start:before{content: '';}
+a.DS_lj-cut_Body_Start:after{content: '';}
+a.DS_lj-cut_Body_Start span:before{content: '';}
+a.DS_lj-cut_Body_Start span:after{content: '';}
+a.DS_lj-cut_Body_End:before{content: '';}
+a.DS_lj-cut_Body_End:after{content: '</lj-cut>';}
+a.DS_lj-cut_Body_End span:before{content: '';}
+a.DS_lj-cut_Body_End span:after{content: '';}

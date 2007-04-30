@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xml-stylesheet href="chrome://deepestsender/skin/about.css" type="text/css"?>
+<!DOCTYPE window [
+	<!ENTITY % aboutDTD SYSTEM "chrome://deepestsender/locale/about.dtd">
+	%aboutDTD;
+	<!ENTITY % commonDTD SYSTEM "chrome://deepestsender/locale/common.dtd">
+	%commonDTD;
+]>
+
+<window id="about" title="&about.title;"
+		xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+		persist="screenX screenY"
+		onload="document.getElementById('version').value = AppName; document.getElementById('credits').setAttribute('src', 'http://deepestsender.mozdev.org/credits.html');"
+		windowtype="deepestsender:about">
+
+	<script type="application/x-javascript" src="lib/util.js"/>
+	<vbox align="stretch" flex="1">
+		<vbox align="center" flex="1">
+			<hbox>
+				<image id="book"/>
+				<vbox pack="center" align="center">
+					<image id="aboutds"/>
+					<description style="font-style: italic" id="version"/>
+				</vbox>
+			</hbox>
+		</vbox>
+		<iframe src="dsanagrams.xul" height="25"/>
+		<iframe id="credits" height="200" class="inset iframe"/>
+		<vbox align="center">
+			<description value="&copyright;"/>
+		</vbox>
+		<hbox flex="1" align="center">
+			<button image="chrome://deepestsender/skin/images/x-click-but04.gif" oncommand="OpenURLInBrowser('https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&amp;business=lid2000%40gmail%2ecom&amp;item_name=Deepest%20Sender%20Donations&amp;no_shipping=0&amp;no_note=1&amp;tax=0&amp;currency_code=USD&amp;charset=UTF%2d8&amp;charset=UTF%2d8');"/>
+			<spacer flex="1"/>
+			<button label="&mozdev;" oncommand="OpenURLInBrowser('http://deepestsender.mozdev.org/');"/>
+			<spacer flex="1"/>
+			<button label="&close;" oncommand="window.close();"/>
+		</hbox>
+	</vbox>
+
+</window>

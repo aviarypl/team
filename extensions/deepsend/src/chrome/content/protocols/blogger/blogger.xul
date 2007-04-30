@@ -1,0 +1,92 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xul-overlay href="chrome://deepestsender/content/lib/menuoverlay.xul"?>
+<?xul-overlay href="chrome://deepestsender/content/lib/midasoverlay.xul"?>
+<!DOCTYPE window [
+	<!ENTITY % bloggerDTD SYSTEM "chrome://deepestsender/locale/protocols/blogger/blogger.dtd">
+	%bloggerDTD;
+	<!ENTITY % commonDTD SYSTEM "chrome://deepestsender/locale/common.dtd">
+	%commonDTD;
+]>
+
+<window xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul" id="dsBlogger"
+	persist="screenX screenY width height" onload="Init();" onunload="WindowClosing();">
+	
+	<stringbundle id="draftbundle" src="chrome://deepestsender/locale/lib/drafts.properties"/>
+	<stringbundle id="commonbundle" src="chrome://deepestsender/locale/common.properties"/>
+	<stringbundle id="atombundle" src="chrome://deepestsender/locale/protocols/atom.properties"/>
+	<stringbundle id="metabundle" src="chrome://deepestsender/locale/protocols/blogger/metaweblog.properties"/>
+	<stringbundle id="editbundle" src="chrome://deepestsender/locale/protocols/blogger/editing.properties"/>
+	<stringbundle id="midasbundle" src="chrome://deepestsender/locale/lib/midas.properties"/>
+	
+	<script type="application/x-javascript" src="chrome://global/content/globalOverlay.js"/>
+	<script type="application/x-javascript" src="../../lib/util.js"/>
+	<script type="application/x-javascript" src="../../lib/io.js"/>
+	<script type="application/x-javascript" src="../../lib/md5.js"/>
+	<script type="application/x-javascript" src="../../lib/clipboard.js"/>
+	<script type="application/x-javascript" src="../../lib/prefutils.js"/>
+	<script type="application/x-javascript" src="../../lib/xmlrpc.js"/>
+	<script type="application/x-javascript" src="../atom.js"/>
+	<script type="application/x-javascript" src="blogger.js"/>
+	<script type="application/x-javascript" src="metaweblog.js"/>
+	<script type="application/x-javascript" src="editing.js"/>
+	
+	<broadcasterset>
+		<broadcaster id="maindisabler"/>
+	</broadcasterset>
+	
+	<commandset id="deepestsendercommands">
+		<command id="cmd_history" oncommand="OpenHistory();" label="&history;"/>
+		<command id="cmd_opeblog" oncommand="alert('akuku');" />
+	</commandset>
+	
+	<keyset id="deepestsenderkeys">
+		<key id="key_history"     key="&key_history.key;" modifiers="accel,shift" command="cmd_history" observes="maindisabler"/>
+	</keyset>
+	
+	<popup id="messagemenu"/>
+	<toolbox id="menubox">
+		<menubar id="menubit">
+			<menu id="file_menu">
+				<menupopup id="dsmenu_file_popup">
+					<menuitem id="menu_history" command="cmd_history" key="key_history"/>
+					<menuseparator/>
+				</menupopup>
+			</menu>
+			<menu id="tools_menu">
+				<menupopup id="dsmenu_tools_popup"> 
+					<!-- //wd -->
+					<menuitem id="menu_openblog" label="&openblog;" command="cmd_openblog"/>
+					<menuseparator/>
+				</menupopup>
+			</menu>
+		</menubar>
+	</toolbox>
+	<box orient="horizontal" align="stretch" flex="1" id="mainbox">
+		<vbox align="stretch" flex="1">
+			<box id="titleblogbox" orient="horizontal">
+				<hbox align="center" flex="1">
+					<label control="subject" value="&subject;" observes="maindisabler"/>
+					<textbox onchange="dsMidas.updatePreview();" id="subject" maxlength="100" flex="1" observes="maindisabler"/>
+				</hbox>
+				<hbox align="center" flex="1" id="linkbox">
+					<label control="link" value="&link.label;" observes="maindisabler"/>
+					<textbox id="link" maxlength="255" flex="1" observes="maindisabler"/>
+				</hbox>
+				<hbox align="center" id="catbox" collapsed="true">
+					<label control="categories" value="&categories.label;" observes="maindisabler"/>
+					<menulist id="categories" observes="maindisabler"/>
+				</hbox>
+			</box>
+			<separator class="thin"/>
+			<vbox id="midasoverlay"/>
+			<hbox pack="center">
+				<checkbox id="draftcheck" label="&draftcheck.label;" observes="maindisabler"/>
+				<spacer flex="1"/>
+				<button label="&post;" oncommand="dsPosts.sendPost();" id="postbutton"/>
+				<button label="&delete;" oncommand="dsPosts.deletePost();" id="deletebutton" collapsed="true" observes="maindisabler"/>
+				<button label="&save;" oncommand="dsPosts.saveEdit();" id="savebutton" collapsed="true"/>
+			</hbox>
+		</vbox>
+	</box>
+</window>

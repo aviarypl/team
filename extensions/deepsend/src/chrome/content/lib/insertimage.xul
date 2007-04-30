@@ -1,0 +1,140 @@
+<?xml version="1.0"?> 
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<!DOCTYPE dialog SYSTEM "chrome://deepestsender/locale/lib/insertimage.dtd">
+
+<dialog id="insertimage"
+	xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+	buttons="accept,cancel"
+	ondialogaccept="return doOK();"
+	title="&insertimage.title;"
+	persist="screenX screenY"
+	windowtype="deepestsender:insertimage"
+	onload="Init();">
+	
+	<script type="application/x-javascript"><![CDATA[
+		result = window.arguments[0];
+		
+		function Init() {
+			if (result.length > 0) {
+				document.getElementById("imgsrc").value = result[0];
+				document.getElementById("imgwidth").value = result[1];
+				document.getElementById("imgheight").value = result[2];
+				document.getElementById("imgalt").value = result[3];
+				document.getElementById("imgborder").value = result[4];
+				if (result[5]) {
+					var select = 0;
+					switch (result[5]) {
+						case "baseline":
+							select = 1;
+							break;
+						case "bottom":
+							select = 2;
+							break;
+						case "inherit":
+							select = 3;
+							break;
+						case "middle":
+							select = 4;
+							break;
+						case "sub":
+							select = 5;
+							break;
+						case "super":
+							select = 6;
+							break;
+						case "text-bottom":
+							select = 7;
+							break;
+						case "text-top":
+							select = 8;
+							break;
+					}
+					document.getElementById("imgvertalign").selectedIndex = select;
+				}
+				if (result[6]) {
+					var float = 0;
+					switch (result[6]) {
+						case "left":
+							float = 1;
+							break;
+						case "none":
+							float = 2;
+							break;
+						case "right":
+							float = 3;
+							break;
+					}
+					document.getElementById("imgfloat").selectedIndex = float;
+				}
+			}
+		}
+		
+		function doOK() {
+			// Fills the result array with the values entered into this XUL.
+			// In: Nothing.
+			// Out: Nothing, but 'result' will be filled.
+			result[0] = document.getElementById("imgsrc").value;
+			result[1] = document.getElementById("imgwidth").value;
+			result[2] = document.getElementById("imgheight").value;
+			result[3] = document.getElementById("imgalt").value;
+			result[4] = document.getElementById("imgborder").value;
+			result[5] = document.getElementById("imgvertalign").value;
+			result[6] = document.getElementById("imgfloat").value;
+			return result;
+		}
+
+	]]></script>
+	<vbox align="stretch" pack="center" flex="1">
+		<label control="imgsrc" value="&imgsrc.value;"/>
+		<textbox id="imgsrc" size="34"/>
+		<hbox>
+			<vbox>
+				<label control="altimg" value="&imgalt.value;"/>
+				<textbox id="imgalt" size="22"/>
+			</vbox>
+			<vbox>
+				<label control="imgwidth" value="&imgwidth.value;"/>
+				<textbox id="imgwidth" size="4"/>
+			</vbox>
+			<vbox>
+				<label control="imgheight" value="&imgheight.value;"/>
+				<textbox id="imgheight" size="4"/>
+			</vbox>
+			<vbox>
+				<label control="imgborder" value="&imgborder.value;"/>
+				<textbox id="imgborder" size="4"/>
+			</vbox>
+		</hbox>
+		<hbox>
+			<vbox flex="1">
+				<label control="imgvertalign" value="&imgvertalign.value;"/>
+				<menulist id="imgvertalign" value="">
+					<menupopup>
+						<menuitem label="" value=""/>
+						<menuitem label="&menuitem.baseline.label;" value="baseline"/>
+						<menuitem label="&menuitem.bottom.label;" value="bottom"/>
+						<menuitem label="&menuitem.inherit.label;" value="inherit"/>
+						<menuitem label="&menuitem.middle.label;" value="middle"/>
+						<menuitem label="&menuitem.sub.label;" value="sub"/>
+						<menuitem label="&menuitem.super.label;" value="super"/>
+						<menuitem label="&menuitem.text-bottom.label;" value="text-bottom"/>
+						<menuitem label="&menuitem.text-top.label;" value="text-top"/>
+						<menuitem label="&menuitem.top.label;" value="top"/>
+					</menupopup>
+				</menulist>
+			</vbox>
+			<vbox flex="1">
+				<label control="imgfloat" value="&imgfloat.value;"/>
+				<menulist id="imgfloat" value="">
+					<menupopup>
+						<menuitem label="" value=""/>
+						<menuitem label="&menuitem.inherit.label;" value="inherit"/>
+						<menuitem label="&menuitem.left.label;" value="left"/>
+						<menuitem label="&menuitem.none.label;" value="none"/>
+						<menuitem label="&menuitem.right.label;" value="right"/>
+					</menupopup>
+				</menulist>
+			</vbox>
+		</hbox>
+	</vbox>
+</dialog>

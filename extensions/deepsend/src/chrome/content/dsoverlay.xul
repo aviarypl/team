@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://deepestsender/skin/dsoverlay.css" type="text/css"?>
+<!DOCTYPE overlay [
+	<!ENTITY % dsoverlayDTD SYSTEM "chrome://deepestsender/locale/dsoverlay.dtd">
+	%dsoverlayDTD;
+	<!ENTITY % commonDTD SYSTEM "chrome://deepestsender/locale/common.dtd">
+	%commonDTD;
+]>
+
+<overlay id="dsOverlay" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+	<script type="application/x-javascript" src="chrome://deepestsender/content/lib/prefutils.js"/>
+	<script type="application/x-javascript" src="chrome://deepestsender/content/dsoverlay.js"/>
+
+	<!-- SeaMonkey crap... -->
+	<keyset id="tasksKeys">
+		<key id="dsLaunch" key="\" oncommand="DeepestSender.runDeepestSender();" modifiers="accel"/>
+	</keyset>
+
+	<menupopup id="windowPopup">
+		<menuitem label="&deepestsender;" oncommand="DeepestSender.runDeepestSender();" id="tasksMenuDS" insertbefore="sep-window-list" class="menuitem-iconic" key="dsLaunch"/>
+	</menupopup>
+
+
+	<statusbarpanel id="component-bar">
+		<toolbarbutton class="taskbutton" id="mini-ds" oncommand="DeepestSender.runDeepestSender()" tooltiptext="&deepestsender;"/>
+	</statusbarpanel>
+	
+	<!-- And Firefox crap... -->
+	<menupopup id="menu_ToolsPopup">
+		<menuseparator/>
+		<menuitem label="&deepestsender;" oncommand="DeepestSender.runDeepestSender();" id="dstoolsmenu" key="dsLaunchFx" class="menuitem-iconic"/>
+	</menupopup>
+	
+	<keyset id="mainKeyset">
+		<key id="dsLaunchFx" key="\" oncommand="DeepestSender.runDeepestSender();" modifiers="accel"/>
+	</keyset>
+	
+	<toolbarpalette id="BrowserToolbarPalette">
+		<toolbarbutton id="deepestsender-button" tooltiptext="&deepestsender;" oncommand="DeepestSender.runDeepestSender(true);" class="toolbarbutton-1" label="&deepestsender;"/>
+	</toolbarpalette>
+	
+	<menupopup id="viewSidebarMenu">
+		<menuitem observes="viewDeepestSenderSidebar"/>
+	</menupopup>
+	
+	<broadcasterset id="mainBroadcasterSet">
+		<broadcaster id="viewDeepestSenderSidebar"
+				autoCheck="false"
+				label="&deepestsender;"
+				type="checkbox" group="sidebar"
+				sidebarurl="chrome://deepestsender/content/"
+				sidebartitle="&deepestsender;"
+				oncommand="toggleSidebar('viewDeepestSenderSidebar');"/>
+	</broadcasterset>
+	
+	<popup id="contentAreaContextMenu">
+		<menuseparator/>
+		<menuitem id="ds-postpageitem" label="&sendtodeepestsender;" oncommand="DeepestSender.sendToDeepestSender();" class="menuitem-iconic"/>
+	</popup>
+</overlay> 

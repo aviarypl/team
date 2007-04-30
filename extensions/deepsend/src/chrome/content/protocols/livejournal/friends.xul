@@ -1,0 +1,199 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xml-stylesheet href="chrome://deepestsender/skin/protocols/livejournal/livejournal.css" type="text/css"?>
+<?xml-stylesheet href="chrome://deepestsender/skin/protocols/livejournal/friends.css" type="text/css"?>
+<!DOCTYPE window SYSTEM "chrome://deepestsender/locale/protocols/livejournal/friends.dtd">
+
+<window xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul" id="dsFriendsEditor"
+	persist="screenX screenY width height" width="450" height="450" onload="Init();" title="&editfriends;"
+	windowtype="deepestsender:friendseditor">
+
+	<stringbundle id="commonbundle" src="chrome://deepestsender/locale/common.properties"/>
+	<stringbundle id="friendsbundle" src="chrome://deepestsender/locale/protocols/livejournal/friends.properties"/>
+	
+	<script type="application/x-javascript" src="friends.js"/>
+	<script type="application/x-javascript" src="masks.js"/>
+	<script type="application/x-javascript" src="groups.js"/>
+	<script type="application/x-javascript" src="drama.js"/>
+	
+	<broadcasterset id="friendsbroadcasters">
+		<broadcaster id="maindisabler" disabled="true"/>
+		<broadcaster id="groupsdisabler" disabled="true"/>
+	</broadcasterset>
+	
+	<popupset>
+		<popup id="nycontext">
+			<menuitem label="&addtofriends;" oncommand="AddFromDrama();"/>
+		</popup>
+		
+		<popup id="ntcontext">
+			<menuitem label="&deletefromfriends;" oncommand="DeleteFromDrama();"/>
+		</popup>
+		
+		<popup id="rename">
+			<textbox id="treeval"/>
+		</popup>
+	</popupset>
+	
+	<tabbox flex="1" id="tabs">
+		<tabs onselect="changedTab(this.selectedIndex);">
+			<tab label="&friends;"/>
+			<tab label="&groups;"/>
+			<tab label="&drama;"/>
+		</tabs>
+		<tabpanels flex="1">
+			<tabpanel>
+				<hbox flex="1" align="stretch">	
+					<vbox flex="1">
+						<hbox align="center">
+							<label value="&search;" control="search"/>
+							<textbox id="search" flex="1" oninput="DoFilter();" observes="maindisabler"/>
+						</hbox>
+						<hbox align="center">
+							<label value="&view;" control="friendsfilter"/>
+							<menulist flex="1" id="friendsfilter" observes="maindisabler" oncommand="DoFilter();">
+								<menupopup>
+									<menuitem label="&all;"/>
+									<menuitem label="&friends;"/>
+									<menuitem label="&communities;"/>
+									<menuitem label="&feeds;"/>
+								</menupopup>
+							</menulist>
+						</hbox>
+						<tree id="friendstree" flex="1" seltype="single" hidecolumnpicker="true" observes="maindisabler" onselect="SelectUser(this);">
+							<treecols>
+								<treecol id="iconcol" style="width: 20px;" hideheader="true" />
+								<treecol id="friendcol" flex="1" hideheader="true" />
+							</treecols>
+							<treechildren/>
+						</tree>
+					</vbox>
+					<vbox>
+						<hbox align="center">
+							<spacer flex="1"/>
+							<button label="&new;" observes="maindisabler" oncommand="NewFriend();"/>
+						</hbox>
+						<spacer flex="1"/>
+						<groupbox>
+							<caption>
+								<label id="username"/>
+							</caption>
+							<vbox align="start">
+								<label id="realname"/>
+								<label id="birthday"/>
+							</vbox>
+							<hbox align="center">
+								<label value="&foreground;" control="fgcolor"/>
+								<textbox size="7" flex="1" id="fgcolor" maxlengh="7" oninput="ValidateColour(this);UpdatePicker('fgpicker',this.value);UpdatePreview();UpdateUserInfo();" observes="maindisabler"/>
+								<colorpicker type="button" id="fgpicker" onchange="UpdateColourField('fgcolor',this.color);UpdatePreview();UpdateUserInfo();" observes="maindisabler"/>
+							</hbox>
+							<hbox align="center">
+								<label value="&background;" control="bgcolor"/>
+								<textbox size="7" flex="1" id="bgcolor" maxlength="7" oninput="ValidateColour(this);UpdatePicker('bgpicker',this.value);UpdatePreview();UpdateUserInfo();" observes="maindisabler"/>
+								<colorpicker type="button" id="bgpicker" onchange="UpdateColourField('bgcolor',this.color);UpdatePreview();UpdateUserInfo();" observes="maindisabler"/>
+							</hbox>
+							<hbox align="center">
+								<label value="&preview;" control="preview"/>
+								<textbox readonly="true" style="text-align: center;" flex="1" id="preview" observes="maindisabler"/>
+							</hbox>
+							<label value="&groupscolon;" control="allowmask"/>
+							<listbox rows="6" flex="1" id="allowmask" observes="maindisabler" onkeypress="if (event.charCode == 32) UpdateGroupInfo(this.selectedItem);"/>
+							<spacer flex="1"/>
+							<hbox align="center">
+								<spacer flex="1"/>
+								<button label="&delete;" observes="maindisabler" oncommand="DeleteUser(ljFriends.currentfriend.user);"/>
+							</hbox>
+						</groupbox>
+						<spacer flex="1"/>
+					</vbox>
+				</hbox>
+			</tabpanel>
+			<tabpanel>
+				<hbox flex="1">
+					<groupbox flex="1">
+						<caption>
+							<label value="&groups;"/>
+						</caption>
+						<tree id="groupstree" ondraggesture="doGroupDrag(event)" ondblclick="RenameGroup(this)" onkeypress="if (event.keyCode == 13) RenameGroup(this);" flex="1" seltype="single" hidecolumnpicker="true" observes="maindisabler" onselect="SelectGroup(this);">
+							<treecols>
+								<treecol id="groupcol" flex="1" hideheader="true" />
+							</treecols>
+							<treechildren/>
+						</tree>
+						<checkbox label="&publicgroup;" id="publicgroup" observes="groupsdisabler" oncommand="TogglePublic(this.checked);"/>
+						<hbox align="center">
+							<button label="&new;" id="newgroup" observes="maindisabler" oncommand="InsertGroup(document.getElementById('groupstree'));"/>
+							<spacer flex="1"/>
+							<button label="&delete;" observes="groupsdisabler" oncommand="DeleteGroup(document.getElementById('groupstree'));"/>
+						</hbox>
+					</groupbox>
+					<groupbox flex="1">
+						<caption>
+							<label value="&friends;"/>
+						</caption>
+						<hbox align="center">
+							<label value="&view;" control="groupfilter"/>
+							<menulist flex="1" id="groupfilter" observes="groupsdisabler" oncommand="ljFriends.filteredfgroups = GroupsFriendsFilter(this); document.getElementById('groupsftree').view = new friendsGroupsTree();">
+								<menupopup>
+									<menuitem label="&all;"/>
+									<menuitem label="&friends;"/>
+									<menuitem label="&communities;"/>
+									<menuitem label="&feeds;"/>
+								</menupopup>
+							</menulist>
+						</hbox>
+						<tree id="groupsftree" flex="1" seltype="single" hidecolumnpicker="true" observes="groupsdisabler" editable="true">
+							<treecols>
+								<treecol id="friendcheck" type="checkbox" editable="true" hideheader="true" style="width: 20px;"/>
+								<treecol id="groupiconcol" style="width: 20px;" hideheader="true" />
+								<treecol id="groupsflist" flex="1" hideheader="true"/>
+							</treecols>
+							<treechildren/>
+						</tree>
+						<hbox align="center">
+							<button label="&checkall;" observes="groupsdisabler" oncommand="CheckAll(true);"/>
+							<spacer flex="1"/>
+							<button label="&uncheckall;" observes="groupsdisabler" oncommand="CheckAll(false);"/>
+						</hbox>
+					</groupbox>
+				</hbox>
+			</tabpanel>
+			<tabpanel>
+				<hbox flex="1">
+					<groupbox flex="1">
+						<caption>
+							<label value="&notonflist;"/>
+						</caption>
+						<tree id="notyours" flex="1" seltype="single" hidecolumnpicker="true" observes="maindisabler" context="nycontext">
+							<treecols>
+								<treecol id="nyicon" style="width: 20px;" hideheader="true" />
+								<treecol id="notyourscol" flex="1" hideheader="true" />
+							</treecols>
+							<treechildren/>
+						</tree>
+						<button observes="maindisabler" label="&addtofriends;" oncommand="AddFromDrama();"/>
+					</groupbox>
+					<groupbox flex="1">
+						<caption>
+							<label value="&notontheirflist;"/>
+						</caption>
+						<tree id="nottheirs" flex="1" seltype="single" hidecolumnpicker="true" observes="maindisabler" context="ntcontext">
+							<treecols>
+								<treecol id="nticon" style="width: 20px;" hideheader="true" />
+								<treecol id="nottheirscol" flex="1" hideheader="true" />
+							</treecols>
+							<treechildren/>
+						</tree>
+						<button observes="maindisabler" label="&deletefromfriends;" oncommand="DeleteFromDrama();"/>
+					</groupbox>
+				</hbox>
+			</tabpanel>
+		</tabpanels>
+	</tabbox>
+	<hbox align="center">
+		<label id="progressinfo" value="&loading;"/>
+		<progressmeter mode="undetermined" flex="1" id="friendsprogress"/>
+		<button label="&ok;" observes="maindisabler" oncommand="SaveGroups();"/>
+		<button label="&cancel;" oncommand="window.close();"/>
+	</hbox>
+</window>

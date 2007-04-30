@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xml-stylesheet href="chrome://deepestsender/skin/about.css" type="text/css"?>
+
+<page xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul" onload="Init();">
+<script type="application/x-javascript"><![CDATA[
+
+var AnagramsArray = ["Deed Pretenses","Deeds Petersen","Deeds Pretense","Deepen Deserts","Deepen Dessert",
+			"Deepened Rests","Deepened Tress","Deepens Desert","Deepens Rested","Deeper Densest",
+			"Deepest Denser","Deepest Enders","Deepest Sender","Deeps Resented","Denser Steeped",
+			"Densest Peered","Depressed Teen","Enders Steeped","Entered Speeds","Enters Speeded",
+			"Ernest Speeded","Nested Speeder","Nester Speeded","Present Seeded","Presented Seed",
+			"Pretended Sees","Repented Seeds","Repents Seeded","Resent Speeded","Resented Speed",
+			"Seeded Serpent","Seeped Tenders","Sender Steeped","Speeded Tenser","Speeder Tensed"];
+
+function Init() {
+	// Main init function. Makes the anagrams into a list, separated by a DS icon. Then kicks them off moving.
+	// In: Nothing.
+	// Out: Nothing.
+	fisherYates(AnagramsArray);
+	for (i = 0; i < AnagramsArray.length; i++) {
+		// This creates a text bit saying the anagram, followed by a LiveJournal logo, for the amount of anagrams there are.
+		// Idea for scrolling crap came from the Firefox credits screen.
+		document.getElementById("anagrams").firstChild.appendChild(document.createElement("text"));
+		document.getElementById("anagrams").firstChild.lastChild.setAttribute("value",AnagramsArray[i]);
+		document.getElementById("anagrams").firstChild.lastChild.setAttribute("class","Bolded");
+		document.getElementById("anagrams").firstChild.appendChild(document.createElement("image"));
+		document.getElementById("anagrams").firstChild.lastChild.setAttribute("class","dssmall");
+	}
+	// This creates a copy of the entire set of text/images.
+	document.getElementById("anagrams").appendChild(document.getElementById("anagrams").firstChild.cloneNode(true));
+	// And puts that copy exactly where the first copy ends, so there's always two running so it can go perpetually without anyone noticing it resetting.
+	document.getElementById("anagrams").lastChild.left = parseInt(document.defaultView.getComputedStyle(document.getElementById("anagrams").firstChild, '').getPropertyValue("width"));
+	// Let's get scrolling.
+	setInterval("ScrollAnagrams()",25);
+}
+
+
+function ScrollAnagrams() {
+	// Moves the anagrams over by a pixel. And creates a clone of the object if it has reached the end of the window
+	//	(so it scrolls forever).
+	// In: Nothing.
+	// Out: Nothing.
+	var dsana = document.getElementById("anagrams");
+	// Position each set of anagrams to the left minus one.
+	dsana.firstChild.left = dsana.firstChild.left - 1;
+	dsana.lastChild.left = dsana.lastChild.left - 1;
+	if (dsana.lastChild.left == 0) {
+		// If the second set of anagrams has just hit the edge of the box, then copy the first one (that is now offscreen), attach it to the end of the second set.
+		dsana.appendChild(dsana.cloneNode(true));
+		// Destroy the first set of anagrams, as it will no longer ever be seen.
+		dsana.removeChild(dsana.firstChild);
+		// Set it to where the set of anagrams which is now first ends.
+		dsana.lastChild.left = parseInt(document.defaultView.getComputedStyle(dsana.firstChild, '').getPropertyValue("width"));
+	}
+}
+
+function fisherYates ( myArray ) {
+	// This is the first function I found when I searched Google for "randomise javascript array." Too lazy to write my own. It's just so it doesn't appear that any anagram has preference over another.
+	// In: An array.
+	// Out: Nothing, but the array you put in is now in random order.
+	var i = myArray.length;
+	while ( i-- ) {
+		var j = Math.floor( Math.random() * ( i + 1 ) );
+		var tempi = myArray[i];
+		var tempj = myArray[j];
+		myArray[i] = tempj;
+		myArray[j] = tempi;
+	}
+}
+
+]]></script>
+	<stack id="anagrams">
+		<hbox flex="1" align="center">
+		</hbox>
+	</stack>
+
+</page>

@@ -1,0 +1,13 @@
+pref("extensions.deepestSender.OpenInSidebar", false);
+pref("extensions.deepestSender.PicAlign", 1);
+pref("extensions.deepestSender.UseCSS", false);
+pref("extensions.deepestSender.RemoveMozAttrs", false);
+pref("extensions.deepestSender.SpellCheckOnPost", false);
+pref("extensions.deepestSender.AutoDetectMusic", false);
+pref("extensions.deepestSender.SourceViewDefault", false);
+pref("extensions.deepestSender.DetectMethod", 0);
+pref("extensions.deepestSender.MP3InfoFile", "");
+pref("extensions.deepestSender.MP3Display", "%1%");
+pref("extensions.deepestSender.SaveDraftEvery", 120);
+pref("extensions.deepestSender.EnableSpellcheck", true);
+pref("extensions.deepestSender.FirstRun", true);

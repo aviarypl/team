@@ -1,0 +1,73 @@
+<?xml version="1.0"?> 
+<?xml-stylesheet href="chrome://communicator/skin/" type="text/css"?>
+<!DOCTYPE dialog SYSTEM "chrome://deepestsender/locale/prefdialog.dtd">
+
+<dialog xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+	windowtype="deepestsender:options"
+	title="&prefdialog.title;"
+	ondialogaccept="OkClicked();"
+	onload="InitNotFx();"
+	persist="screenX screenY"
+	id="dsprefs">
+	
+	<stringbundle id="prefbundle" src="chrome://deepestsender/locale/prefform.properties"/>	
+	
+	<script type="application/x-javascript" src="lib/util.js"/>
+	<script type="application/x-javascript" src="lib/io.js"/>
+	<script type="application/x-javascript" src="lib/prefutils.js"/>
+	<script type="application/x-javascript" src="prefs.js"/>
+	
+	<broadcasterset>
+		<broadcaster id="bc_textfile" disabled="true"/>
+	</broadcasterset>
+	
+	<tabbox>
+		<tabs>
+			<tab label="&mainoptions.label;"/>
+			<tab label="&formattingoptions.label;"/>
+			<tab label="&musicoptions.label;"/>
+		</tabs>
+		<tabpanels>
+			<tabpanel orient="vertical">
+				<hbox align="center">
+					<label value="&piclabel.value;" id="piclabel"/>
+					<menulist id="picalign">
+						<menupopup>
+							<menuitem label="&picalign.top.label;" value="0"/>
+							<menuitem label="&picalign.middle.label;" value="1" selected="true"/>
+							<menuitem label="&picalign.bottom.label;" value="2"/>
+						</menupopup>
+					</menulist>
+				</hbox>
+				<checkbox label="&spellcheckonpost.label;" id="spellcheckonpost" disabled="true"/>
+				<checkbox label="&autodetectmusic.label;" id="autodetectmusic"/>
+				<checkbox label="&sourceview.label;" id="sourceview"/>
+			</tabpanel>
+			<tabpanel orient="vertical">
+				<checkbox label="&usecss.label;" id="usecss"/>
+				<checkbox label="&removemozattrs.label;" id="removemozattrs"/>
+				<groupbox>
+					<caption label="&editorstylesheet;"/>
+					<textbox rows="4" multiline="true" id="editorstyle"/>
+				</groupbox>	
+			</tabpanel>
+			<tabpanel orient="vertical">
+				<radiogroup id="mp3options">
+					<radio label="&dontdetect.label;" value="0" oncommand="SetBroadcaster('bc_textfile', true);"/>
+					<radio label="&foxytunes.label;" value="1" id="foxytunes" disabled="true" oncommand="SetBroadcaster('bc_textfile', true);"/>
+					<radio label="&registry.label;" value="2" id="registry" disabled="true" oncommand="SetBroadcaster('bc_textfile', true);"/>
+					<radio label="&textfile.label;" value="3" id="textfile" oncommand="SetBroadcaster('bc_textfile', false);"/>
+				</radiogroup>
+				<hbox align="center">
+					<label value="&mp3path.label.value;" control="mp3display" observes="bc_textfile"/>
+					<textbox id="mp3path" flex="1" observes="bc_textfile"/>
+					<button label="&mp3path.button.label;" oncommand="SetMP3InfoFile(document.getElementById('mp3path'));" observes="bc_textfile" />
+				</hbox>
+				<hbox align="center">
+					<label value="&mp3display.label.value;" control="mp3display" observes="bc_textfile"/>
+					<textbox id="mp3display" observes="bc_textfile"/>
+				</hbox>
+			</tabpanel>
+		</tabpanels>
+	</tabbox>
+</dialog>

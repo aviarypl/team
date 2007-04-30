@@ -1,0 +1,138 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xml-stylesheet href="chrome://deepestsender/skin/protocols/livejournal/livejournal.css" type="text/css"?>
+<?xul-overlay href="chrome://deepestsender/content/lib/menuoverlay.xul"?>
+<?xul-overlay href="chrome://deepestsender/content/lib/midasoverlay.xul"?>
+<!DOCTYPE window [
+	<!ENTITY % livejournalDTD SYSTEM "chrome://deepestsender/locale/protocols/livejournal/livejournal.dtd">
+	%livejournalDTD;
+	<!ENTITY % commonDTD SYSTEM "chrome://deepestsender/locale/common.dtd">
+	%commonDTD;
+]>
+
+<window xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul" id="dsLiveJournal"
+	persist="screenX screenY width height" onload="Init();" onunload="WindowClosing();"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+
+	<stringbundle id="draftbundle" src="chrome://deepestsender/locale/lib/drafts.properties"/>
+	<stringbundle id="commonbundle" src="chrome://deepestsender/locale/common.properties"/>
+	<stringbundle id="ljbundle" src="chrome://deepestsender/locale/protocols/livejournal/ljposting.properties"/>
+	<stringbundle id="ljeditbundle" src="chrome://deepestsender/locale/protocols/livejournal/ljediting.properties"/>
+	<stringbundle id="midasbundle" src="chrome://deepestsender/locale/lib/midas.properties"/>
+	
+	<script type="application/x-javascript" src="chrome://global/content/globalOverlay.js"/>
+	<script type="application/x-javascript" src="ljflat.js"/>
+	<script type="application/x-javascript" src="../../lib/util.js"/>
+	<script type="application/x-javascript" src="../../lib/io.js"/>
+	<script type="application/x-javascript" src="../../lib/md5.js"/>
+	<script type="application/x-javascript" src="../../lib/clipboard.js"/>
+	<script type="application/x-javascript" src="../../lib/prefutils.js"/>
+	<script type="application/x-javascript" src="ljtags.js"/>
+	<script type="application/x-javascript" src="ljposting.js"/>
+	<script type="application/x-javascript" src="ljediting.js"/>
+	
+	<broadcasterset id="deepestsenderbroadcasters">
+		<broadcaster id="maindisabler"/>
+	</broadcasterset>
+	
+	<commandset id="deepestsendercommands">
+		<command id="cmd_history" oncommand="OpenHistoryWindow();" label="&history;"/>
+		<command id="cmd_lastentry" oncommand="EditLastEntry();" label="&cmd_lastentry.label;"/>
+		<command id="cmd_postoptions" oncommand="OpenPostOptions();"/>
+		<command id="cmd_editfriends" oncommand="EditFriends();" label="&cmd_editfriends.label;"/>
+		<command id="cmd_console" oncommand="window.openDialog('console.xul','dsljconsole','chrome,resizable,titlebar,dialog=no', LiveJournal);" label="LiveJournal Console"/>
+		<command id="cmd_ljuser" oncommand="ljUser();"/>
+		<command id="cmd_ljcut" oncommand="ljCut();"/>
+	</commandset>
+	
+	<keyset id="deepestsenderkeys">
+		<key id="key_history"     key="&key_history.key;" modifiers="accel,shift" command="cmd_history" observes="maindisabler"/>
+		<key id="key_lastentry"   key="&key_lastentry.key;" modifiers="accel" command="cmd_lastentry" observes="maindisabler"/>
+		<key id="key_ljuser"      key="&key_ljuser.key;" modifiers="accel" command="cmd_ljuser" observes="maindisabler"/>
+		<key id="key_postoptions" keycode="&key_postoptions.keycode;" command="cmd_postoptions" observes="maindisabler"/>
+		<key id="key_editfriends" key="&key_editfriends.key;" modifiers="accel" command="cmd_editfriends" observes="maindisabler"/>
+	</keyset>
+	
+	<popup id="messagemenu"/>
+
+	<toolbox id="menubox">
+		<menubar id="menubit">
+			<menu id="file_menu">
+				<menupopup id="dsmenu_file_popup">
+					<menuitem id="menu_history" command="cmd_history" key="key_history"/>
+					<menuitem id="menu_lastentry" command="cmd_lastentry" key="key_lastentry"/>
+					<menuseparator/>
+				</menupopup>
+			</menu>
+			<menu id="menu_Edit"/>
+			<menu id="tools_menu">
+				<menupopup id="dsmenu_tools_popup">
+					<menuitem id="menu_editfriends" command="cmd_editfriends" key="key_editfriends"/>
+					<menuitem id="menu_console" command="cmd_console"/>
+					<menuseparator/>
+				</menupopup>
+			</menu>
+			<menu id="web_menu" label="&web_menu.label;" accesskey="&web_menu.accesskey;">
+				<menupopup id="web_menu_popup"/>
+			</menu>
+		</menubar>
+	</toolbox>
+
+	<box orient="horizontal" align="stretch" flex="1" id="mainbox">
+		<vbox align="center" pack="center" id="userpicbox">
+			<groupbox align="center">
+				<image id="userpic" onclick="dsPosts.visitJournal(event);" tooltiptext="&userpic.tooltiptext;"/>
+				<description value="&deepestsender;" style="font-weight: bold; font-size: large" id="usernametitle"/>
+				<menulist id="usejournal" tooltiptext="&usejournal.tooltiptext;" oncommand="dsPosts.changeJournal(this.selectedItem);" observes="maindisabler"/>
+			</groupbox>
+			<groupbox align="center" id="birthdaybox" collapsed="true" style="opacity: 0;"/>
+			<groupbox align="stretch" id="postoptions">
+				<menulist id="security" tooltiptext="&security.tooltiptext;" oncommand="dsPosts.changeSecurity(this.selectedIndex);" observes="maindisabler">
+					<menupopup>
+						<menuitem label="&security.menuitem.public.label;" value="public"/>
+						<menuitem label="&security.menuitem.private.label;" value="private"/>
+						<menuitem label="&security.menuitem.friends.label;" value="friends"/>
+						<menuitem label="&security.menuitem.custom.label;" value="custom"/>
+					</menupopup>
+				</menulist>
+				<deck id="moodsdeck">
+					<hbox>
+						<menulist id="moods" tooltiptext="&mood.tooltiptext;" observes="maindisabler" flex="1"/>
+						<toolbarbutton label="&gt;" oncommand="document.getElementById('moodsdeck').selectedIndex = 1; document.getElementById('moodtext').focus();" observes="maindisabler"/>
+					</hbox>
+					<hbox>
+						<toolbarbutton label="&lt;" oncommand="document.getElementById('moodsdeck').selectedIndex = 0; document.getElementById('moods').focus();" observes="maindisabler"/>
+						<textbox flex="1" id="moodtext" tooltiptext="&mood.tooltiptext;" observes="maindisabler"/>
+					</hbox>
+				</deck>
+				<hbox id="picturebox">
+					<menulist id="picture" tooltiptext="&picture.tooltiptext;" oncommand="dsPosts.changePicture(this.selectedItem);" observes="maindisabler"/>
+					<toolbarbutton label="..." oncommand="dsPosts.viewUserPics();" observes="maindisabler" tooltiptext="&picsbutton.tooltiptext;"/>
+				</hbox>
+				<textbox id="location" tooltiptext="&location.tooltiptext;" observes="maindisabler" onfocus="dsPosts.fieldGotFocus(this.parentNode.parentNode);" onblur="dsPosts.fieldLoseFocus(this.parentNode.parentNode, ljpostingbundle.getString('CurrentLocation'));"/>
+				<hbox id="entrytags">
+					<textbox flex="1" id="taglist" tooltiptext="&taglist.tooltiptext;" observes="maindisabler" onfocus="dsPosts.fieldGotFocus(this.parentNode.parentNode);" onblur="dsPosts.fieldLoseFocus(this.parentNode.parentNode, ljpostingbundle.getString('Tags'));"/>
+					<toolbarbutton label="..." oncommand="dsPosts.viewTags();" observes="maindisabler" tooltiptext="&tagsbutton.tooltiptext;"/>
+				</hbox>
+				<textbox id="music" tooltiptext="&music.tooltiptext;" observes="maindisabler" onfocus="dsPosts.fieldGotFocus(this.parentNode.parentNode);" onblur="dsPosts.fieldLoseFocus(this.parentNode.parentNode, ljpostingbundle.getString('CurrentMusic'));"/>
+				<toolbarbutton id="detectmusic" label="&detectmusic.label;" oncommand="var musicobj = document.getElementById('music'); dsPosts.fieldGotFocus(musicobj); musicobj.value = FindMusic(); dsPosts.fieldLoseFocus(musicobj, ljpostingbundle.getString('CurrentMusic'));" observes="maindisabler"/>
+			</groupbox>
+		</vbox>
+		<vbox align="stretch" flex="1">
+			<hbox align="center">
+				<label control="subject" value="&subject;" observes="maindisabler"/>
+				<textbox onchange="dsMidas.updatePreview();" id="subject" maxlength="100" flex="1" observes="maindisabler"/>
+			</hbox>
+			<separator class="thin"/>
+			<vbox id="midasoverlay"/>
+			<hbox pack="center">
+				<button label="&postoptions;" id="postoptions" command="cmd_postoptions" observes="maindisabler"/>
+				<button label="&delete;" id="deletebutton" oncommand="ljEdit.deletePost();" collapsed="true" observes="maindisabler"/>
+				<spacer flex="1"/>
+				<button label="&post;" oncommand="dsPosts.sendPost();" id="postbutton"/>
+				<button label="&save;" oncommand="ljEdit.saveEdit();" id="savebutton" collapsed="true"/>
+			</hbox>
+		</vbox>
+	</box>
+</window>
+

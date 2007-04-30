@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<!DOCTYPE window SYSTEM "chrome://deepestsender/locale/help.dtd">
+
+<window id="dshelp" title="&help;"
+	xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+	windowtype="deepestsender:help"
+	persist="screenX screenY width height"
+	onload="Init();"
+	width="900"
+	height="500">
+	
+	<script type="application/x-javascript" src="help.js"/>
+	<hbox flex="1">
+	<vbox flex="1">
+	<description style="font-weight: bold; margin-left: 1em; margin-top: 0.5em;">&contents;</description>
+		<tree id="helpcontents"
+				flex="1"  hidecolumnpicker="true"
+				datasources="http://deepestsender.mozdev.org/help/helpcontents.rdf"
+				containment="http://deepestsender.mozdev.org/DS-rdf#subheadings"
+				ref="urn:root" flags="dont-build-content"
+				onselect="onselect_loadURI(this)">
+			    <template>
+	
+				<rule>
+				    <conditions>
+					<content uri="?uri"/>
+					<triple subject="?uri"
+					    predicate="http://deepestsender.mozdev.org/DS-rdf#subheadings"
+					    object="?subheadings"/>
+					<member container="?subheadings"
+					    child="?subheading"/>
+				    </conditions>
+	
+				    <bindings>
+					<binding subject="?subheading"
+					    predicate="http://deepestsender.mozdev.org/DS-rdf#name"
+					    object="?name"/>
+	
+				    </bindings>
+	
+				    <action>
+					<treechildren>
+					    <treeitem uri="?subheading">
+						<treerow>
+						    <treecell label="?name"/>
+						</treerow>
+					    </treeitem>
+	
+					</treechildren>
+				    </action>
+				</rule>
+			    </template>
+			    <treecols>
+				<treecol id="NameColumn" flex="1" hideheader="true"
+				    primary="true"/>
+			    </treecols>
+			</tree>
+		</vbox>
+		<splitter/>
+		<browser id="helpbrowser" flex="3" type="content" homepage="http://deepestsender.mozdev.org/help/"/>
+	</hbox>
+
+</window>
+

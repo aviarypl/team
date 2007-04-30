@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+
+<?xul-overlay href="chrome://deepestsender/content/lib/menuoverlay.xul"?>
+<?xul-overlay href="chrome://deepestsender/content/lib/midasoverlay.xul"?>
+<!DOCTYPE window SYSTEM "chrome://deepestsender/locale/common.dtd">
+
+<window xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul" id="dsOffline"
+	persist="screenX screenY width height" onload="Init();" onunload="WindowClosing();">
+
+	<stringbundle id="draftbundle" src="chrome://deepestsender/locale/lib/drafts.properties"/>
+	<stringbundle id="ljbundle" src="chrome://deepestsender/locale/protocols/livejournal/ljposting.properties"/>
+	<stringbundle id="midasbundle" src="chrome://deepestsender/locale/lib/midas.properties"/>
+	
+	<script type="application/x-javascript" src="chrome://global/content/globalOverlay.js"/>
+	<script type="application/x-javascript" src="../../lib/util.js"/>
+	<script type="application/x-javascript" src="../../lib/io.js"/>
+	<script type="application/x-javascript" src="../../lib/clipboard.js"/>
+	<script type="application/x-javascript" src="../../lib/prefutils.js"/>
+	<script type="application/x-javascript" src="../livejournal/ljtags.js"/>
+	<script type="application/x-javascript" src="offline.js"/>
+	
+	<broadcasterset>
+		<broadcaster id="maindisabler"/>
+	</broadcasterset>
+	
+	<commandset id="deepestsendercommands">
+		<command id="cmd_ljuser" oncommand="ljUser();"/>
+		<command id="cmd_ljcut" oncommand="ljCut();"/>
+	</commandset>
+	
+	<keyset id="deepestsenderkeys"/>
+	
+	<popup id="messagemenu"/>
+
+	<toolbox id="menubox"/>
+
+	<box orient="horizontal" align="stretch" flex="1" id="mainbox">
+		<vbox align="stretch" flex="1">
+			<hbox align="center">
+				<label control="subject" value="&subject;" observes="maindisabler"/>
+				<textbox onchange="dsMidas.updatePreview();" id="subject" maxlength="100" flex="1" observes="maindisabler"/>
+			</hbox>
+			<separator class="thin"/>
+			<vbox id="midasoverlay"/>
+		</vbox>
+	</box>
+</window>
+

@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xul-overlay href="chrome://deepestsender/content/lib/menuoverlay.xul"?>
+<!DOCTYPE overlay [
+	<!ENTITY % menuoverlayDTD SYSTEM "chrome://deepestsender/locale/lib/menuoverlay.dtd">
+	%menuoverlayDTD;
+	<!ENTITY % commonDTD SYSTEM "chrome://deepestsender/locale/common.dtd">
+	%commonDTD;
+	<!ENTITY % consoleDTD SYSTEM "chrome://deepestsender/locale/protocols/livejournal/console.dtd">
+	%consoleDTD;
+]>
+
+
+<window id="console" title="&livejournalconsole;"
+		xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+		persist="screenX screenY width height"
+		width="600" height="400"
+		onload="Init();"
+		windowtype="deepestsender:console">
+		
+		<stringbundle id="commonbundle" src="chrome://deepestsender/locale/common.properties"/>
+		<stringbundle id="consolebundle" src="chrome://deepestsender/locale/protocols/livejournal/console.properties"/>
+		
+		<script type="application/x-javascript" src="../../clipboard.js"/>
+		<script type="application/x-javascript" src="../../util.js"/>
+		<script type="application/x-javascript" src="console.js"/>
+		
+		<broadcasterset>
+			<broadcaster id="pwdisabler" disabled="true"/>
+		</broadcasterset>
+		
+		<commandset id="console">
+			<command id="cmd_copy"              oncommand="ds_copy();" label="&copyCmd.label;"/>
+			<command id="cmd_selectAll"         oncommand="ds_selectAll();" label="&selectAllCmd.label;"/>
+			<command id="execute"  			oncommand="ExecuteCommand(document.getElementById('consolecommand'));"/>
+		</commandset>
+		
+		<popup id="resultscontext" onpopupshowing="goUpdateGlobalEditMenuItems();">
+			<menuitem id="cMenu_copy"   command="cmd_copy" key="key_copy"/>
+			<menuitem id="cMenu_selectAll" command="cmd_selectAll" key="key_selectAll"/>
+		</popup>
+		
+		<hbox flex="1">
+			<vbox flex="1">
+				<groupbox flex="1">
+					<caption>
+						<label value="&serverresponse;"/>
+					</caption>
+					<iframe id="response" src="../../lib/blank.html" context="resultscontext" class="inset iframe" flex="1" multiline="true"/>
+				</groupbox>
+				<groupbox>
+					<caption>
+						<label value="&consoleinput;"/>
+					</caption>
+					<textbox id="consolecommand" onkeypress="if (event.keyCode == 13) ExecuteCommand(document.getElementById('consolecommand'));"/>
+					<hbox align="center">
+						<button label="&help;" oncommand="ToggleHelp();" observes="maindisabler"/>
+						<progressmeter mode="determined" id="progress" flex="1"/>
+						<button label="&execute;" command="execute"/>
+					</hbox>
+					<hbox align="center">
+						<checkbox label="&override;" id="consoleaccess" oncommand="ToggleOtherUser(this);"/>
+						<label value="&username;" control="username"/>
+						<textbox id="username" observes="pwdisabler"/>
+						<label value="&password;"/>
+						<textbox id="password" type="password" observes="pwdisabler"/>
+					</hbox>
+				</groupbox>
+			</vbox>
+			<splitter>
+				<grippy/>
+			</splitter>
+			<iframe flex="1" persist="width collapsed" id="helpframe" collapsed="true" src="about:blank"/>
+		</hbox>
+</window>

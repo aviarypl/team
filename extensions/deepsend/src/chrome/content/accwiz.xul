@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xml-stylesheet href="chrome://deepestsender/skin/deepestsender.css" type="text/css"?>
+<!DOCTYPE wizard SYSTEM "chrome://deepestsender/locale/accwiz.dtd">
+
+<wizard id="newaccountwizard" title="&newaccountwizard.title;"
+	onwizardfinish="return AddNewAccount();"
+	onwizardnext="return ValidateFields(this);"
+	xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+	windowtype="deepestsender:accountwizard">
+
+	<stringbundle id="accwizbundle" src="chrome://deepestsender/locale/accwiz.properties"/>
+
+	<script type="application/x-javascript" src="accwiz.js"/>
+	<script type="application/x-javascript" src="lib/passwords.js"/>
+	<script type="application/x-javascript" src="lib/util.js"/>
+	
+	<wizardpage>
+		<description>&intro.lineone;</description>
+		<description>&intro.linetwo;</description>
+		<spacer flex="1"/>
+		<description>&intro.linethree;</description>
+	</wizardpage>
+	
+	<wizardpage label="&accountprotocol.label;" onpageadvanced="SetDefaultURL();">
+		<description>&accountprotocol.lineone;</description>
+		<description>&accountprotocol.linetwo;</description>
+		<description>&accountprotocol.linethree;</description>
+		<menulist id="accounttype">
+			<menupopup>
+			    <menuitem label="Blox.pl" value="metaWeblog" class="menuitem-iconic icons" src="chrome://deepestsender/skin/images/ljicon.png"/>
+				<menuitem label="&accounttype.livejournal.label;" value="LiveJournal" class="menuitem-iconic icons" src="chrome://deepestsender/skin/images/ljicon.png"/>
+				<menuitem label="&accounttype.blogger.label;" value="blogger" class="menuitem-iconic icons" src="chrome://deepestsender/skin/images/bloggericon.png"/>
+				<menuitem label="&accounttype.wordpress.label;" value="WordPress" class="menuitem-iconic icons" src="chrome://deepestsender/skin/images/wordpressicon.png"/>
+				<menuitem label="&accounttype.msnspaces.label;" value="MSN" class="menuitem-iconic icons" src="chrome://deepestsender/skin/images/msnspaces.png"/>
+				<menuitem label="&accounttype.metaweblog.label;" value="metaWeblog" class="menuitem-iconic icons"/>
+			</menupopup>
+		</menulist>
+	</wizardpage>
+	
+	<wizardpage label="&postingurl.label;">
+		<description>&postingurl.lineone;</description>
+		<description>&postingurl.linetwo;</description>
+		<textbox id="posturl"/>
+	</wizardpage>
+	
+	<wizardpage label="&username.label;">
+		<description>&username.lineone;</description>
+		<description>&username.linetwo;</description>
+		
+		<vbox>
+		<grid>
+			<columns>
+				<column />
+				<column flex="1"/>
+			</columns>
+			
+			<rows>
+				<row align="center">
+					<label value="&username.label.value;" control="username"/>
+					<textbox id="username"/>
+				</row>
+				<row align="center">
+					<label value="&password.label.value;" control="password"/>
+					<textbox id="password" type="password"/>
+				</row>
+			</rows>
+		</grid>
+		</vbox>
+		<checkbox id="savepassword" checked="true" label="&savepassword.label;" oncommand="EnableDisableSavedPassword(this.checked);"/>
+	</wizardpage>
+	
+	<wizardpage label="&accountname.label;">
+		<description>&accountname.lineone;</description>
+		<textbox id="accountname"/>
+		<checkbox id="makedefault" checked="false" label="&makedefault.label;"/>
+	</wizardpage>
+	
+	<wizardpage>
+		<description>&conclusion;</description>
+	</wizardpage>
+	
+</wizard>
+

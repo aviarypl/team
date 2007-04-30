@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xml-stylesheet href="chrome://deepestsender/skin/protocols/livejournal/livejournal.css" type="text/css"?>
+<?xml-stylesheet href="chrome://deepestsender/skin/protocols/livejournal/userpics.css" type="text/css"?>
+<!DOCTYPE window [
+	<!ENTITY % userpicsDTD SYSTEM "chrome://deepestsender/locale/protocols/livejournal/userpics.dtd">
+	%userpicsDTD;
+	<!ENTITY % commonDTD SYSTEM "chrome://deepestsender/locale/common.dtd">
+	%commonDTD;
+]>
+
+
+<window xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul" id="dsUserPics"
+	persist="screenX screenY width height" onload="Init();" onunload="WipeTree();" title="&dsUserPics.title;"
+	width="300" height="500">
+	
+	<script type="application/x-javascript" src="userpics.js"/>
+	
+	<hbox align="center">
+		<label value="&search.value;"/>
+		<textbox id="picsearch" oninput="document.getElementById('picstree').view = new treeView();" flex="1"/>
+	</hbox>
+	
+	<tree id="picstree" flex="1" seltype="single" onclick="changePic(this);" ondblclick="changePic(this);window.close();" hidecolumnpicker="true">
+		<treecols>
+			<treecol id="userpiccol" flex="1" hideheader="true"/>
+			<treecol id="textcol" flex="1" hideheader="true"/>
+		</treecols>
+		<treechildren/>
+	</tree>
+	<hbox>
+		<spacer flex="1"/>
+		<button label="&close;" oncommand="window.close();"/>
+	</hbox>
+	
+</window>

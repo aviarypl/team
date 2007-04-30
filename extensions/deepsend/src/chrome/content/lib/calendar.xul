@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://deepestsender/skin/lib/calendar.css" type="text/css"?>
+<!DOCTYPE overlay SYSTEM "chrome://deepestsender/locale/lib/calendar.dtd">
+
+<overlay id="calendaroverlay"
+		xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+		
+
+	<script type="application/x-javascript" src="chrome://deepestsender/content/lib/calendar.js"/>
+	
+	<hbox align="center" id="calheader">
+		<toolbarbutton label="&lt;" id="monthless" class="Bolded" oncommand="dsCalendar.changeDate(parseInt(dsCalendar.month, 10) - 1, dsCalendar.year);"/>
+		<spacer flex="1"/>
+		<toolbarbutton id="monthbutton" class="Bolded" type="menu"/>
+		<toolbarbutton id="yearbutton" class="Bolded" type="menu">
+			<menupopup id="yearpopup">
+				<menuitem type="radio" name="yeargroup"/>
+				<menuitem type="radio" name="yeargroup"/>
+				<menuitem type="radio" name="yeargroup"/>
+				<menuitem type="radio" name="yeargroup"/>
+				<menuitem type="radio" name="yeargroup"/>
+				<menuitem type="radio" name="yeargroup"/>
+				<menuitem type="radio" name="yeargroup"/>
+			</menupopup>
+		</toolbarbutton>
+		<spacer flex="1"/>
+		<toolbarbutton label="&gt;" id="monthmore" class="Bolded" oncommand="dsCalendar.changeDate(parseInt(dsCalendar.month, 10) + 1, dsCalendar.year);"/>
+	</hbox>
+	<grid id="calendarbox" class="SelectedBox">
+		<columns>
+			<column/>
+			<column/>
+			<column/>
+			<column/>
+			<column/>
+			<column/>
+			<column/>
+		</columns>
+		<rows id="calendarboxrows">
+			<row>
+				<listheader label="&calendarboxrows.Sunday;"/>
+				<listheader label="&calendarboxrows.Monday;"/>
+				<listheader label="&calendarboxrows.Tuesday;"/>
+				<listheader label="&calendarboxrows.Wednesday;"/>
+				<listheader label="&calendarboxrows.Thursday;"/>
+				<listheader label="&calendarboxrows.Friday;"/>
+				<listheader label="&calendarboxrows.Saturday;"/>
+			</row>
+			<row>
+				<label value="1"/>
+				<label value="2"/>
+				<label value="3"/>
+				<label value="4"/>
+				<label value="5"/>
+				<label value="6"/>
+				<label value="7"/>
+			</row>
+		</rows>
+	</grid>
+	<label value="&datelabel.value;" class="Bolded" id="datelabel"/>
+</overlay>

@@ -1,0 +1,79 @@
+<?xml version="1.0"?> 
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xml-stylesheet href="chrome://deepestsender/skin/prefdialog.css"?>
+<!DOCTYPE prefwindow SYSTEM "chrome://deepestsender/locale/prefdialog.dtd">
+
+<prefwindow xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+	type="prefwindow"
+	windowtype="deepestsender:options"
+	title="&prefdialog.title;"
+	ondialogaccept="SaveStylesheet();"
+	onclose="CheckNotWin();"
+	id="dsprefs">
+	
+	<prefpane id="mainoptions" label="&mainoptions.label;">
+	<script type="application/x-javascript" src="prefs.js"/>
+		<preferences>
+			<preference id="picalign" name="extensions.deepestSender.PicAlign" type="int"/>
+			<preference id="autodetectmusic" name="extensions.deepestSender.AutoDetectMusic" type="bool"/>
+			<preference id="sourceview" name="extensions.deepestSender.SourceViewDefault" type="bool"/>
+			<preference id="sidebaropen" name="extensions.deepestSender.OpenInSidebar" type="bool"/>
+		</preferences>
+		<hbox align="center">
+			<label value="&piclabel.value;" id="piclabel"/>
+			<menulist preference="picalign">
+				<menupopup>
+					<menuitem label="&picalign.top.label;" value="0"/>
+					<menuitem label="&picalign.middle.label;" value="1" selected="true"/>
+					<menuitem label="&picalign.bottom.label;" value="2"/>
+				</menupopup>
+			</menulist>
+		</hbox>
+		<checkbox label="&autodetectmusic.label;" preference="autodetectmusic"/>
+		<checkbox label="&sourceview.label;" preference="sourceview"/>
+		<checkbox label="&sidebaropen.label;" preference="sidebaropen"/>
+	</prefpane>
+
+	<prefpane id="formattingoptions" label="&formattingoptions.label;" onpaneload="ShowFormatting();">
+		<script type="application/x-javascript" src="lib/io.js"/>
+		<preferences>
+			<preference id="usecss" name="extensions.deepestSender.UseCSS" type="bool"/>
+			<preference id="removemozattrs" name="extensions.deepestSender.RemoveMozAttrs" type="bool"/>
+		</preferences>
+		<checkbox label="&usecss.label;" preference="usecss"/>
+		<checkbox label="&removemozattrs.label;" preference="removemozattrs"/>
+		<groupbox>
+			<caption label="&editorstylesheet;"/>
+			<textbox rows="4" multiline="true" id="editorstyle"/>
+		</groupbox>
+	</prefpane>
+	
+	<prefpane id="musicoptions" label="&musicoptions.label;" onpaneload="ShowMP3Options();">
+		<stringbundle id="prefbundle" src="chrome://deepestsender/locale/prefform.properties"/>	
+		<script type="application/x-javascript" src="lib/util.js"/>
+		<preferences>
+			<preference id="mp3options" name="extensions.deepestSender.DetectMethod" type="int"/>
+			<preference id="mp3pathpref" name="extensions.deepestSender.MP3InfoFile" type="unichar"/>
+			<preference id="mp3displaypref" name="extensions.deepestSender.MP3Display" type="unichar"/>
+		</preferences>
+		<broadcasterset>
+			<broadcaster id="bc_textfile" disabled="true"/>
+		</broadcasterset>
+		<radiogroup preference="mp3options" id="mp3optionsgroup">
+			<radio label="&dontdetect.label;" value="0" oncommand="SetBroadcaster('bc_textfile', true);"/>
+			<radio label="&foxytunes.label;" value="1" id="foxytunes" disabled="true" oncommand="SetBroadcaster('bc_textfile', true);"/>
+			<radio label="&registry.label;" value="2" id="registry" disabled="true" oncommand="SetBroadcaster('bc_textfile', true);"/>
+			<radio label="&textfile.label;" value="3" oncommand="SetBroadcaster('bc_textfile', false);"/>
+		</radiogroup>
+		<hbox align="center">
+			<label value="&mp3path.label.value;" control="mp3path" observes="bc_textfile"/>
+			<textbox id="mp3path" flex="1" observes="bc_textfile" preference="mp3pathpref"/>
+			<button label="&mp3path.button.label;" oncommand="SetMP3InfoFile(document.getElementById('mp3path'));" observes="bc_textfile" />
+		</hbox>
+		<hbox align="center">
+			<label value="&mp3display.label.value;" control="mp3display" observes="bc_textfile"/>
+			<textbox id="mp3display" observes="bc_textfile" preference="mp3displaypref"/>
+		</hbox>
+	</prefpane>
+
+</prefwindow>

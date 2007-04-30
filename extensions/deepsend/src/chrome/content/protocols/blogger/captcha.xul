@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<!DOCTYPE window [
+	<!ENTITY % commonDTD SYSTEM "chrome://deepestsender/locale/common.dtd">
+	%commonDTD;
+]>
+
+<dialog id="captcha" title="CAPTCHA"
+		xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+		persist="screenX screenY"
+		windowtype="deepestsender:captcha"
+		ondialogaccept="blogger.solved = document.getElementById('solvecaptcha').value;"
+		width="400"
+		height="300">
+		
+		<script type="application/x-javascript"><![CDATA[
+			blogger = window.arguments[0]; 
+			function Init() {
+				document.getElementById("captcha").src = "http://www.google.com/accounts/" + blogger["CaptchaUrl"];
+			}
+		]]></script>
+
+	<vbox align="center">
+		<image id="captcha"/>
+		<label value="Please type in the letters you see in the image above."/>
+		<textbox id="solvecaptcha"/>
+	</vbox>
+
+</dialog>

@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<!DOCTYPE overlay SYSTEM "chrome://deepestsender/locale/lib/midasoverlay.dtd">
+<?xml-stylesheet href="chrome://deepestsender/skin/lib/midas.css" type="text/css"?>
+<overlay id="dspostoverlay"
+		xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+		
+	<script type="application/x-javascript" src="midas.js"/>
+	<script type="application/x-javascript" src="drafts.js"/>
+	<script type="application/x-javascript" src="spellcheck.js"/>
+	
+	<vbox align="stretch" flex="1" id="midasoverlay">
+		<deck id="messagedeck" flex="1">
+			<tabbox flex="1" id="messagetabbox">
+				<tabs onselect="dsMidas.viewTab(this.selectedItem);" id="messagetabs">
+					<tab label="&tabnormal.label;" id="tabnormal"/>
+					<tab label="&tabsource.label;" id="tabsource"/>
+					<tab label="&tabpreview.label;" id="tabpreview"/>
+				</tabs>
+				<tabpanels flex="1">
+					<tabpanel id="normalview">
+						<vbox align="stretch" flex="1" id="midasview">
+							<box id="formattingbar">
+								<toolbox id="formattingtoolbox" flex="1">
+									<toolbar id="firsttoolbar" pack="start">
+										<toolbarbutton id="bold-button" command="cmd_bold" tooltiptext="&bold-button.tooltiptext;"/>
+										<toolbarbutton id="italic-button" command="cmd_italic" tooltiptext="&italic-button.tooltiptext;"/>
+										<toolbarbutton id="underline-button" command="cmd_underline" tooltiptext="&underline-button.tooltiptext;"/>
+										<toolbarseparator/>
+										<toolbarbutton id="justifyleft-button" command="cmd_jleft" tooltiptext="&justifyleft-button.tooltiptext;"/>
+										<toolbarbutton id="justifycenter-button" command="cmd_jcenter" tooltiptext="&justifycenter-button.tooltiptext;"/>
+										<toolbarbutton id="justifyright-button" command="cmd_jright" tooltiptext="&justifyright-button.tooltiptext;"/>
+										<toolbarbutton id="justifyjustified-button" command="cmd_justify" tooltiptext="&justifyjustified-button.tooltiptext;"/>
+									</toolbar>
+									
+									<toolbar id="secondtoolbar" pack="start">
+										<toolbarbutton id="orderedlist-button" command="cmd_ol" tooltiptext="&orderedlist-button.tooltiptext;"/>
+										<toolbarbutton id="unorderedlist-button" command="cmd_ul" tooltiptext="&unorderedlist-button.tooltiptext;"/>
+										<toolbarseparator/>
+										<toolbarbutton id="link-button" command="cmd_link" tooltiptext="&link-button.tooltiptext;"/>
+										<toolbarbutton id="image-button" command="cmd_insertimage" tooltiptext="&image-button.tooltiptext;"/>
+										<box id="ljbuttons" collapsed="true">
+											<toolbarseparator/>
+											<toolbarbutton id="ljuser-button" command="cmd_ljuser" tooltiptext="&ljuser-button.tooltiptext;"/>
+											<toolbarbutton id="ljcut-button" command="cmd_ljcut" tooltiptext="&ljcut-button.tooltiptext;"/>
+										</box>
+										</toolbar>
+									
+									<toolbar id="thirdtoolbar" flex="1" pack="start">
+										<toolbarbutton id="outdent-button" command="cmd_outdent" tooltiptext="&outdent-button.tooltiptext;"/>
+										<toolbarbutton id="indent-button" command="cmd_indent" tooltiptext="&indent-button.tooltiptext;"/>
+										<colorpicker type="button" id="fgc-button" onchange="dsMidas.doRichEditCommand('forecolor',this.color);" tooltiptext="&fgc-button.tooltiptext;"/>
+									</toolbar>
+								</toolbox>
+							</box>
+							<separator class="thin"/>
+							<editor id="message" stretch="true" flex="1" class="inset iframe" src="chrome://deepestsender/content/lib/blank.html" context="messagemenu" onfocus="goUpdateGlobalEditMenuItems();" spellcheck="true"/>
+						</vbox>
+					</tabpanel>
+					<tabpanel id="sourceview">
+						<textbox id="messagesource" multiline="true" flex="1" context="messagemenu" onfocus="goUpdateGlobalEditMenuItems();" spellcheck="true"/>
+					</tabpanel>
+					<tabpanel>
+						<iframe id="preview-display" stretch="true" src="chrome://deepestsender/content/lib/blank.html" flex="1" class="inset iframe"/>
+					</tabpanel>
+				</tabpanels>
+			</tabbox>
+			<vbox align="center" pack="center">
+				<label id="statuslabel" style="font-weight: bold; font-size: large"/>
+				<label id="statuswhat"/>
+				<separator/>
+				<progressmeter mode="determined" value="0" id="progressbar"/>
+			</vbox>
+		</deck>
+	</vbox>
+</overlay>

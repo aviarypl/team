@@ -1,0 +1,40 @@
+<?xml version="1.0"?> 
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<!DOCTYPE dialog SYSTEM "chrome://deepestsender/locale/accoptions.dtd">
+
+<dialog id="accountoptions"
+	xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+	buttons="accept,cancel"
+	onload="Init();"
+	ondialogaccept="return SaveOptions();"
+	title="&accountoptions.title;"
+	persist="screenX screenY"
+	windowtype="deepestsender:accountoptions">
+
+	<script type="application/x-javascript" src="lib/util.js"/>
+	<script type="application/x-javascript" src="accoptions.js"/>
+
+	<hbox align="center">
+		<label value="&posturl.label.value;" control="posturl"/>
+		<textbox id="posturl" flex="1"/>
+	</hbox>
+	<checkbox id="defaultaccount" label="&defaultaccount.label;"/>
+
+	<groupbox id="LiveJournal" collapsed="true">
+		<caption label="&livejournaloptions;"/>
+		<checkbox id="challenge" label="&challenge.label;"/>
+		<checkbox id="usetags" label="&usetags.label;"/>
+	</groupbox>
+	
+	<groupbox id="blogger" collapsed="true">
+		<caption label="&bloggeroptions;"/>
+		<checkbox id="blogger_autoformat" label="&autoformat.label;"/>
+	</groupbox>
+
+	<groupbox id="metaweblog" collapsed="true">
+		<caption label="&metaweblogoptions;"/>
+		<checkbox id="metaweblog_autoformat" label="&autoformat.label;"/>
+		<checkbox id="metaweblog_categories" label="&categories.label;"/>
+	</groupbox>
+	
+</dialog>
