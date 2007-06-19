@@ -21,7 +21,7 @@ function LoadPostHistory(reload) {
 		params.push(metaWeblog.password);
 		params.push(15);
 		var posthistoryreq = makeXMLRpcCall("metaWeblog.getRecentPosts", params);
-		metaWeblog.dumpXml(posthistoryreq);
+		//metaWeblog.dumpXml(posthistoryreq);
 		metaWeblog.posthistory = new Object();
 		metaWeblog.posthistory.httpreq = new XMLHttpRequest();
 		metaWeblog.posthistory.httpreq.onreadystatechange = historyHandler;
@@ -52,7 +52,7 @@ function historyHandler() {
 				if (usemeta) {
 					try {
 						getBlogHistory().response = parseXMLRpcResponse(getBlogHistory().responseXML);
-						metaWeblog.dumpXml(getBlogHistory().responseXML);
+						//metaWeblog.dumpXml(getBlogHistory().responseXML);
 						if ((getBlogHistory().response["faultCode"]) || (getBlogHistory().response["faultString"])) {
 							alert(historybundle.getString("ErrorGettingHistory") + " " + getBlogHistory().response["faultString"]);
 						} else {

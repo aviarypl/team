@@ -166,3 +166,17 @@ function OpenHistory() {
 		window.openDialog("history.xul","dshistory","chrome,dependent,resizable", blogger, metaWeblog, usemeta);
 	}
 }
+
+//wd
+function OpenBlog() {
+    //dump(metaWeblog.blogs[0][0]["url"]);
+    var mainWindow = window.QueryInterface(Components.interfaces.nsIInterfaceRequestor)
+                   .getInterface(Components.interfaces.nsIWebNavigation)
+                   .QueryInterface(Components.interfaces.nsIDocShellTreeItem)
+                   .rootTreeItem
+                   .QueryInterface(Components.interfaces.nsIInterfaceRequestor)
+                   .getInterface(Components.interfaces.nsIDOMWindow);
+
+    mainWindow.getBrowser().loadOneTab(metaWeblog.blogs[0][0]["url"], null, null, null, false );
+    
+}

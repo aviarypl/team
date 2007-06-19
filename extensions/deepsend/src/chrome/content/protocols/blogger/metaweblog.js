@@ -50,10 +50,10 @@ dsPosts.metaPostToServer = function() {
 	var blogpost = makeXMLRpcCall("metaWeblog.newPost", params);
 	
 	//wd
-	var serializer = new XMLSerializer();
-	var xmlstr = serializer.serializeToString(blogpost);
-	alert(xmlstr);
-	metaWeblog.dumpXml(blogpost);
+	//var serializer = new XMLSerializer();
+	//var xmlstr = serializer.serializeToString(blogpost);
+	//alert(xmlstr);
+	//metaWeblog.dumpXml(blogpost);
 
 	metaWeblog.httpreq = new XMLHttpRequest();
 	metaWeblog.httpreq.onload = dsPosts.metaPostHandler;
@@ -71,7 +71,7 @@ dsPosts.metaPostHandler = function() {
 	if (dsPosts.posting) {
 		try {
 			var response = parseXMLRpcResponse(metaWeblog.httpreq.responseXML);
-			metaWeblog.dumpXml(metaWeblog.httpreq.responseXML);
+			//metaWeblog.dumpXml(metaWeblog.httpreq.responseXML);
 			if ((response["faultCode"]) || (response["faultString"])) {
 				alert(commonbundle.getString("ErrorPosting") + " " + response["faultString"]);
 			} else {

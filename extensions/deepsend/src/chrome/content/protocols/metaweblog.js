@@ -47,7 +47,7 @@ metaWeblog.startLogin = function() {
 	params.push(this.password);
 	
 	var getbloginfo = makeXMLRpcCall("blogger.getUsersBlogs", params);
-	metaWeblog.dumpXml(getbloginfo);
+	//metaWeblog.dumpXml(getbloginfo);
 	this.httpreq = new XMLHttpRequest();
 	this.httpreq.onload = this.loginHandler;
 	this.httpreq.onerror = function() {
@@ -63,7 +63,7 @@ metaWeblog.loginHandler = function() {
 	if (dsAccounts.loggingin) {
 		try {
 			var response = parseXMLRpcResponse(metaWeblog.httpreq.responseXML);
-			metaWeblog.dumpXml(metaWeblog.httpreq.responseXML);
+			//metaWeblog.dumpXml(metaWeblog.httpreq.responseXML);
 			if ((response["faultCode"]) || (response["faultString"])) {
 				alert(commonbundle.getString("ErrorRequest") + " " + response["faultString"]);
 				Login();
@@ -89,7 +89,7 @@ metaWeblog.getCategories = function() {
 	params.push(this.username);
 	params.push(this.password);
 	var getcats = makeXMLRpcCall("metaWeblog.getCategories", params);
-	metaWeblog.dumpXml(getcats);
+	//metaWeblog.dumpXml(getcats);
 	this.httpreq = new XMLHttpRequest();
 	this.httpreq.onload = this.successLogin;
 	this.httpreq.onerror = function() {
@@ -105,7 +105,7 @@ metaWeblog.successLogin = function() {
 	if (dsAccounts.loggingin) {
 		try {
 			var response = parseXMLRpcResponse(metaWeblog.httpreq.responseXML);
-			metaWeblog.dumpXml(metaWeblog.httpreq.responseXML);
+			//metaWeblog.dumpXml(metaWeblog.httpreq.responseXML);
 			if ((response["faultCode"]) || (response["faultString"])) {
 				alert(commonbundle.getString("ErrorRequest") + " " + response["faultString"]);
 				Login();
