@@ -1,0 +1,88 @@
+<?php 
+	include ("_inc/detect.php");
+	echo '<?xml version="1.0" encoding="UTF-8"?>' 
+	?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pl">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="keywords" content="Thunderbird, Mozilla, Netscape, gecko, klient poczty, www, polski, po polsku, tłumaczenie, polska, polska wersja, polskie, w3c, html, javascript, ecmascript, css, download" />
+	<meta name="description" content="Thunderbird.pl - Polskie centrum Thunderbirda. Najlepszego klienta poczty pod słońcem!" />
+	<title>Mozilla Thunderbird w Polsce:: Instalacja polskiego pakietu językowego</title>
+	<link rel="stylesheet" type="text/css" href="thunderbird.css" media="screen, projection" />
+	<link rel="Shortcut Icon" type="image/png" href="img/tb_favicon.png" />
+
+</head>
+<body>
+  
+  <!-- accesibility heading -->
+  <h1>Thunderbird.pl - Instalacja polskiego pakietu językowego</h1>
+  
+  <div id="content">
+    <div id="menu">
+      <div class="ac">
+        <!-- accesibility links -->
+        <p>Przejdź do:</p>
+
+        <ul>
+          <li><a href="#side">wiadomości</a></li>
+          <li><a href="#main">głównej części strony</a></li>
+        </ul>
+      </div>
+      <ul>
+        <li><a href="index.html">Strona główna</a></li><li><a href="conowego.html">Co nowego?</a></li><li><a href="dlaczego.html">Dlaczego Thunderbird?</a></li><li><a href="sysreq.html">Wymagania</a></li><li><a href="pobierz.html">Pobierz</a></li><li><a href="startowa/index.html">Dokumentacja</a></li><li><a href="MPL.html">Licencja</a></li><li><a href="promocja.html">Promocja</a></li>
+
+      </ul>
+    </div>  
+<div id="main" class="mainContent">
+<h2>Instalacja polskiego pakietu językowego dla Thunderbirda</h2>
+
+<p>Jeśli posiadasz już zainstalowanego Thunderbirda w angielskiej wersji językowej, możesz dokonać jego spolszczenia poprzez instalację pakietu językowego.</p>
+
+<h3>Thunderbird <?php echo $ver; ?></h3>
+
+			<ul>
+				<li>Pobierz na dysk jeden z poniższych pakietów językowych:<br />
+				<strong>Windows:</strong> <a href="http://ftp.mozilla.org/pub/mozilla.org/thunderbird/releases/<?php echo $ver; ?>/win32/xpi/pl.xpi">Pakiet językowy</a><br />
+				<strong>UNIX:</strong> <a href="http://ftp.mozilla.org/pub/mozilla.org/thunderbird/releases/<?php echo $ver; ?>/linux-i686/xpi/pl.xpi">Pakiet językowy</a> (działa m. in. w systemach: GNU/Linux, Solaris, FreeBSD)<br />
+				<strong>Mac:</strong> <a href="http://ftp.mozilla.org/pub/mozilla.org/thunderbird/releases/<?php echo $ver; ?>/mac/xpi/pl.xpi">Pakiet językowy</a></li>
+				<li>Uruchom Thunderbirda.</li>
+				<li>Z menu <q>Tools</q> wybierz pozycję <q>Extensions</q>.</li>
+				<li>Kliknij na przycisk <q>Install</q> i wskaż miejsce, gdzie znajduje się pobrany pakiet językowy.</li>
+				<li>Po zakończeniu instalacji zamknij Thunderbirda i uruchom go ponownie.</li>
+			</ul>	
+			
+<h3>Przełączenie wersji językowej</h3>
+
+			<ul>
+			    <li>Wejdź do <q>Options</q> lub <q>Preferences</q> (zależnie od używanego systemu operacyjnego). W wersji polskiej odpowiednio: <q>Opcje</q> i <q>Preferencje</q>).</li> 
+					<li>Kliknij na kategorie <q>Advanced</q> (w wersji polskiej: <q>Zaawansowane</q>).</li>
+			    <li>W zakładce <q>General</q> (pol.: <q>Ogólne</q>) kliknij na przycisk <q>Config Editor...</q> (pol.: <q>Edytor ustawień...</q>)</li>
+					<li>W pole <q>Filter</q> (pol.: <q>Filtr</q>) wpisz <q>locale</q>.</li>
+			    <li>Na liście poniżej odnajdź wpis <q>general.useragent.locale</q>.</li>
+			    <li>Kliknij go prawym klawiszem myszy i z menu podręcznego wybierz <q>Modify</q> (pol.: <q>Modyfikuj</q>).</li>
+			    <li>Wprowadź kod języka (<q>pl</q> dla polskiego, <q>en-US</q> dla angielskiego).</li>
+			    <li>Kliknij OK.</li>
+			    <li>Zamknij Thunderbirda i uruchom go ponownie.</li>
+			</ul>
+			
+			<p>Jeśli chcesz, możesz zamiast tego skorzystać z rozszerzenia <a href="http://benjamin.smedbergs.us/switch-locales/">Locale-Switcher</a>.</p>
+					
+			<h3>Uwaga!</h3>
+
+			<p>Powyższe pakiety nie są oficjalnie wspierane. Jeśli masz problem z instalacją pakietu językowego, zainstaluj <a href="pobierz.html">pełną wersję</a>.</p>
+
+</div>
+			
+			<div style="clear:both"> </div>
+         <div id="footer">
+		<p>&copy; 2003-2007 <a href="http://www.aviary.pl">zespół Aviary.pl</a>. Wszelkie prawa zastrzeżone.<br /> Mozilla, Mozilla Thunderbird i logo Thunderbird to zastrzeżone znaki towarowe <a href="http://www.mozilla.org/foundation">The Mozilla Foundation</a>.</p>
+		</div>
+	</div>
+	<?php
+	    include("_inc/moznet.php");
+	?>
+	<!--[if lt IE 7]><script type="text/javascript" src="/iefix.js"></script><![endif]-->
+</body>
+</html>

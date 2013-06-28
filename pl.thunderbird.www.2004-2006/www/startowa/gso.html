@@ -1,0 +1,133 @@
+<?php 
+include ("../_inc/detect.php");
+echo '<?xml version="1.0" encoding="UTF-8"?>' 
+
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pl">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="keywords" content="Thunderbird, Mozilla, Netscape, gecko, klient poczty, www, polski, po polsku, tłumaczenie, polska, polska wersja, polskie, w3c, html, javascript, ecmascript, css, download" />
+	<meta name="description" content="Thunderbird.pl - Polskie centrum Thunderbirda. Najlepszego klienta poczty pod słońcem!" />
+	<title>Mozilla Thunderbird w Polsce:: Globalna skrzynka odbiorcza</title>
+	<link rel="stylesheet" type="text/css" href="../thunderbird.css" media="screen, projection" />
+	<link rel="Shortcut Icon" type="image/png" href="/img/tb_favicon.png" />
+
+</head>
+<body>
+  
+  <!-- accesibility heading -->
+  <h1>Thunderbird.pl - Globalna skrzynka odbiorcza</h1>
+  
+  <div id="content">
+    <div id="menu">
+      <div class="ac">
+        <!-- accesibility links -->
+        <p>Przejdź do:</p>
+
+        <ul>
+          <li><a href="#side">wiadomości</a></li>
+          <li><a href="#main">głównej części strony</a></li>
+        </ul>
+      </div>
+			<ul>
+			<li><a href="../index.html">Strona główna</a></li><li><a href="../conowego.html">Co nowego?</a></li><li><a href="../dlaczego.html">Dlaczego Thunderbird?</a></li><li><a href="../sysreq.html">Wymagania</a></li><li><a href="../pobierz.html">Pobierz</a></li><li><a href="index.html">Dokumentacja</a></li><li><a href="MPL.html">Licencja</a></li><li><a href="../promocja.html">Promocja</a></li>
+			</ul>
+    </div>  
+<div id="main" class="mainContent">
+
+<h2>Globalna skrzynka odbiorcza</h2>
+
+<p>
+Począwszy od wersji 0.8, Thunderbird umożliwia zapisywanie poczty pobranej z kilku kont POP do jednej skrzynki odbiorczej, znajdującej się w folderach lokalnych. To od Ciebie zależy, czy z globalnej skrzynki odbiorczej (bo tak nazwano tę funkcję, w skrócie GSO) będą korzystały wszystkie, czy tylko niektóre konta POP. Każde konto nie korzystające z GSO będzie miało swój własny zbiór folderów (łącznie ze skrzynką odbiorczą), który będzie widoczny w panelu folderów. 
+</p>
+
+<p>
+W przypadku kont korzystających z globalnej skrzynki odbiorczej sytuacja wygląda inaczej. One nie będą miały własnych folderów w panelu, gdyż wszystkie będą korzystały z jednego zbioru w folderach lokalnych.
+</p>
+
+<h3>Spis treści</h3>
+
+<ol>
+<li><a href="#nowekonto">Podczas tworzenia nowego konta</a></li>
+<li><a href="#zmianaustawien">Zmiana ustawień GSO dla istniejącego konta</a>
+	<ol class="secondstage">
+	<li><a href="#docelowa">Zmiana docelowej skrzynki odbiorczej</a></li>
+	<li><a href="#sprawdzanie">Sprawdzanie ustawień filtrów i pozostałych folderów</a></li>
+	<li><a href="#restart">Zamknięcie i ponowne uruchomienie Thunderbirda</a></li>
+	</ol>
+</li>
+<li><a href="#pozostale">Pozostałe informacje</a></li>
+</ol>
+
+<h3 id="nowekonto">Podczas tworzenia nowego konta</h3>
+
+<p>
+Podczas tworzenia nowego konta POP w Thunderbirdzie, kreator kont zapyta Cię, czy to konto ma korzystać z globalnej skrzynki odbiorczej. Jeśli się na to zgadzasz, upewnij się, że opcja <q>Używaj globalnej skrzynki odbiorczej</q> jest zaznaczona. Jeśli się nie zgadzasz, odznacz ją.
+</p>
+
+<h3 id="zmianaustawien">Zmiana ustawień GSO dla istniejącego konta</h3>
+
+<p>
+Aby zmienić ustawienia globalnej skrzynki odbiorczej, dla już istniejącego konta, musisz wykonać następujące czynności:
+</p>
+
+<h4 id="docelowa">Zmiana docelowej skrzynki odbiorczej</h4>
+
+<p>
+Wejdź do <q>Narzędzia -&gt; Konfiguracja kont -&gt; Konfiguracja serwera</q>, naciśnij przycisk <q>Zaawansowane...</q>. Aby wybrane konto korzystało z GSO, w okienku, które się pojawi, wybierz opcję <q>Globalna skrzynka odbiorcza (konto Foldery lokalne)</q>, po czym naciśnij przycisk <q>OK</q>.
+</p>
+
+<dl>
+<dd>
+<strong>Ważna informacja</strong>: jeśli dane konto posiada wiadomości zapisane w skrzynce odbiorczej lub innych folderach, należy przekopiować lub przenieść te wiadomości do folderów lokalnych <strong>przed</strong> zmianą ustawień konta na korzystanie z globalnej skrzynki odbiorczej. W przeciwnym przypadku stracisz dostęp do tych wiadomości, gdyż po zmianie ustawień konto przestanie być widoczne w panelu folderów. Wtedy, aby z powrotem uzyskać dostęp do zapisanych wiadomości konieczne będzie przywrócenie poprzednich ustawień konta.
+</dd>
+</dl>
+
+<p>
+Aby zmienić ustawienia konta, by nie korzystało z GSO, zaznacz <q>Konto Odebrane dla tego serwera</q> lub <q>Folder odebrane innego konta</q>, po czym naciśnij przycisk <q>OK</q>.
+</p>
+
+<h4 id="sprawdzanie">Sprawdzanie ustawień filtrów i pozostałych folderów</h4>
+
+<p>
+Po zmianie ustawień konta dot. skrzynki odbiorczej sprawdź, czy któreś z poniższych także nie musi zostać zmienione:
+</p>
+
+<ul>
+<li>Wejdź do <q>Narzędzia -&gt; Konfiguracja kont -&gt; Kopie i foldery</q> i przyjrzyj się ustawieniom folderów docelowym dla wysłanych, szkiców i szablonów. Upewnij się, że wiadomości będą przechowywane tam, gdzie sobie tego życzysz.</li>
+<li>Jeśli korzystasz na tym koncie z <a href="fnp.html">filtru niechcianej poczty</a>, przejdź do <q>Narzędzia -&gt; Filtr niechcianej poczty...</q> i upewnij się, że folder wybrany do przechowywania niechcianych wiadomości jest tym, którego chcesz używać</li>
+<li>Jeśli masz skonfigurowane jakieś filtry dla tego konta, przejdź do <q>Narzędzia -&gt; Filtrowanie wiadomości...</q> i upewnij się, że będą one poprawnie współpracowały z nowymi ustawieniami skrzynki odbiorczej. Szczególnie ważną rzeczą przy zmianie ustawień konta, by te korzystało z GSO, jest wyłączenie/usunięcie lub zmiana docelowych folderów tym filtrom, które przemieszczają wiadomości do któregoś z folderów konta.</li>
+</ul>
+
+<h4 id="restart">Zamknięcie i ponowne uruchomienie Thunderbirda</h4>
+
+<p>
+<strong>Ważna informacja</strong>: zamknij i uruchom ponownie Thunderbirda <strong>przed pobieraniem poczty</strong> do jakiegokolwiek konta, którego ustawienia skrzynki odbiorczej zostały zmienione. W przeciwnym razie wiadomości mogą w dalszym ciągu być zapisywane w to samo miejsce, do którego trafiały przed zmianą ustawień konta. 
+</p>
+
+<h3 id="pozostale">Pozostałe informacje</h3>
+
+<ul>
+<li>Konta, które korzystają z GSO są czasem zwane kontami <q>odroczonymi</q>. Możliwe jest utworzenie odroczonego konta, które nie wykorzystuje folderów lokalnych jako miejsca do przechowywania poczty. Przykładowo, jeśli posiadasz trzy konta w serwisie Gmail, możesz tak skonfigurować dwa z nich, by zapisywały pobraną pocztę do miejsca, w którym przechowywana jest poczta z trzeciego konta, ale tym miejscem <i>nie będą</i> foldery lokalne. Aby tego dokonać, postępuj według poleceń opisanych w punkcie <q>Zmiana docelowej skrzynki odbiorczej</q>, lecz zamiast <q>Globalna skrzynka odbiorcza (konto Foldery lokalne)</q> wybierz opcję <q>Folder odebrane innego konta</q> i z rozwijanej listy wybierz konto, którego chcesz użyć.</li>
+<li>W przypadku odroczonych kont, jeśli wejdziesz do <q>Narzędzia -&gt; Konfiguracja kont -&gt; [nazwa konta] Konfiguracja serwera</q> przekonasz się, że ścieżka <q>Katalogu lokalnego</q> <i>nie prowadzi</i> do miejsca w Twoim <a href="http://mozillapl.org/projekty/Szkola/Profile">profilu</a>, w którym przechowywana jest poczta z tego konta. Takie rozwiązanie jest koniecznością, gdyż niektóre pliki każdego z odroczonych kont muszą być przechowywane w innym miejscu, niż współdzielona przez kilka kont poczta (dla przykładu, każde konto POP3 posiada swój własny plik o nazwie "popstate.dat", którego zadaniem jest m. in. sprawdzanie, które wiadomości zostały pobrane i mogą już zostać usunięte z serwera. Informacje o zastosowanych filtrach również muszą być przechowywane osobno dla każdego z kont).</li>
+</ul>
+
+<p>
+Dokument ten powstał na bazie artykułu z bazy wiedzy MozillaZine pt. <q><a href="http://kb.mozillazine.org/Global_Inbox">Global Inbox</a></q>
+</p>
+
+</div>
+			
+			<div style="clear:both"> </div>
+         <div id="footer">
+		<p>&copy; 2003-2007 <a href="http://www.aviary.pl">zespół AviaryPL</a>. Wszelkie prawa zastrzeżone.<br /> Mozilla, Mozilla Thunderbird i logo Thunderbird to zastrzeżone znaki towarowe <a href="http://www.mozilla.org/foundation">The Mozilla Foundation</a>.</p>
+		</div>
+	</div>
+	<?php
+	    include("../_inc/moznet.php");
+	?>
+	<!--[if lt IE 7]><script type="text/javascript" src="/iefix.js"></script><![endif]-->
+</body>
+</html>

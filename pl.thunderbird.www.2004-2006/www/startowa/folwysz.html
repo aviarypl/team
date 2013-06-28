@@ -1,0 +1,141 @@
+<?php 
+include ("../_inc/detect.php");
+echo '<?xml version="1.0" encoding="UTF-8"?>' 
+
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pl">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="keywords" content="Thunderbird, Mozilla, Netscape, gecko, klient poczty, www, polski, po polsku, tłumaczenie, polska, polska wersja, polskie, w3c, html, javascript, ecmascript, css, download" />
+	<meta name="description" content="Thunderbird.pl - Polskie centrum Thunderbirda. Najlepszego klienta poczty pod słońcem!" />
+	<title>Mozilla Thunderbird w Polsce:: Foldery wyszukiwania</title>
+	<link rel="stylesheet" type="text/css" href="../thunderbird.css" media="screen, projection" />
+	<link rel="Shortcut Icon" type="image/png" href="/img/tb_favicon.png" />
+
+</head>
+<body>
+  
+  <!-- accesibility heading -->
+  <h1>Thunderbird.pl - Foldery wyszukiwania</h1>
+  
+  <div id="content">
+    <div id="menu">
+      <div class="ac">
+        <!-- accesibility links -->
+        <p>Przejdź do:</p>
+
+        <ul>
+          <li><a href="#side">wiadomości</a></li>
+          <li><a href="#main">głównej części strony</a></li>
+        </ul>
+      </div>
+			<ul>
+			<li><a href="../index.html">Strona główna</a></li><li><a href="../conowego.html">Co nowego?</a></li><li><a href="../dlaczego.html">Dlaczego Thunderbird?</a></li><li><a href="../sysreq.html">Wymagania</a></li><li><a href="../pobierz.html">Pobierz</a></li><li><a href="index.html">Dokumentacja</a></li><li><a href="MPL.html">Licencja</a></li><li><a href="../promocja.html">Promocja</a></li>
+			</ul>
+    </div>  
+<div id="main" class="mainContent">
+
+<h2>Foldery wyszukiwania</h2>
+
+<p>
+Począwszy od wersji 0.9, Thunderbird umożliwia tworzenie folderów wyszukiwania. Folder wyszukiwania wygląda jak zwykły folder z pocztą, lecz gdy na niego klikniesz, dokonuje on wyszukiwania wedle wcześniej zdefiniowanych kryteriów i wyświetla listę wiadomości, które spełniają te kryteria. Przykładowo, możesz utworzyć folder wyszukiwania, który będzie wyświetlał wszystkie wiadomości otrzymane od danej osoby w przeciągu ostatnich 30 dni, nawet jeśli te wiadomości są przechowywane w różnych folderach i podfolderach.
+</p>
+
+<p>
+Folder wyszukiwania jest <q>folderem wirtualnym</q> w tym sensie, że  wyświetla on zbiór wiadomości, które spełniają określone kryteria wyszukiwania, podczas gdy same wiadomości pozostają tam, gdzie zostały zapisane. Jeśli zaznaczysz i usuniesz wiadomość z folderu wyszukiwania, to zostanie ona usunięta z miejsca, w którym była zapisana. Jeśli jednak usuniesz sam folder wyszukiwania, wiadomości pozostaną nienaruszone. Dodatkową rzeczą, która odróżnia folder wyszukiwania od zwykłego folderu jest to, że jeśli zmienisz jego kryteria wyszukiwania, jego wirtualna <q>zawartość</q> ulegnie aktualizacji. Foldery wyszukiwania pozostają w panelu folderów nawet po zamknięciu i ponownym uruchomieniu programu, i są tam tak długo, dopóki ich nie usuniesz.
+</p>
+
+<h3>Spis treści</h3>
+
+<ol>
+<li><a href="#tworzenie">Tworzenie folderu wyszukiwania</a></li>
+<li><a href="#onlineoffline">Wyszukiwanie online kontra wyszukiwanie offline (dla folderów  IMAP oraz grup dyskusyjnych)</a></li>
+<li><a href="#zmianakryteriow">Zmiana kryteriów wyszukiwania w istniejącym folderze wyszukiwania</a></li>
+<li><a href="#usuwanie">Usuwanie folderu wyszukiwania</a></li>
+<li><a href="#inne">Pozostałe informacje</a></li>
+</ol>
+
+<h3 id="tworzenie">Tworzenie folderu wyszukiwania</h3>
+
+<p>
+Foldery wyszukiwania tworzy się przy pomocy okienka <q>Nowy folder wyszukiwania</q> (<a href="img/NewSavedSearchFolder.png">ilustracja</a>), do którego można się dostać na jeden z poniższych sposobów:
+</p>
+
+<ul>
+<li>Z menu <q>Edycja</q> wybierz pozycję <q>Znajdź -&gt; Wyszukaj wiadomości...</q>. Po wprowadzeniu kryteriów wyszukiwania i naciśnięciu przycisku <q>Znajdź</q>, możesz zapisać ustawienia poprzez kliknięcie na przycisk <q>Zapisz jako folder wyszukiwania</q> (<a href="img/VFSearchMessages.png">ilustracja</a>).</li>
+<li>Z menu <q>Plik</q> wybierz pozycję <q>Nowy -&gt; Folder wyszukiwania...</q></li>
+<li>Po przeprowadzeniu wyszukiwania za pomocą paska szybkiego wyszukiwania, który znajduje się nad panelem wiadomości, wybierz z rozwijanej listy pozycję <q>Zapisz ustawienia wyszukiwania jako folder...</q> (<a href="img/VFQuickSearch.png">ilustracja</a>).</li>
+<li>Po wybraniu ustawienia z rozwijanej listy <q>Wyświetl</q>, znajdującej się nad panelem wiadomości, wybierz pozycję <q>Zapisz widok jako folder...</q> (<a href="img/VFQuickView.png">ilustracja</a>).</li>
+</ul>
+
+<p>
+Po pojawieniu się okienka, wprowadź nazwę dla tego folderu, wybierz przy pomocy rozwijanej listy <q>Zapisz jako podfolder</q> miejsce, gdzie ma on zostać zapisany, a następnie dodaj lub zmodyfikuj kryteria wyszukiwania (łącznie z folderami lub podfolderami, które mają być przeszukiwane). Po zakończeniu kliknij przycisk <q>OK</q>, aby zamknąć okienko. Nowo utworzony folder wyszukiwania powinien teraz pojawić się w panelu folderów. 
+</p>
+
+<p>
+<strong>Przeszukiwanie podfolderów</strong>: jeśli chcesz utworzyć folder wyszukiwania, który będzie przeszukiwał podfoldery, to najprostszym sposobem na dokonanie tego jest skorzystanie z pierwszego ze sposobów wymienionych powyżej (<q>Edycja -&gt; Znajdź -&gt; Wyszukaj wiadomości...</q>), gdyż okienko <q>Wyszukaj wiadomości</q> zawiera opcję, której zaznaczenie skutkuje przeszukiwaniem podfolderów. Pozostałe trzy wymienione sposoby domyślnie przeszukują jedynie zaznaczony folder, ale <i>nie</i> jego podfoldery. Jeśli chcesz, aby folder wyszukiwania uwzględniał podfoldery przy wyświetlaniu wyników, kliknij na przycisk <q>Wybierz...</q> w okienku <q>Nowy folder wyszukiwania</q> i zaznacz podfoldery, które mają zostać uwzględnione.
+</p>
+
+<h3 id="onlineoffline">Wyszukiwanie online kontra wyszukiwanie offline (dla folderów  IMAP oraz grup dyskusyjnych)</h3>
+
+<p>
+Foldery wyszukiwania mogą przeszukiwać zawartość folderów IMAP oraz grup dyskusyjnych zarówno w trybie offline jak i online. Po prostu zgodnie ze swoimi preferencjami zaznacz lub odznacz opcję <q>Szukaj online</q> w okienku <q>Nowy folder wyszukiwania</q>. 
+</p>
+
+<p>
+Wyszukiwanie <strong>online</strong> jest bardziej miarodajne, gdyż zawartość folderu jest aktualizowana online przy każdorazowym otwarciu. Wadą tego rozwiązania jest jednak dłuższy czas, potrzebny na otworzenie się folderu.
+</p>
+
+<p>
+Przy wyszukiwaniu <strong>offline</strong> czas otwarcia folderu wyszukiwania będzie zdecydowanie krótszy, jednak jego zawartość nie będzie odzwierciedlała zmian w nieotwieranych ostatnio przez Ciebie folderach. Przykładowo, jeśli jakieś wiadomości zostały wysłane używając konta IMAP, folder wyszukiwania pracujący w trybie offline może nie wyświetlać tych wiadomości do momentu, w którym otworzysz folder <q>Wysłane</q>.
+</p>
+
+<h3 id="zmianakryteriow">Zmiana kryteriów wyszukiwania w istniejącym folderze wyszukiwania</h3>
+
+<p>
+Aby zmienić kryteria wyszukiwania w folderze wyszukiwania, który został utworzony już wcześniej, kliknij prawym przyciskiem na folderze i wybierz z podręcznego menu pozycję <q>Właściwości...</q> lub zaznacz folder i wybierz z menu <q>Edycja</q> pozycję <q>Właściwości folderu...</q>. Pojawi się okienko <q>Edytuj właściwości folderu wyszukiwania</q>. Zmień kryteria wyszukiwania wedle potrzeb, a następnie kliknij przycisk <q>OK</q>, aby zakończyć.
+</p>
+
+<p>
+Zawartość folderu wyszukiwania nie zmieni się natychmiastowo, musisz kliknąć na jakiś inny folder, po czym ponownie kliknąć na folder wyszukiwania.
+</p>
+
+<h3 id="usuwanie">Usuwanie folderu wyszukiwania</h3>
+
+<p>
+Folder wyszukiwania możesz usunąć w taki sam sposób jak zwykły folder: poprzez kliknięcie prawym przyciskiem na folderze i wybranie z podręcznego menu pozycji <q>Usuń folder</q> lub poprzez menu <q>Edycja -&gt; Usuń folder</q>. Jeśli w ten sposób usuniesz folder wyszukiwania, żadne wiadomości nie zostaną skasowane.
+</p>
+
+<p>
+Usunięcie folderu wyszukiwania jest czynnością nieodwracalną. Nie trafi on do kosza i nie będzie mógł zostać przywrócony, jak to ma miejsce w przypadku zwykłego folderu.
+</p>
+
+<h3 id="inne">Pozostałe informacje</h3>
+
+<ul>
+<li>Na obecną chwilę nie jest możliwe przeszukiwanie folderów/podfolderów na więcej niż jednym koncie widocznym w panelu folderów.</li>
+<li>Możliwe jest przenoszenie folderu wyszukiwania z jednego folderu do drugiego w obrębie tego samego konta w panelu folderów. Nie możesz jednak przenosić folderu wyszukiwania pomiędzy kontami, co dotyczy również folderów lokalnych.</li>
+<li>Plik, który przechowuje dane folderów wyszukiwania nowi nazwę <q>virtualFolders.dat</q> i znajduje się on w Twoim <a href="http://mozillapl.org/projekty/Szkola/Profile">profilu</a>.</li>
+</ul>
+
+<p>
+Dokument ten powstał na bazie artykułu z bazy wiedzy MozillaZine pt. <q><a href="http://kb.mozillazine.org/Saved_Search">Saved Search</a></q>
+</p>
+
+
+</div>
+			
+			<div style="clear:both"> </div>
+         <div id="footer">
+		<p>&copy; 2003-2007 <a href="http://www.aviary.pl">zespół AviaryPL</a>. Wszelkie prawa zastrzeżone.<br /> Mozilla, Mozilla Thunderbird i logo Thunderbird to zastrzeżone znaki towarowe <a href="http://www.mozilla.org/foundation">The Mozilla Foundation</a>.</p>
+		</div>
+	</div>
+	<?php
+	    include("../_inc/moznet.php");
+	?>
+
+	<!--[if lt IE 7]><script type="text/javascript" src="/iefix.js"></script><![endif]-->
+</body>
+</html>

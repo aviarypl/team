@@ -1,0 +1,178 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pl">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="keywords" content="Thunderbird, Mozilla, Netscape, gecko, klient poczty, www, polski, po polsku, tłumaczenie, polska, polska wersja, polskie, w3c, html, javascript, ecmascript, css, download" />
+	<meta name="description" content="Thunderbird.pl - Polskie centrum Thunderbirda. Najlepszego klienta poczty pod słońcem!" />
+	<title>Mozilla Thunderbird w Polsce:: Dlaczego Thunderbird?</title>
+	<link rel="stylesheet" type="text/css" href="thunderbird.css" media="screen, projection" />
+	<link rel="Shortcut Icon" type="image/png" href="img/tb_favicon.png" />
+
+</head>
+<body>
+  
+  <!-- accesibility heading -->
+  <h1>Thunderbird.pl - Dlaczego Thunderbird?</h1>
+  
+  <div id="content">
+    <div id="menu">
+      <div class="ac">
+        <!-- accesibility links -->
+        <p>Przejdź do:</p>
+
+        <ul>
+          <li><a href="#side">wiadomości</a></li>
+          <li><a href="#main">głównej części strony</a></li>
+        </ul>
+      </div>
+      <ul>
+        <li><a href="index.html">Strona główna</a></li><li><a href="conowego.html">Co nowego?</a></li><li><a href="dlaczego.html" class="current">Dlaczego Thunderbird?</a></li><li><a href="sysreq.html">Wymagania</a></li><li><a href="pobierz.html">Pobierz</a></li><li><a href="startowa/index.html">Dokumentacja</a></li><li><a href="MPL.html">Licencja</a></li><li><a href="promocja.html">Promocja</a></li>
+
+      </ul>
+    </div>  
+
+<script type="text/javascript">
+  var W;
+  var img;
+  var width;
+  var height;
+  var opened=false;
+  function wOpen (s,w,h) {
+    img=s;
+    width=w;
+    height=h;
+    if (opened) W.close();
+    W=window.open("preview.html","thunderbird_preview","toolbar=no,status=no,width="+(w+10)+",height="+(h+10));
+    opened=false;
+    setTimeout("setImage()",150);
+  }
+  
+  function setImage() {
+	if (W.document.getElementById('prevImage') != null) { 
+		W.document.getElementById('prevImage').src="./img/screenshots/"+img+".png";
+	} else {
+		setTimeout("setImage()",50);
+	}
+	W.resizeTo(width,height);
+	W.focus();
+  	opened = true;
+  }
+  document.body.onclick=wClose;
+
+  function wClose () {
+    if (opened) W.close();
+  }
+</script>
+
+<div id="main" class="mainContent">
+  
+<h2>Dlaczego warto używać Thunderbirda</h2>
+
+<p>
+Jest wiele powodów, dla których warto używać Thunderbirda zamiast innych klientów poczty. Oto lista najważniejszych.
+</p>
+
+<h3 id="spam">Filtr niechcianej poczty - pozbądź się spamu!</h3>
+
+<p>
+<img alt="Filtr niechcianej poczty - zrzut ekranu" src="./img/screenshots/spam.png" style="float:left" onclick="wOpen('spam-b',360,170)" class="clickable" />Zmęczony spamem oraz irytującymi reklamami w Twojej skrzynce odbiorczej? Mozilla Thunderbird oferuje najskuteczniejsze metody wykrywania i usuwania niechcianej poczty. Nasze narzędzia analizują Twoje wiadomości oraz identyfikują te z nich, które najprawdopodobniej są niepożądane. Możesz zdecydować o automatycznym usuwaniu lub przenoszeniu do innego folderu tego typu wiadomości.
+</p>
+
+<p>
+Aby aktywować filtr niechcianej poczty udaj się do menu <q>Narzędzia/Filtr niechcianej poczty</q>, a następnie w zakładce <q>Inteligentny filtr</q> zaznacz opcję <q>Włącz filtr niechcianej poczty dla bieżącego konta</q>.
+</p>
+
+<h3 id="themes">Zmiana motywów - niech wygląda tak jak lubisz!</h3>
+
+<p>
+<img alt="Motywy - zrzut ekranu" src="./img/screenshots/motywy.png" style="float:right" onclick="wOpen('motywy-b',385,115)" class="clickable" />Motywy umożliwiają dostosowanie wyglądu Thunderbirda wedle własnych potrzeb/gustów. Za pomocą motywów można zmienić tylko ikony paska narzędzi, lub każdy element wyglądu aplikacji. <a href="https://update.mozilla.org/themes/?application=thunderbird">Pobranie oraz instalacja</a> nowych motywów to kwestia kilku kliknięć!
+</p>
+
+<h3 id="emots">Emotikony</h3>
+
+<p>
+<img alt="Emotikony - zrzut ekranu" src="./img/screenshots/emoty.gif" style="float:left" />Emotikony, popularne uśmieszki na dobre wbiły się do naszej świadomości. Towarzyszą nam one na każdym kroku, czy to na stronach internetowych, forach dyskusyjnych, czy też podczas rozmowy z przyjaciółmi za pomocą komunikatora. Dlaczego więc nie korzystać z zalet graficznego przedstawiania emocji w programie pocztowym? Z Thunderbirdem jest to możliwe! Wystarczy tylko wejść w <q>Narzędzia/Opcje</q>, zakładka <q>Wyświetlanie</q> i zaznaczyć opcję <q>Wyświetlaj emotikonki</q>, a uśmieszki w przychodzących wiadomościach będą wyświetlane w postaci graficznej.  
+</p>
+
+
+<h3 id="feeds">Obsługa kanałów RSS i Atom</h3>
+
+<p>
+<img alt="Kanały RSS - zrzut ekranu" src="./img/screenshots/kanaly.png" style="float:right" onclick="wOpen('kanaly-b',550,275)" class="clickable" />Program pocztowy jest dla wiekszości użytkowników komputerów 
+jednym z podstawowych i najczęściej używanych narzędzi komunikacji oraz pracy. A co gdyby można było mieć w 
+tym samym programie dostęp do najnowszych informacji z serwisów informacyjnych oraz blogów, informacji z 
+kraju i ze świata, z ulicy i z boiska? Z Thunderbirdem jest to możliwe! Dzięki wbudowanej w program obsłudze 
+kanałow RSS i Atom, możesz mieć dostęp do nagłówków i treści aktualności ze stron, które wspierają ten format 
+publikacji danych.
+</p>
+
+<h3 id="mgroup">Grupowanie wiadomości</h3>
+
+<p>
+<img alt="Grupowanie - zrzut ekranu" src="./img/screenshots/grup.png" style="float:left" onclick="wOpen('grup-b',335,165)" class="clickable" />
+Grupowanie wiadomości to bardzo ciekawa funkcja, która może ułatwić życie bardzo wielu osobom, szczególnie 
+tym, które na codzień otrzymują duzą ilość listów i nie chcą się w nich pogubić. Thunderbird umożliwia 
+posegregowanie wiadomości na grupy w zależności od daty, etykiety, nadawcy, adresata, priorytetu czy 
+statusu wiadomości znajdujących się w danym folderze.
+</p>
+
+<h3 id="vfold">Foldery ustawień wyszukiwania</h3>
+
+<p>
+Jeszcze żaden program pocztowy nie dawał możliwości tak precyzyjnego wyszukiwania wiadomosci jak Thunderbird. 
+Foldery ustawień wyszukiwania (ang. Saved Search Folders) są potężnym mechanizmem ułatwiającym 
+wyszukiwanie danych, wyświetlają one wiadomości w oparciu o wcześniej ustawione kryteria wyszukiwania. Umożliwiają
+wyszukiwanie wiadomości według daty, nadawcy, tematu, treści wiadomości, priorytetu, załącznika i wielu, wielu innych 
+cech - oczywiście nic nie stoi na przeszkodzie, aby łączyć ze sobą te kryteria.  Możesz na przykład stworzyć folder ustawień 
+wyszukiwania, który pokazuje wszystkie wiadomości zawierające w treści słowo <q>Thunderbird</q>, otrzymane od 
+wybranej osoby w ostatnim miesiącu, nawet jeśli są one przechowywane w różnych folderach i podfolderach.
+</p>
+
+<h3 id="spell">Wbudowane sprawdzanie pisowni</h3>
+
+<p>
+<img alt="Sprawdzanie pisowni - zrzut ekranu" src="./img/screenshots/pisownia.png" style="float:right" />Inteligentne sprawdzanie pisowni dba o profesjonalny wygląd napisanych przez ciebie wiadomości.
+</p>
+
+<p>
+Nie ma potrzeby instalowania zewnętrznych aplikacji do sprawdzania pisowni. Mozilla Thunderbird posiada wbudowany mechanizm sprawdzania pisowni, rozwijany przez <a href="http://spellchecker.mozdev.org/">członków projektu Spellchecker</a>. Jedyne co musisz zrobić, to kliknąć na przycisk Pisownia w pasku narzędzi, a Thunderbird zacznie pracować dla ciebie.
+</p>
+
+<h3 id="toolbars">Dostosowywalne paski narzędzi</h3>
+
+<p>
+<img alt="Dostosowywalne paski narzędzi - zrzut ekranu"src="./img/screenshots/paski.png" style="float:left" />Ustaw paski narzędzi w taki sposób, w jaki tylko chcesz. Możesz mieć wąski pasek tylko z tym, co najpotrzebniejsze, albo wiele pasków z wszystkimi możliwymi opcjami. Paski narzędzi Thunderbirda są w pełni konfigurowalne, więc wyglądają tak, jak sobie tego życzysz. Wybierz Widok -&gt; Paski narzędzi -&gt; Dostosuj... i po prostu przenieś wszystkie ikony, których potrzebujesz. Thunderbird pozwala także tworzyć nowe paski narzędzi. Niektóre rozszerzenia dodają też nowe pozycje do palety dostępnych ikon, które również można wykorzystać.
+</p>
+  
+<h3 id="extens">Rozszerzenia</h3>
+  
+<p>
+<img alt="Zarządzanie rozszerzeniami - zrzut ekranu" src="./img/screenshots/rozszerzenia.png" style="float:right" /><a href="https://update.mozilla.org/extensions/?application=thunderbird">Rozszerzenia</a> to małe programy, które dodają nową funkcjonalność do Thunderbirda. To może być wszystko, od przycisku po zupełnie nowe funkcje, jak gesty myszy. Wspaniałą rzeczą w przypadku rozszerzeń jest to, że pozwalają Thunderbirdowi pozostać małym i czystym. Każdy kto potrzebuje więcej funkcji może pobrać odpowiedne rozszerzenie. Posiadając znajomość języków takich jak <abbr title="Rozszerzalny Język Znaczników">XML</abbr>, <abbr title="Kaskadowe Arkusze Stylów">CSS</abbr> i JavaScript możesz także z łatwością stworzyć własne rozszerzenia.
+</p>
+
+ 
+<h3 id="security">Bezpieczeństwo</h3>
+
+<p>
+Dzięki takim technologiom jak S/MIME, cyfrowy podpis, szyfrowanie wiadomości oraz wsparcie dla urządzeń bezpieczństwa, jak np. inteligentne karty, Mozilla Thunderbird zapewnia najwyższą klasę bezpieczeństwa, stając się godnym polecenia produktem dla instytucji rządowych oraz przedsiębiorstw, gdzie bezpieczeństwo i poufność przesyłanych informacji mają kluczowe znaczenie.
+</p>
+
+<p>
+W przeciwieństwie do innych produktów, Mozilla Thunderbird domyślnie nie zezwala na uruchamianie skryptów. Dzięki temu jest on bezpieczniejszym produktem od innych klientów poczty oraz pomaga zatrzymać rozprzestrzenianie się robaków i wirusów poprzez internet. 
+</p>
+
+</div>
+			
+			<div style="clear:both"> </div>
+         <div id="footer">
+		<p>&copy; 2003-2007 <a href="http://www.aviary.pl">zespół Aviary.pl</a>. Wszelkie prawa zastrzeżone.<br /> Mozilla, Mozilla Thunderbird i logo Thunderbird to zastrzeżone znaki towarowe <a href="http://www.mozilla.org/foundation">The Mozilla Foundation</a>.</p>
+		</div>
+	</div>
+	<?php
+	    include("_inc/moznet.php");
+	?>
+	<!--[if lt IE 7]><script type="text/javascript" src="/iefix.js"></script><![endif]-->
+</body>
+</html>

@@ -1,0 +1,340 @@
+/*/*/
+
+	html {
+		background: #b4cccc url(img/bg.png) repeat-x;
+		font-family: arial, helvetica, sans-serif;
+		margin: 0;
+		color: #000;
+		font-size: 10pt;
+		padding: 2.4em 0 15px 0; /* dla IE */
+	}
+	
+	html[xmlns] {
+		padding: 1.4em 0 15px 0; /* dla dobrych przegladarek */
+		font-size: 0.8em;
+	}
+ 
+	/* IE 5.0+ BUG */
+	body { 
+	 text-align: center;  
+	}
+	
+	a {
+		color: #588;
+		text-decoration: underline;
+	}
+	
+	a img { border: 0 }
+	
+	.ac { display: none }
+
+	a:hover { color: #105399;	}
+	
+	q { 
+    quotes: '\201E' '\201D' '\00BB' '\00AB' 
+    }
+	
+	h1 {
+		font-size: 1.6em;
+		top: -99999px;
+		display: block;
+		position: absolute;
+	}
+
+	h2, h3, h4, h5, h6 {
+		color: #105399;
+		font-family: luxi sans, arial, tahoma, verdana, sans-serif;
+	}
+	
+	h2 {
+		font-size: 1.4em;
+		margin: 0;
+		padding: 0;
+		display: block;
+		border-bottom: 1px solid #105399;
+	}
+	
+	h3 {
+		font-size: 1.25em;
+		margin-bottom: 0;
+		padding-bottom: 0;
+	}
+	
+	h4 { font-size: 1.125em; }
+	h5 { font-size: 1.07em; }
+	h6 { font-size: 1.0em;	}
+
+	#content {
+		background: #fff url(img/toplogotb.jpg) no-repeat;
+		margin: 0 auto;
+		padding-top: 145px;
+		width: 750px;
+		font-size: 0.9em;
+		border: 1px solid #588; 
+		text-align: left;
+	}
+	
+	.mainContent {
+		padding: 0 15px 10px 15px;
+		border-top: 1px solid #fff; /* Bug in Konqueror */
+		/* background: green; */
+	}
+	
+	#side {
+		border-top: 1px solid #fff; /* Bug in Konqueror */
+		display: block;
+		border-left: 1px dashed #acc;
+		padding: 0 10px;
+		float: right;
+		width: 180px;
+		/* background: red; */
+	}
+	
+	
+	#footer {
+		background: #d6dfdf url(img/menubg.png) repeat-x;
+		border-top: 1px dashed #588;
+		text-align: right;
+		color: #144;
+		padding: 5px;
+		font-size: 0.9em;
+	}
+	
+	#footer p { margin: 0; padding: 0 }
+	
+	#menu {
+		padding: 5px 10px;
+		text-align: right;
+		background: url(img/menubarbg.png) repeat-x;
+	}
+	
+	#menu ul {
+		display: inline;
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+
+	}
+	
+	#menu ul li {
+		display: inline;
+		padding: 0;
+		line-height: 30px;
+	}
+	
+	#menu a {
+		text-decoration: none;
+		padding: 5px;
+		background: #d5dede url(img/menubg.png) repeat-x;
+		border-left: 1px dotted #588;
+	}
+
+	#menu a:hover {
+		background: #ccd5d5 url(img/menubg1.png) repeat-x;
+		color: #355;
+	}
+	
+	#menu a.current, #menu a.current:hover {
+		background: #8187ab url(img/menubgb.png) repeat-x;
+		color: #105399;
+	}
+	
+	.builds {
+	    margin-top: 0.7em;
+	}	
+	.builds li {
+	    padding-left: 0;
+	}
+	
+	.dLink {
+		text-decoration: none;
+		text-align: center;
+		background: #d6dede url(img/dlinkbg.png) repeat-x;
+		border: 1px solid #d6dede;
+		display: block;
+		width: 240px;
+		margin: auto;
+		padding: 5px;
+		margin-bottom: 5px;
+		font-size: 15px;
+	}
+	
+	.dLink:hover {
+		border-color: #acc;
+	}
+	
+	.dLink em {
+		font-style: normal;
+		font-size: 24px;
+		font-weight: bold;
+		display: block;
+	}
+	
+	.newsfoot {
+		text-align: right;
+		color: #588;
+	}
+	
+	.col2 {
+		margin-right: 200px;
+	}
+	
+	.mainContent li {
+		margin-bottom: 5px;		
+	}
+	
+	.mainContent p {
+		font-size: 1.0em;
+		line-height: 1.5em;
+	}
+
+	.buildtable {
+		margin: 1em auto 0 auto;
+		border-collapse: collapse;
+	}
+		
+	.buildtable td, .buildtable th {
+		width: 33%;
+		padding: 0 5px;
+		vertical-align: top;
+	}
+	
+	.buildtable th {
+		text-align: center;
+		padding: 0;
+		margin: 0; 
+	}
+
+	.buildtable td {
+		font-size: 0.8em; /* IE SUCKS! */
+		padding-top: 10px;
+	}
+	
+	.buildtable tr > td {
+		font-size: 1.0em;
+	}
+	
+	.buildtable h3, h4, h5 {
+		margin-top: 0;
+	}
+	
+	pre {
+	    font-size: 12px;
+	}
+	
+	.mainContent img {
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+	
+	kbd { 
+		font-family: "courier new", "courier", monospace;
+		padding: 0px 1px 0px 1px;
+		border: 2px solid #999;
+		border-top: 1px solid #ccc;
+		border-left: 1px solid #ccc;
+		background: #f0f0f0;
+	}
+
+	
+	h3 + h4 {
+	    margin-top: 5px;
+	}
+	
+	dt { color: #cf0508; font-weight: bold }
+	
+	.clickable {
+		cursor: pointer
+	}
+
+	.code {
+	    font-family: luxi mono, courier new, courier, monospaced;
+	    font-size: 0.8em;
+	    padding-left: 5px;
+	    margin-top: 0;
+	}
+	
+	.forbanner {
+	    text-align: center;
+	}
+	
+	#moznet {
+	    position: absolute;
+	    top: 0;
+	    left: 0;
+	    right: 0;
+	    width: 100%;
+	    padding: 0 1em;
+	    text-align: left;
+	    border: 1px solid #588;
+	    border-left: 0;
+	    border-top: 0;
+	    background: #e8eeee;
+	    color: #222;
+	    font-size: 0.8em;
+	}
+	
+	html[xmlns] #moznet {
+	    width: inherit;	/* IE HACK */
+	}
+
+	
+	#moznet ul, #moznet ul li {
+	    margin: 0;
+	    padding: 0;
+	    list-style-type: none;
+	    z-index: 10;
+	    display: inline;
+	}
+	
+	#moznet ul li {
+		padding-left: 1ex;
+		padding-right: 1ex;
+	}
+	
+	#moznet > ul > li {
+		padding: inherit;
+	}
+	
+	#moznet a span {
+	    position: absolute;
+	    top: 2.2em;
+	    margin-left: 15px;
+	    background: #e8eeee;
+	    border: 1px solid #588;
+	    color: #222;
+	    line-height: 1.5em;
+	    display: none;
+	    opacity: 0.85;
+	}
+
+	#moznet a:hover span, #moznet a:focus span {
+	    display: inline;
+	}
+
+
+	#moznet a {
+	    text-decoration: none;
+	}
+	
+	#moznet li:after {
+	    content: " | ";
+	    color: #b1b9b8;
+	}
+	
+	#moznet li:last-child:after {
+	    content: "";
+	}
+	
+	.promokod {
+	color: #7D7D7D;
+	}
+	
+	.secondstage {
+	list-style-type: lower-alpha;
+	margin-top: 4px;
+	}
+
+#tbbans textarea {
+    margin-bottom: 1.2em;
+}	

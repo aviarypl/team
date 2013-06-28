@@ -1,0 +1,110 @@
+<?php 
+include ("_inc/detect.php");
+echo '<?xml version="1.0" encoding="UTF-8"?>' 
+
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pl">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="keywords" content="Thunderbird, Mozilla, Netscape, gecko, klient poczty, www, polski, po polsku, tłumaczenie, polska, polska wersja, polskie, w3c, html, javascript, ecmascript, css, download" />
+	<meta name="description" content="Thunderbird.pl - Polskie centrum Thunderbirda. Najlepszego klienta poczty pod słońcem!" />
+	<title>Mozilla Thunderbird w Polsce:: Pobierz</title>
+	<link rel="stylesheet" type="text/css" href="thunderbird.css" media="screen, projection" />
+	<link rel="Shortcut Icon" type="image/png" href="img/tb_favicon.png" />
+
+</head>
+<body>
+  
+  <!-- accesibility heading -->
+  <h1>Thunderbird.pl - Pobierz</h1>
+  
+  <div id="content">
+    <div id="menu">
+      <div class="ac">
+        <!-- accesibility links -->
+        <p>Przejdź do:</p>
+
+        <ul>
+          <li><a href="#side">wiadomości</a></li>
+          <li><a href="#main">głównej części strony</a></li>
+        </ul>
+      </div>
+      <ul>
+        <li><a href="index.html">Strona główna</a></li><li><a href="conowego.html">Co nowego?</a></li><li><a href="dlaczego.html">Dlaczego Thunderbird?</a></li><li><a href="sysreq.html">Wymagania</a></li><li><a href="pobierz.html" class="current">Pobierz</a></li><li><a href="startowa/index.html">Dokumentacja</a></li><li><a href="MPL.html">Licencja</a></li><li><a href="promocja.html">Promocja</a></li>
+
+      </ul>
+    </div>  
+<div id="main" class="mainContent">
+<h2>Pobierz Thunderbirda <?php echo $ver; ?> PL </h2>
+
+<p>Kliknij na jeden z poniższych odnośników by pobrać Thunderbirda dla Twojego systemu operacyjnego.</p>
+
+<table class="buildtable" summary="Tabela zawiera listę odnośników do wydań programu Thunderbird dla różnych systemów operacyjnych.">
+<tr><th><img src="./icon/win32_logo.gif" alt=""/></th><th style="border-left: 1px dashed #588; border-right: 1px dashed #588"><img src="./icon/gnulinux_logo.png" alt="" /></th><th><img src="./icon/macos_logo.png" alt=""/></th></tr>
+<tr>
+	<td>
+		<h3 class="ac">Microsoft Windows</h3>
+
+		<ul>
+			<li><a href="<?php echo $win; ?>">instalator</a></li>
+		</ul>
+	</td>
+	<td style="border-left: 1px dashed #588; border-right: 1px dashed #588">
+
+		<h3 class="ac">GNU/Linux</h3>
+		<ul>
+			<li><a href="<?php echo $lnx; ?>">archiwum tar.gz</a></li>
+		</ul>
+	</td>
+	<td>
+		<h3 class="ac">Mac OS X</h3>
+		<ul>
+			<li><a href="<?php echo $mac; ?>">uniwersalne binarium (Intel i PPC)</a></li>
+			<!--<li><a href="<?php echo $mac_ppc; ?>">wersja tylko dla PPC</a></li>-->
+		</ul>
+	</td>
+
+</tr>
+</table>
+
+
+<p>Przed pobraniem sprawdź <a href="sysreq.html">wymagania systemowe</a>.</p>
+
+<!--<p class="newsfoot" style="font-size: 0.8em">[<a href="http://beta.thunderbird.pl/1.0/Tb-1.0-pl-PL.md5">Sumy MD5</a>]</p>-->
+
+<h3 id="allplatforms">Co zrobić, jeśli Twojego systemu nie ma na liście?</h3>
+
+<p>Autorzy serwisu Thunderbird.pl przygotowują pakiety instalacyjne tylko dla wyżej wymienionych systemów. Jeśli masz
+inny system operacyjny, <a href="<?php echo $contrib; ?>">pobierz wersję anglojęzyczną</a>
+ze stron Fundacji Mozilla, a następnie doinstaluj <a href="langpkg.html">polski pakiet językowy</a>.</p>
+
+<h3 id="langpkg">Co zrobić, jeśli masz już Thunderbirda, ale w wersji angielskiej?</h3>
+<p>Jeśli chcesz doinstalować język polski do anglojęzycznego Thunderbirda, przeczytaj <a href="langpkg.html">tę instrukcję</a>.</p>
+
+<h3 id="bugreport">A jeśli zauważysz błąd?</h3>
+<p>Błędy w tłumaczeniu programu prosimy zgłaszać w naszym 
+<a href="http://bugs.aviary.pl">systemie obsługi błędów</a>.<br />
+O wszystkich innych problemach radzimy informować na naszym 
+<a href="http://www.mozillapl.org/forum/index.php?c=7&amp;sid=7f537985a5a6f2dbb7b8cebc7ecc53cd">forum dyskusyjnym</a>.</p>
+
+<p style="font-size: 0.8em;">Linux jest zarejestrowanym znakiem towarowym Linusa Torvaldsa. Mac OS oraz logo "Jabłko" to zarejestrowane
+znaki towarowe firmy Apple Computer, Inc. Microsoft&nbsp;Windows i logo Windows to zarejestrowane znaki towarowe
+firmy Microsoft Corporation. Znaki towarowe zostały użyte jedynie w celach informacyjnych. </p>	
+
+
+
+</div>
+			
+			<div style="clear:both"> </div>
+         <div id="footer">
+		<p>&copy; 2003-2007 <a href="http://www.aviary.pl">zespół Aviary.pl</a>. Wszelkie prawa zastrzeżone.<br /> Mozilla, Mozilla Thunderbird i logo Thunderbird to zastrzeżone znaki towarowe <a href="http://www.mozilla.org/foundation">The Mozilla Foundation</a>.</p>
+		</div>
+	</div>
+	<?php
+	    include("_inc/moznet.php");
+	?>
+	<!--[if lt IE 7]><script type="text/javascript" src="/iefix.js"></script><![endif]-->
+</body>
+</html>
