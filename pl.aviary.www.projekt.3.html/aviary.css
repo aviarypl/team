@@ -1,0 +1,480 @@
+/* General rules */
+
+body {
+	background: #53617e url(img/bg.jpg);
+	margin: 0;
+	padding: 0;
+	font-family: verdana, vera sans, tahoma, arial, sans-serif;
+}
+
+a img { 
+	border: 0; 
+}
+
+a { 
+	color: #0e3788;
+	font-weight: bold;
+}
+
+a:hover {
+	color: #35435f;
+}
+
+
+p {
+	margin: 0; 
+}
+
+h1, h2, h3, h4, h5, h6 {
+	margin: 10px 0;
+}
+
+h1 {
+	font-size: 1.3ex;
+}
+
+h2 {
+	font-size: 1.2ex;
+}
+
+h3 {
+	font-size: 1.1ex;
+}
+
+h4 {
+	font-size: 1.0ex;
+}
+
+h5 {
+	font-size: 0.9ex;
+}
+
+h6 {
+	font-size: 0.8ex;
+}
+
+
+.cl {
+	clear: both;
+}
+
+#c0 {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	background: url(img/bg-top.jpg) repeat-x;
+	padding: 0;
+	margin: 0;
+	text-align: center; /* workaround for IE bug */
+}
+
+/* Branding */
+
+#brand {
+	width: 760px;
+	background: #fff;
+	color: #000;
+	margin: auto;
+	text-align: left;
+}
+#brand1 {
+	width: 9px;
+	height: 206px;
+	float: left;
+	background: #fff url(img/top-left.png) no-repeat;
+}
+
+#brandM {
+	background: #fff url(img/top-grad.png) repeat-x;
+	width: 358px;
+	height: 206px;
+	float: left;
+}
+
+#brand2 {
+	background: #fff url(img/top-right.jpg) no-repeat;
+	color: #000;
+	width: 389px;
+	height: 206px;
+	padding-right: 4px;
+	float: right;
+}
+
+#homelink {
+	display: block;
+	margin-left: 11px;
+	margin-top: 20px;
+
+	/* Leahy/Langridge Image Replacement */	
+	padding-top: 44px;
+	width: 211px;
+	background-image: url(img/apl.png);
+	background-repeat: no-repeat;
+	overflow: hidden;
+	/* WIN IE5 hack */
+	height: 44px;
+	voice-family: "\"}\""; 
+	voice-family:inherit;
+	height: 0;
+}
+
+/* Sections */
+
+#menu, #content, #foot {
+	width: 760px;
+	background: #fff;
+	color: #000;
+	margin: auto;
+}
+
+#content {
+	padding-top: 2px;
+}
+
+#content.twocol {
+	background: #fff url(img/dots.png) repeat-y;
+}
+
+
+#foot {
+	border-top :1px dotted #777;
+	padding: 5px 0 10px 0;
+	font-size: 1.1ex;
+	text-align: center;
+}
+
+#menu {
+	border-bottom: 4px solid #fff;
+}
+
+
+#menu1, #menu2 {
+	display: none; /* hide from IE */
+}
+
+div > #menu1 {
+	display: block;
+	height: 31px;
+	width: 8px;
+	float: left;
+	background: url(img/menu-left.png) no-repeat;
+}
+
+div > #menu2 {
+	display: block;
+	height: 31px;
+	width: 8px;
+	background: url(img/menu-right.png) no-repeat;
+	float: right;
+}
+
+#menuM {
+	width: 752px;
+	height: 31px;
+	background: #3d4b68 url(img/menu-grad.png) repeat-x;
+	text-align: left;
+	font-size: 11px;
+	font-weight: bold;
+}
+
+.col1of2 {
+	background: url(img/c-grad.png) no-repeat;
+	width: 225px;
+	margin-left: 4px;
+	padding-top: 10px;
+	float: left;
+	text-align: left;
+	min-height: 200px;
+ 	color: #595959;
+}
+
+.col2of2 {
+	background: url(img/c-grad.png) no-repeat;
+	border-left: 5px solid #fff;
+	margin-left: 227px;
+	margin-bottom: 10px;
+	text-align: left;
+	padding: 10px 20px;
+ 	color: #595959;
+}
+
+.col1of1 {
+	background: url(img/c-grad.png) no-repeat;
+	width: 725px;
+	margin-left: 4px;
+	padding: 10px 6px 10px 20px;
+	text-align: left;
+ 	color: #595959;
+}
+
+.ads {
+	text-align: center;
+	padding-top: 6px;
+	padding-bottom: 6px;
+}
+
+
+
+/* Navigation menu */
+
+#nav {
+	list-style-type: none;
+	margin: 0;
+	padding: 0 0 0 20px;
+}
+
+#nav li {
+	display: inline;
+}
+
+#nav a {
+	color: #eee; /* for IE, overriden below for good browsers */
+	text-decoration: none;
+	display: block;
+	float: left;
+	padding: 8px 7px;
+}
+
+#nav a:hover {
+	color: #ddd;
+}
+
+/* text shadows in menu */
+
+div > #nav {
+	padding-top: 3px;
+}
+
+#nav li > a { 	color: #595959;
+	display: block;
+	line-height: 1em;
+	color: #5c6b88; /* shadow color */
+	background-color: transparent;
+	white-space: nowrap; /* wrapping breaks the effect */
+}
+
+#nav li > a:before,
+#nav li > a:after {
+	content: attr(title); /* generated text */
+	display: block;
+}
+
+#nav li > a:before {
+	margin-bottom: -1.05em;
+	margin-left: 0.1ex;
+	color: #2d3b56; /* shadow color */
+	background-color: transparent;
+}
+
+#nav li > a:after {
+	margin-top: -1.05em;
+	margin-left: -0.1ex;
+	color: #fff; /* text color */
+	background-color: transparent;
+}
+
+
+#nav li > a:hover:after {
+	text-decoration: underline;
+	color: #fff; /* text color */
+}
+
+#nav li > a:hover {
+	color: #5c6b88; /* shadow color */
+	text-decoration: underline;
+}
+
+/* Left column */
+
+.col1of2 h2 {
+	margin: 4px 0;
+	text-align: center;
+}
+
+.col1of2 * {
+	margin: 4px 10px 8px 10px;
+}
+
+.col1of2 * * {
+	margin: 0;
+}
+
+.col1of2 p {
+	font-size: 0.7em;
+	color: #595959;
+}
+
+.col1of2 h3 { font-size: 1.15ex; }
+
+p.more {
+	text-align: right;
+	padding-right: 13px;
+	font-size: 1.1ex;
+}
+
+p.more a {
+	color: #35435f;
+	text-decoration: none;
+}
+
+p.more a:hover {
+	color: #6b758a;
+}
+
+p.more a span {
+	width: 15px;
+	height: 18px;
+	float: right;
+	display: block;
+	background: url(img/arrow.gif) no-repeat;
+}
+
+p.more a:hover span {
+	background-position: -16px 0;
+}
+
+p.date {
+	font-size: 0.95ex;
+	padding: 0 16px 0 0;
+	margin: 0;
+	display: block;
+	float: right;
+}
+
+.col1of2 ul { /* was: #newsul */
+	list-style-type: disc;
+	list-style-position: inside;
+	margin: 0;
+	padding: 0 10px 0 10px;
+}
+
+#newsul {
+	color: #0e3788;
+	margin: 25px 0 0 0;
+}
+
+.col1of2 ul li {
+	font-size: 1.1ex;
+}
+
+#morenewsul {
+	margin-top: 13px;
+	border-top: 1px dotted #888;
+	padding: 0;
+	text-align: center;
+	list-style-type: none;
+	font-size: 0.9em;
+}
+
+#morenewsul li {
+	display: inline;
+}
+
+#morenewsul li a {
+	text-decoration: none;
+	color: #595959;
+	font-weight: normal;
+}
+
+#morenewsul li a.curNews {
+	font-weight: bold;
+}
+
+/* other */
+
+
+.prodDesc {
+	padding-top: 20px;
+}
+
+.product {
+	margin-left: 95px;
+}
+
+.fxlogo {
+	margin-left: 5px;
+	background: url(img/logo_fx.gif) no-repeat; /* for IE */
+	width: 90px;
+	height: 90px;
+	float: left;
+}
+
+div > .fxlogo {
+	background: url(img/logo_fx.png) no-repeat;
+}
+
+.tblogo {
+	margin-left: 5px;
+	background: url(img/logo_tb.gif) no-repeat; /* for IE */
+	width: 90px;
+	height: 90px;
+	float: left;
+}
+
+div > .tblogo {
+	background: url(img/logo_tb.png) no-repeat;
+}
+
+.sblogo {
+	margin-left: 5px;
+	background: url(img/logo_sb.gif) no-repeat; 
+	width: 90px;
+	height: 90px;
+	float: left;
+}
+
+.cmlogo {
+	margin-left: 5px;
+	background: url(img/logo_cm.gif) no-repeat; 
+	width: 90px;
+	height: 90px;
+	float: left;
+}
+
+.col2of2 p, .col1of1 p {
+	font-size: 1.2ex;
+}
+
+.col2of2 .more, .col1of1 .more {
+	margin-top: 10px;
+}
+
+a[href^="http:"]:after {
+	content: url(img/ext.gif);
+}
+
+/* Accessibility information - visible to screen readers, hidden in usual browsers */
+
+.ac {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 0;
+	height: 0;
+	z-index: 100;
+	overflow: hidden;
+}
+
+/* Search form */
+
+#search {
+	float: right;
+	padding: 0;
+	margin: 0;
+	padding-top: 5px;
+	padding-right: 20px;
+}
+
+#search span { color: #fff; }
+
+#query {
+	width: 20ex;
+}
+
+
+#search input {
+	font-size: 11px;
+	border-radius: 6px;
+	-moz-border-radius: 6px;
+}
