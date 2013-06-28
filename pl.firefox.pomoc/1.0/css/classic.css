@@ -1,0 +1,247 @@
+@charset "iso-8859-1";
+
+/*
+	Groundwork and original coding by Stefan Huszics
+	Maintenance and optimizations by David Tenser
+	Code cleanup by Lim Chee Aun
+	
+	Copyright (c) 2002-2003 David Tenser.
+	You may NOT steal or copy this work or part
+	of it without my explicit permission.
+	
+ */
+
+body {
+	color: #000;
+	background: #e8e8e8 !important;
+	margin: 2ex;
+	font-family: tahoma, verdana, sans, arial, helvetica, sans-serif;
+	max-width: 120ex;
+	position: absolute;
+	z-index: 2;
+}
+div.top {
+	background-image: none !important;
+}
+
+div.box {
+	/* -moz-border-radius: 3px; /* mozilla only */
+	font-size: 90%;
+	margin: 0 0 0 12.3em;
+	float: none;
+	
+	vertical-align: middle;
+	border-style: solid;
+	border-width: 1px 1px 0px 1px;
+	height: 5ex;
+	background: #7f97b0 url("../images/gradient.png") repeat-x;
+	color: white;
+	border-color: black;
+}
+div.box div.headline {
+	font-weight: normal;
+	font-size: 150%;
+	float: left;
+	margin: 0px 1ex;
+	text-transform: none;
+	padding: .5ex 0ex 0ex 0ex;
+	letter-spacing: 3px;
+}
+
+
+div.spacer1 {
+	font-size: 90%;
+	text-align: right;
+	margin: 0 0 0 12.3em;
+	padding: 0px 2ex 0px 0px;
+	height: 2ex;
+	float: none;
+	border-width: 1px;
+	border-style: solid;
+	overflow: hidden;
+}
+div.spacer1, div.nav div.spacer2 {
+	background: url(../images/spacer.png) #446 repeat-x !important;
+	color: white !important;
+	border-color: black !important;
+}
+
+/* Language Bar */
+
+div.languages {
+ color: #dee;
+ font-size: 85%;
+ text-align: right;
+ padding: 0 1ex 0 0;
+ margin: 0;
+}
+div.languages a:visited, div.languages a:link {
+	color: #bcc;
+	font-weight: bold;
+}
+div.languages a:hover, div.languages a#currentLanguage {
+	color: #fff;
+}
+
+div.languages abbr {
+	border-bottom: 0px;
+}
+div.nav div.spacer2 {
+	color: #555;
+	background: transparent;
+	display: block;
+	border-width: 0 0 1px 0;
+	font-size: 90%;
+	margin: 0 0 1em 0 !important;
+	padding: 0px;
+	height: 2ex;
+}
+
+
+address.copy{
+ text-align: center;
+ font-size: 60%;
+ margin-left: 33ex;
+}
+address.copy,address.copy a:link,address.copy a:hover, address.copy a:visited{
+	font-style: normal;
+	text-decoration: none;
+}
+
+div.menu {
+	position: absolute;
+	top: 4.5ex;
+	left: -.4ex;
+	padding: 0 0 0.5ex 0;
+	width: 10.4em;
+	border: 1px solid black !important;
+	background: #fff url(../images/menuback.png) repeat-y !important;
+	color: inherit;
+}
+[class="menu"]{
+	position: absolute;
+}
+
+div.menu div.nav {
+	padding: 0;
+	margin: 0;
+	border: none;
+	text-align: center;
+}
+div.nav span {
+	display: none
+}
+div.nav div {
+	font-weight: bold;
+	font-size: 90%;
+	margin: 1ex 0px 0.5ex 0px;
+	text-align: center;
+	border-color: black;
+	border-style: solid;
+	border-width: 1px 0px 1px 0px;
+}
+
+
+
+div.menu div.nav a:link, div.menu div.nav a:visited {
+	padding: 0 5px 0 5px;
+	display: block;
+	font-size: 80%;
+	text-align: left;
+	text-decoration: none;
+}
+
+
+div.nav dt {
+	font-weight: bold;
+}
+div.nav dd {
+	margin-left: 0px;
+	padding-left: 0px;
+	
+}
+
+div.nav dl {
+	margin-top: 0px;
+	margin-bottom: 0.5ex;
+}
+
+div.menu div.nav a:hover {
+	text-decoration: none;
+}
+
+div.nav dd a:before {
+	content: " » ";
+}
+
+div.nav dl.links dd a:before {
+	content: "";
+}
+
+div.nav a.indent {
+	margin-left: 0;
+}
+div.nav span.menuspace {
+	display: block;
+	border-width: 0;
+	height: .4em;
+}
+
+
+
+
+.main {
+	background: #fff url(../images/back.png) no-repeat top right;
+	color: inherit;
+	font-size: 90%;
+	min-height: 61ex;
+	margin: 1.7ex 0ex 0ex 12.3em;
+	border-style: solid;
+	border-color: black;
+	padding: 1ex 2ex 0ex 2ex !important;
+	border-width: 0px 1px 1px 1px;
+}
+
+h1, kbd.mouse {
+	color: #339 !important;
+	background: transparent;
+}
+
+h2 {
+	color: #459 !important;
+	background: transparent;
+}
+
+
+
+h3 {
+	color: #558 !important;
+	background: transparent;
+}
+
+h4 {
+	color: #115 !important;
+	background: transparent;
+}
+
+
+/* MOZILLA ONLY */
+div.extension, div.theme, div.menu, div.pleft, div.news, div.main {
+	-moz-border-radius: 0px; /* mozilla only */
+}
+
+div.news div.category1, div.news div.category2, div.news div.category3 { 
+	-moz-border-radius: 0px; /* mozilla only */
+
+}
+
+span.button {
+	-moz-border-radius: 0px; /* mozilla only */
+}
+
+/* cheap trick to hide the ugly onestat icon */
+img.onestat {
+	position: absolute;
+	left: -40px;
+	top: -40px;
+}

@@ -1,0 +1,397 @@
+@charset "iso-8859-1";
+/*
+	Design, maintenance, and optimizations by David Tenser
+	Original groundwork by Stefan Huszics
+	Some code cleanup by Lim Chee Aun
+	
+	Copyright (c) 2002-2003 David Tenser.
+	You may NOT steal or copy this work or part
+	of it without my explicit permission.
+	
+ */
+
+body#firebirdhelp  {
+	color: #000;
+	background: #fff url("../images/back-orange.png") no-repeat top right;
+}
+body#thunderbirdhelp {
+	color: #000;
+	background: #fff url("../images/back-blue.png") no-repeat top right;
+}
+
+#firebirdhelp div.top {
+	background: transparent url("../images/headback-ff.png") no-repeat top left;
+	color: white;
+}
+
+#thunderbirdhelp div.top {
+	background: transparent url("../images/headback-tb.png") no-repeat top left;
+	color: white;
+}
+
+
+div.languages {
+	color: #666;
+}
+div.languages a:link, div.languages a:visited {
+	color: #666;
+}
+
+div.languages a:hover, div.languages a#currentLanguage {
+	color: #333;
+}
+
+.copy, .copy a:link, .copy a:visited{
+	color: #555;
+	background: transparent;
+}
+
+div.menu {
+	color: inherit;
+	border-color: #99c;
+}
+#firebirdhelp div.menu {
+	background: #fff url("../images/menuback-blue.png") repeat-y;
+}
+
+#thunderbirdhelp div.menu {
+	background: #fff url("../images/menuback-blue.png") repeat-y;
+}
+.nav div {
+	background: url(../images/gradient-small.png) #7f97b8 repeat-x;
+	color: #fff;
+	border-color: #99c;
+}
+
+
+.menu .nav a:link, .menu .nav a:visited {
+	color: #339;
+	background: transparent;
+}
+
+#firebirdhelp .menu .nav a:hover {
+	background: url(../images/menuitem-gray.png) repeat-y;
+	color: #D22A1D;
+}
+
+#thunderbirdhelp .menu .nav a:hover {
+	background: url(../images/menuitem-gray.png) repeat-y;
+	color: #c33;
+}
+
+
+
+
+
+.linkindex #linkindex, .linknews #linknews, .linkdownload #linkdownload, .linkfeatures #linkfeatures,
+.linkdocumentation #linkdocumentation, .linkkeyboard #linkkeyboard, .linkmouse #linkmouse,
+.linkoptions #linkoptions, .linksupport #linksupport, .linkfaq #linkfaq, .linktips #linktips,
+.linkmenu #linkmenu, .linkedit #linkedit, .linkbugs #linkbugs, .linklinks #linklinks,
+.linkextensions #linkextensions, .linkthemes #linkthemes, .linkabout #linkabout,
+.linksitenews #linksitenews, .linkcontact #linkcontact {
+	background: url(../images/menuitem-red.png) repeat-y;
+	color: #339;
+}
+
+.menu span.lockmenu a:link, .menu span.lockmenu a:visited, .menu span.unlockmenu a:link, .menu span.unlockmenu a:visited,
+.menu span.lockmenu a:hover, .menu span.unlockmenu a:hover  {
+	color: white;
+	background: transparent;
+}
+
+.main {
+	background: #fafafa;
+	color: inherit;
+	border-color: #f2f2f2;
+
+}
+
+
+div.screenshot-right, div.screenshot-left {
+	background: url(../images/dot-dark-light.png) transparent;
+	color: black;
+} 
+
+
+
+
+/* general appearance of links in documents... */
+.main a:link, .main a:visited {
+	/* a subtle underline effect for normal links */
+	background: url("../images/dot-darker.png") repeat-x bottom transparent;
+	color: #339;
+}
+.main p a:hover, .main div a:hover, .main ul a:hover, .main ol a:hover, address a:hover, div.languages a:hover {
+	background: url("../images/dot-dark.png") transparent !important;
+	color: #c30;
+}
+.main a:target {
+	background-image: url("../images/dot-dark.png");
+}
+/* ...with these exceptions: images and table of contents */
+ul.contents a:link, ul.contents a:visited, div.logo a:link, div.logo a:visited {
+	background-image: none;
+}
+div.logo a:hover { 
+	background-image: none !important;
+}
+
+
+
+/* special graphic links for extensions and themes */
+a.homepage:before {
+	content: url("../images/homepage.png");
+	padding-right: 4px;
+}
+a.download:before {
+	content: url("../images/install.png");
+	padding-right: 4px;
+}
+a.install:before {
+	content: url("../images/install.png");
+	padding-right: 4px;
+}
+
+
+
+hr {
+	border-color: #ddccbb;
+}
+
+#firebirdhelp h1 {
+	color: #90564B;
+	background: transparent;
+	
+}
+#firebirdhelp h2 {
+	color: #A36155;
+	background: transparent;
+	
+}
+#firebirdhelp h3 {
+	color: #866;
+	background: transparent;
+	
+}
+#firebirdhelp h4 {
+	color: #933;
+	background: transparent;
+}
+
+#thunderbirdhelp h1 {
+	color: #339;
+	background: transparent;
+	
+}
+#thunderbirdhelp h2 {
+	color: #459;
+	background: transparent;
+	
+}
+#thunderbirdhelp h3 {
+	color: #454;
+	background: transparent;
+	
+}
+#thunderbirdhelp h4 {
+	color: #151;
+	background: transparent;
+}
+
+kbd.mouse {
+	color: #339;
+	background: transparent;
+}
+
+div.rightside {
+	background: #f7f6fb;
+	color: inherit;
+	border-color: #9999cc;
+}
+
+table {
+ background-color: #aa9988;
+ border-color: #ccc;
+ color: inherit;
+}
+td {
+ background-color: #fff;
+ color: #000;
+}
+
+th {
+	background-color: #999;
+	color: #fff;
+}
+
+/* keyboard shortcuts */
+kbd {
+	background: #faf6f6;
+	color: #000;
+	border-color:  #edd #baa #baa #eed;
+}
+
+span.button {
+	background: #fcfaf4;
+	color: #000;
+	border-color: #fc9 #c96 #c96 #fc9;
+}
+
+
+
+
+
+
+/* used to distunguish menu sequences */
+span.mnu {
+/*color: MenuText;
+background-color: ThreeDFace;*/
+	background: #e8e8e8;
+	color: #333;
+	/*border-color: #e0e0e0;*/
+}
+span.mnu {
+/*	border-width: 1px;
+	border-style: solid;*/
+	padding: 0 3px 0 3px;
+}
+
+/* span.mnu span {
+	background: #f0f0f0;
+	color: #336;
+}
+span.mnu span {
+	padding: 0 4px 0 4px;
+	margin: 0 -2px 0 -2px;
+}
+*/
+
+
+span.checkboxon, span.checkboxoff, span.radioon, span.radiooff {
+	background-color: transparent;
+	color: #444;
+}
+
+
+
+
+
+
+
+
+
+
+
+td.shortcut, td.shortcut_moz {
+	color: #666;
+	background: white;
+	
+}
+
+td.shortcut_moz {
+	color: #666;
+	background: #fffaf4;
+}
+
+
+q, tt, span.file {
+	color: #444;
+	background: transparent;
+}
+
+/* used to indicate text to be entered in e.g. text-boxes, address bar, etc. */
+.type {
+	color: #000;
+	background: white;	
+	border-color: #eee;
+}
+
+
+code {
+	background: transparent;
+	color: black;
+}
+
+.alert, #contactnotice {
+	color: #800000;
+	background: transparent;
+}
+
+fieldset {
+	border-color: gray;
+}
+
+div.news {
+	background: #ffffff;
+	color: inherit;
+	border-color: #e3e3e3; 
+}
+
+
+/* Phoenix News */
+div.news div.category1 { 
+	background: #f8f7fc;
+	color: #666699;
+	border-color: #eeedf2;
+}
+
+/* Mozilla News */
+div.news div.category2 { 
+	background: #fdf7f8;
+	color: #996666;
+	border-color: #eecccc;
+}
+
+/* Site News */
+div.news div.category3 { 
+	background: #f4f4f4;
+	color: #666666;
+	border-color: #e4e4e4;
+}
+
+div.news p.info, div.news p.info a:link, div.news p.info a:visited {
+	color: #333366;
+	background: transparent;
+}
+
+div.news p.info {
+	border-color: #e2e1e6;
+}
+
+
+p.extrainfo, div.downloadinfo {
+	color: #555;
+	background: transparent;
+	border-color: #eecc99;
+}
+
+div.recommendedbuild {
+	background: #ffd;
+	color: inherit;
+	border-color: gray;	
+}
+
+#downloadmilestone {
+	background: transparent;
+	color: inherit;
+}
+
+#downloadnightly {
+	background: #F9EAC9;
+	border-color: #E3E3E3;
+}
+
+#buildit {
+	background: #ECECEC;
+	border-color: #E3E3E3;
+}
+
+pre, .content-code-box {
+	color: inherit;
+	border-color: #aaa;
+	background: #fff;
+}
+
+abbr, acronym, span.credits {
+	border-color: #6666cc;
+}

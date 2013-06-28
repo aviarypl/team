@@ -1,0 +1,715 @@
+@charset "iso-8859-1";
+@import url("colors.css");
+
+/*
+	Groundwork and original coding by Stefan Huszics
+	Maintenance and optimizations by David Tenser
+	Code cleanup by Lim Chee Aun
+	
+	Copyright (c) 2002-2003 David Tenser.
+	You may NOT steal or copy this work or part
+	of it without my explicit permission.
+	
+ */
+
+
+
+
+
+
+body {
+	margin: 1ex 0 0 1ex;
+	font-family: lucida sans unicode, verdana, sans, arial, helvetica, sans-serif;
+	max-width: 122ex;
+}
+
+div.top {
+	height: 5ex;
+	margin: 0;	
+	vertical-align: middle;
+}
+
+
+
+div.box {
+	background: transparent;
+	margin: 0 0 0 0;
+	float: left;
+	padding-left: 0.9em;
+	color: #fff;
+	border: none;
+	height: 5ex;
+	font-size: 90%;
+	vertical-align: middle;
+}
+div.box div.headline {
+	font-family: verdana, sans, arial, helvetica, sans-serif;
+	font-weight: normal;
+	font-size: 140%;
+	float: left;
+	vertical-align: middle;
+	text-transform: lowercase;
+	margin: -.5ex 0 0 35px;
+	padding: 12px 0ex 0ex 0ex;
+	letter-spacing: 1ex;
+}
+
+
+div.spacer1 {
+	float: right;
+	text-align: right;
+	margin: -2em 0 0 0;
+	padding: 0ex 0.8em 0px 0px;
+	height: 2em;
+	font-size: 90%;
+	overflow: hidden;
+}
+
+div.nav div.spacer2 {
+	display: none;
+}
+
+
+
+/* Language Bar */
+div.languages {
+	font-size: 85%;
+	float: right;
+	text-align: right;
+	overflow: visible;
+}
+div.languages a:visited, div.languages a:link {
+	font-weight: normal;
+}
+
+div.languages a#currentLanguage {
+	font-weight: bold;
+}
+div.languages abbr {
+	border-bottom: 0px;
+}
+
+
+
+address.copy{
+ text-align: center;
+ font-size: 60%;
+ margin-left: 33ex;
+}
+address.copy,address.copy a:link,address.copy a:hover, address.copy a:visited{
+	font-style: normal;
+	text-decoration: none;
+}
+
+div.menu {
+	left: 0.6em;
+	padding: 3px 0 0.5ex 0;
+	width: 10.4em;
+	position: absolute;
+	top: 3.78em;
+	border-width: 1px;
+	border-style: solid;
+}
+[class="menu"]{
+	position: absolute;
+}
+#firebirdhelp div.menu {
+	background: url("../images/menuback-blue.png") repeat-y;
+	border: #99c 1px solid;
+}
+
+#thunderbirdhelp div.menu {
+	background: url("../images/menuback-blue.png") repeat-y;
+	border: #99c 1px solid;
+}
+
+
+
+div.menu div.nav {
+	margin: 6px 0px 3px 0px;
+	text-align: center;
+	padding: 0;
+	border: none;
+}
+div.nav span {
+	display: none
+}
+div.nav div {
+	font-weight: bold;
+	font-size: 90%;
+	margin: 1ex 0px 0.5ex 0px;
+	text-align: center;
+	border-style: solid;
+	border-width: 1px 0px 1px 0px;
+}
+
+
+
+div.menu div.nav a:link, div.menu div.nav a:visited {
+	padding: 0 5px 0 5px;
+	display: block;
+	font-size: 80%;
+	text-align: left;
+	text-decoration: none;
+}
+
+
+div.nav dt {
+	font-weight: bold;
+}
+div.nav dd {
+	margin-left: 0px;
+	padding-left: 0px;
+	
+}
+
+div.nav dl {
+	margin-top: 0px;
+	margin-bottom: 0.5ex;
+}
+
+div.menu div.nav a:hover {
+	text-decoration: none;
+}
+
+div.nav dd a:before {
+	content: "  "; /* cheap trick to get indentation without moving the element */
+}
+
+div.nav dl.links dd a:before {
+	content: "";
+}
+
+div.nav a.indent {
+	margin-left: 0;
+}
+div.nav span.menuspace {
+	display: block;
+	border-width: 0;
+	height: .4em;
+}
+
+
+
+.main {
+	min-height: 2ex;
+	margin: .4em 1ex 0 12.5em;
+	padding: 0ex 1ex 0 1ex;
+	font-size: 90%;
+	border-style: solid;
+	border-width: 1px;
+}
+
+
+
+
+
+
+
+/* COMMON STYLES */
+
+img {
+ border-width: 0;
+ vertical-align: bottom;
+}
+
+img.screenshot {
+	margin: 0.5em 0em 0.5em 0em;
+}
+
+div.onestat { 
+	text-align: center;
+	position: absolute;
+	width: 18ex;
+	margin-top: 2ex;
+}
+
+[class="onestat"]{
+	display: none;
+}
+
+
+
+div.screenshot-right, div.screenshot-left {
+	padding: 4px;
+	text-align: center;	
+} 
+
+div.screenshot-right {
+	float: right;
+	margin: 0px 0px 0px 10px;
+}
+
+div.screenshot-left {
+	float: left;
+	margin: 0px 10px 5px 0px;
+}
+
+div.right {
+	float: right;
+	margin: 0px 0px 0px 10px;
+}
+
+div.center {
+	text-align: center;
+}
+
+
+p.justify {
+	text-align: justify;
+}
+
+div.screenshot-left p, div.screenshot-right p {
+	margin-top: 2px;
+	margin-bottom: 0px;
+	font-size: 80%;
+	text-align: center;
+}
+
+div.logo {
+	float: right;
+	margin: -2em 0px 0px 10px;
+}
+
+div.faqicon {
+	background: transparent url("../images/faq.png") no-repeat top right;
+}
+div.downloadicon {
+	background: transparent url("../images/download.png") no-repeat top right;
+}
+div.optionsicon {
+	background: transparent url("../images/options.png") no-repeat top right;
+}
+div.optionsicon, div.downloadicon, div.faqicon, div.extensionicon, div.themeicon {
+	min-height: 200px;
+}
+
+
+a {
+	text-decoration: none;
+}
+
+ul {
+	padding-left: 2ex;
+	margin-left: 0px;
+	font-size: inherit;
+}
+
+ul.contents, ul.contents ul {
+	list-style-type: none;
+}
+
+
+ul.disc {
+	list-style-type: disc;
+}
+
+
+
+hr {
+	border-width: 0 0 1px 0;
+	border-style: solid;
+	height: 0;
+	padding: 1em 0 0 0;
+	margin: 0 0 1em 0;
+	clear: both;
+}
+
+h1, h2.headline { /* h2.headline is left for compatibility with translated sites */
+	font-weight: normal;
+	font-size: 130%;
+	margin-bottom: 0.25em;
+}
+
+p {
+	margin-bottom: 1em;
+	margin-top: 0em;
+	line-height: 1.4em;
+}
+
+ol, ul {
+	line-height: 1.3em;
+}
+
+
+
+p.extrainfo {
+	font-size: 90%;
+	border-width: 0 0 0 2px;
+	border-style: solid;
+	padding-left: 1ex;
+}
+
+
+p.toplink {
+	font-size: 90%;
+	margin: 0 0 1em 0;
+	clear: both;
+}
+p.toplink a:before {
+	content: "« ";
+}
+
+
+
+h2 {
+	font-weight: normal;
+	font-size: 110%;
+	margin-bottom: 0.5em;
+	text-align: left;
+ 
+}
+
+.clear {
+	clear: both;
+}
+
+h3 {
+	font-size: 100%;
+	margin-bottom: 1ex;
+	text-align: left;
+}
+
+h4 {
+	margin-bottom: 0.25em;
+}
+
+/* for the faq and tips & tricks page */
+div.answer {
+	margin-left: 3ex;
+/*	margin-top: 0ex;*/
+}
+
+div.indent {
+	margin-left: 3ex;
+}
+
+
+.checkboxon {
+	padding-left: 18px;
+	background: url("../images/chk_on.png") no-repeat center left;
+}
+.checkboxoff {
+	padding-left: 18px;
+	background: url("../images/chk_off.png") no-repeat center left;
+}
+.radioon {
+	padding-left: 18px;
+	background: url("../images/radio_on.png") no-repeat center left;
+}
+.radiooff {
+	padding-left: 18px;
+	background: url("../images/radio_off.png") no-repeat center left;
+}
+div.checkboxon, div.checkboxoff, div.radioon, div.radiooff {
+	font-weight: bold;
+}
+span.checkboxon, span.checkboxoff, span.radioon, span.radiooff {
+	font-weight: normal;
+}
+
+
+
+
+
+ol {
+	margin-left: 0px; 
+	padding-left: 25px;
+}
+
+
+
+
+
+.strike {
+	text-decoration: line-through;
+}
+div.poll {
+ padding: 0;
+ width: 65%;
+}
+div.poll h3 {
+ margin-top: 0;
+}
+div.rightside {
+	float: right;
+	padding: 1ex;
+	margin-top: 3ex;
+	width: 30%;
+	border-width: 1px;
+	border-style: solid;
+	font-size: 90%;
+}
+div.rightside h3 {
+ margin-top: 0;
+}
+div.rightside:first-child p {
+ margin-bottom: 0;
+ text-align: justify;
+}
+table {
+	border-width: 0 0 0 1px;
+	border-style: solid;
+	border-spacing: 0px;
+	margin-bottom: 1em;
+}
+td {
+ padding-right: 12px;
+ padding-left: 6px;
+ font-size: 90%;
+ vertical-align: top;
+ border-width: 0px 1px 1px 0px;
+ border-style: solid;
+ border-color: #ccc;
+}
+th {
+	padding-left: 6px;
+ font-weight: bold;
+ text-align: left;
+}
+
+
+/* keyboard shortcuts */
+kbd {
+	padding: 0px 1px 0px 1px;
+	border-width: 1px 2px 2px 1px;
+	border-style: solid;
+}
+
+span.button {
+	padding: 0px 1px 0px 1px;
+	border-style: solid;
+	border-width: 1px;
+}
+
+
+
+
+code, kbd, pre, tt, var, span.file {
+	font-family: "courier new", "courier", monospace;
+}
+
+/* used to indicate text to be entered in e.g. text-boxes, address bar, etc. */
+.type {
+	border-width: 1px;
+	border-style: solid;
+	padding: 0 3px 0 3px;	
+}
+
+td.shortcut, td.shortcut_moz {
+	line-height: 1.5em;
+}
+
+/* mouse shortcuts */
+kbd.mouse {
+	border: 0px;
+}
+
+/*pre {
+	border-width: 1px;
+	border-style: solid;
+	padding: 0.5ex;
+	display: block;
+	margin: 1em 0em 1em 0em;
+}*/
+
+pre, .content-code-box {
+	padding: 0.5em;
+	margin: 1em;
+	font-size: 14px;
+	font-family: "courier new", courier, monospace;
+	border-width: 1px;
+	border-style: dashed;
+}
+
+.alert {
+	font-weight: normal;
+}
+
+
+
+fieldset {
+	font-size: 90%;
+	border-width: 1px;
+	border-style: solid;
+}
+
+fieldset.left {
+	width: 47%;
+}
+
+fieldset.right {
+	 float: right;
+	 width: 47%;
+}
+
+
+
+
+abbr, acronym, span.credits {
+	border-width: 0 0 1px 0;
+	border-style: dashed; /*copy gecko's behaviour to IE*/
+	cursor: help;
+}
+
+
+
+li.newsection {
+    margin-top: 1ex;
+    
+}
+
+/* for the front page */
+div.news {
+
+	border-width: 1px 1px 1px 0.8ex;
+	border-style: solid;
+
+	padding-left: 1ex;
+	padding-right: 1ex;
+	margin-bottom: 1ex;
+	margin-top: 2ex;
+	padding-top: 0px;
+	padding-bottom: 2ex;
+}
+
+div.news h3 {
+	margin-top: 1ex;
+}
+
+div.news div.category1, div.news div.category2, div.news div.category3 { 
+	float: right;
+	font-size: 80%;
+	
+	margin-top: -1ex;
+	padding: 0px 2px 1px 2px;
+	border-width: 1px;
+	border-style: solid;
+}
+
+
+div.news p.info {
+	float:left;
+	border-style: solid;
+	border-width: 1px 0 0 0;
+	font-size: 80%;
+	width: 44ex;
+	margin-top: -1ex;
+	padding-top: 0px;
+}
+
+div.news p.info a:link, div.news p.info a:visited {
+	font-weight: normal;
+}
+
+p.extrainfo, div.downloadinfo {
+	border-width: 0 0 0 2px;
+	border-style: solid;
+}
+
+
+p.newsarchive {
+	text-align: right; font-size: 90%; margin-top: -1ex; padding-top: 0px;
+}
+
+
+/* For menu.html */
+div.menublock {
+	float: left;
+	height: 19em;
+}
+
+
+div.downloadinfo {
+	margin-bottom: 1em;
+	font-size: 90%;
+	float: right;
+	padding: 0 1ex 0 1ex;
+	margin-top: 3em;
+	width: 37%;
+	border-width: 0 0 0 2px;
+	border-style: solid;
+}
+div.downloadinfo p {
+	text-align: justify;
+	line-height: 1.5em;
+	margin-top: 0ex;
+	margin-bottom: 0.6ex;
+}
+div.recommendedbuild {
+	margin-top: 1ex;
+	border-width: 1px;
+	border-style: dashed;
+	padding: 0ex 1ex 0ex 1ex;
+}
+
+div.pleft {
+	width: 52%; 
+	float: left;
+}
+
+div.pleft h3 {
+	margin-top: 1ex;
+}
+
+
+#downloadmilestone {
+	border: none;
+	padding: 0;
+	margin-bottom: 1em;
+}
+
+#downloadnightly, #buildit {
+	border-width: 1px;
+	border-style: solid;
+	padding: 0 1ex 0 1ex;
+	margin-bottom: 1em;
+}
+
+
+ul.download {
+	line-height: 1.6em;
+	padding-left: 3ex;
+}
+
+ul.download a {
+	font-weight: bold;
+}
+
+li.windows {
+	list-style-image: url("../images/os_win.png");
+}
+li.linux {
+	list-style-image: url("../images/os_linux.png");
+}
+
+li.mac {
+	list-style-image: url("../images/os_mac.png");
+}
+
+
+
+#contactnotice {
+	font-size: 120%;
+}
+
+
+
+div.extension h3 {
+	font-weight: normal;
+}
+
+
+/* MOZILLA ONLY */
+div.extension, div.theme, div.menu, div.pleft, div.news, div.main {
+	-moz-border-radius: 10px; /* mozilla only */
+}
+
+div.news div.category1, div.news div.category2, div.news div.category3 { 
+	-moz-border-radius: 5px; /* mozilla only */
+
+}
+
+span.button {
+	-moz-border-radius: 4px; /* mozilla only */
+}

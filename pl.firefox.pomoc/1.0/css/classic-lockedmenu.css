@@ -1,0 +1,36 @@
+@charset "iso-8859-1";
+@import url("classic.css");
+
+/*
+**  Original idea and implementation by David Tenser.
+**  http://tenser.net/
+**
+**  Copyright (c) 2002-2003 David Tenser.
+**  You may NOT steal or copy this work or part
+**  of it without my explicit permission.
+*/
+
+div.menu {
+	position: absolute; /* IE hack (IE doesn't support position: fixed) */
+}
+[class="menu"]{
+	position: fixed !important;
+	top: 6.6ex !important;
+	left: 1.5ex !important;
+}
+
+div.menu:hover span.lockmenu {
+	display: none;
+}
+
+span.lockmenu {
+	display: none;
+}
+
+div.menu:hover span.unlockmenu {
+	display: block;
+}
+span.unlockmenu {
+	display: none;
+}
+

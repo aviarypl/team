@@ -1,0 +1,39 @@
+@charset "iso-8859-1";
+
+/*
+**  Original idea and implementation by David Tenser.
+**  http://tenser.net/
+**
+**  Copyright (c) 2002-2003 David Tenser.
+**  You may NOT steal or copy this work or part
+**  of it without my explicit permission.
+*/
+
+div.menu {
+ position: absolute; /* IE hack (IE doesn't support position: fixed) */
+}
+[class="menu"]{
+	position: fixed !important;
+}
+
+div.menu:hover span.lockmenu {
+	display: none;
+}
+
+span.lockmenu {
+	display: none;
+}
+
+div.menu:hover span.unlockmenu {
+	display: block;
+}
+span.unlockmenu {
+	display: none;
+}
+
+/* cheap trick to hide the ugly onestat icon */
+img.onestat {
+	position: absolute;
+	left: -40px;
+	top: -40px;
+}

@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pl" >
+<head>
+<!-- COPYRIGHT (c) 2002-2003 DAVID TENSER. ALL RIGHTS RESERVED. -->
+<title>Firefox: Pomoc &ndash; Zarządzanie ciasteczkami</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta http-equiv="content-script-type" content="text/javascript" />
+<meta http-equiv="content-style-type" content="text/css" />
+<meta content="Firefox: Pomoc" name="description" />
+<meta content="Firefox, Firebird, Phoenix, Mozilla, przegladarka, pomoc, wsparcie, problem, sztuczki, porady, skorki, skiny, skins, themes" name="keywords" />
+<meta content="David Tenser" name="author" />
+<link rel="start" title="Start page" href="index.html" />
+<link rel="author" title="Contact the author" href="contact.html" />
+<link rel="stylesheet" type="text/css" media="screen,projection" href="css/style.css" />
+<link rel="stylesheet" type="text/css" href="css/print.css" media="print" />
+<link rel="alternate stylesheet" title="Locked Menu" media="screen,projection" href="css/lockedmenu.css" type="text/css" />
+<link rel="alternate stylesheet" title="Classic" media="screen,projection" href="css/classic.css" type="text/css" />
+<link rel="alternate stylesheet" title="Classic with Locked Menu" media="screen,projection" href="css/classic-lockedmenu.css" type="text/css" />
+<link rel="icon" href="http://www.mozilla.org/products/firefox/ffico.png" type="image/png" />
+<!-- cookies -->
+<!-- jesli ktos ruszy powyzszy komentarz, to wyrwe mu serce (marcoos) -->
+<script src="javascript/styleswitcher.js" type="text/javascript"></script>
+</head>
+<body id="firebirdhelp" class="linkcookies">
+
+<div class="top">
+	<div class="box">
+		<div class="headline">Firefox: Pomoc</div>
+	</div>
+	<div class="spacer1">
+		<div class="languages">
+			<a href="http://firebird.bric.de/" hreflang="de"><abbr title="Deutsch">de</abbr></a> |
+			<a href="http://texturizer.net/firefox/" hreflang="en" id="currentLanguage"><abbr title="English">en</abbr></a> |
+			<a href="http://www.mudblood.org/firebird/" hreflang="es"><abbr title="Espa&ntilde;ol">es</abbr></a> |
+			<a href="http://texturizer.net/mozilla/fr/firebird/" hreflang="fr"><abbr title="Fran&ccedil;ais">fr</abbr></a> |
+			<a href="http://mozdoesit.m4d.sm/firebird/" hreflang="it"><abbr title="Italiano">it</abbr></a> |
+			<a href="http://texturizer.net/mozilla/jp/firebird/" hreflang="ja"><abbr title="&#26085;&#26412;&#35486;">ja</abbr></a> |
+			<a href="http://www.mozilla.pe.kr/firebird/" hreflang="ko"><abbr title="&#54620;&nbsp;&#44544;">ko</abbr></a> |
+			<a href="http://www.ossm.org.mk/mozilla/firebird/" hreflang="mk"><abbr title="&#1052;&#1072;&#1082;&#1077;&#1076;&#1086;&#1085;&#1089;&#1082;&#1080;">mk</abbr></a> |
+			<a href="http://texturizer.net/mozilla/nl/firebird/" hreflang="nl"><abbr title="Nederlands">nl</abbr></a> |
+			<a href="http://mozilla.lugos.si/MFH/" hreflang="sl"><abbr title="Slovensko">sl</abbr></a> |
+			<a href="http://www.csc.se/mozilla_firefox/" hreflang="sv"><abbr title="Svenska">sv</abbr></a> |
+			<a href="http://people.linux.net.cn/holywen/onlinehelp/firebird/index-cn.html" hreflang="zh"><abbr title="&#27721;&#35821;">zh</abbr></a>
+		</div>
+	</div>
+</div>
+
+<div class="main">
+
+<!-- szablon_top koniec -->
+<h1>Zarządzanie ciasteczkami</h1>
+
+<!-- (notka od marcoosa) Nienawidzę sformułowania "ciasteczka", wolę "pliki cookie", ale co poradzę... -->
+
+<p>Ten artykuł ma na celu wyjaśnić, czym są ciasteczka, jak są stosowane i jak przy użyciu 
+Menedżera ciasteczek w Firefoksie możesz sprawować kontrolę nad ciasteczkami przechowywanymi na Twoim komputerze.
+</p>
+
+<h2><a id="contents"></a>Spis treści</h2>
+
+<ul>
+	<li><a href="#cookies">Czym są ciasteczka?</a></li>
+
+	<li><a href="#setup">Ustalanie zasad działania ciasteczek</a></li>
+	<li><a href="#blocking">Akceptowanie i blokowanie ciasteczek</a></li>
+	<li><a href="#manager">Menedżer ciasteczek</a></li>
+</ul>
+<hr />
+
+
+<h2><a id="cookies"></a>Czym są ciasteczka?</h2>
+
+<p>Ciasteczko (czasami używa się angielskiego terminu "plik cookie" &ndash; przyp. tłum.) jest plikiem
+utworzonym przez witrynę www, który przechowuje pewne informacje na komputerze użytkownika, np.
+jakieś ustawienia użytkownika dotyczące danej witryny. Kiedy odwiedzasz stronę korzystającą z ciasteczek,
+może ona poprosić przeglądarkę o zezwolenie na umieszczenie jednego lub wielu ciasteczek na Twoim dysku twardym.</p>
+
+<p>Kiedy później odwiedzasz taką witrynę ponownie, przeglądarka przesyła jej także zawartość pliku ciasteczka.
+W ten sposób, przykładowo, ta witryna pamięta, jaki styl strony (z odpiętym lub przypiętym menu) wybrałeś(-aś).
+Informacje te pamietane są w ciasteczku, więc wystarczy tylko raz wybrać wybrany styl strony.</p>
+
+<p>Ciasteczka mogą także zawierać Twoje osobiste informacje, w rodzaju nazwiska, adresu e-mail,
+adresu domowego, numeru telefonu. Oczywiście informacje te musisz najpierw podane danej witrynie
+www, same z siebie się w ciasteczkach nie znajdą. Strony www nie mają także dostępu do jakichkolwiek
+innych informacji z Twojego komputera poza utworzonymi przez nie plikami ciasteczek.</p>
+
+<p>Kiedy używasz domyślnych opcji ciasteczek, cała ta procedura jest niewidoczna &ndash; nie jesteś
+w stanie zauważyć, czy dana strona ustawia ciasteczko albo czy przeglądarka odsyła je stronie. Jednakże,
+można tak skonfigurować przeglądarkę, żeby zawsze pytała się użytkownika, czy ustawić ciasteczko.</p>
+
+
+<h2><a id="setup"></a>Ustalanie zasad działania ciasteczek</h2>
+<p>Firefox w domyślnej konfiguracji akceptuje wszystkie ciasteczka. Jeśli chcesz mieć większą kontrolę nad tym,
+jakie ciasteczka są dopuszczane i przechowywane, skorzystaj z poniższych instrukcji:</p>
+
+<ol>
+<li>Wybierz <tt>Narzędzia > Opcje...</tt> z menu głównego by otworzyć <a href="options.html">okno "Opcje"</a>.</li>
+
+<li>Otwórz panel Prywatność, klikając ikonę <a href="options.html#privacy">Prywatność</a> z lewej strony, następnie kliknij na <q>Ciasteczka</q>.</li>
+<li>Zaznacz opcję <span class="checkboxon">zapytaj przed przyjęciem ciasteczka</span>.</li>
+</ol>
+<img class="screenshot" src="images/cookie_ask.png" alt="Zaznacz pole 'zapytaj przed przyjęciem ciasteczka'" />
+<p>Od tej chwili tylko Ty decydujesz, które ciasteczka są dopuszczane, a które odrzucane.</p>
+
+<h3>Inne ustawienia</h3>
+<div class="indent">
+<p>There are also other options that affects how cookies are managed by Firefox. They are not needed for the cookie rules to work but are explained anyway:</p>
+
+<div class="checkboxon">Akceptuj ciasteczka</div>
+<p>If you don't want any sites to store cookies on your computer, uncheck this option. Note that some sites may not work properly when cookies are disabled.</p>
+
+<div class="checkboxoff">pochodzące wyłącznie z serwera, z którym nawiązano pierwotnie połączenie</div>
+<p>If your browser stores a site's cookie, it will return the cookie only to that particular site. Your browser will not provide one site with cookies set by another. Since a Web site can only receive its own cookies, it can learn about your activities while you are at that site but not your activities in general while surfing the Web.</p>
+
+<p>However, sometimes a Web site displays content that is hosted on another site. That content can be anything from an image to text or an advertisement. The other Web site that hosts also has the ability to store a cookie in your browser, even though you don't visit the site directly.</p>
+
+<p>Cookies that are stored by a site other than the one you are visiting are called third-party cookies or foreign cookies. Web sites sometimes use third-party cookies with transparent GIFs, which are special images that help sites count users, track email responses, learn more about how visitors use the site, or customize your browsing experience. (Transparent GIFs are also known as web beacons or web bugs.)</p>
+<p>What this checkbox does is that it blocks these foreign cookies from being saved.</p>
+
+<div class="checkboxoff">wyłącznie na czas trwania obecnej sesji</div>
+<p>If this option is selected, the cookie information will be removed when you restart the browser. Web sites requiring the use of cookies will still work, but if you restart the browser, the Web site will think that you logged into the site for the first time again.</p>
+</div>
+<h2><a id="blocking"></a>Akceptowanie i blokowanie ciasteczek</h2>
+<p>Assuming that you've enabled the cookie rules explained above, you'll see a dialog whenever a site tries to save a cookie on your computer:</p>
+
+<img class="screenshot" src="images/cookie_accept.png" alt="The allow/deny cookie dialog" />
+<h3>Akceptowanie ciasteczka</h3>
+<div class="indent">
+<p>To allow this particular cookie, just click <span class="button">Zezwól</span>. If you trust the site and don't
+ want this dialog to be shown each time the site tries to save a cookie, check the 
+ <span class="checkboxon">Odpowiedz tak samo w przypadku wszystkich pytań dotyczących ciasteczek pochodzących z tej witryny</span> checkbox and then click <span class="button">Zezwól</span>. Firefox will remember this and never ask about cookies for this site again. If you later regret your choice, read about the <a href="#manager">Cookie Manager</a>.</p>
+</div>
+
+<h3>Blokowanie ciasteczka</h3>
+<div class="indent">
+<p>If you don't want this cookie to be saved, click <span class="button">Odrzuć</span>. If you don't trust the 
+site or suspect that it's compromising your privacy, check the 
+<span class="checkboxon">Odpowiedz tak samo w przypadku wszystkich pytań dotyczących ciasteczek pochodzących z tej witryny</span> checkbox and then click <span class="button">Odrzuć</span>. 
+Firefox will then put this site on the list of blocked sites and never save cookies for this site again. this choice can be undone using the <a href="#manager">Cookie Manager</a>.</p>
+</div>
+
+<h2><a id="manager"></a>Menedżer ciasteczek</h2>
+<p>Menedżer ciasteczek is where you can view and remove cookies as well as managing the list of sites that are allowed or not allowed to store cookies on your computer.</p>
+
+<h3>The Cookie List</h3>
+<div class="indent">
+
+<img class="screenshot" src="images/cookie_manager.png" alt="Cookie Manager in Firefox" />
+
+<p>The <q>Stored Cookies</q> tab lists all cookies currently stored on your computer. You can select them to display more information about them.</p>
+
+<p>To remove a cookie from the list, select it and click <span class="button">Remove Cookie</span>. To remove all cookies, click <span class="button">Remove All Cookies</span>. (This is the same as clicking the <span class="button">Clear</span> button from the <a href="options.html#privacy">Privacy panel</a> of the <a href="options.html">Options window</a>.)</p>
+
+<div class="checkboxoff">Don't allow sites that set removed cookies to set future cookies</div>
+
+<p>Even if you remove cookies now, you will reacquire those same cookies the next time you return to the web site. To prevent that from happening, select this checkbox. When this checkbox is selected, web sites for the cookies that you are removing are added to the list of sites whose cookies will automatically be rejected. <strong>Important:</strong> You must check this option <em>before</em> you start to remove cookies, otherwise they will not be added to the list of blocked sites anyway.</p>
+
+<p class="alert">Note: The <span class="button">Help</span> button in Menedżer ciasteczek doesn't work. This is a known issue.</p>
+</div>
+
+<h3>The Site List</h3>
+
+<div class="indent">
+<img class="screenshot" src="images/cookie_list.png" alt="Cookie Manager in Firefox" />
+
+<p>This is the list of sites that are either allowed or not allowed to store cookies on your computer. In the Status column, you can see if the site is blocked or allowed.</p>
+<p>To remove a site from this list, select it and click <span class="button">Remove Site</span>. To clear the list completely, click <span class="button">Remove All Sites</span>. This will reset the cookie rules and you will see dialogs for each cookie again.</p>
+
+</div>
+<!-- szablon_bot starts -->
+
+</div>
+
+
+<!-- START OF MENU -->
+<div class="menu">
+<div class="nav">
+<div class="spacer2"></div>
+
+<div>Menu główne</div>
+<dl>
+	<dt><a href="index.html" id="linkindex">Strona główna</a></dt>
+		<dd><a href="http://texturizer.net/firefox/news.html">Aktualności (ang.)</a></dd>
+		<!--<dd><a href="news.html"  id="linknews">Aktualności</a></dd>-->
+		<dd><a href="features.html"  id="linkfeatures">Możliwości</a></dd>
+		<dd><a href="download.html"  id="linkdownload">Pobierz</a></dd>
+</dl>
+<dl>
+	<dt><a href="documentation.html" id="linkdocumentation">Dokumentacja</a></dt>
+		<dd><a href="keyboard.html" id="linkkeyboard" >Skróty klawiaturowe</a></dd>
+		<dd><a href="mouse.html" id="linkmouse" >Skróty myszy</a></dd>
+		<dd><a href="options.html" id="linkoptions" >Okno Opcje</a></dd>
+		<dd><a href="tips.html" id="linktips" >Wskazówki i porady</a></dd>
+		<dd><a href="menu.html" id="linkmenu" >Opis menu</a></dd>
+</dl>
+<dl>
+	<dt><a href="support.html" id="linksupport">Wsparcie techniczne</a></dt>
+		<dd><a href="faq.html" id="linkfaq" ><acronym title="Najczęściej zadawane pytania">FAQ</acronym> Firefoksa</a></dd>
+		<dd><a href="edit.html" id="linkedit">Edycja plików konfig.</a></dd>
+		<dd><a href="bugs.html" id="linkbugs">Zgłaszanie błędów</a></dd>
+</dl>
+<dl>
+	<dt><a href="extensions.html" id="linkextensions">Dodatki</a></dt>
+</dl>
+<dl>
+	<dt><a href="themes.html" id="linkthemes">Schematy wyglądu</a></dt>
+		<!--<dd><a href="themes-am.html" id="linkthemesam" >Themes A to M</a></dd>
+		<dd><a href="themes-nz.html" id="linkthemesnz">Themes N to Z</a></dd>-->
+</dl>
+
+<div>Odnośniki</div>
+<dl class="links">
+	<dd><a href="http://forums.mozillazine.org/index.php?c=4">Fora Firefox</a></dd>
+	<dd><a href="http://www.mozilla.org/">Mozilla.org</a></dd>
+	<dd><a href="http://www.firefox.pl/">Firefox.pl</a></dd>
+	<dd><a href="http://www.mozillapl.org/">MozillaPL.org</a></dd>
+	<dd><a href="http://texturizer.net/firefox/links.html">Inne odnośniki</a></dd>
+	<dd><a href="http://texturizer.net/thunderbird/">Mozilla Thunderbird</a></dd>
+</dl>
+
+<div>O stronie</div>
+<dl class="links">
+	<dd><a href="about.html" id="linkabout">O stronie</a></dd>
+	<dd><a href="contact.html" id="linkcontact">Kontakt</a></dd>
+</dl>	
+</div>
+
+</div>
+<address xml:lang="en" class="copy">&copy; 2002-2004 <a href="http://texturizer.net/firefox/contact.html">David Tenser</a>.
+Polish translation  &copy; 2004 <a href="http://www.firefox.pl/info.html#authors">Firefox.pl Team</a>.</address>
+</body></html>

@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pl" >
+<head>
+<!-- COPYRIGHT (c) 2002-2003 DAVID TENSER. ALL RIGHTS RESERVED. -->
+<title>Firefox: Pomoc &ndash; Edycja plików konfiguracyjnych</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta http-equiv="content-script-type" content="text/javascript" />
+<meta http-equiv="content-style-type" content="text/css" />
+<meta content="Firefox: Pomoc" name="description" />
+<meta content="Firefox, Firebird, Phoenix, Mozilla, przegladarka, pomoc, wsparcie, problem, sztuczki, porady, skorki, skiny, skins, themes" name="keywords" />
+<meta content="David Tenser" name="author" />
+<link rel="start" title="Start page" href="index.html" />
+<link rel="author" title="Contact the author" href="contact.html" />
+<link rel="stylesheet" type="text/css" media="screen,projection" href="css/style.css" />
+<link rel="stylesheet" type="text/css" href="css/print.css" media="print" />
+<link rel="alternate stylesheet" title="Locked Menu" media="screen,projection" href="css/lockedmenu.css" type="text/css" />
+<link rel="alternate stylesheet" title="Classic" media="screen,projection" href="css/classic.css" type="text/css" />
+<link rel="alternate stylesheet" title="Classic with Locked Menu" media="screen,projection" href="css/classic-lockedmenu.css" type="text/css" />
+<link rel="icon" href="http://www.mozilla.org/products/firefox/ffico.png" type="image/png" />
+<!-- edit -->
+<!-- jesli ktos ruszy powyzszy komentarz, to wyrwe mu serce (marcoos) -->
+<script src="javascript/styleswitcher.js" type="text/javascript"></script>
+</head>
+<body id="firebirdhelp" class="linkedit">
+
+<div class="top">
+	<div class="box">
+		<div class="headline">Mozilla Firefox - pomoc</div>
+	</div>
+	<div class="spacer1">
+		<div class="languages">
+			<a href="http://firebird.bric.de/" hreflang="de"><abbr title="Deutsch">de</abbr></a> |
+			<a href="http://www.mozilla.org/support/firefox/" hreflang="en"><abbr title="English">en</abbr></a> |
+			<a href="http://www.mudblood.org/firebird/" hreflang="es"><abbr title="Espa&ntilde;ol">es</abbr></a> |
+			<a href="http://texturizer.net/mozilla/fr/firebird/" hreflang="fr"><abbr title="Fran&ccedil;ais">fr</abbr></a> |
+			<a href="http://mozdoesit.m4d.sm/firebird/" hreflang="it"><abbr title="Italiano">it</abbr></a> |
+			<a href="http://texturizer.net/mozilla/jp/firebird/" hreflang="ja"><abbr title="&#26085;&#26412;&#35486;">ja</abbr></a> |
+			<a href="http://www.mozilla.pe.kr/firebird/" hreflang="ko"><abbr title="&#54620;&nbsp;&#44544;">ko</abbr></a> |
+			<a href="http://www.ossm.org.mk/mozilla/firebird/" hreflang="mk"><abbr title="&#1052;&#1072;&#1082;&#1077;&#1076;&#1086;&#1085;&#1089;&#1082;&#1080;">mk</abbr></a> |
+			<a href="http://texturizer.net/mozilla/nl/firebird/" hreflang="nl"><abbr title="Nederlands">nl</abbr></a> |
+			<a href="http://pomoc.firefox.pl/" hreflang="pl" id="currentLanguage"><abbr title="Polski">pl</abbr></a> | 
+			<a href="http://mozilla.lugos.si/MFH/" hreflang="sl"><abbr title="Slovensko">sl</abbr></a> |
+			<a href="http://www.csc.se/mozilla_firefox/" hreflang="sv"><abbr title="Svenska">sv</abbr></a> |
+			<a href="http://people.linux.net.cn/holywen/onlinehelp/firebird/index-cn.html" hreflang="zh"><abbr title="&#27721;&#35821;">zh</abbr></a>
+		</div>
+	</div>
+
+</div>
+
+<div class="main">
+
+<!-- szablon_top koniec -->
+<h1>Edycja plików konfiguracyjnych</h1>
+				
+<p>Wiele wskazówek i porad opisanych w tym serwisie wymaga edytowania plików konfiguracyjnych Firefoksa.
+Najbardziej istotne są trzy takie pliki:</p>
+
+<ul>
+	<li><a href="#user">user.js</a> &ndash; używany do ustawiania różnych preferencji</li>
+	<li><a href="#css">userChrome.css</a> &ndash; używany do zmiany wyglądu przeglądarki</li>
+	<li><a href="#content">userContent.css</a> &ndash; używany do zmiany wyglądu przeglądanych stron www</li>
+</ul>
+
+<p>Wszystkie te pliki są zwykłymi plikami tekstowymi przechowywanymi w Twoim
+<a href="#profile">katalogu profilu</a>. Możesz je edytować dowolnym edytorem
+tekstu, na przykład Notatnikiem lub <a href="http://www.texturizer.net/">Texturizerem</a> w Windows albo
+geditem czy kate'm pod Linuksem.</p>
+
+<hr />
+<h2><a id="profile">Katalog profilu</a></h2>
+
+<p>Zanim przejdziemy do plików konfiguracyjnych, musimy wspomnieć o tym, jak znaleźć "katalog profilu".
+W katalogu (folderze) tym Firefox przechowuje wszystkie Twoje ustawienia. Katalog profilu znajduje się
+na Twoim dysku twardym.</p>
+
+<p>W <strong>Windows XP/2000</strong> katalog profilu to <span class="file"><a href="#appdata">%AppData%</a>\Mozilla\Firefox\Profiles\<var>xxxxxxxx</var>.default\</span>, gdzie <var>xxxxxxxx</var> jest losowym ciągiem znaków. Po prostu
+przejdź do <span class="file">C:\Documents and Settings\<var>[nazwa użytkownika]</var>\Dane aplikacji\Mozilla\Firefox\Profiles\</span>, a reszta będzie oczywista.</p>
+<p>W <strong>Windows 95/98/Me</strong> katalog profilu to zazwyczaj <span class="file">C:\WINDOWS\Dane aplikacji\Mozilla\Firefox\Profiles\default\<var>xxxxxxxx</var>.default\</span></p>
+<p>W <strong>Linuksie</strong> jest to <span class="file">~/.mozilla/firefox/<var>xxxxxxxx</var>.default</span>.</p>
+<p>W <strong>Mac OS X</strong> katalog profilu to zwykle <span class="file">~/Library/Application Support/Firefox/Profiles/<var>xxxxxxxx</var>.default/</span>.</p>
+
+<p><b>Uwaga</b>: Firefox może obsługiwać więcej niż jednego użytkownika oraz więcej niż jeden profil. Powyższe
+ścieżki dotyczą domyślnego (ang. <tt xml:lang="en">default</tt>) profilu, który jest automatycznie tworzony przy
+pierwszym uruchomieniu Firefoksa. Możesz zarządzać wieloma profilami przy użyciu  <a href="faq.html#profilemanager">Menedżera Profili</a>.</p>
+
+<p class="extrainfo"><a id="appdata"><var>%AppData%</var></a> jest skrótem do katalogu "Dane aplikacji" (Application Data) w Windows 2000/XP. Aby z niego skorzystać, kliknij <span class="mnu">Start > Uruchom...</span>, napisz: <span class="type">%AppData%</span> i wciśnij <kbd>Enter</kbd>. Zostaniesz przeniesiony(-a) do "prawdziwego" folderu, którym zwykle jest <span class="file">C:\Documents and Settings\<var>[nazwa użytkownika]</var>\Dane aplikacji</span>.</p>
+
+<hr />
+
+<h2><a id="user">user.js</a></h2>
+<p>To główny plik preferencji Firefoksa znajdujący się w <a href="#profile">katalogu profilu</a>. Domyślnie plik ten <b>nie istnieje</b>, więc musisz go utworzyć, zanim zaczniesz dodawać preferencje.</p>
+<p>Użytkownicy Windows: Jeśli wiesz, jak utworzyć plik, pomiń ten akapit. Zanim utworzysz plik, musisz się upewnić,
+że widzisz rozszerzenia nazw plików w Windows. Uruchom Explorera (kliknij na ikonę "Mój komputer" na pulpicie) i wybierz
+<!-- <span class="mnu"><span>Plik</span> > --> <span>Narzędzia</span> > <span>Opcje folderów...</span>. Wybierz zakładkę Widok i usuń znak zaznaczenia z opcji "Ukryj rozszerzenia znanych typów plików". Teraz przejdź do katalogu profilu i wybierz  <span class="mnu"><span>Plik</span> > <span>Nowy</span> > <span>Dokument tekstowy</span></span>. Powinna się pojawić domyślna nazwa <q>Nowy dokument tekstowy.txt</q>. Zmień ją na <q>user.js</q> (kliknij <span class="button">Tak</span>, kiedy pojawi się ostrzeżenie o typie plików).</p>
+
+<p>Użytkownicy Linuksa: Zakładam, że wiesz, jak utworzyć plik, jeśli używasz Linuksa. Po prostu utwórz plik tekstowy user.js w katalogu profilu.</p>
+
+<p class="extrainfo">Można także edytować preferencje przechowywane w pliku user.js z poziomu Firefoksa &ndash; wystarczy podać <tt>about:config</tt> w pasku adresu i nacisnąć <kbd>Enter</kbd>. Pojawi się lista wszystkich dostępnych ustawień (wiele z nich pochodzi z <a href="http://www.mozilla.org/">Mozilli</a>, nie są już używane, ale nie zostały jeszcze usunięte). Dwukliknięcie na nazwie ustawienia umożliwia zmianę jego wartości. Tak wprowadzone zmiany zostaną wprowadzone do pliku prefs.js, który jest automatycznie generowany przez Firefoksa.</p>
+<hr />
+<h2><a id="css">userChrome.css</a></h2>
+<p>Ten plik pozwala zmienić wygląd wielu elementów graficznego interfejsu użytkownika Firefoksa. Przechowywany jest
+w podkatalogu <q>chrome</q> wewnątrz <a href="#profile">katalogu profilu</a>. Podobnie jak w przypadku <a href="#user">user.js</a>, domyślnie ten plik <b>nie istnieje</b>, zatem należy go utworzyć przed dodaniem własnych ustawień. W tym samym
+katalogu znajduje się jednak domyślnie plik o nazwie <q>userChrome-example.css</q> zawierający przykładowe ustawienia. Możesz po prostu zmienić mu nazwę, usuwając część <q>-example</q>.</p>
+<hr />
+<h2><a id="content">userContent.css</a></h2>
+<p>Ten plik pozwala zmienić wygląd stron www i również znajduje się w podkatalogu <q>chrome</q> wewnątrz <a href="#profile">katalogu profilu</a>. Podobnie jak w przypadku <a href="#user">user.js</a>, domyślnie ten plik <b>nie istnieje</b>, zatem należy go utworzyć przed dodaniem własnych ustawień. W tym samym
+katalogu znajduje się jednak domyślnie plik o nazwie <q>userContent-example.css</q>. zawierający przykładowe ustawienia. Możesz po prostu zmienić mu nazwę, usuwając część <q>-example</q>.</p>
+
+<!-- szablon_bot starts -->
+
+</div>
+
+
+<!-- START OF MENU -->
+<div class="menu">
+<div class="nav">
+<div class="spacer2"></div>
+
+<div>Pomoc Firefoksa</div>
+<dl>
+		<dd><a href="index.html" id="linkindex">Strona główna</a></dd>
+		<dd><a href="faq.html" id="linkfaq" ><acronym title="Najczęściej zadawane pytania">FAQ</acronym> Firefoksa</a></dd>
+		<dd><a href="tips.html" id="linktips" >Wskazówki i porady</a></dd>
+		<dd><a href="keyboard.html" id="linkkeyboard" >Skróty klawiaturowe</a></dd>
+		<dd><a href="mouse.html" id="linkmouse" >Skróty myszy</a></dd>
+		<dd><a href="menu.html" id="linkmenu" >Opis menu</a></dd>
+		<dd><a href="options.html" id="linkoptions" >Opcje/Preferencje</a></dd>
+		<dd><a href="edit.html" id="linkedit">Edycja plików konfig.</a></dd>
+		<dd><a href="bugs.html" id="linkbugs">Zgłaszanie błędów</a></dd>
+</dl>
+
+<div>Przydatne strony</div>
+<dl class="links">
+	<dd><a href="http://www.mozillapl.org/forum/forum-15.html" title="Masz problem z Firefoksem? Zadaj pytanie na forum!">Forum dyskusyjne</a></dd>
+	<dd><a href="http://www.firefox.pl/">Firefox.pl</a></dd>
+	<dd><a href="http://www.mozillapl.org/">MozillaPL.org</a></dd>
+	<dd><a href="http://www.mozilla-europe.org/pl/">Mozilla Europe</a></dd>
+	<dd><a href="http://www.mozilla.org/">Mozilla.org</a></dd>
+
+</dl>
+</div>
+
+</div>
+<address xml:lang="en" class="copy">&copy; 2002-2004 <a href="http://www.djst.org/">David Tenser</a>.
+Polish translation  &copy; 2004-2005 <a href="http://www.firefox.pl/">AviaryPL</a>.</address>
+</body></html>
