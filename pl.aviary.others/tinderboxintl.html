@@ -1,0 +1,181 @@
+<!-- 
+
+Usage:
+http://others.aviary.pl/tinderboxintl.html?<OLDCODE>:<NEWCODE> 
+
+After <NEWCODE> you may add any of these parameters, separated by colons:
+
+no-trunk
+no-17
+no-18
+no-180
+
+to remove a branch or trunk from the results.
+
+Examples:
+
+French:     http://others.aviary.pl/tinderboxintl.html?fr-FR:fr
+
+English UK: http://others.aviary.pl/tinderboxintl.html?en-GB:en-GB 
+
+Polish:     http://others.aviary.pl/tinderboxintl.html?pl-PL:pl
+
+Lithuanian (there's no Aviary 1.0 tinderbox for lt): 
+	    http://others.aviary.pl/tinderboxintl.html?lt-LT:lt:no-17 
+	    
+Polish without 1.8 and 1.80, but with trunk and Aviary 1.0:
+    	    http://others.aviary.pl/tinderboxintl.html?pl-PL:pl:no-18:no-180
+
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html lang="en">
+    <head>
+	<title>others.aviary.pl: l10n tinderbox status</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-2" >
+	<link rel="stylesheet" type="text/css" href="oap.css">
+	<style type="text/css">iframe { border: 0; height: 185px; }
+	#dn iframe { height: 195px; }
+	#cnt {
+	    position: fixed;
+	    top: 0;
+	    right: 0px;
+	    background: #2e3b57;
+	    color: #fff;
+	    font-weight: bold;
+	    opacity: 0.8;
+	    padding: 5px;
+	    -moz-border-radius-bottomleft: 10px;
+	    width: 170px;
+	    text-align: center;
+	}
+	
+	#cnt:hover {
+	    
+	    cursor: pointer;
+	    text-decoration: underline;
+	}
+	</style>
+	<script type="text/javascript">
+	    
+	    function noTrunk(elm, idx, arr) {
+		return elm=="no-trunk";
+	    }
+
+	    function no18(elm, idx, arr) {
+		return elm=="no-18";
+	    }
+
+	    function no180(elm, idx, arr) {
+		return elm=="no-180";
+	    }
+
+	    function no17(elm, idx, arr) {
+		return elm=="no-17";
+	    }
+	
+	    function init() {
+
+		
+		var queryElms = [];
+
+		var longcode = null, shortcode = null;
+
+		if (location.search.length>0)
+		    queryElms = location.search.split("?")[1].split(":");
+
+		try {
+		    longcode = queryElms[0];
+		    shortcode = queryElms[1];
+		} catch(e) {};
+		
+		if (!longcode||!shortcode) {
+		    longcode=prompt("Please enter the old-style language code, e.g. pl-PL, fr-FR, de-DE, en-GB etc.");
+		    shortcode=prompt("Please enter the new-style language code, e.g. pl, fr, de, en-GB etc.");
+		}
+		
+		if (!queryElms.some(noTrunk))
+    		    document.getElementById("iftr").src="http://tinderbox.mozilla.org/Mozilla-l10n-" + shortcode + "/panel.html";
+		
+		if (!queryElms.some(no18))
+		    document.getElementById("if18").src="http://tinderbox.mozilla.org/Mozilla1.8-l10n-" + shortcode + "/panel.html";
+		
+		if (!queryElms.some(no180))    
+    		    document.getElementById("if180").src="http://tinderbox.mozilla.org/Mozilla1.8.0-l10n-" + shortcode + "/panel.html";
+		
+		if (!queryElms.some(no17))
+    		    document.getElementById("if17").src="http://tinderbox.mozilla.org/Mozilla-l10n-" + longcode + "/panel.html";
+	    }
+	
+	    function reloadAll() {
+		var f = document.getElementsByTagName("iframe");
+		var t;
+		
+		for (var i=0; i<f.length; i++) {
+		    t=f[i].src;
+		    f[i].src="about:blank";
+		    f[i].src=t;
+		}
+	    }
+	    
+	    function countdown(n) {
+		var cnt = document.getElementById("cnt");
+		cnt.innerHTML="Refresh in " + n + " seconds";
+		var counter = n;
+		
+		setInterval(function() {
+		    if (--counter!=0)
+			cnt.innerHTML="Refresh in " + (counter) + " second" + (counter > 1 ? "s" : "");
+		    else
+			cnt.innerHTML="Refreshing...";
+		    
+		    if (counter==0) {
+			reloadAll();
+			counter = n+1;
+		    }
+		}, 1000);
+
+		
+		cnt.addEventListener("click", function() {
+		    counter = n+1;
+		    cnt.innerHTML="Refreshing...";
+		    reloadAll();
+		}, true);
+
+	    }
+	    
+	    
+	</script>
+    </head>
+    <body onload="init();countdown(120)">
+	
+	<div id="top">
+	    <div id="tr"></div>
+	    <h1><a href="http://www.aviary.pl">aviary.pl</a></h1>
+	    <div id="br"></div>
+	</div>
+	
+
+	<div align="center">	
+	
+	<table cellspacing="10">
+	
+	<tr><td>
+	<h2>Trunk (Gran Paradiso/Minefield) <a href="http://ftp.mozilla.org/pub/mozilla.org/firefox/tinderbox/latest-trunk-l10n/">&darr;</a></h2>
+	<iframe id="iftr" src="about:blank"></iframe><br />
+	</td>
+	<td>
+	<h2>1.8 branch (Bon Echo) <a href="http://ftp.mozilla.org/pub/mozilla.org/firefox/tinderbox/latest-mozilla1.8-l10n/">&darr;</a></h2>
+	<iframe id="if18" src="about:blank"></iframe><br />
+	</td>
+	</tr>
+	<tr id="dn"><td>
+	<h2>1.8.0 branch (Deer Park)</h2>
+	<iframe id="if180" src="about:blank"></iframe><br />
+	</td><td>
+	<h2>Aviary 1.0.1 branch (Fx 1.0.x)</h2>
+	<iframe id="if17" src="about:blank"></iframe><br />
+	</td></tr></table>
+	</div> 
+	<div style="font-size: 10px" id="cnt"></div>	
+    </body>
+</html>

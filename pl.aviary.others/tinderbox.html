@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html lang="pl">
+    <head>
+	<title>others.aviary.pl: tinderbox status</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-2" >
+	<link rel="stylesheet" type="text/css" href="oap.css">
+	<style type="text/css">iframe { border: 0; height: 185px; }
+	#dn iframe { height: 195px; }
+	#cnt {
+	    position: fixed;
+	    top: 0;
+	    right: 0px;
+	    background: #2e3b57;
+	    color: #fff;
+	    font-weight: bold;
+	    opacity: 0.8;
+	    padding: 5px;
+	    -moz-border-radius-bottomleft: 10px;
+	    width: 170px;
+	    text-align: center;
+	}
+	
+	#cnt:hover {
+	    
+	    cursor: pointer;
+	    text-decoration: underline;
+	}
+	</style>
+	<script type="text/javascript">
+	    function reloadAll() {
+		var f = document.getElementsByTagName("iframe");
+		var t;
+		
+		for (var i=0; i<f.length; i++) {
+		    t=f[i].src;
+		    f[i].src="about:blank";
+		    f[i].src=t;
+		}
+	    }
+	    
+	    function countdown(n) {
+		var cnt = document.getElementById("cnt");
+		cnt.innerHTML="Odświeżenie za " + n + " sekund";
+		var counter = n;
+		
+		setInterval(function() {
+		    if (--counter!=0)
+			cnt.innerHTML="Odświeżenie za " + (counter) + " sekund" + (counter == 1 ? "ę" : (counter % 10 > 1) && (counter % 10 < 5 ) && ((counter%100<9)||(counter%100>20)) ? "y" : "");
+		    else
+			cnt.innerHTML="Odświeżanie...";
+		    
+		    if (counter==0) {
+			reloadAll();
+			counter = n+1;
+		    }
+		}, 1000);
+
+		
+		cnt.addEventListener("click", function() {
+		    counter = n+1;
+		    cnt.innerHTML="Odświeżanie...";
+		    reloadAll();
+		}, true);
+
+	    }
+	    
+	    
+	</script>
+    </head>
+    <body onload="countdown(120)">
+	
+	<div id="top">
+	    <div id="tr"></div>
+	    <h1><a href="http://www.aviary.pl">aviary.pl</a></h1>
+	    <div id="br"></div>
+	</div>
+	
+
+	<div align="center">	
+	
+	<table cellspacing="10">
+	
+	<tr><td>
+	<h2>Trunk (Gran Paradiso) <a href="http://ftp.mozilla.org/pub/mozilla.org/firefox/tinderbox/latest-trunk-l10n/">Fx</a>|<a href="http://ftp.mozilla.org/pub/mozilla.org/thunderbird/tinderbox/latest-trunk-l10n/">Tb</a></h2>
+	<iframe src="http://tinderbox.mozilla.org/Mozilla-l10n-pl/panel.html"></iframe><br />
+	</td>
+	<td>
+	<h2>1.8 branch (Bon Echo) <a href="http://ftp.mozilla.org/pub/mozilla.org/firefox/tinderbox/latest-mozilla1.8-l10n/">Fx</a>|<a href="http://ftp.mozilla.org/pub/mozilla.org/thunderbird/tinderbox/latest-mozilla1.8-l10n/">Tb</a></h2>
+	<iframe src="http://tinderbox.mozilla.org/Mozilla1.8-l10n-pl/panel.html"></iframe><br />
+	</td>
+	</tr>
+	<tr id="dn"><td>
+	<h2>1.8.0 branch (Deer Park)</h2>
+	<iframe src="http://tinderbox.mozilla.org/Mozilla1.8.0-l10n-pl/panel.html"></iframe><br />
+	</td><td>
+	<h2>Aviary 1.0.1 branch (Fx 1.0.x)</h2>
+	<iframe src="http://tinderbox.mozilla.org/Mozilla-l10n-pl-PL/panel.html"></iframe><br />
+	</td></tr></table>
+	</div> 
+	<div style="font-size: 10px" id="cnt"></div>	
+    </body>
+</html>
