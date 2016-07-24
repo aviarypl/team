@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="pl" dir="ltr" class="client-nojs">
+<head>
+<meta charset="UTF-8" />
+<title>Mozilla:Bugzilla:3.6:Instalacja – Aviary.pl wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":!1,"wgNamespaceNumber":0,"wgPageName":"Mozilla:Bugzilla:3.6:Instalacja","wgTitle":"Mozilla:Bugzilla:3.6:Instalacja","wgCurRevisionId":11873,"wgRevisionId":11873,"wgArticleId":2242,"wgIsArticle":!0,"wgIsRedirect":!1,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":!1,"wgPageContentLanguage":"pl","wgPageContentModel":"wikitext","wgSeparatorTransformTable":[",\t."," \t,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","styczeń","luty","marzec","kwiecień","maj","czerwiec","lipiec","sierpień","wrzesień","październik","listopad","grudzień"],"wgMonthNamesShort":["","sty","lut","mar","kwi","maj","cze","lip","sie","wrz","paź","lis","gru"],"wgRelevantPageName":"Mozilla:Bugzilla:3.6:Instalacja","wgRelevantArticleId":2242,"wgIsProbablyEditable":!1,"wgRestrictionEdit":[],"wgRestrictionMove":[]});mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"pl"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","skins.vector.js"]);
+} );</script>
+<link rel="stylesheet" href="vector1.css" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}</style>
+<script async="" src="/load.php?debug=false&amp;lang=pl&amp;modules=startup&amp;only=scripts&amp;skin=vector"></script>
+<meta name="generator" content="MediaWiki 1.26.3" />
+<link rel="shortcut icon" href="http://static.aviary.pl/a.64t.png" />
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="Aviary.pl wiki (pl)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://wiki.aviary.pl/api.php?action=rsd" />
+<link rel="copyright" href="http://www.gnu.org/copyleft/fdl.html" />
+<link rel="alternate" type="application/atom+xml" title="Kanał Atom Aviary.pl wiki" href="/index.php?title=Specjalna:Ostatnie_zmiany&amp;feed=atom" />
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/Vector/csshover.min.htc")}</style><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Mozilla_Bugzilla_3_6_Instalacja skin-vector action-view">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+						<div class="mw-indicators">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="pl">Mozilla:Bugzilla:3.6:Instalacja</h1>
+									<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">Z Aviary.pl wiki</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Skocz do:					<a href="#mw-head">nawigacja</a>, 					<a href="#p-search">szukaj</a>
+				</div>
+				<div id="mw-content-text" lang="pl" dir="ltr" class="mw-content-ltr"><pre>
+madrid:/srv/www/htdocs/bugzilla-3.6 # ./checksetup.pl 
+* To jest Bugzilla 3.6 wraz z Perl 5.10.0
+* Uruchomiono na Linux 2.6.31.12-0.2-default #1 SMP 2010-03-16 21:25:39 +0100
+
+Sprawdzanie modulow Perl...
+Sprawdzanie              CGI.pm (v3.33)   ok: znaleziono v3.49 
+Sprawdzanie          Digest-SHA (dowolna) ok: znaleziono v5.45 
+Sprawdzanie            TimeDate (v2.21)   ok: znaleziono v2.22 
+Sprawdzanie            DateTime (v0.28)   ok: znaleziono v0.55 
+Sprawdzanie   DateTime-TimeZone (v0.71)   ok: znaleziono v1.17 
+Sprawdzanie                 DBI (v1.41)   ok: znaleziono v1.609 
+Sprawdzanie    Template-Toolkit (v2.22)   ok: znaleziono v2.22 
+Sprawdzanie          Email-Send (v2.00)   ok: znaleziono v2.185 
+Sprawdzanie          Email-MIME (v1.861)  ok: znaleziono v1.861 
+Sprawdzanie Email-MIME-Encodings (v1.313)  ok: znaleziono v1.313 
+Sprawdzanie Email-MIME-Modifier (v1.442)  ok: znaleziono v1.442 
+Sprawdzanie                 URI (dowolna) ok: znaleziono v1.38 
+
+Sprawdzanie dostepnych modulow Perl DBD...
+Sprawdzanie              DBD-Pg (v1.45)    nie znaleziono 
+Sprawdzanie           DBD-mysql (v4.00)   ok: znaleziono v4.012                                                                                                                                
+Sprawdzanie          DBD-Oracle (v1.19)    nie znaleziono 
+                                                                                                                                                                                               
+Nastepujace moduly Perla sa opcjonalne:
+Sprawdzanie                  GD (v1.20)   ok: znaleziono v2.44 
+Sprawdzanie               Chart (v2.1)    ok: znaleziono v2.4.1 
+Sprawdzanie         Template-GD (dowolna) ok: znaleziono v1.56 
+Sprawdzanie          GDTextUtil (dowolna) ok: znaleziono v0.86 
+Sprawdzanie             GDGraph (dowolna) ok: znaleziono v1.44 
+Sprawdzanie            XML-Twig (dowolna) ok: znaleziono v3.34 
+Sprawdzanie          MIME-tools (v5.406)  ok: znaleziono v5.427 
+Sprawdzanie         libwww-perl (dowolna) ok: znaleziono v5.829 
+Sprawdzanie         PatchReader (v0.9.4)  ok: znaleziono v0.9.5 
+Sprawdzanie           perl-ldap (dowolna) ok: znaleziono v0.4001 
+Sprawdzanie         Authen-SASL (dowolna) ok: znaleziono v2.1401 
+Sprawdzanie          RadiusPerl (dowolna)  nie znaleziono 
+Sprawdzanie           SOAP-Lite (v0.710.06) ok: znaleziono v0.711                                                                                                                              
+Sprawdzanie            JSON-RPC (dowolna) ok: znaleziono v0.96 
+Sprawdzanie          Test-Taint (dowolna)  nie znaleziono 
+Sprawdzanie         HTML-Parser (v3.40)   ok: znaleziono v3.61                                                                                                                                 
+Sprawdzanie       HTML-Scrubber (dowolna) ok: znaleziono v0.08 
+Sprawdzanie Email-MIME-Attachment-Stripper (dowolna) ok: znaleziono v1.313 
+Sprawdzanie         Email-Reply (dowolna) ok: znaleziono v1.202 
+Sprawdzanie         TheSchwartz (dowolna)  nie znaleziono 
+Sprawdzanie      Daemon-Generic (dowolna)  nie znaleziono                                                                                                                                      
+Sprawdzanie            mod_perl (v1.999022) ok: znaleziono v2.000004                                                                                                                           
+***********************************************************************
+* OPCJONALNE MODULY                                                   *
+***********************************************************************
+* Niektore moduly Perla nie sa wymagane do prawidlowego dzialania     *
+* Bugzilli, ale instalujac najnowsza wersje uzyskasz dostep do        *
+* dodatkowych funkcji.                                                *
+*                                                                     *
+* Ponizej znajduje sie lista niezainstalowanych opcjonalnych modulow  *
+* z opisem funkcji, ktore beda dostepne po ich instalacji. W tabeli   *
+* znajduja sie polecenia ulatwiajace instalacje kazdego modulu        *
+***********************************************************************
+*    MODULE NAME * ENABLES FEATURE(S)                                 *
+***********************************************************************
+*     RadiusPerl * Uwierzytelnienie RADIUS                            *
+*     Test-Taint * Interfejs JSON-RPC, Interfejs XML-RPC              *
+*    TheSchwartz * Kolejkowanie poczty                                *
+* Daemon-Generic * Kolejkowanie poczty                                *
+***********************************************************************
+POLECENIA DO ZAINSTALOWANIA OPCJONALNYCH MODULOW:
+
+     RadiusPerl: /usr/bin/perl install-module.pl Authen::Radius
+     Test-Taint: /usr/bin/perl install-module.pl Test::Taint
+    TheSchwartz: /usr/bin/perl install-module.pl TheSchwartz
+ Daemon-Generic: /usr/bin/perl install-module.pl Daemon::Generic
+
+
+Aby sprobowac automatycznie zainstalowac wszystkie wymagane i opcjonalne moduly
+za pomoca jednego polecenia, wykonaj:
+
+  /usr/bin/perl install-module.pl --all
+
+Reading ./localconfig...
+
+OPTIONAL NOTE: If you want to be able to use the 'difference between two
+patches' feature of Bugzilla (which requires the PatchReader Perl module
+as well), you should install patchutils from:
+
+    http://cyberelk.net/tim/patchutils/
+
+Sprawdzanie           DBD-mysql (v4.00)   ok: znaleziono v4.012 
+Checking for           MySQL (v4.1.2)  ok: found v5.1.36-log
+
+Usuwanie istniejacych skompilowanych szablonow...
+Ponowne kompilowanie szablonow...Zakonczono.
+Określanie uprawnień plików…
+
+Teraz po instalacji Bugzilli, nalezy przejsc na strone "Parametry"
+(odnosnik znajduje sie w stopce konta administratora), by sprawdzic czy
+ustawienia sa zgodne z zalozeniami, wlacznie ze sprawdzeniem
+poprawnosci adresu bazowego.
+madrid:/srv/www/htdocs/bugzilla-3.6 # 
+</pre>
+
+<!-- 
+NewPP limit report
+Cached time: 20160717023830
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.003 seconds
+Real time usage: 0.003 seconds
+Preprocessor visited node count: 4/1000000
+Preprocessor generated node count: 24/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 - -total
+-->
+
+<!-- Saved in parser cache with key aviarypl_wiki-wiki_:pcache:idhash:2242-0!*!*!*!*!*!* and timestamp 20160717023830 and revision id 11873
+ -->
+</div>					<div class="printfooter">
+						Źródło: „<a dir="ltr" href="http://wiki.aviary.pl/index.php?title=Mozilla:Bugzilla:3.6:Instalacja&amp;oldid=11873">http://wiki.aviary.pl/index.php?title=Mozilla:Bugzilla:3.6:Instalacja&amp;oldid=11873</a>”					</div>
+				<div id='catlinks' class='catlinks catlinks-allhidden'></div>				<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Menu nawigacyjne</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Narzędzia osobiste</h3>
+						<ul>
+							<li id="pt-login"><a href="/index.php?title=Specjalna:Zaloguj&amp;returnto=Mozilla%3ABugzilla%3A3.6%3AInstalacja" title="Zachęcamy do zalogowania się, choć nie jest to obowiązkowe. [o]" accesskey="o">Zaloguj się</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Przestrzenie nazw</h3>
+						<ul>
+															<li  id="ca-nstab-main" class="selected"><span><a href="/Mozilla:Bugzilla:3.6:Instalacja"  title="Zobacz stronę treści [c]" accesskey="c">Strona</a></span></li>
+															<li  id="ca-talk" class="new"><span><a href="/index.php?title=Dyskusja:Mozilla:Bugzilla:3.6:Instalacja&amp;action=edit&amp;redlink=1"  title="Dyskusja o zawartości tej strony [t]" accesskey="t" rel="discussion">Dyskusja</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label">
+							<span>Warianty</span><a href="#"></a>
+						</h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Wyświetleń</h3>
+						<ul>
+															<li id="ca-view" class="selected"><span><a href="/Mozilla:Bugzilla:3.6:Instalacja" >Czytaj</a></span></li>
+															<li id="ca-viewsource"><span><a href="/index.php?title=Mozilla:Bugzilla:3.6:Instalacja&amp;action=edit"  title="Ta strona jest zabezpieczona. Możesz zobaczyć tekst źródłowy. [e]" accesskey="e">Tekst źródłowy</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="/index.php?title=Mozilla:Bugzilla:3.6:Instalacja&amp;action=history"  title="Starsze wersje tej strony. [h]" accesskey="h">Wyświetl historię</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label"><span>Więcej</span><a href="#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Szukaj</label>
+						</h3>
+
+						<form action="/index.php" id="searchform">
+							<div>
+							<input type="search" name="search" placeholder="Szukaj" title="Przeszukaj Aviary.pl wiki [f]" accesskey="f" id="searchInput" /><input type="hidden" value="Specjalna:Szukaj" name="title" /><input type="submit" name="fulltext" value="Szukaj" title="Szukaj wprowadzonego tekstu w treści stron" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Przejdź" title="Przejdź do strony o dokładnie takim tytule, o ile istnieje" id="searchButton" class="searchButton" />							</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="/Strona_g%C5%82%C3%B3wna"  title="Strona główna"></a></div>
+						<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+			<h3 id='p-navigation-label'>Nawigacja</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-mainpage-description"><a href="/Strona_g%C5%82%C3%B3wna" title="Przejdź na stronę główną [z]" accesskey="z">Strona główna</a></li><li id="n-recentchanges"><a href="/Specjalna:Ostatnie_zmiany" title="Lista ostatnich zmian na Aviary.pl wiki. [r]" accesskey="r">Ostatnie zmiany</a></li><li id="n-randompage"><a href="/Specjalna:Losowa_strona" title="Załaduj losową stronę [x]" accesskey="x">Losowa strona</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="Tutaj możesz się dowiedzieć wielu rzeczy.">Pomoc</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+			<h3 id='p-tb-label'>Narzędzia</h3>
+
+			<div class="body">
+									<ul>
+						<li id="t-whatlinkshere"><a href="/Specjalna:Linkuj%C4%85ce/Mozilla:Bugzilla:3.6:Instalacja" title="Pokaż listę wszystkich stron linkujących do tej strony [j]" accesskey="j">Linkujące</a></li><li id="t-recentchangeslinked"><a href="/Specjalna:Zmiany_w_linkowanych/Mozilla:Bugzilla:3.6:Instalacja" title="Ostatnie zmiany w stronach, do których ta strona linkuje [k]" accesskey="k">Zmiany w linkowanych</a></li><li id="t-specialpages"><a href="/Specjalna:Strony_specjalne" title="Lista wszystkich specjalnych stron [q]" accesskey="q">Strony specjalne</a></li><li id="t-print"><a href="/index.php?title=Mozilla:Bugzilla:3.6:Instalacja&amp;printable=yes" rel="alternate" title="Wersja do wydruku [p]" accesskey="p">Wersja do druku</a></li><li id="t-permalink"><a href="/index.php?title=Mozilla:Bugzilla:3.6:Instalacja&amp;oldid=11873" title="Stały link do tej wersji strony">Link do tej wersji</a></li><li id="t-info"><a href="/index.php?title=Mozilla:Bugzilla:3.6:Instalacja&amp;action=info" title="Więcej informacji na temat tej strony">Informacje o tej stronie</a></li>					</ul>
+							</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> Tę stronę ostatnio zmodyfikowano o 16:23, 19 maj 2010.</li>
+											<li id="footer-info-copyright">Treść udostępniana na licencji <a class="external" rel="nofollow" href="http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 lub późniejsza</a>, jeśli nie podano inaczej.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="/Projekt:Zasady_zachowania_poufno%C5%9Bci" title="Projekt:Zasady zachowania poufności">Zasady zachowania poufności</a></li>
+											<li id="footer-places-about"><a href="/Projekt:O_Aviary.pl_wiki" title="Projekt:O Aviary.pl wiki">O Aviary.pl wiki</a></li>
+											<li id="footer-places-disclaimer"><a href="/Projekt:Informacje_prawne" title="Projekt:Informacje prawne">Informacje prawne</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-copyrightico">
+							<a href="http://www.gnu.org/copyleft/fdl.html"><img src="/resources/assets/licenses/gnu-fdl.png" alt="GNU Free Documentation License 1.3 lub późniejsza" width="88" height="31" /></a>						</li>
+											<li id="footer-poweredbyico">
+							<a href="//www.mediawiki.org/"><img src="/resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31" /></a>						</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"]);
+} );</script><script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.config.set({"wgBackendResponseTime":279});
+} );</script>
+	</body>
+</html>
