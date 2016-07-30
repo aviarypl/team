@@ -1,0 +1,277 @@
+Index: dom/chrome/appstrings.properties
+===================================================================
+RCS file: /l10n/l10n/pl/dom/chrome/appstrings.properties,v
+retrieving revision 1.1
+diff -u -r1.1 appstrings.properties
+--- dom/chrome/appstrings.properties	16 Apr 2005 17:18:00 -0000	1.1
++++ dom/chrome/appstrings.properties	13 Jul 2005 09:31:02 -0000
+@@ -55,7 +55,7 @@
+ proxyConnectFailure=Po\u0142\u0105czenie zosta\u0142o odrzucone podczas pr\u00f3by kontaktu z serwerem proxy. Sprawd\u017a poprawno\u015b\u0107 ustawie\u0144 serwer\u00f3w proxy, a nast\u0119pnie spr\u00f3buj ponownie.
+ 
+ externalProtocolTitle=Pr\u00f3ba otwarcia zewn\u0119trznego protoko\u0142u
+-externalProtocolPrompt=Aby obs\u0142u\u017cy\u0107 odno\u015bnik %1$S: musi zosta\u0107 uruchomiona zewn\u0119trzna aplikacja. Za\u017c\u0105dany odno\u015bnik:\n\n\n%2$S\n\n\nJe\u015bli nie spodziewa\u0142e\u015b si\u0119 tego \u017c\u0105dania, mo\u017ce to by\u0107 pr\u00f3ba wykorzystania b\u0142\u0119du w aplikacji zewn\u0119trznej. Anuluj to \u017c\u0105danie, je\u015bli nie jeste\u015b pewien, czy nie jest podejrzane.\n
++externalProtocolPrompt=Aby obs\u0142u\u017cy\u0107 odno\u015bnik %1$S: musi zosta\u0107 uruchomiona zewn\u0119trzna aplikacja. Za\u017c\u0105dany odno\u015bnik:\n\n\n%2$S\n\n\nJe\u015bli to \u017c\u0105danie pojawi\u0142o si\u0119 niespodziewanie, mo\u017ce to by\u0107 pr\u00f3ba wykorzystania b\u0142\u0119du w aplikacji zewn\u0119trznej. W razie jakichkolwiek w\u0105tpliwo\u015Bci, anuluj to \u017c\u0105danie.\n
+ #LOCALIZATION NOTE (externalProtocolUnknown): The following string is shown if the application name can't be determined
+ externalProtocolUnknown=<Nieznana>
+ externalProtocolChkMsg=Zapami\u0119taj m\u00f3j wyb\u00f3r dla wszystkich odno\u015bnik\u00f3w tego rodzaju.
+Index: dom/chrome/charsetTitles.properties
+===================================================================
+RCS file: /l10n/l10n/pl/dom/chrome/charsetTitles.properties,v
+retrieving revision 1.2
+diff -u -r1.2 charsetTitles.properties
+--- dom/chrome/charsetTitles.properties	26 Apr 2005 12:58:28 -0000	1.2
++++ dom/chrome/charsetTitles.properties	13 Jul 2005 09:31:02 -0000
+@@ -61,13 +61,13 @@
+ x-johab.title=Korea\u0144ski (JOHAB)
+ x-windows-949.title=Korea\u0144ski (UHC)
+ iso-2022-kr.title=Korea\u0144ski (ISO-2022-KR)
+-utf-7.title=Unicode (UTF-7)
+-utf-8.title=Unicode (UTF-8)
+-utf-16.title = Unicode (UTF-16)
+-utf-16le.title = Unicode (UTF-16 Little Endian)
+-utf-16be.title = Unicode (UTF-16 Big Endian)
+-utf-32le.title = Unicode (UTF-32 Little Endian)
+-utf-32be.title = Unicode (UTF-32 Big Endian)
++utf-7.title=Unikod (UTF-7)
++utf-8.title=Unikod (UTF-8)
++utf-16.title = Unikod (UTF-16)
++utf-16le.title = Unikod (UTF-16 Little Endian)
++utf-16be.title = Unikod (UTF-16 Big Endian)
++utf-32le.title = Unikod (UTF-32 Little Endian)
++utf-32be.title = Unikod (UTF-32 Big Endian)
+ iso-8859-5.title=Cyrylica (ISO-8859-5)
+ iso-ir-111.title=Cyrylica (ISO-IR-111)
+ windows-1251.title=Cyrylica (Windows-1251)
+Index: dom/chrome/netError.dtd
+===================================================================
+RCS file: /l10n/l10n/pl/dom/chrome/netError.dtd,v
+retrieving revision 1.1
+diff -u -r1.1 netError.dtd
+--- dom/chrome/netError.dtd	16 Apr 2005 17:18:00 -0000	1.1
++++ dom/chrome/netError.dtd	13 Jul 2005 09:31:02 -0000
+@@ -11,8 +11,8 @@
+ <!ENTITY protocolNotFound.longDesc "Podany adres URL używa nieznanego typu protokołu. Określony w początkowej części adresu protokół stanowi informację dla przeglądarki w jaki sposób należy nawiązać połączenie. Najczęściej jest to protokół http://, (witryny internetowe) lub ftp:// (serwery plików). W tym przypadku wprowadzony protokół jest nieznany lub nieprawidłowy, dlatego nawiązanie połączenia było niemożliwe. Należy sprawdzić nazwę protokołu, a następnie spróbować ponownie." >
+ <!ENTITY connectionFailure.title "Błąd podczas nawiązywania połączenia" >
+ <!ENTITY connectionFailure.longDesc "Połączenie z wybraną witryną było niemożliwe, pomimo tego, że podany adres witryny istnieje. Może to być spowodowane tym, że witryna nie akceptuje połączeń z komputera użytkownika, serwer może być tymczasowo niedostępny lub witryna nie obsługuje usługi lub portu, z którym próbowano nawiązać połączenie. " >
+-<!ENTITY netTimeout.title "Błąd - przekroczono limit połączenia sieciowego" >
+-<!ENTITY netTimeout.longDesc "Podczas nawiązywania połączenia z wybraną stroną przekroczono limit połączenia sieciowego. Przyczyną wystąpienia błędu mogą być problemy sieciowe, które uniemożliwiają przesłanie wymaganych danych w ustalonym przedziale czasowym lub witryna, z którą nawiązywane jest połączenie jest w tej chwili odwiedzana przez dużą liczbę użytkowników, przez co czas odpowiedzi witryny znacznie wydłużył się. W takim przypadku najlepiej ponowić próbę nawiązania połączenia za jakiś czas." >
++<!ENTITY netTimeout.title "Błąd - przekroczono limit czasu połączenia" >
++<!ENTITY netTimeout.longDesc "Podczas nawiązywania połączenia z wybraną stroną przekroczono limit czasu połączenia. Przyczyną wystąpienia błędu mogą być problemy sieciowe, które uniemożliwiają przesłanie wymaganych danych w ustalonym przedziale czasowym lub witryna, z którą nawiązywane jest połączenie jest w tej chwili odwiedzana przez dużą liczbę użytkowników, przez co czas odpowiedzi witryny znacznie wydłużył się. W takim przypadku najlepiej ponowić próbę nawiązania połączenia za jakiś czas." >
+ <!ENTITY redirectLoop.title "Błąd - pętla przekierowań" >
+ <!ENTITY redirectLoop.longDesc "Nawiązywanie połączenia z wybraną witryną zostało przerwane, ponieważ zastosowany na witrynie system przekierowań powoduje powstanie pętli żądań nawiązania połączenia i uniemożliwia jej wyświetlenie." >
+ <!ENTITY unknownSocketType.title "Błąd - nieznane gniazdo" >
+Index: dom/chrome/dom/dom.properties
+===================================================================
+RCS file: /l10n/l10n/pl/dom/chrome/dom/dom.properties,v
+retrieving revision 1.1
+diff -u -r1.1 dom.properties
+--- dom/chrome/dom/dom.properties	16 Apr 2005 17:18:00 -0000	1.1
++++ dom/chrome/dom/dom.properties	13 Jul 2005 09:31:02 -0000
+@@ -2,9 +2,9 @@
+ KillScriptMessage=Skrypt na tej stronie mo\u017ce by\u0107 zaj\u0119ty lub przesta\u0142 odpowiada\u0107. Mo\u017cesz przerwa\u0107 skrypt teraz lub kontynuowa\u0107, by sprawdzi\u0107, czy jego wykonywanie si\u0119 zako\u0144czy.
+ StopScriptButton=Przerwij skrypt
+ WaitForScriptButton=Kontynuuj
+-JSURLLoadBlockedWarning=Pr\u00f3ba za\u0142adowania kodu javascript: URL pochodz\u0105cy z jednego serwera\nw oknie, w kt\u00f3rym wy\u015bwietlona jest tre\u015b\u0107 pochodz\u0105ca z innego serwera,\nzosta\u0142a zablokowana przez Mened\u017cera zabezpiecze\u0144.
+-WindowCloseBlockedWarning=Skrypty nie mog\u0105 zamyka\u0107 okien, kt\u00f3re nie zosta\u0142y otworzone przez skrypt
++JSURLLoadBlockedWarning=Pr\u00f3ba za\u0142adowania kodu javascript z adresu URL pochodz\u0105cego z innego serwera\nni\u017C tre\u015b\u0107 wy\u015bwietlona w bie\u017C\u0105cym oknie,\nzosta\u0142a zablokowana przez Mened\u017cer zabezpiecze\u0144.
++WindowCloseBlockedWarning=Skrypty nie mog\u0105 zamyka\u0107 okien, kt\u00f3rych nie otworzy\u0142y
+ OnBeforeUnloadPreMessage=Czy aby na pewno chcesz wyj\u015b\u0107 z tej strony?
+-OnBeforeUnloadPostMessage=Naci\u015bnij OK by kontynuowa\u0107, lub Anuluj by pozosta\u0107 na aktualnej stronie.
++OnBeforeUnloadPostMessage=Naci\u015bnij OK by kontynuowa\u0107 lub Anuluj by pozosta\u0107 na aktualnej stronie.
+ DocumentAllUsed=Zastosowano niestandardow\u0105 w\u0142asno\u015b\u0107 document.all. Zamiast tego u\u017cyj metody document.getElementById() ze standardu DOM W3C.
+ GlobalScopeElementReference=Odwo\u0142anie do elementu przez ID/NAME w zasi\u0119gu globalnym. Zamiast tego u\u017cyj metody document.getElementById() ze standardu DOM W3C.
+Index: dom/chrome/layout/HtmlForm.properties
+===================================================================
+RCS file: /l10n/l10n/pl/dom/chrome/layout/HtmlForm.properties,v
+retrieving revision 1.1
+diff -u -r1.1 HtmlForm.properties
+--- dom/chrome/layout/HtmlForm.properties	16 Apr 2005 17:18:00 -0000	1.1
++++ dom/chrome/layout/HtmlForm.properties	13 Jul 2005 09:31:02 -0000
+@@ -41,7 +41,7 @@
+ Browse=Przegl\u0105daj...
+ FileUpload=Wysy\u0142anie pliku
+ IsIndexPrompt=Ten indeks mo\u017cna wyszukiwa\u0107. Wprowad\u017a s\u0142owa kluczowe:
+-ForgotPostWarning=Formularz zawiera poprawn\u0105 deklaracje typu kodowania: enctype=%S, jednak\u017ce nie zawiera method=POST. Ten formularz zostanie przes\u0142any u\u017cywaj\u0105c metody method=GET, a zmienna enctype zostanie pomini\u0119ta.
++ForgotPostWarning=Formularz zawiera poprawn\u0105 deklaracj\u0119 typu kodowania: enctype=%S, jednak\u017ce nie zawiera method=POST, dlatego zostanie przes\u0142any z u\u017cyciem metody method=GET, a zmienna enctype zostanie pomini\u0119ta.
+ ForgotFileEnctypeWarning=Za pomoc\u0105 tego formularza mo\u017cna przesy\u0142a\u0107 pliki, jednak\u017ce deklaracja zmiennych formularza jest nieprawid\u0142owa: nie okre\u015blono method=POST oraz enctype=multipart/form-data. Przes\u0142anie pliku jest niemo\u017cliwe.
+ # LOCALIZATION NOTE (DefaultFormSubject): %S will be replaced with brandShortName
+ DefaultFormSubject=Formularz wys\u0142any z programu %S
+Index: dom/chrome/layout/css.properties
+===================================================================
+RCS file: /l10n/l10n/pl/dom/chrome/layout/css.properties,v
+retrieving revision 1.2
+diff -u -r1.2 css.properties
+--- dom/chrome/layout/css.properties	1 Jul 2005 06:29:24 -0000	1.2
++++ dom/chrome/layout/css.properties	13 Jul 2005 09:31:02 -0000
+@@ -66,7 +66,7 @@
+ PESelectorListExtraEOF=',' lub '{'
+ PESelectorListExtra=Oczekiwano "," lub "{", ale odnaleziono "%1$S".
+ PESelectorGroupNoSelector=Oczekiwano selektora.
+-PESelectorGroupExtraCombinator=Wisz\u0105cy kombinator.
++PESelectorGroupExtraCombinator=Nieprawid\u0142owy selektor funkcyjny.
+ PEIDSelNotIdent=Oczekiwano identyfikatora dla selektora ID, ale odnaleziono "%1$S".
+ PEIDSelEmpty=Oczekiwano niepustej nazwy dla selektora ID, ale odnaleziono "%1$S".
+ PEClassSelEOF=nazwa klasy
+Index: dom/chrome/layout/printing.properties
+===================================================================
+RCS file: /l10n/l10n/pl/dom/chrome/layout/printing.properties,v
+retrieving revision 1.1
+diff -u -r1.1 printing.properties
+--- dom/chrome/layout/printing.properties	16 Apr 2005 17:18:00 -0000	1.1
++++ dom/chrome/layout/printing.properties	13 Jul 2005 09:31:02 -0000
+@@ -45,7 +45,7 @@
+ fontsize=10
+ noPrintFilename.title=Brak nazwy pliku
+ noPrintFilename.alert=Wybrano opcje "Drukuj do: Pliku", jednak\u017ce nie podano nazwy pliku.
+-fileConfirm.exists=Plik o nazwie %S ju\u017c istnieje.\nCzy zast\u0105pi\u0107 go teraz?
++fileConfirm.exists=Plik o nazwie %S ju\u017c istnieje.\nZast\u0105pi\u0107 go?
+ print_error_dialog_title=B\u0142\u0105d drukarki
+ printpreview_error_dialog_title=B\u0142\u0105d podgl\u0105du wydruku
+ NS_ERROR_GFX_PRINTER_CMD_NOT_FOUND=Wyst\u0105pi\u0142 b\u0142\u0105d podczas drukowania. Drukarka nie obs\u0142uguje komendy drukowania.
+@@ -78,13 +78,13 @@
+ NS_ERROR_GFX_PRINTER_DRIVER_CONFIGURATION_ERROR=Wyst\u0105pi\u0142 b\u0142\u0105d podczas drukowania. Sterownik drukarni nie jest poprawnie skonfigurowany.
+ NS_ERROR_GFX_PRINTER_XPRINT_BROKEN_XPRT=Zosta\u0142a wykryta nieprawid\u0142owa wersja serwera wydruku Xprt. Drukowanie z u\u017cyciem tej wersji serwera Xprt mo\u017ce by\u0107 niemo\u017cliwe. Skontaktuj si\u0119 z dostawc\u0105 oprogramowania w celu uzyskania poprawionej wersji serwera.
+ NS_ERROR_GFX_PRINTER_DOC_IS_BUSY_PP=W chwili obecnej wy\u015bwietlenie podgl\u0105du strony jest niemo\u017cliwe.\nPo za\u0142adowaniu strony w ca\u0142o\u015bci nale\u017cy spr\u00f3bowa\u0107 ponownie.
+-NS_ERROR_GFX_PRINTER_DOC_WAS_DESTORYED=Strona zosta\u0142a zamieniona w czasie, gdy pr\u00f3bowano wydrukowa\u0107 stron\u0119.\nNale\u017cy spr\u00f3bowa\u0107 ponownie.
+-NS_ERROR_GFX_NO_PRINTDIALOG_IN_TOOLKIT=Wtyczki dialog\u00f3w nie zosta\u0142y prawid\u0142owo zainstalowane\nlub ta wersja zestawu narz\u0119dzi GFX nie obs\u0142uguje natywnych dialog\u00f3w drukowania
++NS_ERROR_GFX_PRINTER_DOC_WAS_DESTORYED=Strona zosta\u0142a zamieniona, podczas gdy pr\u00f3bowano j\u0105 wydrukowa\u0107.\nNale\u017cy spr\u00f3bowa\u0107 ponownie.
++NS_ERROR_GFX_NO_PRINTDIALOG_IN_TOOLKIT=Modu\u0142 dynamicznych okien nie zosta\u0142 prawid\u0142owo zainstalowany\nlub ta wersja zestawu narz\u0119dzi GFX nie obs\u0142uguje ju\u017C systemowych okien drukowania
+ NS_ERROR_GFX_NO_PRINTROMPTSERVICE=Brak dost\u0119pu do linii komend drukowania.
+ NS_ERROR_GFX_PRINTER_NO_XUL=Nie mo\u017cna wydrukowa\u0107 ani otworzy\u0107 podgl\u0105du wydruku tej strony.
+ NS_ERROR_GFX_PRINTER_XPRINT_NO_XPRINT_SERVERS_FOUND=Podczas drukowania wyst\u0105pi\u0142 b\u0142\u0105d. Nie odnaleziono serwera Xprint.\nNale\u017cy sprawdzi\u0107, czy zmienna XPSERVERLIST zawiera prawid\u0142owe dane serwera Xprint.\nWi\u0119cej informacji na http://xprint.mozdev.org/ lub http://www.mozilla.org/projects/xprint/
+ NS_ERROR_GFX_PRINTER_PLEX_NOT_SUPPORTED=Wyst\u0105pi\u0142 b\u0142\u0105d podczas drukowania, poniewa\u017c wybrany tryb drukowania nie jest obs\u0142ugiwany przez Twoj\u0105 drukark\u0119.
+-NS_ERROR_GFX_PRINTER_DOC_IS_BUSY=Nie mo\u017cna drukowa\u0107 dokumentu podczas gdy jest on \u0142adowany.
++NS_ERROR_GFX_PRINTER_DOC_IS_BUSY=Nie mo\u017cna drukowa\u0107 dokumentu, podczas gdy jest on wczytywany.
+ NS_ERROR_GFX_PRINTING_NOT_IMPLEMENTED=Drukowanie nie jest zaimplementowane.
+ NS_ERROR_GFX_COULD_NOT_LOAD_PRINT_MODULE=Oczekiwany modu\u0142 drukowania nie mo\u017ce zosta\u0107 za\u0142adowany.
+ NS_ERROR_GFX_PRINTER_RESOLUTION_NOT_SUPPORTED=Wyst\u0105pi\u0142 b\u0142\u0105d podczas drukowania, poniewa\u017c wybrana rozdzielczo\u015b\u0107/jako\u015b\u0107 nie jest obs\u0142ugiwana przez Twoj\u0105 drukark\u0119.
+Index: dom/chrome/layout/xmlparser.properties
+===================================================================
+RCS file: /l10n/l10n/pl/dom/chrome/layout/xmlparser.properties,v
+retrieving revision 1.1
+diff -u -r1.1 xmlparser.properties
+--- dom/chrome/layout/xmlparser.properties	16 Apr 2005 17:18:00 -0000	1.1
++++ dom/chrome/layout/xmlparser.properties	13 Jul 2005 09:31:02 -0000
+@@ -62,8 +62,8 @@
+ 24=jednostka zadeklarowana w jednostce parametrowej
+ 27=przedrostek nie jest zwi\u0105zany z przestrzeni\u0105 nazw
+ # FIXME: (29,30) find a better Polish word for "undeclared" than the ugly "oddeklarowany"
+-29=zarezerwowany przedrostek (xml) nie mo\u017ce by\u0107 oddeklarowany ani zwi\u0105zany z URI innej przestrzeni nazw.
+-30=zarezerwowany przedrostek (xmlns) nie mo\u017ce by\u0107 zadeklarowany ani oddeklarowany
++29=zarezerwowany przedrostek (xml) nie mo\u017ce by\u0107 nie zadeklarowany lub przypisany do innej przestrzeni nazw URI.
++30=zarezerwowany przedrostek (xmlns) nie mo\u017ce by\u0107 zadeklarowany b\u0105d\u017a nie zadeklarowany
+ 31=przedrostek nie mo\u017ce by\u0107 zwi\u0105zany z jednym z zarezerwowanych URI przestrzeni nazw
+ 
+ # %1$S is replaced by the Expat error string, may be followed by Expected (see below)
+Index: dom/chrome/xslt/xslt.properties
+===================================================================
+RCS file: /l10n/l10n/pl/dom/chrome/xslt/xslt.properties,v
+retrieving revision 1.1
+diff -u -r1.1 xslt.properties
+--- dom/chrome/xslt/xslt.properties	16 Apr 2005 17:18:00 -0000	1.1
++++ dom/chrome/xslt/xslt.properties	13 Jul 2005 09:31:02 -0000
+@@ -62,7 +62,7 @@
+ 24=B\u0142\u0105d parsowania XPath: oczekiwano znaku "!". Negacji nie wykonuje si\u0119 za pomoc\u0105 ():
+ 25=B\u0142\u0105d parsowania XPath: odnaleziono nieprawid\u0142owy znak:
+ 26=B\u0142\u0105d parsowania XPath: oczekiwano operatora binarnego:
+-27=Ze wzgl\u0119d\u00f3w bezpiecze\u0144stwa \u0142adowanie arkusza styl\u00f3w XSLT zosta\u0142o zablokowane.
++27=Ze wzgl\u0119d\u00f3w bezpiecze\u0144stwa wczytywanie arkusza styl\u00f3w XSLT zosta\u0142o zablokowane.
+ 
+ LoadingError=Podczas wczytywania arkusza styl\u00f3w wyst\u0105pi\u0142 b\u0142\u0105d: %S
+ TransformError=Wyst\u0105pi\u0142 b\u0142\u0105d podczas transformacji XSLT: %S
+Index: toolkit/chrome/global/charsetOverlay.dtd
+===================================================================
+RCS file: /l10n/l10n/pl/toolkit/chrome/global/charsetOverlay.dtd,v
+retrieving revision 1.1
+diff -u -r1.1 charsetOverlay.dtd
+--- toolkit/chrome/global/charsetOverlay.dtd	16 Apr 2005 17:33:09 -0000	1.1
++++ toolkit/chrome/global/charsetOverlay.dtd	13 Jul 2005 09:31:03 -0000
+@@ -14,7 +14,7 @@
+ <!ENTITY charsetMenuMore4.accesskey "P" >
+ <!ENTITY charsetMenuMore5.label "Bliski Wschód" >
+ <!ENTITY charsetMenuMore5.accesskey "B" >
+-<!ENTITY charsetMenuUnicode.label       "Unicode">
++<!ENTITY charsetMenuUnicode.label       "Unikod">
+ <!ENTITY charsetMenuUnicode.accesskey       "U">
+ <!ENTITY charsetCustomize.label "Dostosuj listę..." >
+ <!ENTITY charsetCustomize.accesskey "D" >
+Index: toolkit/chrome/global/downloadProgress.properties
+===================================================================
+RCS file: /l10n/l10n/pl/toolkit/chrome/global/downloadProgress.properties,v
+retrieving revision 1.1
+diff -u -r1.1 downloadProgress.properties
+--- toolkit/chrome/global/downloadProgress.properties	16 Apr 2005 17:33:09 -0000	1.1
++++ toolkit/chrome/global/downloadProgress.properties	13 Jul 2005 09:31:03 -0000
+@@ -5,13 +5,13 @@
+ # LOCALIZATION NOTE (BadPluginTitle): 
+ #
+ #    This dialog is displayed when plugin throws unhandled exception
+-BadPluginTitle=Wtyczka pope\u0142ni\u0142a niedozwolon\u0105 operacj\u0119
++BadPluginTitle=Wtyczka wykona\u0142a niedozwolon\u0105 operacj\u0119
+ # LOCALIZATION NOTE (BadPluginMessage): 
+ #
+ #    This is the message for the BadPlugin dialog.
+ #
+ #   Localizable URLs
+-BadPluginMessage=Wtyczka pope\u0142ni\u0142a niedozwolon\u0105 operacj\u0119. Zaleca si\u0119 ponowne uruchomienie programu %S.
++BadPluginMessage=Wtyczka wykona\u0142a niedozwolon\u0105 operacj\u0119. Zaleca si\u0119 ponowne uruchomienie programu %S.
+ # LOCALIZATION NOTE (BadPluginCheckboxMessage): 
+ #
+ #    This message tells the user that if they check this checkbox, they
+Index: toolkit/chrome/global/intl.properties
+===================================================================
+RCS file: /l10n/l10n/pl/toolkit/chrome/global/intl.properties,v
+retrieving revision 1.2
+diff -u -r1.2 intl.properties
+--- toolkit/chrome/global/intl.properties	14 May 2005 10:16:07 -0000	1.2
++++ toolkit/chrome/global/intl.properties	13 Jul 2005 09:31:03 -0000
+@@ -13,7 +13,7 @@
+ # menuitems in the "selectLangs" menulist in
+ # browser/components/preferences/fonts.xul
+ 
+-font.language.group=x-western
++font.language.group=x-central-euro
+ 
+ # Localization Note: Add the code for your language at the front of this entry, 
+ # leaving "en-us, en" for fallback. It's recommended to use the same form, e.g. 
+Index: toolkit/chrome/global/nsHelperAppDlg.dtd
+===================================================================
+RCS file: /l10n/l10n/pl/toolkit/chrome/global/nsHelperAppDlg.dtd,v
+retrieving revision 1.1
+diff -u -r1.1 nsHelperAppDlg.dtd
+--- toolkit/chrome/global/nsHelperAppDlg.dtd	16 Apr 2005 17:33:10 -0000	1.1
++++ toolkit/chrome/global/nsHelperAppDlg.dtd	13 Jul 2005 09:31:03 -0000
+@@ -15,12 +15,12 @@
+ <!ENTITY intro.attachment.label "Zgodnie z deklaracją witryny, pobierany plik &quot;#3&quot; powinien być traktowany jako załącznik. Typ MIME pliku: #2 (#1), adres:" >
+ <!ENTITY intro.attachment.noDesc.label "Zgodnie z deklaracją witryny, pobierany plik &quot;#3&quot; powinien być traktowany jako załącznik. Typ MIME pliku: #2, adres:" >
+ 
+-<!ENTITY intro.sniffed.label "Program #4 wykrył, że typ pliku &quot;#3&quot; to najwyraźniej #2 (#1). Plik ten znajduje się w:">
+-<!ENTITY intro.sniffed.noDesc.label "Program #4 wykrył, że typ pliku &quot;#3&quot; to najwyraźniej #2. Plik ten znajduje się w:">
++<!ENTITY intro.sniffed.label "Program #4 wykrył, że &quot;#3&quot; jest najprawdopodobniej plikiem typu MIME #2 (#1). Plik ten znajduje się w:">
++<!ENTITY intro.sniffed.noDesc.label "Program #4 wykrył, że &quot;#3&quot; jest najprawdopodobniej plikiem typu MIME #2. Plik ten znajduje się w:">
+ 
+ <!ENTITY prompt.label "Po zakończeniu pobierania" >
+ 
+-<!ENTITY alwaysHandle.label "Zawsze wykonuj następującą akcję po pobraniu pliku tego typu" >
++<!ENTITY alwaysHandle.label "Zawsze wykonuj następującą czynność po pobraniu pliku tego typu" >
+ <!ENTITY alwaysHandle.accesskey "a" >
+ 
+ <!ENTITY saveToDisk.label "Zachowaj plik na dysku" >
+Index: toolkit/chrome/global/printjoboptions.properties
+===================================================================
+RCS file: /l10n/l10n/pl/toolkit/chrome/global/printjoboptions.properties,v
+retrieving revision 1.1
+diff -u -r1.1 printjoboptions.properties
+--- toolkit/chrome/global/printjoboptions.properties	16 Apr 2005 17:33:10 -0000	1.1
++++ toolkit/chrome/global/printjoboptions.properties	13 Jul 2005 09:31:03 -0000
+@@ -1,6 +1,6 @@
+-letterSize=Rozmiar Letter (8 1/2 x 11 in.)
+-legalSize=Rozmiar Legal (8 1/2 x 14 in.)
+-exectiveSize=Rozmiar Executive (7 1/2 x 10 in.)
++letterSize=Rozmiar Letter (216 x 279 mm)
++legalSize=Rozmiar Legal (216 x 356 mm)
++exectiveSize=Rozmiar Executive (185 x 267 mm)
+ a5Size=DIN A5 (148 x 210 mm)
+ a4Size=DIN A4 (210 x 297 mm)
+ a3Size=DIN A3 (297 x 420 mm)
+

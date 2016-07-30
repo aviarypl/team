@@ -1,0 +1,89 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Firefox: oprogramowanie w 100% naturalne';
+    $body_id    = 'firefox-organic';
+    $body_class = 'products';
+    
+    $extra_headers = <<<EXTRA_HEADERS
+<link rel="stylesheet" type="text/css" href="http://bugs.aviary.pl/style/tignish/organic-page.css" media="screen" />
+EXTRA_HEADERS;
+
+    @include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+?>
+
+<div id="main-feature">
+	<h2>Lepszy sposób na Sieć</h2>
+	<p>Albo co może dla Ciebie zrobić przeglądarka napędzana przez społeczność open source. </p>
+</div>
+
+<ul id="side-menu">
+	<li class="first"><h3><a href="http://bugs.aviary.pl/&lt;?=$lang?&gt;/products/">Produkty</a> / <a href="http://bugs.aviary.pl/&lt;?=$lang?&gt;/firefox/">Firefox</a></h3></li>
+	<li><a href="http://bugs.aviary.pl/&lt;?=$lang?&gt;/firefox/security/">Bezpieczeństwo</a></li>
+	<li><a href="http://bugs.aviary.pl/&lt;?=$lang?&gt;/firefox/addons/">Dodatki</a></li>
+	<li><span>Oprogramowanie w 100% naturalne</span></li>
+	<li><a href="http://bugs.aviary.pl/&lt;?=$lang?&gt;/firefox/features/">Właściwości</a></li>
+	<li><a href="http://bugs.aviary.pl/&lt;?=$lang?&gt;/firefox/tips/">Porady</a></li>
+	<li><a href="http://bugs.aviary.pl/&lt;?=$lang?&gt;/firefox/&lt;?=LATEST_FIREFOX_VERSION?&gt;/releasenotes/">Informacje o wydaniu</a></li>
+	<li><a href="http://bugs.aviary.pl/&lt;?=$lang?&gt;/firefox/all.html">Inne systemy i języki</a></li>
+</ul>
+
+<div id="main-content">
+
+	<h3>Czym jest naturalne oprogramowanie?</h3>
+	<p><strong>Jak na firmę tworzącą oprogramowanie, jesteśmy nieco nietypowi.</strong>  Używamy terminu „naturalne oprogramowanie”, aby podkreślić, czym różnimy się od innych.</p>
+	<p>Nasz najpopularniejszy produkt, Firefox, jest tworzony przez tysiące osób z całego świata, spośród których nasi pracownicy stanowią tak naprawdę tylko niewielki procent.</p>
+	<p>Motywuje nas nasz cel &ndash; promowanie otwartości, nowatorstwa i szans jakie niesie Internet &ndash; w przeciwieństwie do zwykłych, biznesowych motywów: zysków i ceny akcji (wiesz, że nie mamy nawet własnych akcji?).</p>
+	<p>Ponieważ jesteśmy <a href="http://www.mozilla.org/foundation/">organizacją non-profit i pożytku publicznego</a>, sukcesem dla nas jest budowanie społeczności i wzbogacanie życia innych. Wierzymy w moc i potencjał Internetu, dlatego  chcielibyśmy, aby rozwijał się i prosperował jak najlepiej dla wszyskich, zawsze i wszędzie.</p>
+
+	<img src="http://bugs.aviary.pl/img/tignish/organic/organic-inline-02.png" alt="Firefox girl" class="inline-02" />
+
+	<div id="organic-open-source">
+		<h3>Czym jest otwarte oprogramowanie?</h3>
+		<p>Na początek może to zabrzmieć nieco szalenie, ale czytaj uważnie: <strong>wierzymy, że im więcej ludzi zna nasze „sekrety”, tym lepiej.</strong></p>
+		<p>Dlatego też udostępniamy kod źródłowy Firefoksa – wszystkie wnętrzności, które sprawiają, że działa – całemu światu i zachęcamy wszystkich, aby mu się przyjrzeli.</p>
+		<p>Niektórzy widzieli w nim rzeczy wymagające ulepszeń i je poprawili. Inni mieli pomysł na nowe funkcje i je stworzyli. A jeszcze inni wzięli kod, przerobili go i stworzyli zupełnie nowe i niesamowite produkty.</p>
+		<p>Jaki z tego morał? Otwartość przynosi wiele dobrych rzeczy. Każdy może zajrzeć nam za kulisy… A tak naprawdę, to ich tutaj w ogóle nie ma.</p>
+	</div>
+
+	<img src="http://bugs.aviary.pl/img/tignish/organic/organic-inline-01.png" alt="" />
+
+	<div id="organic-why-care">
+		<h3>Dlaczego miałoby Cię to interesować? <!-- Why should you care? --></h3>
+		<p>Może nie jesteśmy typową firmą, ale <strong>wciąż wiemy, jak skupiać się na najważniejszym: sprawianiu, aby Internet był dla Ciebie coraz lepszym miejscem</strong>.</p>
+		<p>Bycie otwartym oznacza, że następny wyjątkowy pomysł może pochodzić od kogokolwiek, z dowolnego miejsca na świecie i że nie musimy polegać tylko na tuzinie pracowników w naszych biurach. Kiedy tak na to spojrzeć, jaki w ogóle sens ma inne podejście?</p>
+		<p>Całe to naturalne i otwarte oprogramowanie ostatecznie sprowadza się do lepszej przeglądarki dla Ciebie i 130 milionów stałych użytkowników Firefoksa. Oznacza także najwyższą jakość i bezpieczniejszy produkt oraz nowatorstwo, wolność i wspieranie Internetu dostępnego dla wszystkich.</p>
+	</div>
+
+</div><!-- end #main-content div -->
+
+<div id="sidebar">
+	<script type="text/javascript" src="http://bugs.aviary.pl/js/download.old.js"></script>
+    <script type="text/javascript">
+        <!--
+        // Configure the Firefox download write script
+        var gDownloadItemTemplate = " <li class=\"%CSS_CLASS%\"> <h3>Pobierz Firefoksa 3<\/h3><div>%VERSION% for %PLATFORM_NAME%<br \/> %LANGUAGE_NAME%&nbsp;(%FILE_SIZE%)<\/div><a onclick=\"javascript:do_download('%BOUNCER_URL%');\" href=\"%DOWNLOAD_URL%\" class=\"download-link download-firefox\">Pobierz Firefoksa<span> - za darmo<\/span><\/a></li>";
+        var gDownloadItemMacOS9 = "<a href=\"\">MacOS 9 i jego wcześniejsze wersje nie są wspierane<\/a>";
+        var gDownloadItemOtherPlatform = "<a href=\"/<?=$lang?>/firefox/<?=LATEST_FIREFOX_VERSION?>/releasenotes/#contributedbuilds\">Pobierz za darmo<\/a>"
+
+        document.writeln("<ul class=\"download download-firefox " + gCssClass + " \">");
+        writeDownloadItems("fx");
+        document.writeln("<\/ul>");
+        document.writeln("<div class=\"download-other\"><span class=\"other\">");
+        document.writeln("<a href=\"\/<?=$lang?>\/firefox\/<?=LATEST_FIREFOX_VERSION?>\/releasenotes\/\">Informacje o wydaniu<\/a>");
+        document.writeln("| <a href=\"\/<?=$lang?>\/firefox\/all.html\">Inne systemy i języki<\/a>");
+        document.writeln("<\/span><\/div>");
+        //-->
+    </script>
+    <?php echo $firefoxDetails->getNoScriptBlockForLocale('pl-PL'); ?>
+
+	<ul class="what-is-mozilla">
+		<li>
+ 			<h3>Czym jest Mozilla?</h3>
+ 			<p>Jesteśmy społecznością o globalnym zasięgu, organizacją pożytku publicznego oraz projektem otwartego oprogramowania. <span><a href="http://bugs.aviary.pl/&lt;?=$lang?&gt;/about/">Dowiedz się o nas więcej</a></span></p>
+ 		</li>
+	</ul>
+</div>
+
+<?php
+    @include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+?>

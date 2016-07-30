@@ -1,0 +1,135 @@
+=== default/global/variables.none.tmpl
+==================================================================
+--- default/global/variables.none.tmpl  (revision 37)
++++ default/global/variables.none.tmpl  (revision 41)
+@@ -50,11 +50,31 @@
+   "Bledami" => "Błędami",
+   "bledzie" => "błędzie",
+   "Bledzie" => "Błędzie",
+-  "zeroSearchResults" = "Nie znaleziono błędów",
+-  "bit" = "bit",
+-  "bits" = "bits",
+-  "Bugzilla" = "Bugzilla"
+-  "Bugzilli" = "Bugzilli"
+-  "Bugzille" = "Bugzillę"
++  "zeroSearchResults" => "Nie znaleziono błędów",
++  "bit" => "bit",
++  "bits" => "bits",
++  "Bugzilla" => "Bugzilla"
++  "Bugzilli" => "Bugzilli"
++  "Bugzille" => "Bugzillę"
+   }
++
++  selectTransTable = {
++    op_sys => {
++      All => 'Wszystkie',
++      other => 'Inny'
++    },
++    rep_platform => {
++      All => 'Wszystkie',
++      Other => 'Inna'
++    },
++    bug_severity => {
++      blocker => 'blokujący',
++      critical => 'krytyczny',
++      major => 'ważny',
++      normal => 'normalny',
++      minor => 'mniej ważny',
++      trivial => 'trywialny',
++      enhancement => 'propozycja'
++    }
++  }  
+ %]
+=== default/list/table.html.tmpl
+==================================================================
+--- default/list/table.html.tmpl  (revision 37)
++++ default/list/table.html.tmpl  (revision 41)
+@@ -40,9 +40,9 @@
+ 
+ [% abbrev = 
+   {
+-    "bug_severity"         => { maxlength => 3 , title => "Waga" } , 
++    "bug_severity"         => { maxlength => 4 , title => "Waga" } , 
+     "priority"             => { maxlength => 3 , title => "Pri" } , 
+-    "rep_platform"         => { maxlength => 3 , title => "Plt" } , 
++    "rep_platform"         => { maxlength => 4 , title => "Plt" } , 
+     "bug_status"           => { maxlength => 4 } , 
+     "assigned_to"          => { maxlength => 30 , ellipsis => "..." } , 
+     "assigned_to_realname" => { maxlength => 20 , ellipsis => "..." } , 
+@@ -181,7 +181,8 @@
+                column == 'estimated_time' %]
+         [% PROCESS formattimeunit time_unit=bug.$column %] 
+       [% ELSE %]
+-        [%- bug.$column.truncate(abbrev.$column.maxlength, abbrev.$column.ellipsis) FILTER html -%]
++        [%- colval = (selectTransTable.$column.${bug.$column} || bug.$column);
++            colval.truncate(abbrev.$column.maxlength, abbrev.$column.ellipsis) FILTER html -%]
+       [% END %]
+       [%- '</nobr>' IF NOT abbrev.$column.wrap %]
+     </td>
+=== default/bug/create/create-guided.html.tmpl
+==================================================================
+--- default/bug/create/create-guided.html.tmpl  (revision 37)
++++ default/bug/create/create-guided.html.tmpl  (revision 41)
+@@ -540,16 +540,18 @@
+ [%############################################################################%]
+ 
+ [% BLOCK select %]
++  [%- transTable = selectTransTable.$sel -%]
++
+   <select name="[% sel %]">
+     [%- IF default.$sel %]
+       <option value="[% default.$sel FILTER html %]" selected="selected">
+-        [% default.$sel FILTER html -%]
++        [% (transTable.${default.$sel} || default.$sel ) FILTER html -%]
+       </option>
+     [% END %]
+     [%- FOREACH x = $sel %]
+       [% NEXT IF x == default.$sel %]
+       <option value="[% x FILTER html %]">
+-        [% x FILTER html -%]
++        [%- (transTable.$x || x) FILTER html -%]
+       </option>
+     [%- END %]
+   </select>
+=== default/bug/create/create.html.tmpl
+==================================================================
+--- default/bug/create/create.html.tmpl  (revision 37)
++++ default/bug/create/create.html.tmpl  (revision 41)
+@@ -343,11 +343,14 @@
+   </td>
+   [% END %]
+ 
++  [%- transTable = selectTransTable.${sel.name} -%]
++
+   <td>
+     <select name="[% sel.name %]">
+     [%- FOREACH x = ${sel.name} %]
+       <option value="[% x FILTER html %]"
+-        [% " selected=\"selected\"" IF x == default.${sel.name} %]>[% x FILTER html -%]
++        [% " selected=\"selected\"" IF x == default.${sel.name} %]>
++          [%- (transTable.$x || x) FILTER html -%]
+       </option>
+     [%- END %]
+     </select>
+=== default/bug/edit.html.tmpl
+==================================================================
+--- default/bug/edit.html.tmpl  (revision 37)
++++ default/bug/edit.html.tmpl  (revision 41)
+@@ -569,12 +569,15 @@
+ [%############################################################################%]
+ 
+ [% BLOCK select %]
++  [%- transTable = selectTransTable.$selname -%]
++
+   <td>
+     <label for="[% selname %]" accesskey="[% accesskey %]">
+       <select name="[% selname %]" id="[% selname %]">
+         [% FOREACH x = bug.choices.${selname} %]
+           <option value="[% x FILTER html %]"
+-            [% " selected" IF x == bug.${selname} %]>[% x FILTER html %]
++            [% " selected" IF x == bug.${selname} %]>
++            [%- (transTable.$x || x) FILTER html -%]
+           </option>
+         [% END %]
+       </select>
+

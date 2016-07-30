@@ -1,0 +1,591 @@
+diff --git a/browser/chrome/browser/aboutCertError.dtd b/browser/chrome/browser/aboutCertError.dtd
+--- a/browser/chrome/browser/aboutCertError.dtd
++++ b/browser/chrome/browser/aboutCertError.dtd
+@@ -23,14 +23,14 @@ z właściwym serwerem. W przypadku tej 
+ bez takich problemów, błąd ten może oznaczać, że ktoś próbuje się podszyć pod tę witrynę.
+ W tej sytuacji nie należy kontynuować.">
+ <!ENTITY certerror.getMeOutOfHere.label "Zabierz mnie stąd!">
+ 
+ <!ENTITY certerror.expert.heading "Rozumiem zagrożenie">
+ <!ENTITY certerror.expert.content "Jeśli rozumiesz zagrożenie, możesz nakazać
+ programowi &brandShortName;, by ufał identyfikacji tej witryny.
+ <b>Nawet jeśli witryna należy do zaufanych, błąd ten może oznaczać, że ktoś ingeruje
+-w Twoje połączenie.</b>">
++w połączenie użytkownika.</b>">
+ <!ENTITY certerror.expert.contentPara2 "Nie należy dodawać wyjątku, o ile nie ma
+ uzasadnionych przyczyn, dla których ta witryna nie używa zaufanej identyfikacji.">
+ <!ENTITY certerror.addException.label "Dodaj wyjątek…">
+ 
+ <!ENTITY certerror.technical.heading "Szczegóły techniczne">
+diff --git a/browser/chrome/overrides/netError.dtd b/browser/chrome/overrides/netError.dtd
+--- a/browser/chrome/overrides/netError.dtd
++++ b/browser/chrome/overrides/netError.dtd
+@@ -13,66 +13,66 @@
+ <!ENTITY deniedPortAccess.longDesc "">
+ 
+ <!ENTITY dnsNotFound.title "Nie odnaleziono serwera">
+ <!ENTITY dnsNotFound.longDesc "
+ <ul>
+   <li>Sprawdź, czy adres nie zawiera literówek jak np.
+     <strong>ww</strong>.example.com zamiast
+     <strong>www</strong>.example.com</li>
+-  <li>Jeśli nie możesz otworzyć żadnej strony, sprawdź swoje połączenie sieciowe.</li>
+-  <li>Jeśli Twój komputer jest chroniony przez zaporę sieciową lub serwer proxy, sprawdź, czy program &brandShortName; jest uprawniony do łączenia się z Internetem.</li>
++  <li>Jeśli nie można otworzyć żadnej strony, należy sprawdzić swoje połączenie sieciowe.</li>
++  <li>Jeśli komputer użytkownika jest chroniony przez zaporę sieciową lub serwer proxy, należy sprawdzić, czy program &brandShortName; jest uprawniony do łączenia się z Internetem.</li>
+ </ul>
+ ">
+ 
+ <!ENTITY fileNotFound.title "Nie odnaleziono pliku">
+ <!ENTITY fileNotFound.longDesc "
+ <ul>
+-  <li>Sprawdź wielkość liter oraz upewnij się, że nazwa pliku nie zawiera literówek lub innych błędów w pisowni.</li>
+-  <li>Sprawdź, czy plik nie został przeniesiony, usunięty lub czy jego nazwa nie została zmieniona.</li>
++  <li>Należy sprawdzić wielkość liter oraz upewnić się, że nazwa pliku nie zawiera literówek lub innych błędów w pisowni.</li>
++  <li>Należy sprawdzić, czy plik nie został przeniesiony, usunięty lub czy jego nazwa nie została zmieniona.</li>
+ </ul>
+ ">
+ 
+ 
+ <!ENTITY generic.title "Wystąpił błąd">
+ <!ENTITY generic.longDesc "
+ <p>&brandShortName; nie jest w stanie otworzyć tej strony.</p>
+ ">
+ 
+ <!ENTITY malformedURI.title "Adres jest nieprawidłowy">
+ <!ENTITY malformedURI.longDesc "
+ <ul>
+   <li>Adresy internetowe są zwykle postaci
+     <strong>http://www.example.com/</strong></li>
+-  <li>Sprawdź, czy adres zawiera prawidłowe ukośniki (tzn.
++  <li>Należy sprawdzić, czy adres zawiera prawidłowe ukośniki (tzn.
+     <strong>/</strong>).</li>
+ </ul>
+ ">
+ 
+ <!ENTITY netInterrupt.title "Połączenie zostało przerwane">
+ <!ENTITY netInterrupt.longDesc "&sharedLongDesc;">
+ 
+ <!ENTITY netOffline.title "Tryb offline">
+ <!ENTITY netOffline.longDesc "
+ <ul>
+-  <li>Odznacz opcję &quot;Pracuj w trybie offline&quot; w menu Plik i spróbuj ponownie.</li>
++  <li>Należy oddznaczyć opcję &quot;Pracuj w trybie offline&quot; w menu Plik i spróbować ponownie.</li>
+ </ul>
+ ">
+ 
+ <!ENTITY contentEncodingError.title "Błąd kodowania zawartości">
+ <!ENTITY contentEncodingError.longDesc "
+ <ul>
+-  <li>Prosimy poinformować właścicieli witryny o tym problemie.</li>
++  <li>Należy poinformować właścicieli witryny o tym problemie.</li>
+ </ul>
+ ">
+ 
+ <!ENTITY unsafeContentType.title "Niebezpieczny typ pliku">
+ <!ENTITY unsafeContentType.longDesc "
+ <ul>
+-  <li>Prosimy poinformować właścicieli witryny o tym problemie.</li>
++  <li>Należy poinformować właścicieli witryny o tym problemie.</li>
+ </ul>
+ ">
+ 
+ <!ENTITY netReset.title "Połączenie zostało zresetowane">
+ <!ENTITY netReset.longDesc "&sharedLongDesc;">
+ 
+ <!ENTITY netTimeout.title "Przekroczono limit czasu połączenia">
+ <!ENTITY netTimeout.longDesc "&sharedLongDesc;">
+@@ -82,27 +82,27 @@
+ <ul>
+   <li>Aby otworzyć ten adres, może być konieczna instalacja innego programu.</li>
+ </ul>
+ ">
+ 
+ <!ENTITY proxyConnectFailure.title "Serwer proxy odrzuca połączenia">
+ <!ENTITY proxyConnectFailure.longDesc "
+ <ul>
+-  <li>Sprawdź, czy ustawienia serwerów proxy są prawidłowe.</li>
+-  <li>Zapytaj administratora sieci, czy serwer proxy funkcjonuje prawidłowo.</li>
++  <li>Należy sprawdzić, czy ustawienia serwerów proxy są prawidłowe.</li>
++  <li>Należy zapytać administratora sieci, czy serwer proxy funkcjonuje prawidłowo.</li>
+ </ul>
+ ">
+ 
+ <!ENTITY proxyResolveFailure.title "Nie można odnaleźć serwera proxy">
+ <!ENTITY proxyResolveFailure.longDesc "
+ <ul>
+-  <li>Sprawdź, czy ustawienia serwerów proxy są prawidłowe.</li>
+-  <li>Sprawdź, czy połączenie z siecią Twojego komputera funkcjonuje prawidłowo.</li>
+-  <li>Jeśli Twój komputer jest chroniony przez zaporę sieciową lub serwer proxy, sprawdź, czy program &brandShortName; jest uprawniony do łączenia się z Internetem.</li>
++  <li>Należy sprawdzić, czy ustawienia serwerów proxy są prawidłowe.</li>
++  <li>Należy sprawdzić, czy połączenie z siecią komputera użytkownika funkcjonuje prawidłowo.</li>
++  <li>Jeśli komputer użytkownika jest chroniony przez zaporę sieciową lub serwer proxy, należy sprawdzić, czy program &brandShortName; jest uprawniony do łączenia się z Internetem.</li>
+ </ul>
+ ">
+ 
+ <!ENTITY redirectLoop.title "Nieprawidłowe przekierowanie">
+ <!ENTITY redirectLoop.longDesc "
+ <ul>
+   <li>Problem ten może się pojawić w wyniku zablokowania lub odrzucenia ciasteczek.</li>
+ </ul>
+@@ -132,18 +132,18 @@ autentyczności otrzymanych danych.</p>
+   <li>Powodem tego może być nieprawidłowa konfiguracja serwera albo próba podania się za ten serwer przez podmiot nieuprawniony.</li>
+   <li>Jeśli użytkownik łączył się wcześniej z tym serwerem, błąd może być tymczasowy – w tej sytuacji należy spróbować ponownie później.</li>
+ </ul>
+ ">
+ 
+ <!ENTITY sharedLongDesc "
+ <ul>
+   <li>Witryna może być tymczasowo niedostępna lub zbyt obciążona. Spróbuj ponownie za kilka minut.</li>
+-  <li>Jeśli nie możesz otworzyć żadnej strony, sprawdź swoje połączenie sieciowe.</li>
+-  <li>Jeśli Twój komputer jest chroniony przez zaporę sieciową lub serwer proxy, sprawdź, czy program &brandShortName; jest uprawniony do łączenia się z Internetem.</li>
++  <li>Jeśli nie można otworzyć żadnej strony, należy sprawdzić swoje połączenie sieciowe.</li>
++  <li>Jeśli komputer użytkownika jest chroniony przez zaporę sieciową lub serwer proxy, należy sprawdzić, czy program &brandShortName; jest uprawniony do łączenia się z Internetem.</li>
+ </ul>
+ ">
+ 
+ <!ENTITY malwareBlocked.title "Witryna podejrzewana o dokonywanie ataków!">
+ <!ENTITY malwareBlocked.longDesc "
+ <p>Tego rodzaju witryny mogą próbować instalować oprogramowanie wykradające poufne dane, używające komputera do pośredniczenia w atakach lub uszkadzające system.</p>
+ <p>Właściciele witryn, które zostały błędnie uznane za podejrzane, mogą <a href='http://www.stopbadware.org/home/reviewinfo'>poprosić o ponowne ich sprawdzenie</a>.</p>">
+ 
+diff --git a/dom/chrome/layout/printing.properties b/dom/chrome/layout/printing.properties
+--- a/dom/chrome/layout/printing.properties
++++ b/dom/chrome/layout/printing.properties
+@@ -15,20 +15,20 @@
+ #
+ # The Initial Developer of the Original Code is
+ # Netscape Communications Corporation.
+ # Portions created by the Initial Developer are Copyright (C) 1998
+ # the Initial Developer. All Rights Reserved.
+ #
+ # Contributor(s):
+ #   Roland Mainz <roland.mainz@informatik.med.uni-giessen.de>
+-#   Zbigniew Braniecki <gandalf@aviary.pl> (Polish l10n)
+-#   Marek Stepien <marcoos@aviary.pl> (Polish l10n)
+-#   Piotr Bartecki <pbartecki@mozillapl.org> (Polish l10n)
+-#   Marek Wawoczny <GmbH@mozillapl.org> (Polish l10n)
++#   Zbigniew Braniecki <gandalf@aviary.pl> (Polish localization)
++#   Marek Stepien <marcoos@aviary.pl> (Polish localization)
++#   Piotr Bartecki <pbartecki@mozillapl.org> (Polish localization)
++#   Marek Wawoczny <GmbH@mozillapl.org> (Polish localization)
+ #
+ # Alternatively, the contents of this file may be used under the terms of
+ # either of the GNU General Public License Version 2 or later (the "GPL"),
+ # or the GNU Lesser General Public License Version 2.1 or later (the "LGPL"),
+ # in which case the provisions of the GPL or the LGPL are applicable instead
+ # of those above. If you wish to allow use of your version of this file only
+ # under the terms of either the GPL or the LGPL, and not to allow others to
+ # use your version of this file under the terms of the MPL, indicate your
+@@ -64,25 +64,25 @@ NS_ERROR_NOT_IMPLEMENTED=Funkcje nie zos
+ NS_ERROR_NOT_AVAILABLE=Nie jest gotowa
+ NS_ERROR_ABORT=Zadanie drukowania zostało przerwane lub anulowane.
+ NS_ERROR_FAILURE=Wystąpił nieznany błąd podczas drukowania.
+ NS_ERROR_GFX_PRINTER_STARTDOC=Drukowanie nie powiodło się podczas rozpoczynania dokumentu.
+ NS_ERROR_GFX_PRINTER_ENDDOC=Drukowanie nie powiodło się podczas kończenia dokumentu.
+ NS_ERROR_GFX_PRINTER_STARTPAGE=Drukowanie nie powiodło się podczas uruchamiania strony.
+ NS_ERROR_GFX_PRINTER_ENDPAGE=Drukowanie nie powiodło się podczas kończenia strony.
+ NS_ERROR_GFX_PRINTER_PRINT_WHILE_PREVIEW=Nie można rozpocząć drukowania podczas wyświetlania podglądu wydruku.
+-NS_ERROR_GFX_PRINTER_PAPER_SIZE_NOT_SUPPORTED=Wystąpił błąd podczas drukowania, ponieważ rozmiar papieru, który został określony, nie jest obsługiwany przez Twoją drukarkę.
+-NS_ERROR_GFX_PRINTER_ORIENTATION_NOT_SUPPORTED=Wystąpił błąd podczas drukowania, ponieważ orientacja papieru, która została określona, nie jest obsługiwana przez Twoją drukarkę.
+-NS_ERROR_GFX_PRINTER_COLORSPACE_NOT_SUPPORTED=Wystąpił błąd podczas drukowania, ponieważ zadanie drukowania wymaga możliwości druku w kolorze, których Twoja drukarka nie obsługuje.
++NS_ERROR_GFX_PRINTER_PAPER_SIZE_NOT_SUPPORTED=Wystąpił błąd podczas drukowania, ponieważ rozmiar papieru, który został określony, nie jest obsługiwany przez drukarkę użytkownika.
++NS_ERROR_GFX_PRINTER_ORIENTATION_NOT_SUPPORTED=Wystąpił błąd podczas drukowania, ponieważ orientacja papieru, która została określona, nie jest obsługiwana przez drukarkę użytkownika.
++NS_ERROR_GFX_PRINTER_COLORSPACE_NOT_SUPPORTED=Wystąpił błąd podczas drukowania, ponieważ zadanie drukowania wymaga możliwości druku w kolorze, których drukarka użytkownika nie obsługuje.
+ NS_ERROR_GFX_PRINTER_TOO_MANY_COPIES=Wystąpił błąd podczas drukowania, ponieważ zażądano zbyt wielu kopii.
+ NS_ERROR_GFX_PRINTER_DRIVER_CONFIGURATION_ERROR=Wystąpił błąd podczas drukowania. Sterownik drukarni nie jest poprawnie skonfigurowany.
+ NS_ERROR_GFX_PRINTER_DOC_IS_BUSY_PP=W chwili obecnej wyświetlenie podglądu strony jest niemożliwe.\nPo wczytaniu strony w całości należy spróbować ponownie.
+ NS_ERROR_GFX_PRINTER_DOC_WAS_DESTORYED=Strona została zamieniona, podczas gdy próbowano ją wydrukować.\nNależy spróbować ponownie.
+ NS_ERROR_GFX_NO_PRINTDIALOG_IN_TOOLKIT=Moduł dynamicznych okien nie został prawidłowo zainstalowany\nlub ta wersja zestawu narzędzi GFX nie obsługuje już systemowych okien drukowania
+ NS_ERROR_GFX_NO_PRINTROMPTSERVICE=Brak dostępu do linii komend drukowania.
+ NS_ERROR_GFX_PRINTER_NO_XUL=Nie można wydrukować ani otworzyć podglądu wydruku tej strony.
+-NS_ERROR_GFX_PRINTER_PLEX_NOT_SUPPORTED=Wystąpił błąd podczas drukowania, ponieważ wybrany tryb drukowania nie jest obsługiwany przez Twoją drukarkę.
++NS_ERROR_GFX_PRINTER_PLEX_NOT_SUPPORTED=Wystąpił błąd podczas drukowania, ponieważ wybrany tryb drukowania nie jest obsługiwany przez drukarkę użytkownika.
+ NS_ERROR_GFX_PRINTER_DOC_IS_BUSY=Nie można drukować dokumentu, podczas gdy jest on wczytywany.
+ NS_ERROR_GFX_PRINTING_NOT_IMPLEMENTED=Drukowanie nie jest zaimplementowane.
+ NS_ERROR_GFX_COULD_NOT_LOAD_PRINT_MODULE=Oczekiwany moduł drukowania nie może zostać załadowany.
+-NS_ERROR_GFX_PRINTER_RESOLUTION_NOT_SUPPORTED=Wystąpił błąd podczas drukowania, ponieważ wybrana rozdzielczość/jakość nie jest obsługiwana przez Twoją drukarkę.
++NS_ERROR_GFX_PRINTER_RESOLUTION_NOT_SUPPORTED=Wystąpił błąd podczas drukowania, ponieważ wybrana rozdzielczość/jakość nie jest obsługiwana przez drukarkę użytkownika.
+ noprinter=Brak dostępnych drukarek.
+ PrintToFile=Drukuj do pliku
+diff --git a/dom/chrome/netError.dtd b/dom/chrome/netError.dtd
+--- a/dom/chrome/netError.dtd
++++ b/dom/chrome/netError.dtd
+@@ -1,64 +1,64 @@
+ <!ENTITY loadError.label "Błąd wczytywania strony" >
+ <!ENTITY retry.label "Spróbuj ponownie" >
+ 
+ <!-- Specific error messages -->
+ 
+ <!ENTITY connectionFailure.title "Nie udało się nawiązać połączenia">
+-<!ENTITY connectionFailure.longDesc "<p>Pomimo że adres witryny wydaje się prawidłowy, przeglądarka nie była w stanie nawiązać połączenia.</p><ul><li>Witryna jest tymczasowo niedostępna? Jeśli tak, spróbuj ponownie później.</li><li>Nie możesz przeglądać również innych witryn? Jeśli tak, sprawdź, czy połączenie z siecią funkcjonuje prawidłowo.</li><li>Czy Twój komputer lub sieć jest chroniona przez zaporę sieciową lub serwer proxy? Ich nieprawidłowa konfiguracja może powodować problemy z przeglądaniem witryn internetowych.</li></ul>">
++<!ENTITY connectionFailure.longDesc "<p>Pomimo że adres witryny wydaje się prawidłowy, przeglądarka nie była w stanie nawiązać połączenia.</p><ul><li>Witryna jest tymczasowo niedostępna? Jeśli tak, należy sprobować ponownie później.</li><li>Nie można przeglądać również innych witryn? Jeśli tak, należy sprawdzić, czy połączenie z siecią funkcjonuje prawidłowo.</li><li>Czy komputer użytkownika lub sieć jest chroniona przez zaporę sieciową lub serwer proxy? Ich nieprawidłowa konfiguracja może powodować problemy z przeglądaniem witryn internetowych.</li></ul>">
+ 
+ <!ENTITY deniedPortAccess.title "Port zastrzeżony z przyczyn bezpieczeństwa">
+ <!ENTITY deniedPortAccess.longDesc "<p>Żądany adres zawiera numer portu (np. w adresie <q>mozilla.org:80</q> liczba 80 to port na serwerze mozilla.org), który zazwyczaj <em>nie jest</em> wykorzystywany do przeglądania witryn WWW. Przeglądarka anulowała to żądanie ze względów bezpieczeństwa.</p>">
+ 
+ <!ENTITY dnsNotFound.title "Nie odnaleziono adresu">
+-<!ENTITY dnsNotFound.longDesc "<p>Przeglądarka nie mogła odnaleźć adresu serwera dla podanego adresu.</p><ul><li>Upewnij się, że wprowadzony adres witryny jest poprawny (np. <q><strong>www</strong>.mozilla.org</q> a nie <q><strong>ww</strong>.mozilla.org</q>)</li><li>Czy domena aby na pewno nadal istnieje? Jej okres rejestracji mógł upłynąć.</li><li>Nie możesz oglądać innych witryn? Sprawdź swoje połączenie z siecią oraz ustawienia serwerów DNS.</li><li>Czy Twój komputer lub sieć jest chroniona przez zaporę sieciową lub serwer proxy? Ich nieprawidłowa konfiguracja może powodować problemy z przeglądaniem witryn internetowych.</li></ul>">
++<!ENTITY dnsNotFound.longDesc "<p>Przeglądarka nie mogła odnaleźć adresu serwera dla podanego adresu.</p><ul><li>Należy upewnić się, że wprowadzony adres witryny jest poprawny (np. <q><strong>www</strong>.mozilla.org</q> a nie <q><strong>ww</strong>.mozilla.org</q>)</li><li>Czy domena aby na pewno nadal istnieje? Jej okres rejestracji mógł upłynąć.</li><li>Nie można oglądać innych witryn? Należy sprawdzić swoje połączenie z siecią oraz ustawienia serwerów DNS.</li><li>Czy komputer użytkownika lub sieć jest chroniona przez zaporę sieciową lub serwer proxy? Ich nieprawidłowa konfiguracja może powodować problemy z przeglądaniem witryn internetowych.</li></ul>">
+ 
+ <!ENTITY fileNotFound.title "Nie odnaleziono pliku">
+-<!ENTITY fileNotFound.longDesc "<ul><li>Możliwe, że plik ten został usunięty, przeniesiony lub zmieniono mu nazwę.</li><li>Sprawdź, czy w podanym adresie nie ma błędu w pisowni, w tym wielkości liter, ani innych błędów typograficznych.</li><li>Upewnij się, czy masz odpowiednie uprawnienia do przeglądania żądanej strony.</li></ul>">
++<!ENTITY fileNotFound.longDesc "<ul><li>Możliwe, że plik ten został usunięty, przeniesiony lub zmieniono mu nazwę.</li><li>Należy sprawdzić, czy w podanym adresie nie ma błędu w pisowni, w tym wielkości liter, ani innych błędów typograficznych.</li><li>Należy upewnić się, że posiada się odpowiednie uprawnienia do przeglądania żądanej strony.</li></ul>">
+ 
+ <!ENTITY generic.title "Nie można ukończyć żądania">
+ <!ENTITY generic.longDesc "<p>Dodatkowe informacje o tym problemie lub błędzie nie są obecnie dostępne.</p>">
+ 
+ <!ENTITY malformedURI.title "Nieprawidłowy adres">
+-<!ENTITY malformedURI.longDesc "<p>Podano adres w nierozpoznawalnym formacie. Sprawdź, czy w pasku adresu nie ma błędów, a następnie spróbuj ponownie.</p>">
++<!ENTITY malformedURI.longDesc "<p>Podano adres w nierozpoznawalnym formacie. Należy sprawdzić, czy w pasku adresu nie ma błędów, a następnie spróbuj ponownie.</p>">
+ 
+ <!ENTITY netInterrupt.title "Przerwano przesyłanie danych">
+-<!ENTITY netInterrupt.longDesc "<p>Przeglądarka nawiązała połączenie, ale zostało ono przerwane podczas przesyłania informacji. Spróbuj ponownie.</p><ul><li>Nie możesz oglądać innych witryn? Sprawdź swoje połączenie z siecią.</li><li>Jeśli nadal występują problemy, skonsultuj się z administratorem sieci lub dostawcą usług internetowych.</li></ul>">
++<!ENTITY netInterrupt.longDesc "<p>Przeglądarka nawiązała połączenie, ale zostało ono przerwane podczas przesyłania informacji. Należy spróbować ponownie.</p><ul><li>Nie można oglądać innych witryn? Należy sprawdzić swoje połączenie z siecią.</li><li>Jeśli nadal występują problemy, należy skonsultować się z administratorem sieci lub dostawcą usług internetowych.</li></ul>">
+ 
+ <!ENTITY netOffline.title "Tryb offline">
+-<!ENTITY netOffline.longDesc "<p>Przeglądarka pracuje w trybie offline i nie może pobrać żądanego elementu. </p><ul><li>Czy komputer podłączony jest do działającej sieci?</li><li>Przestaw przeglądarkę na tryb online i spróbuj ponownie.</li></ul>">
++<!ENTITY netOffline.longDesc "<p>Przeglądarka pracuje w trybie offline i nie może pobrać żądanego elementu. </p><ul><li>Czy komputer podłączony jest do działającej sieci?</li><li>Należy przestawić przeglądarkę na tryb online i spróbować ponownie.</li></ul>">
+ 
+ <!ENTITY contentEncodingError.title "Błąd kodowania zawartości">
+-<!ENTITY contentEncodingError.longDesc "<p>Otwierana strona nie może zostać wyświetlona, ponieważ używa nieprawidłowych lub nieobsługiwanych metod kompresji.</p><ul><li>Prosimy poinformować właścicieli witryny o tym problemie.</li></ul>">
++<!ENTITY contentEncodingError.longDesc "<p>Otwierana strona nie może zostać wyświetlona, ponieważ używa nieprawidłowych lub nieobsługiwanych metod kompresji.</p><ul><li>Należy poinformować właścicieli witryny o tym problemie.</li></ul>">
+ 
+ <!ENTITY unsafeContentType.title "Niebezpieczny typ pliku">
+ <!ENTITY unsafeContentType.longDesc "
+ <ul>
+-  <li>Prosimy poinformować właścicieli witryny o tym problemie.</li>
++  <li>Należy poinformować właścicieli witryny o tym problemie.</li>
+ </ul>
+ ">
+ 
+ <!ENTITY netReset.title "Przerwane połączenie">
+ <!ENTITY netReset.longDesc "<p>Połączenie sieciowe zostało przerwane podczas negocjacji. Spróbuj ponownie.</p>">
+ 
+ <!ENTITY netTimeout.title "Przekroczono limit czasu połączenia">
+-<!ENTITY netTimeout.longDesc "<p>Witryna przez dłuższy czas nie odpowiedziała na żądanie połączenia i przeglądarka przestała czekać na odpowiedź.</p><ul><li>Możliwe, że serwer tymczasowo nie działa lub jest nadmiernie obciążony. Jeśli tak, spróbuj ponownie później.</li><li>Nie możesz oglądać innych witryn? Sprawdź swoje połączenie z siecią.</li><li>Czy Twój komputer lub sieć jest chroniona przez zaporę sieciową lub serwer proxy? Ich nieprawidłowa konfiguracja może powodować problemy z przeglądaniem witryn internetowych.</li><li>Jeśli nadal występują problemy, skonsultuj się z administratorem sieci lub dostawcą usług internetowych.</li></ul>">
++<!ENTITY netTimeout.longDesc "<p>Witryna przez dłuższy czas nie odpowiedziała na żądanie połączenia i przeglądarka przestała czekać na odpowiedź.</p><ul><li>Możliwe, że serwer tymczasowo nie działa lub jest nadmiernie obciążony. Jeśli tak, należy spróbować ponownie później.</li><li>Nie można oglądać innych witryn? Należy sprawdzić swoje połączenie z siecią.</li><li>Czy komputer użytkownika lub sieć jest chroniona przez zaporę sieciową lub serwer proxy? Ich nieprawidłowa konfiguracja może powodować problemy z przeglądaniem witryn internetowych.</li><li>Jeśli nadal występują problemy, należy skonsultować się z administratorem sieci lub dostawcą usług internetowych.</li></ul>">
+ 
+ <!ENTITY protocolNotFound.title "Nieznany protokół">
+-<!ENTITY protocolNotFound.longDesc "<p>Adres zawiera protokół (np. <q>wxyz://</q>), który nie jest rozpoznawany przez przeglądarkę. Nie może więc ona poprawnie połączyć się z daną witryną.</p><ul><li>Czy próbujesz korzystać z multimediów lub z innych usług nie opartych na tekście? Sprawdź, czy witryna nie ma dodatkowych wymagań.</li><li>Obsługa niektórych protokołów może wymagać oprogramowania lub wtyczek dostarczonych przez zewnętrznych producentów.</li></ul>">
++<!ENTITY protocolNotFound.longDesc "<p>Adres zawiera protokół (np. <q>wxyz://</q>), który nie jest rozpoznawany przez przeglądarkę. Nie może więc ona poprawnie połączyć się z daną witryną.</p><ul><li>Czy próbowano korzystać z multimediów lub z innych usług nie opartych na tekście? Należy sprawdzić, czy witryna nie ma dodatkowych wymagań.</li><li>Obsługa niektórych protokołów może wymagać oprogramowania lub wtyczek dostarczonych przez zewnętrznych producentów.</li></ul>">
+ 
+ <!ENTITY proxyConnectFailure.title "Serwer proxy odrzucił połączenie">
+-<!ENTITY proxyConnectFailure.longDesc "<p>Przeglądarka została skonfigurowana tak, by używać serwera proxy, który jednak odrzucił połączenie.</p><ul><li>Czy konfiguracja serwerów proxy w przeglądarce jest prawidłowa? Sprawdź ustawienia i spróbuj ponownie.</li><li>Upewnij się, że serwer proxy dopuszcza połączenia z Twojej sieci.</li><li>Jeśli nadal występują problemy, skonsultuj się z administratorem sieci lub dostawcą usług internetowych.</li></ul>">
++<!ENTITY proxyConnectFailure.longDesc "<p>Przeglądarka została skonfigurowana tak, by używać serwera proxy, który jednak odrzucił połączenie.</p><ul><li>Czy konfiguracja serwerów proxy w przeglądarce jest prawidłowa? Należy sprawdzić ustawienia i spróbować ponownie.</li><li>Należy upewnić się, że serwer proxy dopuszcza połączenia z sieci użytkownika.</li><li>Jeśli nadal występują problemy, należy skonsultować się z administratorem sieci lub dostawcą usług internetowych.</li></ul>">
+ 
+ <!ENTITY proxyResolveFailure.title "Nie odnaleziono serwera proxy">
+-<!ENTITY proxyResolveFailure.longDesc "<p>Przeglądarka została skonfigurowana tak, by używać serwera proxy, ale serwer proxy nie może być odnaleziony.</p><ul><li>Czy konfiguracja serwerów proxy w przeglądarce jest prawidłowa? Sprawdź ustawienia i spróbuj ponownie.</li><li>Czy komputer podłączony jest do działającej sieci?</li><li>Jeśli nadal występują problemy, skonsultuj się z administratorem sieci lub dostawcą usług internetowych.</li></ul>">
++<!ENTITY proxyResolveFailure.longDesc "<p>Przeglądarka została skonfigurowana tak, by używać serwera proxy, ale serwer proxy nie może być odnaleziony.</p><ul><li>Czy konfiguracja serwerów proxy w przeglądarce jest prawidłowa? Należy sprawdzić ustawienia i spróbować ponownie.</li><li>Czy komputer podłączony jest do działającej sieci?</li><li>Jeśli nadal występują problemy, należy skonsultować się z administratorem sieci lub dostawcą usług internetowych.</li></ul>">
+ 
+ <!ENTITY redirectLoop.title "Pętla przekierowań">
+-<!ENTITY redirectLoop.longDesc "<p>Przeglądarka przerwała próby pobrania żądanego elementu. Witryna przekierowuje żądanie w sposób, który uniemożliwia jego dokończenie.</p><ul><li>Czy ciasteczka zostały wyłączone lub zablokowane dla tej witryny?</li><li><em>UWAGA</em>: Jeśli włączenie obsługi ciasteczek dla tej witryny nie rozwiązuje problemu, najprawdopodobniej jest to problem w konfiguracji serwera, a nie oprogramowania na Twoim komputerze.</li></ul>">
++<!ENTITY redirectLoop.longDesc "<p>Przeglądarka przerwała próby pobrania żądanego elementu. Witryna przekierowuje żądanie w sposób, który uniemożliwia jego dokończenie.</p><ul><li>Czy ciasteczka zostały wyłączone lub zablokowane dla tej witryny?</li><li><em>UWAGA</em>: Jeśli włączenie obsługi ciasteczek dla tej witryny nie rozwiązuje problemu, najprawdopodobniej jest to problem w konfiguracji serwera, a nie oprogramowania na komputerze użytkownika.</li></ul>">
+ 
+ <!ENTITY unknownSocketType.title "Nieoczekiwana odpowiedź serwera">
+ <!ENTITY unknownSocketType.longDesc "<p>Witryna odpowiedziała w sposób nieoczekiwany i przeglądarka nie może kontynuować.</p>">
+ 
+ <!ENTITY nssFailure2.title "Nie udało się nawiązać bezpiecznego połączenia">
+ <!ENTITY nssFailure2.longDesc "<p>Żądana strona nie może zostać wyświetlona, ponieważ nie udało się potwierdzić
+ autentyczności otrzymanych danych.</p><ul><li>Należy skontaktować się z właścicielem witryny i poinformować go o tym problemie.</li></ul>">
+ 
+diff --git a/dom/chrome/security/caps.properties b/dom/chrome/security/caps.properties
+--- a/dom/chrome/security/caps.properties
++++ b/dom/chrome/security/caps.properties
+@@ -13,24 +13,24 @@
+ # The Initial Developer of the Original Code is Netscape
+ # Communications Corporation. Portions created by Netscape are
+ # Copyright (C) 2000 Netscape Communications Corporation. All
+ # Rights Reserved.
+ #
+ # Contributor(s):
+ # Mitch Stoltz <mstoltz@netscape.com>
+ # Christopher A. Aillon <christopher@aillon.com>
+-# Marek Stepien <marcoos@aviary.pl> (Polish l10n)
++# Marek Stepien <marcoos@aviary.pl> (Polish localization)
+ #
+ 
+ Yes=Zezwól
+ No=Zabroń
+ Titleline=Zabezpieczenia internetowe
+ CheckMessage=Zapamiętaj tę decyzję
+-EnableCapabilityQuery=Skrypt z "%S" zażądał rozszerzonych i niebezpiecznych dla Twojego komputera i danych uprawnień:\n\n%S\n\nUdziel żądanych uprawnień tylko w przypadku, gdy jesteś pewien, że to źródło jest wolne od wirusów i innych niebezpieczeństw.
++EnableCapabilityQuery=Skrypt z "%S" zażądał rozszerzonych i niebezpiecznych dla komputera użytkownika i danych uprawnień:\n\n%S\n\nUdziel żądanych uprawnień tylko w przypadku, gdy jesteś pewien, że to źródło jest wolne od wirusów i innych niebezpieczeństw.
+ 
+ # LOCALIZATION NOTE: Due to bug 315288, use only Western European characters in: 
+ # EnableCapabilityDenied, GetPropertyDenied, SetPropertyDenied, CallMethodDenied 
+ # and CreateWrapperDenied.
+ 
+ EnableCapabilityDenied=Skrypt z "%S" nie otrzymal uprawnien %S.
+ CheckLoadURIError=Błąd naruszenia bezpieczeństwa: Treść zawarta pod adresem %S nie może zostać wczytana lub powiązana z %S.
+ CheckSameOriginError=Błąd naruszenia bezpieczeństwa: Treść zawarta pod adresem %S nie może wczytać danych z %S.
+diff --git a/security/manager/chrome/pipnss/pipnss.properties b/security/manager/chrome/pipnss/pipnss.properties
+--- a/security/manager/chrome/pipnss/pipnss.properties
++++ b/security/manager/chrome/pipnss/pipnss.properties
+@@ -16,20 +16,20 @@
+ # Copyright (C) 1998 Netscape Communications Corporation. All
+ # Rights Reserved.
+ #
+ # Contributor(s):
+ #    Javier Delgadillo <javi@netscape.com>
+ #    Brian Ryner <bryner@brianryner.com>
+ #    Terry Hayes <thayes@netscape.com> 
+ #    John Gardiner Myers <jgmyers@speakeasy.net>
+-#    Marek Wawoczny <gmbh@mozillapl.org> (Polish translation)
+-#    Piotr Bartecki <pbartecki@mozillapl.org> (Polish translation)
+-#    Piotr Komoda <gorky@civ.pl> (Polish translation)
+-#    Marek Stepien <marcoos@aviary.pl> (Polish translation)
++#    Marek Wawoczny <gmbh@mozillapl.org> (Polish localization)
++#    Piotr Bartecki <pbartecki@mozillapl.org> (Polish localization)
++#    Piotr Komoda <gorky@civ.pl> (Polish localization)
++#    Marek Stepien <marcoos@aviary.pl> (Polish localization)
+ #
+ # Alternatively, the contents of this file may be used under the terms of
+ # either the GNU General Public License Version 2 or later (the "GPL"), or
+ # the GNU Lesser General Public License Version 2.1 or later (the "LGPL"),
+ # in which case the provisions of the GPL or the LGPL are applicable instead
+ # of those above. If you wish to allow use of your version of this file only
+ # under the terms of either the GPL or the LGPL, and not to allow others to
+ # use your version of this file under the terms of the MPL, indicate your
+@@ -353,17 +353,17 @@ ProfileSwitchSocketsStillActive=Zmiana p
+ ProfileSwitchCryptoUIActive=Zmiana profilu jest chwili obecnej niemożliwa. Należy zakończyć operację, która wymaga udziału użytkownika w jednym lub kilku otwartych oknach.
+ VerifyExpired=<Stracił ważność>
+ VerifyRevoked=<Odwołany>
+ VerifyNotTrusted=<Nie jest zaufany>
+ VerifyIssuerNotTrusted=<Wystawcy certyfikatu nie ma na liście zaufanych wystawców>
+ VerifyIssuerUnknown=<Nieznany wydawca>
+ VerifyInvalidCA=<Nieważny CA>
+ VerifyUnknown=<Nieznany>
+-CertUser=Twój certyfikat
++CertUser=Certyfikat użytkownika
+ CertCA=CA (ośrodek certyfikacji)
+ CertSSL=Serwer SSL
+ # ang: CertEmail = Peer S/MIME
+ CertEmail=Równorzędny S/MIME
+ CertUnknown=Nieznany
+ CertNoNickname=(brak pseudonimu)
+ CertNoEmailAddress=(brak adresu email)
+ NicknameExpired=(stracił ważność)
+diff --git a/security/manager/chrome/pippki/certManager.dtd b/security/manager/chrome/pippki/certManager.dtd
+--- a/security/manager/chrome/pippki/certManager.dtd
++++ b/security/manager/chrome/pippki/certManager.dtd
+@@ -36,26 +36,26 @@
+    - and other provisions required by the GPL or the LGPL. If you do not delete
+    - the provisions above, a recipient may use your version of this file under
+    - the terms of any one of the MPL, the GPL or the LGPL.
+    -
+    - ***** END LICENSE BLOCK ***** -->
+ 
+ <!ENTITY certmgr.title					"Menedżer certyfikatów">
+ 
+-<!ENTITY certmgr.tab.mine                     "Twoje certyfikaty">
++<!ENTITY certmgr.tab.mine                     "Certyfikaty użytkownika">
+ <!ENTITY certmgr.tab.others2                  "Ludzie">
+ <!ENTITY certmgr.tab.websites3                "Serwery">
+ <!ENTITY certmgr.tab.ca                       "Organy certyfikacji">
+ <!ENTITY certmgr.tab.orphan2                  "Pozostałe">
+ 
+ <!ENTITY certmgr.ca.builtins 				"Wbudowane organy">
+-<!ENTITY certmgr.ca.mycas 				"Organy zarządzane przez Ciebie">
++<!ENTITY certmgr.ca.mycas 				"Organy zarządzane przez użytkownika">
+ 
+-<!ENTITY certmgr.mine 					"Posiadasz certyfikaty z następujących organizacji, które identyfikują Ciebie:">
++<!ENTITY certmgr.mine 					"Posiadasz certyfikaty z następujących organizacji, które identyfikują użytkownika:">
+ <!ENTITY certmgr.others 				"Posiadasz certyfikaty, które identyfikują następujące osoby:">
+ <!ENTITY certmgr.websites2 				"Posiadasz certyfikaty, które identyfikują następujące serwery:">
+ <!ENTITY certmgr.cas 					"Posiadasz certyfikaty, które identyfikują następujące organy certyfikacji:">
+ 
+ <!ENTITY certmgr.orphans                      		"Posiadasz certyfikaty, które nie pasują do innych kategorii:">
+ 
+ <!ENTITY certmgr.detail.general_tab.title 		"Ogólne">
+ <!ENTITY certmgr.detail.general_tab.accesskey 		"O">
+@@ -89,17 +89,17 @@
+ <!ENTITY certmgr.editemailcert.title 			"Edytuj ustawienia zaufania tego certyfikatu wiadomości e-mail.">
+ <!ENTITY certmgr.editemailcert.edittrust 		"Edytuj ustawienia zaufania tego certyfikatu:">
+ <!ENTITY certmgr.editemailcert.dotrust 			"Ufaj autentyczności tego certyfikatu.">
+ <!ENTITY certmgr.editemailcert.donttrust 		"Nie ufaj autentyczności tego certyfikatu.">
+ 
+ <!ENTITY certmgr.deletecert.title 				"Usuń certyfikat">
+ <!ENTITY certmgr.deletecert.beforename 			"Zażądano usunięcia certyfikatu:">
+ <!ENTITY certmgr.deletecert.aftername 			"Czy na pewno usunąć wybrany certyfikat?">
+-<!ENTITY certmgr.deleteusercert.title 			"Usuwanie Twojego certyfikatu">
++<!ENTITY certmgr.deleteusercert.title 			"Usuwanie certyfikatu użytkownika">
+ <!ENTITY certmgr.deleteusercert.beforename 		"Zażądano usunięcia certyfikatu:">
+ <!ENTITY certmgr.deleteusercert.aftername 		"Po usunięciu tego certyfikatu nie będzie można odczytać wiadomości zaszyfrowanych tym certyfikatem.">
+ 
+ <!ENTITY certmgr.certname                     "Nazwa certyfikatu">
+ <!ENTITY certmgr.certserver                   "Serwer">
+ <!ENTITY certmgr.typesofoverrides             "Wyjątki">
+ <!ENTITY certmgr.override_lifetime            "Czas życia">
+ <!ENTITY certmgr.tokenname 						"Urządzenie zabezpieczające">
+diff --git a/security/manager/chrome/pippki/pippki.dtd b/security/manager/chrome/pippki/pippki.dtd
+--- a/security/manager/chrome/pippki/pippki.dtd
++++ b/security/manager/chrome/pippki/pippki.dtd
+@@ -13,20 +13,20 @@
+    - 
+    - The Initial Developer of the Original Code is Netscape
+    - Communications Corp.  Portions created by Netscape are
+    - Copyright (C) 2001 Netscape Communications Corp.  All
+    - Rights Reserved.
+    - 
+    - Contributor(s):
+    -   Terry Hayes <thayes@netscape.com>
+-   -   Marek Wawoczny <gmbh@mozillapl.org> (Polish translation)
+-   -   Piotr Bartecki <pbartecki@mozillapl.org> (Polish translation) 
+-   -   Piotr Komoda <gorky@civ.pl> (Polish translation)
+-   -   Marek Stepien <marcoos@aviary.pl> (Polish translation)
++   -   Marek Wawoczny <gmbh@mozillapl.org> (Polish localization)
++   -   Piotr Bartecki <pbartecki@mozillapl.org> (Polish localization) 
++   -   Piotr Komoda <gorky@civ.pl> (Polish localization)
++   -   Marek Stepien <marcoos@aviary.pl> (Polish localization)
+   -->
+   
+ <!ENTITY setPassword.title "Zmień hasło główne" >
+ <!ENTITY setPassword.tokenName.label "Urządzenie zabezpieczające" >
+ <!ENTITY setPassword.oldPassword.label "Bieżące hasło:" >
+ <!ENTITY setPassword.newPassword.label "Nowe hasło:" >
+ <!ENTITY setPassword.reenterPassword.label "Nowe hasło (ponownie):" >
+ <!ENTITY setPassword.meter.label "Miernik jakości hasła" >
+@@ -55,34 +55,34 @@
+ <!ENTITY downloadCert.viewCert.label "Wyświetl" >
+ <!ENTITY downloadCert.viewPolicy.label "Zasady" >
+ <!ENTITY downloadCert.viewCert.text "Sprawdź certyfikat CA" >
+ <!ENTITY downloadCert.viewPolicy.text "Sprawdź uprawnienia i procedury CA" >
+ <!ENTITY caCertExists.title "Certyfikat istnieje" >
+ <!ENTITY caCertExists.message "Certyfikat już istnieje." >
+ <!ENTITY clientAuthAsk.title "Zażądano identyfikacji użytkownika" >
+ <!ENTITY clientAuthAsk.message1 "Pobierana strona wysłała żądanie przedstawienia certyfikatu w celu dokonania identyfikacji:" >
+-<!ENTITY clientAuthAsk.message2 "Wybierz certyfikat, który zostanie przedstawiony jako Twój identyfikator:" >
++<!ENTITY clientAuthAsk.message2 "Wybierz certyfikat, który zostanie przedstawiony jako identyfikator użytkownika:" >
+ <!ENTITY clientAuthAsk.message3 "Szczegóły wybranego certyfikatu:" >
+ <!ENTITY certPicker.title "Wybierz certyfikat" >
+ <!ENTITY certPicker.info "Certyfikat:" >
+ <!ENTITY certPicker.detailsLabel "Szczegóły wybranego certyfikatu:" >
+ <!ENTITY pkcs12.setpassword.title "Wybierz hasło kopii bezpieczeństwa certyfikatu" >
+ <!ENTITY pkcs12.setpassword.message "Wprowadzane hasło zabezpiecza tworzoną kopię certyfikatu. Utworzenie kopii certyfikatu bez podania hasła zabezpieczającego jest niemożliwe." >
+ <!ENTITY pkcs12.setpassword.label1 "Hasło kopii bezpieczeństwa certyfikatu:" >
+ <!ENTITY pkcs12.setpassword.label2 "Hasło kopii bezpieczeństwa certyfikatu (ponownie):" >
+ <!ENTITY pkcs12.setpassword.reminder "Ważne: Jeżeli hasło zabezpieczające kopię certyfikatu zostanie utracone, późniejsze odtworzenie certyfikatu będzie niemożliwe. Zaleca się zachowanie hasła w bezpiecznym miejscu." >
+ <!ENTITY pkcs12.getpassword.title "Proszę podać hasło" >
+ <!ENTITY pkcs12.getpassword.message "Wprowadź hasło, które będzie użyte przy szyfrowaniu kopii bezpieczeństwa tego certyfikatu." >
+ <!ENTITY chooseToken.title "Wybór tokenu" >
+ <!ENTITY chooseToken.message1 "Należy wybrać token." >
+ <!ENTITY escrowWarn.title "Kopia klucza szyfrującego" >
+-<!ENTITY escrowWarn.message1 "Ważne: ten organ certyfikacji zaleca utworzenie kopii Twojego prywatnego klucza szyfrującego." >
++<!ENTITY escrowWarn.message1 "Ważne: ten organ certyfikacji zaleca utworzenie własnej kopii prywatnego klucza szyfrującego." >
+ <!ENTITY escrowWarn.benefit1 "Zaletą tego rozwiązania jest to, że w przypadku utraty dostępu do prywatnego klucza szyfrującego możliwe będzie uzyskanie jego kopii z organu certyfikacji" >
+-<!ENTITY escrowWarn.message2 "Jednakże należy mieć na uwadze, że Twój prywatny klucz szyfrujący, będąc przechowywanym przez organ certyfikacji, może zostać wykorzystany do czytania zaszyfrowanej przy użyciu tego klucza poczty lub dokumentów bez Twojej zgody." >
++<!ENTITY escrowWarn.message2 "Jednakże należy mieć na uwadze, że własny prywatny klucz szyfrujący, będąc przechowywanym przez organ certyfikacji, może zostać wykorzystany do czytania zaszyfrowanej przy użyciu tego klucza poczty lub dokumentów bez zgody użytkownika." >
+ <!ENTITY serverCrlNextupdate.message "W celu uzyskania dalszych informacji należy skontaktować się z administratorem sieci." >
+ <!ENTITY examineCert.label     "Wyświetl certyfikat">
+ <!ENTITY examineCert.accesskey "W">
+ <!ENTITY createCertInfo.title "Generowanie prywatnego klucza" >
+ <!ENTITY createCertInfo.msg1 "Trwa generowanie klucza… Może to potrwać kilka minut…" >
+ <!ENTITY createCertInfo.msg2 "Proszę czekać…" >
+ 
+ <!-- Form Signing confirmation prompt -->
+diff --git a/security/manager/chrome/pippki/pippki.properties b/security/manager/chrome/pippki/pippki.properties
+--- a/security/manager/chrome/pippki/pippki.properties
++++ b/security/manager/chrome/pippki/pippki.properties
+@@ -15,20 +15,20 @@
+ # The Original Code is mozilla.org code.
+ #
+ # The Initial Developer of the Original Code is Netscape
+ # Communications Corporation.  Portions created by Netscape are
+ # Copyright (C) 1998 Netscape Communications Corporation. All
+ # Rights Reserved.
+ #
+ # Contributor(s): 
+-#    Marek Wawoczny <gmbh@mozillapl.org> (Polish translation)
+-#    Piotr Bartecki <pbartecki@mozillapl.org> (Polish translation)
+-#    Piotr Komoda <gorky@civ.pl> (Polish translation)
+-#    Marek Stepien <marcoos@aviary.pl> (Polish translation)
++#    Marek Wawoczny <gmbh@mozillapl.org> (Polish localization)
++#    Piotr Bartecki <pbartecki@mozillapl.org> (Polish localization)
++#    Piotr Komoda <gorky@civ.pl> (Polish localization)
++#    Marek Stepien <marcoos@aviary.pl> (Polish localization)
+ # 
+ # Alternatively, the contents of this file may be used under the terms of
+ # either the GNU General Public License Version 2 or later (the "GPL"), or
+ # the GNU Lesser General Public License Version 2.1 or later (the "LGPL"),
+ # in which case the provisions of the GPL or the LGPL are applicable instead
+ # of those above. If you wish to allow use of your version of this file only
+ # under the terms of either the GPL or the LGPL, and not to allow others to
+ # use your version of this file under the terms of the MPL, indicate your
+@@ -59,17 +59,17 @@ issuerNotKnown=Ponieważ organ certyfika
+ issuerCertNotFound=Znalezienie certyfikatu tego organu certyfikacji było niemożliwe
+ 
+ #For Deleting Certificates
+ deleteSslCertConfirm3=Czy na pewno usunąć te wyjątki dotyczące certyfikatów serwerów?
+ deleteSslCertImpact3=Jeżeli wyjątek dotyczący certyfikatu serwera zostanie usunięty, przywrócone zostaną zwykłe procedury bezpieczeństwa dla tego serwera, w tym wymóg stosowania przez niego poprawnego certyfikatu.
+ deleteSslCertTitle3=Usuń wyjątek dotyczący certyfikatu serwera
+ 
+ deleteUserCertConfirm=Czy na pewno usunąć wybrane certyfikaty?
+-deleteUserCertImpact=Jeżeli usuniesz jeden ze swoich własnych certyfikatów, to ponowne wykorzystanie go do potwierdzenia twojej tożsamości będzie niemożliwe.
++deleteUserCertImpact=Usunięcie jednego ze swoich własnych certyfikatów, spowoduje, że ponowne wykorzystanie go do potwierdzenia tożsamości użytkownika będzie niemożliwe.
+ deleteUserCertTitle=Usuń własne certyfikaty
+ 
+ deleteCaCertConfirm=Czy na pewno usunąć wybrane certyfikaty CA?
+ deleteCaCertImpactX=Jeżeli certyfikat tego organu certyfikacji (CA) zostanie usunięty, program nie zakwalifikuje żadnego certyfikatu wydanego przez ten organ jako godny zaufania.
+ deleteCaCertTitle=Usuń certyfikaty organu certyfikacji
+ 
+ deleteEmailCertConfirm=Czy na pewno usunąć certyfikaty e-mail wybranych osób?
+ deleteEmailCertImpactDesc=Jeśli certyfikat e-mail danej osoby zostanie usunięty, nie będzie można do niej wysłać zaszyfrowanych wiadomości.
+diff --git a/security/manager/chrome/pippki/validation.dtd b/security/manager/chrome/pippki/validation.dtd
+--- a/security/manager/chrome/pippki/validation.dtd
++++ b/security/manager/chrome/pippki/validation.dtd
+@@ -15,37 +15,37 @@
+    -
+    - The Initial Developer of the Original Code is
+    - Netscape Communications Corp.
+    - Portions created by the Initial Developer are Copyright (C) 2001
+    - the Initial Developer. All Rights Reserved.
+    -
+    - Contributor(s):
+    -   David P. Drinan (ddrinan@netscape.com)
+-   -   Marek Wawoczny <gmbh@mozillapl.org> (Polish translation)
+-   -   Piotr Bartecki <pbartecki@mozillapl.org> (Polish translation)
+-   -   Piotr Komoda <pitreck@aviary.pl> (Polish translation)
+-   -   Marek Stępień <marcoos@aviary.pl> (Polish translation)
++   -   Marek Wawoczny <gmbh@mozillapl.org> (Polish localization)
++   -   Piotr Bartecki <pbartecki@mozillapl.org> (Polish localization)
++   -   Piotr Komoda <pitreck@aviary.pl> (Polish localization)
++   -   Marek Stępień <marcoos@aviary.pl> (Polish localization)
+    -
+    - Alternatively, the contents of this file may be used under the terms of
+    - either the GNU General Public License Version 2 or later (the "GPL"), or
+    - the GNU Lesser General Public License Version 2.1 or later (the "LGPL"),
+    - in which case the provisions of the GPL or the LGPL are applicable instead
+    - of those above. If you wish to allow use of your version of this file only
+    - under the terms of either the GPL or the LGPL, and not to allow others to
+    - use your version of this file under the terms of the MPL, indicate your
+    - decision by deleting the provisions above and replace them with the notice
+    - and other provisions required by the GPL or the LGPL. If you do not delete
+    - the provisions above, a recipient may use your version of this file under
+    - the terms of any one of the MPL, the GPL or the LGPL.
+    -
+    - ***** END LICENSE BLOCK ***** -->
+ 
+ <!ENTITY  validation.crlmanager.label             "Menedżer list CRL">
+-<!ENTITY  validation.crlmanager.description       "Poniższe listy unieważnionych certyfikatów (CRL) są przechowywane w Twojej bazie certyfikatów.">
++<!ENTITY  validation.crlmanager.description       "Poniższe listy unieważnionych certyfikatów (CRL) są przechowywane w bazie certyfikatów użytkownika.">
+ <!ENTITY  validation.crlname.label                "Nazwa">
+ <!ENTITY  validation.crllastupdate.label          "Ostatnia aktualizacja">
+ <!ENTITY  validation.crlnextupdate.label          "Następna aktualizacja">
+ <!ENTITY  validation.crlautoupdateenabled.label   "Automatyczna aktualizacja">
+ <!ENTITY  validation.crlautoupdatestatus.label    "Status automatycznej aktualizacji">
+ <!ENTITY  validation.deletecrl.label              "Usuń">
+ <!ENTITY  validation.deletecrl.accesskey          "U">
+ <!ENTITY  validation.updatecrl.label              "Aktualizuj">
+diff --git a/toolkit/chrome/mozapps/preferences/removemp.dtd b/toolkit/chrome/mozapps/preferences/removemp.dtd
+--- a/toolkit/chrome/mozapps/preferences/removemp.dtd
++++ b/toolkit/chrome/mozapps/preferences/removemp.dtd
+@@ -1,6 +1,6 @@
+ <!ENTITY removePassword.title              "Usuń hasło główne">
+ <!ENTITY removeInfo.label                  "Wprowadź aktualne hasło, aby kontynuować:">
+ <!ENTITY removeWarning1.label              "Hasło główne jest stosowane do ochrony prywatnych informacji, takich jak hasła do witryn.">
+-<!ENTITY removeWarning2.label              "Jeśli usuniesz hasło główne, informacje te nie będą chronione w przypadku naruszenia bezpieczeństwa Twojego komputera.">
++<!ENTITY removeWarning2.label              "Usunięcie hasła głównego sprawi, że informacje te nie będą chronione w przypadku naruszenia bezpieczeństwa komputera użytkownika.">
+ <!ENTITY setPassword.oldPassword.label     "Aktualne hasło:">
+ 
+

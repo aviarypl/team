@@ -1,0 +1,91 @@
+diff -ur 4/pl/default/account/prefs/email.html.tmpl 5/pl/default/account/prefs/email.html.tmpl
+--- 4/pl/default/account/prefs/email.html.tmpl	2004-05-22 12:32:12.000000000 +0200
++++ 5/pl/default/account/prefs/email.html.tmpl	2004-05-30 23:17:33.000000000 +0200
+@@ -158,7 +158,7 @@
+     </td>
+     [% IF useqacontact %]
+       <td align="center" width="10%">
+-        <b>Kontakt QA</b>[% #TODOpfx %]
++        <b>Kontakt QA</b>
+       </td>
+     [% END %]
+     <td align="center" width="10%">
+diff -ur 4/pl/default/bug/create/comment-guided.txt.tmpl 5/pl/default/bug/create/comment-guided.txt.tmpl
+--- 4/pl/default/bug/create/comment-guided.txt.tmpl	2004-05-20 21:38:50.000000000 +0200
++++ 5/pl/default/bug/create/comment-guided.txt.tmpl	2004-05-30 23:17:26.000000000 +0200
+@@ -24,7 +24,7 @@
+   #   various custom fields and format an initial Description entry from them. 
+   #%]  
+ Przeglądarka:         [%+ user_agent %]
+-Identyfikator wersji: [%+ form.buildid %][% #TODOpfx: build-id i user-agent %]
++Identyfikator wersji: [%+ form.buildid %]
+ 
+ [%+ form.comment IF form.comment %]
+ 
+diff -ur 4/pl/default/bug/edit.html.tmpl 5/pl/default/bug/edit.html.tmpl
+--- 4/pl/default/bug/edit.html.tmpl	2004-05-29 01:26:48.000000000 +0200
++++ 5/pl/default/bug/edit.html.tmpl	2004-05-30 23:14:11.000000000 +0200
+@@ -313,10 +313,10 @@
+   [% IF Param('usestatuswhiteboard') %]
+     <tr>
+       <td align="right">
+-        <b>Status <u>W</u>hiteboard:</b>[%# TODOpfx: jakiś pomysł jak to przetłumaczyć? %]
++        <b><u>T</u>ablica statusu:</b>
+       </td>
+       <td colspan="5">
+-        <input name="status_whiteboard" accesskey="w"
++        <input name="status_whiteboard" accesskey="t"
+                value="[% bug.status_whiteboard FILTER html %]" size="60">
+       </td>
+     </tr>
+diff -ur 4/pl/default/bug/show-multiple.html.tmpl 5/pl/default/bug/show-multiple.html.tmpl
+--- 4/pl/default/bug/show-multiple.html.tmpl	2004-05-20 21:54:35.000000000 +0200
++++ 5/pl/default/bug/show-multiple.html.tmpl	2004-05-30 23:14:31.000000000 +0200
+@@ -132,7 +132,7 @@
+     [% IF Param("usestatuswhiteboard") %]
+       <tr>
+         <td colspan="4">
+-          <b>Status Whiteboard:</b>&nbsp;[% #TODOpfx %]
++          <b>Tablica statusu:</b>&nbsp;
+           [% bug.status_whiteboard FILTER html %]
+         </td>
+       </tr>
+diff -ur 4/pl/default/global/field-descs.none.tmpl 5/pl/default/global/field-descs.none.tmpl
+--- 4/pl/default/global/field-descs.none.tmpl	2004-05-30 11:37:37.000000000 +0200
++++ 5/pl/default/global/field-descs.none.tmpl	2004-05-30 23:13:34.000000000 +0200
+@@ -55,7 +55,7 @@
+                    "reporter_accessible"  => "Dostępne dla zgłaszającego?",
+                    "resolution"           => "Rozwiązanie",
+                    "short_desc"           => "Podsumowanie",
+-                   "status_whiteboard"    => "Whiteboard", #TODOpfx
++                   "status_whiteboard"    => "Tablica statusu",
+                    "target_milestone"     => "Docelowa wersja",
+                    "version"              => "Wersja",
+                    "votes"                => "Głosów",
+diff -ur 4/pl/default/global/user-error.html.tmpl 5/pl/default/global/user-error.html.tmpl
+--- 4/pl/default/global/user-error.html.tmpl	2004-05-30 01:37:21.000000000 +0200
++++ 5/pl/default/global/user-error.html.tmpl	2004-05-30 23:16:14.000000000 +0200
+@@ -549,7 +549,7 @@
+     [% title = "HTML w sentencji" %]
+     Ze względów bezpieczeństwa, używanie znaczników HTML wewnątrz sentencji zostało wyłączone.
+ 
+-  [% ELSIF error == "no_new_quips" %] [% #TODOpfx %]
++  [% ELSIF error == "no_new_quips" %]
+     [% title = "Nie można tworzyć nowych sentencji" %] 
+     Ta instalacja nie pozwala na dodawanie nowych sentencji.
+ 
+diff -ur 4/pl/default/search/form.html.tmpl 5/pl/default/search/form.html.tmpl
+--- 4/pl/default/search/form.html.tmpl	2004-05-30 20:06:39.000000000 +0200
++++ 5/pl/default/search/form.html.tmpl	2004-05-30 23:12:45.000000000 +0200
+@@ -449,8 +449,8 @@
+       accesskey => 'k' },
+     { name => "bug_file_loc", description => "<u>U</u>RL",
+       accesskey => 'u' },
+-    { name => "status_whiteboard", description => "W<u>h</u>iteboard",
+-      accesskey => 'h' } ] %]
++    { name => "status_whiteboard", description => "<u>T</u>ablica statusu",
++      accesskey => 't' } ] %]
+ 
+     [% UNLESS field.name == 'status_whiteboard' AND NOT Param('usestatuswhiteboard') %]
+     <tr>
+

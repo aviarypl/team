@@ -1,0 +1,103 @@
+Index: calendar/preferences/general.dtd
+===================================================================
+--- calendar/preferences/general.dtd	(wersja 12)
++++ calendar/preferences/general.dtd	(kopia robocza)
+@@ -42,5 +42,5 @@
+ <!ENTITY pref.dateformat.short "długi"  >
+ <!ENTITY pref.defaultlength.label   "Domyślny czas trwania wydarzenia:" >
+ <!ENTITY pref.defaultlength.accesskey "D">
+-<!ENTITY pref.defaultsnoozelength.label   "Domyślna długość odstępu powiadamiania:" >
++<!ENTITY pref.defaultsnoozelength.label   "Domyślna długość odstępu między przypomnieniami:" >
+ <!ENTITY pref.defaultsnoozelength.accesskey "o">
+Index: calendar/preferences/alarms.dtd
+===================================================================
+--- calendar/preferences/alarms.dtd	(wersja 12)
++++ calendar/preferences/alarms.dtd	(kopia robocza)
+@@ -42,30 +42,30 @@
+    - your editor isn't using UTF-8 encoding and may munge up the document!
+   -->
+ 
+-<!ENTITY pref.alarmgoesoff.label "Sygnalizacja powiadomień">
++<!ENTITY pref.alarmgoesoff.label "Sygnalizacja przypomnień">
+ <!ENTITY pref.playasound "Odtwórz dźwięk:">
+-<!ENTITY pref.calendar.alarms.playsound.accessKey "w">
++<!ENTITY pref.calendar.alarms.playsound.accessKey "O">
+ <!ENTITY pref.calendar.alarms.sound.useDefault.label "Użyj domyślnego dźwięku">
+ <!ENTITY pref.calendar.alarms.sound.useDefault.accessKey "d">
+ <!ENTITY pref.calendar.alarms.sound.browse.label "Przeglądaj…">
+ <!ENTITY pref.calendar.alarms.sound.browse.accessKey "g">
+-<!ENTITY pref.calendar.alarms.sound.preview.label "Podgląd">
+-<!ENTITY pref.calendar.alarms.sound.preview.accessKey "P">
++<!ENTITY pref.calendar.alarms.sound.preview.label "Odtwórz">
++<!ENTITY pref.calendar.alarms.sound.preview.accessKey "w">
+ <!ENTITY pref.showalarmbox "Wyświetl okno powiadomienia">
+-<!ENTITY pref.calendar.alarms.showAlarmBox.accessKey "o">
+-<!ENTITY pref.missedalarms "Wyświetl opuszczone powiadomienia">
++<!ENTITY pref.calendar.alarms.showAlarmBox.accessKey "k">
++<!ENTITY pref.missedalarms "Wyświetl opuszczone przypomnienia">
+ <!ENTITY pref.calendar.alarms.missedAlarms.accessKey "m">
+-<!ENTITY pref.calendar.alarms.defaults.label "Domyślne ustawienia powiadomień">
+-<!ENTITY pref.defalarm4events.label "Domyślne ustawienie powiadomień dla wydarzeń:">
++<!ENTITY pref.calendar.alarms.defaults.label "Domyślne ustawienia przypomnień">
++<!ENTITY pref.defalarm4events.label "Przypomnienia dla wydarzeń:">
+ <!ENTITY pref.defalarm4events.accesskey "u">
+-<!ENTITY pref.defalarm4todos.label "Domyślne ustawienie powiadomień dla zadań:">
++<!ENTITY pref.defalarm4todos.label "Przypomnienia dla zadań:">
+ <!ENTITY pref.defalarm4todos.accesskey "s">
+ <!ENTITY pref.alarm.on "włączone">
+ <!ENTITY pref.alarm.off "wyłączone">
+-<!ENTITY pref.defalarmlen4events.label "Domyślny czas powiadomienia przed wydarzeniem:">
++<!ENTITY pref.defalarmlen4events.label "Czas przypomnienia przed wydarzeniem:">
+ <!ENTITY pref.defalarmlen4events.accesskey "c">
+-<!ENTITY pref.defalarmlen4todos.label "Domyślny czas powiadomienia przed zadaniem:">
++<!ENTITY pref.defalarmlen4todos.label "Czas przypomnienia przed zadaniem:">
+ <!ENTITY pref.defalarmlen4todos.accesskey "z">
+-<!ENTITY pref.alarmbox.label "Powiadomienia">
+-<!ENTITY pref.defaultemail.label "Domyślny adres do wysyłania powiadomień:">
+-<!ENTITY pref.defaulttext.label "Domyślny tekst dla powiadomień:">
++<!ENTITY pref.alarmbox.label "Przypomnienia">
++<!ENTITY pref.defaultemail.label "Adres do wysyłania przypomnień:">
++<!ENTITY pref.defaulttext.label "Tekst przypomnień:">
+Index: calendar/calendar.dtd
+===================================================================
+--- calendar/calendar.dtd	(wersja 12)
++++ calendar/calendar.dtd	(kopia robocza)
+@@ -55,8 +55,8 @@
+ <!ENTITY alarm.units.hours.singular    "godzina" >
+ <!ENTITY alarm.units.days.singular     "dzień" >
+ 
+-<!ENTITY alarm.start.warning     "To powiadomienie wymaga daty początkowej" >
+-<!ENTITY alarm.due.warning     "To powiadomienie wymaga daty wystąpienia" >
++<!ENTITY alarm.start.warning     "To przypomnienie wymaga daty początkowej" >
++<!ENTITY alarm.due.warning     "To przypomnienie wymaga daty wystąpienia" >
+ 
+ <!ENTITY repeat.units.occurence.both         "razy" >
+ 
+@@ -109,7 +109,7 @@
+ <!ENTITY newevent.private.note       "To wydarzenie jest prywatne." >
+ <!ENTITY newevent.public.label       "Publiczne" >
+ <!ENTITY newevent.confidential.label "Poufne" >
+-<!ENTITY newevent.alarm.label        "Powiadom:" >
++<!ENTITY newevent.alarm.label        "Przypomnij:" >
+ <!ENTITY newevent.server.label       "Kalendarz:" >
+ <!ENTITY newevent.invite.label       "Zaproś" >
+ <!ENTITY newevent.details.label      "Szczegóły" >
+@@ -211,7 +211,7 @@
+ 
+ <!ENTITY event.alarm.checkbox.label "Przypomnij mi znów " >
+ 
+-<!ENTITY event.title.alarm         "Powiadomienie" >
++<!ENTITY event.title.alarm         "Przypomnienie" >
+ <!ENTITY event.title.new         "Nowe wydarzenie" >
+ <!ENTITY event.title.label       "Edytuj element" >
+ <!ENTITY event.title.edit        "Edytuj" >
+@@ -489,7 +489,7 @@
+ <!ENTITY calendar.alarm.editevent.label             "Edytuj wydarzenie" >
+ <!ENTITY calendar.alarm.acknowledgeall.label        "Potwierdź wszystkie alarmy" >
+ <!ENTITY calendar.alarm.snooze.label                "Przypomnij" >
+-<!ENTITY calendar.alarm.title.label                 "Powiadomienie kalendarza" >
++<!ENTITY calendar.alarm.title.label                 "Przypomnienie kalendarza" >
+ <!ENTITY calendar.alarm.dismiss.label               "Wyłącz" >
+ <!ENTITY calendar.alarm.dismissall.label            "Wyłącz wszystkie przypomnienia" >
+ <!ENTITY calendar.alarm.for.label  "za" >
+

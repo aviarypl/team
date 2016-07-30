@@ -1,0 +1,1836 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>1768 &ndash; Zacząć tworzyć reguły funkcjonowania Aviary.pl</title>
+
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<link href="data/assets/7aa6ea67750936a0368541421bdcd5ee.css" rel="stylesheet" type="text/css">
+
+
+
+    
+<script type="text/javascript" src="data/assets/a7c2f3a028f17a9aa60f56dc9d6e732d.js"></script>
+
+    <script type="text/javascript">
+    <!--
+        YAHOO.namespace('bugzilla');
+        YAHOO.util.Event.addListener = function (el, sType, fn, obj, overrideContext) {
+               if ( ("onpagehide" in window || YAHOO.env.ua.gecko) && sType === "unload") { sType = "pagehide"; };
+               var capture = ((sType == "focusin" || sType == "focusout") && !YAHOO.env.ua.ie) ? true : false;
+               return this._addListener(el, this._getType(sType), fn, obj, overrideContext, capture);
+         };
+        if ( "onpagehide" in window || YAHOO.env.ua.gecko) {
+            YAHOO.util.Event._simpleRemove(window, "unload", 
+                                           YAHOO.util.Event._unload);
+        }
+        
+        function unhide_language_selector() { 
+            YAHOO.util.Dom.removeClass(
+                'lang_links_container', 'bz_default_hidden'
+            ); 
+        } 
+        YAHOO.util.Event.onDOMReady(unhide_language_selector);
+
+        
+        var BUGZILLA = {
+            param: {
+                cookiepath: '\/',
+                maxusermatches: 1000
+            },
+            constant: {
+                COMMENT_COLS: 80
+            },
+            string: {
+                
+
+                attach_desc_required:
+                    "You must enter a Description for this attachment.",
+                component_required:
+                    "You must select a Component for this bug.",
+                description_required:
+                    "You must enter a Description for this bug.",
+                short_desc_required:
+                    "You must enter a Summary for this bug.",
+                version_required:
+                    "You must select a Version for this bug."
+            }
+              , api_token: ''
+        };
+
+    if (history && history.replaceState) {
+      if(!document.location.href.match(/show_bug\.cgi/)) {
+        history.replaceState( null,
+                             "1768 – Zacząć tworzyć reguły funkcjonowania Aviary.pl",
+                             "show_bug.cgi?id=1768" );
+        document.title = "1768 – Zacząć tworzyć reguły funkcjonowania Aviary.pl";
+      }
+      if (document.location.href.match(/show_bug\.cgi\?.*list_id=/)) {
+        var href = document.location.href;
+        href = href.replace(/[\?&]+list_id=(\d+|cookie)/, '');
+        history.replaceState(null, "1768 – Zacząć tworzyć reguły funkcjonowania Aviary.pl", href);
+      }
+    }
+    YAHOO.util.Event.onDOMReady(function() {
+      initDirtyFieldTracking();
+
+    });
+    // -->
+    </script>
+<script type="text/javascript" src="data/assets/daf5e0fb6826e6a35280e622913f0c4a.js"></script>
+
+    
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+                       title="Bugzilla" href="search_plugin.cgi">
+    <link rel="shortcut icon" href="images/favicon.ico">
+  </head>
+
+  <body 
+        class="bugs-aviary-pl
+                 bz_bug
+                 bz_status_CONFIRMED
+                 bz_product_Inne
+                 bz_component_Og&#XF3;lne
+                 bz_bug_1768 yui-skin-sam">
+
+  <div id="header"><div id="banner">
+  </div>
+
+    <div id="titles">
+      <span id="title">Bugzilla &ndash; Bug&nbsp;1768</span>
+
+        <span id="subtitle" class="subheader">Zacząć tworzyć reguły funkcjonowania Aviary.pl</span>
+
+        <span id="information" class="header_addl_info">Last modified: 2012-04-19 09:44:14 CEST</span>
+    </div>
+
+
+    <div id="common_links"><ul class="links">
+  <li><a href="index.html">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi.html">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi.html">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi.html">Search</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="http://bugs.aviary.pl/buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input type="hidden" id="no_redirect_top" name="no_redirect" value="0">
+    <script type="text/javascript">
+      if (history && history.replaceState) {
+        var no_redirect = document.getElementById("no_redirect_top");
+        no_redirect.value = 1;
+      }
+    </script>
+    <input class="txt" type="text" id="quicksearch_top" name="quicksearch" 
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search" 
+           id="find_top"></form>
+  <a href="page.cgi%3Fid=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="report.cgi.html">Reports</a></li>
+
+  <li>
+      <span class="separator">| </span>
+        <a href="request.cgi.html">Requests</a></li>
+
+
+  <li>
+        <span class="separator">| </span>
+        <a href="https://bugzilla.readthedocs.org/en/5.0/using/understanding.html" target="_blank">Help</a>
+      </li>
+    
+      <li id="new_account_container_top">
+        <span class="separator">| </span>
+        <a href="createaccount.cgi.html">New&nbsp;Account</a>
+      </li>
+
+    <li id="mini_login_container_top">
+  <span class="separator">| </span>
+  <a id="login_link_top" href="show_bug.cgi%3Fid=1768&amp;GoAheadAndLogIn=1.html"
+     onclick="return show_mini_login_form('_top')">Log In</a>
+
+  <form action="show_bug.cgi%3Fid=1768.html" method="POST"
+        class="mini_login bz_default_hidden"
+        id="mini_login_top">
+    <input id="Bugzilla_login_top" required
+           name="Bugzilla_login" class="bz_login"
+        type="email" placeholder="Email Address">
+    <input class="bz_password" name="Bugzilla_password" type="password"
+           id="Bugzilla_password_top" required
+           placeholder="Password">
+    <input type="hidden" name="Bugzilla_login_token"
+           value="1469821041-klcvgtYIfFtSvF-_a-cC3-D6ZapiYBOztzsJxeClk0o">
+    <input type="submit" name="GoAheadAndLogIn" value="Log in"
+            id="log_in_top">
+    <a href="show_bug.cgi%3Fid=1768.html#" onclick="return hide_mini_login_form('_top')">[x]</a>
+  </form>
+</li>
+
+
+  <li id="forgot_container_top">
+    <span class="separator">| </span>
+    <a id="forgot_link_top" href="show_bug.cgi%3Fid=1768&amp;GoAheadAndLogIn=1.html#forgot"
+       onclick="return show_forgot_form('_top')">Forgot Password</a>
+    <form action="http://bugs.aviary.pl/token.cgi" method="post" id="forgot_form_top"
+          class="mini_forgot bz_default_hidden">
+      <label for="login_top">Login:</label>
+      <input name="loginname" size="20" id="login_top" required
+          type="email" placeholder="Your Email Address">
+      <input id="forgot_button_top" value="Reset Password" type="submit">
+      <input type="hidden" name="a" value="reqpw">
+      <input type="hidden" id="token_top" name="token"
+             value="1469821041-q3ZuLEe5h3TvRV-002r17C-7K4eK7HTeu4en5jOhUZE">
+      <a href="show_bug.cgi%3Fid=1768.html#" onclick="return hide_forgot_form('_top')">[x]</a>
+    </form>
+  </li>
+</ul>
+    </div>
+  </div>
+
+  <div id="bugzilla-body">
+
+
+<script type="text/javascript">
+<!--
+
+//-->
+</script>
+
+<form name="changeform" id="changeform" method="post" action="http://bugs.aviary.pl/process_bug.cgi">
+
+  <input type="hidden" name="delta_ts" value="2012-04-19 09:44:14">
+  <input type="hidden" name="id" value="1768">
+  <input type="hidden" name="token" value="1469821041-s7M1cfkYWXaWwXL047KaRAt4_kVuCEx1ZAyVbYuabUw">
+<div class="bz_short_desc_container edit_form">
+     <a href="show_bug.cgi%3Fid=1768.html"><b>Bug&nbsp;1768</b></a> <span id="summary_container" class="bz_default_hidden">
+      - <span id="short_desc_nonedit_display">Zacząć tworzyć reguły funkcjonowania Aviary.pl</span>
+     </span>
+
+    <div id="summary_input"><span class="field_label "
+    id="field_label_short_desc">
+
+
+  <a 
+      title="The bug summary is a short sentence which succinctly describes what the bug is about."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#short_desc"
+  >Summary:</a>
+
+</span>Zacząć tworzyć reguły funkcjonowania Aviary.pl
+    </div>
+  </div>
+  <script type="text/javascript">
+    hideEditableField('summary_container',
+                      'summary_input',
+                      'summary_edit_action',
+                      'short_desc',
+                      'Zacząć tworzyć reguły funkcjonowania Aviary.pl' );
+  </script>
+  <table class="edit_form">
+    <tr>
+      
+      <td id="bz_show_bug_column_1" class="bz_show_bug_column">     
+        <table>
+          <tr>
+    <th class="field_label">
+      <a href="page.cgi%3Fid=fields.html#bug_status">Status</a>:
+    </th>
+    <td id="bz_field_status">
+      <span id="static_bug_status">CONFIRMED
+      </span>
+    </td>
+  </tr>
+<tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+<tr><th class="field_label "
+    id="field_label_alias">
+
+
+  <a 
+      title="A short, unique name assigned to a bug in order to assist with looking it up and referring to it in other places in Bugzilla."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#alias"
+  >Alias:</a>
+
+</th>
+    <td>
+        None
+    </td>
+  </tr>
+<tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+<tr><th class="field_label "
+    id="field_label_product">
+
+
+  <a 
+      title="Bugs are categorised into Products and Components. Select a Classification to narrow down this list."
+      class="field_help_link"
+      href="describecomponents.cgi.html"
+  >Product:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_product" >Inne
+
+</td>
+    </tr>
+
+    
+    <tr class="bz_default_hidden"><th class="field_label "
+    id="field_label_classification">
+
+
+  <a 
+      title="Bugs are categorised into Classifications, Products and Components. classifications is the top-level categorisation."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#classification"
+  >Classification:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_classification" >Zespół Aviary.pl
+
+</td>
+    </tr>
+        
+    
+    
+    <tr><th class="field_label "
+    id="field_label_component">
+
+
+  <a 
+      title="Components are second-level categories; each belongs to a particular Product. Select a Product to narrow down this list."
+      class="field_help_link"
+      href="describecomponents.cgi%3Fproduct=Inne.html"
+  >Component:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_component" >Ogólne
+
+  (<a href="buglist.cgi%3Fcomponent=Ogólne&amp;product=Inne&amp;bug_status=__open__.html"
+      target="_blank">show other bugs</a>)
+</td>
+    </tr>
+    <tr><th class="field_label "
+    id="field_label_version">
+
+
+  <a 
+      title="The version field defines the version of the software the bug was found in."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#version"
+  >Version:</a>
+
+</th>
+<td>nieokreślona
+  </td>
+    </tr>
+        
+    
+        
+    <tr><th class="field_label "
+    id="field_label_rep_platform">
+
+
+  <a 
+      title="The hardware platform the bug was observed on. Note: When searching, selecting the option &quot;All&quot; only finds bugs whose value for this field is literally the word &quot;All&quot;."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#rep_platform"
+  >Hardware:</a>
+
+</th>
+      <td class="field_value">Wszystkie
+        Wszystkie
+      </td>
+    </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          
+          <tr>
+      <th class="field_label">
+        <label  accesskey="i">
+          <a href="page.cgi%3Fid=fields.html#importance"><u>I</u>mportance</a></label>:
+      </th>
+      <td>P3
+       normalny
+      </td>
+    </tr>
+          
+          <tr><th class="field_label "
+    id="field_label_assigned_to">
+
+
+  <a 
+      title="The person in charge of resolving the bug."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#assigned_to"
+  >Assignee:</a>
+
+</th>
+      <td><span class="vcard"><span class="fn">Staś Małolepszy :stas</span>
+</span>
+      </td>
+    </tr>
+
+    <tr><th class="field_label "
+    id="field_label_qa_contact">
+
+
+  <a 
+      title="The person responsible for confirming this bug if it is unconfirmed, and for verifying the fix once the bug has been resolved."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#qa_contact"
+  >QA Contact:</a>
+
+</th>
+      <td><span class="vcard"><span class="fn">Nikt nad tym nie pracuje (Aviary.pl Dummy Bug Owner)</span>
+</span>
+      </td>
+    </tr>
+    <script type="text/javascript">
+      assignToDefaultOnChange(['product', 'component'],
+        'nobody\x40aviary.pl',
+        'inne\x40l10n.bledy');
+    </script>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          <tr><th class="field_label "
+    id="field_label_bug_file_loc">
+
+
+  <a 
+      title="Bugs can have a URL associated with them - for example, a pointer to a web site where the problem is seen."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#bug_file_loc"
+  >URL:</a>
+
+</th>
+    <td>
+      <span id="bz_url_input_area">
+      </span>
+    </td>
+  </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+
+          
+<tr><th class="field_label "
+    id="field_label_dependson">
+
+
+  <a 
+      title="The bugs listed here must be resolved before this bug can be resolved."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#dependson"
+  >Depends on:</a>
+
+</th>
+
+  <td>
+    <span id="dependson_input_area">
+    </span>
+
+  </td>
+  </tr>
+  
+  <tr><th class="field_label "
+    id="field_label_blocked">
+
+
+  <a 
+      title="This bug must be resolved before the bugs listed in this field can be resolved."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#blocked"
+  >Blocks:</a>
+
+</th>
+
+  <td>
+    <span id="blocked_input_area">
+    </span>
+
+  </td>
+  </tr>
+          
+        </table>
+      </td>
+      <td>
+        <div class="bz_column_spacer">&nbsp;</div>
+      </td>
+      
+      <td id="bz_show_bug_column_2" class="bz_show_bug_column">
+        <table>
+        <tr>
+    <th class="field_label">
+      Reported:
+    </th>
+    <td>2008-06-12 04:54 CEST by <span class="vcard"><span class="fn">Staś Małolepszy :stas</span>
+</span>
+    </td>
+  </tr>
+  
+  <tr>
+    <th class="field_label">
+      Modified:
+    </th>
+    <td>2012-04-19 09:44 CEST
+      (<a href="show_activity.cgi%3Fid=1768.html">History</a>)
+    </td>
+  
+  </tr>
+<tr>
+      <th class="field_label">
+        <label  accesskey="a">
+          CC List:
+        </label>
+      </th>
+      <td>25 
+          users
+          <span id="cc_edit_area_showhide_container" class="bz_default_hidden">
+            (<a href="show_bug.cgi%3Fid=1768.html#" id="cc_edit_area_showhide">show</a>)
+          </span>
+        <div id="cc_edit_area">
+          <br>
+            <select id="cc" multiple="multiple" size="5" >
+                <option value="akalla">akalla</option>
+                <option value="bpiec">bpiec</option>
+                <option value="cleriic">cleriic</option>
+                <option value="gandalf">gandalf</option>
+                <option value="heidi">heidi</option>
+                <option value="hubert+bap">hubert+bap</option>
+                <option value="jmazgaj">jmazgaj</option>
+                <option value="kstawarz">kstawarz</option>
+                <option value="lemiel">lemiel</option>
+                <option value="leszekz">leszekz</option>
+                <option value="marcoos+bugs">marcoos+bugs</option>
+                <option value="mchojnacki">mchojnacki</option>
+                <option value="mmalinowski">mmalinowski</option>
+                <option value="mwawoczny">mwawoczny</option>
+                <option value="pitreck">pitreck</option>
+                <option value="pmakowski">pmakowski</option>
+                <option value="prefiks">prefiks</option>
+                <option value="ptak82">ptak82</option>
+                <option value="smalolepszy">smalolepszy</option>
+                <option value="splewako">splewako</option>
+                <option value="sprussak">sprussak</option>
+                <option value="tdominikowski">tdominikowski</option>
+                <option value="w.kapusta">w.kapusta</option>
+                <option value="wadimd">wadimd</option>
+                <option value="wszczesny">wszczesny</option>
+            </select>
+        </div>
+          <script type="text/javascript">
+            hideEditableField( 'cc_edit_area_showhide_container', 
+                               'cc_edit_area', 
+                               'cc_edit_area_showhide', 
+                               '', 
+                               '');  
+          </script>
+      </td>
+    </tr>
+
+<tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+<tr><th class="field_label "
+    id="field_label_see_also">
+
+
+  <a 
+      title="This allows you to refer to bugs in other installations. You can enter a URL to a bug in the 'Add Bug URLs' field to note that that bug is related to this one. You can enter multiple URLs at once by separating them with whitespace. You should normally use this field to refer to bugs in other installations. For bugs in this installation, it is better to use the Depends on and Blocks fields."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#see_also"
+  >See Also:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_see_also" >
+
+</td>
+    </tr> 
+
+<tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+
+
+
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+          <hr id="bz_top_half_spacer">
+      </td>
+    </tr>
+  </table>
+
+  <table id="bz_big_form_parts">
+  <tr>
+  <td>
+
+    
+<script type="text/javascript">
+<!--
+function toggle_display(link) {
+    var table = document.getElementById("attachment_table");
+    var view_all = document.getElementById("view_all");
+    var hide_obsolete_url_parameter = "&hide_obsolete=1";
+    // Store current height for scrolling later
+    var originalHeight = table.offsetHeight;
+    var rows = YAHOO.util.Dom.getElementsByClassName(
+        'bz_tr_obsolete', 'tr', table);
+
+    for (var i = 0; i < rows.length; i++) {
+        bz_toggleClass(rows[i], 'bz_default_hidden');
+    }
+
+    if (YAHOO.util.Dom.hasClass(rows[0], 'bz_default_hidden')) {
+        link.innerHTML = "Show Obsolete";
+        view_all.href = view_all.href + hide_obsolete_url_parameter 
+    }
+    else {
+        link.innerHTML = "Hide Obsolete";
+        view_all.href = view_all.href.replace(hide_obsolete_url_parameter,"");
+    }
+
+    var newHeight = table.offsetHeight;
+    // This scrolling makes the window appear to not move at all.
+    window.scrollBy(0, newHeight - originalHeight);
+
+    return false;
+}
+//-->
+</script>
+
+<br>
+<table id="attachment_table">
+  <tr id="a0">
+    <th colspan="3" class="left">
+      Attachments
+    </th>
+  </tr>
+
+
+
+  <tr class="bz_attach_footer">
+    <td colspan="3">
+        <a href="attachment.cgi%3Fbugid=1768&amp;action=enter.html">Add an attachment</a>
+        (proposed patch, testcase, etc.)
+    </td>
+  </tr>
+</table>
+<br>
+
+  </td>
+  <td>
+  </td>
+  </tr></table>
+
+  
+  <div id="comments"><script src="js/comments.js" type="text/javascript">
+</script>
+
+<script type="text/javascript">
+<!--
+  /* Adds the reply text to the 'comment' textarea */
+  function replyToComment(id, real_id, name) {
+      var prefix = "(In reply to " + name + " from comment #" + id + ")\n";
+      var replytext = "";
+        /* pre id="comment_name_N" */
+        var text_elem = document.getElementById('comment_text_'+id);
+        var text = getText(text_elem);
+        replytext = prefix + wrapReplyText(text);
+
+
+      /* <textarea id="comment"> */
+      var textarea = document.getElementById('comment');
+      if (textarea.value != replytext) {
+          textarea.value += replytext;
+      }
+
+      textarea.focus();
+  } 
+//-->
+</script>
+
+
+<!-- This auto-sizes the comments and positions the collapse/expand links 
+     to the right. -->
+<table class="bz_comment_table">
+<tr>
+<td>
+<div id="c0" class="bz_comment bz_first_comment">
+
+      <div class="bz_first_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1768.html#c0">Description</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Staś Małolepszy :stas</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-06-12 04:54:44 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Propozycja:
+
+1. Utworzenie produktu na b.a.p w klasyfikacji Zespol Aviary.pl o nazwie &quot;Reguły&quot; lub &quot;Zarzadzanie&quot; (inne propozyce mile widziane)
+
+2. Wprawadzenie zasady, ze wszelkie dyskusje dotyczace zasad funkcjonowania zespolu tocza sie na b.a.p
+
+3. Dyskusja trwa 7 dni od momentu zalozenia buga. w tym czasie czlonkowie Aviary.pl zabieraja glos w komentarzach oraz glosuja.
+
+4. Stan glosowania powinna na biezaco uaktualaniac w Whiteboardzie buga osoba, ktora rozpoczela dyskusje
+
+5. Nie ma quorum.
+
+6. Propozycja przechodzi, jesli ZA jest ponad 66% oddanych glosow
+
+7. Uchwalona w ten sposob regula trafia na wiki (trzeba tam bedzie stworzyc odpowiednia do tego celu strone lub kategorię)
+
+
+
+Nie chce wprowadzac za duzo biurokracji, ale dzieki temu:
+
+1. unikamy takich rzeczy jak <a href="http://wiki.aviary.pl/Pierwsze_kroki_w_Aviary.pl#Okres_pr.C3.B3bny">http://wiki.aviary.pl/Pierwsze_kroki_w_Aviary.pl#Okres_pr.C3.B3bny</a> (kawalki regul w roznych miejscach)
+
+2. latwiej sledzimy postep dyskusji i glosowania
+
+3. latwiej bedzie na podstawie tych &quot;uchwal&quot; stworzyc statut</pre>
+    </div>
+
+    <div id="c1" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1768.html#c1">Comment 1</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Staś Małolepszy :stas</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-06-12 05:00:51 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">OK, juz widze pierwszy problem. Dodawanie wszystkich do CC to pain in the ass. Mozemy zatem przyjac, ze nie dodajemy, a wysylamy jeden mail na team&#64; z URLem do buga.</pre>
+    </div>
+
+    <div id="c2" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1768.html#c2">Comment 2</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Stefan Plewako :stef</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-06-12 05:16:27 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(In reply to <a href="show_bug.cgi%3Fid=1768.html#c1">comment #1</a>)
+<span class="quote">&gt; OK, juz widze pierwszy problem. Dodawanie wszystkich do CC to pain in the ass.
+&gt; Mozemy zatem przyjac, ze nie dodajemy, a wysylamy jeden mail na team&#64; z URLem
+&gt; do buga.</span >
+
+Dla tego nowego produktu na bap można dodać wszystkich członków jako domyślnych obserwatorów zgłoszenia więc w zasadzie nie powinno być problemu.
+
+Mam natomiast wątpliwości dotyczące punktów drugich:
+(In reply to <a href="show_bug.cgi%3Fid=1768.html#c1">comment #1</a>)
+<span class="quote">&gt; 2. Wprawadzenie zasady, ze wszelkie dyskusje dotyczace zasad
+&gt; funkcjonowania zespolu tocza sie na b.a.p</span >
+
+Nie wiem czy wszelkie dyskusje powinny toczyć się publicznie i nie wiem jak to na nie wpłynie.
+
+(In reply to <a href="show_bug.cgi%3Fid=1768.html#c1">comment #1</a>)
+<span class="quote">&gt; 2. latwiej sledzimy postep dyskusji i glosowania</span >
+
+To już kwestia indywidualna, mnie np. mimo wszystko łatwiejsze się wydaje śledzenie dyskusji przez program pocztowy, a patrząc na dotychczasowe bardzo ogólne dyskusje na bap wydaje mi się to wątpliwe.</pre>
+    </div>
+
+    <div id="c3" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1768.html#c3">Comment 3</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Bartosz Piec</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-06-12 05:28:12 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(In reply to <a href="show_bug.cgi%3Fid=1768.html#c1">comment #1</a>)
+<span class="quote">&gt; OK, juz widze pierwszy problem. Dodawanie wszystkich do CC to pain in the ass.
+&gt; Mozemy zatem przyjac, ze nie dodajemy, a wysylamy jeden mail na team&#64; z URLem
+&gt; do buga.</span >
+
+A czy nie dałoby się dodać team&#64; do obserwatorów (pewnie by trzeba &quot;mu&quot; założyć konto ba bugzilli...)?</pre>
+    </div>
+
+    <div id="c4" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1768.html#c4">Comment 4</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Staś Małolepszy :stas</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-06-12 08:52:03 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(In reply to <a href="show_bug.cgi%3Fid=1768.html#c3">comment #3</a>)
+<span class="quote">&gt; (In reply to <a href="show_bug.cgi%3Fid=1768.html#c1">comment #1</a>)
+&gt; &gt; OK, juz widze pierwszy problem. Dodawanie wszystkich do CC to pain in the ass.
+&gt; &gt; Mozemy zatem przyjac, ze nie dodajemy, a wysylamy jeden mail na team&#64; z URLem
+&gt; &gt; do buga.
+&gt; 
+&gt; A czy nie dałoby się dodać team&#64; do obserwatorów (pewnie by trzeba &quot;mu&quot; założyć
+&gt; konto ba bugzilli...)?</span >
+
+Tak, to powinno zadziałać. Dzięki. (zajmę się tym wieczorem, bo imo i tak by sie przydalo)</pre>
+    </div>
+
+    <div id="c5" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1768.html#c5">Comment 5</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Staś Małolepszy :stas</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-06-12 11:10:05 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(In reply to <a href="show_bug.cgi%3Fid=1768.html#c2">comment #2</a>)
+
+<span class="quote">&gt; Dla tego nowego produktu na bap można dodać wszystkich członków jako domyślnych
+&gt; obserwatorów zgłoszenia więc w zasadzie nie powinno być problemu.</span >
+
+Poszedłem za radą Pieca: błąd 1770.
+
+<span class="quote">&gt; 
+&gt; Mam natomiast wątpliwości dotyczące punktów drugich:
+&gt; (In reply to <a href="show_bug.cgi%3Fid=1768.html#c1">comment #1</a>)
+&gt; &gt; 2. Wprawadzenie zasady, ze wszelkie dyskusje dotyczace zasad
+&gt; &gt; funkcjonowania zespolu tocza sie na b.a.p
+&gt; 
+&gt; Nie wiem czy wszelkie dyskusje powinny toczyć się publicznie i nie wiem jak to
+&gt; na nie wpłynie.</span >
+
+Mysle, ze mozemy zrobic tajną grupę Aviary.pl w bugzilli i chowac w niej bugi o regulach.
+
+<span class="quote">&gt; 
+&gt; (In reply to <a href="show_bug.cgi%3Fid=1768.html#c1">comment #1</a>)
+&gt; &gt; 2. latwiej sledzimy postep dyskusji i glosowania
+&gt; 
+&gt; To już kwestia indywidualna, mnie np. mimo wszystko łatwiejsze się wydaje
+&gt; śledzenie dyskusji przez program pocztowy, a patrząc na dotychczasowe bardzo
+&gt; ogólne dyskusje na bap wydaje mi się to wątpliwe.</span >
+
+Chodzilo mi o to, ze mozna w latwy sposob wyszukac w bugzilli:
+1. trwajace obecnie glosowania
+2. glosowania zakonczone miedzy X a Y
+3. podac linka do glosowania komus
+4. itd.
+
+Poza tym zostaje po tym trwaly slad i pozniej mozna zrozumiec, dlaczego podjelismy taka, a nie inna decyzję (np. omawiajac podobne zagadnienie rok pozniej)</pre>
+    </div>
+
+    <div id="c6" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1768.html#c6">Comment 6</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Stefan Plewako :stef</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-06-14 07:22:28 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">OK, przekonałeś mnie; jakoś sobie chyba damy radę bez wątków.
+
+(In reply to <a href="show_bug.cgi%3Fid=1768.html#c5">comment #5</a>)
+<span class="quote">&gt; Mysle, ze mozemy zrobic tajną grupę Aviary.pl w bugzilli i chowac w niej bugi o
+&gt; regulach.</span >
+
+Taka grupa już chyba istnieje, ważne żeby dodać do niej wszystkich członków zespołu i posiadać możliwość utajnienia (opcjonalnego, nie domyślnie).</pre>
+    </div>
+
+    <div id="c7" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1768.html#c7">Comment 7</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Bartosz Piec</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-06-14 10:22:36 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">A co z głosowaniami nad pozostaniem/przyjęciem kogoś do Aviary.pl? Jestem za tym, żeby głosowanie to było tajne (podawanie powodu bardzo mi się podoba), oraz żeby wymagało zdecydowanie więcej niż połowę głosów (2/3, albo nawet 3/4).
+
+A może by powody zrobić jawne (oczywiście bez ujawniania autora), żeby inni mogli się zapoznać z opinią współczłonków?</pre>
+    </div>
+
+    <div id="c8" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1768.html#c8">Comment 8</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-06-14 12:15:49 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Czas, bym się do tych propozycji ustosunkował.
+
+(In reply to <a href="show_bug.cgi%3Fid=1768.html#c0">comment #0</a>)
+<span class="quote">&gt; Propozycja:
+&gt; 
+&gt; 1. Utworzenie produktu na b.a.p w klasyfikacji Zespol Aviary.pl o nazwie
+&gt; &quot;Reguły&quot; lub &quot;Zarzadzanie&quot; (inne propozyce mile widziane)</span >
+
+Dla mnie bez różnicy, czy dyskusja będzie toczyć się mailowo czy przez b.a.p. - jak wolicie.
+
+<span class="quote">&gt; 2. Wprawadzenie zasady, ze wszelkie dyskusje dotyczace zasad funkcjonowania
+&gt; zespolu tocza sie na b.a.p</span >
+
+Jak wyżej.
+
+<span class="quote">&gt; 3. Dyskusja trwa 7 dni od momentu zalozenia buga. w tym czasie czlonkowie
+&gt; Aviary.pl zabieraja glos w komentarzach oraz glosuja.</span >
+
+Jak wyżej.
+
+<span class="quote">&gt; 4. Stan glosowania powinna na biezaco uaktualaniac w Whiteboardzie buga osoba,
+&gt; ktora rozpoczela dyskusje</span >
+
+Oj, mam pewne obawy. To dość dużo roboty. Po co nam coś takiego?
+
+<span class="quote">&gt; 5. Nie ma quorum.</span >
+
+Czyli bez zmian.
+
+<span class="quote">&gt; 6. Propozycja przechodzi, jesli ZA jest ponad 66% oddanych glosow</span >
+
+To jest dość rewolucyjna zmiana. Obawiam się utrudni podejmowanie decyzji
+
+Od razu mogę się też wypowiedzieć na temat większościowego podejmowania decyzji - nie wiem czy w tak dużym teamie to dobry pomysł (jest dość osobliwy). W każdym razie z mojej strony nie ma problemu - jeśli ta idea będzie miała szerokie poparcie i chcielibyście ją wdrożyć jeszcze przed październikiem - to mogę złożyć dymisję, nie trzeba będzie ze mną negocjować :-)
+
+<span class="quote">&gt; 7. Uchwalona w ten sposob regula trafia na wiki (trzeba tam bedzie stworzyc
+&gt; odpowiednia do tego celu strone lub kategorię)</span >
+
+To jest dobre. Choć nie wiem, co na to Gandalf, bo będzie miał więcej roboty :-)
+
+
+(In reply to <a href="show_bug.cgi%3Fid=1768.html#c7">comment #7</a>)
+<span class="quote">&gt; A co z głosowaniami nad pozostaniem/przyjęciem kogoś do Aviary.pl? Jestem za
+&gt; tym, żeby głosowanie to było tajne (podawanie powodu bardzo mi się podoba),
+&gt; oraz żeby wymagało zdecydowanie więcej niż połowę głosów (2/3, albo nawet 3/4).</span >
+
+To nie jest pierwsza propozycja, by to głosowanie było tajne. Zdecydowanie popieram. Głosowanie związane z wyborem prezesa zarządu też powinny być tajne.
+
+Dlaczego? Unikamy wtedy sytuacji, w której osoby, które mają inne zdanie niż większość, nie chcą wyrażać odmiennego zdania publicznie (bo nie chcą się sprzeciwiać większości).
+
+<span class="quote">&gt; A może by powody zrobić jawne (oczywiście bez ujawniania autora), żeby inni
+&gt; mogli się zapoznać z opinią współczłonków?</span >
+
+Coś takiego zastosowałem przy ostatnim głosowaniu. Z tego co wiem Staszek miał ciekawą propozycję dot. tego głosowania.
+
+Chciałbym też by można było zagłosować &quot;WSTRZYMUJE SIĘ&quot;, jeśli ktoś nie chce ani głosować ZA, ani PRZECIW, bo ma wątpliwości, ale bardzo chce oddać głos.
+
+Jeśli chodzi o to jaką większością głosów przyjnować nowa osobą, to popieram propozycję z 3/4 lub 2/3. Wyobrażam sobie głosowanie, gdzie 11 osób jest ZA, a 10 PRZECIW. Przyjmujemy wtedy do teamu osobę, z którą aż połowa osób nie chce (z jakichśtam powodów) pracować. Gdyby było 3/4 - to wtedy (przy np. 21 głosujących osobach) 16 musi być ZA. Coś takiego jeszcze się nie zdarzyło, ale warto zabezpieczyć się na przyszłość.
+
+Jednak ponieważ część osób może się wstrzymać przez to, że nie wie jak ocenić pracę nowoprzyjmowanej osoby, może dojść do takiej sytuacji:
+21 głosów:
+15 za
+0 przeciw
+6 wstrzymało się
+
+Osoba, przeciwko której nikt nie jest przeciw nie wchodzi do teamu... Dlatego proponuję to zrobić tak:
+
+Głosy ZA muszą stanowić 3/4 sumy głosów ZA i PRZECIW. Sumy głosów WSTRZYMUJE SIĘ nie bierzemy pod uwagę.</pre>
+    </div>
+
+    <div id="c9" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1768.html#c9">Comment 9</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Bartosz Piec</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-06-14 13:00:52 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(In reply to <a href="show_bug.cgi%3Fid=1768.html#c8">comment #8</a>)
+<span class="quote">&gt; &gt; A może by powody zrobić jawne (oczywiście bez ujawniania autora), żeby inni
+&gt; &gt; mogli się zapoznać z opinią współczłonków?
+&gt; 
+&gt; Coś takiego zastosowałem przy ostatnim głosowaniu. </span >
+
+Ale zrobiłeś to po fakcie, a ja to proponuję ujawniać na bieżąco, podczas głosowania. Być może komuś to ułatwi podjęcie decyzji (przypomni mu coś, o czym zapomniał), ale z drugiej strony może sugerować...
+
+<span class="quote">&gt; Z tego co wiem Staszek miał ciekawą propozycję dot. tego głosowania.</span >
+
+Tzn.?
+
+<span class="quote">&gt; Chciałbym też by można było zagłosować &quot;WSTRZYMUJE SIĘ&quot;, jeśli ktoś nie chce
+&gt; ani głosować ZA, ani PRZECIW, bo ma wątpliwości, ale bardzo chce oddać głos.</span >
+
+Jestem ZA :)
+
+<span class="quote">&gt; Głosy ZA muszą stanowić 3/4 sumy głosów ZA i PRZECIW. Sumy głosów WSTRZYMUJE
+&gt; SIĘ nie bierzemy pod uwagę.</span >
+
+Podoba mi się. +1 ode mnie.</pre>
+    </div>
+
+    <div id="c10" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1768.html#c10">Comment 10</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Bartosz Piec</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-06-14 13:02:42 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(In reply to <a href="show_bug.cgi%3Fid=1768.html#c9">comment #9</a>)
+<span class="quote">&gt; &gt; Głosy ZA muszą stanowić 3/4 sumy głosów ZA i PRZECIW. Sumy głosów WSTRZYMUJE
+&gt; &gt; SIĘ nie bierzemy pod uwagę.
+&gt; 
+&gt; Podoba mi się. +1 ode mnie.</span >
+
+Tak mi się teraz nasunęło... W takim razie po co nam &quot;WSTRZYMUJĘ SIĘ&quot;, jeśli nie ma to żadnego znaczenia? :)</pre>
+    </div>
+
+    <div id="c11" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1768.html#c11">Comment 11</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-06-14 13:09:49 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(In reply to <a href="show_bug.cgi%3Fid=1768.html#c10">comment #10</a>)
+<span class="quote">&gt; (In reply to <a href="show_bug.cgi%3Fid=1768.html#c9">comment #9</a>)
+&gt; &gt; &gt; Głosy ZA muszą stanowić 3/4 sumy głosów ZA i PRZECIW. Sumy głosów WSTRZYMUJE
+&gt; &gt; &gt; SIĘ nie bierzemy pod uwagę.
+&gt; &gt; 
+&gt; &gt; Podoba mi się. +1 ode mnie.
+&gt; 
+&gt; Tak mi się teraz nasunęło... W takim razie po co nam &quot;WSTRZYMUJĘ SIĘ&quot;, jeśli
+&gt; nie ma to żadnego znaczenia? :)</span >
+
+Ktoś chce zagłosować, nie może się zdecydować ani na ZA, ani na PRZECIW, ale chce uzasadnić dlaczego (widzi powody, by głosować ZA, widzi powody, by głosować PRZECIW), a nie chce biernie przyglądać się głosowaniu.</pre>
+    </div>
+
+    <div id="c12" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1768.html#c12">Comment 12</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-06-14 13:11:35 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(In reply to <a href="show_bug.cgi%3Fid=1768.html#c9">comment #9</a>)
+
+<span class="quote">&gt; Ale zrobiłeś to po fakcie, a ja to proponuję ujawniać na bieżąco, podczas
+&gt; głosowania. Być może komuś to ułatwi podjęcie decyzji (przypomni mu coś, o czym
+&gt; zapomniał), ale z drugiej strony może sugerować...</span >
+
+Całkiem niezły pomysł.</pre>
+    </div>
+
+    <div id="c13" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1768.html#c13">Comment 13</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Staś Małolepszy :stas</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-06-14 13:48:55 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(In reply to <a href="show_bug.cgi%3Fid=1768.html#c9">comment #9</a>)
+<span class="quote">&gt; (In reply to <a href="show_bug.cgi%3Fid=1768.html#c8">comment #8</a>)
+&gt; &gt; Z tego co wiem Staszek miał ciekawą propozycję dot. tego głosowania.
+&gt; 
+&gt; Tzn.?</span >
+
+Chodzilo o to, zeby wyjasnienie powodu bylo obowiazkowe przy glosie na NIE, a opcjonalne przy glosie na TAK.
+
+<span class="quote">&gt; &gt; Chciałbym też by można było zagłosować &quot;WSTRZYMUJE SIĘ&quot;, jeśli ktoś nie chce
+&gt; &gt; ani głosować ZA, ani PRZECIW, bo ma wątpliwości, ale bardzo chce oddać głos.</span >
+
+<span class="quote">&gt; &gt; Głosy ZA muszą stanowić 3/4 sumy głosów ZA i PRZECIW. Sumy głosów WSTRZYMUJE
+&gt; &gt; SIĘ nie bierzemy pod uwagę.</span >
+ 
+Jesli nie mam zdania, to nie glosuje (wstrzymalem sie). Jesli mam rozne zdania (argumenty na tak, i na nie) to pisze dlaczego i albo 1) oddaję glos (podejmuje jakas decyzje), albo 2) nie oddaję glosu i wstrzymuje sie. Innymi slowy chce, zeby to inni podjeli decyzję za mnie, a to jest moze byc niebezpieczne, bo de facto decyduje wtedy tylko garstka zainteresowanych. Dlatego mysle, ze glosy WSTRZYMUJE SIE powinny liczyc sie do NIE.
+
+Albo inaczej: aby pomysl przeszedl, glosow na TAK musi byc co najmniej 3/4 wszystkich oddanych glosow.
+
+Chodzi o to, zeby w przypadku kontrowersyjnej zmiany, duzo glosow &quot;wstrzymuje sie&quot; nie doprowadzilo do sytuacji, w ktorej mamy np. 3 TAK, 1 NIE i 10 WSTRZYMUJE SIE.
+
+Wazne jest, zeby zauwazyc, ze glos WSTRZYMUJE SIE to nie to samo co glos na NIE. Wyobrazmy sobie sytuacje, w ktorej mamy 3 TAK i 11 NIE - oczywiscie oznacza, to ze zespol nie chce zmiany. W przykladzie z akapitu wyzej (3 TAK, 1 NIE i 10 WSTRZYMUJE SIE) wyraznie widac, ze potrzeba przedyskutowac propozycje, bo zbyt wiele osob ma watpliwosci.
+
+* * *
+
+Aha, powyzsze zaklada, ze jestesmy ostrozni w stosunku do zmian. Jesli chcemy odrotnie (tj. unikac sytuacji, w ktorych blokujemy zmiany) to wystarczy dodawac glosy WSTRZYMUJE SIE do glosow na TAK ;)</pre>
+    </div>
+
+    <div id="c14" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1768.html#c14">Comment 14</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Wojciech Szczęsny</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-06-14 13:55:18 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(In reply to <a href="show_bug.cgi%3Fid=1768.html#c12">comment #12</a>)
+<span class="quote">&gt; (In reply to <a href="show_bug.cgi%3Fid=1768.html#c9">comment #9</a>)
+&gt; &gt; Ale zrobiłeś to po fakcie, a ja to proponuję ujawniać na bieżąco, podczas
+&gt; &gt; głosowania. Być może komuś to ułatwi podjęcie decyzji (przypomni mu coś, o czym
+&gt; &gt; zapomniał), ale z drugiej strony może sugerować...
+&gt; 
+&gt; Całkiem niezły pomysł.</span >
+
+Ja byłbym jednak za tym, by w trakcie głosowania nie ujawniać ani aktualnego
+stanu głosów, ani uzasadnień. Po to jest m.in. cisza wyborcza, by głosy czy
+motywacje tych, którzy już głosowali, nie wpływały na pozostałych.
+
+Jeśli wprowadzimy tajne głosowanie po ty, by ci, którzy mają odmienne zdanie
+niż większość, nie czuli presji, wtedy publikacja uzasadnień podczas głosowania
+też będzie rodzajem takiej presji. Łatwo się z takich uzasadnień domyśleć, czy
+dominują głosy za, czy przeciw.
+
+Wydaje mi się też, że przy publikacji uzasadnień trudno zachować tajność
+głosowania. Tekst uzasadnienia może wskazywać, kto go napisał.</pre>
+    </div>
+
+    <div id="c15" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1768.html#c15">Comment 15</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Staś Małolepszy :stas</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-06-14 14:18:12 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Popieram Wojtka.</pre>
+    </div>
+
+    <div id="c16" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1768.html#c16">Comment 16</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-06-14 14:19:59 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(In reply to <a href="show_bug.cgi%3Fid=1768.html#c13">comment #13</a>)
+<span class="quote">&gt; Dlatego mysle, ze glosy WSTRZYMUJE SIE powinny liczyc sie do NIE.</span >
+
+Chyba troszkę przesadziłeś :-) Może głosy ZA, też powinny liczyć się do NIE? ;-)
+
+<span class="quote">&gt; Albo inaczej: aby pomysl przeszedl, glosow na TAK musi byc co najmniej 3/4
+&gt; wszystkich oddanych glosow.</span >
+
+Hmmm... Jaki pomysł? Co to ma wspólnego z przyjęciem nowej osoby?
+
+<span class="quote">&gt; Aha, powyzsze zaklada, ze jestesmy ostrozni w stosunku do zmian.
+&gt; Jesli chcemy
+&gt; odrotnie (tj. unikac sytuacji, w ktorych blokujemy zmiany) to wystarczy dodawac
+&gt; glosy WSTRZYMUJE SIE do glosow na TAK ;)</span >
+
+Wycofuję się z tego &quot;WSTRZYMUJĘ SIĘ&quot;, bo prowadzi do do strasznego zamieszania. Zapomnijmy o tym jak najszybciej.</pre>
+    </div>
+
+    <div id="c17" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1768.html#c17">Comment 17</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Staś Małolepszy :stas</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-06-14 14:28:38 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(In reply to <a href="show_bug.cgi%3Fid=1768.html#c16">comment #16</a>)
+<span class="quote">&gt; (In reply to <a href="show_bug.cgi%3Fid=1768.html#c13">comment #13</a>)
+&gt; &gt; Dlatego mysle, ze glosy WSTRZYMUJE SIE powinny liczyc sie do NIE.
+&gt; 
+&gt; Chyba troszkę przesadziłeś :-) Może głosy ZA, też powinny liczyć się do NIE?
+&gt; ;-)</span >
+
+Nie nie; ne przesadzilem ;) Chodzi mi o to, zeby glosy WSTRZYMUJE SIE liczyly sie do sumy wszystkich glosow oddanych.
+<span class="quote">&gt; 
+&gt; &gt; Albo inaczej: aby pomysl przeszedl, glosow na TAK musi byc co najmniej 3/4
+&gt; &gt; wszystkich oddanych glosow.
+&gt; 
+&gt; Hmmm... Jaki pomysł? Co to ma wspólnego z przyjęciem nowej osoby?</span >
+
+Pomysl, regula, projekt, propozycja, policy, decyzja o przyjeciu nowej osoby. Ten bug dotyczy ogolnie sposobu, w jaki w Aviary.pl podejmujemy decyzje.
+
+<span class="quote">&gt; 
+&gt; &gt; Aha, powyzsze zaklada, ze jestesmy ostrozni w stosunku do zmian.
+&gt; &gt; Jesli chcemy
+&gt; &gt; odrotnie (tj. unikac sytuacji, w ktorych blokujemy zmiany) to wystarczy dodawac
+&gt; &gt; glosy WSTRZYMUJE SIE do glosow na TAK ;)
+&gt; 
+&gt; Wycofuję się z tego &quot;WSTRZYMUJĘ SIĘ&quot;, bo prowadzi do do strasznego zamieszania.
+&gt; Zapomnijmy o tym jak najszybciej.</span >
+
+Nie nie, to byl dobry pomysl IMO. Trzeba tylko sprawic, zeby do czegos sie liczyly ;)</pre>
+    </div>
+
+    <div id="c18" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1768.html#c18">Comment 18</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-06-14 14:36:36 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(In reply to <a href="show_bug.cgi%3Fid=1768.html#c17">comment #17</a>)
+
+<span class="quote">&gt; &gt; &gt; Albo inaczej: aby pomysl przeszedl, glosow na TAK musi byc co najmniej 3/4
+&gt; &gt; &gt; wszystkich oddanych glosow.
+&gt; &gt; 
+&gt; &gt; Hmmm... Jaki pomysł? Co to ma wspólnego z przyjęciem nowej osoby?
+&gt; 
+&gt; Pomysl, regula, projekt, propozycja, policy, decyzja o przyjeciu nowej osoby.
+&gt; Ten bug dotyczy ogolnie sposobu, w jaki w Aviary.pl podejmujemy decyzje.</span >
+
+Pogubiłem się. Myślałem, że Piecu z tymi 3/4 mówi o przyjmowaniu nowej osoby.</pre>
+    </div>
+
+    <div id="c19" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1768.html#c19">Comment 19</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Bartosz Piec</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-06-14 15:11:28 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(In reply to <a href="show_bug.cgi%3Fid=1768.html#c18">comment #18</a>)
+<span class="quote">&gt; Pogubiłem się. Myślałem, że Piecu z tymi 3/4 mówi o przyjmowaniu nowej osoby.</span >
+
+Ja tak. Ale o czym mówi Staszek, to on musi wyjaśnić :)</pre>
+    </div>
+
+    <div id="c20" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1768.html#c20">Comment 20</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Joanna Mazgaj</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-06-21 12:09:51 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">moge sprobować, w okolicach wtorku 24 czerwca.</pre>
+    </div>
+
+    <div id="c21" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1768.html#c21">Comment 21</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Joanna Mazgaj</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-06-21 12:11:53 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Przepraszam, nie za zakladka! (In reply to <a href="show_bug.cgi%3Fid=1768.html#c20">comment #20</a>)
+<span class="quote">&gt; moge sprobować, w okolicach wtorku 24 czerwca.</span ></pre>
+    </div>
+
+    <div id="c22" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1768.html#c22">Comment 22</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Stefan Plewako :stef</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2012-04-19 07:05:47 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">To się chyba kwalifikuje do zamknięcia.</pre>
+    </div>
+
+    <div id="c23" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1768.html#c23">Comment 23</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Bartosz Piec</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2012-04-19 09:44:14 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(W odpowiedzi na komentarz #22)
+<span class="quote">&gt; To się chyba kwalifikuje do zamknięcia.</span >
+
+I tak i nie... Reguły są, ale głosowania na nie nie ma.</pre>
+    </div>
+
+
+  
+
+</td>
+<td>
+</td>
+</tr></table>
+  </div>
+
+    <hr><div id="add_comment" class="bz_section_additional_comments">
+      <table>
+        <tr>
+          <td>
+            <fieldset>
+              <legend>Note</legend>
+              You need to
+              <a href="show_bug.cgi%3Fid=1768&amp;GoAheadAndLogIn=1.html">log in</a>
+              before you can comment on or make changes to this bug.
+            </fieldset>
+          </td>
+        </tr> 
+      </table>
+  </div>        
+
+</form>
+
+<hr>
+<ul class="related_actions">
+    <li><a href="show_bug.cgi%3Fformat=multiple&amp;id=1768.html">Format For Printing</a></li>
+    <li>&nbsp;-&nbsp;<a href="show_bug.cgi%3Fctype=xml&amp;id=1768">XML</a></li>
+    <li>&nbsp;-&nbsp;<a href="enter_bug.cgi%3Fcloned_bug_id=1768.html">Clone This Bug</a></li>
+    
+    <li>&nbsp;-&nbsp;<a href="show_bug.cgi%3Fid=1768.html#">Top of page </a></li>
+    </ul>
+
+<br>
+</div>
+
+    <div id="footer">
+      <div class="intro"></div>
+<ul id="useful-links">
+  <li id="links-actions"><ul class="links">
+  <li><a href="index.html">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi.html">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi.html">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi.html">Search</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="http://bugs.aviary.pl/buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input type="hidden" id="no_redirect_bottom" name="no_redirect" value="0">
+    <script type="text/javascript">
+      if (history && history.replaceState) {
+        var no_redirect = document.getElementById("no_redirect_bottom");
+        no_redirect.value = 1;
+      }
+    </script>
+    <input class="txt" type="text" id="quicksearch_bottom" name="quicksearch" 
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search" 
+           id="find_bottom"></form>
+  <a href="page.cgi%3Fid=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="report.cgi.html">Reports</a></li>
+
+  <li>
+      <span class="separator">| </span>
+        <a href="request.cgi.html">Requests</a></li>
+
+
+  <li>
+        <span class="separator">| </span>
+        <a href="https://bugzilla.readthedocs.org/en/5.0/using/understanding.html" target="_blank">Help</a>
+      </li>
+    
+      <li id="new_account_container_bottom">
+        <span class="separator">| </span>
+        <a href="createaccount.cgi.html">New&nbsp;Account</a>
+      </li>
+
+    <li id="mini_login_container_bottom">
+  <span class="separator">| </span>
+  <a id="login_link_bottom" href="show_bug.cgi%3Fid=1768&amp;GoAheadAndLogIn=1.html"
+     onclick="return show_mini_login_form('_bottom')">Log In</a>
+
+  <form action="show_bug.cgi%3Fid=1768.html" method="POST"
+        class="mini_login bz_default_hidden"
+        id="mini_login_bottom">
+    <input id="Bugzilla_login_bottom" required
+           name="Bugzilla_login" class="bz_login"
+        type="email" placeholder="Email Address">
+    <input class="bz_password" name="Bugzilla_password" type="password"
+           id="Bugzilla_password_bottom" required
+           placeholder="Password">
+    <input type="hidden" name="Bugzilla_login_token"
+           value="1469821041-klcvgtYIfFtSvF-_a-cC3-D6ZapiYBOztzsJxeClk0o">
+    <input type="submit" name="GoAheadAndLogIn" value="Log in"
+            id="log_in_bottom">
+    <a href="show_bug.cgi%3Fid=1768.html#" onclick="return hide_mini_login_form('_bottom')">[x]</a>
+  </form>
+</li>
+
+
+  <li id="forgot_container_bottom">
+    <span class="separator">| </span>
+    <a id="forgot_link_bottom" href="show_bug.cgi%3Fid=1768&amp;GoAheadAndLogIn=1.html#forgot"
+       onclick="return show_forgot_form('_bottom')">Forgot Password</a>
+    <form action="http://bugs.aviary.pl/token.cgi" method="post" id="forgot_form_bottom"
+          class="mini_forgot bz_default_hidden">
+      <label for="login_bottom">Login:</label>
+      <input name="loginname" size="20" id="login_bottom" required
+          type="email" placeholder="Your Email Address">
+      <input id="forgot_button_bottom" value="Reset Password" type="submit">
+      <input type="hidden" name="a" value="reqpw">
+      <input type="hidden" id="token_bottom" name="token"
+             value="1469821041-q3ZuLEe5h3TvRV-002r17C-7K4eK7HTeu4en5jOhUZE">
+      <a href="show_bug.cgi%3Fid=1768.html#" onclick="return hide_forgot_form('_bottom')">[x]</a>
+    </form>
+  </li>
+</ul>
+  </li>
+
+  
+
+
+
+
+  
+</ul>
+
+      <div class="outro"></div>
+    </div>
+
+  </body>
+</html>

@@ -1,0 +1,131 @@
+/**
+ * Searches stand-up meetings wiki pages and counts the attendance
+ *
+ * User: Hubert Gajewski <hubert@hubertgajewski.com>, Aviary.pl
+ * Date: 22.05.2012
+ * Time: 01:20
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+package standup
+
+import org.xml.sax.InputSource
+
+import java.text.SimpleDateFormat
+import javax.xml.xpath.XPathConstants
+import javax.xml.xpath.XPathFactory
+
+class StandUp {
+    private static xpath = XPathFactory.newInstance().newXPath()
+
+    /**
+     * Checks if stand-up date comes from the future
+     * @param standUpUrlText A string containing the date in format "yyyy-MM-dd"
+     * @return true if the date comes from the future, otherwise false
+     */
+    private static boolean isFutureDate(String standUpUrlText) {
+        return (new SimpleDateFormat("yyyy-MM-dd").parse(standUpUrlText.split(":").last().toString()) < new Date())
+    }
+
+    /**
+     * Takes stand-up links from category page
+     * @param standUpListUrl URL to list of stand-up links (category page)
+     * @param firstStandUpDate First date which should be counted
+     * @return List of stand-up links
+     */
+    public static List getStandUpsList(URL standUpListUrl, String firstStandUpDate = null) {
+        def String aviaryPlWikiUrl = "http://wiki.aviary.pl"
+        def List standUpList = []
+
+        // Reading category page to get list of stand-up URLs
+        if (firstStandUpDate != null) {
+            standUpListUrl = (standUpListUrl.toString() + /&pagefrom=Stand-up%3A$firstStandUpDate/).toURL()
+        }
+
+        // Saving stand-up links
+        while (standUpListUrl != null) {
+
+            // Reading the category page to get a list of stand-up URLs
+            xpath.evaluate('//*[@id="mw-pages"]//ul/li/a[contains(text(),"Stand-up:")]/@href',
+                    new InputSource(standUpListUrl.toString()), XPathConstants.NODESET).each {
+                // Future stand-up meetings will be omitted
+                if (isFutureDate(it.getTextContent())) {
+                    standUpList << aviaryPlWikiUrl + it.getTextContent()
+                }
+            }
+
+            // Getting the URL with additional links
+            def nextItems = xpath.evaluate('//*[@id="mw-pages"]/a[contains(text(),"następne 200")][1]/@href',
+                    new InputSource(standUpListUrl.toString()), XPathConstants.NODESET).each {
+                standUpListUrl = (aviaryPlWikiUrl + it.getTextContent()).toURL()
+            }
+
+            // If there are no additional pages with links - nextItems length equals 0
+            if (nextItems.properties.length < 1) {
+                standUpListUrl = null
+            }
+        }
+
+        return standUpList
+    }
+
+    /**
+     * Returns stand-up attendees
+     * @param standUpsList List of stand-up links
+     * @return Two-dimensional list with stand-up attendees
+     */
+    public static List getStandUpAttendees(List standUpsList) {
+        def List attendees = [][]
+        standUpsList.eachWithIndex() { standUps, i ->
+            println("Fetching data from " + standUpsList[i])
+            if (standUpsList[i].toString().contains("2007-06-17")) {
+                // First stand-up meeting (2007-06-17) does not contain a list of attendees
+                attendees.add(["Adrianer", "Gandalf", "Marcoos", "Nikdo", "Zwierz"])
+
+            } else {
+                xpath.evaluate('//h2//a/text()', new InputSource(standUpsList[i].toString()), XPathConstants.NODESET)
+                        .eachWithIndex() { attendee, j ->
+                    if (attendees[i] == null) {
+                        attendees.add([attendee.getTextContent()])
+                    } else {
+                        attendees[i][j] = attendee.getTextContent()
+                    }
+                }
+            }
+        }
+
+        return attendees
+    }
+
+    /**
+     * Counts stand-up attendance
+     * @param attendees Two-dimensional list with stand-up attendees
+     * @return Stand-up attendance
+     */
+    public static LinkedHashMap countAttendance(List attendees) {
+        def Map attendance = [:]
+
+        attendees.eachWithIndex { obj1, i ->
+            attendees[i].eachWithIndex { obj2, j ->
+                if (attendance.containsKey(attendees[i][j])) {
+                    attendance.putAt(attendees[i][j], ++attendance.getAt(attendees[i][j]))
+                } else {
+                    attendance.putAt(attendees[i][j], 1)
+                }
+            }
+        }
+
+        return attendance
+    }
+}

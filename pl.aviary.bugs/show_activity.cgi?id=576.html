@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Changes made to bug 576</title>
+
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<link href="data/assets/2f5735cf3abd04bddc8e363a8613a9f5.css" rel="stylesheet" type="text/css">
+
+
+
+    
+<script type="text/javascript" src="data/assets/1b4e898422a669ab82b604a2c23edce5.js"></script>
+
+    <script type="text/javascript">
+    <!--
+        YAHOO.namespace('bugzilla');
+        YAHOO.util.Event.addListener = function (el, sType, fn, obj, overrideContext) {
+               if ( ("onpagehide" in window || YAHOO.env.ua.gecko) && sType === "unload") { sType = "pagehide"; };
+               var capture = ((sType == "focusin" || sType == "focusout") && !YAHOO.env.ua.ie) ? true : false;
+               return this._addListener(el, this._getType(sType), fn, obj, overrideContext, capture);
+         };
+        if ( "onpagehide" in window || YAHOO.env.ua.gecko) {
+            YAHOO.util.Event._simpleRemove(window, "unload", 
+                                           YAHOO.util.Event._unload);
+        }
+        
+        function unhide_language_selector() { 
+            YAHOO.util.Dom.removeClass(
+                'lang_links_container', 'bz_default_hidden'
+            ); 
+        } 
+        YAHOO.util.Event.onDOMReady(unhide_language_selector);
+
+        
+        var BUGZILLA = {
+            param: {
+                cookiepath: '\/',
+                maxusermatches: 1000
+            },
+            constant: {
+                COMMENT_COLS: 80
+            },
+            string: {
+                
+
+                attach_desc_required:
+                    "You must enter a Description for this attachment.",
+                component_required:
+                    "You must select a Component for this bug.",
+                description_required:
+                    "You must enter a Description for this bug.",
+                short_desc_required:
+                    "You must enter a Summary for this bug.",
+                version_required:
+                    "You must select a Version for this bug."
+            }
+        };
+
+    // -->
+    </script>
+<script type="text/javascript" src="data/assets/d41d8cd98f00b204e9800998ecf8427e.js"></script>
+
+    
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+                       title="Bugzilla" href="search_plugin.cgi">
+    <link rel="shortcut icon" href="images/favicon.ico">
+  </head>
+
+  <body 
+        class="bugs-aviary-pl yui-skin-sam">
+
+  <div id="header"><div id="banner">
+  </div>
+
+    <div id="titles">
+      <span id="title">Bugzilla &ndash; Activity log for bug 576: Masowe poprawki toolkitu do dnia 26 lipca</span>
+
+
+    </div>
+
+
+    <div id="common_links"><ul class="links">
+  <li><a href="index.html">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi.html">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi.html">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi.html">Search</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="http://bugs.aviary.pl/buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input type="hidden" id="no_redirect_top" name="no_redirect" value="0">
+    <script type="text/javascript">
+      if (history && history.replaceState) {
+        var no_redirect = document.getElementById("no_redirect_top");
+        no_redirect.value = 1;
+      }
+    </script>
+    <input class="txt" type="text" id="quicksearch_top" name="quicksearch" 
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search" 
+           id="find_top"></form>
+  <a href="page.cgi%3Fid=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="report.cgi.html">Reports</a></li>
+
+  <li>
+      <span class="separator">| </span>
+        <a href="request.cgi.html">Requests</a></li>
+
+
+  
+    
+      <li id="new_account_container_top">
+        <span class="separator">| </span>
+        <a href="createaccount.cgi.html">New&nbsp;Account</a>
+      </li>
+
+    <li id="mini_login_container_top">
+  <span class="separator">| </span>
+  <a id="login_link_top" href="http://bugs.aviary.pl/show_activity.cgi?id=576&amp;GoAheadAndLogIn=1"
+     onclick="return show_mini_login_form('_top')">Log In</a>
+
+  <form action="show_activity.cgi%3Fid=576.html" method="POST"
+        class="mini_login bz_default_hidden"
+        id="mini_login_top">
+    <input id="Bugzilla_login_top" required
+           name="Bugzilla_login" class="bz_login"
+        type="email" placeholder="Email Address">
+    <input class="bz_password" name="Bugzilla_password" type="password"
+           id="Bugzilla_password_top" required
+           placeholder="Password">
+    <input type="hidden" name="Bugzilla_login_token"
+           value="1469827044-TzuiWercu1OszJw0wbgFn7VfrOOlmQPFR9MzBK5XR2o">
+    <input type="submit" name="GoAheadAndLogIn" value="Log in"
+            id="log_in_top">
+    <a href="show_activity.cgi%3Fid=576.html#" onclick="return hide_mini_login_form('_top')">[x]</a>
+  </form>
+</li>
+
+
+  <li id="forgot_container_top">
+    <span class="separator">| </span>
+    <a id="forgot_link_top" href="http://bugs.aviary.pl/show_activity.cgi?id=576&amp;GoAheadAndLogIn=1#forgot"
+       onclick="return show_forgot_form('_top')">Forgot Password</a>
+    <form action="http://bugs.aviary.pl/token.cgi" method="post" id="forgot_form_top"
+          class="mini_forgot bz_default_hidden">
+      <label for="login_top">Login:</label>
+      <input name="loginname" size="20" id="login_top" required
+          type="email" placeholder="Your Email Address">
+      <input id="forgot_button_top" value="Reset Password" type="submit">
+      <input type="hidden" name="a" value="reqpw">
+      <input type="hidden" id="token_top" name="token"
+             value="1469827044-aYmDiHcQ2fRkwhKQGB9vn6bifhnkw5IFOlFV7t7jIJw">
+      <a href="show_activity.cgi%3Fid=576.html#" onclick="return hide_forgot_form('_top')">[x]</a>
+    </form>
+  </li>
+</ul>
+    </div>
+  </div>
+
+  <div id="bugzilla-body">
+
+<p>
+  Back to <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED DUPLICATE - Masowe poprawki toolkitu do dnia 26 lipca"
+   href="show_bug.cgi%3Fid=576.html">bug 576</a>
+</p>
+<table id="bug_activity">
+    <tr class="column_header">
+      <th>Who</th>
+      <th>When</th>
+      <th>What</th>
+      <th>Removed</th>
+      <th>Added</th>
+    </tr>
+
+      <tr>
+        <td rowspan="1">gandalf
+        </td>
+        <td rowspan="1">2005-07-05 13:23:36 CEST
+        </td>
+            <td>
+                Status
+            </td><td>CONFIRMED
+  </td><td>IN_PROGRESS
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">cleriic
+        </td>
+        <td rowspan="1">2005-07-09 15:33:56 CEST
+        </td>
+            <td>
+                <a href="attachment.cgi%3Fid=534">
+                Attachment #534</a>
+                Flags
+            </td><td>
+  </td><td>superreview?(gandalf), review?(marcoos)
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">marcoos+bugs
+        </td>
+        <td rowspan="1">2005-07-10 17:34:36 CEST
+        </td>
+            <td>
+                <a href="attachment.cgi%3Fid=534">
+                Attachment #534</a>
+                Flags
+            </td><td>review?(marcoos)
+  </td><td>review-
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2005-07-11 13:14:39 CEST
+        </td>
+            <td>
+                CC
+            </td><td>
+  </td><td>hubert.gajewski
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">gandalf
+        </td>
+        <td rowspan="1">2005-07-12 01:13:46 CEST
+        </td>
+            <td>
+                <a href="attachment.cgi%3Fid=534">
+                Attachment #534</a>
+                Flags
+            </td><td>superreview?(gandalf)
+  </td><td>superreview-
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">pitreck
+        </td>
+        <td rowspan="1">2005-07-13 10:20:14 CEST
+        </td>
+            <td>
+                <a href="attachment.cgi%3Fid=537">
+                Attachment #537</a>
+                Flags
+            </td><td>
+  </td><td>superreview?(gandalf), review?(marek.stepien)
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">marcoos+bugs
+        </td>
+        <td rowspan="1">2005-07-13 10:36:40 CEST
+        </td>
+            <td>
+                <a href="attachment.cgi%3Fid=537">
+                Attachment #537</a>
+                Flags
+            </td><td>review?(marek.stepien)
+  </td><td>review-
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">pitreck
+        </td>
+        <td rowspan="1">2005-07-13 11:33:37 CEST
+        </td>
+            <td>
+                <a href="attachment.cgi%3Fid=537">
+                Attachment #537</a>
+                Attachment is obsolete
+            </td><td>0
+  </td><td>1
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">pitreck
+        </td>
+        <td rowspan="1">2005-07-13 11:35:41 CEST
+        </td>
+            <td>
+                <a href="attachment.cgi%3Fid=538">
+                Attachment #538</a>
+                Flags
+            </td><td>
+  </td><td>superreview?(gandalf), review?(marek.stepien)
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">marcoos+bugs
+        </td>
+        <td rowspan="1">2005-07-13 11:46:54 CEST
+        </td>
+            <td>
+                <a href="attachment.cgi%3Fid=538">
+                Attachment #538</a>
+                Flags
+            </td><td>review?(marek.stepien)
+  </td><td>review+
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">pitreck
+        </td>
+        <td rowspan="1">2005-07-13 12:24:14 CEST
+        </td>
+            <td>
+                <a href="attachment.cgi%3Fid=538">
+                Attachment #538</a>
+                Attachment description
+            </td><td>Poprawki toolkitu, cz. 2 (v2)
+  </td><td>Poprawki toolkitu, cz. 2 (v2) [wrzucone]
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">gandalf
+        </td>
+        <td rowspan="1">2005-07-13 17:57:08 CEST
+        </td>
+            <td>
+                <a href="attachment.cgi%3Fid=538">
+                Attachment #538</a>
+                Flags
+            </td><td>superreview?(gandalf)
+  </td><td>superreview+
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">cleriic
+        </td>
+        <td rowspan="1">2005-07-13 23:04:41 CEST
+        </td>
+            <td>
+                <a href="attachment.cgi%3Fid=534">
+                Attachment #534</a>
+                Attachment is obsolete
+            </td><td>0
+  </td><td>1
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">cleriic
+        </td>
+        <td rowspan="1">2005-07-13 23:05:37 CEST
+        </td>
+            <td>
+                <a href="attachment.cgi%3Fid=539">
+                Attachment #539</a>
+                Flags
+            </td><td>
+  </td><td>superreview?(gandalf), review?(marek.stepien)
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">gandalf
+        </td>
+        <td rowspan="1">2005-07-13 23:19:46 CEST
+        </td>
+            <td>
+                <a href="attachment.cgi%3Fid=539">
+                Attachment #539</a>
+                Flags
+            </td><td>superreview?(gandalf)
+  </td><td>superreview+
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">marcoos+bugs
+        </td>
+        <td rowspan="1">2005-07-13 23:35:38 CEST
+        </td>
+            <td>
+                <a href="attachment.cgi%3Fid=539">
+                Attachment #539</a>
+                Flags
+            </td><td>review?(marek.stepien)
+  </td><td>review-
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">pitreck
+        </td>
+        <td rowspan="1">2005-07-19 07:41:08 CEST
+        </td>
+            <td>
+                Summary
+            </td><td>Masowe poprawki toolkitu do dnia 8 lipca
+  </td><td>Masowe poprawki toolkitu do dnia 26 lipca
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">pitreck
+        </td>
+        <td rowspan="1">2005-07-19 07:43:03 CEST
+        </td>
+            <td>
+                <a href="attachment.cgi%3Fid=551">
+                Attachment #551</a>
+                Flags
+            </td><td>
+  </td><td>superreview?(gandalf), review?(marek.stepien)
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">marcoos+bugs
+        </td>
+        <td rowspan="1">2005-07-19 10:18:58 CEST
+        </td>
+            <td>
+                <a href="attachment.cgi%3Fid=551">
+                Attachment #551</a>
+                Flags
+            </td><td>review?(marek.stepien)
+  </td><td>review+
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="2">pitreck
+        </td>
+        <td rowspan="2">2005-07-19 10:52:46 CEST
+        </td>
+            <td>
+                <a href="attachment.cgi%3Fid=551">
+                Attachment #551</a>
+                Attachment is obsolete
+            </td><td>0
+  </td><td>1
+  </td></tr><tr>
+            <td>
+                <a href="attachment.cgi%3Fid=539">
+                Attachment #539</a>
+                Attachment is obsolete
+            </td><td>0
+  </td><td>1
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="2">pitreck
+        </td>
+        <td rowspan="2">2005-07-19 15:29:59 CEST
+        </td>
+            <td>
+                Severity
+            </td><td>poważny
+  </td><td>normalny
+  </td></tr><tr>
+            <td>
+                Priority
+            </td><td>P2
+  </td><td>P3
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">pitreck
+        </td>
+        <td rowspan="1">2005-07-19 21:59:41 CEST
+        </td>
+            <td>
+                <a href="attachment.cgi%3Fid=553">
+                Attachment #553</a>
+                Flags
+            </td><td>
+  </td><td>review?(hubert.gajewski), superreview?(marek.stepien)
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">marcoos+bugs
+        </td>
+        <td rowspan="1">2005-07-19 22:06:13 CEST
+        </td>
+            <td>
+                <a href="attachment.cgi%3Fid=553">
+                Attachment #553</a>
+                Flags
+            </td><td>superreview?(marek.stepien)
+  </td><td>superreview+
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2005-07-19 22:13:45 CEST
+        </td>
+            <td>
+                <a href="attachment.cgi%3Fid=553">
+                Attachment #553</a>
+                Flags
+            </td><td>review?(hubert.gajewski)
+  </td><td>review+
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">pitreck
+        </td>
+        <td rowspan="1">2005-07-19 23:18:18 CEST
+        </td>
+            <td>
+                <a href="attachment.cgi%3Fid=553">
+                Attachment #553</a>
+                Attachment is obsolete
+            </td><td>0
+  </td><td>1
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="2">marcoos+bugs
+        </td>
+        <td rowspan="2">2005-07-30 23:51:26 CEST
+        </td>
+            <td>
+                Status
+            </td><td>IN_PROGRESS
+  </td><td>RESOLVED
+  </td></tr><tr>
+            <td>
+                Resolution
+            </td><td>---
+  </td><td>DUPLICATE
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="7">hubert+bap
+        </td>
+        <td rowspan="7">2008-05-03 07:34:16 CEST
+        </td>
+            <td>
+                Status
+            </td><td>RESOLVED
+  </td><td>VERIFIED
+  </td></tr><tr>
+            <td>
+                Component
+            </td><td>Toolkit
+  </td><td>inne
+  </td></tr><tr>
+            <td>
+                Version
+            </td><td>Nieokreślona
+  </td><td>nieokreślona
+  </td></tr><tr>
+            <td>
+                Assignee
+            </td><td>gandalf
+  </td><td>marcoos+bugs
+  </td></tr><tr>
+            <td>
+                Product
+            </td><td>Lokalizacje Aviary.pl
+  </td><td>Toolkit
+  </td></tr><tr>
+            <td>
+                Target Milestone
+            </td><td>Nieokreślona
+  </td><td>---
+  </td></tr><tr>
+            <td>
+                QA Contact
+            </td><td>nikdo
+  </td><td>toolkit
+  </td>
+      </tr>
+  </table>
+
+  <p>
+    Back to <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED DUPLICATE - Masowe poprawki toolkitu do dnia 26 lipca"
+   href="show_bug.cgi%3Fid=576.html">bug 576</a>
+  </p>
+</div>
+
+    <div id="footer">
+      <div class="intro"></div>
+<ul id="useful-links">
+  <li id="links-actions"><ul class="links">
+  <li><a href="index.html">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi.html">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi.html">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi.html">Search</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="http://bugs.aviary.pl/buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input type="hidden" id="no_redirect_bottom" name="no_redirect" value="0">
+    <script type="text/javascript">
+      if (history && history.replaceState) {
+        var no_redirect = document.getElementById("no_redirect_bottom");
+        no_redirect.value = 1;
+      }
+    </script>
+    <input class="txt" type="text" id="quicksearch_bottom" name="quicksearch" 
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search" 
+           id="find_bottom"></form>
+  <a href="page.cgi%3Fid=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="report.cgi.html">Reports</a></li>
+
+  <li>
+      <span class="separator">| </span>
+        <a href="request.cgi.html">Requests</a></li>
+
+
+  
+    
+      <li id="new_account_container_bottom">
+        <span class="separator">| </span>
+        <a href="createaccount.cgi.html">New&nbsp;Account</a>
+      </li>
+
+    <li id="mini_login_container_bottom">
+  <span class="separator">| </span>
+  <a id="login_link_bottom" href="http://bugs.aviary.pl/show_activity.cgi?id=576&amp;GoAheadAndLogIn=1"
+     onclick="return show_mini_login_form('_bottom')">Log In</a>
+
+  <form action="show_activity.cgi%3Fid=576.html" method="POST"
+        class="mini_login bz_default_hidden"
+        id="mini_login_bottom">
+    <input id="Bugzilla_login_bottom" required
+           name="Bugzilla_login" class="bz_login"
+        type="email" placeholder="Email Address">
+    <input class="bz_password" name="Bugzilla_password" type="password"
+           id="Bugzilla_password_bottom" required
+           placeholder="Password">
+    <input type="hidden" name="Bugzilla_login_token"
+           value="1469827044-TzuiWercu1OszJw0wbgFn7VfrOOlmQPFR9MzBK5XR2o">
+    <input type="submit" name="GoAheadAndLogIn" value="Log in"
+            id="log_in_bottom">
+    <a href="show_activity.cgi%3Fid=576.html#" onclick="return hide_mini_login_form('_bottom')">[x]</a>
+  </form>
+</li>
+
+
+  <li id="forgot_container_bottom">
+    <span class="separator">| </span>
+    <a id="forgot_link_bottom" href="http://bugs.aviary.pl/show_activity.cgi?id=576&amp;GoAheadAndLogIn=1#forgot"
+       onclick="return show_forgot_form('_bottom')">Forgot Password</a>
+    <form action="http://bugs.aviary.pl/token.cgi" method="post" id="forgot_form_bottom"
+          class="mini_forgot bz_default_hidden">
+      <label for="login_bottom">Login:</label>
+      <input name="loginname" size="20" id="login_bottom" required
+          type="email" placeholder="Your Email Address">
+      <input id="forgot_button_bottom" value="Reset Password" type="submit">
+      <input type="hidden" name="a" value="reqpw">
+      <input type="hidden" id="token_bottom" name="token"
+             value="1469827044-aYmDiHcQ2fRkwhKQGB9vn6bifhnkw5IFOlFV7t7jIJw">
+      <a href="show_activity.cgi%3Fid=576.html#" onclick="return hide_forgot_form('_bottom')">[x]</a>
+    </form>
+  </li>
+</ul>
+  </li>
+
+  
+
+
+
+
+  
+</ul>
+
+      <div class="outro"></div>
+    </div>
+
+  </body>
+</html>

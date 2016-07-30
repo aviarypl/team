@@ -1,0 +1,24 @@
+People who aren't afraid of recompiling the nvidia kernel module or
+even reinstalling the nvidia driver each time the kernel has been
+updated and want or need to use the latest and greatest nvidia driver
+can use the following steps 1-3. The others should use the
+instructions above using YaST and skip the steps below.
+
+1) Kernel sources must be installed and configured. Usually this means
+installing the 'kernel-source', 'make' and 'gcc' packages with YaST2. 
+
+2) Use the nvidia installer for 1.0-9629.
+
+ sh NVIDIA-Linux-x86-1.0-9629-pkg1.run -q
+ 
+3) Configure X.Org with
+
+ sax2 -r -m 0=nvidia (0 is a digit, not a letter!)
+
+NOTE: There is no need to try to enable 3D support. It's already
+      enabled, when the nvidia driver is running.
+
+IMPORTANT: You need to recompile and install the nvidia kernel module
+           after each kernel update.
+
+ sh NVIDIA-Linux-x86-1.0-9629-pkg1.run -K

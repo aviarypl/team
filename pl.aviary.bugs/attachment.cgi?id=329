@@ -1,0 +1,200 @@
+=== Bugzilla/BugMail.pm
+==================================================================
+--- Bugzilla/BugMail.pm  (revision 64)
++++ Bugzilla/BugMail.pm  (local)
+@@ -833,7 +833,7 @@
+ # since if the bug didn't change, you wouldn't be getting mail
+ # in the first place! see http://bugzilla.mozilla.org/show_bug.cgi?id=29820 
+ # for details.
+-    $substs{"neworchanged"} = $isnew ? ' New: ' : '';
++    $substs{"neworchanged"} = $isnew ? '=?UTF-8?B?Tm93eTogCg==?=' : '';
+     $substs{"to"} = $person;
+     $substs{"cc"} = '';
+     $substs{"bugid"} = $id;
+@@ -842,7 +842,7 @@
+     } else {
+       $substs{"diffs"} = $difftext . "\n\n" . $newcomments;
+     }
+-    $substs{"summary"} = $values{'short_desc'};
++    $substs{"summary"} = encode_mail_header($values{'short_desc'});
+     $substs{"reasonsheader"} = join(" ", @reasons);
+     $substs{"reasonsbody"} = $reasonsbody;
+     $substs{"space"} = " ";
+=== Bugzilla/Template.pm
+==================================================================
+--- Bugzilla/Template.pm  (revision 64)
++++ Bugzilla/Template.pm  (local)
+@@ -349,6 +349,8 @@
+             # places; we have a none filter for people to use when they 
+             # really, really don't want a variable to be changed.
+             none => sub { return $_[0]; } ,
++
++            encode_mail_header => sub { return encode_mail_header($_[0]); },
+         },
+ 
+         PLUGIN_BASE => 'Bugzilla::Template::Plugin',
+=== Bugzilla/Util.pm
+==================================================================
+--- Bugzilla/Util.pm  (revision 64)
++++ Bugzilla/Util.pm  (local)
+@@ -26,13 +26,16 @@
+ package Bugzilla::Util;
+ 
+ use strict;
++use MIME::Base64;
++use MIME::QuotedPrint;
+ 
+ use base qw(Exporter);
+ @Bugzilla::Util::EXPORT = qw(is_tainted trick_taint detaint_natural
+                              html_quote url_quote value_quote xml_quote
+                              css_class_quote
+                              lsearch max min
+-                             trim format_time);
++                             trim format_time
++                             encode_mail_header);
+ 
+ use Bugzilla::Config;
+ 
+@@ -180,6 +183,19 @@
+     return $time;
+ }
+ 
++sub encode_mail_header {
++    my ($header) = @_;
++
++    return $header if $header !~ /[^\x20-\x7E\x0A\x0D]/;
++
++    $header =~ s/[\r\n]+$//;
++    $header = encode_base64($header);
++    chomp($header);
++    $header =~ s/\n/?=\n =?UTF-8?B?/g;
++
++    return "=?UTF-8?B?$header?=";
++}
++
+ 1;
+ 
+ __END__
+=== defparams.pl
+==================================================================
+--- defparams.pl  (revision 64)
++++ defparams.pl  (local)
+@@ -525,7 +525,7 @@
+    type => 'l',
+    default => 'From: bugzilla-daemon
+ To: %mailaddress%
+-Subject: Hasło Bugzilli.
++Subject: =?UTF-8?B?SGFzxYJvIEJ1Z3ppbGxpLgo=?=
+ MIME-Version: 1.0
+ Content-Type: text/plain; charset=UTF-8
+ Content-Transfer-Encoding: 8bit
+@@ -559,7 +559,7 @@
+    type => 'l',
+    default => 'From: bugzilla-daemon
+ To: %to%
+-Subject: [Błąd %bugid%] %neworchanged%%summary%
++Subject: [=?UTF-8?B?QsWCxIVkCg==?= %bugid%] %neworchanged%%summary%
+ X-Bugzilla-Reason: %reasonsheader%
+ MIME-Version: 1.0
+ Content-Type: text/plain; charset=UTF-8
+@@ -597,7 +597,7 @@
+    type => 'l',
+    default => 'From: %maintainer%
+ To: %email%
+-Subject: Twoja lista błędów w Bugzilli wymaga uwagi.
++Subject: Twoja lista =?UTF-8?B?YsWCxJlkw7N3Cg==?= w Bugzilli wymaga uwagi.
+ MIME-Version: 1.0
+ Content-Type: text/plain; charset=UTF-8
+ Content-Transfer-Encoding: 8bit
+@@ -800,12 +800,13 @@
+    type => 'l',
+    default => 'From: bugzilla-daemon
+ To: %to%
+-Subject: [Błąd %bugid%] Niektóre z twoich głosów zostały usunięte
++Subject: [=?UTF-8?B?QsWCxIVkCg==?= %bugid%]
++ =?UTF-8?B?Tmlla3TDs3JlIHogVHdvaWNoIGfFgm9zw7N3IHpvc3RhxYJ5IHVzdW5pxJl0ZQo=?=
+ MIME-Version: 1.0
+ Content-Type: text/plain; charset=UTF-8
+ Content-Transfer-Encoding: 8bit
+ 
+-Niektóre lub wszystkie z twoich głosów oddanych na błąd %bugid% zostały
++Niektóre lub wszystkie z Twoich głosów oddanych na błąd %bugid% zostały
+ usunięte.
+ 
+ %votesoldtext%
+=== template/pl/default/account/cancel-token.txt.tmpl
+==================================================================
+--- template/pl/default/account/cancel-token.txt.tmpl  (revision 64)
++++ template/pl/default/account/cancel-token.txt.tmpl  (local)
+@@ -48,11 +48,11 @@
+ 
+ [% BLOCK subject %]
+   [% IF tokentype == 'password' %]
+-    Anulowano zmianę hasła
++    Anulowano =?UTF-8?Q?zmian=C4=99 has=C5=82a?=
+   [% ELSIF tokentype == 'emailnew' OR tokentype == 'emailold' %]
+-    Anulowano zmianę adresu e-mail
++    Anulowano =?UTF-8?Q?zmian=C4=99?= adresu e-mail
+   [% ELSE %]
+-    Żeton [% tokentype %] został anulowany
++    =?UTF-8?Q?=C5=BBeton?= [% tokentype %] =?UTF-8?Q?zosta=C5=82?= anulowany
+   [% END %]
+ [% END %]
+ 
+=== template/pl/default/account/email/change-new.txt.tmpl
+==================================================================
+--- template/pl/default/account/email/change-new.txt.tmpl  (revision 64)
++++ template/pl/default/account/email/change-new.txt.tmpl  (local)
+@@ -24,7 +24,7 @@
+ [% expiration_ts = token_ts + (max_token_age * 86400) %]
+ From: bugzilla-admin-daemon
+ To: [% emailaddress %]
+-Subject: Żądanie zmiany adresu e-mail [% terms.Bugzilli %]
++Subject: =?UTF-8?Q?=C5=BB=C4=85danie?= zmiany adresu e-mail [% terms.Bugzilli %]
+ MIME-Version: 1.0
+ Content-Type: text/plain; charset=UTF-8
+ Content-Transfer-Encoding: 8bit
+=== template/pl/default/account/email/change-old.txt.tmpl
+==================================================================
+--- template/pl/default/account/email/change-old.txt.tmpl  (revision 64)
++++ template/pl/default/account/email/change-old.txt.tmpl  (local)
+@@ -29,7 +29,7 @@
+ [% expiration_ts = token_ts + (max_token_age * 86400) %]
+ From: bugzilla-admin-daemon
+ To: [% emailaddress %]
+-Subject: Żądanie zmiany adresu e-mail [% terms.Bugzilli %]
++Subject: =?UTF-8?Q?=C5=BB=C4=85danie?= zmiany adresu e-mail [% terms.Bugzilli %]
+ MIME-Version: 1.0
+ Content-Type: text/plain; charset=UTF-8
+ Content-Transfer-Encoding: 8bit
+=== template/pl/default/account/password/forgotten-password.txt.tmpl
+==================================================================
+--- template/pl/default/account/password/forgotten-password.txt.tmpl  (revision 64)
++++ template/pl/default/account/password/forgotten-password.txt.tmpl  (local)
+@@ -24,7 +24,7 @@
+ [% expiration_ts = token_ts + (max_token_age * 86400) %]
+ From: bugzilla-admin-daemon
+ To: [% emailaddress %]
+-Subject: Żądanie zmiany hasła [% terms.Bugzilli %]
++Subject: =?UTF-8?Q?=C5=BB=C4=85danie zmiany has=C5=82a?= [% terms.Bugzilli %]
+ MIME-Version: 1.0
+ Content-Type: text/plain; charset=UTF-8
+ Content-Transfer-Encoding: 8bit
+=== template/pl/default/request/email.txt.tmpl
+==================================================================
+--- template/pl/default/request/email.txt.tmpl  (revision 64)
++++ template/pl/default/request/email.txt.tmpl  (local)
+@@ -41,9 +41,11 @@
+ From: bugzilla-request-daemon
+ To: [% to_email %]
+ CC: [% flag.type.cc_list %]
+-Subject: [% subject_status %] [%+ flag.type.name %]: [[% terms.Blad %] [%+ flag.target.bug.id %]] [% flag.target.bug.summary %]
++Subject: [% FILTER encode_mail_header -%]
++[% subject_status %] [%+ flag.type.name %]: [[% terms.Blad %] [%+ flag.target.bug.id %]] [% flag.target.bug.summary %]
+ [%- IF flag.target.attachment.exists %] :
+   [Załącznik [% flag.target.attachment.id %]] [% flag.target.attachment.summary %][% END %]
++[%- END %]
+ Content-Type: text/plain; charset=UTF-8
+ Content-Transfer-Encoding: 8bit
+ 
+

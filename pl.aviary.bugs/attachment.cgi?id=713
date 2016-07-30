@@ -1,0 +1,33 @@
+=== bug/process/verify-new-product.html.tmpl
+==================================================================
+--- bug/process/verify-new-product.html.tmpl	(revision 144)
++++ bug/process/verify-new-product.html.tmpl	(local)
+@@ -50,12 +50,12 @@
+ 
+   <p>
+   [% IF use_target_milestone %]
+-    Przenosisz [% terms.blad %](y) do produktu
++    Przenosisz [% terms.blad %] ([% terms.bledy %]) do produktu
+     <b>[% form.product FILTER html %]</b>,
+     tym samym wersja, komponent, docelowa wersja [% terms.bledu %]
+     przestają być prawidłowe. Proszę teraz uaktualnić te pola:
+   [% ELSE %]
+-    Przenosisz [% terms.blad %](y) do produktu
++    Przenosisz [% terms.blad %] ([% terms.bledy %]) do produktu
+     <b>[% form.product FILTER html %]</b>,
+     tym samym wersja i komponent [% terms.bledu %] przestają być
+     prawidłowe. Proszę teraz uaktualnić te pola:
+=== global/user-error.html.tmpl
+==================================================================
+--- global/user-error.html.tmpl	(revision 144)
++++ global/user-error.html.tmpl	(local)
+@@ -139,7 +139,7 @@
+   [% ELSIF error == "dependency_loop_multi" %]
+     [% title = "Pętla w zależnościach" %]
+     Jeśli te zmiany ([% both FILTER none %]) zostaną zatwierdzone, ten 
+-    [% terms.blad %](y) wystąpi zarówno w części "zależy od" jak i "blokuje"
++    [% terms.blad %] ([% terms.blad %]) wystąpi zarówno w części "zależy od" jak i "blokuje"
+     drzewa zależności. 
+     Spowoduje to powstanie pętli w zależnościach, których istnienie jest 
+     niedozwolone.
+

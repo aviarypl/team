@@ -1,0 +1,65 @@
+diff -ur bz/bugzilla-2.17.7/Bugzilla/BugMail.pm bugzilla-2.17.7/Bugzilla/BugMail.pm
+--- bz/bugzilla-2.17.7/Bugzilla/BugMail.pm	2004-01-26 08:04:22.000000000 +0100
++++ bugzilla-2.17.7/Bugzilla/BugMail.pm	2004-06-22 10:33:08.000000000 +0200
+@@ -230,10 +230,10 @@
+         if ($who ne $lastwho) {
+             $lastwho = $who;
+             $diffheader = "\n$who" . Param('emailsuffix') . " changed:\n\n";
+-            $diffheader .= FormatTriple("What    ", "Removed", "Added");
++            $diffheader .= FormatTriple("Co      ", "Usunięto", "Dodano");
+             $diffheader .= ('-' x 76) . "\n";
+         }
+-        $what =~ s/^(Attachment )?/Attachment #$attachid / if $attachid;
++        $what =~ s/^(Attachment )?/Załącznik #$attachid / if $attachid;
+         if( $fieldname eq 'estimated_time' ||
+             $fieldname eq 'remaining_time' ) {
+             $old = FormatTimeUnit($old);
+@@ -279,10 +279,10 @@
+             $lastbug = $depbug;
+             my $urlbase = Param("urlbase");
+             $thisdiff =
+-              "\nBug $id depends on bug $depbug, which changed state.\n\n" . 
+-              "Bug $depbug Summary: $summary\n" . 
++              "\nBłąd #$id zależy od błędu #$depbug, który zmienił stan.\n\n" . 
++              "Opis błędu #$depbug: $summary\n" . 
+               "${urlbase}show_bug.cgi?id=$depbug\n\n"; 
+-            $thisdiff .= FormatTriple("What    ", "Old Value", "New Value");
++            $thisdiff .= FormatTriple("Co    ", "Poprzednia wartość", "Nowa wartość");
+             $thisdiff .= ('-' x 76) . "\n";
+             $interestingchange = 0;
+         }
+diff -ur bz/bugzilla-2.17.7/Bugzilla/CGI.pm bugzilla-2.17.7/Bugzilla/CGI.pm
+--- bz/bugzilla-2.17.7/Bugzilla/CGI.pm	2004-02-25 15:06:33.000000000 +0100
++++ bugzilla-2.17.7/Bugzilla/CGI.pm	2004-05-31 00:59:10.000000000 +0200
+@@ -50,7 +50,7 @@
+     $self->{Bugzilla_cookie_list} = [];
+ 
+     # Make sure that we don't send any charset headers
+-    $self->charset('');
++    $self->charset('utf-8');
+ 
+     # Check for errors
+     # All of the Bugzilla code wants to do this, so do it here instead of
+diff -ur bz/bugzilla-2.17.7/globals.pl bugzilla-2.17.7/globals.pl
+--- bz/bugzilla-2.17.7/globals.pl	2004-03-03 06:19:28.000000000 +0100
++++ bugzilla-2.17.7/globals.pl	2004-06-22 09:38:32.000000000 +0200
+@@ -917,12 +917,16 @@
+               ~GetAttachmentLink($2, $1)
+               ~egmx;
+ 
++    $text =~ s~\b((?:załącznika|załącznikowi|załącznikiem|załączniku|załącznik)\s*\#?\s*(\d+))
++              ~GetAttachmentLink($2, $1)
++              ~egmx;
++
+     # This handles bug a, comment b type stuff. Because we're using /g
+     # we have to do this in one pattern, and so this is semi-messy.
+     # Also, we can't use $bug_re?$comment_re? because that will match the
+     # empty string
+-    my $bug_re = qr/bug\s*\#?\s*(\d+)/i;
+-    my $comment_re = qr/comment\s*\#?\s*(\d+)/i;
++    my $bug_re = qr/(?:bug|błąd|błędzie|błędowi|błędem|błędu)\s*\#?\s*(\d+)/i;
++    my $comment_re = qr/(?:comment|komentarza|komentarzowi|komentarzem|komentarzu|komentarz)\s*\#?\s*(\d+)/i;
+     $text =~ s~\b($bug_re(?:\s*,?\s*$comment_re)?|$comment_re)
+               ~ # We have several choices. $1 here is the link, and $2-4 are set
+                 # depending on which part matched
+

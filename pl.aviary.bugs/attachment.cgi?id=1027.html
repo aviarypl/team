@@ -1,0 +1,90 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Produkty Mozilli | Bezpieczeństwo';
+    $body_id    = 'security';
+    $extra_headers = <<<EXTRA_HEADERS
+    <link rel="stylesheet" type="text/css" href="http://bugs.aviary.pl/style/tignish/security.css" media="screen" />
+EXTRA_HEADERS;
+    @include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+    
+?>
+
+<div id="main-feature">
+	<h2>Najbezpieczniejsza przeglądarka</h2>
+	<p>Firefox pilnuje, aby Twoje osobiste informacje pozostały osobiste oraz trzyma wszystko, co robisz w Sieci, z dala od podejrzanych typów.</p>
+</div>
+
+<ul id="side-menu">
+	<li class="first"><h3><a href="http://bugs.aviary.pl/&lt;?=$lang?&gt;/products/">Produkty</a> / <a href="http://bugs.aviary.pl/&lt;?=$lang?&gt;/firefox/">Firefox</a></h3></li>
+	<li><span>Bezpieczeństwo</span></li>
+	<li><a href="http://bugs.aviary.pl/&lt;?=$lang?&gt;/firefox/addons/">Dodatki</a></li>
+	<li><a href="http://bugs.aviary.pl/&lt;?=$lang?&gt;/firefox/organic/">Oprogramowanie w 100% naturalne</a></li>
+	<li><a href="http://bugs.aviary.pl/&lt;?=$lang?&gt;/firefox/features/">Właściwości</a></li>
+	<li><a href="http://bugs.aviary.pl/&lt;?=$lang?&gt;/firefox/tips/">Porady</a></li>
+	<li><a href="http://bugs.aviary.pl/&lt;?=$lang?&gt;/firefox/&lt;?=LATEST_FIREFOX_VERSION?&gt;/releasenotes/">Informacje o wydaniu</a></li>
+	<li><a href="http://bugs.aviary.pl/&lt;?=$lang?&gt;/firefox/all.html">Inne systemy i języki</a></li>
+</ul>
+
+<div id="main-content">
+
+	<div class="security-intro">
+		<h3>No więc, jak to robimy?</h3>
+		<p>Co sprawia, że Firefox jest inny? Przede wszystkim, jesteśmy otwarci. To oznacza, że ludzie z całego świata (mamy też tysiące specjalistów, którzy ich wspierają) mogą zajrzeć do kodu źródłowego i znaleźć w nim słabe punkty.</p>
+		<p>A kiedy usłyszymy o problemie, od razu podwijamy rękawy i bierzemy się za naprawianie. Zajęcie się takimi sprawami leży w Twoim (i naszym) interesie, nawet jeżeli musimy przyznać, że trochę nam brakuje do doskonałości.</p>
+		<p>Krótko mówiąc, <strong>Twoje bezpieczeństwo ma najwyższy priorytet..</strong></p>
+	</div>
+
+	<div class="method-madness">
+		<img src="http://bugs.aviary.pl/img/tignish/security/key.png" alt="W tym szaleństwie jest metoda" width="150" height="151" />
+		<h3>W tym szaleństwie jest metoda.</h3>
+		<p>Nie ma większych miłośników Internetu od nas. Ale oszuści, spamerzy i gotowe do ataku wirusy są prawdziwym zagrożeniem, więc musisz na siebie uważać podczas przeglądania zasobów Sieci.</p>
+	</div>
+
+	<div class="firefox-comes-in">
+		<h3>Tutaj do akcji wkracza Firefox.</h3>
+		<p>Korzystanie z niego jest najbezpieczniejszym sposobem na surfowanie po Internecie, ponieważ:</p>
+		<ul>
+			<li><strong>Nie próbujemy sami walczyć z problemami.</strong> Międzynarodowa społeczność ekspertów od bezpieczeństwa cały czas pracuje nad tym, aby Twoje korzystanie z Internetu było jeszcze bezpieczniejsze (a wszystko to dzięki wykorzystywaniu przez nas wolnego oprogramowania). To tak, jakby Twój patrol sąsiedzki był przewodzony przez świetnie wyszkolonych ninja.</li>
+			<li><strong>Cały czas mamy na uwadze Twoje bezpieczeństwo. </strong>Spece od bezpieczeństwa już od samego początku identyfikują i rozwiązują potencjalne problemy, zanim jeszcze zostanie napisana pierwsza linijka kodu.
+			<li><strong>Ciągle jesteśmy na bieżąco. </strong> Cały czas monitorujemy zagrożenia i wypuszczamy aktualizacje Firefoksa, aby zapewnić Ci bezpieczeństwo. Otwarte oprogramowanie oznacza, że każdy może pomóc i znaleźć słabe punkty.</li>
+		</ul>
+		<p>Aby dowiedzieć się dokładniej, w jaki sposób Firefox chroni Cię w sieci, <a href="http://blog.mozilla.com/security" class="external">odwiedź naszego bloga o bezpieczeństwie.</a></p>
+	</div>
+
+</div><!-- end #main-content div -->
+
+
+<div id="sidebar">
+	<script type="text/javascript" src="http://bugs.aviary.pl/js/download.old.js"></script>
+    <script type="text/javascript">
+        <!--
+        // Configure the Firefox download write script
+        var gDownloadItemTemplate = " <li class=\"%CSS_CLASS%\"> <h3>Pobierz Firefoksa 3<\/h3><div>%VERSION% for %PLATFORM_NAME%<br \/> %LANGUAGE_NAME%&nbsp;(%FILE_SIZE%)<\/div><a onclick=\"javascript:do_download('%BOUNCER_URL%');\" href=\"%DOWNLOAD_URL%\" class=\"download-link download-firefox\">Pobierz Firefoksa<span> - za darmo<\/span><\/a></li>";
+        var gDownloadItemMacOS9 = "<a href=\"\">MacOS 9 i jego wcześniejsze wersje nie są wspierane<\/a>";
+        var gDownloadItemOtherPlatform = "<a href=\"/<?=$lang?>/firefox/<?=LATEST_FIREFOX_VERSION?>/releasenotes/#contributedbuilds\">Pobierz za darmo<\/a>"
+
+        document.writeln("<ul class=\"download download-firefox " + gCssClass + " \">");
+        writeDownloadItems("fx");
+        document.writeln("<\/ul>");
+        document.writeln("<div class=\"download-other\"><span class=\"other\">");
+        document.writeln("<a href=\"\/<?=$lang?>\/firefox\/<?=LATEST_FIREFOX_VERSION?>\/releasenotes\/\">Informacje o wydaniu<\/a>");
+        document.writeln("| <a href=\"\/<?=$lang?>\/firefox\/all.html\">Inne systemy i języki<\/a>");
+        document.writeln("<\/span><\/div>");
+        //-->
+    </script>
+    <?php echo $firefoxDetails->getNoScriptBlockForLocale('pl-PL'); ?>
+	<div class="risk">
+		<h1>Kiedy wystawiasz się na ryzyko?</h1>
+		<p>Niezależne badania wykazały, że w 2006 użytkownicy Internet Explorera byli narażeni na zagrożenia płynące z Sieci przez 78% czasu spędzanego w Internecie. Użytkownicy Firefoksa? Tylko 2%.</p>
+		<img src="http://bugs.aviary.pl/img/tignish/security/chart.png" alt="When Are You at Risk" width="295" height="330" />
+	</div>
+
+	<div class="small-print">
+		<p>“At risk” defined as publicly available exploits with no patch. Źródło: <a class="external" href="http://blog.washingtonpost.com/securityfix/2007/01/internet_explorer_unsafe_for_2.html">“Internet Explorer users Unsafe for 284 Days in 2006”</a><br />
+		Brian Krebs, <em>Washington Post</em>, 04.01.2007</p>
+	</div>
+</div>
+
+<?php
+    @include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+?>

@@ -1,0 +1,490 @@
+diff --git a/calendar/chrome/calendar/calendar-event-dialog.properties b/calendar/chrome/calendar/calendar-event-dialog.properties
+--- a/calendar/chrome/calendar/calendar-event-dialog.properties
++++ b/calendar/chrome/calendar/calendar-event-dialog.properties
+@@ -77,17 +77,17 @@ repeatDetailsAnd=i
+ # #3 - interval
+ # i.e. "the FIRST MONDAY of every 3 months"
+ monthlyNthOfEvery=w %1$S %2$S miesiąca;%1$S %2$S co #3 miesiące;%1$S %2$S co #3 miesięcy
+ 
+ # LOCALIZATION NOTE (monthlyEveryOfEvery):
+ # Edit recurrence window -> Recurrence pattern -> Monthly repeat rules
+ # %1$S - weekday
+ # #2 - interval
+-# i.e. "every MONDAY of every 3 months" 
++# i.e. "every MONDAY of every 3 months"
+ #  more specific: every monday of January, April, July, October
+ monthlyEveryOfEvery=w każdy(-ą) %1$S ;w każdy(-ą) %1$S co #2 miesiące;w każdy(-ą) %1$S co #2 miesięcy
+ 
+ # LOCALIZATION NOTE (monthlyDayOfNth):
+ # Edit recurrence window -> Recurrence pattern -> Monthly repeat rules
+ # #2 - month interval
+ # e.g. "day 3 of every 2 months"
+ monthlyDayOfNth=w %1$S. dzień miesiąca;w %1$S. dzień miesiąca co #2 miesiące;w %1$S. dzień miesiąca co #2 miesięcy
+@@ -173,17 +173,17 @@ repeatCountAllDay=%1$S\npocząwszy od %2
+ # Edit recurrence window -> Recurrence details link on Event/Task dialog window
+ # %1%$ - repeatDetailsRule...(see above). This is the first line of the link
+ # %2%$ - event start date (e.g. mm/gg/yyyy)
+ # %3$S - event end date (e.g. mm/gg/yyyy)
+ # %4$S - event start time (e.g. hh:mm (PM/AM))
+ # %5$S - event end time (e.g. hh:mm (PM/AM))
+ # e.g. with repeatDetailsRuleWeekly2:
+ # "Occurs every other week on Sunday and Friday
+-#  effective 1/1/2009 until 1/1/2010 
++#  effective 1/1/2009 until 1/1/2010
+ #  from 5:00 PM to 6:00 PM"
+ repeatDetailsUntil=%1$S\nw okresie %2$S do %3$S\nw godz. od %4$S do %5$S.
+ # LOCALIZATION NOTE (repeatDetailsUntilAllDay):
+ # Edit recurrence window -> Recurrence details link on Event/Task dialog window
+ # %1%$ - repeatDetailsRule...(see above). This is the first line of the link
+ # %2%$ - event start date (e.g. mm/gg/yyyy)
+ # %3$S - event end date (e.g. mm/gg/yyyy)
+ # e.g. with repeatDetailsRuleMonthly6 and all day event:
+diff --git a/calendar/chrome/calendar/calendar.dtd b/calendar/chrome/calendar/calendar.dtd
+--- a/calendar/chrome/calendar/calendar.dtd
++++ b/calendar/chrome/calendar/calendar.dtd
+@@ -123,18 +123,18 @@
+ <!ENTITY calendar.orientation.label "Obróć widok" >
+ <!ENTITY calendar.orientation.accesskey "O" >
+ 
+ <!ENTITY calendar.search.options.searchfor " zawiera:">
+ 
+ <!ENTITY calendar.list.header.label                 "Kalendarz">
+ 
+ <!ENTITY calendar.task.filter.title.label           "Wyświetl">
+-<!ENTITY calendar.task.filter.all.label             "Wszystko"> 
+-<!ENTITY calendar.task.filter.all.accesskey         "W"> 
++<!ENTITY calendar.task.filter.all.label             "Wszystko">
++<!ENTITY calendar.task.filter.all.accesskey         "W">
+ <!ENTITY calendar.task.filter.today.label           "Dzisiaj">
+ <!ENTITY calendar.task.filter.today.accesskey       "D">
+ <!ENTITY calendar.task.filter.next7days.label       "Następne siedem dni">
+ <!ENTITY calendar.task.filter.next7days.accesskey   "s">
+ <!ENTITY calendar.task.filter.notstarted.label      "Nierozpoczęte zadania">
+ <!ENTITY calendar.task.filter.notstarted.accesskey  "N">
+ <!ENTITY calendar.task.filter.overdue.label         "Zaległe zadania">
+ <!ENTITY calendar.task.filter.overdue.accesskey     "Z">
+@@ -181,27 +181,27 @@
+ <!ENTITY calendar.context.deleteevent.accesskey       "U">
+ <!ENTITY calendar.context.deletethisevent.label       "To wydarzenie">
+ <!ENTITY calendar.context.deletethisevent.accesskey   "T">
+ <!ENTITY calendar.context.deletecompleteseries.label  "Ukończone serie"><!-- FIXME Complete Series (hubert) -->
+ <!ENTITY calendar.context.deletecompleteseries.accesskey   "U">
+ <!ENTITY calendar.context.deletefutureevents.label     "Wszystkie przyszłe wydarzenia">
+ <!ENTITY calendar.context.deletefutureevents.accesskey "W">
+ <!ENTITY calendar.context.deletefuturetasks.label     "Wszystkie przyszłe zadania">
+-<!ENTITY calendar.context.deletefuturetasks.accesskey "W">                      
++<!ENTITY calendar.context.deletefuturetasks.accesskey "W">
+ <!ENTITY calendar.context.cutevent.label              "Wytnij">
+ <!ENTITY calendar.context.cutevent.accesskey          "t">
+ <!ENTITY calendar.context.copyevent.label             "Kopiuj">
+ <!ENTITY calendar.context.copyevent.accesskey         "o">
+ <!ENTITY calendar.context.pasteevent.label            "Wklej">
+ <!ENTITY calendar.context.pasteevent.accesskey        "k">
+ <!ENTITY calendar.context.selectall.label             "Zaznacz wszystko">
+ <!ENTITY calendar.context.selectall.accesskey         "a">
+ <!ENTITY calendar.context.button.label                "Bieżące">
+-<!ENTITY calendar.context.button.accesskey            "B" >                     
++<!ENTITY calendar.context.button.accesskey            "B" >
+ 
+ <!-- Task Context Menu -->
+ <!ENTITY calendar.context.progress.label              "Postęp">
+ <!ENTITY calendar.context.progress.accesskey          "P">
+ <!ENTITY calendar.context.priority.label              "Priorytet">
+ <!ENTITY calendar.context.priority.accesskey          "r">
+ 
+ <!ENTITY percnt "&#38;#37;" ><!--=percent sign-->
+diff --git a/calendar/chrome/calendar/calendar.properties b/calendar/chrome/calendar/calendar.properties
+--- a/calendar/chrome/calendar/calendar.properties
++++ b/calendar/chrome/calendar/calendar.properties
+@@ -37,17 +37,17 @@
+ # and other provisions required by the GPL or the LGPL. If you do not delete
+ # the provisions above, a recipient may use your version of this file under
+ # the terms of any one of the MPL, the GPL or the LGPL.
+ #
+ # ***** END LICENSE BLOCK *****
+ 
+ # Misc. strings in JS
+ 
+-# LOCALIZATION NOTE (PrintPreviewWindowTitle): 
++# LOCALIZATION NOTE (PrintPreviewWindowTitle):
+ #    %1$S will be replaced with the title of a html frame
+ PrintPreviewWindowTitle=%1$S - podgląd wydruku
+ Untitled=Bez nazwy
+ 
+ # Default name for new events
+ newEvent=Nowe wydarzenie
+ 
+ # Titles for the event/task dialog
+@@ -97,22 +97,22 @@ importItemsFailed=Import %1$S elementów
+ #spaces needed at the end of the following lines
+ eventDescription=Opis:
+ 
+ unableToRead=Nie można odczytać pliku:
+ unableToWrite=Nie można zapisać do pliku:
+ defaultFileName=Wydarzenia_Kalendarza
+ HTMLTitle=Kalendarz Mozilli
+ 
+-# LOCALIZATION NOTE (timezoneError): 
++# LOCALIZATION NOTE (timezoneError):
+ # used for an error message like 'An unknown and undefined timezone was found while reading c:\Mycalendarfile.ics'
+ #    %1$S will be replaced with the path to a file
+ timezoneError=Podczas odczytu %1$S znaleziono nieznaną i niezdefiniowaną strefę czasową.
+ 
+-# LOCALIZATION NOTE (duplicateError): 
++# LOCALIZATION NOTE (duplicateError):
+ #    %1$S will be replaced with number of duplicate items
+ #    %2$S will be replaced with a file path pointing to a calendar
+ duplicateError=Niektóre elementy zostały zignorowane, ponieważ istnieją zarówno w docelowym kalendarzu, jak i w %2$S. Liczba zignorowanych elementów: %1$S.
+ unableToCreateProvider=Wystąpił błąd podczas przygotowywania do użycia kalendarza umieszczonego pod adresem %1$S. Kalendarz będzie niedostępny.
+ unknownTimezonesError=Wystąpił błąd podczas przygotowywania do użycia kalendarza umieszczonego pod adresem %1$S. Kalendarz może odwoływać się do nieznanej strefy czasowej. Proszę zainstalować najnowszy calendar-timezones.xpi.
+ missingCalendarTimezonesError=Nie znaleziono stref czasowych. Proszę zainstalować calendar-timezones.xpi.
+ 
+ # Sample: Unknown timezone "USPacific" in "Dentist Appt".  Using the 'floating' local timezone instead: 2008/02/28 14:00:00
+@@ -229,17 +229,17 @@ dav_davNotCaldav=Zasób %1$S jest zbiore
+ itemPutError=Wystąpił błąd podczas zapisywania pozycji na serwerze.
+ itemDeleteError=Wystąpił błąd podczas usuwania pozycji z serwera.
+ caldavRequestError=Wystąpił błąd podczas wysyłania zaproszenia.
+ caldavResponseError=Wystąpił błąd podczas wysyłania odpowiedzi.
+ 
+ # LOCALIZATION NOTE (likelyTimezone):
+ #   Translators, please put the most likely timezone(s) where the people using
+ #   your locale will be.  Use the Olson ZoneInfo timezone name *in English*,
+-#   ie "Europe/Paris", (continent or ocean)/(largest city in timezone). 
++#   ie "Europe/Paris", (continent or ocean)/(largest city in timezone).
+ #   Order does not matter, except if two historically different zones now match,
+ #   such as America/New_York and America/Toronto, will only find first listed.
+ #   (Particularly needed to guess the most relevant timezones if there are
+ #    similar timezones at the same June/December GMT offsets with alphabetically
+ #    earlier ZoneInfo timezone names.  Sample explanations for English below.)
+ # for english-US:
+ #   America/Los_Angeles likelier than America/Dawson
+ #   America/New_York    likelier than America/Detroit (NY for US-EasternTime)
+@@ -256,27 +256,27 @@ caldavResponseError=Wystąpił błąd po
+ #   Africa/Johannesburg likelier than Africa/Blantyre (for SouthAfricanStdTime)
+ #   Africa/Nairobi likelier than Africa/Addis_Ababa (for EastAfricanTime)
+ #   Australia/Brisbane likelier than Antarctica/DumontDUrville
+ #   Pacific/Auckland likelier than Antarctica/McMurdo
+ # Before you will change it, please check http://pl.wikipedia.org/wiki/Polonia (hubert)
+ likelyTimezone=Europe/Warsaw, America/Vancouver, America/Los_Angeles, America/Edmonton, America/Winnipeg, America/Chicago, America/Detroit, America/Toronto, America/New_York, America/Argentina/Buenos_Aires, America/Sao_Paulo, Europe/Dublin, Europe/London, Europe/Paris, Europe/Brussels, Europe/Amsterdam, Europe/Berlin, Europe/Vienna, Europe/Stockholm, Europe/Prague, Europe/Riga, Europe/Vilnius, Europe/Minsk, Europe/Kiev, Europe/Athens, Europe/Moscow, Australia/Melbourne, Australia/Sydney
+ 
+ # Guessed Timezone errors and warnings.
+-# Testing note:  
++# Testing note:
+ # * remove preference for calendar.timezone.default in userprofile/prefs.js
+ # * repeat
+ #   - set OS timezone to a city (windows: click right on clock in taskbar)
+ #   - restart: sunbird -jsconsole
+ #   - observe guess in error console and verify whether guessed timezone city
+ #     makes sense for OS city.
+ #
+-# 'Warning: Operating system timezone "E. South America Standard Time" 
++# 'Warning: Operating system timezone "E. South America Standard Time"
+ #  no longer matches ZoneInfo timezone "America/Sao_Paulo".'
+-# Testing notes: 
++# Testing notes:
+ # - Brasil DST change dates are set every year by decree, so likely out of sync.
+ # - Only appears on OSes from which timezone can be obtained
+ #   (windows; or TZ env var, /etc/localtime target path, or line in
+ #    /etc/timezone or /etc/sysconfig/clock contains ZoneInfo timezone id).
+ # - Windows: turning off "Automatically adjust clock for daylight saving time"
+ #   can also trigger this warning.
+ WarningOSTZNoMatch=Uwaga: Strefa czasowa systemu operacyjnego "%1$S"\nnie pokrywa się już ze strefą czasową "%2$S" z wewnętrznej bazy danych ZoneInfo.
+ 
+@@ -298,17 +298,17 @@ warningUsingFloatingTZNoMatch=Uwaga: Uż
+ 
+ # "Warning:  Using guessed timezone
+ #    America/New York (UTC-0500/-0400).
+ #    [rfc2445 summer daylight saving shift rules for timezone]
+ #  This ZoneInfo timezone almost matches/seems to match..."
+ #  This ZoneInfo timezone was chosen based on ... "
+ WarningUsingGuessedTZ=Uwaga: Używana jest odgadnięta strefa czasowa\n  %1$S (UTC%2$S).\n%3$S\n%4$S
+ 
+-# Testing note: "Almost match" timezones include Cairo on W2k. 
++# Testing note: "Almost match" timezones include Cairo on W2k.
+ TZAlmostMatchesOSDifferAtMostAWeek=Ta strefa czasowa ZoneInfo prawie pokrywa się ze strefą czasową systemu operacyjnego.\nOznacza to, że różnica w czasie następnych przejść pomiędzy czasem letnim a czasem standardowym\nwyniesie nie więcej niż tydzień w stosunku do czasu przejść strefy czasowej systemu operacyjnego.\nMogą pojawić się rozbieżności w danych, takie jak różnice w dacie rozpoczęcia,\nróżnice w regułach lub przybliżenie w przypadku reguł w niegregoriańskich kalendarzach.
+ 
+ TZSeemsToMatchOS=W tym roku ta strefa czasowa ZoneInfo wydaje się pokrywać ze strefą czasową systemu operacyjnego.
+ 
+ # LOCALIZATION NOTE (TZFromOS):
+ # used for a display of a chosen timezone
+ #    %1$S will be replaced with the name of a timezone
+ TZFromOS=Ta strefa czasowa ZoneInfo została wybrana na podstawie identyfikatora strefy czasowej\nsystemu operacyjnego\n"%1$S".
+diff --git a/calendar/chrome/calendar/dateFormat.properties b/calendar/chrome/calendar/dateFormat.properties
+--- a/calendar/chrome/calendar/dateFormat.properties
++++ b/calendar/chrome/calendar/dateFormat.properties
+@@ -15,17 +15,17 @@
+ #
+ # The Initial Developer of the Original Code is
+ # OEone Corporation.
+ # Portions created by OEone Corporation are Copyright (C) 2001
+ # OEone Corporation. All Rights Reserved.
+ #
+ # Contributor(s):
+ #   Garth Smedley <garths@oeone.com>
+-#   Martin Schroeder <mschroeder@mozilla.x-home.org>                            
++#   Martin Schroeder <mschroeder@mozilla.x-home.org>
+ #   Kacper Mikke <kacper@k-raj.com.pl> (Polish localization)
+ #   Hubert Gajewski <hubert@hubertgajewski.com>, Aviary.pl (Polish localization)
+ #
+ # Alternatively, the contents of this file may be used under the terms of
+ # either the GNU General Public License Version 2 or later (the "GPL"), or
+ # the GNU Lesser General Public License Version 2.1 or later (the "LGPL"),
+ # in which case the provisions of the GPL or the LGPL are applicable instead
+ # of those above. If you wish to allow use of your version of this file only
+diff --git a/calendar/chrome/calendar/menuOverlay.dtd b/calendar/chrome/calendar/menuOverlay.dtd
+--- a/calendar/chrome/calendar/menuOverlay.dtd
++++ b/calendar/chrome/calendar/menuOverlay.dtd
+@@ -99,13 +99,13 @@
+ <!ENTITY goNextCmd.day.label                    "Następny dzień">
+ <!ENTITY goNextCmd.week.label                   "Następny tydzień">
+ <!ENTITY goNextCmd.month.label                  "Następny miesiąc">
+ <!ENTITY goNextCmd.all.accesskey                "N">
+ 
+ <!ENTITY addressBookCmd.label                   "Książka adresowa">
+ <!ENTITY addressBookCmd.accesskey               "a">
+ 
+-<!ENTITY calendar.importcalendar.label          "Importuj kalendarz…">           
+-<!ENTITY showCurrentView.label                  "Bieżący widok">                 
+-<!ENTITY showCurrentView.accesskey              "B">                            
+-<!ENTITY calendar.properties.label              "Właściwości kalendarza…">       
++<!ENTITY calendar.importcalendar.label          "Importuj kalendarz…">
++<!ENTITY showCurrentView.label                  "Bieżący widok">
++<!ENTITY showCurrentView.accesskey              "B">
++<!ENTITY calendar.properties.label              "Właściwości kalendarza…">
+ <!ENTITY calendar.properties.accesskey          "W">
+diff --git a/calendar/chrome/calendar/migration.dtd b/calendar/chrome/calendar/migration.dtd
+--- a/calendar/chrome/calendar/migration.dtd
++++ b/calendar/chrome/calendar/migration.dtd
+@@ -13,17 +13,17 @@
+    -
+    - The Original Code is Calendar migration code.
+    -
+    - The Initial Developer of the Original Code is
+    -   Joey Minta <jminta@gmail.com>
+    - Portions created by the Initial Developer are Copyright (C) 2006
+    - the Initial Developer. All Rights Reserved.
+    -
+-   - Contributor(s): 
++   - Contributor(s):
+    -   Hubert Gajewski <hubert@hubertgajewski.com>, Aviary.pl (Polish localization)
+    -
+    - Alternatively, the contents of this file may be used under the terms of
+    - either the GNU General Public License Version 2 or later (the "GPL"), or
+    - the GNU Lesser General Public License Version 2.1 or later (the "LGPL"),
+    - in which case the provisions of the GPL or the LGPL are applicable instead
+    - of those above. If you wish to allow use of your version of this file only
+    - under the terms of either the GPL or the LGPL, and not to allow others to
+diff --git a/calendar/chrome/calendar/preferences/alarms.dtd b/calendar/chrome/calendar/preferences/alarms.dtd
+--- a/calendar/chrome/calendar/preferences/alarms.dtd
++++ b/calendar/chrome/calendar/preferences/alarms.dtd
+@@ -13,17 +13,17 @@
+    -
+    - The Original Code is Mozilla Calendar Preferences
+    -
+    - The Initial Developer of the Original Code is
+    - Matthew Willis
+    - Portions created by the Initial Developer are Copyright (C) 2006
+    - the Initial Developer. All Rights Reserved.
+    -
+-   - Contributor(s): 
++   - Contributor(s):
+    -    Cédric Corazza <cedric.corazza@wanadoo.fr>
+    -    Kacper Mikke <kacper@k-raj.com.pl> (Polish localization)
+    -    Marek Stępień <marcoos@aviary.pl> (Polish localization)
+    -    Hubert Gajewski <hubert@hubertgajewski.com>, Aviary.pl (Polish localization)
+    -
+    - Alternatively, the contents of this file may be used under the terms of
+    - either the GNU General Public License Version 2 or later (the "GPL"), or
+    - the GNU Lesser General Public License Version 2.1 or later (the "LGPL"),
+diff --git a/calendar/chrome/calendar/preferences/categories.dtd b/calendar/chrome/calendar/preferences/categories.dtd
+--- a/calendar/chrome/calendar/preferences/categories.dtd
++++ b/calendar/chrome/calendar/preferences/categories.dtd
+@@ -13,17 +13,17 @@
+    -
+    - The Original Code is Mozilla Calendar Preferences
+    -
+    - The Initial Developer of the Original Code is
+    - Matthew Willis
+    - Portions created by the Initial Developer are Copyright (C) 2006
+    - the Initial Developer. All Rights Reserved.
+    -
+-   - Contributor(s): 
++   - Contributor(s):
+    -    Cédric Corazza <cedric.corazza@wanadoo.fr>
+    -    Marek Stępień <marcoos@aviary.pl> (Polish localization)
+    -    Hubert Gajewski <hubert@hubertgajewski.com>, Aviary.pl (Polish localization)
+    -
+    - Alternatively, the contents of this file may be used under the terms of
+    - either the GNU General Public License Version 2 or later (the "GPL"), or
+    - the GNU Lesser General Public License Version 2.1 or later (the "LGPL"),
+    - in which case the provisions of the GPL or the LGPL are applicable instead
+diff --git a/calendar/chrome/calendar/preferences/general.dtd b/calendar/chrome/calendar/preferences/general.dtd
+--- a/calendar/chrome/calendar/preferences/general.dtd
++++ b/calendar/chrome/calendar/preferences/general.dtd
+@@ -13,17 +13,17 @@
+    -
+    - The Original Code is Mozilla Calendar Preferences
+    -
+    - The Initial Developer of the Original Code is
+    - Matthew Willis
+    - Portions created by the Initial Developer are Copyright (C) 2006
+    - the Initial Developer. All Rights Reserved.
+    -
+-   - Contributor(s): 
++   - Contributor(s):
+    -	Marek Stępień <marcoos@aviary.pl> (Polish localization)
+    -
+    - Alternatively, the contents of this file may be used under the terms of
+    - either the GNU General Public License Version 2 or later (the "GPL"), or
+    - the GNU Lesser General Public License Version 2.1 or later (the "LGPL"),
+    - in which case the provisions of the GPL or the LGPL are applicable instead
+    - of those above. If you wish to allow use of your version of this file only
+    - under the terms of either the GPL or the LGPL, and not to allow others to
+diff --git a/calendar/chrome/calendar/providers/gdata/gdata.dtd b/calendar/chrome/calendar/providers/gdata/gdata.dtd
+--- a/calendar/chrome/calendar/providers/gdata/gdata.dtd
++++ b/calendar/chrome/calendar/providers/gdata/gdata.dtd
+@@ -34,16 +34,16 @@
+    - the terms of any one of the MPL, the GPL or the LGPL.
+    -
+    - ***** END LICENSE BLOCK ***** -->
+ 
+ <!ENTITY gdata-provider.label "Kalendarz Google">
+ 
+ <!ENTITY gdata.privacy.default.label "Domyślny">
+ <!ENTITY gdata.privacy.default.accesskey "D">
+-                                                                                
+-<!ENTITY gdata.migration.title "Uaktualnij kalendarze tylko do odczytu">                   
++
++<!ENTITY gdata.migration.title "Uaktualnij kalendarze tylko do odczytu">
+ <!ENTITY gdata.migration.description "Dostawca dla Kalendarza Google wykrył kalendarze, które działają jedynie w trybie tylko do odczytu. Aby uaktualnić któreś z nich, należy wybrać je z poniższej listy">
+-<!ENTITY gdata.migration.upgrade.label "Uaktualnij">                               
+-<!ENTITY gdata.migration.upgrade.accesskey "U">                                 
++<!ENTITY gdata.migration.upgrade.label "Uaktualnij">
++<!ENTITY gdata.migration.upgrade.accesskey "U">
+ <!ENTITY gdata.migration.showagain.label "Zawsze sprawdzaj ">
+ 
+ <!ENTITY gdata.reminder.action.sms.label "Wyślij SMS">
+diff --git a/calendar/chrome/lightning/lightning.dtd b/calendar/chrome/lightning/lightning.dtd
+--- a/calendar/chrome/lightning/lightning.dtd
++++ b/calendar/chrome/lightning/lightning.dtd
+@@ -36,32 +36,32 @@
+    - under the terms of either the GPL or the LGPL, and not to allow others to
+    - use your version of this file under the terms of the MPL, indicate your
+    - decision by deleting the provisions above and replace them with the notice
+    - and other provisions required by the LGPL or the GPL. If you do not delete
+    - the provisions above, a recipient may use your version of this file under
+    - the terms of any one of the MPL, the GPL or the LGPL.
+    -
+    - ***** END LICENSE BLOCK ***** -->
+-   
++
+ <!-- Tools menu -->
+ <!ENTITY lightning.taskLabel "Lightning">
+ 
+ <!-- New menu popup in File menu -->
+ <!ENTITY lightning.menupopup.new.event.label    "Wydarzenie…">
+ <!ENTITY lightning.menupopup.new.task.label     "Zadanie…">
+ <!ENTITY lightning.menupopup.new.calendar.label "Kalendarz…">
+ 
+ <!-- Open menu popup in File menu -->  
+-<!ENTITY lightning.menupopup.open.label               "Otwórz"> 
+-<!ENTITY lightning.menupopup.open.accesskey           "O">   
++<!ENTITY lightning.menupopup.open.label               "Otwórz">
++<!ENTITY lightning.menupopup.open.accesskey           "O">
+ <!ENTITY lightning.menupopup.open.message.label       "Zapisana wiadomość…">
+-<!ENTITY lightning.menupopup.open.message.accesskey   "w">    
++<!ENTITY lightning.menupopup.open.message.accesskey   "w">
+ <!ENTITY lightning.menupopup.open.calendar.label      "Plik kalendarza…">
+-<!ENTITY lightning.menupopup.open.calendar.accesskey  "k">            
++<!ENTITY lightning.menupopup.open.calendar.accesskey  "k">
+ 
+ <!-- Messenger Sidebar -->
+ <!ENTITY lightning.calendar.label                "Kalendarz">
+ <!ENTITY lightning.calendar.accesskey            "K">
+ <!ENTITY lightning.tasks.label                   "Zadania">
+ <!ENTITY lightning.tasks.accesskey               "Z">
+ 
+ <!-- Mode Toolbar -->
+@@ -77,17 +77,17 @@
+ <!ENTITY lightning.toolbar.newtask.label      "Zadanie">
+ 
+ <!-- Messenger Toolbar -->
+ <!ENTITY lightning.toolbar.day.label                 "Dzień">
+ <!ENTITY lightning.toolbar.day.accesskey             "D">
+ <!ENTITY lightning.toolbar.week.label                "Tydzień">
+ <!ENTITY lightning.toolbar.week.accesskey            "T">
+ <!ENTITY lightning.toolbar.multiweek.label           "Wiele tygodni">
+-<!ENTITY lightning.toolbar.multiweek.accesskey       "n">                       
++<!ENTITY lightning.toolbar.multiweek.accesskey       "n">
+ <!ENTITY lightning.toolbar.month.label               "Miesiąc">
+ <!ENTITY lightning.toolbar.month.accesskey           "M">
+ 
+ <!-- properties dialog, calendar creation wizard -->
+ <!ENTITY lightning.calendarproperties.showevents.inagenda.label "Wyświetlaj wydarzenia w panelu bieżących spraw">
+ <!-- FIXME Task Mode - tryb widoku zadań (hubert) -->
+ <!ENTITY lightning.calendarproperties.showtasks.label           "Wyświetlaj zadania w panelu bieżących spraw i w trybie widoku zadań">
+ <!ENTITY lightning.calendarproperties.email.label               "E-mail:">
+diff --git a/calendar/chrome/sunbird/aboutDialog.dtd b/calendar/chrome/sunbird/aboutDialog.dtd
+--- a/calendar/chrome/sunbird/aboutDialog.dtd
++++ b/calendar/chrome/sunbird/aboutDialog.dtd
+@@ -9,17 +9,17 @@
+    -
+    - Software distributed under the License is distributed on an "AS IS" basis,
+    - WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+    - for the specific language governing rights and limitations under the
+    - License.
+    -
+    - The Original Code is Mozilla Firefox about dialog.
+    -
+-   - The Initial Developer of the Original Code is 
++   - The Initial Developer of the Original Code is
+    - Blake Ross (blaker@netscape.com).
+    - Portions created by the Initial Developer are Copyright (C) 2002
+    - the Initial Developer. All Rights Reserved.
+    -
+    - Contributor(s): Matthew Willis <mattwillis@gmail.com>
+                      Ehsan Akhgari <ehsan.akhgari@gmail.com>
+    -                 Marek Stepien <marcoos@aviary.pl> (Polish localization)
+    -                 Hubert Gajewski <hubert@hubertgajewski.com>, Aviary.pl (Polish localization)
+diff --git a/calendar/chrome/sunbird/menuOverlay.dtd b/calendar/chrome/sunbird/menuOverlay.dtd
+--- a/calendar/chrome/sunbird/menuOverlay.dtd
++++ b/calendar/chrome/sunbird/menuOverlay.dtd
+@@ -67,21 +67,21 @@
+ 
+ <!ENTITY calendar.reloadserver.label            "Odśwież zdalne kalendarze">
+ <!ENTITY calendar.reloadserver.key              "R">
+ <!ENTITY calendar.reloadserver.accesskey        "d">
+ 
+ <!ENTITY calendar.publish.calendar.label        "Publikuj kalendarz…">
+ <!ENTITY calendar.publish.calendar.accesskey    "P">
+ <!ENTITY calendar.publish.selection.label       "Publikuj zaznaczone…">
+-<!ENTITY calendar.publish.selection.accesskey   "b">           
++<!ENTITY calendar.publish.selection.accesskey   "b">
+ 
+ <!ENTITY calendar.quit.label                    "Zakończ">
+ <!ENTITY calendar.quit.accesskey                "k">
+-<!ENTITY calendar.quit.key                      "Q"> 
++<!ENTITY calendar.quit.key                      "Q">
+ <!ENTITY calendar.quit.label.mac                "Zakończ program &brandShortName;">
+ 
+ <!ENTITY calendar.exit.label                    "Zakończ">
+ <!ENTITY calendar.exit.accesskey                "k">
+ 
+ <!ENTITY calendar.undo.label                    "Cofnij">
+ <!ENTITY calendar.undo.key                      "Z">
+ <!ENTITY calendar.undo.accesskey                "C">
+diff --git a/calendar/defines.inc b/calendar/defines.inc
+--- a/calendar/defines.inc
++++ b/calendar/defines.inc
+@@ -1,9 +1,9 @@
+ #filter emptyLines
+ 
+ #define MOZ_LANGPACK_CREATOR Aviary.pl
+ 
+ # If non-English locales wish to credit multiple contributors, uncomment this
+ # variable definition and use the format specified.
+-#define MOZ_LANGPACK_CONTRIBUTORS <em:contributor>Hubert Gajewski</em:contributor><em:contributor>Marek Stępień</em:contributor> 
++#define MOZ_LANGPACK_CONTRIBUTORS <em:contributor>Hubert Gajewski</em:contributor><em:contributor>Marek Stępień</em:contributor>
+ 
+ #unfilter emptyLines
+

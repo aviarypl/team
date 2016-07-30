@@ -1,0 +1,4418 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>216 &ndash; Tłumaczenie Bugzilli 2.18</title>
+
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<link href="data/assets/7aa6ea67750936a0368541421bdcd5ee.css" rel="stylesheet" type="text/css">
+
+
+
+    
+<script type="text/javascript" src="data/assets/a7c2f3a028f17a9aa60f56dc9d6e732d.js"></script>
+
+    <script type="text/javascript">
+    <!--
+        YAHOO.namespace('bugzilla');
+        YAHOO.util.Event.addListener = function (el, sType, fn, obj, overrideContext) {
+               if ( ("onpagehide" in window || YAHOO.env.ua.gecko) && sType === "unload") { sType = "pagehide"; };
+               var capture = ((sType == "focusin" || sType == "focusout") && !YAHOO.env.ua.ie) ? true : false;
+               return this._addListener(el, this._getType(sType), fn, obj, overrideContext, capture);
+         };
+        if ( "onpagehide" in window || YAHOO.env.ua.gecko) {
+            YAHOO.util.Event._simpleRemove(window, "unload", 
+                                           YAHOO.util.Event._unload);
+        }
+        
+        function unhide_language_selector() { 
+            YAHOO.util.Dom.removeClass(
+                'lang_links_container', 'bz_default_hidden'
+            ); 
+        } 
+        YAHOO.util.Event.onDOMReady(unhide_language_selector);
+
+        
+        var BUGZILLA = {
+            param: {
+                cookiepath: '\/',
+                maxusermatches: 1000
+            },
+            constant: {
+                COMMENT_COLS: 80
+            },
+            string: {
+                
+
+                attach_desc_required:
+                    "You must enter a Description for this attachment.",
+                component_required:
+                    "You must select a Component for this bug.",
+                description_required:
+                    "You must enter a Description for this bug.",
+                short_desc_required:
+                    "You must enter a Summary for this bug.",
+                version_required:
+                    "You must select a Version for this bug."
+            }
+              , api_token: ''
+        };
+
+    if (history && history.replaceState) {
+      if(!document.location.href.match(/show_bug\.cgi/)) {
+        history.replaceState( null,
+                             "216 – Tłumaczenie Bugzilli 2.18",
+                             "show_bug.cgi?id=216" );
+        document.title = "216 – Tłumaczenie Bugzilli 2.18";
+      }
+      if (document.location.href.match(/show_bug\.cgi\?.*list_id=/)) {
+        var href = document.location.href;
+        href = href.replace(/[\?&]+list_id=(\d+|cookie)/, '');
+        history.replaceState(null, "216 – Tłumaczenie Bugzilli 2.18", href);
+      }
+    }
+    YAHOO.util.Event.onDOMReady(function() {
+      initDirtyFieldTracking();
+
+    });
+    // -->
+    </script>
+<script type="text/javascript" src="data/assets/daf5e0fb6826e6a35280e622913f0c4a.js"></script>
+
+    
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+                       title="Bugzilla" href="search_plugin.cgi">
+    <link rel="shortcut icon" href="images/favicon.ico">
+  </head>
+
+  <body 
+        class="bugs-aviary-pl
+                 bz_bug
+                 bz_status_RESOLVED
+                 bz_product_Bugzilla
+                 bz_component_Og&#XF3;lne
+                 bz_bug_216 yui-skin-sam">
+
+  <div id="header"><div id="banner">
+  </div>
+
+    <div id="titles">
+      <span id="title">Bugzilla &ndash; Bug&nbsp;216</span>
+
+        <span id="subtitle" class="subheader">Tłumaczenie Bugzilli 2.18</span>
+
+        <span id="information" class="header_addl_info">Last modified: 2009-01-02 03:52:05 CET</span>
+    </div>
+
+
+    <div id="common_links"><ul class="links">
+  <li><a href="index.html">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi.html">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi.html">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi.html">Search</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="http://bugs.aviary.pl/buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input type="hidden" id="no_redirect_top" name="no_redirect" value="0">
+    <script type="text/javascript">
+      if (history && history.replaceState) {
+        var no_redirect = document.getElementById("no_redirect_top");
+        no_redirect.value = 1;
+      }
+    </script>
+    <input class="txt" type="text" id="quicksearch_top" name="quicksearch" 
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search" 
+           id="find_top"></form>
+  <a href="page.cgi%3Fid=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="report.cgi.html">Reports</a></li>
+
+  <li>
+      <span class="separator">| </span>
+        <a href="request.cgi.html">Requests</a></li>
+
+
+  <li>
+        <span class="separator">| </span>
+        <a href="https://bugzilla.readthedocs.org/en/5.0/using/understanding.html" target="_blank">Help</a>
+      </li>
+    
+      <li id="new_account_container_top">
+        <span class="separator">| </span>
+        <a href="createaccount.cgi.html">New&nbsp;Account</a>
+      </li>
+
+    <li id="mini_login_container_top">
+  <span class="separator">| </span>
+  <a id="login_link_top" href="show_bug.cgi%3Fid=216&amp;GoAheadAndLogIn=1.html"
+     onclick="return show_mini_login_form('_top')">Log In</a>
+
+  <form action="show_bug.cgi%3Fid=216.html" method="POST"
+        class="mini_login bz_default_hidden"
+        id="mini_login_top">
+    <input id="Bugzilla_login_top" required
+           name="Bugzilla_login" class="bz_login"
+        type="email" placeholder="Email Address">
+    <input class="bz_password" name="Bugzilla_password" type="password"
+           id="Bugzilla_password_top" required
+           placeholder="Password">
+    <input type="hidden" name="Bugzilla_login_token"
+           value="1469819940-6tWjHgAjmqIAoV6FMZVGpPAOuWBW75kCUT0AuVFtWUw">
+    <input type="submit" name="GoAheadAndLogIn" value="Log in"
+            id="log_in_top">
+    <a href="show_bug.cgi%3Fid=216.html#" onclick="return hide_mini_login_form('_top')">[x]</a>
+  </form>
+</li>
+
+
+  <li id="forgot_container_top">
+    <span class="separator">| </span>
+    <a id="forgot_link_top" href="show_bug.cgi%3Fid=216&amp;GoAheadAndLogIn=1.html#forgot"
+       onclick="return show_forgot_form('_top')">Forgot Password</a>
+    <form action="http://bugs.aviary.pl/token.cgi" method="post" id="forgot_form_top"
+          class="mini_forgot bz_default_hidden">
+      <label for="login_top">Login:</label>
+      <input name="loginname" size="20" id="login_top" required
+          type="email" placeholder="Your Email Address">
+      <input id="forgot_button_top" value="Reset Password" type="submit">
+      <input type="hidden" name="a" value="reqpw">
+      <input type="hidden" id="token_top" name="token"
+             value="1469819940-1iVdZ0N9aCO3xs7dSHjP9TUXrw4kG80_cnY0u9nkT7I">
+      <a href="show_bug.cgi%3Fid=216.html#" onclick="return hide_forgot_form('_top')">[x]</a>
+    </form>
+  </li>
+</ul>
+    </div>
+  </div>
+
+  <div id="bugzilla-body">
+
+
+<script type="text/javascript">
+<!--
+
+//-->
+</script>
+
+<form name="changeform" id="changeform" method="post" action="http://bugs.aviary.pl/process_bug.cgi">
+
+  <input type="hidden" name="delta_ts" value="2009-01-02 03:52:05">
+  <input type="hidden" name="id" value="216">
+  <input type="hidden" name="token" value="1469819940-Mf-kj3MpMBUfUt7Dua_2LfxoDQc3MZtmYnhZmHbvzFo">
+<div class="bz_short_desc_container edit_form">
+     <a href="show_bug.cgi%3Fid=216.html"><b>Bug&nbsp;216</b></a> <span id="summary_container" class="bz_default_hidden">
+      - <span id="short_desc_nonedit_display">Tłumaczenie Bugzilli 2.18</span>
+     </span>
+
+    <div id="summary_input"><span class="field_label "
+    id="field_label_short_desc">
+
+
+  <a 
+      title="The bug summary is a short sentence which succinctly describes what the bug is about."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#short_desc"
+  >Summary:</a>
+
+</span>Tłumaczenie Bugzilli 2.18
+    </div>
+  </div>
+  <script type="text/javascript">
+    hideEditableField('summary_container',
+                      'summary_input',
+                      'summary_edit_action',
+                      'short_desc',
+                      'Tłumaczenie Bugzilli 2.18' );
+  </script>
+  <table class="edit_form">
+    <tr>
+      
+      <td id="bz_show_bug_column_1" class="bz_show_bug_column">     
+        <table>
+          <tr>
+    <th class="field_label">
+      <a href="page.cgi%3Fid=fields.html#bug_status">Status</a>:
+    </th>
+    <td id="bz_field_status">
+      <span id="static_bug_status">RESOLVED
+          FIXED
+      </span>
+    </td>
+  </tr>
+<tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+<tr><th class="field_label "
+    id="field_label_alias">
+
+
+  <a 
+      title="A short, unique name assigned to a bug in order to assist with looking it up and referring to it in other places in Bugzilla."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#alias"
+  >Alias:</a>
+
+</th>
+    <td>
+        None
+    </td>
+  </tr>
+<tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+<tr><th class="field_label "
+    id="field_label_product">
+
+
+  <a 
+      title="Bugs are categorised into Products and Components. Select a Classification to narrow down this list."
+      class="field_help_link"
+      href="describecomponents.cgi.html"
+  >Product:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_product" >Bugzilla
+
+</td>
+    </tr>
+
+    
+    <tr class="bz_default_hidden"><th class="field_label "
+    id="field_label_classification">
+
+
+  <a 
+      title="Bugs are categorised into Classifications, Products and Components. classifications is the top-level categorisation."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#classification"
+  >Classification:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_classification" >Tłumaczenia oprogramowania
+
+</td>
+    </tr>
+        
+    
+    
+    <tr><th class="field_label "
+    id="field_label_component">
+
+
+  <a 
+      title="Components are second-level categories; each belongs to a particular Product. Select a Product to narrow down this list."
+      class="field_help_link"
+      href="describecomponents.cgi%3Fproduct=Bugzilla.html"
+  >Component:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_component" >Ogólne
+
+  (<a href="buglist.cgi%3Fcomponent=Ogólne&amp;product=Bugzilla&amp;bug_status=__open__.html"
+      target="_blank">show other bugs</a>)
+</td>
+    </tr>
+    <tr><th class="field_label "
+    id="field_label_version">
+
+
+  <a 
+      title="The version field defines the version of the software the bug was found in."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#version"
+  >Version:</a>
+
+</th>
+<td>nieokreślona
+  </td>
+    </tr>
+        
+    
+        
+    <tr><th class="field_label "
+    id="field_label_rep_platform">
+
+
+  <a 
+      title="The hardware platform the bug was observed on. Note: When searching, selecting the option &quot;All&quot; only finds bugs whose value for this field is literally the word &quot;All&quot;."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#rep_platform"
+  >Hardware:</a>
+
+</th>
+      <td class="field_value">Wszystkie
+        Wszystkie
+      </td>
+    </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          
+          <tr>
+      <th class="field_label">
+        <label  accesskey="i">
+          <a href="page.cgi%3Fid=fields.html#importance"><u>I</u>mportance</a></label>:
+      </th>
+      <td>P2
+       trywialny
+      </td>
+    </tr>
+          
+          <tr><th class="field_label "
+    id="field_label_assigned_to">
+
+
+  <a 
+      title="The person in charge of resolving the bug."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#assigned_to"
+  >Assignee:</a>
+
+</th>
+      <td><span class="vcard"><span class="fn">Pawel Chmielowski</span>
+</span>
+      </td>
+    </tr>
+
+    <tr><th class="field_label "
+    id="field_label_qa_contact">
+
+
+  <a 
+      title="The person responsible for confirming this bug if it is unconfirmed, and for verifying the fix once the bug has been resolved."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#qa_contact"
+  >QA Contact:</a>
+
+</th>
+      <td><span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+      </td>
+    </tr>
+    <script type="text/javascript">
+      assignToDefaultOnChange(['product', 'component'],
+        'nobody\x40aviary.pl',
+        'bugzilla\x40l10n.bledy');
+    </script>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          <tr><th class="field_label "
+    id="field_label_bug_file_loc">
+
+
+  <a 
+      title="Bugs can have a URL associated with them - for example, a pointer to a web site where the problem is seen."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#bug_file_loc"
+  >URL:</a>
+
+</th>
+    <td>
+      <span id="bz_url_input_area">
+      </span>
+    </td>
+  </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+
+          
+<tr><th class="field_label "
+    id="field_label_dependson">
+
+
+  <a 
+      title="The bugs listed here must be resolved before this bug can be resolved."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#dependson"
+  >Depends on:</a>
+
+</th>
+
+  <td>
+    <span id="dependson_input_area">
+    </span>
+<a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - nieprawidłowo zakodowany temat maili wysyłanych przez bugzillę"
+   href="show_bug.cgi%3Fid=433.html">433</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Literówka - jest &quot;które&quot; zamiast &quot;którego&quot;"
+   href="show_bug.cgi%3Fid=434.html">434</a> <a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - niespójne tłumaczenie słowa &quot;graph&quot;"
+   href="show_bug.cgi%3Fid=435.html">435</a> <a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - nieprzetłumaczone słowo &quot;Total&quot; w raporcie z wieloma tabelami/obrazkami"
+   href="show_bug.cgi%3Fid=436.html">436</a> <a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - nie da się zgłosić błędu &quot;korzystając z z systemu pomocy.&quot;"
+   href="show_bug.cgi%3Fid=442.html">442</a> <a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED WORKSFORME - Minibłędy w stopce powiadomienia e-mail Bugzilli"
+   href="show_bug.cgi%3Fid=447.html">447</a> <a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED WONTFIX - nieprzetłumaczone słowo &quot;Bugs&quot; na wykresach"
+   href="show_bug.cgi%3Fid=450.html">450</a> <a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - literówka w tekście wyświetlanym po wylogowaniu"
+   href="show_bug.cgi%3Fid=480.html">480</a> 
+  </td>
+  </tr>
+  
+  <tr><th class="field_label "
+    id="field_label_blocked">
+
+
+  <a 
+      title="This bug must be resolved before the bugs listed in this field can be resolved."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#blocked"
+  >Blocks:</a>
+
+</th>
+
+  <td>
+    <span id="blocked_input_area">
+    </span>
+
+  </td>
+  </tr>
+
+    <tr>
+      <th>&nbsp;</th>
+
+      <td id="show_dependency_tree_or_graph">
+        Show dependency <a href="showdependencytree.cgi%3Fid=216&amp;hide_resolved=1.html">tree</a>
+
+          /&nbsp;<a href="showdependencygraph.cgi%3Fid=216.html">graph</a>
+      </td>
+    </tr>
+          
+        </table>
+      </td>
+      <td>
+        <div class="bz_column_spacer">&nbsp;</div>
+      </td>
+      
+      <td id="bz_show_bug_column_2" class="bz_show_bug_column">
+        <table>
+        <tr>
+    <th class="field_label">
+      Reported:
+    </th>
+    <td>2004-10-09 19:23 CEST by <span class="vcard"><span class="fn">Pawel Chmielowski</span>
+</span>
+    </td>
+  </tr>
+  
+  <tr>
+    <th class="field_label">
+      Modified:
+    </th>
+    <td>2009-01-02 03:52 CET
+      (<a href="show_activity.cgi%3Fid=216.html">History</a>)
+    </td>
+  
+  </tr>
+<tr>
+      <th class="field_label">
+        <label  accesskey="a">
+          CC List:
+        </label>
+      </th>
+      <td>3 
+          users
+          <span id="cc_edit_area_showhide_container" class="bz_default_hidden">
+            (<a href="show_bug.cgi%3Fid=216.html#" id="cc_edit_area_showhide">show</a>)
+          </span>
+        <div id="cc_edit_area">
+          <br>
+            <select id="cc" multiple="multiple" size="5" >
+                <option value="akalla">akalla</option>
+                <option value="gandalf">gandalf</option>
+                <option value="roman">roman</option>
+            </select>
+        </div>
+          <script type="text/javascript">
+            hideEditableField( 'cc_edit_area_showhide_container', 
+                               'cc_edit_area', 
+                               'cc_edit_area_showhide', 
+                               '', 
+                               '');  
+          </script>
+      </td>
+    </tr>
+
+<tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+<tr><th class="field_label "
+    id="field_label_see_also">
+
+
+  <a 
+      title="This allows you to refer to bugs in other installations. You can enter a URL to a bug in the 'Add Bug URLs' field to note that that bug is related to this one. You can enter multiple URLs at once by separating them with whitespace. You should normally use this field to refer to bugs in other installations. For bugs in this installation, it is better to use the Depends on and Blocks fields."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#see_also"
+  >See Also:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_see_also" >
+
+</td>
+    </tr> 
+
+<tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+
+
+
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+          <hr id="bz_top_half_spacer">
+      </td>
+    </tr>
+  </table>
+
+  <table id="bz_big_form_parts">
+  <tr>
+  <td>
+
+    
+<script type="text/javascript">
+<!--
+function toggle_display(link) {
+    var table = document.getElementById("attachment_table");
+    var view_all = document.getElementById("view_all");
+    var hide_obsolete_url_parameter = "&hide_obsolete=1";
+    // Store current height for scrolling later
+    var originalHeight = table.offsetHeight;
+    var rows = YAHOO.util.Dom.getElementsByClassName(
+        'bz_tr_obsolete', 'tr', table);
+
+    for (var i = 0; i < rows.length; i++) {
+        bz_toggleClass(rows[i], 'bz_default_hidden');
+    }
+
+    if (YAHOO.util.Dom.hasClass(rows[0], 'bz_default_hidden')) {
+        link.innerHTML = "Show Obsolete";
+        view_all.href = view_all.href + hide_obsolete_url_parameter 
+    }
+    else {
+        link.innerHTML = "Hide Obsolete";
+        view_all.href = view_all.href.replace(hide_obsolete_url_parameter,"");
+    }
+
+    var newHeight = table.offsetHeight;
+    // This scrolling makes the window appear to not move at all.
+    window.scrollBy(0, newHeight - originalHeight);
+
+    return false;
+}
+//-->
+</script>
+
+<br>
+<table id="attachment_table">
+  <tr id="a0">
+    <th colspan="3" class="left">
+      Attachments
+    </th>
+  </tr>
+
+
+      <tr id="a1" class="bz_contenttype_application_x-bzip2 bz_tr_obsolete bz_default_hidden">
+        <td>
+            <a href="attachment.cgi%3Fid=136"
+               title="View the content of the attachment">
+          <b><span class="bz_obsolete">Tłumaczenie z błędu #8 zsynchronizowane z 2.18rc2</span></b></a>
+
+          <span class="bz_attach_extra_info">
+              (91.53 KB,
+                application/x-bzip2)
+
+            <br>
+            <a href="show_bug.cgi%3Fid=216.html#attach_136"
+               title="Go to the comment associated with the attachment">2004-10-09 19:30 CEST</a>,
+
+            <span class="vcard"><span class="fn">Pawel Chmielowski</span>
+</span>
+          </span>
+        </td>
+
+          <td class="bz_attach_flags">
+              <i>no flags</i>
+          </td>
+
+        <td>
+          <a href="attachment.cgi%3Fid=136&amp;action=edit.html">Details</a>
+        </td>
+      </tr>
+      <tr id="a2" class="bz_contenttype_text_plain bz_patch bz_tr_obsolete bz_default_hidden">
+        <td>
+            <a href="attachment.cgi%3Fid=137"
+               title="View the content of the attachment">
+          <b><span class="bz_obsolete">Przetłumaczenie kilku nowych plików + poprawa paru literówek</span></b></a>
+
+          <span class="bz_attach_extra_info">
+              (5.27 KB,
+                patch)
+
+            <br>
+            <a href="show_bug.cgi%3Fid=216.html#attach_137"
+               title="Go to the comment associated with the attachment">2004-10-09 20:30 CEST</a>,
+
+            <span class="vcard"><span class="fn">Pawel Chmielowski</span>
+</span>
+          </span>
+        </td>
+
+          <td class="bz_attach_flags">
+              <i>no flags</i>
+          </td>
+
+        <td>
+          <a href="attachment.cgi%3Fid=137&amp;action=edit.html">Details</a>
+        </td>
+      </tr>
+      <tr id="a3" class="bz_contenttype_text_plain bz_patch">
+        <td>
+            <a href="attachment.cgi%3Fid=138"
+               title="View the content of the attachment">
+          <b>Kolejne uaktualnienie tłumaczenia</b></a>
+
+          <span class="bz_attach_extra_info">
+              (5.91 KB,
+                patch)
+
+            <br>
+            <a href="show_bug.cgi%3Fid=216.html#attach_138"
+               title="Go to the comment associated with the attachment">2004-10-09 20:49 CEST</a>,
+
+            <span class="vcard"><span class="fn">Pawel Chmielowski</span>
+</span>
+          </span>
+        </td>
+
+          <td class="bz_attach_flags">
+              <i>no flags</i>
+          </td>
+
+        <td>
+          <a href="attachment.cgi%3Fid=138&amp;action=edit.html">Details</a>
+        </td>
+      </tr>
+      <tr id="a4" class="bz_contenttype_text_plain bz_patch">
+        <td>
+            <a href="attachment.cgi%3Fid=139"
+               title="View the content of the attachment">
+          <b>tłumaczenie pages/voting.html.tmpl</b></a>
+
+          <span class="bz_attach_extra_info">
+              (4.00 KB,
+                patch)
+
+            <br>
+            <a href="show_bug.cgi%3Fid=216.html#attach_139"
+               title="Go to the comment associated with the attachment">2004-10-10 20:31 CEST</a>,
+
+            <span class="vcard"><span class="fn">Pawel Chmielowski</span>
+</span>
+          </span>
+        </td>
+
+          <td class="bz_attach_flags">
+              <i>no flags</i>
+          </td>
+
+        <td>
+          <a href="attachment.cgi%3Fid=139&amp;action=edit.html">Details</a>
+        </td>
+      </tr>
+      <tr id="a5" class="bz_contenttype_text_plain bz_patch">
+        <td>
+            <a href="attachment.cgi%3Fid=142"
+               title="View the content of the attachment">
+          <b>Tłoumaczenie pages/fields.html.tmpl</b></a>
+
+          <span class="bz_attach_extra_info">
+              (14.63 KB,
+                patch)
+
+            <br>
+            <a href="show_bug.cgi%3Fid=216.html#attach_142"
+               title="Go to the comment associated with the attachment">2004-10-11 17:09 CEST</a>,
+
+            <span class="vcard"><span class="fn">Pawel Chmielowski</span>
+</span>
+          </span>
+        </td>
+
+          <td class="bz_attach_flags">
+              <i>no flags</i>
+          </td>
+
+        <td>
+          <a href="attachment.cgi%3Fid=142&amp;action=edit.html">Details</a>
+        </td>
+      </tr>
+      <tr id="a6" class="bz_contenttype_text_plain bz_patch">
+        <td>
+            <a href="attachment.cgi%3Fid=143"
+               title="View the content of the attachment">
+          <b>Łatka zamieniająca System na Platforma</b></a>
+
+          <span class="bz_attach_extra_info">
+              (2.43 KB,
+                patch)
+
+            <br>
+            <a href="show_bug.cgi%3Fid=216.html#attach_143"
+               title="Go to the comment associated with the attachment">2004-10-11 17:12 CEST</a>,
+
+            <span class="vcard"><span class="fn">Pawel Chmielowski</span>
+</span>
+          </span>
+        </td>
+
+          <td class="bz_attach_flags">
+              <i>no flags</i>
+          </td>
+
+        <td>
+          <a href="attachment.cgi%3Fid=143&amp;action=edit.html">Details</a>
+        </td>
+      </tr>
+      <tr id="a7" class="bz_contenttype_text_plain bz_patch">
+        <td>
+            <a href="attachment.cgi%3Fid=193"
+               title="View the content of the attachment">
+          <b>Zmiany przyniesione przez 2.18rc3</b></a>
+
+          <span class="bz_attach_extra_info">
+              (32.83 KB,
+                patch)
+
+            <br>
+            <a href="show_bug.cgi%3Fid=216.html#attach_193"
+               title="Go to the comment associated with the attachment">2004-10-28 01:35 CEST</a>,
+
+            <span class="vcard"><span class="fn">Pawel Chmielowski</span>
+</span>
+          </span>
+        </td>
+
+          <td class="bz_attach_flags">
+              <i>no flags</i>
+          </td>
+
+        <td>
+          <a href="attachment.cgi%3Fid=193&amp;action=edit.html">Details</a>
+        </td>
+      </tr>
+      <tr id="a8" class="bz_contenttype_application_x-bzip2 bz_tr_obsolete bz_default_hidden">
+        <td>
+            <a href="attachment.cgi%3Fid=194"
+               title="View the content of the attachment">
+          <b><span class="bz_obsolete">Archiwum z aktualnym tłumaczeniem</span></b></a>
+
+          <span class="bz_attach_extra_info">
+              (93.49 KB,
+                application/x-bzip2)
+
+            <br>
+            <a href="show_bug.cgi%3Fid=216.html#attach_194"
+               title="Go to the comment associated with the attachment">2004-10-28 01:45 CEST</a>,
+
+            <span class="vcard"><span class="fn">Pawel Chmielowski</span>
+</span>
+          </span>
+        </td>
+
+          <td class="bz_attach_flags">
+              <i>no flags</i>
+          </td>
+
+        <td>
+          <a href="attachment.cgi%3Fid=194&amp;action=edit.html">Details</a>
+        </td>
+      </tr>
+      <tr id="a9" class="bz_contenttype_text_plain bz_patch">
+        <td>
+            <a href="attachment.cgi%3Fid=304"
+               title="View the content of the attachment">
+          <b>Uaktualnienie tłumaczenia do CVSowej wersji 2.18 z dnia 28.12.04</b></a>
+
+          <span class="bz_attach_extra_info">
+              (45.33 KB,
+                patch)
+
+            <br>
+            <a href="show_bug.cgi%3Fid=216.html#attach_304"
+               title="Go to the comment associated with the attachment">2005-01-04 19:45 CET</a>,
+
+            <span class="vcard"><span class="fn">Pawel Chmielowski</span>
+</span>
+          </span>
+        </td>
+
+          <td class="bz_attach_flags">
+              <i>no flags</i>
+          </td>
+
+        <td>
+          <a href="attachment.cgi%3Fid=304&amp;action=edit.html">Details</a>
+        </td>
+      </tr>
+      <tr id="a10" class="bz_contenttype_text_plain bz_patch">
+        <td>
+            <a href="attachment.cgi%3Fid=305"
+               title="View the content of the attachment">
+          <b>Mniej wiecej połowa tłumaczenia &quot;Bug Writing Guidelines&quot;</b></a>
+
+          <span class="bz_attach_extra_info">
+              (13.44 KB,
+                patch)
+
+            <br>
+            <a href="show_bug.cgi%3Fid=216.html#attach_305"
+               title="Go to the comment associated with the attachment">2005-01-04 19:47 CET</a>,
+
+            <span class="vcard"><span class="fn">Pawel Chmielowski</span>
+</span>
+          </span>
+        </td>
+
+          <td class="bz_attach_flags">
+              <i>no flags</i>
+          </td>
+
+        <td>
+          <a href="attachment.cgi%3Fid=305&amp;action=edit.html">Details</a>
+        </td>
+      </tr>
+      <tr id="a11" class="bz_contenttype_text_plain bz_patch">
+        <td>
+            <a href="attachment.cgi%3Fid=306"
+               title="View the content of the attachment">
+          <b>Tłumacznie wag błędów, platform uzywanych na stronach wyszukiwania i listach błędów</b></a>
+
+          <span class="bz_attach_extra_info">
+              (4.75 KB,
+                patch)
+
+            <br>
+            <a href="show_bug.cgi%3Fid=216.html#attach_306"
+               title="Go to the comment associated with the attachment">2005-01-04 19:49 CET</a>,
+
+            <span class="vcard"><span class="fn">Pawel Chmielowski</span>
+</span>
+          </span>
+        </td>
+
+          <td class="bz_attach_flags">
+              <i>no flags</i>
+          </td>
+
+        <td>
+          <a href="attachment.cgi%3Fid=306&amp;action=edit.html">Details</a>
+        </td>
+      </tr>
+      <tr id="a12" class="bz_contenttype_text_plain bz_patch bz_tr_obsolete bz_default_hidden">
+        <td>
+            <a href="attachment.cgi%3Fid=307"
+               title="View the content of the attachment">
+          <b><span class="bz_obsolete">Tłumaczenie treści maili wysyłanych przez bugzille</span></b></a>
+
+          <span class="bz_attach_extra_info">
+              (7.27 KB,
+                patch)
+
+            <br>
+            <a href="show_bug.cgi%3Fid=216.html#attach_307"
+               title="Go to the comment associated with the attachment">2005-01-04 19:53 CET</a>,
+
+            <span class="vcard"><span class="fn">Pawel Chmielowski</span>
+</span>
+          </span>
+        </td>
+
+          <td class="bz_attach_flags">
+              <i>no flags</i>
+          </td>
+
+        <td>
+          <a href="attachment.cgi%3Fid=307&amp;action=edit.html">Details</a>
+        </td>
+      </tr>
+      <tr id="a13" class="bz_contenttype_application_x-bzip2 bz_tr_obsolete bz_default_hidden">
+        <td>
+            <a href="attachment.cgi%3Fid=308"
+               title="View the content of the attachment">
+          <b><span class="bz_obsolete">Aktualne tłumaczenie</span></b></a>
+
+          <span class="bz_attach_extra_info">
+              (92.94 KB,
+                application/x-bzip2)
+
+            <br>
+            <a href="show_bug.cgi%3Fid=216.html#attach_308"
+               title="Go to the comment associated with the attachment">2005-01-04 19:56 CET</a>,
+
+            <span class="vcard"><span class="fn">Pawel Chmielowski</span>
+</span>
+          </span>
+        </td>
+
+          <td class="bz_attach_flags">
+              <i>no flags</i>
+          </td>
+
+        <td>
+          <a href="attachment.cgi%3Fid=308&amp;action=edit.html">Details</a>
+        </td>
+      </tr>
+      <tr id="a14" class="bz_contenttype_text_plain bz_patch">
+        <td>
+            <a href="attachment.cgi%3Fid=309"
+               title="View the content of the attachment">
+          <b>Uaktualnienie tlumaczenie do oficjalnego 2.18</b></a>
+
+          <span class="bz_attach_extra_info">
+              (25.23 KB,
+                patch)
+
+            <br>
+            <a href="show_bug.cgi%3Fid=216.html#attach_309"
+               title="Go to the comment associated with the attachment">2005-01-31 19:14 CET</a>,
+
+            <span class="vcard"><span class="fn">Pawel Chmielowski</span>
+</span>
+          </span>
+        </td>
+
+          <td class="bz_attach_flags">
+              <i>no flags</i>
+          </td>
+
+        <td>
+          <a href="attachment.cgi%3Fid=309&amp;action=edit.html">Details</a>
+        </td>
+      </tr>
+      <tr id="a15" class="bz_contenttype_text_plain bz_patch bz_tr_obsolete bz_default_hidden">
+        <td>
+            <a href="attachment.cgi%3Fid=310"
+               title="View the content of the attachment">
+          <b><span class="bz_obsolete">Zmiany w kodzie - update do oficjalnego 2.18</span></b></a>
+
+          <span class="bz_attach_extra_info">
+              (10.20 KB,
+                patch)
+
+            <br>
+            <a href="show_bug.cgi%3Fid=216.html#attach_310"
+               title="Go to the comment associated with the attachment">2005-01-31 19:20 CET</a>,
+
+            <span class="vcard"><span class="fn">Pawel Chmielowski</span>
+</span>
+          </span>
+        </td>
+
+          <td class="bz_attach_flags">
+              <i>no flags</i>
+          </td>
+
+        <td>
+          <a href="attachment.cgi%3Fid=310&amp;action=edit.html">Details</a>
+        </td>
+      </tr>
+      <tr id="a16" class="bz_contenttype_application_octet-stream bz_tr_obsolete bz_default_hidden">
+        <td>
+            <a href="attachment.cgi%3Fid=311"
+               title="View the content of the attachment">
+          <b><span class="bz_obsolete">Aktualne t&amp;#322;umaczenie - dla oficjalnego 2.18</span></b></a>
+
+          <span class="bz_attach_extra_info">
+              (124.41 KB,
+                application/octet-stream)
+
+            <br>
+            <a href="show_bug.cgi%3Fid=216.html#attach_311"
+               title="Go to the comment associated with the attachment">2005-01-31 19:25 CET</a>,
+
+            <span class="vcard"><span class="fn">Pawel Chmielowski</span>
+</span>
+          </span>
+        </td>
+
+          <td class="bz_attach_flags">
+              <i>no flags</i>
+          </td>
+
+        <td>
+          <a href="attachment.cgi%3Fid=311&amp;action=edit.html">Details</a>
+        </td>
+      </tr>
+      <tr id="a17" class="bz_contenttype_text_plain bz_patch">
+        <td>
+            <a href="attachment.cgi%3Fid=313"
+               title="View the content of the attachment">
+          <b>Drobne poprawki</b></a>
+
+          <span class="bz_attach_extra_info">
+              (1.00 KB,
+                patch)
+
+            <br>
+            <a href="show_bug.cgi%3Fid=216.html#attach_313"
+               title="Go to the comment associated with the attachment">2005-02-07 23:03 CET</a>,
+
+            <span class="vcard"><span class="fn">Pawel Chmielowski</span>
+</span>
+          </span>
+        </td>
+
+          <td class="bz_attach_flags">
+              <i>no flags</i>
+          </td>
+
+        <td>
+          <a href="attachment.cgi%3Fid=313&amp;action=edit.html">Details</a>
+        </td>
+      </tr>
+      <tr id="a18" class="bz_contenttype_text_plain bz_patch">
+        <td>
+            <a href="attachment.cgi%3Fid=314"
+               title="View the content of the attachment">
+          <b>Łatka usuwająca zlepianie błąd/blędzie/itd. z poprzedzającymi wyrazami.</b></a>
+
+          <span class="bz_attach_extra_info">
+              (11.33 KB,
+                patch)
+
+            <br>
+            <a href="show_bug.cgi%3Fid=216.html#attach_314"
+               title="Go to the comment associated with the attachment">2005-02-07 23:35 CET</a>,
+
+            <span class="vcard"><span class="fn">Pawel Chmielowski</span>
+</span>
+          </span>
+        </td>
+
+          <td class="bz_attach_flags">
+              <i>no flags</i>
+          </td>
+
+        <td>
+          <a href="attachment.cgi%3Fid=314&amp;action=edit.html">Details</a>
+        </td>
+      </tr>
+      <tr id="a19" class="bz_contenttype_text_plain bz_patch bz_tr_obsolete bz_default_hidden">
+        <td>
+            <a href="attachment.cgi%3Fid=315"
+               title="View the content of the attachment">
+          <b><span class="bz_obsolete">Łatka zmieniająca kodowanie dla dwóch plików z latin2 na utf8</span></b></a>
+
+          <span class="bz_attach_extra_info">
+              (16.59 KB,
+                patch)
+
+            <br>
+            <a href="show_bug.cgi%3Fid=216.html#attach_315"
+               title="Go to the comment associated with the attachment">2005-02-07 23:47 CET</a>,
+
+            <span class="vcard"><span class="fn">Pawel Chmielowski</span>
+</span>
+          </span>
+        </td>
+
+          <td class="bz_attach_flags">
+              <i>no flags</i>
+          </td>
+
+        <td>
+          <a href="attachment.cgi%3Fid=315&amp;action=edit.html">Details</a>
+        </td>
+      </tr>
+      <tr id="a20" class="bz_contenttype_text_plain bz_patch">
+        <td>
+            <a href="attachment.cgi%3Fid=316"
+               title="View the content of the attachment">
+          <b>Łatka zmieniająca kodowanie dla dwóch plików z latin2 na utf8 v.2</b></a>
+
+          <span class="bz_attach_extra_info">
+              (6.87 KB,
+                patch)
+
+            <br>
+            <a href="show_bug.cgi%3Fid=216.html#attach_316"
+               title="Go to the comment associated with the attachment">2005-02-07 23:54 CET</a>,
+
+            <span class="vcard"><span class="fn">Pawel Chmielowski</span>
+</span>
+          </span>
+        </td>
+
+          <td class="bz_attach_flags">
+              <i>no flags</i>
+          </td>
+
+        <td>
+          <a href="attachment.cgi%3Fid=316&amp;action=edit.html">Details</a>
+        </td>
+      </tr>
+      <tr id="a21" class="bz_contenttype_text_plain bz_patch">
+        <td>
+            <a href="attachment.cgi%3Fid=317"
+               title="View the content of the attachment">
+          <b>Dalsze poprawki</b></a>
+
+          <span class="bz_attach_extra_info">
+              (27.75 KB,
+                patch)
+
+            <br>
+            <a href="show_bug.cgi%3Fid=216.html#attach_317"
+               title="Go to the comment associated with the attachment">2005-02-08 17:41 CET</a>,
+
+            <span class="vcard"><span class="fn">Pawel Chmielowski</span>
+</span>
+          </span>
+        </td>
+
+          <td class="bz_attach_flags">
+              <i>no flags</i>
+          </td>
+
+        <td>
+          <a href="attachment.cgi%3Fid=317&amp;action=edit.html">Details</a>
+        </td>
+      </tr>
+      <tr id="a22" class="bz_contenttype_text_plain bz_patch bz_tr_obsolete bz_default_hidden">
+        <td>
+            <a href="attachment.cgi%3Fid=318"
+               title="View the content of the attachment">
+          <b><span class="bz_obsolete">Uaktualniona łatka na kod.</span></b></a>
+
+          <span class="bz_attach_extra_info">
+              (10.28 KB,
+                patch)
+
+            <br>
+            <a href="show_bug.cgi%3Fid=216.html#attach_318"
+               title="Go to the comment associated with the attachment">2005-02-08 17:46 CET</a>,
+
+            <span class="vcard"><span class="fn">Pawel Chmielowski</span>
+</span>
+          </span>
+        </td>
+
+          <td class="bz_attach_flags">
+              <i>no flags</i>
+          </td>
+
+        <td>
+          <a href="attachment.cgi%3Fid=318&amp;action=edit.html">Details</a>
+        </td>
+      </tr>
+      <tr id="a23" class="bz_contenttype_text_plain bz_tr_obsolete bz_default_hidden">
+        <td>
+            <a href="attachment.cgi%3Fid=319"
+               title="View the content of the attachment">
+          <b><span class="bz_obsolete">Plik README do rozpowszechniania wraz paczką lokalizacyjną</span></b></a>
+
+          <span class="bz_attach_extra_info">
+              (1.85 KB,
+                text/plain)
+
+            <br>
+            <a href="show_bug.cgi%3Fid=216.html#attach_319"
+               title="Go to the comment associated with the attachment">2005-02-08 19:02 CET</a>,
+
+            <span class="vcard"><span class="fn">Pawel Chmielowski</span>
+</span>
+          </span>
+        </td>
+
+          <td class="bz_attach_flags">
+              <i>no flags</i>
+          </td>
+
+        <td>
+          <a href="attachment.cgi%3Fid=319&amp;action=edit.html">Details</a>
+        </td>
+      </tr>
+      <tr id="a24" class="bz_contenttype_text_plain">
+        <td>
+            <a href="attachment.cgi%3Fid=320"
+               title="View the content of the attachment">
+          <b>Poprawiony plik README</b></a>
+
+          <span class="bz_attach_extra_info">
+              (1.82 KB,
+                text/plain)
+
+            <br>
+            <a href="show_bug.cgi%3Fid=216.html#attach_320"
+               title="Go to the comment associated with the attachment">2005-02-09 19:07 CET</a>,
+
+            <span class="vcard"><span class="fn">Pawel Chmielowski</span>
+</span>
+          </span>
+        </td>
+
+          <td class="bz_attach_flags">
+              <i>no flags</i>
+          </td>
+
+        <td>
+          <a href="attachment.cgi%3Fid=320&amp;action=edit.html">Details</a>
+        </td>
+      </tr>
+      <tr id="a25" class="bz_contenttype_application_octet-stream">
+        <td>
+            <a href="attachment.cgi%3Fid=321"
+               title="View the content of the attachment">
+          <b>Oficjalna paczka z tłumaczeniem.</b></a>
+
+          <span class="bz_attach_extra_info">
+              (129.19 KB,
+                application/octet-stream)
+
+            <br>
+            <a href="show_bug.cgi%3Fid=216.html#attach_321"
+               title="Go to the comment associated with the attachment">2005-02-09 19:09 CET</a>,
+
+            <span class="vcard"><span class="fn">Pawel Chmielowski</span>
+</span>
+          </span>
+        </td>
+
+          <td class="bz_attach_flags">
+              <i>no flags</i>
+          </td>
+
+        <td>
+          <a href="attachment.cgi%3Fid=321&amp;action=edit.html">Details</a>
+        </td>
+      </tr>
+      <tr id="a26" class="bz_contenttype_application_zip bz_tr_obsolete bz_default_hidden">
+        <td>
+            <a href="attachment.cgi%3Fid=322"
+               title="View the content of the attachment">
+          <b><span class="bz_obsolete">katalogi flag-type i keywords z sekcji &quot;admin&quot;</span></b></a>
+
+          <span class="bz_attach_extra_info">
+              (12.26 KB,
+                application/zip)
+
+            <br>
+            <a href="show_bug.cgi%3Fid=216.html#attach_322"
+               title="Go to the comment associated with the attachment">2005-02-11 17:59 CET</a>,
+
+            <span class="vcard"><span class="fn">Roman Pszonka</span>
+</span>
+          </span>
+        </td>
+
+          <td class="bz_attach_flags">
+              <i>no flags</i>
+          </td>
+
+        <td>
+          <a href="attachment.cgi%3Fid=322&amp;action=edit.html">Details</a>
+        </td>
+      </tr>
+      <tr id="a27" class="bz_contenttype_text_plain bz_patch">
+        <td>
+            <a href="attachment.cgi%3Fid=323"
+               title="View the content of the attachment">
+          <b>Moje poprawki do załączkia 322.</b></a>
+
+          <span class="bz_attach_extra_info">
+              (6.82 KB,
+                patch)
+
+            <br>
+            <a href="show_bug.cgi%3Fid=216.html#attach_323"
+               title="Go to the comment associated with the attachment">2005-02-11 18:34 CET</a>,
+
+            <span class="vcard"><span class="fn">Pawel Chmielowski</span>
+</span>
+          </span>
+        </td>
+
+          <td class="bz_attach_flags">
+              <i>no flags</i>
+          </td>
+
+        <td>
+          <a href="attachment.cgi%3Fid=323&amp;action=edit.html">Details</a>
+        </td>
+      </tr>
+      <tr id="a28" class="bz_contenttype_text_plain bz_patch">
+        <td>
+            <a href="attachment.cgi%3Fid=324"
+               title="View the content of the attachment">
+          <b>Przeniesienie funkcji odmien do pliku globalnego pliku.</b></a>
+
+          <span class="bz_attach_extra_info">
+              (1.04 KB,
+                patch)
+
+            <br>
+            <a href="show_bug.cgi%3Fid=216.html#attach_324"
+               title="Go to the comment associated with the attachment">2005-02-11 18:39 CET</a>,
+
+            <span class="vcard"><span class="fn">Pawel Chmielowski</span>
+</span>
+          </span>
+        </td>
+
+          <td class="bz_attach_flags">
+              <i>no flags</i>
+          </td>
+
+        <td>
+          <a href="attachment.cgi%3Fid=324&amp;action=edit.html">Details</a>
+        </td>
+      </tr>
+      <tr id="a29" class="bz_contenttype_application_zip bz_tr_obsolete bz_default_hidden">
+        <td>
+            <a href="attachment.cgi%3Fid=325"
+               title="View the content of the attachment">
+          <b><span class="bz_obsolete">pliki create.html.tmpl i confirm-edit.html.tmpl</span></b></a>
+
+          <span class="bz_attach_extra_info">
+              (6.52 KB,
+                application/zip)
+
+            <br>
+            <a href="show_bug.cgi%3Fid=216.html#attach_325"
+               title="Go to the comment associated with the attachment">2005-02-13 22:31 CET</a>,
+
+            <span class="vcard"><span class="fn">Roman Pszonka</span>
+</span>
+          </span>
+        </td>
+
+          <td class="bz_attach_flags">
+                  <span title="Zbigniew Braniecki">gandalf</span>:
+                review?
+                
+                    (<span title="Pawel Chmielowski">prefiks</span>)<br>
+          </td>
+
+        <td>
+          <a href="attachment.cgi%3Fid=325&amp;action=edit.html">Details</a>
+        </td>
+      </tr>
+      <tr id="a30" class="bz_contenttype_text_plain bz_patch">
+        <td>
+            <a href="attachment.cgi%3Fid=326"
+               title="View the content of the attachment">
+          <b>Poprawki do 324</b></a>
+
+          <span class="bz_attach_extra_info">
+              (5.58 KB,
+                patch)
+
+            <br>
+            <a href="show_bug.cgi%3Fid=216.html#attach_326"
+               title="Go to the comment associated with the attachment">2005-02-15 00:49 CET</a>,
+
+            <span class="vcard"><span class="fn">Pawel Chmielowski</span>
+</span>
+          </span>
+        </td>
+
+          <td class="bz_attach_flags">
+              <i>no flags</i>
+          </td>
+
+        <td>
+          <a href="attachment.cgi%3Fid=326&amp;action=edit.html">Details</a>
+        </td>
+      </tr>
+      <tr id="a31" class="bz_contenttype_text_plain bz_tr_obsolete bz_default_hidden">
+        <td>
+            <a href="attachment.cgi%3Fid=327"
+               title="View the content of the attachment">
+          <b><span class="bz_obsolete">edit.html.tmpl</span></b></a>
+
+          <span class="bz_attach_extra_info">
+              (8.53 KB,
+                text/plain)
+
+            <br>
+            <a href="show_bug.cgi%3Fid=216.html#attach_327"
+               title="Go to the comment associated with the attachment">2005-02-15 02:08 CET</a>,
+
+            <span class="vcard"><span class="fn">Roman Pszonka</span>
+</span>
+          </span>
+        </td>
+
+          <td class="bz_attach_flags">
+              <i>no flags</i>
+          </td>
+
+        <td>
+          <a href="attachment.cgi%3Fid=327&amp;action=edit.html">Details</a>
+        </td>
+      </tr>
+      <tr id="a32" class="bz_contenttype_text_plain bz_patch">
+        <td>
+            <a href="attachment.cgi%3Fid=328"
+               title="View the content of the attachment">
+          <b>Poprawa kilku literówek i nieprzetłumaczonych słów.</b></a>
+
+          <span class="bz_attach_extra_info">
+              (2.73 KB,
+                patch)
+
+            <br>
+            <a href="show_bug.cgi%3Fid=216.html#attach_328"
+               title="Go to the comment associated with the attachment">2005-02-15 19:50 CET</a>,
+
+            <span class="vcard"><span class="fn">Pawel Chmielowski</span>
+</span>
+          </span>
+        </td>
+
+          <td class="bz_attach_flags">
+              <i>no flags</i>
+          </td>
+
+        <td>
+          <a href="attachment.cgi%3Fid=328&amp;action=edit.html">Details</a>
+        </td>
+      </tr>
+      <tr id="a33" class="bz_contenttype_text_plain bz_patch">
+        <td>
+            <a href="attachment.cgi%3Fid=329"
+               title="View the content of the attachment">
+          <b>Ta łatka załatwia (???) sprawę kodowania tematów.</b></a>
+
+          <span class="bz_attach_extra_info">
+              (7.36 KB,
+                patch)
+
+            <br>
+            <a href="show_bug.cgi%3Fid=216.html#attach_329"
+               title="Go to the comment associated with the attachment">2005-02-15 23:08 CET</a>,
+
+            <span class="vcard"><span class="fn">Pawel Chmielowski</span>
+</span>
+          </span>
+        </td>
+
+          <td class="bz_attach_flags">
+              <i>no flags</i>
+          </td>
+
+        <td>
+          <a href="attachment.cgi%3Fid=329&amp;action=edit.html">Details</a>
+        </td>
+      </tr>
+      <tr id="a34" class="bz_contenttype_application_octet-stream bz_tr_obsolete bz_default_hidden">
+        <td>
+            <a href="attachment.cgi%3Fid=330"
+               title="View the content of the attachment">
+          <b><span class="bz_obsolete">Uaktualniona paczka</span></b></a>
+
+          <span class="bz_attach_extra_info">
+              (98.20 KB,
+                application/octet-stream)
+
+            <br>
+            <a href="show_bug.cgi%3Fid=216.html#attach_330"
+               title="Go to the comment associated with the attachment">2005-02-16 17:07 CET</a>,
+
+            <span class="vcard"><span class="fn">Pawel Chmielowski</span>
+</span>
+          </span>
+        </td>
+
+          <td class="bz_attach_flags">
+              <i>no flags</i>
+          </td>
+
+        <td>
+          <a href="attachment.cgi%3Fid=330&amp;action=edit.html">Details</a>
+        </td>
+      </tr>
+      <tr id="a35" class="bz_contenttype_application_octet-stream bz_tr_obsolete bz_default_hidden">
+        <td>
+            <a href="attachment.cgi%3Fid=337"
+               title="View the content of the attachment">
+          <b><span class="bz_obsolete">Nannowsza paczka z tłumaczeniem</span></b></a>
+
+          <span class="bz_attach_extra_info">
+              (130.96 KB,
+                application/octet-stream)
+
+            <br>
+            <a href="show_bug.cgi%3Fid=216.html#attach_337"
+               title="Go to the comment associated with the attachment">2005-03-02 20:30 CET</a>,
+
+            <span class="vcard"><span class="fn">Pawel Chmielowski</span>
+</span>
+          </span>
+        </td>
+
+          <td class="bz_attach_flags">
+              <i>no flags</i>
+          </td>
+
+        <td>
+          <a href="attachment.cgi%3Fid=337&amp;action=edit.html">Details</a>
+        </td>
+      </tr>
+      <tr id="a36" class="bz_contenttype_application_zip">
+        <td>
+            <a href="attachment.cgi%3Fid=339"
+               title="View the content of the attachment">
+          <b>kilka poprawek do modułu admin i jedna do default\flag\list.html.tmpl</b></a>
+
+          <span class="bz_attach_extra_info">
+              (11.86 KB,
+                application/zip)
+
+            <br>
+            <a href="show_bug.cgi%3Fid=216.html#attach_339"
+               title="Go to the comment associated with the attachment">2005-03-06 18:16 CET</a>,
+
+            <span class="vcard"><span class="fn">Roman Pszonka</span>
+</span>
+          </span>
+        </td>
+
+          <td class="bz_attach_flags">
+                  <span title="Roman Pszonka">roman</span>:
+                review?
+                
+                    (<span title="Pawel Chmielowski">prefiks</span>)<br>
+          </td>
+
+        <td>
+          <a href="attachment.cgi%3Fid=339&amp;action=edit.html">Details</a>
+        </td>
+      </tr>
+      <tr id="a37" class="bz_contenttype_application_octet-stream bz_tr_obsolete bz_default_hidden">
+        <td>
+            <a href="attachment.cgi%3Fid=340"
+               title="View the content of the attachment">
+          <b><span class="bz_obsolete">Paczka wraz z poprawkami Romana.</span></b></a>
+
+          <span class="bz_attach_extra_info">
+              (130.94 KB,
+                application/octet-stream)
+
+            <br>
+            <a href="show_bug.cgi%3Fid=216.html#attach_340"
+               title="Go to the comment associated with the attachment">2005-03-06 19:53 CET</a>,
+
+            <span class="vcard"><span class="fn">Pawel Chmielowski</span>
+</span>
+          </span>
+        </td>
+
+          <td class="bz_attach_flags">
+              <i>no flags</i>
+          </td>
+
+        <td>
+          <a href="attachment.cgi%3Fid=340&amp;action=edit.html">Details</a>
+        </td>
+      </tr>
+      <tr id="a38" class="bz_contenttype_text_plain bz_patch">
+        <td>
+            <a href="attachment.cgi%3Fid=351"
+               title="View the content of the attachment">
+          <b>Drobna literówka.</b></a>
+
+          <span class="bz_attach_extra_info">
+              (531 bytes,
+                patch)
+
+            <br>
+            <a href="show_bug.cgi%3Fid=216.html#attach_351"
+               title="Go to the comment associated with the attachment">2005-03-14 18:27 CET</a>,
+
+            <span class="vcard"><span class="fn">Pawel Chmielowski</span>
+</span>
+          </span>
+        </td>
+
+          <td class="bz_attach_flags">
+              <i>no flags</i>
+          </td>
+
+        <td>
+          <a href="attachment.cgi%3Fid=351&amp;action=edit.html">Details</a>
+        </td>
+      </tr>
+      <tr id="a39" class="bz_contenttype_text_plain bz_patch">
+        <td>
+            <a href="attachment.cgi%3Fid=363"
+               title="View the content of the attachment">
+          <b>Najnowsza ladka modyfikujące pliki spoze template/</b></a>
+
+          <span class="bz_attach_extra_info">
+              (12.70 KB,
+                patch)
+
+            <br>
+            <a href="show_bug.cgi%3Fid=216.html#attach_363"
+               title="Go to the comment associated with the attachment">2005-03-19 21:11 CET</a>,
+
+            <span class="vcard"><span class="fn">Pawel Chmielowski</span>
+</span>
+          </span>
+        </td>
+
+          <td class="bz_attach_flags">
+              <i>no flags</i>
+          </td>
+
+        <td>
+          <a href="attachment.cgi%3Fid=363&amp;action=edit.html">Details</a>
+        </td>
+      </tr>
+      <tr id="a40" class="bz_contenttype_text_plain bz_patch">
+        <td>
+            <a href="attachment.cgi%3Fid=364"
+               title="View the content of the attachment">
+          <b>Tłumaczenie create-guided.html.tmpl</b></a>
+
+          <span class="bz_attach_extra_info">
+              (25.43 KB,
+                patch)
+
+            <br>
+            <a href="show_bug.cgi%3Fid=216.html#attach_364"
+               title="Go to the comment associated with the attachment">2005-03-22 23:40 CET</a>,
+
+            <span class="vcard"><span class="fn">Pawel Chmielowski</span>
+</span>
+          </span>
+        </td>
+
+          <td class="bz_attach_flags">
+              <i>no flags</i>
+          </td>
+
+        <td>
+          <a href="attachment.cgi%3Fid=364&amp;action=edit.html">Details</a>
+        </td>
+      </tr>
+
+  <tr class="bz_attach_footer">
+    <td colspan="3">
+        <span class="bz_attach_view_hide">
+            <a href="show_bug.cgi%3Fid=216.html#a0" onclick="return toggle_display(this);">Show
+              Obsolete</a> (16)
+            <a id="view_all" href="attachment.cgi%3Fbugid=216&amp;action=viewall&amp;hide_obsolete=1.html">View All</a>
+        </span>
+        <a href="attachment.cgi%3Fbugid=216&amp;action=enter.html">Add an attachment</a>
+        (proposed patch, testcase, etc.)
+    </td>
+  </tr>
+</table>
+<br>
+
+  </td>
+  <td>
+  </td>
+  </tr></table>
+
+  
+  <div id="comments"><script src="js/comments.js" type="text/javascript">
+</script>
+
+<script type="text/javascript">
+<!--
+  /* Adds the reply text to the 'comment' textarea */
+  function replyToComment(id, real_id, name) {
+      var prefix = "(In reply to " + name + " from comment #" + id + ")\n";
+      var replytext = "";
+        /* pre id="comment_name_N" */
+        var text_elem = document.getElementById('comment_text_'+id);
+        var text = getText(text_elem);
+        replytext = prefix + wrapReplyText(text);
+
+
+      /* <textarea id="comment"> */
+      var textarea = document.getElementById('comment');
+      if (textarea.value != replytext) {
+          textarea.value += replytext;
+      }
+
+      textarea.focus();
+  } 
+//-->
+</script>
+
+
+<!-- This auto-sizes the comments and positions the collapse/expand links 
+     to the right. -->
+<table class="bz_comment_table">
+<tr>
+<td>
+<div id="c0" class="bz_comment bz_first_comment">
+
+      <div class="bz_first_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=216.html#c0">Description</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Pawel Chmielowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-10-09 19:23:31 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Nowa wersja, nowe tłumaczenie. Przydałoby się przygotować tłumaczenie tak by
+była dostępna wraz z oficjalnym wydaniem.</pre>
+    </div>
+
+    <div id="c1" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=216.html#c1">Comment 1</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Pawel Chmielowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-10-09 19:30:52 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Created <span class="bz_obsolete"><a href="attachment.cgi%3Fid=136" name="attach_136" title="Tłumaczenie z błędu #8 zsynchronizowane z 2.18rc2">attachment 136</a> <a href="attachment.cgi%3Fid=136&amp;action=edit.html" title="Tłumaczenie z błędu #8 zsynchronizowane z 2.18rc2">[details]</a></span>
+Tłumaczenie z błędu #8 zsynchronizowane z 2.18rc2
+
+Archiwum zawiera tłumaczenie przygotowane dla 2.17.7 uaktualnione do wersji
+2.18rc2. Nie zawiera tłumacznia nowododanych plików.</pre>
+    </div>
+
+    <div id="c2" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=216.html#c2">Comment 2</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Pawel Chmielowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-10-09 20:30:57 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Created <span class="bz_obsolete"><a href="attachment.cgi%3Fid=137" name="attach_137" title="Przetłumaczenie kilku nowych plików + poprawa paru literówek">attachment 137</a> <a href="attachment.cgi%3Fid=137&amp;action=edit.html" title="Przetłumaczenie kilku nowych plików + poprawa paru literówek">[details]</a></span>
+Przetłumaczenie kilku nowych plików + poprawa paru literówek</pre>
+    </div>
+
+    <div id="c3" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=216.html#c3">Comment 3</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Pawel Chmielowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-10-09 20:49:19 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Created <span class=""><a href="attachment.cgi%3Fid=138" name="attach_138" title="Kolejne uaktualnienie tłumaczenia">attachment 138</a> <a href="attachment.cgi%3Fid=138&amp;action=edit.html" title="Kolejne uaktualnienie tłumaczenia">[details]</a></span>
+Kolejne uaktualnienie tłumaczenia
+
+Łatka na zawartość załącznika #136. Doszedł jeden dodatkowy plik w
+stosunku do załącznika #137.
+
+
+Do przetłumaczenia pozostaly:
+  z nowych plików które doszły w 2.18:
+
+    - pages/bug-writing.html.tmpl
+    - pages/fields.html.tmpl
+    - pages/voting.html.tmpl
+
+  oraz katalog admin/ i bug/create/create-guided.html.tmpl</pre>
+    </div>
+
+    <div id="c4" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=216.html#c4">Comment 4</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Pawel Chmielowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-10-10 20:31:28 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Created <span class=""><a href="attachment.cgi%3Fid=139" name="attach_139" title="tłumaczenie pages/voting.html.tmpl">attachment 139</a> <a href="attachment.cgi%3Fid=139&amp;action=edit.html" title="tłumaczenie pages/voting.html.tmpl">[details]</a></span>
+tłumaczenie pages/voting.html.tmpl</pre>
+    </div>
+
+    <div id="c5" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=216.html#c5">Comment 5</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-10-11 02:11:58 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">jak na razie po przejzeniu zalacznikow, nie mam zastrzezen :)</pre>
+    </div>
+
+    <div id="c6" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=216.html#c6">Comment 6</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Pawel Chmielowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-10-11 17:09:20 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Created <span class=""><a href="attachment.cgi%3Fid=142" name="attach_142" title="Tłoumaczenie pages/fields.html.tmpl">attachment 142</a> <a href="attachment.cgi%3Fid=142&amp;action=edit.html" title="Tłoumaczenie pages/fields.html.tmpl">[details]</a></span>
+Tłoumaczenie pages/fields.html.tmpl</pre>
+    </div>
+
+    <div id="c7" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=216.html#c7">Comment 7</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Pawel Chmielowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-10-11 17:12:14 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Created <span class=""><a href="attachment.cgi%3Fid=143" name="attach_143" title="Łatka zamieniająca System na Platforma">attachment 143</a> <a href="attachment.cgi%3Fid=143&amp;action=edit.html" title="Łatka zamieniająca System na Platforma">[details]</a></span>
+Łatka zamieniająca System na Platforma</pre>
+    </div>
+
+    <div id="c8" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=216.html#c8">Comment 8</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Pawel Chmielowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-10-28 01:35:19 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Created <span class=""><a href="attachment.cgi%3Fid=193" name="attach_193" title="Zmiany przyniesione przez 2.18rc3">attachment 193</a> <a href="attachment.cgi%3Fid=193&amp;action=edit.html" title="Zmiany przyniesione przez 2.18rc3">[details]</a></span>
+Zmiany przyniesione przez 2.18rc3
+
+To wynik dołącznia zmian z nowego wydania 2.18rc3. Wyłącznie zmiany w
+polskim tłumaczeniu.</pre>
+    </div>
+
+    <div id="c9" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=216.html#c9">Comment 9</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Pawel Chmielowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-10-28 01:45:30 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Created <span class="bz_obsolete"><a href="attachment.cgi%3Fid=194" name="attach_194" title="Archiwum z aktualnym tłumaczeniem">attachment 194</a> <a href="attachment.cgi%3Fid=194&amp;action=edit.html" title="Archiwum z aktualnym tłumaczeniem">[details]</a></span>
+Archiwum z aktualnym tłumaczeniem</pre>
+    </div>
+
+    <div id="c10" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=216.html#c10">Comment 10</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Pawel Chmielowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-01-04 19:45:39 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Created <span class=""><a href="attachment.cgi%3Fid=304" name="attach_304" title="Uaktualnienie tłumaczenia do CVSowej wersji 2.18 z dnia 28.12.04">attachment 304</a> <a href="attachment.cgi%3Fid=304&amp;action=edit.html" title="Uaktualnienie tłumaczenia do CVSowej wersji 2.18 z dnia 28.12.04">[details]</a></span>
+Uaktualnienie tłumaczenia do CVSowej wersji 2.18 z dnia 28.12.04</pre>
+    </div>
+
+    <div id="c11" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=216.html#c11">Comment 11</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Pawel Chmielowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-01-04 19:47:00 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Created <span class=""><a href="attachment.cgi%3Fid=305" name="attach_305" title="Mniej wiecej połowa tłumaczenia &quot;Bug Writing Guidelines&quot;">attachment 305</a> <a href="attachment.cgi%3Fid=305&amp;action=edit.html" title="Mniej wiecej połowa tłumaczenia &quot;Bug Writing Guidelines&quot;">[details]</a></span>
+Mniej wiecej połowa tłumaczenia &quot;Bug Writing Guidelines&quot;</pre>
+    </div>
+
+    <div id="c12" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=216.html#c12">Comment 12</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Pawel Chmielowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-01-04 19:49:27 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Created <span class=""><a href="attachment.cgi%3Fid=306" name="attach_306" title="Tłumacznie wag błędów, platform uzywanych na stronach wyszukiwania i listach błędów">attachment 306</a> <a href="attachment.cgi%3Fid=306&amp;action=edit.html" title="Tłumacznie wag błędów, platform uzywanych na stronach wyszukiwania i listach błędów">[details]</a></span>
+Tłumacznie wag błędów, platform uzywanych na stronach wyszukiwania i listach błędów</pre>
+    </div>
+
+    <div id="c13" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=216.html#c13">Comment 13</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Pawel Chmielowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-01-04 19:53:48 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Created <span class="bz_obsolete"><a href="attachment.cgi%3Fid=307" name="attach_307" title="Tłumaczenie treści maili wysyłanych przez bugzille">attachment 307</a> <a href="attachment.cgi%3Fid=307&amp;action=edit.html" title="Tłumaczenie treści maili wysyłanych przez bugzille">[details]</a></span>
+Tłumaczenie treści maili wysyłanych przez bugzille
+
+Ta łatka operuje bezpośrednio na plikach bugzilli a nie tłumaczeniu. Żeby
+część tych zmian zaczęła obowiązywać, należy zmienić treści maili w
+preferencjach bugzilli. Można to zrobić ręcznie, lub zmieniając treści
+pól z mailami i następnie nakazując przywrócić wartości domyślne.</pre>
+    </div>
+
+    <div id="c14" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=216.html#c14">Comment 14</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Pawel Chmielowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-01-04 19:56:55 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Created <span class="bz_obsolete"><a href="attachment.cgi%3Fid=308" name="attach_308" title="Aktualne tłumaczenie">attachment 308</a> <a href="attachment.cgi%3Fid=308&amp;action=edit.html" title="Aktualne tłumaczenie">[details]</a></span>
+Aktualne tłumaczenie</pre>
+    </div>
+
+    <div id="c15" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=216.html#c15">Comment 15</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Pawel Chmielowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-01-31 19:14:21 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Created <span class=""><a href="attachment.cgi%3Fid=309" name="attach_309" title="Uaktualnienie tlumaczenie do oficjalnego 2.18">attachment 309</a> <a href="attachment.cgi%3Fid=309&amp;action=edit.html" title="Uaktualnienie tlumaczenie do oficjalnego 2.18">[details]</a></span>
+Uaktualnienie tlumaczenie do oficjalnego 2.18
+
+Zawiera również reszte tłumaczenia &quot;Bug Writing Guidelines&quot;. Jest to w zasadzie
+kompletne tłumaczenie, nieprzetłumaczony został jedynie panel administratora.</pre>
+    </div>
+
+    <div id="c16" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=216.html#c16">Comment 16</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Pawel Chmielowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-01-31 19:20:58 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Created <span class="bz_obsolete"><a href="attachment.cgi%3Fid=310" name="attach_310" title="Zmiany w kodzie - update do oficjalnego 2.18">attachment 310</a> <a href="attachment.cgi%3Fid=310&amp;action=edit.html" title="Zmiany w kodzie - update do oficjalnego 2.18">[details]</a></span>
+Zmiany w kodzie - update do oficjalnego 2.18</pre>
+    </div>
+
+    <div id="c17" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=216.html#c17">Comment 17</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Pawel Chmielowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-01-31 19:25:06 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Created <span class="bz_obsolete"><a href="attachment.cgi%3Fid=311" name="attach_311" title="Aktualne t&amp;#322;umaczenie - dla oficjalnego 2.18">attachment 311</a> <a href="attachment.cgi%3Fid=311&amp;action=edit.html" title="Aktualne t&amp;#322;umaczenie - dla oficjalnego 2.18">[details]</a></span>
+Aktualne t&amp;#322;umaczenie - dla oficjalnego 2.18</pre>
+    </div>
+
+    <div id="c18" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=216.html#c18">Comment 18</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-02-01 17:25:06 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Ok. Jutro zupdatuje Bugzille z 2.18rc3 do 2.18 final i uruchomie polska
+lokalizacje dla testow. Poprawie przy okazji bledy zwiazane z COLLATION Mysqla</pre>
+    </div>
+
+    <div id="c19" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=216.html#c19">Comment 19</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-02-04 15:31:25 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">gotowe. Mozna zaczynac testy.
+Dodatkowo zalozylem skorke MozilliPL.</pre>
+    </div>
+
+    <div id="c20" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=216.html#c20">Comment 20</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-02-04 15:44:44 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Hehe, wygląda fajnie, lepiej niż b.m.o. :)
+
+Tylko coś strasznie duże litery są w polu tekstowym &quot;dodatkowe komentarze&quot;</pre>
+    </div>
+
+    <div id="c21" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=216.html#c21">Comment 21</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-02-04 15:48:26 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Lepiej? Zmniejszylem do 12px</pre>
+    </div>
+
+    <div id="c22" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=216.html#c22">Comment 22</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-02-04 15:51:52 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Moje pierwsze uwagi:
+1) Zmienic kolory tych &quot;tabow&quot; w preferencjach i wyszukiwaniu (ochydny niebieski
+i fiolet..)
+2) Zmniejszyc &quot;Wyswietl raport aktywnosc...&quot; i &quot;Wersja do druku&quot; w pojedynczym
+bledzie
+3) Cos bym zrobil z tym &quot;strona glowna&quot; bo to sie kojarzy ze strona glowna
+bugzilli (przynajmniej mi)</pre>
+    </div>
+
+    <div id="c23" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=216.html#c23">Comment 23</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-02-04 16:17:03 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Aha - i grafy dzialaja :&gt;</pre>
+    </div>
+
+    <div id="c24" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=216.html#c24">Comment 24</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Pawel Chmielowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-02-04 16:33:43 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">gandalf: mógłbyś jeszcze popatrzeć na #13 ? To powinno załatwić problem z
+polskimi znakami w mailach</pre>
+    </div>
+
+    <div id="c25" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=216.html#c25">Comment 25</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-02-04 17:02:00 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Ok.
+Jak na razie zaaplikowalem dwa patche: <span class="bz_obsolete"><a href="attachment.cgi%3Fid=311" name="attach_311" title="Aktualne t&amp;#322;umaczenie - dla oficjalnego 2.18">attachment 311</a> <a href="attachment.cgi%3Fid=311&amp;action=edit.html" title="Aktualne t&amp;#322;umaczenie - dla oficjalnego 2.18">[details]</a></span> i <span class="bz_obsolete"><a href="attachment.cgi%3Fid=307" name="attach_307" title="Tłumaczenie treści maili wysyłanych przez bugzille">attachment 307</a> <a href="attachment.cgi%3Fid=307&amp;action=edit.html" title="Tłumaczenie treści maili wysyłanych przez bugzille">[details]</a></span>.
+
+Czy cos jeszcze? Przy okazji - posprzataj pliz :) Bo jest maly balagan (czemu
+307 jest obsolate?)</pre>
+    </div>
+
+    <div id="c26" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=216.html#c26">Comment 26</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Pawel Chmielowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-02-04 17:25:28 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Załącznik 310 między innymi zawiera 307 więc imho 307 zostało oznaczone całkiem
+naturalnie. Nie oznaczone są te części które wymagają review.</pre>
+    </div>
+
+    <div id="c27" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=216.html#c27">Comment 27</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-02-04 17:34:55 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">ah. Czyli powinienem byl uzyc <span class="bz_obsolete"><a href="attachment.cgi%3Fid=310" name="attach_310" title="Zmiany w kodzie - update do oficjalnego 2.18">attachment 310</a> <a href="attachment.cgi%3Fid=310&amp;action=edit.html" title="Zmiany w kodzie - update do oficjalnego 2.18">[details]</a></span> a nie <span class="bz_obsolete"><a href="attachment.cgi%3Fid=307" name="attach_307" title="Tłumaczenie treści maili wysyłanych przez bugzille">attachment 307</a> <a href="attachment.cgi%3Fid=307&amp;action=edit.html" title="Tłumaczenie treści maili wysyłanych przez bugzille">[details]</a></span>? Hmm... Ale
+chyba nic zlego sie nie stalo, ze uzylem starszego?
+
+Czy jeszcze jakis aplikowac?</pre>
+    </div>
+
+    <div id="c28" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=216.html#c28">Comment 28</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Pawel Chmielowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-02-04 17:43:28 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">310 dodaje rozpoznawanie załączniki, załączniki, bład, etc. 307 nie. Tak więc w
+sumie mozesz odłatać 307 i zarzucić 310</pre>
+    </div>
+
+    <div id="c29" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=216.html#c29">Comment 29</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Roman Pszonka</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-02-04 17:49:56 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">czy to tylko u mnie temat maila wyświetla się jako &quot;[BĹ~BÄ~Ed 216] TĹ~Bumaczenie
+Bugzilli 2.18&quot;?  chyba coś jest nie tak z kodowaniem tematu -  akurat dyskusja
+na temat przystosowania bugzilli do utf-8 toczy się w bugu
+<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=126266">https://bugzilla.mozilla.org/show_bug.cgi?id=126266</a></pre>
+    </div>
+
+    <div id="c30" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=216.html#c30">Comment 30</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-02-04 18:20:35 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">u mnie ladnie pokazuje polskie znaczki w tytule maila.
+
+Pawel: zrobie to jutro.</pre>
+    </div>
+
+    <div id="c31" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=216.html#c31">Comment 31</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Pawel Chmielowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-02-07 23:03:37 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Created <span class=""><a href="attachment.cgi%3Fid=313" name="attach_313" title="Drobne poprawki">attachment 313</a> <a href="attachment.cgi%3Fid=313&amp;action=edit.html" title="Drobne poprawki">[details]</a></span>
+Drobne poprawki</pre>
+    </div>
+
+    <div id="c32" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=216.html#c32">Comment 32</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Pawel Chmielowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-02-07 23:35:05 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Created <span class=""><a href="attachment.cgi%3Fid=314" name="attach_314" title="Łatka usuwająca zlepianie błąd/blędzie/itd. z poprzedzającymi wyrazami.">attachment 314</a> <a href="attachment.cgi%3Fid=314&amp;action=edit.html" title="Łatka usuwająca zlepianie błąd/blędzie/itd. z poprzedzającymi wyrazami.">[details]</a></span>
+Łatka usuwająca zlepianie błąd/blędzie/itd. z poprzedzającymi wyrazami.</pre>
+    </div>
+
+    <div id="c33" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=216.html#c33">Comment 33</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Pawel Chmielowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-02-07 23:47:40 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Created <span class="bz_obsolete"><a href="attachment.cgi%3Fid=315" name="attach_315" title="Łatka zmieniająca kodowanie dla dwóch plików z latin2 na utf8">attachment 315</a> <a href="attachment.cgi%3Fid=315&amp;action=edit.html" title="Łatka zmieniająca kodowanie dla dwóch plików z latin2 na utf8">[details]</a></span>
+Łatka zmieniająca kodowanie dla dwóch plików z latin2 na utf8</pre>
+    </div>
+
+    <div id="c34" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=216.html#c34">Comment 34</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Pawel Chmielowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-02-07 23:54:15 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Created <span class=""><a href="attachment.cgi%3Fid=316" name="attach_316" title="Łatka zmieniająca kodowanie dla dwóch plików z latin2 na utf8 v.2">attachment 316</a> <a href="attachment.cgi%3Fid=316&amp;action=edit.html" title="Łatka zmieniająca kodowanie dla dwóch plików z latin2 na utf8 v.2">[details]</a></span>
+Łatka zmieniająca kodowanie dla dwóch plików z latin2 na utf8 v.2
+
+Poprawka do poprzedniej łatki</pre>
+    </div>
+
+    <div id="c35" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=216.html#c35">Comment 35</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-02-08 00:32:30 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Wycofalem late: 307
+Zalozylem laty: 310, 313,314,316</pre>
+    </div>
+
+    <div id="c36" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=216.html#c36">Comment 36</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Pawel Chmielowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-02-08 17:41:40 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Created <span class=""><a href="attachment.cgi%3Fid=317" name="attach_317" title="Dalsze poprawki">attachment 317</a> <a href="attachment.cgi%3Fid=317&amp;action=edit.html" title="Dalsze poprawki">[details]</a></span>
+Dalsze poprawki</pre>
+    </div>
+
+    <div id="c37" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=216.html#c37">Comment 37</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Pawel Chmielowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-02-08 17:46:02 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Created <span class="bz_obsolete"><a href="attachment.cgi%3Fid=318" name="attach_318" title="Uaktualniona łatka na kod.">attachment 318</a> <a href="attachment.cgi%3Fid=318&amp;action=edit.html" title="Uaktualniona łatka na kod.">[details]</a></span>
+Uaktualniona łatka na kod.
+
+Dodałem nagłowki MIME-Version: 1.0 do wysyłanych maili</pre>
+    </div>
+
+    <div id="c38" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=216.html#c38">Comment 38</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Pawel Chmielowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-02-08 19:02:21 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Created <span class="bz_obsolete"><a href="attachment.cgi%3Fid=319" name="attach_319" title="Plik README do rozpowszechniania wraz paczką lokalizacyjną">attachment 319</a> <a href="attachment.cgi%3Fid=319&amp;action=edit.html" title="Plik README do rozpowszechniania wraz paczką lokalizacyjną">[details]</a></span>
+Plik README do rozpowszechniania wraz paczką lokalizacyjną</pre>
+    </div>
+
+    <div id="c39" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=216.html#c39">Comment 39</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-02-09 19:05:33 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Roman: jak rozumiem pracujesz nad panelem adm. tak? Czy duzo zostalo?</pre>
+    </div>
+
+    <div id="c40" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=216.html#c40">Comment 40</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Pawel Chmielowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-02-09 19:07:01 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Created <span class=""><a href="attachment.cgi%3Fid=320" name="attach_320" title="Poprawiony plik README">attachment 320</a> <a href="attachment.cgi%3Fid=320&amp;action=edit.html" title="Poprawiony plik README">[details]</a></span>
+Poprawiony plik README</pre>
+    </div>
+
+    <div id="c41" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=216.html#c41">Comment 41</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Pawel Chmielowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-02-09 19:09:47 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Created <span class=""><a href="attachment.cgi%3Fid=321" name="attach_321" title="Oficjalna paczka z tłumaczeniem.">attachment 321</a> <a href="attachment.cgi%3Fid=321&amp;action=edit.html" title="Oficjalna paczka z tłumaczeniem.">[details]</a></span>
+Oficjalna paczka z tłumaczeniem.</pre>
+    </div>
+
+    <div id="c42" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=216.html#c42">Comment 42</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Roman Pszonka</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-02-09 19:49:24 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(W odpowiedzi na komentarz #39)
+<span class="quote">&gt; Roman: jak rozumiem pracujesz nad panelem adm. tak? Czy duzo zostalo?</span >
+
+myślę, że jutro lub pojutrze część administracyjna będzie gotowa</pre>
+    </div>
+
+    <div id="c43" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=216.html#c43">Comment 43</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Roman Pszonka</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-02-11 17:59:13 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Created <span class="bz_obsolete"><a href="attachment.cgi%3Fid=322" name="attach_322" title="katalogi flag-type i keywords z sekcji &quot;admin&quot;">attachment 322</a> <a href="attachment.cgi%3Fid=322&amp;action=edit.html" title="katalogi flag-type i keywords z sekcji &quot;admin&quot;">[details]</a></span>
+katalogi flag-type i keywords z sekcji &quot;admin&quot;
+
+dodałem katalogi flag-type i keywords z sekcji &quot;admin&quot; - czekam na uwagi (tu
+lub na maila)
+pracuję jeszcze nad katalogami groups i products</pre>
+    </div>
+
+    <div id="c44" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=216.html#c44">Comment 44</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Pawel Chmielowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-02-11 18:34:41 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Created <span class=""><a href="attachment.cgi%3Fid=323" name="attach_323" title="Moje poprawki do załączkia 322.">attachment 323</a> <a href="attachment.cgi%3Fid=323&amp;action=edit.html" title="Moje poprawki do załączkia 322.">[details]</a></span>
+Moje poprawki do załączkia 322.
+
+Dodatkowo przydało by się wyciąć windowsowe końce lini z niektórych
+plików.</pre>
+    </div>
+
+    <div id="c45" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=216.html#c45">Comment 45</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Pawel Chmielowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-02-11 18:39:57 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Created <span class=""><a href="attachment.cgi%3Fid=324" name="attach_324" title="Przeniesienie funkcji odmien do pliku globalnego pliku.">attachment 324</a> <a href="attachment.cgi%3Fid=324&amp;action=edit.html" title="Przeniesienie funkcji odmien do pliku globalnego pliku.">[details]</a></span>
+Przeniesienie funkcji odmien do pliku globalnego pliku.
+
+Żeby nie dublować funkcji ODMIEN przenoszę ją do pliku globalnego,
+czytanego przez pozostałe.</pre>
+    </div>
+
+    <div id="c46" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=216.html#c46">Comment 46</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-02-11 18:43:36 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">dodalem flage review dla zalacznikow. teraz mozecie nawzajem weryfikowac swoje
+patche jesli chcecie :)</pre>
+    </div>
+
+    <div id="c47" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=216.html#c47">Comment 47</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Pawel Chmielowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-02-11 18:47:21 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">gandalf: To jak już się bawisz w administratora to mógłbyś odrazu parę wersji
+dopisać to tego produktu.</pre>
+    </div>
+
+    <div id="c48" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=216.html#c48">Comment 48</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Roman Pszonka</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-02-13 22:31:13 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Created <span class="bz_obsolete"><a href="attachment.cgi%3Fid=325" name="attach_325" title="pliki create.html.tmpl i confirm-edit.html.tmpl">attachment 325</a> <a href="attachment.cgi%3Fid=325&amp;action=edit.html" title="pliki create.html.tmpl i confirm-edit.html.tmpl">[details]</a></span>
+pliki create.html.tmpl i confirm-edit.html.tmpl
+
+w załączeniu dwa kolejne pliki, ostatni jutro</pre>
+    </div>
+
+    <div id="c49" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=216.html#c49">Comment 49</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-02-15 00:08:16 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Comment on <span class="bz_obsolete"><a href="attachment.cgi%3Fid=325" name="attach_325" title="pliki create.html.tmpl i confirm-edit.html.tmpl">attachment 325</a> <a href="attachment.cgi%3Fid=325&amp;action=edit.html" title="pliki create.html.tmpl i confirm-edit.html.tmpl">[details]</a></span>
+pliki create.html.tmpl i confirm-edit.html.tmpl
+
+prefiks: mozesz r= ?</pre>
+    </div>
+
+    <div id="c50" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=216.html#c50">Comment 50</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Pawel Chmielowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-02-15 00:49:18 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Created <span class=""><a href="attachment.cgi%3Fid=326" name="attach_326" title="Poprawki do 324">attachment 326</a> <a href="attachment.cgi%3Fid=326&amp;action=edit.html" title="Poprawki do 324">[details]</a></span>
+Poprawki do 324</pre>
+    </div>
+
+    <div id="c51" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=216.html#c51">Comment 51</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Pawel Chmielowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-02-15 00:53:42 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">gandalf: niestety nie mogę edytować nie swoich załączników, więc i tym samym
+ustawić flagi. Będziesz musiał pogrzebać coś w uprawnieniach.</pre>
+    </div>
+
+    <div id="c52" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=216.html#c52">Comment 52</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Roman Pszonka</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-02-15 02:08:35 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Created <span class="bz_obsolete"><a href="attachment.cgi%3Fid=327" name="attach_327" title="edit.html.tmpl">attachment 327</a> <a href="attachment.cgi%3Fid=327&amp;action=edit.html" title="edit.html.tmpl">[details]</a></span>
+edit.html.tmpl
+
+ostatni plik z sekcji &quot;admin&quot;</pre>
+    </div>
+
+    <div id="c53" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=216.html#c53">Comment 53</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Roman Pszonka</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-02-15 17:17:13 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(W odpowiedzi na komentarz #30)
+<span class="quote">&gt; u mnie ladnie pokazuje polskie znaczki w tytule maila.</span >
+
+zachęcam do odwiedzenia <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=126266#c188">https://bugzilla.mozilla.org/show_bug.cgi?id=126266#c188</a>
+
+u mnie (pine) niestety nie jest dobrze, gdyż w temacie są niezakodowane znaki
+8-bitowe (dodatkowo jest to sprzeczne z rfc2047)
+
+rozumiem, że niektóre MUA sobie z tym radzą, ale wg mnie temat maila powinien
+być poprawnie zakodowany
+</pre>
+    </div>
+
+    <div id="c54" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=216.html#c54">Comment 54</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Adrian Kalla :Adrianer</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-02-15 18:48:57 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Mozilla Mail 1.8b nightly i widze w temacie maila zamiast &quot;[Błąd...&quot; &quot;[BXXXd...&quot;
+Sądzę, że priorytetem powinno być aby w Mozilli się dobrze wyświetlało ;)</pre>
+    </div>
+
+    <div id="c55" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=216.html#c55">Comment 55</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Pawel Chmielowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-02-15 19:50:30 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Created <span class=""><a href="attachment.cgi%3Fid=328" name="attach_328" title="Poprawa kilku literówek i nieprzetłumaczonych słów.">attachment 328</a> <a href="attachment.cgi%3Fid=328&amp;action=edit.html" title="Poprawa kilku literówek i nieprzetłumaczonych słów.">[details]</a></span>
+Poprawa kilku literówek i nieprzetłumaczonych słów.</pre>
+    </div>
+
+    <div id="c56" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=216.html#c56">Comment 56</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Pawel Chmielowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-02-15 23:08:35 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Created <span class=""><a href="attachment.cgi%3Fid=329" name="attach_329" title="Ta łatka załatwia (???) sprawę kodowania tematów.">attachment 329</a> <a href="attachment.cgi%3Fid=329&amp;action=edit.html" title="Ta łatka załatwia (???) sprawę kodowania tematów.">[details]</a></span>
+Ta łatka załatwia (???) sprawę kodowania tematów.
+
+To powinno załatwić problem z kodowaniem tematu wiadomości (inne nagłowki
+jak from, to są wysyłane jak lecą, grzebanie się z nimi jest nieco
+kłopotliwe). Testowane na mojej lokalnej bugzilli, ale przydałoby się
+więcej testów (tymbardziej że mój ThB nie miał kłopotów ze starymi...)</pre>
+    </div>
+
+    <div id="c57" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=216.html#c57">Comment 57</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Pawel Chmielowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-02-15 23:23:47 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Przejrzałem załącznik 327 i nie mam żadnych zastrzeżeń. Tym samym templejty dla
+modułu administracyjnego są ukończone. Pewnym problemem jest że spora część
+lokalizacji jest zaszyta w plikach perlowych i tym samym jest dostępna wyłącznie
+po angielsku.
+
+Proponuje zostawić resztę tłumaczenia tak jak jest.</pre>
+    </div>
+
+    <div id="c58" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=216.html#c58">Comment 58</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-02-16 15:12:55 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">ok.  W tym momencie skonczylem na komentarzu 35. Prefiks: jakie kolejne laty
+ponakladac, zeby to ladnie dzialalo? Czy moze poczekamy az pozbierasz wszystko i
+zlozysz paczke?</pre>
+    </div>
+
+    <div id="c59" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=216.html#c59">Comment 59</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Pawel Chmielowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-02-16 17:07:18 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Created <span class="bz_obsolete"><a href="attachment.cgi%3Fid=330" name="attach_330" title="Uaktualniona paczka">attachment 330</a> <a href="attachment.cgi%3Fid=330&amp;action=edit.html" title="Uaktualniona paczka">[details]</a></span>
+Uaktualniona paczka
+
+Paczka zawiera ostatnie poprawki, tłumaczenie Romana sekcji admin oraz
+poprawiony plik README.</pre>
+    </div>
+
+    <div id="c60" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=216.html#c60">Comment 60</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-02-16 17:38:28 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Aha.
+Musialem zmienic w bug/create/create.html.tmpl linie na:
+h2 = &quot;Tutaj moÅ¼esz dodaÄ. nowy raport o bÅ.Ä.dzie do Bugzilli.&quot;
+Poniewaz zglaszalo blad...</pre>
+    </div>
+
+    <div id="c61" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=216.html#c61">Comment 61</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Pawel Chmielowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-03-02 20:30:24 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Created <span class="bz_obsolete"><a href="attachment.cgi%3Fid=337" name="attach_337" title="Nannowsza paczka z tłumaczeniem">attachment 337</a> <a href="attachment.cgi%3Fid=337&amp;action=edit.html" title="Nannowsza paczka z tłumaczeniem">[details]</a></span>
+Nannowsza paczka z tłumaczeniem</pre>
+    </div>
+
+    <div id="c62" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=216.html#c62">Comment 62</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Roman Pszonka</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-03-06 18:16:08 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Created <span class=""><a href="attachment.cgi%3Fid=339" name="attach_339" title="kilka poprawek do modułu admin i jedna do default\flag\list.html.tmpl">attachment 339</a> <a href="attachment.cgi%3Fid=339&amp;action=edit.html" title="kilka poprawek do modułu admin i jedna do default\flag\list.html.tmpl">[details]</a></span>
+kilka poprawek do modułu admin i jedna do default\flag\list.html.tmpl
+
+Sprawdziłem moduł admin na działającej instalacji, załączyłem poprawione
+pliki.
+
+Przydałoby się jeszcze sprawdzić całość zanim zostanie opublikowana
+ostateczna wersja... Ja niestety nie wiem czy znajdę czas w najbliższym
+tygodniu.
+
+Czy na bugs.firefox.pl jest najnowsza wersja tłumaczenia, razem z poprawkami
+dotyczącymi kodu?</pre>
+    </div>
+
+    <div id="c63" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=216.html#c63">Comment 63</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-03-06 18:26:26 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">nie. czekam na URL od Prefiksa z info &quot;to jest finalne. Instaluj&quot; :)
+btw. Jesli zalaczasz cos co ma podlegac review, najlepiej zeby to bylo oznaczone
+jako patch i mialo format diffa, a nie zip :) </pre>
+    </div>
+
+    <div id="c64" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=216.html#c64">Comment 64</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Pawel Chmielowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-03-06 19:38:08 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Trochę pokombinowane jest admin/flag-type/edit.html.tmpl można to uprościć w ten
+sposób:
+
++++ admin/flag-type/edit.html.tmpl  (local)
+&#64;&#64; -36,15 +36,11 &#64;&#64;
+ [% IF type.target_type == &quot;bug&quot; %]
+   [% title = BLOCK %]Tworzenie typu flagi dla [% terms.bledow %][% END %]
+   [% typeLabelLowerPlural = BLOCK %][% terms.bledy %][% END %]
+-  [% typeLabelLowerPluralPL = BLOCK %]tych samych [% terms.bledow %][% END %]
+-  [% typeLabelLowerSingular = BLOCK %][% terms.blad %][% END %]
+-  [% typeLabelLowerSingularPL = BLOCK %]tego samego [% terms.bledu %][% END %]
++  [% typeLabelLowerSingular = BLOCK %]tego samego [% terms.bledu %][% END %]
+ [% ELSE %]
+   [% title = &quot;Tworzenie typu flagi dla załączników&quot; %]
+   [% typeLabelLowerPlural = BLOCK %]załączniki[% END %]
+-  [% typeLabelLowerPluralPL = BLOCK %]tych samych załączników[% END %]
+-  [% typeLabelLowerSingular = BLOCK %]załącznik[% END %]
+-  [% typeLabelLowerSingularPL = BLOCK %]tego samego załącznika[% END %]
++  [% typeLabelLowerSingular = BLOCK %]tego samego załącznika[% END %]
+ [% END %]
+ 
+ [% IF last_action == &quot;copy&quot; %]
+&#64;&#64; -191,7 +187,7 &#64;&#64;
+       &lt;th&gt;&amp;nbsp;&lt;/th&gt;
+       &lt;td&gt;
+         &lt;input type=&quot;checkbox&quot; name=&quot;is_multiplicable&quot; [% &quot;checked&quot; IF
+type.is_multiplicable || !type.is_multiplicable.defined %]&gt;
+-        wielokrotna (wiele flag tego typu może być ustawiane dla [%
+typeLabelLowerSingularPL %])
++        wielokrotna (wiele flag tego typu może być ustawiane dla [%
+typeLabelLowerSingular %])
+       &lt;/td&gt;
+     &lt;/tr&gt;
+ 
+Innych zastrzeżeń nie mam, jeszcze tylko spróbuje zobaczyć jak to działa na
+mojej bugzilli.</pre>
+    </div>
+
+    <div id="c65" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=216.html#c65">Comment 65</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Pawel Chmielowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-03-06 19:53:46 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Created <span class="bz_obsolete"><a href="attachment.cgi%3Fid=340" name="attach_340" title="Paczka wraz z poprawkami Romana.">attachment 340</a> <a href="attachment.cgi%3Fid=340&amp;action=edit.html" title="Paczka wraz z poprawkami Romana.">[details]</a></span>
+Paczka wraz z poprawkami Romana.
+
+Uaktualniona paczka zawierająca poprawki Romana i moją zmianę z poprzedniego
+komentarza.
+
+To nadaje się do zainstalowania na b.a.p, najnowsza łatka zdaje się jest
+już zainstalowana (tyle że trzeba jeszcze raz zresetować treści mejli).</pre>
+    </div>
+
+    <div id="c66" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=216.html#c66">Comment 66</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Pawel Chmielowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-03-14 18:27:12 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Created <span class=""><a href="attachment.cgi%3Fid=351" name="attach_351" title="Drobna literówka.">attachment 351</a> <a href="attachment.cgi%3Fid=351&amp;action=edit.html" title="Drobna literówka.">[details]</a></span>
+Drobna literówka.</pre>
+    </div>
+
+    <div id="c67" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=216.html#c67">Comment 67</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-03-18 17:10:55 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Masówka. Z &quot;Bugzilla pl-PL&quot; do Lokalizacje/Bugzilla. Sorry for bugspam ;)</pre>
+    </div>
+
+    <div id="c68" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=216.html#c68">Comment 68</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Pawel Chmielowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-03-19 21:11:07 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Created <span class=""><a href="attachment.cgi%3Fid=363" name="attach_363" title="Najnowsza ladka modyfikujące pliki spoze template/">attachment 363</a> <a href="attachment.cgi%3Fid=363&amp;action=edit.html" title="Najnowsza ladka modyfikujące pliki spoze template/">[details]</a></span>
+Najnowsza ladka modyfikujące pliki spoze template/</pre>
+    </div>
+
+    <div id="c69" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=216.html#c69">Comment 69</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-03-19 21:14:36 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Ok. To jeszcze z mojego punktu widzenia zostal do napisania skrypt ktory z SVNa
+stworzy paczke z wydaniem. No i, jesli chcesz miec w paczce jakies teksty typu
+README/INSTALL, to tez bym prosil, zeby znalazly sie w SVNie.</pre>
+    </div>
+
+    <div id="c70" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=216.html#c70">Comment 70</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-03-19 21:34:23 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Comment on <span class=""><a href="attachment.cgi%3Fid=363" name="attach_363" title="Najnowsza ladka modyfikujące pliki spoze template/">attachment 363</a> <a href="attachment.cgi%3Fid=363&amp;action=edit.html" title="Najnowsza ladka modyfikujące pliki spoze template/">[details]</a></span>
+Najnowsza ladka modyfikujące pliki spoze template/
+
+nalozone na bugs.aviary.pl</pre>
+    </div>
+
+    <div id="c71" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=216.html#c71">Comment 71</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Roman Pszonka</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-03-19 22:30:20 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">temat był trochę źle zakodowany - jako &quot;Subject: [BĹ~BÄ~Ed 216]
+=?UTF-8?B?VMWCdW1hY3plbmllIEJ1Z3ppbGxpIDIuMTg=?=&quot; 
+
+sprawdzam czy już jest OK ;)</pre>
+    </div>
+
+    <div id="c72" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=216.html#c72">Comment 72</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-03-21 18:01:22 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">zwracam uwage, ze nie przetlumaczony jest jeszcze ten helper:
+<a href="enter_bug.cgi%3Fproduct=Lokalizacje&amp;format=guided.html">http://bugs.aviary.pl/enter_bug.cgi?product=Lokalizacje&amp;format=guided</a></pre>
+    </div>
+
+    <div id="c73" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=216.html#c73">Comment 73</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Pawel Chmielowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-03-22 23:40:18 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Created <span class=""><a href="attachment.cgi%3Fid=364" name="attach_364" title="Tłumaczenie create-guided.html.tmpl">attachment 364</a> <a href="attachment.cgi%3Fid=364&amp;action=edit.html" title="Tłumaczenie create-guided.html.tmpl">[details]</a></span>
+Tłumaczenie create-guided.html.tmpl
+
+Ta łatka zawiera tłumaczenie tego co jest dostępne przykładowo pod
+<a href="enter_bug.cgi%3Fproduct=Lokalizacje&amp;format=guided.html">http://bugs.aviary.pl/enter_bug.cgi?product=Lokalizacje&amp;format=guided</a>. Ta
+wersja przeznaczona jest do typowej instalacji, ta zainstalowana na b.a.p
+wymaga dodatkowych modyfikacji (zarówno części tekstu jak i kodu).</pre>
+    </div>
+
+    <div id="c74" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=216.html#c74">Comment 74</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-03-24 02:23:21 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">create guided: &quot;przykładowo może to być używany motym (czy błąd występuje z
+domyślnym motywem?)&quot;</pre>
+    </div>
+
+    <div id="c75" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=216.html#c75">Comment 75</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-04-07 17:31:52 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">2.18 wydane!
+<a href="http://www.bugzilla.org/download/">http://www.bugzilla.org/download/</a>
+
+Dzieki chlopaki :)</pre>
+    </div>
+
+
+  
+
+</td>
+<td>
+</td>
+</tr></table>
+  </div>
+
+    <hr><div id="add_comment" class="bz_section_additional_comments">
+      <table>
+        <tr>
+          <td>
+            <fieldset>
+              <legend>Note</legend>
+              You need to
+              <a href="show_bug.cgi%3Fid=216&amp;GoAheadAndLogIn=1.html">log in</a>
+              before you can comment on or make changes to this bug.
+            </fieldset>
+          </td>
+        </tr> 
+      </table>
+  </div>        
+
+</form>
+
+<hr>
+<ul class="related_actions">
+    <li><a href="show_bug.cgi%3Fformat=multiple&amp;id=216.html">Format For Printing</a></li>
+    <li>&nbsp;-&nbsp;<a href="show_bug.cgi%3Fctype=xml&amp;id=216">XML</a></li>
+    <li>&nbsp;-&nbsp;<a href="enter_bug.cgi%3Fcloned_bug_id=216.html">Clone This Bug</a></li>
+    
+    <li>&nbsp;-&nbsp;<a href="show_bug.cgi%3Fid=216.html#">Top of page </a></li>
+    </ul>
+
+<br>
+</div>
+
+    <div id="footer">
+      <div class="intro"></div>
+<ul id="useful-links">
+  <li id="links-actions"><ul class="links">
+  <li><a href="index.html">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi.html">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi.html">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi.html">Search</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="http://bugs.aviary.pl/buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input type="hidden" id="no_redirect_bottom" name="no_redirect" value="0">
+    <script type="text/javascript">
+      if (history && history.replaceState) {
+        var no_redirect = document.getElementById("no_redirect_bottom");
+        no_redirect.value = 1;
+      }
+    </script>
+    <input class="txt" type="text" id="quicksearch_bottom" name="quicksearch" 
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search" 
+           id="find_bottom"></form>
+  <a href="page.cgi%3Fid=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="report.cgi.html">Reports</a></li>
+
+  <li>
+      <span class="separator">| </span>
+        <a href="request.cgi.html">Requests</a></li>
+
+
+  <li>
+        <span class="separator">| </span>
+        <a href="https://bugzilla.readthedocs.org/en/5.0/using/understanding.html" target="_blank">Help</a>
+      </li>
+    
+      <li id="new_account_container_bottom">
+        <span class="separator">| </span>
+        <a href="createaccount.cgi.html">New&nbsp;Account</a>
+      </li>
+
+    <li id="mini_login_container_bottom">
+  <span class="separator">| </span>
+  <a id="login_link_bottom" href="show_bug.cgi%3Fid=216&amp;GoAheadAndLogIn=1.html"
+     onclick="return show_mini_login_form('_bottom')">Log In</a>
+
+  <form action="show_bug.cgi%3Fid=216.html" method="POST"
+        class="mini_login bz_default_hidden"
+        id="mini_login_bottom">
+    <input id="Bugzilla_login_bottom" required
+           name="Bugzilla_login" class="bz_login"
+        type="email" placeholder="Email Address">
+    <input class="bz_password" name="Bugzilla_password" type="password"
+           id="Bugzilla_password_bottom" required
+           placeholder="Password">
+    <input type="hidden" name="Bugzilla_login_token"
+           value="1469819940-6tWjHgAjmqIAoV6FMZVGpPAOuWBW75kCUT0AuVFtWUw">
+    <input type="submit" name="GoAheadAndLogIn" value="Log in"
+            id="log_in_bottom">
+    <a href="show_bug.cgi%3Fid=216.html#" onclick="return hide_mini_login_form('_bottom')">[x]</a>
+  </form>
+</li>
+
+
+  <li id="forgot_container_bottom">
+    <span class="separator">| </span>
+    <a id="forgot_link_bottom" href="show_bug.cgi%3Fid=216&amp;GoAheadAndLogIn=1.html#forgot"
+       onclick="return show_forgot_form('_bottom')">Forgot Password</a>
+    <form action="http://bugs.aviary.pl/token.cgi" method="post" id="forgot_form_bottom"
+          class="mini_forgot bz_default_hidden">
+      <label for="login_bottom">Login:</label>
+      <input name="loginname" size="20" id="login_bottom" required
+          type="email" placeholder="Your Email Address">
+      <input id="forgot_button_bottom" value="Reset Password" type="submit">
+      <input type="hidden" name="a" value="reqpw">
+      <input type="hidden" id="token_bottom" name="token"
+             value="1469819940-1iVdZ0N9aCO3xs7dSHjP9TUXrw4kG80_cnY0u9nkT7I">
+      <a href="show_bug.cgi%3Fid=216.html#" onclick="return hide_forgot_form('_bottom')">[x]</a>
+    </form>
+  </li>
+</ul>
+  </li>
+
+  
+
+
+
+
+  
+</ul>
+
+      <div class="outro"></div>
+    </div>
+
+  </body>
+</html>

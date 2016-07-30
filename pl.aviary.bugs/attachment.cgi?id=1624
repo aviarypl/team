@@ -1,0 +1,17 @@
+diff -r 166d844ea329 pl/default/global/user-error.html.tmpl
+--- a/pl/default/global/user-error.html.tmpl	Mon Aug 16 18:44:49 2010 +0200
++++ b/pl/default/global/user-error.html.tmpl	Sun Oct 10 20:01:59 2010 +0200
+@@ -930,11 +930,10 @@
+     [% IF product %]
+       produktu „[% product FILTER html %]”
+     [% END %]
+-    [%+ field_descs.product FILTER html %]
+     [% IF bug_id %]
+       dla [% terms.bledu %] „[% bug_id FILTER html %]”.
+     [% ELSIF new %]
+-      i nie może być dołączony do nowego [% terms.bledu %].
++      i nie [% IF users.size > 1 %] mogą być dołączeni [% ELSE %] może być dołączony [% END %] do nowego [% terms.bledu %].
+     [% ELSE %]
+       dla co najmniej jednego zmienianego [% terms.bledu %].
+     [% END %]
+

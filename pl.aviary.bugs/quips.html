@@ -1,0 +1,1680 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <title>Bugzilla Quip System</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <link href="data/assets/f7cb5c3d002f7940feca60a326979e6c.css" rel="stylesheet" type="text/css">
+  <script type="text/javascript" src="data/assets/1b4e898422a669ab82b604a2c23edce5.js"></script>
+  <script type="text/javascript">
+    <!--
+        YAHOO.namespace('bugzilla');
+        YAHOO.util.Event.addListener = function (el, sType, fn, obj, overrideContext) {
+               if ( ("onpagehide" in window || YAHOO.env.ua.gecko) && sType === "unload") { sType = "pagehide"; };
+               var capture = ((sType == "focusin" || sType == "focusout") && !YAHOO.env.ua.ie) ? true : false;
+               return this._addListener(el, this._getType(sType), fn, obj, overrideContext, capture);
+         };
+        if ( "onpagehide" in window || YAHOO.env.ua.gecko) {
+            YAHOO.util.Event._simpleRemove(window, "unload", 
+                                           YAHOO.util.Event._unload);
+        }
+        
+        function unhide_language_selector() { 
+            YAHOO.util.Dom.removeClass(
+                'lang_links_container', 'bz_default_hidden'
+            ); 
+        } 
+        YAHOO.util.Event.onDOMReady(unhide_language_selector);
+
+        
+        var BUGZILLA = {
+            param: {
+                cookiepath: '\/',
+                maxusermatches: 1000
+            },
+            constant: {
+                COMMENT_COLS: 80
+            },
+            string: {
+                
+
+                attach_desc_required:
+                    "You must enter a Description for this attachment.",
+                component_required:
+                    "You must select a Component for this bug.",
+                description_required:
+                    "You must enter a Description for this bug.",
+                short_desc_required:
+                    "You must enter a Summary for this bug.",
+                version_required:
+                    "You must select a Version for this bug."
+            }
+        };
+
+    // -->
+  </script>
+  <script type="text/javascript" src="data/assets/d41d8cd98f00b204e9800998ecf8427e.js"></script>
+  <link rel="shortcut icon" href="images/favicon.ico">
+ </head>
+ <body class="bugs-aviary-pl yui-skin-sam">
+  <div id="header">
+   <div id="banner">
+   </div>
+   <div id="titles">
+    <span id="title">Bugzilla &ndash; Add your own clever headline</span>
+   </div>
+   <div id="common_links">
+    <ul class="links">
+     <li><a href="./">Home</a></li>
+     <li><span class="separator">| </span><a href="enter_bug.cgi">New</a></li>
+     <li><span class="separator">| </span><a href="describecomponents.cgi">Browse</a></li>
+     <li><span class="separator">| </span><a href="query.cgi">Search</a></li>
+     <li class="form">
+      <span class="separator">| </span>
+      <form action="buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+       <input type="hidden" id="no_redirect_top" name="no_redirect" value="0">
+       <script type="text/javascript">
+      if (history && history.replaceState) {
+        var no_redirect = document.getElementById("no_redirect_top");
+        no_redirect.value = 1;
+      }
+       </script>
+       <input class="txt" type="text" id="quicksearch_top" name="quicksearch" title="Quick Search" value="">
+       <input class="btn" type="submit" value="Search" id="find_top">
+      </form>
+      <a href="page.cgi?id=quicksearch.html" title="Quicksearch Help">[?]</a>
+     </li>
+     <li><span class="separator">| </span><a href="report.cgi">Reports</a></li>
+     <li><span class="separator">| </span><a href="userprefs.cgi">Preferences</a></li>
+     <li><span class="separator">| </span><a href="admin.cgi">Administration</a></li>
+     <li><span class="separator">| </span><a href="index.html">Log&nbsp;in</a></li>
+    </ul>
+   </div>
+  </div>
+
+  <div id="bugzilla-body">
+   <p>Bugzilla will pick a random quip for the headline on eachbug list.</p>
+   <p>You can extend the quip list. Type in something clever or funny or boring (but not obscene or offensive, please) and bonk on the button.</p>
+
+  <form method="post" action="quips.cgi">
+    <input type="hidden" name="action" value="add">
+    <input type="hidden" name="token" value="">
+    <input size="80" name="quip" maxlength="512" required>
+    <p>
+      <input type="submit" id="add" value="Add This Quip">
+    </p>
+  </form>
+
+    <h2>Edit existing quips:</h2>
+    <p>
+      <strong>Note:</strong> Only approved quips will be shown.
+      If the parameter 'quip_list_entry_control' is set to <q>open</q>, 
+      entered quips are automatically approved.
+    </p>
+    <form name="editform" method="post" action="quips.cgi">
+      <input type="hidden" name="action" value="approve">
+      <input type="hidden" name="token" value="">
+      <table id="quips">
+        <thead>
+        <tr class="column_header">
+          <th>Quip</th>
+          <th>Author</th>
+          <th>Action</th>
+          <th>Approved</th>
+        </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>Lepsza puszka Pandory niż paprykarz szczeciński.</td>
+            <td>marcoos+bugs
+            </td>
+            <td>
+              <a href="">
+                Delete
+              </a>
+            </td>
+            <td class="center">
+              <input type="hidden" name="defined_quipid_2"
+                     id="defined_quipid_2"
+                     value="1">
+              <input type="checkbox" name="quipid_2"
+                     id="quipid_2" checked="checked">
+            </td>
+          </tr>
+          <tr>
+            <td>Linux is like a wigwam. No Gates, no Windows, and an Apache inside.</td>
+            <td>marcoos+bugs
+            </td>
+            <td>
+              <a href="">
+                Delete
+              </a>
+            </td>
+            <td class="center">
+              <input type="hidden" name="defined_quipid_3"
+                     id="defined_quipid_3"
+                     value="1">
+              <input type="checkbox" name="quipid_3"
+                     id="quipid_3" checked="checked">
+            </td>
+          </tr>
+          <tr>
+            <td>Każda wystarczająco zaawansowana technologia praktycznie niczym nie różni się od magii.</td>
+            <td>marcoos+bugs
+            </td>
+            <td>
+              <a href="">
+                Delete
+              </a>
+            </td>
+            <td class="center">
+              <input type="hidden" name="defined_quipid_4"
+                     id="defined_quipid_4"
+                     value="1">
+              <input type="checkbox" name="quipid_4"
+                     id="quipid_4" checked="checked">
+            </td>
+          </tr>
+          <tr>
+            <td>Mozilla. I niech zadrżą zwolennicy Mammona!</td>
+            <td>marcoos+bugs
+            </td>
+            <td>
+              <a href="">
+                Delete
+              </a>
+            </td>
+            <td class="center">
+              <input type="hidden" name="defined_quipid_5"
+                     id="defined_quipid_5"
+                     value="1">
+              <input type="checkbox" name="quipid_5"
+                     id="quipid_5" checked="checked">
+            </td>
+          </tr>
+          <tr>
+            <td>Firefox. I zwolennicy Mammona uklękli przerażeni.</td>
+            <td>marcoos+bugs
+            </td>
+            <td>
+              <a href="">
+                Delete
+              </a>
+            </td>
+            <td class="center">
+              <input type="hidden" name="defined_quipid_6"
+                     id="defined_quipid_6"
+                     value="1">
+              <input type="checkbox" name="quipid_6"
+                     id="quipid_6" checked="checked">
+            </td>
+          </tr>
+          <tr>
+            <td>Most end users have no clue about what is web standard and what is not. Trying to get them to learn is like trying to teach a pig to sing -- it does you no good and it annoys the pig. (Brendan Eich)</td>
+            <td>gandalf
+            </td>
+            <td>
+              <a href="">
+                Delete
+              </a>
+            </td>
+            <td class="center">
+              <input type="hidden" name="defined_quipid_22"
+                     id="defined_quipid_22"
+                     value="1">
+              <input type="checkbox" name="quipid_22"
+                     id="quipid_22" checked="checked">
+            </td>
+          </tr>
+          <tr>
+            <td>Chcesz zrobić coś wielkiego? Umyj słonia.</td>
+            <td>wadimd
+            </td>
+            <td>
+              <a href="">
+                Delete
+              </a>
+            </td>
+            <td class="center">
+              <input type="hidden" name="defined_quipid_25"
+                     id="defined_quipid_25"
+                     value="1">
+              <input type="checkbox" name="quipid_25"
+                     id="quipid_25" checked="checked">
+            </td>
+          </tr>
+          <tr>
+            <td>
+Każdy wystarczająco zaawansowany bug praktycznie niczym nie różni się od funkcij programu.
+Każda wystarczająco zaawansowany bug praktycznie niczym nie różni się od magii.</td>
+            <td>wadimd
+            </td>
+            <td>
+              <a href="">
+                Delete
+              </a>
+            </td>
+            <td class="center">
+              <input type="hidden" name="defined_quipid_26"
+                     id="defined_quipid_26"
+                     value="1">
+              <input type="checkbox" name="quipid_26"
+                     id="quipid_26" checked="checked">
+            </td>
+          </tr>
+          <tr>
+            <td>Czarować to każdy może, a programować tylko nieliczni!</td>
+            <td>cleriic
+            </td>
+            <td>
+              <a href="">
+                Delete
+              </a>
+            </td>
+            <td class="center">
+              <input type="hidden" name="defined_quipid_27"
+                     id="defined_quipid_27"
+                     value="1">
+              <input type="checkbox" name="quipid_27"
+                     id="quipid_27" checked="checked">
+            </td>
+          </tr>
+          <tr>
+            <td>Cholera, takiego burdelu to ja jeszcze nie widziałem - Leszek Miller do Jerzego Hausnera podczas prac nad budżetem na rok 2003.</td>
+            <td>marcoos+bugs
+            </td>
+            <td>
+              <a href="">
+                Delete
+              </a>
+            </td>
+            <td class="center">
+              <input type="hidden" name="defined_quipid_28"
+                     id="defined_quipid_28"
+                     value="1">
+              <input type="checkbox" name="quipid_28"
+                     id="quipid_28" checked="checked">
+            </td>
+          </tr>
+          <tr>
+            <td>rekurencja, ż I, DCMs. ~cji; lm D. ~cji (~cyj) - zobacz: rekurencja</td>
+            <td>marcoos+bugs
+            </td>
+            <td>
+              <a href="">
+                Delete
+              </a>
+            </td>
+            <td class="center">
+              <input type="hidden" name="defined_quipid_29"
+                     id="defined_quipid_29"
+                     value="1">
+              <input type="checkbox" name="quipid_29"
+                     id="quipid_29" checked="checked">
+            </td>
+          </tr>
+          <tr>
+            <td>Where do you want to find bug today? ;-)</td>
+            <td>jklawiter
+            </td>
+            <td>
+              <a href="">
+                Delete
+              </a>
+            </td>
+            <td class="center">
+              <input type="hidden" name="defined_quipid_30"
+                     id="defined_quipid_30"
+                     value="1">
+              <input type="checkbox" name="quipid_30"
+                     id="quipid_30" checked="checked">
+            </td>
+          </tr>
+          <tr>
+            <td>Problem znajduje się zazwyczaj między klawiaturą a oparciem krzesła</td>
+            <td>heidi
+            </td>
+            <td>
+              <a href="">
+                Delete
+              </a>
+            </td>
+            <td class="center">
+              <input type="hidden" name="defined_quipid_31"
+                     id="defined_quipid_31"
+                     value="1">
+              <input type="checkbox" name="quipid_31"
+                     id="quipid_31" checked="checked">
+            </td>
+          </tr>
+          <tr>
+            <td>All your base are belong to us.</td>
+            <td>marcoos+bugs
+            </td>
+            <td>
+              <a href="">
+                Delete
+              </a>
+            </td>
+            <td class="center">
+              <input type="hidden" name="defined_quipid_32"
+                     id="defined_quipid_32"
+                     value="1">
+              <input type="checkbox" name="quipid_32"
+                     id="quipid_32" checked="checked">
+            </td>
+          </tr>
+          <tr>
+            <td>Rodzina jest tam, gdzie nasz naród znajduje nadzieję, gdzie skrzydła dostają marzeń. (George W. Bush)</td>
+            <td>marcoos+bugs
+            </td>
+            <td>
+              <a href="">
+                Delete
+              </a>
+            </td>
+            <td class="center">
+              <input type="hidden" name="defined_quipid_33"
+                     id="defined_quipid_33"
+                     value="1">
+              <input type="checkbox" name="quipid_33"
+                     id="quipid_33" checked="checked">
+            </td>
+          </tr>
+          <tr>
+            <td>To najwyraźniej jest budżet. Jest w nim wiele liczb. (George W. Bush)</td>
+            <td>marcoos+bugs
+            </td>
+            <td>
+              <a href="">
+                Delete
+              </a>
+            </td>
+            <td class="center">
+              <input type="hidden" name="defined_quipid_34"
+                     id="defined_quipid_34"
+                     value="1">
+              <input type="checkbox" name="quipid_34"
+                     id="quipid_34" checked="checked">
+            </td>
+          </tr>
+          <tr>
+            <td>Od tego czwartku kasy biletowe i samoloty wznowią loty z lotniska Ronalda Reagana. (George W. Bush)</td>
+            <td>marcoos+bugs
+            </td>
+            <td>
+              <a href="">
+                Delete
+              </a>
+            </td>
+            <td class="center">
+              <input type="hidden" name="defined_quipid_35"
+                     id="defined_quipid_35"
+                     value="1">
+              <input type="checkbox" name="quipid_35"
+                     id="quipid_35" checked="checked">
+            </td>
+          </tr>
+          <tr>
+            <td>Nasi wrogowie są innowacyjni i mają zasoby - my również. Oni nigdy nie przestają wymyślać nowych sposobów na szkodzenie naszemu krajowi i naszym ludziom - my również. (George W. Bush)</td>
+            <td>marcoos+bugs
+            </td>
+            <td>
+              <a href="">
+                Delete
+              </a>
+            </td>
+            <td class="center">
+              <input type="hidden" name="defined_quipid_36"
+                     id="defined_quipid_36"
+                     value="1">
+              <input type="checkbox" name="quipid_36"
+                     id="quipid_36" checked="checked">
+            </td>
+          </tr>
+          <tr>
+            <td>Kosmos ma ciągle wysoki priorytet dla NASA. (George W. Bush)</td>
+            <td>marcoos+bugs
+            </td>
+            <td>
+              <a href="">
+                Delete
+              </a>
+            </td>
+            <td class="center">
+              <input type="hidden" name="defined_quipid_37"
+                     id="defined_quipid_37"
+                     value="1">
+              <input type="checkbox" name="quipid_37"
+                     id="quipid_37" checked="checked">
+            </td>
+          </tr>
+          <tr>
+            <td>Jedyny dowód, jaki ma poseł Ziobro, to jego dowód osobisty. (Leszek Miller)</td>
+            <td>marcoos+bugs
+            </td>
+            <td>
+              <a href="">
+                Delete
+              </a>
+            </td>
+            <td class="center">
+              <input type="hidden" name="defined_quipid_38"
+                     id="defined_quipid_38"
+                     value="1">
+              <input type="checkbox" name="quipid_38"
+                     id="quipid_38" checked="checked">
+            </td>
+          </tr>
+          <tr>
+            <td>Gdyby w jeziorze były ryby, wędkowanie nie miałoby sensu. (Lech Wałęsa)</td>
+            <td>marcoos+bugs
+            </td>
+            <td>
+              <a href="">
+                Delete
+              </a>
+            </td>
+            <td class="center">
+              <input type="hidden" name="defined_quipid_39"
+                     id="defined_quipid_39"
+                     value="1">
+              <input type="checkbox" name="quipid_39"
+                     id="quipid_39" checked="checked">
+            </td>
+          </tr>
+          <tr>
+            <td>W logice tkwi zawsze pierwiastek nudy. (Fiodor Dostojewski)</td>
+            <td>marcoos+bugs
+            </td>
+            <td>
+              <a href="">
+                Delete
+              </a>
+            </td>
+            <td class="center">
+              <input type="hidden" name="defined_quipid_40"
+                     id="defined_quipid_40"
+                     value="1">
+              <input type="checkbox" name="quipid_40"
+                     id="quipid_40" checked="checked">
+            </td>
+          </tr>
+          <tr>
+            <td>And one of the things we've got to make sure that we do is anything. (George W. Bush)</td>
+            <td>marcoos+bugs
+            </td>
+            <td>
+              <a href="">
+                Delete
+              </a>
+            </td>
+            <td class="center">
+              <input type="hidden" name="defined_quipid_42"
+                     id="defined_quipid_42"
+                     value="1">
+              <input type="checkbox" name="quipid_42"
+                     id="quipid_42" checked="checked">
+            </td>
+          </tr>
+          <tr>
+            <td>Border relations between Canada and Mexico have never been better. (George W. Bush)</td>
+            <td>marcoos+bugs
+            </td>
+            <td>
+              <a href="">
+                Delete
+              </a>
+            </td>
+            <td class="center">
+              <input type="hidden" name="defined_quipid_43"
+                     id="defined_quipid_43"
+                     value="1">
+              <input type="checkbox" name="quipid_43"
+                     id="quipid_43" checked="checked">
+            </td>
+          </tr>
+          <tr>
+            <td>[01.10.2004 03:08 CET] #developers timeless: in general the best way to get something from a reporter is talkback... even if it means beating the reporter over the head a few times</td>
+            <td>gandalf
+            </td>
+            <td>
+              <a href="">
+                Delete
+              </a>
+            </td>
+            <td class="center">
+              <input type="hidden" name="defined_quipid_45"
+                     id="defined_quipid_45"
+                     value="1">
+              <input type="checkbox" name="quipid_45"
+                     id="quipid_45" checked="checked">
+            </td>
+          </tr>
+          <tr>
+            <td>From the creators of EDLIN: Microsoft Internet Explorer</td>
+            <td>marcoos+bugs
+            </td>
+            <td>
+              <a href="">
+                Delete
+              </a>
+            </td>
+            <td class="center">
+              <input type="hidden" name="defined_quipid_46"
+                     id="defined_quipid_46"
+                     value="1">
+              <input type="checkbox" name="quipid_46"
+                     id="quipid_46" checked="checked">
+            </td>
+          </tr>
+          <tr>
+            <td>To nie lag... to Zona (c) Yano 2004</td>
+            <td>jklawiter
+            </td>
+            <td>
+              <a href="">
+                Delete
+              </a>
+            </td>
+            <td class="center">
+              <input type="hidden" name="defined_quipid_50"
+                     id="defined_quipid_50"
+                     value="1">
+              <input type="checkbox" name="quipid_50"
+                     id="quipid_50" checked="checked">
+            </td>
+          </tr>
+          <tr>
+            <td>&quot;The internet? We?re not interested in it&quot;, Bill Gates, 1993</td>
+            <td>bpiec
+            </td>
+            <td>
+              <a href="">
+                Delete
+              </a>
+            </td>
+            <td class="center">
+              <input type="hidden" name="defined_quipid_51"
+                     id="defined_quipid_51"
+                     value="1">
+              <input type="checkbox" name="quipid_51"
+                     id="quipid_51" checked="checked">
+            </td>
+          </tr>
+          <tr>
+            <td>zach: normally, the best way to get something to happen is to implement it</td>
+            <td>gandalf
+            </td>
+            <td>
+              <a href="">
+                Delete
+              </a>
+            </td>
+            <td class="center">
+              <input type="hidden" name="defined_quipid_53"
+                     id="defined_quipid_53"
+                     value="1">
+              <input type="checkbox" name="quipid_53"
+                     id="quipid_53" checked="checked">
+            </td>
+          </tr>
+          <tr>
+            <td>Jeżeli w demokratycznym kraju źle się dzieje to znaczy że większość chce źle.</td>
+            <td>decho
+            </td>
+            <td>
+              <a href="">
+                Delete
+              </a>
+            </td>
+            <td class="center">
+              <input type="hidden" name="defined_quipid_54"
+                     id="defined_quipid_54"
+                     value="1">
+              <input type="checkbox" name="quipid_54"
+                     id="quipid_54" checked="checked">
+            </td>
+          </tr>
+          <tr>
+            <td>Democracy means government by discussion, but it is only effective if you can stop people talking.</td>
+            <td>smalolepszy
+            </td>
+            <td>
+              <a href="">
+                Delete
+              </a>
+            </td>
+            <td class="center">
+              <input type="hidden" name="defined_quipid_55"
+                     id="defined_quipid_55"
+                     value="1">
+              <input type="checkbox" name="quipid_55"
+                     id="quipid_55" checked="checked">
+            </td>
+          </tr>
+          <tr>
+            <td>A camel is a horse designed by a committee</td>
+            <td>smalolepszy
+            </td>
+            <td>
+              <a href="">
+                Delete
+              </a>
+            </td>
+            <td class="center">
+              <input type="hidden" name="defined_quipid_56"
+                     id="defined_quipid_56"
+                     value="1">
+              <input type="checkbox" name="quipid_56"
+                     id="quipid_56" checked="checked">
+            </td>
+          </tr>
+          <tr>
+            <td>We are Bugzilla of Borg. Submiting is futile. You will be INVALIDated.</td>
+            <td>marcoos+bugs
+            </td>
+            <td>
+              <a href="">
+                Delete
+              </a>
+            </td>
+            <td class="center">
+              <input type="hidden" name="defined_quipid_57"
+                     id="defined_quipid_57"
+                     value="1">
+              <input type="checkbox" name="quipid_57"
+                     id="quipid_57" checked="checked">
+            </td>
+          </tr>
+          <tr>
+            <td>Nie wiem jaka broń będzie użyta w trzeciej wojnie światowej, ale czwarta będzie na kije i kamienie. (Albert Einstein)</td>
+            <td>marcoos+bugs
+            </td>
+            <td>
+              <a href="">
+                Delete
+              </a>
+            </td>
+            <td class="center">
+              <input type="hidden" name="defined_quipid_58"
+                     id="defined_quipid_58"
+                     value="1">
+              <input type="checkbox" name="quipid_58"
+                     id="quipid_58" checked="checked">
+            </td>
+          </tr>
+          <tr>
+            <td>Kto rano wstaje, ten leje jak z cebra.</td>
+            <td>marcoos+bugs
+            </td>
+            <td>
+              <a href="">
+                Delete
+              </a>
+            </td>
+            <td class="center">
+              <input type="hidden" name="defined_quipid_59"
+                     id="defined_quipid_59"
+                     value="1">
+              <input type="checkbox" name="quipid_59"
+                     id="quipid_59" checked="checked">
+            </td>
+          </tr>
+          <tr>
+            <td>Vanitas vanitatum et omnia vanitas. Ale bądź optymistą!</td>
+            <td>marcoos+bugs
+            </td>
+            <td>
+              <a href="">
+                Delete
+              </a>
+            </td>
+            <td class="center">
+              <input type="hidden" name="defined_quipid_61"
+                     id="defined_quipid_61"
+                     value="1">
+              <input type="checkbox" name="quipid_61"
+                     id="quipid_61" checked="checked">
+            </td>
+          </tr>
+          <tr>
+            <td>Raz, dwa, trzy... próba klawiatury...</td>
+            <td>marcoos+bugs
+            </td>
+            <td>
+              <a href="">
+                Delete
+              </a>
+            </td>
+            <td class="center">
+              <input type="hidden" name="defined_quipid_63"
+                     id="defined_quipid_63"
+                     value="1">
+              <input type="checkbox" name="quipid_63"
+                     id="quipid_63" checked="checked">
+            </td>
+          </tr>
+          <tr>
+            <td>&quot;Chcesz się uwolnić od pracy - wykonaj ją!&quot; przysłowie buddyjskie</td>
+            <td>gandalf
+            </td>
+            <td>
+              <a href="">
+                Delete
+              </a>
+            </td>
+            <td class="center">
+              <input type="hidden" name="defined_quipid_64"
+                     id="defined_quipid_64"
+                     value="1">
+              <input type="checkbox" name="quipid_64"
+                     id="quipid_64" checked="checked">
+            </td>
+          </tr>
+          <tr>
+            <td>Daj mi wystarczająco dużo czasu, a dostanę sie, gdzie tylko zechcesz nawet do Twojego prywatnego notesu, który nosisz w marynarce ... (Michael L. Puldy)</td>
+            <td>ptak82
+            </td>
+            <td>
+              <a href="">
+                Delete
+              </a>
+            </td>
+            <td class="center">
+              <input type="hidden" name="defined_quipid_66"
+                     id="defined_quipid_66"
+                     value="1">
+              <input type="checkbox" name="quipid_66"
+                     id="quipid_66" checked="checked">
+            </td>
+          </tr>
+          <tr>
+            <td>Szłem łąką, kwiaty pachły, wiater wiał, ona mnie odepchła. Więc weszłem do chaty, trzasłem drzwiami, pierdłem, rzygłem i wyszłem. Bo chamstwa nie zniesę.</td>
+            <td>marcoos+bugs
+            </td>
+            <td>
+              <a href="">
+                Delete
+              </a>
+            </td>
+            <td class="center">
+              <input type="hidden" name="defined_quipid_67"
+                     id="defined_quipid_67"
+                     value="1">
+              <input type="checkbox" name="quipid_67"
+                     id="quipid_67" checked="checked">
+            </td>
+          </tr>
+          <tr>
+            <td>Przychodzi informatyk do lekarza. - Boli mnie żołądek, panie doktorze. - Dziwne, u mnie działa.</td>
+            <td>marcoos+bugs
+            </td>
+            <td>
+              <a href="">
+                Delete
+              </a>
+            </td>
+            <td class="center">
+              <input type="hidden" name="defined_quipid_70"
+                     id="defined_quipid_70"
+                     value="1">
+              <input type="checkbox" name="quipid_70"
+                     id="quipid_70" checked="checked">
+            </td>
+          </tr>
+          <tr>
+            <td>Nie można mieć pretensji do Słońca, że się kręci wokół Ziemi. (Lech Wałęsa)</td>
+            <td>marcoos+bugs
+            </td>
+            <td>
+              <a href="">
+                Delete
+              </a>
+            </td>
+            <td class="center">
+              <input type="hidden" name="defined_quipid_71"
+                     id="defined_quipid_71"
+                     value="1">
+              <input type="checkbox" name="quipid_71"
+                     id="quipid_71" checked="checked">
+            </td>
+          </tr>
+          <tr>
+            <td>Ja już nie szukam pieniędzy za książki, bo te całkowicie udupiłem w sprawach społecznych... To znaczy... Utopiłem. Powiedziałem: &quot;utopiłem&quot;, ale to była dykcja zła. (Lech Wałęsa)</td>
+            <td>marcoos+bugs
+            </td>
+            <td>
+              <a href="">
+                Delete
+              </a>
+            </td>
+            <td class="center">
+              <input type="hidden" name="defined_quipid_72"
+                     id="defined_quipid_72"
+                     value="1">
+              <input type="checkbox" name="quipid_72"
+                     id="quipid_72" checked="checked">
+            </td>
+          </tr>
+          <tr>
+            <td>Oprócz jej profesjonalnych umiejętności ma ona mężne serce w kształtnej piersi. (Leszek Miller)</td>
+            <td>marcoos+bugs
+            </td>
+            <td>
+              <a href="">
+                Delete
+              </a>
+            </td>
+            <td class="center">
+              <input type="hidden" name="defined_quipid_73"
+                     id="defined_quipid_73"
+                     value="1">
+              <input type="checkbox" name="quipid_73"
+                     id="quipid_73" checked="checked">
+            </td>
+          </tr>
+          <tr>
+            <td>Konserwatyści są konserwatystami, nie biegają jak pchły z kwiatka na kwiatek. (Jan Maria Rokita)</td>
+            <td>marcoos+bugs
+            </td>
+            <td>
+              <a href="">
+                Delete
+              </a>
+            </td>
+            <td class="center">
+              <input type="hidden" name="defined_quipid_74"
+                     id="defined_quipid_74"
+                     value="1">
+              <input type="checkbox" name="quipid_74"
+                     id="quipid_74" checked="checked">
+            </td>
+          </tr>
+          <tr>
+            <td>Polski lotnik to jest taki, że jak trzeba będzie to nawet poleci na drzwiach od stodoły. (Bronisław Komorowski)</td>
+            <td>marcoos+bugs
+            </td>
+            <td>
+              <a href="">
+                Delete
+              </a>
+            </td>
+            <td class="center">
+              <input type="hidden" name="defined_quipid_75"
+                     id="defined_quipid_75"
+                     value="1">
+              <input type="checkbox" name="quipid_75"
+                     id="quipid_75" checked="checked">
+            </td>
+          </tr>
+          <tr>
+            <td>Pani Poseł - proszę mi wybaczyć, ale obawiam się, że Pani owies uderzył do głowy. (Bogdan Lewandowski do Renaty Beger)</td>
+            <td>marcoos+bugs
+            </td>
+            <td>
+              <a href="">
+                Delete
+              </a>
+            </td>
+            <td class="center">
+              <input type="hidden" name="defined_quipid_76"
+                     id="defined_quipid_76"
+                     value="1">
+              <input type="checkbox" name="quipid_76"
+                     id="quipid_76" checked="checked">
+            </td>
+          </tr>
+          <tr>
+            <td>Ich szaleństwo przekraczało granice naszej głupoty (Brytyjski kryptograf o autorach niemieckich szyfrów w trakcie II WŚ)</td>
+            <td>gandalf
+            </td>
+            <td>
+              <a href="">
+                Delete
+              </a>
+            </td>
+            <td class="center">
+              <input type="hidden" name="defined_quipid_78"
+                     id="defined_quipid_78"
+                     value="1">
+              <input type="checkbox" name="quipid_78"
+                     id="quipid_78" checked="checked">
+            </td>
+          </tr>
+          <tr>
+            <td>ja tylko zapewniam ludziom od QA pewne miejsca pracy (Adrianer)</td>
+            <td>gandalf
+            </td>
+            <td>
+              <a href="">
+                Delete
+              </a>
+            </td>
+            <td class="center">
+              <input type="hidden" name="defined_quipid_79"
+                     id="defined_quipid_79"
+                     value="1">
+              <input type="checkbox" name="quipid_79"
+                     id="quipid_79" checked="checked">
+            </td>
+          </tr>
+          <tr>
+            <td>Andrzej Lepper udowodnił, że ma za nic prawo i jest politycznym awanturnikiem. Poparcie PiS-u dla tego polityka w jakiejkolwiek sytuacji jest nierealne. (Lech Kaczyński, III 2005)</td>
+            <td>marcoos+bugs
+            </td>
+            <td>
+              <a href="">
+                Delete
+              </a>
+            </td>
+            <td class="center">
+              <input type="hidden" name="defined_quipid_80"
+                     id="defined_quipid_80"
+                     value="1">
+              <input type="checkbox" name="quipid_80"
+                     id="quipid_80" checked="checked">
+            </td>
+          </tr>
+          <tr>
+            <td>Nikt nas nie przekona, że białe jest białe a czarne jest czarne! - Prezes Rady Ministrów IV Rzeczypospolitej Polskiej, Jarosław Kaczyński</td>
+            <td>marcoos+bugs
+            </td>
+            <td>
+              <a href="">
+                Delete
+              </a>
+            </td>
+            <td class="center">
+              <input type="hidden" name="defined_quipid_81"
+                     id="defined_quipid_81"
+                     value="1">
+              <input type="checkbox" name="quipid_81"
+                     id="quipid_81" checked="checked">
+            </td>
+          </tr>
+          <tr>
+            <td>Rzecz raz odłożona na później odkłada się dalej sama</td>
+            <td>w.kapusta
+            </td>
+            <td>
+              <a href="">
+                Delete
+              </a>
+            </td>
+            <td class="center">
+              <input type="hidden" name="defined_quipid_86"
+                     id="defined_quipid_86"
+                     value="1">
+              <input type="checkbox" name="quipid_86"
+                     id="quipid_86" checked="checked">
+            </td>
+          </tr>
+          <tr>
+            <td>Staraliśmy się jak najlepiej, a wyszło jak zwykle. (Wiktor Czernomyrdin, premier Rosji)</td>
+            <td>marcoos+bugs
+            </td>
+            <td>
+              <a href="">
+                Delete
+              </a>
+            </td>
+            <td class="center">
+              <input type="hidden" name="defined_quipid_87"
+                     id="defined_quipid_87"
+                     value="1">
+              <input type="checkbox" name="quipid_87"
+                     id="quipid_87" checked="checked">
+            </td>
+          </tr>
+          <tr>
+            <td>We mnie jest czyste dobro. (Jarosław Kaczyński)</td>
+            <td>marcoos+bugs
+            </td>
+            <td>
+              <a href="">
+                Delete
+              </a>
+            </td>
+            <td class="center">
+              <input type="hidden" name="defined_quipid_89"
+                     id="defined_quipid_89"
+                     value="1">
+              <input type="checkbox" name="quipid_89"
+                     id="quipid_89" checked="checked">
+            </td>
+          </tr>
+          <tr>
+            <td>Władza Samoobrony w Polsce to będzie kryzys europejski, dużo większy niż ten austriacki. (Jarosław Kaczyński, 2002)</td>
+            <td>marcoos+bugs
+            </td>
+            <td>
+              <a href="">
+                Delete
+              </a>
+            </td>
+            <td class="center">
+              <input type="hidden" name="defined_quipid_90"
+                     id="defined_quipid_90"
+                     value="1">
+              <input type="checkbox" name="quipid_90"
+                     id="quipid_90" checked="checked">
+            </td>
+          </tr>
+          <tr>
+            <td>Człowiek jest małpą, która potrafi zrobić najprecyzyjniejszą brzytwę, aby poderżnąć gardło drugiej małpie. (Stanisław Lem)</td>
+            <td>marcoos+bugs
+            </td>
+            <td>
+              <a href="">
+                Delete
+              </a>
+            </td>
+            <td class="center">
+              <input type="hidden" name="defined_quipid_91"
+                     id="defined_quipid_91"
+                     value="1">
+              <input type="checkbox" name="quipid_91"
+                     id="quipid_91" checked="checked">
+            </td>
+          </tr>
+          <tr>
+            <td>Dopóki nie skorzystałem z Internetu, nie wiedziałem, że na świecie jest tylu idiotów. (Stanisław Lem)</td>
+            <td>marcoos+bugs
+            </td>
+            <td>
+              <a href="">
+                Delete
+              </a>
+            </td>
+            <td class="center">
+              <input type="hidden" name="defined_quipid_92"
+                     id="defined_quipid_92"
+                     value="1">
+              <input type="checkbox" name="quipid_92"
+                     id="quipid_92" checked="checked">
+            </td>
+          </tr>
+          <tr>
+            <td>Gdyby ludzie robili tylko to, co wyglądało na możliwe, do dzisiaj siedzieliby w jaskiniach. (Stanisław Lem)</td>
+            <td>marcoos+bugs
+            </td>
+            <td>
+              <a href="">
+                Delete
+              </a>
+            </td>
+            <td class="center">
+              <input type="hidden" name="defined_quipid_93"
+                     id="defined_quipid_93"
+                     value="1">
+              <input type="checkbox" name="quipid_93"
+                     id="quipid_93" checked="checked">
+            </td>
+          </tr>
+          <tr>
+            <td>Komputer? Sam? Już panu tłumaczyłem, że on jest głupi. (Stanisław Lem)</td>
+            <td>marcoos+bugs
+            </td>
+            <td>
+              <a href="">
+                Delete
+              </a>
+            </td>
+            <td class="center">
+              <input type="hidden" name="defined_quipid_94"
+                     id="defined_quipid_94"
+                     value="1">
+              <input type="checkbox" name="quipid_94"
+                     id="quipid_94" checked="checked">
+            </td>
+          </tr>
+          <tr>
+            <td>Świat się zmienia, słońce zachodzi, a wódka się kończy. (&quot;Głos rozsądku V&quot;, Andrzej Sapkowski)</td>
+            <td>marcoos+bugs
+            </td>
+            <td>
+              <a href="">
+                Delete
+              </a>
+            </td>
+            <td class="center">
+              <input type="hidden" name="defined_quipid_95"
+                     id="defined_quipid_95"
+                     value="1">
+              <input type="checkbox" name="quipid_95"
+                     id="quipid_95" checked="checked">
+            </td>
+          </tr>
+          <tr>
+            <td>Zaiste, wielkiego trzeba zadufania i wielkiego zaślepienia, by posokę lejącą się z szafotu nazywać sprawiedliwością. (Vysogota z Corvo)</td>
+            <td>marcoos+bugs
+            </td>
+            <td>
+              <a href="">
+                Delete
+              </a>
+            </td>
+            <td class="center">
+              <input type="hidden" name="defined_quipid_96"
+                     id="defined_quipid_96"
+                     value="1">
+              <input type="checkbox" name="quipid_96"
+                     id="quipid_96" checked="checked">
+            </td>
+          </tr>
+          <tr>
+            <td>W mowie pewnych ludzi słychać błędy ortograficzne. (Julian Tuwim)</td>
+            <td>marcoos+bugs
+            </td>
+            <td>
+              <a href="">
+                Delete
+              </a>
+            </td>
+            <td class="center">
+              <input type="hidden" name="defined_quipid_97"
+                     id="defined_quipid_97"
+                     value="1">
+              <input type="checkbox" name="quipid_97"
+                     id="quipid_97" checked="checked">
+            </td>
+          </tr>
+          <tr>
+            <td>Najpierw Cię ignorują. Potem śmieją się z Ciebie. Później z Tobą walczą. Później wygrywasz. (Mohandas Gandhi)</td>
+            <td>marcoos+bugs
+            </td>
+            <td>
+              <a href="">
+                Delete
+              </a>
+            </td>
+            <td class="center">
+              <input type="hidden" name="defined_quipid_98"
+                     id="defined_quipid_98"
+                     value="1">
+              <input type="checkbox" name="quipid_98"
+                     id="quipid_98" checked="checked">
+            </td>
+          </tr>
+          <tr>
+            <td>Technika przyrasta liniowo, a głupota rośnie geometrycznie. (Janusz Korwin-Mikke)</td>
+            <td>marcoos+bugs
+            </td>
+            <td>
+              <a href="">
+                Delete
+              </a>
+            </td>
+            <td class="center">
+              <input type="hidden" name="defined_quipid_99"
+                     id="defined_quipid_99"
+                     value="1">
+              <input type="checkbox" name="quipid_99"
+                     id="quipid_99" checked="checked">
+            </td>
+          </tr>
+          <tr>
+            <td>To nie jest krótsza spódniczka, ja po prostu mam dłuższe nogi. (Anna Kurnikowa)</td>
+            <td>marcoos+bugs
+            </td>
+            <td>
+              <a href="">
+                Delete
+              </a>
+            </td>
+            <td class="center">
+              <input type="hidden" name="defined_quipid_100"
+                     id="defined_quipid_100"
+                     value="1">
+              <input type="checkbox" name="quipid_100"
+                     id="quipid_100" checked="checked">
+            </td>
+          </tr>
+          <tr>
+            <td>Człowiek na poziomie powinien się trzymać w pionie. (Andrzej Mleczko)</td>
+            <td>marcoos+bugs
+            </td>
+            <td>
+              <a href="">
+                Delete
+              </a>
+            </td>
+            <td class="center">
+              <input type="hidden" name="defined_quipid_101"
+                     id="defined_quipid_101"
+                     value="1">
+              <input type="checkbox" name="quipid_101"
+                     id="quipid_101" checked="checked">
+            </td>
+          </tr>
+          <tr>
+            <td>There is no dark side of the Moon really... matter of fact it's all dark.</td>
+            <td>wadimd
+            </td>
+            <td>
+              <a href="">
+                Delete
+              </a>
+            </td>
+            <td class="center">
+              <input type="hidden" name="defined_quipid_102"
+                     id="defined_quipid_102"
+                     value="1">
+              <input type="checkbox" name="quipid_102"
+                     id="quipid_102" checked="checked">
+            </td>
+          </tr>
+          <tr>
+            <td>Idea jest prosta: my implementujemy bugi, wy je znajdujecie i potem dzielimy się kasą po połowie (na spotkaniu programistów z SQA)</td>
+            <td>wadimd
+            </td>
+            <td>
+              <a href="">
+                Delete
+              </a>
+            </td>
+            <td class="center">
+              <input type="hidden" name="defined_quipid_103"
+                     id="defined_quipid_103"
+                     value="1">
+              <input type="checkbox" name="quipid_103"
+                     id="quipid_103" checked="checked">
+            </td>
+          </tr>
+          <tr>
+            <td>Oświeć nas, o, wszechmogące Słońce i obdarz swą boską mądrością, żebyśmy lepiej zrozumieli rzeczywistość (Gayatri Mantra, Rigweda)</td>
+            <td>marcoos+bugs
+            </td>
+            <td>
+              <a href="">
+                Delete
+              </a>
+            </td>
+            <td class="center">
+              <input type="hidden" name="defined_quipid_104"
+                     id="defined_quipid_104"
+                     value="1">
+              <input type="checkbox" name="quipid_104"
+                     id="quipid_104" checked="checked">
+            </td>
+          </tr>
+          <tr>
+            <td>[%# Whoever wrote the original version of boolean charts had a seriously twisted mind %] - Bugzilla 3.0 - boolean-charts.html.tmpl</td>
+            <td>wadimd
+            </td>
+            <td>
+              <a href="">
+                Delete
+              </a>
+            </td>
+            <td class="center">
+              <input type="hidden" name="defined_quipid_105"
+                     id="defined_quipid_105"
+                     value="1">
+              <input type="checkbox" name="quipid_105"
+                     id="quipid_105" checked="checked">
+            </td>
+          </tr>
+          <tr>
+            <td>Tłumaczenia są jak kobiety - albo piękne, albo wierne. (Voltaire)</td>
+            <td>splewako
+            </td>
+            <td>
+              <a href="">
+                Delete
+              </a>
+            </td>
+            <td class="center">
+              <input type="hidden" name="defined_quipid_106"
+                     id="defined_quipid_106"
+                     value="1">
+              <input type="checkbox" name="quipid_106"
+                     id="quipid_106" checked="checked">
+            </td>
+          </tr>
+          <tr>
+            <td>no słowa rosną najlepiej na słowni ― nikdo na ircu</td>
+            <td>splewako
+            </td>
+            <td>
+              <a href="">
+                Delete
+              </a>
+            </td>
+            <td class="center">
+              <input type="hidden" name="defined_quipid_107"
+                     id="defined_quipid_107"
+                     value="1">
+              <input type="checkbox" name="quipid_107"
+                     id="quipid_107" checked="checked">
+            </td>
+          </tr>
+          <tr>
+            <td>The question of whether computers can think is just like the question of whether submarines can swim. (Edsger W. Dijkstra) </td>
+            <td>wadimd
+            </td>
+            <td>
+              <a href="">
+                Delete
+              </a>
+            </td>
+            <td class="center">
+              <input type="hidden" name="defined_quipid_108"
+                     id="defined_quipid_108"
+                     value="1">
+              <input type="checkbox" name="quipid_108"
+                     id="quipid_108" checked="checked">
+            </td>
+          </tr>
+          <tr>
+            <td>Smoking kills... so do I [J.M.]</td>
+            <td>jmazgaj
+            </td>
+            <td>
+              <a href="">
+                Delete
+              </a>
+            </td>
+            <td class="center">
+              <input type="hidden" name="defined_quipid_109"
+                     id="defined_quipid_109"
+                     value="1">
+              <input type="checkbox" name="quipid_109"
+                     id="quipid_109" checked="checked">
+            </td>
+          </tr>
+          <tr>
+            <td>In his free time, Jack Bauer teaches a course at Harvard: &quot;Time Management: Making the Most Out of Each Day&quot;</td>
+            <td>akalla
+            </td>
+            <td>
+              <a href="">
+                Delete
+              </a>
+            </td>
+            <td class="center">
+              <input type="hidden" name="defined_quipid_110"
+                     id="defined_quipid_110"
+                     value="1">
+              <input type="checkbox" name="quipid_110"
+                     id="quipid_110" checked="checked">
+            </td>
+          </tr>
+          <tr>
+            <td>Given enough eyeballs, all bugs are shallow.</td>
+            <td>piotrdrag
+            </td>
+            <td>
+              <a href="">
+                Delete
+              </a>
+            </td>
+            <td class="center">
+              <input type="hidden" name="defined_quipid_111"
+                     id="defined_quipid_111"
+                     value="1">
+              <input type="checkbox" name="quipid_111"
+                     id="quipid_111" checked="checked">
+            </td>
+          </tr>
+          <tr>
+            <td>Adding manpower to a late software project makes it later.</td>
+            <td>piotrdrag
+            </td>
+            <td>
+              <a href="">
+                Delete
+              </a>
+            </td>
+            <td class="center">
+              <input type="hidden" name="defined_quipid_112"
+                     id="defined_quipid_112"
+                     value="1">
+              <input type="checkbox" name="quipid_112"
+                     id="quipid_112" checked="checked">
+            </td>
+          </tr>
+          <tr>
+            <td>&quot;Angel of the Lord, what are these tortured screams?&quot; And the angel said unto me, &quot;These are the cries of the carrots, the cries of the carrots! You see, Reverend Maynard, tomorrow is harvest day and to them it is the holocaust.&quot;</td>
+            <td>piotrdrag
+            </td>
+            <td>
+              <a href="">
+                Delete
+              </a>
+            </td>
+            <td class="center">
+              <input type="hidden" name="defined_quipid_113"
+                     id="defined_quipid_113"
+                     value="1">
+              <input type="checkbox" name="quipid_113"
+                     id="quipid_113" checked="checked">
+            </td>
+          </tr>
+          <tr>
+            <td>The sky above the port was the color of television, tuned to a dead channel.</td>
+            <td>piotrdrag
+            </td>
+            <td>
+              <a href="">
+                Delete
+              </a>
+            </td>
+            <td class="center">
+              <input type="hidden" name="defined_quipid_114"
+                     id="defined_quipid_114"
+                     value="1">
+              <input type="checkbox" name="quipid_114"
+                     id="quipid_114" checked="checked">
+            </td>
+          </tr>
+          <tr>
+            <td>Ogólnie wiadomo, że bezmyślne mówienie może pociągnąć za sobą śmiertelne ofiary, ciągle jednak nie w pełni uświadamiana jest waga tego problemu.</td>
+            <td>piotrdrag
+            </td>
+            <td>
+              <a href="">
+                Delete
+              </a>
+            </td>
+            <td class="center">
+              <input type="hidden" name="defined_quipid_115"
+                     id="defined_quipid_115"
+                     value="1">
+              <input type="checkbox" name="quipid_115"
+                     id="quipid_115" checked="checked">
+            </td>
+          </tr>
+          <tr>
+            <td>There is no Swedish conspiracy.</td>
+            <td>piotrdrag
+            </td>
+            <td>
+              <a href="">
+                Delete
+              </a>
+            </td>
+            <td class="center">
+              <input type="hidden" name="defined_quipid_116"
+                     id="defined_quipid_116"
+                     value="1">
+              <input type="checkbox" name="quipid_116"
+                     id="quipid_116" checked="checked">
+            </td>
+          </tr>
+          <tr>
+            <td>you know you have been translating UIs for a long time when you can write the translated button labels in references, without checking back (runa_b)</td>
+            <td>piotrdrag
+            </td>
+            <td>
+              <a href="">
+                Delete
+              </a>
+            </td>
+            <td class="center">
+              <input type="hidden" name="defined_quipid_117"
+                     id="defined_quipid_117"
+                     value="1">
+              <input type="checkbox" name="quipid_117"
+                     id="quipid_117" checked="checked">
+            </td>
+          </tr>
+          <tr>
+            <td>Well, don't you know about the bird? Well, everybody knows that the bird is the word! A-well-a bird, bird, b-bird's the word</td>
+            <td>piotrdrag
+            </td>
+            <td>
+              <a href="">
+                Delete
+              </a>
+            </td>
+            <td class="center">
+              <input type="hidden" name="defined_quipid_118"
+                     id="defined_quipid_118"
+                     value="1">
+              <input type="checkbox" name="quipid_118"
+                     id="quipid_118" checked="checked">
+            </td>
+          </tr>
+          <tr>
+            <td>This Bugzilla needs to be about 20% cooler.</td>
+            <td>piotrdrag
+            </td>
+            <td>
+              <a href="">
+                Delete
+              </a>
+            </td>
+            <td class="center">
+              <input type="hidden" name="defined_quipid_119"
+                     id="defined_quipid_119"
+                     value="1">
+              <input type="checkbox" name="quipid_119"
+                     id="quipid_119" checked="checked">
+            </td>
+          </tr>
+          <tr>
+            <td>I could clear the bugs in Ten. Seconds. Flat. (Rainbug Dash)</td>
+            <td>piotrdrag
+            </td>
+            <td>
+              <a href="">
+                Delete
+              </a>
+            </td>
+            <td class="center">
+              <input type="hidden" name="defined_quipid_120"
+                     id="defined_quipid_120"
+                     value="1">
+              <input type="checkbox" name="quipid_120"
+                     id="quipid_120" checked="checked">
+            </td>
+          </tr>
+          <tr>
+            <td>Hold on a second! Eternal chaos comes with chocolate rain, you guys! CHOCOLATE! RAIN!</td>
+            <td>piotrdrag
+            </td>
+            <td>
+              <a href="">
+                Delete
+              </a>
+            </td>
+            <td class="center">
+              <input type="hidden" name="defined_quipid_121"
+                     id="defined_quipid_121"
+                     value="1">
+              <input type="checkbox" name="quipid_121"
+                     id="quipid_121" checked="checked">
+            </td>
+          </tr>
+          <tr>
+            <td>BĘDZIE TO WYSŁANE CZY / SZLAG MNIE JUŻ TRAFIA</td>
+            <td>piotrdrag
+            </td>
+            <td>
+              <a href="">
+                Delete
+              </a>
+            </td>
+            <td class="center">
+              <input type="hidden" name="defined_quipid_122"
+                     id="defined_quipid_122"
+                     value="1">
+              <input type="checkbox" name="quipid_122"
+                     id="quipid_122" checked="checked">
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <input type="button" id="uncheck_all" value="Uncheck All"
+             class="bz_default_hidden" onclick="SetCheckboxes(false);">
+      <input type="button" id="check_all" value="Check All"
+             class="bz_default_hidden" onclick="SetCheckboxes(true);">
+      <input type="submit" id="update" value="Save Changes">
+
+      <script type="text/javascript">
+        <!--
+        var numelements = document.forms.editform.elements.length;
+        function SetCheckboxes(value) {
+          var item;
+          for (var i=0 ; i<numelements ; i++) {
+            item = document.forms.editform.elements[i];
+            item.checked = value;
+          }
+        }
+        YAHOO.util.Dom.removeClass("check_all", "bz_default_hidden");
+        YAHOO.util.Dom.removeClass("uncheck_all", "bz_default_hidden");
+        //-->
+      </script>
+    </form>
+    <br>
+</div>
+
+    <div id="footer">
+      <div class="intro"></div>
+<ul id="useful-links">
+  <li id="links-actions"><ul class="links">
+  <li><a href="./">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi">Search</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input type="hidden" id="no_redirect_bottom" name="no_redirect" value="0">
+    <script type="text/javascript">
+      if (history && history.replaceState) {
+        var no_redirect = document.getElementById("no_redirect_bottom");
+        no_redirect.value = 1;
+      }
+        </script>
+        <input class="txt" type="text" id="quicksearch_bottom" name="quicksearch" title="Quick Search" value="">
+        <input class="btn" type="submit" value="Search" id="find_bottom">
+       </form>
+       <a href="page.cgi?id=quicksearch.html" title="Quicksearch Help">[?]</a>
+      </li>
+      <li><span class="separator">| </span><a href="report.cgi">Reports</a></li>
+      <li><span class="separator">| </span><a href="userprefs.cgi">Preferences</a></li>
+      <li><span class="separator">| </span><a href="admin.cgi">Administration</a></li>
+      <li><span class="separator">| </span><a href="index.html">Log&nbsp;in</a></li>
+     </ul>
+    </li>
+    <li id="links-saved">
+     <ul class="links">
+     </ul>
+    </li>
+   </ul>
+   <div class="outro">
+   </div>
+  </div>
+ </body>
+</html>

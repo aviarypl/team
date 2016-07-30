@@ -1,0 +1,61 @@
+Index: fbc-pl.xml
+===================================================================
+RCS file: fbc-pl.xml
+diff -N fbc-pl.xml
+--- /dev/null	1 Jan 1970 00:00:00 -0000
++++ fbc-pl.xml	30 Mar 2008 16:28:33 -0000
+@@ -0,0 +1,19 @@
++<SearchPlugin xmlns="http://www.mozilla.org/2006/browser/search/">
++<ShortName>Federacja Bibliotek Cyfrowych</ShortName>
++<Description>Federacja Bibliotek Cyfrowych</Description>
++<InputEncoding>UTF-8</InputEncoding>
++<Image width="16" height="16">data:image/x-icon;base64,/9j/4AAQSkZJRgABAQEASABIAAD/4QAWRXhpZgAATU0AKgAAAAgAAAAAAAD//gAXQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q/9sAQwAFAwQEBAMFBAQEBQUFBgcMCAcHBwcPCwsJDBEPEhIRDxERExYcFxMUGhURERghGBodHR8fHxMXIiQiHiQcHh8e/9sAQwEFBQUHBgcOCAgOHhQRFB4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4e/8AAEQgAEAAQAwEiAAIRAQMRAf/EABYAAQEBAAAAAAAAAAAAAAAAAAYEB//EACIQAAEEAgIDAAMAAAAAAAAAAAECAwUGBBEAIQcSMRMiQf/EABUBAQEAAAAAAAAAAAAAAAAAAAUG/8QAIxEAAQMDAgcAAAAAAAAAAAAAAQIDEQASIQRBBQYiIzGRwf/aAAwDAQACEQMRAD8A0OPsk/5ItlikVTwhKpAOKQV9+oSkn9iARtRCSe/m9Di3NzMqvMR7qZhMlHybftiZTZKfbYBHWz/CCDvkdGtOI9R7xIseKX4heC64Ho0oO5MaOyB+Mfex8PClZZuvlK1QruTWF1SpwxBaxlJKdgEbA2AVE6A+AAcB47yq2+CFI7gUOqcgyD5BiI2+1XMa9nW3KXa2ylJFsjZOABFxUVZJ91//2Q==</Image>
++<Url type="text/html" method="GET" template="http://fbc.pionier.net.pl/owoc/results">
++    <Param name="query" value="{searchTerms}" />
++    <Param name="isExpandable" value="off" />
++    <Param name="queryType" value="-2" />
++    <Param name="isRemote" value="on" />
++    <Param name="encode" value="true" />
++    <Param name="server:type" value="both" />
++    <Param name="action" value="DistributedSearchAction" />
++</Url>
++<Url type="application/x-suggestions+json" method="GET" template="http://fbc.pionier.net.pl/owoc/gossip">
++    <Param name="query" value="{searchTerms}" />
++    <Param name="action" value="GossipAction" />
++</Url>
++</SearchPlugin>
+\ No newline at end of file
+Index: list.txt
+===================================================================
+RCS file: /l10n/l10n/pl/browser/searchplugins/list.txt,v
+retrieving revision 1.4
+diff -u -8 -r1.4 list.txt
+--- list.txt	7 Jul 2006 11:05:23 -0000	1.4
++++ list.txt	30 Mar 2008 16:28:33 -0000
+@@ -1,7 +1,7 @@
+ google
+ wp-pl
+ allegro-pl
+ wikipedia-pl
+ pwn-pl
+ merlin-pl
+-pbi-pl
++fbc-pl
+Index: pbi-pl.xml
+===================================================================
+RCS file: pbi-pl.xml
+diff -N pbi-pl.xml
+--- pbi-pl.xml	3 Jun 2006 16:43:22 -0000	1.2
++++ /dev/null	1 Jan 1970 00:00:00 -0000
+@@ -1,9 +0,0 @@
+-<SearchPlugin xmlns="http://www.mozilla.org/2006/browser/search/">
+-<ShortName>Polska Biblioteka Internetowa</ShortName>
+-<Description>Polska Biblioteka Internetowa</Description>
+-<InputEncoding>UTF-8</InputEncoding>
+-<Image width="16" height="16">data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH1QsBASYZ5zwwmwAAAeJJREFUOMvFk89LVHEUxT/f977z3oyp2dQMNRbSZAQhhRESFNkmCBcJ7StoEREtgqJd0SoKWtRf0CJctG1VRItWUgRBYSARajj+tpnUdN68976nVYXVQnHRgbO4F+69cM65RhIbgccGYf9spPUV+dmc+VWPDsstVEmCLPIt/qYWwlKHWbXAJbE0OYaZn8JzKTKeXL4IgjhNiXfuxa98xp+tkIRNOOMpt2OXAbAuTcSnD9BYob65iJpbwfMx9WXsUg3Xto3cyyfEpTJxuQsBrjZPFIQKtxaNSabH5WYqRPntZEaG8KbG8BoRrjVP0nkAO/yOqPMgmdlx7MB99K1KUtoNe7qwZ69hkolRrSwtkh18hnEpUXsZtRUwEnZuAsmB8bAPr/P98l3So3141pJGEUFjGZu25AlfPSXdUqDRc5LMyEf8weewWMW1l3G9/QQ3zrB08xHZwyew1uJb+1tEEy3jbEDc3UvuzkXsmxerXNHje0T7e7DdxwizWfOXjSYIaew7RNPtc/hDr0lKu4n6zpN0H0dNzbjJL8R+hnwm+HcQJBENPJCOBFq4dUHVyYqiel2SWAuRRHLllGpX+zU3M73mwZ+0AEmhndrpS3QUimbdWZbE3Pu3qn6dX/d1SZj//o0/AMxcOtpLylQvAAAAAElFTkSuQmCC</Image>
+-<Url type="text/html" method="GET" template="http://www.pbi.edu.pl/site.php?keyword={searchTerms}&amp;sourceid=Mozilla-search&amp;s=NzQzMGQ4NjQwOTY4">
+-</Url>
+-<SearchForm>http://www.pbi.edu.pl/</SearchForm>
+-</SearchPlugin>
+\ No newline at end of file
+

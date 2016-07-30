@@ -1,0 +1,66 @@
+=== admin/flag-type/edit.html.tmpl
+==================================================================
+--- admin/flag-type/edit.html.tmpl  (revision 63)
++++ admin/flag-type/edit.html.tmpl  (local)
+@@ -34,7 +34,7 @@
+ [% END %]
+ 
+ [% IF type.target_type == "bug" %]
+-  [% title = BLOCK %]Tworzenie typu flagi dla [terms.bledow %][% END %]
++  [% title = BLOCK %]Tworzenie typu flagi dla [% terms.bledow %][% END %]
+   [% typeLabelLowerPlural = BLOCK %][% terms.bledy %][% END %]
+   [% typeLabelLowerSingular = BLOCK %][% terms.blad %][% END %]
+ [% ELSE %]
+@@ -194,9 +194,9 @@
+     <tr>
+       <th></th>
+       <td>
+-        <input type="submit" value="        
+-          [% IF (last_action == "enter" || last_action == "copy") %]Utwórz 
+-          [% ELSE %]Zapisz zmiany 
++        <input type="submit" value="
++          [% IF (last_action == "enter" || last_action == "copy") %]Utwórz
++          [% ELSE %]Zapisz zmiany
+           [% END %]">
+       </td>
+     </tr>
+=== admin/flag-type/list.html.tmpl
+==================================================================
+--- admin/flag-type/list.html.tmpl  (revision 63)
++++ admin/flag-type/list.html.tmpl  (local)
+@@ -99,7 +99,7 @@
+           <a href="editflagtypes.cgi?action=copy&amp;id=[% type.id %]">Kopiuj</a>
+           | <a href="editflagtypes.cgi?action=confirmdelete&amp;id=[% type.id %]"
+                onclick="return confirmDelete([% type.id %], '[% type.name FILTER js FILTER html %]',
+-                                             [% type.flag_count %]);">Delete</a>
++                                             [% type.flag_count %]);">Usuń</a>
+         </td>
+       </tr>
+ 
+=== bug/create/create.html.tmpl
+==================================================================
+--- bug/create/create.html.tmpl  (revision 63)
++++ bug/create/create.html.tmpl  (local)
+@@ -25,7 +25,7 @@
+ 
+ [% PROCESS global/header.html.tmpl
+   title = "Tworzenie raportu o błędzie"
+-  h2 = "Tutaj możesz dodać nowy raport o błędzie do $terms.Bugzilli."
++  h2 = "Tutaj możesz dodać nowy raport o błędzie do ${terms.Bugzilli}."
+   onload="set_assign_to();"
+ %]
+ [% USE Bugzilla %]
+=== search/search-help.html.tmpl
+==================================================================
+--- search/search-help.html.tmpl  (revision 63)
++++ search/search-help.html.tmpl  (local)
+@@ -58,7 +58,7 @@
+ { id => "keywords_type", 
+   html => "Wybór sposobu wyszukiwania słów kluczowych" },   
+ { id => "bug_status", 
+-  html => "Lista statusów w których może być szukany $terms.blad." },   
++  html => "Lista statusów w których może być szukany ${terms.blad}." },   
+ { id => "resolution", 
+   html => "Jeśli $terms.blad został rozwiązany, jedna z tych metod rozwiązania musi zostać<br>
+            określona dla takiego ${terms.bledu}." },   
+

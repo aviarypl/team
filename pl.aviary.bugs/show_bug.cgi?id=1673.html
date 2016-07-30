@@ -1,0 +1,2134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>1673 &ndash; Przycięte okno informacji o certyfikatach</title>
+
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<link href="data/assets/7aa6ea67750936a0368541421bdcd5ee.css" rel="stylesheet" type="text/css">
+
+
+
+    
+<script type="text/javascript" src="data/assets/a7c2f3a028f17a9aa60f56dc9d6e732d.js"></script>
+
+    <script type="text/javascript">
+    <!--
+        YAHOO.namespace('bugzilla');
+        YAHOO.util.Event.addListener = function (el, sType, fn, obj, overrideContext) {
+               if ( ("onpagehide" in window || YAHOO.env.ua.gecko) && sType === "unload") { sType = "pagehide"; };
+               var capture = ((sType == "focusin" || sType == "focusout") && !YAHOO.env.ua.ie) ? true : false;
+               return this._addListener(el, this._getType(sType), fn, obj, overrideContext, capture);
+         };
+        if ( "onpagehide" in window || YAHOO.env.ua.gecko) {
+            YAHOO.util.Event._simpleRemove(window, "unload", 
+                                           YAHOO.util.Event._unload);
+        }
+        
+        function unhide_language_selector() { 
+            YAHOO.util.Dom.removeClass(
+                'lang_links_container', 'bz_default_hidden'
+            ); 
+        } 
+        YAHOO.util.Event.onDOMReady(unhide_language_selector);
+
+        
+        var BUGZILLA = {
+            param: {
+                cookiepath: '\/',
+                maxusermatches: 1000
+            },
+            constant: {
+                COMMENT_COLS: 80
+            },
+            string: {
+                
+
+                attach_desc_required:
+                    "You must enter a Description for this attachment.",
+                component_required:
+                    "You must select a Component for this bug.",
+                description_required:
+                    "You must enter a Description for this bug.",
+                short_desc_required:
+                    "You must enter a Summary for this bug.",
+                version_required:
+                    "You must select a Version for this bug."
+            }
+              , api_token: ''
+        };
+
+    if (history && history.replaceState) {
+      if(!document.location.href.match(/show_bug\.cgi/)) {
+        history.replaceState( null,
+                             "1673 – Przycięte okno informacji o certyfikatach",
+                             "show_bug.cgi?id=1673" );
+        document.title = "1673 – Przycięte okno informacji o certyfikatach";
+      }
+      if (document.location.href.match(/show_bug\.cgi\?.*list_id=/)) {
+        var href = document.location.href;
+        href = href.replace(/[\?&]+list_id=(\d+|cookie)/, '');
+        history.replaceState(null, "1673 – Przycięte okno informacji o certyfikatach", href);
+      }
+    }
+    YAHOO.util.Event.onDOMReady(function() {
+      initDirtyFieldTracking();
+
+    });
+    // -->
+    </script>
+<script type="text/javascript" src="data/assets/daf5e0fb6826e6a35280e622913f0c4a.js"></script>
+
+    
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+                       title="Bugzilla" href="search_plugin.cgi">
+    <link rel="shortcut icon" href="images/favicon.ico">
+  </head>
+
+  <body 
+        class="bugs-aviary-pl
+                 bz_bug
+                 bz_status_VERIFIED
+                 bz_product_Firefox
+                 bz_component_Og&#XF3;lne
+                 bz_bug_1673 yui-skin-sam">
+
+  <div id="header"><div id="banner">
+  </div>
+
+    <div id="titles">
+      <span id="title">Bugzilla &ndash; Bug&nbsp;1673</span>
+
+        <span id="subtitle" class="subheader">Przycięte okno informacji o certyfikatach</span>
+
+        <span id="information" class="header_addl_info">Last modified: 2014-08-15 11:14:50 CEST</span>
+    </div>
+
+
+    <div id="common_links"><ul class="links">
+  <li><a href="index.html">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi.html">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi.html">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi.html">Search</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="http://bugs.aviary.pl/buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input type="hidden" id="no_redirect_top" name="no_redirect" value="0">
+    <script type="text/javascript">
+      if (history && history.replaceState) {
+        var no_redirect = document.getElementById("no_redirect_top");
+        no_redirect.value = 1;
+      }
+    </script>
+    <input class="txt" type="text" id="quicksearch_top" name="quicksearch" 
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search" 
+           id="find_top"></form>
+  <a href="page.cgi%3Fid=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="report.cgi.html">Reports</a></li>
+
+  <li>
+      <span class="separator">| </span>
+        <a href="request.cgi.html">Requests</a></li>
+
+
+  <li>
+        <span class="separator">| </span>
+        <a href="https://bugzilla.readthedocs.org/en/5.0/using/understanding.html" target="_blank">Help</a>
+      </li>
+    
+      <li id="new_account_container_top">
+        <span class="separator">| </span>
+        <a href="createaccount.cgi.html">New&nbsp;Account</a>
+      </li>
+
+    <li id="mini_login_container_top">
+  <span class="separator">| </span>
+  <a id="login_link_top" href="show_bug.cgi%3Fid=1673&amp;GoAheadAndLogIn=1.html"
+     onclick="return show_mini_login_form('_top')">Log In</a>
+
+  <form action="show_bug.cgi%3Fid=1673.html" method="POST"
+        class="mini_login bz_default_hidden"
+        id="mini_login_top">
+    <input id="Bugzilla_login_top" required
+           name="Bugzilla_login" class="bz_login"
+        type="email" placeholder="Email Address">
+    <input class="bz_password" name="Bugzilla_password" type="password"
+           id="Bugzilla_password_top" required
+           placeholder="Password">
+    <input type="hidden" name="Bugzilla_login_token"
+           value="1469820974-x5F2-24cN9HPmLtOH-TWGpFlpOPZakjf3oO8UhaVSd0">
+    <input type="submit" name="GoAheadAndLogIn" value="Log in"
+            id="log_in_top">
+    <a href="show_bug.cgi%3Fid=1673.html#" onclick="return hide_mini_login_form('_top')">[x]</a>
+  </form>
+</li>
+
+
+  <li id="forgot_container_top">
+    <span class="separator">| </span>
+    <a id="forgot_link_top" href="show_bug.cgi%3Fid=1673&amp;GoAheadAndLogIn=1.html#forgot"
+       onclick="return show_forgot_form('_top')">Forgot Password</a>
+    <form action="http://bugs.aviary.pl/token.cgi" method="post" id="forgot_form_top"
+          class="mini_forgot bz_default_hidden">
+      <label for="login_top">Login:</label>
+      <input name="loginname" size="20" id="login_top" required
+          type="email" placeholder="Your Email Address">
+      <input id="forgot_button_top" value="Reset Password" type="submit">
+      <input type="hidden" name="a" value="reqpw">
+      <input type="hidden" id="token_top" name="token"
+             value="1469820974-8oZJ1P6acU9mhrHXzr1kFqupAAIaoRm2Kl_O2L4uB8w">
+      <a href="show_bug.cgi%3Fid=1673.html#" onclick="return hide_forgot_form('_top')">[x]</a>
+    </form>
+  </li>
+</ul>
+    </div>
+  </div>
+
+  <div id="bugzilla-body">
+
+
+<script type="text/javascript">
+<!--
+
+//-->
+</script>
+
+<form name="changeform" id="changeform" method="post" action="http://bugs.aviary.pl/process_bug.cgi">
+
+  <input type="hidden" name="delta_ts" value="2014-08-15 11:14:50">
+  <input type="hidden" name="id" value="1673">
+  <input type="hidden" name="token" value="1469820974-tx0wA9FuQvKBT8iCrF6Mb3QQdWK2QPfsjJyL63KQSnA">
+<div class="bz_short_desc_container edit_form">
+     <a href="show_bug.cgi%3Fid=1673.html"><b>Bug&nbsp;1673</b></a> <span id="summary_container" class="bz_default_hidden">
+      - <span id="short_desc_nonedit_display">Przycięte okno informacji o certyfikatach</span>
+     </span>
+
+    <div id="summary_input"><span class="field_label "
+    id="field_label_short_desc">
+
+
+  <a 
+      title="The bug summary is a short sentence which succinctly describes what the bug is about."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#short_desc"
+  >Summary:</a>
+
+</span>Przycięte okno informacji o certyfikatach
+    </div>
+  </div>
+  <script type="text/javascript">
+    hideEditableField('summary_container',
+                      'summary_input',
+                      'summary_edit_action',
+                      'short_desc',
+                      'Przycięte okno informacji o certyfikatach' );
+  </script>
+  <table class="edit_form">
+    <tr>
+      
+      <td id="bz_show_bug_column_1" class="bz_show_bug_column">     
+        <table>
+          <tr>
+    <th class="field_label">
+      <a href="page.cgi%3Fid=fields.html#bug_status">Status</a>:
+    </th>
+    <td id="bz_field_status">
+      <span id="static_bug_status">VERIFIED
+          FIXED
+      </span>
+    </td>
+  </tr>
+<tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+<tr><th class="field_label "
+    id="field_label_alias">
+
+
+  <a 
+      title="A short, unique name assigned to a bug in order to assist with looking it up and referring to it in other places in Bugzilla."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#alias"
+  >Alias:</a>
+
+</th>
+    <td>
+        None
+    </td>
+  </tr>
+<tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+<tr><th class="field_label "
+    id="field_label_product">
+
+
+  <a 
+      title="Bugs are categorised into Products and Components. Select a Classification to narrow down this list."
+      class="field_help_link"
+      href="describecomponents.cgi.html"
+  >Product:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_product" >Firefox
+
+</td>
+    </tr>
+
+    
+    <tr class="bz_default_hidden"><th class="field_label "
+    id="field_label_classification">
+
+
+  <a 
+      title="Bugs are categorised into Classifications, Products and Components. classifications is the top-level categorisation."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#classification"
+  >Classification:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_classification" >Tłumaczenia oprogramowania
+
+</td>
+    </tr>
+        
+    
+    
+    <tr><th class="field_label "
+    id="field_label_component">
+
+
+  <a 
+      title="Components are second-level categories; each belongs to a particular Product. Select a Product to narrow down this list."
+      class="field_help_link"
+      href="describecomponents.cgi%3Fproduct=Firefox.html"
+  >Component:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_component" >Ogólne
+
+  (<a href="buglist.cgi%3Fcomponent=Ogólne&amp;product=Firefox&amp;bug_status=__open__.html"
+      target="_blank">show other bugs</a>)
+</td>
+    </tr>
+    <tr><th class="field_label "
+    id="field_label_version">
+
+
+  <a 
+      title="The version field defines the version of the software the bug was found in."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#version"
+  >Version:</a>
+
+</th>
+<td>trunk
+  </td>
+    </tr>
+        
+    
+        
+    <tr><th class="field_label "
+    id="field_label_rep_platform">
+
+
+  <a 
+      title="The hardware platform the bug was observed on. Note: When searching, selecting the option &quot;All&quot; only finds bugs whose value for this field is literally the word &quot;All&quot;."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#rep_platform"
+  >Hardware:</a>
+
+</th>
+      <td class="field_value">Wszystkie
+        Windows XP
+      </td>
+    </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          
+          <tr>
+      <th class="field_label">
+        <label  accesskey="i">
+          <a href="page.cgi%3Fid=fields.html#importance"><u>I</u>mportance</a></label>:
+      </th>
+      <td>P1
+       krytyczny
+      </td>
+    </tr>
+          
+          <tr><th class="field_label "
+    id="field_label_assigned_to">
+
+
+  <a 
+      title="The person in charge of resolving the bug."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#assigned_to"
+  >Assignee:</a>
+
+</th>
+      <td><span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+      </td>
+    </tr>
+
+    <tr><th class="field_label "
+    id="field_label_qa_contact">
+
+
+  <a 
+      title="The person responsible for confirming this bug if it is unconfirmed, and for verifying the fix once the bug has been resolved."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#qa_contact"
+  >QA Contact:</a>
+
+</th>
+      <td><span class="vcard">firefox
+</span>
+      </td>
+    </tr>
+    <script type="text/javascript">
+      assignToDefaultOnChange(['product', 'component'],
+        'splewako\x40aviary.pl',
+        'firefox\x40l10n.bledy');
+    </script>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          <tr><th class="field_label "
+    id="field_label_bug_file_loc">
+
+
+  <a 
+      title="Bugs can have a URL associated with them - for example, a pointer to a web site where the problem is seen."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#bug_file_loc"
+  >URL:</a>
+
+</th>
+    <td>
+      <span id="bz_url_input_area">
+          <a href="http://lxr.mozilla.org/l10n/source/pl/security/manager/chrome/pippki/pippki.properties#93"
+             rel="noreferrer"><span title="http://lxr.mozilla.org/l10n/source/pl/security/manager/chrome/pippki/pippki.properties#93">http://lxr.mozilla.org/l10n/source/pl...
+        </span></a>
+      </span>
+    </td>
+  </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+
+          
+<tr><th class="field_label "
+    id="field_label_dependson">
+
+
+  <a 
+      title="The bugs listed here must be resolved before this bug can be resolved."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#dependson"
+  >Depends on:</a>
+
+</th>
+
+  <td>
+    <span id="dependson_input_area">
+    </span>
+
+  </td>
+  </tr>
+  
+  <tr><th class="field_label "
+    id="field_label_blocked">
+
+
+  <a 
+      title="This bug must be resolved before the bugs listed in this field can be resolved."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#blocked"
+  >Blocks:</a>
+
+</th>
+
+  <td>
+    <span id="blocked_input_area">
+    </span>
+<a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - [tracking] Lokalizacja Firefoksa 3.0"
+   href="show_bug.cgi%3Fid=1040.html">1040</a> 
+  </td>
+  </tr>
+
+    <tr>
+      <th>&nbsp;</th>
+
+      <td id="show_dependency_tree_or_graph">
+        Show dependency <a href="showdependencytree.cgi%3Fid=1673&amp;hide_resolved=1.html">tree</a>
+
+          /&nbsp;<a href="showdependencygraph.cgi%3Fid=1673.html">graph</a>
+      </td>
+    </tr>
+          
+        </table>
+      </td>
+      <td>
+        <div class="bz_column_spacer">&nbsp;</div>
+      </td>
+      
+      <td id="bz_show_bug_column_2" class="bz_show_bug_column">
+        <table>
+        <tr>
+    <th class="field_label">
+      Reported:
+    </th>
+    <td>2008-03-31 05:16 CEST by <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+    </td>
+  </tr>
+  
+  <tr>
+    <th class="field_label">
+      Modified:
+    </th>
+    <td>2014-08-15 11:14 CEST
+      (<a href="show_activity.cgi%3Fid=1673.html">History</a>)
+    </td>
+  
+  </tr>
+<tr>
+      <th class="field_label">
+        <label  accesskey="a">
+          CC List:
+        </label>
+      </th>
+      <td>4 
+          users
+          <span id="cc_edit_area_showhide_container" class="bz_default_hidden">
+            (<a href="show_bug.cgi%3Fid=1673.html#" id="cc_edit_area_showhide">show</a>)
+          </span>
+        <div id="cc_edit_area">
+          <br>
+            <select id="cc" multiple="multiple" size="5" >
+                <option value="gandalf">gandalf</option>
+                <option value="hubert+bap">hubert+bap</option>
+                <option value="smalolepszy">smalolepszy</option>
+                <option value="w.kapusta">w.kapusta</option>
+            </select>
+        </div>
+          <script type="text/javascript">
+            hideEditableField( 'cc_edit_area_showhide_container', 
+                               'cc_edit_area', 
+                               'cc_edit_area_showhide', 
+                               '', 
+                               '');  
+          </script>
+      </td>
+    </tr>
+
+<tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+<tr><th class="field_label "
+    id="field_label_see_also">
+
+
+  <a 
+      title="This allows you to refer to bugs in other installations. You can enter a URL to a bug in the 'Add Bug URLs' field to note that that bug is related to this one. You can enter multiple URLs at once by separating them with whitespace. You should normally use this field to refer to bugs in other installations. For bugs in this installation, it is better to use the Depends on and Blocks fields."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#see_also"
+  >See Also:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_see_also" >
+
+</td>
+    </tr> 
+
+<tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+
+
+
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+          <hr id="bz_top_half_spacer">
+      </td>
+    </tr>
+  </table>
+
+  <table id="bz_big_form_parts">
+  <tr>
+  <td>
+
+    
+<script type="text/javascript">
+<!--
+function toggle_display(link) {
+    var table = document.getElementById("attachment_table");
+    var view_all = document.getElementById("view_all");
+    var hide_obsolete_url_parameter = "&hide_obsolete=1";
+    // Store current height for scrolling later
+    var originalHeight = table.offsetHeight;
+    var rows = YAHOO.util.Dom.getElementsByClassName(
+        'bz_tr_obsolete', 'tr', table);
+
+    for (var i = 0; i < rows.length; i++) {
+        bz_toggleClass(rows[i], 'bz_default_hidden');
+    }
+
+    if (YAHOO.util.Dom.hasClass(rows[0], 'bz_default_hidden')) {
+        link.innerHTML = "Show Obsolete";
+        view_all.href = view_all.href + hide_obsolete_url_parameter 
+    }
+    else {
+        link.innerHTML = "Hide Obsolete";
+        view_all.href = view_all.href.replace(hide_obsolete_url_parameter,"");
+    }
+
+    var newHeight = table.offsetHeight;
+    // This scrolling makes the window appear to not move at all.
+    window.scrollBy(0, newHeight - originalHeight);
+
+    return false;
+}
+//-->
+</script>
+
+<br>
+<table id="attachment_table">
+  <tr id="a0">
+    <th colspan="3" class="left">
+      Attachments
+    </th>
+  </tr>
+
+
+      <tr id="a1" class="bz_contenttype_image_png">
+        <td>
+            <a href="attachment.cgi%3Fid=986"
+               title="View the content of the attachment">
+          <b>Zrzut ekranu</b></a>
+
+          <span class="bz_attach_extra_info">
+              (27.94 KB,
+                image/png)
+
+            <br>
+            <a href="show_bug.cgi%3Fid=1673.html#attach_986"
+               title="Go to the comment associated with the attachment">2008-03-31 05:16 CEST</a>,
+
+            <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+          </span>
+        </td>
+
+          <td class="bz_attach_flags">
+              <i>no flags</i>
+          </td>
+
+        <td>
+          <a href="attachment.cgi%3Fid=986&amp;action=edit.html">Details</a>
+        </td>
+      </tr>
+      <tr id="a2" class="bz_contenttype_image_png">
+        <td>
+            <a href="attachment.cgi%3Fid=993"
+               title="View the content of the attachment">
+          <b>Zrzut msz.gov.pl</b></a>
+
+          <span class="bz_attach_extra_info">
+              (9.62 KB,
+                image/png)
+
+            <br>
+            <a href="show_bug.cgi%3Fid=1673.html#attach_993"
+               title="Go to the comment associated with the attachment">2008-04-03 06:50 CEST</a>,
+
+            <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+          </span>
+        </td>
+
+          <td class="bz_attach_flags">
+              <i>no flags</i>
+          </td>
+
+        <td>
+          <a href="attachment.cgi%3Fid=993&amp;action=edit.html">Details</a>
+        </td>
+      </tr>
+      <tr id="a3" class="bz_contenttype_image_png">
+        <td>
+            <a href="attachment.cgi%3Fid=994"
+               title="View the content of the attachment">
+          <b>Zrzut z OS X</b></a>
+
+          <span class="bz_attach_extra_info">
+              (84.39 KB,
+                image/png)
+
+            <br>
+            <a href="show_bug.cgi%3Fid=1673.html#attach_994"
+               title="Go to the comment associated with the attachment">2008-04-03 09:45 CEST</a>,
+
+            <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+          </span>
+        </td>
+
+          <td class="bz_attach_flags">
+              <i>no flags</i>
+          </td>
+
+        <td>
+          <a href="attachment.cgi%3Fid=994&amp;action=edit.html">Details</a>
+        </td>
+      </tr>
+      <tr id="a4" class="bz_contenttype_text_plain bz_patch bz_tr_obsolete bz_default_hidden">
+        <td>
+            <a href="attachment.cgi%3Fid=995"
+               title="View the content of the attachment">
+          <b><span class="bz_obsolete">Patch</span></b></a>
+
+          <span class="bz_attach_extra_info">
+              (2.65 KB,
+                patch)
+
+            <br>
+            <a href="show_bug.cgi%3Fid=1673.html#attach_995"
+               title="Go to the comment associated with the attachment">2008-04-03 10:08 CEST</a>,
+
+            <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+          </span>
+        </td>
+
+          <td class="bz_attach_flags">
+              <i>no flags</i>
+          </td>
+
+        <td>
+          <a href="attachment.cgi%3Fid=995&amp;action=edit.html">Details</a>
+        </td>
+      </tr>
+      <tr id="a5" class="bz_contenttype_image_png">
+        <td>
+            <a href="attachment.cgi%3Fid=996"
+               title="View the content of the attachment">
+          <b>Zrzut z OS X z zaaplikowaną łatką</b></a>
+
+          <span class="bz_attach_extra_info">
+              (98.68 KB,
+                image/png)
+
+            <br>
+            <a href="show_bug.cgi%3Fid=1673.html#attach_996"
+               title="Go to the comment associated with the attachment">2008-04-03 10:11 CEST</a>,
+
+            <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+          </span>
+        </td>
+
+          <td class="bz_attach_flags">
+              <i>no flags</i>
+          </td>
+
+        <td>
+          <a href="attachment.cgi%3Fid=996&amp;action=edit.html">Details</a>
+        </td>
+      </tr>
+      <tr id="a6" class="bz_contenttype_text_plain bz_patch bz_tr_obsolete bz_default_hidden">
+        <td>
+            <a href="attachment.cgi%3Fid=1002"
+               title="View the content of the attachment">
+          <b><span class="bz_obsolete">Patch</span></b></a>
+
+          <span class="bz_attach_extra_info">
+              (2.68 KB,
+                patch)
+
+            <br>
+            <a href="show_bug.cgi%3Fid=1673.html#attach_1002"
+               title="Go to the comment associated with the attachment">2008-04-05 07:14 CEST</a>,
+
+            <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+          </span>
+        </td>
+
+          <td class="bz_attach_flags">
+              <i>no flags</i>
+          </td>
+
+        <td>
+          <a href="attachment.cgi%3Fid=1002&amp;action=edit.html">Details</a>
+        </td>
+      </tr>
+      <tr id="a7" class="bz_contenttype_text_plain bz_patch">
+        <td>
+            <a href="attachment.cgi%3Fid=1003"
+               title="View the content of the attachment">
+          <b>Patch</b></a>
+
+          <span class="bz_attach_extra_info">
+              (2.70 KB,
+                patch)
+
+            <br>
+            <a href="show_bug.cgi%3Fid=1673.html#attach_1003"
+               title="Go to the comment associated with the attachment">2008-04-05 12:54 CEST</a>,
+
+            <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+          </span>
+        </td>
+
+          <td class="bz_attach_flags">
+                  <span title="Hubert Gajewski">hubert+bap</span>:
+                review+
+                <br>
+          </td>
+
+        <td>
+          <a href="attachment.cgi%3Fid=1003&amp;action=edit.html">Details</a>
+        </td>
+      </tr>
+      <tr id="a8" class="bz_contenttype_image_png">
+        <td>
+            <a href="attachment.cgi%3Fid=1021"
+               title="View the content of the attachment">
+          <b>Nowy zrzut z XP</b></a>
+
+          <span class="bz_attach_extra_info">
+              (9.78 KB,
+                image/png)
+
+            <br>
+            <a href="show_bug.cgi%3Fid=1673.html#attach_1021"
+               title="Go to the comment associated with the attachment">2008-04-08 02:13 CEST</a>,
+
+            <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+          </span>
+        </td>
+
+          <td class="bz_attach_flags">
+              <i>no flags</i>
+          </td>
+
+        <td>
+          <a href="attachment.cgi%3Fid=1021&amp;action=edit.html">Details</a>
+        </td>
+      </tr>
+
+  <tr class="bz_attach_footer">
+    <td colspan="3">
+        <span class="bz_attach_view_hide">
+            <a href="show_bug.cgi%3Fid=1673.html#a0" onclick="return toggle_display(this);">Show
+              Obsolete</a> (2)
+            <a id="view_all" href="attachment.cgi%3Fbugid=1673&amp;action=viewall&amp;hide_obsolete=1.html">View All</a>
+        </span>
+        <a href="attachment.cgi%3Fbugid=1673&amp;action=enter.html">Add an attachment</a>
+        (proposed patch, testcase, etc.)
+    </td>
+  </tr>
+</table>
+<br>
+
+  </td>
+  <td>
+  </td>
+  </tr></table>
+
+  
+  <div id="comments"><script src="js/comments.js" type="text/javascript">
+</script>
+
+<script type="text/javascript">
+<!--
+  /* Adds the reply text to the 'comment' textarea */
+  function replyToComment(id, real_id, name) {
+      var prefix = "(In reply to " + name + " from comment #" + id + ")\n";
+      var replytext = "";
+        /* pre id="comment_name_N" */
+        var text_elem = document.getElementById('comment_text_'+id);
+        var text = getText(text_elem);
+        replytext = prefix + wrapReplyText(text);
+
+
+      /* <textarea id="comment"> */
+      var textarea = document.getElementById('comment');
+      if (textarea.value != replytext) {
+          textarea.value += replytext;
+      }
+
+      textarea.focus();
+  } 
+//-->
+</script>
+
+
+<!-- This auto-sizes the comments and positions the collapse/expand links 
+     to the right. -->
+<table class="bz_comment_table">
+<tr>
+<td>
+<div id="c0" class="bz_comment bz_first_comment">
+
+      <div class="bz_first_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1673.html#c0">Description</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-03-31 05:16:16 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Okno informacji o certyfikatach jest przycięte.</pre>
+    </div>
+
+    <div id="c1" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1673.html#c1">Comment 1</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-03-31 05:16:31 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Created <span class=""><a href="attachment.cgi%3Fid=986" name="attach_986" title="Zrzut ekranu">attachment 986</a> <a href="attachment.cgi%3Fid=986&amp;action=edit.html" title="Zrzut ekranu">[details]</a></span>
+Zrzut ekranu</pre>
+    </div>
+
+    <div id="c2" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1673.html#c2">Comment 2</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-04-03 02:22:08 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(w odpowiedzi na komentarz #1)
+<span class="quote">&gt; Created an attachment (id=986) [details]
+&gt; Zrzut ekranu</span >
+
+Nie udało mi się odtworzyć takiej sytuacji. Nie można tego okna poszerzyć? Jak to na OS X wygląda?
+
+</pre>
+    </div>
+
+    <div id="c3" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1673.html#c3">Comment 3</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-04-03 04:45:58 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Ten komunikat udało mi się wygenerować tylko na jednym z serwerów w firmie, a tu nie mam Maka pod ręką.
+</pre>
+    </div>
+
+    <div id="c4" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1673.html#c4">Comment 4</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-04-03 05:53:19 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">to jak mamy odtworzyc problem?</pre>
+    </div>
+
+    <div id="c5" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1673.html#c5">Comment 5</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-04-03 06:15:21 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Znaleźć inny serwer, który jest tak zrypany, jak ten u mnie w firmie, heh. :/</pre>
+    </div>
+
+    <div id="c6" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1673.html#c6">Comment 6</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-04-03 06:19:07 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Trzeba po prostu skrócić ten tekst do takiej długości, jaką mają inne komunikaty wyświetlane w tym miejscu...
+</pre>
+    </div>
+
+    <div id="c7" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1673.html#c7">Comment 7</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-04-03 06:20:33 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Aha, można by też spróbować sobie postawić serwer i podpisać go certyfikatem nieznanego wystawcy... </pre>
+    </div>
+
+    <div id="c8" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1673.html#c8">Comment 8</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-04-03 06:23:24 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(w odpowiedzi na komentarz #5)
+<span class="quote">&gt; Znaleźć inny serwer, który jest tak zrypany, jak ten u mnie w firmie, heh.
+&gt; :/</span >
+
+Haha, znalazłem. Jak to dobrze, że zawsze można znaleźć jakiś syf na stronach Rządu RP. :D
+
+<a href="https://www.msz.gov.pl/">https://www.msz.gov.pl/</a>
+</pre>
+    </div>
+
+    <div id="c9" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1673.html#c9">Comment 9</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-04-03 06:42:16 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(w odpowiedzi na komentarz #8)
+<span class="quote">&gt; (w odpowiedzi na komentarz #5)
+&gt; &gt; Znaleźć inny serwer, który jest tak zrypany, jak ten u mnie w firmie, heh.
+&gt; &gt; :/
+&gt; 
+&gt; Haha, znalazłem. Jak to dobrze, że zawsze można znaleźć jakiś syf na
+&gt; stronach Rządu RP. :D
+&gt; 
+&gt; <a href="https://www.msz.gov.pl/">https://www.msz.gov.pl/</a></span >
+
+To jest inny problem. Ja znam kilka stron, które są samopodpisane, ale wtedy komunikat jest krótszy i się mieści.
+
+</pre>
+    </div>
+
+    <div id="c10" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1673.html#c10">Comment 10</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-04-03 06:50:01 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Created <span class=""><a href="attachment.cgi%3Fid=993" name="attach_993" title="Zrzut msz.gov.pl">attachment 993</a> <a href="attachment.cgi%3Fid=993&amp;action=edit.html" title="Zrzut msz.gov.pl">[details]</a></span>
+Zrzut msz.gov.pl
+
+Nie rozumiem. I na wewnętrznym zrypanym serwerze u mnie w firmie i na msz.gov.pl jest *dokładnie* ten sam problem.</pre>
+    </div>
+
+    <div id="c11" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1673.html#c11">Comment 11</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-04-03 07:31:11 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">jest: Nie można sprawdzić tego certyfikatu, ponieważ jego wystawcy nie ma na liście zaufanych wystawców.
+
+
+prop: Nie można sprawdzić tego certyfikatu - wystawcy nie ma na liście zaufanych wystawców.
+</pre>
+    </div>
+
+    <div id="c12" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1673.html#c12">Comment 12</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-04-03 07:36:00 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(w odpowiedzi na komentarz #10)
+<span class="quote">&gt; Created an attachment (id=993) [details]
+&gt; Zrzut msz.gov.pl
+&gt; 
+&gt; Nie rozumiem. I na wewnętrznym zrypanym serwerze u mnie w firmie i na
+&gt; msz.gov.pl jest *dokładnie* ten sam problem.</span >
+
+Bardzo ciekawe, ja nie mogę wyświetlić certyfikatu, bo dostaję informację, że strona nie obsługuje szyfrowania danych.
+
+</pre>
+    </div>
+
+    <div id="c13" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1673.html#c13">Comment 13</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-04-03 09:45:44 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Created <span class=""><a href="attachment.cgi%3Fid=994" name="attach_994" title="Zrzut z OS X">attachment 994</a> <a href="attachment.cgi%3Fid=994&amp;action=edit.html" title="Zrzut z OS X">[details]</a></span>
+Zrzut z OS X
+
+Na Maku jest ciut lepiej, bo widać przycisk, a jednocześnie ciut gorzej, bo jest więcej ucięte.</pre>
+    </div>
+
+    <div id="c14" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1673.html#c14">Comment 14</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-04-03 10:08:15 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Created <span class="bz_obsolete"><a href="attachment.cgi%3Fid=995" name="attach_995" title="Patch">attachment 995</a> <a href="attachment.cgi%3Fid=995&amp;action=edit.html" title="Patch">[details]</a></span>
+Patch
+
+Wprowadza zmianę zaproponowaną przez gandalfa, w podobny sposób skraca kilka innych stringów wyświetlanych w tym miejscu. Jako bonus, usuwa &quot;tykanie&quot; z jednego innego stringu w tym samym pliku. :)
+
+Chyba że ktoś ma inne propozycje. Jeśli nie będzie ich do 22:00, to wrzucam tego patcha.</pre>
+    </div>
+
+    <div id="c15" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1673.html#c15">Comment 15</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-04-03 10:11:00 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Created <span class=""><a href="attachment.cgi%3Fid=996" name="attach_996" title="Zrzut z OS X z zaaplikowaną łatką">attachment 996</a> <a href="attachment.cgi%3Fid=996&amp;action=edit.html" title="Zrzut z OS X z zaaplikowaną łatką">[details]</a></span>
+Zrzut z OS X z zaaplikowaną łatką</pre>
+    </div>
+
+    <div id="c16" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1673.html#c16">Comment 16</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-04-03 10:47:33 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(w odpowiedzi na komentarz #14)
+<span class="quote">&gt; Created an attachment (id=995) [details]
+&gt; Patch
+&gt; 
+&gt; Wprowadza zmianę zaproponowaną przez gandalfa, w podobny sposób skraca kilka
+&gt; innych stringów wyświetlanych w tym miejscu. Jako bonus, usuwa &quot;tykanie&quot; z
+&gt; jednego innego stringu w tym samym pliku. :)
+&gt; 
+&gt; Chyba że ktoś ma inne propozycje. Jeśli nie będzie ich do 22:00, to wrzucam
+&gt; tego patcha.</span >
+
+Proponuję drobną zmianę:
+
++certNotVerified_CertNotTrusted=Nie można sprawdzić tego certyfikatu, ponieważ nie ma go na liście zaufanych.
++certNotVerified_IssuerUnknown=Nie można sprawdzić tego certyfikatu, ponieważ jego wystawca jest nieznany.
++certNotVerified_CAInvalid=Nie można sprawdzić tego certyfikatu, ponieważ jego CA jest nieprawidłowy.
+
+Niech tylko
++certNotVerified_IssuerNotTrusted=Nie można sprawdzić tego certyfikatu - wystawcy nie ma na liście zaufanych wystawców.
+będzie bez tego &quot;ponieważ&quot;.
+
+</pre>
+    </div>
+
+    <div id="c17" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1673.html#c17">Comment 17</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Staś Małolepszy :stas</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-04-03 11:26:06 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Hubert, czy to wtedy nie będzie za długie?
+
+Poza tym zastanawiam się, czy nie lepiej byłoby zamiast półpauzy użyć dwukropka, np. 
+Nie można sprawdzić tego certyfikatu: wystawcy nie ma na liście zaufanych wystawców.
+
+Ale jakby pomysł ten nie spotkał się z aprobatą, to półpauza mi tak bardzo nie przeszkadza ;-)
+</pre>
+    </div>
+
+    <div id="c18" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1673.html#c18">Comment 18</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-04-03 11:36:08 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(w odpowiedzi na komentarz #17)
+<span class="quote">&gt; Hubert, czy to wtedy nie będzie za długie?</span >
+
+Nie będzie. certNotVerified_IssuerNotTrusted jest najdłuższe po zmianach.
+
+<span class="quote">&gt; Poza tym zastanawiam się, czy nie lepiej byłoby zamiast półpauzy użyć
+&gt; dwukropka, np. 
+&gt; Nie można sprawdzić tego certyfikatu: wystawcy nie ma na liście zaufanych
+&gt; wystawców.</span >
+
+IMHO lepsze.</pre>
+    </div>
+
+    <div id="c19" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1673.html#c19">Comment 19</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-04-03 12:18:05 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(w odpowiedzi na komentarz #17)
+<span class="quote">&gt; Poza tym zastanawiam się, czy nie lepiej byłoby zamiast półpauzy użyć
+&gt; dwukropka, np</span >
+
+Dobry pomysł.
+</pre>
+    </div>
+
+    <div id="c20" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1673.html#c20">Comment 20</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-04-03 12:36:56 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">mi dwukropek mniej pasuje, ale to pewnie kwestia ojcostwa pomyslu i brak obiektywizmu</pre>
+    </div>
+
+    <div id="c21" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1673.html#c21">Comment 21</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-04-05 07:14:22 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Created <span class="bz_obsolete"><a href="attachment.cgi%3Fid=1002" name="attach_1002" title="Patch">attachment 1002</a> <a href="attachment.cgi%3Fid=1002&amp;action=edit.html" title="Patch">[details]</a></span>
+Patch</pre>
+    </div>
+
+    <div id="c22" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1673.html#c22">Comment 22</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-04-05 07:51:39 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(w odpowiedzi na komentarz #21)
+<span class="quote">&gt; Created an attachment (id=1002) [details]
+&gt; Patch</span >
+
+Wolisz dwukropek zamiast &quot;ponieważ&quot;? Przecież pozostałe komunikaty się mieszczą.
+
+</pre>
+    </div>
+
+    <div id="c23" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1673.html#c23">Comment 23</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-04-05 08:17:03 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(w odpowiedzi na komentarz #22)
+<span class="quote">&gt; (w odpowiedzi na komentarz #21)
+&gt; &gt; Created an attachment (id=1002) [details] [details]
+&gt; &gt; Patch
+&gt; 
+&gt; Wolisz dwukropek zamiast &quot;ponieważ&quot;? Przecież pozostałe komunikaty się
+&gt; mieszczą.</span >
+
+OK, mogę dać &quot;ponieważ&quot; w tych dwóch:
++certNotVerified_IssuerUnknown=Nie można sprawdzić tego certyfikatu: jego wystawca jest nieznany.
++certNotVerified_CAInvalid=Nie można sprawdzić tego certyfikatu: jego CA jest nieprawidłowy.
+
+W dwóch najdłuższych natomiast - nie. Zwłaszcza w trosce o użytkowników Linuksa, w którym każde środowisko ma inny motyw, inne czcionki i coś, co jest u nas &quot;na granicy&quot; poprawności, u niektórych z nich może się rozwalać.</pre>
+    </div>
+
+    <div id="c24" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1673.html#c24">Comment 24</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-04-05 08:34:49 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(w odpowiedzi na komentarz #23)
+
+<span class="quote">&gt; W dwóch najdłuższych natomiast - nie. Zwłaszcza w trosce o użytkowników
+&gt; Linuksa, w którym każde środowisko ma inny motyw, inne czcionki i coś, co
+&gt; jest u nas &quot;na granicy&quot; poprawności, u niektórych z nich może się
+&gt; rozwalać.</span >
+
++certNotVerified_CertNotTrusted=Nie można sprawdzić tego certyfikatu: nie ma go na liście zaufanych certyfikatów.
+
+Jeśli zrobimy tak:
+
++certNotVerified_CertNotTrusted=Nie można sprawdzić tego certyfikatu, ponieważ nie ma go na liście zaufanych.
+
+to będzie krótsze niż najdłuższe. Nie chcesz wywalić słowa &quot;certyfikatów&quot;?
+
+
+
+</pre>
+    </div>
+
+    <div id="c25" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1673.html#c25">Comment 25</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-04-05 12:54:00 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Created <span class=""><a href="attachment.cgi%3Fid=1003" name="attach_1003" title="Patch">attachment 1003</a> <a href="attachment.cgi%3Fid=1003&amp;action=edit.html" title="Patch">[details]</a></span>
+Patch
+
+Niech ci będzie...</pre>
+    </div>
+
+    <div id="c26" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1673.html#c26">Comment 26</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-04-05 12:55:23 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Comment on <span class=""><a href="attachment.cgi%3Fid=1003" name="attach_1003" title="Patch">attachment 1003</a> <a href="attachment.cgi%3Fid=1003&amp;action=edit.html" title="Patch">[details]</a></span>
+Patch
+
+r=hubert</pre>
+    </div>
+
+    <div id="c27" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1673.html#c27">Comment 27</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-04-05 13:21:21 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">fxd</pre>
+    </div>
+
+    <div id="c28" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1673.html#c28">Comment 28</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-04-07 16:11:37 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">v.</pre>
+    </div>
+
+    <div id="c29" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1673.html#c29">Comment 29</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-04-08 02:13:05 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Created <span class=""><a href="attachment.cgi%3Fid=1021" name="attach_1021" title="Nowy zrzut z XP">attachment 1021</a> <a href="attachment.cgi%3Fid=1021&amp;action=edit.html" title="Nowy zrzut z XP">[details]</a></span>
+Nowy zrzut z XP
+
+Wszystko jest czytelne, ale nadal o dwie-trzy literki za dużo.
+
+Wywaliłbym &quot;wystawców&quot;, spróbuję to zrobić wieczorem.</pre>
+    </div>
+
+    <div id="c30" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1673.html#c30">Comment 30</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-04-08 02:13:26 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">reop.</pre>
+    </div>
+
+    <div id="c31" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1673.html#c31">Comment 31</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-04-08 08:52:37 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">fixed.</pre>
+    </div>
+
+
+  
+
+</td>
+<td>
+</td>
+</tr></table>
+  </div>
+
+    <hr><div id="add_comment" class="bz_section_additional_comments">
+      <table>
+        <tr>
+          <td>
+            <fieldset>
+              <legend>Note</legend>
+              You need to
+              <a href="show_bug.cgi%3Fid=1673&amp;GoAheadAndLogIn=1.html">log in</a>
+              before you can comment on or make changes to this bug.
+            </fieldset>
+          </td>
+        </tr> 
+      </table>
+  </div>        
+
+</form>
+
+<hr>
+<ul class="related_actions">
+    <li><a href="show_bug.cgi%3Fformat=multiple&amp;id=1673.html">Format For Printing</a></li>
+    <li>&nbsp;-&nbsp;<a href="show_bug.cgi%3Fctype=xml&amp;id=1673">XML</a></li>
+    <li>&nbsp;-&nbsp;<a href="enter_bug.cgi%3Fcloned_bug_id=1673.html">Clone This Bug</a></li>
+    
+    <li>&nbsp;-&nbsp;<a href="show_bug.cgi%3Fid=1673.html#">Top of page </a></li>
+    </ul>
+
+<br>
+</div>
+
+    <div id="footer">
+      <div class="intro"></div>
+<ul id="useful-links">
+  <li id="links-actions"><ul class="links">
+  <li><a href="index.html">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi.html">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi.html">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi.html">Search</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="http://bugs.aviary.pl/buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input type="hidden" id="no_redirect_bottom" name="no_redirect" value="0">
+    <script type="text/javascript">
+      if (history && history.replaceState) {
+        var no_redirect = document.getElementById("no_redirect_bottom");
+        no_redirect.value = 1;
+      }
+    </script>
+    <input class="txt" type="text" id="quicksearch_bottom" name="quicksearch" 
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search" 
+           id="find_bottom"></form>
+  <a href="page.cgi%3Fid=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="report.cgi.html">Reports</a></li>
+
+  <li>
+      <span class="separator">| </span>
+        <a href="request.cgi.html">Requests</a></li>
+
+
+  <li>
+        <span class="separator">| </span>
+        <a href="https://bugzilla.readthedocs.org/en/5.0/using/understanding.html" target="_blank">Help</a>
+      </li>
+    
+      <li id="new_account_container_bottom">
+        <span class="separator">| </span>
+        <a href="createaccount.cgi.html">New&nbsp;Account</a>
+      </li>
+
+    <li id="mini_login_container_bottom">
+  <span class="separator">| </span>
+  <a id="login_link_bottom" href="show_bug.cgi%3Fid=1673&amp;GoAheadAndLogIn=1.html"
+     onclick="return show_mini_login_form('_bottom')">Log In</a>
+
+  <form action="show_bug.cgi%3Fid=1673.html" method="POST"
+        class="mini_login bz_default_hidden"
+        id="mini_login_bottom">
+    <input id="Bugzilla_login_bottom" required
+           name="Bugzilla_login" class="bz_login"
+        type="email" placeholder="Email Address">
+    <input class="bz_password" name="Bugzilla_password" type="password"
+           id="Bugzilla_password_bottom" required
+           placeholder="Password">
+    <input type="hidden" name="Bugzilla_login_token"
+           value="1469820975-Nj4C7Rd2XBEsm5qHR0LBZjpPNau2qeXMMJ_5u4x0DUI">
+    <input type="submit" name="GoAheadAndLogIn" value="Log in"
+            id="log_in_bottom">
+    <a href="show_bug.cgi%3Fid=1673.html#" onclick="return hide_mini_login_form('_bottom')">[x]</a>
+  </form>
+</li>
+
+
+  <li id="forgot_container_bottom">
+    <span class="separator">| </span>
+    <a id="forgot_link_bottom" href="show_bug.cgi%3Fid=1673&amp;GoAheadAndLogIn=1.html#forgot"
+       onclick="return show_forgot_form('_bottom')">Forgot Password</a>
+    <form action="http://bugs.aviary.pl/token.cgi" method="post" id="forgot_form_bottom"
+          class="mini_forgot bz_default_hidden">
+      <label for="login_bottom">Login:</label>
+      <input name="loginname" size="20" id="login_bottom" required
+          type="email" placeholder="Your Email Address">
+      <input id="forgot_button_bottom" value="Reset Password" type="submit">
+      <input type="hidden" name="a" value="reqpw">
+      <input type="hidden" id="token_bottom" name="token"
+             value="1469820975-zoqPywLNE7uI8F0ds8KJerP66vA2IiL5TTGFWvM7wlc">
+      <a href="show_bug.cgi%3Fid=1673.html#" onclick="return hide_forgot_form('_bottom')">[x]</a>
+    </form>
+  </li>
+</ul>
+  </li>
+
+  
+
+
+
+
+  
+</ul>
+
+      <div class="outro"></div>
+    </div>
+
+  </body>
+</html>

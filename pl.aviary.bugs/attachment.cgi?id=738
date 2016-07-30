@@ -1,0 +1,99 @@
+Index: l10n/pl/browser/chrome/browser/preferences/advanced.dtd
+===================================================================
+RCS file: /l10n/l10n/pl/browser/chrome/browser/preferences/advanced.dtd,v
+retrieving revision 1.11
+diff -u -r1.11 advanced.dtd
+--- l10n/pl/browser/chrome/browser/preferences/advanced.dtd	14 Mar 2006 21:56:16 -0000	1.11
++++ l10n/pl/browser/chrome/browser/preferences/advanced.dtd	6 May 2006 13:22:03 -0000
+@@ -58,7 +58,7 @@
+ <!ENTITY viewSecurityDevices.accesskey  "U">
+ 
+ <!ENTITY languages.caption                  "Języki">
+-<!ENTITY languagesInfo.label                "Wybierz preferowane języki, w jakich mają być wyświetlane strony www.">
++<!ENTITY languagesInfo.label                "Wybierz preferowane języki, w jakich mają być wyświetlane strony WWW.">
+ <!ENTITY showLanguages.label                "Edytuj języki...">
+ <!ENTITY showLanguages.accesskey            "j">
+ 
+Index: l10n/pl/browser/chrome/browser/preferences/languages.dtd
+===================================================================
+RCS file: /l10n/l10n/pl/browser/chrome/browser/preferences/languages.dtd,v
+retrieving revision 1.3
+diff -u -r1.3 languages.dtd
+--- l10n/pl/browser/chrome/browser/preferences/languages.dtd	2 Sep 2005 09:18:55 -0000	1.3
++++ l10n/pl/browser/chrome/browser/preferences/languages.dtd	6 May 2006 13:22:03 -0000
+@@ -2,7 +2,7 @@
+ 
+ <!ENTITY languages.customize.Header                     "Języki">
+ <!ENTITY languages.customize.label                      "Języki">
+-<!ENTITY languages.customize.prefLangDescript           "Niektóre strony www dostępne są w wielu wersjach językowych. Ustal listę preferowanych języków dla tego rodzaju stron.">
++<!ENTITY languages.customize.prefLangDescript           "Niektóre strony WWW dostępne są w wielu wersjach językowych. Ustal listę preferowanych języków dla tego rodzaju stron.">
+ <!ENTITY languages.customize.active.label               "Języki w preferowanej kolejności:">
+ <!ENTITY languages.customize.moveUp.label               "W górę">
+ <!ENTITY languages.customize.moveUp.accesskey           "g">
+Index: l10n/pl/browser/chrome/overrides/appstrings.properties
+===================================================================
+RCS file: /l10n/l10n/pl/browser/chrome/overrides/appstrings.properties,v
+retrieving revision 1.9
+diff -u -r1.9 appstrings.properties
+--- l10n/pl/browser/chrome/overrides/appstrings.properties	8 Apr 2006 21:09:45 -0000	1.9
++++ l10n/pl/browser/chrome/overrides/appstrings.properties	6 May 2006 13:22:04 -0000
+@@ -49,7 +49,7 @@
+ netReset=Połączenie z serwerem zostało zresetowane podczas ładowania strony.
+ netOffline=Firefox jest obecnie w trybie offline i przeglądanie Internetu jest w tej chwili niemożliwe.
+ isprinting=Strona nie może zostać zmieniona podczas wydruku, lub kiedy włączony jest podgląd wydruku.
+-deniedPortAccess=Ten adres zawiera numer portu sieciowego, który zazwyczaj nie jest wykorzystywany do przeglądania stron www. Firefox anulował żądanie dla bezpieczeństwa użytkownika.
++deniedPortAccess=Ten adres zawiera numer portu sieciowego, który zazwyczaj nie jest wykorzystywany do przeglądania stron WWW. Firefox anulował żądanie dla bezpieczeństwa użytkownika.
+ proxyResolveFailure=Firefox został skonfigurowany tak, by używał serwera proxy, którego nie jest w stanie odnaleźć.
+ proxyConnectFailure=Firefox został skonfigurowany tak, by używał serwera proxy, który odmawia połączenia.
+ contentEncodingError=Otwierana strona nie może zostać wyświetlona ponieważ używa nieprawidłowych lub nieobsługiwanych metod kompresji. Prosimy poinformować właścicieli witryny o tym problemie.
+Index: l10n/pl/browser/installer/installer.inc
+===================================================================
+RCS file: /l10n/l10n/pl/browser/installer/installer.inc,v
+retrieving revision 1.7
+diff -u -r1.7 installer.inc
+--- l10n/pl/browser/installer/installer.inc	24 Oct 2005 14:19:38 -0000	1.7
++++ l10n/pl/browser/installer/installer.inc	6 May 2006 13:22:05 -0000
+@@ -112,7 +112,7 @@
+ #define QFA_LONG Narzędzie do raportowania informacji o problemach krytycznych programu $ProductShortName$
+ 
+ #define RPT_SHORT Website Reporter
+-#define RPT_LONG Narzędzie do zgłaszania informacji o problemach zgodności witryn www z programem $ProductShortName$
++#define RPT_LONG Narzędzie do zgłaszania informacji o problemach zgodności witryn WWW z programem $ProductShortName$
+ 
+ #define CORE_PREPARING Trwa przygotowywanie instalacji, proszę czekać...
+ #define INST_UNINST Instalacja deinstalatora, proszę czekać...
+Index: l10n/pl/dom/chrome/netError.dtd
+===================================================================
+RCS file: /l10n/l10n/pl/dom/chrome/netError.dtd,v
+retrieving revision 1.8
+diff -u -r1.8 netError.dtd
+--- l10n/pl/dom/chrome/netError.dtd	13 Oct 2005 14:24:07 -0000	1.8
++++ l10n/pl/dom/chrome/netError.dtd	6 May 2006 13:22:05 -0000
+@@ -7,7 +7,7 @@
+ <!ENTITY connectionFailure.longDesc "<p>Pomimo że adres witryny wydaje się prawidłowy, przeglądarka nie była w stanie nawiązać połączenia.</p><ul><li>Witryna jest tymczasowo niedostępna? Jeśli tak, spróbuj ponownie później.</li><li>Nie możesz przeglądać również innych witryn? Jeśli tak, sprawdź, czy połączenie z siecią funkcjonuje prawidłowo.</li><li>Czy Twój komputer lub sieć jest chroniona przez zaporę ogniową lub serwer proxy? Ich nieprawidłowa konfiguracja może powodować problemy z przeglądaniem witryn internetowych.</li></ul>">
+ 
+ <!ENTITY deniedPortAccess.title "Port zastrzeżony z przyczyn bezpieczeństwa">
+-<!ENTITY deniedPortAccess.longDesc "<p>Żądany adres zawiera numer portu (np. w adresie <q>mozilla.org:80</q> liczba 80 to port na serwerze mozilla.org), który zazwyczaj <em>nie jest</em> wykorzystywany do przeglądania witryn www. Przeglądarka anulowała to żądanie ze względów bezpieczeństwa.</p>">
++<!ENTITY deniedPortAccess.longDesc "<p>Żądany adres zawiera numer portu (np. w adresie <q>mozilla.org:80</q> liczba 80 to port na serwerze mozilla.org), który zazwyczaj <em>nie jest</em> wykorzystywany do przeglądania witryn WWW. Przeglądarka anulowała to żądanie ze względów bezpieczeństwa.</p>">
+ 
+ <!ENTITY dnsNotFound.title "Nie odnaleziono adresu">
+ <!ENTITY dnsNotFound.longDesc "<p>Przeglądarka nie mogła odnaleźć adresu serwera dla podanego adresu.</p><ul><li>Upewnij się, że wprowadzony adres witryny jest poprawny (np. <q><strong>www</strong>.mozilla.org</q> a nie <q><strong>ww</strong>.mozilla.org</q>)</li><li>Czy domena aby na pewno nadal istnieje? Jej okres rejestracji mógł upłynąć.</li><li>Nie możesz oglądać innych witryn? Sprawdź swoje połączenie z siecią oraz ustawienia serwerów DNS.</li><li>Czy Twój komputer lub sieć jest chroniona przez zaporę ogniową lub serwer proxy? Ich nieprawidłowa konfiguracja może powodować problemy z przeglądaniem witryn internetowych.</li></ul>">
+Index: l10n/pl/security/manager/chrome/pipnss/pipnss.properties
+===================================================================
+RCS file: /l10n/l10n/pl/security/manager/chrome/pipnss/pipnss.properties,v
+retrieving revision 1.10
+diff -u -r1.10 pipnss.properties
+--- l10n/pl/security/manager/chrome/pipnss/pipnss.properties	4 Apr 2006 19:00:50 -0000	1.10
++++ l10n/pl/security/manager/chrome/pipnss/pipnss.properties	6 May 2006 13:22:08 -0000
+@@ -156,8 +156,8 @@
+ CertDumpIsNotCA=Nie jest urzędem certyfikacji
+ CertDumpPathLen=Maksymalna liczba pośrednich CA: %S
+ CertDumpPathLenUnlimited=nieograniczona
+-CertDumpEKU_1_3_6_1_5_5_7_3_1=Uwierzytelnianie serwera www TLS
+-CertDumpEKU_1_3_6_1_5_5_7_3_2=Uwierzytelnianie klienta www TLS
++CertDumpEKU_1_3_6_1_5_5_7_3_1=Uwierzytelnianie serwera WWW TLS
++CertDumpEKU_1_3_6_1_5_5_7_3_2=Uwierzytelnianie klienta WWW TLS
+ CertDumpEKU_1_3_6_1_5_5_7_3_3=Podpisywanie kodu
+ CertDumpEKU_1_3_6_1_5_5_7_3_4=Zabezpieczenie poczty elektronicznej
+ CertDumpEKU_1_3_6_1_5_5_7_3_8=Datowanie
+

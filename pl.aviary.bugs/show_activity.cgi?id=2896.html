@@ -1,0 +1,1722 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Changes made to bug 2896</title>
+
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<link href="data/assets/2f5735cf3abd04bddc8e363a8613a9f5.css" rel="stylesheet" type="text/css">
+
+
+
+    
+<script type="text/javascript" src="data/assets/1b4e898422a669ab82b604a2c23edce5.js"></script>
+
+    <script type="text/javascript">
+    <!--
+        YAHOO.namespace('bugzilla');
+        YAHOO.util.Event.addListener = function (el, sType, fn, obj, overrideContext) {
+               if ( ("onpagehide" in window || YAHOO.env.ua.gecko) && sType === "unload") { sType = "pagehide"; };
+               var capture = ((sType == "focusin" || sType == "focusout") && !YAHOO.env.ua.ie) ? true : false;
+               return this._addListener(el, this._getType(sType), fn, obj, overrideContext, capture);
+         };
+        if ( "onpagehide" in window || YAHOO.env.ua.gecko) {
+            YAHOO.util.Event._simpleRemove(window, "unload", 
+                                           YAHOO.util.Event._unload);
+        }
+        
+        function unhide_language_selector() { 
+            YAHOO.util.Dom.removeClass(
+                'lang_links_container', 'bz_default_hidden'
+            ); 
+        } 
+        YAHOO.util.Event.onDOMReady(unhide_language_selector);
+
+        
+        var BUGZILLA = {
+            param: {
+                cookiepath: '\/',
+                maxusermatches: 1000
+            },
+            constant: {
+                COMMENT_COLS: 80
+            },
+            string: {
+                
+
+                attach_desc_required:
+                    "You must enter a Description for this attachment.",
+                component_required:
+                    "You must select a Component for this bug.",
+                description_required:
+                    "You must enter a Description for this bug.",
+                short_desc_required:
+                    "You must enter a Summary for this bug.",
+                version_required:
+                    "You must select a Version for this bug."
+            }
+        };
+
+    // -->
+    </script>
+<script type="text/javascript" src="data/assets/d41d8cd98f00b204e9800998ecf8427e.js"></script>
+
+    
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+                       title="Bugzilla" href="search_plugin.cgi">
+    <link rel="shortcut icon" href="images/favicon.ico">
+  </head>
+
+  <body 
+        class="bugs-aviary-pl yui-skin-sam">
+
+  <div id="header"><div id="banner">
+  </div>
+
+    <div id="titles">
+      <span id="title">Bugzilla &ndash; Activity log for bug 2896: KompoZer 0.8 [tracking bug]</span>
+
+
+    </div>
+
+
+    <div id="common_links"><ul class="links">
+  <li><a href="index.html">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi.html">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi.html">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi.html">Search</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="http://bugs.aviary.pl/buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input type="hidden" id="no_redirect_top" name="no_redirect" value="0">
+    <script type="text/javascript">
+      if (history && history.replaceState) {
+        var no_redirect = document.getElementById("no_redirect_top");
+        no_redirect.value = 1;
+      }
+    </script>
+    <input class="txt" type="text" id="quicksearch_top" name="quicksearch" 
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search" 
+           id="find_top"></form>
+  <a href="page.cgi%3Fid=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="report.cgi.html">Reports</a></li>
+
+  <li>
+      <span class="separator">| </span>
+        <a href="request.cgi.html">Requests</a></li>
+
+
+  
+    
+      <li id="new_account_container_top">
+        <span class="separator">| </span>
+        <a href="createaccount.cgi.html">New&nbsp;Account</a>
+      </li>
+
+    <li id="mini_login_container_top">
+  <span class="separator">| </span>
+  <a id="login_link_top" href="http://bugs.aviary.pl/show_activity.cgi?id=2896&amp;GoAheadAndLogIn=1"
+     onclick="return show_mini_login_form('_top')">Log In</a>
+
+  <form action="show_activity.cgi%3Fid=2896.html" method="POST"
+        class="mini_login bz_default_hidden"
+        id="mini_login_top">
+    <input id="Bugzilla_login_top" required
+           name="Bugzilla_login" class="bz_login"
+        type="email" placeholder="Email Address">
+    <input class="bz_password" name="Bugzilla_password" type="password"
+           id="Bugzilla_password_top" required
+           placeholder="Password">
+    <input type="hidden" name="Bugzilla_login_token"
+           value="1469837133-DFG7z-Be60PweXbiUeJpiKv358T2lkZanoj25MtQDlI">
+    <input type="submit" name="GoAheadAndLogIn" value="Log in"
+            id="log_in_top">
+    <a href="show_activity.cgi%3Fid=2896.html#" onclick="return hide_mini_login_form('_top')">[x]</a>
+  </form>
+</li>
+
+
+  <li id="forgot_container_top">
+    <span class="separator">| </span>
+    <a id="forgot_link_top" href="http://bugs.aviary.pl/show_activity.cgi?id=2896&amp;GoAheadAndLogIn=1#forgot"
+       onclick="return show_forgot_form('_top')">Forgot Password</a>
+    <form action="http://bugs.aviary.pl/token.cgi" method="post" id="forgot_form_top"
+          class="mini_forgot bz_default_hidden">
+      <label for="login_top">Login:</label>
+      <input name="loginname" size="20" id="login_top" required
+          type="email" placeholder="Your Email Address">
+      <input id="forgot_button_top" value="Reset Password" type="submit">
+      <input type="hidden" name="a" value="reqpw">
+      <input type="hidden" id="token_top" name="token"
+             value="1469837133-pchjnm48TBV1sGI5Sk5mWOe8uhUDyFT4zvAq9qh3wwY">
+      <a href="show_activity.cgi%3Fid=2896.html#" onclick="return hide_forgot_form('_top')">[x]</a>
+    </form>
+  </li>
+</ul>
+    </div>
+  </div>
+
+  <div id="bugzilla-body">
+
+<p>
+  Back to <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - KompoZer 0.8 [tracking bug]"
+   href="show_bug.cgi%3Fid=2896.html">bug 2896</a>
+</p>
+<table id="bug_activity">
+    <tr class="column_header">
+      <th>Who</th>
+      <th>When</th>
+      <th>What</th>
+      <th>Removed</th>
+      <th>Added</th>
+    </tr>
+
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2010-02-24 13:20:56 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Przetłumaczyć makeCSSRule, currentstylesfor i renameButton [&#64; EdCssProps.dtd ]"
+   href="show_bug.cgi%3Fid=2895.html">2895</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2010-02-24 13:22:08 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - Pozostałość Kompozytora i literówki w locale\editor\EditConflict.dtd"
+   href="show_bug.cgi%3Fid=403.html">403</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2010-02-24 13:22:12 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - Brak skalowania okna preferencji"
+   href="show_bug.cgi%3Fid=575.html">575</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2010-02-24 13:22:14 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Zły klawisz skrótu dla &quot;Zakończ&quot;"
+   href="show_bug.cgi%3Fid=588.html">588</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2010-02-24 13:22:16 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - Domyslne kodowanie powinno byc ISO-8859-2"
+   href="show_bug.cgi%3Fid=491.html">491</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2010-02-24 13:22:17 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Powinno być konsekwentnie: &quot;twoich&quot; lub &quot;Twoich&quot; [ &#64; /mozapps/profile/profileSelection.dtd ]"
+   href="show_bug.cgi%3Fid=582.html">582</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2010-02-24 13:22:19 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - Interpunkcja, styl w locale\editor\EdDialogOverlay.dtd"
+   href="show_bug.cgi%3Fid=402.html">402</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2010-02-24 13:22:21 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED WONTFIX - Błędy w edytorze CSS w wersji PL"
+   href="show_bug.cgi%3Fid=574.html">574</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2010-02-24 13:22:22 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - Drobne błędy w: \mozapps\extensions\extensions.dtd"
+   href="show_bug.cgi%3Fid=398.html">398</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2010-02-24 13:22:23 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Zrobić QA plików dla KompoZera 0.8"
+   href="show_bug.cgi%3Fid=2756.html">2756</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2010-02-24 13:22:25 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - Pozostałość Kompozytora w locale\editor\editorNavigatorOverlay.dtd"
+   href="show_bug.cgi%3Fid=405.html">405</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2010-02-24 13:22:26 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED WONTFIX - Błędy w wallet/pref-passwords.dtd"
+   href="show_bug.cgi%3Fid=397.html">397</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2010-02-24 13:22:28 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - tłumaczenie w oknach dialogowych - megabug"
+   href="show_bug.cgi%3Fid=445.html">445</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2010-02-24 13:22:29 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - Pozostałość Kompozytora w locale\editor\EdConvertToTable.dtd"
+   href="show_bug.cgi%3Fid=401.html">401</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2010-02-24 13:32:15 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Przetłumaczyć 8 stringów [&#64; cascades.properties ]"
+   href="show_bug.cgi%3Fid=2898.html">2898</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2010-02-24 13:48:12 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Powinno być &quot;Zakończ&quot; zamiast &quot;Wyjdź&quot; [&#64; platformCommunicatorOverlay.dtd ]"
+   href="show_bug.cgi%3Fid=2901.html">2901</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2010-02-24 13:51:44 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Brakuje &quot;programu&quot; w przed brandShortName [&#64; platformCommunicatorOverlay.dtd, unitilyOverlay.dtd ]"
+   href="show_bug.cgi%3Fid=2902.html">2902</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2010-02-24 13:56:13 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Nieprzetłumaczone urlbar.label i middleClick.label [&#64; platformPrefOverlay.dtd ]"
+   href="show_bug.cgi%3Fid=2904.html">2904</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2010-02-24 15:05:10 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Nieprzetłumaczone accesskeys w [&#64; platformCommunicatorOverlay.dtd ]"
+   href="show_bug.cgi%3Fid=2907.html">2907</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2010-02-24 15:13:32 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Zamiast ctrl powinno być Ctrl, zamiast enter - Enter [&#64; platformPrefOverlay.dtd ]"
+   href="show_bug.cgi%3Fid=2909.html">2909</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2010-02-25 11:00:40 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Brakuje słowa &quot;program&quot; przy program &amp;brandShortName; [&#64; win/platformPrefOverlay.dtd]"
+   href="show_bug.cgi%3Fid=2922.html">2922</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2010-02-25 11:07:00 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Nieprawidłowy adres pliku RDF w [&#64; region.properties ]"
+   href="show_bug.cgi%3Fid=2923.html">2923</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2010-02-25 11:12:48 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Notka licencyjna i autorzy pliku zostali usunięci z [&#64; askViewZoom.dtd, printPreview.dtd ]"
+   href="show_bug.cgi%3Fid=2924.html">2924</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2010-02-25 11:17:45 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Dodać zagubione komentarze w plikach"
+   href="show_bug.cgi%3Fid=2925.html">2925</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2010-02-25 11:26:02 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Zmienić &quot;Dodaj do zakładek&quot; na &quot;Dodaj zakładkę&quot; [&#64; contentAreaCommands.dtd ]"
+   href="show_bug.cgi%3Fid=2926.html">2926</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2010-03-02 12:47:53 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Dziwne nazwy zestawów znaków powinny być zmienione [&#64; pref-fonts.dtd ]"
+   href="show_bug.cgi%3Fid=2959.html">2959</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2010-03-02 12:53:52 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Zamiast &quot;Sans Serif&quot; powinno być &quot;Bezszeryfowa&quot; [&#64; pref-fonts.dtd ]"
+   href="show_bug.cgi%3Fid=2960.html">2960</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2010-03-02 13:13:09 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Poprawić tłumaczenie &quot;web page&quot; w [&#64; pref-fonts.dtd ]"
+   href="show_bug.cgi%3Fid=2961.html">2961</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2010-03-02 13:45:15 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Zmienić &quot;sidebar&quot; na &quot;panel boczny&quot; [&#64; sidebarOverlay.dtd ]"
+   href="show_bug.cgi%3Fid=2962.html">2962</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2010-03-02 13:52:32 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Zamiast &quot;Kompozytor Stron&quot; powinno być &quot;KompoZer&quot; [ &#64; tasksOverlay.dtd ]"
+   href="show_bug.cgi%3Fid=2963.html">2963</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2010-03-02 13:57:14 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Ustalić czy niektóre rzeczy w [ &#64; tasksOverlay.dtd ] na pewno nie powinny być tłumaczone"
+   href="show_bug.cgi%3Fid=2964.html">2964</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2010-03-02 14:13:07 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Nadużywanie dużych liter w [ &#64; utilityOverlay.dtd ]"
+   href="show_bug.cgi%3Fid=2965.html">2965</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2010-03-02 14:18:50 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Powinno być &quot;rozmiar oryginalny&quot; zamiast &quot;Oryginalny rozmiar&quot; [ &#64; viewZoomOverlay.properties ]"
+   href="show_bug.cgi%3Fid=2966.html">2966</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2010-03-05 11:25:40 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Zmienić &quot;Publikuj&quot; na &quot;Opublikuj&quot; i odwrotnie [&#64; EditorPublish.dtd ]"
+   href="show_bug.cgi%3Fid=2973.html">2973</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2010-03-05 11:43:29 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Zamiast &quot;Prefix&quot; powinno być &quot;Prefiks&quot;, zamiast &quot;n.p.&quot; - &quot;np.&quot; [&#64; EditorPublish.dtd ]"
+   href="show_bug.cgi%3Fid=2974.html">2974</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2010-03-05 12:00:36 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Nieprzetłumaczone &quot;Auth&quot; i &quot;Implicit&quot; w [&#64; EditorPublish.dtd ]"
+   href="show_bug.cgi%3Fid=2975.html">2975</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2010-03-05 12:03:34 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Nieprzetłumaczone localUrls.label i close.label [&#64; MarkUpCleaner.dtd ]"
+   href="show_bug.cgi%3Fid=2976.html">2976</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2010-03-05 12:17:43 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Poprawić UnknownColor w [&#64; editor.properties ]"
+   href="show_bug.cgi%3Fid=2977.html">2977</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2010-03-05 12:25:34 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Poprawić cudzysłowy, szyk i dodać przecinki w ModifiedDocumentWarning [&#64; editor.properties ]"
+   href="show_bug.cgi%3Fid=2978.html">2978</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2010-03-06 02:10:23 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Brakuje słowa &quot;program&quot; w [&#64; editorOverlay.dtd ]"
+   href="show_bug.cgi%3Fid=2979.html">2979</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2010-03-06 02:22:23 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Nieprzetłumaczone supportKompoZer.label [&#64; editorOverlay.dtd ]"
+   href="show_bug.cgi%3Fid=2980.html">2980</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2010-03-06 02:30:48 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Posprzątać encje w [&#64; editorOverlay.dtd ]"
+   href="show_bug.cgi%3Fid=2981.html">2981</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2010-03-06 02:32:52 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Nieprawidłowe skróty dla DesignMode i SplitMode [&#64; editorOverlay.dtd ]"
+   href="show_bug.cgi%3Fid=2982.html">2982</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2010-03-06 02:35:51 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Usunąć komentarz &lt;!-- Advanced --&gt; w [&#64; editorOverlay.dtd ]"
+   href="show_bug.cgi%3Fid=2983.html">2983</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2010-03-06 02:43:00 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Zmienić &quot;Nie znaleziono sugestii dla słowa&quot; na &quot;(brak sugestii)&quot; [&#64; editorOverlay.dtd ]"
+   href="show_bug.cgi%3Fid=2984.html">2984</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2010-03-06 03:02:57 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Brak nazw produktu i licencji w [&#64; brand.dtd ]"
+   href="show_bug.cgi%3Fid=2985.html">2985</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2010-03-06 03:08:39 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Zmienic &quot;Kodowanie&quot; na &quot;Zestaw&quot; [&#64; charsetOverlay.dtd ]"
+   href="show_bug.cgi%3Fid=2986.html">2986</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2010-03-06 03:24:46 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Zmienić &quot;Armeński&quot; na &quot;Ormiański&quot; i poprawić inne sposoby zapisu [&#64; chartsetTitles.properties]"
+   href="show_bug.cgi%3Fid=2987.html">2987</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2010-03-06 03:30:14 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Okno opcji jest za wąskie"
+   href="show_bug.cgi%3Fid=2988.html">2988</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2010-03-06 03:33:18 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Zmienić domyślne kodowanie z ISO-8859-2 na UTF-8"
+   href="show_bug.cgi%3Fid=2989.html">2989</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2010-03-06 03:35:49 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Zepsute kodowanie w sekcji Contributors [&#64; config.properties ]"
+   href="show_bug.cgi%3Fid=2990.html">2990</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2010-03-06 03:48:17 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Zmienić &quot;kodowania&quot; na &quot;zestawy&quot; [&#64; customizeCharset.dtd ]"
+   href="show_bug.cgi%3Fid=2991.html">2991</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2010-03-06 03:52:21 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Brak przecinka przed &quot;by zamknąć&quot; [&#64; downloadProgress.properties ]"
+   href="show_bug.cgi%3Fid=2992.html">2992</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2010-03-06 03:55:33 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Zmienić &quot;Czy zastąpić go?&quot; na &quot;Czy go zastąpić?&quot; [&#64; filepicker.properties ]"
+   href="show_bug.cgi%3Fid=2993.html">2993</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2010-03-06 03:58:16 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Zmienić &quot;Usuń host&quot; na &quot;Usuń hosta&quot; [&#64; history.properties ]"
+   href="show_bug.cgi%3Fid=2994.html">2994</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2010-03-06 04:09:18 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Zaktualizować rok w [&#64; license.dtd ]"
+   href="show_bug.cgi%3Fid=2997.html">2997</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2010-03-06 08:54:07 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Zmienić &quot;załaduj&quot; na &quot;prześlij&quot; [&#64; printjoboptions.dtd ]"
+   href="show_bug.cgi%3Fid=3010.html">3010</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2010-03-06 09:06:01 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Zmienić &quot;hasz&quot; na &quot;suma kontrolna&quot; [&#64; xpinstall.properties ]"
+   href="show_bug.cgi%3Fid=3011.html">3011</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2010-03-06 09:11:06 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Źle odmieniona data (05 grudzień) i błędna nazwa zespołów (Mozillapl.org i AviaryPL) [&#64; *.xhtml ]"
+   href="show_bug.cgi%3Fid=3012.html">3012</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2010-03-06 09:30:49 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Nieprawidłowo pozamieniane Nvu na &amp;brandShortName; [&#64; composer_tutorial.xhtml, css.xhtml, customize.xhtml, menu_reference.xhtml, publishing_help.xhtml, shortcuts.xhtml ]"
+   href="show_bug.cgi%3Fid=3013.html">3013</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2010-03-06 10:28:07 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - W pl używamy odnośników z chrome://, w en-US - nie [&#64; help-toc.rdf ]"
+   href="show_bug.cgi%3Fid=3014.html">3014</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2010-03-06 10:32:17 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Dodać słowo &quot;program&quot; w różnych odmianach w plikach helpa [&#64; *.xhtml ]"
+   href="show_bug.cgi%3Fid=3015.html">3015</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2010-03-06 10:44:23 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Zamiast &quot;zakładka&quot; powinno być &quot;karta&quot; [&#64; EdDialogOverlay.dtd, EditorPageProperties.dtd, EditorPublish.dtd, *.xhtml ]"
+   href="show_bug.cgi%3Fid=3017.html">3017</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2010-03-06 10:54:06 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Zamiast &quot;panel&quot; powinno być &quot;karta&quot;"
+   href="show_bug.cgi%3Fid=3020.html">3020</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2010-03-06 10:57:48 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Zamiast &quot;sidebar&quot; powinno być &quot;panel boczny&quot;"
+   href="show_bug.cgi%3Fid=3021.html">3021</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2010-03-06 11:06:08 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Zmienić &quot;ładowanie&quot; na &quot;wczytywanie&quot; [&#64; sidebarOverlay.dtd, editor.properties, images.xhtml, extensions.properties ]"
+   href="show_bug.cgi%3Fid=3022.html">3022</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2010-03-11 10:29:54 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Brakuje słowa &quot;program&quot; w [&#64; nvu-toc.rdf ]"
+   href="show_bug.cgi%3Fid=3034.html">3034</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2010-03-11 10:56:20 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Treść pliku [&#64; welcome.xhtml ] nie pokrywa się z oryginałem"
+   href="show_bug.cgi%3Fid=3035.html">3035</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2010-03-11 11:13:28 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - W oknie opcji nie ma panelu Treść, do którego odsyłamy [&#64; unknownContentType.dtd ]"
+   href="show_bug.cgi%3Fid=3036.html">3036</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2010-03-11 11:16:42 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Usunąć &quot;chcesz&quot; z unknownPromptText.label [&#64; unknownContentType.dtd ]"
+   href="show_bug.cgi%3Fid=3037.html">3037</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2010-03-11 11:28:10 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Opcje i Preferencje w środku zdania powinny być pisane małą literą [&#64; extentions.dtd ]"
+   href="show_bug.cgi%3Fid=3038.html">3038</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2010-03-11 11:42:10 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Zmienić &quot;Twoje&quot; na &quot;użytkownika&quot; [&#64; createProfileWizard.dtd, profileSelection.dtd ]"
+   href="show_bug.cgi%3Fid=3039.html">3039</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2010-03-11 12:05:30 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Pozbyć się męskich form (&quot;czy jesteś pewien&quot;) w [&#64; passwordmgr.properties ]"
+   href="show_bug.cgi%3Fid=3040.html">3040</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2010-03-11 12:23:09 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Zmienić &quot;Ważny od/do&quot; na &quot;Nieważny przed/po&quot; [&#64; pipnss.properties ]"
+   href="show_bug.cgi%3Fid=3041.html">3041</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2010-03-11 12:31:57 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Pozbyć się form osobowych i poprawić drobne rzeczy w [&#64; certManager.dtd, pippki.dtd ]"
+   href="show_bug.cgi%3Fid=3042.html">3042</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2010-03-11 13:06:08 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Nieprzetłumaczone helpCopyrightNotice [&#64; brand.dtd ]"
+   href="show_bug.cgi%3Fid=3043.html">3043</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2010-03-11 14:39:30 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Poprawić szyk w tytule [&#64; credits.xhtml ]"
+   href="show_bug.cgi%3Fid=3044.html">3044</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2010-03-14 00:14:33 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Jest &quot;długa&quot; zamiast &quot;długa&quot; [&#64; nsWebBrowserPersist.properties ]"
+   href="show_bug.cgi%3Fid=3046.html">3046</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2010-03-14 00:20:40 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Zmienić &quot;Poniechaj&quot; na &quot;Anuluj&quot; [&#64; wizard.dtd ]"
+   href="show_bug.cgi%3Fid=3047.html">3047</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2010-03-14 00:33:40 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Błędne tłumaczenie dla &quot;XPath parse failure: '!' unexpected, negation is not()&quot; [&#64; xslt.properties ]"
+   href="show_bug.cgi%3Fid=3048.html">3048</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2010-03-14 00:53:58 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Poprawić złe prawa dostępu plików"
+   href="show_bug.cgi%3Fid=3049.html">3049</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2010-03-14 01:03:59 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Pozbyć się męskich form w tekstach związanych z hasłem głównym [&#64; preferences.properties ]"
+   href="show_bug.cgi%3Fid=3050.html">3050</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2010-03-14 01:07:27 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Pozbyć się form osobowych w removeWarning2.label [&#64; removemp.dtd ]"
+   href="show_bug.cgi%3Fid=3051.html">3051</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2010-03-14 01:25:17 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Zwiększyć rozmiar okna aktualizacji [&#64; updates.dtd ]"
+   href="show_bug.cgi%3Fid=3052.html">3052</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2010-03-14 01:32:22 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Zmienić &quot;internetem&quot; na &quot;Internetem&quot; i dodać &quot;Czy&quot; w zdaniu pytającym [&#64; updates.properties ]"
+   href="show_bug.cgi%3Fid=3053.html">3053</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2010-03-14 03:33:52 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Nieaktualny nagłówek z licencją [&#64; security.properties ]"
+   href="show_bug.cgi%3Fid=3054.html">3054</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2010-03-14 03:42:10 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Zamiast &quot;treści&quot; powinno być &quot;treści&quot; [&#64; security.properties ]"
+   href="show_bug.cgi%3Fid=3055.html">3055</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2010-03-14 03:57:01 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Poprawić tłumaczenie w [&#64; sitemanager.properties ]"
+   href="show_bug.cgi%3Fid=3056.html">3056</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2010-03-14 04:18:39 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Przywrócić właściwą notkę licencyjną [&#64; tipoftheday.rdf ]"
+   href="show_bug.cgi%3Fid=3057.html">3057</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2010-03-14 04:31:31 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Poprawić URL w [&#64; tipoftheday.rdf ]"
+   href="show_bug.cgi%3Fid=3058.html">3058</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2010-03-14 04:32:40 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Poprawić symbol języka w [&#64; tipoftheday.rdf ]"
+   href="show_bug.cgi%3Fid=3059.html">3059</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2010-03-14 04:37:15 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Zmienić &quot;Ukryj&quot; na &quot;ukryj&quot; [&#64; tipoftheday.rdf ]"
+   href="show_bug.cgi%3Fid=3060.html">3060</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2010-03-14 04:50:05 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Zmienić słowo &quot;panel&quot; na &quot;karta&quot; [&#64; tipoftheday.rdf ]"
+   href="show_bug.cgi%3Fid=3061.html">3061</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2010-03-14 05:01:39 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Poprawić poradę o stylach lokalnych [&#64; tipoftheday.rdf ]"
+   href="show_bug.cgi%3Fid=3062.html">3062</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2010-03-14 05:08:23 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Zmienić &quot;możesz&quot; na &quot;można&quot; [&#64; tipoftheday.rdf ]"
+   href="show_bug.cgi%3Fid=3063.html">3063</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2010-03-14 05:14:03 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Zmienić &quot;Stron&quot; na &quot;stron&quot; [&#64; tipoftheday.rdf ]"
+   href="show_bug.cgi%3Fid=3064.html">3064</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2010-03-14 05:31:54 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Zmienić &quot;Sprofiluj&quot; na &quot;Dostosuj&quot; [&#64; tipoftheday.rdf ]"
+   href="show_bug.cgi%3Fid=3065.html">3065</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2010-03-14 06:14:08 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Zmienić KompoZer na &amp;brandShortName; [&#64; tipoftheday.rdf ]"
+   href="show_bug.cgi%3Fid=3066.html">3066</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">splewako
+        </td>
+        <td rowspan="1">2011-01-19 06:49:43 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WORKSFORME - Usunąć &quot;chcesz&quot; z unknownPromptText.label [&#64; unknownContentType.dtd ]"
+   href="show_bug.cgi%3Fid=3636.html">3636</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">splewako
+        </td>
+        <td rowspan="1">2011-01-19 06:50:26 CET
+        </td>
+            <td>
+                Depends on
+            </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WORKSFORME - Usunąć &quot;chcesz&quot; z unknownPromptText.label [&#64; unknownContentType.dtd ]"
+   href="show_bug.cgi%3Fid=3636.html">3636</a>
+  </td><td>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="3">akalla
+        </td>
+        <td rowspan="3">2014-10-19 12:07:51 CEST
+        </td>
+            <td>
+                Status
+            </td><td>CONFIRMED
+  </td><td>RESOLVED
+  </td></tr><tr>
+            <td>
+                CC
+            </td><td>
+  </td><td>akalla
+  </td></tr><tr>
+            <td>
+                Resolution
+            </td><td>---
+  </td><td>WONTFIX
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2014-10-19 16:23:48 CEST
+        </td>
+            <td>
+                Status
+            </td><td>RESOLVED
+  </td><td>VERIFIED
+  </td>
+      </tr>
+  </table>
+
+  <p>
+    Back to <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - KompoZer 0.8 [tracking bug]"
+   href="show_bug.cgi%3Fid=2896.html">bug 2896</a>
+  </p>
+</div>
+
+    <div id="footer">
+      <div class="intro"></div>
+<ul id="useful-links">
+  <li id="links-actions"><ul class="links">
+  <li><a href="index.html">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi.html">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi.html">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi.html">Search</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="http://bugs.aviary.pl/buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input type="hidden" id="no_redirect_bottom" name="no_redirect" value="0">
+    <script type="text/javascript">
+      if (history && history.replaceState) {
+        var no_redirect = document.getElementById("no_redirect_bottom");
+        no_redirect.value = 1;
+      }
+    </script>
+    <input class="txt" type="text" id="quicksearch_bottom" name="quicksearch" 
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search" 
+           id="find_bottom"></form>
+  <a href="page.cgi%3Fid=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="report.cgi.html">Reports</a></li>
+
+  <li>
+      <span class="separator">| </span>
+        <a href="request.cgi.html">Requests</a></li>
+
+
+  
+    
+      <li id="new_account_container_bottom">
+        <span class="separator">| </span>
+        <a href="createaccount.cgi.html">New&nbsp;Account</a>
+      </li>
+
+    <li id="mini_login_container_bottom">
+  <span class="separator">| </span>
+  <a id="login_link_bottom" href="http://bugs.aviary.pl/show_activity.cgi?id=2896&amp;GoAheadAndLogIn=1"
+     onclick="return show_mini_login_form('_bottom')">Log In</a>
+
+  <form action="show_activity.cgi%3Fid=2896.html" method="POST"
+        class="mini_login bz_default_hidden"
+        id="mini_login_bottom">
+    <input id="Bugzilla_login_bottom" required
+           name="Bugzilla_login" class="bz_login"
+        type="email" placeholder="Email Address">
+    <input class="bz_password" name="Bugzilla_password" type="password"
+           id="Bugzilla_password_bottom" required
+           placeholder="Password">
+    <input type="hidden" name="Bugzilla_login_token"
+           value="1469837133-DFG7z-Be60PweXbiUeJpiKv358T2lkZanoj25MtQDlI">
+    <input type="submit" name="GoAheadAndLogIn" value="Log in"
+            id="log_in_bottom">
+    <a href="show_activity.cgi%3Fid=2896.html#" onclick="return hide_mini_login_form('_bottom')">[x]</a>
+  </form>
+</li>
+
+
+  <li id="forgot_container_bottom">
+    <span class="separator">| </span>
+    <a id="forgot_link_bottom" href="http://bugs.aviary.pl/show_activity.cgi?id=2896&amp;GoAheadAndLogIn=1#forgot"
+       onclick="return show_forgot_form('_bottom')">Forgot Password</a>
+    <form action="http://bugs.aviary.pl/token.cgi" method="post" id="forgot_form_bottom"
+          class="mini_forgot bz_default_hidden">
+      <label for="login_bottom">Login:</label>
+      <input name="loginname" size="20" id="login_bottom" required
+          type="email" placeholder="Your Email Address">
+      <input id="forgot_button_bottom" value="Reset Password" type="submit">
+      <input type="hidden" name="a" value="reqpw">
+      <input type="hidden" id="token_bottom" name="token"
+             value="1469837133-pchjnm48TBV1sGI5Sk5mWOe8uhUDyFT4zvAq9qh3wwY">
+      <a href="show_activity.cgi%3Fid=2896.html#" onclick="return hide_forgot_form('_bottom')">[x]</a>
+    </form>
+  </li>
+</ul>
+  </li>
+
+  
+
+
+
+
+  
+</ul>
+
+      <div class="outro"></div>
+    </div>
+
+  </body>
+</html>

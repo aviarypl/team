@@ -1,0 +1,1958 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>2638 &ndash; Poradnik dla tłumaczy Aviary.pl</title>
+
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<link href="data/assets/7aa6ea67750936a0368541421bdcd5ee.css" rel="stylesheet" type="text/css">
+
+
+
+    
+<script type="text/javascript" src="data/assets/a7c2f3a028f17a9aa60f56dc9d6e732d.js"></script>
+
+    <script type="text/javascript">
+    <!--
+        YAHOO.namespace('bugzilla');
+        YAHOO.util.Event.addListener = function (el, sType, fn, obj, overrideContext) {
+               if ( ("onpagehide" in window || YAHOO.env.ua.gecko) && sType === "unload") { sType = "pagehide"; };
+               var capture = ((sType == "focusin" || sType == "focusout") && !YAHOO.env.ua.ie) ? true : false;
+               return this._addListener(el, this._getType(sType), fn, obj, overrideContext, capture);
+         };
+        if ( "onpagehide" in window || YAHOO.env.ua.gecko) {
+            YAHOO.util.Event._simpleRemove(window, "unload", 
+                                           YAHOO.util.Event._unload);
+        }
+        
+        function unhide_language_selector() { 
+            YAHOO.util.Dom.removeClass(
+                'lang_links_container', 'bz_default_hidden'
+            ); 
+        } 
+        YAHOO.util.Event.onDOMReady(unhide_language_selector);
+
+        
+        var BUGZILLA = {
+            param: {
+                cookiepath: '\/',
+                maxusermatches: 1000
+            },
+            constant: {
+                COMMENT_COLS: 80
+            },
+            string: {
+                
+
+                attach_desc_required:
+                    "You must enter a Description for this attachment.",
+                component_required:
+                    "You must select a Component for this bug.",
+                description_required:
+                    "You must enter a Description for this bug.",
+                short_desc_required:
+                    "You must enter a Summary for this bug.",
+                version_required:
+                    "You must select a Version for this bug."
+            }
+              , api_token: ''
+        };
+
+    if (history && history.replaceState) {
+      if(!document.location.href.match(/show_bug\.cgi/)) {
+        history.replaceState( null,
+                             "2638 – Poradnik dla tłumaczy Aviary.pl",
+                             "show_bug.cgi?id=2638" );
+        document.title = "2638 – Poradnik dla tłumaczy Aviary.pl";
+      }
+      if (document.location.href.match(/show_bug\.cgi\?.*list_id=/)) {
+        var href = document.location.href;
+        href = href.replace(/[\?&]+list_id=(\d+|cookie)/, '');
+        history.replaceState(null, "2638 – Poradnik dla tłumaczy Aviary.pl", href);
+      }
+    }
+    YAHOO.util.Event.onDOMReady(function() {
+      initDirtyFieldTracking();
+
+    });
+    // -->
+    </script>
+<script type="text/javascript" src="data/assets/daf5e0fb6826e6a35280e622913f0c4a.js"></script>
+
+    
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+                       title="Bugzilla" href="search_plugin.cgi">
+    <link rel="shortcut icon" href="images/favicon.ico">
+  </head>
+
+  <body 
+        class="bugs-aviary-pl
+                 bz_bug
+                 bz_status_RESOLVED
+                 bz_product_Wytyczne
+                 bz_component_Og&#XF3;lne
+                 bz_bug_2638 yui-skin-sam">
+
+  <div id="header"><div id="banner">
+  </div>
+
+    <div id="titles">
+      <span id="title">Bugzilla &ndash; Bug&nbsp;2638</span>
+
+        <span id="subtitle" class="subheader">Poradnik dla tłumaczy Aviary.pl</span>
+
+        <span id="information" class="header_addl_info">Last modified: 2011-05-12 06:49:41 CEST</span>
+    </div>
+
+
+    <div id="common_links"><ul class="links">
+  <li><a href="index.html">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi.html">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi.html">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi.html">Search</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="http://bugs.aviary.pl/buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input type="hidden" id="no_redirect_top" name="no_redirect" value="0">
+    <script type="text/javascript">
+      if (history && history.replaceState) {
+        var no_redirect = document.getElementById("no_redirect_top");
+        no_redirect.value = 1;
+      }
+    </script>
+    <input class="txt" type="text" id="quicksearch_top" name="quicksearch" 
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search" 
+           id="find_top"></form>
+  <a href="page.cgi%3Fid=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="report.cgi.html">Reports</a></li>
+
+  <li>
+      <span class="separator">| </span>
+        <a href="request.cgi.html">Requests</a></li>
+
+
+  <li>
+        <span class="separator">| </span>
+        <a href="https://bugzilla.readthedocs.org/en/5.0/using/understanding.html" target="_blank">Help</a>
+      </li>
+    
+      <li id="new_account_container_top">
+        <span class="separator">| </span>
+        <a href="createaccount.cgi.html">New&nbsp;Account</a>
+      </li>
+
+    <li id="mini_login_container_top">
+  <span class="separator">| </span>
+  <a id="login_link_top" href="show_bug.cgi%3Fid=2638&amp;GoAheadAndLogIn=1.html"
+     onclick="return show_mini_login_form('_top')">Log In</a>
+
+  <form action="show_bug.cgi%3Fid=2638.html" method="POST"
+        class="mini_login bz_default_hidden"
+        id="mini_login_top">
+    <input id="Bugzilla_login_top" required
+           name="Bugzilla_login" class="bz_login"
+        type="email" placeholder="Email Address">
+    <input class="bz_password" name="Bugzilla_password" type="password"
+           id="Bugzilla_password_top" required
+           placeholder="Password">
+    <input type="hidden" name="Bugzilla_login_token"
+           value="1469821655-21g3IHIP7-lDvYbXZNKxckn7N9rcLePOtdLx6cOlcxM">
+    <input type="submit" name="GoAheadAndLogIn" value="Log in"
+            id="log_in_top">
+    <a href="show_bug.cgi%3Fid=2638.html#" onclick="return hide_mini_login_form('_top')">[x]</a>
+  </form>
+</li>
+
+
+  <li id="forgot_container_top">
+    <span class="separator">| </span>
+    <a id="forgot_link_top" href="show_bug.cgi%3Fid=2638&amp;GoAheadAndLogIn=1.html#forgot"
+       onclick="return show_forgot_form('_top')">Forgot Password</a>
+    <form action="http://bugs.aviary.pl/token.cgi" method="post" id="forgot_form_top"
+          class="mini_forgot bz_default_hidden">
+      <label for="login_top">Login:</label>
+      <input name="loginname" size="20" id="login_top" required
+          type="email" placeholder="Your Email Address">
+      <input id="forgot_button_top" value="Reset Password" type="submit">
+      <input type="hidden" name="a" value="reqpw">
+      <input type="hidden" id="token_top" name="token"
+             value="1469821655-h8p-9hXYzH6FB2FREogWLCCEVlxgyHiFjARQHeaqVwM">
+      <a href="show_bug.cgi%3Fid=2638.html#" onclick="return hide_forgot_form('_top')">[x]</a>
+    </form>
+  </li>
+</ul>
+    </div>
+  </div>
+
+  <div id="bugzilla-body">
+
+
+<script type="text/javascript">
+<!--
+
+//-->
+</script>
+
+<form name="changeform" id="changeform" method="post" action="http://bugs.aviary.pl/process_bug.cgi">
+
+  <input type="hidden" name="delta_ts" value="2011-05-12 06:49:41">
+  <input type="hidden" name="id" value="2638">
+  <input type="hidden" name="token" value="1469821655-O8r7eGDAdmW7qkOTm2OUZuhN3YvsnLafB6ySjqAcVuI">
+<div class="bz_short_desc_container edit_form">
+     <a href="show_bug.cgi%3Fid=2638.html"><b>Bug&nbsp;2638</b></a> <span id="summary_container" class="bz_default_hidden">
+      - <span id="short_desc_nonedit_display">Poradnik dla tłumaczy Aviary.pl</span>
+     </span>
+
+    <div id="summary_input"><span class="field_label "
+    id="field_label_short_desc">
+
+
+  <a 
+      title="The bug summary is a short sentence which succinctly describes what the bug is about."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#short_desc"
+  >Summary:</a>
+
+</span>Poradnik dla tłumaczy Aviary.pl
+    </div>
+  </div>
+  <script type="text/javascript">
+    hideEditableField('summary_container',
+                      'summary_input',
+                      'summary_edit_action',
+                      'short_desc',
+                      'Poradnik dla tłumaczy Aviary.pl' );
+  </script>
+  <table class="edit_form">
+    <tr>
+      
+      <td id="bz_show_bug_column_1" class="bz_show_bug_column">     
+        <table>
+          <tr>
+    <th class="field_label">
+      <a href="page.cgi%3Fid=fields.html#bug_status">Status</a>:
+    </th>
+    <td id="bz_field_status">
+      <span id="static_bug_status">RESOLVED
+          FIXED
+      </span>
+    </td>
+  </tr>
+<tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+<tr><th class="field_label "
+    id="field_label_alias">
+
+
+  <a 
+      title="A short, unique name assigned to a bug in order to assist with looking it up and referring to it in other places in Bugzilla."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#alias"
+  >Alias:</a>
+
+</th>
+    <td>
+        None
+    </td>
+  </tr>
+<tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+<tr><th class="field_label "
+    id="field_label_product">
+
+
+  <a 
+      title="Bugs are categorised into Products and Components. Select a Classification to narrow down this list."
+      class="field_help_link"
+      href="describecomponents.cgi.html"
+  >Product:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_product" >Wytyczne
+
+</td>
+    </tr>
+
+    
+    <tr class="bz_default_hidden"><th class="field_label "
+    id="field_label_classification">
+
+
+  <a 
+      title="Bugs are categorised into Classifications, Products and Components. classifications is the top-level categorisation."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#classification"
+  >Classification:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_classification" >Archiwum
+
+</td>
+    </tr>
+        
+    
+    
+    <tr><th class="field_label "
+    id="field_label_component">
+
+
+  <a 
+      title="Components are second-level categories; each belongs to a particular Product. Select a Product to narrow down this list."
+      class="field_help_link"
+      href="describecomponents.cgi%3Fproduct=Wytyczne.html"
+  >Component:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_component" >Ogólne
+
+  (<a href="buglist.cgi%3Fcomponent=Ogólne&amp;product=Wytyczne&amp;bug_status=__open__.html"
+      target="_blank">show other bugs</a>)
+</td>
+    </tr>
+    <tr><th class="field_label "
+    id="field_label_version">
+
+
+  <a 
+      title="The version field defines the version of the software the bug was found in."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#version"
+  >Version:</a>
+
+</th>
+<td>unspecified
+  </td>
+    </tr>
+        
+    
+        
+    <tr><th class="field_label "
+    id="field_label_rep_platform">
+
+
+  <a 
+      title="The hardware platform the bug was observed on. Note: When searching, selecting the option &quot;All&quot; only finds bugs whose value for this field is literally the word &quot;All&quot;."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#rep_platform"
+  >Hardware:</a>
+
+</th>
+      <td class="field_value">Wszystkie
+        Wszystkie
+      </td>
+    </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          
+          <tr>
+      <th class="field_label">
+        <label  accesskey="i">
+          <a href="page.cgi%3Fid=fields.html#importance"><u>I</u>mportance</a></label>:
+      </th>
+      <td>P3
+       normalny
+      </td>
+    </tr>
+          
+          <tr><th class="field_label "
+    id="field_label_assigned_to">
+
+
+  <a 
+      title="The person in charge of resolving the bug."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#assigned_to"
+  >Assignee:</a>
+
+</th>
+      <td><span class="vcard"><span class="fn">Leszek Życzkowski</span>
+</span>
+      </td>
+    </tr>
+
+    <tr><th class="field_label "
+    id="field_label_qa_contact">
+
+
+  <a 
+      title="The person responsible for confirming this bug if it is unconfirmed, and for verifying the fix once the bug has been resolved."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#qa_contact"
+  >QA Contact:</a>
+
+</th>
+      <td><span class="vcard">wytyczne
+</span>
+      </td>
+    </tr>
+    <script type="text/javascript">
+      assignToDefaultOnChange(['product', 'component'],
+        'w.kapusta\x40gmail.com',
+        'wytyczne\x40l10n.bledy');
+    </script>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          <tr><th class="field_label "
+    id="field_label_bug_file_loc">
+
+
+  <a 
+      title="Bugs can have a URL associated with them - for example, a pointer to a web site where the problem is seen."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#bug_file_loc"
+  >URL:</a>
+
+</th>
+    <td>
+      <span id="bz_url_input_area">
+      </span>
+    </td>
+  </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+
+          
+<tr><th class="field_label "
+    id="field_label_dependson">
+
+
+  <a 
+      title="The bugs listed here must be resolved before this bug can be resolved."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#dependson"
+  >Depends on:</a>
+
+</th>
+
+  <td>
+    <span id="dependson_input_area">
+    </span>
+
+  </td>
+  </tr>
+  
+  <tr><th class="field_label "
+    id="field_label_blocked">
+
+
+  <a 
+      title="This bug must be resolved before the bugs listed in this field can be resolved."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#blocked"
+  >Blocks:</a>
+
+</th>
+
+  <td>
+    <span id="blocked_input_area">
+    </span>
+
+  </td>
+  </tr>
+          
+        </table>
+      </td>
+      <td>
+        <div class="bz_column_spacer">&nbsp;</div>
+      </td>
+      
+      <td id="bz_show_bug_column_2" class="bz_show_bug_column">
+        <table>
+        <tr>
+    <th class="field_label">
+      Reported:
+    </th>
+    <td>2009-09-30 03:22 CEST by <span class="vcard"><span class="fn">Leszek Życzkowski</span>
+</span>
+    </td>
+  </tr>
+  
+  <tr>
+    <th class="field_label">
+      Modified:
+    </th>
+    <td>2011-05-12 06:49 CEST
+      (<a href="show_activity.cgi%3Fid=2638.html">History</a>)
+    </td>
+  
+  </tr>
+<tr>
+      <th class="field_label">
+        <label  accesskey="a">
+          CC List:
+        </label>
+      </th>
+      <td>9 
+          users
+          <span id="cc_edit_area_showhide_container" class="bz_default_hidden">
+            (<a href="show_bug.cgi%3Fid=2638.html#" id="cc_edit_area_showhide">show</a>)
+          </span>
+        <div id="cc_edit_area">
+          <br>
+            <select id="cc" multiple="multiple" size="5" >
+                <option value="bpiec">bpiec</option>
+                <option value="gandalf">gandalf</option>
+                <option value="hubert+bap">hubert+bap</option>
+                <option value="jmazgaj">jmazgaj</option>
+                <option value="niezapominajka">niezapominajka</option>
+                <option value="tbap.AD04">tbap.AD04</option>
+                <option value="w.kapusta">w.kapusta</option>
+                <option value="wadimd">wadimd</option>
+                <option value="wszczesny">wszczesny</option>
+            </select>
+        </div>
+          <script type="text/javascript">
+            hideEditableField( 'cc_edit_area_showhide_container', 
+                               'cc_edit_area', 
+                               'cc_edit_area_showhide', 
+                               '', 
+                               '');  
+          </script>
+      </td>
+    </tr>
+
+<tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+<tr><th class="field_label "
+    id="field_label_see_also">
+
+
+  <a 
+      title="This allows you to refer to bugs in other installations. You can enter a URL to a bug in the 'Add Bug URLs' field to note that that bug is related to this one. You can enter multiple URLs at once by separating them with whitespace. You should normally use this field to refer to bugs in other installations. For bugs in this installation, it is better to use the Depends on and Blocks fields."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#see_also"
+  >See Also:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_see_also" >
+
+</td>
+    </tr> 
+
+<tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+
+
+
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+          <hr id="bz_top_half_spacer">
+      </td>
+    </tr>
+  </table>
+
+  <table id="bz_big_form_parts">
+  <tr>
+  <td>
+
+    
+<script type="text/javascript">
+<!--
+function toggle_display(link) {
+    var table = document.getElementById("attachment_table");
+    var view_all = document.getElementById("view_all");
+    var hide_obsolete_url_parameter = "&hide_obsolete=1";
+    // Store current height for scrolling later
+    var originalHeight = table.offsetHeight;
+    var rows = YAHOO.util.Dom.getElementsByClassName(
+        'bz_tr_obsolete', 'tr', table);
+
+    for (var i = 0; i < rows.length; i++) {
+        bz_toggleClass(rows[i], 'bz_default_hidden');
+    }
+
+    if (YAHOO.util.Dom.hasClass(rows[0], 'bz_default_hidden')) {
+        link.innerHTML = "Show Obsolete";
+        view_all.href = view_all.href + hide_obsolete_url_parameter 
+    }
+    else {
+        link.innerHTML = "Hide Obsolete";
+        view_all.href = view_all.href.replace(hide_obsolete_url_parameter,"");
+    }
+
+    var newHeight = table.offsetHeight;
+    // This scrolling makes the window appear to not move at all.
+    window.scrollBy(0, newHeight - originalHeight);
+
+    return false;
+}
+//-->
+</script>
+
+<br>
+<table id="attachment_table">
+  <tr id="a0">
+    <th colspan="3" class="left">
+      Attachments
+    </th>
+  </tr>
+
+
+
+  <tr class="bz_attach_footer">
+    <td colspan="3">
+        <a href="attachment.cgi%3Fbugid=2638&amp;action=enter.html">Add an attachment</a>
+        (proposed patch, testcase, etc.)
+    </td>
+  </tr>
+</table>
+<br>
+
+  </td>
+  <td>
+  </td>
+  </tr></table>
+
+  
+  <div id="comments"><script src="js/comments.js" type="text/javascript">
+</script>
+
+<script type="text/javascript">
+<!--
+  /* Adds the reply text to the 'comment' textarea */
+  function replyToComment(id, real_id, name) {
+      var prefix = "(In reply to " + name + " from comment #" + id + ")\n";
+      var replytext = "";
+        /* pre id="comment_name_N" */
+        var text_elem = document.getElementById('comment_text_'+id);
+        var text = getText(text_elem);
+        replytext = prefix + wrapReplyText(text);
+
+
+      /* <textarea id="comment"> */
+      var textarea = document.getElementById('comment');
+      if (textarea.value != replytext) {
+          textarea.value += replytext;
+      }
+
+      textarea.focus();
+  } 
+//-->
+</script>
+
+
+<!-- This auto-sizes the comments and positions the collapse/expand links 
+     to the right. -->
+<table class="bz_comment_table">
+<tr>
+<td>
+<div id="c0" class="bz_comment bz_first_comment">
+
+      <div class="bz_first_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2638.html#c0">Description</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Leszek Życzkowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-09-30 03:22:48 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Ponieważ zabrakło czasu na omówienie tego tematu na spotkaniu w Krakowie, w tym miejscu chciałbym abyśmy omówili ten dokument. 
+Uważam, że jest to kompendium podstawowej wiedzy na temat tłumaczeń i kilka podstawowych zasad. Prosiłbym o rzeczowe wypowiedzi na temat zawartych tam zapisów.
+Poradnik znajduje się pod adresem: <a href="http://fsc.com.pl/poradnik/">http://fsc.com.pl/poradnik/</a></pre>
+    </div>
+
+    <div id="c1" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2638.html#c1">Comment 1</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Bartosz Piec</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-09-30 05:08:04 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Po co zakładasz drugiego buga, jeśli jest 2503, do tego niezamknięty?</pre>
+    </div>
+
+    <div id="c2" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2638.html#c2">Comment 2</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Leszek Życzkowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-09-30 05:51:57 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(In reply to <a href="show_bug.cgi%3Fid=2638.html#c1">comment #1</a>)
+<span class="quote">&gt; Po co zakładasz drugiego buga, jeśli jest 2503, do tego niezamknięty?</span >
+
+Bo tutaj chcę uniknąć takich wpisów, jak tam i ten wpis. Chcę dyskutować merytorycznie. To jest mój pierwszy i ostatni wpis tego typu.</pre>
+    </div>
+
+    <div id="c3" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2638.html#c3">Comment 3</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Wojciech Szczęsny</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-10-05 11:33:16 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Najpierw kilka spraw natury ogólnej.
+
+Prawa autorskie
+Myślę, że warto już na tym etapie ustalić z autorem poradnika dla tłumaczy Lotusa, czy zgodzi się na udostępnienie swojej pracy na wolnej licencji. Tworzenie poradnika dla tłumaczy Aviary, którego nie będzie można opublikować na jakiejś liberalnej licencji, nie jest najlepszym rozwiązaniem.
+
+Źródła
+W bibliografii pojawiają się książki wydane w roku 1976 czy 1980. Lepiej unikać powoływania się na dzieła wydane wiele lat temu. Nie znaczy to, że akurat te przytoczone informacje są nieaktualne. Jednak nie ma pewności, co się od tamtego czasu zmieniło, więc lepiej powoływać się na możliwe najnowsze wydania, bo prezentują one obecny stan.
+
+Pierwsza osoba
+Rozumiem, że w tej chwili jest indywidualna propozycja Teo. W wersji docelowej należy jednak pozbyć się form w pierwszej osobie, zwłaszcza prezentujących własne stanowisko (&quot;opowiadam się&quot;). Jeśli nie da się ustalić jednoznacznie jakiejś formy, to można napisać, że forma jest zalecana, ponieważ...
+
+Ogólne zalecenia
+Z ogólnymi zaleceniami w rodzaju - nie należy tłumaczyć słowo w słowo, w tekście dla zwykłego użytkownika należy unikać specjalistycznych określeń - zgadzam się jak najbardziej. Jednak te ogólne sformułowania mogą być w praktyce różnie rozumiane, co może być powodem konfliktów. Nie mam w tej chwili gotowego pomysłu, jak to ewentualnie sformułować, ale wprowadziłbym jakieś zdanie zwracające uwagę, by w szczegółowych dyskusjach nie nadużywać powoływania się na te ogólne zalecenia.</pre>
+    </div>
+
+    <div id="c4" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2638.html#c4">Comment 4</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Katarzyna Niewodniczańska</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-10-07 16:11:41 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Mój profesor, lingwista, zwykł mawiać, iż szanujący się i grupujący wokół czegoś  ludzie, powinni otaczać się tym, do czego ich działalność nawiązuje. Oczywiście miał na myśli językoznawców i książki. Widząc zatem, iż grupa Aviary dysponuje własnym &quot;Poradnikiem dla tłumaczy&quot;, byłby niezwykle kontent. Stąd słowa uznania dla Leszka, który z pietyzmem ów dokument przygotował. Pomijam jego walory praktyczne (&quot;Poradnika&quot; rzecz jasna, nie Leszka) o których napiszę później, by zaznaczyć, jak jest on ważną wizytówką  naszej grupy na zewnątrz. Chcemy przecież &quot;dzielić się wiedzą...&quot;, wnikać w społeczności i &quot;zmieniać ich życie&quot; (iście nieść &quot;kaganek oświaty&quot;), ale także okazujemy się być (zgodnie z prawdą oczywistą) tymi, którzy poszukują lepszych rozwiązań, nieustannie się kształcą, dzielą wątpliwościami, szanują stanowiska autorytetów i prolongują swój język ojczysty  jako dobro najcenniejsze. Rozumiem, iż nikt nie podważa bytu &quot;Poradnika&quot; jako takiego, ja po prostu podkreślam jego wartość.
+Konkretnie:
+1. Leszek, mówiąc o specyfice techniki translacji, uczula na różnice językowe, składniowe i stylistyczne języka polskiego i angielskiego.
+2. Trafnie różnicuje rodzaj tłumaczenia ze względu na odbiorcę. (I dobrze, bo ja jestem tym &quot;zwykłym&quot;).
+3. W sprawie cyfr i liczb, powiedziałabym, iż litera służy do zapisywania głosek.
+4.Dobrze, że podkreśla zróżnicowanie formalne wyrazów. (Przeciętny Kowalski nie rozumie różnicy między literaturą dziecięcą i dziecinną).
+5. Gani powszechna modę na uwznioślanie, preferując prostotę. (Moi uczniowie uwielbiali &quot;jednostki ludzkie&quot;. Muszę jednak przyznać, iż przy &quot;obozowiczach&quot;,więźniach obozów pracy, zaczynali mieć wątpliwości).
+6. Zwraca uwagę na konieczność dopowiadania całego znaczenia, a więc  dobudowywania wypowiedzenia, jaką wymuszają niektóre wyrazy, np. &quot;dostosować&quot;. (Kilka bugów z tym związanych zgłosiłam sprawdzając Flocka)
+7. Pisze o &quot;dobrych neologizmach&quot;, bo rzeczywiście te (czy to słowotwórcze, czy leksykalne) wzbogacają język. Nie jestem jednak przekonana do neologizmu &quot;natywny&quot;, ale może dlatego właśnie, iż to neologizm?
+8. Piętnuje wyrażenia typu: &quot;rozdział mówi&quot;, &quot;podręcznik opisuje&quot;. (Cieszy to moje nauczycielskie oczy, które widziały setki razy &quot;mówiące wiersze&quot;.
+9. Kropkę umieszcza się również po równoważnikach, po wszystkich wypowiedzeniach stanowiących samoistną całość.
+10. Nic nie poradzę na moją prywatną niechęć do &quot;klikania&quot;, uporczywie zmienianego, jak tylko jest to możliwe.
+11. Co stało się ze zdaniami: 3,4,6 &quot;Suplementu&quot;?
+
+Wracając do komentarza Wojtka:
+1. Nie sądzę, by powoływanie się na poradniki z roku 1980 było językowym faux-pas. Język ewoluuje, to prawda, ale norma kodyfikacyjna jest znacznie bardziej rygorystyczna, niż się powszechnie wydaje, a zanim coś stanie się obowiązującym uzusem, językoznawcy muszą podjąć szereg działań (poprzedzonych zmianą językowych przyzwyczajeń). Moje SJP wydane w różnych latach różnią się ilością haseł, to prawda, jakością papieru i kolorem okładki. Poza tym Leszek przywołuje również pozycje nowsze.  Trudno mu również zarzucić, iż nie skonfrontował przytoczonych wiadomości z poradnikami nowszymi, bo tego po prostu nie wiemy.
+2. W wersji docelowej rzeczywiście lepiej byłoby posługiwać się formą bezosobową. Obecnie Leszek musi wypowiadać się w swoim imieniu, bo przecież on jest inicjatorem przedsięwzięcia, on się podpisał i on zaprosił nas do merytorycznej dyskusji o tym dokumencie.</pre>
+    </div>
+
+    <div id="c5" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2638.html#c5">Comment 5</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Leszek Życzkowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-10-08 16:46:43 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(In reply to <a href="show_bug.cgi%3Fid=2638.html#c3">comment #3</a>)
+Prawa autorskie uzgodnione. Po akceptacji zostanie udostępniony w oparciu o jedną z wolnych licencji.
+
+Bibliografia zaktualizowana.</pre>
+    </div>
+
+    <div id="c6" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2638.html#c6">Comment 6</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Leszek Życzkowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-10-08 16:48:19 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(In reply to <a href="show_bug.cgi%3Fid=2638.html#c4">comment #4</a>)
+Dzięki Kasiu za cenne uwagi. Postulowane zmiany dotyczące kropki i litery wprowadzone.</pre>
+    </div>
+
+    <div id="c7" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2638.html#c7">Comment 7</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Wojciech Kapusta</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-10-16 02:30:41 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Po pierwsze: fantastyczny poradnik. Świetna robota. Przeczytałem go z wielkim zainteresowaniem i mimo wieloletniego stażu w zawodzie tłumacza znalazłem w min mnóstwo interesujących rzeczy, w tym takie, na jakie w codziennej, na ogół mało twórczej a raczej rzemieślniczej pracy nie zwraca się uwagi, mimo że o nich się teoretycznie wie, oraz także kilka nowych, ciekawych zagadnień. Opracowanie to zasługuje na wielkie podziękowania oraz na to, aby stać się podręcznikiem obowiązkowym, którego dokładną znajomość powinniśmy sprawdzać w formie egzaminacyjnej. Razem z GWO ma szansę stać się wręcz ewangelią dla tłumaczy, nie tylko z naszej branży.
+
+Z uwagi na jego obszerność muszę go jeszcze raz dogłębnie przestudiować i przeanalizować, jednak chciałbym już teraz przedstawić kilka uwag.
+
+Rozdział 8.6
+============
+* zastosować (biernik, kogo, co) kreator, plik, program itd.
+
+- czy nie należałoby użyć formy &quot;kreatora&quot;?
+
+Rozdział 8.7
+============
+Microsoft w swoich konwencjach językowych zaleca tłumaczyć on this computer jako na tym komputerze w odniesieniu do oprogramowania, instalowania programów itp., ale w tym komputerze w odniesieniu do sprzętu. Jest to dobra zasada i warto ją przyjąć.
+
+- Tu oczywiście nie mogę się zgodzić. Wiem, że jestem w tym osamotniony, więc będzie to klasyczne votum speratum, albo lepiej nec Hercules contra plures, ale tak czy owak:
+1. Microsoft nie powinien być postrzegany jako wyznacznik i jedynie słuszny wzór.
+2. Instalowane programów NA komputerze jest bzdurą językową, tak oczywistą, że już nie mam siły powtarzać tego i argumentować po raz n (n → nieskończoność).
+3. Na komputerze można sobie postawić portret Billa Gatesa (tak, wiem, że już było).
+itd.
+
+Rozdział 8.22
+=============
+Pojawia się na przykład problem, czy pisać uruchomić kreator czy uruchomić kreatora.
+
+- patrz wyżej, uwagi do rozdziału 8.6.
+
+Rozdział 8.30
+=============
+obydwa wyrazy, unikalny i unikatowy, trzeba więc uznać za poprawne
+
+- W GWO proponuję &quot;unikatowy&quot; wzgl. dla niektórych zastosowań &quot;niepowtarzalny&quot;. Unikalny kojarzy się trochę z unikaniem.
+
+Rozdział 8.32
+=============
+Osoby pracujące w systemie Unix posługują się spolszczeniami wyrazów angielskich (np. używają słowa root, odmieniając je z polskimi końcówkami fleksyjnymi, zamiast określenia katalog główny).
+
+- Nieścisłość; tu bym napisał &quot;zamiast określenia &quot;administrator&quot;. Nie słyszałem jeszcze, żeby ktoś mówił root o katalogu głównym.
+
+A w wersji tego programu dla Linuksa należy zastosować formy zgodne z systemem Linux.
+
+- proponowałbym dodać przykład (np. katalog a nie folder).
+
+Jeżeli tłumaczony program jest przeznaczony na wiele platform, należy stosować konwencje typowe dla platformy najbardziej popularnej, co z pewnością się sprowadzi do Microsoft Windows.
+
+- To bym sobie podarował. Takie sformułowania zachęcają do praktyk, jak w lokalizacji programów Mozilli, która - wyrosła przecież z środowiska linuksowego - odcięła się od niego całkowicie i straszy wszędzie słownictwem windowsowym. To samo dotyczy np. OpenOffice, w którym mamy do czynienia z mieszanką słownictwa linuksowego i windowsowego, z przewagą tego ostatniego.
+
+Rozdział 8.42
+=============
+Podobnie słowo machine znacznie lepiej przetłumaczyć jako komputer niż maszyna – jeśli chodzi o komputer.
+
+- patrz GWO.
+
+Rozdział 8.44
+=============
+Proponuję dodać rozważania na temat formy bezosobowej oraz kilka przykładów różnorodnych form (proszę, można, trzeba, należy itp.). Ponadto warto umieścić wskazówkę odnośnie nienadużywania słowa &quot;należy&quot;, które w ostatnich czasach zrobiło oszałamiającą karierę, niestety ze szkodą dla brzmienia tłumaczeń.
+
+Rozdział 8.46
+=============
+Jednak ze względu na rozpowszechnienie tego typu określeń, jedynie zaleca się tę formę, a nie forsuje.
+
+- niezrozumiałe.
+
+Propozycja dodania rozdziału 8.50 &quot;Poprawny kontra prawidłowy&quot;
+==============================================================
+Słowo &quot;poprawny&quot; jest nadużywane i pojawia się często w nieodpowiednich miejscach. Przykłady z życia wzięte:
+- Niepoprawne hasło
+- Niepoprawne kodowanie (w Nautilusie, informacja o NIEZGODNYM z systemowym kodowaniem nazw plików i katalogów)
+- Niepoprawne dane
+i 1001 innych.
+Uważam, że w takich miejscach należy stosować inne określenia, np. wspomniane &quot;nieprawidłowy&quot;, &quot;błędny&quot; i in. Trzeba uczulić tłumaczy na zwracanie uwagi na kontekst i różnorodność określeń (podobnie jak w przypadku używania wszędzie &quot;należy&quot;).
+
+Rozdział 9.1
+============
+Proponowałbym podać przykład skrótu dla &quot;wyżej wymienione&quot; (ww.) wobec plagi nowomodnego w/w.
+
+Rozdział 9.3
+============
+Liczby wielocyfrowe należy dzielić na grupy trzycyfrowe oddzielane odstępami.
+
+- Proponowałbym dodać &quot;w polskiej konwencji zapisu&quot;, w celu uniknięcia nieporozumień.
+
+Proponuję przyjęcie zasady wyodrębniania grup cyfr tylko w liczbach dłuższych niż czterocyfrowe. Tak więc napiszemy 8192, ale 16 384.
+
+- Lepiej nie. Doprowadzi to szybko do bałaganu.
+
+Rozdział 9.5
+============
+Oto kilka przykładów poprawnego zapisu kwot pieniężnych: 1 048 zł, 12 500,99 zł, 12 500 zł 99 gr, 400 dolarów, 400 USD.
+
+- Trzeba koniecznie przypomnieć, że PLN, USD itp. NIE są określeniami walut, lecz skrótami używanymi przez systemy bankowe. W tłumaczeniach (i wszelkich tekstach, może za wyjątkiem oprogramowania bankowego i jego dokumentacji) powinno się używać prawnie zatwierdzonych skrótów i symboli walut.
+
+Rozdział 9.8.3
+==============
+Warto już tu podać negatywny przykład użycia przecinka np. &quot;Najpierw, trzeba przeczytać poradnik dla tłumaczy&quot; (First, you have to read the Translators Guide by L. Życzkowski).
+
+Rozdział 9.8.6
+==============
+Cudzysłowy niemieckie składają się z cudzysłowu otwierającego ( » ) oraz końcowego zamykającego ( « ). Stosowane są do zagnieżdżania cytatów wewnątrz cytatów, na przykład: „Cytat »wewnątrz« cytatu.” (cytat drugiego poziomu) lub wyjątkowo jako cudzysłowy pierwszego poziomu do wyróżnień w tekście.
+
+- proponowałbym uznać to jako zalecane.
+
+Rozdział 10.1
+=============
+ Wybierz polecenie Mmm » Ppp. (nazwy rozdzielono znakiem specjalnym w tym przypadku cudzysłowem francuskim; można też używać strzałek).
+
+- proponowałbym uznać strzałki jako zalecane, chyba że zleceniodawca zażąda inaczej.
+
+Rozdział 10.4
+=============
+1. Zgadzam się z Katarzyną; klikanie nie brzmi.
+2. Jeśli tłumaczymy oprogramowanie do urządzeń przemysłowych (ekran dotykowy), telefonów itp. warto zwracać uwagę, aby zamienić klikania na sensowny w danym przypadku odpowiednik.
+
+Rozdział 10.6
+=============
+Filename already exist. Do you want to overwrite existing file? - Nazwa pliku już istnieje. Czy zastąpić istniejący plik nowym?
+
+- Tu mamy przykład błędnego tekstu w oryginale pociągającego za sobą błędne tłumaczenie i znaczenie przekładu. Powinno być chyba &quot;Istnieje już plik o tej nazwie&quot;?
+
+Rozdział 10.7
+=============
+Administrator's Guide - Podręcznik dla administratora
+
+- a nie lepiej &quot;Podręcznik administratora&quot;?
+
+
+*************
+Na razie tyle. Po ponownym przestudiowaniu mogą dojść dalsze uwagi i propozycje.</pre>
+    </div>
+
+    <div id="c8" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2638.html#c8">Comment 8</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Leszek Życzkowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-10-16 13:32:16 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(w odpowiedzi na komentarz #7)
+Dziękuję Wojciechu za komentarz. Zależało mi na Twojej opinii, ponieważ jesteś obarczony linkuksowo.
+<span class="quote">&gt; 
+&gt; Rozdział 8.6
+&gt; ============
+&gt; * zastosować (biernik, kogo, co) kreator, plik, program itd.
+&gt; 
+&gt; - czy nie należałoby użyć formy &quot;kreatora&quot;?
+&gt; </span >
+Nie. Proponowana przez Ciebie forma jest niepoprawna. Gdyby chodziło o osobę kreującą np. modę – tak. Wówczas należy użyć w bierniku określenie „kreatora”. Jeśli chodzi o określenie interfejsu prowadzącego krok po kroku poprzez np. proces instalacyjny programu – kreator „Uruchom kreator”. Reasumując – jeśli odnosi się to do rzeczowników żywotnych występuje z końcówką „a”, nieżywotnych – bez.
+<span class="quote">&gt; Rozdział 8.7
+&gt; ============
+&gt; Microsoft w swoich konwencjach językowych zaleca tłumaczyć on this computer
+&gt; jako na tym komputerze w odniesieniu do oprogramowania, instalowania programów
+&gt; itp., ale w tym komputerze w odniesieniu do sprzętu. Jest to dobra zasada i
+&gt; warto ją przyjąć.
+&gt; 
+&gt; - Tu oczywiście nie mogę się zgodzić. Wiem, że jestem w tym osamotniony, więc
+&gt; będzie to klasyczne votum speratum, albo lepiej nec Hercules contra plures, </span >
+I chyba pozostanie Twoje votum separatum, bo takie określenie stało się uzusem i jest powszechnie akceptowalne.
+
+<span class="quote">&gt; Rozdział 8.22
+&gt; =============
+&gt; Pojawia się na przykład problem, czy pisać uruchomić kreator czy uruchomić
+&gt; kreatora.
+&gt; 
+&gt; - patrz wyżej, uwagi do rozdziału 8.6.</span >
+&gt;
+Wyjaśnienie w punkcie, do którego się odnosisz.
+
+<span class="quote">&gt; Rozdział 8.30
+&gt; =============
+&gt; obydwa wyrazy, unikalny i unikatowy, trzeba więc uznać za poprawne
+&gt; 
+&gt; - W GWO proponuję &quot;unikatowy&quot; wzgl. dla niektórych zastosowań &quot;niepowtarzalny&quot;.
+&gt; Unikalny kojarzy się trochę z unikaniem.</span >
+W tym punkcie jest podane, że „wyrazy bliskoznaczne – wyjątkowy, niepowtarzalny, jedyny w swoim rodzaju – mogą być czasem lepsze”.
+<span class="quote">&gt; 
+&gt; Rozdział 8.32
+&gt; =============
+&gt; Osoby pracujące w systemie Unix posługują się spolszczeniami wyrazów
+&gt; angielskich (np. używają słowa root, odmieniając je z polskimi końcówkami
+&gt; fleksyjnymi, zamiast określenia katalog główny).
+&gt; 
+&gt; - Nieścisłość; tu bym napisał &quot;zamiast określenia &quot;administrator&quot;. Nie
+&gt; słyszałem jeszcze, żeby ktoś mówił root o katalogu głównym.
+&gt; </span >
+Wykonam dokładne sprawdzenie i jeśli się potwierdzi dokonam odpowiedniej zmiany.
+
+<span class="quote">&gt; A w wersji tego programu dla Linuksa należy zastosować formy zgodne z systemem
+&gt; Linux.
+&gt; 
+&gt; - proponowałbym dodać przykład (np. katalog a nie folder).</span >
+&gt;
+Zalecenie „katalog a nie folder” powinno być w GWO.
+
+<span class="quote">&gt; Jeżeli tłumaczony program jest przeznaczony na wiele platform, należy stosować
+&gt; konwencje typowe dla platformy najbardziej popularnej, co z pewnością się
+&gt; sprowadzi do Microsoft Windows.
+&gt; 
+&gt; - To bym sobie podarował. Takie sformułowania zachęcają do praktyk, jak w
+&gt; lokalizacji programów Mozilli, która - wyrosła przecież z środowiska
+&gt; linuksowego - odcięła się od niego całkowicie i straszy wszędzie słownictwem
+&gt; windowsowym.To samo dotyczy np. OpenOffice, w którym mamy do czynienia z
+&gt; mieszanką słownictwa linuksowego i windowsowego, z przewagą tego ostatniego.</span >
+
+Mozilla wyrosła z Netscape'a, któremu było bliżej w nazewnictwie do określeń używanych w Windowsie niż w Uniksie. Dziwi mnie straszna ortodoksyjność w opiniach polskich –niksowców. Wersje oryginalne używają takich samych określeń, jak są używane w produktach M$ i jakoś jest wszystko dobrze. U nas jest to niemalże przestępstwo. Polscy Gnomowcy odżegnują się od określenia „folder”, a w wersji oryginalnej jest normalnie stosowane. Czy czasem nie jest to przeginanie, a może niewiedza i nieznajomość określenia „folder”. Ponadto obarczanie winą M$ za wymyślenie i używanie tego określenia jest totalną nieznajomością zagadnienia. Dla ułatwienia podam, że folder wymyśliło Apple. Chętnych zapoznania się z zagadnieniem „folderu” zachęcam do poczytania materiałów związanych z tym zagadnieniem w języku angielskim – zawsze najlepiej jest zasięgać informacji „u źródeł”. Jeśli chodzi o OpenOffice, to IMHO Marcin Miłkowski robi bardzo dobrą robotę i zna się na tym. Dałby Bóg abyśmy mieli takich tłumaczy w naszym zespole. Ja hołduje zasadzie, że należy uczyć się od mistrzów. Dla mnie Marcin jest takim mistrzem. Nie zapiera się rękami i nogami o wyimaginowane, dziwne zasady tylko patrzy trzeźwo i właściwie reaguje na to co się wokół dzieje. Tylko idąc tą drogą oprogramowanie open-source będzie zdobywało coraz szersze rzesze użytkowników. Kto tego nie rozumie, staje na drodze jego popularyzacji. Jeśli chodzi o M$, to zatrudnia najlepszych specjalistów od tłumaczenia oprogramowania w Polsce i od nich trzeba uczyć się. 
+Programy M$ mogą pozostawiać wiele do życzenia, ale ich tłumaczenia na język polski są bardzo dobre. Specjalnie podkreślę TŁUMACZENIA. Ponadto czy chcemy, czy nie Wingroza jest i długo będzie najpopularniejszym OS-em i dlatego w zaleceniach jest, aby odnosić się do najpopularniejszego systemu operacyjnego. Jeszcze raz powtórzę, jak mantrę TWÓRZMY TŁUMACZENIA DLA ZWYKŁEGO UŻYTKOWNIKA. a ZU w 95% używa Wingrozy.
+<span class="quote">&gt; 
+&gt; Rozdział 8.42
+&gt; =============
+&gt; Podobnie słowo machine znacznie lepiej przetłumaczyć jako komputer niż maszyna
+&gt; – jeśli chodzi o komputer.
+&gt; 
+&gt; - patrz GWO.
+&gt; </span >
+Przecież tak jest napisane w poradniku.
+
+<span class="quote">&gt; Rozdział 8.44
+&gt; =============
+&gt; Proponuję dodać rozważania na temat formy bezosobowej oraz kilka przykładów
+&gt; różnorodnych form (proszę, można, trzeba, należy itp.). Ponadto warto umieścić
+&gt; wskazówkę odnośnie nienadużywania słowa &quot;należy&quot;, które w ostatnich czasach
+&gt; zrobiło oszałamiającą karierę, niestety ze szkodą dla brzmienia tłumaczeń.
+&gt; </span >
+Można trochę więcej na ten temat wspomnieć. Kiedyś już na ten temat pisałeś. Podaj mi, w którym bugu na ten temat sie wypowiadałeś, a skorzystam z Twoich uwag i dołącze je do poradnika.
+ 
+<span class="quote">&gt; Rozdział 8.46
+&gt; =============
+&gt; Jednak ze względu na rozpowszechnienie tego typu określeń, jedynie zaleca się
+&gt; tę formę, a nie forsuje.
+&gt; 
+&gt; - niezrozumiałe.</span >
+Przeformułuję na bardziej jasne określenia.
+<span class="quote">&gt; 
+&gt; Propozycja dodania rozdziału 8.50 &quot;Poprawny kontra prawidłowy&quot;
+&gt; ==============================================================
+&gt; Słowo &quot;poprawny&quot; jest nadużywane i pojawia się często w nieodpowiednich
+&gt; miejscach. Przykłady z życia wzięte:
+&gt; - Niepoprawne hasło
+&gt; - Niepoprawne kodowanie (w Nautilusie, informacja o NIEZGODNYM z systemowym
+&gt; kodowaniem nazw plików i katalogów)
+&gt; - Niepoprawne dane
+&gt; i 1001 innych.
+&gt; Uważam, że w takich miejscach należy stosować inne określenia, np. wspomniane
+&gt; &quot;nieprawidłowy&quot;, &quot;błędny&quot; i in. Trzeba uczulić tłumaczy na zwracanie uwagi na
+&gt; kontekst i różnorodność określeń (podobnie jak w przypadku używania wszędzie
+&gt; &quot;należy&quot;).</span >
+Wojciechu, Sformułuj ten punkt w formie docelowej i dołączę go do poradnika
+<span class="quote">&gt; 
+&gt; Rozdział 9.1
+&gt; ============
+&gt; Proponowałbym podać przykład skrótu dla &quot;wyżej wymienione&quot; (ww.) wobec plagi
+&gt; nowomodnego w/w.
+&gt; </span >
+To jest w poradniku:
+„ Na przykład zamiast w/g (według) lepiej pisać wg, a zamiast w/w (wyżej wymieniony) – ww.”
+
+<span class="quote">&gt; Rozdział 9.3
+&gt; ============
+&gt; Liczby wielocyfrowe należy dzielić na grupy trzycyfrowe oddzielane odstępami.
+&gt; 
+&gt; - Proponowałbym dodać &quot;w polskiej konwencji zapisu&quot;, w celu uniknięcia
+&gt; nieporozumień.
+&gt; </span >
+Dodałem.
+<span class="quote">&gt; Proponuję przyjęcie zasady wyodrębniania grup cyfr tylko w liczbach dłuższych
+&gt; niż czterocyfrowe. Tak więc napiszemy 8192, ale 16 384.
+&gt; 
+&gt; - Lepiej nie. Doprowadzi to szybko do bałaganu.
+&gt; </span >
+??? Nie rozumiem, jakiego bałaganu.
+
+<span class="quote">&gt; Rozdział 9.5
+&gt; ============
+&gt; Oto kilka przykładów poprawnego zapisu kwot pieniężnych: 1 048 zł, 12 500,99
+&gt; zł, 12 500 zł 99 gr, 400 dolarów, 400 USD.
+&gt; 
+&gt; - Trzeba koniecznie przypomnieć, że PLN, USD itp. NIE są określeniami walut,
+&gt; lecz skrótami używanymi przez systemy bankowe. W tłumaczeniach (i wszelkich
+&gt; tekstach, może za wyjątkiem oprogramowania bankowego i jego dokumentacji)
+&gt; powinno się używać prawnie zatwierdzonych skrótów i symboli walut.</span >
+Zlikwidowałem USD i dodałem zapis o używaniu skrótów w systemach bankowych.
+<span class="quote">&gt; 
+&gt; Rozdział 9.8.3
+&gt; ==============
+&gt; Warto już tu podać negatywny przykład użycia przecinka np. &quot;Najpierw, trzeba
+&gt; przeczytać poradnik dla tłumaczy&quot; (First, you have to read the Translators
+&gt; Guide by L. Życzkowski).</span >
+Tam jest już dużo przykładów. Oby je nasi tłumacze stosowali.
+<span class="quote">&gt; 
+&gt; Rozdział 9.8.6
+&gt; ==============
+&gt; Cudzysłowy niemieckie składają się z cudzysłowu otwierającego ( » ) oraz
+&gt; końcowego zamykającego ( « ). Stosowane są do zagnieżdżania cytatów wewnątrz
+&gt; cytatów, na przykład: „Cytat »wewnątrz« cytatu.” (cytat drugiego poziomu) lub
+&gt; wyjątkowo jako cudzysłowy pierwszego poziomu do wyróżnień w tekście.
+&gt; 
+&gt; - proponowałbym uznać to jako zalecane.
+&gt; </span >
+Normy obowiązujące w Polsce i przykłady są podane w rozdziale 4.1, ale w tym miejscu dołączyłem, jako zasadę dla tłumaczy Aviary.pl
+
+<span class="quote">&gt; Rozdział 10.1
+&gt; =============
+&gt;  Wybierz polecenie Mmm » Ppp. (nazwy rozdzielono znakiem specjalnym w tym
+&gt; przypadku cudzysłowem francuskim; można też używać strzałek).
+&gt; 
+&gt; - proponowałbym uznać strzałki jako zalecane, chyba że zleceniodawca zażąda
+&gt; inaczej.
+&gt; </span >
+Z tym bym polemizował. Graficznie ładniej IMHO wygląda cudzysłów francuski.
+
+<span class="quote">&gt; Rozdział 10.4
+&gt; =============
+&gt; 1. Zgadzam się z Katarzyną; klikanie nie brzmi.
+&gt; 2. Jeśli tłumaczymy oprogramowanie do urządzeń przemysłowych (ekran dotykowy),
+&gt; telefonów itp. warto zwracać uwagę, aby zamienić klikania na sensowny w danym
+&gt; przypadku odpowiednik.
+&gt; </span >
+W tym rozdziale omawiane są „czynności wykonywane za pomocą myszy”, ale dodałem Twoją uwagę na temat ekranów dotykowych.
+<span class="quote">&gt; Rozdział 10.6
+&gt; =============
+&gt; Filename already exist. Do you want to overwrite existing file? - Nazwa pliku
+&gt; już istnieje. Czy zastąpić istniejący plik nowym?
+&gt; 
+&gt; - Tu mamy przykład błędnego tekstu w oryginale pociągającego za sobą błędne
+&gt; tłumaczenie i znaczenie przekładu. Powinno być chyba &quot;Istnieje już plik o tej
+&gt; nazwie&quot;?
+&gt; </span >
+I masz rację – poprawiłem. Dziękuję, to niewybaczalny błąd z mojej strony. :(
+
+<span class="quote">&gt; Rozdział 10.7
+&gt; =============
+&gt; Administrator's Guide - Podręcznik dla administratora
+&gt; 
+&gt; - a nie lepiej &quot;Podręcznik administratora&quot;?
+&gt; </span >
+
+Proponowany przez Ciebie termin jest szeroko rozpowszechniony. Jak tak dalej pójdzie, to stanie się uzusem – oby nie. Określenie „Podręcznik administratora” wskazuje, że właścicielem podręcznika jest administrator. Podobnie jest z „Instrukcja użytkownika”. Powinno być „Instrukcja użytkowania”. „Podręcznik administratora” jest typową kalką z angielskiego. Po polsku powinno być „Podręcznik dla administratora”</pre>
+    </div>
+
+    <div id="c9" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2638.html#c9">Comment 9</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Wojciech Szczęsny</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-10-16 14:23:43 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(w odpowiedzi na komentarz #7)
+<span class="quote">&gt; Rozdział 8.32
+&gt; =============
+&gt; Osoby pracujące w systemie Unix posługują się spolszczeniami wyrazów
+&gt; angielskich (np. używają słowa root, odmieniając je z polskimi końcówkami
+&gt; fleksyjnymi, zamiast określenia katalog główny).
+&gt; 
+&gt; - Nieścisłość; tu bym napisał &quot;zamiast określenia &quot;administrator&quot;. Nie
+&gt; słyszałem jeszcze, żeby ktoś mówił root o katalogu głównym.</span >
+
+Niekoniecznie jest to nieścisłość - istnieje coś takiego jak root directory (<a href="http://en.wikipedia.org/wiki/Root_directory">http://en.wikipedia.org/wiki/Root_directory</a>)</pre>
+    </div>
+
+    <div id="c10" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2638.html#c10">Comment 10</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Wojciech Kapusta</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-10-17 10:37:22 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text"><span class="quote">&gt; &gt; Rozdział 8.6
+&gt; &gt; ============
+&gt; &gt; * zastosować (biernik, kogo, co) kreator, plik, program itd.
+&gt; &gt; 
+&gt; &gt; - czy nie należałoby użyć formy &quot;kreatora&quot;?
+&gt; &gt; 
+&gt; Nie. Proponowana przez Ciebie forma jest niepoprawna. Gdyby chodziło o osobę
+&gt; kreującą np. modę – tak. Wówczas należy użyć w bierniku określenie „kreatora”.
+&gt; Jeśli chodzi o określenie interfejsu prowadzącego krok po kroku poprzez np.
+&gt; proces instalacyjny programu – kreator „Uruchom kreator”. Reasumując – jeśli
+&gt; odnosi się to do rzeczowników żywotnych występuje z końcówką „a”, nieżywotnych
+&gt; – bez.</span >
+
+Czyli mamy napisać: &quot;trzeba użyć program Xyz&quot; a nie &quot;trzeba użyć programu Xyz&quot;???
+
+
+
+<span class="quote">&gt; &gt; Rozdział 8.7
+&gt; &gt; ============
+&gt; &gt; Microsoft w swoich konwencjach językowych zaleca tłumaczyć on this computer
+&gt; &gt; jako na tym komputerze w odniesieniu do oprogramowania, instalowania programów
+&gt; &gt; itp., ale w tym komputerze w odniesieniu do sprzętu. Jest to dobra zasada i
+&gt; &gt; warto ją przyjąć.
+&gt; &gt; 
+&gt; &gt; - Tu oczywiście nie mogę się zgodzić. Wiem, że jestem w tym osamotniony, więc
+&gt; &gt; będzie to klasyczne votum speratum, albo lepiej nec Hercules contra plures, 
+&gt; I chyba pozostanie Twoje votum separatum, bo takie określenie stało się uzusem
+&gt; i jest powszechnie akceptowalne.</span >
+
+To znaczy, że słowo k...a (a także szereg innych), które stało się uzusem wśród młodzieży, polityków, aktorów i wielu innych grup społecznych ma być przez nas używane, bo jest uzusem? To tak samo można powiedzieć, że ponieważ 80% kierowców nie wie, jak używać kierunkowskazu (STOP - wg. powyższej reguły - kierunkowskaz) na rondzie, więc ja też mam go źle używać, bo taki jest &quot;uzus&quot;?
+
+
+
+<span class="quote">&gt; &gt; A w wersji tego programu dla Linuksa należy zastosować formy zgodne z systemem Linux.
+&gt; &gt; 
+&gt; &gt; - proponowałbym dodać przykład (np. katalog a nie folder).
+&gt; &gt;
+&gt; Zalecenie „katalog a nie folder” powinno być w GWO.</span >
+- Jest.
+
+
+
+<span class="quote">&gt; TWÓRZMY TŁUMACZENIA DLA ZWYKŁEGO UŻYTKOWNIKA a ZU w 95% używa Wingrozy.</span >
+
+To może w takim razie zlikwidujmy grupę Gnomową, bo jej prowadzenie jest sprzeczne ze zdrowym rozsądkiem? To po co tu w ogóle dyskutujemy? Skoro mamy wykonywać tłumaczenia dla i zgodne z M$ Window$, działania związane z przedmiotowym poradnikiem oraz z GWO są całkowicie niepotrzebne - wszystko można znaleźć w poradnikach i podobnych dokumentach Micro$oftu.
+
+
+
+<span class="quote">&gt; &gt; Rozdział 8.42
+&gt; &gt; =============
+&gt; &gt; Podobnie słowo machine znacznie lepiej przetłumaczyć jako komputer niż maszyna
+&gt; &gt; – jeśli chodzi o komputer.
+&gt; &gt; 
+&gt; &gt; - patrz GWO.
+&gt; &gt; 
+&gt; Przecież tak jest napisane w poradniku.</span >
+
+Podałem to tylko jako potwierdzenie. Może ktoś ze śledzących tę dy6skusję przypomni sobie, że taki projekt istnieje.
+
+
+
+<span class="quote">&gt; &gt; Rozdział 9.1
+&gt; &gt; ============
+&gt; &gt; Proponowałbym podać przykład skrótu dla &quot;wyżej wymienione&quot; (ww.) wobec plagi
+&gt; &gt; nowomodnego w/w.
+&gt; &gt; 
+&gt; To jest w poradniku:
+&gt; „ Na przykład zamiast w/g (według) lepiej pisać wg, a zamiast w/w (wyżej
+&gt; wymieniony) – ww.”</span >
+
+Przepraszam, nie zauważyłem.
+
+
+
+<span class="quote">&gt; &gt; Rozdział 9.3
+&gt; &gt; ============</span >
+
+<span class="quote">&gt; &gt; Proponuję przyjęcie zasady wyodrębniania grup cyfr tylko w liczbach dłuższych &gt; &gt; niż czterocyfrowe. Tak więc napiszemy 8192, ale 16 384.
+&gt; &gt; 
+&gt; &gt; - Lepiej nie. Doprowadzi to szybko do bałaganu.
+&gt; &gt; 
+&gt; ??? Nie rozumiem, jakiego bałaganu.</span >
+
+W wyniku tej niekonsekwencji. Poza tym, dlaczego mielibyśmy pisać 1000 zamiast 1 000, skoro piszemy 10 000, czy 100 000?</pre>
+    </div>
+
+    <div id="c11" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2638.html#c11">Comment 11</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Wojciech Kapusta</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-10-17 10:39:54 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text"><span class="quote">&gt; Niekoniecznie jest to nieścisłość - istnieje coś takiego jak root directory
+&gt; (<a href="http://en.wikipedia.org/wiki/Root_directory">http://en.wikipedia.org/wiki/Root_directory</a>)</span >
+
+Tak, jest nawet w GWO.
+
+Ale proszę, przeczytaj dokładnie: &quot;Nie słyszałem jeszcze, żeby ktoś mówił root o katalogu głównym&quot;.</pre>
+    </div>
+
+    <div id="c12" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2638.html#c12">Comment 12</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Wojciech Szczęsny</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-10-17 11:15:48 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(w odpowiedzi na komentarz #10)
+<span class="quote">&gt; &gt; &gt; Rozdział 8.6
+&gt; &gt; &gt; ============
+&gt; &gt; &gt; * zastosować (biernik, kogo, co) kreator, plik, program itd.
+&gt; &gt; &gt; 
+&gt; &gt; &gt; - czy nie należałoby użyć formy &quot;kreatora&quot;?
+&gt; &gt; &gt; 
+&gt; &gt; Nie. Proponowana przez Ciebie forma jest niepoprawna. Gdyby chodziło o osobę
+&gt; &gt; kreującą np. modę – tak. Wówczas należy użyć w bierniku określenie „kreatora”.
+&gt; &gt; Jeśli chodzi o określenie interfejsu prowadzącego krok po kroku poprzez np.
+&gt; &gt; proces instalacyjny programu – kreator „Uruchom kreator”. Reasumując – jeśli
+&gt; &gt; odnosi się to do rzeczowników żywotnych występuje z końcówką „a”, nieżywotnych
+&gt; &gt; – bez.
+&gt; 
+&gt; Czyli mamy napisać: &quot;trzeba użyć program Xyz&quot; a nie &quot;trzeba użyć programu
+&gt; Xyz&quot;???</span >
+
+Piszemy &quot;trzeba użyć programu Xyz&quot;, ponieważ czasownik &quot;użyć&quot; wymaga dopełniacza (użyć czegoś), a nie biernika (użyć coś). Powyższa dyskusja wiąże się zaś z formami biernika rzeczowników żywotnych i nieżywotnych.
+
+Słowa &quot;kreator&quot;, &quot;menedżer&quot; są mylące dlatego, że mają dwa znaczenia. Mogą określać zarówno osobę, jak i mechanizm. W zależności od znaczenia będą miały inną końcówkę biernika. Słowo &quot;program&quot; nie sprawia takich trudności i raczej nikt z nas nie powie &quot;zastosować programa&quot; :)</pre>
+    </div>
+
+    <div id="c13" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2638.html#c13">Comment 13</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Leszek Życzkowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-10-17 12:44:59 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(w odpowiedzi na komentarz #10)
+<span class="quote">&gt; &gt; TWÓRZMY TŁUMACZENIA DLA ZWYKŁEGO UŻYTKOWNIKA a ZU w 95% używa Wingrozy.
+&gt; 
+&gt; To może w takim razie zlikwidujmy grupę Gnomową, bo jej prowadzenie jest
+&gt; sprzeczne ze zdrowym rozsądkiem? To po co tu w ogóle dyskutujemy? Skoro mamy
+&gt; wykonywać tłumaczenia dla i zgodne z M$ Window$, działania związane z
+&gt; przedmiotowym poradnikiem oraz z GWO są całkowicie niepotrzebne - wszystko
+&gt; można znaleźć w poradnikach i podobnych dokumentach Micro$oftu.
+&gt; </span >
+To oznacza, że grupa gnomowa istnieje tylko po to, by robić tłumaczenia Gnome dla wąskiego grona specjalistów? Dlaczego Linux i platformy graficzne z nim powiązane mają komunikować się mało zrozumiałym dla osób nieobeznanych z tymi środowiskami językiem? – dodatkowo językiem mijającym się z polską składnią i rytmem.
+Tę kwestię trzeba rozpatrywać w kontekście całego zapisu, a tam stoi napisane, że chodzi o programy działające na wielu platformach… Jak wiele aplikacji gnomowych działa na wielu platformach?
+Idąc tym tokiem rozumowania, to zlikwidujmy grupę firefoksową, flockową…
+
+<span class="quote">&gt; &gt; &gt; Rozdział 9.3
+&gt; &gt; &gt; ============
+&gt; 
+&gt; &gt; &gt; Proponuję przyjęcie zasady wyodrębniania grup cyfr tylko w liczbach dłuższych &gt; &gt; niż czterocyfrowe. Tak więc napiszemy 8192, ale 16 384.
+&gt; &gt; &gt; 
+&gt; &gt; &gt; - Lepiej nie. Doprowadzi to szybko do bałaganu.
+&gt; &gt; &gt; 
+&gt; &gt; ??? Nie rozumiem, jakiego bałaganu.
+&gt; 
+&gt; W wyniku tej niekonsekwencji. Poza tym, dlaczego mielibyśmy pisać 1000 zamiast
+&gt; 1 000, skoro piszemy 10 000, czy 100 000?</span >
+
+<a href="http://poradnia.pwn.pl/lista.php?id=8944">http://poradnia.pwn.pl/lista.php?id=8944</a></pre>
+    </div>
+
+    <div id="c14" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2638.html#c14">Comment 14</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Wojciech Kapusta</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-10-17 15:01:49 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">OK. Zapoznałem się z poradą z tej poradni i widzę od razu niekonsekwencję:
+
+&quot;oddziela się dla większej czytelności odstępem (w postaci spacji twardej) TYSIĄCE, miliony, miliardy itd.&quot;
+
+a niżej:
+
+&quot;Wyjątkowo tylko oddziela się spacją tysiące w liczbach czterocyfrowych&quot;
+
+Z całym szacunkiem dla Pana Wolańskiego - to niech się zdecyduje, albo tak, albo siak. Ciekawe, co by powiedzieli moi klienci, gdybym w moich przekładach niekiedy bardzo naukowych opracowań raz używał separatora, a raz nie. To jest jedna z bardziej bzdurnych porad w tej poradni, i po raz któryś z kolei potwierdza ona moje przekonanie, że lepiej do niej nie zaglądać.
+
+***
+
+Oczywiście jako autor tego poradnika masz prawo napisać w nim, co zechcesz, ale chciałbym jednak prywatnie szczerze poradzić ostrożność, szczególnie w przypadkach korzystania z źródeł internetowych. Nie mówię, że są one napisane w złej wierze, ale niekiedy lepiej zachować własny, zdrowy rozsądek.</pre>
+    </div>
+
+    <div id="c15" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2638.html#c15">Comment 15</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Leszek Życzkowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-10-17 15:21:27 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(w odpowiedzi na komentarz #14)
+<span class="quote">&gt; OK. Zapoznałem się z poradą z tej poradni i widzę od razu niekonsekwencję:
+&gt; 
+&gt; &quot;oddziela się dla większej czytelności odstępem (w postaci spacji twardej)
+&gt; TYSIĄCE, miliony, miliardy itd.&quot;
+&gt; 
+&gt; a niżej:
+&gt; 
+&gt; &quot;Wyjątkowo tylko oddziela się spacją tysiące w liczbach czterocyfrowych&quot;
+&gt; 
+&gt; Z całym szacunkiem dla Pana Wolańskiego - to niech się zdecyduje, albo tak,
+&gt; albo siak. Ciekawe, co by powiedzieli moi klienci, gdybym w moich przekładach
+&gt; niekiedy bardzo naukowych opracowań raz używał separatora, a raz nie. To jest
+&gt; jedna z bardziej bzdurnych porad w tej poradni, i po raz któryś z kolei
+&gt; potwierdza ona moje przekonanie, że lepiej do niej nie zaglądać.
+&gt; </span >
+Wojciechu, bo stracę cały szacunek dla Ciebie, jaki mam. Dlaczego manipulujesz danymi?
+Całość brzmi:
+„Wyjątkowo tylko oddziela się spacją tysiące w liczbach czterocyfrowych, gdy w rubryce tabeli występują zarówno liczby czterocyfrowe, jak i dłuższe.”
+
+Podkreślam – „GDY W RUBRYCE TABELI” !!!!</pre>
+    </div>
+
+    <div id="c16" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2638.html#c16">Comment 16</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-10-17 15:38:57 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(w odpowiedzi na komentarz #14)
+
+<span class="quote">&gt; Poza tym, dlaczego mielibyśmy pisać 1000 zamiast
+&gt; 1 000, skoro piszemy 10 000, czy 100 000?</span >
+
+Wojciechu, ten punkt o zapisie liczb (poza zdaniem o tabelach) obowiązuje wszystkich tłumaczy Aviary.pl już od mniej więcej 4 miesięcy - <a href="http://wiki.aviary.pl/Jak_t%C5%82umaczy%C4%87">http://wiki.aviary.pl/Jak_t%C5%82umaczy%C4%87</a></pre>
+    </div>
+
+    <div id="c17" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2638.html#c17">Comment 17</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-10-18 09:01:03 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">słuchajcie, dyskusja tutaj jest fascynująca, ale trudno mi się śledzi kiedy odnosicie się do poszczególnych wątków, a całość w nieskończoność się wydłuża...
+
+Powiedzcie mi, czy nie sądzicie, że lepiej przenieść dyskusję na temat *konkretnych* fragmentów na narzędzie typu co-ment, stworzone właśnie do grupowego doskonalenia dokumentu?
+
+Tutaj jest dokument stworzony do dyskusji nad statutem: <a href="http://www.co-ment.net/text/1629/">http://www.co-ment.net/text/1629/</a>
+
+Możemy stworzyć identyczny dla Poradnika... łatwiej by mi się to czytało wraz z dotychczasowymi uwagami i dodawało komentarze widząc poprzednie.</pre>
+    </div>
+
+    <div id="c18" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2638.html#c18">Comment 18</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Leszek Życzkowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-10-18 13:06:56 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(w odpowiedzi na komentarz #17)
+ 
+<span class="quote">&gt; Możemy stworzyć identyczny dla Poradnika... łatwiej by mi się to czytało wraz z
+&gt; dotychczasowymi uwagami i dodawało komentarze widząc poprzednie.</span >
+
+Czemu nie? Mnie się to podoba, ale Prezes mówił, że wszystko musi być w Bugzilli.</pre>
+    </div>
+
+    <div id="c19" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2638.html#c19">Comment 19</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-12-18 06:25:20 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(w odpowiedzi na komentarz #18)
+<span class="quote">&gt; (w odpowiedzi na komentarz #17)
+&gt; 
+&gt; &gt; Możemy stworzyć identyczny dla Poradnika... łatwiej by mi się to czytało wraz z
+&gt; &gt; dotychczasowymi uwagami i dodawało komentarze widząc poprzednie.
+&gt; 
+&gt; Czemu nie? Mnie się to podoba, ale Prezes mówił, że wszystko musi być w
+&gt; Bugzilli.</span >
+
+Może być i tam, byle wszystko było publiczne, byle było wiadomo gdzie jest ostatnia wersja i byle z tego buga można się było dowiedzieć jaki jest aktualny status.</pre>
+    </div>
+
+
+  
+
+</td>
+<td>
+</td>
+</tr></table>
+  </div>
+
+    <hr><div id="add_comment" class="bz_section_additional_comments">
+      <table>
+        <tr>
+          <td>
+            <fieldset>
+              <legend>Note</legend>
+              You need to
+              <a href="show_bug.cgi%3Fid=2638&amp;GoAheadAndLogIn=1.html">log in</a>
+              before you can comment on or make changes to this bug.
+            </fieldset>
+          </td>
+        </tr> 
+      </table>
+  </div>        
+
+</form>
+
+<hr>
+<ul class="related_actions">
+    <li><a href="show_bug.cgi%3Fformat=multiple&amp;id=2638.html">Format For Printing</a></li>
+    <li>&nbsp;-&nbsp;<a href="show_bug.cgi%3Fctype=xml&amp;id=2638">XML</a></li>
+    <li>&nbsp;-&nbsp;<a href="enter_bug.cgi%3Fcloned_bug_id=2638.html">Clone This Bug</a></li>
+    
+    <li>&nbsp;-&nbsp;<a href="show_bug.cgi%3Fid=2638.html#">Top of page </a></li>
+    </ul>
+
+<br>
+</div>
+
+    <div id="footer">
+      <div class="intro"></div>
+<ul id="useful-links">
+  <li id="links-actions"><ul class="links">
+  <li><a href="index.html">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi.html">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi.html">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi.html">Search</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="http://bugs.aviary.pl/buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input type="hidden" id="no_redirect_bottom" name="no_redirect" value="0">
+    <script type="text/javascript">
+      if (history && history.replaceState) {
+        var no_redirect = document.getElementById("no_redirect_bottom");
+        no_redirect.value = 1;
+      }
+    </script>
+    <input class="txt" type="text" id="quicksearch_bottom" name="quicksearch" 
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search" 
+           id="find_bottom"></form>
+  <a href="page.cgi%3Fid=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="report.cgi.html">Reports</a></li>
+
+  <li>
+      <span class="separator">| </span>
+        <a href="request.cgi.html">Requests</a></li>
+
+
+  <li>
+        <span class="separator">| </span>
+        <a href="https://bugzilla.readthedocs.org/en/5.0/using/understanding.html" target="_blank">Help</a>
+      </li>
+    
+      <li id="new_account_container_bottom">
+        <span class="separator">| </span>
+        <a href="createaccount.cgi.html">New&nbsp;Account</a>
+      </li>
+
+    <li id="mini_login_container_bottom">
+  <span class="separator">| </span>
+  <a id="login_link_bottom" href="show_bug.cgi%3Fid=2638&amp;GoAheadAndLogIn=1.html"
+     onclick="return show_mini_login_form('_bottom')">Log In</a>
+
+  <form action="show_bug.cgi%3Fid=2638.html" method="POST"
+        class="mini_login bz_default_hidden"
+        id="mini_login_bottom">
+    <input id="Bugzilla_login_bottom" required
+           name="Bugzilla_login" class="bz_login"
+        type="email" placeholder="Email Address">
+    <input class="bz_password" name="Bugzilla_password" type="password"
+           id="Bugzilla_password_bottom" required
+           placeholder="Password">
+    <input type="hidden" name="Bugzilla_login_token"
+           value="1469821655-21g3IHIP7-lDvYbXZNKxckn7N9rcLePOtdLx6cOlcxM">
+    <input type="submit" name="GoAheadAndLogIn" value="Log in"
+            id="log_in_bottom">
+    <a href="show_bug.cgi%3Fid=2638.html#" onclick="return hide_mini_login_form('_bottom')">[x]</a>
+  </form>
+</li>
+
+
+  <li id="forgot_container_bottom">
+    <span class="separator">| </span>
+    <a id="forgot_link_bottom" href="show_bug.cgi%3Fid=2638&amp;GoAheadAndLogIn=1.html#forgot"
+       onclick="return show_forgot_form('_bottom')">Forgot Password</a>
+    <form action="http://bugs.aviary.pl/token.cgi" method="post" id="forgot_form_bottom"
+          class="mini_forgot bz_default_hidden">
+      <label for="login_bottom">Login:</label>
+      <input name="loginname" size="20" id="login_bottom" required
+          type="email" placeholder="Your Email Address">
+      <input id="forgot_button_bottom" value="Reset Password" type="submit">
+      <input type="hidden" name="a" value="reqpw">
+      <input type="hidden" id="token_bottom" name="token"
+             value="1469821655-h8p-9hXYzH6FB2FREogWLCCEVlxgyHiFjARQHeaqVwM">
+      <a href="show_bug.cgi%3Fid=2638.html#" onclick="return hide_forgot_form('_bottom')">[x]</a>
+    </form>
+  </li>
+</ul>
+  </li>
+
+  
+
+
+
+
+  
+</ul>
+
+      <div class="outro"></div>
+    </div>
+
+  </body>
+</html>

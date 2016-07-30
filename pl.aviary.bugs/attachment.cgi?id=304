@@ -1,0 +1,1060 @@
+=== default/request/queue.html.tmpl
+==================================================================
+--- default/request/queue.html.tmpl   (/2.18/pl-patch/template/pl)   (revision 35)
++++ default/request/queue.html.tmpl   (/2.18/pl-trunk/template/pl)   (revision 35)
+@@ -24,7 +24,7 @@
+ [% USE Bugzilla %]
+ [% cgi = Bugzilla.cgi %]
+ 
+-[%# The javascript and header_html blocks get used in header.html.tmpl. %]
++[%# The javascript block gets used in header.html.tmpl. %]
+ [% javascript = BLOCK %]
+   var usetms = 0; // do we have target milestone?
+   var first_load = 1; // is this the first time we load the page?
+@@ -36,10 +36,6 @@
+   [% END %]
+ [% END %]
+ 
+-[% header_html = BLOCK %]
+-  <script language="JavaScript" type="text/javascript" src="productmenu.js"></script>
+-[% END %]
+-
+ [% filter_form = BLOCK %]
+ <form action="request.cgi" method="get">
+   <input type="hidden" name="action" value="queue">
+@@ -131,6 +127,8 @@
+     table.requests th { text-align: left; }
+     table#filter th { text-align: right; }
+   "
++  onload="selectProduct(document.forms[0], 'product', 'component', 'Any');"
++  javascript_urls=["productmenu.js"]
+ %]
+ 
+ [% IF debug %]
+=== default/attachment/diff-header.html.tmpl
+==================================================================
+--- default/attachment/diff-header.html.tmpl   (/2.18/pl-patch/template/pl)   (revision 35)
++++ default/attachment/diff-header.html.tmpl   (/2.18/pl-trunk/template/pl)   (revision 35)
+@@ -219,6 +219,7 @@
+ [% ELSE %]
+   <html>
+   <head>
++  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <style type="text/css">
+   [% style %]
+   </style>
+@@ -239,7 +240,7 @@
+     | <a href="[% PROCESS editurl id=attachid %]">Edytuj</a>
+     | <a href="[% PROCESS diffurl id=attachid %]&amp;context=[% context FILTER html %]&amp;collapsed=[% collapsed FILTER html %]&amp;headers=[% headers FILTER html %]&amp;format=raw">Tekst łatki w postaci surowej</a>
+   [% END %]
+-  [% IF other_patches %]
++  [% IF other_patches.size > 0 %]
+     [% IF headers %] |[%END%]
+     Różnice pomiędzy
+     <form style="display: inline" action="">
+=== default/admin/flag-type/edit.html.tmpl
+==================================================================
+--- default/admin/flag-type/edit.html.tmpl   (/2.18/pl-patch/template/pl)   (revision 35)
++++ default/admin/flag-type/edit.html.tmpl   (/2.18/pl-trunk/template/pl)   (revision 35)
+@@ -21,7 +21,7 @@
+ 
+ [% PROCESS global/variables.none.tmpl %]
+ 
+-[%# The javascript and header_html blocks get used in header.html.tmpl. %]
++[%# The javascript block gets used in header.html.tmpl. %]
+ [% javascript = BLOCK %]
+   var usetms = 0; // do we have target milestone?
+   var first_load = 1; // is this the first time we load the page?
+@@ -33,10 +33,6 @@
+   [% END %]
+ [% END %]
+ 
+-[% header_html = BLOCK %]
+-  <script language="JavaScript" type="text/javascript" src="productmenu.js"></script>
+-[% END %]
+-
+ [% IF type.target_type == "bug" %]
+   [% title = BLOCK %]Create Flag Type for [% terms.Bugs %][% END %]
+   [% typeLabelLowerPlural = BLOCK %][% terms.bugs %][% END %]
+@@ -59,7 +55,8 @@
+     table#form th { text-align: right; vertical-align: baseline; white-space: nowrap; }
+     table#form td { text-align: left; vertical-align: baseline; }
+   "
+-  onload="selectProduct(forms[0], 'product', 'component', '__Any__');"
++  onload="selectProduct(document.forms[0], 'product', 'component', '__Any__');"
++  javascript_urls=["productmenu.js"]
+ %]
+ 
+ <form method="post" action="editflagtypes.cgi">
+=== default/account/prefs/email.html.tmpl
+==================================================================
+--- default/account/prefs/email.html.tmpl   (/2.18/pl-patch/template/pl)   (revision 35)
++++ default/account/prefs/email.html.tmpl   (/2.18/pl-trunk/template/pl)   (revision 35)
+@@ -18,6 +18,7 @@
+   #
+   # Contributor(s): Gervase Markham <gerv@gerv.net>
+   #                 Myk Melez <myk@mozilla.org>
++  #                 Shane H. W. Travis <travis@sedsystems.ca>
+   #%]
+ 
+ [%# INTERFACE:
+@@ -35,6 +36,7 @@
+ [% PROCESS global/variables.none.tmpl %]
+ 
+ [% useqacontact = Param('useqacontact') %]
++[% usevotes = Param('usevotes') %]
+ 
+ <table>
+   [% IF Param('supportwatchers') %]
+@@ -141,7 +143,7 @@
+ 
+ <table width="100%" border="1">
+   <tr>
+-    <td colspan="[% useqacontact ? '5' : '4' %]" align="center" width="50%">
++    <td colspan="[% (useqacontact AND usevotes) ? '5' : ((useqacontact OR usevotes) ? '4' : '3') %]" align="center" width="50%">
+       <b>Kiedy mój związek z tymi [% terms.bledami %] jest następujący:</b>
+     </td>
+     <td rowspan="2" width="50%">
+@@ -164,9 +166,11 @@
+     <td align="center" width="10%">
+       <b>Obserwator</b>
+     </td>
+-    <td align="center" width="10%">
+-      <b>Głosujący</b>
+-    </td>
++    [% IF usevotes %]
++      <td align="center" width="10%">
++        <b>Głosujący</b>
++      </td>
++    [% END %]
+   </tr>
+ 
+ [% bugLabelLower = BLOCK %]
+@@ -197,6 +201,7 @@
+       [% FOREACH role = [ "Reporter", "Owner", "QAcontact", "CClist", "Voter" ]
+        %]
+         [% NEXT IF role == "QAcontact" AND NOT useqacontact %]
++        [% NEXT IF role == "Voter" AND NOT usevotes %]
+         <td align="center">
+           <input type="checkbox" name="email[% role %][% reason.name %]" value="on"
+             [% " checked" IF $role.${reason.name} %]>
+=== default/account/prefs/saved-searches.html.tmpl
+==================================================================
+--- default/account/prefs/saved-searches.html.tmpl   (/2.18/pl-patch/template/pl)   (revision 35)
++++ default/account/prefs/saved-searches.html.tmpl   (/2.18/pl-trunk/template/pl)   (revision 35)
+@@ -66,7 +66,7 @@
+           <a href="buglist.cgi?[% q.query FILTER html %]">Wyszukaj</a>
+         </td>
+         <td>
+-          <a href="query.cgi?[% q.query FILTER html %]">Edytuj</a>
++          <a href="query.cgi?[% q.query FILTER html %]&known_name=[% q.name FILTER url_quote %]">Edytuj</a>
+         </td>
+         <td>
+           <a href="buglist.cgi?cmdtype=dorem&amp;remaction=forget&amp;namedcmd=
+=== default/account/create.html.tmpl
+==================================================================
+--- default/account/create.html.tmpl   (/2.18/pl-patch/template/pl)   (revision 35)
++++ default/account/create.html.tmpl   (/2.18/pl-trunk/template/pl)   (revision 35)
+@@ -39,7 +39,7 @@
+   na adres podany w trakcie tworzenia konta. <b>Nie będziesz w stanie
+   zalogować się do czasu otrzymania e-maila.</b> Jeśli wiadomość nie
+   dotrze w rozsądnym czasie, skontaktuj się z opiekunem tej
+-  instalacji %[ terms.Bugzilli %] pod adresem
++  instalacji [% terms.Bugzilli %] pod adresem
+   <a href="mailto:[% Param("maintainer") %]">[% Param("maintainer") %]</a>.
+ </p>
+ 
+=== default/reports/duplicates-simple.html.tmpl
+==================================================================
+--- default/reports/duplicates-simple.html.tmpl   (/2.18/pl-patch/template/pl)   (revision 35)
++++ default/reports/duplicates-simple.html.tmpl   (/2.18/pl-trunk/template/pl)   (revision 35)
+@@ -34,6 +34,7 @@
+   [% END%]
+ 
+   <head>
++    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+     <title>[% title FILTER html %]</title>
+   </head>
+ 
+=== default/pages/fields.html.tmpl
+==================================================================
+--- default/pages/fields.html.tmpl   (/2.18/pl-patch/template/pl)   (revision 35)
++++ default/pages/fields.html.tmpl   (/2.18/pl-trunk/template/pl)   (revision 35)
+@@ -52,44 +52,57 @@
+   <tr valign="top">
+     <td>
+       <dl>
+-        <dt><b>UNCONFIRMED</b> (niepotwierdzony)</dt>
++        <dt>
++          <b>UNCONFIRMED</b> (niepotwierdzony)
++        </dt>
++        <dd>
++          Ten [% terms.blad %] został niedawno dodany do bazy [% terms.bledow %]. 
++          Nikt nie potwierdził czy dany [% terms.blad %] jest poprawny. Użytkownicy
++          którzy posiadają uprawnienie "canconfirm", mogą potwierdzić [% terms.blad %], 
++          zmieniając jego status na <b>NEW</b>. Ewentualnie może on być bezpośrednio rozwiązany
++          i oznaczony jako <b>RESOLVED</b>.
++        </dd>
+ 
+-        <dd>Ten [% terms.blad %] został niedawno dodany do bazy [% terms.bledow %]. 
+-        Nikt nie potwierdził czy dany [% terms.blad %] jest poprawny. Użytkownicy
+-        którzy posiadają uprawnienie "canconfirm", mogą potwierdzić [% terms.blad %], 
+-        zmieniając jego status na <b>NEW</b>. Ewentualnie może on być bezpośrednio rozwiązany
+-        i oznaczony jako <b>RESOLVED</b>.</dd>
++        <dt>
++          <b>NEW</b> (nowy)
++        </dt>
++        <dd>
++          Ten [% terms.blad %] został niedawno dodany do listy [% terms.bledow %]
++          które powinny byś obsłużone. [% terms.Blad %] o tym statusie może zostać
++          zaakceptowany i zmienić status na <b>ASSIGNED</b>, przypisany do kogoś innego
++          i pozostać <b>NEW</b>, lub zostać rozwiązany ze statusem <b>RESOLVED</b>.
++        </dd>
+ 
+-        <dt><b>NEW</b> (nowy)</dt>
++        <dt>
++          <b>ASSIGNED</b> (przypisany)
++        </dt>
++        <dd>
++          Ten [% terms.blad %] nie został jeszcze rozwiązany, lecz zaostał przypisany
++          do właściwej osoby. Taki [% terms.blad %] może zostać przypisany innej osobie
++          i zmienić status na <b>NEW</b>, albo zostać rozwiązany ze zmianą statusu na
++          <b>RESOLVED</b>.
++        </dd>
+ 
+-        <dd>Ten [% terms.blad %] został niedawno dodany do listy [% terms.bledow %]
+-        które powinny byś obsłużone. [% terms.Blad %] o tym statusie może zostać
+-        zaakceptowany i zmienić status na <b>ASSIGNED</b>, przypisany do kogoś innego
+-        i pozostać <b>NEW</b>, lub zostać rozwiązany ze statusem <b>RESOLVED</b>.
++        <dt>
++          <b>REOPENED</b> (powtórnie otworzony)
++        </dt>
++        <dd>
++          Ten [% terms.blad %] został już raz rozwiązany, lecz rozwiązanie okazało się
++          niepoprawne. Przykładowo [% terms.blad %] o statusie <b>WORKSFORME</b> może zostać
++          powtórnie otworzony, kiedy zostanie podane więcej informacji, które wystarczą do
++          powtórzenia [% terms.bledu %] przez zainteresowane osoby. [% terms.Bledy %] tego
++          typu mogą zmienić status na <b>ASSIGNED</b> lub <b>RESOLVED</b>.
+         </dd>
+-
+-        <dt><b>ASSIGNED</b> (przypisany)</dt>
+-
+-        <dd>Ten [% terms.blad %] nie został jeszcze rozwiązany, lecz zaostał przypisany
+-        do właściwej osoby. Taki [% terms.blad %] może zostać przypisany innej osobie
+-        i zmienić status na <b>NEW</b>, albo zostać rozwiązany ze zmianą statusu na
+-        <b>RESOLVED</b>.</dd>
+-
+-        <dt><b>REOPENED</b> (powtórnie otworzony)</dt>
+-
+-        <dd>Ten [% terms.blad %] został już raz rozwiązany, lecz rozwiązanie okazało się
+-        niepoprawne. Przykładowo [% terms.blad %] o statusie <b>WORKSFORME</b> może zostać
+-        powtórnie otworzony, kiedy zostanie podane więcej informacji, które wystarczą do
+-        powtórzenia [% terms.bledu %] przez zainteresowane osoby. [% terms.Bledy %] tego
+-        typu mogą zmienić status na <b>ASSIGNED</b> lub <b>RESOLVED</b>.</dd>
+       </dl>
+     </td>
+ 
+     <td>
+       <dl>
+-        <dd>Brak rozwiązania. Dla [% terms.bledow %] o tych "otwartych" statusach,
+-        pole rozwiązanie jest puste. Pozostałe [% terms.bledy %] muszą być oznaczone
+-        którymś z poniższych rozwiązań.</dd>
++        <dd>
++          Brak rozwiązania. Dla [% terms.bledow %] o tych "otwartych" statusach,
++          pole rozwiązanie jest puste. Pozostałe [% terms.bledy %] muszą być oznaczone
++          którymś z poniższych rozwiązań.
++        </dd>
+       </dl>
+     </td>
+   </tr>
+@@ -97,62 +110,89 @@
+   <tr valign="top">
+     <td>
+       <dl>
+-        <dt><b>RESOLVED</b> (rozwiązany)</dt>
++        <dt>
++          <b>RESOLVED</b> (rozwiązany)
++        </dt>
++        <dd>
++          Rozwiązanie [% terms.bledu %] zostało znalezione i czeka ono na weryfikację
++          przez kontakt QA. Taki [% terms.blad %] może zostać powtórnie otworzony (zmieniając
++          status na <b>REOPENED</b>), zmienić status na <b>VERIFIED</b>, albo zostać zamknięty
++          ze statusem <b>CLOSED</b>.
++        </dd>
+ 
+-        <dd>Rozwiązanie [% terms.bledu %] zostało znalezione i czeka ono na weryfikację
+-        przez kontakt QA. Taki [% terms.blad %] może zostać powtórnie otworzony (zmieniając
+-        status na <b>REOPENED</b>), zmienić status na <b>VERIFIED</b>, albo zostać zamknięty
+-        ze statusem <b>CLOSED</b>.</dd>
++        <dt>
++          <b>VERIFIED</b> (zweryfikowany)
++        </dt>
++        <dd>
++          Kontakt QA zapoznał się z proponowanym rozwiązaniem [% terms.bledu %] i uznał
++          że jest ono wystarczające. [% terms.Blad %] pozostaje w tym stanie do czasu wydania
++          produktu do którego przynależał [% terms.blad %] (wówczas status zostanie zmieniony na
++          <b>CLOSED</b>).
++        </dd>
+ 
+-        <dt><b>VERIFIED</b> (zweryfikowany)</dt>
+-
+-        <dd>Kontakt QA zapoznał się z proponowanym rozwiązaniem [% terms.bledu %] i uznał
+-        że jest ono wystarczające. [% terms.Blad %] pozostaje w tym stanie do czasu wydania
+-        produktu do którego przynależał [% terms.blad %] (wówczas status zostanie zmieniony na
+-        <b>CLOSED</b>).</dd>
+-
+-        <dt><b>CLOSED</b> (zamknięty)</dt>
+-
+-        <dd>[% terms.Blad %] został uznany za zamknięty z poprawnym rozwiązaniem. Jedyną
+-        możliwą zmianą statusu dla takiego [% terms.bledu %] jest zmiana na <b>REOPENED</b>.</dd>
++        <dt>
++          <b>CLOSED</b> (zamknięty)
++        </dt>
++        <dd>
++          [% terms.Blad %] został uznany za zamknięty z poprawnym rozwiązaniem. Jedyną
++          możliwą zmianą statusu dla takiego [% terms.bledu %] jest zmiana na <b>REOPENED</b>.
++        </dd>
+       </dl>
+     </td>
+ 
+     <td>
+       <dl>
+-        <dt><b>FIXED</b> (naprawiony)</dt>
++        <dt>
++          <b>FIXED</b> (naprawiony)
++        </dt>
++        <dd>
++          Rozwiązanie takiego [% terms.bledu %] zostało przetestowane i wysłane do
++          repozytorium.
++        </dd>
+ 
+-        <dd>Rozwiązanie takiego [% terms.bledu %] zostało przetestowane i wysłane do
+-        repozytorium.</dd>
++        <dt>
++          <b>INVALID</b> (nieprawidłowy)
++        </dt>
++        <dd>
++          Problem opisany w raporcie nie jest prawidłowym [% terms.bledem %]
++        </dd>
+ 
+-        <dt><b>INVALID</b> (nieprawidłowy)</dt>
++        <dt>
++          <b>WONTFIX</b> (nierozwiązywalny)
++        </dt>
++        <dd>
++          Problem opisany w raporcie [% terms.bledu %] nigdy nie zostanie
++          rozwiązany.
++        </dd>
+ 
+-        <dd>Problem opisany w raporcie nie jest prawidłowym [% terms.bledem %]</dd>
++        <dt>
++          <b>DUPLICATE</b> (duplikat)
++        </dt>
++        <dd>
++          Raport [% terms.bledu %] jest duplikatem istniejącego raportu. Oznaczenie
++          [% terms.bledu %] jako duplikatu wymaga podanie numeru [% terms.bledu %] którego
++          duplikatem jest ten [% terms.blad %]. Informacja o duplikacie zostanie umieszczona
++          jako komentarz do prawidłowego [% terms.bledu %].
++        </dd>
+ 
+-        <dt><b>WONTFIX</b> (nierozwiązywalny)</dt>
++        <dt>
++          <b>WORKSFORME</b> (potrzebne dodatkowe informacje)
++        </dt>
++        <dd>
++          Próby powtórzenia [% terms.bledu %] zakończyły się fiaskiem, a kod żródłowy nie
++          pozwala znaleźć powodu dla którego, zostało zaobserwowane dane zachowanie.
++          Jeśli w późniejszym okresie pojawią się dodatkowe informacje, proszę zmienić
++          przypisanie [% terms.bledu %].
++        </dd>
+ 
+-        <dd>Problem opisany w raporcie [% terms.bledu %] nigdy nie zostanie
+-        rozwiązany.</dd>
+-
+-        <dt><b>DUPLICATE</b> (duplikat)</dt>
+-
+-        <dd>Raport [% terms.bledu %] jest duplikatem istniejącego raportu. Oznaczenie
+-        [% terms.bledu %] jako duplikatu wymaga podanie numeru [% terms.bledu %] którego
+-        duplikatem jest ten [% terms.blad %]. Informacja o duplikacie zostanie umieszczona
+-        jako komentarz do prawidłowego [% terms.bledu %].</dd>
+-
+-        <dt><b>WORKSFORME</b> (potrzebne dodatkowe informacje)</dt>
+-
+-        <dd>Próby powtórzenia [% terms.bledu %] zakończyły się fiaskiem, a kod żródłowy nie
+-        pozwala znaleźć powodu dla którego, zostało zaobserwowane dane zachowanie.
+-        Jeśli w późniejszym okresie pojawią się dodatkowe informacje, proszę zmienić
+-        przypisanie [% terms.bledu %].</dd>
+-
+-        <dt><b>MOVED</b> (przeniesiony)</dt>
+-
+-        <dd>Problem opisany w tym raporcie odnosi się do produktu, którego [% terms.bledy %]
+-        śledzone są w innej bazie danych. [% terms.Blad %] został przeniesionej do tej bazy
+-        danych.</dd>
++        <dt>
++          <b>MOVED</b> (przeniesiony)
++        </dt>
++        <dd>
++          Problem opisany w tym raporcie odnosi się do produktu, którego [% terms.bledy %]
++          śledzone są w innej bazie danych. [% terms.Blad %] został przeniesionej do tej bazy
++          danych.
++        </dd>
+       </dl>
+     </td>
+   </tr>
+=== default/global/code-error.html.tmpl
+==================================================================
+--- default/global/code-error.html.tmpl   (/2.18/pl-patch/template/pl)   (revision 35)
++++ default/global/code-error.html.tmpl   (/2.18/pl-trunk/template/pl)   (revision 35)
+@@ -126,7 +126,7 @@
+          
+   [% ELSIF error == "invalid_component" %]
+     [% title = "Nieprawidłowy komponent" %]
+-    Komponent [% component FILTER html %] nie jest zdefiniowany w produkcie
++    Komponent [% name FILTER html %] nie jest zdefiniowany w produkcie
+     [% product FILTER html %].
+     
+   [% ELSIF error == "invalid_dimensions" %]
+@@ -156,7 +156,7 @@
+   
+   [% ELSIF error == "flag_type_component_nonexistent" %]
+     W produkcie <em>[% product FILTER html %]</em> nie istniej
+-    komponent <em>[% component FILTER html %]</em>.
++    komponent <em>[% name FILTER html %]</em>.
+   
+   [% ELSIF error == "flag_type_component_without_product" %]
+     Komponent został wybrany, lecz nie wybrano produktu.
+@@ -230,14 +230,6 @@
+        Nie można stwierdzić co chcesz zrobić.
+     [% END %]
+ 
+-  [% ELSIF error == "unknown_component" %]
+-    [% title = "Nieznany komponent" %]
+-    Nie istnieje komponent <em>[% component FILTER html %]</em>.
+-
+-  [% ELSIF error == "unknown_product" %]
+-    [% title = "Nieznany produkt" %]
+-    Nie istnieje produkt <em>[% product FILTER html %]</em>.
+-
+   [% ELSE %]
+     [% title = "Błąd wewnętrzny" %]
+     Wystąpił błąd wewnętrzny, lecz [% terms.Bugzilla %] nie wie
+=== default/global/confirm-user-match.html.tmpl
+==================================================================
+--- default/global/confirm-user-match.html.tmpl   (/2.18/pl-patch/template/pl)   (revision 35)
++++ default/global/confirm-user-match.html.tmpl   (/2.18/pl-trunk/template/pl)   (revision 35)
+@@ -96,7 +96,7 @@
+                     <select name="[% field.key FILTER html %]"
+                      id="[% field.key FILTER html %]">
+                       [% FOREACH match = query.value.users %]
+-                        <option value="[% match.email FILTER html %]">
++                        <option value="[% match.login FILTER html %]">
+                          [%- match.identity FILTER html -%]
+                         </option>
+                       [% END %]
+@@ -116,7 +116,7 @@
+                        multiple="multiple" size="[% query.value.users.size %]">
+                       [% END %]
+                       [% FOREACH match = query.value.users %]
+-                        <option value="[% match.email FILTER html %]">
++                        <option value="[% match.login FILTER html %]">
+                          [%- match.identity FILTER html -%]
+                         </option>
+                       [% END %]
+=== default/global/user-error.html.tmpl
+==================================================================
+--- default/global/user-error.html.tmpl   (/2.18/pl-patch/template/pl)   (revision 35)
++++ default/global/user-error.html.tmpl   (/2.18/pl-trunk/template/pl)   (revision 35)
+@@ -101,7 +101,7 @@
+ 
+   [% ELSIF error == "auth_cant_create_account" %]
+     [% title = "Nie można utworzyć konta" %]
+-    Ta instalacja %[ terms.Bugzilli %] korzysta z metod weryfikacji użytkownika,
++    Ta instalacja [% terms.Bugzilli %] korzysta z metod weryfikacji użytkownika,
+     które nie pozwalają na tworzenie nowych kont. W celu utworzenia konta,
+     proszę skontaktować się z administratorem .
+ 
+@@ -162,11 +162,6 @@
+     [% title = "Wymagany opis" %]
+     Musisz podać opis dla [% terms.bledu %].
+ 
+-  [% ELSIF error == "dupe_invalid_bug_id" %]
+-    [% title = BLOCK %]Nieprawidłowy numer [% terms.bledu %][% END %]
+-    Musisz podać poprawny numer [% terms.bledu %], którego duplikatem jest ten
+-    [%+ terms.blad %]. [% terms.Blad %] nie został zmieniony.
+-
+   [% ELSIF error == "dupe_of_self_disallowed" %]
+     [% title = BLOCK %]Nieprawidłowy numer [% terms.bledu %][% END %]
+     Nie można oznaczyć [% terms.bledu %] jako duplikatu samego siebie.
+@@ -228,7 +223,8 @@
+ 
+   [% ELSIF error == "flag_type_name_invalid" %]
+     [% title = "Nieprawidłoawa nazwa flagi" %]
+-    Długość nazwy <em>[% name FILTER html %]</em> musi zawierać się pomiędzy 1 a 50 znakami.
++    Długość nazwy <em>[% name FILTER html %]</em> musi zawierać się pomiędzy
++    1 a 50 znakami i nie może zawierać żadnej spacji lub przecinka
+ 
+   [% ELSIF error == "format_not_found" %]
+     [% title = "Nie znaleziono formatowania" %]
+@@ -327,22 +323,29 @@
+     [% title = "Nieprawidłowy identyfikator załącznika" %]
+     Identyfikator załącznika [% attach_id FILTER html %] jest nieprawidłowy.
+ 
+-  [% ELSIF error == "invalid_bug_id" %]
+-    [% title = BLOCK %]Nieprawidłowy identyfikator [% terms.bledu %][% END %]
+-    Identyfikator [% terms.bledu %] [% bug_id FILTER html %] jest nieprawidłowy.
+-
+   [% ELSIF error == "invalid_bug_id_non_existent" %]
+     [% title = BLOCK %]Nieprawidłowy identyfikator [% terms.bledu %][% END %]
+     [% terms.Blad %] #[% bug_id FILTER html %] nie istnieje.
+     
+   [% ELSIF error == "invalid_bug_id_or_alias" %]
+     [% title = BLOCK %]Nieprawidłowy identyfikator [% terms.bledu %][% END %]
+-    Identyfikator [% terms.bledu %] <em>[% bug_id FILTER html %]</em> jest nieprawidłowy.
+-    [% IF Param("usebugaliases") %]
+-      Nie jest to ani numer [% terms.bledu %], ani alias [% terms.bledu %].
++    [% IF bug_id %]
++      [% IF Param("usebugaliases") %]
++      '[% bug_id FILTER html %]' nie jest prawidłowymy identyfikatorem [% terms.bledu %],
++        ani aliasu.
++      [% ELSE %]
++      '[% bug_id FILTER html %]' nie jest prawidłowymy identyfikatorem [% terms.bledu %].
++      [% END %].
++    [% ELSE %]
++      [% IF field %]
++        Pole '[% field_descs.$field FILTER html %]' nie może być puste.
++      [% END %]
++      Musisz wpisać prawidłowy numer [% terms.bledu %]!
+     [% END %]
+-    Jeśli próbujesz używać szybkiego wyszukiwania, musisz mieć włączoną obsługę JavaScript w swojej
+-    przeglądarce.
++    <noscript>
++      Jeśli próbujesz używać szybkiego wyszukiwania, musisz mieć włączoną
++      obsługę JavaScript w swojej przeglądarce.
++    </noscript>
+ 
+   [% ELSIF error == "invalid_changedsince" %]
+     [% title = "Nieprawidłowa wartość dla 'Zmieniono w trakcie X dni'" %]
+@@ -667,7 +670,8 @@
+ 
+   [% ELSIF error == "still_unresolved_bugs" %]
+     [% IF dependency_count == 1 %]
+-      [% terms.Blad %] #<a href="show_bug.cgi?id=[% dependencies.0.bug_id FILTER none %]">[% dependencies.0.bu      nadal ma [% dependencies.0.dependencies FILTER html %] 
++      [% terms.Blad %] #<a href="show_bug.cgi?id=[% dependencies.0.bug_id FILTER none %]">[% dependencies.0.bu_id FILTER none %]</a>
++      nadal ma [% dependencies.0.dependencies FILTER html %] 
+       [% PROCESS ODMIEN c=dependencies.0.dependencies o1="nierozwiązaną zależność"
+         o2="nierozwiązane zależności" o3="nierozwiązanych zależności" %].
+       wyświetl
+=== default/global/field-descs.none.tmpl
+==================================================================
+--- default/global/field-descs.none.tmpl   (/2.18/pl-patch/template/pl)   (revision 35)
++++ default/global/field-descs.none.tmpl   (/2.18/pl-trunk/template/pl)   (revision 35)
+@@ -26,6 +26,7 @@
+ [% field_descs = { "[Bug creation]"       => "[Utworzono $terms.blad]",
+                    "alias"                => "Alias",
+                    "assigned_to"          => "Przypisany do",
++                   "blocked"              => "Blokuje",
+                    "bug_file_loc"         => "URL",
+                    "bug_id"               => "Identyfikator $terms.bledu",
+                    "bug_severity"         => "Waga błędu",
+@@ -37,6 +38,8 @@
+                    "component"            => "Komponent",
+                    "creation_ts"          => "Data utworzenia $terms.bledu",
+                    "delta_ts"             => "Czas ostatniej zmiany",
++                   "dependson"            => "Zeleży od",
++                   "dup_id"               => "Duplikat",
+                    "estimated_time"       => "Orgi. oszac.",
+                    "everconfirmed"        => "Potwierdźony?",
+                    "groupset"             => "Zbiór grup",
+=== default/global/useful-links.html.tmpl
+==================================================================
+--- default/global/useful-links.html.tmpl   (/2.18/pl-patch/template/pl)   (revision 35)
++++ default/global/useful-links.html.tmpl   (/2.18/pl-trunk/template/pl)   (revision 35)
+@@ -31,7 +31,7 @@
+     <div class="label">Akcje:</div>
+     <div class="links">
+         <a href="[% Param('urlbase') %]">Początek</a> | 
+-        <a href="enter_bug.cgi">Zgłoś [% terms.blad %]New</a> | 
++        <a href="enter_bug.cgi">Zgłoś [% terms.blad %]</a> | 
+         <a href="query.cgi">Szukaj</a> |
+         
+         <input class="btn" type="submit" value="Znajdź"> [% terms.blad %] # 
+@@ -69,18 +69,18 @@
+     <div class="label">Edycja:</div>
+     <div class="links">
+ 
+-        <a href="userprefs.cgi">ustawień</a>
+-        [% ' | <a href="editparams.cgi">parameterów</a>' 
++        <a href="userprefs.cgi">Ustawień</a>
++        [% ' | <a href="editparams.cgi">Parameterów</a>' 
+                                                   IF user.groups.tweakparams %]
+-        [% ' | <a href="editusers.cgi">użytkowników</a>'     IF user.groups.editusers 
++        [% ' | <a href="editusers.cgi">Użytkowników</a>'     IF user.groups.editusers 
+                                                   || user.can_bless %]
+-        [% ' | <a href="editproducts.cgi">produktów</a>' 
++        [% ' | <a href="editproducts.cgi">Produktów</a>' 
+                                                IF user.groups.editcomponents %]
+-        [% ' | <a href="editflagtypes.cgi">flag</a>'
++        [% ' | <a href="editflagtypes.cgi">Flag</a>'
+                                                IF user.groups.editcomponents %]
+-        [% ' | <a href="editgroups.cgi">grup</a>' 
++        [% ' | <a href="editgroups.cgi">Grup</a>' 
+                                                  IF user.groups.creategroups %]
+-        [% ' | <a href="editkeywords.cgi">słów kluczowych</a>' 
++        [% ' | <a href="editkeywords.cgi">Słów&nbsp;kluczowych</a>' 
+                                                  IF user.groups.editkeywords %]
+     </div>
+   </div>
+=== default/global/header.html.tmpl
+==================================================================
+--- default/global/header.html.tmpl   (/2.18/pl-patch/template/pl)   (revision 35)
++++ default/global/header.html.tmpl   (/2.18/pl-trunk/template/pl)   (revision 35)
+@@ -28,6 +28,7 @@
+   # h3: string. Right-aligned subheader.
+   # bgcolor: string. the page's background color ("#rrggbb").
+   # bodyattrs: any extra attributes for the <body> tag
++  # bodyclasses: array of extra CSS classes for the <body>
+   # onload: string. JavaScript code to run when the page finishes loading.
+   # javascript: string. Javascript to go in the header.
+   # style: string. CSS style.
+@@ -59,6 +60,7 @@
+ <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+ <html>
+   <head>
++    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+     <title>[% title FILTER html %]</title>
+ 
+ [%# Migration note: contents of the old Param 'headerhtml' would go here %]
+@@ -94,8 +96,11 @@
+   #%]
+ 
+   <body bgcolor="[% bgcolor %]" onload="[% onload %]"
+-   class="[% Param('urlbase').replace('^https?://','').replace('/$','').replace('[-~@:/.]+','-') %]" 
+-   [% bodyattrs %]>
++        class="[% Param('urlbase').replace('^https?://','').replace('/$','').replace('[-~@:/.]+','-') %]
++               [% FOREACH class = bodyclasses %]
++                 [% ' ' %][% class FILTER css_class_quote %]
++               [% END %]"
++        [% bodyattrs %]>
+ 
+ [%# Migration note: the following file corresponds to the old Param
+   # 'bannerhtml'
+=== default/search/boolean-charts.html.tmpl
+==================================================================
+--- default/search/boolean-charts.html.tmpl   (/2.18/pl-patch/template/pl)   (revision 35)
++++ default/search/boolean-charts.html.tmpl   (/2.18/pl-trunk/template/pl)   (revision 35)
+@@ -88,10 +88,10 @@
+   "setters.login_name" => "Ustwiający flagę",
+   "content" => "Zawartość"
+ } %]
++
+   <p>
+-    <strong>
+-      <a name="chart" href="queryhelp.cgi#advancedquerying">
+-      Zaawansowane zapytanie przy wykorzystaniu wyrażeń boolowskich</a>:
++    <strong>      
++      Zaawansowane zapytanie przy wykorzystaniu wyrażeń boolowskich:
+     </strong>
+   </p>
+ 
+=== default/search/search-advanced.html.tmpl
+==================================================================
+--- default/search/search-advanced.html.tmpl   (/2.18/pl-patch/template/pl)   (revision 35)
++++ default/search/search-advanced.html.tmpl   (/2.18/pl-trunk/template/pl)   (revision 35)
+@@ -49,20 +49,15 @@
+ 
+ [% PROCESS search/tabs.html.tmpl %]
+ 
+-[% button_name = "Szukaj" %]
++[% button_name = "Search" %]
+ 
+ [%# The decent help requires Javascript %]
+ [% IF NOT help %]
+   [% IF cgi.user_agent("Mozilla/5") %]
+     <script type="text/javascript"> <!--
+-      document.write("<p><a href='query.cgi?help=1'>Pokaż pomoc</a> (przeładowuje stronę).</p>");
++      document.write("<p><a href='query.cgi?help=1&amp;format=advanced'>Pokaż pomoc</a> (przeładowuje stronę).</p>");
+       // -->
+     </script>
+-    <noscript>
+-      <p><a href="queryhelp.cgi">Pokaż pomoc</a> dla tego formularza.</p>
+-    </noscript>
+-  [% ELSE %]
+-      <p><a href="queryhelp.cgi">Pokaż pomoc</a> dla tego formularza.</p>
+   [% END %]
+ [% ELSE %]
+   <p>
+@@ -86,10 +81,6 @@
+ 
+ [% PROCESS "search/boolean-charts.html.tmpl" %]
+ 
+-<p>
+-  Pokaż <a href="queryhelp.cgi">wskazówki</a> jak korzystać z tego formularza.
+-</p>
+-
+ </form>
+ 
+ [% PROCESS "search/search-help.html.tmpl" IF help %]
+=== default/search/search-specific.html.tmpl
+==================================================================
+--- default/search/search-specific.html.tmpl   (/2.18/pl-patch/template/pl)   (revision 35)
++++ default/search/search-specific.html.tmpl   (/2.18/pl-trunk/template/pl)   (revision 35)
+@@ -106,6 +106,10 @@
+     <td></td>
+     <td>
+       <input type="submit" value="Wyszukaj">
++      [% IF known_name %]
++        <input type="hidden" name="query_based_on" 
++               value="[% known_name FILTER html %]">
++      [% END %]
+     </td>
+   </tr>
+ </table>
+=== default/search/knob.html.tmpl
+==================================================================
+--- default/search/knob.html.tmpl   (/2.18/pl-patch/template/pl)   (revision 35)
++++ default/search/knob.html.tmpl   (/2.18/pl-trunk/template/pl)   (revision 35)
+@@ -21,6 +21,15 @@
+   #                 Jouni Heikniemi <jouni@heikniemi.net>
+   #%]
+ 
++[%# INTERFACE:
++  # (incomplete!)
++  # ...
++  # known_name: string. Possibly known stored name for the query being
++  #                     edited. This value is just passed through in a
++  #                     hidden field.
++  #%]
++
++
+ [% PROCESS global/variables.none.tmpl %]
+ 
+ [%# This is not necessary for English templates, but useful for localisers. %]
+@@ -46,6 +55,10 @@
+ 
+ <p>  
+   <input type="submit" value="[% button_name FILTER html %]">
++  [% IF known_name %]
++    <input type="hidden" name="query_based_on" 
++           value="[% known_name FILTER html %]">
++  [% END %]
+ </p>
+ 
+ <p>
+=== default/flag/list.html.tmpl
+==================================================================
+--- default/flag/list.html.tmpl   (/2.18/pl-patch/template/pl)   (revision 35)
++++ default/flag/list.html.tmpl   (/2.18/pl-trunk/template/pl)   (revision 35)
+@@ -100,7 +100,7 @@
+             [% IF type.is_active %]
+               <option value="+" [% "selected" IF flag.status == "+" %]>+</option>
+               <option value="-" [% "selected" IF flag.status == "-" %]>-</option>
+-              [% IF type.is_requestable %]
++              [% IF type.is_requestable || flag.status == "?" %]
+                 <option value="?" [% "selected" IF flag.status == "?" %]>?</option>
+               [% END %]
+             [% ELSE %]
+=== default/list/list-simple.html.tmpl
+==================================================================
+--- default/list/list-simple.html.tmpl   (/2.18/pl-patch/template/pl)   (revision 35)
++++ default/list/list-simple.html.tmpl   (/2.18/pl-trunk/template/pl)   (revision 35)
+@@ -40,6 +40,7 @@
+ <html>
+ 
+   <head>
++    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+     <title>[% title %]</title>
+     <base href="[% Param("urlbase") %]">
+     <link href="css/buglist.css" rel="stylesheet" type="text/css">
+=== default/list/server-push.html.tmpl
+==================================================================
+--- default/list/server-push.html.tmpl   (/2.18/pl-patch/template/pl)   (revision 35)
++++ default/list/server-push.html.tmpl   (/2.18/pl-trunk/template/pl)   (revision 35)
+@@ -28,6 +28,7 @@
+ 
+ <html>
+   <head>
++    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+     <title>[% terms.Bugzilla %] przetwarza Twoje zapytanie</title>
+   </head>
+   <body>
+=== default/list/table.html.tmpl
+==================================================================
+--- default/list/table.html.tmpl   (/2.18/pl-patch/template/pl)   (revision 35)
++++ default/list/table.html.tmpl   (/2.18/pl-trunk/template/pl)   (revision 35)
+@@ -89,7 +89,9 @@
+           ID
+         [% ELSE %]
+           <a href="buglist.cgi?
+-                    [% urlquerypart FILTER html %]&amp;order=bugs.bug_id">ID</a>
++                    [% urlquerypart FILTER html %]&amp;order=bugs.bug_id
++                    [%-#%]&amp;query_based_on=
++                    [% defaultsavename OR searchname FILTER html %]">ID</a>
+         [% END %]
+       </th>
+ 
+@@ -128,7 +130,9 @@
+     [% ELSE %]
+       <a href="buglist.cgi?[% urlquerypart FILTER html %]&amp;order=
+         [% column.name FILTER url_quote FILTER html %]
+-        [% ",$qorder" FILTER html IF order %]">
++        [% ",$qorder" FILTER html IF order %]
++        [%-#%]&amp;query_based_on=
++        [% defaultsavename OR searchname FILTER html %]">
+           [%- abbrev.$id.title || field_descs.$id || column.title -%]</a>
+     [% END %]
+   </th>
+@@ -148,12 +152,12 @@
+     [% tableheader %]
+   [% END %]
+ 
+-  <tr class="bz_[% bug.bug_severity FILTER css_class_quote %]
+-             bz_[% bug.priority FILTER css_class_quote %]
+-             bz_[% bug.bug_status FILTER css_class_quote %]
+-             [%+ "bz_$bug.resolution" FILTER css_class_quote IF bug.resolution %]
+-             [%+ "bz_secure" IF bug.isingroups %]
+-             [%+ count % 2 == 1 ? "bz_odd" : "bz_even" %]
++  <tr class="bz_[% bug.bug_severity FILTER css_class_quote -%]
++             bz_[% bug.priority FILTER css_class_quote -%]
++             bz_[% bug.bug_status FILTER css_class_quote -%]
++             [%+ "bz_$bug.resolution" FILTER css_class_quote IF bug.resolution -%]
++             [%+ "bz_secure" IF bug.isingroups -%]
++             [%+ count % 2 == 1 ? "bz_odd" : "bz_even" -%]
+              ">
+              
+ 
+=== default/list/list.html.tmpl
+==================================================================
+--- default/list/list.html.tmpl   (/2.18/pl-patch/template/pl)   (revision 35)
++++ default/list/list.html.tmpl   (/2.18/pl-trunk/template/pl)   (revision 35)
+@@ -22,6 +22,7 @@
+ [%# INTERFACE:
+   # searchtype: string. Type of search - either "series", "saved" or undef.
+   # ...
++  # defaultsavename: string. The default name for saving the query.
+   #%]
+ 
+ [%############################################################################%]
+@@ -166,7 +167,11 @@
+     [% END %]
+     
+     <td valign="middle">
+-      <a href="query.cgi?[% urlquerypart FILTER html %]">Edytuj&nbsp;zapytanie</a>
++        [% editqueryname = searchname OR defaultsavename OR '' %]
++        <a href="query.cgi?[% urlquerypart FILTER html %]
++        [% IF editqueryname != '' %]&amp;known_name=
++            [% editqueryname FILTER url_quote %]
++        [% END %]">Edytuj&nbsp;zapytanie</a>
+     </td>
+       
+     [% IF searchtype == "saved" %]
+=== default/list/edit-multiple.html.tmpl
+==================================================================
+--- default/list/edit-multiple.html.tmpl   (/2.18/pl-patch/template/pl)   (revision 35)
++++ default/list/edit-multiple.html.tmpl   (/2.18/pl-trunk/template/pl)   (revision 35)
+@@ -290,13 +290,14 @@
+     <input id="knob-verify" type="radio" name="knob" value="verify">
+     <label for="knob-verify">Oznacz [% terms.bugs %] jako <b>VERIFIED</b></label><br>
+   [% END %]
+-  [% IF bugstatuses.contains('RESOLVED') || bugstatuses.contains('VERIFIED') %]
+-    [% knum = knum + 1 %]
+-    <input id="knob-close" type="radio" name="knob" value="close">
+-    <label for="knob-close">Oznacz [% terms.bledy %] jako <b>CLOSED</b></label><br>
+-  [% END %]
+ [% END %]
+ 
++[% IF !bugstatuses.containsany(openstates) AND !bugstatuses.contains('CLOSED') %]
++  [% knum = knum + 1 %]
++  <input id="knob-close" type="radio" name="knob" value="close">
++  <label for="knob-close">Oznacz [% terms.bledy %] jako <b>CLOSED</b></label><br>
++[% END %]
++
+ [% knum = knum + 1 %]
+ <input id="knob-reassign" type="radio" name="knob" value="reassign">
+ <label for="knob-reassign"><a href="bug_status.html#assigned_to">
+=== default/bug/votes/list-for-user.html.tmpl
+==================================================================
+--- default/bug/votes/list-for-user.html.tmpl   (/2.18/pl-patch/template/pl)   (revision 35)
++++ default/bug/votes/list-for-user.html.tmpl   (/2.18/pl-trunk/template/pl)   (revision 35)
+@@ -91,7 +91,8 @@
+             <td align="right">
+               [% isclosed = !bug.opened %]
+                 <a href="show_bug.cgi?id=[% bug.id %]">
+-                  [% bug.id FILTER closed(isclosed) %]</a>
++                  [% bug.id FILTER closed(isclosed) %]
++                </a>
+             </td>
+             <td>
+               <a href="votes.cgi?action=show_bug&amp;bug_id=[% bug.id %]">
+@@ -103,10 +104,10 @@
+ 
+         <tr>
+           <td></td>
+-          <td colspan="3">[% product.total +%]
++          <td colspan="3">
++            Oddano [% product.total +%]
+             [%+ PROCESS odmiana l=product.total s1="glos" s2="głosy" s3="głosów" %]
+-            z [% product.maxvotes +%] 
+-            [%+ PROCESS odmiana l=product.total s1="oddany" s2="oddane" s3="oddanych" %]
++            z [% product.maxvotes +%].
+             <br>
+             <br>
+           </td>
+=== default/bug/create/create.html.tmpl
+==================================================================
+--- default/bug/create/create.html.tmpl   (/2.18/pl-patch/template/pl)   (revision 35)
++++ default/bug/create/create.html.tmpl   (/2.18/pl-trunk/template/pl)   (revision 35)
+@@ -70,12 +70,6 @@
+ <form name="Create" id="Create" method="post" action="post_bug.cgi">
+ <input type="hidden" name="product" value="[% product FILTER html %]">
+ 
+-[% IF bug_status.size <= 1 %]
+-  <input type="hidden" name="bug_status" 
+-         value="[% default.bug_status FILTER html %]">
+-[% END %]
+-
+-
+ <table cellspacing="2" cellpadding="0" border="0">
+ 
+   <tr>
+@@ -168,14 +162,18 @@
+     <td colspan="3"></td>
+   </tr>
+ 
+-[% IF bug_status.size > 1 %]
+   <tr>
++[% IF bug_status.size <= 1 %]
++  <input type="hidden" name="bug_status" 
++         value="[% default.bug_status FILTER html %]">
++    <td align="right" valign="top"><strong>Początkowy stan:</strong></td>
++    <td valign="top">[% default.bug_status FILTER html %]</td>
++[% ELSE %]
+     [% sel = { description => 'Początkowy stan', name => 'bug_status' } %]
+     [% INCLUDE select %]
+-
++[% END %]
+     <td colspan="2"></td>
+   </tr>
+-[% END %]
+ 
+   <tr>
+     <td align="right">
+=== default/bug/edit.html.tmpl
+==================================================================
+--- default/bug/edit.html.tmpl   (/2.18/pl-patch/template/pl)   (revision 35)
++++ default/bug/edit.html.tmpl   (/2.18/pl-trunk/template/pl)   (revision 35)
+@@ -277,7 +277,7 @@
+        </td>
+        <td colspan="7">
+          <input name="qa_contact" accesskey="q"
+-                value="[% bug.qa_contact.email FILTER html %]" size="60">
++                value="[% bug.qa_contact.login FILTER html %]" size="60">
+        </td>
+      </tr>
+    [% END %]
+=== default/bug/knob.html.tmpl
+==================================================================
+--- default/bug/knob.html.tmpl   (/2.18/pl-patch/template/pl)   (revision 35)
++++ default/bug/knob.html.tmpl   (/2.18/pl-trunk/template/pl)   (revision 35)
+@@ -97,34 +97,35 @@
+         [% terms.blad %] do
+       </label>
+       <input name="assigned_to" size="32"
+-             onchange="if ((this.value != '[% bug.assigned_to.email FILTER js FILTER html %]') &&
++             onchange="if ((this.value != '[% bug.assigned_to.login FILTER js FILTER html %]') &&
+                             (this.value != '')) {
+                          document.changeform.knob[[% knum %]].checked=true;
+                        }"
+-             value="[% bug.assigned_to.email FILTER html %]">
++             value="[% bug.assigned_to.login FILTER html %]">
+       <br>
+       [% IF bug.isunconfirmed && bug.user.canconfirm %]
+         &nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" id="andconfirm" name="andconfirm">
+         <label for="andconfirm">
+           oraz potwierdź istnienie [% terms.bledu %] (zmień status na <b>NEW</b>)
++        </label>
+         <br>
+       [% END %]
+       [% knum = knum + 1 %]
+ 
+       <input type="radio" id="knob-reassign-cmp" name="knob" value="reassignbycomponent">
+       <label for="knob-reassign-cmp">
+-      Przypisz [% terms.blad %] do właściciela
+-      [% " lub kontaktu QA" IF Param('useqacontact') %]
+-      wybranego komponentu
++        Przypisz [% terms.blad %] do właściciela
++        [% " lub kontaktu QA" IF Param('useqacontact') %]
++        wybranego komponentu
++      </label>
++      <br>
++      [% IF bug.isunconfirmed && bug.user.canconfirm %]
++        &nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" id="compconfirm" name="compconfirm">
++        <label for="compconfirm">
++          oraz potwierdź istnienie [% terms.bledu %] (zmień status na <b>NEW</b>)
++        </label>
+         <br>
+-        [% IF bug.isunconfirmed && bug.user.canconfirm %]
+-          &nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" id="compconfirm" name="compconfirm">
+-          <label for="compconfirm">
+-            oraz potwierdź istnienie [% terms.bledu %] (zmień status na <b>NEW</b>)
+-          </label>
+-          <br>
+-        [% END %]
+-      </label>
++      [% END %]
+       [% knum = knum + 1 %]
+     [% ELSE %]
+       [% IF bug.resolution != "MOVED" ||
+=== default/bug/show.xml.tmpl
+==================================================================
+--- default/bug/show.xml.tmpl   (/2.18/pl-patch/template/pl)   (revision 35)
++++ default/bug/show.xml.tmpl   (/2.18/pl-trunk/template/pl)   (revision 35)
+@@ -26,7 +26,7 @@
+           urlbase="[% Param('urlbase') %]"
+           maintainer="[% Param('maintainer') FILTER xml %]"
+ [% IF user %]
+-          exporter="[% user.login FILTER xml %]"
++          exporter="[% user.email FILTER xml %]"
+ [% END %]
+ >
+ 
+=== default/bug/activity/table.html.tmpl
+==================================================================
+--- default/bug/activity/table.html.tmpl   (/2.18/pl-patch/template/pl)   (revision 35)
++++ default/bug/activity/table.html.tmpl   (/2.18/pl-trunk/template/pl)   (revision 35)
+@@ -39,7 +39,7 @@
+ 
+ [% IF incomplete_data %]
+   <p>
+-    W [% terms.Bugzilli %] istniał błąd, który powodował utratę danych na temat zmian, w
++    W <a href="http://www.bugzilla.org/">[% terms.Bugzilli %]</a> istniał błąd, który powodował utratę danych na temat zmian, w
+     przypadku gdy [% terms.blad %] zawierał dużą liczbę zależności lub obserwatorów.
+     Ten błąd został już naprawiony, jednakże część historii tego [% terms.bledu %] nie
+     była możliwa do odzyskania. Przed zmianami które nie mogły zostać odtworzone, zostanie
+=== default/bug/show.html.tmpl
+==================================================================
+--- default/bug/show.html.tmpl   (/2.18/pl-patch/template/pl)   (revision 35)
++++ default/bug/show.html.tmpl   (/2.18/pl-trunk/template/pl)   (revision 35)
+@@ -28,17 +28,16 @@
+ 
+ [% filtered_desc = bug.short_desc FILTER html %]
+ [% filtered_timestamp = bug.delta_ts FILTER time %]
+-[% bodyattrs = BLOCK %]class='bz_bug bz_status_[% bug.bug_status 
+-  FILTER css_class_quote %] bz_component_[% bug.component 
+-  FILTER css_class_quote %] bz_bug_[% bug.bug_id 
+-  FILTER css_class_quote %]' 
+-[% END %]
+ [% PROCESS global/header.html.tmpl
+   title = "$terms.Blad $bug.bug_id - $bug.short_desc"
+   h1 = "$terms.Blad nr $bug.bug_id"
+   h2 = filtered_desc
+   h3 = "Ostatnio zmodyfikowany: $filtered_timestamp"
+-  bodyattrs = bodyattrs
++  bodyclasses = ['bz_bug',
++                 "bz_status_$bug.bug_status",
++                 "bz_component_$bug.component",
++                 "bz_bug_$bug.bug_id"
++                ]
+ %]
+ 
+ [% PROCESS bug/navigate.html.tmpl %]
+

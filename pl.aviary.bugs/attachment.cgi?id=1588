@@ -1,0 +1,107 @@
+diff -r ab7a05048f84 pl/default/admin/groups/list.html.tmpl
+--- a/pl/default/admin/groups/list.html.tmpl	Sat Jun 19 22:57:03 2010 +0200
++++ b/pl/default/admin/groups/list.html.tmpl	Wed Jul 07 21:35:26 2010 +0200
+@@ -90,6 +90,65 @@
+        }
+      }
+    } 
++
++%]
++
++[% overrides.description = { 
++	 'description' => { 
++       "Administrators" => { 
++         override_content => 1  
++         content => "Administratorzy" 
++       }
++       "Can configure whine reports for other users" => { 
++         override_content => 1  
++         content => "Konfiguracja raportów powiadomień dla innych użytkowników" 
++       }
++       "User can configure whine reports for self" => { 
++         override_content => 1  
++         content => "Konfiguracja raportów powiadomień dla samego siebie" 
++       }
++       "Can perform actions as other users" => { 
++         override_content => 1  
++         content => "Przejęcie tożsamości innego użytkownika" 
++       }
++       "Can not be impersonated by other users" => { 
++         override_content => 1  
++         content => "Ochrona przed przejęciem tożsamości" 
++       }
++       "Can confirm a bug or mark it a duplicate" => { 
++         override_content => 1  
++         content => "Potwierdzanie $terms.bledow lub oznaczanie je jako duplikaty" 
++       }
++       "Can create and destroy groups" => { 
++         override_content => 1  
++         content => "Tworzenie i usuwanie grup" 
++       }
++       "Can edit all bug fields" => { 
++         override_content => 1  
++         content => "Edycja wszystkich pól $terms.bledu" 
++       }
++       "Can create, destroy, and edit classifications" => { 
++         override_content => 1  
++         content => "Tworzenie, usuwanie i edycja kategorii" 
++       }
++       "Can create, destroy, and edit components" => { 
++         override_content => 1  
++         content => "Tworzenie, usuwanie i edycja komponentów" 
++       }
++       "Can create, destroy, and edit keywords" => { 
++         override_content => 1  
++         content => "Tworzenie, usuwanie i edycja słów kluczowych" 
++       }
++       "Can edit or disable users" => { 
++         override_content => 1  
++         content => "Tworzenie, usuwanie i edycja kont użytkowników" 
++       }
++       "Can change Parameters" => { 
++         override_content => 1  
++         content => "Zmiana parametrów" 
++       }
++     }
++   }
+ %]
+ 
+ [% FOREACH group IN ["chartgroup", "insidergroup", "timetrackinggroup", "querysharegroup"] %]
+
+diff -r ab7a05048f84 pl/default/global/field-descs.none.tmpl
+--- a/pl/default/global/field-descs.none.tmpl	Sat Jun 19 22:57:03 2010 +0200
++++ b/pl/default/global/field-descs.none.tmpl	Wed Jul 07 21:35:26 2010 +0200
+@@ -198,19 +198,19 @@
+ [% MACRO get_choice(ch) GET choice_descs.$ch || ch %]
+ 
+ [% permissions_descs = {
+-    "Administrators"                                  => "Administracyjne"
+-    "Can configure whine reports for other users"     => "Może konfigurować raporty powiadomień dla innych użytkowników"
+-    "User can configure whine reports for self"       => "Może konfigurować raporty powiadomień dla samego siebie"
+-    "Can perform actions as other users"              => "Może wykonywać działania jako inny użytkownik"
+-    "Can not be impersonated by other users"          => "Nikt nie może przejąć tożsamości tego użytkownika"
+-    "Can confirm a bug or mark it a duplicate"        => "Może potwierdzać błędy lub oznaczać je jako duplikaty"
+-    "Can create and destroy groups"                   => "Może tworzyć i usuwać grupy"
+-    "Can edit all bug fields"                         => "Może edytować wszystkie pola $terms.bledu"
+-    "Can create, destroy, and edit classifications"   => "Może tworzyć, usuwać i edytować kategorie"
+-    "Can create, destroy, and edit components"        => "Może tworzyć, usuwać i edytować komponenty"
+-    "Can create, destroy, and edit keywords"          => "Może tworzyć, usuwać i edytować słowa kluczowe"
+-    "Can edit or disable users"                       => "Może edytować lub usuwać użytkowników"
+-    "Can change Parameters"                           => "Może zmieniać parametry"
++    "Administrators"                                  => "Administratorzy"
++    "Can configure whine reports for other users"     => "Konfiguracja raportów powiadomień dla innych użytkowników"
++    "User can configure whine reports for self"       => "Konfiguracja raportów powiadomień dla samego siebie"
++    "Can perform actions as other users"              => "Przejęcie tożsamości innego użytkownika"
++    "Can not be impersonated by other users"          => "Ochrona przed przejęciem tożsamości"
++    "Can confirm a bug or mark it a duplicate"        => "Potwierdzanie $terms.bledow lub oznaczanie je jako duplikaty"
++    "Can create and destroy groups"                   => "Tworzenie i usuwanie grup"
++    "Can edit all bug fields"                         => "Edycja wszystkich pól $terms.bledu"
++    "Can create, destroy, and edit classifications"   => "Tworzenie, usuwanie i edycja kategorii"
++    "Can create, destroy, and edit components"        => "Tworzenie, usuwanie i edycja komponentów"
++    "Can create, destroy, and edit keywords"          => "Tworzenie, usuwanie i edycja słów kluczowych"
++    "Can edit or disable users"                       => "Tworzenie, usuwanie i edycja kont użytkowników"
++    "Can change Parameters"                           => "Zmiana parametrów"
+ } %]
+ 
+ [% MACRO get_permissions(perm) GET permissions_descs.$perm || perm %]
+

@@ -1,0 +1,26 @@
+diff --git a/extensions/OldBugMove/template/pl/default/admin/params/oldbugmove.html.tmpl b/extensions/OldBugMove/template/pl/default/admin/params/oldbugmove.html.tmpl
+--- a/extensions/OldBugMove/template/pl/default/admin/params/oldbugmove.html.tmpl
++++ b/extensions/OldBugMove/template/pl/default/admin/params/oldbugmove.html.tmpl
+@@ -29,7 +29,6 @@
+ [% param_descs = {
+ 
+   "move-to-url" => 
+-    "Adres URL bazy, do której można przenosić $terms.bledy z tejże"
+-    _ " bazy.",
++    "Adres URL bazy danych, do której można przenosić $terms.bledy.",
+ 
+   "move-to-address" => 
+@@ -34,8 +33,9 @@
+ 
+   "move-to-address" => 
+-    "Podczas przenoszenia ${terms.bledow} wysyłany jest e-mail do bazy docelowej."
+-    _ " Parametr ten określa adres e-mail bazy docelowej przeznaczony do odbioru"
+-    _ " informacji o przenoszonych ${terms.bledach}.",
++    "Podczas przenoszenia ${terms.bledow} do docelowej bazy danych wysyłany jest
++e-mail."
++    _ " Parametr ten określa adres e-mail docelowej bazy danych przeznaczony do"
++    _ " odbioru informacji o przenoszonych ${terms.bledach}.",
+ 
+   movers => 
+     "Lista użytkowników uprawnionych do przenoszenia ${terms.bledow}.",
+

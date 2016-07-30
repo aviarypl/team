@@ -1,0 +1,357 @@
+diff -uNr 1.0PR/locale/communicator/pref/pref-helpers.dtd 1.0/locale/communicator/pref/pref-helpers.dtd
+--- 1.0PR/locale/communicator/pref/pref-helpers.dtd	2004-12-21 15:19:00.000000000 +0100
++++ 1.0/locale/communicator/pref/pref-helpers.dtd	2005-06-17 15:21:00.000000000 +0200
+@@ -57,10 +57,21 @@
+ <!ENTITY specialChars.description      "Output the following characters as entities:">
+ <!ENTITY basicEncoding.label           "Only &amp; &lt; &gt; ' and non-breakable whitespace">
+ <!ENTITY latin1EntitiesEncoding.label  "The above and Latin-1 letters">
+-<!ENTITY htmlEntitiesEncoding.label    "All characters having an entity equivalence in the HTML 4 specification">
++<!ENTITY htmlEntitiesEncoding.label    "HTML 4 special characters">
+ <!ENTITY allEntitiesEncoding.label     "Use &amp;#..; notation for all non-ASCII characters">
+ 
+ <!ENTITY realtimeSpellCheck.label      "Real-time spellcheck">
+ 
+ <!ENTITY spellCheckRealTime.label      "Underline misspelled words">
+ <!ENTITY spellCheckRealTime.accesskey  "u">
++
++<!ENTITY dialect.label                 "Markup">
++<!ENTITY markupLanguage.label          "Language:">
++<!ENTITY dtd.label                     "DTD:">
++<!ENTITY htmlMarkupLanguage.label      "HTML 4">
++<!ENTITY xhtmlMarkupLanguage.label     "XHTML 1">
++<!ENTITY looseDTD.label                "Transitional">
++<!ENTITY strictDTD.label               "Strict">
++
++<!ENTITY noGTEncoding.label            "Don't encode '&gt;' outside of attribute values">
++<!ENTITY noEscaping.label              "Don't encode special chararacters in attribute values">
+diff -uNr 1.0PR/locale/editor/EditorLinkProperties.dtd 1.0/locale/editor/EditorLinkProperties.dtd
+--- 1.0PR/locale/editor/EditorLinkProperties.dtd	2005-02-21 13:03:00.000000000 +0100
++++ 1.0/locale/editor/EditorLinkProperties.dtd	2005-05-17 11:57:00.000000000 +0200
+@@ -73,8 +73,11 @@
+ 
+ <!ENTITY targetBox.label "Target">
+ <!ENTITY userDefinedTarget.label "Link is to be opened">
+-<!ENTITY topRadio.label "in same window, getting rid of all framesets">
++<!ENTITY topRadio.label "in same window, without framesets">
+ <!ENTITY blankRadio.label "in a new window">
+ <!ENTITY parentRadio.label "in the parent frameset">
+ <!ENTITY selfRadio.label "in the current frame">
+ <!ENTITY userDefinedRadio.label "in this frame:">
++
++<!ENTITY technoratiTag.label "Technorati tags">
++<!ENTITY technoratiTagCheckbox.label "This is a Technorati tag">
+diff -uNr 1.0PR/locale/editor/Nvu-totd-en.rdf 1.0/locale/editor/Nvu-totd-en.rdf
+--- 1.0PR/locale/editor/Nvu-totd-en.rdf	2005-03-23 17:53:00.000000000 +0100
++++ 1.0/locale/editor/Nvu-totd-en.rdf	2005-06-17 10:46:00.000000000 +0200
+@@ -140,6 +140,21 @@
+       <description>Control+shift+n (Command+shift+t on Mac OS X) will create a new blank window</description>
+     </item>
+ 
++    <item>
++      <title>...you can change the border of a single table cell?</title>
++      <description>Place the caret in that cell, right-click on the cell in the status bar and select Inline Styles &gt; Border Properties</description>
++    </item>
++
++    <item>
++      <title>...you can close a tab with one click?</title>
++      <description>Just middle-click on the tab itself</description>
++    </item>
++
++    <item>
++      <title>...you can close the current tab with one key?</title>
++      <description>Control-F4 will close the current tab.</description>
++    </item>
++
+   </channel>
+ </rss>
+ 
+diff -uNr 1.0PR/locale/editor/aboutDialog.dtd 1.0/locale/editor/aboutDialog.dtd
+--- 1.0PR/locale/editor/aboutDialog.dtd	2005-03-16 16:10:00.000000000 +0100
++++ 1.0/locale/editor/aboutDialog.dtd	2005-06-16 14:57:00.000000000 +0200
+@@ -41,5 +41,5 @@
+ <!ENTITY copyrightLink          "http://nvu.com/about.html">
+ <!ENTITY credits                "Credits">
+ <!ENTITY aboutVersion           "version">
+-<!ENTITY copyrightText          "&#169;1998-2005 Contributors. All Rights Reserved.">
++<!ENTITY copyrightText          "&#169;1998-2005 Contributors. All Rights Reserved. Nvu and the Nvu logo are trademarks of Linspire Inc.">
+ <!ENTITY aboutLink              "&lt; About &brandShortName;">
+diff -uNr 1.0PR/locale/editor/credits.html 1.0/locale/editor/credits.html
+--- 1.0PR/locale/editor/credits.html	2005-03-21 20:29:00.000000000 +0100
++++ 1.0/locale/editor/credits.html	2005-06-20 16:34:00.000000000 +0200
+@@ -55,7 +55,11 @@
+       
+       .credit {
+         text-align: center;
+-      } 
++        margin: 0px;
++      }
++      .credit > h4 {
++        margin: 0px;
++      }
+       
+       .footnote {
+         font-size: x-small;
+@@ -102,7 +106,7 @@
+       
+       function runCredits()
+       {
+-        gCreditsInterval = setInterval("creditsCallback()", 25);  
++        gCreditsInterval = setInterval("creditsCallback()", 1);  
+       }
+       
+       function creditsCallback()
+@@ -122,7 +126,7 @@
+   </head>
+   <body onload="init();" onunload="uninit();">
+     <div id="titleBox">
+-      <img src="chrome://editor/content/about-credits.png" style="margin-top: 12px"><br>
++      <img src="chrome://editor/content/about-credits.png"><br>
+       <img src="chrome://editor/content/about-header.png">
+     </div>
+     
+@@ -180,18 +184,102 @@
+             R.J. Keller<br>
+             Kamal Deep Singh Sahambi<br>
+             Michael Pyne<br>
+-            <em>Idefix</em> in Nvu forums
++            <em>Idefix</em> in Nvu forums<br>
++            Robert Cheramy
+           </div>
+         </div>
+ 
+-<!-- LOCALIZERS: Add your translation credits here!
+         <div class="creditsGroup">
+-          <h3>Translators</h3>
++          <h3>Localizations</h3>
++          <div class="credit">
++            <h4>fr-FR</h4>
++            Sébastien Desvignes<br>
++            Cédric Corazza<br>
++            Flore Allemandou<br>
++            the Frenchmozilla team
++          </div>
++          <div class="credit">
++            <h4>ru-RU</h4>
++            Alexey Gubanov<br>
++            Alexander Slovesnik<br>
++            Yury Merkulov<br>
++            Vlad Merzhevich<br>
++            Miroslav Skaldov
++          </div>
++          <div class="credit">
++            <h4>nl-NL</h4>
++            Gert-Paul van der Beek<br>
++            Marcel Herda<br>
++            Martijn Ras<br>
++            Martijn Weisbeek
++          </div>
++          <div class="credit">
++            <h4>it-IT</h4>
++            Andrea Sanavia<br>
++            Marco Ratini<br>
++            Carlo Gandolfi<br>
++            Ricardo Fusaroli<br>
++            Claudia Mongini<br>
++            MozillaItalia.org team 
++          </div>
++          <div class="credit">
++            <h4>de-DE</h4>
++            Thorsten Fritz<br>
++            Marcel Herda<br>
++            Peter Weilbacher
++          </div>
++          <div class="credit">
++            <h4>fi-FI</h4>
++            Jussi Bergström<br>
++            The Finnish Mozilla l10n Team
++          </div>
++          <div class="credit">
++            <h4>zh-TW</h4>
++            Hung-Te Lin<br>
++            Po-Chiang Chao
++          </div>
++          <div class="credit">
++            <h4>pl-PL</h4>
++            Stanis&#322;aw&#160;Ma&#322;olepszy<br>
++            Zbigniew Braniecki<br>
++            Marek St&#281;pie&#324;<br>
++            Piotr Pielach<br>
++            Piotr Komoda<br>
++            Irek Chmielowiec<br>
++            Pawe&#322; Chmielewski<br>
++            Wadim Dziedzic<br>
++            Piotr Chyli&#324;ski
++          </div>
++          <div class="credit">
++            <h4>jp-JP</h4>
++            &#12418;&#12392;&#12402;&#12371;
++          </div>
++          <div class="credit">
++            <h4>hu-HU</h4>
++            Tímár András<br>
++            Gazdag András
++          </div>
++          <div class="credit">
++            <h4>es-ES</h4>
++            The NAVE Project
++          </div>
++          <div class="credit">
++            <h4>ca-AD</h4>
++            Gerard Farràs i Ballabriga<br>
++            Softcatala
++          </div>
++          <div class="credit">
++            <h4>cs-CZ</h4>
++            Pavel Petric<br>
++            Pavel Cvrcek<br>
++            Adam Hauner
++          </div>
+           <div class="credit">
+-            Translator Name<br>
++            <h4>da-DK</h4>
++            Kim Ludvigsen<br>
++            Det danske Mozilla-team
+           </div>
+         </div>
+--->         
+         <div class="creditsGroup">
+           <h3>Brand Identity</h3>
+           <div class="credit">Ingolfur Haraldsson</div>
+@@ -202,7 +290,8 @@
+ 
+         <div class="creditsGroup">        
+           <h3>Quality Assurance</h3>
+-          <div class="credit">Georgi Damyanov</div>
++          <div class="credit">Georgi Damyanov<br>
++          Mark Sepeda</div>
+ 
+           <h3>Special Thanks To</h3>
+           <div class="credit">Linspire Insiders</div>
+diff -uNr 1.0PR/locale/editor/editor.properties 1.0/locale/editor/editor.properties
+--- 1.0PR/locale/editor/editor.properties	2005-01-25 09:28:00.000000000 +0100
++++ 1.0/locale/editor/editor.properties	2005-05-20 11:58:00.000000000 +0200
+@@ -24,6 +24,7 @@
+ None=None
+ none=none
+ OpenHTMLFile=Open HTML File
++XHTMLfiles=XHTML Files
+ SelectImageFile=Select Image File
+ SaveDocument=Save Page
+ SaveDocumentAs=Save Page As
+@@ -238,6 +239,7 @@
+ # TEMPLATES
+ #
+ DocumentIsTemplate=This document is a template
++HTMLtemplates=HTML templates
+ #
+ # Class dropdown menu
+ #
+diff -uNr 1.0PR/locale/editor/editorOverlay.dtd 1.0/locale/editor/editorOverlay.dtd
+--- 1.0PR/locale/editor/editorOverlay.dtd	2005-03-29 13:49:00.000000000 +0200
++++ 1.0/locale/editor/editorOverlay.dtd	2005-06-17 11:54:00.000000000 +0200
+@@ -717,10 +717,14 @@
+ <!ENTITY tipofthedaymenu.accesskey "T">
+ <!ENTITY aboutMenu.label          "About Nvu">
+ <!ENTITY aboutmenu.accesskey      "A">
+-<!ENTITY localizingnvu.accesskey  "L">
++<!ENTITY localizingnvu.accesskey  "Z">
+ <!ENTITY localizingNvu.label      "Localizing Nvu">
+-<!ENTITY userGuideMenu.label      "Contributed User Guide">
++<!ENTITY userGuideMenu.label      "User Guide">
+ <!ENTITY userguidemenu.accesskey  "U">
++<!ENTITY aboutLinspire.label      "About Linspire Inc.">
++<!ENTITY aboutlinspire.accesskey  "L">
++<!ENTITY aboutDI.label            "About Disruptive Innovations">
++<!ENTITY aboutDI.accesskey        "I">
+ 
+ <!ENTITY leftGlued.tooltip        "Glue to the left border">
+ <!ENTITY rightGlued.tooltip       "Glue to the right border">
+@@ -732,4 +736,3 @@
+ <!ENTITY spellSuggestions.label   "Spelling Suggestions">
+ <!ENTITY spellSuggestions.accesskey "S">
+ <!ENTITY spellAddToDictionary.label "Add to Dictionary">
+-
+diff -uNr 1.0PR/locale/editor/pref-editing.dtd 1.0/locale/editor/pref-editing.dtd
+--- 1.0PR/locale/editor/pref-editing.dtd	2005-03-16 13:54:00.000000000 +0100
++++ 1.0/locale/editor/pref-editing.dtd	2005-05-10 14:49:00.000000000 +0200
+@@ -5,14 +5,6 @@
+ <!ENTITY authorName.accesskey      "u">
+ <!ENTITY pageColorHeader           "Default Page Appearance">
+ 
+-<!ENTITY dialect.label              "Markup">
+-<!ENTITY markupLanguage.label       "Language:">
+-<!ENTITY dtd.label                  "DTD:">
+-<!ENTITY htmlMarkupLanguage.label   "HTML 4">
+-<!ENTITY xhtmlMarkupLanguage.label  "XHTML 1">
+-<!ENTITY looseDTD.label             "Transitional">
+-<!ENTITY strictDTD.label            "Strict">
+-
+ <!ENTITY defaultColorsRadio.label   "Reader's default colors (Don't set colors in page)">
+ <!ENTITY defaultColors.accesskey    "d">
+ <!ENTITY customColorsRadio.label    "Use custom colors:">
+diff -uNr 1.0PR/locale/editor/tabeditor.dtd 1.0/locale/editor/tabeditor.dtd
+--- 1.0PR/locale/editor/tabeditor.dtd	2004-12-21 15:19:00.000000000 +0100
++++ 1.0/locale/editor/tabeditor.dtd	2005-06-17 16:28:00.000000000 +0200
+@@ -40,3 +40,9 @@
+ <!ENTITY closeTab.accesskey          "c">
+ <!ENTITY closeOtherTabs.label        "Close Other Tabs">
+ <!ENTITY closeOtherTabs.accesskey    "o">
++<!ENTITY newTab.label                "New Tab">
++<!ENTITY newTab.accesskey            "n">
++<!ENTITY revert.label                "Revert">
++<!ENTITY revert.accesskey            "v">
++<!ENTITY refreshImages.label         "Reload Images">
++<!ENTITY refreshImages.accesskey     "r">
+diff -uNr 1.0PR/locale/editor-region/region.properties 1.0/locale/editor-region/region.properties
+--- 1.0PR/locale/editor-region/region.properties	2005-03-30 14:33:00.000000000 +0200
++++ 1.0/locale/editor-region/region.properties	2005-04-04 14:00:00.000000000 +0200
+@@ -5,3 +5,5 @@
+ editor.bugReports.url=http://www.nvu.com/bugreport2.php
+ editor.L10N.url=http://glazman.org/nvu/NVU-L10N.html
+ editor.CCuserGuide.url=http://www.nvudev.org/guide/1.0PR
++editor.aboutLinspire.url=http://www.linspire.com/
++editor.aboutDI.url=http://disruptive-innovations.com
+diff -uNr 1.0PR/locale/en-US/cascades/EdCssProps.dtd 1.0/locale/en-US/cascades/EdCssProps.dtd
+--- 1.0PR/locale/en-US/cascades/EdCssProps.dtd	2005-01-31 13:51:00.000000000 +0100
++++ 1.0/locale/en-US/cascades/EdCssProps.dtd	2005-05-12 10:08:00.000000000 +0200
+@@ -242,3 +242,28 @@
+ <!ENTITY cueBefore.label                    "Cue before:">
+ <!ENTITY pauseAfter.label                   "Pause after:">
+ <!ENTITY cueAfter.label                     "Cue After:">
++
++
++<!ENTITY listTab.label			"Lists">
++
++<!ENTITY listStyleType.label		"List Style Type:">
++<!ENTITY noneListStyleType.label                        "none">
++<!ENTITY discListStyleType.label                        "disc">
++<!ENTITY circleListStyleType.label                      "circle">
++<!ENTITY squareListStyleType.label                      "square">
++<!ENTITY decimalListStyleType.label                     "decimal">
++<!ENTITY decimalLeadingZeroListStyleType.label        "decimal-leading-zero">
++<!ENTITY lowerRomanListStyleType.label                 "lower-roman">
++<!ENTITY upperRomanListStyleType.label                 "upper-roman">
++<!ENTITY lowerGreekListStyleType.label                 "lower-greek">
++<!ENTITY lowerAlphaListStyleType.label                 "lower-alpha">
++<!ENTITY upperAlphaListStyleType.label                 "upper-alpha">
++<!ENTITY armenianListStyleType.label                    "armenian">
++<!ENTITY georgianListStyleType.label                    "georgian">
++
++
++<!ENTITY listStyleImage.label		"List Style Image:">
++
++<!ENTITY listStylePosition.label	"List Style Position:">
++<!ENTITY insideListStylePosition.label		"inside">
++<!ENTITY outsideListStylePosition.label		"outside">
+diff -uNr 1.0PR/locale/en-US/cascades/cascades.properties 1.0/locale/en-US/cascades/cascades.properties
+--- 1.0PR/locale/en-US/cascades/cascades.properties	2005-03-16 17:35:00.000000000 +0100
++++ 1.0/locale/en-US/cascades/cascades.properties	2005-06-22 08:31:00.000000000 +0200
+@@ -31,6 +31,6 @@
+ SaveBeforeLocalSheetWarning2=(use Refresh button if stylesheet is not immediately downloaded)
+ SelectCSSFile=Select a CSS File
+ AlternateKeyword= (alternate) 
+-StyleSheet=StyleSheet
++Stylesheet=StyleSheet
+ StyleSheetIsEmbedded=none (embedded into the document)
+ Transparent=transparent
+

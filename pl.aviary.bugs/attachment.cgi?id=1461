@@ -1,0 +1,20 @@
+#!/bin/sh
+
+export PREFIX=/tmp/emerillon
+export PKG_CONFIG_PATH=/usr/lib/pkgconfig:$PREFIX/lib/pkgconfig
+git clone git://git.moblin.org/librest
+cd librest
+./autogen.sh --prefix=$PREFIX
+make install
+cd ..
+git clone git://git.dronelabs.com/ethos
+cd ethos
+./autogen.sh --prefix=$PREFIX
+make install
+cd ..
+git clone git://git.gnome.org/emerillon
+cd emerillon
+./autogen.sh --prefix=$PREFIX
+make install
+cd ..
+

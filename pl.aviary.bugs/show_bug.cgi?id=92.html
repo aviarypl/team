@@ -1,0 +1,3850 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>92 &ndash; Tlumaczenie helpa do Fx 1.0</title>
+
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<link href="data/assets/7aa6ea67750936a0368541421bdcd5ee.css" rel="stylesheet" type="text/css">
+
+
+
+    
+<script type="text/javascript" src="data/assets/a7c2f3a028f17a9aa60f56dc9d6e732d.js"></script>
+
+    <script type="text/javascript">
+    <!--
+        YAHOO.namespace('bugzilla');
+        YAHOO.util.Event.addListener = function (el, sType, fn, obj, overrideContext) {
+               if ( ("onpagehide" in window || YAHOO.env.ua.gecko) && sType === "unload") { sType = "pagehide"; };
+               var capture = ((sType == "focusin" || sType == "focusout") && !YAHOO.env.ua.ie) ? true : false;
+               return this._addListener(el, this._getType(sType), fn, obj, overrideContext, capture);
+         };
+        if ( "onpagehide" in window || YAHOO.env.ua.gecko) {
+            YAHOO.util.Event._simpleRemove(window, "unload", 
+                                           YAHOO.util.Event._unload);
+        }
+        
+        function unhide_language_selector() { 
+            YAHOO.util.Dom.removeClass(
+                'lang_links_container', 'bz_default_hidden'
+            ); 
+        } 
+        YAHOO.util.Event.onDOMReady(unhide_language_selector);
+
+        
+        var BUGZILLA = {
+            param: {
+                cookiepath: '\/',
+                maxusermatches: 1000
+            },
+            constant: {
+                COMMENT_COLS: 80
+            },
+            string: {
+                
+
+                attach_desc_required:
+                    "You must enter a Description for this attachment.",
+                component_required:
+                    "You must select a Component for this bug.",
+                description_required:
+                    "You must enter a Description for this bug.",
+                short_desc_required:
+                    "You must enter a Summary for this bug.",
+                version_required:
+                    "You must select a Version for this bug."
+            }
+              , api_token: ''
+        };
+
+    if (history && history.replaceState) {
+      if(!document.location.href.match(/show_bug\.cgi/)) {
+        history.replaceState( null,
+                             "92 – Tlumaczenie helpa do Fx 1.0",
+                             "show_bug.cgi?id=92" );
+        document.title = "92 – Tlumaczenie helpa do Fx 1.0";
+      }
+      if (document.location.href.match(/show_bug\.cgi\?.*list_id=/)) {
+        var href = document.location.href;
+        href = href.replace(/[\?&]+list_id=(\d+|cookie)/, '');
+        history.replaceState(null, "92 – Tlumaczenie helpa do Fx 1.0", href);
+      }
+    }
+    YAHOO.util.Event.onDOMReady(function() {
+      initDirtyFieldTracking();
+
+    });
+    // -->
+    </script>
+<script type="text/javascript" src="data/assets/daf5e0fb6826e6a35280e622913f0c4a.js"></script>
+
+    
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+                       title="Bugzilla" href="search_plugin.cgi">
+    <link rel="shortcut icon" href="images/favicon.ico">
+  </head>
+
+  <body 
+        class="bugs-aviary-pl
+                 bz_bug
+                 bz_status_VERIFIED
+                 bz_product_Firefox
+                 bz_component_Og&#XF3;lne
+                 bz_bug_92 yui-skin-sam">
+
+  <div id="header"><div id="banner">
+  </div>
+
+    <div id="titles">
+      <span id="title">Bugzilla &ndash; Bug&nbsp;92</span>
+
+        <span id="subtitle" class="subheader">Tlumaczenie helpa do Fx 1.0</span>
+
+        <span id="information" class="header_addl_info">Last modified: 2008-05-04 05:19:03 CEST</span>
+    </div>
+
+
+    <div id="common_links"><ul class="links">
+  <li><a href="index.html">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi.html">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi.html">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi.html">Search</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="http://bugs.aviary.pl/buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input type="hidden" id="no_redirect_top" name="no_redirect" value="0">
+    <script type="text/javascript">
+      if (history && history.replaceState) {
+        var no_redirect = document.getElementById("no_redirect_top");
+        no_redirect.value = 1;
+      }
+    </script>
+    <input class="txt" type="text" id="quicksearch_top" name="quicksearch" 
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search" 
+           id="find_top"></form>
+  <a href="page.cgi%3Fid=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="report.cgi.html">Reports</a></li>
+
+  <li>
+      <span class="separator">| </span>
+        <a href="request.cgi.html">Requests</a></li>
+
+
+  <li>
+        <span class="separator">| </span>
+        <a href="https://bugzilla.readthedocs.org/en/5.0/using/understanding.html" target="_blank">Help</a>
+      </li>
+    
+      <li id="new_account_container_top">
+        <span class="separator">| </span>
+        <a href="createaccount.cgi.html">New&nbsp;Account</a>
+      </li>
+
+    <li id="mini_login_container_top">
+  <span class="separator">| </span>
+  <a id="login_link_top" href="show_bug.cgi%3Fid=92&amp;GoAheadAndLogIn=1.html"
+     onclick="return show_mini_login_form('_top')">Log In</a>
+
+  <form action="show_bug.cgi%3Fid=92.html" method="POST"
+        class="mini_login bz_default_hidden"
+        id="mini_login_top">
+    <input id="Bugzilla_login_top" required
+           name="Bugzilla_login" class="bz_login"
+        type="email" placeholder="Email Address">
+    <input class="bz_password" name="Bugzilla_password" type="password"
+           id="Bugzilla_password_top" required
+           placeholder="Password">
+    <input type="hidden" name="Bugzilla_login_token"
+           value="1469819851-YPjooKXWmv1HxvLSiknl6MXsat6nhkvZf2GJ2rv0QZI">
+    <input type="submit" name="GoAheadAndLogIn" value="Log in"
+            id="log_in_top">
+    <a href="show_bug.cgi%3Fid=92.html#" onclick="return hide_mini_login_form('_top')">[x]</a>
+  </form>
+</li>
+
+
+  <li id="forgot_container_top">
+    <span class="separator">| </span>
+    <a id="forgot_link_top" href="show_bug.cgi%3Fid=92&amp;GoAheadAndLogIn=1.html#forgot"
+       onclick="return show_forgot_form('_top')">Forgot Password</a>
+    <form action="http://bugs.aviary.pl/token.cgi" method="post" id="forgot_form_top"
+          class="mini_forgot bz_default_hidden">
+      <label for="login_top">Login:</label>
+      <input name="loginname" size="20" id="login_top" required
+          type="email" placeholder="Your Email Address">
+      <input id="forgot_button_top" value="Reset Password" type="submit">
+      <input type="hidden" name="a" value="reqpw">
+      <input type="hidden" id="token_top" name="token"
+             value="1469819851-EzbUFxcFM91QvBnB3sjkVhw29dWK2XImyQl_rOiriII">
+      <a href="show_bug.cgi%3Fid=92.html#" onclick="return hide_forgot_form('_top')">[x]</a>
+    </form>
+  </li>
+</ul>
+    </div>
+  </div>
+
+  <div id="bugzilla-body">
+
+
+<script type="text/javascript">
+<!--
+
+//-->
+</script>
+
+<form name="changeform" id="changeform" method="post" action="http://bugs.aviary.pl/process_bug.cgi">
+
+  <input type="hidden" name="delta_ts" value="2008-05-04 05:19:03">
+  <input type="hidden" name="id" value="92">
+  <input type="hidden" name="token" value="1469819851-ig-VhMm7YHrivvdJzfskbVDKd6S9sAVW_V8bzgK4sXY">
+<div class="bz_short_desc_container edit_form">
+     <a href="show_bug.cgi%3Fid=92.html"><b>Bug&nbsp;92</b></a> <span id="summary_container" class="bz_default_hidden">
+      - <span id="short_desc_nonedit_display">Tlumaczenie helpa do Fx 1.0</span>
+     </span>
+
+    <div id="summary_input"><span class="field_label "
+    id="field_label_short_desc">
+
+
+  <a 
+      title="The bug summary is a short sentence which succinctly describes what the bug is about."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#short_desc"
+  >Summary:</a>
+
+</span>Tlumaczenie helpa do Fx 1.0
+    </div>
+  </div>
+  <script type="text/javascript">
+    hideEditableField('summary_container',
+                      'summary_input',
+                      'summary_edit_action',
+                      'short_desc',
+                      'Tlumaczenie helpa do Fx 1.0' );
+  </script>
+  <table class="edit_form">
+    <tr>
+      
+      <td id="bz_show_bug_column_1" class="bz_show_bug_column">     
+        <table>
+          <tr>
+    <th class="field_label">
+      <a href="page.cgi%3Fid=fields.html#bug_status">Status</a>:
+    </th>
+    <td id="bz_field_status">
+      <span id="static_bug_status">VERIFIED
+          FIXED
+      </span>
+    </td>
+  </tr>
+<tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+<tr><th class="field_label "
+    id="field_label_alias">
+
+
+  <a 
+      title="A short, unique name assigned to a bug in order to assist with looking it up and referring to it in other places in Bugzilla."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#alias"
+  >Alias:</a>
+
+</th>
+    <td>
+        None
+    </td>
+  </tr>
+<tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+<tr><th class="field_label "
+    id="field_label_product">
+
+
+  <a 
+      title="Bugs are categorised into Products and Components. Select a Classification to narrow down this list."
+      class="field_help_link"
+      href="describecomponents.cgi.html"
+  >Product:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_product" >Firefox
+
+</td>
+    </tr>
+
+    
+    <tr class="bz_default_hidden"><th class="field_label "
+    id="field_label_classification">
+
+
+  <a 
+      title="Bugs are categorised into Classifications, Products and Components. classifications is the top-level categorisation."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#classification"
+  >Classification:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_classification" >Tłumaczenia oprogramowania
+
+</td>
+    </tr>
+        
+    
+    
+    <tr><th class="field_label "
+    id="field_label_component">
+
+
+  <a 
+      title="Components are second-level categories; each belongs to a particular Product. Select a Product to narrow down this list."
+      class="field_help_link"
+      href="describecomponents.cgi%3Fproduct=Firefox.html"
+  >Component:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_component" >Ogólne
+
+  (<a href="buglist.cgi%3Fcomponent=Ogólne&amp;product=Firefox&amp;bug_status=__open__.html"
+      target="_blank">show other bugs</a>)
+</td>
+    </tr>
+    <tr><th class="field_label "
+    id="field_label_version">
+
+
+  <a 
+      title="The version field defines the version of the software the bug was found in."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#version"
+  >Version:</a>
+
+</th>
+<td>nieokreślona
+  </td>
+    </tr>
+        
+    
+        
+    <tr><th class="field_label "
+    id="field_label_rep_platform">
+
+
+  <a 
+      title="The hardware platform the bug was observed on. Note: When searching, selecting the option &quot;All&quot; only finds bugs whose value for this field is literally the word &quot;All&quot;."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#rep_platform"
+  >Hardware:</a>
+
+</th>
+      <td class="field_value">Wszystkie
+        Wszystkie
+      </td>
+    </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          
+          <tr>
+      <th class="field_label">
+        <label  accesskey="i">
+          <a href="page.cgi%3Fid=fields.html#importance"><u>I</u>mportance</a></label>:
+      </th>
+      <td>P2
+       trywialny
+      </td>
+    </tr>
+          
+          <tr><th class="field_label "
+    id="field_label_assigned_to">
+
+
+  <a 
+      title="The person in charge of resolving the bug."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#assigned_to"
+  >Assignee:</a>
+
+</th>
+      <td><span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+      </td>
+    </tr>
+
+    <tr><th class="field_label "
+    id="field_label_qa_contact">
+
+
+  <a 
+      title="The person responsible for confirming this bug if it is unconfirmed, and for verifying the fix once the bug has been resolved."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#qa_contact"
+  >QA Contact:</a>
+
+</th>
+      <td><span class="vcard">firefox
+</span>
+      </td>
+    </tr>
+    <script type="text/javascript">
+      assignToDefaultOnChange(['product', 'component'],
+        'splewako\x40aviary.pl',
+        'firefox\x40l10n.bledy');
+    </script>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          <tr><th class="field_label "
+    id="field_label_bug_file_loc">
+
+
+  <a 
+      title="Bugs can have a URL associated with them - for example, a pointer to a web site where the problem is seen."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#bug_file_loc"
+  >URL:</a>
+
+</th>
+    <td>
+      <span id="bz_url_input_area">
+      </span>
+    </td>
+  </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+
+          
+<tr><th class="field_label "
+    id="field_label_dependson">
+
+
+  <a 
+      title="The bugs listed here must be resolved before this bug can be resolved."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#dependson"
+  >Depends on:</a>
+
+</th>
+
+  <td>
+    <span id="dependson_input_area">
+    </span>
+<a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - [POMOC] Jest: autentyfikacja. Powinno być: uwierzytelnianie"
+   href="show_bug.cgi%3Fid=243.html">243</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - [POMOC] jeszcze są schematy wyglądu!"
+   href="show_bug.cgi%3Fid=246.html">246</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Niekonsekwentne nazewnictwo w menu Widok &gt; Style strony"
+   href="show_bug.cgi%3Fid=254.html">254</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - [POMOC] Ortografia: &quot;OdświeRZ&quot;"
+   href="show_bug.cgi%3Fid=263.html">263</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Literówka w słowie &quot;Sieć&quot;"
+   href="show_bug.cgi%3Fid=269.html">269</a> 
+  </td>
+  </tr>
+  
+  <tr><th class="field_label "
+    id="field_label_blocked">
+
+
+  <a 
+      title="This bug must be resolved before the bugs listed in this field can be resolved."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#blocked"
+  >Blocks:</a>
+
+</th>
+
+  <td>
+    <span id="blocked_input_area">
+    </span>
+<a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Lokalizacja Firefoksa 1.0 RC 2"
+   href="show_bug.cgi%3Fid=260.html">260</a> 
+  </td>
+  </tr>
+
+    <tr>
+      <th>&nbsp;</th>
+
+      <td id="show_dependency_tree_or_graph">
+        Show dependency <a href="showdependencytree.cgi%3Fid=92&amp;hide_resolved=1.html">tree</a>
+
+          /&nbsp;<a href="showdependencygraph.cgi%3Fid=92.html">graph</a>
+      </td>
+    </tr>
+          
+        </table>
+      </td>
+      <td>
+        <div class="bz_column_spacer">&nbsp;</div>
+      </td>
+      
+      <td id="bz_show_bug_column_2" class="bz_show_bug_column">
+        <table>
+        <tr>
+    <th class="field_label">
+      Reported:
+    </th>
+    <td>2004-06-11 15:51 CEST by <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+    </td>
+  </tr>
+  
+  <tr>
+    <th class="field_label">
+      Modified:
+    </th>
+    <td>2008-05-04 05:19 CEST
+      (<a href="show_activity.cgi%3Fid=92.html">History</a>)
+    </td>
+  
+  </tr>
+<tr>
+      <th class="field_label">
+        <label  accesskey="a">
+          CC List:
+        </label>
+      </th>
+      <td>3 
+          users
+          <span id="cc_edit_area_showhide_container" class="bz_default_hidden">
+            (<a href="show_bug.cgi%3Fid=92.html#" id="cc_edit_area_showhide">show</a>)
+          </span>
+        <div id="cc_edit_area">
+          <br>
+            <select id="cc" multiple="multiple" size="5" >
+                <option value="hubert+bap">hubert+bap</option>
+                <option value="pitreck">pitreck</option>
+                <option value="wadimd">wadimd</option>
+            </select>
+        </div>
+          <script type="text/javascript">
+            hideEditableField( 'cc_edit_area_showhide_container', 
+                               'cc_edit_area', 
+                               'cc_edit_area_showhide', 
+                               '', 
+                               '');  
+          </script>
+      </td>
+    </tr>
+
+<tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+<tr><th class="field_label "
+    id="field_label_see_also">
+
+
+  <a 
+      title="This allows you to refer to bugs in other installations. You can enter a URL to a bug in the 'Add Bug URLs' field to note that that bug is related to this one. You can enter multiple URLs at once by separating them with whitespace. You should normally use this field to refer to bugs in other installations. For bugs in this installation, it is better to use the Depends on and Blocks fields."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#see_also"
+  >See Also:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_see_also" >
+
+</td>
+    </tr> 
+
+<tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+
+
+
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+          <hr id="bz_top_half_spacer">
+      </td>
+    </tr>
+  </table>
+
+  <table id="bz_big_form_parts">
+  <tr>
+  <td>
+
+    
+<script type="text/javascript">
+<!--
+function toggle_display(link) {
+    var table = document.getElementById("attachment_table");
+    var view_all = document.getElementById("view_all");
+    var hide_obsolete_url_parameter = "&hide_obsolete=1";
+    // Store current height for scrolling later
+    var originalHeight = table.offsetHeight;
+    var rows = YAHOO.util.Dom.getElementsByClassName(
+        'bz_tr_obsolete', 'tr', table);
+
+    for (var i = 0; i < rows.length; i++) {
+        bz_toggleClass(rows[i], 'bz_default_hidden');
+    }
+
+    if (YAHOO.util.Dom.hasClass(rows[0], 'bz_default_hidden')) {
+        link.innerHTML = "Show Obsolete";
+        view_all.href = view_all.href + hide_obsolete_url_parameter 
+    }
+    else {
+        link.innerHTML = "Hide Obsolete";
+        view_all.href = view_all.href.replace(hide_obsolete_url_parameter,"");
+    }
+
+    var newHeight = table.offsetHeight;
+    // This scrolling makes the window appear to not move at all.
+    window.scrollBy(0, newHeight - originalHeight);
+
+    return false;
+}
+//-->
+</script>
+
+<br>
+<table id="attachment_table">
+  <tr id="a0">
+    <th colspan="3" class="left">
+      Attachments
+    </th>
+  </tr>
+
+
+      <tr id="a1" class="bz_contenttype_application_octet-stream bz_tr_obsolete bz_default_hidden">
+        <td>
+            <a href="attachment.cgi%3Fid=73"
+               title="View the content of the attachment">
+          <b><span class="bz_obsolete">tlumaczenie</span></b></a>
+
+          <span class="bz_attach_extra_info">
+              (57.51 KB,
+                application/octet-stream)
+
+            <br>
+            <a href="show_bug.cgi%3Fid=92.html#attach_73"
+               title="Go to the comment associated with the attachment">2004-06-11 15:52 CEST</a>,
+
+            <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+          </span>
+        </td>
+
+          <td class="bz_attach_flags">
+              <i>no flags</i>
+          </td>
+
+        <td>
+          <a href="attachment.cgi%3Fid=73&amp;action=edit.html">Details</a>
+        </td>
+      </tr>
+      <tr id="a2" class="bz_contenttype_application_octet-stream bz_tr_obsolete bz_default_hidden">
+        <td>
+            <a href="attachment.cgi%3Fid=126"
+               title="View the content of the attachment">
+          <b><span class="bz_obsolete">help.jar</span></b></a>
+
+          <span class="bz_attach_extra_info">
+              (144.21 KB,
+                application/octet-stream)
+
+            <br>
+            <a href="show_bug.cgi%3Fid=92.html#attach_126"
+               title="Go to the comment associated with the attachment">2004-09-20 00:45 CEST</a>,
+
+            <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+          </span>
+        </td>
+
+          <td class="bz_attach_flags">
+              <i>no flags</i>
+          </td>
+
+        <td>
+          <a href="attachment.cgi%3Fid=126&amp;action=edit.html">Details</a>
+        </td>
+      </tr>
+      <tr id="a3" class="bz_contenttype_application_octet-stream bz_tr_obsolete bz_default_hidden">
+        <td>
+            <a href="attachment.cgi%3Fid=130"
+               title="View the content of the attachment">
+          <b><span class="bz_obsolete">wersja całkowicie polska (help.jar)</span></b></a>
+
+          <span class="bz_attach_extra_info">
+              (150.57 KB,
+                application/octet-stream)
+
+            <br>
+            <a href="show_bug.cgi%3Fid=92.html#attach_130"
+               title="Go to the comment associated with the attachment">2004-09-20 19:35 CEST</a>,
+
+            <span class="vcard">wadimd
+</span>
+          </span>
+        </td>
+
+          <td class="bz_attach_flags">
+              <i>no flags</i>
+          </td>
+
+        <td>
+          <a href="attachment.cgi%3Fid=130&amp;action=edit.html">Details</a>
+        </td>
+      </tr>
+      <tr id="a4" class="bz_contenttype_application_octet-stream bz_tr_obsolete bz_default_hidden">
+        <td>
+            <a href="attachment.cgi%3Fid=133"
+               title="View the content of the attachment">
+          <b><span class="bz_obsolete">help.jar + kolejne poprawki</span></b></a>
+
+          <span class="bz_attach_extra_info">
+              (150.82 KB,
+                application/octet-stream)
+
+            <br>
+            <a href="show_bug.cgi%3Fid=92.html#attach_133"
+               title="Go to the comment associated with the attachment">2004-09-23 08:54 CEST</a>,
+
+            <span class="vcard">wadimd
+</span>
+          </span>
+        </td>
+
+          <td class="bz_attach_flags">
+              <i>no flags</i>
+          </td>
+
+        <td>
+          <a href="attachment.cgi%3Fid=133&amp;action=edit.html">Details</a>
+        </td>
+      </tr>
+      <tr id="a5" class="bz_contenttype_application_octet-stream bz_tr_obsolete bz_default_hidden">
+        <td>
+            <a href="attachment.cgi%3Fid=134"
+               title="View the content of the attachment">
+          <b><span class="bz_obsolete">help.jar (v.20040923)</span></b></a>
+
+          <span class="bz_attach_extra_info">
+              (150.82 KB,
+                application/octet-stream)
+
+            <br>
+            <a href="show_bug.cgi%3Fid=92.html#attach_134"
+               title="Go to the comment associated with the attachment">2004-09-24 13:32 CEST</a>,
+
+            <span class="vcard">wadimd
+</span>
+          </span>
+        </td>
+
+          <td class="bz_attach_flags">
+              <i>no flags</i>
+          </td>
+
+        <td>
+          <a href="attachment.cgi%3Fid=134&amp;action=edit.html">Details</a>
+        </td>
+      </tr>
+      <tr id="a6" class="bz_contenttype_application_octet-stream bz_tr_obsolete bz_default_hidden">
+        <td>
+            <a href="attachment.cgi%3Fid=135"
+               title="View the content of the attachment">
+          <b><span class="bz_obsolete">zzipowany podkatalog help z pl-PL.jar (v.20041007 z obrazkami)</span></b></a>
+
+          <span class="bz_attach_extra_info">
+              (602.95 KB,
+                application/octet-stream)
+
+            <br>
+            <a href="show_bug.cgi%3Fid=92.html#attach_135"
+               title="Go to the comment associated with the attachment">2004-10-07 20:36 CEST</a>,
+
+            <span class="vcard">wadimd
+</span>
+          </span>
+        </td>
+
+          <td class="bz_attach_flags">
+              <i>no flags</i>
+          </td>
+
+        <td>
+          <a href="attachment.cgi%3Fid=135&amp;action=edit.html">Details</a>
+        </td>
+      </tr>
+      <tr id="a7" class="bz_contenttype_application_octet-stream bz_tr_obsolete bz_default_hidden">
+        <td>
+            <a href="attachment.cgi%3Fid=140"
+               title="View the content of the attachment">
+          <b><span class="bz_obsolete">Poprawiony help (20041010)</span></b></a>
+
+          <span class="bz_attach_extra_info">
+              (603.00 KB,
+                application/octet-stream)
+
+            <br>
+            <a href="show_bug.cgi%3Fid=92.html#attach_140"
+               title="Go to the comment associated with the attachment">2004-10-11 00:41 CEST</a>,
+
+            <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+          </span>
+        </td>
+
+          <td class="bz_attach_flags">
+              <i>no flags</i>
+          </td>
+
+        <td>
+          <a href="attachment.cgi%3Fid=140&amp;action=edit.html">Details</a>
+        </td>
+      </tr>
+      <tr id="a8" class="bz_contenttype_application_octet-stream bz_tr_obsolete bz_default_hidden">
+        <td>
+            <a href="attachment.cgi%3Fid=141"
+               title="View the content of the attachment">
+          <b><span class="bz_obsolete">poprawka customization.xhtml</span></b></a>
+
+          <span class="bz_attach_extra_info">
+              (603.03 KB,
+                application/octet-stream)
+
+            <br>
+            <a href="show_bug.cgi%3Fid=92.html#attach_141"
+               title="Go to the comment associated with the attachment">2004-10-11 00:43 CEST</a>,
+
+            <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+          </span>
+        </td>
+
+          <td class="bz_attach_flags">
+              <i>no flags</i>
+          </td>
+
+        <td>
+          <a href="attachment.cgi%3Fid=141&amp;action=edit.html">Details</a>
+        </td>
+      </tr>
+      <tr id="a9" class="bz_contenttype_application_zip bz_tr_obsolete bz_default_hidden">
+        <td>
+            <a href="attachment.cgi%3Fid=189"
+               title="View the content of the attachment">
+          <b><span class="bz_obsolete">help z 24.10.2004.</span></b></a>
+
+          <span class="bz_attach_extra_info">
+              (661.05 KB,
+                application/zip)
+
+            <br>
+            <a href="show_bug.cgi%3Fid=92.html#attach_189"
+               title="Go to the comment associated with the attachment">2004-10-24 11:50 CEST</a>,
+
+            <span class="vcard"><span class="fn">Staś Małolepszy :stas</span>
+</span>
+          </span>
+        </td>
+
+          <td class="bz_attach_flags">
+              <i>no flags</i>
+          </td>
+
+        <td>
+          <a href="attachment.cgi%3Fid=189&amp;action=edit.html">Details</a>
+        </td>
+      </tr>
+      <tr id="a10" class="bz_contenttype_application_zip bz_tr_obsolete bz_default_hidden">
+        <td>
+            <a href="attachment.cgi%3Fid=190"
+               title="View the content of the attachment">
+          <b><span class="bz_obsolete">poprawiony help, wersja 20041024b</span></b></a>
+
+          <span class="bz_attach_extra_info">
+              (658.36 KB,
+                application/zip)
+
+            <br>
+            <a href="show_bug.cgi%3Fid=92.html#attach_190"
+               title="Go to the comment associated with the attachment">2004-10-24 14:35 CEST</a>,
+
+            <span class="vcard"><span class="fn">Staś Małolepszy :stas</span>
+</span>
+          </span>
+        </td>
+
+          <td class="bz_attach_flags">
+              <i>no flags</i>
+          </td>
+
+        <td>
+          <a href="attachment.cgi%3Fid=190&amp;action=edit.html">Details</a>
+        </td>
+      </tr>
+      <tr id="a11" class="bz_contenttype_application_zip">
+        <td>
+            <a href="attachment.cgi%3Fid=218"
+               title="View the content of the attachment">
+          <b>wersja z 3 listopada, final</b></a>
+
+          <span class="bz_attach_extra_info">
+              (667.29 KB,
+                application/zip)
+
+            <br>
+            <a href="show_bug.cgi%3Fid=92.html#attach_218"
+               title="Go to the comment associated with the attachment">2004-11-03 22:58 CET</a>,
+
+            <span class="vcard"><span class="fn">Staś Małolepszy :stas</span>
+</span>
+          </span>
+        </td>
+
+          <td class="bz_attach_flags">
+              <i>no flags</i>
+          </td>
+
+        <td>
+          <a href="attachment.cgi%3Fid=218&amp;action=edit.html">Details</a>
+        </td>
+      </tr>
+      <tr id="a12" class="bz_contenttype_application_xhtml&#X2B;xml">
+        <td>
+            <a href="attachment.cgi%3Fid=219.html"
+               title="View the content of the attachment">
+          <b>prefs.xhtml, na wypadek zmiany nazwy opcji (patrz komentarz 67)</b></a>
+
+          <span class="bz_attach_extra_info">
+              (27.92 KB,
+                application/xhtml+xml)
+
+            <br>
+            <a href="show_bug.cgi%3Fid=92.html#attach_219"
+               title="Go to the comment associated with the attachment">2004-11-04 00:09 CET</a>,
+
+            <span class="vcard"><span class="fn">Staś Małolepszy :stas</span>
+</span>
+          </span>
+        </td>
+
+          <td class="bz_attach_flags">
+              <i>no flags</i>
+          </td>
+
+        <td>
+          <a href="attachment.cgi%3Fid=219&amp;action=edit.html">Details</a>
+        </td>
+      </tr>
+      <tr id="a13" class="bz_contenttype_application_zip">
+        <td>
+            <a href="attachment.cgi%3Fid=245"
+               title="View the content of the attachment">
+          <b>Uaktualnionych 6 obrazków z helpa</b></a>
+
+          <span class="bz_attach_extra_info">
+              (258.75 KB,
+                application/zip)
+
+            <br>
+            <a href="show_bug.cgi%3Fid=92.html#attach_245"
+               title="Go to the comment associated with the attachment">2004-11-05 21:35 CET</a>,
+
+            <span class="vcard"><span class="fn">Staś Małolepszy :stas</span>
+</span>
+          </span>
+        </td>
+
+          <td class="bz_attach_flags">
+              <i>no flags</i>
+          </td>
+
+        <td>
+          <a href="attachment.cgi%3Fid=245&amp;action=edit.html">Details</a>
+        </td>
+      </tr>
+
+  <tr class="bz_attach_footer">
+    <td colspan="3">
+        <span class="bz_attach_view_hide">
+            <a href="show_bug.cgi%3Fid=92.html#a0" onclick="return toggle_display(this);">Show
+              Obsolete</a> (10)
+            <a id="view_all" href="attachment.cgi%3Fbugid=92&amp;action=viewall&amp;hide_obsolete=1.html">View All</a>
+        </span>
+        <a href="attachment.cgi%3Fbugid=92&amp;action=enter.html">Add an attachment</a>
+        (proposed patch, testcase, etc.)
+    </td>
+  </tr>
+</table>
+<br>
+
+  </td>
+  <td>
+  </td>
+  </tr></table>
+
+  
+  <div id="comments"><script src="js/comments.js" type="text/javascript">
+</script>
+
+<script type="text/javascript">
+<!--
+  /* Adds the reply text to the 'comment' textarea */
+  function replyToComment(id, real_id, name) {
+      var prefix = "(In reply to " + name + " from comment #" + id + ")\n";
+      var replytext = "";
+        /* pre id="comment_name_N" */
+        var text_elem = document.getElementById('comment_text_'+id);
+        var text = getText(text_elem);
+        replytext = prefix + wrapReplyText(text);
+
+
+      /* <textarea id="comment"> */
+      var textarea = document.getElementById('comment');
+      if (textarea.value != replytext) {
+          textarea.value += replytext;
+      }
+
+      textarea.focus();
+  } 
+//-->
+</script>
+
+
+<!-- This auto-sizes the comments and positions the collapse/expand links 
+     to the right. -->
+<table class="bz_comment_table">
+<tr>
+<td>
+<div id="c0" class="bz_comment bz_first_comment">
+
+      <div class="bz_first_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=92.html#c0">Description</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-06-11 15:51:29 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Przenosze z <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Lokalizacja Firefoksa 0.9"
+   href="show_bug.cgi%3Fid=45.html">bug 45</a>.
+
+Do przetlumaczenia jest caly help, szukam chetnego do pomocy!</pre>
+    </div>
+
+    <div id="c1" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=92.html#c1">Comment 1</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-06-11 15:52:18 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Created <span class="bz_obsolete"><a href="attachment.cgi%3Fid=73" name="attach_73" title="tlumaczenie">attachment 73</a> <a href="attachment.cgi%3Fid=73&amp;action=edit.html" title="tlumaczenie">[details]</a></span>
+tlumaczenie
+
+to plik zip z plikami do tlumaczenia</pre>
+    </div>
+
+    <div id="c2" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=92.html#c2">Comment 2</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-06-11 16:03:21 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">jesli ktos moze pomoc, prosze o informacje, rozdziele pliki</pre>
+    </div>
+
+    <div id="c3" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=92.html#c3">Comment 3</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard">wadimd
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-06-11 16:23:41 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(In reply to <a href="show_bug.cgi%3Fid=92.html#c0">comment #0</a>)
+<span class="quote">&gt; Przenosze z <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Lokalizacja Firefoksa 0.9"
+   href="show_bug.cgi%3Fid=45.html">bug 45</a>.
+&gt; 
+&gt; Do przetlumaczenia jest caly help, szukam chetnego do pomocy!</span >
+
+ja bym może najpierw sugerował zajrzeć na
+<a href="http://mozillapl.org/projekty/Tlumaczenia/Pomoc">http://mozillapl.org/projekty/Tlumaczenia/Pomoc</a> bo część już jest ruszona
+(nie wiem tylko czy i jak się zmieniły oryginały...)</pre>
+    </div>
+
+    <div id="c4" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=92.html#c4">Comment 4</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-06-11 16:31:53 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">jasne, ale to juz ten kto bierze na siebie plik, niech sprawdzi pliz :)</pre>
+    </div>
+
+    <div id="c5" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=92.html#c5">Comment 5</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Staś Małolepszy :stas</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-06-11 17:03:47 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">moje trzy grosze:
+
+tematów jest kilka, jedne większe, inne mniejsze.
+
+1. większe:
+   prefs.xhtml
+   using_firebird.xhtml
+   glossary.xhtml
+   cookies.xhtml
+   customization.xhtml
+
+2. mniejsze:
+   welcome.xhtml
+   profiles.xhtml
+   download_manager.xhtml
+   popup.xhtml
+   shortcuts.xhtml
+   mouse_shortcuts.xhtml
+          ***
+   menu_reference.xhtml (dość długie, ale mało tekstu) 
+   forieusers.xhtml
+   firefox_welcome.xhtml
+
+mniejsze są faktycznie małe, ale to zawsze trochę roboty. Biorę na siebie 6
+pierwszych tematów na w/w liście (do trzech gwiazdek). Na długie dokumenty
+niestety nie mam teraz czasu. Poza tym, brak mi doświadczenia, więc mam nadzieję
+wyrobić się na tych małych tekstach.
+
+odnośnie samego tłumaczenia - czy piszemy:
+&quot;Jeśli chcesz, możesz spróbować..&quot;
+czy &quot;Jeśli użytkownik zechce, może spróbować..&quot;
+albo nawet zupełnie bezosobowo: &quot;Można spróbować..&quot; ?
+
+tam często zwracają się bezpośrednio do użytkownika, dlatego tłumaczenie w stylu
+pierwszym byłoby najłatwiejsze. Tylko zastanawiam się, czy po polsku tak się pisze.</pre>
+    </div>
+
+    <div id="c6" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=92.html#c6">Comment 6</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard">wadimd
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-06-11 18:11:38 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(In reply to <a href="show_bug.cgi%3Fid=92.html#c5">comment #5</a>)
+<span class="quote">&gt; 
+&gt; odnośnie samego tłumaczenia - czy piszemy:
+&gt; &quot;Jeśli chcesz, możesz spróbować..&quot;
+&gt; czy &quot;Jeśli użytkownik zechce, może spróbować..&quot;
+&gt; albo nawet zupełnie bezosobowo: &quot;Można spróbować..&quot; ?
+&gt; 
+&gt; tam często zwracają się bezpośrednio do użytkownika, dlatego tłumaczenie w stylu
+&gt; pierwszym byłoby najłatwiejsze. Tylko zastanawiam się, czy po polsku tak się</span >
+pisze.
+
+powtórzę się, ale zajrzyj na podany wyżej adres wiki - tam są krótkie wytyczne
+itp. i poczytaj te już tłumaczone/przetłumaczone. Co do stylu to obowiązujący
+jest &quot;Aby zrobić cośtam, należy zrobić cośtam&quot;
+</pre>
+    </div>
+
+    <div id="c7" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=92.html#c7">Comment 7</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-06-11 18:23:15 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Z helpem jest jeden problem - w 0.9 RC Help jest po prostu nieaktualny (dotyczy
+de facto 0.8) - opisuje np. okno Opcji/Preferencji zawiera Themes i Extensions,
+które zostały wyciągnięte (nie mówiąc już o Qute w skrinszotach).
+
+Pytanie więc brzmi, czy jest sens tłumaczyć coś, co nie jest aktualne...
+
+</pre>
+    </div>
+
+    <div id="c8" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=92.html#c8">Comment 8</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-06-11 18:29:46 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Jeszcze jedno. część materiałów się pokrywa z zawartością texturizer.net/firefox.
+
+Niepelne tłumaczenie texturizera jest tu:
+<a href="http://beta.firefox.pl/marcoos/pomoc/">http://beta.firefox.pl/marcoos/pomoc/</a>
+
+To: <a href="http://beta.firefox.pl/marcoos/pomoc/mouse.html">http://beta.firefox.pl/marcoos/pomoc/mouse.html</a> ,
+to: <a href="http://beta.firefox.pl/marcoos/pomoc/keyboard.html">http://beta.firefox.pl/marcoos/pomoc/keyboard.html</a> oraz to:
+<a href="http://beta.firefox.pl/marcoos/pomoc/menu.html">http://beta.firefox.pl/marcoos/pomoc/menu.html</a> może być przydatne przy
+tłumaczeniu (a może nawet być w pewnym sensie &quot;gotowcem&quot; ;))
+</pre>
+    </div>
+
+    <div id="c9" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=92.html#c9">Comment 9</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Staś Małolepszy :stas</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-06-11 19:44:34 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(In reply to <a href="show_bug.cgi%3Fid=92.html#c6">comment #6</a>)
+<span class="quote">&gt; powtórzę się, ale zajrzyj na podany wyżej adres wiki - tam są krótkie wytyczne
+&gt; itp. i poczytaj te już tłumaczone/przetłumaczone. Co do stylu to obowiązujący
+&gt; jest &quot;Aby zrobić cośtam, należy zrobić cośtam&quot;</span >
+
+okej, dziękuję, zastosuję się:)
+
+(In reply to <a href="show_bug.cgi%3Fid=92.html#c7">comment #7</a>)
+<span class="quote">&gt; (...) 0.9 RC Help jest po prostu nieaktualny (...) 
+&gt; Pytanie więc brzmi, czy jest sens tłumaczyć coś, co nie jest aktualne...</span >
+
+hymmm, to może na razie pozbieramy to co jest, dotłumaczymy resztę i poczekamy
+do wydania 0.9. Wtedy zobaczymy, co się zmieniło, i szybko wprowadzimy niezbędne
+poprawki? w zależności od tego kiedy wyjdzie nowy fx, mógłbym poświęcić mu cały
+dzień intensywnego dorabiania helpa.
+
+</pre>
+    </div>
+
+    <div id="c10" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=92.html#c10">Comment 10</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Piotr Komoda</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-06-12 13:30:19 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Tlumaczenie popup.xhtml dostepne w CVSie jest w najnowszej wersji (tej nie
+odwolujacej sie do preferencji), takze zeby ktos przypadkiem nie wpadl na pomysl
+brania sie za to :D
+No chyba ze chodzi o poprawki :)</pre>
+    </div>
+
+    <div id="c11" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=92.html#c11">Comment 11</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-06-12 21:27:34 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">-&gt; staszyna</pre>
+    </div>
+
+    <div id="c12" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=92.html#c12">Comment 12</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-06-14 00:01:15 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Do prac: <a href="http://beta.firefox.pl/0.9/testing/">http://beta.firefox.pl/0.9/testing/</a></pre>
+    </div>
+
+    <div id="c13" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=92.html#c13">Comment 13</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Staś Małolepszy :stas</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-06-15 01:30:37 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(W odpowiedzi na komentarz #12)
+<span class="quote">&gt; Do prac: <a href="http://beta.firefox.pl/0.9/testing/">http://beta.firefox.pl/0.9/testing/</a></span >
+
+hmmm, z tego co tam widzę, to to jest jakiś starszy help. Nie pasują szoty,
+układ menu, theme, skróty klawiaturowe (ctrl+e)... tekst jest zasadniczo ten
+sam, ale jednak dużo się pozmieniało... co z tym zrobimy?</pre>
+    </div>
+
+    <div id="c14" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=92.html#c14">Comment 14</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Staś Małolepszy :stas</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-06-15 01:45:51 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(ech, pomyliłem taby i nie tu gdzie trzeba wcisnąłem &quot;Zatwierdź&quot;)
+
+no i teraz moje wahanie:
+* czy robimy to sami, tj. dostosowujemy help do 0.9
+* czy może czekamy na oficjalny help od mozilla.org i jeśli będzie się różnił
+znacząco, to dołączamy polski do 1.0? wtedy oczywiście już pożądnie przetłumaczony.
+* no chyba że do 0.9 damy help 0.8...:/
+
+imho to dość ważny problem, bo na razie tracę motywacje do tłumaczenia;))
+jasne, że takie tematy jak profile albo menedżer pobierania plików praktycznie
+się nie zmienią. albo skróty klaw. tu chodzi o kilka drobnych poprawek. Inne
+tematy mogą jednak różnić się już bardziej.
+
+Osobiście jestem za helpem po polsku już w 0.9. Jeśli będzie inny niż później
+wydany przez mozilla.org, to trudno, zawsze będzie dobrą podstawą do kolejnego
+tłumaczenia. Nie wiem tylko, czy tak wolno.</pre>
+    </div>
+
+    <div id="c15" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=92.html#c15">Comment 15</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Piotr Komoda</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-06-15 02:46:26 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Do premiery Fx 0.9 zostalo nie wiecej niz 7h, watpie aby do tego czasu
+zupdejtowany zostal help (zreszta, to bylo by dosc chamskie zmieniac pliki
+jezykowe na kilka godzin przed premiera). Jaki jest obecnie stan tlumaczenia? 
+Ile mamy czasu na podeslanie langpackow? Moim zdaniem nie ma co gnac na leb na
+szyje, dokonczmy to, co powinnismy i jestesmy w stanie. Help oraz tooltipy moga
+IMO poczekac do 1.0 beta.</pre>
+    </div>
+
+    <div id="c16" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=92.html#c16">Comment 16</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Staś Małolepszy :stas</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-06-15 10:44:39 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">zasnąłem już wczoraj.. tłumaczę teraz profiles, mam skróty, welcome i download
+managera. W sumie to trochę beznadziejnie.
+
+Na mozilla.org już jest informacja o wydaniu zero kropka dziewiątki. Choć mają
+na razie mały bałagan i zagubił się plik dla linuxa. O już jest. Ściąga się.
+
+Może wycelujemy z tym tłumaczeniem w 1.0b, które ma wyjść w lipcu?</pre>
+    </div>
+
+    <div id="c17" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=92.html#c17">Comment 17</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-06-15 12:57:37 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">ok. Odkladamy help.
+Tlumaczysz 0.9 czy 0.9rc?</pre>
+    </div>
+
+    <div id="c18" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=92.html#c18">Comment 18</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Staś Małolepszy :stas</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-06-15 13:27:30 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(W odpowiedzi na <a href="show_bug.cgi%3Fid=92.html#c17">comment #17</a>)
+<span class="quote">&gt; ok. Odkladamy help.
+&gt; Tlumaczysz 0.9 czy 0.9rc?</span >
+
+tłumaczę pliki z rc (stąd: <a href="http://beta.firefox.pl/0.9/testing/">http://beta.firefox.pl/0.9/testing/</a>), ale jeśli
+dobrze patrzę, 0.9 final ma dokładnie to samo. Czyli help dotyczący 0.8.
+
+Czy można się jakoś dogadać z MF i spytać, kiedy opublikują nowy help?
+
+</pre>
+    </div>
+
+    <div id="c19" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=92.html#c19">Comment 19</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">piotr</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-06-24 20:35:27 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Witam
+W przyszlym tygodniu koncze sesje i moge poswiecic pare dni moich ciezko
+zapracowanych wakacji ;) na tlumaczenie. 
+Czasu troche bedzie wiec moge nieco pociagnac, niestety z tego watku nie bardzo
+widac co zostalo do zrobienia, wiec jezeli ktos mnie nakieruje to moge zrobic
+pare czesci.
+
+pozdrawiam</pre>
+    </div>
+
+    <div id="c20" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=92.html#c20">Comment 20</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Staś Małolepszy :stas</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-06-29 23:04:24 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(W odpowiedzi na komentarz #19)
+ 
+<span class="quote">&gt; Czasu troche bedzie wiec moge nieco pociagnac, niestety z tego watku nie bardzo
+&gt; widac co zostalo do zrobienia, wiec jezeli ktos mnie nakieruje to moge zrobic
+&gt; pare czesci.</span >
+
+ok. siedzę nad tym sam chyba, więc fajnie, że jesteś. gdybyś mógł wybrać sobie
+jeden-dwa pliki z tej listy, byłoby super:
+   prefs.xhtml
+   using_firebird.xhtml
+   glossary.xhtml
+   cookies.xhtml
+   customization.xhtml
+np cookies i customization? one jeszcze nie są takie duże. albo jeden z tych
+najdłuższych? using_firebird? wybierz proszę sam.
+
+</pre>
+    </div>
+
+    <div id="c21" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=92.html#c21">Comment 21</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Staś Małolepszy :stas</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-06-29 23:15:34 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(W odpowiedzi na komentarz #20)
+<span class="quote">&gt; np cookies i customization? one jeszcze nie są takie duże. albo jeden z tych
+&gt; najdłuższych? using_firebird? wybierz proszę sam.</span >
+
+aha, koniecznie zajrzyj tu: <a href="http://mozillapl.org/projekty/Tlumaczenia/Pomoc">http://mozillapl.org/projekty/Tlumaczenia/Pomoc</a>
+</pre>
+    </div>
+
+    <div id="c22" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=92.html#c22">Comment 22</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard">wadimd
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-06-30 19:00:28 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">a wiki na to:
+<span class="quote">&gt;    prefs.xhtml</span >
+robi się
+
+<span class="quote">&gt;    cookies.xhtml</span >
+zrobione
+
+<span class="quote">&gt;    customization.xhtml</span >
+zrobione (do przeczytania)
+
+w
+</pre>
+    </div>
+
+    <div id="c23" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=92.html#c23">Comment 23</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Staś Małolepszy :stas</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-07-04 11:18:09 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Wyjeżdżam, wracam 15.07. Biorę ze sobą wszystkie te mniejsze (z punktu drugiego,
+patrz <a href="show_bug.cgi%3Fid=92.html#c5">comment #5</a>) i using_firefox.xhtml. 
+
+Pozdrawiam, do usły.</pre>
+    </div>
+
+    <div id="c24" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=92.html#c24">Comment 24</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Piotr Komoda</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-07-19 05:49:06 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Firefox &quot;oberwal&quot; aktualizacje plikow pomocy, prawdopodobnie juz nic sie w tych
+plikach nie zmieni do 1.0, wiec warto sie za nie wziasc.
+
+<a href="http://bonsai.mozilla.org/cvsquery.cgi?treeid=default&amp;module=all&amp;branch=AVIARY_1_0_20040515_BRANCH&amp;branchtype=match&amp;dir=&amp;file=&amp;filetype=match&amp;who=&amp;whotype=match&amp;sortby=Date&amp;hours=2&amp;date=explicit&amp;mindate=2004-07-18+17%3A20%3A00&amp;maxdate=2004-07-18+17%3A30%3A00&amp;cvsroot=%2Fcvsroot">http://bonsai.mozilla.org/cvsquery.cgi?treeid=default&amp;module=all&amp;branch=AVIARY_1_0_20040515_BRANCH&amp;branchtype=match&amp;dir=&amp;file=&amp;filetype=match&amp;who=&amp;whotype=match&amp;sortby=Date&amp;hours=2&amp;date=explicit&amp;mindate=2004-07-18+17%3A20%3A00&amp;maxdate=2004-07-18+17%3A30%3A00&amp;cvsroot=%2Fcvsroot</a></pre>
+    </div>
+
+    <div id="c25" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=92.html#c25">Comment 25</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Staś Małolepszy :stas</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-07-19 08:56:08 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">za dwie godziny jadę na rejs. będę 1 sierpnia. Mam nadzieję, że to może trochę
+poczekać, bo na razie moje pliki są wprawdzie po polsku, ale nie nadają się do
+czytania. W sierpniu będę już siedział w domu, więc będę miał dużo czasu. Sry.</pre>
+    </div>
+
+    <div id="c26" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=92.html#c26">Comment 26</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard">wadimd
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-09-01 16:43:11 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(W odpowiedzi na komentarz #25)
+<span class="quote">&gt; czytania. W sierpniu będę już siedział w domu, więc będę miał dużo czasu. Sry.</span >
+
+i jak stoimy 'w tym temacie' ?
+
+w
+</pre>
+    </div>
+
+    <div id="c27" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=92.html#c27">Comment 27</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Staś Małolepszy :stas</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-09-11 20:50:43 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">nie najlepiej. do 16 września uczę się intensywnie do poprawki. mimo to mam plan
+i zamiar zdążyć z tłumaczeniem.</pre>
+    </div>
+
+    <div id="c28" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=92.html#c28">Comment 28</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard">wadimd
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-09-13 22:39:25 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">status:
+<a href="http://mozillapl.org/forum/ftopic8338.html">http://mozillapl.org/forum/ftopic8338.html</a></pre>
+    </div>
+
+    <div id="c29" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=92.html#c29">Comment 29</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard">wadimd
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-09-19 12:47:54 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(W odpowiedzi na komentarz #28)
+<span class="quote">&gt; status:
+&gt; <a href="http://mozillapl.org/forum/ftopic8338.html">http://mozillapl.org/forum/ftopic8338.html</a></span >
+
+bieżąca wersja na <a href="http://dziedzic.org/inne/help.jar">http://dziedzic.org/inne/help.jar</a>
+TODO: using firefox, spis treści i słownik - wszystko to jest w obróbce...</pre>
+    </div>
+
+    <div id="c30" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=92.html#c30">Comment 30</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-09-19 15:50:53 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">ekstra! Jesli potrzebujesz pomocy, moge potlumaczyc!</pre>
+    </div>
+
+    <div id="c31" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=92.html#c31">Comment 31</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard">wadimd
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-09-19 17:10:41 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(W odpowiedzi na komentarz #30)
+<span class="quote">&gt; ekstra! Jesli potrzebujesz pomocy, moge potlumaczyc!</span >
+
+w tym samym miejscu wrzuciłem wersję z przetłumaczonym using_firefox i GUI
+do zrobienia został spis treści (tak żeby się tytuły zgadzały z przetłumaczonymi
+:-)), glossary (to robi jeden człowiek) i ogólne testy/korekta. Nie wiem tez co
+robimy z obrazkami - oryginalnie to siedzą one na mozilla.org (i help je ściąga)
+- my możemy wrzucić je do jara lub też gdzieś na firefox.pl (screenshoty polskie
+zrobił Piecu, ale jeszcze nie sprawdziłem czy wszystkie i mają inne nazwy niż w
+oryginale i trochę się gubię... :-/ w tym) wrzucam je tu:
+<a href="http://dziedzic.org/inne/images.zip">http://dziedzic.org/inne/images.zip</a>
+
+na dziś już muszę zmykać ;-)
+</pre>
+    </div>
+
+    <div id="c32" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=92.html#c32">Comment 32</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-09-20 00:45:25 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Created <span class="bz_obsolete"><a href="attachment.cgi%3Fid=126" name="attach_126" title="help.jar">attachment 126</a> <a href="attachment.cgi%3Fid=126&amp;action=edit.html" title="help.jar">[details]</a></span>
+help.jar
+
+Ok. Zrobilem spis tresci. Nie zrozumialem - czy glossary ktos robi czy mam
+zrobic?
+
+Wrzucam wersje ze spisem tresci (i kilkoma poprawkami jezykowymi)</pre>
+    </div>
+
+    <div id="c33" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=92.html#c33">Comment 33</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard">wadimd
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-09-20 09:44:04 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">
+<span class="quote">&gt; Ok. Zrobilem spis tresci. Nie zrozumialem - czy glossary ktos robi czy mam
+&gt; zrobic?</span >
+
+robi się, ale jak nie będę tego miał do wieczora to sam to zrobię i podeślę
+To jest praktycznie Ctrl+C i Ctrl+V bo mamy gotowy glossary dla suite (niestety
+pliki zostały w domu i nawet jakbym chciał to teraz nic z tym nie zrobię...)
+</pre>
+    </div>
+
+    <div id="c34" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=92.html#c34">Comment 34</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard">wadimd
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-09-20 09:51:31 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text"><span class="quote">&gt; (niestety
+&gt; pliki zostały w domu i nawet jakbym chciał to teraz nic z tym nie zrobię...)
+&gt; </span >
+
+chyba ze glossary.html lezy w CVS na sf.net w katalogu helpa dla suite (ale
+chyba jeszcze nie zdążyłe tego wrzucić))</pre>
+    </div>
+
+    <div id="c35" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=92.html#c35">Comment 35</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Staś Małolepszy :stas</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-09-20 13:03:46 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">czy mogę się jeszcze na coś przydać?</pre>
+    </div>
+
+    <div id="c36" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=92.html#c36">Comment 36</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard">wadimd
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-09-20 14:30:49 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(W odpowiedzi na komentarz #35)
+<span class="quote">&gt; czy mogę się jeszcze na coś przydać?</span >
+
+jakbyś miał chwilę, to poczytaj to - pewno tam jeszcze sporo baboli siedzi...</pre>
+    </div>
+
+    <div id="c37" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=92.html#c37">Comment 37</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-09-20 14:49:45 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Jesli uzywasz Linuksa to na beta.firefox.pl wystawilem wersje z gotowym helpem
+(procz glossary) - jesli nie, musisz sobie sam wlozyc help.jar z zalacznika do
+chrome i zmienic w plikach /chrome/*.txt wpisy do locale helpa</pre>
+    </div>
+
+    <div id="c38" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=92.html#c38">Comment 38</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard">wadimd
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-09-20 19:35:32 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Created <span class="bz_obsolete"><a href="attachment.cgi%3Fid=130" name="attach_130" title="wersja całkowicie polska (help.jar)">attachment 130</a> <a href="attachment.cgi%3Fid=130&amp;action=edit.html" title="wersja całkowicie polska (help.jar)">[details]</a></span>
+wersja całkowicie polska (help.jar)
+
+wrzucam całość po Polsku - jest glossary, poprawki tu i tam ;-), obrazki na
+razie zostawiłem oryginalne (tzn. angielskie, pobierane z mozilla.org).
+Teoretycznie mogłby być FIXED, ale jeszcze bym to poczytał. Za chwile
+wrzucę też całość do CVS na SF.net</pre>
+    </div>
+
+    <div id="c39" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=92.html#c39">Comment 39</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard">wadimd
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-09-23 08:54:08 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Created <span class="bz_obsolete"><a href="attachment.cgi%3Fid=133" name="attach_133" title="help.jar + kolejne poprawki">attachment 133</a> <a href="attachment.cgi%3Fid=133&amp;action=edit.html" title="help.jar + kolejne poprawki">[details]</a></span>
+help.jar + kolejne poprawki</pre>
+    </div>
+
+    <div id="c40" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=92.html#c40">Comment 40</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard">wadimd
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-09-24 13:32:05 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Created <span class="bz_obsolete"><a href="attachment.cgi%3Fid=134" name="attach_134" title="help.jar (v.20040923)">attachment 134</a> <a href="attachment.cgi%3Fid=134&amp;action=edit.html" title="help.jar (v.20040923)">[details]</a></span>
+help.jar (v.20040923)</pre>
+    </div>
+
+    <div id="c41" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=92.html#c41">Comment 41</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-10-02 22:58:53 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">mass - tne blad zostal poprawiony w wydaniu 0.10.1 pl-PL, dostepnym w tym
+momencie na beta.firefox.pl</pre>
+    </div>
+
+    <div id="c42" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=92.html#c42">Comment 42</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard">wadimd
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-10-07 15:38:52 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">ludkowie... a co robimy z obrazkami do helpa?
+1. trzeba zdecydowac gdzie je trzymamy 
+2. trzeba im pozmieniac nazwy, 
+3. zmienic adresy w &lt;img&gt; w stronach pomocy...</pre>
+    </div>
+
+    <div id="c43" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=92.html#c43">Comment 43</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard">wadimd
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-10-07 20:36:31 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Created <span class="bz_obsolete"><a href="attachment.cgi%3Fid=135" name="attach_135" title="zzipowany podkatalog help z pl-PL.jar (v.20041007 z obrazkami)">attachment 135</a> <a href="attachment.cgi%3Fid=135&amp;action=edit.html" title="zzipowany podkatalog help z pl-PL.jar (v.20041007 z obrazkami)">[details]</a></span>
+zzipowany podkatalog help z pl-PL.jar (v.20041007 z obrazkami)
+
+załączam wersję z polskimi obrazkami wewnątrz paczki
+dostępne także na <a href="http://dziedzic.org/inne/help.zip">http://dziedzic.org/inne/help.zip</a></pre>
+    </div>
+
+    <div id="c44" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=92.html#c44">Comment 44</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-10-11 00:41:25 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Created <span class="bz_obsolete"><a href="attachment.cgi%3Fid=140" name="attach_140" title="Poprawiony help (20041010)">attachment 140</a> <a href="attachment.cgi%3Fid=140&amp;action=edit.html" title="Poprawiony help (20041010)">[details]</a></span>
+Poprawiony help (20041010)
+
+Nikdo: jeszcze jeden taki numer i bede krzyczal... ;)
+Dlaczego nie zrobiles diffa podsylajac nowa wersje?
+
+1) Nie uzywamy Windowsowych znakow konca linii.
+2) Jakbys zrobil to bys zauwazyl, ze w cookies.xhtml i popups.xhtml byles
+uprzejmy rozwalic deklaracja xhtmla.
+
+Prosze na przyszlosc podsylac oprocz paczki diffa, jasno pokazujacego zmiany,
+tak aby QA oraz inni zainteresowani mogli latwo obejrzec liste zmian.</pre>
+    </div>
+
+    <div id="c45" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=92.html#c45">Comment 45</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-10-11 00:43:17 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Created <span class="bz_obsolete"><a href="attachment.cgi%3Fid=141" name="attach_141" title="poprawka customization.xhtml">attachment 141</a> <a href="attachment.cgi%3Fid=141&amp;action=edit.html" title="poprawka customization.xhtml">[details]</a></span>
+poprawka customization.xhtml
+
+i jeszcze w customization.xhtml...</pre>
+    </div>
+
+    <div id="c46" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=92.html#c46">Comment 46</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Staś Małolepszy :stas</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-10-17 20:28:53 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">otwieram ponownie ten błąd.
+
+gandalf: usuń blocking1.0pr1, jeśli się zgadzasz.
+usunąłem <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Lokalizacja Firefoksa 1.0 PR 1 (&quot;0.10&quot;)"
+   href="show_bug.cgi%3Fid=188.html">bug #188</a> z listy błędów blokowanych przez #92.
+
+argumentacja:
+w helpie trochę sie pozmieniało, doszły dwa pliki (platformStrings.dtd i
+tabbed_browsing.xhtml). Poza tym chciałbym uporządkować help przed 1.0 final.
+Skoro go już zamrozili, teraz właśnie jest imho dobry na to czas. W niektórych
+plikach zmieniono kod HTML (np. zamiast ul i li używa się dl, dt i dd.). Uważam,
+że warto zadbać o spójność, bo to ułatwi pracę z helpem po 1.0final.
+
+Zajmę się tym, i w sobotę (30 października) podeślę poprawiony help. Myślę, że
+będzie to już wersja ostateczna, 1.0final-ready. Polskie tłumaczenie pochodzić
+będzie z już sprawdzonego <span class="bz_obsolete"><a href="attachment.cgi%3Fid=141" name="attach_141" title="poprawka customization.xhtml">attachment 141</a> <a href="attachment.cgi%3Fid=141&amp;action=edit.html" title="poprawka customization.xhtml">[details]</a></span> (v20041010), help angielski, który
+będzie wzorem,  mam z wczorajszego nightly.
+
+Może tak być?</pre>
+    </div>
+
+    <div id="c47" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=92.html#c47">Comment 47</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard">wadimd
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-10-17 20:45:34 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Staszyna: możemy się podzielić robotą :-)</pre>
+    </div>
+
+    <div id="c48" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=92.html#c48">Comment 48</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-10-17 23:05:32 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">blocking-1.0</pre>
+    </div>
+
+    <div id="c49" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=92.html#c49">Comment 49</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-10-22 18:13:40 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">tfu. przepraszam za spam</pre>
+    </div>
+
+    <div id="c50" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=92.html#c50">Comment 50</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-10-22 18:39:46 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Panowie, co z tymi plikami dwoma (tabbed_browsing.xhtml i costam.dtd)? Damy rade
+na jutro?</pre>
+    </div>
+
+    <div id="c51" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=92.html#c51">Comment 51</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Staś Małolepszy :stas</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-10-22 20:11:23 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(W odpowiedzi na komentarz #50)
+<span class="quote">&gt; Panowie, co z tymi plikami dwoma (tabbed_browsing.xhtml i costam.dtd)? Damy rade
+&gt; na jutro?</span >
+
+Hmm, nikdo szybciutko przetłumaczył tabbed_browsing. Mam kilka poprawek, ale nie
+miałem po prostu czasu, by skonsultować się z nim w ich sprawie. Reszty zmian
+trochę jest, ale jutro zarezerwowałem sobie dość sporo czasu na uporanie się z
+tym. Do której mam czas? Jeśli nie zdążę, to podeślę to, co będę miał w danej
+chwili a co powinno być już w miarę bliskie obecnemu helpowi.
+</pre>
+    </div>
+
+    <div id="c52" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=92.html#c52">Comment 52</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-10-23 19:21:38 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">-&gt;assigned (dostosowuję opis buga do status quo)</pre>
+    </div>
+
+    <div id="c53" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=92.html#c53">Comment 53</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Staś Małolepszy :stas</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-10-23 22:48:16 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Z całym helpem nie zdążę do jutra do 14.00. Natomiast podeślę niedługo help taki
+pół-na-pół gotowy. tzn. to da się czytać, jest poprawne, są obrazki i w ogóle,
+tylko gdzieniegdzie będą jeszcze jaieś rozbieżności. Na pewno rozwiązane zostaną
+błędy składowe tego błędu (<a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - [POMOC] Jest: autentyfikacja. Powinno być: uwierzytelnianie"
+   href="show_bug.cgi%3Fid=243.html">bug #243</a> i <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - [POMOC] jeszcze są schematy wyglądu!"
+   href="show_bug.cgi%3Fid=246.html">bug #246</a>), będą też 2 nowe pliki. Z całym
+helpem celuję w 1.0RC2, którego nie ma w polu &quot;wersja docelowa&quot;.</pre>
+    </div>
+
+    <div id="c54" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=92.html#c54">Comment 54</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-10-24 00:39:28 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(W odpowiedzi na komentarz #53)
+<span class="quote">&gt; Z całym
+&gt; helpem celuję w 1.0RC2, którego nie ma w polu &quot;wersja docelowa&quot;.</span >
+
+Jak to nie ma?!
+
+</pre>
+    </div>
+
+    <div id="c55" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=92.html#c55">Comment 55</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Staś Małolepszy :stas</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-10-24 11:50:38 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Created <span class="bz_obsolete"><a href="attachment.cgi%3Fid=189" name="attach_189" title="help z 24.10.2004.">attachment 189</a> <a href="attachment.cgi%3Fid=189&amp;action=edit.html" title="help z 24.10.2004.">[details]</a></span>
+help z 24.10.2004.
+
+Oto help z poprawkami, który chciałbym właczyć do rc1. Muszę jeszcze tylko
+poprawić glossary.xhtml, by ostatecznie rozwiązać <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - [POMOC] Jest: autentyfikacja. Powinno być: uwierzytelnianie"
+   href="show_bug.cgi%3Fid=243.html">bug #243</a>. Problem jest
+taki, że gdy wgrywam to do chrome/pl-PL.jar!/locale/help, to wywala mi błąd
+parsowania:
+
+Błąd parsowania XML: błąd przetwarzania odwołania jednostki zewnętrznej
+Obszar: jar:resource:///chrome/pl-PL.jar!/locale/help/download_manager.xhtml
+Numer linii 6, Kolumna 5: 
+    %platformDTD; 
+----^
+
+Pomocy. Mamy mało czasu.</pre>
+    </div>
+
+    <div id="c56" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=92.html#c56">Comment 56</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Staś Małolepszy :stas</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-10-24 13:16:39 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">już wszystko działa, help do rc1 jest gotowy. Czekam tylko na <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Niekonsekwentne nazewnictwo w menu Widok &gt; Style strony"
+   href="show_bug.cgi%3Fid=254.html">bug # 254</a> i zaraz
+wrzucam tu paczkę.</pre>
+    </div>
+
+    <div id="c57" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=92.html#c57">Comment 57</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Staś Małolepszy :stas</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-10-24 14:35:56 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Created <span class="bz_obsolete"><a href="attachment.cgi%3Fid=190" name="attach_190" title="poprawiony help, wersja 20041024b">attachment 190</a> <a href="attachment.cgi%3Fid=190&amp;action=edit.html" title="poprawiony help, wersja 20041024b">[details]</a></span>
+poprawiony help, wersja 20041024b
+
+Poprawiony help. Wszystkie strony valid xhtml, nie ma żadnych błędów
+parsowania. Ta paczka rozwiązuje <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - [POMOC] Jest: autentyfikacja. Powinno być: uwierzytelnianie"
+   href="show_bug.cgi%3Fid=243.html">bug #243</a>, <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - [POMOC] jeszcze są schematy wyglądu!"
+   href="show_bug.cgi%3Fid=246.html">bug #246</a> oraz uwzględnia zmianę z
+<a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Niekonsekwentne nazewnictwo w menu Widok &gt; Style strony"
+   href="show_bug.cgi%3Fid=254.html">bug #254</a>.</pre>
+    </div>
+
+    <div id="c58" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=92.html#c58">Comment 58</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-10-24 16:23:15 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text"><span class="bz_obsolete"><a href="attachment.cgi%3Fid=190" name="attach_190" title="poprawiony help, wersja 20041024b">attachment 190</a> <a href="attachment.cgi%3Fid=190&amp;action=edit.html" title="poprawiony help, wersja 20041024b">[details]</a></span> wyladowal w CVSie</pre>
+    </div>
+
+    <div id="c59" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=92.html#c59">Comment 59</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Staś Małolepszy :stas</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-10-24 20:34:43 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Opiszę, co się zmieniło i co trzeba jeszcze zrobić w  tłumaczeniu helpa:
+
+1. Status quo ante:
+Znaczna część plików pomocy pochodziła bezpośrednio z helpa Suite. Z zewnątrz
+nie było wprawdzie tego widać, ale z tego powwody wersje polska i angielska
+różniły się dość znacznie między sobą w kodzie. Dodatkowo w kilku miejsach
+dodano opis jakiejś funkcji, w kilku innych (tych więcej) usunieto coś.
+
+2. Status quo:
+Następujące pliki zdążyłem przejrzeć, zmienić, co należało, i w ten sposób
+uaktualnić je. Nie oznaczo to, że są bezwzględnie pozbawione niedociągnięć -
+wręcz przeciwnie, wydaje mi się, że jest w nich dość dużo małych błędów
+(błędzików? błędków?;)) interpunkcyjnych. Z tego powodu chciałbym po wydanie RC1
+zrobić Dzień Przecinka - więcej info wkrótce. Oto lista:
+  cookies.xhtml                    
+  customization.xhtml                    
+  download_manager.xhtml    
+  firebird-glossary.rdf          
+  firebird-toc.rdf 
+  firefox_welcome.xhtml  
+  glossary.xhtml  
+  help.dtd (zgodnie z <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - help.dtd - backButton, forwardButton - poprawki tooltips"
+   href="show_bug.cgi%3Fid=247.html">bug #247</a>)
+  menu_reference.xhtml  
+  platformStrings.dtd 
+  popup.xhtml
+  prefs.xhtml
+  tabbed_browsing.xhtml          
+  welcome.xhtml
+
+Poniższe pliki zostawiłem sobie na później, ale to &quot;później&quot; oznacza niedaleką
+przyszłość. Jeśli ktoś ma czas i ochotę, może zajrzeć do tych plików i
+doprowadzić je do zgodności z najnowszą wersją angielską
+(<a href="http://lxr.mozilla.org/aviarybranch/source/browser/components/help/locale/en-US/">http://lxr.mozilla.org/aviarybranch/source/browser/components/help/locale/en-US/</a>)
+  firebird-index1.rdf
+  forieusers.xhtml
+  mouse_shortcuts.xhtml
+  popup.xhtml
+  shortcuts.xhtml
+  using_firebird.xhtml
+ 
+Trzecia lista zawiera pliki, które nie wymagały zmiany. Oto ona:
+  contents.rdf   
+  helpMenuOverlay.dtd
+  help.properties 
+  help-toc.rdf 
+  firebirdhelp.rdf  
+(uwaga: w tym ostatnim pliku jest taki oto string: &quot;Nie znaleziono pasujących
+wyników&quot;. Może udałoby się wymyślić cos zgrabniejszego? Chyba, że tylko mi się
+wydaje to koniecznym.)
+
+W 3 plikach z pierwszej listy (mimo, że sa właśnie na tej liście) są jeszcze
+trzy znane mi braki:
+  - cookies.xhtml: zmieniły sie opcje selecta &quot;Przechowuj ciasteczka&quot; w opcjach
+prywatności (<a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Prywatość-Ciasteczka wykracza poza widoczny obszar"
+   href="show_bug.cgi%3Fid=200.html">bug #200</a>), na załączonym screenshocie zamiast &quot;pytaj mnie za każdym
+razem&quot; powinno być więc &quot;pytaj każdorazowo&quot;.
+  - welcome.xhtml: zmieniła się ikonka help viwera pt. Dostosuj pasek narzędzi
+(images/buttons.png)
+  - prefs.xhtml: doszły dwa krótkie akapity pt. Allow web sites to install
+software (*)
+
+Piszę to wszystko przede wszystkim po to, by samemu się w tym nie zgubić ;) Poza
+tym, jak widać - trzeba jeszcze trochę zrobić, ale pracy niejest dużo, i
+spokojnie możemy zdążyć na RC2, by następnie spokojnie i starannie bawić się w
+QA aż do wydania 1.0final.
+
+Dziękuję nikdo za nieocenioną pomoc i za wcześniejsze tłumaczenia, oraz
+marcoosowi za QA.
+______
+
+* - oto ich tekst, może ktoś będzie szybszy ode mnie ;)
+
+&lt;p&gt;&lt;em&gt;Allow web sites to install software&lt;/em&gt;&lt;br/&gt;
+By default, web sites are allowed to install software such as extensions
+and themes. However, &amp;brandShortName; will always ask you to confirm
+software installations. Uncheck this &amp;pref.singular; to completely disable
+extension and theme installation.&lt;/p&gt;
+
+&lt;p&gt;Enabling this &amp;pref.singular; is sufficient to install themes. Extensions are
+more powerful than themes, however, so you must explicitly allow a web site to
+install its extensions. To do so, click &lt;em&gt;Allowed Sites&lt;/em&gt;, enter the
+site name, and click &lt;em&gt;Allow&lt;/em&gt;.&lt;/p&gt;</pre>
+    </div>
+
+    <div id="c60" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=92.html#c60">Comment 60</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-10-26 20:43:36 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">W sprawie menuPath na Maku - zgłosiłem błąd:
+<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=265741">https://bugzilla.mozilla.org/show_bug.cgi?id=265741</a>
+
+Błąd ma już patcha, został oznaczony jako late-l10n, więc jeśli zostanie
+rozwiązany i patch wdrożony do 1.0 RC 1, a Staszyna to poprawi, to patch
+Staszyny wprowadzający dokładnię tę samą zmianę w pl-PL powinien zostać
+zaakceptowany mimo zamrożenia drzewa aviary.</pre>
+    </div>
+
+    <div id="c61" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=92.html#c61">Comment 61</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard">wadimd
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-10-28 19:05:45 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">&lt;p&gt;&lt;em&gt;Zezwól witrynom na instalację oprogramowania&lt;/em&gt;&lt;br/&gt;
+Domyślnie, po żądaniu instalacji oprogramowania (rozszerzenia lub motywu)
+przeglądarka &amp;brandShortName; wyświetla okno dialogowe z pytaniem o
+potwierdzenie instalacji. Aby całkowicie wyłączyć możliwość instalacji
+rozszerzeń i motywów, należy wyłączyć tę opcję.&lt;/p&gt;
+
+&lt;p&gt;Włączenia powyższej opcji pozwala instalować tylko motywy. Aby można było
+instalować rozszerzenia, należy ręcznie dodać adres witryny do listy witryn
+uprawnionych do instalacji rozszerzeń. W tym celu należy nacisnąć przycisk
+&lt;em&gt;Uprawnione witryny&lt;/em&gt;, wpisać adres witryny i nacisnąć przycisk 
+&lt;em&gt;Zezwól&lt;/em&gt;.&lt;/p&gt;
+
+co do tych screenshotów to tam i tak ledwo co widać - nie wiem czy jest sens się
+tym bawić :) (tak wógóle jeśli mówimy o screenshotach to w rc1 chyba zmieniły
+się ikony w oknie opcji... :/ )</pre>
+    </div>
+
+    <div id="c62" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=92.html#c62">Comment 62</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard">wadimd
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-10-28 19:21:42 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">screenshot przy rozszerzeniach jest 'ściśnięty' - pewno nie potrzebne/złe są
+rozmiary obrazka w tagu &lt;img&gt;</pre>
+    </div>
+
+    <div id="c63" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=92.html#c63">Comment 63</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Staś Małolepszy :stas</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-10-28 20:35:51 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(W odpowiedzi na <a href="show_bug.cgi%3Fid=92.html#c61">comment #61</a>)
+Dziękuję nikdo, już jest w helpie. Pozwoliłem sobie na kilka niewielkich zmian.
+
+(W odpowiedzi na <a href="show_bug.cgi%3Fid=92.html#c62">comment #62</a>)
+Poprawione u mnie na hdd. 
+</pre>
+    </div>
+
+    <div id="c64" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=92.html#c64">Comment 64</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Staś Małolepszy :stas</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-11-03 00:35:41 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">do skończenia całego helpa brakuje mi tylko uaktualnienia jednego pliku -
+firebird-index1.rdf. Bardzo przydałaby mi się pomoc, bo mam teraz trochę mniej
+czasu. Niestety ten plik to dość dużo pracy. Nikdo? :)</pre>
+    </div>
+
+    <div id="c65" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=92.html#c65">Comment 65</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Staś Małolepszy :stas</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-11-03 22:58:04 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Created <span class=""><a href="attachment.cgi%3Fid=218" name="attach_218" title="wersja z 3 listopada, final">attachment 218</a> <a href="attachment.cgi%3Fid=218&amp;action=edit.html" title="wersja z 3 listopada, final">[details]</a></span>
+wersja z 3 listopada, final
+
+Załączam paczkę z plikami helpa i obrazkami (dwa wspomniane w <a href="show_bug.cgi%3Fid=92.html#c59">comment #59</a>
+uaktualnione). Poprawione zostały błędy: <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - [POMOC] Ortografia: &quot;OdświeRZ&quot;"
+   href="show_bug.cgi%3Fid=263.html">bug #263</a>, <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Literówka w słowie &quot;Sieć&quot;"
+   href="show_bug.cgi%3Fid=269.html#c60">bug #269, comment #60</a>.
+Sprawdziłem u siebie, wszystko wydaje się działać poprawnie. Uwzględniłem
+najnowsze poprawki w wersji angielskiej (ostatnie chyba z 1 listopada),
+zgłosiłem też jeden błąd -
+<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=267523">https://bugzilla.mozilla.org/show_bug.cgi?id=267523</a>.
+
+Jak dla mnie resolved fixed. Teraz czas na polowanie na ostatnie literówki i
+przecinki (wiele juz poprawiłem). Powodzenia.
+
+Nikdo - dzięki za ten firebird-index1. Nie dałbym rady.</pre>
+    </div>
+
+    <div id="c66" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=92.html#c66">Comment 66</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Staś Małolepszy :stas</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-11-03 23:03:41 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">czekam na ew. informacje o błędach. (może byc także na <a href="mailto:staszyna&#64;chrome.pl">staszyna&#64;chrome.pl</a> lub
+mejlem).</pre>
+    </div>
+
+    <div id="c67" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=92.html#c67">Comment 67</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Staś Małolepszy :stas</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-11-04 00:09:34 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Created <span class=""><a href="attachment.cgi%3Fid=219.html" name="attach_219" title="prefs.xhtml, na wypadek zmiany nazwy opcji (patrz komentarz 67)">attachment 219</a> <a href="attachment.cgi%3Fid=219&amp;action=edit.html" title="prefs.xhtml, na wypadek zmiany nazwy opcji (patrz komentarz 67)">[details]</a></span>
+prefs.xhtml, na wypadek zmiany nazwy opcji (patrz komentarz 67)
+
+Plik prefs.xhtml, który uwzględnia zmianę z <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - uwagi dotyczące okna preferencji"
+   href="show_bug.cgi%3Fid=277.html">bug #277</a>, punkt 6. Jeśli zmiana
+przejdzie, trzeba będzie podmienić prefs.xhtml w paczce z 3 listopada.</pre>
+    </div>
+
+    <div id="c68" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=92.html#c68">Comment 68</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-11-04 04:58:23 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Ok. Z racji tego, ze wlasnie sie okazalo, ze za pare godzin wydaja RC2, wlaczam
+aktualnego helpa z <span class=""><a href="attachment.cgi%3Fid=218" name="attach_218" title="wersja z 3 listopada, final">attachment 218</a> <a href="attachment.cgi%3Fid=218&amp;action=edit.html" title="wersja z 3 listopada, final">[details]</a></span>. 
+Natomiast Staszyna i nikdo - kurcze, tyle razy prosilem, zeby uzywac unixowych
+koncow linii... A tu jest po prostu burdel. Raz jest unix, raz windows, raz unix
+i windows... Zmieniacie dowolnie konce linni w kolejnych wersjach, a przeciez
+ktos (ja i w przypadku zamrozenia bsmedberg) musi to potem sprawdzic! A diff
+wychodzi taki, jakby caly plik zostal przepisany od zera tylko dlatego, ze ktos
+zmienil koniec linii :(</pre>
+    </div>
+
+    <div id="c69" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=92.html#c69">Comment 69</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-11-05 13:50:01 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">nowy help zostal wlaczony do CVSa.</pre>
+    </div>
+
+    <div id="c70" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=92.html#c70">Comment 70</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Staś Małolepszy :stas</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-11-05 21:35:24 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Created <span class=""><a href="attachment.cgi%3Fid=245" name="attach_245" title="Uaktualnionych 6 obrazków z helpa">attachment 245</a> <a href="attachment.cgi%3Fid=245&amp;action=edit.html" title="Uaktualnionych 6 obrazków z helpa">[details]</a></span>
+Uaktualnionych 6 obrazków z helpa
+
+paczka zawiera następujące skriny zrobione przez nikdo. Cleriic: dzięki za
+przypomnienie o nich.
+
+opt_advanced.png
+opt_downloads.png
+opt_general.png
+opt_privacy.png
+opt_webfeatures.png
+cookies_manager.png
+
+zastanawiam się, co zrobić z opt_javascript.png (patrz <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Zaawansowane opcje JavaScript - lepsza propozycja zmiany niż w błędzie 277"
+   href="show_bug.cgi%3Fid=289.html">bug #289</a>) - obecnie
+jest tak, jak na pierwszy załączniku.</pre>
+    </div>
+
+    <div id="c71" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=92.html#c71">Comment 71</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-03-18 18:41:19 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Masówka. Likwidacja produktu &quot;Firefox pl-PL&quot;, błędy zostają przeniesione do
+Lokalizacja/Firefox.</pre>
+    </div>
+
+
+  
+
+</td>
+<td>
+</td>
+</tr></table>
+  </div>
+
+    <hr><div id="add_comment" class="bz_section_additional_comments">
+      <table>
+        <tr>
+          <td>
+            <fieldset>
+              <legend>Note</legend>
+              You need to
+              <a href="show_bug.cgi%3Fid=92&amp;GoAheadAndLogIn=1.html">log in</a>
+              before you can comment on or make changes to this bug.
+            </fieldset>
+          </td>
+        </tr> 
+      </table>
+  </div>        
+
+</form>
+
+<hr>
+<ul class="related_actions">
+    <li><a href="show_bug.cgi%3Fformat=multiple&amp;id=92.html">Format For Printing</a></li>
+    <li>&nbsp;-&nbsp;<a href="show_bug.cgi%3Fctype=xml&amp;id=92">XML</a></li>
+    <li>&nbsp;-&nbsp;<a href="enter_bug.cgi%3Fcloned_bug_id=92.html">Clone This Bug</a></li>
+    
+    <li>&nbsp;-&nbsp;<a href="show_bug.cgi%3Fid=92.html#">Top of page </a></li>
+    </ul>
+
+<br>
+</div>
+
+    <div id="footer">
+      <div class="intro"></div>
+<ul id="useful-links">
+  <li id="links-actions"><ul class="links">
+  <li><a href="index.html">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi.html">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi.html">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi.html">Search</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="http://bugs.aviary.pl/buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input type="hidden" id="no_redirect_bottom" name="no_redirect" value="0">
+    <script type="text/javascript">
+      if (history && history.replaceState) {
+        var no_redirect = document.getElementById("no_redirect_bottom");
+        no_redirect.value = 1;
+      }
+    </script>
+    <input class="txt" type="text" id="quicksearch_bottom" name="quicksearch" 
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search" 
+           id="find_bottom"></form>
+  <a href="page.cgi%3Fid=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="report.cgi.html">Reports</a></li>
+
+  <li>
+      <span class="separator">| </span>
+        <a href="request.cgi.html">Requests</a></li>
+
+
+  <li>
+        <span class="separator">| </span>
+        <a href="https://bugzilla.readthedocs.org/en/5.0/using/understanding.html" target="_blank">Help</a>
+      </li>
+    
+      <li id="new_account_container_bottom">
+        <span class="separator">| </span>
+        <a href="createaccount.cgi.html">New&nbsp;Account</a>
+      </li>
+
+    <li id="mini_login_container_bottom">
+  <span class="separator">| </span>
+  <a id="login_link_bottom" href="show_bug.cgi%3Fid=92&amp;GoAheadAndLogIn=1.html"
+     onclick="return show_mini_login_form('_bottom')">Log In</a>
+
+  <form action="show_bug.cgi%3Fid=92.html" method="POST"
+        class="mini_login bz_default_hidden"
+        id="mini_login_bottom">
+    <input id="Bugzilla_login_bottom" required
+           name="Bugzilla_login" class="bz_login"
+        type="email" placeholder="Email Address">
+    <input class="bz_password" name="Bugzilla_password" type="password"
+           id="Bugzilla_password_bottom" required
+           placeholder="Password">
+    <input type="hidden" name="Bugzilla_login_token"
+           value="1469819851-YPjooKXWmv1HxvLSiknl6MXsat6nhkvZf2GJ2rv0QZI">
+    <input type="submit" name="GoAheadAndLogIn" value="Log in"
+            id="log_in_bottom">
+    <a href="show_bug.cgi%3Fid=92.html#" onclick="return hide_mini_login_form('_bottom')">[x]</a>
+  </form>
+</li>
+
+
+  <li id="forgot_container_bottom">
+    <span class="separator">| </span>
+    <a id="forgot_link_bottom" href="show_bug.cgi%3Fid=92&amp;GoAheadAndLogIn=1.html#forgot"
+       onclick="return show_forgot_form('_bottom')">Forgot Password</a>
+    <form action="http://bugs.aviary.pl/token.cgi" method="post" id="forgot_form_bottom"
+          class="mini_forgot bz_default_hidden">
+      <label for="login_bottom">Login:</label>
+      <input name="loginname" size="20" id="login_bottom" required
+          type="email" placeholder="Your Email Address">
+      <input id="forgot_button_bottom" value="Reset Password" type="submit">
+      <input type="hidden" name="a" value="reqpw">
+      <input type="hidden" id="token_bottom" name="token"
+             value="1469819851-EzbUFxcFM91QvBnB3sjkVhw29dWK2XImyQl_rOiriII">
+      <a href="show_bug.cgi%3Fid=92.html#" onclick="return hide_forgot_form('_bottom')">[x]</a>
+    </form>
+  </li>
+</ul>
+  </li>
+
+  
+
+
+
+
+  
+</ul>
+
+      <div class="outro"></div>
+    </div>
+
+  </body>
+</html>

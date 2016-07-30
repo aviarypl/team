@@ -1,0 +1,127 @@
+Index: security/manager/chrome/pipnss/security.properties
+===================================================================
+RCS file: /l10n/l10n/pl/security/manager/chrome/pipnss/security.properties,v
+retrieving revision 1.2
+diff -u -r1.2 security.properties
+--- security/manager/chrome/pipnss/security.properties	19 Jul 2005 08:50:04 -0000	1.2
++++ security/manager/chrome/pipnss/security.properties	19 Jul 2005 19:46:22 -0000
+@@ -23,11 +23,11 @@
+ # newlines. These are used to lay out the dialog.
+ 
+ Title=Zabezpieczenia
+-MixedContentMessage=Za\u017C\u0105dano po\u0142\u0105czenia szyfrowanego ze stron\u0105, kt\u00F3ra zawiera elementy niezaszyfrowane. Istnieje niebezpiecze\u0144stwo odczytania niekt\u00F3rych wy\u015Bwietlanych oraz wprowadzanych informacji na tej stronie przez osoby trzecie.
++MixedContentMessage=Za\u017C\u0105dano po\u0142\u0105czenia szyfrowanego ze stron\u0105, kt\u00F3ra zawiera elementy niezaszyfrowane. Prawdopodobie\u0144stwo odczytania przesy\u0142anych danych przez osoby trzecie jest du\u017ce.
+ LeaveSecureMessage=Po\u0142\u0105czenie szyfrowane z t\u0105 stron\u0105 zostanie zako\u0144czone. Od tej chwili \u017cadne wysy\u0142ane ani odbierane dane nie b\u0119d\u0105 wi\u0119cej szyfrowane. Istnieje niebezpiecze\u0144stwo odczytania przesy\u0142anych danych przez osoby trzecie.
+ EnterSecureMessage=Za\u017c\u0105dano po\u0142\u0105czenia szyfrowanego ze stron\u0105, kt\u00f3rej to\u017csamo\u015b\u0107 zosta\u0142a sprawdzona i potwierdzona. Prawdopodobie\u0144stwo odczytania wy\u015bwietlanych oraz wprowadzanych informacji na tej stronie przez osoby trzecie jest znikome.
+-WeakSecureMessage=Za\u017c\u0105dano po\u0142\u0105czenia ze stron\u0105, kt\u00f3ra u\u017cywa niskiego poziomu szyfrowania. To\u017csamo\u015b\u0107 strony zosta\u0142a sprawdzona i potwierdzona, jednak\u017ce istnieje niebezpiecze\u0144stwo odczytania wy\u015bwietlanych i wprowadzanych informacji na tej stronie przez osoby trzecie.
+-PostToInsecureFromSecureMessage=Pomimo tego, \u017ce bie\u017c\u0105ce po\u0142\u0105czenie jest szyfrowane, wszystkie wprowadzone dane zostan\u0105 przes\u0142ane przez po\u0142\u0105czenie nieszyfrowane, dlatego istnieje niebezpiecze\u0144stwo ich odczytania przez osoby trzecie.##Czy na pewno kontynuowa\u0107 wysy\u0142anie wprowadzonych danych?##
++WeakSecureMessage=Za\u017c\u0105dano po\u0142\u0105czenia ze stron\u0105, kt\u00f3ra u\u017cywa niskiego poziomu szyfrowania. To\u017csamo\u015b\u0107 strony zosta\u0142a sprawdzona i potwierdzona, jednak\u017ce prawdopodobie\u0144stwo odczytania wy\u015bwietlanych i wprowadzanych informacji jest du\u017ce.
++PostToInsecureFromSecureMessage=Pomimo tego, \u017ce bie\u017c\u0105ce po\u0142\u0105czenie jest szyfrowane, wszystkie wprowadzone dane zostan\u0105 przes\u0142ane przez po\u0142\u0105czenie nieszyfrowane, dlatego prawdopodobie\u0144stwo ich odczytania przez osoby trzecie jest du\u017ce.##Czy na pewno kontynuowa\u0107 wysy\u0142anie wprowadzonych danych?##
+ PostToInsecureFromInsecureMessage=Wprowadzone dane nie zostan\u0105 zaszyfrowane przed przes\u0142aniem i mog\u0105 zosta\u0107 odczytane przez osoby trzecie podczas transmisji.##Czy na pewno kontynuowa\u0107 wysy\u0142anie danych?##
+ MixedContentShowAgain=Zawsze ostrzegaj przed nawi\u0105zaniem po\u0142\u0105czenia szyfrowanego ze stron\u0105 zawieraj\u0105c\u0105 elementy niezaszyfrowane.
+ LeaveSecureShowAgain=Zawsze ostrzegaj przed zako\u0144czeniem po\u0142\u0105czenia szyfrowanego.
+Index: security/manager/chrome/pippki/pippki.dtd
+===================================================================
+RCS file: /l10n/l10n/pl/security/manager/chrome/pippki/pippki.dtd,v
+retrieving revision 1.2
+diff -u -r1.2 pippki.dtd
+--- security/manager/chrome/pippki/pippki.dtd	19 Jul 2005 08:50:04 -0000	1.2
++++ security/manager/chrome/pippki/pippki.dtd	19 Jul 2005 19:46:22 -0000
+@@ -47,7 +47,7 @@
+ <!ENTITY pref.security.general.certificates.title "Certyfikaty" >
+ <!ENTITY pref.security.general.manageCert.label "Menedżer certyfikatów" >
+ <!ENTITY downloadCert.title "Pobieranie certyfikatu" >
+-<!ENTITY downloadCert.message1 "Otrzymano prośbę o dołączenie nowego Ośrodka Certyfikującego do listy zaufanych ośrodków." >
++<!ENTITY downloadCert.message1 "Otrzymano prośbę o dołączenie nowego ośrodka certyfikującego do listy zaufanych ośrodków." >
+ <!ENTITY downloadCert.trustSSL "Zaufaj temu CA przy identyfikacji witryn internetowych." >
+ <!ENTITY downloadCert.trustEmail "Zaufaj temu CA przy identyfikacji użytkowników poczty." >
+ <!ENTITY downloadCert.trustObjSign "Zaufaj temu CA przy identyfikacji twórców oprogramowania." >
+@@ -82,7 +82,7 @@
+ <!ENTITY escrowWarn.title "Kopia klucza szyfrującego" >
+ <!ENTITY escrowWarn.message1 "Ważne: Ten urząd certyfikujący zaleca utworzenie kopii twojego prywatnego klucza szyfrującego." >
+ <!ENTITY escrowWarn.benefit1 "Zaletą tego rozwiązania jest to, że w przypadku utraty dostępu do prywatnego klucza szyfrującego możliwe będzie uzyskanie jego kopii z ośrodka certyfikującego" >
+-<!ENTITY escrowWarn.message2 "Jednakże należy mieć na uwadze, że Twój prywatny klucz szyfrujący będąc przechowywanym przez urząd certyfikujący może zostać wykorzystany do czytania zaszyfrowanej przy użyciu tego klucza poczty lub dokumentów bez twojej zgody." >
++<!ENTITY escrowWarn.message2 "Jednakże należy mieć na uwadze, że Twój prywatny klucz szyfrujący będąc przechowywanym przez urząd certyfikujący może zostać wykorzystany do czytania zaszyfrowanej przy użyciu tego klucza poczty lub dokumentów bez Twojej zgody." >
+ <!ENTITY serverCrlNextupdate.message "W celu uzyskania dalszych informacji należy skontaktować się z administratorem sieci." >
+ <!ENTITY createCertInfo.title "Generowanie prywatnego klucza" >
+ <!ENTITY createCertInfo.msg1 "Trwa generowanie klucza... Może to potrwać kilka minut...." >
+Index: toolkit/chrome/mozapps/extensions/extensions.properties
+===================================================================
+RCS file: /l10n/l10n/pl/toolkit/chrome/mozapps/extensions/extensions.properties,v
+retrieving revision 1.9
+diff -u -r1.9 extensions.properties
+--- toolkit/chrome/mozapps/extensions/extensions.properties	19 Jul 2005 08:50:04 -0000	1.9
++++ toolkit/chrome/mozapps/extensions/extensions.properties	19 Jul 2005 19:46:23 -0000
+@@ -85,14 +85,14 @@
+ 
+ dssSwitchAfterRestart=Uruchom ponownie %S by wykorzysta\u0107.
+ 
+-# Default window size for extensions manager and themes manager
+-# Size in Pixel (e.g. '460')
+-extensionsManagerWidth=462
+-extensionsManagerHeight=300
+-themesManagerWidth=560
+-themesManagerHeight=380
+-
+-# The left column in themes manager
+-# Size in em (e.g. '20em')
+-# Note: here is the unit 'em' necessary
++# Default window size for extensions manager and themes manager
++# Size in Pixel (e.g. '460')
++extensionsManagerWidth=462
++extensionsManagerHeight=300
++themesManagerWidth=560
++themesManagerHeight=380
++
++# The left column in themes manager
++# Size in em (e.g. '20em')
++# Note: here is the unit 'em' necessary
+ themesManagerLeftColumn=20em
+Index: toolkit/chrome/mozapps/update/updates.dtd
+===================================================================
+RCS file: /l10n/l10n/pl/toolkit/chrome/mozapps/update/updates.dtd,v
+retrieving revision 1.11
+diff -u -r1.11 updates.dtd
+--- toolkit/chrome/mozapps/update/updates.dtd	19 Jul 2005 08:50:04 -0000	1.11
++++ toolkit/chrome/mozapps/update/updates.dtd	19 Jul 2005 19:46:23 -0000
+@@ -12,7 +12,7 @@
+ 
+ <!ENTITY  moreDetails.label               "Wiecej szczegółów &#0187;">
+ <!ENTITY  moreDetails.accesskey           "g">
+-<!ENTITY  clickHere.label                 "Aby uzyskać bardziej ogólne informacje o tej aktualizacji, proszę kliknąć tutaj">
++<!ENTITY  clickHere.label                 "Szczegółowe informacje o tej aktualizacji dostępne są tutaj">
+ 
+ <!ENTITY  incompatible.warning            "Ta aktualizacja spowoduje, że niektóre z rozszerzeń lub motywów przestaną działać, dopóki nie zostaną zaktualizaowane.">
+ <!ENTITY  listIncompatible.label          "Pokaż listę">
+@@ -27,18 +27,18 @@
+ 
+ <!ENTITY  license.title                   "Warunki licencji">
+ <!ENTITY  license.intro                   "Aby zainstalować aktualizację należy zaakceptować warunki licencji. Proszę przeczytać uważnie:">
+-<!ENTITY  license.instructions            "W przypadku akceptacji warunków licencji, należy wybrać przycisk 'Zgadzam się' poniżej, aby kontynuować instalację akutalizacji.">
++<!ENTITY  license.instructions            'Jeśli akceptujesz warunki licencji, kliknij przycisk "Zgadzam się", aby kontynuować instalację aktualizacji.'>
+ 
+ 
+ <!ENTITY  downloading.title               "Pobieranie aktualizacji">
+ 
+ <!ENTITY  downloading.intro               "Trwa pobieranie aktualizacji...">
+ <!ENTITY  connecting.label                "Łączenie z serwerem aktualizacji...">
+-<!ENTITY  verificationFailedText.label    "Nie udało się potwierdzić integralności pobranej aktualizacji. Rozpoczęto pobieranie programu w nowej wersji.">
++<!ENTITY  verificationFailedText.label    "Nie udało się potwierdzić integralności pobranej aktualizacji. Rozpoczęto pobieranie całego programu.">
+ 
+ <!ENTITY  details.link                    "Szczegóły">
+ <!ENTITY  pause.label                     "Wstrzymaj">
+-<!ENTITY  pause.accesskey                 "s">
++<!ENTITY  pause.accesskey                 "W">
+ <!ENTITY  close.label                     "Zamknij">
+ <!ENTITY  close.accesskey                 "Z">
+ 
+@@ -62,6 +62,6 @@
+ <!ENTITY  installed.intro                 "Instalacja aktualizacji zakończyła się powodzeniem.">
+ <!ENTITY  whatsnew.label                  "Spis najważniejszych zmian..."> 
+ 
+-<!ENTITY  update.details.label            "Szczegóły">
+-<!ENTITY  update.installedOn.label        "Zainstalowano w:">
++<!ENTITY  update.details.label            "Szczegóły">
++<!ENTITY  update.installedOn.label        "Zainstalowano:">
+ <!ENTITY  update.status.label             "Status:">
+

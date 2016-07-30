@@ -1,0 +1,1888 @@
+diff -urN bugzilla3.4.3-pl/pl/default/account/prefs/email.html.tmpl bugzilla3.4.4-pl/pl/default/account/prefs/email.html.tmpl
+--- bugzilla3.4.3-pl/pl/default/account/prefs/email.html.tmpl	2009-10-29 11:45:23.000000000 +0100
++++ bugzilla3.4.4-pl/pl/default/account/prefs/email.html.tmpl	2009-11-18 11:58:40.445009000 +0100
+@@ -117,7 +117,7 @@
+ 
+ [% events = [
+     { id = constants.EVT_ADDED_REMOVED,
+-      description = "przypisano mnie do lub usunięto z roli " },
++      description = "przypisano mnie do lub usunięto z roli" },
+     { id = constants.EVT_BUG_CREATED,
+       description = "dodano nowy $terms.blad" },
+     { id = constants.EVT_OPENED_CLOSED,
+diff -urN bugzilla3.4.3-pl/pl/default/admin/components/list.html.tmpl bugzilla3.4.4-pl/pl/default/admin/components/list.html.tmpl
+--- bugzilla3.4.3-pl/pl/default/admin/components/list.html.tmpl	2009-10-26 15:12:25.000000000 +0100
++++ bugzilla3.4.4-pl/pl/default/admin/components/list.html.tmpl	2009-11-18 12:33:09.074409000 +0100
+@@ -114,7 +114,7 @@
+ [% IF ! showbugcounts %]
+ 
+   <p><a href="editcomponents.cgi?product=[% product.name FILTER url_quote %]&amp;showbugcounts=1">
+-      Odśwież stronę i wyświetl w tabeli liczbę [% terms.bledow %] (wolno)</a></p>
++      Odśwież stronę i wyświetl w tabeli liczbę [% terms.bledow %] (wolne)</a></p>
+ 
+ [% END %]
+ 
+diff -urN bugzilla3.4.3-pl/pl/default/admin/components/select-product.html.tmpl bugzilla3.4.4-pl/pl/default/admin/components/select-product.html.tmpl
+--- bugzilla3.4.3-pl/pl/default/admin/components/select-product.html.tmpl	2009-10-26 15:12:25.000000000 +0100
++++ bugzilla3.4.4-pl/pl/default/admin/components/select-product.html.tmpl	2009-11-18 12:33:22.034223000 +0100
+@@ -64,7 +64,7 @@
+ 
+ [% IF !showbugcounts %]
+   <p><a href="editcomponents.cgi?showbugcounts=1">
+-      Odśwież stronę i wyświetl w tabeli liczbę [% terms.bledow %] (wolno)</a></p>
++      Odśwież stronę i wyświetl w tabeli liczbę [% terms.bledow %] (wolne)</a></p>
+ [% END %]
+ 
+ [% PROCESS global/footer.html.tmpl %]
+diff -urN bugzilla3.4.3-pl/pl/default/admin/fieldvalues/list.html.tmpl bugzilla3.4.4-pl/pl/default/admin/fieldvalues/list.html.tmpl
+--- bugzilla3.4.3-pl/pl/default/admin/fieldvalues/list.html.tmpl	2009-11-02 20:27:18.796875000 +0100
++++ bugzilla3.4.4-pl/pl/default/admin/fieldvalues/list.html.tmpl	2009-11-18 12:15:01.744052000 +0100
+@@ -73,7 +73,7 @@
+   [% ELSIF check_value.is_default %]
+     [% overrides.action.name.${check_value.name} = {
+          override_content => 1
+-         content => "(Wartość domyślna)"
++         content => "(wartość domyślna)"
+          override_contentlink => 1
+          contentlink => undef
+        }
+diff -urN bugzilla3.4.3-pl/pl/default/admin/flag-type/edit.html.tmpl bugzilla3.4.4-pl/pl/default/admin/flag-type/edit.html.tmpl
+--- bugzilla3.4.3-pl/pl/default/admin/flag-type/edit.html.tmpl	2009-11-02 19:58:17.281250000 +0100
++++ bugzilla3.4.4-pl/pl/default/admin/flag-type/edit.html.tmpl	2009-11-18 12:17:10.669403000 +0100
+@@ -37,7 +37,7 @@
+ [% IF last_action == "copy" %]
+   [% title = BLOCK %]Tworzenie typu flagi na podstawie [% type.name FILTER html %][% END %]
+ [% ELSIF last_action == "edit" %]
+-  [% title = BLOCK %]Edit Flag Type [% type.name FILTER html %][% END %]
++  [% title = BLOCK %]Edycja typu flagi [% type.name FILTER html %][% END %]
+   [% doc_section = "flags-overview.html#flags-edit" %]
+ [% END %]
+ 
+diff -urN bugzilla3.4.3-pl/pl/default/admin/groups/confirm-remove.html.tmpl bugzilla3.4.4-pl/pl/default/admin/groups/confirm-remove.html.tmpl
+--- bugzilla3.4.3-pl/pl/default/admin/groups/confirm-remove.html.tmpl	2009-11-01 17:05:27.609375000 +0100
++++ bugzilla3.4.4-pl/pl/default/admin/groups/confirm-remove.html.tmpl	2009-11-18 12:22:49.924269000 +0100
+@@ -28,9 +28,9 @@
+   #%]
+ 
+ [% IF regexp %]
+-  [% title = "Potwierdzenie: Usunąć wszystkich jawnych członków pasujących do wyrażenia regularnego?" %]
++  [% title = "Potwierdzenie: Czy usunąć wszystkich jawnych członków pasujących do wyrażenia regularnego?" %]
+ [% ELSE %]
+-  [% title = "Potwierdzenie: Usunąć wszystkich jawnych członków?" %]
++  [% title = "Potwierdzenie: Czy usunąć wszystkich jawnych członków?" %]
+ [% END %]
+ 
+ [% PROCESS global/header.html.tmpl
+@@ -39,7 +39,7 @@
+ %]
+ 
+ [% IF regexp %]
+-  <p>Ta opcja usunie wszystkich jawnych członków grupy '[% group.name FILTER html %]'
++  <p>Ta opcja usunie wszystkich jawnych członków grupy '[% group.name FILTER html %]',
+     których nazwy spełniają następujące wyrażenie regularne:
+     '[% regexp FILTER html %]'</p>
+ [% ELSE %]
+@@ -50,7 +50,7 @@
+ <p>Opcja ta wykorzystywana jest tylko wtedy, gdy dokonywane są aktualizacje grup 
+   stworzonych przez [% terms.Bugzille %] w wersji 2.16 i wcześniejszych. 
+   Proszę używać tej opcji ze <b>szczególną uwagą</b> oraz zapoznać się z dokumentacją
+-  aby uzyskać dodatkowe informacje."
++  aby uzyskać dodatkowe informacje.
+ </p>
+     
+ <form method="post" action="editgroups.cgi">
+@@ -60,7 +60,7 @@
+   
+   <input name="token" type="hidden" value="[% token FILTER html %]">
+   <input name="confirm" type="submit" value="Potwierdź">
+-  <p>Or <a href="editgroups.cgi">wróć do strony Edycja grup</a>.</p>
++  <p>lub wróć do strony <a href="editgroups.cgi">Edycja grup</a>.</p>
+ </form>
+     
+ [% PROCESS global/footer.html.tmpl %] 
+diff -urN bugzilla3.4.3-pl/pl/default/admin/milestones/confirm-delete.html.tmpl bugzilla3.4.4-pl/pl/default/admin/milestones/confirm-delete.html.tmpl
+--- bugzilla3.4.3-pl/pl/default/admin/milestones/confirm-delete.html.tmpl	2009-10-27 12:41:16.000000000 +0100
++++ bugzilla3.4.4-pl/pl/default/admin/milestones/confirm-delete.html.tmpl	2009-11-18 12:29:12.094953000 +0100
+@@ -50,7 +50,7 @@
+   <td valign="top">[% terms.Bledy %]:</td>
+   <td valign="top">
+ [% IF milestone.bug_count %]
+-  <a title="Lista [% terms.bledow %] z wersją docelową'
++  <a title="Lista [% terms.bledow %] z wersją docelową '
+            [% milestone.name FILTER html %]'"
+      href="buglist.cgi?target_milestone=[% milestone.name FILTER url_quote %]&amp;product=
+           [%- product.name FILTER url_quote %]">
+diff -urN bugzilla3.4.3-pl/pl/default/admin/params/mta.html.tmpl bugzilla3.4.4-pl/pl/default/admin/params/mta.html.tmpl
+--- bugzilla3.4.3-pl/pl/default/admin/params/mta.html.tmpl	2009-11-10 08:05:58.375671900 +0100
++++ bugzilla3.4.4-pl/pl/default/admin/params/mta.html.tmpl	2009-11-24 16:36:10.234375000 +0100
+@@ -20,7 +20,7 @@
+   #%]
+ [%
+    title = "Wiadomości e-mail"
+-   desc = "Określenie sposobów dostarczana wychodzących wiadomości"
++   desc = "Określenie sposobu dostarczania wychodzących wiadomości"
+ %]
+ 
+ [% param_descs = {
+diff -urN bugzilla3.4.3-pl/pl/default/admin/products/edit.html.tmpl bugzilla3.4.4-pl/pl/default/admin/products/edit.html.tmpl
+--- bugzilla3.4.3-pl/pl/default/admin/products/edit.html.tmpl	2009-11-01 17:07:21.328125000 +0100
++++ bugzilla3.4.4-pl/pl/default/admin/products/edit.html.tmpl	2009-11-15 14:05:26.843750000 +0100
+@@ -34,7 +34,7 @@
+ [% group_control = {${constants.CONTROLMAPNA}        => 'Niedostępne',
+                     ${constants.CONTROLMAPSHOWN}     => 'Pokazywane',
+                     ${constants.CONTROLMAPDEFAULT}   => 'Domyślne',
+-                    ${constants.CONTROLMAPMANDATORY} => 'Wymagane '}
++                    ${constants.CONTROLMAPMANDATORY} => 'Wymagane'}
+  %]
+ 
+ <form method="post" action="editproducts.cgi">
+diff -urN bugzilla3.4.3-pl/pl/default/admin/products/footer.html.tmpl bugzilla3.4.4-pl/pl/default/admin/products/footer.html.tmpl
+--- bugzilla3.4.3-pl/pl/default/admin/products/footer.html.tmpl	2009-11-13 09:16:32.692280900 +0100
++++ bugzilla3.4.4-pl/pl/default/admin/products/footer.html.tmpl	2009-11-16 09:41:14.501884100 +0100
+@@ -67,9 +67,9 @@
+ 
+ [%# Edit other products (in a classification if specified): %]
+ [% UNLESS no_edit_other_products_link %]
+-   Edycja innych produktów <a 
++   Edycja <a 
+   href="editproducts.cgi?
+-        [%- classification_url_part_start FILTER none %]">
++        [%- classification_url_part_start FILTER none %]">innych produktów
+           [% classification_text %]</a>.
+ 
+ [% END %]
+diff -urN bugzilla3.4.3-pl/pl/default/admin/products/updated.html.tmpl bugzilla3.4.4-pl/pl/default/admin/products/updated.html.tmpl
+--- bugzilla3.4.3-pl/pl/default/admin/products/updated.html.tmpl	2009-10-27 14:24:39.000000000 +0100
++++ bugzilla3.4.4-pl/pl/default/admin/products/updated.html.tmpl	2009-11-20 20:18:31.468750000 +0100
+@@ -93,7 +93,7 @@
+   
+ [% IF changes.votesperuser.defined %]
+   <p>
+-  Zaktualizowano liczbę głosów użytkownika z
++  Zaktualizowano maksymalną liczbę głosów na osobę z
+   [%+ changes.votesperuser.0 FILTER html %] na
+   [%+ product.votes_per_user FILTER html %].
+   </p>
+@@ -139,17 +139,17 @@
+      [%- detail.id FILTER html %]</a> od [% detail.name FILTER html %]<br>
+     [% END %]
+   [% ELSE %]
+-    &rarr;there were none.
++    &rarr;nie znaleziono.
+   [% END %]
+   </p>
+ 
+-  <p>Checking existing votes in this product for anybody
+-  who now has too many total votes...<br>
++  <p>Sprawdzanie głosów: wyszukiwanie użytkowników, którzy mają teraz
++  zbyt dużo oddanych głosów...<br>
+   [% IF changes.too_many_total_votes.size %]
+     [% FOREACH detail = changes.too_many_total_votes %]
+-      &rarr;removed votes for [% terms.bug %] <a href="show_bug.cgi?id=
++      &rarr;usunięto głosy oddane na [% terms.bledy %] <a href="show_bug.cgi?id=
+      [%- detail.id FILTER url_quote %]">
+-     [%- detail.id FILTER html %]</a> from [% detail.name FILTER html %]<br>
++     [%- detail.id FILTER html %]</a> z [% detail.name FILTER html %]<br>
+     [% END %]
+   [% ELSE %]
+     &rarr;nie znaleziono.
+diff -urN bugzilla3.4.3-pl/pl/default/admin/sanitycheck/messages.html.tmpl bugzilla3.4.4-pl/pl/default/admin/sanitycheck/messages.html.tmpl
+--- bugzilla3.4.3-pl/pl/default/admin/sanitycheck/messages.html.tmpl	2009-10-30 13:02:18.000000000 +0100
++++ bugzilla3.4.4-pl/pl/default/admin/sanitycheck/messages.html.tmpl	2009-11-18 13:09:24.203908100 +0100
+@@ -76,7 +76,7 @@
+     Sprawdzam statusy/everconfirmed
+ 
+   [% ELSIF san_tag == "bug_check_status_everconfirmed_error_text" %]
+-    [% terms.Bledy %] niepotwierdzone (UNCONFIRMED) z ustawionym statusem everconfirmed
++    [% terms.Bledy %] [% get_status("UNCONFIRMED") FILTER html %] z ustawionym statusem everconfirmed
+ 
+   [% ELSIF san_tag == "bug_check_status_everconfirmed_error_text2" %]
+     [% terms.Bledy %] potwierdzone bez ustawionego statusu everconfirmed
+@@ -196,8 +196,8 @@
+     nieprawidłowe flagi.</a>
+ 
+   [% ELSIF san_tag == "group_control_map_entries_creation" %]
+-    OK, now creating <code>SHOWN</code> member control entries
+-    for product/group combinations lacking one.
++    OK, tworzę wpisy <code>Pokazywane</code> dla produktów/grup, którym
++	nie ustawiono tej właściwości.
+ 
+   [% ELSIF san_tag == "group_control_map_entries_update" %]
+     Zmieniam wpis <code>Niedostępne/<em>xxx</em></code> dla grupy <em>[% group_name FILTER html %]</em> na
+@@ -210,7 +210,7 @@
+     <em>[% product_name FILTER html %]</em>.
+ 
+   [% ELSIF san_tag == "group_control_map_entries_repaired" %]
+-    Repaired [% counter FILTER html %] defective group control settings.
++    Naprawiono [% counter FILTER html %] uszkodzonych ustawień grup kontroli dostępu.
+ 
+   [% ELSIF san_tag == "keyword_check_start" %]
+     Sprawdzam tablicę słów kluczowych.
+diff -urN bugzilla3.4.3-pl/pl/default/admin/users/confirm-delete.html.tmpl bugzilla3.4.4-pl/pl/default/admin/users/confirm-delete.html.tmpl
+--- bugzilla3.4.3-pl/pl/default/admin/users/confirm-delete.html.tmpl	2009-10-30 14:40:05.000000000 +0100
++++ bugzilla3.4.4-pl/pl/default/admin/users/confirm-delete.html.tmpl	2009-11-18 13:16:55.360308500 +0100
+@@ -409,30 +409,30 @@
+         [% END %]
+         [% IF whine_events %]
+           <li>
+-            [% otheruser.login FILTER html %] has scheduled
++            [% otheruser.login FILTER html %] zdefiniował
+             [% IF whine_events == 1 %]
+-              a whine
++              przypomnienie
+             [% ELSE %]
+-              [%+ whine_events %] whines
++              [%+ whine_events %] przypomnień
+             [% END %].
+             [% IF whine_events == 1 %]
+-              This whine
++              Te przypomnienie
+             [% ELSE %]
+-              These whines
++              Te przypomnienia
+             [% END %]
+-            will be deleted along with the user account.
++            zostaną usunięte wraz z kontem użytkownika.
+           </li>
+         [% END %]
+         [% IF whine_schedules %]
+           <li>
+-            [% otheruser.login FILTER html %] is on the receiving end of
++            [% otheruser.login FILTER html %] otrzymuje
+             [% IF whine_schedules == 1 %]
+-              a whine
++              przypomnienie
+             [% ELSE %]
+-              [%+ whine_schedules %] whines
++              [%+ whine_schedules %] przypomnień
+             [% END %].
+-            The corresponding schedules will be deleted along with the user account,
+-            but the whines themselves will be left unaltered.
++            Harmonogramy zdarzeń zostaną usunięte wraz z kontem użytkownika,
++            ale poszczególne przypomnienia pozostaną nietknięte.
+           </li>
+         [% END %]
+       </ul>
+diff -urN bugzilla3.4.3-pl/pl/default/admin/users/edit.html.tmpl bugzilla3.4.4-pl/pl/default/admin/users/edit.html.tmpl
+--- bugzilla3.4.3-pl/pl/default/admin/users/edit.html.tmpl	2009-11-03 09:09:09.010688300 +0100
++++ bugzilla3.4.4-pl/pl/default/admin/users/edit.html.tmpl	2009-11-18 13:18:14.449646000 +0100
+@@ -128,7 +128,7 @@
+ </p>
+ [% IF editusers %]
+   <p>
+-    Nawiasy kwadratowe [] wokół pola wyboru oznaczają możliwość 
++    Nawiasy kwadratowe [] wokół pola wyboru w pierwszej kolumnie oznaczają możliwość 
+ 	przyznawania członkostwa w tej grupie innym użytkownikom 
+ 	w wyniku członkostwa w innej grupie.
+   </p>
+diff -urN bugzilla3.4.3-pl/pl/default/admin/users/userdata.html.tmpl bugzilla3.4.4-pl/pl/default/admin/users/userdata.html.tmpl
+--- bugzilla3.4.3-pl/pl/default/admin/users/userdata.html.tmpl	2009-10-30 14:20:08.000000000 +0100
++++ bugzilla3.4.4-pl/pl/default/admin/users/userdata.html.tmpl	2009-11-18 13:20:29.167735000 +0100
+@@ -75,7 +75,7 @@
+     <td>
+       <input type="checkbox" name="disable_mail" id="disable_mail" value="1" 
+       [% IF otheruser.email_disabled %] checked="checked" [% END %] />
+-      (Opcja dotyczy powiadamiania i przypominania, a nie wiadomości administracyjnych)
++      (Opcja dotyczy powiadamiania i przypominania, a nie wiadomości administracyjnych.)
+     </td>
+   </tr>
+   <tr>
+diff -urN bugzilla3.4.3-pl/pl/default/admin/versions/list.html.tmpl bugzilla3.4.4-pl/pl/default/admin/versions/list.html.tmpl
+--- bugzilla3.4.3-pl/pl/default/admin/versions/list.html.tmpl	2009-10-27 14:43:19.000000000 +0100
++++ bugzilla3.4.4-pl/pl/default/admin/versions/list.html.tmpl	2009-11-18 12:33:39.599205000 +0100
+@@ -76,7 +76,7 @@
+ [% IF ! showbugcounts %]
+ 
+   <p><a href="editversions.cgi?product=[% product.name FILTER url_quote %]&amp;showbugcounts=1">
+-      Wyświetl tabelę z liczbą [% terms.bledow %] (wolno)</a></p>
++      Wyświetl tabelę z liczbą [% terms.bledow %] (wolne)</a></p>
+ 
+ [% END %]
+ 
+diff -urN bugzilla3.4.3-pl/pl/default/admin/versions/select-product.html.tmpl bugzilla3.4.4-pl/pl/default/admin/versions/select-product.html.tmpl
+--- bugzilla3.4.3-pl/pl/default/admin/versions/select-product.html.tmpl	2009-10-27 14:43:31.000000000 +0100
++++ bugzilla3.4.4-pl/pl/default/admin/versions/select-product.html.tmpl	2009-11-18 12:34:01.816563100 +0100
+@@ -64,7 +64,7 @@
+ 
+ [% IF !showbugcounts %]
+   <p><a href="editversions.cgi?showbugcounts=1">
+-      Wyświetl tabelę z liczbą [% terms.bledow %] (wolno)</a></p>
++      Wyświetl tabelę z liczbą [% terms.bledow %] (wolne)</a></p>
+ [% END %]
+ 
+ [% PROCESS global/footer.html.tmpl %]
+diff -urN bugzilla3.4.3-pl/pl/default/admin/workflow/comment.html.tmpl bugzilla3.4.4-pl/pl/default/admin/workflow/comment.html.tmpl
+--- bugzilla3.4.3-pl/pl/default/admin/workflow/comment.html.tmpl	2009-10-27 14:44:10.000000000 +0100
++++ bugzilla3.4.4-pl/pl/default/admin/workflow/comment.html.tmpl	2009-11-18 13:24:49.739633000 +0100
+@@ -49,7 +49,7 @@
+     <th>&nbsp;</th>
+     [% FOREACH status = statuses %]
+       <th class="col-header[% status.is_open ? " open-status" : " closed-status" %]">
+-        [% status.name FILTER html %]
++        [% get_status(status.name) FILTER html %]
+       </th>
+     [% END %]
+   </tr>
+@@ -59,7 +59,7 @@
+   [% FOREACH status = p.merge(statuses) %]
+     <tr class="highlight">
+       <th align="right" class="[% status.is_open ? "open-status" : "closed-status" %]">
+-        [% status.name FILTER html %]
++        [% get_status(status.name) FILTER html %]
+       </th>
+ 
+       [% FOREACH new_status = statuses %]
+diff -urN bugzilla3.4.3-pl/pl/default/attachment/create.html.tmpl bugzilla3.4.4-pl/pl/default/attachment/create.html.tmpl
+--- bugzilla3.4.3-pl/pl/default/attachment/create.html.tmpl	2009-11-01 16:14:22.140625000 +0100
++++ bugzilla3.4.4-pl/pl/default/attachment/create.html.tmpl	2009-11-18 14:00:11.690812300 +0100
+@@ -50,7 +50,7 @@
+     <tr>
+       <th>Dezaktualizuje:</th>
+       <td>
+-        <em>(opcjonalne) proszę zaznaczyć istniejące załączniki, które stają się nieaktualne po dodaniu nowego załącznika.</em><br>
++        <em>(opcjonalne) Proszę zaznaczyć istniejące załączniki, które stają się nieaktualne po dodaniu nowego załącznika:</em><br>
+         [% IF attachments.size %]
+           [% FOREACH attachment = attachments %]
+             [% IF ((attachment.isprivate == 0) || (Param("insidergroup")
+@@ -70,10 +70,10 @@
+       <tr>
+         <th>Przepisanie:</th>
+         <td>
+-          <em>aby przepisać ten [% terms.blad %] na siebie
+-		  należy zaznaczyć poniższą opcję.</em><br>
++          <em>Aby przepisać ten [% terms.blad %] na siebie
++		  należy zaznaczyć poniższą opcję:</em><br>
+           <input type="checkbox" id="takebug" name="takebug" value="1">
+-          <label for="takebug">przepisz [% terms.blad %] na mnie</label>
++          <label for="takebug">Przepisz [% terms.blad %] na mnie</label>
+           [% bug_statuses = [] %]
+           [% FOREACH bug_status = bug.status.can_change_to %]
+             [% NEXT IF bug_status.name == "UNCONFIRMED" && !bug.product_obj.votes_to_confirm %]
+@@ -82,7 +82,7 @@
+           [% IF bug_statuses.size %]
+             <label for="takebug">i ustaw stan [% terms.bledu %] na</label>
+             <select id="bug_status" name="bug_status">
+-              <option value="[% bug.status.name FILTER html %]">[% get_status(bug.status.name) FILTER html %] (current)</option>
++              <option value="[% bug.status.name FILTER html %]">[% get_status(bug.status.name) FILTER html %] (obecny status)</option>
+               [% FOREACH bug_status = bug_statuses %]
+                 [% NEXT IF bug_status.id == bug.status.id %]
+                 <option value="[% bug_status.name FILTER html %]">[% get_status(bug_status.name) FILTER html %]</option>
+@@ -95,7 +95,7 @@
+     <tr>
+       <th><label for="comment">Komentarz:</label></th>
+       <td>
+-        <em>(opcjonalne) proszę podać komentarz do [% terms.bledu %], dotyczący tego załącznika.</em><br>
++        <em>(opcjonalne) Proszę podać komentarz do [% terms.bledu %], dotyczący tego załącznika:</em><br>
+         [% INCLUDE global/textarea.html.tmpl
+           name    = 'comment'
+           id      = 'comment'
+@@ -110,8 +110,8 @@
+       <tr>
+         <th>Prywatność:</th>
+         <td>
+-          <em>jeśli załącznik powinien być traktowany jako prywatny, proszę 
+-		  zaznaczyć poniższe pole.</em><br>
++          <em>Jeśli załącznik powinien być traktowany jako prywatny, proszę 
++		  zaznaczyć poniższe pole:</em><br>
+           <input type="checkbox" name="isprivate" id="isprivate"
+           value="1" onClick="updateCommentPrivacy(this)">
+         <label for="isprivate">Prywatny</label>
+diff -urN bugzilla3.4.3-pl/pl/default/attachment/createformcontents.html.tmpl bugzilla3.4.4-pl/pl/default/attachment/createformcontents.html.tmpl
+--- bugzilla3.4.3-pl/pl/default/attachment/createformcontents.html.tmpl	2009-10-27 15:14:06.000000000 +0100
++++ bugzilla3.4.4-pl/pl/default/attachment/createformcontents.html.tmpl	2009-11-18 13:59:46.325049800 +0100
+@@ -24,7 +24,7 @@
+ <tr>
+   <th><label for="data">Plik</label>:</th>
+   <td>
+-    <em>Podaj ścieżkę do pliku w Twoim systemie.</em><br>
++    <em>Podaj ścieżkę do pliku w Twoim systemie:</em><br>
+     <input type="file" id="data" name="data" size="50"
+       [% IF Param("allow_attach_url") %]
+         onchange="DataFieldHandler()" 
+@@ -48,7 +48,7 @@
+ <tr class="expert_fields">
+   <th><label for="attachurl">Adres URL</label>:</th>
+   <td>
+-    <em>Adres URL załącznika.</em><br>
++    <em>Adres URL załącznika:</em><br>
+     <input type="text" id="attachurl" name="attachurl" size="60" 
+            maxlength="2000"
+            onkeyup="URLFieldHandler()" onblur="URLFieldHandler()">
+@@ -59,7 +59,7 @@
+ <tr>
+   <th><label for="description">Opis</label>:</th>
+   <td>
+-    <em>Krótki opis załącznika.</em><br>
++    <em>Krótki opis załącznika:</em><br>
+     <input type="text" id="description" name="description" size="60" maxlength="200">
+   </td>
+ </tr>
+diff -urN bugzilla3.4.3-pl/pl/default/attachment/diff-header.html.tmpl bugzilla3.4.4-pl/pl/default/attachment/diff-header.html.tmpl
+--- bugzilla3.4.3-pl/pl/default/attachment/diff-header.html.tmpl	2009-11-01 22:57:09.796875000 +0100
++++ bugzilla3.4.4-pl/pl/default/attachment/diff-header.html.tmpl	2009-11-18 14:06:38.621896200 +0100
+@@ -92,18 +92,18 @@
+   <br>
+ [% ELSE %]
+   [% IF headers %]
+-    <a href="attachment.cgi?oldid=[% oldid %]&amp;newid=[% newid %]&amp;action=interdiff&amp;format=raw">Raw Unified</a>
++    <a href="attachment.cgi?oldid=[% oldid %]&amp;newid=[% newid %]&amp;action=interdiff&amp;format=raw">Format Raw Unified</a>
+     |
+   [% END %]
+ [% END %]
+   
+ [%# Collapse / Expand %]
+ <a href="#"
+-   onmouseover="lastStatus = window.status; window.status='Zwiń wszystkie'; return true"
++   onmouseover="lastStatus = window.status; window.status='Collapse All'; return true"
+    onmouseout="window.status = lastStatus; return true"
+    onclick="return collapse_all()">Zwiń wszystkie</a> | 
+ <a href="#"
+-   onmouseover="lastStatus = window.status; window.status='Rozwiń wszystkie'; return true"
++   onmouseover="lastStatus = window.status; window.status='Expand All'; return true"
+    onmouseout="window.status = lastStatus; return true"
+    onclick="return expand_all()">Rozwiń wszystkie</a>
+ 
+@@ -131,12 +131,12 @@
+ [% IF warning %]
+ <h2 class="warning">Ostrzeżenie: 
+   [% IF warning == "interdiff1" %]
+-  z powodu niedoskonałości [% terms.Bugzilli %], wyświetlany diagram różnic pomiędzy dwiema
++  Z powodu niedoskonałości [% terms.Bugzilli %], wyświetlany diagram różnic pomiędzy dwiema
+   łatkami, stworzonych dla różnych zestawów plików, może pokazywać niektóre dane w 
+   niewłaściwych miejscach.
+   [% END %]
+   [% IF warning == "interdiff2" %]
+-  wyświetlany diagram różnic pomiędzy dwiema łatkami może być, z powodu niedoskonałości 
++  Wyświetlany diagram różnic pomiędzy dwiema łatkami może być, z powodu niedoskonałości 
+   [% terms.Bugzilli %], wyświetlany niepoprawnie w przypadku porównywania łatek stworzonych
+   dla różnych wersji plików.
+   [% END %]
+diff -urN bugzilla3.4.3-pl/pl/default/attachment/edit.html.tmpl bugzilla3.4.4-pl/pl/default/attachment/edit.html.tmpl
+--- bugzilla3.4.3-pl/pl/default/attachment/edit.html.tmpl	2009-10-27 15:22:46.000000000 +0100
++++ bugzilla3.4.4-pl/pl/default/attachment/edit.html.tmpl	2009-11-18 14:10:36.619942700 +0100
+@@ -275,7 +275,7 @@
+       [% ELSIF !Param("allow_attachment_display") %]
+         <td id="view_disabled" width="50%">
+           <p><b>
+-            Z powodu zabezpieczeń  [% terms.Bugzilli %] ten załącznik nie może być wyświetlony w przeglądarce.
++            Z powodu zabezpieczeń [% terms.Bugzilli %] ten załącznik nie może być wyświetlony w przeglądarce.
+           </b></p>
+           <p><b>
+             W celu otwarcia załącznika, należy najpierw 
+diff -urN bugzilla3.4.3-pl/pl/default/attachment/list.html.tmpl bugzilla3.4.4-pl/pl/default/attachment/list.html.tmpl
+--- bugzilla3.4.3-pl/pl/default/attachment/list.html.tmpl	2009-10-27 15:25:03.000000000 +0100
++++ bugzilla3.4.4-pl/pl/default/attachment/list.html.tmpl	2009-11-18 14:13:02.006825700 +0100
+@@ -92,7 +92,7 @@
+ 
+             <br>
+             <a href="#attach_[% attachment.id %]"
+-               title="Przechodzi do komentarza związanego z załącznikiem">
++               title="Przejdź do komentarza powiązanego z załącznikiem">
+               [%- attachment.attached FILTER time %]</a>,
+ 
+             [% INCLUDE global/user.html.tmpl who = attachment.attacher %]
+diff -urN bugzilla3.4.3-pl/pl/default/attachment/midair.html.tmpl bugzilla3.4.4-pl/pl/default/attachment/midair.html.tmpl
+--- bugzilla3.4.3-pl/pl/default/attachment/midair.html.tmpl	2009-10-27 15:25:40.000000000 +0100
++++ bugzilla3.4.4-pl/pl/default/attachment/midair.html.tmpl	2009-11-18 14:14:07.270145200 +0100
+@@ -32,7 +32,7 @@
+ [% cgi = Bugzilla.cgi %]
+ 
+ [% PROCESS global/variables.none.tmpl %]
+-[% PROCESS global/header.html.tmpl title = "Mid-air collision!" %]
++[% PROCESS global/header.html.tmpl title = "Wykryto kolizję!" %]
+ 
+ <h1>Wykryto kolizję!</h1>
+ 
+diff -urN bugzilla3.4.3-pl/pl/default/bug/comments.html.tmpl bugzilla3.4.4-pl/pl/default/bug/comments.html.tmpl
+--- bugzilla3.4.3-pl/pl/default/bug/comments.html.tmpl	2009-10-28 09:16:23.000000000 +0100
++++ bugzilla3.4.4-pl/pl/default/bug/comments.html.tmpl	2009-11-18 14:21:03.684776700 +0100
+@@ -70,13 +70,13 @@
+ 
+   function collapse_comment(link, comment) {
+     link.innerHTML = "[+]";
+-    link.title = "Rozwija komentarz.";
++    link.title = "Rozwiń komentarz";
+     YAHOO.util.Dom.addClass(comment, 'collapsed');
+   }
+ 
+   function expand_comment(link, comment) {
+     link.innerHTML = "[-]";
+-    link.title = "Zwija komentarz";
++    link.title = "Zwiń komentarz";
+     YAHOO.util.Dom.removeClass(comment, 'collapsed');
+   }
+ 
+@@ -87,7 +87,7 @@
+     document.write(' <a href="#" class="bz_collapse_comment"' +
+                    ' id="comment_link_' + count +
+                    '" onclick="toggle_comment_display(this, ' +  count +
+-                   '); return false;" title="Zwija komentarz.">[-]<\/a> ');
++                   '); return false;" title="Zwiń komentarz">[-]<\/a> ');
+   }
+   //-->
+   </script>
+diff -urN bugzilla3.4.3-pl/pl/default/bug/dependency-tree.html.tmpl bugzilla3.4.4-pl/pl/default/bug/dependency-tree.html.tmpl
+--- bugzilla3.4.3-pl/pl/default/bug/dependency-tree.html.tmpl	2009-10-28 09:19:49.000000000 +0100
++++ bugzilla3.4.4-pl/pl/default/bug/dependency-tree.html.tmpl	2009-11-18 14:41:39.192311200 +0100
+@@ -98,9 +98,9 @@
+   </h3>
+   [% IF ids.size %]
+     ([% IF maxdepth -%]do [% maxdepth %]. poziomu [% "" IF maxdepth > 1 %] | [% END -%]
+-    <a href="buglist.cgi?bug_id=[% ids.join(",") %]">pokaż jako listę [% terms.bledow %] </a>
++    <a href="buglist.cgi?bug_id=[% ids.join(",") %]">Pokaż jako listę [% terms.bledow %]</a>
+     [% IF user.in_group('editbugs') && ids.size > 1 %]
+-      | <a href="buglist.cgi?bug_id=[% ids.join(",") %]&amp;tweak=1">zmień kilka na raz</a>
++      | <a href="buglist.cgi?bug_id=[% ids.join(",") %]&amp;tweak=1">Zmień kilka na raz</a>
+     [% END %])
+     <ul class="tree">
+       [% INCLUDE display_tree tree=$tree_name %]
+@@ -170,7 +170,7 @@
+ 
+ [% BLOCK buginfo %]
+   [% get_status(bug.bug_status) FILTER html -%] [%+ get_resolution(bug.resolution) FILTER html %];
+-  [%-%] przypisany do [% bug.assigned_to.login FILTER html %]
++  [%-%] Przypisany do [% bug.assigned_to.login FILTER html %]
+   [%-%][% "; Wersja docelowa: " _ bug.target_milestone IF bug.target_milestone %]
+ [% END %]
+ 
+diff -urN bugzilla3.4.3-pl/pl/default/bug/edit.html.tmpl bugzilla3.4.4-pl/pl/default/bug/edit.html.tmpl
+--- bugzilla3.4.3-pl/pl/default/bug/edit.html.tmpl	2009-11-10 12:55:40.045738000 +0100
++++ bugzilla3.4.4-pl/pl/default/bug/edit.html.tmpl	2009-11-18 15:07:59.685405200 +0100
+@@ -48,13 +48,13 @@
+        */
+       [% IF user.settings.quote_replies.value != 'off' %]
+         document.write('[<a href="#add_comment" onclick="replyToComment(' + 
+-                       id + ',' + real_id + ');">odpowiedz<' + '/a>]');
++                       id + ',' + real_id + ');">Odpowiedz<' + '/a>]');
+       [% END %]
+   }
+ 
+   /* Adds the reply text to the `comment' textarea */
+   function replyToComment(id, real_id) {
+-      var prefix = "(w odpowiedzi na komentarz #" + id + ")\n";
++      var prefix = "(W odpowiedzi na komentarz #" + id + ")\n";
+       var replytext = "";
+       [% IF user.settings.quote_replies.value == 'quoted_reply' %]
+         /* pre id="comment_name_N" */
+@@ -271,7 +271,7 @@
+         </td></tr></table>
+         [% ELSE %]
+           <fieldset>
+-            <legend>Uwaga</legend>
++            <legend>Uwaga:</legend>
+             <p>
+               Aby dodawać komentarze lub dokonywać zmian w [% terms.bledzie %], należy najpierw się 
+               <a href="[% IF Param('ssl') != 'never' %][% Param('sslbase') %][% END %]show_bug.cgi?id=[% bug.bug_id %]&amp;GoAheadAndLogIn=1">zalogować</a>.
+@@ -325,8 +325,8 @@
+             <td>
+               <label 
+                 for="alias" 
+-                title="nazwa dla  
+-                       [% terms.bledu %], która może być używana zamiast jego numeru  
++                title="Nazwa dla  
++                       [% terms.bledu %], która może być używana zamiast jego numeru,  
+                        [%%] np. podczas dodawania go do listy zależności"
+                 >Alias</label>:</td><td>
+           [% ELSIF bug.alias %]
+@@ -392,7 +392,7 @@
+       <td class="field_label">
+         <label for="component" accesskey="m">
+           <b><a href="describecomponents.cgi?product=[% bug.product FILTER url_quote %]">
+-            Co<u>m</u>ponent</a>:
++            Ko<u>m</u>ponent</a>:
+           </b>
+         </label>
+       </td>
+@@ -840,7 +840,7 @@
+ [% BLOCK section_cclist %]
+     <tr>
+       <td class="field_label">
+-        <label for="newcc" accesskey="a"><b>Lista obserwatorów</b>:</label>
++        <label for="newcc" accesskey="a"><b>List<u>a</u> obserwatorów</b>:</label>
+       </td>
+       <td>
+         [% IF user.id %]
+@@ -871,7 +871,7 @@
+           [% END %]
+         [% END %]
+         <span id="cc_edit_area_showhide_container" class="bz_default_hidden">
+-          (<a href="#" id="cc_edit_area_showhide">[% IF user.id %]edytuj[% ELSE %]show[% END %]</a>)
++          (<a href="#" id="cc_edit_area_showhide">[% IF user.id %]edytuj[% ELSE %]wyświetl[% END %]</a>)
+         </span>
+         <div id="cc_edit_area">
+           <br>
+@@ -944,7 +944,7 @@
+   [% IF show_bug_flags %]
+     <tr>
+       <td class="field_label flags_label">
+-        <label><b>Flags:</b></label>
++        <label><b>Flagi:</b></label>
+       </td>
+       <td></td>
+     </tr>
+diff -urN bugzilla3.4.3-pl/pl/default/bug/format_comment.txt.tmpl bugzilla3.4.4-pl/pl/default/bug/format_comment.txt.tmpl
+--- bugzilla3.4.3-pl/pl/default/bug/format_comment.txt.tmpl	2009-11-10 12:59:37.123395500 +0100
++++ bugzilla3.4.4-pl/pl/default/bug/format_comment.txt.tmpl	2009-11-16 10:44:59.758971200 +0100
+@@ -39,15 +39,15 @@
+ [% PROCESS 'global/field-descs.none.tmpl' %]
+ 
+ [%- IF comment.type == constants.CMT_DUPE_OF -%]
+-[% wrapped_comment %]
++X[% comment.body %]
+ 
+ *** Ten [% terms.blad %] został oznaczony jako duplikat [% terms.bledu %] [%+ comment.extra_data %] ***
+ [% ELSIF comment.type == constants.CMT_HAS_DUPE %]
+-*** [% terms.Blad %] [%+ comment.extra_data %] został oznaczony jako duplikat tego[% terms.bledu %]. ***
++*** [% terms.Blad %] [%+ comment.extra_data %] został oznaczony jako duplikat tego [% terms.bledu %]. ***
+ [% ELSIF comment.type == constants.CMT_POPULAR_VOTES %]
+ *** Ten [% terms.blad %] został potwierdzony przez głosowanie. ***
+ [% ELSIF comment.type == constants.CMT_MOVED_TO %]
+-[% wrapped_comment %]
++X[% comment.body %]
+ 
+ [%+ terms.Blad %] został przeniesiony do [% Param("move-to-url") %].
+ Jeśli przeniesienie powiodło się, [% comment.extra_data %] otrzyma wiadomość e-mail zawierającą
+@@ -56,5 +56,5 @@
+ [%+ get_status('VERIFIED') %] i skopiować odnośnik do nowego [% terms.bledu %].
+ W przeciwnym wypadku należy otworzyć ponownie ten [% terms.blad %].
+ [%- ELSE -%]
+-[%- wrapped_comment %]
++X[%- comment.body %]
+ [% END %]
+diff -urN bugzilla3.4.3-pl/pl/default/bug/navigate.html.tmpl bugzilla3.4.4-pl/pl/default/bug/navigate.html.tmpl
+--- bugzilla3.4.3-pl/pl/default/bug/navigate.html.tmpl	2009-10-30 09:55:10.000000000 +0100
++++ bugzilla3.4.4-pl/pl/default/bug/navigate.html.tmpl	2009-11-18 15:14:10.520922900 +0100
+@@ -22,11 +22,11 @@
+ [% IF bottom_navigator == 1 %]
+   <ul class="related_actions">
+     <li><a href="show_bug.cgi?format=multiple&amp;id=
+-                [% bug.bug_id FILTER url_quote %]">Format dla drukowania</a></li>
++                [% bug.bug_id FILTER url_quote %]">Format do druku</a></li>
+     <li>&nbsp;-&nbsp;<a href="show_bug.cgi?ctype=xml&amp;id=
+                         [% bug.bug_id  FILTER url_quote %]">XML</a></li>
+     <li>&nbsp;-&nbsp;<a href="enter_bug.cgi?cloned_bug_id=
+-                        [% bug.bug_id  FILTER url_quote %]">Klonuj ten  
++                        [% bug.bug_id  FILTER url_quote %]">Sklonuj ten  
+                         [% terms.blad %]</a></li>
+     [%# Links to more things users can do with this bug. %]
+     [% Hook.process("links") %]
+diff -urN bugzilla3.4.3-pl/pl/default/bug/show-multiple.html.tmpl bugzilla3.4.4-pl/pl/default/bug/show-multiple.html.tmpl
+--- bugzilla3.4.3-pl/pl/default/bug/show-multiple.html.tmpl	2009-11-01 21:08:12.859375000 +0100
++++ bugzilla3.4.4-pl/pl/default/bug/show-multiple.html.tmpl	2009-11-18 15:18:33.911797700 +0100
+@@ -314,7 +314,7 @@
+ 
+ [% BLOCK dependencies %]
+   <tr>
+-    <th>[% terms.Blad %] [%+ field_descs.${name} FILTER html %]:</th>
++    <th>[%+ field_descs.${name} FILTER html %]:</th>
+     <td>
+       [% FOREACH depbug = bug.${name} %]
+         [% depbug FILTER bug_link(depbug) FILTER none %][% ", " IF not loop.last() %]
+diff -urN bugzilla3.4.3-pl/pl/default/bug/votes/list-for-user.html.tmpl bugzilla3.4.4-pl/pl/default/bug/votes/list-for-user.html.tmpl
+--- bugzilla3.4.3-pl/pl/default/bug/votes/list-for-user.html.tmpl	2009-11-02 11:53:51.035715400 +0100
++++ bugzilla3.4.4-pl/pl/default/bug/votes/list-for-user.html.tmpl	2009-11-15 11:00:23.265625000 +0100
+@@ -100,7 +100,7 @@
+                   product.maxperbug > 1 %]
+               <font size="-1">
+                 (Uwagi: [% product.maxperbug %] to maksymalna liczba głosów
+-                na [% terms.bug %] przewidziana w tym produkcie.)
++                na [% terms.blad %] przewidziana w tym produkcie.)
+               </font>
+             [% END %]
+           </td>
+diff -urN bugzilla3.4.3-pl/pl/default/email/newchangedmail.txt.tmpl bugzilla3.4.4-pl/pl/default/email/newchangedmail.txt.tmpl
+--- bugzilla3.4.3-pl/pl/default/email/newchangedmail.txt.tmpl	2009-11-10 13:12:05.599933300 +0100
++++ bugzilla3.4.4-pl/pl/default/email/newchangedmail.txt.tmpl	2009-11-20 09:53:08.162060100 +0100
+@@ -19,12 +19,33 @@
+   #%]
+ 
+ [% PROCESS "global/variables.none.tmpl" %]
+-[% diffspl = diffs | replace('changed', 'zmienił(a)') %]
++[% diffspl = diffs | replace('changed', 'zmienił') %]
+ [% diffspl = diffspl | replace('What', '    ') %]
+ [% diffspl = diffspl | replace('Removed ', 'Usunięto') %]
+ [% diffspl = diffspl | replace('     \|Added', '     |Dodano') %]
+ [% diffspl = diffspl | replace('Comment', 'Komentarz') %]
+ [% diffspl = diffspl | replace('from', 'od') %]
++[% diffspl = diffspl | replace('Old Value', 'Usunięto ') %]
++[% diffspl = diffspl | replace('New Value', 'Dodano') %]
++[% diffspl = diffspl | replace('Bug', 'Błąd') %]
++[% diffspl = diffspl | replace('depends on bug', 'zależy od błędu') %]
++[% diffspl = diffspl | replace('which', 'który') %]
++[% diffspl = diffspl | replace('state', 'stan') %]
++[% diffspl = diffspl | replace('Summary', 'Podsumowanie') %]
++[% diffspl = diffspl | replace('Classification', 'Klasyfikacja') %]
++[% diffspl = diffspl | replace('Product', 'Produkt') %]
++[% diffspl = diffspl | replace('Version', 'Wersja') %]
++[% diffspl = diffspl | replace('Platform', 'Platforma') %]
++[% diffspl = diffspl | replace('OS/Version', 'OS') %]
++[% diffspl = diffspl | replace('Severity', 'Ważność') %]
++[% diffspl = diffspl | replace('Priority', 'Priorytet') %]
++[% diffspl = diffspl | replace('Component', 'Komponent') %]
++[% diffspl = diffspl | replace('AssignedTo', 'Przypisany do') %]
++[% diffspl = diffspl | replace('ReportedBy', 'Zgłoszony przez') %]
++[% diffspl = diffspl | replace('Group', 'Grupa') %]
++[% diffspl = diffspl | replace('Blocks', 'Blokuje') %]
++[% diffspl = diffspl | replace('Depends on', 'Zależy od') %]
++[% diffspl = diffspl | replace('Attachment', 'Załącznik') %]
+ From: [% Param('mailfrom') %]
+ To: [% to %]
+ Subject: [[% terms.Blad %] [%+ bugid %]] [% 'Nowy: ' IF isnew %][%+ summary %]
+@@ -61,9 +82,11 @@
+ -- [%# Protect the trailing space of the signature marker %]
+ Konfiguracja powiadomień e-mail: [% urlbase %]userprefs.cgi?tab=email
+ ------- Powód wysłania wiadomości: -------
++
+ [% FOREACH relationship = reasons %]
+   [% SWITCH relationship %]
+     [% CASE constants.REL_ASSIGNEE %]
++
+ [% terms.Blad %] jest przypisany do ciebie.
+ 
+     [% CASE constants.REL_REPORTER %]
+@@ -101,4 +124,5 @@
+ Obserwujesz kogoś kto głosował na ten [% terms.blad %].
+ 
+   [% END %]
++  
+ [% END %]
+diff -urN bugzilla3.4.3-pl/pl/default/email/votes-removed.txt.tmpl bugzilla3.4.4-pl/pl/default/email/votes-removed.txt.tmpl
+--- bugzilla3.4.3-pl/pl/default/email/votes-removed.txt.tmpl	2009-11-01 21:38:11.656250000 +0100
++++ bugzilla3.4.4-pl/pl/default/email/votes-removed.txt.tmpl	2009-11-19 14:17:56.228698000 +0100
+@@ -31,12 +31,12 @@
+ %] na [% terms.blad %], ale [% votesremoved FILTER html %] zostały usunięte.
+ 
+ [% IF votesnew %]
+-[% PROCESS ODMIEN c=votesnew o1="Pozostał 1 głos" o2="Pozostało $votesnew głosy" o3="Pozostało $votesnew głosów" %] na ten [% terms.blad %].
++[% PROCESS ODMIEN c=votesnew o1="Pozostał 1 głos" o2="Pozostały $votesnew głosy" o3="Pozostało $votesnew głosów" %] na ten [% terms.blad %].
+ [% ELSE %]
+ Nie możesz już zagłosować na [% terms.blad %].
+ [% END %]
+ 
+-Reason:
++Powód:
+ [% IF reason == "votes_bug_moved" %]
+   Ten [% terms.blad %] został przeniesiony do innego produktu.
+ 
+diff -urN bugzilla3.4.3-pl/pl/default/email/whine.txt.tmpl bugzilla3.4.4-pl/pl/default/email/whine.txt.tmpl
+--- bugzilla3.4.3-pl/pl/default/email/whine.txt.tmpl	2009-10-28 10:20:31.000000000 +0100
++++ bugzilla3.4.4-pl/pl/default/email/whine.txt.tmpl	2009-11-20 09:38:04.864927000 +0100
+@@ -26,23 +26,23 @@
+ 
+ [Wiadomość e-mail wygenerowana automatycznie.]
+ 
+-W systemie [% terms.Bugzilla %] znaleziono co najmniej jeden [% terms.blad %] przypisany do Ciebie, 
+-który wymaga uwagi ([% urlbase %]).
++W systemie [% terms.Bugzilla %] ([% urlbase %]) znaleziono co najmniej jeden [% terms.blad %] przypisany do Ciebie, 
++który wymaga uwagi.
+ 
+ Wszystkie te [% terms.bledy %] są w stanie [% get_status("NEW") %] lub 
+-[% get_status("REOPENED") %] i nie zostały zmienione od co najmniej
+-[% Param("whinedays") %] dni.
++[% get_status("REOPENED") %] i nie zostały zmienione od co najmniej 
++[% Param("whinedays") %] dni(a).
+ Należy przejrzeć ww. [% terms.bledy %] i zdecydować co do ich dalszego losu.
+ 
+ Możliwe sytuacje:
+ 	
+-(1) Ten [% terms.blad %] jest prosty do rozwiązania (np. posiada status [% get_resolution("INVALID") %]),
++(1) Ten [% terms.blad %] jest prosty do rozwiązania (np. poprzez nadanie mu statusu [% get_resolution("INVALID") %]),
+     więc można się go pozbyć natychmiast.
+-(2) Ten [% terms.blad %] należy do kogoś innego, więc należy go przepisać tej osobie.
++(2) Ten [% terms.blad %] należy do kogoś innego, więc należy go przypisać tej osobie.
+     (Podpowiedź: jeśli osoba nie jest znana, należy prawidłowo określić pole Komponent,
+-    a następnie przepisać [% terms.blad %] do domyślnego właściciela tego komponentu.)
++    a następnie przypisać [% terms.blad %] do domyślnego właściciela tego komponentu.)
+ (3) Jeśli [% terms.blad %] należy do Ciebie, lecz nie można go rozwiązać natychmiast,
+-    należy wydać polecenie "Akceptuj [% terms.blad %]".
++    należy wybrać polecenie "Wyślij" na stronie edycji [% terms.bledu %].
+ 
+ Pełną listę [% terms.bledow %] ze statusem [% get_status("NEW") %]/[% get_status("REOPENED") %] 
+ można uzyskać pod adresem:
+@@ -52,8 +52,8 @@
+ lub można użyć zwykłej strony zapytań:
+ [%+ urlbase %]query.cgi
+ 
+-Poniżej dołączono poszczególne adresy URLs do wszystkich [% terms.bledow %] ze statusem
+-[% get_status("NEW") %], które nie były modyfikowane od [% Param("whinedays") %] lub dłużej.
++Poniżej dołączono poszczególne adresy URL do wszystkich [% terms.bledow %] ze statusem 
++[% get_status("NEW") %], które nie były modyfikowane od [% Param("whinedays") %] dni(a) lub dłużej.
+ 
+ Wiadomość ta będzie wysyłana codziennie do czasu podjęcia kroków w celu rozwiązania
+ tych [% terms.bledow %].
+diff -urN bugzilla3.4.3-pl/pl/default/global/code-error.html.tmpl bugzilla3.4.4-pl/pl/default/global/code-error.html.tmpl
+--- bugzilla3.4.3-pl/pl/default/global/code-error.html.tmpl	2009-10-28 10:42:38.000000000 +0100
++++ bugzilla3.4.4-pl/pl/default/global/code-error.html.tmpl	2009-11-24 17:46:22.218750000 +0100
+@@ -38,7 +38,7 @@
+ 
+ [% error_message = BLOCK %]
+   [% IF    error == "action_unrecognized" %]
+-    [% docslinks = {'query.html' => "Trwa szukanie $terms.bledow",
++    [% docslinks = {'query.html' => "Szukanie $terms.bledow",
+                     'query.html#list' => "Listy $terms.bledow"} %]
+     Nie można rozpoznać wartości (<em>[% action FILTER html %]</em>)
+     zmiennej <em>action</em>.
+@@ -58,7 +58,7 @@
+       [%+ Param('emailregexpdesc') %]
+     [% END %]
+     Nie może też zawierać żadnego z poniższych znaków specjalnych:
+-    <tt>\ ( ) &amp; &lt; &gt; , ; : &quot; [ ]</tt>, ani białych znaków.
++    <tt>\ ( ) &amp; &lt; &gt; , ; : &quot; [ ]</tt>, ani znaków spacji.
+ 
+   [% ELSIF error == "authres_unhandled" %]
+     Wartość zwracana przez [% value FILTER html %] nie została obsłużona 
+@@ -101,9 +101,9 @@
+     Nie można otworzyć pliku <tt>[% filename FILTER html %]</tt> z danymi do wykresu.
+   
+   [% ELSIF error == "chart_lines_not_installed" %]
+-    [% admindocslinks = {'installation.html#install-perlmodules' => 'Do korzystania z wykresów niezbędna jest instalacja modułów Perl'} %]
++    [% admindocslinks = {'installation.html#install-perlmodules' => 'Wykresy - instalacja niezbędnych modułów Perl'} %]
+     Wykresy nie będą działać, póki nie zostanie zainstalowany moduł Perl Chart::Lines.
+-    Proszę uruchomić skrypt checksetup.pl aby wyświetlić instrukcję instalacji.
++    Proszę uruchomić skrypt checksetup.pl, aby uzyskać instrukcję instalacji.
+ 	
+   [% ELSIF error == "column_not_null_without_default" %]
+     Błąd podczas dodawania kolumny [% name FILTER html %]:
+@@ -141,7 +141,6 @@
+     w bazie danych dla '[% username FILTER html %]', ale źródło kont
+     podaje, że '[% extern_user FILTER html %]' posiada ten ID.
+ 
+-[%#Nietłumaczone#%]
+   [% ELSIF error == "field_choice_must_use_type" %]
+     When you call a class method on <code>Bugzilla::Field::Choice</code>,
+     you must call <code>Bugzilla::Field::Choice-&gt;type('some_field')</code>
+@@ -157,15 +156,15 @@
+     nie jest polem dodatkowym.
+ 
+   [% ELSIF error == "gd_not_installed" %]
+-    [% admindocslinks = {'installation.html#install-perlmodules' => 'Installing Perl modules necessary for Charting'} %]
++    [% admindocslinks = {'installation.html#install-perlmodules' => 'Wykresy - instalacja niezbędnych modułów Perl'} %]
+     Wykresy nie będą wyświetlane do czasu zainstalowania modułu Perl GD.
+-    Proszę uruchomić skrypt checksetup.pl, aby otrzymać instrukcje postępowania.
++    Proszę uruchomić skrypt checksetup.pl, aby uzyskać instrukcję instalacji.
+ 
+   [% ELSIF error == "illegal_content_type_method" %]
+-    Formularz został uszkodzony podczas wysyłania. Pole <em>content
+-    method</em>, które określa sposób w jaki należy wykryć typ zawartości,
+-    powinno być jednym z <em>autodetect</em>, <em>list</em>,
+-    lub <em>manual</em>. Obecna wartość pola to
++    Formularz został uszkodzony podczas wysyłania. Pole <em>Metoda określenia 
++    typu zawartości</em>, które określa sposób w jaki należy wykryć typ zawartości,
++    powinno być ustawione jako <em>autodetekcja</em>, <em>wybór z listy</em>
++    lub <em>ręczny</em>. Obecna wartość pola to
+     <em>[% contenttypemethod FILTER html %]</em>.
+ 
+   [% ELSIF error == "illegal_field" %]
+@@ -226,7 +225,7 @@
+     [% title = "Edycja flag jest niemożliwa" %]
+     [% IF type == "b" %]
+       Flagi nie mogą zostać zmieniony podczas
+-      zmiany kilku [% terms.bledow %] równocześnie.
++      zmiany kilku [% terms.bledow %] jednocześnie.
+     [% ELSE %]
+       Odwołanie do istniejącej flagi podczas tworzenia
+       nowych załączników jest niedopuszczalne.
+@@ -272,21 +271,20 @@
+     [% ELSE %]
+       .
+     [% END %]
+-[%#Nietłumaczone#%]
++
+   [% ELSIF error == "jobqueue_insert_failed" %]
+-   [% title = "Job Queue Failure" %]
+-    Inserting a <code>[% job FILTER html %]</code> job into the Job 
+-    Queue failed with the following error: [% errmsg FILTER html %]
+-[%#Nietłumaczone#%]
++   [% title = "Błąd kolejki zadań" %]
++    Podczas próby dodania zadania <code>[% job FILTER html %]</code> do kolejki 
++    zadań wystąpił następujący błąd: [% errmsg FILTER html %]
++
+   [% ELSIF error == "jobqueue_not_configured" %]
+-    Using the job queue system requires that certain Perl modules
+-    be installed. Run <code>checksetup.pl</code> to see what modules
+-    you are missing.
+-[%#Nietłumaczone#%]
++    Korzystanie z systemu kolejkowania zadań wymaga instalacji określonych modułów Perl.
++    Proszę uruchomić skrypt checksetup.pl, aby uzyskać instrukcję instalacji.
++	
+   [% ELSIF error == "jobqueue_no_job_mapping" %]
+-    <code>Bugzilla::JobQueue</code> has not been configured to handle
+-    the job "[% job FILTER html %]".  You need to add this job type
+-    to the <code>JOB_MAP</code> constant in <code>Bugzilla::JobQueue</code>.
++    <code>Bugzilla::JobQueue</code> nie został skonfigurowany do obsługi
++    zadania "[% job FILTER html %]". Należy dodać ten typ zadań
++    do stałej <code>JOB_MAP</code> modułu <code>Bugzilla::JobQueue</code>.
+ 
+   [% ELSIF error == "ldap_bind_failed" %]
+     Wykonanie powiązania z serwerem LDAP nie powiodło się. Komunikat błędu:
+@@ -327,17 +325,17 @@
+     Wymagany jest poprawny identyfikator sentencji.
+ 
+   [% ELSIF error == "no_manual_moved" %]
+-    Nie można zmienić rozwiązania [% terms.bledu %] na MOVED bez
+-    przeniesienia [% terms.bledu %].[%#Nietłumaczone#%]
++    Nie można zmienić rozwiązania [% terms.bledu %] na [%+ get_status("MOVED") FILTER html %] bez
++    przeniesienia [% terms.bledu %].
+   [% ELSIF error == "no_open_bug_status" %]
+-    [% title = "$terms.Bug Cannot Be Confirmed" %]
++    [% title = "$terms.Blad nie może zostać potwierdzony" %]
+     There is no valid transition from
+     [%+ get_status("UNCONFIRMED") FILTER html %] to an open state.
+ 
+   [% ELSIF error == "param_invalid" %]
+-   [% title = "Invalid Parameter" %]
+-   <code>[% param FILTER html %]</code> is not a valid parameter
+-   for the [% function FILTER html %] function.
++   [% title = "Błędny parametr" %]
++   <code>[% param FILTER html %]</code> nie jest prawidłowym parametrem
++   funkcji [% function FILTER html %].
+ 
+   [% ELSIF error == "param_must_be_numeric" %]
+     [% title = "Błędny parametr" %]
+@@ -356,14 +354,14 @@
+     został ustawiony.
+ [%#Nietłumaczone#%]
+   [% ELSIF error == "product_empty_group_controls" %]
+-    [% title = "Missing Group Controls" %]
+-    New settings must be defined to edit group controls for
+-    the [% group.name FILTER html %] group.
++    [% title = "Brak ustawień kontroli dostępu" %]
++    Należy edytować ustawienia grup kontroli dostępu dla
++    grupy [% group.name FILTER html %].
+ 
+   [% ELSIF error == "product_illegal_group_control" %]
+-    [% title = "Illegal Group Control" %]
+-    '[% value FILTER html %]' is not a legal value for
+-    the '[% field FILTER html %]' field.
++    [% title = "Nieprawidłowa wartość" %]
++    '[% value FILTER html %]' nie jest prawidłową wartością dla
++    pola '[% field FILTER html %]'.
+ 
+   [% ELSIF error == "protection_violation" %]
+     Wywołano funkcję <code>[% function FILTER html %]</code>
+@@ -418,7 +416,7 @@
+   [% ELSIF error == "soap_not_installed" %]
+     [% admindocslinks = {'installation.html#install-perlmodules' => 'Installing Perl modules'} %]
+     Interfejs XMLRPC nie będzie działał bez zainstalowanego modułu perla SOAP::Lite.
+-    Proszę uruchomić checksetup.pl, aby uzyskać instrukcję instalacji.
++    Proszę uruchomić skrypt checksetup.pl, aby uzyskać instrukcję instalacji.
+ 	
+   [% ELSIF error == "token_generation_error" %]
+     Wystąpił poważny błąd w systemie generowania żetonów.
+diff -urN bugzilla3.4.3-pl/pl/default/global/messages.html.tmpl bugzilla3.4.4-pl/pl/default/global/messages.html.tmpl
+--- bugzilla3.4.3-pl/pl/default/global/messages.html.tmpl	2009-11-01 18:08:22.968750000 +0100
++++ bugzilla3.4.4-pl/pl/default/global/messages.html.tmpl	2009-11-24 18:40:37.593750000 +0100
+@@ -604,20 +604,20 @@
+     Usuwanie klucza obcego: [% table FILTER html %].[% column FILTER html %] -&gt; [% fk.TABLE FILTER html %].[% fk.COLUMN FILTER html %]...
+ 
+   [% ELSIF message_tag == "install_fk_invalid" %]
+-    ERROR: There are invalid values for the [% column FILTER html %] column in the [% table FILTER html %]
+-    table. (These values do not exist in the [% foreign_table FILTER html %] table, in the 
+-    [% foreign_column FILTER html %] column.)
+-
+-    Before continuing with checksetup, you will need to fix these values,
+-    either by deleting these rows from the database, or changing the values
+-    of [% column FILTER html %] in [% table FILTER html %] to point to valid values in [% foreign_table FILTER html %].[% foreign_column FILTER html %].
++    BŁĄD: Wykryto nieprawidłowe wartości w kolumnie [% column FILTER html %] tablicy [% table FILTER html %].
++    (Wartości te nie istnieją w tablicy [% foreign_table FILTER html %], w kolumnie 
++    [% foreign_column FILTER html %].)
++
++    Przed kontynuowaniem wykonywania skryptu checksetup należy naprawić te wartości
++    poprzez skasowanie odpowiednich rzędów w bazie danych lub zmianę wartości
++    kolumny [% column FILTER html %] w tabeli [% table FILTER html %] tak, aby wskazywały na poprawne wartości w tabeli i kolumnie [% foreign_table FILTER html %].[% foreign_column FILTER html %].
+ 
+-    The bad values from the [% table FILTER html %].[% column FILTER html %] column are:
++    Nieprawidłowe wartości z tabeli i kolumny [% table FILTER html %].[% column FILTER html %]:
+     [%+ values.join(', ') FILTER html %]
+ 
+   [% ELSIF message_tag == "install_fk_invalid_fixed" %]
+-    WARNING: There were invalid values in [% table FILTER html %].[% column FILTER html %]
+-    that have been [% IF action == 'delete' %]deleted[% ELSE %]set to NULL[% END %]:
++    BŁĄD: Wykryto nieprawidłowe wartości w tablicy i kolumnie [% table FILTER html %].[% column FILTER html %],
++    które zostały [% IF action == 'delete' %]usunięte[% ELSE %]ustawione jako NULL[% END %]:
+     [%+ values.join(', ') FILTER html %]
+ 
+   [% ELSIF message_tag == "install_group_create" %]
+@@ -696,7 +696,7 @@
+   [% ELSIF message_tag == "remaining_time_zeroed" %]
+     Wartość pola [% field_descs.remaining_time FILTER html %] została
+     automatycznie zmieniona na zero, w związku z oznaczeniem [% terms.bledu %]
+-    na RESOLVED lub CLOSED.
++    jako [% get_status("RESOLVED") FILTER html %] lub [% get_status("CLOSED") FILTER html %].
+ 
+   [% ELSIF message_tag == "sanitycheck" %]
+     [%# We use this way to call sanitycheck-specific messages so that
+@@ -714,7 +714,7 @@
+ 
+   [% ELSIF message_tag == "sudo_started" %]
+     [% title = "Rozpoczęto sesję sudo" %]
+-      Rozpoczęto sesję sudo.  Przez następne 6 godzin lub do czasu zakończenia
++      Rozpoczęto sesję sudo. Przez następne 6 godzin lub do czasu zakończenia
+       sesji wszystkie działania będą wykonywane na koncie użytkownika
+       ([% target FILTER html %]).
+   
+diff -urN bugzilla3.4.3-pl/pl/default/global/user-error.html.tmpl bugzilla3.4.4-pl/pl/default/global/user-error.html.tmpl
+--- bugzilla3.4.3-pl/pl/default/global/user-error.html.tmpl	2009-11-03 08:14:34.020483400 +0100
++++ bugzilla3.4.4-pl/pl/default/global/user-error.html.tmpl	2009-11-24 18:46:27.531250000 +0100
+@@ -357,13 +357,12 @@
+ 
+   [% ELSIF error == "dependency_loop_multi" %]
+     [% title = "Pętla w zależnościach" %]
+-    Następujące [% terms.bledy %] znajdą się 
+-    w polach "Blokuje" i "Zależy od" drzewa zależności, jeśli zmiany
+-	te zostaną zatwierdzone:
++    Następujące [% terms.bledy %] znajdują się 
++    w polach "Blokuje" i "Zależy od" drzewa zależności:
+     [% FOREACH dep = deps %]
+       [%+ dep FILTER bug_link(dep) FILTER none %]
+     [% END %].
+-    Doprowadzi to do niedozwolonej pętli w zależnościach.
++    Zatwierdzenie zmian doprowadziłoby do niedozwolonej pętli w zależnościach.
+ 
+   [% ELSIF error == "dependency_loop_single" %]
+     [% title = "Pętla w zależnościach" %]
+@@ -425,7 +424,7 @@
+ 
+   [% ELSIF error == "field_cant_control_self" %]
+     [% title = "Pole nie może kontrolować samego siebie" %]
+-    Pole [% field.description FILTER html %] nie może byc ustawione jako kontrolujące 
++    Pole [% field.description FILTER html %] nie może być ustawione jako kontrolujące 
+     samego siebie.
+ 
+   [% ELSIF error == "field_control_must_be_select" %]
+@@ -463,21 +462,21 @@
+     użyciu tego interfejsu.
+ 
+   [% ELSIF error == "fieldvalue_already_exists" %]
+-    [% title = "Field Value Already Exists" %]
+-    The value '[% value.name FILTER html %]' already exists for the
+-    [%+ field.description FILTER html %] field.
++    [% title = "Podana wartość już istnieje" %]
++    Wartość '[% value.name FILTER html %]' dla pola 
++    [%+ field.description FILTER html %] już istnieje.
+ 
+   [% ELSIF error == "fieldvalue_is_controller" %]
+-    [% title = "Value Controls Other Fields" %]
+-    You cannot delete the [% value.field.description FILTER html %]
+-    '[% value.name FILTER html %]' because
++    [% title = "Wartość kontroluje inne pola" %]
++    Nie można usunąć wartości [% value.field.description FILTER html %]
++    '[% value.name FILTER html %]' ponieważ
+     [% IF fields.size %]
+-      it controls the visibility of the following fields:
++      kontroluje ona widoczność następujących pól:
+       [%+ fields.join(', ') FILTER html %].
+     [% END %]
+-    [% ' and ' IF fields.size AND vals.size %]
++    [% ' oraz ' IF fields.size AND vals.size %]
+     [% IF vals.size %]
+-      it controls the visibility of the following field values:
++      kontroluje widoczność następujących wartości pól:
+       <ul>
+         [% FOREACH field_name = vals.keys %]
+           [% FOREACH val = vals.${field_name} %]
+@@ -777,7 +776,7 @@
+     [% ELSE %]
+       [%+ Param('emailregexpdesc') %]
+     [% END %]
+-    Adres nie może również zawierać żadnego z tych znaków:
++    Adres nie może również zawierać żadnego z następujących znaków:
+     <tt>\ ( ) &amp; &lt; &gt; , ; : &quot; [ ]</tt> oraz spacji.
+     
+   [% ELSIF error == "illegal_frequency" %]
+@@ -793,7 +792,7 @@
+ 
+   [% ELSIF error == "illegal_is_obsolete" %]
+     [% title = "Zapytanie nie ma sensu" %]
+-    Jedynymi prawidłowymi wartościami dla pola <em>Załącznik jest nieaktualny</em> jest 0 lub 1.
++    Jedynymi prawidłowymi wartościami dla pola <em>Załącznik jest zdezaktualizowany</em> jest 0 lub 1.
+ 
+   [% ELSIF error == "illegal_query_name" %]
+     [% title = "Nieprawidłowa nazwa zapytania" %]
+@@ -914,9 +913,8 @@
+     [% IF users.size > 1 %] nie mogą [% ELSE %] nie może [% END %]
+     modyfikować 
+     [% IF product %]
+-      '[% product FILTER html %]'
++      produktu '[% product FILTER html %]'
+     [% END %]
+-    [%+ field_descs.product FILTER html %]
+     [% IF bug_id %]
+       dla [% terms.bledu %] '[% bug_id FILTER html %]'.
+     [% ELSIF new %]
+@@ -990,12 +988,12 @@
+   [% ELSIF error == "milestone_required" %]
+     [% title = "Wymagana wersja docelowa" %]
+     Przypisując [% terms.blad %] #[%+ bug_id FILTER html %] do siebie, należy 
+-    ustawić wersję docelową. Przypisanie błędu wymaga pewnego oszacowania czasu poprawienia 
++    ustawić wersję docelową. Przypisanie błędu wymaga oszacowania ilości czasu potrzebnego na poprawienie 
+     [% terms.bledu %].
+ 	
+   [% ELSIF error == "milestone_sortkey_invalid" %]
+     [% title = "Nieprawidłowy klucz sortowania" %]
+-    Klucz sortowania'[% sortkey FILTER html %]' musi zawierać się w przedziale
++    Klucz sortowania '[% sortkey FILTER html %]' musi zawierać się w przedziale
+     [%+ constants.MIN_SMALLINT FILTER html %] &le; klucz sortowania &le;
+     [%+ constants.MAX_SMALLINT FILTER html %].
+ 
+@@ -1030,7 +1028,7 @@
+   [% ELSIF error == "missing_content_type" %]
+     [% title = "Brakujące określenie typu zawartości" %]
+      Poproszono [% terms.Bugzille %] o automatyczne wykrycie typu zawartości załącznika,
+-     lecz przeglądarka nie wysłała typu zawartości podczas przysyłania pliku.
++     lecz przeglądarka nie wysłała typu zawartości podczas przesyłania pliku.
+      Proszę podać typ zawartości ręcznie.
+                 
+   [% ELSIF error == "missing_content_type_method" %]
+@@ -1194,7 +1192,7 @@
+ 
+   [% ELSIF error == "number_not_numeric" %]
+     [% title = "Wymagana wartość liczbowa" %]
+-    Wartość '[% num FILTER html %]'dla pola 
++    Wartość '[% num FILTER html %]' dla pola 
+     <em>[% field_descs.$field FILTER html %]</em> nie 
+     jest liczbą.
+ 
+@@ -1275,23 +1273,23 @@
+     Produkt '[% product FILTER html %]' nie istnieje.
+ 
+   [% ELSIF error == "product_illegal_group" %]
+-    [% title = "Illegal Group" %]
+-    [% group.name FILTER html %] is not an active [% terms.bug %] group
+-    and so you cannot edit group controls for it.
++    [% title = "Nieprawidłowa grupa" %]
++    Grupa [% group.name FILTER html %] nie jest aktywną grupą dla [% terms.bledow %], dlatego
++    nie można jej edytować.
+ 
+   [% ELSIF error == "product_illegal_votes" %]
+-    [% title = "Votes Must Be Non-negative" %]
++    [% title = "Nieprawidłowa wartość" %]
+     [% admindocslinks = {'voting.html' => 'Setting up the voting feature'} %]
+-    '[% votes FILTER html %]' is an invalid value for the
++    Wartość '[% votes FILTER html %]' nie jest prawidłowa dla pola
+     <em>
+     [% IF field == "votesperuser" %]
+-      Votes Per User
++      Maks. liczba głosów na osobę
+     [% ELSIF field == "maxvotesperbug" %]
+-      Maximum Votes Per [% terms.Bug %]
++      Maks. liczba głosów na [% terms.blad %]
+     [% ELSIF field == "votestoconfirm" %]
+-      Votes To Confirm
++      Próg potwierdzenia
+     [% END %]
+-    </em> field, which should contain a non-negative number.
++    </em> ponieważ nie jest poprawną dodatnią liczbą całkowitą.
+ 
+   [% ELSIF error == "product_name_already_in_use" %]
+     [% title = "Nazwa produktu jest już używana" %]
+@@ -1449,7 +1447,7 @@
+ 	
+   [% ELSIF error == "still_unresolved_bugs" %]
+     [% IF dependency_count == 1 %]
+-      [% terms.Blad %]# <a href="show_bug.cgi?id=[% dependencies.0.bug_id FILTER none %]">[% dependencies.0.bug_id FILTER none %]</a>
++      [% terms.Blad %] # <a href="show_bug.cgi?id=[% dependencies.0.bug_id FILTER none %]">[% dependencies.0.bug_id FILTER none %]</a>
+       nadal ma [% dependencies.0.dependencies FILTER html %] 
+       [% PROCESS ODMIEN c=dependencies.0.dependencies o1="nierozwiązaną zależność"
+         o2="nierozwiązane zależności" o3="nierozwiązanych zależności" %].
+@@ -1461,7 +1459,7 @@
+       mają nierozwiązane zależności.
+       <br>
+       [% FOREACH bug = dependencies %]
+-        [% terms.Blad %]# <a href="show_bug.cgi?id=[% bug.bug_id FILTER none %]">[% bug.bug_id FILTER none %]</a>
++        [% terms.Blad %] # <a href="show_bug.cgi?id=[% bug.bug_id FILTER none %]">[% bug.bug_id FILTER none %]</a>
+         posiada [% bug.dependencies FILTER html %]
+         [% PROCESS ODMIEN c=dependencies.0.dependencies o1="nierozwiązaną zależność"
+              o2="nierozwiązane zależności" o3="nierozwiązanych zależności" %].
+@@ -1498,7 +1496,7 @@
+     [% admindocslinks = {'voting.html' => 'Ustawienia funkcji głosowania'} %]
+     Można oddać co najwyżej [% max FILTER html %] głosów na pojedynczy
+     [%+ terms.blad %] dla produktu
+-    <tt>[% prod FILTER html %]</tt>, a próbowano oddać
++    <tt>[% product FILTER html %]</tt>, a próbowano oddać
+     [% votes FILTER html %] głosów.
+ 
+   [% ELSIF error == "too_many_votes_for_product" %]
+@@ -1506,7 +1504,7 @@
+     [% admindocslinks = {'voting.html' => 'Ustawienia funkcji głosowania'} %]
+     Próbowano oddać [% votes FILTER html %] głosów. Dopuszczalne maksimum
+     głosów to [%+ max FILTER html %] na jeden [% terms.blad %] dla produktu
+-    <tt>[% prod FILTER html %]</tt>.
++    <tt>[% product FILTER html %]</tt>.
+ 
+   [% ELSIF error == "token_does_not_exist" %]
+     [% title = "Nieistniejący żeton" %]
+@@ -1533,7 +1531,7 @@
+ 
+   [% ELSIF error == "version_already_exists" %]
+     [% title = "Wersja już istnieje" %]
+-    [% admindocslinks = {'versions.html' => 'Administracja wersji'} %]
++    [% admindocslinks = {'versions.html' => 'Administracja wersjami'} %]
+     Wersja '[% name FILTER html %]' już istnieje dla produktu '
+     [%- product FILTER html %]'.
+ 
+@@ -1544,7 +1542,7 @@
+   [% ELSIF error == "version_has_bugs" %]
+     [% title = BLOCK %]Wersja nadal ma przypisane [% terms.bledy %][% END %]
+     Nadal [% nb FILTER html %] [%+ terms.bledow %] jest przypisanych do tej
+-    wersji. Proszę przypisać te [% terms.bledy %] do innej wersji aby
++    wersji. Proszę przypisać te [% terms.bledy %] do innej wersji, aby
+     możliwe było usunięcie tej wersji.
+ 
+   [% ELSIF error == "version_not_specified" %]
+@@ -1567,14 +1565,14 @@
+     Z tego powodu nie jest możliwe usunięcie tego konta.
+ 
+   [% ELSIF error == "user_access_by_id_denied" %]
+-    [% title = "User Access By Id Denied" %]
+-    Logged-out users cannot use the "ids" argument to this function
+-    to access any user information.
++    [% title = "Odmowa dostępu" %]
++    Wylogowani użytkownicy nie mogą używać argumentu "ids" tej funkcji do uzyskania
++    dostępu do danych użytkowników.
+ 
+   [% ELSIF error == "user_access_by_match_denied" %]
+-    [% title = "User-Matching Denied" %]
+-    Logged-out users cannot use the "match" argument to this function
+-    to access any user information.
++    [% title = "Odmowa dopasowania użytkownika" %]
++    Wylogowani użytkownicy nie mogą używać argumentu "match" tej funkcji do uzyskania
++    dostępu do danych użytkowników.
+ 
+   [% ELSIF error == "user_login_required" %]
+     [% title = "Wymagana nazwa użytkownika" %]
+@@ -1613,9 +1611,9 @@
+     Ten żeton nie może być użyty do utworzenia konta.
+ 
+   [% ELSIF error == "xmlrpc_invalid_value" %]
+-    "[% value FILTER html %]" is not a valid value for a
+-    &lt;[% type FILTER html %]&gt; field. (See the XML-RPC specification
+-    for details.)
++    Wartość "[% value FILTER html %]" nie jest prawidłową wartością dla pola
++    &lt;[% type FILTER html %]&gt;. (Proszę zapoznać się ze specyfikacją protokołu XML-RPC
++    w celu uzyskania szczegółowych informacji.)
+ 
+   [% ELSIF error == "zero_length_file" %]
+     [% title = "Plik jest pusty" %]
+@@ -1693,7 +1691,7 @@
+       [% END %]
+     [% END %]
+     
+-    zapisanego wyszukiwania '[% namedcmd FILTER html %]'.
++    zapisane wyszukiwania '[% namedcmd FILTER html %]'.
+   </p>
+ [% END %]            
+ 
+diff -urN bugzilla3.4.3-pl/pl/default/global/variables.none.tmpl bugzilla3.4.4-pl/pl/default/global/variables.none.tmpl
+--- bugzilla3.4.3-pl/pl/default/global/variables.none.tmpl	2009-10-28 14:35:33.000000000 +0100
++++ bugzilla3.4.4-pl/pl/default/global/variables.none.tmpl	2009-11-20 11:12:09.906100000 +0100
+@@ -62,9 +62,8 @@
+   "Bugzilli" => "Bugzilli",
+   "Bugzille" => "Bugzillę"
+   "zgloszenie" => "zgłoszenie",
+-  
+   "zeroSearchResults" => "Nie znalaziono żadnych błędów",
+-  "Bugzilla" => "Bugzilla"
++
+   }
+   
+     selectTransTable = {
+diff -urN bugzilla3.4.3-pl/pl/default/index.html.tmpl bugzilla3.4.4-pl/pl/default/index.html.tmpl
+--- bugzilla3.4.3-pl/pl/default/index.html.tmpl	2009-11-10 13:18:31.012628300 +0100
++++ bugzilla3.4.4-pl/pl/default/index.html.tmpl	2009-11-15 20:12:15.015625000 +0100
+@@ -52,7 +52,7 @@
+     sidebarname="[% terms.Bugzilla %] "+sidebarname;
+   window.sidebar.addPanel (sidebarname, "[% urlbase FILTER html %]sidebar.cgi", "");
+ }
+-var quicksearch_message = "Wpisz # [% terms.bledu %] lub wyrażenie które szukasz.";
++var quicksearch_message = "Numer [% terms.bledu %] lub szukane wyrażenie.";
+ 
+ function checkQuicksearch( form ) {
+   if (form.quicksearch.value == '' || form.quicksearch.value == quicksearch_message ) { 
+diff -urN bugzilla3.4.3-pl/pl/default/list/edit-multiple.html.tmpl bugzilla3.4.4-pl/pl/default/list/edit-multiple.html.tmpl
+--- bugzilla3.4.3-pl/pl/default/list/edit-multiple.html.tmpl	2009-11-01 21:12:31.390625000 +0100
++++ bugzilla3.4.4-pl/pl/default/list/edit-multiple.html.tmpl	2009-11-20 11:33:34.733350000 +0100
+@@ -145,7 +145,7 @@
+                value="[% dontchange FILTER html %]"
+                >
+       </td>
+-      <th><label for="deadline">Ostateczny termin (RRRR-MM-DD):</label></th>
++      <th><label for="deadline">Termin ostateczny (RRRR-MM-DD):</label></th>
+       <td>
+         <input id="deadline"
+                name="deadline"
+@@ -289,7 +289,7 @@
+   <input type="checkbox" name="commentprivacy" value="1"
+          id="newcommentprivacy"
+          onClick="updateCommentTagControl(this, form)"/>
+-  <label for="newcommentprivacy">Private</label>
++  <label for="newcommentprivacy">Prywatny</label>
+ [% END %]
+ <br>
+ [% INCLUDE global/textarea.html.tmpl
+diff -urN bugzilla3.4.3-pl/pl/default/list/list.atom.tmpl bugzilla3.4.4-pl/pl/default/list/list.atom.tmpl
+--- bugzilla3.4.3-pl/pl/default/list/list.atom.tmpl	2009-11-01 21:20:45.265625000 +0100
++++ bugzilla3.4.4-pl/pl/default/list/list.atom.tmpl	2009-11-20 11:35:07.412743000 +0100
+@@ -42,7 +42,7 @@
+ 
+   [% FOREACH bug = bugs %]
+   <entry>
+-    <title>[% "@" IF bug.secure_mode %][[% terms.Bug %] [%+ bug.bug_id FILTER xml %]] [% bug.short_desc FILTER xml %]</title>
++    <title>[% "@" IF bug.secure_mode %][[% terms.Blad %] [%+ bug.bug_id FILTER xml %]] [% bug.short_desc FILTER xml %]</title>
+     <link rel="alternate" type="text/html"
+           href="[% urlbase FILTER html %]show_bug.cgi?id=
+           [%- bug.bug_id FILTER xml %]"/>
+diff -urN bugzilla3.4.3-pl/pl/default/list/quips.html.tmpl bugzilla3.4.4-pl/pl/default/list/quips.html.tmpl
+--- bugzilla3.4.3-pl/pl/default/list/quips.html.tmpl	2009-10-28 14:48:30.000000000 +0100
++++ bugzilla3.4.4-pl/pl/default/list/quips.html.tmpl	2009-11-20 19:09:32.390625000 +0100
+@@ -100,7 +100,7 @@
+     <p>
+       <strong>Uwaga:</strong> wyświetlane będą wyłącznie sentencje, które
+       zostały uprzednio zatwierdzone.
+-      Jeśli parametr 'quip_list_entry_control' został ustawiony na <q>open</q>,
++      Jeśli parametr 'quip_list_entry_control' został ustawiony na <q>otwarte</q>,
+       nowe sentencje będą akceptowane automatycznie.
+     </p>
+     <form name="editform" method="post" action="quips.cgi">
+diff -urN bugzilla3.4.3-pl/pl/default/pages/bug-writing.html.tmpl bugzilla3.4.4-pl/pl/default/pages/bug-writing.html.tmpl
+--- bugzilla3.4.3-pl/pl/default/pages/bug-writing.html.tmpl	2009-11-01 17:17:29.171875000 +0100
++++ bugzilla3.4.4-pl/pl/default/pages/bug-writing.html.tmpl	2009-11-20 19:36:06.859375000 +0100
+@@ -32,14 +32,14 @@
+ 
+ <h3>Spis treści</h3>
+ <ul>
+-<li><a href="#why">Dlaczego to jest ważne</a></li>
++<li><a href="#why">Dlaczego to jest ważne?</a></li>
+ <li><a href="#useful">Co sprawia, że zgłoszenie [% terms.bledu %] jest przydatne?</a></li>
+ <li><a href="#before">Zanim zaczniesz...</a></li>
+ <li><a href="#reporting">Zgłaszanie [% terms.bledu %]</a></li>
+ <li><a href="#more">Dalsze wskazówki dotyczące tworzenia dobrych zgłoszeń [% terms.bledow %]</a></li>
+ </ul>
+ 
+-<h3><a name="why">Dlaczego to jest ważne</a></h3>
++<h3><a name="why">Dlaczego to jest ważne?</a></h3>
+ 
+ <blockquote>
+   <p>Zwykle jakość raportu jednoznacznie wpływa na możliwość rozwiązania 
+@@ -51,7 +51,7 @@
+   być adekwatne dla konkretnego projektu, w którym wykorzystywana jest [% terms.Bugzilla %].</p>
+ </blockquote>
+ 
+-<h3><a name="useful">Co sprawia, że zgłoszenie [% terms.bledu %] jest przydatne</a></h3>
++<h3><a name="useful">Co sprawia, że zgłoszenie [% terms.bledu %] jest przydatne?</a></h3>
+ 
+ <blockquote>
+   <p>Wartościowe raporty o [% terms.bledach %] to takie, które pozwalają
+@@ -101,7 +101,7 @@
+ 
+ <ol>
+  <li>Na głównej stronie [% terms.Bugzilli %] należy otworzyć odnośnik
+- "<a href="enter_bug.cgi">Dodaj nowy [% terms.blad %]</a>".</li>
++ "<a href="enter_bug.cgi">Nowy [% terms.blad %]</a>".</li>
+ 
+  <li>Następnie należy wybrać produkt, w którym znaleziono [% terms.blad %].</li>
+ 
+@@ -138,7 +138,7 @@
+   <p><b>Jak ważny jest ten [% terms.blad %]?</b></p>
+ 
+   <blockquote>
+-    <p><b>Waga błędu: w jakim stopniu poważny jest dany [% terms.blad %]?</b><br>
++    <p><b>Waga błędu: W jakim stopniu poważny jest dany [% terms.blad %]?</b><br>
+      Wartością domyślną pola jest 'normalny'. Jeśli nie ma pewności, jaką wagę przypisać 
+      [% terms.bledowi %], należy otworzyć odnośnik Waga błędu. Zostanie wyświetlona strona, na
+      której opisane są poszczególne wagi błędów.<br>
+@@ -175,16 +175,16 @@
+     przeglądania 10 stronicowej listy [% terms.bledow %].<br>
+     
+     <br>
+-     Dobre podsumowanie to np.: "<tt>Anulowanie kopiowania plików powoduje zamknięcie Nautilusa</tt>".<br>
++     Dobre podsumowanie to, np.: "<tt>Anulowanie kopiowania plików powoduje zamknięcie Nautilusa</tt>".<br>
+      Niepoprawne podsumowania: "<tt>Program się zawiesza</tt>" lub "<tt>Problem przy kopiowaniu</tt>".<br>
+     <br>
+      <b>Opis:</b><br>
+-     W tym polu proszę podać wyczerpujący opis problemu. Czytelnicy  raportu
++     W tym polu proszę podać wyczerpujący opis problemu. Czytelnicy raportu
+      prawdopodobnie będą oczekiwać przynajmniej następujących informacji:</p>
+ 
+     <blockquote>
+-      <p><b>Ogólny opis:</b> Nieco bardziej szczegółowe rozwinięcie zawartości
+-      podsumowania.</p>
++      <p><b>Ogólny opis: Nieco bardziej szczegółowe rozwinięcie zawartości
++      podsumowania.</b></p>
+ 
+       <blockquote>
+ 	<pre>
+@@ -192,9 +192,9 @@
+ 	</pre>
+       </blockquote>
+ 
+-      <p><b>Sposób wywołania błędu:</b> Możliwie nieskomplikowany opis czynności,
++      <p><b>Sposób wywołania błędu: Możliwie nieskomplikowany opis czynności,
+       których powtórzenie pozwala na zauważenie [% terms.bledu %]. Powinien zawierać
+-      początkowe ustawienia wymagane do wystąpienia [% terms.bledu %].</p>
++      początkowe ustawienia wymagane do wystąpienia [% terms.bledu %].</b> </p>
+ 
+       <blockquote>
+ 			<pre>
+@@ -206,7 +206,7 @@
+ 			</pre>
+       </blockquote>
+ 
+-      <p><b>Otrzymany wynik:</b> Co stało się po wykonaniu tych czynności.</p>
++      <p><b>Otrzymany wynik: Co stało się po wykonaniu tych czynności?</b></p>
+ 
+       <blockquote>
+ 			<pre>
+@@ -214,8 +214,8 @@
+ 			</pre>
+       </blockquote>
+ 
+-      <p><b>Oczekiwany wynik:</b> Co powinno się otrzymać, gdyby ten [% terms.blad %]
+-      nie występował.</p>
++      <p><b>Oczekiwany wynik: Co powinno się otrzymać, gdyby ten [% terms.blad %]
++      nie występował?</b></p>
+ 
+       <blockquote>
+ 		<pre>
+@@ -224,8 +224,8 @@
+ 		</pre>
+       </blockquote>
+ 
+-      <p><b>Wersja i platforma:</b> Wersja oraz platforma, na której zaobserwowano 
+-      [% terms.blad %].</p>
++      <p><b>Wersja i platforma: Wersja oraz platforma, na której zaobserwowano 
++      [% terms.blad %].</b></p>
+ 
+       <blockquote>
+ 		<pre>
+@@ -233,9 +233,9 @@
+ 		</pre>
+       </blockquote>
+ 
+-      <p><b>Dodatkowe wersje i platformy:</b> Inne wersje i platformy, które testowano
++      <p><b>Dodatkowe wersje i platformy: Inne wersje i platformy, które testowano
+       na występowanie tego [% terms.bledu %] oraz wyniki testów (jeśli taki test ma sens,
+-      to również wyniki z innych programów).</p>
++      to również wyniki z innych programów).</b></p>
+ 
+       <blockquote>
+ 		<pre>
+@@ -243,8 +243,8 @@
+ 		</pre>
+       </blockquote>
+ 
+-      <p><b>Dodatkowe informacje:</b> Dodatkowe informacje, które mogą pomóc w
+-      poprawieniu błędu.
++      <p><b>Dodatkowe informacje: Dodatkowe informacje, które mogą pomóc w
++      poprawieniu błędu.</b><br>
+       Przykładowo dla [% terms.bledow %] powodujących awarię programu:</p>
+ 
+       <ul>
+@@ -275,23 +275,23 @@
+ 
+   <blockquote>
+     <p><b>Proszę używać formalnej struktury, dzięki temu sporządzone raporty będą łatwe do
+-    przejrzenia.</b> Osoby czytające raporty o [% terms.bledach %] często potrzebują
++    przejrzenia.</b><br> Osoby czytające raporty o [% terms.bledach %] często potrzebują
+     dotrzeć do określonej części opisu [% terms.bledu %]. Jeśli używana instalacja 
+     [% terms.Bugzilli %] zawiera narzędzie ułatwiające zgłaszanie 
+     [% terms.bledow %] - proszę go użyć.</p>
+ 
+-    <p><b>Należy przedkładać wyrazistość nad elokwencję.</b> Nikt nie będzie śmiał się
++    <p><b>Należy przedkładać wyrazistość nad elokwencję.</b><br> Nikt nie będzie śmiał się
+     z zabawnego tytułu zgłoszenia, gdy o 3 nad ranem będzie starał przypomnieć
+     sobie, jak odnaleźć ten [% terms.blad %].</p>
+ 
+-    <p><b>Jeden [% terms.blad %] na jeden raport.</b> Zwykle zupełnie inne osoby
++    <p><b>Jeden [% terms.blad %] na jeden raport.</b><br> Zwykle zupełnie inne osoby
+     naprawiają, weryfikują i ustalają priorytety dla [% terms.bledow %]. Jeśli w
+     jednym raporcie zostanie zawartych kilka [% terms.bledow %], prawdopodobnie odpowiednie
+     osoby nie dowiedzą się odpowiednio szybko o zgłoszonym raporcie. Dodatkowo, niektóre 
+     [% terms.bledy %] mogą być ważniejsze niż inne i tym samym prawidłowe
+     ustalenie priorytetu dla raportu może być niemożliwe.</p>
+ 
+-    <p><b>Żaden [% terms.blad %] nie jest na tyle trywialny, aby go nie zgłosić.</b>
++    <p><b>Żaden [% terms.blad %] nie jest na tyle trywialny, aby go nie zgłosić.</b><br>
+     Rzeczywiste występowanie niektórych [% terms.bledow %], np. używanie zwolnionej
+     pamięci, można zauważyć tylko przeglądając kod źródłowy - objawy tego typu 
+     [% terms.bledu %] są postrzegane przez zwykłego użytkownika jako awaria programu.
+@@ -304,7 +304,7 @@
+   <p><b><a name="summary"></a>2. Jak i dlaczego pisać dobre podsumowania [% terms.bledow %]</b></p>
+ 
+   <blockquote>
+-    <p><b>Trzeba zrobić dobre wrażenie na odbiorcach raportu o [% terms.bledzie %].</b>
++    <p><b>Trzeba zrobić dobre wrażenie na odbiorcach raportu o [% terms.bledzie %].</b><br>
+     Podobnie jak gazetowy nagłówek pozwala czytelnikowi wybrać interesujące go artykuły
+     spośród wielu innych, podsumowanie [% terms.bledu %] pozwala stwierdzić osobie
+     przeglądającej raporty, czy dany raport wart jest tego, by go wybrać spośród tuzinów
+@@ -315,7 +315,7 @@
+     żeby zobaczyć czy [% terms.blad %] ten w rzeczywistości mieści się w zakresie
+     obowiązków/zainteresowań danej osoby.</p>
+ 
+-    <p><b>[% terms.Bledy %] są zwykle wyszukiwane po ich podsumowaniu.</b> Podobnie
++    <p><b>[% terms.Bledy %] są zwykle wyszukiwane po ich podsumowaniu.</b><br> Podobnie
+     jak wyszukuje się strony w Google przy użyciu intuicyjnych słów kluczowych, tak też
+     próbuje się znaleźć określone zgłoszenie [% terms.bledu %]. Opisowe podsumowanie [% terms.bledu %] jest 
+     łatwiejsze do znalezienia przy użyciu słów kluczowych, intuicyjnych dla danego problemu.</p>
+diff -urN bugzilla3.4.3-pl/pl/default/pages/quicksearch.html.tmpl bugzilla3.4.4-pl/pl/default/pages/quicksearch.html.tmpl
+--- bugzilla3.4.3-pl/pl/default/pages/quicksearch.html.tmpl	2009-11-13 10:40:13.141842600 +0100
++++ bugzilla3.4.4-pl/pl/default/pages/quicksearch.html.tmpl	2009-11-20 19:55:15.406250000 +0100
+@@ -15,7 +15,7 @@
+   #%]
+ 
+ [% PROCESS global/variables.none.tmpl %]
+-
++[% PROCESS "global/field-descs.none.tmpl" %]
+ [% INCLUDE global/header.html.tmpl
+    title  = "Szybkie wyszukiwanie w $terms.Bugzilli",
+    style  = 'ul {margin-bottom: 2ex}
+@@ -127,8 +127,8 @@
+     <strong>[% terms.Bledy %] otwarte, a rozwiązane</strong>:<br />
+     Domyślnie wyświetlane są tylko [% terms.bledy %] otwarte.
+     Opcja <tt>+DUP</tt> jako pierwsze słowo zapytania włącza wyszukiwanie 
+-	w [% terms.bledach %] o statusie duplikat,
+-    <tt>FIXED</tt> wyszukuje tylko [%+ terms.bledy %] FIXED 
++	w [% terms.bledach %] o statusie [% get_resolution("DUPLICATE") FILTER html %] (DUPLICATE),
++    <tt>FIXED</tt> wyszukuje tylko [%+ terms.bledy %] o statusie [% get_resolution("FIXED") FILTER html %] (FIXED), 
+     a <tt>ALL</tt> przeszukuje wszystkie [% terms.bledy %]
+     niezależnie od stanu i rozwiązania.
+ 	Wyszukiwanie duplikatów jest zalecane gdy nie można znaleźć otwartego 
+diff -urN bugzilla3.4.3-pl/pl/default/pages/quicksearchhack.html.tmpl bugzilla3.4.4-pl/pl/default/pages/quicksearchhack.html.tmpl
+--- bugzilla3.4.3-pl/pl/default/pages/quicksearchhack.html.tmpl	2009-11-01 17:17:06.343750000 +0100
++++ bugzilla3.4.4-pl/pl/default/pages/quicksearchhack.html.tmpl	2009-11-20 20:03:04.406250000 +0100
+@@ -31,8 +31,8 @@
+                 { alert('Proszę najpierw podać jedno lub więcej haseł do wyszukania.');
+                   return false; } return true;">
+   <input type="text" size="40" name="quicksearch">
+-  <input type="submit" value="Find" id="find">
+-  <input type="submit" name="load" value="Load Search Form" id="load">
++  <input type="submit" value="Znajdź" id="find">
++  <input type="submit" name="load" value="Otwórz formularz wyszukiwania" id="load">
+ </form>
+ 
+ <p>
+diff -urN bugzilla3.4.3-pl/pl/default/pages/release-notes.html.tmpl bugzilla3.4.4-pl/pl/default/pages/release-notes.html.tmpl
+--- bugzilla3.4.3-pl/pl/default/pages/release-notes.html.tmpl	2009-11-13 19:41:51.953125000 +0100
++++ bugzilla3.4.4-pl/pl/default/pages/release-notes.html.tmpl	2009-11-20 22:49:28.921875000 +0100
+@@ -59,6 +59,14 @@
+ 
+ <h2><a name="v34_point"></a>Updates In This 3.4.x Release</h2>
+ 
++<h3>3.4.4</h3>
++
++<p>This release contains a fix for a security issue. See the
++  <a href="http://www.bugzilla.org/security/3.4.3/">Security Advisory</a>
++  for details.</p>
++
++<p>Additionally, this release fixes a few minor [% terms.bugs %].</p>
++
+ <h3>3.4.3</h3>
+ 
+ <ul>
+diff -urN bugzilla3.4.3-pl/pl/default/pages/sudo.html.tmpl bugzilla3.4.4-pl/pl/default/pages/sudo.html.tmpl
+--- bugzilla3.4.3-pl/pl/default/pages/sudo.html.tmpl	2009-11-01 17:16:54.671875000 +0100
++++ bugzilla3.4.4-pl/pl/default/pages/sudo.html.tmpl	2009-11-20 20:07:14.250000000 +0100
+@@ -22,7 +22,7 @@
+ [% INCLUDE global/header.html.tmpl title = "Sudo: przejęcie tożsamości" %]
+ 
+ <p>
+-  Opcja <b>sudo</b> w [% terms.Bugzilli %] pozwala czasowo przyjąć tożsamość 
++  Opcja <b>sudo</b> w [% terms.Bugzilli %] pozwala czasowo przejąć tożsamość 
+   innego użytkownika. Opcja ta dostępna jest tylko dla użytkowników
+   posiadających odpowiednie uprawnienia.
+ </p>
+@@ -30,7 +30,7 @@
+ <p>
+   Podczas sesji sudo wszystkie czynności wykonywane są
+   tak, jakby były wykonywane przez użytkownika, którego tożsamość jest
+-  przyjęta. Opcja ta jest przydatna w celu testowania i wykonywania ważnych
++  przejęta. Opcja ta jest przydatna w celu testowania i wykonywania ważnych
+   zadań podczas nieobecności danego użytkownika. Zostanie wysłana 
+   wiadomość z informacją o użyciu sudo do użytkownika, którego tożsamość 
+   zostanie użyta.
+diff -urN bugzilla3.4.3-pl/pl/default/pages/voting.html.tmpl bugzilla3.4.4-pl/pl/default/pages/voting.html.tmpl
+--- bugzilla3.4.3-pl/pl/default/pages/voting.html.tmpl	2009-11-01 17:16:49.562500000 +0100
++++ bugzilla3.4.4-pl/pl/default/pages/voting.html.tmpl	2009-11-20 20:56:52.093750000 +0100
+@@ -39,7 +39,7 @@
+ 
+ <ul>
+   <li>Należy wejść na stronę wyszukiwania i wybrać wyszukiwanie zaawansowane. W pole
+-  "Co najmniej ___ głosów" należy wpisać 1. Dzięki temu można zobaczyć [% terms.bledy %],
++  "Minimalna liczba głosów" należy wpisać 1. Dzięki temu można zobaczyć [% terms.bledy %],
+   na które ktoś oddał głos.</li>
+ </ul>
+ 
+@@ -48,7 +48,7 @@
+ <ul>
+   <li>Otworzyć stronę odpowiedniego [% terms.bledu %].</li>
+ 
+-  <li>Otworzyć odnośnik "Głosuj na ten [% terms.blad %]", który powinien znajdować się tuż nad
++  <li>Otworzyć odnośnik "zagłosuj", który powinien znajdować się tuż nad
+   polem "Dodatkowy komentarz" (jeśli nie ma takiego przycisku, produkt do którego
+   przypisano ten błąd, nie pozwala na oddawanie głosów).</li>
+ 
+diff -urN bugzilla3.4.3-pl/pl/default/reports/chart.csv.tmpl bugzilla3.4.4-pl/pl/default/reports/chart.csv.tmpl
+--- bugzilla3.4.3-pl/pl/default/reports/chart.csv.tmpl	2009-11-13 19:42:10.015625000 +0100
++++ bugzilla3.4.4-pl/pl/default/reports/chart.csv.tmpl	2009-11-20 20:59:38.296875000 +0100
+@@ -21,7 +21,7 @@
+ [% colsepchar = user.settings.csv_colsepchar.value %]
+ 
+ [% data = chart.data %]
+-Date\Series
++Data\Seria
+ [% FOREACH label = chart.labels %]
+   [% colsepchar %][% label FILTER csv %]
+ [% END %]
+diff -urN bugzilla3.4.3-pl/pl/default/reports/report-line.png.tmpl bugzilla3.4.4-pl/pl/default/reports/report-line.png.tmpl
+--- bugzilla3.4.3-pl/pl/default/reports/report-line.png.tmpl	2009-10-29 07:44:11.000000000 +0100
++++ bugzilla3.4.4-pl/pl/default/reports/report-line.png.tmpl	2009-11-16 13:09:21.473637200 +0100
+@@ -58,6 +58,7 @@
+ [% END %]
+ 
+ [% FILTER null;
++  
+   graph.set(x_label           => col_field_disp,
+             y_label           => y_label,
+             y_tick_number     => 8,
+diff -urN bugzilla3.4.3-pl/pl/default/reports/report-pie.png.tmpl bugzilla3.4.4-pl/pl/default/reports/report-pie.png.tmpl
+--- bugzilla3.4.3-pl/pl/default/reports/report-pie.png.tmpl	2009-10-26 15:12:25.000000000 +0100
++++ bugzilla3.4.4-pl/pl/default/reports/report-pie.png.tmpl	2009-11-16 13:09:02.926168700 +0100
+@@ -36,7 +36,7 @@
+ 
+ [% FILTER null;
+   USE graph = GD.Graph.pie(width, height);
+-    
++ 
+   graph.set(title          => col_field_disp,
+             pie_height     => 20,
+             suppress_angle => 2,
+diff -urN bugzilla3.4.3-pl/pl/default/reports/series.html.tmpl bugzilla3.4.4-pl/pl/default/reports/series.html.tmpl
+--- bugzilla3.4.3-pl/pl/default/reports/series.html.tmpl	2009-10-29 07:46:19.000000000 +0100
++++ bugzilla3.4.4-pl/pl/default/reports/series.html.tmpl	2009-11-20 21:21:49.375000000 +0100
+@@ -41,17 +41,17 @@
+       <td></td>
+     </tr>
+     <tr>
+-      [% PROCESS series_select sel = { name => 'kategoria',
++      [% PROCESS series_select sel = { name => 'category',
+                                        size => 5,
+                                        onchange => "catSelected()" } %]
+         <td>
+           <noscript>
+-            <input type="submit" name="action-edit" value="Update --&gt;"
++            <input type="submit" name="action-edit" value="Uaktualnij --&gt;"
+                    id="action-edit">
+           </noscript>
+         </td>
+         
+-      [% PROCESS series_select sel = { name => 'podkategoria', 
++      [% PROCESS series_select sel = { name => 'subcategory', 
+                                        size => 5,
+                                        onchange => "checkNewState()" } %]
+         
+diff -urN bugzilla3.4.3-pl/pl/default/request/queue.html.tmpl bugzilla3.4.4-pl/pl/default/request/queue.html.tmpl
+--- bugzilla3.4.3-pl/pl/default/request/queue.html.tmpl	2009-10-29 08:25:24.000000000 +0100
++++ bugzilla3.4.4-pl/pl/default/request/queue.html.tmpl	2009-11-20 21:29:47.031250000 +0100
+@@ -31,7 +31,7 @@
+     table.requests th { text-align: left; }
+     table#filtering th { text-align: right; }
+   "
+-  onload="var f = document.request_form; selectProduct(f.product, f.component, null, null, 'Dowolny');"
++  onload="var f = document.request_form; selectProduct(f.product, f.component, null, null, 'Any');"
+   javascript_urls=["js/productform.js"]
+ %]
+ 
+@@ -52,7 +52,7 @@
+            title="Adres email żądającego"></td>
+       <th>Produkt:</th>
+       <td>
+-        <select name="product" onchange="selectProduct(this, this.form.component, null, null, 'Dowolny');">
++        <select name="product" onchange="selectProduct(this, this.form.component, null, null, 'Any');">
+           <option value="">Dowolny</option>
+           [% FOREACH prod = products %]
+             <option value="[% prod.name FILTER html %]"
+@@ -122,7 +122,7 @@
+       "category"   => "Produkt/Komponent"    } %]
+ 
+ [% DEFAULT display_columns = ["requester", "requestee", "type", "bug", "attachment", "created"]
+-           group_field     = "Requestee"
++           group_field     = "Adresat żądania"
+            group_value     = ""
+ %]
+ 
+diff -urN bugzilla3.4.3-pl/pl/default/search/form.html.tmpl bugzilla3.4.4-pl/pl/default/search/form.html.tmpl
+--- bugzilla3.4.3-pl/pl/default/search/form.html.tmpl	2009-11-10 13:25:39.864704600 +0100
++++ bugzilla3.4.4-pl/pl/default/search/form.html.tmpl	2009-11-20 21:34:30.796875000 +0100
+@@ -525,7 +525,7 @@
+   <tr>
+     <td>
+       <select name="bugidtype">
+-        <option value="include"[% " selected" IF default.bugidtype.0 == "include" %]>tylko </option>
++        <option value="include"[% " selected" IF default.bugidtype.0 == "include" %]>tylko</option>
+         <option value="exclude"[% " selected" IF default.bugidtype.0 == "exclude" %]>oprócz</option>
+       </select>
+       <label for="bug_id">Numery [% terms.bledow %]</label>:
+diff -urN bugzilla3.4.3-pl/pl/default/search/search-help.html.tmpl bugzilla3.4.4-pl/pl/default/search/search-help.html.tmpl
+--- bugzilla3.4.3-pl/pl/default/search/search-help.html.tmpl	2009-11-10 13:30:29.573493700 +0100
++++ bugzilla3.4.4-pl/pl/default/search/search-help.html.tmpl	2009-11-20 21:42:52.328125000 +0100
+@@ -36,7 +36,7 @@
+ { id => "version", 
+   html => "Pole to określa wersję oprogramowania, w którym znaleziono ${terms.blad}." },   
+ { id => "target_milestone", 
+-  html => "Pole Wersja docelowa używane jest do określenia wersji, w której
++  html => "Pole to używane jest do określenia wersji, w której
+            $terms.blad ten powinien zostać rozwiązany." },    
+ { id => "longdesc",
+   html => "$terms.Bledy zawierają także komentarze dodane przez użytkowników ${terms.Bugzilli}.  
+@@ -84,12 +84,12 @@
+            które pola należy wziąć pod uwagę." },     
+ { id => "chfieldfrom", 
+   html => "Proszę podać daty w formacie RRRR-MM-DD (opcjonalnie z godziną w formacie<br>
+-           HH:mm 24h) albo względne daty, jak np 1h, 2d, 3w, 4m, 5y, które oznaczają<br>
++           HH:mm 24h) albo względne daty, jak np.: 1h, 2d, 3w, 4m, 5y, które oznaczają<br>
+            odpowiednio 1 godzinę, 2 dni, 3 tygodnie, 4 miesiące i 5 lat wstecz. 0d oznacza<br>
+            ostatnią północ, a 0h, 0w, 0m, 0y - początek tej godziny, tygodnia, miesiąca lub roku." },
+ { id => "chfieldto", 
+   html => "Proszę podać daty w formacie RRRR-MM-DD (opcjonalnie z godziną w formacie<br>
+-           HH:mm 24h) albo względne daty, jak np 1h, 2d, 3w, 4m, 5y, które oznaczają<br>
++           HH:mm 24h) albo względne daty, jak np.: 1h, 2d, 3w, 4m, 5y, które oznaczają<br>
+            odpowiednio 1 godzinę, 2 dni, 3 tygodnie, 4 miesiące i 5 lat wstecz. 0d oznacza<br>
+            ostatnią północ, a 0h, 0w, 0m, 0y - początek tej godziny, tygodnia, miesiąca lub roku." },
+ { id => "chfieldvalue", 
+diff -urN bugzilla3.4.3-pl/pl/default/search/search-report-graph.html.tmpl bugzilla3.4.4-pl/pl/default/search/search-report-graph.html.tmpl
+--- bugzilla3.4.3-pl/pl/default/search/search-report-graph.html.tmpl	2009-10-30 12:40:32.000000000 +0100
++++ bugzilla3.4.4-pl/pl/default/search/search-report-graph.html.tmpl	2009-11-20 21:45:25.312500000 +0100
+@@ -41,7 +41,7 @@
+ 
+ <p>
+   Z list rozwijanych proszę wybrać kryteria do utworzenia nagłówków tabeli
+-  względem osi wykresu, a następnie dopasować zestaw [% terms.bledow %]  za pomocą
++  względem osi wykresu, a następnie dopasować zestaw [% terms.bledow %] za pomocą
+   pozostałej części formularza.
+ </p>
+ 
+diff -urN bugzilla3.4.3-pl/pl/default/search/search-report-table.html.tmpl bugzilla3.4.4-pl/pl/default/search/search-report-table.html.tmpl
+--- bugzilla3.4.3-pl/pl/default/search/search-report-table.html.tmpl	2009-10-30 12:40:53.000000000 +0100
++++ bugzilla3.4.4-pl/pl/default/search/search-report-table.html.tmpl	2009-11-20 21:46:36.921875000 +0100
+@@ -41,7 +41,7 @@
+ 
+ <p>
+   Z list rozwijanych proszę wybrać kryteria do utworzenia nagłówków tabeli                                                                                                 
+-  względem osi wykresu, a następnie dopasować zestaw [% terms.bledow %]  za pomocą                                                                                            
++  względem osi wykresu, a następnie dopasować zestaw [% terms.bledow %] za pomocą                                                                                            
+   pozostałej części formularza.      
+ </p>
+ 
+diff -urN bugzilla3.4.3-pl/pl/default/setup/strings.txt.pl bugzilla3.4.4-pl/pl/default/setup/strings.txt.pl
+--- bugzilla3.4.3-pl/pl/default/setup/strings.txt.pl	2009-11-01 19:07:21.406250000 +0100
++++ bugzilla3.4.4-pl/pl/default/setup/strings.txt.pl	2009-11-23 14:19:00.658123200 +0100
+@@ -54,13 +54,13 @@
+ 
+ EOT
+     install_data_too_long => <<EOT,
+-WARNING: Some of the data in the ##table##.##column## column is longer than
+-its new length limit of ##max_length## characters. The data that needs to be
+-fixed is printed below with the value of the ##id_column## column first and
+-then the value of the ##column## column that needs to be fixed:
++UWAGA: Niektore dane zawarte w kolumnie ##table##.##column## maja wieksza dlugosc
++niz dozwolony nowy limit wynoszacy ##max_length## znakow. Dane wymagajace poprawienia
++wyswietlone zostaly ponizej, w nastepujacej kolejnosci: wartosc ##id_column## kolumny, 
++a nastepnie wartosc ##column## kolumny wymagajacej naprawienia:
+ 
+ EOT
+-    install_module => 'Instaluję ##module## wersję ##version##...',
++    install_module => 'Instaluje ##module## wersje ##version##...',
+     max_allowed_packet => <<EOT,
+ UWAGA: Nalezy ustawic parametr max_allowed_packet instalacji MySQL przynajmniej 
+ na wartosc ##needed##. Obecna wartość to ##current##.
+@@ -74,32 +74,32 @@
+ # Bugzilla::Install::Requirements to match the box formatting.
+     modules_message_db => <<EOT,
+ ***********************************************************************
+-* DATABASE ACCESS                                                     *
++* DOSTEP DO BAZY DANYCH                                               *
+ ***********************************************************************
+-* In order to access your database, Bugzilla requires that the        *
+-* correct "DBD" module be installed for the database that you are     *
+-* running. See below for the correct command to run to install the    *
+-* appropriate module for your database.                               *
++* Do uzyskania dostepu do uzywanej bazy danych Bugzilla wymaga        *
++* zainstalowania odpowiedniego modulu "DBD".                          *
++* W celu jego instalacji nalezy wykonac jedna z ponizszych komend.    *
++*                                                                     *
+ EOT
+     modules_message_optional => <<EOT,
+ ***********************************************************************
+-* OPTIONAL MODULES                                                    *
++* OPCJONALNE MODULY                                                   *
+ ***********************************************************************
+-* Certain Perl modules are not required by Bugzilla, but by           *
+-* installing the latest version you gain access to additional         *
+-* features.                                                           *
+-*                                                                     *
+-* The optional modules you do not have installed are listed below,    *
+-* with the name of the feature they enable. Below that table are the  *
+-* commands to install each module.                                    *
++* Niektore moduly Perla nie sa wymagane do prawidlowego dzialania     *
++* Bugzilli, jednak ich instalacja umozliwia korzystanie z dodatkowych *
++* funkcjonalnosci.                                                    *
++* Ponizej znajduje sie lista niezainstalowanych modulow wraz          *
++* z opisem funkcjonalnosci, ktora bedzie udostepniona po ich          * 
++* instalacji. Ponizej tabeli znajduja sie komendy ulatwiajace         *
++* instalacje poszczegolnych modulow.                                  *
+ EOT
+     modules_message_required => <<EOT,
+ ***********************************************************************
+-* REQUIRED MODULES                                                    *
++* WYMAGANE MODULY                                                     *
+ ***********************************************************************
+-* Bugzilla requires you to install some Perl modules which are either *
+-* missing from your system, or the version on your system is too old. *
+-* See below for commands to install these modules.                    *
++* Bugzilla do prawidlowego dzialania wymaga zainstalowania okreslonych*
++* modulow Perla, ktorych brakuje w tym systemie lub ich wersje nie sa *
++* aktualne. Ponizsze komendy ulatwia instalacje wymaganych modulow.   *
+ EOT
+ 
+     module_found => "znaleziono v##ver##",
+@@ -108,21 +108,21 @@
+     module_unknown_version => "znaleziono nieznana wersje",
+     ppm_repo_add => <<EOT,
+ ***********************************************************************
+-* Note For Windows Users                                              *
++* Uwagi dla uzytkownikow systemu Windows                              *
+ ***********************************************************************
+-* In order to install the modules listed below, you first have to run * 
+-* the following command as an Administrator:                          *
++* W celu instalacji nizej wymienionych modulow nalezy wykonac ponizsze* 
++* polecenie uzywając uprawnien Administratora:                        *
+ *                                                                     *
+ *   ppm repo add theory58S ##theory_url##
+ EOT
+     ppm_repo_up => <<EOT,
+ *                                                                     *
+-* Then you have to do (also as an Administrator):                     *
++* Nastepnie (takze jako Administrator) nalezy wykonac:                *
+ *                                                                     *
+ *   ppm repo up theory58S                                             *
+ *                                                                     *
+-* Do that last command over and over until you see "theory58S" at the *
+-* top of the displayed list.                                          *
++* Ostatnia komende nalezy uruchamiac taka ilosc razy, az na poczatku  *
++* listy zostanie wyswietlony tekst "theory58S".                       * 
+ EOT
+     template_precompile   => "Prekompilacja szablonow... ",
+     template_removing_dir => "Usuwanie istniejacych skompilowanych szablonow...",
+diff -urN bugzilla3.4.3-pl/pl/default/sidebar.xul.tmpl bugzilla3.4.4-pl/pl/default/sidebar.xul.tmpl
+--- bugzilla3.4.3-pl/pl/default/sidebar.xul.tmpl	2009-10-30 13:02:36.000000000 +0100
++++ bugzilla3.4.4-pl/pl/default/sidebar.xul.tmpl	2009-11-19 14:13:10.578286200 +0100
+@@ -62,7 +62,7 @@
+ 
+   <box autostretch="never" valign="top">
+     <box orient="vertical" flex="1">
+-      <text class="text-link" onclick="load_relative_url('query.cgi')" value="Wyszukiwane"/>
++      <text class="text-link" onclick="load_relative_url('query.cgi')" value="Szukaj"/>
+       <text class="text-link" onclick="load_relative_url('report.cgi')" value="Raporty"/>
+       <text class="text-link" onclick="load_relative_url('enter_bug.cgi')" value="Nowy [% terms.blad %]"/>
+       <separator class="thin"/>
+

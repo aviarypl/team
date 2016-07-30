@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Changes made to bug 4127</title>
+
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<link href="data/assets/2f5735cf3abd04bddc8e363a8613a9f5.css" rel="stylesheet" type="text/css">
+
+
+
+    
+<script type="text/javascript" src="data/assets/1b4e898422a669ab82b604a2c23edce5.js"></script>
+
+    <script type="text/javascript">
+    <!--
+        YAHOO.namespace('bugzilla');
+        YAHOO.util.Event.addListener = function (el, sType, fn, obj, overrideContext) {
+               if ( ("onpagehide" in window || YAHOO.env.ua.gecko) && sType === "unload") { sType = "pagehide"; };
+               var capture = ((sType == "focusin" || sType == "focusout") && !YAHOO.env.ua.ie) ? true : false;
+               return this._addListener(el, this._getType(sType), fn, obj, overrideContext, capture);
+         };
+        if ( "onpagehide" in window || YAHOO.env.ua.gecko) {
+            YAHOO.util.Event._simpleRemove(window, "unload", 
+                                           YAHOO.util.Event._unload);
+        }
+        
+        function unhide_language_selector() { 
+            YAHOO.util.Dom.removeClass(
+                'lang_links_container', 'bz_default_hidden'
+            ); 
+        } 
+        YAHOO.util.Event.onDOMReady(unhide_language_selector);
+
+        
+        var BUGZILLA = {
+            param: {
+                cookiepath: '\/',
+                maxusermatches: 1000
+            },
+            constant: {
+                COMMENT_COLS: 80
+            },
+            string: {
+                
+
+                attach_desc_required:
+                    "You must enter a Description for this attachment.",
+                component_required:
+                    "You must select a Component for this bug.",
+                description_required:
+                    "You must enter a Description for this bug.",
+                short_desc_required:
+                    "You must enter a Summary for this bug.",
+                version_required:
+                    "You must select a Version for this bug."
+            }
+        };
+
+    // -->
+    </script>
+<script type="text/javascript" src="data/assets/d41d8cd98f00b204e9800998ecf8427e.js"></script>
+
+    
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+                       title="Bugzilla" href="search_plugin.cgi">
+    <link rel="shortcut icon" href="images/favicon.ico">
+  </head>
+
+  <body 
+        class="bugs-aviary-pl yui-skin-sam">
+
+  <div id="header"><div id="banner">
+  </div>
+
+    <div id="titles">
+      <span id="title">Bugzilla &ndash; Activity log for bug 4127: Bugzilla 4.2 PL - testy automatyczne Selenium</span>
+
+
+    </div>
+
+
+    <div id="common_links"><ul class="links">
+  <li><a href="index.html">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi.html">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi.html">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi.html">Search</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="http://bugs.aviary.pl/buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input type="hidden" id="no_redirect_top" name="no_redirect" value="0">
+    <script type="text/javascript">
+      if (history && history.replaceState) {
+        var no_redirect = document.getElementById("no_redirect_top");
+        no_redirect.value = 1;
+      }
+    </script>
+    <input class="txt" type="text" id="quicksearch_top" name="quicksearch" 
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search" 
+           id="find_top"></form>
+  <a href="page.cgi%3Fid=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="report.cgi.html">Reports</a></li>
+
+  <li>
+      <span class="separator">| </span>
+        <a href="request.cgi.html">Requests</a></li>
+
+
+  
+    
+      <li id="new_account_container_top">
+        <span class="separator">| </span>
+        <a href="createaccount.cgi.html">New&nbsp;Account</a>
+      </li>
+
+    <li id="mini_login_container_top">
+  <span class="separator">| </span>
+  <a id="login_link_top" href="http://bugs.aviary.pl/show_activity.cgi?id=4127&amp;GoAheadAndLogIn=1"
+     onclick="return show_mini_login_form('_top')">Log In</a>
+
+  <form action="show_activity.cgi%3Fid=4127.html" method="POST"
+        class="mini_login bz_default_hidden"
+        id="mini_login_top">
+    <input id="Bugzilla_login_top" required
+           name="Bugzilla_login" class="bz_login"
+        type="email" placeholder="Email Address">
+    <input class="bz_password" name="Bugzilla_password" type="password"
+           id="Bugzilla_password_top" required
+           placeholder="Password">
+    <input type="hidden" name="Bugzilla_login_token"
+           value="1469842204--uR7BXekcS_GdX8YExOrJmhZhhja-8gu_D4DMJ-hmac">
+    <input type="submit" name="GoAheadAndLogIn" value="Log in"
+            id="log_in_top">
+    <a href="show_activity.cgi%3Fid=4127.html#" onclick="return hide_mini_login_form('_top')">[x]</a>
+  </form>
+</li>
+
+
+  <li id="forgot_container_top">
+    <span class="separator">| </span>
+    <a id="forgot_link_top" href="http://bugs.aviary.pl/show_activity.cgi?id=4127&amp;GoAheadAndLogIn=1#forgot"
+       onclick="return show_forgot_form('_top')">Forgot Password</a>
+    <form action="http://bugs.aviary.pl/token.cgi" method="post" id="forgot_form_top"
+          class="mini_forgot bz_default_hidden">
+      <label for="login_top">Login:</label>
+      <input name="loginname" size="20" id="login_top" required
+          type="email" placeholder="Your Email Address">
+      <input id="forgot_button_top" value="Reset Password" type="submit">
+      <input type="hidden" name="a" value="reqpw">
+      <input type="hidden" id="token_top" name="token"
+             value="1469842204-duXHOLvFDJW1Xzet9-PhpQh-yjTaYISdPa0hfM3AqTA">
+      <a href="show_activity.cgi%3Fid=4127.html#" onclick="return hide_forgot_form('_top')">[x]</a>
+    </form>
+  </li>
+</ul>
+    </div>
+  </div>
+
+  <div id="bugzilla-body">
+
+<p>
+  Back to <a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - Bugzilla 4.2 PL - testy automatyczne Selenium"
+   href="show_bug.cgi%3Fid=4127.html">bug 4127</a>
+</p>
+<table id="bug_activity">
+    <tr class="column_header">
+      <th>Who</th>
+      <th>When</th>
+      <th>What</th>
+      <th>Removed</th>
+      <th>Added</th>
+    </tr>
+
+      <tr>
+        <td rowspan="1">bap.mailtrader
+        </td>
+        <td rowspan="1">2011-10-04 09:04:59 CEST
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - Bugzilla 4.2 PL - test_bug_edit.t"
+   href="show_bug.cgi%3Fid=4128.html">4128</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">bap.mailtrader
+        </td>
+        <td rowspan="1">2011-10-04 09:06:48 CEST
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - Bugzilla 4.2 PL - test_choose_priority.t"
+   href="show_bug.cgi%3Fid=4129.html">4129</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">bap.mailtrader
+        </td>
+        <td rowspan="1">2011-10-04 09:11:15 CEST
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - Bugzilla 4.2 PL - test_classifications.t"
+   href="show_bug.cgi%3Fid=4130.html">4130</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">bap.mailtrader
+        </td>
+        <td rowspan="1">2011-10-04 09:12:06 CEST
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - Bugzilla 4.2 PL - test_config.t"
+   href="show_bug.cgi%3Fid=4131.html">4131</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">bap.mailtrader
+        </td>
+        <td rowspan="1">2011-10-04 09:12:46 CEST
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - Bugzilla 4.2 PL - test_create_user_accounts.t"
+   href="show_bug.cgi%3Fid=4132.html">4132</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">bap.mailtrader
+        </td>
+        <td rowspan="1">2011-10-04 09:13:28 CEST
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - Bugzilla 4.2 PL - test_custom_fields.t"
+   href="show_bug.cgi%3Fid=4133.html">4133</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">bap.mailtrader
+        </td>
+        <td rowspan="1">2011-10-04 09:14:07 CEST
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - Bugzilla 4.2 PL - test_custom_fields_admin.t"
+   href="show_bug.cgi%3Fid=4134.html">4134</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">bap.mailtrader
+        </td>
+        <td rowspan="1">2011-10-04 09:14:48 CEST
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - Bugzilla 4.2 PL - test_default_groups.t"
+   href="show_bug.cgi%3Fid=4135.html">4135</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">bap.mailtrader
+        </td>
+        <td rowspan="1">2011-10-04 09:15:25 CEST
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - Bugzilla 4.2 PL - test_edit_products_properties.t"
+   href="show_bug.cgi%3Fid=4136.html">4136</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">bap.mailtrader
+        </td>
+        <td rowspan="1">2011-10-04 09:15:54 CEST
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - Bugzilla 4.2 PL - test_email_preferences.t"
+   href="show_bug.cgi%3Fid=4137.html">4137</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">bap.mailtrader
+        </td>
+        <td rowspan="1">2011-10-04 09:16:29 CEST
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - Bugzilla 4.2 PL - test_enter_new_bug.t"
+   href="show_bug.cgi%3Fid=4138.html">4138</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">bap.mailtrader
+        </td>
+        <td rowspan="1">2011-10-04 09:17:01 CEST
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - Bugzilla 4.2 PL - test_flags.t"
+   href="show_bug.cgi%3Fid=4139.html">4139</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">bap.mailtrader
+        </td>
+        <td rowspan="1">2011-10-04 09:17:35 CEST
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - Bugzilla 4.2 PL - test_flags2.t"
+   href="show_bug.cgi%3Fid=4140.html">4140</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">bap.mailtrader
+        </td>
+        <td rowspan="1">2011-10-04 09:18:07 CEST
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - Bugzilla 4.2 PL - test_groups.t"
+   href="show_bug.cgi%3Fid=4141.html">4141</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">bap.mailtrader
+        </td>
+        <td rowspan="1">2011-10-04 09:18:39 CEST
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - Bugzilla 4.2 PL - test_keywords.t"
+   href="show_bug.cgi%3Fid=4142.html">4142</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">bap.mailtrader
+        </td>
+        <td rowspan="1">2011-10-04 09:19:06 CEST
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - Bugzilla 4.2 PL - test_login.t"
+   href="show_bug.cgi%3Fid=4143.html">4143</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">bap.mailtrader
+        </td>
+        <td rowspan="1">2011-10-04 09:19:37 CEST
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - Bugzilla 4.2 PL - test_milestones.t"
+   href="show_bug.cgi%3Fid=4144.html">4144</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">bap.mailtrader
+        </td>
+        <td rowspan="1">2011-10-04 09:20:08 CEST
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - Bugzilla 4.2 PL - test_private_attachments.t"
+   href="show_bug.cgi%3Fid=4145.html">4145</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">bap.mailtrader
+        </td>
+        <td rowspan="1">2011-10-04 09:20:40 CEST
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - Bugzilla 4.2 PL - test_qa_contact.t"
+   href="show_bug.cgi%3Fid=4146.html">4146</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">bap.mailtrader
+        </td>
+        <td rowspan="1">2011-10-04 09:21:05 CEST
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - Bugzilla 4.2 PL - test_require_login.t"
+   href="show_bug.cgi%3Fid=4147.html">4147</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">bap.mailtrader
+        </td>
+        <td rowspan="1">2011-10-04 09:21:30 CEST
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - Bugzilla 4.2 PL - test_sanity_check.t"
+   href="show_bug.cgi%3Fid=4148.html">4148</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">bap.mailtrader
+        </td>
+        <td rowspan="1">2011-10-04 09:22:03 CEST
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - Bugzilla 4.2 PL - test_saved_searches.t"
+   href="show_bug.cgi%3Fid=4149.html">4149</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">bap.mailtrader
+        </td>
+        <td rowspan="1">2011-10-04 09:22:38 CEST
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - Bugzilla 4.2 PL - test_search.t"
+   href="show_bug.cgi%3Fid=4150.html">4150</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">bap.mailtrader
+        </td>
+        <td rowspan="1">2011-10-04 09:23:11 CEST
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - Bugzilla 4.2 PL - test_security.t"
+   href="show_bug.cgi%3Fid=4151.html">4151</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">bap.mailtrader
+        </td>
+        <td rowspan="1">2011-10-04 09:23:46 CEST
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - Bugzilla 4.2 PL - test_shared_searches.t"
+   href="show_bug.cgi%3Fid=4152.html">4152</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">bap.mailtrader
+        </td>
+        <td rowspan="1">2011-10-04 09:24:18 CEST
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - Bugzilla 4.2 PL - test_show_all_products.t"
+   href="show_bug.cgi%3Fid=4153.html">4153</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">bap.mailtrader
+        </td>
+        <td rowspan="1">2011-10-04 09:24:44 CEST
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - Bugzilla 4.2 PL - test_shutdown.t"
+   href="show_bug.cgi%3Fid=4154.html">4154</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">bap.mailtrader
+        </td>
+        <td rowspan="1">2011-10-04 09:25:12 CEST
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - Bugzilla 4.2 PL - test_status_whiteboard.t"
+   href="show_bug.cgi%3Fid=4155.html">4155</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">bap.mailtrader
+        </td>
+        <td rowspan="1">2011-10-04 09:25:38 CEST
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - Bugzilla 4.2 PL - test_strict_isolation.t"
+   href="show_bug.cgi%3Fid=4156.html">4156</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">bap.mailtrader
+        </td>
+        <td rowspan="1">2011-10-04 09:26:04 CEST
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - Bugzilla 4.2 PL - test_sudo_sessions.t"
+   href="show_bug.cgi%3Fid=4157.html">4157</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">bap.mailtrader
+        </td>
+        <td rowspan="1">2011-10-04 09:26:29 CEST
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - Bugzilla 4.2 PL - test_target_milestones.t"
+   href="show_bug.cgi%3Fid=4158.html">4158</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">bap.mailtrader
+        </td>
+        <td rowspan="1">2011-10-04 09:26:54 CEST
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - Bugzilla 4.2 PL - test_time_summary.t"
+   href="show_bug.cgi%3Fid=4159.html">4159</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">bap.mailtrader
+        </td>
+        <td rowspan="1">2011-10-04 09:27:27 CEST
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - Bugzilla 4.2 PL - test_user_groups.t"
+   href="show_bug.cgi%3Fid=4160.html">4160</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">bap.mailtrader
+        </td>
+        <td rowspan="1">2011-10-04 09:27:55 CEST
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - Bugzilla 4.2 PL - test_user_matching.t"
+   href="show_bug.cgi%3Fid=4161.html">4161</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">bap.mailtrader
+        </td>
+        <td rowspan="1">2011-10-04 09:28:19 CEST
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - Bugzilla 4.2 PL - test_user_preferences.t"
+   href="show_bug.cgi%3Fid=4162.html">4162</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">bap.mailtrader
+        </td>
+        <td rowspan="1">2011-10-04 09:28:47 CEST
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - Bugzilla 4.2 PL - test_user_privs.t"
+   href="show_bug.cgi%3Fid=4163.html">4163</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">bap.mailtrader
+        </td>
+        <td rowspan="1">2011-10-04 09:29:14 CEST
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - Bugzilla 4.2 PL - test_votes.t"
+   href="show_bug.cgi%3Fid=4164.html">4164</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">bap.mailtrader
+        </td>
+        <td rowspan="1">2011-10-11 08:00:01 CEST
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - Bugzilla 4.2 PL - Util.pm"
+   href="show_bug.cgi%3Fid=4167.html">4167</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2011-10-24 13:05:40 CEST
+        </td>
+            <td>
+                CC
+            </td><td>
+  </td><td>hubert
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">bap.mailtrader
+        </td>
+        <td rowspan="1">2012-01-10 14:31:02 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - Bugzilla 4.2 PL - test_dependencies.t"
+   href="show_bug.cgi%3Fid=4230.html">4230</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="2">jmazgaj
+        </td>
+        <td rowspan="2">2012-01-14 13:49:46 CET
+        </td>
+            <td>
+                Status
+            </td><td>CONFIRMED
+  </td><td>IN_PROGRESS
+  </td></tr><tr>
+            <td>
+                Assignee
+            </td><td>nobody
+  </td><td>jmazgaj
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">bap.mailtrader
+        </td>
+        <td rowspan="1">2012-02-19 12:25:25 CET
+        </td>
+            <td>
+                Blocks
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - Bugzilla 4.2 PL"
+   href="show_bug.cgi%3Fid=4257.html">4257</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">bap.mailtrader
+        </td>
+        <td rowspan="1">2012-03-03 12:47:15 CET
+        </td>
+            <td>
+                Blocks
+            </td><td><a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - Bugzilla 4.2 PL"
+   href="show_bug.cgi%3Fid=4257.html">4257</a>
+  </td><td>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">jmazgaj
+        </td>
+        <td rowspan="1">2012-03-11 18:35:50 CET
+        </td>
+            <td>
+                CC
+            </td><td>
+  </td><td>kstawarz
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="2">jmazgaj
+        </td>
+        <td rowspan="2">2012-03-11 18:46:28 CET
+        </td>
+            <td>
+                Status
+            </td><td>IN_PROGRESS
+  </td><td>RESOLVED
+  </td></tr><tr>
+            <td>
+                Resolution
+            </td><td>---
+  </td><td>FIXED
+  </td>
+      </tr>
+  </table>
+
+  <p>
+    Back to <a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - Bugzilla 4.2 PL - testy automatyczne Selenium"
+   href="show_bug.cgi%3Fid=4127.html">bug 4127</a>
+  </p>
+</div>
+
+    <div id="footer">
+      <div class="intro"></div>
+<ul id="useful-links">
+  <li id="links-actions"><ul class="links">
+  <li><a href="index.html">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi.html">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi.html">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi.html">Search</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="http://bugs.aviary.pl/buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input type="hidden" id="no_redirect_bottom" name="no_redirect" value="0">
+    <script type="text/javascript">
+      if (history && history.replaceState) {
+        var no_redirect = document.getElementById("no_redirect_bottom");
+        no_redirect.value = 1;
+      }
+    </script>
+    <input class="txt" type="text" id="quicksearch_bottom" name="quicksearch" 
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search" 
+           id="find_bottom"></form>
+  <a href="page.cgi%3Fid=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="report.cgi.html">Reports</a></li>
+
+  <li>
+      <span class="separator">| </span>
+        <a href="request.cgi.html">Requests</a></li>
+
+
+  
+    
+      <li id="new_account_container_bottom">
+        <span class="separator">| </span>
+        <a href="createaccount.cgi.html">New&nbsp;Account</a>
+      </li>
+
+    <li id="mini_login_container_bottom">
+  <span class="separator">| </span>
+  <a id="login_link_bottom" href="http://bugs.aviary.pl/show_activity.cgi?id=4127&amp;GoAheadAndLogIn=1"
+     onclick="return show_mini_login_form('_bottom')">Log In</a>
+
+  <form action="show_activity.cgi%3Fid=4127.html" method="POST"
+        class="mini_login bz_default_hidden"
+        id="mini_login_bottom">
+    <input id="Bugzilla_login_bottom" required
+           name="Bugzilla_login" class="bz_login"
+        type="email" placeholder="Email Address">
+    <input class="bz_password" name="Bugzilla_password" type="password"
+           id="Bugzilla_password_bottom" required
+           placeholder="Password">
+    <input type="hidden" name="Bugzilla_login_token"
+           value="1469842204--uR7BXekcS_GdX8YExOrJmhZhhja-8gu_D4DMJ-hmac">
+    <input type="submit" name="GoAheadAndLogIn" value="Log in"
+            id="log_in_bottom">
+    <a href="show_activity.cgi%3Fid=4127.html#" onclick="return hide_mini_login_form('_bottom')">[x]</a>
+  </form>
+</li>
+
+
+  <li id="forgot_container_bottom">
+    <span class="separator">| </span>
+    <a id="forgot_link_bottom" href="http://bugs.aviary.pl/show_activity.cgi?id=4127&amp;GoAheadAndLogIn=1#forgot"
+       onclick="return show_forgot_form('_bottom')">Forgot Password</a>
+    <form action="http://bugs.aviary.pl/token.cgi" method="post" id="forgot_form_bottom"
+          class="mini_forgot bz_default_hidden">
+      <label for="login_bottom">Login:</label>
+      <input name="loginname" size="20" id="login_bottom" required
+          type="email" placeholder="Your Email Address">
+      <input id="forgot_button_bottom" value="Reset Password" type="submit">
+      <input type="hidden" name="a" value="reqpw">
+      <input type="hidden" id="token_bottom" name="token"
+             value="1469842204-duXHOLvFDJW1Xzet9-PhpQh-yjTaYISdPa0hfM3AqTA">
+      <a href="show_activity.cgi%3Fid=4127.html#" onclick="return hide_forgot_form('_bottom')">[x]</a>
+    </form>
+  </li>
+</ul>
+  </li>
+
+  
+
+
+
+
+  
+</ul>
+
+      <div class="outro"></div>
+    </div>
+
+  </body>
+</html>

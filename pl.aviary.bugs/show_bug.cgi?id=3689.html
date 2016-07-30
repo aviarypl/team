@@ -1,0 +1,1629 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>3689 &ndash; Przeglądanie w kartach – pasek kart</title>
+
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<link href="data/assets/7aa6ea67750936a0368541421bdcd5ee.css" rel="stylesheet" type="text/css">
+
+
+
+    
+<script type="text/javascript" src="data/assets/a7c2f3a028f17a9aa60f56dc9d6e732d.js"></script>
+
+    <script type="text/javascript">
+    <!--
+        YAHOO.namespace('bugzilla');
+        YAHOO.util.Event.addListener = function (el, sType, fn, obj, overrideContext) {
+               if ( ("onpagehide" in window || YAHOO.env.ua.gecko) && sType === "unload") { sType = "pagehide"; };
+               var capture = ((sType == "focusin" || sType == "focusout") && !YAHOO.env.ua.ie) ? true : false;
+               return this._addListener(el, this._getType(sType), fn, obj, overrideContext, capture);
+         };
+        if ( "onpagehide" in window || YAHOO.env.ua.gecko) {
+            YAHOO.util.Event._simpleRemove(window, "unload", 
+                                           YAHOO.util.Event._unload);
+        }
+        
+        function unhide_language_selector() { 
+            YAHOO.util.Dom.removeClass(
+                'lang_links_container', 'bz_default_hidden'
+            ); 
+        } 
+        YAHOO.util.Event.onDOMReady(unhide_language_selector);
+
+        
+        var BUGZILLA = {
+            param: {
+                cookiepath: '\/',
+                maxusermatches: 1000
+            },
+            constant: {
+                COMMENT_COLS: 80
+            },
+            string: {
+                
+
+                attach_desc_required:
+                    "You must enter a Description for this attachment.",
+                component_required:
+                    "You must select a Component for this bug.",
+                description_required:
+                    "You must enter a Description for this bug.",
+                short_desc_required:
+                    "You must enter a Summary for this bug.",
+                version_required:
+                    "You must select a Version for this bug."
+            }
+              , api_token: ''
+        };
+
+    if (history && history.replaceState) {
+      if(!document.location.href.match(/show_bug\.cgi/)) {
+        history.replaceState( null,
+                             "3689 – Przeglądanie w kartach – pasek kart",
+                             "show_bug.cgi?id=3689" );
+        document.title = "3689 – Przeglądanie w kartach – pasek kart";
+      }
+      if (document.location.href.match(/show_bug\.cgi\?.*list_id=/)) {
+        var href = document.location.href;
+        href = href.replace(/[\?&]+list_id=(\d+|cookie)/, '');
+        history.replaceState(null, "3689 – Przeglądanie w kartach – pasek kart", href);
+      }
+    }
+    YAHOO.util.Event.onDOMReady(function() {
+      initDirtyFieldTracking();
+
+    });
+    // -->
+    </script>
+<script type="text/javascript" src="data/assets/daf5e0fb6826e6a35280e622913f0c4a.js"></script>
+
+    
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+                       title="Bugzilla" href="search_plugin.cgi">
+    <link rel="shortcut icon" href="images/favicon.ico">
+  </head>
+
+  <body 
+        class="bugs-aviary-pl
+                 bz_bug
+                 bz_status_RESOLVED
+                 bz_product_Wytyczne
+                 bz_component_Og&#XF3;lne
+                 bz_bug_3689 yui-skin-sam">
+
+  <div id="header"><div id="banner">
+  </div>
+
+    <div id="titles">
+      <span id="title">Bugzilla &ndash; Bug&nbsp;3689</span>
+
+        <span id="subtitle" class="subheader">Przeglądanie w kartach – pasek kart</span>
+
+        <span id="information" class="header_addl_info">Last modified: 2011-02-01 09:30:44 CET</span>
+    </div>
+
+
+    <div id="common_links"><ul class="links">
+  <li><a href="index.html">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi.html">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi.html">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi.html">Search</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="http://bugs.aviary.pl/buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input type="hidden" id="no_redirect_top" name="no_redirect" value="0">
+    <script type="text/javascript">
+      if (history && history.replaceState) {
+        var no_redirect = document.getElementById("no_redirect_top");
+        no_redirect.value = 1;
+      }
+    </script>
+    <input class="txt" type="text" id="quicksearch_top" name="quicksearch" 
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search" 
+           id="find_top"></form>
+  <a href="page.cgi%3Fid=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="report.cgi.html">Reports</a></li>
+
+  <li>
+      <span class="separator">| </span>
+        <a href="request.cgi.html">Requests</a></li>
+
+
+  <li>
+        <span class="separator">| </span>
+        <a href="https://bugzilla.readthedocs.org/en/5.0/using/understanding.html" target="_blank">Help</a>
+      </li>
+    
+      <li id="new_account_container_top">
+        <span class="separator">| </span>
+        <a href="createaccount.cgi.html">New&nbsp;Account</a>
+      </li>
+
+    <li id="mini_login_container_top">
+  <span class="separator">| </span>
+  <a id="login_link_top" href="show_bug.cgi%3Fid=3689&amp;GoAheadAndLogIn=1.html"
+     onclick="return show_mini_login_form('_top')">Log In</a>
+
+  <form action="show_bug.cgi%3Fid=3689.html" method="POST"
+        class="mini_login bz_default_hidden"
+        id="mini_login_top">
+    <input id="Bugzilla_login_top" required
+           name="Bugzilla_login" class="bz_login"
+        type="email" placeholder="Email Address">
+    <input class="bz_password" name="Bugzilla_password" type="password"
+           id="Bugzilla_password_top" required
+           placeholder="Password">
+    <input type="hidden" name="Bugzilla_login_token"
+           value="1469822392-yDorqIGwWJNRd7pzPmGK2R83PEkWll3EiJUJ8ITjYCk">
+    <input type="submit" name="GoAheadAndLogIn" value="Log in"
+            id="log_in_top">
+    <a href="show_bug.cgi%3Fid=3689.html#" onclick="return hide_mini_login_form('_top')">[x]</a>
+  </form>
+</li>
+
+
+  <li id="forgot_container_top">
+    <span class="separator">| </span>
+    <a id="forgot_link_top" href="show_bug.cgi%3Fid=3689&amp;GoAheadAndLogIn=1.html#forgot"
+       onclick="return show_forgot_form('_top')">Forgot Password</a>
+    <form action="http://bugs.aviary.pl/token.cgi" method="post" id="forgot_form_top"
+          class="mini_forgot bz_default_hidden">
+      <label for="login_top">Login:</label>
+      <input name="loginname" size="20" id="login_top" required
+          type="email" placeholder="Your Email Address">
+      <input id="forgot_button_top" value="Reset Password" type="submit">
+      <input type="hidden" name="a" value="reqpw">
+      <input type="hidden" id="token_top" name="token"
+             value="1469822392-oAQf8jnwjR9bP5Go0VyhsQlH_iZ0x7CrpH8O_SUqv_w">
+      <a href="show_bug.cgi%3Fid=3689.html#" onclick="return hide_forgot_form('_top')">[x]</a>
+    </form>
+  </li>
+</ul>
+    </div>
+  </div>
+
+  <div id="bugzilla-body">
+
+
+<script type="text/javascript">
+<!--
+
+//-->
+</script>
+
+<form name="changeform" id="changeform" method="post" action="http://bugs.aviary.pl/process_bug.cgi">
+
+  <input type="hidden" name="delta_ts" value="2011-02-01 09:30:44">
+  <input type="hidden" name="id" value="3689">
+  <input type="hidden" name="token" value="1469822392-r_xjN001ZgHRoaNJR0hnH99A1vsvF43M4O0NvMzA2RU">
+<div class="bz_short_desc_container edit_form">
+     <a href="show_bug.cgi%3Fid=3689.html"><b>Bug&nbsp;3689</b></a> <span id="summary_container" class="bz_default_hidden">
+      - <span id="short_desc_nonedit_display">Przeglądanie w kartach – pasek kart</span>
+     </span>
+
+    <div id="summary_input"><span class="field_label "
+    id="field_label_short_desc">
+
+
+  <a 
+      title="The bug summary is a short sentence which succinctly describes what the bug is about."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#short_desc"
+  >Summary:</a>
+
+</span>Przeglądanie w kartach – pasek kart
+    </div>
+  </div>
+  <script type="text/javascript">
+    hideEditableField('summary_container',
+                      'summary_input',
+                      'summary_edit_action',
+                      'short_desc',
+                      'Przeglądanie w kartach – pasek kart' );
+  </script>
+  <table class="edit_form">
+    <tr>
+      
+      <td id="bz_show_bug_column_1" class="bz_show_bug_column">     
+        <table>
+          <tr>
+    <th class="field_label">
+      <a href="page.cgi%3Fid=fields.html#bug_status">Status</a>:
+    </th>
+    <td id="bz_field_status">
+      <span id="static_bug_status">RESOLVED
+          INVALID
+      </span>
+    </td>
+  </tr>
+<tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+<tr><th class="field_label "
+    id="field_label_alias">
+
+
+  <a 
+      title="A short, unique name assigned to a bug in order to assist with looking it up and referring to it in other places in Bugzilla."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#alias"
+  >Alias:</a>
+
+</th>
+    <td>
+        None
+    </td>
+  </tr>
+<tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+<tr><th class="field_label "
+    id="field_label_product">
+
+
+  <a 
+      title="Bugs are categorised into Products and Components. Select a Classification to narrow down this list."
+      class="field_help_link"
+      href="describecomponents.cgi.html"
+  >Product:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_product" >Wytyczne
+
+</td>
+    </tr>
+
+    
+    <tr class="bz_default_hidden"><th class="field_label "
+    id="field_label_classification">
+
+
+  <a 
+      title="Bugs are categorised into Classifications, Products and Components. classifications is the top-level categorisation."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#classification"
+  >Classification:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_classification" >Archiwum
+
+</td>
+    </tr>
+        
+    
+    
+    <tr><th class="field_label "
+    id="field_label_component">
+
+
+  <a 
+      title="Components are second-level categories; each belongs to a particular Product. Select a Product to narrow down this list."
+      class="field_help_link"
+      href="describecomponents.cgi%3Fproduct=Wytyczne.html"
+  >Component:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_component" >Ogólne
+
+  (<a href="buglist.cgi%3Fcomponent=Ogólne&amp;product=Wytyczne&amp;bug_status=__open__.html"
+      target="_blank">show other bugs</a>)
+</td>
+    </tr>
+    <tr><th class="field_label "
+    id="field_label_version">
+
+
+  <a 
+      title="The version field defines the version of the software the bug was found in."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#version"
+  >Version:</a>
+
+</th>
+<td>unspecified
+  </td>
+    </tr>
+        
+    
+        
+    <tr><th class="field_label "
+    id="field_label_rep_platform">
+
+
+  <a 
+      title="The hardware platform the bug was observed on. Note: When searching, selecting the option &quot;All&quot; only finds bugs whose value for this field is literally the word &quot;All&quot;."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#rep_platform"
+  >Hardware:</a>
+
+</th>
+      <td class="field_value">Wszystkie
+        Wszystkie
+      </td>
+    </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          
+          <tr>
+      <th class="field_label">
+        <label  accesskey="i">
+          <a href="page.cgi%3Fid=fields.html#importance"><u>I</u>mportance</a></label>:
+      </th>
+      <td>P3
+       normalny
+      </td>
+    </tr>
+          
+          <tr><th class="field_label "
+    id="field_label_assigned_to">
+
+
+  <a 
+      title="The person in charge of resolving the bug."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#assigned_to"
+  >Assignee:</a>
+
+</th>
+      <td><span class="vcard"><span class="fn">Wojciech Kapusta</span>
+</span>
+      </td>
+    </tr>
+
+    <tr><th class="field_label "
+    id="field_label_qa_contact">
+
+
+  <a 
+      title="The person responsible for confirming this bug if it is unconfirmed, and for verifying the fix once the bug has been resolved."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#qa_contact"
+  >QA Contact:</a>
+
+</th>
+      <td><span class="vcard">wytyczne
+</span>
+      </td>
+    </tr>
+    <script type="text/javascript">
+      assignToDefaultOnChange(['product', 'component'],
+        'w.kapusta\x40gmail.com',
+        'wytyczne\x40l10n.bledy');
+    </script>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          <tr><th class="field_label "
+    id="field_label_bug_file_loc">
+
+
+  <a 
+      title="Bugs can have a URL associated with them - for example, a pointer to a web site where the problem is seen."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#bug_file_loc"
+  >URL:</a>
+
+</th>
+    <td>
+      <span id="bz_url_input_area">
+      </span>
+    </td>
+  </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+
+          
+<tr><th class="field_label "
+    id="field_label_dependson">
+
+
+  <a 
+      title="The bugs listed here must be resolved before this bug can be resolved."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#dependson"
+  >Depends on:</a>
+
+</th>
+
+  <td>
+    <span id="dependson_input_area">
+    </span>
+
+  </td>
+  </tr>
+  
+  <tr><th class="field_label "
+    id="field_label_blocked">
+
+
+  <a 
+      title="This bug must be resolved before the bugs listed in this field can be resolved."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#blocked"
+  >Blocks:</a>
+
+</th>
+
+  <td>
+    <span id="blocked_input_area">
+    </span>
+
+  </td>
+  </tr>
+          
+        </table>
+      </td>
+      <td>
+        <div class="bz_column_spacer">&nbsp;</div>
+      </td>
+      
+      <td id="bz_show_bug_column_2" class="bz_show_bug_column">
+        <table>
+        <tr>
+    <th class="field_label">
+      Reported:
+    </th>
+    <td>2011-01-30 03:48 CET by <span class="vcard"><span class="fn">Leszek Życzkowski</span>
+</span>
+    </td>
+  </tr>
+  
+  <tr>
+    <th class="field_label">
+      Modified:
+    </th>
+    <td>2011-02-01 09:30 CET
+      (<a href="show_activity.cgi%3Fid=3689.html">History</a>)
+    </td>
+  
+  </tr>
+<tr>
+      <th class="field_label">
+        <label  accesskey="a">
+          CC List:
+        </label>
+      </th>
+      <td>4 
+          users
+          <span id="cc_edit_area_showhide_container" class="bz_default_hidden">
+            (<a href="show_bug.cgi%3Fid=3689.html#" id="cc_edit_area_showhide">show</a>)
+          </span>
+        <div id="cc_edit_area">
+          <br>
+            <select id="cc" multiple="multiple" size="5" >
+                <option value="bpiec">bpiec</option>
+                <option value="hubert+bap">hubert+bap</option>
+                <option value="splewako">splewako</option>
+                <option value="wszczesny">wszczesny</option>
+            </select>
+        </div>
+          <script type="text/javascript">
+            hideEditableField( 'cc_edit_area_showhide_container', 
+                               'cc_edit_area', 
+                               'cc_edit_area_showhide', 
+                               '', 
+                               '');  
+          </script>
+      </td>
+    </tr>
+
+<tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+<tr><th class="field_label "
+    id="field_label_see_also">
+
+
+  <a 
+      title="This allows you to refer to bugs in other installations. You can enter a URL to a bug in the 'Add Bug URLs' field to note that that bug is related to this one. You can enter multiple URLs at once by separating them with whitespace. You should normally use this field to refer to bugs in other installations. For bugs in this installation, it is better to use the Depends on and Blocks fields."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#see_also"
+  >See Also:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_see_also" >
+
+</td>
+    </tr> 
+
+<tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+
+
+
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+          <hr id="bz_top_half_spacer">
+      </td>
+    </tr>
+  </table>
+
+  <table id="bz_big_form_parts">
+  <tr>
+  <td>
+
+    
+<script type="text/javascript">
+<!--
+function toggle_display(link) {
+    var table = document.getElementById("attachment_table");
+    var view_all = document.getElementById("view_all");
+    var hide_obsolete_url_parameter = "&hide_obsolete=1";
+    // Store current height for scrolling later
+    var originalHeight = table.offsetHeight;
+    var rows = YAHOO.util.Dom.getElementsByClassName(
+        'bz_tr_obsolete', 'tr', table);
+
+    for (var i = 0; i < rows.length; i++) {
+        bz_toggleClass(rows[i], 'bz_default_hidden');
+    }
+
+    if (YAHOO.util.Dom.hasClass(rows[0], 'bz_default_hidden')) {
+        link.innerHTML = "Show Obsolete";
+        view_all.href = view_all.href + hide_obsolete_url_parameter 
+    }
+    else {
+        link.innerHTML = "Hide Obsolete";
+        view_all.href = view_all.href.replace(hide_obsolete_url_parameter,"");
+    }
+
+    var newHeight = table.offsetHeight;
+    // This scrolling makes the window appear to not move at all.
+    window.scrollBy(0, newHeight - originalHeight);
+
+    return false;
+}
+//-->
+</script>
+
+<br>
+<table id="attachment_table">
+  <tr id="a0">
+    <th colspan="3" class="left">
+      Attachments
+    </th>
+  </tr>
+
+
+
+  <tr class="bz_attach_footer">
+    <td colspan="3">
+        <a href="attachment.cgi%3Fbugid=3689&amp;action=enter.html">Add an attachment</a>
+        (proposed patch, testcase, etc.)
+    </td>
+  </tr>
+</table>
+<br>
+
+  </td>
+  <td>
+  </td>
+  </tr></table>
+
+  
+  <div id="comments"><script src="js/comments.js" type="text/javascript">
+</script>
+
+<script type="text/javascript">
+<!--
+  /* Adds the reply text to the 'comment' textarea */
+  function replyToComment(id, real_id, name) {
+      var prefix = "(In reply to " + name + " from comment #" + id + ")\n";
+      var replytext = "";
+        /* pre id="comment_name_N" */
+        var text_elem = document.getElementById('comment_text_'+id);
+        var text = getText(text_elem);
+        replytext = prefix + wrapReplyText(text);
+
+
+      /* <textarea id="comment"> */
+      var textarea = document.getElementById('comment');
+      if (textarea.value != replytext) {
+          textarea.value += replytext;
+      }
+
+      textarea.focus();
+  } 
+//-->
+</script>
+
+
+<!-- This auto-sizes the comments and positions the collapse/expand links 
+     to the right. -->
+<table class="bz_comment_table">
+<tr>
+<td>
+<div id="c0" class="bz_comment bz_first_comment">
+
+      <div class="bz_first_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=3689.html#c0">Description</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Leszek Życzkowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2011-01-30 03:48:04 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Użycie określenia „karta” w odniesieniu do miejsca wyświetlania strony internetowej samo w sobie nie jest takie złe, ale inne towarzyszące temu zjawisku określenia są nieco dezinformujące, żeby nie powiedzieć – złe, ale wróćmy do źródeł.
+Tabbed browsing zostało zaadoptowane z systemu przechowywania dokumentów papierowych (strony internetowe, to przecież dokumenty), który w języku angielskim zowie się „file folders” – zbiory folderów. Poszczególne typy dokumentów w takim zbiorze oddzielane są arkuszami (sheet) zwanymi też przekładkami. Dla łatwiejszego odszukania dokumentów przekładki są oznaczane etykietami (ang. tab – nie mylić z labels, które też są etykietami, ale używane w innych sytuacjach) zwanymi też zakładkami.
+Materiał źródłowy:
+<a href="http://en.wikipedia.org/wiki/File_folder">http://en.wikipedia.org/wiki/File_folder</a>
+Wróćmy zatem do poruszanej kwestii. Mamy już karty, których nie da się zmienić i przyjmijmy, że są to wspomniane wyżej arkusze, przekładki (sheet). Na tych kartach są wyświetlane strony i każda strona ma swoją etykietę wyświetlaną na pasku… No i natknęliśmy się na pierwszy problem. Obecnie nazwany jest paskiem kart, ale przecież na nim nie są karty, tylko ETYKIETY kart, zatem powinien on nosić nazwę PASEK ETYKIET KART. Nie można użyć krótszego określenia, bo w innym miejscu mamy już etykiety. Inny problem to używanie określenia „wyświetlaj karty na pasku kart”. Przecież to absurd. Na tym pasku są wyświetlane tylko etykiety. No to dalej szukam dziury w całym. W Firefoksie 4 mamy „App Tab” tłumaczony teraz jako „Karta aplikacji”. Otóż ta „karta aplikacji” jest umieszczana na obecnie zwanym pasku kart w formie małej etykiety, a jej kliknięcie powoduje otwarcie przypisanej do niej strony. Jest to inna forma zakładki umieszczanej na pasku kart, czyli jest zakładką, a skoro umieszczana na pasku kart, jest etykietą.
+Takich przykładów można przytoczyć więcej, ale ważniejszy jest cel, jaki chciałbym osiągnąć, a mimo długiego wywodu jest krótki:
+
+- Pasek kart
++ Pasek etykiet kart
+
+Wszędzie tam, gdzie chodzi o element wyświetlany na pasku etykiet kart używać określenia etykieta karty.
+
+Sprawa dotycząca tłumaczenia App Tab jest zgłoszona w innym błędzie.</pre>
+    </div>
+
+    <div id="c1" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=3689.html#c1">Comment 1</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Bartosz Piec</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2011-01-30 07:50:23 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">&quot;Etykiety kart&quot; brzmią dla mnie strasznie, a &quot;pasek etykiet kart&quot; jeszcze gorzej...
+
+Karta to dla mnie treść strony + jej tytuł i ikona (czyli Twoja etykieta) + przyciski nawigacyjne, adres itp. (od Fx4 są już domyślnie elementem karty). W takim rozumieniu &quot;pasek kart&quot; jest jak najbardziej w porządku.</pre>
+    </div>
+
+    <div id="c2" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=3689.html#c2">Comment 2</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Leszek Życzkowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2011-01-30 10:06:38 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(W odpowiedzi na komentarz #1)
+<span class="quote">&gt; &quot;Etykiety kart&quot; brzmią dla mnie strasznie, a &quot;pasek etykiet kart&quot; jeszcze
+&gt; gorzej...
+&gt; </span >
+Bartek, zapoznałeś się z etymologią tego określenia, poznałeś źródła? Tam są właśnie etykiety kart. Biorąc pod uwagę źródła „File folders can have tabs” czyli zbiory folderów mogą mieć etykiety. Pasek kart jest miejscem, gdzie są właśnie wyświetlane etykiety kart. Używając skrótu myślowego można nazwać ten pasek paskiem kart, ale opisując co się na nim znajduje, trzeba użyć określenia „etykiety kart” bo to one się tam znajdują, a nie karty. 
+
+<span class="quote">&gt; Karta to dla mnie treść strony + jej tytuł i ikona (czyli Twoja etykieta) +
+&gt; przyciski nawigacyjne, adres itp. (od Fx4 są już domyślnie elementem karty). W
+&gt; takim rozumieniu &quot;pasek kart&quot; jest jak najbardziej w porządku.</span >
+
+Niestety masz tylko połowiczną rację. Jeśli wybierzesz opcję wyświetlania paska na dole, żadne przyciski nawigacyjne ani inne paski nie są częścią karty. Pasek narzędzi nawigacyjnych i pasek zakładek staje się częścią karty, gdy wybierzesz wyświetlanie paska kart na górze.</pre>
+    </div>
+
+    <div id="c3" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=3689.html#c3">Comment 3</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Bartosz Piec</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2011-01-30 10:23:15 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(W odpowiedzi na komentarz #2)
+<span class="quote">&gt; (W odpowiedzi na komentarz #1)
+&gt; &gt; &quot;Etykiety kart&quot; brzmią dla mnie strasznie, a &quot;pasek etykiet kart&quot; jeszcze
+&gt; &gt; gorzej...
+&gt; &gt; 
+&gt; Bartek, zapoznałeś się z etymologią tego określenia, poznałeś źródła? </span >
+
+A co to ma do rzeczy? Piszę moje subiektywne odczucie, źródła nic do tego nie mają.
+
+
+<span class="quote">&gt; Używając skrótu myślowego można nazwać ten pasek paskiem kart</span >
+
+I jak rozumiem w takim znaczeniu są tu używane.
+
+
+<span class="quote">&gt; &gt; Karta to dla mnie treść strony + jej tytuł i ikona (czyli Twoja etykieta) +
+&gt; &gt; przyciski nawigacyjne, adres itp. (od Fx4 są już domyślnie elementem karty). W
+&gt; &gt; takim rozumieniu &quot;pasek kart&quot; jest jak najbardziej w porządku.
+&gt; 
+&gt; Niestety masz tylko połowiczną rację. Jeśli wybierzesz opcję wyświetlania paska
+&gt; na dole, żadne przyciski nawigacyjne ani inne paski nie są częścią karty. Pasek
+&gt; narzędzi nawigacyjnych i pasek zakładek staje się częścią karty, gdy wybierzesz
+&gt; wyświetlanie paska kart na górze.</span >
+
+Napisałem, że są &quot;domyślnie&quot;, czyli dla większości użytkowników już tak będą cały czas.
+
+Btw, SJP PWN, na który się często powołujesz, nie zna określenia &quot;etykiety&quot; w Twoim znaczeniu:
+
+    etykieta I «obowiązujący sposób zachowania się w pewnych środowiskach»
+
+    etykieta II
+    1. «nalepka na towarze lub opakowaniu z nazwą towaru, ceną itp.»
+    2. «tabliczka z nazwą i opisem eksponatu»
+    3. «powszechna, powierzchowna opinia o kimś»
+
+    etykieta sieciowa zob. netykieta.
+
+<a href="http://sjp.pwn.pl/szukaj/etykieta">http://sjp.pwn.pl/szukaj/etykieta</a></pre>
+    </div>
+
+    <div id="c4" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=3689.html#c4">Comment 4</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2011-01-30 11:06:22 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Mniej więcej myślicie o tym samym.
+
+etykieta karty
+
+ _/¯¯¯¯¯¯¯¯¯¯\_  
+
+
+karta
+
+ _/¯¯¯¯¯¯¯¯¯¯\_
+|              |
+|              |
+|              |
+|              |
+|--------------|
+
+Jeśli zadać pytanie, czy na tym pasku mieści się cała karta to byłby to argument przeciwko &quot;paskowi kart&quot;.
+
+Ja to widzę jednak inaczej. &quot;Pasek kart&quot;, bo karty sobie na nim (tu wstaw odpowiednie) leżą/opierają się/są do niego przyczepione/itd. Można też powiedzieć, że tak się nazywa, bo jest wykorzystywany przez karty.
+
+Na podobnej zasadzie funkcjonuje &quot;Pasek dodatków&quot;. Czy to jest pasek, gdzie są umieszczone dodatki? Nie (choć są przypadki, że cały dodatek to pare literek na tym pasku). Jest to pasek, który jest przez dodatki wykorzystywany. Ale to chyba nie powód, żeby nazywać go &quot;paskiem etykiet dodatków&quot;, &quot;paskiem wykorzystywanym przez dodatki&quot;, czy jakoś podobnie.
+
+Rozumiem skąd wziął się pomysł, ale argumentacja mnie nie przekonuje.</pre>
+    </div>
+
+    <div id="c5" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=3689.html#c5">Comment 5</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Leszek Życzkowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2011-01-30 11:23:42 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(W odpowiedzi na komentarz #3)
+<span class="quote">&gt; A co to ma do rzeczy? Piszę moje subiektywne odczucie, źródła nic do tego nie
+&gt; mają.</span >
+
+IMHO Mają i to bardzo duże.
+
+<span class="quote">&gt; Napisałem, że są &quot;domyślnie&quot;, czyli dla większości użytkowników już tak będą
+&gt; cały czas.</span >
+
+Nic takiego nie napisałeś. Napisałeś jedynie, że „tytuł i ikona (czyli Twoja etykieta) + przyciski nawigacyjne, adres itp. (od Fx4 są już domyślnie elementem karty)”.
+<span class="quote">&gt; Btw, SJP PWN, na który się często powołujesz, nie zna określenia &quot;etykiety&quot; w
+&gt; Twoim znaczeniu:
+&gt; 
+&gt;     etykieta I «obowiązujący sposób zachowania się w pewnych środowiskach»
+&gt; 
+&gt;     etykieta II
+&gt;     1. «nalepka na towarze lub opakowaniu z nazwą towaru, ceną itp.»
+&gt;     2. «tabliczka z nazwą i opisem eksponatu»
+&gt;     3. «powszechna, powierzchowna opinia o kimś»</span >
+
+Można podpiąć się pod punkty 1 i 2.
+Fachowo po polsku nazywa się to zakładka indeksująca. Byłbyś pewnie zadowolony gdybym tak chciał to nazwać. :)</pre>
+    </div>
+
+    <div id="c6" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=3689.html#c6">Comment 6</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Bartosz Piec</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2011-01-30 11:35:49 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(W odpowiedzi na komentarz #5)
+<span class="quote">&gt; &gt; Napisałem, że są &quot;domyślnie&quot;, czyli dla większości użytkowników już tak będą
+&gt; &gt; cały czas.
+&gt; 
+&gt; Nic takiego nie napisałeś. Napisałeś jedynie, że „tytuł i ikona (czyli Twoja
+&gt; etykieta) + przyciski nawigacyjne, adres itp. (od Fx4 są już domyślnie
+&gt; elementem karty)”.</span >
+
+No, właśnie. Przecież napisałem, że przyciski nawigacyjne, adres itp. od Fx4 są domyślnie elementem karty. Nie wiem czego nie rozumiesz...
+
+<span class="quote">&gt; &gt;     etykieta II
+&gt; &gt;     1. «nalepka na towarze lub opakowaniu z nazwą towaru, ceną itp.»
+&gt; &gt;     2. «tabliczka z nazwą i opisem eksponatu»
+&gt; &gt;     3. «powszechna, powierzchowna opinia o kimś»
+&gt; 
+&gt; Można podpiąć się pod punkty 1 i 2.</span >
+
+Pewnie, można i pod 3... Ale jak odnosisz to do przechowywania dokumentów, to SJP nie zna etykiety jako &quot;zakładki&quot; czy elementu &quot;przekładki&quot;.
+
+<span class="quote">&gt; Fachowo po polsku nazywa się to zakładka indeksująca. Byłbyś pewnie zadowolony
+&gt; gdybym tak chciał to nazwać. :)</span >
+
+Ale po co komplikować? Czy wszystko w internecie musi mieć swoje odniesienie do tradycyjnych rzeczy?</pre>
+    </div>
+
+    <div id="c7" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=3689.html#c7">Comment 7</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Leszek Życzkowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2011-01-30 11:40:36 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(W odpowiedzi na komentarz #4)
+<span class="quote">&gt; Mniej więcej myślicie o tym samym.
+&gt; 
+&gt; etykieta karty
+&gt; 
+&gt;  _/¯¯¯¯¯¯¯¯¯¯\_  
+&gt; 
+&gt; 
+&gt; karta
+&gt; 
+&gt;  _/¯¯¯¯¯¯¯¯¯¯\_
+&gt; |              |
+&gt; |              |
+&gt; |              |
+&gt; |              |
+&gt; |--------------|
+&gt; 
+&gt; Jeśli zadać pytanie, czy na tym pasku mieści się cała karta to byłby to
+&gt; argument przeciwko &quot;paskowi kart&quot;.
+&gt; 
+&gt; Ja to widzę jednak inaczej. &quot;Pasek kart&quot;, bo karty sobie na nim (tu wstaw
+&gt; odpowiednie) leżą/opierają się/są do niego przyczepione/itd. Można też
+&gt; powiedzieć, że tak się nazywa, bo jest wykorzystywany przez karty.
+&gt; 
+&gt; Na podobnej zasadzie funkcjonuje &quot;Pasek dodatków&quot;. Czy to jest pasek, gdzie są
+&gt; umieszczone dodatki? Nie (choć są przypadki, że cały dodatek to pare literek na
+&gt; tym pasku). Jest to pasek, który jest przez dodatki wykorzystywany. Ale to
+&gt; chyba nie powód, żeby nazywać go &quot;paskiem etykiet dodatków&quot;, &quot;paskiem
+&gt; wykorzystywanym przez dodatki&quot;, czy jakoś podobnie.
+&gt; 
+&gt; Rozumiem skąd wziął się pomysł, ale argumentacja mnie nie przekonuje.</span >
+
+Nie będę się upierał przy pasku etykiet, bo jak wspomniałem wcześniej pasek kart jest uproszczeniem myślowym. Chodzi mi przede wszystkim, by w opisach stosować określenie, że znajdują się tam etykiety kart. Karta razem ze znacznikiem indeksującym stanowi całość i też można potraktować to jako kartę, ale to się kłóci z filozofią „Tabbed file folders”, od której pochodzi „Tabbed browsing”, bo w katalogach widać etykiety, po których trafiasz do danego zbioru, tak jak po etykietach kart trafiasz do danej witryny (zbioru stron). Szczególnie jest to widoczne, gdy podczas przeglądania innej witryny, na pasku widzisz kilka etykiet kart, na których jest oznaczone co się tam znajduje i na tej podstawie otwierasz dana kartę, gdy akurat masz taka potrzebę.
+To nie na samej karcie znajduje się ikona witryny, jej nazwa wskaźnik wczytywania (Fx4) oraz przyciska zamykania, tylko na etykiecie karty. Analogia ze zbiorem dokumentów dodatkowo jest podkreślana przez wyróżnienie tego elementu, tak jak zgrabnie narysowałeś.</pre>
+    </div>
+
+    <div id="c8" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=3689.html#c8">Comment 8</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Leszek Życzkowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2011-01-30 11:51:42 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(W odpowiedzi na komentarz #6)
+<span class="quote">&gt; (W odpowiedzi na komentarz #5)
+&gt; &gt; &gt; Napisałem, że są &quot;domyślnie&quot;, czyli dla większości użytkowników już tak będą
+&gt; &gt; &gt; cały czas.
+&gt; &gt; 
+&gt; &gt; Nic takiego nie napisałeś. Napisałeś jedynie, że „tytuł i ikona (czyli Twoja
+&gt; &gt; etykieta) + przyciski nawigacyjne, adres itp. (od Fx4 są już domyślnie
+&gt; &gt; elementem karty)”.
+&gt; 
+&gt; No, właśnie. Przecież napisałem, że przyciski nawigacyjne, adres itp. od Fx4 są
+&gt; domyślnie elementem karty. Nie wiem czego nie rozumiesz...</span >
+
+Tak jak napisałeś oznacza, że te elementy są domyślnie elementami karty i bez względu na położenie paska kart tak wyglądają. Tak sformułowana myśl nie jest prawidłowa, bo przy innym położeniu kart jest inaczej. 
+
+<span class="quote">&gt; Ale po co komplikować? Czy wszystko w internecie musi mieć swoje odniesienie do
+&gt; tradycyjnych rzeczy?</span >
+
+W tym przypadku ma i to bardzo ścisły związek z tradycją, dlatego przytoczyłem na wstępie odniesienie do tego faktu.</pre>
+    </div>
+
+    <div id="c9" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=3689.html#c9">Comment 9</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Stefan Plewako :stef</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2011-01-31 04:35:12 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(In reply to <a href="show_bug.cgi%3Fid=3689.html#c0">comment #0</a>)
+<span class="quote">&gt; - Pasek kart
+&gt; + Pasek etykiet kart</span >
+
+Jestem przeciw.</pre>
+    </div>
+
+    <div id="c10" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=3689.html#c10">Comment 10</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Wojciech Szczęsny</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2011-02-01 01:38:33 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Określenie &quot;pasek kart&quot; jest prawidłowe niezależnie do ustaleń, czy zawiera on karty, etykiety kart czy jeszcze coś innego. To typowy przykład zabiegu &quot;totum pro parte&quot; - nazwa części obiektu zastępowana jest nazwą całości. Dzięki temu język m.in. zyskuje na ekonomiczności, ponieważ można tworzyć formy krótsze (w języku literackim zabieg pełni jeszcze dodatkowe funkcje stylistyczne). 
+
+Idąc tokiem rozumowania z pierwszego komentarza, nie należałoby mówić &quot;katalog książek&quot;, ponieważ katalog nie zawiera książek, tylko kartki z ich opisami w skrzyneczkach lub wpisy w bazie danych.</pre>
+    </div>
+
+    <div id="c11" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=3689.html#c11">Comment 11</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Leszek Życzkowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2011-02-01 01:50:43 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(W odpowiedzi na komentarz #9)
+<span class="quote">&gt; (In reply to <a href="show_bug.cgi%3Fid=3689.html#c0">comment #0</a>)
+&gt; &gt; - Pasek kart
+&gt; &gt; + Pasek etykiet kart
+&gt; 
+&gt; Jestem przeciw.</span >
+
+Stef, ważniejsze jest, by używać określeń, że na pasku kart znajdują się etykiety kart niż sam pasek, o którym już wcześniej pisałem, że „Używając skrótu myślowego można nazwać ten pasek paskiem kart, ale opisując co się na nim znajduje, trzeba użyć określenia „etykiety kart” bo to one się tam znajdują, a nie karty.”
+
+Zostawmy zatem „pasek kart”, niech sobie będzie, ale ważniejsze jest:
+Wszędzie tam, gdzie chodzi o element wyświetlany na pasku etykiet kart używać
+określenia etykieta karty.</pre>
+    </div>
+
+    <div id="c12" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=3689.html#c12">Comment 12</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Leszek Życzkowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2011-02-01 01:52:13 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(W odpowiedzi na komentarz #10)
+<span class="quote">&gt; Określenie &quot;pasek kart&quot; jest prawidłowe niezależnie do ustaleń, czy zawiera on
+&gt; karty, etykiety kart czy jeszcze coś innego. To typowy przykład zabiegu &quot;totum
+&gt; pro parte&quot; - nazwa części obiektu zastępowana jest nazwą całości. Dzięki temu
+&gt; język m.in. zyskuje na ekonomiczności, ponieważ można tworzyć formy krótsze (w
+&gt; języku literackim zabieg pełni jeszcze dodatkowe funkcje stylistyczne). 
+&gt; 
+&gt; Idąc tokiem rozumowania z pierwszego komentarza, nie należałoby mówić &quot;katalog
+&gt; książek&quot;, ponieważ katalog nie zawiera książek, tylko kartki z ich opisami w
+&gt; skrzyneczkach lub wpisy w bazie danych.</span >
+
+Dzięki za rzeczową wypowiedź. Chyba z tym paskiem kart trochę przekombinowałem, ale z etykietami – nie. :)</pre>
+    </div>
+
+    <div id="c13" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=3689.html#c13">Comment 13</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Bartosz Piec</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2011-02-01 03:21:31 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(W odpowiedzi na komentarz #10)
+<span class="quote">&gt; Idąc tokiem rozumowania z pierwszego komentarza, nie należałoby mówić &quot;katalog
+&gt; książek&quot;, ponieważ katalog nie zawiera książek, tylko kartki z ich opisami w
+&gt; skrzyneczkach lub wpisy w bazie danych.</span >
+
+Świetny przykład, chyba zamykający dyskusję.
+
+
+(W odpowiedzi na komentarz #12)
+<span class="quote">&gt; Dzięki za rzeczową wypowiedź. Chyba z tym paskiem kart trochę przekombinowałem,
+&gt; ale z etykietami – nie. :)</span >
+
+Dla mnie określenie &quot;etykieta&quot; kompletnie nie pasuje do tej części karty z tytułem i ikoną...
+
+Czy w związku z powyższym INVALID?</pre>
+    </div>
+
+    <div id="c14" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=3689.html#c14">Comment 14</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Stefan Plewako :stef</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2011-02-01 03:34:08 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(In reply to <a href="show_bug.cgi%3Fid=3689.html#c11">comment #11</a>)
+<span class="quote">&gt; Stef, ważniejsze jest, by używać określeń, że na pasku kart znajdują się
+&gt; etykiety kart niż sam pasek, </span >
+
+Moim zdaniem *nie jest to ważne* i nie znajduję w tym bugu ani jednego argumentu za takim stwierdzeniem.
+
+
+Jak napisałem jestem przeciwny.
+W ogóle jestem zasadniczo przeciwny próbom specyfikowania rzeczy które tego nie wymagają.
+
+Próbujesz specyfikować sztywne nazewnictwo zmieniającego się elementu interfejsu (do którego odniesień tekstowych swoją drogą jest chyba coraz mniej) poprzez swoje bardzo subiektywne postrzeganie interfejsu i próbę przenoszenia na siłę analogii ze świata materialnego w dodatku argumentami które się niekoniecznie bronią.
+
+Proponuję zamknąć to zgłoszenie.</pre>
+    </div>
+
+    <div id="c15" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=3689.html#c15">Comment 15</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Leszek Życzkowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2011-02-01 04:32:45 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(W odpowiedzi na komentarz #14)
+<span class="quote">&gt; Próbujesz specyfikować sztywne nazewnictwo zmieniającego się elementu
+&gt; interfejsu (do którego odniesień tekstowych swoją drogą jest chyba coraz mniej)
+&gt; poprzez swoje bardzo subiektywne postrzeganie interfejsu i próbę przenoszenia
+&gt; na siłę analogii ze świata materialnego w dodatku argumentami które się
+&gt; niekoniecznie bronią.</span >
+
+„Tabbed browsing” jest żywcem przeniesione z „Tabbed file folders” i nikt tego „na siłę” nie przenosił – takie są fakty. Przeczytaj artykuł z odnośnika w opisie. Skoro piszesz takie rzeczy, pewnie się z nim nie zapoznałeś, a warto. Pozwoli ci zrozumieć zjawisko i co to jest „tab”. Świat wirtualny opiera się na zjawiskach świata rzeczywistego i czy ci się to podoba, czy nie, tak jest – chyba, że stworzysz własny świat wirtualny. Wolałbym jednak zobaczyć obiecany dawno temu nowy interfejs GWO niż ten świat. No cóż może nie nadążam za duchem czasu…</pre>
+    </div>
+
+    <div id="c16" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=3689.html#c16">Comment 16</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Stefan Plewako :stef</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2011-02-01 04:55:37 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(In reply to <a href="show_bug.cgi%3Fid=3689.html#c15">comment #15</a>)
+<span class="quote">&gt; „Tabbed browsing” jest żywcem przeniesione z „Tabbed file folders” i nikt tego
+&gt; „na siłę” nie przenosił – takie są fakty. Przeczytaj artykuł z odnośnika w
+&gt; opisie.</span >
+
+Nie twierdzę, że koncepcja nie była zaczerpnięta - jednak nie sposób nie zauważyć, że materialne taby nie mają swoich pasków czy przycisków zamykania…
+
+<span class="quote">&gt; Skoro piszesz takie rzeczy, pewnie się z nim nie zapoznałeś, a warto.</span >
+
+Kolejna subiektywna opinia, tym razem już nie w temacie…
+
+<span class="quote">&gt; Pozwoli ci zrozumieć zjawisko i co to jest „tab”.</span >
+
+Uważasz, że nie rozumiem - Twój problem Twojej najwyraźniej ograniczonej percepcji lub wnioskowania. :)
+
+<span class="quote">&gt; Świat wirtualny opiera się na
+&gt; zjawiskach świata rzeczywistego i czy ci się to podoba, czy nie, tak jest –</span >
+
+Właśnie, opiera a nie przenosi bezpośrednio - to moim zdaniem ważna różnica.
+
+<span class="quote">&gt; Wolałbym jednak zobaczyć obiecany dawno temu nowy interfejs GWO niż ten świat.</span >
+
+Jakbym go nie tworzył sam to byś już go dawno widział. Ale Ty wolisz trwonić czas na osobiste wycieczki nie mające związku z tematem - no chyba, że to zgłoszenie dotyczy gwo albo stowarzyszenia.
+
+Nawiasem, jest dość prawdopodobne, że pasek kart w fx4 będzie występował tylko w jednym miejscu: Preferencje/Opcje → Karty → Zawsze wyświetlaj pasek kart (showTabBar.label)
+
+Swoje stanowisko przedstawiłem i nie mam zamiaru dalej komentować tego zgłoszenia.</pre>
+    </div>
+
+    <div id="c17" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=3689.html#c17">Comment 17</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Leszek Życzkowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2011-02-01 06:06:35 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(W odpowiedzi na komentarz #16) 
+Nie będę z tobą dyskutował na temat wycieczek osobistych. Przypomnę ci, że to ty zacząłeś wycieczki osobiste stwierdzeniem „poprzez swoje bardzo subiektywne postrzeganie interfejsu i próbę przenoszenia na siłę analogii ze świata materialnego w dodatku argumentami które się niekoniecznie bronią”, więc otrzymałeś stosowną ripostę. EOT</pre>
+    </div>
+
+    <div id="c18" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=3689.html#c18">Comment 18</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Wojciech Kapusta</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2011-02-01 09:30:44 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Mości Panowie, czytać hadko, a więc starczy tego ględzenia.
+
+Zespół wypowiedział się jasno, a my, powagą i prawem naszego stanowiska, potwierdzamy opinię Zespołu i zamykamy to zgłoszenie.</pre>
+    </div>
+
+
+  
+
+</td>
+<td>
+</td>
+</tr></table>
+  </div>
+
+    <hr><div id="add_comment" class="bz_section_additional_comments">
+      <table>
+        <tr>
+          <td>
+            <fieldset>
+              <legend>Note</legend>
+              You need to
+              <a href="show_bug.cgi%3Fid=3689&amp;GoAheadAndLogIn=1.html">log in</a>
+              before you can comment on or make changes to this bug.
+            </fieldset>
+          </td>
+        </tr> 
+      </table>
+  </div>        
+
+</form>
+
+<hr>
+<ul class="related_actions">
+    <li><a href="show_bug.cgi%3Fformat=multiple&amp;id=3689.html">Format For Printing</a></li>
+    <li>&nbsp;-&nbsp;<a href="show_bug.cgi%3Fctype=xml&amp;id=3689">XML</a></li>
+    <li>&nbsp;-&nbsp;<a href="enter_bug.cgi%3Fcloned_bug_id=3689.html">Clone This Bug</a></li>
+    
+    <li>&nbsp;-&nbsp;<a href="show_bug.cgi%3Fid=3689.html#">Top of page </a></li>
+    </ul>
+
+<br>
+</div>
+
+    <div id="footer">
+      <div class="intro"></div>
+<ul id="useful-links">
+  <li id="links-actions"><ul class="links">
+  <li><a href="index.html">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi.html">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi.html">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi.html">Search</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="http://bugs.aviary.pl/buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input type="hidden" id="no_redirect_bottom" name="no_redirect" value="0">
+    <script type="text/javascript">
+      if (history && history.replaceState) {
+        var no_redirect = document.getElementById("no_redirect_bottom");
+        no_redirect.value = 1;
+      }
+    </script>
+    <input class="txt" type="text" id="quicksearch_bottom" name="quicksearch" 
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search" 
+           id="find_bottom"></form>
+  <a href="page.cgi%3Fid=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="report.cgi.html">Reports</a></li>
+
+  <li>
+      <span class="separator">| </span>
+        <a href="request.cgi.html">Requests</a></li>
+
+
+  <li>
+        <span class="separator">| </span>
+        <a href="https://bugzilla.readthedocs.org/en/5.0/using/understanding.html" target="_blank">Help</a>
+      </li>
+    
+      <li id="new_account_container_bottom">
+        <span class="separator">| </span>
+        <a href="createaccount.cgi.html">New&nbsp;Account</a>
+      </li>
+
+    <li id="mini_login_container_bottom">
+  <span class="separator">| </span>
+  <a id="login_link_bottom" href="show_bug.cgi%3Fid=3689&amp;GoAheadAndLogIn=1.html"
+     onclick="return show_mini_login_form('_bottom')">Log In</a>
+
+  <form action="show_bug.cgi%3Fid=3689.html" method="POST"
+        class="mini_login bz_default_hidden"
+        id="mini_login_bottom">
+    <input id="Bugzilla_login_bottom" required
+           name="Bugzilla_login" class="bz_login"
+        type="email" placeholder="Email Address">
+    <input class="bz_password" name="Bugzilla_password" type="password"
+           id="Bugzilla_password_bottom" required
+           placeholder="Password">
+    <input type="hidden" name="Bugzilla_login_token"
+           value="1469822392-yDorqIGwWJNRd7pzPmGK2R83PEkWll3EiJUJ8ITjYCk">
+    <input type="submit" name="GoAheadAndLogIn" value="Log in"
+            id="log_in_bottom">
+    <a href="show_bug.cgi%3Fid=3689.html#" onclick="return hide_mini_login_form('_bottom')">[x]</a>
+  </form>
+</li>
+
+
+  <li id="forgot_container_bottom">
+    <span class="separator">| </span>
+    <a id="forgot_link_bottom" href="show_bug.cgi%3Fid=3689&amp;GoAheadAndLogIn=1.html#forgot"
+       onclick="return show_forgot_form('_bottom')">Forgot Password</a>
+    <form action="http://bugs.aviary.pl/token.cgi" method="post" id="forgot_form_bottom"
+          class="mini_forgot bz_default_hidden">
+      <label for="login_bottom">Login:</label>
+      <input name="loginname" size="20" id="login_bottom" required
+          type="email" placeholder="Your Email Address">
+      <input id="forgot_button_bottom" value="Reset Password" type="submit">
+      <input type="hidden" name="a" value="reqpw">
+      <input type="hidden" id="token_bottom" name="token"
+             value="1469822392-oAQf8jnwjR9bP5Go0VyhsQlH_iZ0x7CrpH8O_SUqv_w">
+      <a href="show_bug.cgi%3Fid=3689.html#" onclick="return hide_forgot_form('_bottom')">[x]</a>
+    </form>
+  </li>
+</ul>
+  </li>
+
+  
+
+
+
+
+  
+</ul>
+
+      <div class="outro"></div>
+    </div>
+
+  </body>
+</html>

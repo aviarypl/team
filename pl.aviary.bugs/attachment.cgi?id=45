@@ -1,0 +1,930 @@
+diff -ur 1/pl/default/account/auth/ldap-error.html.tmpl 2/pl/default/account/auth/ldap-error.html.tmpl
+--- 1/pl/default/account/auth/ldap-error.html.tmpl	2004-05-19 21:54:10.000000000 +0200
++++ 2/pl/default/account/auth/ldap-error.html.tmpl	2004-05-20 19:42:23.000000000 +0200
+@@ -38,8 +38,8 @@
+     [% END %]
+ 
+   [% CASE "no_userid" %]
+-    [% terms.Bugzilla %] utworzyła dla ciebie nowe konto, lecz nie może znaleźć nowoutworzonego
+-    identyfiaktora użytkownika.
++    Twoje konto [% terms.Bugzilli %] zostało utworzone, jednakże nie jest możliwe
++    znalezienie nowoutworzonego identyfiaktora użytkownika.
+ 
+   [% CASE "server_not_defined" %]
+     Serwer LDAP z danymi uwierzytelnianiającymi nie został zdefiniowny.
+diff -ur 1/pl/default/account/auth/login.html.tmpl 2/pl/default/account/auth/login.html.tmpl
+--- 1/pl/default/account/auth/login.html.tmpl	2004-05-20 09:54:10.000000000 +0200
++++ 2/pl/default/account/auth/login.html.tmpl	2004-05-20 19:51:24.000000000 +0200
+@@ -30,18 +30,18 @@
+ [% PROCESS global/variables.none.tmpl %]
+ 
+ [% PROCESS global/header.html.tmpl
+-  title = "Login"
++  title = "Logowanie"
+ %]
+ 
+ <p>
+-  I need a legitimate login and password to continue.
++  Potrzebne są prawidłowy identyfikator użytkownika i hasła do poprawnego działania.
+ </p>
+ 
+ <form action="[% target FILTER html %]" method="POST">
+   <table>
+     <tr>
+       <td align="right">
+-        <b>Nazwa:</b>
++        <b>Identyfikator:</b>
+       </td>
+       <td>
+         <input size="35" name="Bugzilla_login">
+@@ -88,8 +88,7 @@
+ 
+   [% PROCESS "global/hidden-fields.html.tmpl"
+      exclude="^Bugzilla_(login|password|restrictlogin)$" %]
+-[% #TODOpfx %]
+-  <input type="submit" name="GoAheadAndLogIn" value="Login">
++  <input type="submit" name="GoAheadAndLogIn" value="Zaloguj">
+ </form>
+ 
+ [%# Allow the user to create a new account, or request a token to change
+@@ -109,7 +108,7 @@
+   <form method="get" action="token.cgi">
+     <input type="hidden" name="a" value="reqpw">
+     Jeśli posiadasz już konto, lecz zapomniałeś hasła,
+-    podaj nazwę konta w polu poniżej i wyślij prośbę o
++    podaj nazwę konta w poniższym polu i wyślij prośbę o
+     zmianę hasła.<br>
+     <input size="35" name="loginname">
+     <input type="submit" value="Wyślij prośbę">
+diff -ur 1/pl/default/account/cancel-token.txt.tmpl 2/pl/default/account/cancel-token.txt.tmpl
+--- 1/pl/default/account/cancel-token.txt.tmpl	2004-05-20 00:33:32.000000000 +0200
++++ 2/pl/default/account/cancel-token.txt.tmpl	2004-05-20 19:54:48.000000000 +0200
+@@ -26,20 +26,20 @@
+ To: [% emailaddress %]
+ Subject: [% PROCESS subject %]
+ 
+-Prośba z [% remoteaddress %] została anulowana.
++Zgłoszenie z [% remoteaddress %] zostało anulowane.
+ 
+-Jeśli prośba nie została złożona przez ciebie, ktoś próbuje
++Jeśli zgłoszenie nie zostało złożone przez Ciebie, ktoś próbuje
+ włamać się na twoje konto [% terms.Bugzilli %], lub potwierdzenie
+-zostało wysłane omyłkowo.
++zostało wysłane pomyłkowo.
+ 
+-Przyjrzyj się informacją zawartym w tym emailu i w wypadku podejrzeń odeślij tą
++Przyjrzyj się informacjom zawartym w tym e-mailu i w wypadku podejrzeń prześlij tą
+ wiadomość do [% maintainer %].
+ 
+             Żeton: [% token %]
+        Typ żetonu: [% tokentype %]
+        Użytkownik: [% emailaddress %]
+-     Data żądania: [% issuedate %]
+-Data potwierdznia: [% eventdata %]
++  Data zgłoszenia: [% issuedate %]
++   Data zdarzenia: [% eventdata %]
+  Powód anulowania:
+ [% PROCESS cancelactionmessage %]
+ 
+@@ -47,26 +47,26 @@
+   [% IF tokentype == 'password' %]
+     Anulowano zmianę hasła
+   [% ELSIF tokentype == 'emailnew' OR tokentype == 'emailold' %]
+-    Anulowano zmianę adresu email
++    Anulowano zmianę adresu e-mail
+   [% ELSE %]
+     Żeton [% tokentype %] został anulowany
+   [% END %]
+ [% END %]
+ 
+ [% BLOCK cancelactionmessage %]
+-  [% IF    cancelaction == 'account_exists' %]
+-    Adres [% email %] już jest zarejestorany.
++  [% IF cancelaction == 'account_exists' %]
++    Adres [% email %] już jest zarejestrowany.
+ 
+   [% ELSIF cancelaction == 'email_change_cancelled' %]
+     Żądanie zmiany adresu z [% old_email %] na [% new_email %] zostało
+     anulowane.
+ 
+   [% ELSIF cancelaction == 'email_change_cancelled_reinstated' %]
+-    Żądanie zmiany twojego adresu email na [% new_email %] zostało
++    Żądanie zmiany Twojego adresu e-mail na [% new_email %] zostało
+     anulowane. Twój pierwotny adres został przywrócony.
+ 
+   [% ELSIF cancelaction == 'emailold_change_cancelled' %]
+-    Żądanie zmiany twojego adresu email na [% new_email %] zostało
++    Żądanie zmiany Twojego adresu e-mail na [% new_email %] zostało
+     anulowane.
+ 
+   [% ELSIF cancelaction == 'password_change_canceled' %]
+@@ -88,7 +88,7 @@
+     [%# Give sensible error if the cancel-token function is used incorrectly.
+       #%]
+     Nieprawidłowo użyłeś żetonów. Podałeś napis '[% cancelaction %]'. Prawidłową
+-    metodą użycia żetonu jest podanie go w znaczniku i zdefiniowanie znacznika
++    metodą użycia żetonu jest podanie go jako znacznika i zdefiniowanie znacznika
+     wewnątrz pliku cancel-token.txt.tmpl.
+ 
+     Jeśli jesteś zwykłym użytkownikiem [% terms.Bugzilli %], prosimy o przesłanie
+diff -ur 1/pl/default/account/created.html.tmpl 2/pl/default/account/created.html.tmpl
+--- 1/pl/default/account/created.html.tmpl	2004-05-20 00:28:06.000000000 +0200
++++ 2/pl/default/account/created.html.tmpl	2004-05-20 19:55:34.000000000 +0200
+@@ -28,10 +28,10 @@
+ %]
+ 
+ <p>
+-  Nowe konto,  
++  Nowe konto, 
+   <tt>[% login FILTER html %]</tt>,
+-  zostało utworzone i losowo wygenerowane hasło zostało wysłane na
+-  twój adres emailowy.
++  zostało utworzone. Wygenerowane hasło zostało wysłane na
++  Twój adres e-mailowy.
+ </p>
+ 
+ <p>
+diff -ur 1/pl/default/account/create.html.tmpl 2/pl/default/account/create.html.tmpl
+--- 1/pl/default/account/create.html.tmpl	2004-05-20 09:50:21.000000000 +0200
++++ 2/pl/default/account/create.html.tmpl	2004-05-20 19:55:09.000000000 +0200
+@@ -34,10 +34,11 @@
+ [% PROCESS global/header.html.tmpl %]
+ 
+ <p>
+-  Aby utworzyć konto [% terms.Bugzilli %], wszystko co potrzebujesz
+-  to wprowadzin adres konta emailowego. Konto zostanie utworzone a
+-  hasło zostanie wysłane emailem do ciebie. <b>Nie będziesz w stanie
+-  zalogować się do czasu otrzymania emaila.</b> Jeśli wiadomość nie
++  Wszystko co potrzebujesz do utworzenia konta [% terms.Bugzilli %] 
++  to adres konta e-mailowego. Konto [% terms.Bugzilli %] zostanie
++  utworzone, a hasło zostanie wysłane na adres podany w trakcie
++  tworzenia konta. <b>Nie będziesz w stanie
++  zalogować się do czasu otrzymania e-maila.</b> Jeśli wiadomość nie
+   dotrze w rozsądnym czasie, możesz skontaktować się z opiekunem tej
+   instalacji %[ terms.Bugzilli %] pod adresem
+   <a href="mailto:[% Param("maintainer") %]">[% Param("maintainer") %]</a>.
+@@ -51,7 +52,7 @@
+   <table>
+     <tr>
+       <td align="right">
+-        <b>Adres email:</b>
++        <b>Adres e-mail:</b>
+       </td>
+       <td>
+         <input size="35" name="login">
+diff -ur 1/pl/default/account/email/change-new.txt.tmpl 2/pl/default/account/email/change-new.txt.tmpl
+--- 1/pl/default/account/email/change-new.txt.tmpl	2004-05-20 11:19:08.000000000 +0200
++++ 2/pl/default/account/email/change-new.txt.tmpl	2004-05-20 20:38:21.000000000 +0200
+@@ -24,19 +24,19 @@
+ [% expiration_ts = token_ts + (max_token_age * 86400) %]
+ From: bugzilla-admin-daemon
+ To: [% emailaddress %]
+-Subject: Żądanie Zmiany Adresu Email [% terms.Bugzilli %]
++Subject: Żądanie zmiany adresu e-mail [% terms.Bugzilli %]
+ 
+-[%+ terms.Bugzilla %] otrzymała prośbę o zmianę adresu email
+-dla konta [% oldemailaddress %] na twój adres email.
++[%+ terms.Bugzilla %] otrzymała prośbę o zmianę adresu e-mail
++dla konta [% oldemailaddress %] na twój adres.
+ 
+-Aby potwierdzić tą zmianę, odwiedź poniższy link:
++Aby potwierdzić tą zmianę, odwiedź poniższy odnośnik:
+ 
+ [%+ Param('urlbase') %]token.cgi?a=cfmem&t=[% token FILTER url_quote %]
+ 
+ Jeśli to nie ty złożyłeś prośbę o zmianę adresu, lub chcesz anulować
+-tą zmianę, odwiedz ten link:
++tą zmianę, odwiedz ten odnośnik:
+ 
+ [%+ Param('urlbase') %]token.cgi?a=cxlem&t=[% token FILTER url_quote %]
+ 
+-W przypadku nie odwiedzenia żadnego z linków prośba wygaśnie po [%+ max_token_age %] dniach 
+-(konkretnie [%+ time2str("%H:%M on the %o of %B, %Y", expiration_ts) %]).
++W przypadku nie odwiedzenia żadnego z odnośników prośba wygaśnie po [%+ max_token_age %]
++dniach (konkretnie [%+ time2str("%H:%M on the %o of %B, %Y", expiration_ts) %]).
+diff -ur 1/pl/default/account/email/change-old.txt.tmpl 2/pl/default/account/email/change-old.txt.tmpl
+--- 1/pl/default/account/email/change-old.txt.tmpl	2004-05-20 11:19:23.000000000 +0200
++++ 2/pl/default/account/email/change-old.txt.tmpl	2004-05-20 20:38:50.000000000 +0200
+@@ -29,19 +29,19 @@
+ [% expiration_ts = token_ts + (max_token_age * 86400) %]
+ From: bugzilla-admin-daemon
+ To: [% emailaddress %]
+-Subject: Żądanie Zmiany Adresu Email [% terms.Bugzilli %]
++Subject: Żądanie zmiany adresu e-mail [% terms.Bugzilli %]
+ Importance: High
+ X-MSMail-Priority: High
+ X-Priority: 1
+ 
+-[%+ terms.Bugzilla %] otrzymała prośbę o zmianę adresu email
++[%+ terms.Bugzilla %] otrzymała prośbę o zmianę adresu e-mail
+ dla twojego konta na adres [%+ newemailaddress %].
+ 
+ Jeśli to nie ty złożyłeś prośbę o zmianę adresu, lub chcesz anulować
+-tą zmianę, odwiedz ten link:
++tą zmianę, odwiedz ten odnośnik:
+ 
+ [%+ Param('urlbase') %]token.cgi?a=cxlem&t=[% token FILTER url_quote %]
+ 
+-Jeśli nie odwiedzisz linka oraz z [%+ newemailaddress %] zostanie wysłane
++Jeśli nie odwiedzisz odnośnika oraz z [%+ newemailaddress %] zostanie wysłane
+ potwierdzenie prośby, zmiana adresu na trwałe zajdzie za [%+ max_token_age %] dni (dokładnie
+ [%+ time2str("%H:%M on the %o of %B, %Y", expiration_ts) %]).
+diff -ur 1/pl/default/account/email/confirm.html.tmpl 2/pl/default/account/email/confirm.html.tmpl
+--- 1/pl/default/account/email/confirm.html.tmpl	2004-05-20 09:52:14.000000000 +0200
++++ 2/pl/default/account/email/confirm.html.tmpl	2004-05-20 20:00:35.000000000 +0200
+@@ -23,11 +23,11 @@
+   # token: string. The token to be used in this address change.
+   #%]
+   
+-[% title = "Confirm Change Email" %]
++[% title = "Potwierdzenie zmiany adresu e-mail" %]
+ [% PROCESS global/header.html.tmpl %]
+ 
+ <p>
+-  Aby dokonać zmiany adresu email, proszę podać swój stary adres email:
++  Aby dokonać zmiany adresu e-mail, proszę podać swój stary adres.
+ </p>
+ 
+ <form method="post" action="token.cgi">
+@@ -35,7 +35,7 @@
+   <input type="hidden" name="a" value="chgem">
+   <table>
+     <tr>
+-      <th align="right">Stary adres email:</th>
++      <th align="right">Stary adres e-mail:</th>
+       <td><input type="text" name="email" size="36"></td>
+     </tr>
+     <tr>
+diff -ur 1/pl/default/account/exists.html.tmpl 2/pl/default/account/exists.html.tmpl
+--- 1/pl/default/account/exists.html.tmpl	2004-05-20 00:34:49.000000000 +0200
++++ 2/pl/default/account/exists.html.tmpl	2004-05-20 19:40:59.000000000 +0200
+@@ -33,8 +33,7 @@
+   <input type="hidden" name="a" value="reqpw">
+   <input type="hidden" name="loginname" value="[% login FILTER html %]">
+   Konto [% terms.Bugzilli %] o identyfikatorze <tt>[% login FILTER html %]</tt> już istnieje.
+-  Jeśli to ty jesteś właścicielem tego konta, lecz poprostu zapomniałeś
+-  hasła, możesz
++  Jeśli to Ty jesteś właścicielem tego konta, lecz poprostu zapomniałeś hasła, możesz
+   <input type="submit" value="wysłać prośbe o zmianę hasła">.
+ </form>
+ 
+diff -ur 1/pl/default/account/password/forgotten-password.txt.tmpl 2/pl/default/account/password/forgotten-password.txt.tmpl
+--- 1/pl/default/account/password/forgotten-password.txt.tmpl	2004-05-20 11:19:41.000000000 +0200
++++ 2/pl/default/account/password/forgotten-password.txt.tmpl	2004-05-20 20:37:45.000000000 +0200
+@@ -24,18 +24,18 @@
+ [% expiration_ts = token_ts + (max_token_age * 86400) %]
+ From: bugzilla-admin-daemon
+ To: [% emailaddress %]
+-Subject: Żądanie Zmiany Hasła [% terms.Bugzilli %]
++Subject: Żądanie zmiany hasła [% terms.Bugzilli %]
+ 
+ Poprosiłeś (lub ktoś podający się za ciebie) o zmianę hasła
+-[%+ terms.Bugzilli %]. Aby zatwierdzić zmianę, odwiedź poniższy link:
++[%+ terms.Bugzilli %]. Aby zatwierdzić zmianę, odwiedź poniższy odnośnik:
+ 
+ [%+ Param('urlbase') %]token.cgi?a=cfmpw&t=[% token FILTER url_quote %]
+ 
+-Jeśli to nie ty złożyłeś prośbe, lub chcesz anulować żądanie
+-odwiedź ten link:
++Jeśli to nie Ty złożyłeś prośbe, lub chcesz anulować żądanie
++odwiedź ten odnośnik:
+ 
+ [%+ Param('urlbase') %]token.cgi?a=cxlpw&t=[% token FILTER url_quote %]
+ 
+-W przypadku braku jakiejkolwiek reakcji, żądanie wygaśnie po [%+ max_token_age +%]
++W przypadku braku jakiejkolwiek reakcji, żądanie wygaśnie automatycznie po [%+ max_token_age +%]
+ dniach (dokładnie [%+ time2str("%H:%M on the %o of %B, %Y", expiration_ts) -%]) lub w chwili 
+-zalogowania się na twoje konto.
++ponownego zalogowania się na Twoje konto.
+diff -ur 1/pl/default/account/password/set-forgotten-password.html.tmpl 2/pl/default/account/password/set-forgotten-password.html.tmpl
+--- 1/pl/default/account/password/set-forgotten-password.html.tmpl	2004-05-20 09:51:28.000000000 +0200
++++ 2/pl/default/account/password/set-forgotten-password.html.tmpl	2004-05-20 20:05:17.000000000 +0200
+@@ -23,7 +23,7 @@
+ [% PROCESS global/header.html.tmpl %]
+ 
+ <p>
+-  Aby zmienić swoje hasło, wpisz nowe hasło dwukrotnie:
++  Aby zmienić hasło, wpisz dwukrotnie nowe hasło :
+ </p>
+ 
+ <form method="post" action="token.cgi">
+diff -ur 1/pl/default/account/prefs/account.html.tmpl 2/pl/default/account/prefs/account.html.tmpl
+--- 1/pl/default/account/prefs/account.html.tmpl	2004-05-20 00:25:28.000000000 +0200
++++ 2/pl/default/account/prefs/account.html.tmpl	2004-05-20 20:06:08.000000000 +0200
+@@ -59,7 +59,7 @@
+   </tr>              
+ 
+   <tr>
+-    <th align="right">Imię i nazwisko (opcjonalne, rekomendowane):</th>
++    <th align="right">Imię i nazwisko (opcjonalne, zalecane):</th>
+     <td>
+       <input size="35" name="realname" value="[% realname FILTER html %]">
+     </td>
+@@ -69,7 +69,7 @@
+     [% IF login_change_date %]
+       [% IF new_login_name %]
+         <tr>
+-          <th align="right">Adres email oczekujący na potwierdzenie:</th>
++          <th align="right">Adres e-mail oczekujący na potwierdzenie:</th>
+           <td>[% new_login_name FILTER html %]</td>
+         </tr>
+         <tr>
+@@ -78,7 +78,7 @@
+         </tr>
+       [% ELSE %]
+         <tr>
+-          <th align="right">Potwierdzony adres email:</th>
++          <th align="right">Potwierdzony adres e-mail:</th>
+           <td>[% login FILTER html %]
+         </tr>
+         <tr>
+@@ -88,7 +88,7 @@
+       [% END %]
+     [% ELSE %]
+       <tr>
+-        <th align="right">Nowy adres email:</th>
++        <th align="right">Nowy adres e-mail:</th>
+         <td>
+           <input size="35" name="new_login_name">
+         </td>
+diff -ur 1/pl/default/account/prefs/email.html.tmpl 2/pl/default/account/prefs/email.html.tmpl
+--- 1/pl/default/account/prefs/email.html.tmpl	2004-05-20 11:30:19.000000000 +0200
++++ 2/pl/default/account/prefs/email.html.tmpl	2004-05-20 20:14:46.000000000 +0200
+@@ -46,11 +46,11 @@
+ 
+     <tr>
+       <td colspan="4">
+-        Jęsli chcesz pomóc komuś kto jest aktualnie na wakacjach, lub potrzebujesz
++        Jeśli chcesz pomóc komuś kto jest obecnie na wakacjach, lub potrzebujesz
+         przeprowadzić czynności związane ze wszystkimi [% terms.bledami %] danej osoby,
+-        możesz poinformowac [% terms.Bugzille %], aby przsyłała również tobie, listy
+-        związane z [% terms.blendami %] danej osoby. Podaj, oddzieloną przecinkiem, listę
+-        adresów email osób których chcesz obserwować.
++        możesz poprosić [% terms.Bugzille %] o przysyłanie, również tobie, listów
++        związanych z [% terms.bledami %] danej osoby. Aby to uczynić, podaj, oddzieloną
++        przecinkami, listę adresów e-mail osób, których błędy chcesz obserwować.
+       </td>
+     </tr>
+ 
+@@ -66,8 +66,9 @@
+   <tr>
+     <td colspan="2">
+       <p>
+-        Jeśli nie chcesz otrzymywac potwierdzeń o "błachych" zmianach, możesz, używając
+-        poniższych opcji, odfiltrować niektóre (lub nawet wszystkie) potwierdzenia.
++        Jeśli nie chcesz otrzymywać potwierdzeń o "błachych" zmianach, możesz
++        odfiltrować niektóre (lub nawet wszystkie) potwierdzenia, używając
++        poniższych opcji.
+       </p>
+     </td>
+   </tr>
+@@ -87,7 +88,7 @@
+     <td>
+       <input type="checkbox" name="ExcludeSelf" id="ExcludeSelf" value="on"
+         [% " checked" IF excludeself %]>
+-      <label for="ExcludeSelf">Wysyłaj emaile informujące wyłącznie o zmianach dokonywanych przez inne osoby</label>
++      <label for="ExcludeSelf">Wysyłaj e-maile informujące wyłącznie o zmianach dokonywanych przez inne osoby</label>
+       <br>
+     </td>
+   </tr>
+@@ -96,7 +97,7 @@
+     <td>
+       <input type="checkbox" name="FlagRequestee" id="FlagRequestee" value="on"
+         [% " checked" IF FlagRequestee %]>
+-      <label for="FlagRequestee">Przysyłaj emaile, gdy ktoś poprosi mnie o ustawienie flagi</label>
++      <label for="FlagRequestee">Wysyłaj e-maile, gdy ktoś poprosi mnie o ustawienie flagi</label>
+       <br>
+     </td>
+   </tr>
+@@ -105,13 +106,13 @@
+     <td>
+       <input type="checkbox" name="FlagRequester" id="FlagRequester" value="on"
+         [% " checked" IF FlagRequester %]>
+-      <label for="FlagRequester">Przysyłaj emaile gdy ktoś ustawi flagę o którą poprosiłem</label>
++      <label for="FlagRequester">Wysyłaj e-maile gdy ktoś ustawi flagę o którą poprosiłem</label>
+       <br>
+     </td>
+   </tr>
+ </table>
+-<noscript>W wypadku gdy obsługa Javascriptu jest włączona, możesz ustwić te flagi jednym
+-    kliknięciem.<br></noscript>
++<noscript>Przy włączonej obsłudze Javascriptu, możesz ustawić te flagi jednym kliknięciem.<br>
++</noscript>
+ <script type="text/javascript">
+ <!--
+ function SetCheckboxes(setting) {
+@@ -141,10 +142,10 @@
+ <table width="100%" border="1">
+   <tr>
+     <td colspan="[% useqacontact ? '5' : '4' %]" align="center" width="50%">
+-      <b>Kiedy mój związek z tymi [% terms.blendami %] jest:</b>
++      <b>Kiedy mój związek z tymi [% terms.bledami %] jest:</b>
+     </td>
+     <td rowspan="2" width="50%">
+-      <b>Chce otrzymywać emaile jeśli:</b>
++      <b>Chce otrzymywać e-maile jeśli:</b>
+     </td>
+   </tr>
+ 
+@@ -174,15 +175,15 @@
+ 
+   [% FOREACH reason = [
+       { name = 'Removeme',
+-        description = "Zostałem dodany, lub usunięty z listy" },
++        description = "Zostałem dodany lub usunięty z listy" },
+       { name = 'Comments',
+         description = "Został dodany nowy komentarz" },
+       { name = 'Attachments',
+         description = "Został dodany nowy załącznik" },
+       { name = 'Status',
+-        description = "Priorytet, status, ważność lub kamień milowy został zmieniony" },
++        description = "Priorytet, status, waga błędu lub docelowa wersja została zmieniona" },
+       { name = 'Resolved',
+-        description = "${bugLabelLower} został rozwiązany lub zweryfikowany" },
++        description = "$terms.Blad został rozwiązany lub zweryfikowany" },
+       { name = 'Keywords',
+         description = "Słowa kluczowe zostały zmienione" },
+       { name = 'CC',
+@@ -190,7 +191,7 @@
+       { name = 'Other',
+         description = "Zostało zmienione jakiekolwiek pole nie wymienione powyżej" },
+       { name = 'Unconfirmed',
+-        description = "${bugLabelLower} jest niepotwierdzony" },
++        description = "$terms.Blad jest niepotwierdzony" },
+   ] %]
+     <tr>
+       [% FOREACH role = [ "Reporter", "Owner", "QAcontact", "CClist", "Voter" ]
+diff -ur 1/pl/default/account/prefs/footer.html.tmpl 2/pl/default/account/prefs/footer.html.tmpl
+--- 1/pl/default/account/prefs/footer.html.tmpl	2004-05-20 11:31:32.000000000 +0200
++++ 2/pl/default/account/prefs/footer.html.tmpl	2004-05-20 20:37:03.000000000 +0200
+@@ -30,7 +30,7 @@
+ 
+ <table>
+   <tr>
+-    <th align="right">Link do 'Moje [% terms.Bledy %]':</th>
++    <th align="right">Odnośnik do 'Moje [% terms.Bledy %]':</th>
+     <td>
+       <select name="mybugslink">
+         <option value="1">Powinien być widoczy w stopce każdej strony</option>
+@@ -51,7 +51,7 @@
+             <option value="0">Powinno być widoczne wyłącznie na stronie z zapytaniami</option>
+             <option value="1"
+               [% " selected" IF query.footer %]>
+-              Powinno być pokazywany z stopce każdej strony
++              Powinno być pokazywane w stopce każdej strony
+             </option>
+           </select>
+         </td>
+@@ -65,10 +65,9 @@
+     <tr>
+       <td colspan="4">
+         <br>
+-        Jeśli utworzyłeś i nakazałeś zapamiętać zapytanie na stronie
+-        <a href="query.cgi">zapytań</a>,
+-        na tej stronie możesż ustwić by takie zapytania były wyświetlane
+-        w stopce każdej strony w [% terms.Bugzilli %].
++        Jeśli utworzysz i nakażeszś zapamiętać zapytanie na stronie
++        <a href="query.cgi">zapytań</a>, ta strona pozwoili Ci na włączenie
++        pokazywania takich zapytań w stopce każdej strony [% terms.Bugzilli %].
+         <br>
+         <br>
+       </td>
+diff -ur 1/pl/default/account/prefs/permissions.html.tmpl 2/pl/default/account/prefs/permissions.html.tmpl
+--- 1/pl/default/account/prefs/permissions.html.tmpl	2004-05-19 23:05:00.000000000 +0200
++++ 2/pl/default/account/prefs/permissions.html.tmpl	2004-05-20 20:18:09.000000000 +0200
+@@ -36,7 +36,7 @@
+   <tr>
+     <td>
+       [% IF has_bits.size %]
+-        Poniższa lista uprawnień jest przypisana do twojego konta:
++        Poniższa lista uprawnień jest przypisana do Twojego konta:
+         <p>
+         <br>
+         <table align="center">
+diff -ur 1/pl/default/account/prefs/prefs.html.tmpl 2/pl/default/account/prefs/prefs.html.tmpl
+--- 1/pl/default/account/prefs/prefs.html.tmpl	2004-05-20 09:51:04.000000000 +0200
++++ 2/pl/default/account/prefs/prefs.html.tmpl	2004-05-20 20:19:53.000000000 +0200
+@@ -37,7 +37,7 @@
+ 
+ [% filtered_login = login FILTER html %]
+ [% PROCESS global/header.html.tmpl
+-   title = "User Preferences"
++   title = "Ustawienia użytkownika"
+    h2 = filtered_login
+    style = "td.selected_tab {
+               border-width: 2px 2px 0px;
+@@ -51,7 +51,7 @@
+ 
+ [% tabs = [ { name => "account", description => "Ustawienia konta", 
+               saveable => "1" },
+-            { name => "email", description => "Ustawienia emaila", 
++            { name => "email", description => "Ustawienia poczty", 
+               saveable => "1" },
+             { name => "permissions", description => "Uprawnienia", 
+               saveable => "0" } ] %]
+@@ -82,13 +82,12 @@
+ [% IF changes_saved %]
+   <p>
+     <font color="red">
+-      Zmiany dla zakładki
+-      [% current_tab.description FILTER lower %] zostały zapisane.
++      Zmiany dla zakładki [%+ current_tab.description FILTER lower %] zostały zapisane.
+     </font>
+   </p>
+   [% IF email_changes_saved %]
+     <p>
+-      Email z prośbą o potwierdzenie został wysłany na nowy i stary adres email.
++      E-mail z prośbą o potwierdzenie został wysłany na nowy i stary adres.
+     </p>
+   [% END %]
+ [% END %]
+@@ -118,5 +117,4 @@
+ 
+ [% PROCESS global/footer.html.tmpl %]
+ 
+-    
+-    
++
+diff -ur 1/pl/default/attachment/created.html.tmpl 2/pl/default/attachment/created.html.tmpl
+--- 1/pl/default/attachment/created.html.tmpl	2004-05-20 12:01:54.000000000 +0200
++++ 2/pl/default/attachment/created.html.tmpl	2004-05-20 20:26:16.000000000 +0200
+@@ -39,8 +39,9 @@
+   <tr>
+     <td>
+       <h2>
+-        <a title="[% description FILTER html %]" href="attachment.cgi?id=[% attachid %]&amp;action=edit">Attachment #[% attachid %]</a>
+-        to <a href="show_bug.cgi?id=[% bugid %]">[% terms.Bug %] #[% bugid %]</a> Created
++        <a title="[% description FILTER html %]" href="attachment.cgi?id=[% attachid %]&amp;action=edit">Załącznik #[% attachid %]</a>
++        do <a href="show_bug.cgi?id=[% bugid %]">[% terms.bledu %] #[% bugid %]</a>
++        został utworzony.
+       </h2>
+ 
+       [% PROCESS "bug/process/bugmail.html.tmpl" mailing_bugid = bugid %]
+@@ -48,7 +49,7 @@
+       [% IF contenttypemethod == 'autodetect' %]
+         <p>
+           <b>Uwaga:</b> Wykryty typ załącznika to <em>[% contenttype %]</em>. Jeśli ta wartość
+-          jest nieprawidłowa, możesz poprawić typ 
++          jest nieprawidłowa, możesz poprawić typ MIME 
+           <a href="attachment.cgi?id=[% attachid %]&amp;action=edit">edytując załącznik</a>.
+         </p>
+       [% END %]
+diff -ur 1/pl/default/attachment/create.html.tmpl 2/pl/default/attachment/create.html.tmpl
+--- 1/pl/default/attachment/create.html.tmpl	2004-05-20 11:57:54.000000000 +0200
++++ 2/pl/default/attachment/create.html.tmpl	2004-05-20 20:24:10.000000000 +0200
+@@ -111,8 +111,8 @@
+     <tr>
+       <th>Przestarzałe załączniki:</th>
+       <td>
+-        <em>(opcjonalnie) Wybierz z listy załączniki, który stają się przestarzałe
+-        wskutek dołącznie twojego załącznika.</em><br>
++        <em>(opcjonalne) Wybierz z listy załączniki, który stają się przestarzałe
++        po dołączeniu twojego załącznika.</em><br>
+         [% IF attachments.size %]
+           [% FOREACH attachment = attachments %]
+             [% IF ((attachment.isprivate == 0) || (Param("insidergroup")
+@@ -132,7 +132,7 @@
+       <tr>
+         <th>Przypisanie [% terms.bledu %]:</th>
+         <td>
+-          <em>Jeśli chcesz przypsać ten [% terms.blad %] sobie,
++          <em>Jeśli chcesz przypisać ten [% terms.blad %] sobie,
+               zaznacz poniższe pole.</em><br>
+           <input type="checkbox" id="takebug" name="takebug" value="1">
+           <label for="takebug">przypisz [% terms.blad %] sobie</label>
+@@ -142,13 +142,13 @@
+     <tr>
+       <th>Komentarz:</th>
+       <td>
+-        <em>(opcjonalnie) Dodaj komentarz do tego załącznieki do [% terms.bledu %].</em><br>
++        <em>(opcjonalne) Dodaj komentarz do tego załącznika listy komentarzy [% terms.bledu %].</em><br>
+         <textarea wrap="soft" name="comment" rows="6" cols="80"></textarea>
+       </td>
+     </tr>
+     <tr>
+       <th>&nbsp;</th>
+-      <td><input type="submit" value="Submit"></td>
++      <td><input type="submit" value="Wyślij"></td>
+     </tr>
+   </table>
+ 
+diff -ur 1/pl/default/attachment/diff-file.html.tmpl 2/pl/default/attachment/diff-file.html.tmpl
+--- 1/pl/default/attachment/diff-file.html.tmpl	2004-05-20 12:44:38.000000000 +0200
++++ 2/pl/default/attachment/diff-file.html.tmpl	2004-05-20 20:39:19.000000000 +0200
+@@ -71,7 +71,7 @@
+       </a>
+     [% END %]
+   [% END %] 
+-  (<a name="[% file.filename FILTER html %]_sec[% section_num %]"><a href="#[% file.filename FILTER html %]_sec[% section_num %]">Link do tego miejsca</a></a>)
++  (<a name="[% file.filename FILTER html %]_sec[% section_num %]"><a href="#[% file.filename FILTER html %]_sec[% section_num %]">Odnośnik do tego miejsca</a></a>)
+   </th></tr>
+   [% FOREACH group = section.groups %]
+     [% IF group.context %]
+@@ -127,7 +127,7 @@
+ [% END %]
+ 
+ [% BLOCK odmlini %]
+-  [% linia < 2 ? "linia" : linia % 10 > 1 &&  linia % 10 < 5 ? "linie" : "lini" %]
++  [% linia < 2 ? "linia" : linia % 10 > 1 &&  linia % 10 < 5 ? "linie" : "linii" %]
+ [% END %]
+ 
+ </table>
+diff -ur 1/pl/default/attachment/diff-header.html.tmpl 2/pl/default/attachment/diff-header.html.tmpl
+--- 1/pl/default/attachment/diff-header.html.tmpl	2004-05-20 12:58:16.000000000 +0200
++++ 2/pl/default/attachment/diff-header.html.tmpl	2004-05-20 22:03:24.000000000 +0200
+@@ -24,7 +24,7 @@
+ [% PROCESS global/variables.none.tmpl %]
+ 
+ [% title = BLOCK %]
+-  Attachment #[% attachid %] for [% terms.Bug %] #[% bugid %]
++  Załącznik #[% attachid %] dla [% terms.bledu %] #[% bugid %]
+ [% END %]
+ 
+ [% style = BLOCK %]
+@@ -196,7 +196,7 @@
+       <a href="[% new_url %]">[% new_desc FILTER html %]</a>
+       (<a href="[% new_url %]">#[% newid %]</a>)
+     [% END %]
+-    dla <a href="show_bug.cgi?id=[% bugid %]">[% terms.Bug %] #[% bugid %]</a>
++    dla <a href="show_bug.cgi?id=[% bugid %]">[% terms.Blad %] #[% bugid %]</a>
+   [% END %]
+   [% h2 = BLOCK %]
+     [% bugsummary FILTER html %]
+@@ -294,12 +294,12 @@
+ <h2 class="warning">Ostrzeżenie: 
+   [% IF warning == "interdiff1" %]
+   z powodu niedoskonałości [% terms.Bugzilli %], wyświetlany diagram różnic pomiędzy dwiema
+-  łatkami, stworzonych dla różnych zestawów plików, może pokazywać niektóre rzeczy, w 
++  łatkami, stworzonych dla różnych zestawów plików, może pokazywać niektóre rzeczy w 
+   niewłaściwych miejscach.
+   [% END %]
+   [% IF warning == "interdiff2" %]
+   wyświetlany diagram różnic pomiędzy dwiema łatkami może być, z powodu niedoskonałości
+-  [% terms.Bugzilli %], wyświetlany niepoprawnie, w przypadku porównywania łatek stworzonych
++  [% terms.Bugzilli %], wyświetlany niepoprawnie w przypadku porównywania łatek stworzonych
+   dla różnych wersji plików.
+   [% END %]
+ </h2>
+diff -ur 1/pl/default/attachment/edit.html.tmpl 2/pl/default/attachment/edit.html.tmpl
+--- 1/pl/default/attachment/edit.html.tmpl	2004-05-20 13:17:28.000000000 +0200
++++ 2/pl/default/attachment/edit.html.tmpl	2004-05-20 20:34:34.000000000 +0200
+@@ -22,7 +22,7 @@
+ [% PROCESS global/variables.none.tmpl %]
+ 
+ [%# Define strings that will serve as the title and header of this page %]
+-[% title = BLOCK %]Edycja załącznika a#[% attachid %] dla [% terms.bledu %] #[% bugid %][% END %]
++[% title = BLOCK %]Edycja załącznika #[% attachid %] dla [% terms.bledu %] #[% bugid %][% END %]
+ [% h1 = BLOCK %]Edycja załącznika #[% attachid %] dla
+   [%+ GetBugLink(bugid, "$terms.Bugs $bugid") %][% END %]
+ [% h2 = BLOCK %][% bugsummary FILTER html %][% END %]
+@@ -249,7 +249,7 @@
+           <textarea id="editFrame" name="comment" style="height: 400px; width: 100%; display: none;" cols="80" wrap="soft"></textarea>
+           <iframe id="viewFrame" src="attachment.cgi?id=[% attachid %]&amp;action=view" style="height: 400px; width: 100%;">
+             <b>Załącznik nie może być wyświetlony na tej stronie,
+-            ponieważ twoja przeglądarka nie obsługuje IFRAME.
++            ponieważ Twoja przeglądarka nie obsługuje IFRAME.
+             <a href="attachment.cgi?id=[% attachid %]&amp;action=view">Wyświetl załącznik na osobnej stronie</a>.</b>
+           </iframe>
+           <script type="application/x-javascript" language="JavaScript">
+@@ -272,7 +272,7 @@
+       [% ELSE %]
+         <td id="noview" width="50%">
+           <p><b>
+-            Załącznik nie może zostać wyświetlony w twojej przeglądarce, ponieważ
++            Załącznik nie może zostać wyświetlony w Twojej przeglądarce, ponieważ
+             nie jest ona zdolna do obsługi dokumentu z typem MIME
+             ([% contenttype FILTER html %]).
+           </b></p>
+diff -ur 1/pl/default/attachment/list.html.tmpl 2/pl/default/attachment/list.html.tmpl
+--- 1/pl/default/attachment/list.html.tmpl	2004-05-20 13:13:44.000000000 +0200
++++ 2/pl/default/attachment/list.html.tmpl	2004-05-20 20:36:04.000000000 +0200
+@@ -85,7 +85,7 @@
+ 
+   <tr>
+     <td colspan="[% show_attachment_flags ? 5 : 4 %]">
+-      <a href="attachment.cgi?bugid=[% bugid %]&amp;action=enter"Utwórz nowy załącznik</a> (proponowana łatka, testowy plik, itp.)
++      <a href="attachment.cgi?bugid=[% bugid %]&amp;action=enter"Utwórz nowy załącznik</a> (propozycja łatki, testowy plik, itp.)
+     </td>
+     [% IF attachments.size %]
+       <td>
+diff -ur 1/pl/default/attachment/show-multiple.html.tmpl 2/pl/default/attachment/show-multiple.html.tmpl
+--- 1/pl/default/attachment/show-multiple.html.tmpl	2004-05-20 13:19:03.000000000 +0200
++++ 2/pl/default/attachment/show-multiple.html.tmpl	2004-05-20 20:43:12.000000000 +0200
+@@ -21,10 +21,10 @@
+ 
+ [% PROCESS global/variables.none.tmpl %]
+ [% filtered_summary = bugsummary FILTER html %]
+-[% h1 = BLOCK %]View All Attachments for
++[% h1 = BLOCK %]Wyświetl wszystkie odnośniki dla [%+ terms.bledu %]
+   [%+ GetBugLink(bugid, "$terms.Bug $bugid") %][% END %]
+ [% PROCESS global/header.html.tmpl
+-  title = "View All Attachments for $terms.Bug #$bugid"
++  title = "Wyświetl wszystkie odnośniki dla $terms.bledu #$bugid"
+   h1 = h1
+   h2 = filtered_summary
+   style = "
+@@ -66,7 +66,7 @@
+ 
+       <td valign="top">
+         [% IF a.statuses.size == 0 %]
+-          <i>none</i>
++          <i>brak</i>
+         [% ELSE %]
+           [% FOREACH s = a.statuses %]
+             [% s FILTER html FILTER replace('\s', '&nbsp;') %]<br>
+diff -ur 1/pl/default/attachment/updated.html.tmpl 2/pl/default/attachment/updated.html.tmpl
+--- 1/pl/default/attachment/updated.html.tmpl	2004-05-20 13:20:25.000000000 +0200
++++ 2/pl/default/attachment/updated.html.tmpl	2004-05-20 20:44:59.000000000 +0200
+@@ -37,15 +37,15 @@
+ <table border="1">
+   <tr>
+     <td>
+-      <h2>Zmiany
+-        <a href="attachment.cgi?id=[% attachid %]&amp;action=edit">załącznika [% attachid %]</a>
+-        dla [% terms.bledu %] [%+ bugid %] zostały wysłane
++      <h2>Zmiany w
++        <a href="attachment.cgi?id=[% attachid %]&amp;action=edit">załączniku [%+ attachid %]</a>
++        dla [%+ terms.bledu %] [%+ bugid %] zostały wysłane
+       </h2>
+       [% PROCESS "bug/process/bugmail.html.tmpl" mailing_bugid = bugid %]
+     </td>
+ 
+     <td>
+-      <a href="show_bug.cgi?id=[% bugid %]">Wróć do [% terms.bledu %] #[% bugid %]</a>
++      <a href="show_bug.cgi?id=[% bugid %]">Wróć do [%+ terms.bledu %] #[% bugid %]</a>
+     </td>
+   </tr>
+ </table>
+diff -ur 1/pl/default/bug/activity/show.html.tmpl 2/pl/default/bug/activity/show.html.tmpl
+--- 1/pl/default/bug/activity/show.html.tmpl	2004-05-20 13:52:43.000000000 +0200
++++ 2/pl/default/bug/activity/show.html.tmpl	2004-05-20 22:00:36.000000000 +0200
+@@ -30,7 +30,7 @@
+ 
+ [% PROCESS global/header.html.tmpl
+   title = "Zmiany dokonane w $terms.bledzie $bug_id"
+-  h1 = "Raport zmian"
++  h1 = "Raport aktywności $terms.bledu"
+   h2 = "$terms.Blad <a href=\"show_bug.cgi?id=$bug_id\">$bug_id</a>"
+  %]
+ 
+@@ -39,8 +39,8 @@
+ [% PROCESS bug/activity/table.html.tmpl %]
+ 
+ <p>
+-  <a href="show_bug.cgi?id=[% bug_id %]">Wróć do [% terms.bledu %] 
+-  [%+ bug_id %]</a>
++  <a href="show_bug.cgi?id=[% bug_id %]">Wróć do [%+ terms.bledu +%] 
++  #[% bug_id %]</a>
+ </p>
+ 
+ [% PROCESS global/footer.html.tmpl %]
+diff -ur 1/pl/default/bug/activity/table.html.tmpl 2/pl/default/bug/activity/table.html.tmpl
+--- 1/pl/default/bug/activity/table.html.tmpl	2004-05-20 13:58:27.000000000 +0200
++++ 2/pl/default/bug/activity/table.html.tmpl	2004-05-20 21:32:31.000000000 +0200
+@@ -39,9 +39,9 @@
+ 
+ [% IF incomplete_data %]
+   <p>
+-    W [% terms.Bugzilla %] istniał błąd który powodował utratę danych na temat zmian, w
++    W [% terms.Bugzilli %] istniał błąd który powodował utratę danych na temat zmian, w
+     przypadku gdy [% terms.blad %] zawierał dużą liczbę zależności lub obserwatorów.
+-    Ten błąd został już naprawiony, jednakże część danych tego [% terms.bledu %] nie
++    Ten błąd został już naprawiony, jednakże część histori tego [% terms.bledu %] nie
+     była możliwa do odzyskania. Przed zmianami które nie mogły zostać odtworzone, zostanie
+     wstawiony symbol '?'.
+   </p>
+Tylko w 2/pl/default/bug: choose.html.tmpl
+Tylko w 2/pl/default/bug: comments.html.tmpl
+diff -ur 1/pl/default/bug/create/comment-guided.txt.tmpl 2/pl/default/bug/create/comment-guided.txt.tmpl
+--- 1/pl/default/bug/create/comment-guided.txt.tmpl	2004-05-20 14:02:38.000000000 +0200
++++ 2/pl/default/bug/create/comment-guided.txt.tmpl	2004-05-20 21:38:50.000000000 +0200
+@@ -23,7 +23,7 @@
+   #   fields on a template from enter_bug.cgi.) It can be used to pull out 
+   #   various custom fields and format an initial Description entry from them. 
+   #%]  
+-Przeglądarki:         [%+ user_agent %]
++Przeglądarka:         [%+ user_agent %]
+ Identyfikator wersji: [%+ form.buildid %][% #TODOpfx: build-id i user-agent %]
+ 
+ [%+ form.comment IF form.comment %]
+diff -ur 1/pl/default/bug/create/create.html.tmpl 2/pl/default/bug/create/create.html.tmpl
+--- 1/pl/default/bug/create/create.html.tmpl	2004-05-20 14:33:06.000000000 +0200
++++ 2/pl/default/bug/create/create.html.tmpl	2004-05-20 21:41:41.000000000 +0200
+@@ -21,7 +21,7 @@
+   #%]
+ 
+ [% PROCESS global/header.html.tmpl
+-  title = "Tworzeni raportu o błędzie"
++  title = "Tworzenie raportu o błędzie"
+   h2 = "Tutaj możesz dodać nowy raport o błędzie do Bugzilli."
+   onload="set_assign_to();"
+ %]
+@@ -242,7 +242,7 @@
+           </strong>
+         </td>
+         <td colspan="3">
+-          <input name="keywords" size="60" value="[% keywords FILTER html %]"> (optional)
++          <input name="keywords" size="60" value="[% keywords FILTER html %]"> (opcjonalne)
+         </td>
+       </tr>
+     [% END %]
+@@ -275,7 +275,7 @@
+         </strong>
+       <br>
+       <font size="-1">
+-        (Nie zaznaczaj żadnej opcje, aby uczynić ten [% terms.blad %] publicznym.)
++        (Nie zaznaczaj żadnej grupy, aby uczynić ten [% terms.blad %] publicznym.)
+       </font>
+       <br>
+       <br>
+@@ -296,13 +296,13 @@
+   <tr>
+     <td></td>
+     <td colspan="3">
+-      <input type="submit" value="    Zatwierdź    "
++      <input type="submit" value="    Wyślij    "
+              onclick="if (this.form.short_desc.value == '')
+-             { alert('Proszę podać wartośc w polu podsumownaia.');
++             { alert('Proszę podać wartość w polu podsumownaia.');
+                return false; } return true;">
+       &nbsp;&nbsp;&nbsp;&nbsp;
+       <input type="submit" name="maketemplate"
+-             value="Zapamiętaj wartości, jako wzorzec możlwy do zapamiętania jako zakładka">
++             value="Zapamiętaj wartości, jako wzorzec-zakładkę">
+     </td>
+   </tr>
+ 
+@@ -311,10 +311,10 @@
+     <td></td>
+     <td colspan="3">
+       <br>
+-      Wypełniliśmy pola dotyczące twojego systemu operacyjnego i platformy
+-      na podstawie twojej przeglądarki. Proszę sprawdzić poprawność tych
+-      pól i w przypadku wpisania niepoprawnych wartości wysłać wiadomośc do
+-      [%+ Param('maintainer') %].
++      Pola dotyczące twojego systemu operacyjnego i platformy sprzętowej zostały wypełnione
++      na podstawie informacji z twojej przeglądarki. Proszę sprawdzić poprawność tych
++      danych i w przypadku znalezienia błędnych wartości, wysłać zawiadomienie o tym 
++      fakcie do [%+ Param('maintainer') %].
+     </td>
+   </tr>
+ [% END %]
+diff -ur 1/pl/default/bug/create/make-template.html.tmpl 2/pl/default/bug/create/make-template.html.tmpl
+--- 1/pl/default/bug/create/make-template.html.tmpl	2004-05-20 14:24:33.000000000 +0200
++++ 2/pl/default/bug/create/make-template.html.tmpl	2004-05-20 20:41:05.000000000 +0200
+@@ -27,8 +27,8 @@
+ %]
+ 
+ <p>
+-Jeśli dodasz do zakładek <a href="enter_bug.cgi?[% url FILTER html %]">ten link</a>,
+-użycie tej zakładki przeniesie Cię do formularxa wypełniania nowego [% terms.bledu %],
++Jeśli dodasz do zakładek <a href="enter_bug.cgi?[% url FILTER html %]">ten odnośnik</a>,
++użycie tej zakładki przeniesie Cię do formularza zgłaszania nowego [% terms.bledu %],
+ z polami wypełnionymi wartościami które wpisałeś przed chwilą.
+ </p>
+ 
+diff -ur 1/pl/default/global/variables.none.tmpl 2/pl/default/global/variables.none.tmpl
+--- 1/pl/default/global/variables.none.tmpl	2004-05-20 14:26:33.000000000 +0200
++++ 2/pl/default/global/variables.none.tmpl	2004-05-20 19:13:19.000000000 +0200
+@@ -31,23 +31,23 @@
+ [% terms = {
+   "bug" => "bug",
+   "Bug" => "Bug",
+-  "abug" = "a bug",
+-  "Abug" = "A bug",
+-  "ABug" = "A Bug",
+-  "bugs" = "bugs",
+-  "Bugs" = "Bugs",
+-  "blad" = "błąd",
+-  "Blad" = "Błąd",
+-  "bledu" = "błędu",
+-  "Bledu" = "Błędu",
+-  "bledy" = "błędy",
+-  "Bledy" = "Błędy",
+-  "bledow" = "błędów",
+-  "Bledow" = "Błędów",
+-  "bledami" = "błędami",
+-  "Bledami" = "Błędami",
+-  "bledzie" = "błędzie",
+-  "Bledzie" = "Błędzie",
++  "abug" => "a bug",
++  "Abug" => "A bug",
++  "ABug" => "A Bug",
++  "bugs" => "bugs",
++  "Bugs" => "Bugs",
++  "blad" => "błąd",
++  "Blad" => "Błąd",
++  "bledu" => "błędu",
++  "Bledu" => "Błędu",
++  "bledy" => "błędy",
++  "Bledy" => "Błędy",
++  "bledow" => "błędów",
++  "Bledow" => "Błędów",
++  "bledami" => "błędami",
++  "Bledami" => "Błędami",
++  "bledzie" => "błędzie",
++  "Bledzie" => "Błędzie",
+   "zeroSearchResults" = "Nie znaleziono błędów",
+   "bit" = "bit",
+   "bits" = "bits",
+

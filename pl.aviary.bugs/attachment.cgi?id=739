@@ -1,0 +1,1003 @@
+Index: groups/delete.html.tmpl
+===================================================================
+--- groups/delete.html.tmpl	(revision 90)
++++ groups/delete.html.tmpl	(working copy)
+@@ -35,14 +35,14 @@
+ 
+ 
+ [% PROCESS global/header.html.tmpl
+-  title = "Delete group"
++  title = "Usuwanie grupy"
+ %]
+ 
+ <table border="1">
+   <tr>
+     <th>Id</th>
+-    <th>Name</th>
+-    <th>Description</th>
++    <th>Nazwa</th>
++    <th>Opis</th>
+   </tr>
+   <tr>
+     <td>[% gid FILTER html %]</td>
+@@ -53,58 +53,57 @@
+ 
+ <form method="post" action="editgroups.cgi">
+   [% IF hasusers %]
+-    <p><b>One or more users belong to this group. You cannot delete
+-    this group while there are users in it.</b>
++    <p><b>Grupa zawiera użytkowników. Nie można usunąć grupy
++	z przypisanymi użytkownikami.</b>
+ 
+-    <br><a href="editusers.cgi?action=list&groupid=[% gid FILTER html %]&grouprestrict=1">Show
+-    me which users</a> - <input type="checkbox" name="removeusers">Remove
+-    all users from this group for me.</p>
++    <br><a href="editusers.cgi?action=list&groupid=[% gid FILTER html %]&grouprestrict=1">Pokaż
++    użytkowników</a> - <input type="checkbox" name="removeusers">Usuń
++    wszystkich użytkowników z tej grupy.</p>
+   [% END %]
+ 
+   [% IF hasbugs %]
+-    <p><b>One or more [% terms.bug %] reports are visible only to this group.
+-    You cannot delete this group while any [% terms.bugs %] are using it.</b>
++    <p><b>Conajmniej jeden [% terms.blad %] jest widoczny tylko dla tej grupy.
++    Nie można usunąć grupy gdy istnieją [% terms.bledy %] widoczne tylko dla tej grupy.</b>
+ 
+-    <br><a href="buglist.cgi?bug_id=[% buglist FILTER html %]">Show me
+-    which [% terms.bugs %]</a> - <input type="checkbox" name="removebugs">Remove
+-    all [% terms.bugs %] from this group restriction for me.</p>
++    <br><a href="buglist.cgi?bug_id=[% buglist FILTER html %]">Pokaż 
++    [% terms.bledy %]</a> - <input type="checkbox" name="removebugs">Usun
++    wszystkie [% terms.bledy %] z tej grupy.</p>
+ 
+-    <p><b>NOTE:</b> It's quite possible to make confidential [% terms.bugs %]
+-    public by checking this box.  It is <B>strongly</B> suggested
+-    that you review the [% terms.bugs %] in this group before checking
+-    the box.</p>
++    <p><b>UWAGA:</b> Przez zaznaczenie tej opcji można upublicznić
++	poufne [% terms.bledy %]. <b>Zaleca się</b> przejrzenie [% terms.bledow %] 
++	w grupie przed zaznaczeniem opcji.</p>
+   [% END %]
+ 
+   [% IF hasproduct %]
+-    <p><b>This group is tied to the <U>[% name FILTER html %]</U> product.
+-    You cannot delete this group while it is tied to a product.</b>
++    <p><b>Grupa ta jest powiązana z produktem <U>[% name FILTER html %]</U>.
++    Nie można usunąć grupy powiązanej z produktem.</b>
+ 
+-    <br><input type="checkbox" name="unbind">Delete this group anyway,
+-    and make the <U>[% name FILTER html %]</U> publicly visible.</p>
++    <br><input type="checkbox" name="unbind">Usuń grupę i upublicznij
++    <U>[% name FILTER html %]</U>.</p>
+   [% END %]
+   
+   [% IF hasflags %]
+-    <p><b>This group restricts who can make changes to flags of certain types.
+-    You cannot delete this group while there are flag types using it.</b>
++    <p><b>Tylko użytkownicy z tej grupy mogą zmieniać flagi pewnego typu.
++    Nie można usunąć grupy, która jest używana przez typy flag.</b>
+ 
+-    <br><a href="editflagtypes.cgi?action=list&group=[% gid FILTER html %]">Show
+-    me which types</a> - <input type="checkbox" name="removeflags">Remove all
+-    flag types from this group for me.</p>
++    <br><a href="editflagtypes.cgi?action=list&group=[% gid FILTER html %]">Pokaż
++    typy flag</a> - <input type="checkbox" name="removeflags">Usuń wszystkie
++    typy flag powiązane z tą grupą.</p>
+   [% END %]
+ 
+-  <h2>Confirmation</h2>
++  <h2>Potwierdzenie</h2>
+ 
+-  <p>Do you really want to delete this group?</p>
++  <p>Czy na pewno usunąć tę grupę?</p>
+   [% IF (hasusers || hasbugs || hasproduct || hasflags) %]
+-    <p><b>You must check all of the above boxes or correct the
+-          indicated problems first before you can proceed.</b></p>
++    <p><b>Aby kontynuować, należy rozwiązać wszystkie problemy
++	lub zaznaczyć wszystkie opcje powyżej.</b></p>
+   [% END %]
+ 
+-  <p><input type="submit" value="Yes, delete">
++  <p><input type="submit" value="Tak, usuń">
+   <input type="hidden" name="action" value="delete">
+   <input type="hidden" name="group" value="[% gid FILTER html %]">
+ </form>
+ 
+-Go back to the <a href="editgroups.cgi">group list</a>.
++Wróć do <a href="editgroups.cgi">listy grup</a>.
+ 
+ [% PROCESS global/footer.html.tmpl %] 
+Index: groups/create.html.tmpl
+===================================================================
+--- groups/create.html.tmpl	(revision 90)
++++ groups/create.html.tmpl	(working copy)
+@@ -1,4 +1,4 @@
+-﻿[%# 1.0@bugzilla.org %]
++[%# 1.0@bugzilla.org %]
+ [%# The contents of this file are subject to the Mozilla Public
+   # License Version 1.1 (the "License"); you may not use this file
+   # except in compliance with the License. You may obtain a copy of
+@@ -35,7 +35,7 @@
+   <table border="1" cellpadding="4" cellspacing="0"><tr>
+     <th>Nazwa</th>
+     <th>Opis</th>
+-    <th>Wyrażenie regularne dla użytkowników</th>
++    <th>Wyrażenie regularne nazwy użytkowników</th>
+     <th>Używaj dla [% terms.bledow %]</th>
+   </tr><tr>
+     <td><input size="20" name="name"></td>
+Index: groups/change.html.tmpl
+===================================================================
+--- groups/change.html.tmpl	(revision 90)
++++ groups/change.html.tmpl	(working copy)
+@@ -35,37 +35,37 @@
+   #%]
+ 
+ [% IF (action == 1) %]
+-  [% title = "Confirm: Remove All Explicit Members?" %]
++  [% title = "Potwierdzenie: Usunąć wszystkich jawnych członków?" %]
+ [% ELSIF (action == 2) %]
+-  [% title = "Confirm: Remove Explicit Members in the Regular Expression?" %]
++  [% title = "Potwierdzenie: Usunąć wszystkich jawnych członków wg wyrażenia regularnego?" %]
+ [% ELSE %]
+-  [% title = "Updating group hierarchy" %]
++  [% title = "Uaktualnienie hierarchii grupy" %]
+ [% END %]
+ 
+ [% PROCESS global/header.html.tmpl %]
+ 
+ <p>
+-  Checking....
++  Trwa sprawdzanie....
+ 
+   [% IF changes %]
+-    changed.
++    zmieniono.
+   [% END %]
+ </p>
+     
+ [% IF (action == 1) || (action == 2) %]
+   [% IF changes %]
+-    <p>Group updated, please confirm removal:</p>
++    <p>Grupa uaktualniona, proszę potwierdzić usunięcie:</p>
+   [% END %]
+ 
+   [% IF (action == 1) %]
+-    <p>This option will remove all explicitly defined users
++    <p>Opcja ta usuwa z grupy wszystkich jawnych użytkowników
+   [% ELSIF regexp %]
+-    <p>This option will remove all users included in the regular expression:
++    <p>Opcja ta usuwa z grupy wszystkich jawnych użytkowników określonych za pomocą wyrażenia regularnego:
+     [% regexp FILTER html %]
+   [% ELSE %]
+     <p>
+-      <b>There is no regular expression defined.</b>
+-      No users will be removed.
++      <b>Brak wyrażenia regularnego.</b>
++      Żadni użytkownicy nie zostaną usunięci.
+     </p>
+   [% END %]
+   
+@@ -73,10 +73,10 @@
+     from group [% name FILTER html %].</p>
+     
+     <p>
+-      Generally, you will only need to do this when upgrading groups
+-      created with [% terms.Bugzilla %] versions 2.16 and prior. Use
+-      this option with <b>extreme care</b> and consult the documentation
+-      for further information.
++	  Opcja ta przydatna jest tylko w razie uaktualniania grup
++	  utworzonych za pomocą [% terms.Bugzilli %] w wersji 2.16 i wcześniejszych. 
++	  Podczas użycia należy zachować <b>szczególną ostrożność</b> i skorzystać 
++	  z dokumentacji.
+     </p>
+     
+     <form method="post" action="editgroups.cgi">
+@@ -89,7 +89,7 @@
+       [% END %]
+     
+       <input name="confirm" type="submit" value="Confirm">
+-      <p>Or <a href="editgroups.cgi">return to the Edit Groups page</a>.</p>
++      <p><a href="editgroups.cgi">Wroć do strony edycji grup</a>.</p>
+     </form>
+   [% END %]
+ [% ELSE %]
+@@ -97,15 +97,15 @@
+     # their changes %]
+ 
+   [% IF changes %]
+-    <p>Done.</p>
++    <p>Zakończono.</p>
+   [% ELSE %]
+     <p>
+-      You didn't change anything! If you really meant it, hit the <b>Back</b>
+-      button and try again.
++	  Nie wprowadzono żadnych zmian. Aby dokonać zmian, należy użyć przycisku
++      <b>Wstecz</b> i spróbowac ponownie.
+     </p>
+   [% END %]
+     
+-  <p>Back to the <a href="editgroups.cgi">group list</a>.</p>
++  <p>Wróć do <a href="editgroups.cgi">listy grup</a>.</p>
+ [% END %]
+ 
+ [% PROCESS global/footer.html.tmpl %] 
+Index: groups/edit.html.tmpl
+===================================================================
+--- groups/edit.html.tmpl	(revision 90)
++++ groups/edit.html.tmpl	(working copy)
+@@ -43,7 +43,7 @@
+ 
+ 
+ [% PROCESS global/header.html.tmpl
+-  title = "Change Group: $name"
++  title = "Zmiana grupy $name"
+   style = "tr.odd_row {
+                background: #e9e9e9; 
+            }
+@@ -57,7 +57,7 @@
+ <form method="post" action="editgroups.cgi">
+   <table border="1" cellpadding="4">
+     <tr>
+-      <th>Group:</th>
++      <th>Grupa:</th>
+       <td>
+         [% IF isbuggroup %]
+           <input type="hidden" name="oldname" value="[% name FILTER html %]">
+@@ -69,7 +69,7 @@
+     </tr>
+ 
+     <tr>
+-      <th>Description:</th>
++      <th>Opis:</th>
+       <td>
+         [% IF isbuggroup %]
+           <input type="hidden" name="olddesc" value="[% description FILTER html %]">
+@@ -81,7 +81,7 @@
+     </tr>
+ 
+     <tr>
+-      <th>User Regexp:</th>
++      <th>Wyrażenie regularne nazwy użytkowników:</th>
+       <td>
+         <input type="hidden" name="oldregexp" value="[% regexp FILTER html %]">
+         <input type="text" name="regexp" size="40" value="[% regexp FILTER html %]">
+@@ -90,7 +90,7 @@
+ 
+     [% IF isbuggroup %]
+       <tr>
+-        <th>Use For [% terms.Bugs %]:</th>
++        <th>Użyj dla [% terms.bledow %]:</th>
+         <td>
+           <input type="checkbox" name="isactive" value="1" [% (isactive == 1) ? "checked" : "" %]>
+           <input type="hidden" name="oldisactive" value="[% isactive FILTER html %]">
+@@ -100,35 +100,34 @@
+   </table>
+ 
+   <p>
+-    Users become members of this group in one of three ways:
++    Użytkownicy mogą zostać członkami grupy gdy:
+     <ul>
+-      <li> by being explicity included when the user is edited.
+-      <li> by matching the user regexp above.
+-      <li> by being a member of one of the groups included in this group
+-           by checking the boxes below.
++      <li> zostaną do niej przypisani w opcjach użytkownika,
++      <li> nazwa użytkownika pasuje do w/w wyrażenia regularnego,
++      <li> są członkami jednej z grup zawierających zaznaczonych poniżej.
+     </ul>
+ 
+   [% usevisibility = Param('usevisibilitygroups') %]
+ 
+-    <h4>Group Permissions</h4>
++    <h4>Uprawnienia grupy</h4>
+   <table class="permissions" cellspacing="0" cellpadding="2">
+     <tr>     
+       [% IF usevisibility %]
+         <th>
+-          Visible
++          Widzialność
+         </th>
+       [% END %]
+       <th>
+-        Grant
++        Nadawanie
+       </th>
+       <th>
+-        Inherit
++        Dziedziczenie
+       </th>
+       <th>
+-        Group
++        Grupa
+       </th>
+       <th>
+-        Description
++        Opis
+       </th>
+     </tr>
+     [% row = 0 %]
+@@ -170,40 +169,35 @@
+     [% END %]
+   </table>
+   
+-  <input type="submit" value="Save Changes">
++  <input type="submit" value="Zapisz zmiany">
+   <br>
+   <dl>
+     [% IF usevisibility %]
+-      <dt>Visibility:</dt>
+-      <dd>
+-        Members of the selected groups can be aware of the 
+-        "[% name FILTER html %]" group
++      <dt>Widoczność:</dt>
++      <dd>
++	    Członkowie zaznaczonych grup będą wiedzieli o grupie "[% name FILTER html %]".
+       </dd>
+     [% END %]
+-    <dt>Grant:</dt>
+-    <dd>
+-    Members of the selected groups can grant membership to the
+-    "[% name FILTER html %]" group
++    <dt>Nadawanie:</dt>
++    <dd>
++		Członkowie zaznaczonych grup mogą nadawać członkowstwo w grupie "[% name FILTER html %]".
+     </dd>
+-    <dt>Inherit:</dt>
+-    <dd>
+-      Members of the selected groups are automatically members of the
+-      "[% name FILTER html %]" group
++    <dt>Dziedziczenie:</dt>
++    <dd>
++	  Członkowie zaznaczonych grup będą automatycznie członkami grupy "[% name FILTER html %]".
+     </dd>
+   </dl>
+   <table width="76%" border="0">
+     <tr>
+       <td>
+-        <h4>Conversion of groups created with [% terms.Bugzilla %]
+-        versions 2.16 and prior:</h4>
++        <h4>Konwersja grup utworzonych za pomocą [% terms.bugzilli %] 2.16 i wcześniejszych:</h4>
+         
+         <ul>
+-          <li>Remove all explicit memberships from this group: 
++          <li>Usuń wszystkich jawnych członków tej grupy: 
+             <input name="remove_explicit_members" type="submit" id="remove_explicit_members" value="Remove Memberships">
+           </li>
+ 
+-          <li>Remove all explicit memberships that are included in the above
+-            regular expression: 
++          <li>Usuń wszystkich jawnych członków tej grupy, których nazwa spełnia w/w wyrażenie regularne: 
+             <input name="remove_explicit_members_regexp" type="submit" id="remove_explicit_members_regexp" value="Remove memberships included in regular expression"> 
+           </li>
+         </ul>
+@@ -215,6 +209,6 @@
+   <input type="hidden" name="group" value="[% group_id FILTER html %]">
+ </form>
+ 
+-Back to the <a href="editgroups.cgi">group list</a>.
++Wróć do <a href="editgroups.cgi">listy grup</a>.
+ 
+ [% PROCESS global/footer.html.tmpl %] 
+Index: groups/deleted.html.tmpl
+===================================================================
+--- groups/deleted.html.tmpl	(revision 90)
++++ groups/deleted.html.tmpl	(working copy)
+@@ -30,25 +30,24 @@
+ 
+ 
+ [% PROCESS global/header.html.tmpl
+-  title = "Deleting group"
++  title = "Usuwanie grupy"
+ %]
+ 
+ [% IF cantdelete %]
+   <p>
+-    This group cannot be deleted because there are records
+-    in the database which refer to it.  All such records
+-    must be removed or altered to remove the reference to this
+-    group before the group can be deleted.
++    Grupa nie może być usunięta, ponieważ w bazie danych znajdują
++	się odniesienia do niej. Przed usunięciem grupy, należy
++	usunąć lub poprawić odnośne rekordy.
+   </p>
+ 
+   <p>
+-    <a href="editgroups.cgi?action=del&amp;group=[% gid FILTER html %]">View</a>
+-    the list of which records are affected.
++    <a href="editgroups.cgi?action=del&amp;group=[% gid FILTER html %]">Pokaż</a>
++    listę rekordów odnoszących się do grupy.
+   </p>
+ [% ELSE %]
+-  <p><b>The group [% name FILTER html %] has been deleted.</b></p>
++  <p><b>Grupa [% name FILTER html %] została usunięta.</b></p>
+ [% END %]
+ 
+-<p>Go back to the <a href="editgroups.cgi">group list</a>.
++<p>Wróć do <a href="editgroups.cgi">listy grup</a>.
+ 
+ [% PROCESS global/footer.html.tmpl %] 
+Index: groups/created.html.tmpl
+===================================================================
+--- groups/created.html.tmpl	(revision 90)
++++ groups/created.html.tmpl	(working copy)
+@@ -27,12 +27,12 @@
+   #%]
+ 
+ [% PROCESS global/header.html.tmpl
+-  title = "Adding new group"
++  title = "Dodawanie grupy"
+ %]
+ 
+-<p>OK, done.</p>
++<p>OK. Zakończono.</p>
+ 
+-<p><a href="editgroups.cgi?action=add">Add</a> another group or
+-go back to the <a href="editgroups.cgi">group list</a>.</p>
++<p><a href="editgroups.cgi?action=add">Dodaj</a> inną grupę 
++lub wróć do <a href="editgroups.cgi">listy grup</a>.</p>
+ 
+ [% PROCESS global/footer.html.tmpl %] 
+Index: groups/list.html.tmpl
+===================================================================
+--- groups/list.html.tmpl	(revision 90)
++++ groups/list.html.tmpl	(working copy)
+@@ -33,19 +33,19 @@
+   #%]
+ 
+ [% PROCESS global/header.html.tmpl
+-  title = "Edit Groups"
+-  h2 = "This lets you edit the groups available to put users in."
++  title = "Edycja grup"
++  h2 = "Pozwala na edycję grup użytkowników."
+ %]
+ 
+ 
+ <table border="1">
+   <tr>
+-    <th>Name</th>
+-    <th>Description</th>
+-    <th>User RegExp</th>
+-    <th>Use For [% terms.Bugs %]</th>
+-    <th>Type</th>
+-    <th>Action</th>
++    <th>Nazwa</th>
++    <th>Opis</th>
++    <th>RegExp Użytkowników</th>
++    <th>Używana dla [% terms.bledow%]</th>
++    <th>Typ</th>
++    <th>Akcja</th>
+   </tr>
+ 
+   [% FOREACH group = groups %]
+@@ -67,9 +67,9 @@
+       </td>
+ 
+       <td align="center" valign="middle">
+-        <a href="editgroups.cgi?action=changeform&amp;group=[% group.id FILTER html %]">Edit</a>
++        <a href="editgroups.cgi?action=changeform&amp;group=[% group.id FILTER html %]">Edytuj</a>
+         [% IF (group.isbuggroup) %]
+-          | <a href="editgroups.cgi?action=del&amp;group=[% group.id FILTER html %]">Delete</a>
++          | <a href="editgroups.cgi?action=del&amp;group=[% group.id FILTER html %]">Usuń</a>
+         [% END %]
+       </td>
+     </tr>
+@@ -77,43 +77,36 @@
+ 
+   <tr>
+     <td colspan="5"></td>
+-    <td><a href="editgroups.cgi?action=add">Add Group</a></td>
++    <td><a href="editgroups.cgi?action=add">Dodaj grupę</a></td>
+   </tr>
+ </table>
+ 
+-<p>
+-  <b>Name</b> is what is used with the UserInGroup() function in any
+-customized cgi files you write that use a given group.  It can also be used
+-by people submitting [% terms.bugs %] by email to limit [% terms.abug %]
+-to a certain set of groups.
+-</p>
++<p><b>Nazwa</b> jest używana w funkcji UserInGroup() w stworzonych przez Ciebie
++plikach cgi. Może być również używana przez osoby wysyłające [% terms.bledy %] 
++przez e-mail aby ograniczyć widoczność [% terms.bledu %] do osób należących do
++określonych grup. Nie może zawierać spacji.</p>
+ 
+-<p>
+-  <b>Description</b> is what will be shown in the [% terms.bug %] reports
+-to members of the group where they can choose whether the [% terms.bug %]
+-will be restricted to others in the same group.
+-</p>
++<p><b>Opis</b> jest tym co pojawi się w raportach [% terms.bledow %]
++dla członków grupy, gdzie mogą oni wybrać czy [% terms.blad %] będzie
++wyświetlany jedynie dla pozostałych osób z tej samej grupy.</p>
+ 
+-<p>
+-  <b>User RegExp</b> is optional, and if filled in, will automatically
+-grant membership to this group to anyone with an email address
+-that matches this perl regular expression. Do not forget
+-the trailing '$'.  Example '@mycompany\.com$'
+-</p>
++<p><b>Wyrażenie regularne dla użytkowników</b> (opcjonalne) 
++w przypadku wypełnienia automatycznie udzieli członkostwa
++w tej grupie każdemu, kogo adres e-mail
++pasuje do tego wyrażenia regularnego. Przykład: '@mycompany\.com$'</p>
+ 
+-<p>
+-  The <b>Use For [% terms.Bugs %]</b> flag determines whether or not
+-the group is eligible to be used for [% terms.bugs %]. If you remove
+-this flag, it will no longer be possible for users to add [% terms.bugs %]
+-to this group, although [% terms.bugs %] already in the group will remain
+-in the group. Doing so is a much less drastic way to stop a group
+-from growing than deleting the group as well as a way to maintain
+-lists of users without cluttering the lists of groups used
+-for [% terms.bug %] restrictions.
+-</p>
++<p>Flaga <b>Używana dla [% terms.bledow %]</b> określa czy grupa
++może być używana dla [% terms.bledow %]. Jeśli zostanie ona odznaczona,
++nie będzie możliwe dodawanie nowych [% terms.bledow %] do tej grupy,
++jednakże [% terms.bledy %] będące już w grupie, pozostaną w niej.
++Jest to mniej drastyczny sposób na powstrzymanie wzrostu grupy
++niż jej usunięcie. <b>Uwaga: Jeśli tworzysz nową grupę,
++prawdopodobnie chcesz, aby możliwe było dodawanie 
++[% terms.bledow %] do grupy, pozostaw więc to pole zaznaczone.</b></p>
+ 
++
+ <p>
+-  The <b>Type</b> field identifies system groups.
++  Pole <b>Typ</b> określa grupy systemu.
+ </p>
+ 
+ [% PROCESS global/footer.html.tmpl %]
+Index: groups/remove.html.tmpl
+===================================================================
+--- groups/remove.html.tmpl	(revision 90)
++++ groups/remove.html.tmpl	(working copy)
+@@ -33,28 +33,28 @@
+ 
+ 
+ [% IF remove_all %]
+-  [% title = "Removing All Explicit Group Memberships from '"
++  [% title = "Usuwanie wszystkich jawnych członków z '"
+       _ name _ "'" %]
+ [% ELSE %]
+-  [% title = "Removing All Explicit Group Memberships Matching "
+-      _ "Group RegExp from '" _ name _ "'" %]
++  [% title = "Usuwanie wszystkich jawnych członków spełniających wyrażenie regularne "
++      _ name _ "'" %]
+ [% END %]
+ 
+ [% PROCESS global/header.html.tmpl %]
+ 
+ [% IF remove_all %]
+-  <p><b>Removing explicit membership</b></p>
++  <p><b>Usuwanie wszystkich jawnych członków</b></p>
+ [% ELSE %]
+-  <p><b>Removing explicit memberships of users matching
++  <p><b>Usuwanie wszystkich jawnych członków spełniających wyrażenie regularne
+   '[% regexp FILTER html %]'...</b></p>
+ [% END %]
+     
+ [% FOREACH user = users %]
+-  [% user.login FILTER html %] removed<br>
++  [% user.login FILTER html %] usunięty<br>
+ [% END %]
+ 
+-<p><b>Done</b>.</p>
++<p><b>Zakończono</b>.</p>
+ 
+-<p>Back to the <a href="editgroups.cgi">group list</a>.</p>
++<p>Wróć do <a href="editgroups.cgi">listy grup</a>.</p>
+ 
+ [% PROCESS global/footer.html.tmpl %] 
+Index: fieldvalues/create.html.tmpl
+===================================================================
+--- fieldvalues/create.html.tmpl	(revision 90)
++++ fieldvalues/create.html.tmpl	(working copy)
+@@ -19,7 +19,7 @@
+   #%]
+   
+ [% title = BLOCK %]Dodawanie wartości do pola '[% field FILTER html %]'[% END %]
+-[% h2 = BLOCK %]Ta strona pozwoli Ci dodać nową wartość do pola
++[% h2 = BLOCK %]Ta strona pozwala dodać nową wartość do pola
+                 '[% field FILTER html %]'.[% END %]
+ [% PROCESS global/header.html.tmpl
+   title = title
+Index: fieldvalues/confirm-delete.html.tmpl
+===================================================================
+--- fieldvalues/confirm-delete.html.tmpl	(revision 90)
++++ fieldvalues/confirm-delete.html.tmpl	(working copy)
+@@ -24,8 +24,8 @@
+   #             with the field.
+   #%]
+ 
+-[% title = BLOCK %]Delete Value '[% value FILTER html %]' from the 
+-  '[% field FILTER html %]' field[% END %]
++[% title = BLOCK %]Usuwanie wartości '[% value FILTER html %]' z pola
++  '[% field FILTER html %]' [% END %]
+ 
+ [% PROCESS global/header.html.tmpl
+   title = title
+@@ -71,9 +71,9 @@
+       <li>'[% value FILTER html %]' jest domyślną wartością dla
+           pola '[% field FILTER html %]'.
+           [% IF user.groups.tweakparams %]
+-            Musisz najpierw <a href="editparams.cgi?section=bugfields#
++            Proszę najpierw <a href="editparams.cgi?section=bugfields#
+             [%- param_name FILTER url_quote %]">zmienić domyślną wartość</a> dla
+-            tego pola, zanim będziesz mógł skasować tą.
++            tego pola.
+           [% END %]
+     [% END %]
+ 
+@@ -81,10 +81,10 @@
+       <li>
+           [% PROCESS ODMIEN c=bug_count o1="Jest 1 $terms.blad"
+             o2="Są $bug_count błędy" o3="Jest $bug_count błędów" %]
+-          z tą wartością pola. Musisz zmienić wartości pól w 
++          z tą wartością pola. Proszę zmienić wartości pól w 
+           <a title="liście [% terms.bledow %] gdzie '[% field FILTER html %]' ma wartość '[% value FILTER html %]'"
+              href="buglist.cgi?[% field FILTER url_quote %]=[% value FILTER url_quote %]">
+-            zanim będziesz mógł skasować te wartości.
++            przed usunięciem wartości.
+     [% END %]
+ 
+     [% IF value_count == 1 %]
+@@ -95,7 +95,7 @@
+ 
+ [% ELSE %]
+ 
+-  <p>Czy jesteś pewien że chcesz usunąć tą wartość/p>
++  <p>Czy na pewno usunąć tą wartość/p>
+ 
+   <form method="post" action="editvalues.cgi">
+     <input type="submit" value="Tak, usuń">
+Index: fieldvalues/select-field.html.tmpl
+===================================================================
+--- fieldvalues/select-field.html.tmpl	(revision 90)
++++ fieldvalues/select-field.html.tmpl	(working copy)
+@@ -27,7 +27,7 @@
+ [% PROCESS global/variables.none.tmpl %]
+ 
+ [% PROCESS global/header.html.tmpl
+-  title = "Edycja wartości dla którego pola?"
++  title = "Wybór pola"
+ %]
+ 
+ [% columns = [
+Index: components/create.html.tmpl
+===================================================================
+--- components/create.html.tmpl	(revision 90)
++++ components/create.html.tmpl	(working copy)
+@@ -24,7 +24,7 @@
+   #%]
+   
+ [% title = BLOCK %]Dodawanie komponentu do produktu '[% product FILTER html %]'[% END %]
+-[% h2 = BLOCK %]Ta strona pozwal na dodanie nowych komponentów do produktu
++[% h2 = BLOCK %]Ta strona pozwala na dodanie nowych komponentów do produktu
+                 '[% product FILTER html %]'.[% END %]
+ [% PROCESS global/header.html.tmpl
+   title = title
+Index: components/edit.html.tmpl
+===================================================================
+--- components/edit.html.tmpl	(revision 90)
++++ components/edit.html.tmpl	(working copy)
+@@ -98,7 +98,7 @@
+    <input type="submit" value="Zatwierdź"> lub <a 
+         href="editcomponents.cgi?action=del&amp;product=
+         [%- prod.name FILTER url_quote %]&amp;component=
+-        [%- comp.name FILTER url_quote %]">Usuń</a> this component.
++        [%- comp.name FILTER url_quote %]">Usuń</a> komponent.
+ 
+ </form>
+ 
+Index: components/deleted.html.tmpl
+===================================================================
+--- components/deleted.html.tmpl	(revision 90)
++++ components/deleted.html.tmpl	(working copy)
+@@ -41,13 +41,13 @@
+   [% PROCESS ODMIEN c=deleted_bug_count o1="$terms.blad."
+      o2="$terms.bledy." o3="$terms.bledow." %]
+   </p><p>
+-  Wszystkie odwołania do usuniętych [% terms.bledow %] zostały skasowane.
++  Wszystkie odwołania do usuniętych [% terms.bledow %] zostały również usunięte.
+ [% ELSE %]
+-  Nie było [% terms.bledow %] w tym produkcie.
++  Nie znaleziono [% terms.bledow %] w tym produkcie.
+ [% END %]
+ </p>
+ 
+-<p>Ustawienia flag zostały skasowane.</p>
++<p>Ustawienia flag zostały usunięte.</p>
+ 
+ <p>Komponent '[% name FILTER html %]' został usunięty.</p>
+ 
+Index: components/confirm-delete.html.tmpl
+===================================================================
+--- components/confirm-delete.html.tmpl	(revision 90)
++++ components/confirm-delete.html.tmpl	(working copy)
+@@ -110,7 +110,7 @@
+     [% PROCESS ODMIEN c=bug_count o1="przypisany $terms.blad"
+         o2="przypisane $terms.bledy" o3="przypisanych $terms.bledow" %]
+ 
+-    do tego komponentu. Musisz najpierw przepisać 
++    Zanim możliwe będzie usunięcie go, należy najpierw przepisać 
+ 
+     [% IF comp.bug_count > 1 %]
+        te [% terms.bledy %] 
+@@ -118,7 +118,7 @@
+        ten [% terms.blad %]
+     [% END %]
+ 
+-    do innego komponentu, zanim możliwe będzie skasowanie go.
++    do innego komponentu.
+ 
+   [% ELSE %]
+ 
+@@ -129,8 +129,8 @@
+       [% PROCESS ODMIEN c=comp.bug_count o1="przypisany $terms.blad!"
+           o2="przypisane $terms.bledy!" o3="przypisanych $terms.bledow!" %]
+         
+-      Jeśli skasujesz ten komponent, <b><blink>WSZYSTKIE</blink></b> 
+-      [% terms.bledy %] oraz cała ich historia również zostanie  usunięta.
++      Usunięcie komponentu spowoduje utratę, <b><blink>WSZYSTKICH</blink></b> 
++      [% terms.bledow %] oraz całej ich historii.
+       </td></tr></table>
+ 
+   [% END %]
+@@ -139,7 +139,7 @@
+ 
+ [% IF comp.bug_count == 0 || Param('allowbugdeletion') %]
+ 
+-  <p>Czy jesteś pewien że chcesz usunąć ten komponent?<p>
++  <p>Czy na pewno usunąć ten komponent?<p>
+   
+   <form method="post" action="editcomponents.cgi">
+   <input type="submit" value="Tak, usuń">
+Index: components/select-product.html.tmpl
+===================================================================
+--- components/select-product.html.tmpl	(revision 90)
++++ components/select-product.html.tmpl	(working copy)
+@@ -29,7 +29,7 @@
+ [% PROCESS global/variables.none.tmpl %]
+ 
+ [% PROCESS global/header.html.tmpl
+-  title = "Edycja komponentów których produktów?"
++  title = "Wybór produktu"
+ %]
+ 
+ [% columns = [
+Index: components/footer.html.tmpl
+===================================================================
+--- components/footer.html.tmpl	(revision 90)
++++ components/footer.html.tmpl	(working copy)
+@@ -37,7 +37,7 @@
+   href="editcomponents.cgi?action=edit&amp;product=
+   [%- product FILTER url_quote %]&amp;component=[% name FILTER url_quote %]">
+    '[% name FILTER html %]'</a> 
+-  lub edycja 
++  | edycja 
+ [% END %]
+ 
+ [% IF !no_edit_other_components_link %]
+@@ -45,7 +45,7 @@
+   title="Wybór komponentu produktu '[% product FILTER html %]' do edycji"
+   href="editcomponents.cgi?product=
+   [%- product FILTER url_quote %]">'[% product FILTER html %]'</a>, 
+-  lub edycja 
++  | edycja 
+ [% END %]
+ 
+ produktu <a 
+Index: table.html.tmpl
+===================================================================
+--- table.html.tmpl	(revision 90)
++++ table.html.tmpl	(working copy)
+@@ -170,7 +170,7 @@
+ [% END %]
+ 
+ [% IF data.size == 0 %]
+-  <tr><td colspan="[% columns.size %]" align="center"><i>&lt;none&gt;</i></td></tr>
++  <tr><td colspan="[% columns.size %]" align="center"><i>&lt;brak&gt;</i></td></tr>
+ [% END %]
+ 
+ 
+Index: flag-type/edit.html.tmpl
+===================================================================
+--- flag-type/edit.html.tmpl	(revision 90)
++++ flag-type/edit.html.tmpl	(working copy)
+@@ -192,20 +192,20 @@
+     </tr>
+ 
+     <tr>
+-      <th>Grant Group:</th>
+-      <td>
+-        the group allowed to grant/deny flags of this type
+-        (to allow all users to grant/deny these flags, leave this empty)<br>
++      <th>Grupa mogąca ustawiać flagi:</th>
++      <td>
++	    grupa, która może ustawiać flagi tego typu (puste pole oznacza zezwolenie 
++		dla wszystkich użytkowników)<br>
+         <input type="text" name="grant_gid" value="[% type.grant_gid FILTER html %]" size="50" maxlength="255">
+       </td>
+     </tr>
+ 
+     <tr>
+-      <th>Request Group:</th>
+-      <td>
+-        if flags of this type are requestable, the group allowed to request them
+-        (to allow all users to request these flags, leave this empty)<br>
+-        Note that the request group alone has no effect if the grant group is not defined!<br>
++      <th>Grupa mogąca żądać flag:</th>
++      <td>
++	    jeśli można żądać flag tego typu, pole określa grupę która jest do tego uprawniona
++		(puste pole oznacza zezwolenie dla wszystkich użytkowników).<br>
++        Uwaga: przed ustawieniem tego pola należy określić grupę mogącą ustawiać flagi<br>
+         <input type="text" name="request_gid" value="[% type.request_gid FILTER html %]" size="50" maxlength="255">
+       </td>
+     </tr>
+Index: flag-type/confirm-delete.html.tmpl
+===================================================================
+--- flag-type/confirm-delete.html.tmpl	(revision 90)
++++ flag-type/confirm-delete.html.tmpl	(working copy)
+@@ -29,7 +29,7 @@
+ %]
+ 
+ <p>
+-   Występuje [% flag_count %] 
++   Znaleziono [% flag_count %] 
+    [% PROCESS ODMIEN c=flag_count o1="flaga" o2="flagi" o3="flag" %] typu 
+    [% name FILTER html %].
+    Jeśli usuniesz ten typ, również odpowiadające mu flagi zostaną usunięte. 
+@@ -42,7 +42,7 @@
+ <table>
+    <tr>
+       <td colspan="2">
+-         Czy na pewno chcesz usunąć ten typ?
++         Czy na pewno usunąć ten typ?
+       </td>
+    </tr>
+    <tr>
+Index: sudo.html.tmpl
+===================================================================
+--- sudo.html.tmpl	(revision 90)
++++ sudo.html.tmpl	(working copy)
+@@ -22,33 +22,34 @@
+ [% PROCESS global/variables.none.tmpl %]
+ 
+ [% PROCESS global/header.html.tmpl
+-   title = "Begin sudo session"
++   title = "Sesja sudo"
+    style_urls = ['skins/standard/admin.css']
+  %]
+  
+ [% DEFAULT target_login = "" %]
+ 
+-<p>
+-  The <b>sudo</b> feature of [% terms.Bugzilla %] allows you to impersonate a 
+-  user for a short time  While an sudo session is in progress, every action you 
+-  perform will be taking place as if you had logged in as the user whom will be 
+-  impersonating.
++<p>
++  Funkcja <b>sudo</b> pozwala pracować chwilowo jako inny użytkownik systemu
++  [% terms.Bugzilla %]. Wszystkie wykonane podczas sesji sudo czynności będą
++  wykonane z uprawnieniami i ograniczeniami użytkownika, którego tożsamość
++  będzie użyta.
+ </p>
+ 
+-<p class="areyoureallyreallysure">
+-  This is a very powerful feature; you should be very careful while using it.  
+-  Your actions may be logged more carefully than normal.
++<p class="areyoureallyreallysure">
++  Opcja ta jest przeznaczona dla zaawansowanych użytkowników. Proszę zachować
++  szczególną ostrożność podczas pracy w trybie sudo. Wykonane czynności
++  mogą być rejestrowane przez system dokładniej niż zwykle.
+ </p>
+ 
+ <form action="relogin.cgi" method="POST">
+   <p>
+-    To begin, 
++    Aby rozpocząć, należy 
+     [% IF Param('usemenuforusers') %]
+-      select 
++      wybrać
+     [% ELSE %]
+-      enter the login of 
++      podać nazwę
+     [% END %]
+-    the <u>u</u>ser to impersonate:
++    <u>u</u>żytkownika docelowego:
+     [% INCLUDE global/userselect.html.tmpl
+        name => "target_login"
+        value => "$target_login_default"
+@@ -59,39 +60,39 @@
+   </p>
+   
+   [% IF !Param('usemenuforusers') %]
+-    <p>
+-      The username must be entered exactly.  No matching will be performed.
++    <p>
++	  Proszę podać dokładną nazwę użytkownika. Podana nazwa nie będzie
++	  dopasowywana do istniejących nazw.
+     </p>
+   [% END %]
+   
+-  <p>
+-    Next, please take a moment to explain why you are doing this:<br>
++  <p>
++    Powód użycia opcji sudo:<br>
+     <input type="text" name="reason" size="80" maxlength="200" value="
+     [%- reason_default FILTER html %]">
+   </p>
+   
+-  <p>
+-    The message you enter here will be sent to the impersonated user by email.
+-    You may leave this empty if you wish, but they will still know that you 
+-    are impersonating them.
++  <p>
++    Wprowadzony tekst zostanie wysłany pocztą elektroniczną do użytkownika,
++	którego konto zostanie użyte. Powiadomienie zostanie wysłane także w 
++	przypadku niepodania powodu.
+   </p>
+   
+   [% IF user.get_flag("can_logout") %]
+     <p>
+-      Finally, enter your [% terms.Bugzilla %] password: 
++      Hasło bieżącego użytkownika: 
+       <input type="hidden" name="Bugzilla_login" value="
+       [%- user.login FILTER html %]">
+       <input type="password" name="Bugzilla_password" maxlength="20" size="20">
+-      <br>
+-      This is done for two reasons.  First of all, it is done to reduce 
+-      the chances of someone doing large amounts of damage using your 
+-      already-logged-in account.  Second, it is there to force you to take the 
+-      time to consider if you really need to use this feature.
++      <br>
++	  Weryfikacja hasła ma na celu ograniczenie szkód spowodowanych przez
++	  użycie sesji zalogowanego użytkownika. Proszę także ponownie rozważyć
++	  konieczność użycia tej funkcji.
+     </p>
+   [% END %]
+   
+-  <p>
+-    Click the button to begin the session:
++  <p>
++    Proszę nacisnąć przycisk, aby rozpocząć sesję:
+     <input type="submit" value="Begin Session">
+     <input type="hidden" name="action" value="begin-sudo">
+     <input type="hidden" name="token" value="[% token FILTER html %]">
+Index: classifications/delete.html.tmpl
+===================================================================
+--- classifications/delete.html.tmpl	(revision 90)
++++ classifications/delete.html.tmpl	(working copy)
+@@ -20,7 +20,7 @@
+   #%]
+ 
+ [% PROCESS global/header.html.tmpl
+-  title = "Classification deleted"
++  title = "Usunięto klasyfikację"
+ %]
+ 
+ Klasyfikacja [% classification.name FILTER html %] usunięta.<br>
+Index: classifications/select.html.tmpl
+===================================================================
+--- classifications/select.html.tmpl	(revision 90)
++++ classifications/select.html.tmpl	(working copy)
+@@ -25,7 +25,7 @@
+ 
+ <table border=1 cellpadding=4 cellspacing=0>
+   <tr bgcolor="#6666ff">
+-    <th align="left">Edytuj klasyfikacje ...</th>
++    <th align="left">Edytuj klasyfikacje...</th>
+     <th align="left">Opis</th>
+     <th align="left">Produkty</th>
+     <th align="left">Akcje</th>
+@@ -44,7 +44,7 @@
+       [% IF (cl.id == 1) %]
+         <td valign="top">[% cl.product_count FILTER html %]</td>
+       [% ELSE %]
+-        <td valign="top"><a href="editclassifications.cgi?action=reclassify&amp;classification=[% cl.name FILTER url_quote %]">reclassify ([% cl.product_count FILTER html %])</a></td>
++        <td valign="top"><a href="editclassifications.cgi?action=reclassify&amp;classification=[% cl.name FILTER url_quote %]">zmień klasyfikację ([% cl.product_count FILTER html %])</a></td>
+       [% END %]
+ 
+       [%# don't allow user to delete the default id. %]
+

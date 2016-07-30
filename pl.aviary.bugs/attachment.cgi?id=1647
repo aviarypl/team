@@ -1,0 +1,12 @@
+diff --git a/extensions/Voting/template/pl/default/hook/global/code-error-errors.html.tmpl b/extensions/Voting/template/pl/default/hook/global/code-error-errors.html.tmpl
+--- a/extensions/Voting/template/pl/default/hook/global/code-error-errors.html.tmpl
++++ b/extensions/Voting/template/pl/default/hook/global/code-error-errors.html.tmpl
+@@ -23,6 +23,6 @@
+ 
+ [% IF error == "voting_no_open_bug_status" %]
+     [% title = "Nie można potwierdzić $terms.bledu" %]
+-    To nie jest prawidłowe przekształcenie z
++    To nie jest prawidłowe przejście ze statusu
+     [%+ display_value("bug_status", "UNCONFIRMED") FILTER html %] na status otwarty.
+ [% END %]
+

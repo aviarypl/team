@@ -1,0 +1,53 @@
+diff --git a/browser/chrome/overrides/appstrings.properties b/browser/chrome/overrides/appstrings.properties
+--- a/browser/chrome/overrides/appstrings.properties
++++ b/browser/chrome/overrides/appstrings.properties
+@@ -51,17 +51,17 @@ unknownSocketType=Firefox nie jest w sta
+ unknownSocketType=Firefox nie jest w stanie skomunikować się z tym serwerem.
+ netReset=Połączenie z serwerem zostało zresetowane podczas wczytywania strony.
+ netOffline=Firefox jest obecnie w trybie offline i przeglądanie Internetu jest w tej chwili niemożliwe.
+ isprinting=Strona nie może zostać zmieniona podczas wydruku, lub kiedy włączony jest podgląd wydruku.
+ deniedPortAccess=Ten adres zawiera numer portu sieciowego, który zazwyczaj nie jest wykorzystywany do przeglądania stron WWW. Firefox anulował żądanie dla bezpieczeństwa użytkownika.
+ proxyResolveFailure=Firefox został skonfigurowany tak, by używał serwera proxy, którego nie jest w stanie odnaleźć.
+ proxyConnectFailure=Firefox został skonfigurowany tak, by używał serwera proxy, który odmawia połączenia.
+ contentEncodingError=Otwierana strona nie może zostać wyświetlona, ponieważ używa nieprawidłowych lub nieobsługiwanych metod kompresji.
+-unsafeContentType=Otwierana strona nie może zostać wyświetlona, ponieważ umieszczona jest w pliku, którego otwarcie może nie być bezpieczne. Prosimy poinformować właścicieli witryny o tym problemie.
++unsafeContentType=Otwierana strona nie może zostać wyświetlona, ponieważ umieszczona jest w pliku, którego otwarcie może nie być bezpieczne. Proszę poinformować właścicieli witryny o tym problemie.
+ externalProtocolTitle=Żądanie zewnętrznego protokołu
+ externalProtocolPrompt=Aby obsłużyć odnośnik %1$S: musi zostać uruchomiona zewnętrzna aplikacja.\n\n\nZażądany odnośnik:\n\n%2$S\n\nAplikacja: %3$S\n\n\nJeśli to żądanie pojawiło się niespodziewanie, może to być próba wykorzystania błędu w aplikacji zewnętrznej. W razie jakichkolwiek wątpliwości anuluj to żądanie.\n
+ #LOCALIZATION NOTE (externalProtocolUnknown): The following string is shown if the application name can't be determined
+ externalProtocolUnknown=<Nieznana>
+ externalProtocolChkMsg=Zapamiętaj mój wybór dla wszystkich odnośników tego rodzaju.
+ externalProtocolLaunchBtn=Uruchom aplikację
+ malwareBlocked=Witryna %S została zgłoszona jako witryna stanowiąca zagrożenie i została zablokowana zgodnie z ustawieniami bezpieczeństwa.
+ phishingBlocked=Witryna %S została zgłoszona jako przypadek oszustwa mającego na celu wyłudzenie danych osobowych i informacji finansowych.
+diff --git a/browser/chrome/overrides/netError.dtd b/browser/chrome/overrides/netError.dtd
+--- a/browser/chrome/overrides/netError.dtd
++++ b/browser/chrome/overrides/netError.dtd
+@@ -55,24 +55,24 @@
+ <ul>
+   <li>Odznacz opcję &quot;Pracuj w trybie offline&quot; w menu Plik i spróbuj ponownie.</li>
+ </ul>
+ ">
+ 
+ <!ENTITY contentEncodingError.title "Błąd kodowania zawartości">
+ <!ENTITY contentEncodingError.longDesc "
+ <ul>
+-  <li>Prosimy poinformować właścicieli witryny o tym problemie.</li>
++  <li>Proszę poinformować właścicieli witryny o tym problemie.</li>
+ </ul>
+ ">
+ 
+ <!ENTITY unsafeContentType.title "Niebezpieczny typ pliku">
+ <!ENTITY unsafeContentType.longDesc "
+ <ul>
+-  <li>Prosimy poinformować właścicieli witryny o tym problemie.</li>
++  <li>Proszę poinformować właścicieli witryny o tym problemie.</li>
+ </ul>
+ ">
+ 
+ <!ENTITY netReset.title "Połączenie zostało zresetowane">
+ <!ENTITY netReset.longDesc "&sharedLongDesc;">
+ 
+ <!ENTITY netTimeout.title "Przekroczono limit czasu połączenia">
+ <!ENTITY netTimeout.longDesc "&sharedLongDesc;">
+

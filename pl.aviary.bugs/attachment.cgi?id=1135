@@ -1,0 +1,139 @@
+diff -r e91bd136f944 browser/chrome/browser/aboutPrivateBrowsing.dtd
+--- /dev/null	Thu Jan 01 00:00:00 1970 +0000
++++ b/browser/chrome/browser/aboutPrivateBrowsing.dtd	Mon Nov 10 23:44:14 2008 +0100
+@@ -0,0 +1,14 @@
++<!ENTITY privatebrowsingpage.tabtitle                  "Tryb prywatny">
++
++<!ENTITY privatebrowsingpage.pagetitle                 "Tryb prywatny">
++
++<!ENTITY privatebrowsingpage.issueDesc                 "&brandShortName; nie zapamięta historii przeglądania dla tej sesji.">
++<!ENTITY privatebrowsingpage.longDesc                  "Żadne dane o historii przeglądania podczas tej sesji nie zostaną zapisane. Dotyczy to w szczególności: historii przeglądanych stron, historii wyszukiwania, historii pobierania plików, danych formularzy, ciasteczek oraz plików pamięci podręcznej. Należy jednak pamiętać, że wszystkie pobrane pliki i dodane zakładki zostaną zachowane.">
++
++<!ENTITY privatebrowsingpage.clearRecentHistoryDesc    "Istnieje także możliwość wyczyszczenia dotychczasowej historii
++przeglądania przed przejściem do trybu prywatnego.">
++<!ENTITY privatebrowsingpage.recentHistory.label       "Wyczyść historię przeglądania">
++<!ENTITY privatebrowsingpage.recentHistory.accesskey   "W">
++
++<!ENTITY privatebrowsingpage.howToStopDesc             "Aby opuścić tryb prywatnego przeglądania, należy odznaczyć pozycję Narzędzia &gt; Tryb prywatny.">
++<!ENTITY privatebrowsingpage.footerDesc                "Udanego przeglądania!"><!-- FIXME: originally enjoy -->
+diff -r e91bd136f944 browser/chrome/browser/browser.dtd
+--- a/browser/chrome/browser/browser.dtd	Mon Nov 10 19:03:21 2008 +0100
++++ b/browser/chrome/browser/browser.dtd	Mon Nov 10 23:44:14 2008 +0100
+@@ -7,6 +7,9 @@
+ <!ENTITY mainWindow.titlemodifier "&brandFullName;" >
+ <!-- LOCALIZATION NOTE (mainWindow.titlemodifiermenuseparator): DONT_TRANSLATE -->
+ <!ENTITY mainWindow.titlemodifiermenuseparator " - " >
++<!-- LOCALIZATION NOTE (mainWindowPrivateBrowsing.titlemodifier): This will be appended to the window's title
++                                                                  inside the private browsing mode -->
++<!ENTITY mainWindowPrivateBrowsing.titlemodifier "&mainWindow.titlemodifier; (tryb prywatny)"><!-- FIXME: bap 2011, private browsing -->
+ 
+ <!ENTITY tabCmd.label "Nowa karta" >
+ <!ENTITY tabCmd.accesskey "t" >
+@@ -169,6 +172,9 @@
+ <!ENTITY clearRecentHistoryCmd.label     "Wyczyść historię przeglądania">
+ <!ENTITY clearRecentHistoryCmd.accesskey "W">
+ 
++<!ENTITY privateBrowsingCmd.label        "Tryb prywatny">
++<!ENTITY privateBrowsingCmd.accesskey    "T">
++
+ <!ENTITY viewMenu.label "Widok" >
+ <!ENTITY viewMenu.accesskey "W" >
+ <!ENTITY viewToolbarsMenu.label "Paski narzędzi" >
+@@ -181,7 +187,7 @@
+ <!ENTITY historyMenu.label "Historia">
+ <!ENTITY historyMenu.accesskey "h">
+ <!ENTITY historyUndoMenu.label "Ostatnio zamknięte karty">
+-
++
+ <!ENTITY historyHomeCmd.label "Strona startowa">
+ <!ENTITY showAllHistoryCmd2.label "Wyświetl kompletną historię">
+ <!ENTITY showAllHistoryCmd.commandkey "H">
+diff -r e91bd136f944 browser/chrome/browser/browser.properties
+--- a/browser/chrome/browser/browser.properties	Mon Nov 10 19:03:21 2008 +0100
++++ b/browser/chrome/browser/browser.properties	Mon Nov 10 23:44:14 2008 +0100
+@@ -15,14 +15,14 @@
+ 
+ blockImages=Blokuj obrazki z serwera %S
+ 
+-# bookmark dialog strings                                                       
++# bookmark dialog strings
+ bookmarkAllTabsDefault=[Nazwa folderu]
+ 
+ xpinstallPromptWarning=Program %S nie pozwolił tej witrynie (%S) zapytać o zgodę na instalację oprogramowania.
+ xpinstallPromptAllowButton=Zezwól
+-# Accessibility Note:                                                           
++# Accessibility Note:
+ # Be sure you do not choose an accesskey that is used elsewhere in the active context (e.g. main menu bar, submenu of the warning popup button)
+-# See http://www.mozilla.org/access/keyboard/accesskey for details              
++# See http://www.mozilla.org/access/keyboard/accesskey for details
+ xpinstallPromptAllowButton.accesskey=Z
+ xpinstallDisabledMessageLocked=Instalacja oprogramowania została wyłączona przez administratora systemu.
+ xpinstallDisabledMessage=Instalacja oprogramowania jest obecnie wyłączona. Kliknij Włącz i spróbuj ponownie.
+@@ -47,7 +47,7 @@
+ imageAllowedWarning=%S będzie od tej pory wyświetlać obrazki z %S
+ undo=Cofnij
+ undo.accessKey=C
+- 
++
+ # missing plugin installer
+ missingpluginsMessage.title=Aby wyświetlić pełną zawartość tej strony, potrzebne są dodatkowe wtyczki.
+ missingpluginsMessage.button.label=Zainstaluj brakujące wtyczki…
+@@ -64,13 +64,13 @@
+ 
+ # Check for Updates
+ updatesItem_default=Sprawdź dostępność aktualizacji…
+-updatesItem_defaultFallback=Sprawdź dostępność aktualizacji…                            
++updatesItem_defaultFallback=Sprawdź dostępność aktualizacji…
+ updatesItem_downloading=Pobieranie elementu %S…
+ updatesItem_downloadingFallback=Pobieranie aktualizacji…
+ updatesItem_resume=Wznów pobieranie elementu %S…
+-updatesItem_resumeFallback=Wznów pobieranie aktualizacji… 
+-updatesItem_pending=Zastosuj pobraną aktualizację… 
+-updatesItem_pendingFallback=Zastosuj pobraną aktualizację…                      
++updatesItem_resumeFallback=Wznów pobieranie aktualizacji…
++updatesItem_pending=Zastosuj pobraną aktualizację…
++updatesItem_pendingFallback=Zastosuj pobraną aktualizację…
+ 
+ # RSS Pretty Print
+ 
+@@ -82,7 +82,7 @@
+ menuOpenAllInTabs.label=Otwórz wszystkie w kartach
+ menuOpenAllInTabs.accesskey=O
+ 
+-# Unified Back-/Forward Popup                                                   
++# Unified Back-/Forward Popup
+ tabHistory.current=Pozostań na tej stronie
+ tabHistory.goBack=Cofnij się do tej strony
+ tabHistory.goForward=Przejdź do przodu do tej strony
+@@ -121,11 +121,11 @@
+ identity.unknown.tooltip=Ta witryna nie dostarcza informacji o swej tożsamości.
+ identity.ownerUnknown2=(nieznany)
+ 
+-# Downloads Monitor Panel                                                       
++# Downloads Monitor Panel
+ # LOCALIZATION NOTE (activeDownloads, pausedDownloads): Semi-colon list of plural
+-# forms. See: http://developer.mozilla.org/en/docs/Localization_and_Plurals     
+-# #1 number of downloads; #2 time left                                          
+-# examples: One active download (2 minutes remaining); 11 paused downloads      
++# forms. See: http://developer.mozilla.org/en/docs/Localization_and_Plurals 
++# #1 number of downloads; #2 time left 
++# examples: One active download (2 minutes remaining); 11 paused downloads
+ activeDownloads=Trwa pobieranie jednego pliku. #2;Trwa pobieranie #1 plików. #2;Trwa pobieranie #1 plików. #2
+ pausedDownloads=Wstrzymane pobieranie jednego pliku;Wstrzymane pobieranie #1 plików;Wstrzymane pobieranie #1 plików
+ 
+@@ -161,3 +161,14 @@
+ safebrowsing.reportedAttackSite=Zgłoszona witryna dokonująca ataków!
+ safebrowsing.notAnAttackButton.label=To nie jest witryna dokonująca ataków…
+ safebrowsing.notAnAttackButton.accessKey=T
++
++# Private Browsing Confirmation dialog
++# LOCALIZATION NOTE (privateBrowsingMessage): %S will be replaced
++# by the name of the application.
++# LOCALIZATION NOTE (privateBrowsingYesTitle, privateBrowsingNoTitle, privateBrowsingNeverAsk):
++# Access keys are specified by prefixing the desired letter with an ampersand.
++privateBrowsingDialogTitle=Tryb prywatny
++privateBrowsingMessage=Program %S zapamięta aktualnie otwarte karty, aby otworzyć jepo zakończeniu przeglądania w trybie prywatnym.
++privateBrowsingYesTitle=&Przejdź do Trybu prywatnego
++privateBrowsingNoTitle=&Anuluj
++privateBrowsingNeverAsk=&Nie wyświetlaj więcej tego komunikatu
+

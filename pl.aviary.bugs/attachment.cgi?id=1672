@@ -1,0 +1,51 @@
+diff --git a/browser/chrome/browser/browser.dtd b/browser/chrome/browser/browser.dtd
+--- a/browser/chrome/browser/browser.dtd
++++ b/browser/chrome/browser/browser.dtd
+@@ -318,29 +318,28 @@ can reach it easily. -->
+    is a fundamental keybinding and we are maintaining a XP binding so that it is easy
+    for people to switch to Linux.
+ 
+   Do *not* tamper with these values without talking to ben@mozilla.org
+    
+ -->
+ <!ENTITY searchFocus.commandkey       "k">
+ <!ENTITY searchFocusUnix.commandkey   "j">
+-
+ <!ENTITY tabView.commandkey           "e">
+ 
++<!ENTITY openLinkCmdInTab.label "Otwórz odnośnik w nowej karcie" >
++<!ENTITY openLinkCmdInTab.accesskey "j" >
+ <!ENTITY openLinkCmd.label "Otwórz odnośnik w nowym oknie" >
+ <!ENTITY openLinkCmd.accesskey "n" >
+-<!ENTITY openLinkCmdInTab.label "Otwórz odnośnik w nowej karcie" >
+-<!ENTITY openLinkCmdInTab.accesskey "j" >
+ <!ENTITY openLinkCmdInCurrent.label     "Otwórz odnośnik">
+ <!ENTITY openLinkCmdInCurrent.accesskey "O">
++<!ENTITY openFrameCmdInTab.label "Otwórz ramkę w nowej karcie" >
++<!ENTITY openFrameCmdInTab.accesskey "j" >
+ <!ENTITY openFrameCmd.label "Otwórz ramkę w nowym oknie" >
+ <!ENTITY openFrameCmd.accesskey "n" >
+-<!ENTITY openFrameCmdInTab.label "Otwórz ramkę w nowej karcie" >
+-<!ENTITY openFrameCmdInTab.accesskey "j" >
+ <!ENTITY showOnlyThisFrameCmd.label "Pokaż tylko tę ramkę" >
+ <!ENTITY showOnlyThisFrameCmd.accesskey "r" >
+ <!ENTITY reloadCmd.commandkey "r" >
+ <!ENTITY reloadFrameCmd.label "Odśwież ramkę" >
+ <!ENTITY reloadFrameCmd.accesskey "O" >
+ <!ENTITY viewPartialSourceForSelectionCmd.label "Pokaż źródło zaznaczenia" >
+ <!ENTITY viewPartialSourceForMathMLCmd.label "Pokaż źródło MathML" >
+ <!ENTITY viewPartialSourceCmd.accesskey "d" >
+diff --git a/browser/chrome/browser/openLocation.dtd b/browser/chrome/browser/openLocation.dtd
+--- a/browser/chrome/browser/openLocation.dtd
++++ b/browser/chrome/browser/openLocation.dtd
+@@ -1,8 +1,8 @@
+ <!ENTITY enter.label "Wprowadź adres internetowy (URL) strony WWW, pliku lub zasobu, który ma zostać otworzony:" >
+ <!ENTITY chooseFile.label "Wybierz plik…" >
++<!ENTITY newTab.label "Nowa karta" >
+ <!ENTITY newWindow.label "Nowe okno" >
+-<!ENTITY newTab.label "Nowa karta" >
+ <!ENTITY topTab.label "Bieżąca karta">
+ <!ENTITY caption.label "Otwórz adres internetowy" >
+ <!ENTITY openWhere.label "Gdzie otworzyć:" >
+ <!ENTITY openBtn.label "Otwórz">
+

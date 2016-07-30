@@ -1,0 +1,135 @@
+Index: pl/calendar/chrome/prototypes/sun-calendar-event-dialog.dtd
+===================================================================
+RCS file: /l10n/l10n/pl/calendar/chrome/prototypes/sun-calendar-event-dialog.dtd,v
+retrieving revision 1.1.2.17
+diff -u -8 -r1.1.2.17 sun-calendar-event-dialog.dtd
+--- pl/calendar/chrome/prototypes/sun-calendar-event-dialog.dtd	5 Sep 2007 21:29:43 -0000	1.1.2.17
++++ pl/calendar/chrome/prototypes/sun-calendar-event-dialog.dtd	8 Sep 2007 22:10:24 -0000
+@@ -74,17 +74,17 @@
+ <!ENTITY  event.menu.edit.paste.accesskey                 "W">
+ <!ENTITY  event.menu.edit.select.all.label                "Zaznacz wszystko">
+ <!ENTITY  event.menu.edit.select.all.accesskey            "Z">
+ 
+ <!ENTITY  event.menu.view.label                           "Widok">
+ <!ENTITY  event.menu.view.accesskey                       "W">
+ <!ENTITY  event.menu.view.toolbars.label                  "Paski narzędzi">
+ <!ENTITY  event.menu.view.toolbars.accesskey              "n">
+-<!ENTITY  event.menu.view.toolbars.event.label            "Pasek zdarzeń"><!-- FIXME -->
++<!ENTITY  event.menu.view.toolbars.event.label            "Pasek zdarzeń">
+ <!ENTITY  event.menu.view.toolbars.event.accesskey        "P">
+ <!ENTITY  event.menu.view.toolbars.customize.label        "Dostosuj…">
+ <!ENTITY  event.menu.view.toolbars.customize.accesskey    "D">
+ 
+ <!ENTITY  event.menu.options.label                        "Opcje">
+ <!ENTITY  event.menu.options.accesskey                    "O">
+ <!ENTITY  event.menu.options.attendees.label              "Zaproś uczestników…">
+ <!ENTITY  event.menu.options.attendees.accesskey          "Z">
+@@ -138,17 +138,17 @@
+ <!ENTITY event.email.tentative.attendees.accesskey        "n">
+ 
+ <!-- Toolbar -->
+ <!ENTITY  event.toolbar.save.label                        "Zapisz i zamknij">
+ <!ENTITY  event.toolbar.attendees.label                   "Zaproś uczestników">
+ <!ENTITY  event.toolbar.spellcheck.label                  "Sprawdzanie pisowni">
+ <!ENTITY  event.toolbar.privacy.label                     "Prywatność">
+ <!ENTITY  event.toolbar.link.label                        "Dodaj odnośnik">
+-acdikmnoprstuz
++
+ <!-- Main page -->
+ <!ENTITY event.title.textbox.label                        "Nazwa:" >
+ <!ENTITY event.title.textbox.accesskey                    "z">
+ <!ENTITY event.location.label                             "Adres:" >
+ <!ENTITY event.location.accesskey                         "A">
+ <!ENTITY event.categories.label                           "Kategoria:">
+ <!ENTITY event.categories.accesskey                       "r">
+ <!ENTITY event.calendar.label                             "Kalendarz:" >
+@@ -221,24 +221,26 @@
+ <!ENTITY event.recurrence.pattern.every.label           "Co" >
+ <!ENTITY event.recurrence.pattern.every.weekday.label   "W dni robocze" >
+ <!ENTITY event.recurrence.on.label                      "W:" >
+ <!ENTITY event.recurrence.the.label                     "Każdy(-a)" >
+ <!ENTITY event.recurrence.repeat.first.label            "Pierwszy(-a)">
+ <!ENTITY event.recurrence.repeat.second.label           "Drugi(-a)">
+ <!ENTITY event.recurrence.repeat.third.label            "Trzeci(-a)">
+ <!ENTITY event.recurrence.repeat.fourth.label           "Czwarty(-a)">
++<!ENTITY event.recurrence.repeat.fifth.label            "Piąty(-a)">
+ <!ENTITY event.recurrence.repeat.last.label             "Ostatni(a)">
++<!ENTITY event.recurrence.repeat.dayofmonth.label       "Dzień miesiąca">
+ <!ENTITY event.recurrence.repeat.recur.label            "Powtarzaj w dniu (dni)">
+ <!ENTITY event.recurrence.every.label                   "Co:" >
+ <!ENTITY event.recurrence.of.label                      "z" >
+ <!ENTITY event.recurrence.range.label                   "Zakres powtarzalności">
+ <!ENTITY event.recurrence.forever.label                 "Bez daty końcowej" >
+ <!ENTITY event.recurrence.repeat.for.label              "Utwórz" >
+-<!ENTITY event.recurrence.appointments.label            "spotkań(-nia)" ><!-- FIXME -->
++<!ENTITY event.recurrence.appointments.label            "spotkań(-nia)" >
+ <!ENTITY event.repeat.until.label                       "Powtarzaj do" >
+ <!ENTITY event.recurrence.preview.label                 "Podgląd">
+ 
+ <!ENTITY month.1.name "styczeń" >
+ <!ENTITY month.2.name "luty" >
+ <!ENTITY month.3.name "marzec" >
+ <!ENTITY month.4.name "kwiecień" >
+ <!ENTITY month.5.name "maj" >
+@@ -281,17 +283,16 @@
+ <!ENTITY repeat.units.months.both        "miesiąc(e)" >
+ <!ENTITY repeat.units.years.both         "rok (lata)" >
+ 
+ <!-- Timezone dialog -->
+ 
+ <!ENTITY timezone.title.label            "Wybór strefy czasowej">
+ 
+ <!-- Read-Only dialog -->
+-<!-- FIXME -->
+ <!ENTITY read.only.general.label         "Główne">
+ <!ENTITY read.only.title.label           "Nazwa:">
+ <!ENTITY read.only.date.label            "Data:">
+ <!ENTITY read.only.repeat.label          "Powtarzaj:">
+ <!ENTITY read.only.location.label        "Adres:">
+ <!ENTITY read.only.organizer.label       "Organizator:">
+ <!ENTITY read.only.reply.label           "Odpowiedź:">
+ <!ENTITY read.only.accept.label          "Będę uczestniczyć">
+Index: pl/calendar/chrome/prototypes/sun-calendar-event-dialog.properties
+===================================================================
+RCS file: /l10n/l10n/pl/calendar/chrome/prototypes/sun-calendar-event-dialog.properties,v
+retrieving revision 1.1.2.6
+diff -u -8 -r1.1.2.6 sun-calendar-event-dialog.properties
+--- pl/calendar/chrome/prototypes/sun-calendar-event-dialog.properties	5 Sep 2007 20:17:16 -0000	1.1.2.6
++++ pl/calendar/chrome/prototypes/sun-calendar-event-dialog.properties	8 Sep 2007 22:10:24 -0000
+@@ -65,16 +65,17 @@
+ repeatDetailsRuleMonthly4=%1$S. dnia każdego miesiąca
+ repeatDetailsRuleMonthly5=%1$S. dnia co drugiego miesiąca
+ repeatDetailsRuleMonthly6=%1$S. dnia co %2$S. miesiąca
+ 
+ repeatDetailsOrdinal1=Pierwsze
+ repeatDetailsOrdinal2=Drugie
+ repeatDetailsOrdinal3=Trzecie
+ repeatDetailsOrdinal4=Czwarte
++repeatDetailsOrdinal5=Piąte
+ repeatDetailsOrdinal-1=Ostatnie
+ 
+ repeatDetailsRuleYearly1=%2$Sgo %1$S
+ repeatDetailsRuleYearly2=%2$Sgo %1$S co drugiego roku
+ repeatDetailsRuleYearly3=%2$Sgo %1$S co %3$S lat(a)
+ repeatDetailsRuleYearly4=%1$Sgo %2$S %3$S
+ repeatDetailsRuleYearly5=%1$Sgo %2$S %3$S co drugiego roku
+ repeatDetailsRuleYearly6=%1$Sgo %2$S %3$S co %4$S lat(a)
+@@ -93,17 +94,16 @@
+ repeatDetailsMonth12=grudnia
+ 
+ repeatDetailsCount=%1$S\npocząwszy od %2$S, powtarzaj %3$S razy\nw godz. od %4$S do %5$S.
+ repeatDetailsCountAllDay=%1$S\npocząwszy od %2$S, powtarzaj %3$S razy.
+ repeatDetailsUntil=%1$S\nw okresie %2$S do %3$S\n, w godz. od %4$S do %5$S.
+ repeatDetailsUntilAllDay=%1$S\nw okresie od %2$S do %3$S.
+ repeatDetailsInfinite=%1$S\npocząwszy od %2$S\n, w godz. od %3$S do %4$S.
+ repeatDetailsInfiniteAllDay=%1$S\npocząwszy od %2$S.
+-# FIXME - check these strings (hubert)
+ reminderCustomTitle=%1$S %2$S %3$S %4$S
+ reminderCustomUnitMinute=minuta
+ reminderCustomUnitMinutes=minut(y)
+ reminderCustomUnitHour=godzina
+ reminderCustomUnitHours=godzin(y)
+ reminderCustomUnitDay=dzień
+ reminderCustomUnitDays=dni
+ reminderCustomRelationStart=przed
+

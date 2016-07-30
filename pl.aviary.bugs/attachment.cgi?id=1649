@@ -1,0 +1,18 @@
+diff --git a/extensions/Voting/template/pl/default/hook/global/user-error-errors.html.tmpl b/extensions/Voting/template/pl/default/hook/global/user-error-errors.html.tmpl
+--- a/extensions/Voting/template/pl/default/hook/global/user-error-errors.html.tmpl
++++ b/extensions/Voting/template/pl/default/hook/global/user-error-errors.html.tmpl
+@@ -41,5 +41,5 @@
+     </em> które powinno zawierać dodatnie wartości liczbowe.
+ 
+ [% ELSIF error == "voting_too_many_votes_for_bug" %]
+-    [% title = "Nieprawidłowe głosowanie" %]
++    [% title = "Nieprzepisowe głosowanie" %]
+     [% admindocslinks = {'voting.html' => 'Ustawianie funkcji głosowania'} %]
+@@ -45,5 +45,5 @@
+     [% admindocslinks = {'voting.html' => 'Ustawianie funkcji głosowania'} %]
+-    Można oddać najwyżej [% max FILTER html %] głosów na pojedynczy
++    Można oddać najwyżej [% max FILTER html %] głosów na jeden
+     [%+ terms.blad %] w produkcie
+     <tt>[% product FILTER html %]</tt>, a próbowano oddać
+     [%+ votes FILTER html %] głosów.
+

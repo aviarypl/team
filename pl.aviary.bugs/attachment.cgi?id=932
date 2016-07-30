@@ -1,0 +1,152 @@
+Index: pl/calendar/chrome/prototypes/sun-calendar-event-dialog.dtd
+===================================================================
+RCS file: /l10n/l10n/pl/calendar/chrome/prototypes/sun-calendar-event-dialog.dtd,v
+retrieving revision 1.1.2.20
+diff -u -8 -r1.1.2.20 sun-calendar-event-dialog.dtd
+--- pl/calendar/chrome/prototypes/sun-calendar-event-dialog.dtd	21 Oct 2007 18:59:36 -0000	1.1.2.20
++++ pl/calendar/chrome/prototypes/sun-calendar-event-dialog.dtd	12 Nov 2007 11:07:39 -0000
+@@ -234,34 +234,21 @@
+ <!ENTITY event.recurrence.of.label                      "" >
+ <!ENTITY event.recurrence.range.label                   "Zakres powtarzalności">
+ <!ENTITY event.recurrence.forever.label                 "Bez daty końcowej" >
+ <!ENTITY event.recurrence.repeat.for.label              "Utwórz" >
+ <!ENTITY event.recurrence.appointments.label            "spotkań(-nia)" >
+ <!ENTITY event.repeat.until.label                       "Powtarzaj do" >
+ <!ENTITY event.recurrence.preview.label                 "Podgląd">
+ 
+-<!ENTITY month.1.name "stycznia" >
+-<!ENTITY month.2.name "lutego" >
+-<!ENTITY month.3.name "marca" >
+-<!ENTITY month.4.name "kwietnia" >
+-<!ENTITY month.5.name "maja" >
+-<!ENTITY month.6.name "czerwca" >
+-<!ENTITY month.7.name "lipca" >
+-<!ENTITY month.8.name "sierpienia" >
+-<!ENTITY month.9.name "września" >
+-<!ENTITY month.10.name "października" >
+-<!ENTITY month.11.name "listopada" >
+-<!ENTITY month.12.name "grudnia" >
+-
+ <!-- Reminder dialog -->
+ 
+ <!ENTITY reminder.title.label                           "Ustaw przypomnienia">
+ <!ENTITY reminder.reminder.label                        "Przypomnij">
+-<!ENTITY reminder.due.label                             "Kiedy nadejdzie czas przypomnienia">
++<!ENTITY reminder.action.label                          "Wybierz rodzaj przypomnienia">
+ <!ENTITY reminder.action.alert.label                    "Wyświetl powiadomienie">
+ <!ENTITY reminder.action.sound.label                    "Odtwórz dźwięk">
+ <!ENTITY reminder.action.email.label                    "Wyślij e-mail">
+ <!ENTITY reminder.new.label                             "Nowe">
+ <!ENTITY reminder.delete.label                          "Usuń">
+ <!ENTITY reminder.rename.label                          "Zmień nazwę">
+ <!ENTITY reminder.relation.start.label                  "rozpoczęcia wydarzenia">
+ <!ENTITY reminder.relation.end.label                    "zakończenia wydarzenia">
+Index: pl/calendar/chrome/calendar/global.dtd
+===================================================================
+RCS file: /l10n/l10n/pl/calendar/chrome/calendar/global.dtd,v
+retrieving revision 1.2.2.6
+diff -u -8 -r1.2.2.6 global.dtd
+--- pl/calendar/chrome/calendar/global.dtd	2 Jun 2007 23:29:15 -0000	1.2.2.6
++++ pl/calendar/chrome/calendar/global.dtd	12 Nov 2007 11:07:40 -0000
+@@ -127,8 +127,21 @@
+ <!ENTITY calendar.global.units.days     "dni">
+ <!ENTITY calendar.global.units.week     "tydzień">
+ <!ENTITY calendar.global.units.weeks    "tygodni">
+ <!ENTITY calendar.global.units.month    "miesiąc">
+ <!ENTITY calendar.global.units.months   "miesięcy">
+ <!ENTITY calendar.global.units.year     "rok">
+ <!ENTITY calendar.global.units.years    "lat">
+ 
++<!ENTITY month.1.name "stycznia" >
++<!ENTITY month.2.name "lutego" >
++<!ENTITY month.3.name "marca" >
++<!ENTITY month.4.name "kwietnia" >
++<!ENTITY month.5.name "maja" >
++<!ENTITY month.6.name "czerwca" >
++<!ENTITY month.7.name "lipca" >
++<!ENTITY month.8.name "sierpienia" >
++<!ENTITY month.9.name "września" >
++<!ENTITY month.10.name "października" >
++<!ENTITY month.11.name "listopada" >
++<!ENTITY month.12.name "grudnia" >
++
+Index: pl/calendar/chrome/calendar/calendar.properties
+===================================================================
+RCS file: /l10n/l10n/pl/calendar/chrome/calendar/calendar.properties,v
+retrieving revision 1.2.2.27
+diff -u -8 -r1.2.2.27 calendar.properties
+--- pl/calendar/chrome/calendar/calendar.properties	11 Nov 2007 17:00:20 -0000	1.2.2.27
++++ pl/calendar/chrome/calendar/calendar.properties	12 Nov 2007 11:07:40 -0000
+@@ -50,19 +50,18 @@
+ newEventDialog=Nowe wydarzenie
+ editEventDialog=Edycja wydarzenia
+ newTaskDialog=Nowe zadanie
+ editTaskDialog=Edycja zadania
+ 
+ # Do you want to save changes?
+ askSaveTitleEvent=Zapisz wydarzenie
+ askSaveTitleTask=Zapisz zadanie
+-askSaveMessage=Czy zapisać zmiany?
+-askSaveLabel1=Tak
+-askSaveLabel2=Nie
++askSaveMessageEvent=Wydarzenie nie zostało zapisane. Czy je zapisać?    
++askSaveMessageTask=Zadanie nie zostało zapisane. Czy je zapisać?       
+ 
+ # Event Dialog Warnings
+ warningNegativeDuration=Wprowadzona data zakończenia jest wcześniejsza niż data rozpoczęcia
+ 
+ # The name of the calendar provided with the application by default
+ homeCalendarName=Domowy
+ 
+ # The name given to a calendar if an opened calendar has an empty filename
+Index: pl/calendar/chrome/lightning/lightning.dtd
+===================================================================
+RCS file: /l10n/l10n/pl/calendar/chrome/lightning/lightning.dtd,v
+retrieving revision 1.1.2.13
+diff -u -8 -r1.1.2.13 lightning.dtd
+--- pl/calendar/chrome/lightning/lightning.dtd	21 Oct 2007 18:59:36 -0000	1.1.2.13
++++ pl/calendar/chrome/lightning/lightning.dtd	12 Nov 2007 11:07:40 -0000
+@@ -16,16 +16,17 @@
+    - The Initial Developer of the Original Code is Oracle Corporation
+    - Portions created by the Initial Developer are Copyright (C) 2005
+    - the Initial Developer. All Rights Reserved.
+    -
+    - Contributor(s):
+    -   Mike Shaver       <shaver@mozilla.org>
+    -   Simon Paquet      <bugzilla@babylonsounds.com>
+    -   Matthew Willis    <mattwillis@mac.com>
++   -   Philipp Kewisch <mozilla@kewis.ch>
+    -   Marek Stępień     <marcoos@aviary.pl> (Polish localization)
+    -   Hubert Gajewski   <hubert@hubertgajewski.com> (Polish localization)
+    -
+    - Alternatively, the contents of this file may be used under the terms of
+    - either the GNU General Public License Version 2 or later (the "GPL"), or
+    - the GNU Lesser General Public License Version 2.1 or later (the "LGPL"),
+    - in which case the provisions of the GPL or the LGPL are applicable instead
+    - of those above. If you wish to allow use of your version of this file only
+@@ -42,16 +43,24 @@
+ <!-- Tools menu -->
+ <!ENTITY lightning.taskLabel "Lightning">
+ 
+ <!-- New menu popup in File menu -->
+ <!ENTITY lightning.menupopup.new.event.label    "Wydarzenie…">
+ <!ENTITY lightning.menupopup.new.task.label     "Zadanie…">
+ <!ENTITY lightning.menupopup.new.calendar.label "Kalendarz…">
+ 
++<!-- Open menu popup in File menu -->  
++<!ENTITY lightning.menupopup.open.label               "Otwórz"> 
++<!ENTITY lightning.menupopup.open.accesskey           "O">   
++<!ENTITY lightning.menupopup.open.message.label       "Zapisana wiadomość…">
++<!ENTITY lightning.menupopup.open.message.accesskey   "w">    
++<!ENTITY lightning.menupopup.open.calendar.label      "Plik kalendarza…">
++<!ENTITY lightning.menupopup.open.calendar.accesskey  "k">                      
++
+ <!-- Agenda Tree View -->
+ <!ENTITY agenda.treeview.label           "Widok:">
+ <!ENTITY agenda.treeview.menu.label      "Widok">
+ <!ENTITY agenda.treeview.all.label       "Wszystkie">
+ <!ENTITY agenda.treeview.events.label    "Wydarzenia">
+ <!ENTITY agenda.treeview.tasks.label     "Zadania">
+ <!ENTITY agenda.treeview.reminders.label "Przypomnienia">
+ <!ENTITY agenda.treeview.customize.label "Dostosuj…">
+

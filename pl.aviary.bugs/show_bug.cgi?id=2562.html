@@ -1,0 +1,1337 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>2562 &ndash; (Glowicki) Wtyczka wyszukiwarki: Pf.pl</title>
+
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<link href="data/assets/7aa6ea67750936a0368541421bdcd5ee.css" rel="stylesheet" type="text/css">
+
+
+
+    
+<script type="text/javascript" src="data/assets/a7c2f3a028f17a9aa60f56dc9d6e732d.js"></script>
+
+    <script type="text/javascript">
+    <!--
+        YAHOO.namespace('bugzilla');
+        YAHOO.util.Event.addListener = function (el, sType, fn, obj, overrideContext) {
+               if ( ("onpagehide" in window || YAHOO.env.ua.gecko) && sType === "unload") { sType = "pagehide"; };
+               var capture = ((sType == "focusin" || sType == "focusout") && !YAHOO.env.ua.ie) ? true : false;
+               return this._addListener(el, this._getType(sType), fn, obj, overrideContext, capture);
+         };
+        if ( "onpagehide" in window || YAHOO.env.ua.gecko) {
+            YAHOO.util.Event._simpleRemove(window, "unload", 
+                                           YAHOO.util.Event._unload);
+        }
+        
+        function unhide_language_selector() { 
+            YAHOO.util.Dom.removeClass(
+                'lang_links_container', 'bz_default_hidden'
+            ); 
+        } 
+        YAHOO.util.Event.onDOMReady(unhide_language_selector);
+
+        
+        var BUGZILLA = {
+            param: {
+                cookiepath: '\/',
+                maxusermatches: 1000
+            },
+            constant: {
+                COMMENT_COLS: 80
+            },
+            string: {
+                
+
+                attach_desc_required:
+                    "You must enter a Description for this attachment.",
+                component_required:
+                    "You must select a Component for this bug.",
+                description_required:
+                    "You must enter a Description for this bug.",
+                short_desc_required:
+                    "You must enter a Summary for this bug.",
+                version_required:
+                    "You must select a Version for this bug."
+            }
+              , api_token: ''
+        };
+
+    if (history && history.replaceState) {
+      if(!document.location.href.match(/show_bug\.cgi/)) {
+        history.replaceState( null,
+                             "2562 – (Glowicki) Wtyczka wyszukiwarki: Pf.pl",
+                             "show_bug.cgi?id=2562" );
+        document.title = "2562 – (Glowicki) Wtyczka wyszukiwarki: Pf.pl";
+      }
+      if (document.location.href.match(/show_bug\.cgi\?.*list_id=/)) {
+        var href = document.location.href;
+        href = href.replace(/[\?&]+list_id=(\d+|cookie)/, '');
+        history.replaceState(null, "2562 – (Glowicki) Wtyczka wyszukiwarki: Pf.pl", href);
+      }
+    }
+    YAHOO.util.Event.onDOMReady(function() {
+      initDirtyFieldTracking();
+
+    });
+    // -->
+    </script>
+<script type="text/javascript" src="data/assets/daf5e0fb6826e6a35280e622913f0c4a.js"></script>
+
+    
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+                       title="Bugzilla" href="search_plugin.cgi">
+    <link rel="shortcut icon" href="images/favicon.ico">
+  </head>
+
+  <body 
+        class="bugs-aviary-pl
+                 bz_bug
+                 bz_status_RESOLVED
+                 bz_product_Firefox
+                 bz_component_Og&#XF3;lne
+                 bz_bug_2562 yui-skin-sam">
+
+  <div id="header"><div id="banner">
+  </div>
+
+    <div id="titles">
+      <span id="title">Bugzilla &ndash; Bug&nbsp;2562</span>
+
+        <span id="subtitle" class="subheader">Wtyczka wyszukiwarki: Pf.pl</span>
+
+        <span id="information" class="header_addl_info">Last modified: 2015-11-16 16:23:10 CET</span>
+    </div>
+
+
+    <div id="common_links"><ul class="links">
+  <li><a href="index.html">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi.html">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi.html">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi.html">Search</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="http://bugs.aviary.pl/buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input type="hidden" id="no_redirect_top" name="no_redirect" value="0">
+    <script type="text/javascript">
+      if (history && history.replaceState) {
+        var no_redirect = document.getElementById("no_redirect_top");
+        no_redirect.value = 1;
+      }
+    </script>
+    <input class="txt" type="text" id="quicksearch_top" name="quicksearch" 
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search" 
+           id="find_top"></form>
+  <a href="page.cgi%3Fid=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="report.cgi.html">Reports</a></li>
+
+  <li>
+      <span class="separator">| </span>
+        <a href="request.cgi.html">Requests</a></li>
+
+
+  <li>
+        <span class="separator">| </span>
+        <a href="https://bugzilla.readthedocs.org/en/5.0/using/understanding.html" target="_blank">Help</a>
+      </li>
+    
+      <li id="new_account_container_top">
+        <span class="separator">| </span>
+        <a href="createaccount.cgi.html">New&nbsp;Account</a>
+      </li>
+
+    <li id="mini_login_container_top">
+  <span class="separator">| </span>
+  <a id="login_link_top" href="show_bug.cgi%3Fid=2562&amp;GoAheadAndLogIn=1.html"
+     onclick="return show_mini_login_form('_top')">Log In</a>
+
+  <form action="show_bug.cgi%3Fid=2562.html" method="POST"
+        class="mini_login bz_default_hidden"
+        id="mini_login_top">
+    <input id="Bugzilla_login_top" required
+           name="Bugzilla_login" class="bz_login"
+        type="email" placeholder="Email Address">
+    <input class="bz_password" name="Bugzilla_password" type="password"
+           id="Bugzilla_password_top" required
+           placeholder="Password">
+    <input type="hidden" name="Bugzilla_login_token"
+           value="1469821603-41IFYY4IGJ0WV6zZUC-Qa_gvDPtDB0R13_cW4H4guDM">
+    <input type="submit" name="GoAheadAndLogIn" value="Log in"
+            id="log_in_top">
+    <a href="show_bug.cgi%3Fid=2562.html#" onclick="return hide_mini_login_form('_top')">[x]</a>
+  </form>
+</li>
+
+
+  <li id="forgot_container_top">
+    <span class="separator">| </span>
+    <a id="forgot_link_top" href="show_bug.cgi%3Fid=2562&amp;GoAheadAndLogIn=1.html#forgot"
+       onclick="return show_forgot_form('_top')">Forgot Password</a>
+    <form action="http://bugs.aviary.pl/token.cgi" method="post" id="forgot_form_top"
+          class="mini_forgot bz_default_hidden">
+      <label for="login_top">Login:</label>
+      <input name="loginname" size="20" id="login_top" required
+          type="email" placeholder="Your Email Address">
+      <input id="forgot_button_top" value="Reset Password" type="submit">
+      <input type="hidden" name="a" value="reqpw">
+      <input type="hidden" id="token_top" name="token"
+             value="1469821603-Ie1Nr4evZvVFBL0wlawsV5qmwYWflFEtiE44xuyI1rc">
+      <a href="show_bug.cgi%3Fid=2562.html#" onclick="return hide_forgot_form('_top')">[x]</a>
+    </form>
+  </li>
+</ul>
+    </div>
+  </div>
+
+  <div id="bugzilla-body">
+
+
+<script type="text/javascript">
+<!--
+
+//-->
+</script>
+
+<form name="changeform" id="changeform" method="post" action="http://bugs.aviary.pl/process_bug.cgi">
+
+  <input type="hidden" name="delta_ts" value="2015-11-16 16:23:10">
+  <input type="hidden" name="id" value="2562">
+  <input type="hidden" name="token" value="1469821603-KyJyp-TS2_qmii4J5FqJQzyIW-H-JPseTUGuoZXQkYo">
+<div class="bz_short_desc_container edit_form">
+     <a href="show_bug.cgi%3Fid=2562.html"><b>Bug&nbsp;2562</b></a> <span id="summary_container" class="bz_default_hidden">
+        (<span id="alias_nonedit_display">Glowicki</span>)
+      - <span id="short_desc_nonedit_display">Wtyczka wyszukiwarki: Pf.pl</span>
+     </span>
+
+    <div id="summary_input"><span class="field_label "
+    id="field_label_short_desc">
+
+
+  <a 
+      title="The bug summary is a short sentence which succinctly describes what the bug is about."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#short_desc"
+  >Summary:</a>
+
+</span>Wtyczka wyszukiwarki: Pf.pl
+    </div>
+  </div>
+  <script type="text/javascript">
+    hideEditableField('summary_container',
+                      'summary_input',
+                      'summary_edit_action',
+                      'short_desc',
+                      'Wtyczka wyszukiwarki: Pf.pl' );
+  </script>
+  <table class="edit_form">
+    <tr>
+      
+      <td id="bz_show_bug_column_1" class="bz_show_bug_column">     
+        <table>
+          <tr>
+    <th class="field_label">
+      <a href="page.cgi%3Fid=fields.html#bug_status">Status</a>:
+    </th>
+    <td id="bz_field_status">
+      <span id="static_bug_status">RESOLVED
+          WONTFIX
+      </span>
+    </td>
+  </tr>
+<tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+<tr><th class="field_label "
+    id="field_label_alias">
+
+
+  <a 
+      title="A short, unique name assigned to a bug in order to assist with looking it up and referring to it in other places in Bugzilla."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#alias"
+  >Alias:</a>
+
+</th>
+    <td>Glowicki
+    </td>
+  </tr>
+<tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+<tr><th class="field_label "
+    id="field_label_product">
+
+
+  <a 
+      title="Bugs are categorised into Products and Components. Select a Classification to narrow down this list."
+      class="field_help_link"
+      href="describecomponents.cgi.html"
+  >Product:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_product" >Firefox
+
+</td>
+    </tr>
+
+    
+    <tr class="bz_default_hidden"><th class="field_label "
+    id="field_label_classification">
+
+
+  <a 
+      title="Bugs are categorised into Classifications, Products and Components. classifications is the top-level categorisation."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#classification"
+  >Classification:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_classification" >Tłumaczenia oprogramowania
+
+</td>
+    </tr>
+        
+    
+    
+    <tr><th class="field_label "
+    id="field_label_component">
+
+
+  <a 
+      title="Components are second-level categories; each belongs to a particular Product. Select a Product to narrow down this list."
+      class="field_help_link"
+      href="describecomponents.cgi%3Fproduct=Firefox.html"
+  >Component:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_component" >Ogólne
+
+  (<a href="buglist.cgi%3Fcomponent=Ogólne&amp;product=Firefox&amp;bug_status=__open__.html"
+      target="_blank">show other bugs</a>)
+</td>
+    </tr>
+    <tr><th class="field_label "
+    id="field_label_version">
+
+
+  <a 
+      title="The version field defines the version of the software the bug was found in."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#version"
+  >Version:</a>
+
+</th>
+<td>trunk
+  </td>
+    </tr>
+        
+    
+        
+    <tr><th class="field_label "
+    id="field_label_rep_platform">
+
+
+  <a 
+      title="The hardware platform the bug was observed on. Note: When searching, selecting the option &quot;All&quot; only finds bugs whose value for this field is literally the word &quot;All&quot;."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#rep_platform"
+  >Hardware:</a>
+
+</th>
+      <td class="field_value">Wszystkie
+        Wszystkie
+      </td>
+    </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          
+          <tr>
+      <th class="field_label">
+        <label  accesskey="i">
+          <a href="page.cgi%3Fid=fields.html#importance"><u>I</u>mportance</a></label>:
+      </th>
+      <td>P3
+       propozycja
+      </td>
+    </tr>
+          
+          <tr><th class="field_label "
+    id="field_label_assigned_to">
+
+
+  <a 
+      title="The person in charge of resolving the bug."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#assigned_to"
+  >Assignee:</a>
+
+</th>
+      <td><span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+      </td>
+    </tr>
+
+    <tr><th class="field_label "
+    id="field_label_qa_contact">
+
+
+  <a 
+      title="The person responsible for confirming this bug if it is unconfirmed, and for verifying the fix once the bug has been resolved."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#qa_contact"
+  >QA Contact:</a>
+
+</th>
+      <td><span class="vcard">firefox
+</span>
+      </td>
+    </tr>
+    <script type="text/javascript">
+      assignToDefaultOnChange(['product', 'component'],
+        'splewako\x40aviary.pl',
+        'firefox\x40l10n.bledy');
+    </script>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          <tr><th class="field_label "
+    id="field_label_bug_file_loc">
+
+
+  <a 
+      title="Bugs can have a URL associated with them - for example, a pointer to a web site where the problem is seen."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#bug_file_loc"
+  >URL:</a>
+
+</th>
+    <td>
+      <span id="bz_url_input_area">
+          <a href="http://www.aviary.pl/wspolpraca/twoja-witryna-w-firefoksie/"
+             rel="noreferrer"><span title="http://www.aviary.pl/wspolpraca/twoja-witryna-w-firefoksie/">http://www.aviary.pl/wspolpraca/twoja...
+        </span></a>
+      </span>
+    </td>
+  </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+
+          
+<tr><th class="field_label "
+    id="field_label_dependson">
+
+
+  <a 
+      title="The bugs listed here must be resolved before this bug can be resolved."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#dependson"
+  >Depends on:</a>
+
+</th>
+
+  <td>
+    <span id="dependson_input_area">
+    </span>
+
+  </td>
+  </tr>
+  
+  <tr><th class="field_label "
+    id="field_label_blocked">
+
+
+  <a 
+      title="This bug must be resolved before the bugs listed in this field can be resolved."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#blocked"
+  >Blocks:</a>
+
+</th>
+
+  <td>
+    <span id="blocked_input_area">
+    </span>
+
+  </td>
+  </tr>
+          
+        </table>
+      </td>
+      <td>
+        <div class="bz_column_spacer">&nbsp;</div>
+      </td>
+      
+      <td id="bz_show_bug_column_2" class="bz_show_bug_column">
+        <table>
+        <tr>
+    <th class="field_label">
+      Reported:
+    </th>
+    <td>2009-07-23 00:15 CEST by <span class="vcard"><span class="fn">Andrzej</span>
+</span>
+    </td>
+  </tr>
+  
+  <tr>
+    <th class="field_label">
+      Modified:
+    </th>
+    <td>2015-11-16 16:23 CET
+      (<a href="show_activity.cgi%3Fid=2562.html">History</a>)
+    </td>
+  
+  </tr>
+<tr>
+      <th class="field_label">
+        <label  accesskey="a">
+          CC List:
+        </label>
+      </th>
+      <td>4 
+          users
+          <span id="cc_edit_area_showhide_container" class="bz_default_hidden">
+            (<a href="show_bug.cgi%3Fid=2562.html#" id="cc_edit_area_showhide">show</a>)
+          </span>
+        <div id="cc_edit_area">
+          <br>
+            <select id="cc" multiple="multiple" size="5" >
+                <option value="akalla">akalla</option>
+                <option value="bartml">bartml</option>
+                <option value="hubert+bap">hubert+bap</option>
+                <option value="splewako">splewako</option>
+            </select>
+        </div>
+          <script type="text/javascript">
+            hideEditableField( 'cc_edit_area_showhide_container', 
+                               'cc_edit_area', 
+                               'cc_edit_area_showhide', 
+                               '', 
+                               '');  
+          </script>
+      </td>
+    </tr>
+
+<tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+<tr><th class="field_label "
+    id="field_label_see_also">
+
+
+  <a 
+      title="This allows you to refer to bugs in other installations. You can enter a URL to a bug in the 'Add Bug URLs' field to note that that bug is related to this one. You can enter multiple URLs at once by separating them with whitespace. You should normally use this field to refer to bugs in other installations. For bugs in this installation, it is better to use the Depends on and Blocks fields."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#see_also"
+  >See Also:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_see_also" >
+
+</td>
+    </tr> 
+
+<tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+
+
+
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+          <hr id="bz_top_half_spacer">
+      </td>
+    </tr>
+  </table>
+
+  <table id="bz_big_form_parts">
+  <tr>
+  <td>
+
+    
+<script type="text/javascript">
+<!--
+function toggle_display(link) {
+    var table = document.getElementById("attachment_table");
+    var view_all = document.getElementById("view_all");
+    var hide_obsolete_url_parameter = "&hide_obsolete=1";
+    // Store current height for scrolling later
+    var originalHeight = table.offsetHeight;
+    var rows = YAHOO.util.Dom.getElementsByClassName(
+        'bz_tr_obsolete', 'tr', table);
+
+    for (var i = 0; i < rows.length; i++) {
+        bz_toggleClass(rows[i], 'bz_default_hidden');
+    }
+
+    if (YAHOO.util.Dom.hasClass(rows[0], 'bz_default_hidden')) {
+        link.innerHTML = "Show Obsolete";
+        view_all.href = view_all.href + hide_obsolete_url_parameter 
+    }
+    else {
+        link.innerHTML = "Hide Obsolete";
+        view_all.href = view_all.href.replace(hide_obsolete_url_parameter,"");
+    }
+
+    var newHeight = table.offsetHeight;
+    // This scrolling makes the window appear to not move at all.
+    window.scrollBy(0, newHeight - originalHeight);
+
+    return false;
+}
+//-->
+</script>
+
+<br>
+<table id="attachment_table">
+  <tr id="a0">
+    <th colspan="3" class="left">
+      Attachments
+    </th>
+  </tr>
+
+
+      <tr id="a1" class="bz_contenttype_text_plain">
+        <td>
+            <a href="attachment.cgi%3Fid=1375"
+               title="View the content of the attachment">
+          <b>Kod wyszukiwarki Pf.pl</b></a>
+
+          <span class="bz_attach_extra_info">
+              (53 bytes,
+                text/plain)
+
+            <br>
+            <a href="show_bug.cgi%3Fid=2562.html#attach_1375"
+               title="Go to the comment associated with the attachment">2009-07-23 00:15 CEST</a>,
+
+            <span class="vcard"><span class="fn">Andrzej</span>
+</span>
+          </span>
+        </td>
+
+          <td class="bz_attach_flags">
+              <i>no flags</i>
+          </td>
+
+        <td>
+          <a href="attachment.cgi%3Fid=1375&amp;action=edit.html">Details</a>
+        </td>
+      </tr>
+      <tr id="a2" class="bz_contenttype_application_zip">
+        <td>
+            <a href="attachment.cgi%3Fid=1407"
+               title="View the content of the attachment">
+          <b>Uaktualniona wersja wyszukiwarki Pf.pl w XML</b></a>
+
+          <span class="bz_attach_extra_info">
+              (3.58 KB,
+                application/zip)
+
+            <br>
+            <a href="show_bug.cgi%3Fid=2562.html#attach_1407"
+               title="Go to the comment associated with the attachment">2009-10-05 01:53 CEST</a>,
+
+            <span class="vcard"><span class="fn">Andrzej</span>
+</span>
+          </span>
+        </td>
+
+          <td class="bz_attach_flags">
+              <i>no flags</i>
+          </td>
+
+        <td>
+          <a href="attachment.cgi%3Fid=1407&amp;action=edit.html">Details</a>
+        </td>
+      </tr>
+
+  <tr class="bz_attach_footer">
+    <td colspan="3">
+        <span class="bz_attach_view_hide">
+            <a id="view_all" href="attachment.cgi%3Fbugid=2562&amp;action=viewall.html">View All</a>
+        </span>
+        <a href="attachment.cgi%3Fbugid=2562&amp;action=enter.html">Add an attachment</a>
+        (proposed patch, testcase, etc.)
+    </td>
+  </tr>
+</table>
+<br>
+
+  </td>
+  <td>
+  </td>
+  </tr></table>
+
+  
+  <div id="comments"><script src="js/comments.js" type="text/javascript">
+</script>
+
+<script type="text/javascript">
+<!--
+  /* Adds the reply text to the 'comment' textarea */
+  function replyToComment(id, real_id, name) {
+      var prefix = "(In reply to " + name + " from comment #" + id + ")\n";
+      var replytext = "";
+        /* pre id="comment_name_N" */
+        var text_elem = document.getElementById('comment_text_'+id);
+        var text = getText(text_elem);
+        replytext = prefix + wrapReplyText(text);
+
+
+      /* <textarea id="comment"> */
+      var textarea = document.getElementById('comment');
+      if (textarea.value != replytext) {
+          textarea.value += replytext;
+      }
+
+      textarea.focus();
+  } 
+//-->
+</script>
+
+
+<!-- This auto-sizes the comments and positions the collapse/expand links 
+     to the right. -->
+<table class="bz_comment_table">
+<tr>
+<td>
+<div id="c0" class="bz_comment bz_first_comment">
+
+      <div class="bz_first_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2562.html#c0">Description</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Andrzej</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-07-23 00:15:56 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Created <span class=""><a href="attachment.cgi%3Fid=1375" name="attach_1375" title="Kod wyszukiwarki Pf.pl">attachment 1375</a> <a href="attachment.cgi%3Fid=1375&amp;action=edit.html" title="Kod wyszukiwarki Pf.pl">[details]</a></span>
+Kod wyszukiwarki Pf.pl
+
+Witam,
+firma Eniro Polska właściciel wyszukiwarki firm Pf.pl chciałaby zgłosić propozycję jej integracji z najnowsza wersją Firefoxa.
+Wyszukiwarka Pf.pl spełnia wszystkie z poniższych punktów jakościowych:
+   1. jest przydatna dla szerokiej grupy użytkowników.
+   2. jest przyjazna dla użytkowników Firefoksa, tzn. w pełni w nim funkcjonalna.
+   3. jej usługi są być najwyższej jakości.
+   4. jest popularna wśród użytkowników.
+
+W załączniku kod wyszukiwarki, która można pobrać ze stron mozilli np pod adresem: <a href="http://mozillapl.org/baza_wyszukiwarek/firmy">http://mozillapl.org/baza_wyszukiwarek/firmy</a></pre>
+    </div>
+
+    <div id="c1" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2562.html#c1">Comment 1</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Adrian Kalla :Adrianer</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-07-23 03:57:27 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Kilka uwag:
+
+-zalacznik to nie kod wyszukiwarki, lecz plik url...
+-plik do ktorego odnosi sie ten plik, nie jest wtyczka wyszukiwarki formatu OpenSearch, wiec na moj gust nie spelnia nastepujacego wymogu: &quot;2. jest przyjazna dla użytkowników Firefoksa, tzn. w pełni w nim funkcjonalna.&quot;
+-Temat zgloszenia nie jest taki jaki powinien byc (patrz: <a href="http://www.aviary.pl/wspolpraca/twoja-witryna-w-firefoksie/">http://www.aviary.pl/wspolpraca/twoja-witryna-w-firefoksie/</a> )
+
+Oprocz tego: jest to zapewne kwestia dyskusyjna, ale IMHO Panorama Firm nie spelnia wymogu &quot;1. jest przydatna dla szerokiej grupy użytkowników.&quot;.
+Zwykla ksiazka telefoniczna by ten wymog raczej spelnila... 
+Pytanie ktore tu mi sie nasuwa: ile razy do roku uzytkownik domowy szuka czegos w Panoramie Firm lub podobnych? 
+Powyzsze wydaje mi sie tym bardziej problemowe, ze w prosbie nie podano zadnych argumentow, rowniez dla &quot;4. jest popularna wśród użytkowników.&quot; Samo skopiowanie tego punktu wydaje mi sie niewystarczajace...</pre>
+    </div>
+
+    <div id="c2" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2562.html#c2">Comment 2</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-07-23 04:26:57 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(In reply to <a href="show_bug.cgi%3Fid=2562.html#c1">comment #1</a>)
+<span class="quote">&gt; Kilka uwag:
+&gt; 
+&gt; -zalacznik to nie kod wyszukiwarki, lecz plik url...</span >
+
+Tak, wszystko powinno być w bugu.
+
+<span class="quote">&gt; -plik do ktorego odnosi sie ten plik, nie jest wtyczka wyszukiwarki formatu
+&gt; OpenSearch, wiec na moj gust nie spelnia nastepujacego wymogu: &quot;2. jest
+&gt; przyjazna dla użytkowników Firefoksa, tzn. w pełni w nim funkcjonalna.&quot;</span >
+
+Tam chodzi o witrynę, nie o wtyczkę. To witryna musi spełniać taki wymóg. Jak na razie nie znalazłem na Pf.pl niczego, co by sugerowało, że ten punkt jest niespełniony.
+
+<span class="quote">&gt; -Temat zgloszenia nie jest taki jaki powinien byc (patrz:
+&gt; <a href="http://www.aviary.pl/wspolpraca/twoja-witryna-w-firefoksie/">http://www.aviary.pl/wspolpraca/twoja-witryna-w-firefoksie/</a> )</span >
+
+Racja, to jest do poprawy.
+
+<span class="quote">&gt; Oprocz tego: jest to zapewne kwestia dyskusyjna, ale IMHO Panorama Firm nie
+&gt; spelnia wymogu &quot;1. jest przydatna dla szerokiej grupy użytkowników.&quot;.
+&gt; Zwykla ksiazka telefoniczna by ten wymog raczej spelnila... </span >
+
+Moim zdaniem nie spełniałaby, gdyby była zawężona do pewnej branży, tutaj nie mamy takiego przypadku.
+
+<span class="quote">&gt; Powyzsze wydaje mi sie tym bardziej problemowe, ze w prosbie nie podano zadnych
+&gt; argumentow, rowniez dla &quot;4. jest popularna wśród użytkowników.&quot; Samo
+&gt; skopiowanie tego punktu wydaje mi sie niewystarczajace...</span >
+
+Słuszna uwaga.</pre>
+    </div>
+
+    <div id="c3" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2562.html#c3">Comment 3</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Andrzej</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-10-05 01:53:46 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Created <span class=""><a href="attachment.cgi%3Fid=1407" name="attach_1407" title="Uaktualniona wersja wyszukiwarki Pf.pl w XML">attachment 1407</a> <a href="attachment.cgi%3Fid=1407&amp;action=edit.html" title="Uaktualniona wersja wyszukiwarki Pf.pl w XML">[details]</a></span>
+Uaktualniona wersja wyszukiwarki Pf.pl w XML</pre>
+    </div>
+
+    <div id="c4" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2562.html#c4">Comment 4</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Andrzej</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-10-05 02:06:10 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Witam,
+przesyłam ponowne poprawione zgłoszenie wyszukiwarki Pf.pl jako stałego komponentu polskiej wersji Firefox.
+
+Wyszukiwarka Pf.pl jest przydatna dla szerokiej grupy użytkowników - udostępnione są w niej firmy ze wszystkich miast i branż w Polsce. Użytkownik korzystając z Pf.pl może tym samym odnaleźć w naszej bazie każdy rodzaj firmy od korporacji aż po drobne sklepy osiedlowe.
+
+Pf.pl jest w pełni przyjaznym (intuicyjny panel, łatwość budowania zapytań) i przejrzystym narzędziem dzięki czemu miesiąc w miesiąc nasze strony odwiedza coraz więcej użytkowników. O popularności Pf.pl mogą świadczyć publicznie dostępne rankingi.
+
+Pf.pl jako jedyna strona yellowpages zawsze zajmuje notowane miejsca w ogólnych zestawieniach  polskich witryn.
+
+W lipcowym badaniu Megapanel (<a href="http://www.internetstandard.pl/news/350230/Lipcowe.wyniki.Megapanelu.najpopularniejsze.witryny.i.grupy.witryn.w.Polsce.html">http://www.internetstandard.pl/news/350230/Lipcowe.wyniki.Megapanelu.najpopularniejsze.witryny.i.grupy.witryn.w.Polsce.html</a>) Pf.pl zajęło 14te miejsce w kategorii &quot;Ranking grup witryn i witryn niezgrupowanych według zasięgu miesięcznego&quot;, a 16te w &quot;Ranking domen według zasięgu miesięcznego&quot;.
+
+W lipcowym rankingu serwisów tematycznych (<a href="http://www.internetstandard.pl/news/350244/Lipcowy.ranking.serwisow.tematycznych.html">http://www.internetstandard.pl/news/350244/Lipcowy.ranking.serwisow.tematycznych.html</a>) w kategorii &quot;Kategoria Wyszukiwarki i katalogi&quot; Pf.pl zdobyło drugie miejsce zaraz po Google.
+
+W załączniku poprawiona wersja okna wyszukiwarki w formacie XML.</pre>
+    </div>
+
+    <div id="c5" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2562.html#c5">Comment 5</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-12-06 00:57:48 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(w odpowiedzi na komentarz #4)
+<span class="quote">&gt; Wyszukiwarka Pf.pl jest przydatna dla szerokiej grupy użytkowników</span >
+
+Dlaczego zatem nie jest dostępna do zainstalowania dla przeglądających strony Pf.pl?
+
+<a href="https://developer.mozilla.org/pl/Tworzenie_wtyczek_OpenSearch_dla_Firefoksa#Automatyczne_wykrywanie_wtyczek_wyszukiwarek">https://developer.mozilla.org/pl/Tworzenie_wtyczek_OpenSearch_dla_Firefoksa#Automatyczne_wykrywanie_wtyczek_wyszukiwarek</a></pre>
+    </div>
+
+    <div id="c6" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2562.html#c6">Comment 6</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Bartłomiej Brzozowiec (BartZilla)</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-12-06 17:39:23 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(w odpowiedzi na komentarz #5)
+<span class="quote">&gt; (w odpowiedzi na komentarz #4)
+&gt; &gt; Wyszukiwarka Pf.pl jest przydatna dla szerokiej grupy użytkowników
+&gt; 
+&gt; Dlaczego zatem nie jest dostępna do zainstalowania dla przeglądających strony
+&gt; Pf.pl?
+&gt; 
+&gt; <a href="https://developer.mozilla.org/pl/Tworzenie_wtyczek_OpenSearch_dla_Firefoksa#Automatyczne_wykrywanie_wtyczek_wyszukiwarek">https://developer.mozilla.org/pl/Tworzenie_wtyczek_OpenSearch_dla_Firefoksa#Automatyczne_wykrywanie_wtyczek_wyszukiwarek</a></span >
+
+A dlaczego Google jest nie tylko na liście wyszukiwarek, ale jest nawet _domyślną_ wyszukiwarką, skoro także nie korzysta z tego mechanizmu?</pre>
+    </div>
+
+    <div id="c7" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2562.html#c7">Comment 7</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-12-06 18:08:31 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(w odpowiedzi na komentarz #6)
+<span class="quote">&gt; A dlaczego Google jest nie tylko na liście wyszukiwarek, ale jest nawet
+&gt; _domyślną_ wyszukiwarką, skoro także nie korzysta z tego mechanizmu?</span >
+
+Dlatego, że ma na polskim rynku dominującą pozycję (obecnie ponad 90%, w chwili premiery Firefoksa 1.0 - ponad 50%). Poza tym udostępnienie użytkownikom wtyczki wyszukiwania nie jest warunkiem koniecznym do spełnienia, by znaleźć się w gronie domyślnie instalowanych wyszukiwarek (inne przykłady: Allegro, Merlin).</pre>
+    </div>
+
+    <div id="c8" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2562.html#c8">Comment 8</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Andrzej</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-12-07 00:01:23 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(w odpowiedzi na komentarz #7)
+<span class="quote">&gt; (w odpowiedzi na komentarz #6)
+&gt; &gt; A dlaczego Google jest nie tylko na liście wyszukiwarek, ale jest nawet
+&gt; &gt; _domyślną_ wyszukiwarką, skoro także nie korzysta z tego mechanizmu?
+&gt; 
+&gt; Dlatego, że ma na polskim rynku dominującą pozycję (obecnie ponad 90%, w chwili
+&gt; premiery Firefoksa 1.0 - ponad 50%). Poza tym udostępnienie użytkownikom
+&gt; wtyczki wyszukiwania nie jest warunkiem koniecznym do spełnienia, by znaleźć
+&gt; się w gronie domyślnie instalowanych wyszukiwarek (inne przykłady: Allegro,
+&gt; Merlin).</span >
+
+
+Jesteśmy w trakcie przygotowywania wtyczki do add-ons, jednak jak Panowie zauważyli jej istnienie nie jest warunkiem decydującym/koniecznym odnośnie dodania wyszukiwarki do Firefox tylko raczej dodatkową, niezależną możliwością promocji Pf.pl.</pre>
+    </div>
+
+    <div id="c9" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2562.html#c9">Comment 9</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2011-01-23 09:55:42 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Marek, co z tym robimy?
+
+Z tego co się orientuję, to mamy w tej chwili tak dużo wtyczek wyszukiwarek, że dodanie nowej nie bardzo wchodzi w grę (pomijając kwestię, czy dodać Pf.pl czy nie).</pre>
+    </div>
+
+    <div id="c10" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2562.html#c10">Comment 10</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2011-01-29 10:48:11 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Marek?</pre>
+    </div>
+
+    <div id="c11" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2562.html#c11">Comment 11</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2011-02-23 13:27:14 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Wrócimy do tematu po 4.0, wtedy będzie można się zastanowić nad dalszymi modyfikacjami zestawu wyszukiwarek (patrz też bug dot. WL).</pre>
+    </div>
+
+    <div id="c12" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2562.html#c12">Comment 12</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Stefan Plewako :stef</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2015-11-16 16:23:10 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Nie wróciliśmy, w razie czego należy kierować się <a href="http://www.aviary.pl/wspolpraca/twoja-witryna-w-firefoksie/">http://www.aviary.pl/wspolpraca/twoja-witryna-w-firefoksie/</a></pre>
+    </div>
+
+
+  
+
+</td>
+<td>
+</td>
+</tr></table>
+  </div>
+
+    <hr><div id="add_comment" class="bz_section_additional_comments">
+      <table>
+        <tr>
+          <td>
+            <fieldset>
+              <legend>Note</legend>
+              You need to
+              <a href="show_bug.cgi%3Fid=2562&amp;GoAheadAndLogIn=1.html">log in</a>
+              before you can comment on or make changes to this bug.
+            </fieldset>
+          </td>
+        </tr> 
+      </table>
+  </div>        
+
+</form>
+
+<hr>
+<ul class="related_actions">
+    <li><a href="show_bug.cgi%3Fformat=multiple&amp;id=2562.html">Format For Printing</a></li>
+    <li>&nbsp;-&nbsp;<a href="show_bug.cgi%3Fctype=xml&amp;id=2562">XML</a></li>
+    <li>&nbsp;-&nbsp;<a href="enter_bug.cgi%3Fcloned_bug_id=2562.html">Clone This Bug</a></li>
+    
+    <li>&nbsp;-&nbsp;<a href="show_bug.cgi%3Fid=2562.html#">Top of page </a></li>
+    </ul>
+
+<br>
+</div>
+
+    <div id="footer">
+      <div class="intro"></div>
+<ul id="useful-links">
+  <li id="links-actions"><ul class="links">
+  <li><a href="index.html">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi.html">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi.html">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi.html">Search</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="http://bugs.aviary.pl/buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input type="hidden" id="no_redirect_bottom" name="no_redirect" value="0">
+    <script type="text/javascript">
+      if (history && history.replaceState) {
+        var no_redirect = document.getElementById("no_redirect_bottom");
+        no_redirect.value = 1;
+      }
+    </script>
+    <input class="txt" type="text" id="quicksearch_bottom" name="quicksearch" 
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search" 
+           id="find_bottom"></form>
+  <a href="page.cgi%3Fid=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="report.cgi.html">Reports</a></li>
+
+  <li>
+      <span class="separator">| </span>
+        <a href="request.cgi.html">Requests</a></li>
+
+
+  <li>
+        <span class="separator">| </span>
+        <a href="https://bugzilla.readthedocs.org/en/5.0/using/understanding.html" target="_blank">Help</a>
+      </li>
+    
+      <li id="new_account_container_bottom">
+        <span class="separator">| </span>
+        <a href="createaccount.cgi.html">New&nbsp;Account</a>
+      </li>
+
+    <li id="mini_login_container_bottom">
+  <span class="separator">| </span>
+  <a id="login_link_bottom" href="show_bug.cgi%3Fid=2562&amp;GoAheadAndLogIn=1.html"
+     onclick="return show_mini_login_form('_bottom')">Log In</a>
+
+  <form action="show_bug.cgi%3Fid=2562.html" method="POST"
+        class="mini_login bz_default_hidden"
+        id="mini_login_bottom">
+    <input id="Bugzilla_login_bottom" required
+           name="Bugzilla_login" class="bz_login"
+        type="email" placeholder="Email Address">
+    <input class="bz_password" name="Bugzilla_password" type="password"
+           id="Bugzilla_password_bottom" required
+           placeholder="Password">
+    <input type="hidden" name="Bugzilla_login_token"
+           value="1469821603-41IFYY4IGJ0WV6zZUC-Qa_gvDPtDB0R13_cW4H4guDM">
+    <input type="submit" name="GoAheadAndLogIn" value="Log in"
+            id="log_in_bottom">
+    <a href="show_bug.cgi%3Fid=2562.html#" onclick="return hide_mini_login_form('_bottom')">[x]</a>
+  </form>
+</li>
+
+
+  <li id="forgot_container_bottom">
+    <span class="separator">| </span>
+    <a id="forgot_link_bottom" href="show_bug.cgi%3Fid=2562&amp;GoAheadAndLogIn=1.html#forgot"
+       onclick="return show_forgot_form('_bottom')">Forgot Password</a>
+    <form action="http://bugs.aviary.pl/token.cgi" method="post" id="forgot_form_bottom"
+          class="mini_forgot bz_default_hidden">
+      <label for="login_bottom">Login:</label>
+      <input name="loginname" size="20" id="login_bottom" required
+          type="email" placeholder="Your Email Address">
+      <input id="forgot_button_bottom" value="Reset Password" type="submit">
+      <input type="hidden" name="a" value="reqpw">
+      <input type="hidden" id="token_bottom" name="token"
+             value="1469821603-Ie1Nr4evZvVFBL0wlawsV5qmwYWflFEtiE44xuyI1rc">
+      <a href="show_bug.cgi%3Fid=2562.html#" onclick="return hide_forgot_form('_bottom')">[x]</a>
+    </form>
+  </li>
+</ul>
+  </li>
+
+  
+
+
+
+
+  
+</ul>
+
+      <div class="outro"></div>
+    </div>
+
+  </body>
+</html>

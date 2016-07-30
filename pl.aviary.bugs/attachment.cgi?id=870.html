@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<title>Spam protection</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<script type="text/javascript">
+
+function replaceAddresses() {
+    var re = /\sat\s(aviary)\sdot\s/;
+    var links = document.links;
+    for (var i = 0; link = links[i]; i++) {
+        if (link.protocol == "mailto:") {
+            var href = unescape(link.href);
+            var text = unescape(link.firstChild.nodeValue);
+            link.href = href.replace(re, "@$1\.");
+            link.firstChild.nodeValue = text.replace(re, "@$1\.");            
+        }    
+    }
+}
+
+</script>
+</head>
+<body onload="replaceAddresses();">
+
+
+<dl>
+    <dt>Stanisław Małolepszy (<a href="mailto:smalolepszy at aviary dot pl">smalolepszy at aviary dot pl</a>)</dt>
+        <dd>Językoznawca i tłumacz. Osoba odpowiedzialna za lokalizację   osobistego kalendarza Sunbird. Pełni też rolę korektora tłumaczeń    publikowanych przez Aviary.pl.  </dd>
+    <dt>Wojciech Kapusta (<a href="mailto:wkapusta at aviary dot pl">wkapusta at aviary dot pl</a>) </dt>
+        <dd>Korekta tłumaczeń programów oraz tekstów publikowanych przez Aviary.pl.</dd>
+<dt>Marek Stępień (<a href="mailto:mstepien at aviary dot pl">mstepien at aviary dot pl</a>)</dt>
+    <dd>Kierownik lokalizacji przeglądarek Firefox i Minimo oraz osoba odpowiedzialna za działanie i wygląd naszych stron internetowych. Opiekuje się również polską wersją serwisu <a href="http://www.mozilla-europe.org/">Mozilla-Europe.org</a>. </dd>
+</dl>
+</body>
+</html>

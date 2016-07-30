@@ -1,0 +1,2681 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>146 &ndash; Widok/Kodowanie znaków, Opcje/Kodowanie znaków - zmiana rodzaju?</title>
+
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<link href="data/assets/7aa6ea67750936a0368541421bdcd5ee.css" rel="stylesheet" type="text/css">
+
+
+
+    
+<script type="text/javascript" src="data/assets/a7c2f3a028f17a9aa60f56dc9d6e732d.js"></script>
+
+    <script type="text/javascript">
+    <!--
+        YAHOO.namespace('bugzilla');
+        YAHOO.util.Event.addListener = function (el, sType, fn, obj, overrideContext) {
+               if ( ("onpagehide" in window || YAHOO.env.ua.gecko) && sType === "unload") { sType = "pagehide"; };
+               var capture = ((sType == "focusin" || sType == "focusout") && !YAHOO.env.ua.ie) ? true : false;
+               return this._addListener(el, this._getType(sType), fn, obj, overrideContext, capture);
+         };
+        if ( "onpagehide" in window || YAHOO.env.ua.gecko) {
+            YAHOO.util.Event._simpleRemove(window, "unload", 
+                                           YAHOO.util.Event._unload);
+        }
+        
+        function unhide_language_selector() { 
+            YAHOO.util.Dom.removeClass(
+                'lang_links_container', 'bz_default_hidden'
+            ); 
+        } 
+        YAHOO.util.Event.onDOMReady(unhide_language_selector);
+
+        
+        var BUGZILLA = {
+            param: {
+                cookiepath: '\/',
+                maxusermatches: 1000
+            },
+            constant: {
+                COMMENT_COLS: 80
+            },
+            string: {
+                
+
+                attach_desc_required:
+                    "You must enter a Description for this attachment.",
+                component_required:
+                    "You must select a Component for this bug.",
+                description_required:
+                    "You must enter a Description for this bug.",
+                short_desc_required:
+                    "You must enter a Summary for this bug.",
+                version_required:
+                    "You must select a Version for this bug."
+            }
+              , api_token: ''
+        };
+
+    if (history && history.replaceState) {
+      if(!document.location.href.match(/show_bug\.cgi/)) {
+        history.replaceState( null,
+                             "146 – Widok\/Kodowanie znaków, Opcje\/Kodowanie znaków - zmiana rodzaju?",
+                             "show_bug.cgi?id=146" );
+        document.title = "146 – Widok\/Kodowanie znaków, Opcje\/Kodowanie znaków - zmiana rodzaju?";
+      }
+      if (document.location.href.match(/show_bug\.cgi\?.*list_id=/)) {
+        var href = document.location.href;
+        href = href.replace(/[\?&]+list_id=(\d+|cookie)/, '');
+        history.replaceState(null, "146 – Widok\/Kodowanie znaków, Opcje\/Kodowanie znaków - zmiana rodzaju?", href);
+      }
+    }
+    YAHOO.util.Event.onDOMReady(function() {
+      initDirtyFieldTracking();
+
+    });
+    // -->
+    </script>
+<script type="text/javascript" src="data/assets/daf5e0fb6826e6a35280e622913f0c4a.js"></script>
+
+    
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+                       title="Bugzilla" href="search_plugin.cgi">
+    <link rel="shortcut icon" href="images/favicon.ico">
+  </head>
+
+  <body 
+        class="bugs-aviary-pl
+                 bz_bug
+                 bz_status_VERIFIED
+                 bz_product_Toolkit
+                 bz_component_inne
+                 bz_bug_146 yui-skin-sam">
+
+  <div id="header"><div id="banner">
+  </div>
+
+    <div id="titles">
+      <span id="title">Bugzilla &ndash; Bug&nbsp;146</span>
+
+        <span id="subtitle" class="subheader">Widok/Kodowanie znaków, Opcje/Kodowanie znaków - zmiana rodzaju?</span>
+
+        <span id="information" class="header_addl_info">Last modified: 2009-01-19 10:01:59 CET</span>
+    </div>
+
+
+    <div id="common_links"><ul class="links">
+  <li><a href="index.html">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi.html">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi.html">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi.html">Search</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="http://bugs.aviary.pl/buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input type="hidden" id="no_redirect_top" name="no_redirect" value="0">
+    <script type="text/javascript">
+      if (history && history.replaceState) {
+        var no_redirect = document.getElementById("no_redirect_top");
+        no_redirect.value = 1;
+      }
+    </script>
+    <input class="txt" type="text" id="quicksearch_top" name="quicksearch" 
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search" 
+           id="find_top"></form>
+  <a href="page.cgi%3Fid=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="report.cgi.html">Reports</a></li>
+
+  <li>
+      <span class="separator">| </span>
+        <a href="request.cgi.html">Requests</a></li>
+
+
+  <li>
+        <span class="separator">| </span>
+        <a href="https://bugzilla.readthedocs.org/en/5.0/using/understanding.html" target="_blank">Help</a>
+      </li>
+    
+      <li id="new_account_container_top">
+        <span class="separator">| </span>
+        <a href="createaccount.cgi.html">New&nbsp;Account</a>
+      </li>
+
+    <li id="mini_login_container_top">
+  <span class="separator">| </span>
+  <a id="login_link_top" href="show_bug.cgi%3Fid=146&amp;GoAheadAndLogIn=1.html"
+     onclick="return show_mini_login_form('_top')">Log In</a>
+
+  <form action="show_bug.cgi%3Fid=146.html" method="POST"
+        class="mini_login bz_default_hidden"
+        id="mini_login_top">
+    <input id="Bugzilla_login_top" required
+           name="Bugzilla_login" class="bz_login"
+        type="email" placeholder="Email Address">
+    <input class="bz_password" name="Bugzilla_password" type="password"
+           id="Bugzilla_password_top" required
+           placeholder="Password">
+    <input type="hidden" name="Bugzilla_login_token"
+           value="1469819890-vac0ERxDM1jqmjdfe2xhcv4zDL2rJUkUQfIKmAJVgeM">
+    <input type="submit" name="GoAheadAndLogIn" value="Log in"
+            id="log_in_top">
+    <a href="show_bug.cgi%3Fid=146.html#" onclick="return hide_mini_login_form('_top')">[x]</a>
+  </form>
+</li>
+
+
+  <li id="forgot_container_top">
+    <span class="separator">| </span>
+    <a id="forgot_link_top" href="show_bug.cgi%3Fid=146&amp;GoAheadAndLogIn=1.html#forgot"
+       onclick="return show_forgot_form('_top')">Forgot Password</a>
+    <form action="http://bugs.aviary.pl/token.cgi" method="post" id="forgot_form_top"
+          class="mini_forgot bz_default_hidden">
+      <label for="login_top">Login:</label>
+      <input name="loginname" size="20" id="login_top" required
+          type="email" placeholder="Your Email Address">
+      <input id="forgot_button_top" value="Reset Password" type="submit">
+      <input type="hidden" name="a" value="reqpw">
+      <input type="hidden" id="token_top" name="token"
+             value="1469819890-XYuaGGxOrnFBKC_fzXEmk94bf6FU55zj0AlTVZe1mjw">
+      <a href="show_bug.cgi%3Fid=146.html#" onclick="return hide_forgot_form('_top')">[x]</a>
+    </form>
+  </li>
+</ul>
+    </div>
+  </div>
+
+  <div id="bugzilla-body">
+
+
+<script type="text/javascript">
+<!--
+
+//-->
+</script>
+
+<form name="changeform" id="changeform" method="post" action="http://bugs.aviary.pl/process_bug.cgi">
+
+  <input type="hidden" name="delta_ts" value="2009-01-19 10:01:59">
+  <input type="hidden" name="id" value="146">
+  <input type="hidden" name="token" value="1469819890-ACZVfs6voCigB527jRR0MGiOBOoqk5UhKc24cKHVlBc">
+<div class="bz_short_desc_container edit_form">
+     <a href="show_bug.cgi%3Fid=146.html"><b>Bug&nbsp;146</b></a> <span id="summary_container" class="bz_default_hidden">
+      - <span id="short_desc_nonedit_display">Widok/Kodowanie znaków, Opcje/Kodowanie znaków - zmiana rodzaju?</span>
+     </span>
+
+    <div id="summary_input"><span class="field_label "
+    id="field_label_short_desc">
+
+
+  <a 
+      title="The bug summary is a short sentence which succinctly describes what the bug is about."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#short_desc"
+  >Summary:</a>
+
+</span>Widok/Kodowanie znaków, Opcje/Kodowanie znaków - zmiana rodzaju?
+    </div>
+  </div>
+  <script type="text/javascript">
+    hideEditableField('summary_container',
+                      'summary_input',
+                      'summary_edit_action',
+                      'short_desc',
+                      'Widok\/Kodowanie znaków, Opcje\/Kodowanie znaków - zmiana rodzaju?' );
+  </script>
+  <table class="edit_form">
+    <tr>
+      
+      <td id="bz_show_bug_column_1" class="bz_show_bug_column">     
+        <table>
+          <tr>
+    <th class="field_label">
+      <a href="page.cgi%3Fid=fields.html#bug_status">Status</a>:
+    </th>
+    <td id="bz_field_status">
+      <span id="static_bug_status">VERIFIED
+          FIXED
+      </span>
+    </td>
+  </tr>
+<tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+<tr><th class="field_label "
+    id="field_label_alias">
+
+
+  <a 
+      title="A short, unique name assigned to a bug in order to assist with looking it up and referring to it in other places in Bugzilla."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#alias"
+  >Alias:</a>
+
+</th>
+    <td>
+        None
+    </td>
+  </tr>
+<tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+<tr><th class="field_label "
+    id="field_label_product">
+
+
+  <a 
+      title="Bugs are categorised into Products and Components. Select a Classification to narrow down this list."
+      class="field_help_link"
+      href="describecomponents.cgi.html"
+  >Product:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_product" >Toolkit
+
+</td>
+    </tr>
+
+    
+    <tr class="bz_default_hidden"><th class="field_label "
+    id="field_label_classification">
+
+
+  <a 
+      title="Bugs are categorised into Classifications, Products and Components. classifications is the top-level categorisation."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#classification"
+  >Classification:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_classification" >Tłumaczenia oprogramowania
+
+</td>
+    </tr>
+        
+    
+    
+    <tr><th class="field_label "
+    id="field_label_component">
+
+
+  <a 
+      title="Components are second-level categories; each belongs to a particular Product. Select a Product to narrow down this list."
+      class="field_help_link"
+      href="describecomponents.cgi%3Fproduct=Toolkit.html"
+  >Component:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_component" >inne
+
+  (<a href="buglist.cgi%3Fcomponent=inne&amp;product=Toolkit&amp;bug_status=__open__.html"
+      target="_blank">show other bugs</a>)
+</td>
+    </tr>
+    <tr><th class="field_label "
+    id="field_label_version">
+
+
+  <a 
+      title="The version field defines the version of the software the bug was found in."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#version"
+  >Version:</a>
+
+</th>
+<td>nieokreślona
+  </td>
+    </tr>
+        
+    
+        
+    <tr><th class="field_label "
+    id="field_label_rep_platform">
+
+
+  <a 
+      title="The hardware platform the bug was observed on. Note: When searching, selecting the option &quot;All&quot; only finds bugs whose value for this field is literally the word &quot;All&quot;."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#rep_platform"
+  >Hardware:</a>
+
+</th>
+      <td class="field_value">Wszystkie
+        Wszystkie
+      </td>
+    </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          
+          <tr>
+      <th class="field_label">
+        <label  accesskey="i">
+          <a href="page.cgi%3Fid=fields.html#importance"><u>I</u>mportance</a></label>:
+      </th>
+      <td>P1
+       trywialny
+      </td>
+    </tr>
+          
+          <tr><th class="field_label "
+    id="field_label_assigned_to">
+
+
+  <a 
+      title="The person in charge of resolving the bug."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#assigned_to"
+  >Assignee:</a>
+
+</th>
+      <td><span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+      </td>
+    </tr>
+
+    <tr><th class="field_label "
+    id="field_label_qa_contact">
+
+
+  <a 
+      title="The person responsible for confirming this bug if it is unconfirmed, and for verifying the fix once the bug has been resolved."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#qa_contact"
+  >QA Contact:</a>
+
+</th>
+      <td><span class="vcard"><span class="fn">Staś Małolepszy :stas</span>
+</span>
+      </td>
+    </tr>
+    <script type="text/javascript">
+      assignToDefaultOnChange(['product', 'component'],
+        'splewako\x40aviary.pl',
+        'toolkit\x40l10n.bledy');
+    </script>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          <tr><th class="field_label "
+    id="field_label_bug_file_loc">
+
+
+  <a 
+      title="Bugs can have a URL associated with them - for example, a pointer to a web site where the problem is seen."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#bug_file_loc"
+  >URL:</a>
+
+</th>
+    <td>
+      <span id="bz_url_input_area">
+      </span>
+    </td>
+  </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+
+          <tr>
+    <th class="field_label">
+      <label>Duplicates (2)</label>:
+    </th>
+    <td class="field_value">
+      <span id="duplicates"><a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED DUPLICATE - Widok / Kodowanie znaków"
+   href="show_bug.cgi%3Fid=711.html">711</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED DUPLICATE - Opcje / Kodowanie znaków"
+   href="show_bug.cgi%3Fid=764.html">764</a> 
+      </span>
+      (<a href="buglist.cgi%3Fbug_id=711,764.html">view as bug list</a>)
+    </td>
+  </tr>
+<tr><th class="field_label "
+    id="field_label_dependson">
+
+
+  <a 
+      title="The bugs listed here must be resolved before this bug can be resolved."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#dependson"
+  >Depends on:</a>
+
+</th>
+
+  <td>
+    <span id="dependson_input_area">
+    </span>
+
+  </td>
+  </tr>
+  
+  <tr><th class="field_label "
+    id="field_label_blocked">
+
+
+  <a 
+      title="This bug must be resolved before the bugs listed in this field can be resolved."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#blocked"
+  >Blocks:</a>
+
+</th>
+
+  <td>
+    <span id="blocked_input_area">
+    </span>
+<a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - [tracking] Lokalizacja Firefoksa 3.0"
+   href="show_bug.cgi%3Fid=1040.html">1040</a> <a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED WORKSFORME - [tracking] Lokalizacja SeaMonkey 2.0.x"
+   href="show_bug.cgi%3Fid=1652.html">seamonkey2</a> 
+  </td>
+  </tr>
+
+    <tr>
+      <th>&nbsp;</th>
+
+      <td id="show_dependency_tree_or_graph">
+        Show dependency <a href="showdependencytree.cgi%3Fid=146&amp;hide_resolved=1.html">tree</a>
+
+          /&nbsp;<a href="showdependencygraph.cgi%3Fid=146.html">graph</a>
+      </td>
+    </tr>
+          
+        </table>
+      </td>
+      <td>
+        <div class="bz_column_spacer">&nbsp;</div>
+      </td>
+      
+      <td id="bz_show_bug_column_2" class="bz_show_bug_column">
+        <table>
+        <tr>
+    <th class="field_label">
+      Reported:
+    </th>
+    <td>2004-06-21 14:55 CEST by <span class="vcard"><span class="fn">Piotr Chyliński</span>
+</span>
+    </td>
+  </tr>
+  
+  <tr>
+    <th class="field_label">
+      Modified:
+    </th>
+    <td>2009-01-19 10:01 CET
+      (<a href="show_activity.cgi%3Fid=146.html">History</a>)
+    </td>
+  
+  </tr>
+<tr>
+      <th class="field_label">
+        <label  accesskey="a">
+          CC List:
+        </label>
+      </th>
+      <td>10 
+          users
+          <span id="cc_edit_area_showhide_container" class="bz_default_hidden">
+            (<a href="show_bug.cgi%3Fid=146.html#" id="cc_edit_area_showhide">show</a>)
+          </span>
+        <div id="cc_edit_area">
+          <br>
+            <select id="cc" multiple="multiple" size="5" >
+                <option value="akalla">akalla</option>
+                <option value="bpiec">bpiec</option>
+                <option value="gandalf">gandalf</option>
+                <option value="hubert+bap">hubert+bap</option>
+                <option value="mwawoczny">mwawoczny</option>
+                <option value="pitreck">pitreck</option>
+                <option value="prefiks">prefiks</option>
+                <option value="splewako">splewako</option>
+                <option value="toolkit">toolkit</option>
+                <option value="w.kapusta">w.kapusta</option>
+            </select>
+        </div>
+          <script type="text/javascript">
+            hideEditableField( 'cc_edit_area_showhide_container', 
+                               'cc_edit_area', 
+                               'cc_edit_area_showhide', 
+                               '', 
+                               '');  
+          </script>
+      </td>
+    </tr>
+
+<tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+<tr><th class="field_label "
+    id="field_label_see_also">
+
+
+  <a 
+      title="This allows you to refer to bugs in other installations. You can enter a URL to a bug in the 'Add Bug URLs' field to note that that bug is related to this one. You can enter multiple URLs at once by separating them with whitespace. You should normally use this field to refer to bugs in other installations. For bugs in this installation, it is better to use the Depends on and Blocks fields."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#see_also"
+  >See Also:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_see_also" >
+
+</td>
+    </tr> 
+
+<tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+
+
+
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+          <hr id="bz_top_half_spacer">
+      </td>
+    </tr>
+  </table>
+
+  <table id="bz_big_form_parts">
+  <tr>
+  <td>
+
+    
+<script type="text/javascript">
+<!--
+function toggle_display(link) {
+    var table = document.getElementById("attachment_table");
+    var view_all = document.getElementById("view_all");
+    var hide_obsolete_url_parameter = "&hide_obsolete=1";
+    // Store current height for scrolling later
+    var originalHeight = table.offsetHeight;
+    var rows = YAHOO.util.Dom.getElementsByClassName(
+        'bz_tr_obsolete', 'tr', table);
+
+    for (var i = 0; i < rows.length; i++) {
+        bz_toggleClass(rows[i], 'bz_default_hidden');
+    }
+
+    if (YAHOO.util.Dom.hasClass(rows[0], 'bz_default_hidden')) {
+        link.innerHTML = "Show Obsolete";
+        view_all.href = view_all.href + hide_obsolete_url_parameter 
+    }
+    else {
+        link.innerHTML = "Hide Obsolete";
+        view_all.href = view_all.href.replace(hide_obsolete_url_parameter,"");
+    }
+
+    var newHeight = table.offsetHeight;
+    // This scrolling makes the window appear to not move at all.
+    window.scrollBy(0, newHeight - originalHeight);
+
+    return false;
+}
+//-->
+</script>
+
+<br>
+<table id="attachment_table">
+  <tr id="a0">
+    <th colspan="3" class="left">
+      Attachments
+    </th>
+  </tr>
+
+
+      <tr id="a1" class="bz_contenttype_text_plain">
+        <td>
+            <a href="attachment.cgi%3Fid=757"
+               title="View the content of the attachment">
+          <b>wynik grepa</b></a>
+
+          <span class="bz_attach_extra_info">
+              (5.37 KB,
+                text/plain)
+
+            <br>
+            <a href="show_bug.cgi%3Fid=146.html#attach_757"
+               title="Go to the comment associated with the attachment">2006-09-10 21:28 CEST</a>,
+
+            <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+          </span>
+        </td>
+
+          <td class="bz_attach_flags">
+              <i>no flags</i>
+          </td>
+
+        <td>
+          <a href="attachment.cgi%3Fid=757&amp;action=edit.html">Details</a>
+        </td>
+      </tr>
+      <tr id="a2" class="bz_contenttype_text_plain bz_patch">
+        <td>
+            <a href="attachment.cgi%3Fid=970"
+               title="View the content of the attachment">
+          <b>Patch dla browser i toolkit (trunk)</b></a>
+
+          <span class="bz_attach_extra_info">
+              (12.73 KB,
+                patch)
+
+            <br>
+            <a href="show_bug.cgi%3Fid=146.html#attach_970"
+               title="Go to the comment associated with the attachment">2008-03-22 11:07 CET</a>,
+
+            <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+          </span>
+        </td>
+
+          <td class="bz_attach_flags">
+              <i>no flags</i>
+          </td>
+
+        <td>
+          <a href="attachment.cgi%3Fid=970&amp;action=edit.html">Details</a>
+        </td>
+      </tr>
+      <tr id="a3" class="bz_contenttype_image_png">
+        <td>
+            <a href="attachment.cgi%3Fid=1000"
+               title="View the content of the attachment">
+          <b>&quot;Hebrajski - porządek wizualny&quot; jest za długi</b></a>
+
+          <span class="bz_attach_extra_info">
+              (186.78 KB,
+                image/png)
+
+            <br>
+            <a href="show_bug.cgi%3Fid=146.html#attach_1000"
+               title="Go to the comment associated with the attachment">2008-04-05 06:39 CEST</a>,
+
+            <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+          </span>
+        </td>
+
+          <td class="bz_attach_flags">
+              <i>no flags</i>
+          </td>
+
+        <td>
+          <a href="attachment.cgi%3Fid=1000&amp;action=edit.html">Details</a>
+        </td>
+      </tr>
+      <tr id="a4" class="bz_contenttype_text_plain bz_patch">
+        <td>
+            <a href="attachment.cgi%3Fid=1001"
+               title="View the content of the attachment">
+          <b>&quot;Hebrajski - porządek wizualny&quot; -&gt; &quot;Hebrajski wizualny&quot;</b></a>
+
+          <span class="bz_attach_extra_info">
+              (763 bytes,
+                patch)
+
+            <br>
+            <a href="show_bug.cgi%3Fid=146.html#attach_1001"
+               title="Go to the comment associated with the attachment">2008-04-05 06:44 CEST</a>,
+
+            <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+          </span>
+        </td>
+
+          <td class="bz_attach_flags">
+                  <span title="Hubert Gajewski">hubert+bap</span>:
+                review+
+                <br>
+          </td>
+
+        <td>
+          <a href="attachment.cgi%3Fid=1001&amp;action=edit.html">Details</a>
+        </td>
+      </tr>
+
+  <tr class="bz_attach_footer">
+    <td colspan="3">
+        <span class="bz_attach_view_hide">
+            <a id="view_all" href="attachment.cgi%3Fbugid=146&amp;action=viewall.html">View All</a>
+        </span>
+        <a href="attachment.cgi%3Fbugid=146&amp;action=enter.html">Add an attachment</a>
+        (proposed patch, testcase, etc.)
+    </td>
+  </tr>
+</table>
+<br>
+
+  </td>
+  <td>
+  </td>
+  </tr></table>
+
+  
+  <div id="comments"><script src="js/comments.js" type="text/javascript">
+</script>
+
+<script type="text/javascript">
+<!--
+  /* Adds the reply text to the 'comment' textarea */
+  function replyToComment(id, real_id, name) {
+      var prefix = "(In reply to " + name + " from comment #" + id + ")\n";
+      var replytext = "";
+        /* pre id="comment_name_N" */
+        var text_elem = document.getElementById('comment_text_'+id);
+        var text = getText(text_elem);
+        replytext = prefix + wrapReplyText(text);
+
+
+      /* <textarea id="comment"> */
+      var textarea = document.getElementById('comment');
+      if (textarea.value != replytext) {
+          textarea.value += replytext;
+      }
+
+      textarea.focus();
+  } 
+//-->
+</script>
+
+
+<!-- This auto-sizes the comments and positions the collapse/expand links 
+     to the right. -->
+<table class="bz_comment_table">
+<tr>
+<td>
+<div id="c0" class="bz_comment bz_first_comment">
+
+      <div class="bz_first_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=146.html#c0">Description</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Piotr Chyliński</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-06-21 14:55:56 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Menu Widok/Kodowanie znaków - &quot;kodowanie&quot; to rodzaj nijaki, ale w listach pojawia się rodzaj męski. 
+Czy zamiast &quot;Zachodni&quot;, &quot;Środkowoeuropejski&quot; etc. nie powinno być &quot;Zachodnie&quot;, 
+&quot;Środkowoeuropejskie&quot; etc.?</pre>
+    </div>
+
+    <div id="c1" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=146.html#c1">Comment 1</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Piotr Pielach</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-06-21 15:48:48 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Dodam tylko, że M$ w IE bardzo podobnie to rozwiązał... :) r. nijaki -&gt; męski
+(zwykle)
+Ale raczej nie brał bym tego za atut :]</pre>
+    </div>
+
+    <div id="c2" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=146.html#c2">Comment 2</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-10-02 20:27:55 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">mam duuuze watpliwosci, czy dobrze by wygladalo &quot;Kodowanie chinskie&quot;.</pre>
+    </div>
+
+    <div id="c3" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=146.html#c3">Comment 3</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-10-11 02:25:50 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">mass
+owner-&gt;marcoos
+qa-&gt;na siebie (na razie)</pre>
+    </div>
+
+    <div id="c4" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=146.html#c4">Comment 4</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-10-21 00:32:48 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Ja jestem za poprawieniem tego. Kodowanie (jakie) środkowoeuropejskie.
+
+Problem jest z chińskim (ale nie taki, jak mówi Gandalf).
+
+&quot;Chiński tradycyjny&quot; to nie kodowanie, ale język (chiński-tawjański, ale taka
+nazwa może być niepoprawna politycznie). Po angielsku nie ma problemu, bo
+&quot;Chinese Traditional&quot; znaczy zarówno &quot;Chiński tradycyjny&quot; jak i &quot;Kodowanie
+tradycyjno-chińskie&quot; (to drugie po polsku brzmi jednak idiotycznie).
+
+Jeśli ktoś wymyśli, jak potraktować kodowanie chińskie, jestem za wprowadzeniem
+tej zmiany.
+
+Dopóki nie mamy pomysłu, zostaje jak jest.
+
+Zespół GNOME PL tłumaczy to po prostu na &quot;Chińskie tradycyjne&quot;, co jest błędem,
+bo to nie kodowanie jest tradycyjne, tylko język... Więc nie możemy się powołać
+na to, jak to przetłumaczono w Epiphany PL.
+</pre>
+    </div>
+
+    <div id="c5" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=146.html#c5">Comment 5</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-03-18 18:29:18 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Masówka. Likwidacja produktu &quot;Firefox pl-PL&quot;, błędy zostają przeniesione do
+Lokalizacja/Firefox.</pre>
+    </div>
+
+    <div id="c6" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=146.html#c6">Comment 6</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-04-16 21:15:24 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Oba rozwiązania (a la IE i a la Epiphany) mają swoje wady... Ktoś ma jakieś
+propozycje? 
+
+Chciałbym to mieć poprawione w 1.1. :)</pre>
+    </div>
+
+    <div id="c7" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=146.html#c7">Comment 7</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Piotr Chyliński</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-04-16 21:25:19 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(W odpowiedzi na komentarz #6)
+<span class="quote">&gt; Oba rozwiązania (a la IE i a la Epiphany) mają swoje wady... Ktoś ma jakieś
+&gt; propozycje? 
+&gt; 
+&gt; Chciałbym to mieć poprawione w 1.1. :)</span >
+
+A może tak:
+Kodowanie -&gt; chińskie (tradycyjny)/chińskie (uproszczony)
+
+</pre>
+    </div>
+
+    <div id="c8" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=146.html#c8">Comment 8</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Staś Małolepszy :stas</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-04-16 23:03:59 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(W odpowiedzi na komentarz #7)
+<span class="quote">&gt; Kodowanie -&gt; chińskie (tradycyjny)/chińskie (uproszczony)</span >
+
+Mnie się ta propozycja podoba. Choć może dodałbym jeszcze słowo &quot;język&quot;. Czyli:
+Kodowanie znaków &gt; ... &gt; ... &gt; chińskie, język tradycyjny (EUC-TW)
+Kodowanie znaków &gt; ... &gt; ... &gt; chińskie, język uproszczony (ISO-2022-CN)
+itd.
+
+Bez nawiasów wokół &quot;jezyk ..&quot;, bo nawias jest zaraz potem.
+
+I jeszcze jedno. Czy długie listy kodowań zaczynających się od małej litery będą
+wyglądały dobrze?
+
+</pre>
+    </div>
+
+    <div id="c9" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=146.html#c9">Comment 9</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-04-17 00:07:13 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(W odpowiedzi na komentarz #8)
+
+<span class="quote">&gt; I jeszcze jedno. Czy długie listy kodowań zaczynających się od małej litery będą
+&gt; wyglądały dobrze?</span >
+
+Też o tym pomyślałem. Lepiej wygląda z dużej. BTW: wszędzie w menu Firefoksa
+pozycje zaczynają się z dużej litery. Tutaj powinno być tak samo.
+
+</pre>
+    </div>
+
+    <div id="c10" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=146.html#c10">Comment 10</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-04-17 00:17:37 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Dwukropek zamiast cudzysłowu w *.dtd powoduje crash Firefoksa (FF wywala się na
+zakładce Prywatność w Opcjach), stąd podwyższenie wagi błędu.</pre>
+    </div>
+
+    <div id="c11" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=146.html#c11">Comment 11</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-04-17 00:18:29 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">O Jezu. Zignorujcie powyższy komentarz. Sorry, nie ten błąd. :)</pre>
+    </div>
+
+    <div id="c12" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=146.html#c12">Comment 12</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-05-21 20:36:27 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Target -&gt; DP alpha 1
+
+(przepraszam za bugspam, maile można odfiltrować po haśle: &quot;jeleniowypark1&quot;)</pre>
+    </div>
+
+    <div id="c13" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=146.html#c13">Comment 13</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-05-24 01:18:44 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Nie w DP A1...</pre>
+    </div>
+
+    <div id="c14" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=146.html#c14">Comment 14</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-07-18 00:29:00 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Nie w 1.1 (zgodnie z ustaleniami na #aviarypl)</pre>
+    </div>
+
+    <div id="c15" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=146.html#c15">Comment 15</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Wojciech Kapusta</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-10-18 09:58:03 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(W odpowiedzi na komentarz #14)
+Proponuję następujące, poniekąd kompromisowe rozwiązanie:
+
+1.  W przypadku konkretnych języków (Wietnamski, Grecki, Islandzki, Perski ...)
+zostawić tak, jak jest, bo są to określenia języka i związanego z nim kodowania
+(np. język gruziński). Inaczej: określamy bezpośrednio język, a nie kodowanie. 
+Ewentualnie można dla jasności dodać słowo 'Język' z przodu i pozamieniać
+wielkie litery na małe, np. &quot;Język turecki (ISO-8859-9)&quot;.
+2. W przypadku cyrylicy - zostawić to tak jak jest. 
+3. W przypadku kodowań środkowoeuropejskich, bałtyckich, zachodnich (a dlaczego
+nie &quot;zachodnioeuropejskich&quot;?) lepiej byłoby zmienić formę na
+&quot;Środkowoeuropejskie&quot;, Bałtyckie&quot;, &quot;Zachodnioeuropejskie&quot;, bo tu określamy nie
+język, a kodowanie.
+4. Unikode - nazwa kodowania, proponowałbym zostawić w formie nieodmiennej.
+
+ALE:
+
+W tabelce 'Ustawienia kodowania znaków' (Widok → Kodowanie znaków → Dostosuj
+listę...) mamy nagłówki &quot;Dostępne...&quot; i &quot;Używane zestawy znaków&quot;! Tu z kolei nie
+ma konfliktu, bo sformułowanie 'Zestaw (znaków) środkowoeuropejski' jest w
+porządku. Dlatego należałoby przemyśleć odpowiednie określenia nagłówków dla pól
+tej tabelki.
+
+</pre>
+    </div>
+
+    <div id="c16" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=146.html#c16">Comment 16</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-10-18 10:11:03 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(W odpowiedzi na komentarz #15)
+<span class="quote">&gt; 4. Unikode - nazwa kodowania, proponowałbym zostawić w formie nieodmiennej.</span >
+   ^^^^^^^
+
+Prosze... powiedz, ze miales na mysli Unicode ... ;)</pre>
+    </div>
+
+    <div id="c17" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=146.html#c17">Comment 17</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Wojciech Kapusta</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-10-19 15:13:16 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(W odpowiedzi na komentarz #16)
+ 
+<span class="quote">&gt; Prosze... powiedz, ze miales na mysli Unicode ... ;)</span >
+
+Zdecydowanie tak!!!
+</pre>
+    </div>
+
+    <div id="c18" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=146.html#c18">Comment 18</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Wojciech Kapusta</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-10-26 22:32:33 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Patrz również błędy: #738 i #739.
+
+</pre>
+    </div>
+
+    <div id="c19" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=146.html#c19">Comment 19</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-10-28 16:22:04 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">*** <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED DUPLICATE - Opcje / Kodowanie znaków"
+   href="show_bug.cgi%3Fid=764.html">Bug 764</a> has been marked as a duplicate of this bug. ***</pre>
+    </div>
+
+    <div id="c20" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=146.html#c20">Comment 20</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-10-28 16:26:54 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">*** <a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED DUPLICATE - Widok / Kodowanie znaków"
+   href="show_bug.cgi%3Fid=711.html">Bug 711</a> has been marked as a duplicate of this bug. ***</pre>
+    </div>
+
+    <div id="c21" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=146.html#c21">Comment 21</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-10-28 16:27:31 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text"><span class="quote">&gt; formalnie Toolkit (jako wspólne Fx/Tb), ccing pitreck</span ></pre>
+    </div>
+
+    <div id="c22" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=146.html#c22">Comment 22</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Wojciech Kapusta</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-11-07 10:28:57 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Obecnie (wersja z 6 listopada) nazwy kodowań azjatyckich wyglądają lepiej, nadal
+jednak mamy konflikt odmiany, np.: &quot;Kodowanie...&quot; → &quot;Środkowoeuropejski ...&quot;,
+czy &quot;Dostępne kodowania...&quot; → &quot;Zachodni ...&quot;.</pre>
+    </div>
+
+    <div id="c23" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=146.html#c23">Comment 23</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Filemon</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-11-09 23:15:22 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Chciałbym zauważyć, że &quot;chiński tradycyjny&quot; i &quot;chiński uproszczony&quot; nie
+oznaczają języków! To są dwa odmienne systemy zapisu, które mogą być używane do
+tego samego języka - system uproszczony w porównaniu do tradycyjnego zawiera po
+prostu mniej pokrzaczone ideogramy.</pre>
+    </div>
+
+    <div id="c24" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=146.html#c24">Comment 24</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2006-08-09 15:05:43 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Istnieje inna możliwość - zmieniamy &quot;Kodowanie znaków&quot; na &quot;Zestaw znaków&quot;, wtedy
+problem z przymiotnikami znika, tak samo jak problem z komentarza 23.
+
+Co myślicie?</pre>
+    </div>
+
+    <div id="c25" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=146.html#c25">Comment 25</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2006-08-09 21:32:22 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(W odpowiedzi na komentarz #24)
+<span class="quote">&gt; Istnieje inna możliwość - zmieniamy &quot;Kodowanie znaków&quot; na &quot;Zestaw znaków&quot;, wtedy
+&gt; problem z przymiotnikami znika, tak samo jak problem z komentarza 23.
+&gt; 
+&gt; Co myślicie?</span >
+
+Brzmi sensownie. Jeśli nikt nie przedstawi mocnych kontrargumentów - poprę ten
+pomysł :-)</pre>
+    </div>
+
+    <div id="c26" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=146.html#c26">Comment 26</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Wojciech Kapusta</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2006-08-31 17:31:40 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Jestem za zestawem znaków.
+
+Wtedy znikną nam też niespójności gramatyczne w pozostałych oknach, np.
+&quot;Ustawienia kodowania znaków&quot;, dostępne przez Kodowanie znaków → Dostosuj listę...
+</pre>
+    </div>
+
+    <div id="c27" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=146.html#c27">Comment 27</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2006-08-31 17:33:18 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Jedyna moja obawa, to ze oddalamy sie od tlumaczen innych programow. Jak jest w
+IE/Operze/Safari?
+
+Jesli ten problem nie jest duzy to jestem jak najbradziej za taka zmiana.</pre>
+    </div>
+
+    <div id="c28" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=146.html#c28">Comment 28</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Wawoczny</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2006-09-10 21:20:44 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">No nie wiem, dla mnie zestaw znaków to np. a-z0-9, a to jak zostaną zakodowane
+jest zdefiniowane przez kodowanie znaków... Dlatego jestem przeciw tej zmianie...</pre>
+    </div>
+
+    <div id="c29" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=146.html#c29">Comment 29</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2006-09-10 21:28:05 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Created <span class=""><a href="attachment.cgi%3Fid=757" name="attach_757" title="wynik grepa">attachment 757</a> <a href="attachment.cgi%3Fid=757&amp;action=edit.html" title="wynik grepa">[details]</a></span>
+wynik grepa
+
+Tyle by mniej więcej było do zmiany...
+
+Dla większej przejrzystości rozdzieliłem katalogi głównego poziomu
+pojedynczą linią odstępu.
+
+Problemy:
+Czasami uzywamy samego słowa &quot;kodowanie&quot;. Dwa słowa &quot;zestaw znaków&quot; mogą
+być dłuższe i potencjalnie wymagać korekty rozmiarów okien...</pre>
+    </div>
+
+    <div id="c30" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=146.html#c30">Comment 30</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Bartosz Piec</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2006-09-11 02:07:30 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Zestaw znaków mi tam nie pasuje, rzeczywiśćie to właśnie jest kodowanie, ale nie
+wiem co z odmianą :/</pre>
+    </div>
+
+    <div id="c31" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=146.html#c31">Comment 31</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2006-09-12 16:54:47 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Po dyskusji na #aviarypl: →3.0...
+
+</pre>
+    </div>
+
+    <div id="c32" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=146.html#c32">Comment 32</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2007-07-05 11:08:23 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Czas wrócić do tematu, 3.0 się zbliża...
+
+&quot;Zestaw znaków&quot; to tłumaczenie angielskiego określenia &quot;char[acter ]set&quot;. Kwestia do rozważenia więc brzmi tak naprawdę, czy &quot;charset&quot;===&quot;encoding&quot;, czy może jednak mógłby się zdarzyć jakiś przypadek, w którym konieczne byłoby rozróżnienie między &quot;zestawem znaków&quot; a &quot;kodowaniem&quot;.
+
+Wikipedia mówi, że nie. <a href="http://en.wikipedia.org/wiki/Charset">http://en.wikipedia.org/wiki/Charset</a> przekierowuje do &quot;Character encoding&quot;...
+
+Osobiście wolę &quot;kodowanie&quot; jako tłumaczenie &quot;encoding&quot;, ale trudności natury techniczno-gramatycznej, jakie mamy ze wspólnym przymiotnikiem dla &quot;języka&quot; i &quot;kodowania&quot;, skłaniają mnie jednak ku &quot;zestawowi&quot;.
+
+Opinie?</pre>
+    </div>
+
+    <div id="c33" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=146.html#c33">Comment 33</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2007-07-05 11:11:03 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Aha, Opera ma dokładnie tak, jak Firefox 1.x i 2.x (Kodowanie -&gt; Środkowoeuropejski).</pre>
+    </div>
+
+    <div id="c34" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=146.html#c34">Comment 34</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2007-07-08 04:55:56 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(w odpowiedzi na komentarz #32)
+
+<span class="quote">&gt; Opinie?</span >
+
+Nie przeczytałem tutaj argumentów, które skłoniłyby mnie do zmiany stanowiska. Nadal jestem za tą zmianą. Zestaw znaków.
+
+</pre>
+    </div>
+
+    <div id="c35" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=146.html#c35">Comment 35</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-03-22 11:02:49 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Przyglądnąłem się jeszcze raz temu, co mamy w menu i opcjach/preferencjach. I widzę kolejny argument za zmianą na &quot;zestaw znaków&quot;. Wszystko tam jest ułożone wg schematu:
+&quot;Zestaw znaków (KODOWANIE)&quot;
+np.: &quot;Środkowoeuropejski (ISO-8859-2)&quot;
+Tak na prawdę, to kodowanie znaków jest określone dopiero w nawiasie, dlatego nie widzę już żadnych przeszkód w zmianie tego na &quot;Zestaw znaków&quot;. Ale nie wszędzie. w pageInfo.dtd musi zostać &quot;Kodowanie:&quot;, bo obok tego pojawia się tylko np. &quot;ISO-8859-2&quot;. Zaraz będzie patch.</pre>
+    </div>
+
+    <div id="c36" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=146.html#c36">Comment 36</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-03-22 11:07:31 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Created <span class=""><a href="attachment.cgi%3Fid=970" name="attach_970" title="Patch dla browser i toolkit (trunk)">attachment 970</a> <a href="attachment.cgi%3Fid=970&amp;action=edit.html" title="Patch dla browser i toolkit (trunk)">[details]</a></span>
+Patch dla browser i toolkit (trunk)</pre>
+    </div>
+
+    <div id="c37" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=146.html#c37">Comment 37</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-03-22 15:59:00 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Comment on <span class=""><a href="attachment.cgi%3Fid=970" name="attach_970" title="Patch dla browser i toolkit (trunk)">attachment 970</a> <a href="attachment.cgi%3Fid=970&amp;action=edit.html" title="Patch dla browser i toolkit (trunk)">[details]</a></span>
+Patch dla browser i toolkit (trunk)
+
+sr=marcoos
+
+Dobra robota. Wrzuć to proszę, kiedy trunk zostanie ponownie otwarty (zob. dev.l10n).
+
+Aha, widzę zmiany tylko w toolkicie i Firefoksie - co z Thunderbirdem i SMk?</pre>
+    </div>
+
+    <div id="c38" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=146.html#c38">Comment 38</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-03-22 16:15:16 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(w odpowiedzi na komentarz #37)
+<span class="quote">&gt; (From update of <span class=""><a href="attachment.cgi%3Fid=970" name="attach_970" title="Patch dla browser i toolkit (trunk)">attachment 970</a> <a href="attachment.cgi%3Fid=970&amp;action=edit.html" title="Patch dla browser i toolkit (trunk)">[details]</a></span>)
+&gt; sr=marcoos
+&gt; 
+&gt; Dobra robota. Wrzuć to proszę, kiedy trunk zostanie ponownie otwarty (zob.
+&gt; dev.l10n).
+&gt; 
+&gt; Aha, widzę zmiany tylko w toolkicie i Firefoksie - co z Thunderbirdem i SMk?</span >
+
+Trzeba uważać, co się zmienia, bo można przedobrzyć. Zostawiłem to Stefowi i Adrianerowi, bo sami lepiej znają lokalizowaną aplikację.</pre>
+    </div>
+
+    <div id="c39" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=146.html#c39">Comment 39</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Stefan Plewako :stef</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-03-27 06:04:47 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Comment on <span class=""><a href="attachment.cgi%3Fid=970" name="attach_970" title="Patch dla browser i toolkit (trunk)">attachment 970</a> <a href="attachment.cgi%3Fid=970&amp;action=edit.html" title="Patch dla browser i toolkit (trunk)">[details]</a></span>
+Patch dla browser i toolkit (trunk)
+
+Czyszczę flagę, grzeczność grzecznością ale toolkitem  zajmuje się Marek i o ile nic się nie zmieniło ja tu  nie mam nic do roboty.</pre>
+    </div>
+
+    <div id="c40" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=146.html#c40">Comment 40</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-03-27 06:54:00 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(w odpowiedzi na komentarz #39)
+<span class="quote">&gt; (From update of <span class=""><a href="attachment.cgi%3Fid=970" name="attach_970" title="Patch dla browser i toolkit (trunk)">attachment 970</a> <a href="attachment.cgi%3Fid=970&amp;action=edit.html" title="Patch dla browser i toolkit (trunk)">[details]</a></span>)
+&gt; Czyszczę flagę, grzeczność grzecznością ale toolkitem  zajmuje się Marek
+&gt; i o ile nic się nie zmieniło ja tu  nie mam nic do roboty.</span >
+
+Jak wolisz :-) 
+
+</pre>
+    </div>
+
+    <div id="c41" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=146.html#c41">Comment 41</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-03-30 07:21:35 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Adrian?</pre>
+    </div>
+
+    <div id="c42" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=146.html#c42">Comment 42</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-04-01 12:07:01 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Nie możemy dłużej czekać.
+
+Łatka wrzucona do trunka. Fixed.</pre>
+    </div>
+
+    <div id="c43" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=146.html#c43">Comment 43</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-04-05 06:39:02 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Created <span class=""><a href="attachment.cgi%3Fid=1000" name="attach_1000" title="&quot;Hebrajski - porządek wizualny&quot; jest za długi">attachment 1000</a> <a href="attachment.cgi%3Fid=1000&amp;action=edit.html" title="&quot;Hebrajski - porządek wizualny&quot; jest za długi">[details]</a></span>
+&quot;Hebrajski - porządek wizualny&quot; jest za długi
+
+&quot;Hebrajski - porządek wizualny&quot; jest za długi, proponuję przywrócić krótszą postać &quot;Hebrajki wizualny&quot;.</pre>
+    </div>
+
+    <div id="c44" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=146.html#c44">Comment 44</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-04-05 06:40:00 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">reop.</pre>
+    </div>
+
+    <div id="c45" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=146.html#c45">Comment 45</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-04-05 06:44:59 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Created <span class=""><a href="attachment.cgi%3Fid=1001" name="attach_1001" title="&quot;Hebrajski - porządek wizualny&quot; -&gt; &quot;Hebrajski wizualny&quot;">attachment 1001</a> <a href="attachment.cgi%3Fid=1001&amp;action=edit.html" title="&quot;Hebrajski - porządek wizualny&quot; -&gt; &quot;Hebrajski wizualny&quot;">[details]</a></span>
+&quot;Hebrajski - porządek wizualny&quot; -&gt; &quot;Hebrajski wizualny&quot;</pre>
+    </div>
+
+    <div id="c46" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=146.html#c46">Comment 46</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-04-05 06:46:50 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(w odpowiedzi na komentarz #43)
+<span class="quote">&gt; Created an attachment (id=1000) [details]
+&gt; &quot;Hebrajski - porządek wizualny&quot; jest za długi
+&gt; 
+&gt; &quot;Hebrajski - porządek wizualny&quot; jest za długi, proponuję przywrócić
+&gt; krótszą postać &quot;Hebrajki wizualny&quot;.</span >
+
+Niech będzie.
+
+</pre>
+    </div>
+
+    <div id="c47" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=146.html#c47">Comment 47</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-04-05 06:47:40 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(w odpowiedzi na komentarz #46)
+<span class="quote">&gt; &gt; &quot;Hebrajski - porządek wizualny&quot; jest za długi, proponuję przywrócić
+&gt; &gt; krótszą postać &quot;Hebrajki wizualny&quot;.
+&gt; 
+&gt; Niech będzie.</span >
+
+Chociaż wolałbym &quot;Hebrajski wizualny&quot; ;-)
+
+</pre>
+    </div>
+
+    <div id="c48" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=146.html#c48">Comment 48</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-04-05 06:48:28 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Comment on <span class=""><a href="attachment.cgi%3Fid=1001" name="attach_1001" title="&quot;Hebrajski - porządek wizualny&quot; -&gt; &quot;Hebrajski wizualny&quot;">attachment 1001</a> <a href="attachment.cgi%3Fid=1001&amp;action=edit.html" title="&quot;Hebrajski - porządek wizualny&quot; -&gt; &quot;Hebrajski wizualny&quot;">[details]</a></span>
+&quot;Hebrajski - porządek wizualny&quot; -&gt; &quot;Hebrajski wizualny&quot;
+
+r=hubert</pre>
+    </div>
+
+    <div id="c49" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=146.html#c49">Comment 49</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-04-05 06:53:14 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Jeszcze może małe wyjaśnienie, co to jest &quot;Hebrajski [- porządek] wizualny&quot;. Otóż jest to taki dziwoląg. Jak chyba wszyscy wiemy, Żydzi piszą od prawej do lewej. Pozostałe kodowania hebrajskie mają porządek bajtów w pliku logiczny (czyli litery są w takiej kolejności, w jakiej są czytane). Natomiast &quot;hebrajski wizualny&quot; ma porządek bajtów w pliku wizualny (czyli litery są w kolejności odwrotnej od tej, w jakiej są czytane - to tak, jakbyśmy my mieli &quot;wókanz watsez&quot; zamiast &quot;zestaw znaków&quot; ;-)).
+
+fxd</pre>
+    </div>
+
+    <div id="c50" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=146.html#c50">Comment 50</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-04-06 12:30:09 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">v &#64; Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.5; pl; rv:1.9pre) Gecko/2008040604 Minefield/3.0pre</pre>
+    </div>
+
+
+  
+
+</td>
+<td>
+</td>
+</tr></table>
+  </div>
+
+    <hr><div id="add_comment" class="bz_section_additional_comments">
+      <table>
+        <tr>
+          <td>
+            <fieldset>
+              <legend>Note</legend>
+              You need to
+              <a href="show_bug.cgi%3Fid=146&amp;GoAheadAndLogIn=1.html">log in</a>
+              before you can comment on or make changes to this bug.
+            </fieldset>
+          </td>
+        </tr> 
+      </table>
+  </div>        
+
+</form>
+
+<hr>
+<ul class="related_actions">
+    <li><a href="show_bug.cgi%3Fformat=multiple&amp;id=146.html">Format For Printing</a></li>
+    <li>&nbsp;-&nbsp;<a href="show_bug.cgi%3Fctype=xml&amp;id=146">XML</a></li>
+    <li>&nbsp;-&nbsp;<a href="enter_bug.cgi%3Fcloned_bug_id=146.html">Clone This Bug</a></li>
+    
+    <li>&nbsp;-&nbsp;<a href="show_bug.cgi%3Fid=146.html#">Top of page </a></li>
+    </ul>
+
+<br>
+</div>
+
+    <div id="footer">
+      <div class="intro"></div>
+<ul id="useful-links">
+  <li id="links-actions"><ul class="links">
+  <li><a href="index.html">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi.html">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi.html">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi.html">Search</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="http://bugs.aviary.pl/buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input type="hidden" id="no_redirect_bottom" name="no_redirect" value="0">
+    <script type="text/javascript">
+      if (history && history.replaceState) {
+        var no_redirect = document.getElementById("no_redirect_bottom");
+        no_redirect.value = 1;
+      }
+    </script>
+    <input class="txt" type="text" id="quicksearch_bottom" name="quicksearch" 
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search" 
+           id="find_bottom"></form>
+  <a href="page.cgi%3Fid=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="report.cgi.html">Reports</a></li>
+
+  <li>
+      <span class="separator">| </span>
+        <a href="request.cgi.html">Requests</a></li>
+
+
+  <li>
+        <span class="separator">| </span>
+        <a href="https://bugzilla.readthedocs.org/en/5.0/using/understanding.html" target="_blank">Help</a>
+      </li>
+    
+      <li id="new_account_container_bottom">
+        <span class="separator">| </span>
+        <a href="createaccount.cgi.html">New&nbsp;Account</a>
+      </li>
+
+    <li id="mini_login_container_bottom">
+  <span class="separator">| </span>
+  <a id="login_link_bottom" href="show_bug.cgi%3Fid=146&amp;GoAheadAndLogIn=1.html"
+     onclick="return show_mini_login_form('_bottom')">Log In</a>
+
+  <form action="show_bug.cgi%3Fid=146.html" method="POST"
+        class="mini_login bz_default_hidden"
+        id="mini_login_bottom">
+    <input id="Bugzilla_login_bottom" required
+           name="Bugzilla_login" class="bz_login"
+        type="email" placeholder="Email Address">
+    <input class="bz_password" name="Bugzilla_password" type="password"
+           id="Bugzilla_password_bottom" required
+           placeholder="Password">
+    <input type="hidden" name="Bugzilla_login_token"
+           value="1469819890-vac0ERxDM1jqmjdfe2xhcv4zDL2rJUkUQfIKmAJVgeM">
+    <input type="submit" name="GoAheadAndLogIn" value="Log in"
+            id="log_in_bottom">
+    <a href="show_bug.cgi%3Fid=146.html#" onclick="return hide_mini_login_form('_bottom')">[x]</a>
+  </form>
+</li>
+
+
+  <li id="forgot_container_bottom">
+    <span class="separator">| </span>
+    <a id="forgot_link_bottom" href="show_bug.cgi%3Fid=146&amp;GoAheadAndLogIn=1.html#forgot"
+       onclick="return show_forgot_form('_bottom')">Forgot Password</a>
+    <form action="http://bugs.aviary.pl/token.cgi" method="post" id="forgot_form_bottom"
+          class="mini_forgot bz_default_hidden">
+      <label for="login_bottom">Login:</label>
+      <input name="loginname" size="20" id="login_bottom" required
+          type="email" placeholder="Your Email Address">
+      <input id="forgot_button_bottom" value="Reset Password" type="submit">
+      <input type="hidden" name="a" value="reqpw">
+      <input type="hidden" id="token_bottom" name="token"
+             value="1469819890-XYuaGGxOrnFBKC_fzXEmk94bf6FU55zj0AlTVZe1mjw">
+      <a href="show_bug.cgi%3Fid=146.html#" onclick="return hide_forgot_form('_bottom')">[x]</a>
+    </form>
+  </li>
+</ul>
+  </li>
+
+  
+
+
+
+
+  
+</ul>
+
+      <div class="outro"></div>
+    </div>
+
+  </body>
+</html>

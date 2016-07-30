@@ -1,0 +1,1964 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>177 &ndash; Lokalizacja Firefoksa 0.9.3</title>
+
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<link href="data/assets/7aa6ea67750936a0368541421bdcd5ee.css" rel="stylesheet" type="text/css">
+
+
+
+    
+<script type="text/javascript" src="data/assets/a7c2f3a028f17a9aa60f56dc9d6e732d.js"></script>
+
+    <script type="text/javascript">
+    <!--
+        YAHOO.namespace('bugzilla');
+        YAHOO.util.Event.addListener = function (el, sType, fn, obj, overrideContext) {
+               if ( ("onpagehide" in window || YAHOO.env.ua.gecko) && sType === "unload") { sType = "pagehide"; };
+               var capture = ((sType == "focusin" || sType == "focusout") && !YAHOO.env.ua.ie) ? true : false;
+               return this._addListener(el, this._getType(sType), fn, obj, overrideContext, capture);
+         };
+        if ( "onpagehide" in window || YAHOO.env.ua.gecko) {
+            YAHOO.util.Event._simpleRemove(window, "unload", 
+                                           YAHOO.util.Event._unload);
+        }
+        
+        function unhide_language_selector() { 
+            YAHOO.util.Dom.removeClass(
+                'lang_links_container', 'bz_default_hidden'
+            ); 
+        } 
+        YAHOO.util.Event.onDOMReady(unhide_language_selector);
+
+        
+        var BUGZILLA = {
+            param: {
+                cookiepath: '\/',
+                maxusermatches: 1000
+            },
+            constant: {
+                COMMENT_COLS: 80
+            },
+            string: {
+                
+
+                attach_desc_required:
+                    "You must enter a Description for this attachment.",
+                component_required:
+                    "You must select a Component for this bug.",
+                description_required:
+                    "You must enter a Description for this bug.",
+                short_desc_required:
+                    "You must enter a Summary for this bug.",
+                version_required:
+                    "You must select a Version for this bug."
+            }
+              , api_token: ''
+        };
+
+    if (history && history.replaceState) {
+      if(!document.location.href.match(/show_bug\.cgi/)) {
+        history.replaceState( null,
+                             "177 – Lokalizacja Firefoksa 0.9.3",
+                             "show_bug.cgi?id=177" );
+        document.title = "177 – Lokalizacja Firefoksa 0.9.3";
+      }
+      if (document.location.href.match(/show_bug\.cgi\?.*list_id=/)) {
+        var href = document.location.href;
+        href = href.replace(/[\?&]+list_id=(\d+|cookie)/, '');
+        history.replaceState(null, "177 – Lokalizacja Firefoksa 0.9.3", href);
+      }
+    }
+    YAHOO.util.Event.onDOMReady(function() {
+      initDirtyFieldTracking();
+
+    });
+    // -->
+    </script>
+<script type="text/javascript" src="data/assets/daf5e0fb6826e6a35280e622913f0c4a.js"></script>
+
+    
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+                       title="Bugzilla" href="search_plugin.cgi">
+    <link rel="shortcut icon" href="images/favicon.ico">
+  </head>
+
+  <body 
+        class="bugs-aviary-pl
+                 bz_bug
+                 bz_status_VERIFIED
+                 bz_product_Firefox
+                 bz_component_Og&#XF3;lne
+                 bz_bug_177 yui-skin-sam">
+
+  <div id="header"><div id="banner">
+  </div>
+
+    <div id="titles">
+      <span id="title">Bugzilla &ndash; Bug&nbsp;177</span>
+
+        <span id="subtitle" class="subheader">Lokalizacja Firefoksa 0.9.3</span>
+
+        <span id="information" class="header_addl_info">Last modified: 2009-01-02 03:22:20 CET</span>
+    </div>
+
+
+    <div id="common_links"><ul class="links">
+  <li><a href="index.html">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi.html">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi.html">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi.html">Search</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="http://bugs.aviary.pl/buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input type="hidden" id="no_redirect_top" name="no_redirect" value="0">
+    <script type="text/javascript">
+      if (history && history.replaceState) {
+        var no_redirect = document.getElementById("no_redirect_top");
+        no_redirect.value = 1;
+      }
+    </script>
+    <input class="txt" type="text" id="quicksearch_top" name="quicksearch" 
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search" 
+           id="find_top"></form>
+  <a href="page.cgi%3Fid=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="report.cgi.html">Reports</a></li>
+
+  <li>
+      <span class="separator">| </span>
+        <a href="request.cgi.html">Requests</a></li>
+
+
+  <li>
+        <span class="separator">| </span>
+        <a href="https://bugzilla.readthedocs.org/en/5.0/using/understanding.html" target="_blank">Help</a>
+      </li>
+    
+      <li id="new_account_container_top">
+        <span class="separator">| </span>
+        <a href="createaccount.cgi.html">New&nbsp;Account</a>
+      </li>
+
+    <li id="mini_login_container_top">
+  <span class="separator">| </span>
+  <a id="login_link_top" href="show_bug.cgi%3Fid=177&amp;GoAheadAndLogIn=1.html"
+     onclick="return show_mini_login_form('_top')">Log In</a>
+
+  <form action="show_bug.cgi%3Fid=177.html" method="POST"
+        class="mini_login bz_default_hidden"
+        id="mini_login_top">
+    <input id="Bugzilla_login_top" required
+           name="Bugzilla_login" class="bz_login"
+        type="email" placeholder="Email Address">
+    <input class="bz_password" name="Bugzilla_password" type="password"
+           id="Bugzilla_password_top" required
+           placeholder="Password">
+    <input type="hidden" name="Bugzilla_login_token"
+           value="1469819912-pED17Mf2BJdPS_iq2w_dZ1c0XEdonOo3USzwcbhyse0">
+    <input type="submit" name="GoAheadAndLogIn" value="Log in"
+            id="log_in_top">
+    <a href="show_bug.cgi%3Fid=177.html#" onclick="return hide_mini_login_form('_top')">[x]</a>
+  </form>
+</li>
+
+
+  <li id="forgot_container_top">
+    <span class="separator">| </span>
+    <a id="forgot_link_top" href="show_bug.cgi%3Fid=177&amp;GoAheadAndLogIn=1.html#forgot"
+       onclick="return show_forgot_form('_top')">Forgot Password</a>
+    <form action="http://bugs.aviary.pl/token.cgi" method="post" id="forgot_form_top"
+          class="mini_forgot bz_default_hidden">
+      <label for="login_top">Login:</label>
+      <input name="loginname" size="20" id="login_top" required
+          type="email" placeholder="Your Email Address">
+      <input id="forgot_button_top" value="Reset Password" type="submit">
+      <input type="hidden" name="a" value="reqpw">
+      <input type="hidden" id="token_top" name="token"
+             value="1469819912-pmvdrIi5s0DJ8a6Y_OKzt5oM7LQXIo9oyUKjbIQzPEg">
+      <a href="show_bug.cgi%3Fid=177.html#" onclick="return hide_forgot_form('_top')">[x]</a>
+    </form>
+  </li>
+</ul>
+    </div>
+  </div>
+
+  <div id="bugzilla-body">
+
+
+<script type="text/javascript">
+<!--
+
+//-->
+</script>
+
+<form name="changeform" id="changeform" method="post" action="http://bugs.aviary.pl/process_bug.cgi">
+
+  <input type="hidden" name="delta_ts" value="2009-01-02 03:22:20">
+  <input type="hidden" name="id" value="177">
+  <input type="hidden" name="token" value="1469819912-GpMQrvUnTm1H-eSai6uJC1VIhk3ESTCXjdrUNCB1NIo">
+<div class="bz_short_desc_container edit_form">
+     <a href="show_bug.cgi%3Fid=177.html"><b>Bug&nbsp;177</b></a> <span id="summary_container" class="bz_default_hidden">
+      - <span id="short_desc_nonedit_display">Lokalizacja Firefoksa 0.9.3</span>
+     </span>
+
+    <div id="summary_input"><span class="field_label "
+    id="field_label_short_desc">
+
+
+  <a 
+      title="The bug summary is a short sentence which succinctly describes what the bug is about."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#short_desc"
+  >Summary:</a>
+
+</span>Lokalizacja Firefoksa 0.9.3
+    </div>
+  </div>
+  <script type="text/javascript">
+    hideEditableField('summary_container',
+                      'summary_input',
+                      'summary_edit_action',
+                      'short_desc',
+                      'Lokalizacja Firefoksa 0.9.3' );
+  </script>
+  <table class="edit_form">
+    <tr>
+      
+      <td id="bz_show_bug_column_1" class="bz_show_bug_column">     
+        <table>
+          <tr>
+    <th class="field_label">
+      <a href="page.cgi%3Fid=fields.html#bug_status">Status</a>:
+    </th>
+    <td id="bz_field_status">
+      <span id="static_bug_status">VERIFIED
+          WONTFIX
+      </span>
+    </td>
+  </tr>
+<tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+<tr><th class="field_label "
+    id="field_label_alias">
+
+
+  <a 
+      title="A short, unique name assigned to a bug in order to assist with looking it up and referring to it in other places in Bugzilla."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#alias"
+  >Alias:</a>
+
+</th>
+    <td>
+        None
+    </td>
+  </tr>
+<tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+<tr><th class="field_label "
+    id="field_label_product">
+
+
+  <a 
+      title="Bugs are categorised into Products and Components. Select a Classification to narrow down this list."
+      class="field_help_link"
+      href="describecomponents.cgi.html"
+  >Product:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_product" >Firefox
+
+</td>
+    </tr>
+
+    
+    <tr class="bz_default_hidden"><th class="field_label "
+    id="field_label_classification">
+
+
+  <a 
+      title="Bugs are categorised into Classifications, Products and Components. classifications is the top-level categorisation."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#classification"
+  >Classification:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_classification" >Tłumaczenia oprogramowania
+
+</td>
+    </tr>
+        
+    
+    
+    <tr><th class="field_label "
+    id="field_label_component">
+
+
+  <a 
+      title="Components are second-level categories; each belongs to a particular Product. Select a Product to narrow down this list."
+      class="field_help_link"
+      href="describecomponents.cgi%3Fproduct=Firefox.html"
+  >Component:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_component" >Ogólne
+
+  (<a href="buglist.cgi%3Fcomponent=Ogólne&amp;product=Firefox&amp;bug_status=__open__.html"
+      target="_blank">show other bugs</a>)
+</td>
+    </tr>
+    <tr><th class="field_label "
+    id="field_label_version">
+
+
+  <a 
+      title="The version field defines the version of the software the bug was found in."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#version"
+  >Version:</a>
+
+</th>
+<td>nieokreślona
+  </td>
+    </tr>
+        
+    
+        
+    <tr><th class="field_label "
+    id="field_label_rep_platform">
+
+
+  <a 
+      title="The hardware platform the bug was observed on. Note: When searching, selecting the option &quot;All&quot; only finds bugs whose value for this field is literally the word &quot;All&quot;."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#rep_platform"
+  >Hardware:</a>
+
+</th>
+      <td class="field_value">Wszystkie
+        Wszystkie
+      </td>
+    </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          
+          <tr>
+      <th class="field_label">
+        <label  accesskey="i">
+          <a href="page.cgi%3Fid=fields.html#importance"><u>I</u>mportance</a></label>:
+      </th>
+      <td>P2
+       trywialny
+      </td>
+    </tr>
+          
+          <tr><th class="field_label "
+    id="field_label_assigned_to">
+
+
+  <a 
+      title="The person in charge of resolving the bug."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#assigned_to"
+  >Assignee:</a>
+
+</th>
+      <td><span class="vcard"><span class="fn">Piotr Komoda</span>
+</span>
+      </td>
+    </tr>
+
+    <tr><th class="field_label "
+    id="field_label_qa_contact">
+
+
+  <a 
+      title="The person responsible for confirming this bug if it is unconfirmed, and for verifying the fix once the bug has been resolved."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#qa_contact"
+  >QA Contact:</a>
+
+</th>
+      <td><span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+      </td>
+    </tr>
+    <script type="text/javascript">
+      assignToDefaultOnChange(['product', 'component'],
+        'splewako\x40aviary.pl',
+        'firefox\x40l10n.bledy');
+    </script>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          <tr><th class="field_label "
+    id="field_label_bug_file_loc">
+
+
+  <a 
+      title="Bugs can have a URL associated with them - for example, a pointer to a web site where the problem is seen."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#bug_file_loc"
+  >URL:</a>
+
+</th>
+    <td>
+      <span id="bz_url_input_area">
+      </span>
+    </td>
+  </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+
+          
+<tr><th class="field_label "
+    id="field_label_dependson">
+
+
+  <a 
+      title="The bugs listed here must be resolved before this bug can be resolved."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#dependson"
+  >Depends on:</a>
+
+</th>
+
+  <td>
+    <span id="dependson_input_area">
+    </span>
+
+  </td>
+  </tr>
+  
+  <tr><th class="field_label "
+    id="field_label_blocked">
+
+
+  <a 
+      title="This bug must be resolved before the bugs listed in this field can be resolved."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#blocked"
+  >Blocks:</a>
+
+</th>
+
+  <td>
+    <span id="blocked_input_area">
+    </span>
+
+  </td>
+  </tr>
+          
+        </table>
+      </td>
+      <td>
+        <div class="bz_column_spacer">&nbsp;</div>
+      </td>
+      
+      <td id="bz_show_bug_column_2" class="bz_show_bug_column">
+        <table>
+        <tr>
+    <th class="field_label">
+      Reported:
+    </th>
+    <td>2004-08-05 22:14 CEST by <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+    </td>
+  </tr>
+  
+  <tr>
+    <th class="field_label">
+      Modified:
+    </th>
+    <td>2009-01-02 03:22 CET
+      (<a href="show_activity.cgi%3Fid=177.html">History</a>)
+    </td>
+  
+  </tr>
+<tr>
+      <th class="field_label">
+        <label  accesskey="a">
+          CC List:
+        </label>
+      </th>
+      <td>4 
+          users
+          <span id="cc_edit_area_showhide_container" class="bz_default_hidden">
+            (<a href="show_bug.cgi%3Fid=177.html#" id="cc_edit_area_showhide">show</a>)
+          </span>
+        <div id="cc_edit_area">
+          <br>
+            <select id="cc" multiple="multiple" size="5" >
+                <option value="akalla">akalla</option>
+                <option value="cleriic">cleriic</option>
+                <option value="heidi">heidi</option>
+                <option value="lenrock">lenrock</option>
+            </select>
+        </div>
+          <script type="text/javascript">
+            hideEditableField( 'cc_edit_area_showhide_container', 
+                               'cc_edit_area', 
+                               'cc_edit_area_showhide', 
+                               '', 
+                               '');  
+          </script>
+      </td>
+    </tr>
+
+<tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+<tr><th class="field_label "
+    id="field_label_see_also">
+
+
+  <a 
+      title="This allows you to refer to bugs in other installations. You can enter a URL to a bug in the 'Add Bug URLs' field to note that that bug is related to this one. You can enter multiple URLs at once by separating them with whitespace. You should normally use this field to refer to bugs in other installations. For bugs in this installation, it is better to use the Depends on and Blocks fields."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#see_also"
+  >See Also:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_see_also" >
+
+</td>
+    </tr> 
+
+<tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+
+
+
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+          <hr id="bz_top_half_spacer">
+      </td>
+    </tr>
+  </table>
+
+  <table id="bz_big_form_parts">
+  <tr>
+  <td>
+
+    
+<script type="text/javascript">
+<!--
+function toggle_display(link) {
+    var table = document.getElementById("attachment_table");
+    var view_all = document.getElementById("view_all");
+    var hide_obsolete_url_parameter = "&hide_obsolete=1";
+    // Store current height for scrolling later
+    var originalHeight = table.offsetHeight;
+    var rows = YAHOO.util.Dom.getElementsByClassName(
+        'bz_tr_obsolete', 'tr', table);
+
+    for (var i = 0; i < rows.length; i++) {
+        bz_toggleClass(rows[i], 'bz_default_hidden');
+    }
+
+    if (YAHOO.util.Dom.hasClass(rows[0], 'bz_default_hidden')) {
+        link.innerHTML = "Show Obsolete";
+        view_all.href = view_all.href + hide_obsolete_url_parameter 
+    }
+    else {
+        link.innerHTML = "Hide Obsolete";
+        view_all.href = view_all.href.replace(hide_obsolete_url_parameter,"");
+    }
+
+    var newHeight = table.offsetHeight;
+    // This scrolling makes the window appear to not move at all.
+    window.scrollBy(0, newHeight - originalHeight);
+
+    return false;
+}
+//-->
+</script>
+
+<br>
+<table id="attachment_table">
+  <tr id="a0">
+    <th colspan="3" class="left">
+      Attachments
+    </th>
+  </tr>
+
+
+
+  <tr class="bz_attach_footer">
+    <td colspan="3">
+        <a href="attachment.cgi%3Fbugid=177&amp;action=enter.html">Add an attachment</a>
+        (proposed patch, testcase, etc.)
+    </td>
+  </tr>
+</table>
+<br>
+
+  </td>
+  <td>
+  </td>
+  </tr></table>
+
+  
+  <div id="comments"><script src="js/comments.js" type="text/javascript">
+</script>
+
+<script type="text/javascript">
+<!--
+  /* Adds the reply text to the 'comment' textarea */
+  function replyToComment(id, real_id, name) {
+      var prefix = "(In reply to " + name + " from comment #" + id + ")\n";
+      var replytext = "";
+        /* pre id="comment_name_N" */
+        var text_elem = document.getElementById('comment_text_'+id);
+        var text = getText(text_elem);
+        replytext = prefix + wrapReplyText(text);
+
+
+      /* <textarea id="comment"> */
+      var textarea = document.getElementById('comment');
+      if (textarea.value != replytext) {
+          textarea.value += replytext;
+      }
+
+      textarea.focus();
+  } 
+//-->
+</script>
+
+
+<!-- This auto-sizes the comments and positions the collapse/expand links 
+     to the right. -->
+<table class="bz_comment_table">
+<tr>
+<td>
+<div id="c0" class="bz_comment bz_first_comment">
+
+      <div class="bz_first_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=177.html#c0">Description</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-08-05 22:14:08 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Wyszedł Firefox 0.9.3. Trzeba zrobić polską wersję.
+
+Z powodu ograniczonego dostępu do sieci mogę przygotować langpack, ale buildy
+dla Windows, Mac OS X i Linuksa musi zrobić ktoś inny. (czyli prawdopodobnie Ty,
+Pitreck ;)).
+
+Zdaje się, że zmian żadnych w GUI nie ma, prawdopodobnie wystarczy pozmieniać
+numery wersji w XPI... Jeśli jestem w błędzie, proszę krzyczeć. :)</pre>
+    </div>
+
+    <div id="c1" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=177.html#c1">Comment 1</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-08-05 22:56:14 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Langpack wrzucony na beta:
+<a href="http://beta.firefox.pl/0.9.3/firefox-0.9.3-pl-PL-langpack.xpi">http://beta.firefox.pl/0.9.3/firefox-0.9.3-pl-PL-langpack.xpi</a>
+
+Jest to langpack z wersji 0.9.1 z odpowiednio zmienionymi maxVersions. Pod moim
+Linuksem działa. Niech to ktoś (dmuchając na zimne, bo raczej powinno działać
+OK) sprawdzi pod Windows. :)
+</pre>
+    </div>
+
+    <div id="c2" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=177.html#c2">Comment 2</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-08-05 23:18:42 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Pod w/w adresem paczka została podmieniona na poprawioną wersję (ci, którzy
+pobrali xpi przed 23:15 mają zły numer wersji w okienku &quot;About&quot;). Teraz to
+poprawiłem.
+</pre>
+    </div>
+
+    <div id="c3" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=177.html#c3">Comment 3</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-08-06 07:22:43 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">assigned -&gt; <a href="mailto:marcoos&#64;firefox.pl">marcoos&#64;firefox.pl</a>
+qa-&gt; me
+
+Paczka dziala u mnie (Linux).
+Btw. prosze o zglaszanie mi bledow jesli znowu wroca problemy z dyskiem. Na
+razie wyglada na to ze nie traci juz bajtow.</pre>
+    </div>
+
+    <div id="c4" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=177.html#c4">Comment 4</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Piotr Pielach</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-08-06 09:49:25 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">A co z tekstem &quot;Options Firefox&quot; pod Windowsem?
+Czyżby był hardcoded?
+
+<a href="http://mozillapl.org/forum/sutra46428.html#46428">http://mozillapl.org/forum/sutra46428.html#46428</a>
+</pre>
+    </div>
+
+    <div id="c5" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=177.html#c5">Comment 5</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Piotr Komoda</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-08-06 10:59:57 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Ja mam ostatnio troche problemow nie wirtualnych, ktore musze rozwiazac. Powoli
+przygotowywuje sie tez do wyjazdu na wczasy, malo czasu spedzam przy kompie,
+mimo, ze ten caly czas pracuje i cos pobiera ;) takze niestety nie bede mogl
+zajac sie paczkami oraz przeprowadzic testow. Pozatym nadal nie mam odpowiednich
+uprawnien do beta.firefox.pl, nic po prostu nie moge tam zrobic. Takze musicie
+sobie jakos poradzic bezemnie. Lenrock zrobil juz Instalator dla Windows, pracje
+tez nad instalka Linuksowa. Takze skontaktujcie sie z nim.
+
+Marcoos-&gt; 
+Podeslij Lenrockowi zaktualizowany pl-PL.jar, bo jego wydanie prawdopodobnie w
+about mowi 0.9.1. Przetestujcie tez Langpack, bo jak bawilem sie z langiem do
+0.9.1 razem z Clerriciem, to mielismy problemy z tymi min/max ver. Ustawienie
+0.9.1/0.9.2 sprawialo problemy, musielismy wiec powrocic do min/max 0.9
+
+Cleriic-&gt;
+Wywal ikone programu z menu start w winXP, poczym zainstaluj polska wersje
+Firefoksa. Wtedy powinno byc po polsku (przerabialem juz ten problem z
+Thunderbirdem, ten napis sam sie nie zmieni, jesli uzywales wczesniej
+angielskiego wydania, trzeba pokombinowac samemu). </pre>
+    </div>
+
+    <div id="c6" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=177.html#c6">Comment 6</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Piotr Pielach</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-08-06 18:34:37 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text"><span class="quote">&gt; Marcoos-&gt; 
+&gt; Podeslij Lenrockowi zaktualizowany pl-PL.jar, bo jego wydanie prawdopodobnie w
+&gt; about mowi 0.9.1. Przetestujcie tez Langpack, bo jak bawilem sie z langiem do
+&gt; 0.9.1 razem z Clerriciem, to mielismy problemy z tymi min/max ver. Ustawienie
+&gt; 0.9.1/0.9.2 sprawialo problemy, musielismy wiec powrocic do min/max 0.9</span >
+
+A dokładniej, przy wersji 0.9.1/0.9.2 jeśli paczka językowa miała min/max na
+0.9.1 to nie chciała się instalować! Po prostu tak jakby do skryptów
+&quot;docierało&quot;, że Fx jest w wersji 0.9.0...</pre>
+    </div>
+
+    <div id="c7" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=177.html#c7">Comment 7</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-08-06 22:36:13 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Co do <a href="show_bug.cgi%3Fid=177.html#c4">comment 4</a>, XPI nie lokalizuje takich rzeczy. Te nazwy robi instalator, a
+skoro instalator jest angielski, to to jest po angielsku.
+
+Ja nie mogę zrobić pełnych paczek, bo zbankrutuję podsyłając je po modemie. ;-)
+
+Pitreck, wszystkie JARy siedzą wewnątrz tego XPI, niech sobie każdy wyciągnie
+to, co potrzebuje:
+<a href="http://beta.firefox.pl/0.9.3/firefox-0.9.3-pl-PL-langpack.xpi">http://beta.firefox.pl/0.9.3/firefox-0.9.3-pl-PL-langpack.xpi</a>
+
+To XPI to paczka dla 0.9.2 z podniesionym maxVersion do 0.9.3 (i kilkoma innymi
+podmianami 0.9.1 na 0.9.3, głównie w okienku &quot;About&quot; i w about: ). U mnie (i jak
+widać, u Gandalfa) pod Linuksem działa.
+
+Osoby chętne zrobić paczki (instalator win, instalator linux, tar.gz linux, zip
+windows, dmg.gz mac) - poszukiwane. :)
+</pre>
+    </div>
+
+    <div id="c8" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=177.html#c8">Comment 8</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Kornel &quot;lenrock&quot; Misiejuk</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-08-06 23:13:40 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Ok to ja mogę się podjąć dla win , installer + zip ,mam już wstępne wersje to je
+uaktualnie o nowe langpacki . Co do wersji lin to narazie utknąłem , to znaczy
+moj  vitalinux wywala mi głupi błąd że nie moze znaleść license.txt zarówno na
+wersji z mozilla.org jak i mojej :/ więc nie jestem pewnien czy coś mi się uda
+na tym systemie przygotować . </pre>
+    </div>
+
+    <div id="c9" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=177.html#c9">Comment 9</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Kornel &quot;lenrock&quot; Misiejuk</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-08-07 00:44:44 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">No to chyba nadają się już jako wersję beta dla win
+<a href="http://www.ee.pw.edu.pl/~misiejuk/mozilla/wydania/FirefoxSetup-0.9.3-pl-PL.exe">http://www.ee.pw.edu.pl/~misiejuk/mozilla/wydania/FirefoxSetup-0.9.3-pl-PL.exe</a> i
+<a href="http://www.ee.pw.edu.pl/~misiejuk/mozilla/wydania/Firefox-win32-0.9.3-pl-PL.zip">http://www.ee.pw.edu.pl/~misiejuk/mozilla/wydania/Firefox-win32-0.9.3-pl-PL.zip</a> .</pre>
+    </div>
+
+    <div id="c10" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=177.html#c10">Comment 10</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-08-10 12:27:23 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Czy ktoś testował buildy Lenrocka?
+
+Potrzebujemy jeszcze wciąż wersji dla Linuksa i Mac OS X...</pre>
+    </div>
+
+    <div id="c11" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=177.html#c11">Comment 11</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Piotr Pielach</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-08-10 21:16:15 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(W odpowiedzi na komentarz #10)
+<span class="quote">&gt; Czy ktoś testował buildy Lenrocka?</span >
+
+Tak - testowałem. Wersji z instalera używam cały czas. ZIPa też sprawdzałem.
+Według mnie mogą być uznane za ostatateczne wersje... :)</pre>
+    </div>
+
+    <div id="c12" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=177.html#c12">Comment 12</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-08-11 10:53:16 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(W odpowiedzi na komentarz #11)
+<span class="quote">&gt; Według mnie mogą być uznane za ostatateczne wersje... :)</span >
+
+No to niech jeszcze ktoś zrobi linuksową i jabłuszkową i wydajemy.
+
+Aha, ja w sobotę znikam na tydzień _całkowicie_...
+</pre>
+    </div>
+
+    <div id="c13" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=177.html#c13">Comment 13</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Piotr Chyliński</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-08-13 02:51:03 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(W odpowiedzi na komentarz #10)
+
+<span class="quote">&gt; Potrzebujemy jeszcze wciąż wersji dla Linuksa i Mac OS X...</span >
+
+Paczka dla Mac OS X jest wystawiona tutaj: &lt;<a href="http://homepage.mac.com/heidi17/">http://homepage.mac.com/heidi17/</a>
+Firefox093PL.dmg.gz&gt;</pre>
+    </div>
+
+    <div id="c14" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=177.html#c14">Comment 14</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-08-13 11:28:14 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Piotr: świetnie. :)
+
+Ponieważ za chwilę wyjeżdżam... --&gt; pitreck.
+ 
+Trzeba jeszcze: 
+* zrobić instalkę i tar.gz dla Linuksa
+* wrzucić wszystko na sf.net
+* podmienić linki na stronie i wrzucic jakiegoś niusa na firefox.pl i kilka
+zaprzyjaźnionych serwisów.
+
+</pre>
+    </div>
+
+    <div id="c15" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=177.html#c15">Comment 15</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Kornel &quot;lenrock&quot; Misiejuk</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-08-13 13:25:22 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Ja niestety nie mam juz czasu na robienie wersji Linuxowej ,po za tym nie szło
+mi to wogóle:/ </pre>
+    </div>
+
+    <div id="c16" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=177.html#c16">Comment 16</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-08-20 23:12:36 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">I co? Nic? :(
+
+</pre>
+    </div>
+
+    <div id="c17" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=177.html#c17">Comment 17</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Piotr Chyliński</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-08-21 13:17:01 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(W odpowiedzi na komentarz #16)
+<span class="quote">&gt; I co? Nic? :(</span >
+
+Niezupełnie. Dogadałem się ze znajomym z Digita i polska wersja FF 0.9.3 może się pojawić na ich 
+DVD, ale... trzeba się pośpieszyć, bo będzie tylko macowa ;)
+
+PS. mam nadzieję, że nie nabroiłem tą oddolną inicjatywą?</pre>
+    </div>
+
+    <div id="c18" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=177.html#c18">Comment 18</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Piotr Chyliński</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-08-23 14:43:07 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(W odpowiedzi na komentarz #13)
+<span class="quote">&gt; Paczka dla Mac OS X jest wystawiona tutaj: &lt;<a href="http://homepage.mac.com/heidi17/">http://homepage.mac.com/heidi17/</a>
+&gt; Firefox093PL.dmg.gz&gt;</span >
+
+Mały bugtest wśród znajomych wykazał błąd z uprawnieniami wewnątrz pakietu macowego. 
+Powodował, że jedna z komend z menu &quot;Pomoc&quot; pozostawała anglojęzyczna (&quot;Help Contents&quot;).
+
+Poprawiona paczka znajduje się pod adresem:
+&lt;<a href="http://homepage.mac.com/heidi17/Firefox093PLa.dmg.gz">http://homepage.mac.com/heidi17/Firefox093PLa.dmg.gz</a>&gt;</pre>
+    </div>
+
+    <div id="c19" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=177.html#c19">Comment 19</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Piotr Komoda</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-08-24 07:26:02 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">To ja sie krotko przywitam po urlopie i przejde do rzeczy. Zrobilem tar.gz
+linuksowy, do pobrania z:
+<a href="http://pitreck.civ.pl/firefox/firefox-0.9.3-pl-PL-i686-linux-gtk2+xft.tar.gz">http://pitreck.civ.pl/firefox/firefox-0.9.3-pl-PL-i686-linux-gtk2+xft.tar.gz</a>
+niestety na instalatorze linuksowym poleglem i chyba sie poddam. Cala noc sie z
+tym meczylem, najpierw wywalal mi bledy przy instalacji, potem, gdy juz to
+obszedlem po instalacji program nie chcial sie uruchomic. Probowalem juz
+wszystkiego, sprawdzalem archiwa, przepakowywalem je z roznymi wariantami
+kompresji, probowalem tez przepakowac to wszystko i zbudowac pod linuksem, bez
+skutecznie. Z angielskim oryginalem, na ktorym bazowalem, zadnych problemow nie ma.</pre>
+    </div>
+
+    <div id="c20" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=177.html#c20">Comment 20</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Kornel &quot;lenrock&quot; Misiejuk</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-08-24 09:27:02 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">To może podrzuć także tą wadliwą wersję instalatora-lin , może sa to tylko
+jakieś problemy w pozwoleniami plików ? 
+
+BTW. Sunbird ma teraz także wersję z instalatorem (i okropne nowe logo) ,
+ogólnie piecu jest zainteresowany wypuszczaniem polskiej lokalizacji sunbirda i
+chciałem przygotować win-installer , niestety nie wiem czym jest spakowany ten
+exec , 7-zip , upx , lzap , total commander(zip, rar,ace,tar,gz,lha,uc2) go nie
+rusza :( ,dokumentacji też mi się nie udało znaleść (tylko do starego projektu
+instalatora <a href="http://seb.mozdev.org/sunbird/">http://seb.mozdev.org/sunbird/</a>) może umiecie jakoś pomóc i co
+myślicie o utworzeniu kolejnej strony reklamowej sunbird.pl ?</pre>
+    </div>
+
+    <div id="c21" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=177.html#c21">Comment 21</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Piotr Komoda</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-08-24 10:23:26 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(W odpowiedzi na komentarz #20)
+<span class="quote">&gt; To może podrzuć także tą wadliwą wersję instalatora-lin , może sa to tylko
+&gt; jakieś problemy w pozwoleniami plików ? </span >
+<a href="http://pitreck.civ.pl/firefox/firefox-0.9.3-pl-PL-i686-linux-gtk2+xft-installer.tar.gz">http://pitreck.civ.pl/firefox/firefox-0.9.3-pl-PL-i686-linux-gtk2+xft-installer.tar.gz</a>
+
+Do Sunbirda dobierzesz sie mozipem (mozip.exe):
+<a href="http://www.csie.ntu.edu.tw/%7Eb7506051/mozilla/tools/">http://www.csie.ntu.edu.tw/%7Eb7506051/mozilla/tools/</a>
+
+Z opisu Gandalfa dowiesz sie jak za cos takiego sie zabrac:
+<a href="http://beta.firefox.pl/others/pl-packages/0.8/guide.html">http://beta.firefox.pl/others/pl-packages/0.8/guide.html</a></pre>
+    </div>
+
+    <div id="c22" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=177.html#c22">Comment 22</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-08-24 13:10:51 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Co do tekstu: <a href="http://beta.firefox.pl/others/pl-packages/0.8/guide.html">http://beta.firefox.pl/others/pl-packages/0.8/guide.html</a> -
+zwróćcie uwagę, że to dotyczy 0.8 i nie wszystko tak jest w 0.9.
+
+Szczególnie uważać radzę przy kopiowaniu profilu. Jednocześnie radzę też
+powstrzymać się od podmieniania buildconfig.html.
+
+W tej chwili do <a href="http://beta.firefox.pl/0.9.3/">http://beta.firefox.pl/0.9.3/</a> są uploadowane paczki zrobione
+przez Was (dla Windows i Mac OS X) oraz mój build dla Linuksa+GTK2 (tar.gz, bez
+instalatora).
+
+Co do instalatora dla Linuksa - jedyną znaną mi osobą, która umie coś takiego
+zrobić, jest Gandalf... Ja mogę spróbować, ale nie wiem, czy mi wyjdzie (i czy
+nie zbankrutuję wysyłając to po modemie ;)
+
+W pliki md5-test.txt znajdą się sumy md5 plików z katalogu 0.9.3 w takiej
+postaci, w jakiej się tam znajdują. Porównajcie je ze swoimi, bo serwer Gandalfa
+czasami czyni cuda. :)
+</pre>
+    </div>
+
+    <div id="c23" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=177.html#c23">Comment 23</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-08-24 14:32:44 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text"><span class="quote">&gt; W tej chwili do <a href="http://beta.firefox.pl/0.9.3/">http://beta.firefox.pl/0.9.3/</a> są uploadowane paczki zrobione
+&gt; przez Was (dla Windows i Mac OS X) oraz mój build dla Linuksa+GTK2 (tar.gz, bez
+&gt; instalatora).</span >
+
+Aha, właśnie zauważyłem, że Pitreck jednak zrobił tar.gz. Powinienem uważniej
+czytać bugi. :) Właśnie je wgetuję na beta.fx
+
+Proszę o testowanie wersji linuksowej (i, jak wspomniałem, porównanie md5 na
+serwerze z md5 uzyskanym lokalnie [polecenie: md5sum nazwa-pliku pod Linuksem i
+OS X, w windows też coś się do tego powinno znaleźć]).
+</pre>
+    </div>
+
+    <div id="c24" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=177.html#c24">Comment 24</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Kornel &quot;lenrock&quot; Misiejuk</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-08-24 15:07:12 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">pitreck&gt; Dzięki zapomniałem jak zwykle o mozipie , w środku jest instalator
+zbudowany na podstawie fx 0.9 więc chyba sobie poradzę ,a nawet trochę może go
+poprawię :) 
+Marcoos &gt; Obie wersję win są ok , mam te same zapisy md5 lokalnie. </pre>
+    </div>
+
+    <div id="c25" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=177.html#c25">Comment 25</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-08-28 20:21:54 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Podsumujmy. Mamy:
+- mamy Windows/ZIP i Windows/Installer
+- Mac OS X
+- Linux/tar.gz
+
+Nie mamy: linuksowego instalatora.
+
+Czy ktoś w ogóle zamierza zrobić to ostatnie? Jeśli nie, to może po prostu
+wydajmy to, co mamy... Bo już wkrótce trzeba się wziąć za 1.0 Preview Release...</pre>
+    </div>
+
+    <div id="c26" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=177.html#c26">Comment 26</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Adrian Kalla :Adrianer</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-09-07 13:19:49 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">spróbuję dziś w nocy coś wykombinować z tym instalatorem linuxowym... tyle się
+zajmowałem instalatorem Mozilli Suite że te wyzwanie musi mi się udać ;)</pre>
+    </div>
+
+    <div id="c27" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=177.html#c27">Comment 27</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Adrian Kalla :Adrianer</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-09-07 13:49:45 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">narazie sobie tylko plik config.ini tego felernego wydania polskiego z
+instalatorem przejzalem i doszedlem do wniosku ze jest to zywcem skopiowany
+config.ini z firefoxa windowsowego, co jest karygodnym bledem. Program name pod
+linuxem to napewno nie &quot;firefox.exe&quot; :]
+confix.ini w Firefoxie rozni sie mniej miedzy linuxem a windowsem niz w Mozilli
+Suite, ale to tylko zludzenie ze sa ze soba kompatybilne. 
+Trzeba zrobic nowy config.ini na podstawie angielskiego config.ini z fx 0.9.3. 
+Przy okazji: z tego co pamietam, to kodowanie znakow w config.ini mozilli suite
+bylo rozne w windowowym i linuxowym instalatorze, co tez moze byc problemem w
+tym wypadku.</pre>
+    </div>
+
+    <div id="c28" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=177.html#c28">Comment 28</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Piotr Komoda</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-09-07 14:59:53 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">-&gt;Adrianer
+Fakt, config.ini windowswowy i linuksowy roznia sie, ale to raczej nie ten trop.
+W instalatorze 0.9.3 wykorzystalem pliki z linuksowej instalki 0.9.1 pl-PL, bo z
+windowsowym config.ini instalator wogole nie chcial sie uruchomic. Wykonalem tez
+kilka testow: 
+*polskie pliki instalatora, polskie pliki jezykowe przegladarki: 
+bledy archiwow langplpl, regpl, browser podczas instalacji lub nie uruchamianie
+sie programu po zainstalowaniu
+*polskie pliki instalatora, angielskie pliki jezykowe przegladarki:
+instaluje sie bez problemow, rowniez bez problemow uruchamia sie po zainstalowaniu
+*angielskie pliki instalatora, polskie pliki jezykowe przegladarki:
+bledy archiwow langenus, regus (musialem pozmieniac nazwy paczek na angielskie,
+aby pasowaly do angielskich plikow instalatora), browser podczas instalacji lub
+nie uruchamianie sie programu po zainstalowaniu
+*angielskie pliki instalatora, angielskie pliki jezykowe przegladarki:
+instaluje sie bez problemow, rowniez bez problemow uruchamia sie po zainstalowaniu</pre>
+    </div>
+
+    <div id="c29" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=177.html#c29">Comment 29</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-09-12 18:26:48 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Cóż, w tej chwili nie ma chyba większego sensu zajmować się 0.9.3. Szkoda. :-(
+
+<a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Lokalizacja Firefoksa 1.0 PR 1 (&quot;0.10&quot;)"
+   href="show_bug.cgi%3Fid=188.html">Bug 188</a> - o 1.0 Preview Release.</pre>
+    </div>
+
+    <div id="c30" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=177.html#c30">Comment 30</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-09-13 00:39:15 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">v.</pre>
+    </div>
+
+    <div id="c31" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=177.html#c31">Comment 31</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-03-18 19:00:38 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Masówka. Likwidacja produktu &quot;Firefox pl-PL&quot;, bugi przenoszone do produktu
+Lokalizacja, komponent Firefox.</pre>
+    </div>
+
+
+  
+
+</td>
+<td>
+</td>
+</tr></table>
+  </div>
+
+    <hr><div id="add_comment" class="bz_section_additional_comments">
+      <table>
+        <tr>
+          <td>
+            <fieldset>
+              <legend>Note</legend>
+              You need to
+              <a href="show_bug.cgi%3Fid=177&amp;GoAheadAndLogIn=1.html">log in</a>
+              before you can comment on or make changes to this bug.
+            </fieldset>
+          </td>
+        </tr> 
+      </table>
+  </div>        
+
+</form>
+
+<hr>
+<ul class="related_actions">
+    <li><a href="show_bug.cgi%3Fformat=multiple&amp;id=177.html">Format For Printing</a></li>
+    <li>&nbsp;-&nbsp;<a href="show_bug.cgi%3Fctype=xml&amp;id=177">XML</a></li>
+    <li>&nbsp;-&nbsp;<a href="enter_bug.cgi%3Fcloned_bug_id=177.html">Clone This Bug</a></li>
+    
+    <li>&nbsp;-&nbsp;<a href="show_bug.cgi%3Fid=177.html#">Top of page </a></li>
+    </ul>
+
+<br>
+</div>
+
+    <div id="footer">
+      <div class="intro"></div>
+<ul id="useful-links">
+  <li id="links-actions"><ul class="links">
+  <li><a href="index.html">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi.html">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi.html">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi.html">Search</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="http://bugs.aviary.pl/buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input type="hidden" id="no_redirect_bottom" name="no_redirect" value="0">
+    <script type="text/javascript">
+      if (history && history.replaceState) {
+        var no_redirect = document.getElementById("no_redirect_bottom");
+        no_redirect.value = 1;
+      }
+    </script>
+    <input class="txt" type="text" id="quicksearch_bottom" name="quicksearch" 
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search" 
+           id="find_bottom"></form>
+  <a href="page.cgi%3Fid=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="report.cgi.html">Reports</a></li>
+
+  <li>
+      <span class="separator">| </span>
+        <a href="request.cgi.html">Requests</a></li>
+
+
+  <li>
+        <span class="separator">| </span>
+        <a href="https://bugzilla.readthedocs.org/en/5.0/using/understanding.html" target="_blank">Help</a>
+      </li>
+    
+      <li id="new_account_container_bottom">
+        <span class="separator">| </span>
+        <a href="createaccount.cgi.html">New&nbsp;Account</a>
+      </li>
+
+    <li id="mini_login_container_bottom">
+  <span class="separator">| </span>
+  <a id="login_link_bottom" href="show_bug.cgi%3Fid=177&amp;GoAheadAndLogIn=1.html"
+     onclick="return show_mini_login_form('_bottom')">Log In</a>
+
+  <form action="show_bug.cgi%3Fid=177.html" method="POST"
+        class="mini_login bz_default_hidden"
+        id="mini_login_bottom">
+    <input id="Bugzilla_login_bottom" required
+           name="Bugzilla_login" class="bz_login"
+        type="email" placeholder="Email Address">
+    <input class="bz_password" name="Bugzilla_password" type="password"
+           id="Bugzilla_password_bottom" required
+           placeholder="Password">
+    <input type="hidden" name="Bugzilla_login_token"
+           value="1469819912-pED17Mf2BJdPS_iq2w_dZ1c0XEdonOo3USzwcbhyse0">
+    <input type="submit" name="GoAheadAndLogIn" value="Log in"
+            id="log_in_bottom">
+    <a href="show_bug.cgi%3Fid=177.html#" onclick="return hide_mini_login_form('_bottom')">[x]</a>
+  </form>
+</li>
+
+
+  <li id="forgot_container_bottom">
+    <span class="separator">| </span>
+    <a id="forgot_link_bottom" href="show_bug.cgi%3Fid=177&amp;GoAheadAndLogIn=1.html#forgot"
+       onclick="return show_forgot_form('_bottom')">Forgot Password</a>
+    <form action="http://bugs.aviary.pl/token.cgi" method="post" id="forgot_form_bottom"
+          class="mini_forgot bz_default_hidden">
+      <label for="login_bottom">Login:</label>
+      <input name="loginname" size="20" id="login_bottom" required
+          type="email" placeholder="Your Email Address">
+      <input id="forgot_button_bottom" value="Reset Password" type="submit">
+      <input type="hidden" name="a" value="reqpw">
+      <input type="hidden" id="token_bottom" name="token"
+             value="1469819912-pmvdrIi5s0DJ8a6Y_OKzt5oM7LQXIo9oyUKjbIQzPEg">
+      <a href="show_bug.cgi%3Fid=177.html#" onclick="return hide_forgot_form('_bottom')">[x]</a>
+    </form>
+  </li>
+</ul>
+  </li>
+
+  
+
+
+
+
+  
+</ul>
+
+      <div class="outro"></div>
+    </div>
+
+  </body>
+</html>

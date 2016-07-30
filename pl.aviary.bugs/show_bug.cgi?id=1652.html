@@ -1,0 +1,1298 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>1652 &ndash; (seamonkey2) [tracking] Lokalizacja SeaMonkey 2.0.x</title>
+
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<link href="data/assets/7aa6ea67750936a0368541421bdcd5ee.css" rel="stylesheet" type="text/css">
+
+
+
+    
+<script type="text/javascript" src="data/assets/a7c2f3a028f17a9aa60f56dc9d6e732d.js"></script>
+
+    <script type="text/javascript">
+    <!--
+        YAHOO.namespace('bugzilla');
+        YAHOO.util.Event.addListener = function (el, sType, fn, obj, overrideContext) {
+               if ( ("onpagehide" in window || YAHOO.env.ua.gecko) && sType === "unload") { sType = "pagehide"; };
+               var capture = ((sType == "focusin" || sType == "focusout") && !YAHOO.env.ua.ie) ? true : false;
+               return this._addListener(el, this._getType(sType), fn, obj, overrideContext, capture);
+         };
+        if ( "onpagehide" in window || YAHOO.env.ua.gecko) {
+            YAHOO.util.Event._simpleRemove(window, "unload", 
+                                           YAHOO.util.Event._unload);
+        }
+        
+        function unhide_language_selector() { 
+            YAHOO.util.Dom.removeClass(
+                'lang_links_container', 'bz_default_hidden'
+            ); 
+        } 
+        YAHOO.util.Event.onDOMReady(unhide_language_selector);
+
+        
+        var BUGZILLA = {
+            param: {
+                cookiepath: '\/',
+                maxusermatches: 1000
+            },
+            constant: {
+                COMMENT_COLS: 80
+            },
+            string: {
+                
+
+                attach_desc_required:
+                    "You must enter a Description for this attachment.",
+                component_required:
+                    "You must select a Component for this bug.",
+                description_required:
+                    "You must enter a Description for this bug.",
+                short_desc_required:
+                    "You must enter a Summary for this bug.",
+                version_required:
+                    "You must select a Version for this bug."
+            }
+              , api_token: ''
+        };
+
+    if (history && history.replaceState) {
+      if(!document.location.href.match(/show_bug\.cgi/)) {
+        history.replaceState( null,
+                             "1652 – (seamonkey2) [tracking] Lokalizacja SeaMonkey 2.0.x",
+                             "show_bug.cgi?id=1652" );
+        document.title = "1652 – (seamonkey2) [tracking] Lokalizacja SeaMonkey 2.0.x";
+      }
+      if (document.location.href.match(/show_bug\.cgi\?.*list_id=/)) {
+        var href = document.location.href;
+        href = href.replace(/[\?&]+list_id=(\d+|cookie)/, '');
+        history.replaceState(null, "1652 – (seamonkey2) [tracking] Lokalizacja SeaMonkey 2.0.x", href);
+      }
+    }
+    YAHOO.util.Event.onDOMReady(function() {
+      initDirtyFieldTracking();
+
+    });
+    // -->
+    </script>
+<script type="text/javascript" src="data/assets/daf5e0fb6826e6a35280e622913f0c4a.js"></script>
+
+    
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+                       title="Bugzilla" href="search_plugin.cgi">
+    <link rel="shortcut icon" href="images/favicon.ico">
+  </head>
+
+  <body 
+        class="bugs-aviary-pl
+                 bz_bug
+                 bz_status_RESOLVED
+                 bz_product_SeaMonkey
+                 bz_component_Og&#XF3;lne
+                 bz_bug_1652 yui-skin-sam">
+
+  <div id="header"><div id="banner">
+  </div>
+
+    <div id="titles">
+      <span id="title">Bugzilla &ndash; Bug&nbsp;1652</span>
+
+        <span id="subtitle" class="subheader">[tracking] Lokalizacja SeaMonkey 2.0.x</span>
+
+        <span id="information" class="header_addl_info">Last modified: 2012-04-26 13:45:45 CEST</span>
+    </div>
+
+
+    <div id="common_links"><ul class="links">
+  <li><a href="index.html">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi.html">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi.html">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi.html">Search</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="http://bugs.aviary.pl/buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input type="hidden" id="no_redirect_top" name="no_redirect" value="0">
+    <script type="text/javascript">
+      if (history && history.replaceState) {
+        var no_redirect = document.getElementById("no_redirect_top");
+        no_redirect.value = 1;
+      }
+    </script>
+    <input class="txt" type="text" id="quicksearch_top" name="quicksearch" 
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search" 
+           id="find_top"></form>
+  <a href="page.cgi%3Fid=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="report.cgi.html">Reports</a></li>
+
+  <li>
+      <span class="separator">| </span>
+        <a href="request.cgi.html">Requests</a></li>
+
+
+  <li>
+        <span class="separator">| </span>
+        <a href="https://bugzilla.readthedocs.org/en/5.0/using/understanding.html" target="_blank">Help</a>
+      </li>
+    
+      <li id="new_account_container_top">
+        <span class="separator">| </span>
+        <a href="createaccount.cgi.html">New&nbsp;Account</a>
+      </li>
+
+    <li id="mini_login_container_top">
+  <span class="separator">| </span>
+  <a id="login_link_top" href="show_bug.cgi%3Fid=1652&amp;GoAheadAndLogIn=1.html"
+     onclick="return show_mini_login_form('_top')">Log In</a>
+
+  <form action="show_bug.cgi%3Fid=1652.html" method="POST"
+        class="mini_login bz_default_hidden"
+        id="mini_login_top">
+    <input id="Bugzilla_login_top" required
+           name="Bugzilla_login" class="bz_login"
+        type="email" placeholder="Email Address">
+    <input class="bz_password" name="Bugzilla_password" type="password"
+           id="Bugzilla_password_top" required
+           placeholder="Password">
+    <input type="hidden" name="Bugzilla_login_token"
+           value="1469820960-CBq6yLVhHsHfF2fnvyf1HKNyVtj0CjCMP4UPLgH4TKw">
+    <input type="submit" name="GoAheadAndLogIn" value="Log in"
+            id="log_in_top">
+    <a href="show_bug.cgi%3Fid=1652.html#" onclick="return hide_mini_login_form('_top')">[x]</a>
+  </form>
+</li>
+
+
+  <li id="forgot_container_top">
+    <span class="separator">| </span>
+    <a id="forgot_link_top" href="show_bug.cgi%3Fid=1652&amp;GoAheadAndLogIn=1.html#forgot"
+       onclick="return show_forgot_form('_top')">Forgot Password</a>
+    <form action="http://bugs.aviary.pl/token.cgi" method="post" id="forgot_form_top"
+          class="mini_forgot bz_default_hidden">
+      <label for="login_top">Login:</label>
+      <input name="loginname" size="20" id="login_top" required
+          type="email" placeholder="Your Email Address">
+      <input id="forgot_button_top" value="Reset Password" type="submit">
+      <input type="hidden" name="a" value="reqpw">
+      <input type="hidden" id="token_top" name="token"
+             value="1469820960-MiIL_vdbSM8DQIz-MkEAxRiHYSPOroCXeI_aRXpselE">
+      <a href="show_bug.cgi%3Fid=1652.html#" onclick="return hide_forgot_form('_top')">[x]</a>
+    </form>
+  </li>
+</ul>
+    </div>
+  </div>
+
+  <div id="bugzilla-body">
+
+
+<script type="text/javascript">
+<!--
+
+//-->
+</script>
+
+<form name="changeform" id="changeform" method="post" action="http://bugs.aviary.pl/process_bug.cgi">
+
+  <input type="hidden" name="delta_ts" value="2012-04-26 13:45:45">
+  <input type="hidden" name="id" value="1652">
+  <input type="hidden" name="token" value="1469820960-D9hKzhG5AGRDHg2Oaxg2ep_dfaiNRSWfoRB5F04272s">
+<div class="bz_short_desc_container edit_form">
+     <a href="show_bug.cgi%3Fid=1652.html"><b>Bug&nbsp;1652</b></a> <span id="summary_container" class="bz_default_hidden">
+        (<span id="alias_nonedit_display">seamonkey2</span>)
+      - <span id="short_desc_nonedit_display">[tracking] Lokalizacja SeaMonkey 2.0.x</span>
+     </span>
+
+    <div id="summary_input"><span class="field_label "
+    id="field_label_short_desc">
+
+
+  <a 
+      title="The bug summary is a short sentence which succinctly describes what the bug is about."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#short_desc"
+  >Summary:</a>
+
+</span>[tracking] Lokalizacja SeaMonkey 2.0.x
+    </div>
+  </div>
+  <script type="text/javascript">
+    hideEditableField('summary_container',
+                      'summary_input',
+                      'summary_edit_action',
+                      'short_desc',
+                      '[tracking] Lokalizacja SeaMonkey 2.0.x' );
+  </script>
+  <table class="edit_form">
+    <tr>
+      
+      <td id="bz_show_bug_column_1" class="bz_show_bug_column">     
+        <table>
+          <tr>
+    <th class="field_label">
+      <a href="page.cgi%3Fid=fields.html#bug_status">Status</a>:
+    </th>
+    <td id="bz_field_status">
+      <span id="static_bug_status">RESOLVED
+          WORKSFORME
+      </span>
+    </td>
+  </tr>
+<tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+<tr><th class="field_label "
+    id="field_label_alias">
+
+
+  <a 
+      title="A short, unique name assigned to a bug in order to assist with looking it up and referring to it in other places in Bugzilla."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#alias"
+  >Alias:</a>
+
+</th>
+    <td>seamonkey2
+    </td>
+  </tr>
+<tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+<tr><th class="field_label "
+    id="field_label_product">
+
+
+  <a 
+      title="Bugs are categorised into Products and Components. Select a Classification to narrow down this list."
+      class="field_help_link"
+      href="describecomponents.cgi.html"
+  >Product:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_product" >SeaMonkey
+
+</td>
+    </tr>
+
+    
+    <tr class="bz_default_hidden"><th class="field_label "
+    id="field_label_classification">
+
+
+  <a 
+      title="Bugs are categorised into Classifications, Products and Components. classifications is the top-level categorisation."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#classification"
+  >Classification:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_classification" >Tłumaczenia oprogramowania
+
+</td>
+    </tr>
+        
+    
+    
+    <tr><th class="field_label "
+    id="field_label_component">
+
+
+  <a 
+      title="Components are second-level categories; each belongs to a particular Product. Select a Product to narrow down this list."
+      class="field_help_link"
+      href="describecomponents.cgi%3Fproduct=SeaMonkey.html"
+  >Component:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_component" >Ogólne
+
+  (<a href="buglist.cgi%3Fcomponent=Ogólne&amp;product=SeaMonkey&amp;bug_status=__open__.html"
+      target="_blank">show other bugs</a>)
+</td>
+    </tr>
+    <tr><th class="field_label "
+    id="field_label_version">
+
+
+  <a 
+      title="The version field defines the version of the software the bug was found in."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#version"
+  >Version:</a>
+
+</th>
+<td>2.0
+  </td>
+    </tr>
+        
+    
+        
+    <tr><th class="field_label "
+    id="field_label_rep_platform">
+
+
+  <a 
+      title="The hardware platform the bug was observed on. Note: When searching, selecting the option &quot;All&quot; only finds bugs whose value for this field is literally the word &quot;All&quot;."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#rep_platform"
+  >Hardware:</a>
+
+</th>
+      <td class="field_value">Wszystkie
+        Wszystkie
+      </td>
+    </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          
+          <tr>
+      <th class="field_label">
+        <label  accesskey="i">
+          <a href="page.cgi%3Fid=fields.html#importance"><u>I</u>mportance</a></label>:
+      </th>
+      <td>P5
+       blokujący
+      </td>
+    </tr>
+          
+          <tr><th class="field_label "
+    id="field_label_assigned_to">
+
+
+  <a 
+      title="The person in charge of resolving the bug."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#assigned_to"
+  >Assignee:</a>
+
+</th>
+      <td><span class="vcard"><span class="fn">Adrian Kalla :Adrianer</span>
+</span>
+      </td>
+    </tr>
+
+    <tr><th class="field_label "
+    id="field_label_qa_contact">
+
+
+  <a 
+      title="The person responsible for confirming this bug if it is unconfirmed, and for verifying the fix once the bug has been resolved."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#qa_contact"
+  >QA Contact:</a>
+
+</th>
+      <td><span class="vcard">seamonkey
+</span>
+      </td>
+    </tr>
+    <script type="text/javascript">
+      assignToDefaultOnChange(['product', 'component'],
+        'akalla\x40aviary.pl',
+        'seamonkey\x40l10n.bledy');
+    </script>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          <tr><th class="field_label "
+    id="field_label_bug_file_loc">
+
+
+  <a 
+      title="Bugs can have a URL associated with them - for example, a pointer to a web site where the problem is seen."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#bug_file_loc"
+  >URL:</a>
+
+</th>
+    <td>
+      <span id="bz_url_input_area">
+      </span>
+    </td>
+  </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+
+          
+<tr><th class="field_label "
+    id="field_label_dependson">
+
+
+  <a 
+      title="The bugs listed here must be resolved before this bug can be resolved."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#dependson"
+  >Depends on:</a>
+
+</th>
+
+  <td>
+    <span id="dependson_input_area">
+    </span>
+<a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Widok/Kodowanie znaków, Opcje/Kodowanie znaków - zmiana rodzaju?"
+   href="show_bug.cgi%3Fid=146.html">146</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - za długie teksty w pl/toolkit/chrome/mozapps/preferences/ocsp.dtd"
+   href="show_bug.cgi%3Fid=612.html">612</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Przetłumaczenie helpa SeaMonkey dla 1.1.x"
+   href="show_bug.cgi%3Fid=637.html">637</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Synchronizacja terminologii w SeaMonkey w stosunku do Fx, Tb"
+   href="show_bug.cgi%3Fid=639.html">639</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Tworzenie / Format / Styl tekstu / Element nierozdzielający"
+   href="show_bug.cgi%3Fid=761.html">761</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Pozbyć się \uXXXX z *.properties"
+   href="show_bug.cgi%3Fid=916.html">916</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Komunikaty konsoli błędów"
+   href="show_bug.cgi%3Fid=930.html">930</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - [tracking] Lokalizacja Firefoksa 3.0"
+   href="show_bug.cgi%3Fid=1040.html">1040</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Problemy lokalizacyjne związane z bugiem 338753"
+   href="show_bug.cgi%3Fid=1148.html">1148</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Tekst przy wiadomości przekazywanej"
+   href="show_bug.cgi%3Fid=1561.html">1561</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Zmienić &quot;Uruchom ponownie teraz&quot; na &quot;Uruchom teraz ponownie&quot;"
+   href="show_bug.cgi%3Fid=1581.html">1581</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Plik -&gt; Nowy"
+   href="show_bug.cgi%3Fid=1611.html">1611</a> <a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - Dodać komponent Editor"
+   href="show_bug.cgi%3Fid=1706.html">1706</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - &quot;2003-2007&quot; w Pomocy"
+   href="show_bug.cgi%3Fid=2039.html">2039</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Problemy z maksymalną szerokością menu w MAC OS X"
+   href="show_bug.cgi%3Fid=2064.html">2064</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - &quot;Źródło zaznaczenia&quot; -&gt; &quot;Źródło zaznaczonego fragmentu&quot;?"
+   href="show_bug.cgi%3Fid=2129.html">2129</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Liczba wierszy i kolumny"
+   href="show_bug.cgi%3Fid=2130.html">2130</a> <a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED WONTFIX - &quot;Nowy&quot; czy &quot;Nowa&quot;?"
+   href="show_bug.cgi%3Fid=2131.html">2131</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Zbędny dwukropek w wizytówce"
+   href="show_bug.cgi%3Fid=2132.html">2132</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Męska forma przy zgłaszaniu niedziałającej witryny"
+   href="show_bug.cgi%3Fid=2203.html">2203</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Poprawić &quot;Kończenie instalatora&quot; w mui.properties"
+   href="show_bug.cgi%3Fid=2279.html">2279</a> <a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - Wyczyścić mozillowe pliki ze zbędnych znaków"
+   href="show_bug.cgi%3Fid=2371.html">2371</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Podwójny znak zapytania na stronie z niezaufanym połączeniem"
+   href="show_bug.cgi%3Fid=2529.html">2529</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - [ChatZilla] Drobne błędy przy opisie domyślnej wiadomości opuszczenia kanału"
+   href="show_bug.cgi%3Fid=2681.html">2681</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - [ChatZilla] 'była możliwość' w tooltipie ustawień"
+   href="show_bug.cgi%3Fid=2682.html">2682</a> <a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - [ChatZilla] Niejasny tekst w tooltipie od typów proxy + brakujące przecinki w preferencjach"
+   href="show_bug.cgi%3Fid=2683.html">2683</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - [ChatZilla] Brak przecinka i niezgrabne zdanie w tooltipie od automatycznych zmian statusu"
+   href="show_bug.cgi%3Fid=2684.html">2684</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - [ChatZilla] &quot;działa tylko dla nowych wersjach&quot; w jednym z tooltipów opcji"
+   href="show_bug.cgi%3Fid=2685.html">2685</a> <a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - [ChatZilla] Bardzo niejasny opis tworzenia maski hosta w tooltipie od Nazwy użytkownika w opcjach"
+   href="show_bug.cgi%3Fid=2686.html">2686</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - [ChatZilla] Męska forma przy opisie Pseudonimu w opcjach"
+   href="show_bug.cgi%3Fid=2687.html">2687</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - [ChatZilla] Brakujący przecinek w psudonimowym tooltipie w opcjach"
+   href="show_bug.cgi%3Fid=2688.html">2688</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - [ChatZilla] Brakujący przecinek i niezgrabne zdanie w tooltipie od Trybu użytkownika"
+   href="show_bug.cgi%3Fid=2689.html">2689</a> <a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - [ChatZilla] Niejasny opis &quot;tej karty&quot; w tooltipie opcji &quot;Pokaż nagłówek&quot; w preferencjach"
+   href="show_bug.cgi%3Fid=2690.html">2690</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - [ChatZilla] Brakujący przecinek w tooltipie od czasu sprawdzania statusu automatycznej nieobecności"
+   href="show_bug.cgi%3Fid=2691.html">2691</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - [ChatZilla] &quot;Wystarczające przekraczanie limitu&quot; w tooltipie od Limitu trybu konferencji"
+   href="show_bug.cgi%3Fid=2692.html">2692</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - [ChatZilla] Brak kropki na końcu tooltipa w preferencjach"
+   href="show_bug.cgi%3Fid=2693.html">2693</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - [ChatZilla] Niezgrabne zdanie + brakujący przecinek w tooltipie od uporządkowania userów"
+   href="show_bug.cgi%3Fid=2694.html">2694</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - [ChatZilla] Brakujący przecinek w tooltipie od pokazywania symboli trybu userów"
+   href="show_bug.cgi%3Fid=2695.html">2695</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - [ChatZilla] Zbędna nazwa sekcji w nazwie jednej z opcji w preferencjach"
+   href="show_bug.cgi%3Fid=2696.html">2696</a> <a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED INVALID - [ChatZilla] Startowanie skryptów podczas startu w sekcji Autostart preferencji"
+   href="show_bug.cgi%3Fid=2697.html">2697</a> <a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED WORKSFORME - [ChatZilla] Wyświetla -&gt; Wyświetlaj"
+   href="show_bug.cgi%3Fid=2698.html">2698</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - [ChatZilla] Kopiuje -&gt; Kopiuj, Zwracanie uwagi -&gt; Zwracaj uwagę"
+   href="show_bug.cgi%3Fid=2699.html">2699</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - [ChatZilla] Brakujące przecinki i męska forma w tooltipie od ostrzegania o zamykaniu kart"
+   href="show_bug.cgi%3Fid=2700.html">2700</a> <a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - [ChatZilla] Brakujące przecinki w tooltipie od sprawdzania pisowni"
+   href="show_bug.cgi%3Fid=2701.html">2701</a> <a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - [ChatZilla] Brakujące przecinki w tooltipie od wysyłania kodów kolorów"
+   href="show_bug.cgi%3Fid=2702.html">2702</a> <a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - [ChatZilla] Zdanie do przeredagowania i przecinek do dodania w tooltipie od Zwracania uwagi"
+   href="show_bug.cgi%3Fid=2703.html">2703</a> <a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - [ChatZilla] Brakujące przecinki i koślawe zdanie wołające o redakcję w tooltipie od strasznie długiej opcji"
+   href="show_bug.cgi%3Fid=2704.html">2704</a> <a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - [ChatZilla] Brakujący przecinek w sekcji z odnośnikami w preferencjach"
+   href="show_bug.cgi%3Fid=2705.html">2705</a> <a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - [ChatZilla] Brakuje przecinka w tooltipie od automatycznego dzielenia długich słów"
+   href="show_bug.cgi%3Fid=2706.html">2706</a> <a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - [ChatZilla] Koniec zdania w złym miejscu"
+   href="show_bug.cgi%3Fid=2707.html">2707</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Brak spacji w wyszukiwaniu fragmentów (menu kontekstowe)"
+   href="show_bug.cgi%3Fid=3082.html">3082</a> <a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED DUPLICATE - Niespójny rodzaj przymiotników w informacjach o stronie (ctrl+i)"
+   href="show_bug.cgi%3Fid=3083.html">3083</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Brakujący przecinek w ustawieniach sidebaru"
+   href="show_bug.cgi%3Fid=3084.html">3084</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Brakujące &quot;Czy&quot; w pytaniu"
+   href="show_bug.cgi%3Fid=3085.html">3085</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - [pomoc Sm] angielskojęzyczny"
+   href="show_bug.cgi%3Fid=3133.html">3133</a> <a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - [pomoc Sm] &quot;karty z ramki&quot;, a żadnych kart tam nie ma"
+   href="show_bug.cgi%3Fid=3135.html">3135</a> <a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED WORKSFORME - [pomoc Sm] kliknięcie na znaku plusatrójkącie"
+   href="show_bug.cgi%3Fid=3136.html">3136</a> <a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED WORKSFORME - [pomoc Sm] zbędny przecinek w sekcji Powrót do poprzednich tematów i drukowanie"
+   href="show_bug.cgi%3Fid=3138.html">3138</a> <a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED WORKSFORME - [pomoc Sm] &quot;Dla wygodniejszego korzystania pomocy&quot;"
+   href="show_bug.cgi%3Fid=3139.html">3139</a> <a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED WORKSFORME - [pomoc Sm] niezgrabne zdanie i brakujące &quot;a&quot;"
+   href="show_bug.cgi%3Fid=3147.html">3147</a> <a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED WORKSFORME - [pomoc Sm] Szukanie wyrażenia typu: &quot;poczta&quot; da rezultat..."
+   href="show_bug.cgi%3Fid=3149.html">3149</a> <a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED WORKSFORME - [pomoc Sm] Zbędny nawias"
+   href="show_bug.cgi%3Fid=3150.html">3150</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - [pomoc Sm] Wyszukiwanie tematu"
+   href="show_bug.cgi%3Fid=3152.html">3152</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - [Pomoc Kuriera Poczty] Niepotrzebne powtórzenia i brak polskich znaków we Wstępie"
+   href="show_bug.cgi%3Fid=3607.html">3607</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - [Pomoc Kuriera Poczty] Błędy w sekcji Używanie Kreatora kont pocztowych"
+   href="show_bug.cgi%3Fid=3608.html">3608</a> <a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - [Pomoc Kuriera Poczty] Błędy w sekcji Konfiguracja kont pocztowych i grup dyskusyjnych"
+   href="show_bug.cgi%3Fid=3609.html">3609</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - [Pomoc Kuriera Poczty] Błędy w sekcji Tworzenie dodatkowych kont pocztowych i grup dyskusyjnych"
+   href="show_bug.cgi%3Fid=3610.html">3610</a> <a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - [Pomoc Kuriera Poczty] Błędy w sekcji Zmiana ustawień istniejącego konta"
+   href="show_bug.cgi%3Fid=3612.html">3612</a> <a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - [Pomoc Kuriera Poczty] Błędy w sekcji Pobieranie nowych wiadomości"
+   href="show_bug.cgi%3Fid=3613.html">3613</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - [Pomoc Kuriera Poczty] Błędy w sekcji Zmiana wyglądu głównego okna Kuriera Poczty"
+   href="show_bug.cgi%3Fid=3614.html">3614</a> <a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - [Pomoc Kuriera Poczty] Błędy w sekcji Sortowanie oraz grupowanie wiadomości w wątki"
+   href="show_bug.cgi%3Fid=3615.html">3615</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - [Pomoc Kuriera Poczty] Błędy w sekcji Zapisywanie oraz drukowanie wiadomości"
+   href="show_bug.cgi%3Fid=3616.html">3616</a> <a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - [Pomoc Kuriera Poczty] Błędy w sekcji Kontrola obrazków, skryptów i wtyczek"
+   href="show_bug.cgi%3Fid=3617.html">3617</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - [Pomoc Kuriera Poczty] Błędy w sekcji Tworzenie nowych wiadomości pocztowych i grup dyskusyjnych"
+   href="show_bug.cgi%3Fid=3618.html">3618</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - [Pomoc Kuriera Poczty] Błędy w sekcji Korzystanie z okna tworzenia wiadomości"
+   href="show_bug.cgi%3Fid=3619.html">3619</a> <a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - [Pomoc Kuriera Poczty] Błędy w sekcji Adresowanie wiadomości"
+   href="show_bug.cgi%3Fid=3620.html">3620</a> <a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - [Pomoc Kuriera Poczty] Błędy w sekcji Opcje wysyłania wiadomości"
+   href="show_bug.cgi%3Fid=3621.html">3621</a> <a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - [Pomoc Kuriera Poczty] Błędy w sekcji Tworzenie odpowiedzi na wiadomość"
+   href="show_bug.cgi%3Fid=3622.html">3622</a> <a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - [Pomoc Kuriera Poczty] Sekcja &quot;Przesyłanie wiadomości&quot;"
+   href="show_bug.cgi%3Fid=3637.html">3637</a> <a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - [Pomoc Kuriera Poczty] Sekcja &quot;Potwierdzenia otwarcia (dostarczenia) wiadomości&quot;"
+   href="show_bug.cgi%3Fid=3638.html">3638</a> <a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - [Pomoc Kuriera Poczty] Sekcja &quot;Zapisywanie i edycja szkiców wiadomości&quot;"
+   href="show_bug.cgi%3Fid=3639.html">3639</a> <a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - [Pomoc Kuriera Poczty] Sekcja &quot;Tworzenie i korzystanie z szablonów&quot;"
+   href="show_bug.cgi%3Fid=3640.html">3640</a> <a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - [Pomoc Kuriera Poczty] Sekcja &quot;Używanie HTML w wiadomościach&quot;"
+   href="show_bug.cgi%3Fid=3641.html">3641</a> <a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - [Pomoc Kuriera Poczty] Sekcja &quot;Edycja lub wstawianie elementów HTML&quot;"
+   href="show_bug.cgi%3Fid=3642.html">3642</a> <a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - [Pomoc Kuriera Poczty] Sekcja &quot;Opcje wysyłania wiadomości w formacie HTML&quot;"
+   href="show_bug.cgi%3Fid=3643.html">3643</a> <a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - [Pomoc Kuriera Poczty] Sekcja &quot;Załączanie pliku lub strony WWW&quot;"
+   href="show_bug.cgi%3Fid=3644.html">3644</a> <a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - [Pomoc Kuriera Poczty] Sekcja &quot;Przeglądanie i otwieranie załączników&quot;"
+   href="show_bug.cgi%3Fid=3645.html">3645</a> <a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - [Pomoc Kuriera Poczty] Sekcja &quot;Zapisywanie załączników&quot;"
+   href="show_bug.cgi%3Fid=3646.html">3646</a> <a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - [Pomoc Kuriera Poczty] Błędy w sekcji Usuwanie wiadomości z kont POP i IMAP"
+   href="show_bug.cgi%3Fid=3703.html">3703</a> <a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - [Pomoc Kuriera Poczty] Błędy w sekcji Książki adresowe — wprowadzenie"
+   href="show_bug.cgi%3Fid=3704.html">3704</a> <a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - [Pomoc Kuriera Poczty] Błędy w sekcji Tworzenie nowej wizytówki w książce adresowej"
+   href="show_bug.cgi%3Fid=3705.html">3705</a> <a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - [Pomoc Kuriera Poczty] Błędy w sekcji Podgląd i edycja wizytówek"
+   href="show_bug.cgi%3Fid=3706.html">3706</a> <a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - [Pomoc Kuriera Poczty] Błędy w sekcji Tworzenie listy dystrybucyjnej"
+   href="show_bug.cgi%3Fid=3707.html">3707</a> <a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - [Pomoc Kuriera Poczty] Błędy w sekcji Edycja listy dystrybucyjnej"
+   href="show_bug.cgi%3Fid=3708.html">3708</a> <a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - [Pomoc Kuriera Poczty] Błędy w sekcji Przeszukiwanie książek adresowych i katalogów"
+   href="show_bug.cgi%3Fid=3709.html">3709</a> <a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - [Pomoc Kuriera Poczty] Błędy w sekcji Wyszukiwanie zaawansowane (w książce adresowej)"
+   href="show_bug.cgi%3Fid=3710.html">3710</a> <a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - [Pomoc Kuriera Poczty] Błędy w sekcji Importowanie książek adresowych"
+   href="show_bug.cgi%3Fid=3711.html">3711</a> <a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - [Pomoc Kuriera Poczty] Błędy w sekcji Eksportowanie książki adresowej"
+   href="show_bug.cgi%3Fid=3712.html">3712</a> <a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - [Pomoc Kuriera Poczty] Błędy w sekcji Dodawanie i usuwanie katalogów LDAP"
+   href="show_bug.cgi%3Fid=3713.html">3713</a> <a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - [Pomoc Kuriera Poczty] Błędy w sekcji Ustawienia serwera katalogów"
+   href="show_bug.cgi%3Fid=3714.html">3714</a> <a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - [Pomoc Kuriera Poczty] Błędy w sekcji Organizowanie wiadomości"
+   href="show_bug.cgi%3Fid=3845.html">3845</a> <a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - [Pomoc Kuriera Poczty] Błędy w sekcji Współdzielenie folderów z innymi użytkownikami (tylko IMAP)"
+   href="show_bug.cgi%3Fid=3846.html">3846</a> <a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - [Pomoc Kuriera Poczty] Błędy w sekcji Etykietowanie wiadomości"
+   href="show_bug.cgi%3Fid=3847.html">3847</a> <a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - [Pomoc Kuriera Poczty] Zaznaczanie lub flagowanie wiadomości"
+   href="show_bug.cgi%3Fid=3848.html">3848</a> <a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - [Pomoc Kuriera Poczty] Błędy w sekcji Używanie widoków wiadomości"
+   href="show_bug.cgi%3Fid=3849.html">3849</a> <a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - [Pomoc Kuriera Poczty] Błędy w sekcji Wprowadzenie do grup dyskusyjnych"
+   href="show_bug.cgi%3Fid=4011.html">4011</a> <a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - [Pomoc Kuriera Poczty] Błędy w sekcji Przygotowywanie Kuriera Poczty do pracy w trybie offline"
+   href="show_bug.cgi%3Fid=4012.html">4012</a> <a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - [Pomoc Kuriera Poczty] Błędy w sekcji Pobieranie wszystkich wiadomości do pracy w trybie offline"
+   href="show_bug.cgi%3Fid=4013.html">4013</a> <a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - [Pomoc Kuriera Poczty] Błędy w sekcji Pobieranie wybranego folderu do pracy w trybie offline"
+   href="show_bug.cgi%3Fid=4014.html">4014</a> <a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - [Pomoc Kuriera Poczty] Błędy w sekcji Pobieranie wybranego folderu do pracy w trybie offline"
+   href="show_bug.cgi%3Fid=4015.html">4015</a> <a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - [Pomoc Kuriera Poczty] Błędy w sekcji Pobieranie wybranych lub oznaczonych wiadomości do pracy w trybie offline"
+   href="show_bug.cgi%3Fid=4016.html">4016</a> <a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - [Pomoc Kuriera Poczty] Błędy w sekcji Pobieranie wpisów z katalogu (LDAP) do pracy w trybie offline"
+   href="show_bug.cgi%3Fid=4017.html">4017</a> <a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - [Pomoc Kuriera Poczty] Błędy w sekcji Konfiguracja kont do pracy w trybie offline"
+   href="show_bug.cgi%3Fid=4018.html">4018</a> <a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - [Pomoc Kuriera Poczty] Błędy w sekcji Wybór elementów dostępnych w trybie offline"
+   href="show_bug.cgi%3Fid=4019.html">4019</a> <a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - [Pomoc Kuriera Poczty] Błędy w sekcji Pobieranie i synchronizacja wiadomości"
+   href="show_bug.cgi%3Fid=4115.html">4115</a> 
+  </td>
+  </tr>
+  
+  <tr><th class="field_label "
+    id="field_label_blocked">
+
+
+  <a 
+      title="This bug must be resolved before the bugs listed in this field can be resolved."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#blocked"
+  >Blocks:</a>
+
+</th>
+
+  <td>
+    <span id="blocked_input_area">
+    </span>
+
+  </td>
+  </tr>
+
+    <tr>
+      <th>&nbsp;</th>
+
+      <td id="show_dependency_tree_or_graph">
+        Show dependency <a href="showdependencytree.cgi%3Fid=1652&amp;hide_resolved=1.html">tree</a>
+
+          /&nbsp;<a href="showdependencygraph.cgi%3Fid=1652.html">graph</a>
+      </td>
+    </tr>
+          
+        </table>
+      </td>
+      <td>
+        <div class="bz_column_spacer">&nbsp;</div>
+      </td>
+      
+      <td id="bz_show_bug_column_2" class="bz_show_bug_column">
+        <table>
+        <tr>
+    <th class="field_label">
+      Reported:
+    </th>
+    <td>2008-03-10 13:26 CET by <span class="vcard"><span class="fn">Adrian Kalla :Adrianer</span>
+</span>
+    </td>
+  </tr>
+  
+  <tr>
+    <th class="field_label">
+      Modified:
+    </th>
+    <td>2012-04-26 13:45 CEST
+      (<a href="show_activity.cgi%3Fid=1652.html">History</a>)
+    </td>
+  
+  </tr>
+<tr>
+      <th class="field_label">
+        <label  accesskey="a">
+          CC List:
+        </label>
+      </th>
+      <td>1 
+          user
+          <span id="cc_edit_area_showhide_container" class="bz_default_hidden">
+            (<a href="show_bug.cgi%3Fid=1652.html#" id="cc_edit_area_showhide">show</a>)
+          </span>
+        <div id="cc_edit_area">
+          <br>
+            <select id="cc" multiple="multiple" size="5" >
+                <option value="gandalf">gandalf</option>
+            </select>
+        </div>
+          <script type="text/javascript">
+            hideEditableField( 'cc_edit_area_showhide_container', 
+                               'cc_edit_area', 
+                               'cc_edit_area_showhide', 
+                               '', 
+                               '');  
+          </script>
+      </td>
+    </tr>
+
+<tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+<tr><th class="field_label "
+    id="field_label_see_also">
+
+
+  <a 
+      title="This allows you to refer to bugs in other installations. You can enter a URL to a bug in the 'Add Bug URLs' field to note that that bug is related to this one. You can enter multiple URLs at once by separating them with whitespace. You should normally use this field to refer to bugs in other installations. For bugs in this installation, it is better to use the Depends on and Blocks fields."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#see_also"
+  >See Also:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_see_also" >
+
+</td>
+    </tr> 
+
+<tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+
+
+
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+          <hr id="bz_top_half_spacer">
+      </td>
+    </tr>
+  </table>
+
+  <table id="bz_big_form_parts">
+  <tr>
+  <td>
+
+    
+<script type="text/javascript">
+<!--
+function toggle_display(link) {
+    var table = document.getElementById("attachment_table");
+    var view_all = document.getElementById("view_all");
+    var hide_obsolete_url_parameter = "&hide_obsolete=1";
+    // Store current height for scrolling later
+    var originalHeight = table.offsetHeight;
+    var rows = YAHOO.util.Dom.getElementsByClassName(
+        'bz_tr_obsolete', 'tr', table);
+
+    for (var i = 0; i < rows.length; i++) {
+        bz_toggleClass(rows[i], 'bz_default_hidden');
+    }
+
+    if (YAHOO.util.Dom.hasClass(rows[0], 'bz_default_hidden')) {
+        link.innerHTML = "Show Obsolete";
+        view_all.href = view_all.href + hide_obsolete_url_parameter 
+    }
+    else {
+        link.innerHTML = "Hide Obsolete";
+        view_all.href = view_all.href.replace(hide_obsolete_url_parameter,"");
+    }
+
+    var newHeight = table.offsetHeight;
+    // This scrolling makes the window appear to not move at all.
+    window.scrollBy(0, newHeight - originalHeight);
+
+    return false;
+}
+//-->
+</script>
+
+<br>
+<table id="attachment_table">
+  <tr id="a0">
+    <th colspan="3" class="left">
+      Attachments
+    </th>
+  </tr>
+
+
+
+  <tr class="bz_attach_footer">
+    <td colspan="3">
+        <a href="attachment.cgi%3Fbugid=1652&amp;action=enter.html">Add an attachment</a>
+        (proposed patch, testcase, etc.)
+    </td>
+  </tr>
+</table>
+<br>
+
+  </td>
+  <td>
+  </td>
+  </tr></table>
+
+  
+  <div id="comments"><script src="js/comments.js" type="text/javascript">
+</script>
+
+<script type="text/javascript">
+<!--
+  /* Adds the reply text to the 'comment' textarea */
+  function replyToComment(id, real_id, name) {
+      var prefix = "(In reply to " + name + " from comment #" + id + ")\n";
+      var replytext = "";
+        /* pre id="comment_name_N" */
+        var text_elem = document.getElementById('comment_text_'+id);
+        var text = getText(text_elem);
+        replytext = prefix + wrapReplyText(text);
+
+
+      /* <textarea id="comment"> */
+      var textarea = document.getElementById('comment');
+      if (textarea.value != replytext) {
+          textarea.value += replytext;
+      }
+
+      textarea.focus();
+  } 
+//-->
+</script>
+
+
+<!-- This auto-sizes the comments and positions the collapse/expand links 
+     to the right. -->
+<table class="bz_comment_table">
+<tr>
+<td>
+<div id="c0" class="bz_comment bz_first_comment">
+
+      <div class="bz_first_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1652.html#c0">Description</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Adrian Kalla :Adrianer</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-03-10 13:26:47 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text"> </pre>
+    </div>
+
+    <div id="c1" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1652.html#c1">Comment 1</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2010-05-17 14:48:32 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">krowujacy -&gt; normalny (filtruj po: massmail )</pre>
+    </div>
+
+    <div id="c2" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1652.html#c2">Comment 2</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2010-05-18 12:27:39 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">ponowna zmiana, przywracam wage &quot;blokujacy&quot; (filtrowac po slowie: mass-o-mail)</pre>
+    </div>
+
+    <div id="c3" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1652.html#c3">Comment 3</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Adrian Kalla :Adrianer</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2012-04-08 16:28:36 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Sm 2.0 juz zostalo dawno temu wydane...</pre>
+    </div>
+
+    <div id="c4" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1652.html#c4">Comment 4</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Stefan Plewako :stef</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2012-04-23 16:32:35 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Usuwanie statusu PRZEDAWNIONY i przywracanie stanu poprzedzającego, zob. <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Dodać nowy status buga: PRZEDAWNIONY"
+   href="show_bug.cgi%3Fid=4114.html#c19">http://bugs.aviary.pl/show_bug.cgi?id=4114#c19</a></pre>
+    </div>
+
+
+  
+
+</td>
+<td>
+</td>
+</tr></table>
+  </div>
+
+    <hr><div id="add_comment" class="bz_section_additional_comments">
+      <table>
+        <tr>
+          <td>
+            <fieldset>
+              <legend>Note</legend>
+              You need to
+              <a href="show_bug.cgi%3Fid=1652&amp;GoAheadAndLogIn=1.html">log in</a>
+              before you can comment on or make changes to this bug.
+            </fieldset>
+          </td>
+        </tr> 
+      </table>
+  </div>        
+
+</form>
+
+<hr>
+<ul class="related_actions">
+    <li><a href="show_bug.cgi%3Fformat=multiple&amp;id=1652.html">Format For Printing</a></li>
+    <li>&nbsp;-&nbsp;<a href="show_bug.cgi%3Fctype=xml&amp;id=1652">XML</a></li>
+    <li>&nbsp;-&nbsp;<a href="enter_bug.cgi%3Fcloned_bug_id=1652.html">Clone This Bug</a></li>
+    
+    <li>&nbsp;-&nbsp;<a href="show_bug.cgi%3Fid=1652.html#">Top of page </a></li>
+    </ul>
+
+<br>
+</div>
+
+    <div id="footer">
+      <div class="intro"></div>
+<ul id="useful-links">
+  <li id="links-actions"><ul class="links">
+  <li><a href="index.html">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi.html">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi.html">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi.html">Search</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="http://bugs.aviary.pl/buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input type="hidden" id="no_redirect_bottom" name="no_redirect" value="0">
+    <script type="text/javascript">
+      if (history && history.replaceState) {
+        var no_redirect = document.getElementById("no_redirect_bottom");
+        no_redirect.value = 1;
+      }
+    </script>
+    <input class="txt" type="text" id="quicksearch_bottom" name="quicksearch" 
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search" 
+           id="find_bottom"></form>
+  <a href="page.cgi%3Fid=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="report.cgi.html">Reports</a></li>
+
+  <li>
+      <span class="separator">| </span>
+        <a href="request.cgi.html">Requests</a></li>
+
+
+  <li>
+        <span class="separator">| </span>
+        <a href="https://bugzilla.readthedocs.org/en/5.0/using/understanding.html" target="_blank">Help</a>
+      </li>
+    
+      <li id="new_account_container_bottom">
+        <span class="separator">| </span>
+        <a href="createaccount.cgi.html">New&nbsp;Account</a>
+      </li>
+
+    <li id="mini_login_container_bottom">
+  <span class="separator">| </span>
+  <a id="login_link_bottom" href="show_bug.cgi%3Fid=1652&amp;GoAheadAndLogIn=1.html"
+     onclick="return show_mini_login_form('_bottom')">Log In</a>
+
+  <form action="show_bug.cgi%3Fid=1652.html" method="POST"
+        class="mini_login bz_default_hidden"
+        id="mini_login_bottom">
+    <input id="Bugzilla_login_bottom" required
+           name="Bugzilla_login" class="bz_login"
+        type="email" placeholder="Email Address">
+    <input class="bz_password" name="Bugzilla_password" type="password"
+           id="Bugzilla_password_bottom" required
+           placeholder="Password">
+    <input type="hidden" name="Bugzilla_login_token"
+           value="1469820960-CBq6yLVhHsHfF2fnvyf1HKNyVtj0CjCMP4UPLgH4TKw">
+    <input type="submit" name="GoAheadAndLogIn" value="Log in"
+            id="log_in_bottom">
+    <a href="show_bug.cgi%3Fid=1652.html#" onclick="return hide_mini_login_form('_bottom')">[x]</a>
+  </form>
+</li>
+
+
+  <li id="forgot_container_bottom">
+    <span class="separator">| </span>
+    <a id="forgot_link_bottom" href="show_bug.cgi%3Fid=1652&amp;GoAheadAndLogIn=1.html#forgot"
+       onclick="return show_forgot_form('_bottom')">Forgot Password</a>
+    <form action="http://bugs.aviary.pl/token.cgi" method="post" id="forgot_form_bottom"
+          class="mini_forgot bz_default_hidden">
+      <label for="login_bottom">Login:</label>
+      <input name="loginname" size="20" id="login_bottom" required
+          type="email" placeholder="Your Email Address">
+      <input id="forgot_button_bottom" value="Reset Password" type="submit">
+      <input type="hidden" name="a" value="reqpw">
+      <input type="hidden" id="token_bottom" name="token"
+             value="1469820960-MiIL_vdbSM8DQIz-MkEAxRiHYSPOroCXeI_aRXpselE">
+      <a href="show_bug.cgi%3Fid=1652.html#" onclick="return hide_forgot_form('_bottom')">[x]</a>
+    </form>
+  </li>
+</ul>
+  </li>
+
+  
+
+
+
+
+  
+</ul>
+
+      <div class="outro"></div>
+    </div>
+
+  </body>
+</html>

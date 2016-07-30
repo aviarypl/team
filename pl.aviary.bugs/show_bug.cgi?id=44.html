@@ -1,0 +1,4744 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>44 &ndash; Lokalizacja Thunderbirda 0.6</title>
+
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<link href="data/assets/7aa6ea67750936a0368541421bdcd5ee.css" rel="stylesheet" type="text/css">
+
+
+
+    
+<script type="text/javascript" src="data/assets/a7c2f3a028f17a9aa60f56dc9d6e732d.js"></script>
+
+    <script type="text/javascript">
+    <!--
+        YAHOO.namespace('bugzilla');
+        YAHOO.util.Event.addListener = function (el, sType, fn, obj, overrideContext) {
+               if ( ("onpagehide" in window || YAHOO.env.ua.gecko) && sType === "unload") { sType = "pagehide"; };
+               var capture = ((sType == "focusin" || sType == "focusout") && !YAHOO.env.ua.ie) ? true : false;
+               return this._addListener(el, this._getType(sType), fn, obj, overrideContext, capture);
+         };
+        if ( "onpagehide" in window || YAHOO.env.ua.gecko) {
+            YAHOO.util.Event._simpleRemove(window, "unload", 
+                                           YAHOO.util.Event._unload);
+        }
+        
+        function unhide_language_selector() { 
+            YAHOO.util.Dom.removeClass(
+                'lang_links_container', 'bz_default_hidden'
+            ); 
+        } 
+        YAHOO.util.Event.onDOMReady(unhide_language_selector);
+
+        
+        var BUGZILLA = {
+            param: {
+                cookiepath: '\/',
+                maxusermatches: 1000
+            },
+            constant: {
+                COMMENT_COLS: 80
+            },
+            string: {
+                
+
+                attach_desc_required:
+                    "You must enter a Description for this attachment.",
+                component_required:
+                    "You must select a Component for this bug.",
+                description_required:
+                    "You must enter a Description for this bug.",
+                short_desc_required:
+                    "You must enter a Summary for this bug.",
+                version_required:
+                    "You must select a Version for this bug."
+            }
+              , api_token: ''
+        };
+
+    if (history && history.replaceState) {
+      if(!document.location.href.match(/show_bug\.cgi/)) {
+        history.replaceState( null,
+                             "44 – Lokalizacja Thunderbirda 0.6",
+                             "show_bug.cgi?id=44" );
+        document.title = "44 – Lokalizacja Thunderbirda 0.6";
+      }
+      if (document.location.href.match(/show_bug\.cgi\?.*list_id=/)) {
+        var href = document.location.href;
+        href = href.replace(/[\?&]+list_id=(\d+|cookie)/, '');
+        history.replaceState(null, "44 – Lokalizacja Thunderbirda 0.6", href);
+      }
+    }
+    YAHOO.util.Event.onDOMReady(function() {
+      initDirtyFieldTracking();
+
+    });
+    // -->
+    </script>
+<script type="text/javascript" src="data/assets/daf5e0fb6826e6a35280e622913f0c4a.js"></script>
+
+    
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+                       title="Bugzilla" href="search_plugin.cgi">
+    <link rel="shortcut icon" href="images/favicon.ico">
+  </head>
+
+  <body 
+        class="bugs-aviary-pl
+                 bz_bug
+                 bz_status_VERIFIED
+                 bz_product_Thunderbird
+                 bz_component_Og&#XF3;lne
+                 bz_bug_44 yui-skin-sam">
+
+  <div id="header"><div id="banner">
+  </div>
+
+    <div id="titles">
+      <span id="title">Bugzilla &ndash; Bug&nbsp;44</span>
+
+        <span id="subtitle" class="subheader">Lokalizacja Thunderbirda 0.6</span>
+
+        <span id="information" class="header_addl_info">Last modified: 2010-05-13 05:53:18 CEST</span>
+    </div>
+
+
+    <div id="common_links"><ul class="links">
+  <li><a href="index.html">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi.html">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi.html">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi.html">Search</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="http://bugs.aviary.pl/buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input type="hidden" id="no_redirect_top" name="no_redirect" value="0">
+    <script type="text/javascript">
+      if (history && history.replaceState) {
+        var no_redirect = document.getElementById("no_redirect_top");
+        no_redirect.value = 1;
+      }
+    </script>
+    <input class="txt" type="text" id="quicksearch_top" name="quicksearch" 
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search" 
+           id="find_top"></form>
+  <a href="page.cgi%3Fid=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="report.cgi.html">Reports</a></li>
+
+  <li>
+      <span class="separator">| </span>
+        <a href="request.cgi.html">Requests</a></li>
+
+
+  <li>
+        <span class="separator">| </span>
+        <a href="https://bugzilla.readthedocs.org/en/5.0/using/understanding.html" target="_blank">Help</a>
+      </li>
+    
+      <li id="new_account_container_top">
+        <span class="separator">| </span>
+        <a href="createaccount.cgi.html">New&nbsp;Account</a>
+      </li>
+
+    <li id="mini_login_container_top">
+  <span class="separator">| </span>
+  <a id="login_link_top" href="show_bug.cgi%3Fid=44&amp;GoAheadAndLogIn=1.html"
+     onclick="return show_mini_login_form('_top')">Log In</a>
+
+  <form action="show_bug.cgi%3Fid=44.html" method="POST"
+        class="mini_login bz_default_hidden"
+        id="mini_login_top">
+    <input id="Bugzilla_login_top" required
+           name="Bugzilla_login" class="bz_login"
+        type="email" placeholder="Email Address">
+    <input class="bz_password" name="Bugzilla_password" type="password"
+           id="Bugzilla_password_top" required
+           placeholder="Password">
+    <input type="hidden" name="Bugzilla_login_token"
+           value="1469819817-wCcLcZn6cPc5WDuC7MeyqsxAOO_ZuoR0lZucDXiLqI0">
+    <input type="submit" name="GoAheadAndLogIn" value="Log in"
+            id="log_in_top">
+    <a href="show_bug.cgi%3Fid=44.html#" onclick="return hide_mini_login_form('_top')">[x]</a>
+  </form>
+</li>
+
+
+  <li id="forgot_container_top">
+    <span class="separator">| </span>
+    <a id="forgot_link_top" href="show_bug.cgi%3Fid=44&amp;GoAheadAndLogIn=1.html#forgot"
+       onclick="return show_forgot_form('_top')">Forgot Password</a>
+    <form action="http://bugs.aviary.pl/token.cgi" method="post" id="forgot_form_top"
+          class="mini_forgot bz_default_hidden">
+      <label for="login_top">Login:</label>
+      <input name="loginname" size="20" id="login_top" required
+          type="email" placeholder="Your Email Address">
+      <input id="forgot_button_top" value="Reset Password" type="submit">
+      <input type="hidden" name="a" value="reqpw">
+      <input type="hidden" id="token_top" name="token"
+             value="1469819817-Ks0emxRTRQWEfK4lLaS_Avq5J3BuyIyLBS20BeUe-Hc">
+      <a href="show_bug.cgi%3Fid=44.html#" onclick="return hide_forgot_form('_top')">[x]</a>
+    </form>
+  </li>
+</ul>
+    </div>
+  </div>
+
+  <div id="bugzilla-body">
+
+
+<script type="text/javascript">
+<!--
+
+//-->
+</script>
+
+<form name="changeform" id="changeform" method="post" action="http://bugs.aviary.pl/process_bug.cgi">
+
+  <input type="hidden" name="delta_ts" value="2010-05-13 05:53:18">
+  <input type="hidden" name="id" value="44">
+  <input type="hidden" name="token" value="1469819817-Qz-gShIxDZFjNLDLuUZeDRLKPpaPZvkgpGp5kswtut8">
+<div class="bz_short_desc_container edit_form">
+     <a href="show_bug.cgi%3Fid=44.html"><b>Bug&nbsp;44</b></a> <span id="summary_container" class="bz_default_hidden">
+      - <span id="short_desc_nonedit_display">Lokalizacja Thunderbirda 0.6</span>
+     </span>
+
+    <div id="summary_input"><span class="field_label "
+    id="field_label_short_desc">
+
+
+  <a 
+      title="The bug summary is a short sentence which succinctly describes what the bug is about."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#short_desc"
+  >Summary:</a>
+
+</span>Lokalizacja Thunderbirda 0.6
+    </div>
+  </div>
+  <script type="text/javascript">
+    hideEditableField('summary_container',
+                      'summary_input',
+                      'summary_edit_action',
+                      'short_desc',
+                      'Lokalizacja Thunderbirda 0.6' );
+  </script>
+  <table class="edit_form">
+    <tr>
+      
+      <td id="bz_show_bug_column_1" class="bz_show_bug_column">     
+        <table>
+          <tr>
+    <th class="field_label">
+      <a href="page.cgi%3Fid=fields.html#bug_status">Status</a>:
+    </th>
+    <td id="bz_field_status">
+      <span id="static_bug_status">VERIFIED
+          FIXED
+      </span>
+    </td>
+  </tr>
+<tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+<tr><th class="field_label "
+    id="field_label_alias">
+
+
+  <a 
+      title="A short, unique name assigned to a bug in order to assist with looking it up and referring to it in other places in Bugzilla."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#alias"
+  >Alias:</a>
+
+</th>
+    <td>
+        None
+    </td>
+  </tr>
+<tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+<tr><th class="field_label "
+    id="field_label_product">
+
+
+  <a 
+      title="Bugs are categorised into Products and Components. Select a Classification to narrow down this list."
+      class="field_help_link"
+      href="describecomponents.cgi.html"
+  >Product:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_product" >Thunderbird
+
+</td>
+    </tr>
+
+    
+    <tr class="bz_default_hidden"><th class="field_label "
+    id="field_label_classification">
+
+
+  <a 
+      title="Bugs are categorised into Classifications, Products and Components. classifications is the top-level categorisation."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#classification"
+  >Classification:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_classification" >Tłumaczenia oprogramowania
+
+</td>
+    </tr>
+        
+    
+    
+    <tr><th class="field_label "
+    id="field_label_component">
+
+
+  <a 
+      title="Components are second-level categories; each belongs to a particular Product. Select a Product to narrow down this list."
+      class="field_help_link"
+      href="describecomponents.cgi%3Fproduct=Thunderbird.html"
+  >Component:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_component" >Ogólne
+
+  (<a href="buglist.cgi%3Fcomponent=Ogólne&amp;product=Thunderbird&amp;bug_status=__open__.html"
+      target="_blank">show other bugs</a>)
+</td>
+    </tr>
+    <tr><th class="field_label "
+    id="field_label_version">
+
+
+  <a 
+      title="The version field defines the version of the software the bug was found in."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#version"
+  >Version:</a>
+
+</th>
+<td>nieokreślona
+  </td>
+    </tr>
+        
+    
+        
+    <tr><th class="field_label "
+    id="field_label_rep_platform">
+
+
+  <a 
+      title="The hardware platform the bug was observed on. Note: When searching, selecting the option &quot;All&quot; only finds bugs whose value for this field is literally the word &quot;All&quot;."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#rep_platform"
+  >Hardware:</a>
+
+</th>
+      <td class="field_value">Wszystkie
+        Wszystkie
+      </td>
+    </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          
+          <tr>
+      <th class="field_label">
+        <label  accesskey="i">
+          <a href="page.cgi%3Fid=fields.html#importance"><u>I</u>mportance</a></label>:
+      </th>
+      <td>P2
+       trywialny
+      </td>
+    </tr>
+          
+          <tr><th class="field_label "
+    id="field_label_assigned_to">
+
+
+  <a 
+      title="The person in charge of resolving the bug."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#assigned_to"
+  >Assignee:</a>
+
+</th>
+      <td><span class="vcard"><span class="fn">Piotr Komoda</span>
+</span>
+      </td>
+    </tr>
+
+    <tr><th class="field_label "
+    id="field_label_qa_contact">
+
+
+  <a 
+      title="The person responsible for confirming this bug if it is unconfirmed, and for verifying the fix once the bug has been resolved."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#qa_contact"
+  >QA Contact:</a>
+
+</th>
+      <td><span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+      </td>
+    </tr>
+    <script type="text/javascript">
+      assignToDefaultOnChange(['product', 'component'],
+        'nobody\x40aviary.pl',
+        'thunderbird\x40l10n.bledy');
+    </script>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          <tr><th class="field_label "
+    id="field_label_bug_file_loc">
+
+
+  <a 
+      title="Bugs can have a URL associated with them - for example, a pointer to a web site where the problem is seen."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#bug_file_loc"
+  >URL:</a>
+
+</th>
+    <td>
+      <span id="bz_url_input_area">
+      </span>
+    </td>
+  </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+
+          
+<tr><th class="field_label "
+    id="field_label_dependson">
+
+
+  <a 
+      title="The bugs listed here must be resolved before this bug can be resolved."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#dependson"
+  >Depends on:</a>
+
+</th>
+
+  <td>
+    <span id="dependson_input_area">
+    </span>
+<a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Lokalizacja Thunderbirda 0.5"
+   href="show_bug.cgi%3Fid=35.html">35</a> 
+  </td>
+  </tr>
+  
+  <tr><th class="field_label "
+    id="field_label_blocked">
+
+
+  <a 
+      title="This bug must be resolved before the bugs listed in this field can be resolved."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#blocked"
+  >Blocks:</a>
+
+</th>
+
+  <td>
+    <span id="blocked_input_area">
+    </span>
+
+  </td>
+  </tr>
+
+    <tr>
+      <th>&nbsp;</th>
+
+      <td id="show_dependency_tree_or_graph">
+        Show dependency <a href="showdependencytree.cgi%3Fid=44&amp;hide_resolved=1.html">tree</a>
+
+          /&nbsp;<a href="showdependencygraph.cgi%3Fid=44.html">graph</a>
+      </td>
+    </tr>
+          
+        </table>
+      </td>
+      <td>
+        <div class="bz_column_spacer">&nbsp;</div>
+      </td>
+      
+      <td id="bz_show_bug_column_2" class="bz_show_bug_column">
+        <table>
+        <tr>
+    <th class="field_label">
+      Reported:
+    </th>
+    <td>2004-04-25 21:56 CEST by <span class="vcard"><span class="fn">Piotr Komoda</span>
+</span>
+    </td>
+  </tr>
+  
+  <tr>
+    <th class="field_label">
+      Modified:
+    </th>
+    <td>2010-05-13 05:53 CEST
+      (<a href="show_activity.cgi%3Fid=44.html">History</a>)
+    </td>
+  
+  </tr>
+<tr>
+      <th class="field_label">
+        <label  accesskey="a">
+          CC List:
+        </label>
+      </th>
+      <td>2 
+          users
+          <span id="cc_edit_area_showhide_container" class="bz_default_hidden">
+            (<a href="show_bug.cgi%3Fid=44.html#" id="cc_edit_area_showhide">show</a>)
+          </span>
+        <div id="cc_edit_area">
+          <br>
+            <select id="cc" multiple="multiple" size="5" >
+                <option value="marcoos+bugs">marcoos+bugs</option>
+                <option value="mwawoczny">mwawoczny</option>
+            </select>
+        </div>
+          <script type="text/javascript">
+            hideEditableField( 'cc_edit_area_showhide_container', 
+                               'cc_edit_area', 
+                               'cc_edit_area_showhide', 
+                               '', 
+                               '');  
+          </script>
+      </td>
+    </tr>
+
+<tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+<tr><th class="field_label "
+    id="field_label_see_also">
+
+
+  <a 
+      title="This allows you to refer to bugs in other installations. You can enter a URL to a bug in the 'Add Bug URLs' field to note that that bug is related to this one. You can enter multiple URLs at once by separating them with whitespace. You should normally use this field to refer to bugs in other installations. For bugs in this installation, it is better to use the Depends on and Blocks fields."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#see_also"
+  >See Also:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_see_also" >
+
+</td>
+    </tr> 
+
+<tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+
+
+
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+          <hr id="bz_top_half_spacer">
+      </td>
+    </tr>
+  </table>
+
+  <table id="bz_big_form_parts">
+  <tr>
+  <td>
+
+    
+<script type="text/javascript">
+<!--
+function toggle_display(link) {
+    var table = document.getElementById("attachment_table");
+    var view_all = document.getElementById("view_all");
+    var hide_obsolete_url_parameter = "&hide_obsolete=1";
+    // Store current height for scrolling later
+    var originalHeight = table.offsetHeight;
+    var rows = YAHOO.util.Dom.getElementsByClassName(
+        'bz_tr_obsolete', 'tr', table);
+
+    for (var i = 0; i < rows.length; i++) {
+        bz_toggleClass(rows[i], 'bz_default_hidden');
+    }
+
+    if (YAHOO.util.Dom.hasClass(rows[0], 'bz_default_hidden')) {
+        link.innerHTML = "Show Obsolete";
+        view_all.href = view_all.href + hide_obsolete_url_parameter 
+    }
+    else {
+        link.innerHTML = "Hide Obsolete";
+        view_all.href = view_all.href.replace(hide_obsolete_url_parameter,"");
+    }
+
+    var newHeight = table.offsetHeight;
+    // This scrolling makes the window appear to not move at all.
+    window.scrollBy(0, newHeight - originalHeight);
+
+    return false;
+}
+//-->
+</script>
+
+<br>
+<table id="attachment_table">
+  <tr id="a0">
+    <th colspan="3" class="left">
+      Attachments
+    </th>
+  </tr>
+
+
+      <tr id="a1" class="bz_contenttype_application_xhtml&#X2B;xml">
+        <td>
+            <a href="attachment.cgi%3Fid=23.html"
+               title="View the content of the attachment">
+          <b>about.xhtml</b></a>
+
+          <span class="bz_attach_extra_info">
+              (3.66 KB,
+                application/xhtml+xml)
+
+            <br>
+            <a href="show_bug.cgi%3Fid=44.html#attach_23"
+               title="Go to the comment associated with the attachment">2004-04-26 01:57 CEST</a>,
+
+            <span class="vcard"><span class="fn">Piotr Komoda</span>
+</span>
+          </span>
+        </td>
+
+          <td class="bz_attach_flags">
+              <i>no flags</i>
+          </td>
+
+        <td>
+          <a href="attachment.cgi%3Fid=23&amp;action=edit.html">Details</a>
+        </td>
+      </tr>
+      <tr id="a2" class="bz_contenttype_text_html">
+        <td>
+            <a href="attachment.cgi%3Fid=24.html"
+               title="View the content of the attachment">
+          <b>credits.html</b></a>
+
+          <span class="bz_attach_extra_info">
+              (8.93 KB,
+                text/html)
+
+            <br>
+            <a href="show_bug.cgi%3Fid=44.html#attach_24"
+               title="Go to the comment associated with the attachment">2004-04-26 02:13 CEST</a>,
+
+            <span class="vcard"><span class="fn">Piotr Komoda</span>
+</span>
+          </span>
+        </td>
+
+          <td class="bz_attach_flags">
+              <i>no flags</i>
+          </td>
+
+        <td>
+          <a href="attachment.cgi%3Fid=24&amp;action=edit.html">Details</a>
+        </td>
+      </tr>
+      <tr id="a3" class="bz_contenttype_text_plain bz_tr_obsolete bz_default_hidden">
+        <td>
+            <a href="attachment.cgi%3Fid=25"
+               title="View the content of the attachment">
+          <b><span class="bz_obsolete">viewSource.dtd</span></b></a>
+
+          <span class="bz_attach_extra_info">
+              (1.77 KB,
+                text/plain)
+
+            <br>
+            <a href="show_bug.cgi%3Fid=44.html#attach_25"
+               title="Go to the comment associated with the attachment">2004-04-26 02:20 CEST</a>,
+
+            <span class="vcard"><span class="fn">Piotr Komoda</span>
+</span>
+          </span>
+        </td>
+
+          <td class="bz_attach_flags">
+              <i>no flags</i>
+          </td>
+
+        <td>
+          <a href="attachment.cgi%3Fid=25&amp;action=edit.html">Details</a>
+        </td>
+      </tr>
+      <tr id="a4" class="bz_contenttype_text_plain bz_tr_obsolete bz_default_hidden">
+        <td>
+            <a href="attachment.cgi%3Fid=26"
+               title="View the content of the attachment">
+          <b><span class="bz_obsolete">viewSource.properties</span></b></a>
+
+          <span class="bz_attach_extra_info">
+              (375 bytes,
+                text/plain)
+
+            <br>
+            <a href="show_bug.cgi%3Fid=44.html#attach_26"
+               title="Go to the comment associated with the attachment">2004-04-26 02:22 CEST</a>,
+
+            <span class="vcard"><span class="fn">Piotr Komoda</span>
+</span>
+          </span>
+        </td>
+
+          <td class="bz_attach_flags">
+              <i>no flags</i>
+          </td>
+
+        <td>
+          <a href="attachment.cgi%3Fid=26&amp;action=edit.html">Details</a>
+        </td>
+      </tr>
+      <tr id="a5" class="bz_contenttype_text_plain">
+        <td>
+            <a href="attachment.cgi%3Fid=27"
+               title="View the content of the attachment">
+          <b>Diff 0.5-0.6</b></a>
+
+          <span class="bz_attach_extra_info">
+              (56.71 KB,
+                text/plain)
+
+            <br>
+            <a href="show_bug.cgi%3Fid=44.html#attach_27"
+               title="Go to the comment associated with the attachment">2004-04-28 20:58 CEST</a>,
+
+            <span class="vcard"><span class="fn">Piotr Komoda</span>
+</span>
+          </span>
+        </td>
+
+          <td class="bz_attach_flags">
+              <i>no flags</i>
+          </td>
+
+        <td>
+          <a href="attachment.cgi%3Fid=27&amp;action=edit.html">Details</a>
+        </td>
+      </tr>
+      <tr id="a6" class="bz_contenttype_text_plain">
+        <td>
+            <a href="attachment.cgi%3Fid=28"
+               title="View the content of the attachment">
+          <b>poprawki</b></a>
+
+          <span class="bz_attach_extra_info">
+              (687 bytes,
+                text/plain)
+
+            <br>
+            <a href="show_bug.cgi%3Fid=44.html#attach_28"
+               title="Go to the comment associated with the attachment">2004-04-28 23:41 CEST</a>,
+
+            <span class="vcard"><span class="fn">Piotr Komoda</span>
+</span>
+          </span>
+        </td>
+
+          <td class="bz_attach_flags">
+              <i>no flags</i>
+          </td>
+
+        <td>
+          <a href="attachment.cgi%3Fid=28&amp;action=edit.html">Details</a>
+        </td>
+      </tr>
+      <tr id="a7" class="bz_contenttype_text_plain">
+        <td>
+            <a href="attachment.cgi%3Fid=29"
+               title="View the content of the attachment">
+          <b>roznice miedzy Gandalfa a Pitrecka 0.5</b></a>
+
+          <span class="bz_attach_extra_info">
+              (31.41 KB,
+                text/plain)
+
+            <br>
+            <a href="show_bug.cgi%3Fid=44.html#attach_29"
+               title="Go to the comment associated with the attachment">2004-04-30 13:46 CEST</a>,
+
+            <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+          </span>
+        </td>
+
+          <td class="bz_attach_flags">
+              <i>no flags</i>
+          </td>
+
+        <td>
+          <a href="attachment.cgi%3Fid=29&amp;action=edit.html">Details</a>
+        </td>
+      </tr>
+      <tr id="a8" class="bz_contenttype_text_plain">
+        <td>
+            <a href="attachment.cgi%3Fid=30"
+               title="View the content of the attachment">
+          <b>Zmiany 2004-04-26 - 0.6RC1</b></a>
+
+          <span class="bz_attach_extra_info">
+              (2.46 KB,
+                text/plain)
+
+            <br>
+            <a href="show_bug.cgi%3Fid=44.html#attach_30"
+               title="Go to the comment associated with the attachment">2004-04-30 22:22 CEST</a>,
+
+            <span class="vcard"><span class="fn">Piotr Komoda</span>
+</span>
+          </span>
+        </td>
+
+          <td class="bz_attach_flags">
+              <i>no flags</i>
+          </td>
+
+        <td>
+          <a href="attachment.cgi%3Fid=30&amp;action=edit.html">Details</a>
+        </td>
+      </tr>
+      <tr id="a9" class="bz_contenttype_text_plain">
+        <td>
+            <a href="attachment.cgi%3Fid=31"
+               title="View the content of the attachment">
+          <b>Zmiany pl-unix 0.5 - 0.6 RC1</b></a>
+
+          <span class="bz_attach_extra_info">
+              (305 bytes,
+                text/plain)
+
+            <br>
+            <a href="show_bug.cgi%3Fid=44.html#attach_31"
+               title="Go to the comment associated with the attachment">2004-04-30 22:45 CEST</a>,
+
+            <span class="vcard"><span class="fn">Piotr Komoda</span>
+</span>
+          </span>
+        </td>
+
+          <td class="bz_attach_flags">
+              <i>no flags</i>
+          </td>
+
+        <td>
+          <a href="attachment.cgi%3Fid=31&amp;action=edit.html">Details</a>
+        </td>
+      </tr>
+      <tr id="a10" class="bz_contenttype_text_plain">
+        <td>
+            <a href="attachment.cgi%3Fid=32"
+               title="View the content of the attachment">
+          <b>Poprawki Wojtka</b></a>
+
+          <span class="bz_attach_extra_info">
+              (4.05 KB,
+                text/plain)
+
+            <br>
+            <a href="show_bug.cgi%3Fid=44.html#attach_32"
+               title="Go to the comment associated with the attachment">2004-05-03 04:31 CEST</a>,
+
+            <span class="vcard"><span class="fn">Piotr Komoda</span>
+</span>
+          </span>
+        </td>
+
+          <td class="bz_attach_flags">
+              <i>no flags</i>
+          </td>
+
+        <td>
+          <a href="attachment.cgi%3Fid=32&amp;action=edit.html">Details</a>
+        </td>
+      </tr>
+      <tr id="a11" class="bz_contenttype_text_plain bz_tr_obsolete bz_default_hidden">
+        <td>
+            <a href="attachment.cgi%3Fid=33"
+               title="View the content of the attachment">
+          <b><span class="bz_obsolete">poprawki2</span></b></a>
+
+          <span class="bz_attach_extra_info">
+              (500 bytes,
+                text/plain)
+
+            <br>
+            <a href="show_bug.cgi%3Fid=44.html#attach_33"
+               title="Go to the comment associated with the attachment">2004-05-05 16:18 CEST</a>,
+
+            <span class="vcard"><span class="fn">Piotr Komoda</span>
+</span>
+          </span>
+        </td>
+
+          <td class="bz_attach_flags">
+              <i>no flags</i>
+          </td>
+
+        <td>
+          <a href="attachment.cgi%3Fid=33&amp;action=edit.html">Details</a>
+        </td>
+      </tr>
+      <tr id="a12" class="bz_contenttype_text_plain">
+        <td>
+            <a href="attachment.cgi%3Fid=34"
+               title="View the content of the attachment">
+          <b>poprawki2</b></a>
+
+          <span class="bz_attach_extra_info">
+              (508 bytes,
+                text/plain)
+
+            <br>
+            <a href="show_bug.cgi%3Fid=44.html#attach_34"
+               title="Go to the comment associated with the attachment">2004-05-05 16:21 CEST</a>,
+
+            <span class="vcard"><span class="fn">Piotr Komoda</span>
+</span>
+          </span>
+        </td>
+
+          <td class="bz_attach_flags">
+              <i>no flags</i>
+          </td>
+
+        <td>
+          <a href="attachment.cgi%3Fid=34&amp;action=edit.html">Details</a>
+        </td>
+      </tr>
+      <tr id="a13" class="bz_contenttype_text_plain">
+        <td>
+            <a href="attachment.cgi%3Fid=35"
+               title="View the content of the attachment">
+          <b>poprawki3</b></a>
+
+          <span class="bz_attach_extra_info">
+              (1.14 KB,
+                text/plain)
+
+            <br>
+            <a href="show_bug.cgi%3Fid=44.html#attach_35"
+               title="Go to the comment associated with the attachment">2004-05-05 21:40 CEST</a>,
+
+            <span class="vcard"><span class="fn">Piotr Komoda</span>
+</span>
+          </span>
+        </td>
+
+          <td class="bz_attach_flags">
+              <i>no flags</i>
+          </td>
+
+        <td>
+          <a href="attachment.cgi%3Fid=35&amp;action=edit.html">Details</a>
+        </td>
+      </tr>
+      <tr id="a14" class="bz_contenttype_text_plain">
+        <td>
+            <a href="attachment.cgi%3Fid=36"
+               title="View the content of the attachment">
+          <b>Poprawki</b></a>
+
+          <span class="bz_attach_extra_info">
+              (33.11 KB,
+                text/plain)
+
+            <br>
+            <a href="show_bug.cgi%3Fid=44.html#attach_36"
+               title="Go to the comment associated with the attachment">2004-05-05 21:57 CEST</a>,
+
+            <span class="vcard"><span class="fn">Marek Wawoczny</span>
+</span>
+          </span>
+        </td>
+
+          <td class="bz_attach_flags">
+              <i>no flags</i>
+          </td>
+
+        <td>
+          <a href="attachment.cgi%3Fid=36&amp;action=edit.html">Details</a>
+        </td>
+      </tr>
+      <tr id="a15" class="bz_contenttype_text_plain bz_tr_obsolete bz_default_hidden">
+        <td>
+            <a href="attachment.cgi%3Fid=37"
+               title="View the content of the attachment">
+          <b><span class="bz_obsolete">poprawki Marka</span></b></a>
+
+          <span class="bz_attach_extra_info">
+              (18.17 KB,
+                text/plain)
+
+            <br>
+            <a href="show_bug.cgi%3Fid=44.html#attach_37"
+               title="Go to the comment associated with the attachment">2004-05-06 03:16 CEST</a>,
+
+            <span class="vcard"><span class="fn">Piotr Komoda</span>
+</span>
+          </span>
+        </td>
+
+          <td class="bz_attach_flags">
+              <i>no flags</i>
+          </td>
+
+        <td>
+          <a href="attachment.cgi%3Fid=37&amp;action=edit.html">Details</a>
+        </td>
+      </tr>
+      <tr id="a16" class="bz_contenttype_text_plain">
+        <td>
+            <a href="attachment.cgi%3Fid=38"
+               title="View the content of the attachment">
+          <b>poprawki Marka</b></a>
+
+          <span class="bz_attach_extra_info">
+              (19.10 KB,
+                text/plain)
+
+            <br>
+            <a href="show_bug.cgi%3Fid=44.html#attach_38"
+               title="Go to the comment associated with the attachment">2004-05-06 07:00 CEST</a>,
+
+            <span class="vcard"><span class="fn">Piotr Komoda</span>
+</span>
+          </span>
+        </td>
+
+          <td class="bz_attach_flags">
+              <i>no flags</i>
+          </td>
+
+        <td>
+          <a href="attachment.cgi%3Fid=38&amp;action=edit.html">Details</a>
+        </td>
+      </tr>
+      <tr id="a17" class="bz_contenttype_text_plain">
+        <td>
+            <a href="attachment.cgi%3Fid=40"
+               title="View the content of the attachment">
+          <b>poprawki Marka 2</b></a>
+
+          <span class="bz_attach_extra_info">
+              (3.01 KB,
+                text/plain)
+
+            <br>
+            <a href="show_bug.cgi%3Fid=44.html#attach_40"
+               title="Go to the comment associated with the attachment">2004-05-06 12:00 CEST</a>,
+
+            <span class="vcard"><span class="fn">Piotr Komoda</span>
+</span>
+          </span>
+        </td>
+
+          <td class="bz_attach_flags">
+              <i>no flags</i>
+          </td>
+
+        <td>
+          <a href="attachment.cgi%3Fid=40&amp;action=edit.html">Details</a>
+        </td>
+      </tr>
+      <tr id="a18" class="bz_contenttype_text_plain">
+        <td>
+            <a href="attachment.cgi%3Fid=41"
+               title="View the content of the attachment">
+          <b>poprawki4</b></a>
+
+          <span class="bz_attach_extra_info">
+              (4.38 KB,
+                text/plain)
+
+            <br>
+            <a href="show_bug.cgi%3Fid=44.html#attach_41"
+               title="Go to the comment associated with the attachment">2004-05-12 05:49 CEST</a>,
+
+            <span class="vcard"><span class="fn">Piotr Komoda</span>
+</span>
+          </span>
+        </td>
+
+          <td class="bz_attach_flags">
+              <i>no flags</i>
+          </td>
+
+        <td>
+          <a href="attachment.cgi%3Fid=41&amp;action=edit.html">Details</a>
+        </td>
+      </tr>
+
+  <tr class="bz_attach_footer">
+    <td colspan="3">
+        <span class="bz_attach_view_hide">
+            <a href="show_bug.cgi%3Fid=44.html#a0" onclick="return toggle_display(this);">Show
+              Obsolete</a> (4)
+            <a id="view_all" href="attachment.cgi%3Fbugid=44&amp;action=viewall&amp;hide_obsolete=1.html">View All</a>
+        </span>
+        <a href="attachment.cgi%3Fbugid=44&amp;action=enter.html">Add an attachment</a>
+        (proposed patch, testcase, etc.)
+    </td>
+  </tr>
+</table>
+<br>
+
+  </td>
+  <td>
+  </td>
+  </tr></table>
+
+  
+  <div id="comments"><script src="js/comments.js" type="text/javascript">
+</script>
+
+<script type="text/javascript">
+<!--
+  /* Adds the reply text to the 'comment' textarea */
+  function replyToComment(id, real_id, name) {
+      var prefix = "(In reply to " + name + " from comment #" + id + ")\n";
+      var replytext = "";
+        /* pre id="comment_name_N" */
+        var text_elem = document.getElementById('comment_text_'+id);
+        var text = getText(text_elem);
+        replytext = prefix + wrapReplyText(text);
+
+
+      /* <textarea id="comment"> */
+      var textarea = document.getElementById('comment');
+      if (textarea.value != replytext) {
+          textarea.value += replytext;
+      }
+
+      textarea.focus();
+  } 
+//-->
+</script>
+
+
+<!-- This auto-sizes the comments and positions the collapse/expand links 
+     to the right. -->
+<table class="bz_comment_table">
+<tr>
+<td>
+<div id="c0" class="bz_comment bz_first_comment">
+
+      <div class="bz_first_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=44.html#c0">Description</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Piotr Komoda</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-04-25 21:56:45 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Biore sie za spisanie wszystkich zmian poczynionych przezemnie od publikacji Tb
+0.5 pl-PL. Moze to troche potrwac, bo jak na razie (z powodow znanych
+odwiedzajacym forum MozillaPL) mam tylko liste nowo przetlumaczonych przezemnie
+stringow, ktora zaraz tu umieszcze. Zglaszajcie wszystkie uwagi, znaleznione
+bledy, idiotyzmy w tlumaczniu, sugestie, itp. Przydal by sie nam CVS do
+zarzadzania tym wszystkim, ale to temat na inny bug-report.</pre>
+    </div>
+
+    <div id="c1" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=44.html#c1">Comment 1</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-04-26 01:02:15 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">-&gt; Pitreck
+QA -&gt; ja</pre>
+    </div>
+
+    <div id="c2" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=44.html#c2">Comment 2</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Piotr Komoda</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-04-26 01:57:32 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Created <span class=""><a href="attachment.cgi%3Fid=23.html" name="attach_23" title="about.xhtml">attachment 23</a> <a href="attachment.cgi%3Fid=23&amp;action=edit.html" title="about.xhtml">[details]</a></span>
+about.xhtml
+
+Mala zmiana planow:
+Mialem jak na razie wstawic liste nowo przetlumaczonych stringow wzgledem 0.5,
+ale to mija sie z celem. Branch Tb 0.5 zostal utorzony w styczniu, a pliki
+jezykowe pochodzily z wydania z grudnia. Brakowalo tam duzej ilosci stringow,
+ktore ja wczesniej przetlumaczylem i ktore znalazly sie w wydaniach
+po-finalnych. Niemozliwym jest teraz doliczenie sie ktore to byly stringi, wiec
+to, co bym dodal nie bylo by nawet pelna lista nowo przetlumaczonych stringow!
+Jedyne wyjscie to porownanie plikow jezykowych Tb 0.5 pl-PL z obecnymi(kochane
+Compare &amp; Merge) i od razu wypisanie wszystkich roznic.  Jest to zrobione
+obecnie w jakis 7% i raczej nie spodziewajcie sie gotowca przed sroda wieczor. 
+
+
+Jeszcze jedno, tlumaczenie zawiera kilka plikow ktore zostaly zmienione prawie
+w calosci, sa takze nowe pliki ktore tlumaczyc trzeba bylo w calosci. Zmian
+jest za duzo do opisania, wiec poprostu umieszcze je tutaj jako zalaczniki.
+Pierwszym z nich jest about.xhtml, ktory posiadal wykaz wszystkich osob
+tlumaczacych oraz pomagajacych w tlumaczeniu. Jako ze teraz role te pelni
+credits.html (nastepny zalacznik), ktorego zawartosc jest wyswietlana w okienku
+about pod przyciskiem &quot;Tworcy&quot;, nie ma wiec sensu sie dublowac. About.xhtml ma
+teraz postac zblizona do oryginalu.</pre>
+    </div>
+
+    <div id="c3" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=44.html#c3">Comment 3</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Piotr Komoda</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-04-26 02:13:53 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Created <span class=""><a href="attachment.cgi%3Fid=24.html" name="attach_24" title="credits.html">attachment 24</a> <a href="attachment.cgi%3Fid=24&amp;action=edit.html" title="credits.html">[details]</a></span>
+credits.html
+
+Jeszcze jedno. Z tlumaczenia wylecialy nastepujace pliki:
+pl-PL-mail\locale\pl-PL\communicator\profile\confirmMigration.dtd 
+pl-PL-mail\locale\pl-PL\global\background.png
+pl-PL-mail\locale\pl-PL\global\flash.png
+pl-PL-mail\locale\pl-PL\messenger\bird.png
+pl-PL-mail\locale\pl-PL\messenger\mail_mozilla.gif
+pl-PL-mail\locale\pl-PL\navigator\viewSource.dtd
+
+Doszly:
+pl-PL-mail\locale\pl-PL\global\viewSource.dtd
+pl-PL-mail\locale\pl-PL\global\viewSource.properties
+pl-PL-mail\locale\pl-PL\global\xbl.properties
+pl-PL-mail\locale\pl-PL\messenger\credits.html
+pl-PL-mail\locale\pl-PL\messenger\thunderbird-watemark.png
+pl-PL-mail\locale\pl-PL\messenger\messengercompose\pref-composing_html.dtd
+
+Doszedl takze nowy folder pl-PL-mail\locale\pl-PL\communicator\layout, w nim
+nastepujace pliki:
+HtmlForm.properties
+MediaDocument.properties
+xmlparser.properties
+
+Podsumowujac:
+Wzgledem Tb 0.5 modyfikacji uleglo 99 plikow, usunietych zostalo 6 plikow,
+doszlo 10 plikow.</pre>
+    </div>
+
+    <div id="c4" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=44.html#c4">Comment 4</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Piotr Komoda</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-04-26 02:20:35 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Created <span class="bz_obsolete"><a href="attachment.cgi%3Fid=25" name="attach_25" title="viewSource.dtd">attachment 25</a> <a href="attachment.cgi%3Fid=25&amp;action=edit.html" title="viewSource.dtd">[details]</a></span>
+viewSource.dtd
+
+Zapomnialem dodac, ze powyzsze statystyki dotycza tylko pl-PL-mail.jar. W
+pl-win.jar tez jest kilka zmian, ale za niego zabiore sie pozniej.</pre>
+    </div>
+
+    <div id="c5" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=44.html#c5">Comment 5</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Piotr Komoda</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-04-26 02:22:56 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Created <span class="bz_obsolete"><a href="attachment.cgi%3Fid=26" name="attach_26" title="viewSource.properties">attachment 26</a> <a href="attachment.cgi%3Fid=26&amp;action=edit.html" title="viewSource.properties">[details]</a></span>
+viewSource.properties</pre>
+    </div>
+
+    <div id="c6" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=44.html#c6">Comment 6</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Piotr Komoda</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-04-27 00:26:16 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Cholera, po co ja te viewSource tu wstawilem? W przeciwienstwie do dwoch
+poprzednich plikow, one zainteresowanym osobom nic bez oryginalnych textow nie
+dadza... Cuz, zmeczenie wzielo gore wczorajszej nocy. Dzisiaj tez mi nie
+najsprawniej te przezucanie roznic z Compare &amp; Merge do Notepad 2 idzie, wstalem
+poznym popoludniem(a wlasciwie to byl juz wieczor) z uczuciem jakby mnie walec
+przejechal. Mam ukonczone 25% i juz niemal pewnym jest, ze do srody wieczor sie
+nie wyrobie. Tlumaczenie najnowszego weekly tez sie nieco opozni. Narazie nie
+planuje opublikowac wydania przed zakonczeniem prac nad spisem roznic.
+
+PS. Tlumaczenie credits.html jest bazowane na pliku o tej samej nazwie,
+pochodzacego z Firefoksa 0.8 pl-PL.</pre>
+    </div>
+
+    <div id="c7" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=44.html#c7">Comment 7</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Piotr Komoda</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-04-27 07:01:37 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">W pl-win zmianie ulegl jeden plik oraz doszedl jeden nowy:
+pl-win\locale\pl-PL\navigator-platform\platformNavigationBindings.dtd
+
+70% roboty ukonczone. Najgorsze jeszcze przedemna, ale te bitwe zostawiam sobie
+na nastepna nocke. Dobranoc panstwu :)</pre>
+    </div>
+
+    <div id="c8" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=44.html#c8">Comment 8</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard">wadimd
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-04-27 21:11:11 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">proponuję zamienić 'komponuj' list na 'napisz' list :-)</pre>
+    </div>
+
+    <div id="c9" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=44.html#c9">Comment 9</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Piotr Komoda</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-04-28 20:58:37 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Created <span class=""><a href="attachment.cgi%3Fid=27" name="attach_27" title="Diff 0.5-0.6">attachment 27</a> <a href="attachment.cgi%3Fid=27&amp;action=edit.html" title="Diff 0.5-0.6">[details]</a></span>
+Diff 0.5-0.6
+
+Uff, a jednak wyrobilem sie. Oto lista zmian Thunderbirda 0.6b 2004-04-26
+wzgledem wydania 0.5. Wykaz usunietych stringow nie posiada angielskich textow,
+ale to chyba nie bedzie problemem ;)
+
+PS. Da sie jakos usunac z listy zalacznikow te viewSource?</pre>
+    </div>
+
+    <div id="c10" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=44.html#c10">Comment 10</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Piotr Komoda</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-04-28 23:41:16 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Created <span class=""><a href="attachment.cgi%3Fid=28" name="attach_28" title="poprawki">attachment 28</a> <a href="attachment.cgi%3Fid=28&amp;action=edit.html" title="poprawki">[details]</a></span>
+poprawki
+
+Dodaje nowy zalacznik, znajdowac sie w nim beda zmiany spowodowane inwencja
+wlasna oraz poprawki bledow (w tym te zgloszone przez Wojta, postaram sie
+namowic go na sprawdzenie Tb 0.6, gdy ten wejdzie w faze RC). To, co jest juz
+obecne w tym pliku znajdzie sie w nastepnym wydaniu TB.</pre>
+    </div>
+
+    <div id="c11" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=44.html#c11">Comment 11</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-04-29 01:44:29 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Super Piotrku. Postaram sie zgrac Twoje zmiany z moim 0.5 jutro. </pre>
+    </div>
+
+    <div id="c12" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=44.html#c12">Comment 12</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Piotr Komoda</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-04-29 01:52:35 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(In reply to <a href="show_bug.cgi%3Fid=44.html#c11">comment #11</a>)
+<span class="quote">&gt; Super Piotrku. Postaram sie zgrac Twoje zmiany z moim 0.5 jutro. </span >
+
+Cieszy mnie to. Niech mi tylko lepetyna odpocznie, to jutro wezme sie za strone
+Tb. Czekam na haselko :)</pre>
+    </div>
+
+    <div id="c13" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=44.html#c13">Comment 13</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Piotr Komoda</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-04-29 07:31:18 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Comment on <span class=""><a href="attachment.cgi%3Fid=27" name="attach_27" title="Diff 0.5-0.6">attachment 27</a> <a href="attachment.cgi%3Fid=27&amp;action=edit.html" title="Diff 0.5-0.6">[details]</a></span>
+Diff 0.5-0.6
+
+<span class="quote">&gt;N=Nowe
+&gt;Z=Zmodyfikowane
+&gt;U=Usunięte</span >
+&gt;
+<span class="quote">&gt;pl-PL-mail?dom.properties?N?OnBeforeUnloadPreMessage?Are you sure you want to navigate away from this page??Czy napewno opuścić obecnie przeglądaną stronę? 
+&gt;pl-PL-mail?dom.properties?N?OnBeforeUnloadPostMessage?Press OK to continue, or Cancel to stay on the current page.?OK aby kontynuować, Anuluj aby zostać na obecnej stronie.
+&gt;pl-PL-mail?pref-applications.dtd?Z?aimLaunchSelect.label?AOL Instant Messenger Launch?Uruchom AOL Instant Messengera?Uruchom klienta Jabbera 
+&gt;pl-PL-mail?pref-extensions.dtd?Z?extensionIntro.label?Extensions are a great way to customize &amp;brandShortName; with extra features.?Dodatki umożliwiają rozszerzenie funkcjonalności i dostosowanie &amp;brandShortName; do własnych potrzeb.?Dodatki umożliwiają rozszerzenie funkcjonalności i dostosowanie Mozilli Thunderbird do własnych potrzeb.
+&gt;pl-PL-mail?pref-extensions.dtd?Z?newExtensionDescription.label?In order to install a new extension for &amp;brandShortName;, you must first download the extension using a browser.?Wszystkie nowe dodatki lub schematy &amp;brandShortName; należy przed instalacją pobrać za pomocą przeglądarki.?Wszystkie nowe dodatki lub schematy Mozilli Thunderbird należy przed instalacją pobrać za pomocą przeglądarki.
+&gt;pl-PL-mail?pref-fonts.dtd?N?replyInDefaultCharset.label?Always use the default character encoding in replies. (When unchecked, only new messages use the default.)?Używaj domyślnego kodowania znaków w odpowiedziach. (Jeśli odznaczone, tylko nowe wiadomości będą korzystały z domyślnych ustawień.)
+&gt;pl-PL-mail?pref-fonts.dtd?N?replyInDefaultCharset.accesskey?r?o
+&gt;pl-PL-mail?pref-languages.dtd?Z?languages.customize.right.header?charset.customize.right.header?Select Supported Character Encodings?Wybierz obsługiwane kodowania
+&gt;pl-PL-mail?pref-themes.dtd?Z?installedThemes.label?Select a theme to use:?Wybierz domyślny schemat &amp;brandShortName;:?Wybierz domyślny schemat Mozilli Thunderbird:
+&gt;pl-PL-mail?pref-themes.dtd?Z?newThemeDescription.label?In order to install a new theme for &amp;brandShortName;, you must first download the theme using a browser.?Wszystkie nowe dodatki lub schematy &amp;brandShortName; należy przed instalacją pobrać za pomocą przeglądarki.?Wszystkie nowe dodatki lub schematy Mozilli Thunderbird należy przed instalacją pobrać za pomocą przeglądarki.
+&gt;pl-PL-mail?prefutilities.properties?N?themesFilter?Themes (*.jar)?Schematy (*.jar)
+&gt;pl-PL-mail?prefutilities.properties?N?extensionFilter?Extensions (*.xpi)?Dodatki (*.xpi)
+&gt;pl-PL-mail?createProfileWizard.dtd?Z?window.title.label?&amp;brandShortName; Profile Manager?Menedżer profili &amp;brandShortName;?Menedżer profili Mozilli Thunderbird
+&gt;pl-PL-mail?createProfileWizard.dtd?Z?newprofile.title?Create Profile Wizard?Menedźer profili &amp;brandShortName;?Menedżer profili Mozilli Thunderbird
+&gt;pl-PL-mail?createProfileWizard.dtd?Z?profileCreationExplanation_2.text?If you are sharing this copy of &amp;brandShortName; with other users, you can use profiles to keep each user's information separate. To do this, each user should create his or her own profile.?Jeżeli na tym samym komputerze wielu użytkowników korzysta z &amp;brandShortName;, możliwe jest utworzenie odrębnego profilu dla każdego z nich. W tym celu każdy z użytkowników powinien uruchomić menedżera profili i utworzyć swój własny profil.?Jeżeli na tym samym komputerze wielu użytkowników korzysta z Mozilli Thunderbird, możliwe jest utworzenie odrębnego profilu dla każdego z nich. W tym celu każdy z użytkowników powinien uruchomić menedżera profili i utworzyć swój własny profil.
+&gt;pl-PL-mail?createProfileWizard.dtd?Z?profileCreationExplanation_3.text?If you are the only person using this copy of &amp;brandShortName;, you must have at least one profile. If you would like, you can create multiple profiles for yourself to store different sets of settings and preferences. For example, you may want to have separate profiles for business and personal use.?Jeżeli jesteś jedynym użytkownikiem &amp;brandShortName; musisz mieć utworzony przynajmniej jeden profil. Możliwe jest utworzenie wielu profili dla tego samego użytkownika, aby przechowywać różne zestawy ustawień i preferencji. Na przykład można posiadać odrębne profile do użytku służbowego i osobistego.?Jeżeli jesteś jedynym użytkownikiem Mozilli Thunderbird musisz mieć utworzony przynajmniej jeden profil. Możliwe jest utworzenie wielu profili dla tego samego użytkownika, aby przechowywać różne zestawy ustawień i preferencji. Na przykład można posiadać odrębne profile do użytku służbowego i osobistego.
+&gt;pl-PL-mail?profileManager.properties?Z?intro_start?To access your personal profile, which contains your stored messages, settings and other personalized information, please choose your profile from the list, and click %S to begin your session.?Wszystkie ustawienia własne, zakładki, zachowana poczta oraz inne dane użytkownika przechowywane są w profilach osobistych. Wybierz swój profil z listy, a następnie naciśnij przycisk Uruchom Mozillę lub naciśnij przycisk Zarządzaj profilami, aby utworzyć nowy profil.?Wszystkie ustawienia własne, zakładki, zachowana poczta oraz inne dane użytkownika przechowywane są w profilach osobistych. Wybierz swój profil z listy, a następnie naciśnij przycisk Uruchom Mozillę Thunderbird lub naciśnij przycisk Zarządzaj profilami, aby utworzyć nowy profil.
+&gt;pl-PL-mail?profileManager.properties?Z?intro_switch?To switch to another profile, which contains stored messages, settings and other personalized information, please choose that profile from the list, and click %S to begin using that profile.?Aby zmienić profil, w którym przechowywane są ustawienia własne, zakładki, zachowana poczta oraz inne dane użytkownika, należy wybrać nazwę profilu, a następnie nacisnąć przycisk Uruchom Mozillę.?Aby zmienić profil, w którym przechowywane są ustawienia własne, zakładki, zachowana poczta oraz inne dane użytkownika, należy wybrać nazwę profilu, a następnie nacisnąć przycisk Uruchom Mozillę Thunderbird.
+&gt;pl-PL-mail?profileManager.properties?Z?startButton?Start %S?Uruchom Mozilla?Uruchom Mozillę Thunderbird
+&gt;pl-PL-mail?profileSelection.dtd?Z?welcome.label?Welcome to &amp;brandShortName;?Witamy w &amp;brandShortName;?Witamy w Mozilli Thunderbird
+&gt;pl-PL-mail?profileSelection.dtd?Z?profilemanager.label?&amp;brandShortName; Profile Manager?Menedżer profili &amp;brandShortName;?Menedżer profili Mozilli Thunderbird
+&gt;pl-PL-mail?profileSelection.dtd?Z?start.label?Start &amp;vendorShortName;?Uruchom Mozillę?Uruchom Mozillę Thunderbird
+&gt;pl-PL-mail?utilityOverlay.dtd?Z?aboutCmd.label?About &amp;brandShortName;?O &amp;brandShortName;?O Mozilli Thunderbird
+&gt;pl-PL-mail?utilityOverlay.dtd?N?direct.label?Online (proxy: none)?Online (proxy: żadne)
+&gt;pl-PL-mail?utilityOverlay.dtd?N?direct.accesskey?n?n
+&gt;pl-PL-mail?utilityOverlay.dtd?N?manual.label?Online (proxy: manual)?Online (proxy: manualne)
+&gt;pl-PL-mail?utilityOverlay.dtd?N?manual.accesskey?m?m
+&gt;pl-PL-mail?utilityOverlay.dtd?N?pac.label?Online (proxy: auto)?Online (proxy: automatyczne)
+&gt;pl-PL-mail?utilityOverlay.dtd?N?pac.accesskey?a?a
+&gt;pl-PL-mail?utilityOverlay.dtd?N?proxy.label?Proxy Configuration...?Konfiguracja Proxy...
+&gt;pl-PL-mail?utilityOverlay.dtd?N?proxy.accesskey?C?C
+&gt;pl-PL-mail?utilityOverlay.properties?N?onlineTooltip0?You are online (proxy: none). Click the icon to go offline.?Jesteś w trybie online (proxy: żadne). Kliknij ikonę, aby przejść do trybu online.
+&gt;pl-PL-mail?utilityOverlay.properties?N?onlineTooltip1?You are online (proxy: manual). Click the icon to go offline.?Jesteś w trybie online (proxy: manualne). Kliknij ikonę, aby przejść do trybu online.
+&gt;pl-PL-mail?utilityOverlay.properties?N?onlineTooltip2?You are online (proxy: auto). Click the icon to go offline.?Jesteś w trybie online (proxy: automatyczne). Kliknij ikonę, aby przejść do trybu online.
+&gt;pl-PL-mail?utilityOverlay.properties?U?onlineTooltip??Jesteś w trybie online. Kliknij ikonę, aby przejść do trybu online.
+&gt;pl-PL-mail?SignonViewer.dtd?Z?windowalttitle.label?Form Manager: Sites?Menedżer formularzy?Menedżer formularzy: Strony
+&gt;pl-PL-mail?SignonViewer.dtd?N?treehead.password.label?Password?Hasło
+&gt;pl-PL-mail?SignonViewer.properties?N?hidePasswords?Hide Passwords?Ukryj hasła
+&gt;pl-PL-mail?SignonViewer.properties?N?showPasswords?Show Passwords?Pokaż hasła
+&gt;pl-PL-mail?SignonViewer.properties?N?noMasterPasswordPrompt?Are you sure you wish to show your passwords??Czy na pewno pokazać hasła?
+&gt;pl-PL-mail?editorOverlay.dtd?U?saveAsCharsetCmd.label??Zapisz dokument w stronie kodowej...
+&gt;pl-PL-mail?editorOverlay.dtd?N?saveAsChangeEncodingCmd.label?Save And Change Character Encoding?Zapisz i zmień kodowanie znaków
+&gt;pl-PL-mail?editorOverlay.dtd?Z?filesaveascharset.accesskey?filesaveandchangeencoding.accesskey?E?u?u
+&gt;pl-PL-mail?editorOverlay.dtd?N?editfind.keybinding2?VK_F19?VK_F19
+&gt;pl-PL-mail?editorOverlay.dtd?Z?insertHLineCmd.label?Horizontal Line?Linię poziomą?Poziomą linię
+&gt;pl-PL-mail?editorOverlay.dtd?Z?hruleToolbarCmd.tooltip?Insert horizontal line or edit selected line's properties?Wstaw poziomą linię lub edytuj właściwości wybranej linii?Wstaw linię poziomą lub edytuj właściwości wybranej linii
+&gt;pl-PL-mail?editorOverlay.dtd?Z?InsertPopupButton.tooltip?Insert a Link, Anchor, Image, Horizontal Line, or Table?Wstaw Odnośnik, Kotwicę, Obrazek, Poziomą Linię lub Tabelę?Wstaw Odnośnik, Kotwicę, Obrazek, Linię Poziomą lub Tabelę
+&gt;pl-PL-mail?about.dtd?N?title.label?About &amp;brandShortName;?O &amp;brandShortName;?O Mozilli Thunderbird
+&gt;pl-PL-mail?about.dtd?U?okButton.label?OK?OK
+&gt;pl-PL-mail?about.dtd?N?aboutTab.label?About &amp;brandShortName;?O &amp;brandShortName;?O Mozilli Thunderbird
+&gt;pl-PL-mail?brand.dtd?Z?lang.version?1.7b?1.5b?1.7b
+&gt;pl-PL-mail?brand.dtd?Z?brandShortName?Thunderbird?Mozilla Thunderbird?Thunderbird
+&gt;pl-PL-mail?brand.dtd?N?brandFullName?Mozilla Thunderbird?Mozilla Thunderbird
+&gt;pl-PL-mail?brand.properties?N?brandFullName?Mozilla Thunderbird?Mozilla Thunderbird
+&gt;pl-PL-mail?brand.properties?N?brandRealShortName?Thunderbird?Thunderbird
+&gt;pl-PL-mail?charset.dtd?N?charsetMenuUnicode.label?Unicode?Unikod
+&gt;pl-PL-mail?charset.dtd?N?charsetMenuUnicode.accesskey?U?U
+&gt;pl-PL-mail?charsetOverlay.dtd?N?charsetMenuUnicode.label?Unicode?Unikod
+&gt;pl-PL-mail?charsetOverlay.dtd?N?charsetMenuUnicode.accesskey?U?U
+&gt;pl-PL-mail?charsetTitles.properties?N?utf-16le.title?Unicode (UTF-16 Little Endian)?Unikod (UTF-16 Little Endian)
+&gt;pl-PL-mail?charsetTitles.properties?N?utf-16be.title?Unicode (UTF-16 Big Endian)?Unikod (UTF-16 Big Endian)
+&gt;pl-PL-mail?charsetTitles.properties?N?utf-32le.title?Unicode (UTF-32 Little Endian)?Unikod (UTF-32 Little Endian)
+&gt;pl-PL-mail?charsetTitles.properties?N?utf-32be.title?Unicode (UTF-32 Big Endian)?Unikod (UTF-32 Big Endian)
+&gt;pl-PL-mail?intl.properties?Z?intl.charsetmenu.browser.static?ISO-8859-1, UTF-8?iso-8859-2?ISO-8859-2, UTF-8
+&gt;pl-PL-mail?intl.properties?Z?intl.charsetmenu.browser.more1?ISO-8859-1, ISO-8859-15, IBM850, x-mac-roman, windows-1252, ISO-8859-14, ISO-8859-7, x-mac-greek, windows-1253, x-mac-icelandic, ISO-8859-10, ISO-8859-3?iso-8859-1, iso-8859-15, ibm850, x-mac-roman, windows-1252, iso-8859-14, iso-8859-7, x-mac-greek, windows-1253, x-mac-icelandic, iso-8859-10, iso-8859-3?ISO-8859-1, ISO-8859-15, IBM850, x-mac-roman, windows-1252, ISO-8859-14, ISO-8859-7, x-mac-greek, windows-1253, x-mac-icelandic, ISO-8859-10, ISO-8859-3
+&gt;pl-PL-mail?intl.properties?Z?intl.charsetmenu.browser.more2?ISO-8859-4, ISO-8859-13, windows-1257, IBM852, ISO-8859-2, x-mac-ce, windows-1250, x-mac-croatian, IBM855, ISO-8859-5, ISO-IR-111, KOI8-R, x-mac-cyrillic, windows-1251, IBM866, KOI8-U, x-mac-ukrainian, ISO-8859-16, x-mac-romanian?iso-8859-4, iso-8859-13, windows-1257, ibm852, iso-8859-2, x-mac-ce, windows-1250, x-mac-croatian, ibm855, iso-8859-5, iso-ir-111, koi8-r, x-mac-cyrillic, windows-1251, ibm866, koi8-u, x-mac-ukrainian, iso-8859-16, x-mac-romanian?ISO-8859-4, ISO-8859-13, windows-1257, IBM852, ISO-8859-2, x-mac-ce, windows-1250, x-mac-croatian, IBM855, ISO-8859-5, ISO-IR-111, KOI8-R, x-mac-cyrillic, windows-1251, IBM866, KOI8-U, x-mac-ukrainian, ISO-8859-16, x-mac-romanian
+&gt;pl-PL-mail?intl.properties?Z?intl.charsetmenu.browser.more3?GB2312, x-gbk, gb18030, HZ-GB-2312, ISO-2022-CN, Big5, Big5-HKSCS, x-euc-tw, EUC-JP, ISO-2022-JP, Shift_JIS, EUC-KR, x-windows-949, x-johab, ISO-2022-KR?gb2312, x-gbk, gb18030, hz-gb-2312, iso-2022-cn, big5, big5-hkscs, x-euc-tw, euc-jp, iso-2022-jp, shift_jis, euc-kr, x-windows-949, x-johab, iso-2022-kr?GB2312, x-gbk, gb18030, HZ-GB-2312, ISO-2022-CN, Big5, Big5-HKSCS, x-euc-tw, EUC-JP, ISO-2022-JP, Shift_JIS, EUC-KR, x-windows-949, x-johab, ISO-2022-KR
+&gt;pl-PL-mail?intl.properties?Z?intl.charsetmenu.browser.more4?armscii-8, GEOSTD8, TIS-620, ISO-8859-11, windows-874, IBM857, ISO-8859-9, x-mac-turkish, windows-1254, x-viet-tcvn5712, VISCII, x-viet-vps, windows-1258, x-mac-devanagari, x-mac-gujarati, x-mac-gurmukhi?armscii-8, geostd8, tis-620, iso-8859-11, windows-874, ibm857, iso-8859-9, x-mac-turkish, windows-1254, x-viet-tcvn5712, viscii, x-viet-vps, windows-1258, x-mac-devanagari, x-mac-gujarati, x-mac-gurmukhi?armscii-8, GEOSTD8, TIS-620, ISO-8859-11, windows-874, IBM857, ISO-8859-9, x-mac-turkish, windows-1254, x-viet-tcvn5712, VISCII, x-viet-vps, windows-1258, x-mac-devanagari, x-mac-gujarati, x-mac-gurmukhi
+&gt;pl-PL-mail?intl.properties?Z?intl.charsetmenu.browser.more5?ISO-8859-6, windows-1256, IBM864, x-mac-arabic, x-mac-farsi, ISO-8859-8-I, windows-1255, ISO-8859-8, IBM862, x-mac-hebrew?iso-8859-6, windows-1256, ibm864, x-mac-arabic, x-mac-farsi, iso-8859-8-i, windows-1255, iso-8859-8, ibm862, x-mac-hebrew?ISO-8859-6, windows-1256, IBM864, x-mac-arabic, x-mac-farsi, ISO-8859-8-I, windows-1255, ISO-8859-8, IBM862, x-mac-hebrew
+&gt;pl-PL-mail?intl.properties?N?intl.charsetmenu.browser.unicode?UTF-8, UTF-16LE, UTF-16BE, UTF-32LE, UTF-32BE, UTF-7?UTF-8, UTF-16LE, UTF-16BE, UTF-32LE, UTF-32BE, UTF-7
+&gt;pl-PL-mail?languageNames.properties?N?hsb?Upper Sorbian?Górny Serbsko-Łużyski
+&gt;pl-PL-mail?printing.properties?Z?NS_ERROR_GFX_PRINTER_XPRINT_NO_XPRINT_SERVERS_FOUND?There was a problem printing. No Xprint server(s) could be found.\nCheck whether the XPSERVERLIST environment variable contains any valid Xprint servers.\nFor further information see <a href="http://xprint.mozdev.org/">http://xprint.mozdev.org/</a> or <a href="http://www.mozilla.org/projects/xprint/?Podczas">http://www.mozilla.org/projects/xprint/?Podczas</a> drukowania wystąpił błąd. Nie odnaleziono serwera Xprint.\nNależy sprawdzić, czy zmienna XPSERVERLIST zawiera prawidłowe dane serwera Xprint.?Podczas drukowania wystąpił błąd. Nie odnaleziono serwera Xprint.\nNależy sprawdzić, czy zmienna XPSERVERLIST zawiera prawidłowe dane serwera Xprint.\nWięcej informacji dostępnych pod adresem <a href="http://xprint.mozdev.org/">http://xprint.mozdev.org/</a> oraz <a href="http://www.mozilla.org/projects/xprint/">http://www.mozilla.org/projects/xprint/</a>
+&gt;pl-PL-mail?printing.properties?N?NS_ERROR_GFX_PRINTER_DOC_IS_BUSY?The browser cannot print the document while it is being loaded.?Mozilla Thunderbird nie może wydrukować dokumentu podczas jego wczytywania. 
+&gt;pl-PL-mail?printing.properties?N?NS_ERROR_GFX_PRINTING_NOT_IMPLEMENTED??Drukowanie nie jest zaimplementowane.
+&gt;pl-PL-mail?printing.properties?N?NS_ERROR_GFX_COULD_NOT_LOAD_PRINT_MODULE?Printing is not implemented.?Żądany moduł wydruku nie może zostać wczytany.
+&gt;pl-PL-mail?aboutDialog.dtd?Z?aboutDialog.title?About &amp;brandShortName;?O &amp;brandShortName;?O Mozilli Thunderbird
+&gt;pl-PL-mail?aboutDialog.dtd?U?copyright??Informacje o prawach autorskich i współtwórcach
+&gt;pl-PL-mail?aboutDialog.dtd?U?copyrightLink??<a href="http://www.firefox.pl/">http://www.firefox.pl/</a>
+&gt;pl-PL-mail?aboutDialog.dtd?N?credits?Credits?Twórcy
+&gt;pl-PL-mail?aboutDialog.dtd?N?aboutLink?&amp;lt; About &amp;brandShortName;?&amp;lt; O Mozilli Thunderbird
+&gt;pl-PL-mail?aboutDialog.dtd?N?aboutVersion?version?wersja
+&gt;pl-PL-mail?aboutDialog.dtd?N?copyrightText?&amp;#169;1998-2004 Contributors. All Rights Reserved. Mozilla Thunderbird and the Thunderbird logos are trademarks of the Mozilla Foundation.  All rights reserved.?&amp;#169;1998-2004 Współtwórcy. Wszelkie prawa zastrzeżone. Mozilla Thunderbird i wszelkie znaki graficzne Thunderbirda są znakami handlowymi Fundacji Mozilla.  Wszelkie prawa zastrzeżone.
+&gt;pl-PL-mail?AccountWizard.dtd?Z?accountTypeDesc.label?This Wizard will collect the information necessary to set up a Mail or Newsgroup account. If you do not know the information requested, please contact your System Administrator or Internet Service Provider.?Kreator kont przystępuje do zebrania informacji niezbędnych do utworzenia nowego konta pocztowego lub konta grup dyskusyjnych. Skontaktuj się z administratorem sieci lub Twoim dostawcą usług internetowych, jeżeli nie posiadasz wszystkich wymaganych danych.?Kreator kont przystępuje do zebrania informacji niezbędnych do utworzenia nowego konta pocztowego lub konta grup dyskusyjnych. Skontaktuj się z administratorem sieci lub Twoim dostawcą usług internetowych, jeśli nie znasz wszystkich wymaganych danych.
+&gt;pl-PL-mail?abCardOverlay.dtd?Z?CellularNumber.label?Mobile:?Komórka:?Telefon komórkowy:
+&gt;pl-PL-mail?abCardOverlay.dtd?Z?Company.label?Organization:?Organizacja:?Firma/Organizacja:
+&gt;pl-PL-mail?abMainWindow.dtd?N?newCard.key?N?N
+&gt;pl-PL-mail?abMainWindow.dtd?Z?hintsAndTips.label?&amp;brandShortName; Help?Pomoc &amp;brandShortName;?Pomoc Mozilli Thunderbird
+&gt;pl-PL-mail?abMainWindow.dtd?Z?aboutCmd.label?About &amp;brandShortName;?O &amp;brandShortName;?O Mozilli Thunderbird
+&gt;pl-PL-mail?abMainWindow.dtd?N?throbberItem.title?Activity Indicator?Wskaźnik aktywności
+&gt;pl-PL-mail?abMainWindow.dtd?Z?ScreenName.label?Screen Name?Identyfikator?JID
+&gt;pl-PL-mail?abMainWindow.dtd?Z?Company.label?Organization:?Organizacja?Firma/Organizacja
+&gt;pl-PL-mail?abMainWindow.dtd?Z?CellularNumber.label?Mobile?Komórka?Telefon komórkowy
+&gt;pl-PL-mail?abNewCardDialog.dtd?Z?CellularNumber.label?Mobile?Komórka:?Telefon komórkowy:
+&gt;pl-PL-mail?abNewCardDialog.dtd?Z?Company.label?Organization:?Organizacja:?Firma/Organizacja:
+&gt;pl-PL-mail?abResultsPaneOverlay.dtd?Z?CellularNumber.label?Mobile:?Komórka:?Telefon komórkowy:
+&gt;pl-PL-mail?abResultsPaneOverlay.dtd?Z?Company.label?Organization:?Organizacja:?Firma/Organizacja:
+&gt;pl-PL-mail?abResultsPaneOverlay.dtd?Z?ScreenName.label?Screen Name?Identyfikator?JID
+&gt;pl-PL-mail?abSelectAdressesDialog.dtd?Z?lookIn.label?Look in:?Znajdź adresy które w książce:?Znajdź adresy w książce:
+&gt;pl-PL-mail?addressBook.properties?Z?propertyScreenName?Screen Name?Identyfikator?JID
+&gt;pl-PL-mail?addressBook.properties?Z?propertyCellular?Mobile?Komórka?Telefon komórkowy:
+&gt;pl-PL-mail?addressBook.properties?N?noMatchFound?No matches found?Nie znaleziono adresów spełniających kryteria wyszukiwania
+&gt;pl-PL-mail?addressBook.properties?Z?matchFound?1 match found?Znaleziono jeden adres spełniający kryteria wyszukiwania
+&gt;pl-PL-mail?addressBook.properties?Z?cardCopied?1 card copied?Przekopiowano jedną wizytówkę
+&gt;pl-PL-mail?pref-addressing.dtd?U?window.title??Adresowanie
+&gt;pl-PL-mail?pref-addressing.dtd?U?pane.description??Konfiguracja adresowania
+&gt;pl-PL-mail?pref-addressing.dtd?U?pinpoint.label??Pomoc przy adresowaniu
+&gt;pl-PL-mail?pref-addressing.dtd?U?lookFor.label??Znajdź adresy:
+&gt;pl-PL-mail?pref-addressing.dtd?U?padCheck.label??W książkach adresowych
+&gt;pl-PL-mail?pref-addressing.dtd?U?padCheck.accesskey??a
+&gt;pl-PL-mail?pref-addressing.dtd?U?dirCheck.label??Na serwerze usług katalogowych
+&gt;pl-PL-mail?pref-addressing.dtd?U?dirCheck.accesskey??u
+&gt;pl-PL-mail?pref-addressing.dtd?U?mulFound.label??Gdy znalezionych zostanie wiele adresów:
+&gt;pl-PL-mail?pref-addressing.dtd?U?showList.label??Pokaż mi listę adresów do wyboru
+&gt;pl-PL-mail?pref-addressing.dtd?U?showList.accesskey??s
+&gt;pl-PL-mail?pref-addressing.dtd?U?acceptList.label??Użyj adresu wpisanego przeze mnie
+&gt;pl-PL-mail?pref-addressing.dtd?U?acceptList.accesskey??U
+&gt;pl-PL-mail?pref-addressing.dtd?U?oneMatch.label??Jeżeli znaleziono tylko jeden adres w osobistej książce adresowej:
+&gt;pl-PL-mail?pref-addressing.dtd?U?useAddress.label??Użyj tego adresu i nie przeszukuj serwerów usług katalogowych
+&gt;pl-PL-mail?pref-addressing.dtd?U?useAddress.accesskey??u
+&gt;pl-PL-mail?pref-addressing.dtd?N?emailCollectionPicker.accesskey?A?A
+&gt;pl-PL-mail?pref-addressing.dtd?Z?addressingEnable.accesskey?L?A?L
+&gt;pl-PL-mail?am-addressing.dtd?Z?useHtml.label?Compose messages in HTML format?Używaj edytora HTML do tworzenia wiadomości?Komponuj wiadomości w formacie HTML
+&gt;pl-PL-mail?am-advanced.dtd?Z?smtpServer.label?Outgoing Server (SMTP) Settings?Ustawienia serwera poczty wychodzącej (SMTP)?Konfiguracja serwera poczty wychodzącej (SMTP)
+&gt;pl-PL-mail?am-main.dtd?Z?Organization.label?Oraganization:?Organizacja:?Firma/Organizacja:
+&gt;pl-PL-mail?am-mdn.dtd?Z?notInToCc.label?If I'm not in the To or Cc of the message:?Jeżeli mój adres e-mail nie jest w polu &quot;Do&quot; lub &quot;Kopia&quot;:?Jeżeli mój adres e-mail nie znajduje się w polu &quot;Do&quot; lub &quot;Kopia&quot;:
+&gt;pl-PL-mail?am-server-advanced.dtd?N?useIdle.label?Use IDLE command if the server supports it?Używaj polecenia IDLE, jeśli serwer je obsługuje
+&gt;pl-PL-mail?am-server-advanced.dtd?N?useIdle.accesskey?I?I
+&gt;pl-PL-mail?am-server-top.dtd?Z?username.label?User Name:?Identyfikator?JID
+&gt;pl-PL-mail?am-server-top.dtd?Z?loginAtStartup.label?Check for new messages at startup?Sprawdzaj, czy są nowe wiadomości podczas uruchamiania?Sprawdzaj podczas uruchamiania, czy są nowe wiadomości
+&gt;pl-PL-mail?am-server-top.dtd?N?localFolderPicker.label?Select Local Directory?Wybierz katalog lokalny
+&gt;pl-PL-mail?am-server-top.dtd?N?browseFolder.label?Browse...?Przeglądaj...
+&gt;pl-PL-mail?am-server-top.dtd?N?browseFolder.accesskey?B?P
+&gt;pl-PL-mail?am-serverwithnoidentities.dtd?Z?localFolderPicker.label?Select Local Directory?Położenie folderów lokalnych?Wybierz katalog lokalny
+&gt;pl-PL-mail?am-smime.dtd?Z?managedevices.button?Manage Security Devices...?Menedżer urządzeń zabezpieczających...?Menedżer urządzeń bezpieczeństwa...
+&gt;pl-PL-mail?am-smime.dtd?N?managecertsPref.label?Manage your personal certificates:?Zarządza twoimi osobistmi certyfikatami: 
+&gt;pl-PL-mail?am-smime.dtd?N?managedevicesPref.label?Manage your security devices such as smart cards:?Zarządza twoimi urządzeniami bezpieczeństwa, np. inteligentnymi kartami: 
+&gt;pl-PL-mail?am-smime.dtd?N?passwordAndSecurity.label?Passwords and Security?Hasła i bezpieczeństwo
+&gt;pl-PL-mail?FilterEditor.dtd?Z?deleteFromServer.label?Delete from POP server?Usuń z serwera POP3?Usuń z serwera POP
+&gt;pl-PL-mail?FilterEditor.dtd?N?setJunkScore.label?Set Junk Status to:?Ustaw status niechcianej poczty na:
+&gt;pl-PL-mail?FilterEditor.dtd?N?junk.label?Junk?Niechciana
+&gt;pl-PL-mail?FilterEditor.dtd?N?notJunk.label?Not Junk?Pożądana
+&gt;pl-PL-mail?FilterListDialog.dtd?N?choosethisnewsserver.label?choose this news server?wybierz ten serwer news
+&gt;pl-PL-mail?imapMsgs.properties?Z?5058?Deleting this folder is not undoable and will delete all of the messages it contains, and its sub-folders. Are you sure you still want to delete this folder??Usunięcie tego folderu jest operacją nieodwracalną i spowoduje usunięcie wszystkich zawartych w nim wiadomości. Czy na pewno kontynuować usuwanie folderu??Usunięcie tego folderu jest operacją nieodwracalną i spowoduje usunięcie wszystkich zawartych w nim wiadomości oraz podfolderów. Czy na pewno kontynuować usuwanie folderu?
+&gt;pl-PL-mail?importDialog.dtd?Z?importDescription.label?This wizard will import mail messages, address book entries, and/or preferences from other mail programs and common address book formats into &amp;brandShortName; Mail.?Za pomocą Kreatora importu możliwe jest przeprowadzenie automatycznej konwersji danych z innych popularnych programów pocztowych do &amp;brandShortName;. W tym celu należy wybrać rodzaj importowanych danych, a następnie nacisnąć Dalej.?Za pomocą Kreatora importu możliwe jest przeprowadzenie automatycznej konwersji danych z innych popularnych programów pocztowych do Mozilli Thunderbird. W tym celu należy wybrać rodzaj importowanych danych, a następnie nacisnąć Dalej.
+&gt;pl-PL-mail?importDialog.dtd?Z?importDescription2.label?Once they have been imported, you will be able to access them from within &amp;brandShortName; Mail and/or Address Book.?Po zakończeniu importu wszystkie dane będą dostępne bezpośrednio w &amp;brandShortName; lub książce adresowej.?Po zakończeniu importu wszystkie dane będą dostępne bezpośrednio w Mozilli Thunderbird lub książce adresowej.
+&gt;pl-PL-mail?importMsgs.properties?Z?2110?Mobile Number?Numer komórki?Numer telefonu komórkowego
+&gt;pl-PL-mail?importMsgs.properties?Z?2125?Organization?Organizacja?Firma/Organizacja
+&gt;pl-PL-mail?junkMail.dtd?Z?mainDescription.label?&amp;brandShortName; has several ways to detect junk mail, or unsolicited mail. These controls evaluate incoming messages and identify those that are most likely to be junk mail.  A junk icon is displayed if the message is identified as junk mail.?Jedną z istotnych zalet &amp;brandShortName; jest bardzo precyzyjny mechanizm rozpoznawania niechcianych wiadomości (niezamawiane reklamy, spam itp.), pracujący w oparciu o jedną z metod rachunku prawdopodobieństwa. Poniższe ustawienia umożliwiają konfigurację filtru niechcianych wiadomości.?Jedną z istotnych zalet Mozilli Thunderbird jest bardzo precyzyjny mechanizm rozpoznawania niechcianych wiadomości (niezamawiane reklamy, spam itp.), pracujący w oparciu o jedną z metod rachunku prawdopodobieństwa. Poniższe ustawienia umożliwiają konfigurację filtru niechcianych wiadomości.
+&gt;pl-PL-mail?junkMail.dtd?Z?move.label?Move incoming messages determined to be junk mail to:?Przenieś otrzymane wiadomości, które zostały oznaczone jako niechciane do:?Przenieś otrzymane wiadomości, które zostały oznaczone jako niechciane, do:
+&gt;pl-PL-mail?junkMail.dtd?Z?purge1.label?Automatically delete junk messages older than?Automatycznie usuwaj wiadomości oznaczone jako niechciane po upływie?Automatycznie usuwaj wiadomości oznaczone jako niechciane, po upływie
+&gt;pl-PL-mail?junkMail.dtd?N?resetTrainingDescription.label?Resetting the training data used by the adaptive filter requires you to retrain the filter:?Zresetowanie danych treningowych, wykorzystywanych przez filtr niechcianej poczty wymaga ponownego wytrenowania filtru:
+&gt;pl-PL-mail?junkMail.dtd?N?resetTrainingData.label?Reset Training Data?Zresetuj dane treningowe
+&gt;pl-PL-mail?junkMail.dtd?N?resetTrainingData.accesskey?R?r
+&gt;pl-PL-mail?localMsgs.properties?Z?4012?The RETR command did not succeed. Error retrieving a message.?Polecenie RETR nie powiodło się.?Polecenie RETR nie powiodło się. Błąd odzyskiwania wiadomości.
+&gt;pl-PL-mail?localMsgs.properties?Z?4015?The LIST command did not succeed. Error getting the ID and size of a message.?Polecenie LIST nie powiodło się.?Polecenie LIST nie powiodło się. Błąd uzyskiwania ID oraz rozmiaru wiadomości.
+&gt;pl-PL-mail?localMsgs.properties?Z?4016?The DELE command did not succeed. Error marking a message as deleted.?Polecenie DELE nie powiodło się.?Polecenie DELE nie powiodło się. Błąd oznaczania wiadomości jako usuniętej.
+&gt;pl-PL-mail?localMsgs.properties?Z?4024?The STAT command did not succeed. Error getting message number and sizes.?Polecenie STAT nie powiodło się.?Polecenie STAT nie powiodło się. Błąd uzyskiwania numeru i rozmiarów wiadomości.
+&gt;pl-PL-mail?mailOverlay.dtd?N?newMessageCmd2.key?N?N
+&gt;pl-PL-mail?messenger.dtd?Z?messengerWindow.title??&amp;brandShortName;?Poczta i Grupy Dyskusyjne
+&gt;pl-PL-mail?messenger.dtd?Z?titledefault.label?&amp;brandFullName;?&amp;brandShortName;?&amp;brandFullName;
+&gt;pl-PL-mail?messenger.dtd?N?openMessageMenu.label?Open?Otwórz
+&gt;pl-PL-mail?messenger.dtd?N?openMessageWindowCmd.label?Open Message?Otwórz wiadomość
+&gt;pl-PL-mail?messenger.dtd?N?openMessageWindowCmd.accesskey?s?d
+&gt;pl-PL-mail?messenger.dtd?N?openMessageFileCmd.label?Open Saved Message...?Otwórz zapisaną wiadomość...
+&gt;pl-PL-mail?messenger.dtd?N?openMessageFileCmd.accesskey?O?O
+&gt;pl-PL-mail?messenger.dtd?Z?openAttachmentCmd.label?Attachments?Otwórz załącznik?Załącznika
+&gt;pl-PL-mail?messenger.dtd?U?openMessageCmd.label??Otwórz wiadomość
+&gt;pl-PL-mail?messenger.dtd?U?openMessageCmd.accesskey??O
+&gt;pl-PL-mail?messenger.dtd?U?openMessageCmd.key??o
+&gt;pl-PL-mail?messenger.dtd?Z?sortByAttachmentsCmd.label?Attachments?Otwórz załącznik?Załącznika
+&gt;pl-PL-mail?messenger.dtd?Z?sortByJunkStatusCmd.label?Junk Status?Status niechcianej poczty?Statusu niechcianej poczty
+&gt;pl-PL-mail?messenger.dtd?Z?sortBySenderCmd.label?Sender?Nadawca?Nadawcy
+&gt;pl-PL-mail?messenger.dtd?Z?sortByRecipientCmd.label?Recipient?Adresat?Adresata
+&gt;pl-PL-mail?messenger.dtd?U?sortByThreadCmd.label??Wątku
+&gt;pl-PL-mail?messenger.dtd?U?sortByThreadCmd.accesskey??w
+&gt;pl-PL-mail?messenger.dtd?U?viewThreaded.label??Wątki
+&gt;pl-PL-mail?messenger.dtd?U?viewThreaded.accesskey??T
+&gt;pl-PL-mail?messenger.dtd?N?sortThreaded.label?Threaded?Powątkowane
+&gt;pl-PL-mail?messenger.dtd?N?sortThreaded.accesskey?T?t
+&gt;pl-PL-mail?messenger.dtd?N?sortUnthreaded.label?Unthreaded?Niepowątkowane
+&gt;pl-PL-mail?messenger.dtd?N?sortUnthreaded.accesskey?h?n
+&gt;pl-PL-mail?messenger.dtd?Z?textZoomEnlargeCmd.label?Increase Text Size?Increase Text Size?Powiększ rozmiar tekstu
+&gt;pl-PL-mail?messenger.dtd?Z?textZoomEnlargeCmd.accesskey?I?I?W
+&gt;pl-PL-mail?messenger.dtd?Z?textZoomReduceCmd.label?Decrease Text Size?Decrease Text Size?Pomniejsz rozmiar tekstu
+&gt;pl-PL-mail?messenger.dtd?Z?textZoomReduceCmd.accesskey?D?D?M
+&gt;pl-PL-mail?messenger.dtd?N?recalculateJunkScoreCmd.label?Run Junk Mail Controls?Uruchom filtr niechcianej poczty 
+&gt;pl-PL-mail?messenger.dtd?N?recalculateJunkScoreCmd.accesskey?C?C
+&gt;pl-PL-mail?messenger.dtd?Z?hintsAndTips.label?&amp;brandShortName; Help?Pomoc &amp;brandShortName;?Pomoc Mozilli Thunderbird
+&gt;pl-PL-mail?messenger.dtd?Z?aboutCmd.label?About &amp;brandShortName;?O &amp;brandShortName;?O Mozilli Thunderbird
+&gt;pl-PL-mail?messenger.dtd?N?throbberItem.title?Activity Indicator?Wskaźnik aktywności
+&gt;pl-PL-mail?messenger.dtd?U?menuBar.tooltip??Pasek menu
+&gt;pl-PL-mail?messenger.dtd?U?mailToolbar.tooltip??Pasek narzędzi pocztowych
+&gt;pl-PL-mail?messenger.dtd?N?quickSearchCmd.key?k?k
+&gt;pl-PL-mail?messenger.properties?N?OpenEMLFiles?Open Message?Otwórz wiadomość
+&gt;pl-PL-mail?messenger.properties?N?openWindowWarningTitle?Confirm?Potwierdź
+&gt;pl-PL-mail?messenger.properties?N?openWindowWarningText?Opening %S messages may be slow.  Continue??Otworzenie %S wiadomości może zająć trochę czasu. Kontynuować?
+&gt;pl-PL-mail?messenger.properties?N?confirmResetJunkTrainingTitle?Confirm?Potwierdź
+&gt;pl-PL-mail?messenger.properties?N?confirmResetJunkTrainingText?Are you sure you want to reset the adaptive filter training data??Czy na pewno zresetować dane treningowe filtru?
+&gt;pl-PL-mail?composeMsgs.properties?Z?12570?12544?Enter your password for %S on %S:?Wprowadź hasło użytkownika %S na serwerze %S:
+&gt;pl-PL-mail?composeMsgs.properties?N?12570?There was an error attaching %S. Please check if you have access to the file.?Wystąpił błąd podczas załączania %S. Należy upewnić się, czy użytkownik posiada dostęp do pliku. 
+&gt;pl-PL-mail?composeMsgs.properties?N?12571?There was an error copying the message to the Sent folder. Retry??Wystąpił błąd podczas kopiowania wiadomości do folderu wysłane. Ponowić próbę?
+&gt;pl-PL-mail?composeMsgs.properties?Z?mailnews.reply_header_authorwrote?%s wrote?Użytkownik %s napisał?%s napisał(-a)
+&gt;pl-PL-mail?messengercompose.dtd?N?newMessageCmd2.key?N?N
+&gt;pl-PL-mail?messengercompose.dtd?Z?hintsAndTips.label?&amp;brandShortName; Help?Pomoc &amp;brandShortName;?Pomoc Mozilli Thunderbird
+&gt;pl-PL-mail?messengercompose.dtd?Z?aboutCmd.label?About &amp;brandShortName;?O &amp;brandShortName;?O Mozilli Thunderbird
+&gt;pl-PL-mail?messengercompose.dtd?N?throbberItem.title?Activity Indicator?Wskaźnik aktywności
+&gt;pl-PL-mail?messengercompose.dtd?N?openAttachment.label?Open?Otwórz
+&gt;pl-PL-mail?messengercompose.dtd?N?openAttachment.accesskey?O?O
+&gt;pl-PL-mail?pref-composing_messages.dtd?Z?useMIME.label?For messages that contain 8-bit characters, use 'quoted printable' MIME encoding. Leave unchecked to send the messages as is.?Dla wiadomości, które zawierają 8-bitowe znaki, użyj kodowania MIME &quot;quoted printable&quot;. Pozostaw niezaznaczone, aby wysłać wiadomość taką jaką jest.?Dla wiadomości, które zawierają 8-bitowe znaki, użyj kodowania MIME &quot;quoted printable&quot;. Pozostaw bez zaznaczenia, aby wysłać wiadomość taką, jaką jest.
+&gt;pl-PL-mail?pref-composing_messages.dtd?Z?sendOptionsCaption.label?Send and HTML Options?Konfiguruj...?Opcje formatowania i wysyłania
+&gt;pl-PL-mail?pref-composing_messages.dtd?N?htmlComposeDescription.label?Configure default HTML options:?Ustawienia formatowania wysyłanych wiadomości HTML:
+&gt;pl-PL-mail?pref-composing_messages.dtd?N?htmlCompose.label?HTML Options...?Opcje HTML...
+&gt;pl-PL-mail?pref-composing_messages.dtd?N?htmlCompose.accesskey?H?H
+&gt;pl-PL-mail?sendProgress.dtd?U?keepProgressDialogUpMsg.label??Nie zamykaj tego okna po wysłaniu wiadomości. 
+&gt;pl-PL-mail?sendProgress.dtd?U?dialogCancel.label??Anuluj 
+&gt;pl-PL-mail?sendProgress.dtd?U?dialogClose.label??Zamknij
+&gt;pl-PL-mail?mime.properties?Z?1011?Organization?Organizacja?Firma/Organizacja
+&gt;pl-PL-mail?msgAccountCentral.dtd?Z?advFeaturesSectionHdr.label?Advanced Features?Zaawansowane funkcje?Funkcje zaawansowane
+&gt;pl-PL-mail?msgHdrViewOverlay.dtd?Z?organizationField.label?Organization: ?Organizacja: ?Firma/Organizacja: 
+&gt;pl-PL-mail?offline.properties?Z?sendMessagesLabel?Would you like to send the messages \nin your Unsent Messages folder?\n\n?Czy wysłać wiadomości \nz folderu Niewysłane wiadomości po przełączeniu się w tryb online?\n\n?Czy wysłać wiadomości \nz folderu Niewysłane wiadomości?\n\n
+&gt;pl-PL-mail?pref-advanced.dtd?N?showCondensedAddresses.label?Show only display name for people in my address book.?Pokazuj jedynie wyświetlaną nazwę dla osób z mojej książki adresowej.
+&gt;pl-PL-mail?pref-advanced.dtd?Z?notInToCc.label?If I'm not in the To or Cc of the message:?Jeżeli mój adres e-mail nie jest w polu &quot;Do&quot; lub &quot;Kopia&quot;:?Jeżeli mój adres e-mail nie znajduje się w polu &quot;Do&quot; lub &quot;Kopia&quot;:
+&gt;pl-PL-mail?pref-mailnews.dtd?Z?pane.title?Mail &amp;amp; Newsgroups?Ustawienia ogólne?Poczta i Grupy Dyskusyjne
+&gt;pl-PL-mail?pref-mailnews.dtd?Z?useMessenger.label?Use Mail from MAPI-based applications?Aplikacje korzystające z MAPI mają korzystać z &amp;brandShortName;?Aplikacje korzystające z MAPI mają korzystać z Mozilli Thunderbird
+&gt;pl-PL-mail?pref-mailnews.dtd?Z?messengerStartPage.label?&amp;brandShortName; Start Page?Strona startowa &amp;brandShortName;?Strona startowa Thunderbirda
+&gt;pl-PL-mail?pref-mailnews.dtd?Z?enableStartPage.label?When &amp;brandShortName; launches, show the Start Page in the message area?Po uruchomieniu wyświetl poniższą stronę startową w oknie wiadomości:?Po uruchomieniu Thunderbirda wyświetl poniższą stronę startową w oknie wiadomości:
+&gt;pl-PL-mail?pref-mailnews.dtd?Z?selectWindowLayout.label?Select the window layout you prefer for Mail.?Wybierz preferowany układ okien &amp;brandShortName;?Wybierz preferowany układ okien programu
+&gt;pl-PL-mail?pref-mailnews.dtd?Z?setDefaultMailClient.label?Use &amp;brandShortName; as the default mail application?Ustaw &amp;brandShortName; jako domyślny program pocztowy?Ustaw Thunderbirda jako domyślny program pocztowy
+&gt;pl-PL-mail?pref-mailnews.dtd?Z?setDefaultNewsClient.label?Use &amp;brandShortName; as the default news application?Ustaw &amp;brandShortName; jako domyślny program grup dyskusyjnych?Ustaw Thunderbirda jako domyślny program grup dyskusyjnych
+&gt;pl-PL-mail?pref-mailnews.dtd?N?bounceSystemDockIcon.label?Animate the dock icon?Włącz animacje dla ikony w doku
+&gt;pl-PL-mail?pref-mailnews.dtd?N?bounceSystemDockIcon.accesskey?B?B
+&gt;pl-PL-mail?pref-notifications.dtd?N?systemsound.accesskey?M?S
+&gt;pl-PL-mail?pref-notifications.dtd?N?customsound.accesskey?C?a
+&gt;pl-PL-mail?pref-offline.dtd?U?window.title??Tryb offline i miejsce na dysku
+&gt;pl-PL-mail?pref-offline.dtd?N?radioRememberPrevState.accesskey?R?r
+&gt;pl-PL-mail?pref-offline.dtd?N?radioAskMe.accesskey?A?a
+&gt;pl-PL-mail?pref-offline.dtd?N?radioAskUnsent.accesskey?s?s
+&gt;pl-PL-mail?pref-offline.dtd?N?radioAutoSend.accesskey?u?u
+&gt;pl-PL-mail?pref-offline.dtd?N?radioNotSend.accesskey?D?d
+&gt;pl-PL-mail?pref-offline.dtd?N?radioAskDownload.accesskey?k?Z
+&gt;pl-PL-mail?pref-offline.dtd?N?radioAutoDownload.accesskey?o?o
+&gt;pl-PL-mail?pref-offline.dtd?N?radioNotDownload.accesskey?n?n
+&gt;pl-PL-mail?pref-receipts.dtd?U?dsn.label??Potwierdzenia, wysyłanego przez serwer adresata,  (DSN)
+&gt;pl-PL-mail?pref-receipts.dtd?U?dsn.accesskey??d
+&gt;pl-PL-mail?pref-receipts.dtd?U?mdn.label??Potwierdzenia wysyłanego przez adresata, świadczącego o przeczytaniu wiadomości (MDN)
+&gt;pl-PL-mail?pref-receipts.dtd?U?mdn.accesskey??m
+&gt;pl-PL-mail?pref-receipts.dtd?U?both.label??Obu powyższych rodzajów potwierdzenia
+&gt;pl-PL-mail?pref-receipts.dtd?U?both.accesskey??b
+&gt;pl-PL-mail?pref-receipts.dtd?U?custom.label??Dostosuj...
+&gt;pl-PL-mail?pref-receipts.dtd?U?custom.accesskey??t
+&gt;pl-PL-mail?pref-receipts.dtd?Z?notInToCc.label?If I'm not in the To or Cc of the message:?Jeżeli mój adres e-mail nie jest w polu &quot;Do&quot; lub &quot;Kopia&quot;:?Jeżeli mój adres e-mail nie znajduje się w polu &quot;Do&quot; lub &quot;Kopia&quot;:
+&gt;pl-PL-mail?pref-windows.dtd?Z?pane.title?Windows?Układ okien &amp;brandShortName;?Układ okien Mozilli Thunderbird
+&gt;pl-PL-mail?pref-windows.dtd?Z?selectWindowLayout.label?Select the window layout you prefer for Mail:?Preferowany układ okien &amp;brandShortName;:?Preferowany układ okien programu:
+&gt;pl-PL-mail?pref-windows.dtd?Z?chooseExp.label?Note: For this setting to take effect, you will need to exit and then restart Mail.?Uwaga: Aby te ustawienia zostały uaktywnione, należy ponownie uruchomić &amp;brandShortName;.?Uwaga: Aby te ustawienia zostały uaktywnione, należy ponownie uruchomić Mozillę Thunderbird.
+&gt;pl-PL-mail?prefs.properties?Z?prefPanel-server??Ustawienia serwera?Konfiguracja serwera
+&gt;pl-PL-mail?search-attributes.properties?Z?27?Mobile?Komórka?Telefon komórkowy
+&gt;pl-PL-mail?search-attributes.properties?Z?31?Organization?Organizacja?Firma/Organizacja
+&gt;pl-PL-mail?smtpEditorOverlay.dtd?Z?alwaysUseUsername.label?Use name and password?Używaj identyfikatora użytkownika oraz hasło?Używaj identyfikatora użytkownika oraz hasła
+&gt;pl-PL-mail?vcard.properties?Z?1012?Mobile?Komórka?Telefon komórkowy
+&gt;pl-PL-mail?downloads.dtd?U?progress.label??Postęp
+&gt;pl-PL-mail?downloads.dtd?U?status.label??Status
+&gt;pl-PL-mail?downloads.dtd?U?timeremaining.label??Pozostało
+&gt;pl-PL-mail?downloads.dtd?U?transferred.label??Pobrano
+&gt;pl-PL-mail?downloads.dtd?U?transferrate.label??Szybkość
+&gt;pl-PL-mail?downloads.dtd?U?timeelapsed.label??Upłynęło
+&gt;pl-PL-mail?downloads.dtd?U?status.label??Status
+&gt;pl-PL-mail?downloads.dtd?U?source.label??Adres URL
+&gt;pl-PL-mail?downloads.dtd?U?cancel.label??Anuluj
+&gt;pl-PL-mail?downloads.dtd?U?launch.label??Uruchom
+&gt;pl-PL-mail?downloads.dtd?U?divider.label??-
+&gt;pl-PL-mail?downloads.dtd?U?show.label??Pokaż
+&gt;pl-PL-mail?downloads.dtd?U?open.label??Otwórz
+&gt;pl-PL-mail?downloads.dtd?U?retry.label??Ponów
+&gt;pl-PL-mail?downloads.dtd?U?remove.label??Usuń
+&gt;pl-PL-mail?downloads.dtd?U?pause.label??Wstrzymaj
+&gt;pl-PL-mail?downloads.dtd?U?resume.label??Kontynuuj
+&gt;pl-PL-mail?downloads.dtd?U?cmd.show.label??Pokaż
+&gt;pl-PL-mail?downloads.dtd?U?cmd.show.accesskey??a
+&gt;pl-PL-mail?downloads.dtd?U?cmd.show.tooltipWin??Pokaż pobrany plik w Eksploratorze Windows
+&gt;pl-PL-mail?downloads.dtd?U?cmd.show.tooltipMac??Pokaż pobrany plik w Finderze
+&gt;pl-PL-mail?downloads.dtd?U?cmd.show.tooltipUnix??Pokaż pobrany plik w oknie przeglądarki 
+&gt;pl-PL-mail?downloads.dtd?N?cmd.show.label??Otwórz folder zawierający
+&gt;pl-PL-mail?downloads.dtd?U?cmd.show.accesskey??f
+&gt;pl-PL-mail?pref-downloads.dtd?Z?downloadManagerWindow.label?Attachment Manager?Menedżer pobierania plików?Menedżer pobierania załączników
+&gt;pl-PL-mail?pref-downloads.dtd?Z?showWhenStarting.label?Show Attachment Manager window when a download begins.?Rozpoczynając pobieranie plików wyświetl Menedżera pobierania plików.?Rozpoczynając pobieranie załączników wyświetl Menedżera pobierania załączników.
+&gt;pl-PL-mail?pref-downloads.dtd?Z?closeWhenDone.label?Close the Attachment Manager when all attachments are complete.?Zamknij Menedżera pobierania plików, gdy wszystkie pliki zostaną już pobrane.?Zamknij Menedżera pobierania załączników, gdy wszystkie załączniki zostaną już pobrane.
+&gt;pl-PL-mail?navigator.properties?N?uploadFile?Upload File?Wyślij plik
+&gt;pl-PL-mail?navigator.properties?Z?intl.charsetmenu.browser.static?ISO-8859-1, UTF-8?ISO-8859-2?ISO-8859-2, UTF-8
+&gt;pl-PL-mail?navigator.properties?N?intl.charsetmenu.browser.unicode?UTF-8, UTF-16LE, UTF-16BE, UTF-32LE, UTF-32BE, UTF-7?UTF-8, UTF-16LE, UTF-16BE, UTF-32LE, UTF-32BE, UTF-7
+&gt;pl-PL-mail?navigator.properties?N?wallpaperConfirmTitle?Set As Wallpaper?Ustaw jako tapetę
+&gt;pl-PL-mail?navigator.properties?N?wallpaperConfirmButton?Set Wallpaper?Ustaw tapetę
+&gt;pl-PL-mail?navigator.properties?N?wallpaperConfirmMsg?Do you want to set this image as your desktop wallpaper??Ustawić ten obraz jako tapetę pulpitu?
+&gt;pl-PL-mail?necko.properties?N?PhishingAuth?You are about to visit \&quot;%1$S.\&quot; This site may be attempting to trick you into thinking you are visiting a different site. Use extreme caution.?Nastąpiła próba otwarcia strony \&quot;%1$S\.&quot; Strona ta może próbować oszukiwać użytkowników poprzez podszywanie się pod inną stronę (np. banku czy sklepu internetowego). Należy zachować ostrożność.
+&gt;pl-PL-mail?necko.properties?N?PhishingAuthAccept?I understand and will be very careful?Rozumiem, zachowam ostrożność
+&gt;pl-PL-mail?necko.properties?N?SuperfluousAuth?You are about to log into the site \&quot;%1$S\&quot; with the username \&quot;%2$S,\&quot; but the website does not require authentication. This may be an attempt to trick you.\n\nIs \&quot;%1$S\&quot; the site you want to visit??Nastąpiła próba zalogowania na stronę \&quot;%1$S\&quot; przy pomocy nazwy użytkownika \&quot;%2$S,\&quot; ale strona nie wymaga identyfikacji. To może być podstęp.\n\nCzy adres \&quot;%1$S\&quot; jest tym, który zamierzano odwiedzić?  
+&gt;pl-PL-mail?necko.properties?N?AutomaticAuth?You are about to log into the site \&quot;%1$S\&quot; with the username \&quot;%2$S.\&quot;?Nastąpiła próba zalogowania na stronę \&quot;%1$S\&quot; przy pomocy nazwy użytkownika \&quot;%2$S.\&quot;
+&gt;pl-PL-mail?pipnss.properties?U?LowGrade??512 (Niski poziom zabezpieczeń)
+&gt;pl-PL-mail?pipnss.properties?Z?UnknownCertOrg?(Unknown Organization)?(Nieznana organizacja)?(Nieznana firma/organizacja)
+&gt;pl-PL-mail?pipnss.properties?Z?HostReusedIssuerSerial?You have received an invalid certificate.  Please contact the server administrator or email correspondent and give them the following information:\n\nYour certificate contains the same serial number as another certificate issued by the certificate authority.  Please get a new certificate containing a unique serial number.?Otrzymano nieprawidłowy certyfikat, zawierający taką samą nazwę i numer seryjny jak jeden z już posiadanych certyfikatów. Należy skontaktować się z administratorem serwera lub osobą, od której ten certyfikat pochodzi i zażądać poprawnego certyfikatu.?Otrzymano nieprawidłowy certyfikat.Należy skontaktować się z administratorem serwera lub osobą, od której ten certyfikat pochodzi i przekazać jej następującą informację: \n\nPana(i) certyfikat zawiera taki sam numer seryjny, jak inny certyfikat wystawiony przez ośrodek certyfikacji. Proszę uzyskać nowy certyfikat zawierający unikalny numer seryjny.
+&gt;pl-PL-mail?pipnss.properties?N?CertInfoStoredIn?Stored In:?Przechowywany w:
+&gt;pl-PL-mail?pipnss.properties?N?CertNoNickname?(no nickname)?(brak pseudonimu)
+&gt;pl-PL-mail?pipnss.properties?N?CertNoEmailAddress?(no email address)?(brak adresów email)
+&gt;pl-PL-mail?certManager.dtd?Z?certmgr.certdetail.o?Organization (O)?Organizacja (O)?Firma/Organizacja (O)
+&gt;pl-PL-mail?pippki.dtd?N?formSigning.title?Text Signing Request?Żądanie podpisu
+&gt;pl-PL-mail?pippki.dtd?N?formSigning.cert?Signing Certificate?Podpisywanie certyfikatu
+&gt;pl-PL-mail?pippki.dtd?N?formSigning.confirmPassword?To confirm you agree to sign this text message using your selected certificate, please confirm by entering the master password:?Aby potwierdzić swą zgodę na podpisanie wiadomości za pomocą wybranego certyfikatu, należy podać główne hasło:
+&gt;pl-PL-mail?pippki.properties?Z?clientAuthMessage1?Organization: &quot;%S&quot;?Organizacja: &quot;%S&quot;?Firma/Organizacja: &quot;%S&quot;
+&gt;pl-PL-mail?pippki.properties?N?formSigningIntro?The site '%S' has requested that you sign the following text message:?Strona '%S' zażądała podpisania następującej wiadomości:
+&gt;pl-PL-mail?pref-validation.dtd?Z?crl.issuer.org.label?Organization: ?Organizacja: ?Firma/Organizacja: 
+&gt;pl-PL-mail?walletNavigatorOverlay.dtd?Z?prefillCmd.accesskey?n?f?n
+&gt;pl-PL-mail?viewSource.dtd?N?mainWindow.title?&amp;brandShortName;?&amp;brandShortName; 
+&gt;pl-PL-mail?viewSource.dtd?N?mainWindow.titlemodifier?&amp;brandShortName;?&amp;brandShortName; 
+&gt;pl-PL-mail?viewSource.dtd?N?mainWindow.titlemodifierseparator? - ? - 
+&gt;pl-PL-mail?viewSource.dtd?N?mainWindow.preface?Source of: ?Źródło: 
+&gt;pl-PL-mail?viewSource.dtd?N?fileMenu.label?File?Plik
+&gt;pl-PL-mail?viewSource.dtd?N?fileMenu.accesskey?F?P
+&gt;pl-PL-mail?viewSource.dtd?N?savePageCmd.label?Save Page As...?Zapisz stronę jako...
+&gt;pl-PL-mail?viewSource.dtd?N?savePageCmd.accesskey?A?A
+&gt;pl-PL-mail?viewSource.dtd?N?savePageCmd.commandkey?S?S
+&gt;pl-PL-mail?viewSource.dtd?N?pageSetupCmd.label?Page Setup...?Ustawienia strony...
+&gt;pl-PL-mail?viewSource.dtd?N?pageSetupCmd.accesskey?u?u
+&gt;pl-PL-mail?viewSource.dtd?N?printPreviewCmd.label?Print Preview?Podgląd wydruku
+&gt;pl-PL-mail?viewSource.dtd?N?printPreviewCmd.accesskey?v?P
+&gt;pl-PL-mail?viewSource.dtd?N?printCmd.label?Print...?Drukuj...
+&gt;pl-PL-mail?viewSource.dtd?N?printCmd.accesskey?P?D
+&gt;pl-PL-mail?viewSource.dtd?N?printCmd.commandkey?P?P
+&gt;pl-PL-mail?viewSource.dtd?N?closeCmd.label?Close?Zamknij
+&gt;pl-PL-mail?viewSource.dtd?N?closeCmd.accesskey?C?Z
+&gt;pl-PL-mail?viewSource.dtd?N?closeCmd.commandkey?W?W
+&gt;pl-PL-mail?viewSource.dtd?N?textEnlarge.commandkey?+?+
+&gt;pl-PL-mail?viewSource.dtd?N?textReduce.commandkey?-?-
+&gt;pl-PL-mail?viewSource.dtd?N?textReset.commandkey?0?0
+&gt;pl-PL-mail?viewSource.dtd?N?goToLineCmd.label?Go to Line...?Przejdź do wiersza...
+&gt;pl-PL-mail?viewSource.dtd?N?goToLineCmd.accesskey?G?P
+&gt;pl-PL-mail?viewSource.dtd?N?goToLineCmd.commandkey?l?l
+&gt;pl-PL-mail?viewSource.dtd?N?viewMenu.label?View?Widok
+&gt;pl-PL-mail?viewSource.dtd?N?viewMenu.accesskey?V?W
+&gt;pl-PL-mail?viewSource.dtd?N?menu_wrapLongLines.title?Wrap Long Lines?Zawijaj długie linie 
+&gt;pl-PL-mail?viewSource.dtd?N?menu_wrapLongLines.accesskey?W?W
+&gt;pl-PL-mail?viewSource.dtd?N?menu_highlightSyntax.label?Syntax Highlighting?Podświetlanie składni
+&gt;pl-PL-mail?viewSource.dtd?N?menu_highlightSyntax.accesskey?H?P
+&gt;pl-PL-mail?viewSource.dtd?N?menu_textEnlarge.label?Increase Text Size?Powiększ rozmiar tekstu
+&gt;pl-PL-mail?viewSource.dtd?N?menu_textEnlarge.accesskey?I?w
+&gt;pl-PL-mail?viewSource.dtd?N?menu_textReduce.label?Decrease Text Size?Pomniejsz rozmiar tekstu
+&gt;pl-PL-mail?viewSource.dtd?N?menu_textReduce.accesskey?D?m
+&gt;pl-PL-mail?viewSource.properties?N?goToLineTitle?Go to line?Przejdź do wiersza
+&gt;pl-PL-mail?viewSource.properties?N?goToLineText?Enter line number?Wprowadź numer wiersza
+&gt;pl-PL-mail?viewSource.properties?N?invalidInputTitle?Invalid input?Nieprawidłowe dane
+&gt;pl-PL-mail?viewSource.properties?N?invalidInputText?The line number entered is invalid.?Wprowadzony numer wiersza jest nieprawidłowy.
+&gt;pl-PL-mail?viewSource.properties?N?outOfRangeTitle?Line not found?Nie odnaleziono wiersza
+&gt;pl-PL-mail?viewSource.properties?N?outOfRangeText?The specified line was not found.?Podany numer wiersza nie został odnaleziony.
+&gt;pl-PL-mail?viewSource.properties?N?statusBarLineCol?Line %1$S, Col %2$S?Wiersz %1$S, Kolumna %2$S
+&gt;pl-PL-mail?xbl.properties?N?UnexpectedElement?Unexpected &lt;%1$S&gt; element.?Nieoczekiwany element &lt;%1$S&gt;.
+&gt;pl-PL-mail?pref-composing_html.dtd?N?dialog.title?HTML Options?Opcje HTML
+&gt;pl-PL-mail?pref-composing_html.dtd?N?defaultMessagesHeader.label?Defaults for HTML Messages?Domyślne ustawienia dla wiadomości HTML
+&gt;pl-PL-mail?pref-composing_html.dtd?N?font.label?Font:?Czcionka:
+&gt;pl-PL-mail?pref-composing_html.dtd?N?font.accesskey?n?C
+&gt;pl-PL-mail?pref-composing_html.dtd?N?size.label?Size:?Rozmiar:
+&gt;pl-PL-mail?pref-composing_html.dtd?N?size.accesskey?S?R
+&gt;pl-PL-mail?pref-composing_html.dtd?N?fontColor.label?Text:?Tekst:
+&gt;pl-PL-mail?pref-composing_html.dtd?N?fontColor.accesskey?T?e
+&gt;pl-PL-mail?pref-composing_html.dtd?N?bgColor.label?Background:?Tło:
+&gt;pl-PL-mail?pref-composing_html.dtd?N?bgColor.accesskey?B?T
+&gt;pl-PL-mail?pref-composing_html.dtd?N?restoreDefaultsDescription.label?Restore Defaults:?Przywróć domyślne:
+&gt;pl-PL-mail?pref-composing_html.dtd?N?restoreDefaults.label?Restore?Przywróć
+&gt;pl-PL-mail?pref-composing_html.dtd?N?restoreDefaults.accesskey?R?r
+&gt;pl-PL-mail?HtmlForm.properties?N?Reset?Reset?Resetuj
+&gt;pl-PL-mail?HtmlForm.properties?N?Submit?Submit Query?Wyślij zapytanie
+&gt;pl-PL-mail?HtmlForm.properties?N?Browse?Browse...?Przeglądaj...
+&gt;pl-PL-mail?HtmlForm.properties?N?FileUpload?File Upload?Wysyłanie pliku
+&gt;pl-PL-mail?HtmlForm.properties?N?IsIndexPrompt?This is a searchable index. Enter search keywords: ?To jest indeks łoju. Wpisz hasło wyszukiwania:   
+&gt;pl-PL-mail?HtmlForm.properties?N?ForgotPostWarning?Form contains enctype=%S, but does not contain method=post.  Submitting normally with method=GET and no enctype instead.?Formularz zawiera enctype=%S, ale nie zawiera method=post.  Wysyłam normalnie z method=GET oraz bez enctype.
+&gt;pl-PL-mail?HtmlForm.properties?N?ForgotFileEnctypeWarning?Form contains a file input, but is missing method=POST and enctype=multipart/form-data on the form.  The file will not be sent.?Formularz umożliwia wysłanie pliku, ale brakujue mu method=POST oraz enctype=multipart/form-data. Plik nie zostanie wysłany.
+&gt;pl-PL-mail?MediaDocument.properties?N?ImageTitleWithDimensionsAndFile?%S (%S Image, %Sx%S pixels)?%S (Obraz %S, %Sx%S pikseli)
+&gt;pl-PL-mail?MediaDocument.properties?N?ImageTitleWithoutDimensions?%S (%S Image)?%S (Obraz %S)
+&gt;pl-PL-mail?MediaDocument.properties?N?ImageTitleWithDimensions?(%S Image, %Sx%S pixels)?(Obraz %S, %Sx%S pikseli)
+&gt;pl-PL-mail?MediaDocument.properties?N?ImageTitleWithNeitherDimensionsNorFile?(%S Image)?(Obraz %S)
+&gt;pl-PL-mail?MediaDocument.properties?N?MediaTitleWithFile?%S (%S Object)?%S (Obiekt %S)
+&gt;pl-PL-mail?MediaDocument.properties?N?MediaTitleWithNoInfo?(%S Object)?(Obiekt %S)
+&gt;pl-PL-mail?MediaDocument.properties?N?InvalidImage?The image ?%S? cannot be displayed, because it contains errors.?Obraz ?%S? nie może zostać wyświetlony, ponieważ zawiera błędy.
+&gt;pl-PL-mail?MediaDocument.properties?N?ScaledImage?Scaled (%S%%)?Wyskalowany (%S%%)
+&gt;pl-PL-mail?MediaDocument.properties?N?TitleWithStatus?%S - %S?%S - %S
+&gt;pl-PL-mail?xmlparser.properties?N?1?out of memory?brak pamięci
+&gt;pl-PL-mail?xmlparser.properties?N?2?syntax error?błąd składni
+&gt;pl-PL-mail?xmlparser.properties?N?3?no element found?nie znaleziono elementu
+&gt;pl-PL-mail?xmlparser.properties?N?4?not well-formed?nieprawidłowo sformowany
+&gt;pl-PL-mail?xmlparser.properties?N?5?unclosed token?niedomknięty token
+&gt;pl-PL-mail?xmlparser.properties?N?6?unclosed token?niedomknięty token
+&gt;pl-PL-mail?xmlparser.properties?N?7?mismatched tag?niepasujący znacznik
+&gt;pl-PL-mail?xmlparser.properties?N?8?duplicate attribute?podwójny atrybut
+&gt;pl-PL-mail?xmlparser.properties?N?9?junk after document element?niezrozumiała seria znaków po elemencie dokumentu
+&gt;pl-PL-mail?xmlparser.properties?N?10?illegal parameter entity reference?niedozwolone odwołanie parametru jednostki
+&gt;pl-PL-mail?xmlparser.properties?N?11?undefined entity?niezdefiniowana jednostka
+&gt;pl-PL-mail?xmlparser.properties?N?12?recursive entity reference?powtarzające się odwołanie jednostki
+&gt;pl-PL-mail?xmlparser.properties?N?13?asynchronous entity?jednostka asynchroniczna
+&gt;pl-PL-mail?xmlparser.properties?N?14?reference to invalid character number?odwołanie do niewłaściwego numeru znaku
+&gt;pl-PL-mail?xmlparser.properties?N?15?reference to binary entity?odwołanie to jednostki binarnej
+&gt;pl-PL-mail?xmlparser.properties?N?16?reference to external entity in attribute?odwołanie do jednostki zewnętrznej w atrybucie
+&gt;pl-PL-mail?xmlparser.properties?N?17?xml processing instruction not at start of external entity?instrukcja przetwarzania xml nie jest na początku jednostki zewnętrznej
+&gt;pl-PL-mail?xmlparser.properties?N?18?unknown encoding?nieznane kodowanie
+&gt;pl-PL-mail?xmlparser.properties?N?19?encoding specified in XML declaration is incorrect?kodowanie określone w deklaracji XML jest nieprawidłowe
+&gt;pl-PL-mail?xmlparser.properties?N?20?unclosed CDATA section?niedomknięta sekcja CDATA
+&gt;pl-PL-mail?xmlparser.properties?N?21?error in processing external entity reference?błąd przetwarzania odwołania jednostki zewnętrznej
+&gt;pl-PL-mail?xmlparser.properties?N?22?document is not standalone?dokument nie jest samoistny
+&gt;pl-PL-mail?xmlparser.properties?N?XMLParsingError?XML Parsing Error: %1$S\nLocation: %2$S\nLine Number %3$d, Column %4$d:?Błąd parsowania XML: %1$S\nObszar: %2$S\nNumer linii %3$d, Kolumna %4$d:
+&gt;pl-PL-mail?xmlparser.properties?N?Expected? . Expected: &lt;/%S&gt;.? . Oczekiwano: &lt;/%S&gt;.
+&gt;pl-win?mapi.properties?N?optionsLabel?%S &amp;Options?&amp;Opcje Thunderbirda
+&gt;pl-win?pref-mailnewsOverlay.dtd?Z?enableMapi.label??Ustaw &amp;vendorShortName; jako domyślny program pocztowy?Ustaw Thunderbirda jako domyślny program pocztowy
+&gt;pl-win?pref-mailnewsOverlay.dtd?Z?enableNews.label??Ustaw &amp;vendorShortName; jako domyślny program grup dyskusyjnych?Ustaw Thunderbirda jako domyślny program grup dyskusyjnych?
+&gt;pl-win?platformNavigationBindings.dtd?N?goBackCmd.keyCode?VK_LEFT?VK_LEFT
+&gt;pl-win?platformNavigationBindings.dtd?N?goForwardCmd.keyCode?VK_RIGHT?VK_RIGHT</span ></pre>
+    </div>
+
+    <div id="c14" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=44.html#c14">Comment 14</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Piotr Komoda</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-04-29 07:43:06 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Oz ty kur..cze! :-0 
+A chcialem tylko wyedytowac plik z roznicami, aby dodac nowe stringi z wydania
+2004-04-28(lacznie 2 sztuki)! Mam nauczke na pszyszlosc, dodam roznice w nowym
+pliku, jak sie troche wiecej uzbiera. Jesli jest to mozliwe to prosilbym o
+usuniecie tego i poprzedniego komentarza. </pre>
+    </div>
+
+    <div id="c15" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=44.html#c15">Comment 15</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-04-29 11:43:14 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">nie, nie jest to mozliwe. A dodajac nowy plik ustaw obsolete starszego</pre>
+    </div>
+
+    <div id="c16" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=44.html#c16">Comment 16</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-04-30 12:39:29 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">W Twoim tlumaczeniu do 0.5 znalazlem blad:
+
+diff -B -r -w -b -E -i
+/root/tb/temp/pl/pl-PL/locale/pl-PL/editor/editorOverlay.dtd
+/root/tb/temp/pitreck/pl-PL/locale/pl-PL/editor/editorOverlay.dtd
+178,179c178,179
+&lt; &lt;!ENTITY fontCourier.label &quot;Courier&quot; &gt;
+&lt; &lt;!ENTITY fontcourier.accesskey &quot;c&quot; &gt;
+---
+<span class="quote">&gt; &lt;!ENTITY fontCourier.label &quot;Kurier&quot;&gt;
+&gt; &lt;!ENTITY fontcourier.accesskey &quot;K&quot;&gt;</span >
+
+Tlumaczenie nazwy czcionki jest bledem.</pre>
+    </div>
+
+    <div id="c17" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=44.html#c17">Comment 17</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-04-30 12:40:29 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">I drugi blad:
+
+diff -B -r -w -b -E -i /root/tb/temp/pl/pl-PL/locale/pl-PL/global/about.xhtml
+/root/tb/temp/pitreck/pl-PL/locale/pl-PL/global/about.xhtml
+1c1
+&lt; &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+---
+<span class="quote">&gt; ?&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span >
+
+Jakis znaczek Ci wlazl przed definicje xmla</pre>
+    </div>
+
+    <div id="c18" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=44.html#c18">Comment 18</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-04-30 13:33:31 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">diff -B -r -w -b -E -i
+/root/tb/temp/pl/pl-PL/locale/pl-PL/global/editMenuOverlay.dtd
+/root/tb/temp/pitreck/pl-PL/locale/pl-PL/global/editMenuOverlay.dtd
+30c30
+&lt; &lt;!ENTITY findAgainCmd.accesskey &quot;n&quot; &gt;
+---
+<span class="quote">&gt; &lt;!ENTITY findAgainCmd.accesskey &quot;g&quot;&gt;</span >
+
+Po co zmieniac acceskey tutaj na g, ktorego nie ma w nazwie?
+
+-------------
+diff -B -r -w -b -E -i
+/root/tb/temp/pl/pl-PL/locale/pl-PL/global/regionNames.properties
+/root/tb/temp/pitreck/pl-PL/locale/pl-PL/global/regionNames.properties
+6c6
+&lt; jo=Jordania
+---
+<span class="quote">&gt; jo=Jordan</span >
+68c68
+&lt; bn=Su\u0142tanat Brunei
+---
+<span class="quote">&gt; bn=Brunei Darussalam</span >
+70c70
+&lt; in=Indie
+---
+<span class="quote">&gt; in=India</span >
+
+Czemu tak?
+------
+diff -B -r -w -b -E -i
+/root/tb/temp/pl/pl-PL/locale/pl-PL/messenger/messenger.dtd
+/root/tb/temp/pitreck/pl-PL/locale/pl-PL/messenger/messenger.dtd
+1,2c1,2
+
+sporo nie przetlumaczonych tekstow.
+------
+diff -B -r -w -b -E -i
+/root/tb/temp/pl/pl-PL/locale/pl-PL/messenger/msgHdrViewOverlay.dtd
+/root/tb/temp/pitreck/pl-PL/locale/pl-PL/messenger/msgHdrViewOverlay.dtd
+19c19
+&lt; &lt;!ENTITY printAttachmentCmd.label &quot;Drukuj&quot; &gt;
+---
+<span class="quote">&gt; &lt;!ENTITY printAttachmentCmd.label &quot;.Drukuj&quot;&gt;</span >
+
+blad
+-----
+diff -B -r -w -b -E -i
+/root/tb/temp/pl/pl-PL/locale/pl-PL/messenger/pref-advanced.dtd
+/root/tb/temp/pitreck/pl-PL/locale/pl-PL/messenger/pref-advanced.dtd
+14c14
+&lt; &lt;!ENTITY showFolderColumns.label &quot;Wyświetl nagłówki kolumn panelu folderów&quot; &gt;
+---
+<span class="quote">&gt; &lt;!ENTITY showFolderColumns.label       &quot;Pokaż rozszerzone kolumny w panelu</span >
+folderów.&quot;&gt;
+
+Nie podoba mi sie to tlumaczenie :/
+----------
+diff -B -r -w -b -E -i
+/root/tb/temp/pl/pl-PL/locale/pl-PL/messenger/search.properties
+/root/tb/temp/pitreck/pl-PL/locale/pl-PL/messenger/search.properties
+3c3
+&lt; searchSuccessMessage=Tylko jedna wiadomo\u015b\u0107 spe\u0142nia kryteria
+wyszukiwania
+---
+<span class="quote">&gt; searchSuccessMessage=Liczba wiadomo\u015Bci spe\u0142niaj\u0105cych kryteria</span >
+wyszukiwania: %S
+
+To znowu blad. Ta encja opisuje sytuacje gdy tylko JEDNA wiadomosc pasuje do wzorca.
+</pre>
+    </div>
+
+    <div id="c19" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=44.html#c19">Comment 19</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-04-30 13:42:58 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">50,51c50,51
+&lt; 12553=Utworzona wiadomo\u015b\u0107 zawiera znaki, kt\u00f3re nie
+istniej\u0105 w wybranym kodowaniu i mo\u017ce nie by\u0107 czytelna po
+wys\u0142aniu lub zapisaniu. Naci\u015bnij OK, aby przed wys\u0142aniem lub
+zapisaniem zmieni\u0107 kodowanie wiadomo\u015bci na UTF-8 (uniwersalne) lub
+naci\u015bnij Anuluj, aby powr\u00f3ci\u0107 do okna tworzenia wiadomo\u015bci,
+gdzie b\u0119dzie mo\u017cliwa zmiana kodowania.
+&lt; 12554=Wys\u0142anie wiadomo\u015bci do wi\u0119cej ni\u017c jednego serwera
+grup dyskusyjnych jest niemo\u017cliwe
+---
+<span class="quote">&gt; 12553=Wiadomo\u015B\u0107, kt\u00F3ra zosta\u0142a skomponowana, zawiera znaki</span >
+nieistniej\u0105ce w bie\u017C\u0105cym kodowaniu. Mimo \u017Ce mo\u017Cna
+wybra\u0107 inne kodowanie znak\u00F3w, zazwyczaj bezpieczniej jest
+u\u017Cywa\u0107 Unicode dla poczty. Kliknij OK, aby wys\u0142a\u0107 lub
+zapisa\u0107 jako Unicode (UTF-8). 
+<span class="quote">&gt; 12554=Mo\u017Cesz wys\u0142a\u0107 artyku\u0142 jednocze\u015Bnie tylko do</span >
+jednego serwera grup dyskusyjnych.
+
+Nie podoba mi sie...</pre>
+    </div>
+
+    <div id="c20" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=44.html#c20">Comment 20</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-04-30 13:46:12 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Created <span class=""><a href="attachment.cgi%3Fid=29" name="attach_29" title="roznice miedzy Gandalfa a Pitrecka 0.5">attachment 29</a> <a href="attachment.cgi%3Fid=29&amp;action=edit.html" title="roznice miedzy Gandalfa a Pitrecka 0.5">[details]</a></span>
+roznice miedzy Gandalfa a Pitrecka 0.5
+
+Zalaczam liste roznic miedzy moja wersja a Twoja. Pomijajac te w ktorych jedna
+roznica jest inna nazwa wydaje mi sie, ze bledy leza w Twojej wersji. Do
+poprawienia.
+
+Wieczorem zrobie diffa miedzy anglieska 0.5 i 0.6, potem miedzy moja 0.5 i
+Twoja 0.6 i zobaczymy czy roznice u nas pokrywaja sie z roznicami w
+angielskich. Jesli nie to trzeba do tego doprowadzic.</pre>
+    </div>
+
+    <div id="c21" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=44.html#c21">Comment 21</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-04-30 14:00:09 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">pozwole sobie zwrocic uwage, ze w TB 0.6 zmienia sie rozklad plikow jezykowych.
+z lastest 0.6 widze dwa jary en-US-mail.jar i en-unix.jar</pre>
+    </div>
+
+    <div id="c22" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=44.html#c22">Comment 22</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Piotr Komoda</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-04-30 20:40:56 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text"><span class="quote">&gt; Do komentarza 16:</span >
+To tlumaczenie nie jest mojego autorstwa, pochodzi z langpacka n!Kuriera 0.4, w
+oparciu o ktory rozpoczynalem tlumaczenie
+
+<span class="quote">&gt; Do Komentarza 17:</span >
+U siebie tego nie widze
+
+<span class="quote">&gt; Do Komentarza 18:</span >
+editMenuOverlay.dtd
+Ja tego nie ruszalem, to juz bylo w langpacku.
+
+regionNames.properties
+j/w
+
+msgHdrViewOverlay.dtd
+j/w
+
+pref-advanced.dtd
+moje tlumaczenie, moj blad
+
+search.properties
+Blad langpacka na ktorym bazowalem
+
+<span class="quote">&gt; Do Komentarza 19:</span >
+composeMsgs.properties
+j/w
+
+Z jednej strony ciesze sie, ze znalezione przez ciebie idiotyzmy poza jednym nie
+sa mego autorstwa, z drugiej smuce, ze sam tego nie wykrylem i nie poprawilem...</pre>
+    </div>
+
+    <div id="c23" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=44.html#c23">Comment 23</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Piotr Komoda</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-04-30 22:00:34 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Ok, biore sie za poprawiane znalezionych przez ciebie bledow. Taka mala ciekawostka:
+editMenuOverlay.dtd W oryginalnym pliku jezykowym jest:
+&lt;!ENTITY findAgainCmd.accesskey &quot;g&quot;&gt;
+
+msgHdrViewOverlay.dtd W oryginalnym pliku jezykowym jest:
+&lt;!ENTITY printAttachmentCmd.label &quot;.Print&quot;&gt;
+
+<span class="quote">&gt; Do Komentarza 20:
+&gt; Wieczorem zrobie diffa miedzy anglieska 0.5 i 0.6, potem miedzy moja 0.5 i
+&gt; Twoja 0.6 i zobaczymy czy roznice u nas pokrywaja sie z roznicami w
+&gt; angielskich. Jesli nie to trzeba do tego doprowadzic.</span >
+
+Tych roznic bedzie u mnie wiecej, glownie ze wzgledu na poprawki i wlasna
+inwencje tworcza
+
+<span class="quote">&gt; Do Komentarza 21:</span >
+Pliki en-US-mail.jar w wydaniach windows i linux niczym sie nie roznia, wyglada
+na to, ze bug#214663 zostal naprawiony, yeah!</pre>
+    </div>
+
+    <div id="c24" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=44.html#c24">Comment 24</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Piotr Komoda</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-04-30 22:22:04 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Created <span class=""><a href="attachment.cgi%3Fid=30" name="attach_30" title="Zmiany 2004-04-26 - 0.6RC1">attachment 30</a> <a href="attachment.cgi%3Fid=30&amp;action=edit.html" title="Zmiany 2004-04-26 - 0.6RC1">[details]</a></span>
+Zmiany 2004-04-26 - 0.6RC1</pre>
+    </div>
+
+    <div id="c25" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=44.html#c25">Comment 25</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Piotr Komoda</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-04-30 22:45:57 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Created <span class=""><a href="attachment.cgi%3Fid=31" name="attach_31" title="Zmiany pl-unix 0.5 - 0.6 RC1">attachment 31</a> <a href="attachment.cgi%3Fid=31&amp;action=edit.html" title="Zmiany pl-unix 0.5 - 0.6 RC1">[details]</a></span>
+Zmiany pl-unix 0.5 - 0.6 RC1</pre>
+    </div>
+
+    <div id="c26" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=44.html#c26">Comment 26</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Piotr Komoda</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-05-03 04:31:08 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Created <span class=""><a href="attachment.cgi%3Fid=32" name="attach_32" title="Poprawki Wojtka">attachment 32</a> <a href="attachment.cgi%3Fid=32&amp;action=edit.html" title="Poprawki Wojtka">[details]</a></span>
+Poprawki Wojtka
+
+Poprawki bledow Tb 0.5, wykrytych przez Wojtka:
+<a href="http://mozillapl.org/forum/ftopic6260.html">http://mozillapl.org/forum/ftopic6260.html</a></pre>
+    </div>
+
+    <div id="c27" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=44.html#c27">Comment 27</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-05-05 03:22:47 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Bledy zauwazone przez marcoosa:
+
+02:46:20] &lt;Marcoos&gt; kosmetyka
+[02:46:20] &lt;Marcoos&gt; &quot;Po uruchomieniu Thunderbirda wyświetl poniższą stronę
+startową w oknie wiadomości&quot;
+[02:46:22] &lt;Marcoos&gt; -&gt; o uruchomieniu Thunderbirda wyświetl poniższą stronę w
+oknie wiadomości&quot;
+[02:46:23] &lt;Marcoos&gt; bez słowa &quot;startową&quot;, przecież jest w nagłówku.
+[02:46:24] &lt;Marcoos&gt; masło maślane :)
+[02:46:25] &lt;Marcoos&gt; stosujemy nazwę &quot;folder&quot; czy &quot;katalog&quot; dla folderów poczty?
+[02:46:26] &lt;Marcoos&gt; aa anieważne
+[02:46:28] &lt;Marcoos&gt; &quot;Nie wysyłaj niewysłanych wiadomości&quot; :D
+[02:46:28] &lt;Marcoos&gt; fajnie to brzmi :)
+(...)
+[02:46:33] &lt;Marcoos&gt; Otwó?z nowe wiadomości w:
+[02:46:34] &lt;Marcoos&gt; * Istniejącym oknie
+[02:46:35] &lt;Marcoos&gt; * Nowym oknie
+[02:46:36] &lt;Marcoos&gt; te dwie opcje dałbym z małej litery
+[02:46:40] &lt;Marcoos&gt; &quot;istniejącym oknie&quot;, &quot;nowym oknie&quot;
+[02:46:59] &lt;Marcoos&gt; analogicznie:
+[02:47:03] &lt;Marcoos&gt; &quot;Po odebraniu nowej wiadomości&quot;
+[02:47:09] &lt;Marcoos&gt; wszystkie checkboksy z małej
+[02:47:11] &lt;Marcoos&gt; (w Opcjach)
+[02:47:33] &lt;Marcoos&gt; w &quot;Autouzupełnianiu adresu&quot; też.
+[02:47:46] &lt;Marcoos&gt; i w Opcje &gt; Załączniki
+[02:47:59] &lt;Marcoos&gt; wszędzie tam, gdzie dany checkbox jest wyraźnie częścią
+zdania wprowadzającego
+[02:48:29] &lt;Marcoos&gt; Opcje &gt; Języki &gt; Wybierz tryb kodowania blablabla wiadomości
+[02:48:33] &lt;Marcoos&gt; brakuje dwukropka na końcu :)
+
+pod adresem:
+<a href="http://www.firefox.pl/thunderbird/thunderbird-0.6-pl-PL-i686-linux-gtk2+xtf.tar.gz">http://www.firefox.pl/thunderbird/thunderbird-0.6-pl-PL-i686-linux-gtk2+xtf.tar.gz</a>
+znajduje sie wersja pre RC. obok lezy plik guide.html gdzie sa opisane wszystkie
+zmiany w stosunku do tego co mi wystawiles. Te oznaczone &quot;popraw pliz&quot; to do Ciebie.
+
+Ok. Mamy juz chyba caly material, zloz z tego jednego builda dla linuksa, ok?</pre>
+    </div>
+
+    <div id="c28" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=44.html#c28">Comment 28</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-05-05 11:25:38 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Na domyślnej stronie startowej w tb: &quot;I nieograniczone możliwości dalszego
+rozszerzania&quot;  - napisałbym to tak: &quot;...i nieograniczone możliwości dalszego
+rozszerzania&quot;. Tak głupio zaczynać zdanie od &quot;I&quot;. :)
+
+Warto by także rozważyć rozmiary niektórych okien (Opcje, Konta, Kreator kont).
+</pre>
+    </div>
+
+    <div id="c29" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=44.html#c29">Comment 29</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-05-05 11:28:55 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Jeszcze jedno: po co about.xhtml w Tb?!
+
+W Thunderbidzie nie ma żadnej metody, żeby to wyświetlić (chyba że ktoś ustawi
+to jako startową w Opcjach), a i tak wówczas mamy błędy parsowania XML
+(niezdefiniowana encja), tak samo jak w wersji angielskiej.
+</pre>
+    </div>
+
+    <div id="c30" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=44.html#c30">Comment 30</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-05-05 11:31:44 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Aha, jeszcze co do startowej strony:
+
+* Obsługa poczty i grup dyskusyjnych
+* Inteligente rozpoznawanie...
+* Rozbudowane filtry...
+
+- to wszystko też powinno być z małych liter.
+
+Link do strony domowej powinien być taki:
+
+Informacje o produkcie &lt;a href=&quot;...&quot;&gt;strona domowa Thunderbirda&lt;/a&gt;
+
+a nie taki, jak teraz:
+
+Informacje o produkcie strona domowa &lt;a href=&quot;...&quot;&gt;Thunderbirda&lt;/a&gt;
+
+</pre>
+    </div>
+
+    <div id="c31" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=44.html#c31">Comment 31</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-05-05 11:40:05 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Jeszcze propozycja, którą wczoraj zgłosilem Gandalfowi na jabberze, ale chyba
+się do niej w ogóle nie odniósł (albo nie pamiętam tego ;)):
+
+Dodajmy do naszych linuksowych paczek z Tb ten skrypt:
+<a href="http://beta.firefox.pl/marcoos/thunderbird/thunderbird-run">http://beta.firefox.pl/marcoos/thunderbird/thunderbird-run</a>
+(przy czym: zmienić w nim /opt/ng/thunderbird/ na domyślną ścieżkę, do której
+zalecamy instalować Tb) i poinformujmy użytkowników, żeby to nim właśnie
+uruchamiali Thunderbirda i ten skrypt (a nie samego Tb) ustawiali jako
+domyślnego klienta poczty.
+
+Rozwiązuje to problemy w rodzaju:
+- &quot;jak mam uruchomionego thunderbirda, to jak kliknę na ikonkę, to pojawia się
+jakiś menedżer profili&quot; --&gt; otworzy lub wywali na wierzch okno z Inboksem
+- &quot;menedżer profili pojawia mi się zamiast okna komponowania wiadomości, kiedy
+kliknę link mailto:&quot; --&gt; otworzy od razu okno komponowania wiadomości
+
+Zapewnia to też łatwiejszy sposób na integrację z czymkolwiek, bo skrypt odpala
+się tak:
+
+thunderbird-run
+
+lub
+
+thunderbird-run <a href="mailto:jakis&#64;adres.email.pl">jakis&#64;adres.email.pl</a>
+
+Czyli np. aby ustawić Tb jako domyślny klient poczty w Gnome 2.6: Ustawienia -&gt;
+Zaawansowane -&gt; Preferowane aplikacje -&gt; Czytnik poczty -&gt; Dowolny czytnik
+poczty ==&gt; thunderbird-run %s
+
+</pre>
+    </div>
+
+    <div id="c32" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=44.html#c32">Comment 32</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-05-05 11:56:49 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">nie bedziemy nic dodawac. Jestem po akceptacji wstepnego draftu zasad dzialania
+projektow lokalizacyjnych. I jest tam kilka typow projektow. Jesli chcemy
+zaliczac sie do tego typu ktory ma prawo do oglaszania siebie oficjalnym
+projektem lokalizacyjnym to nie mozemy dodawac kodu...</pre>
+    </div>
+
+    <div id="c33" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=44.html#c33">Comment 33</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-05-05 14:15:39 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Ale to nie jest kod. To tylko skrypt w bashu, umieszczony obok i nie wpływający
+w żaden sposób na działanie Tb, a drastycznie ułatwiający życie użytkownikom...
+</pre>
+    </div>
+
+    <div id="c34" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=44.html#c34">Comment 34</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-05-05 15:20:12 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Zatem podeslij go jako patch do bugzilla.mozilla.org. Wydajemy pakiet o
+identycznej funkcjonalnosci. Z tymi samymi zaletami i wadami. Mozemy dodac
+skrypt obok z informacja jak go zainstalowac. Ale wyraznie obok, zeby zaznaczyc,
+ze jest to nasz wlasny dodatek</pre>
+    </div>
+
+    <div id="c35" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=44.html#c35">Comment 35</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Piotr Komoda</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-05-05 16:18:12 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Created <span class="bz_obsolete"><a href="attachment.cgi%3Fid=33" name="attach_33" title="poprawki2">attachment 33</a> <a href="attachment.cgi%3Fid=33&amp;action=edit.html" title="poprawki2">[details]</a></span>
+poprawki2
+
+Mialem to dodac wczesniej, ale nie mozna bylo sie tu dostac.
+
+---
+<span class="quote">&gt; Zmiany w stos. do Pitrecka wersji:
+&gt; - overlayinfo musi zostac</span >
+
+A czemu, jesli mozna spytac?
+Nie wiem jak sprawa wyglada w przypadku wersji linuksowej, ale w wydaniu
+windows jest to pozostalosc po inspektorze DOM, niepotrzebnie zajmujaca miejsce
+w poczuszce. Jesli ktos zdecyduje sie na instalacje inspektora, to wtedy pojawi
+mu sie ten folder i podfoldery przy pierwszym uruchomieniu Tb.
+
+<span class="quote">&gt; - mozilla-x-remote-client usunalem, bo nie ma go w orginale</span >
+Wydanie, ktore pobralem z:
+<a href="http://ftp.mozilla.org/pub/mozilla.org/thunderbird/releases/0.6/">http://ftp.mozilla.org/pub/mozilla.org/thunderbird/releases/0.6/</a>
+zawiera ten plik....
+
+<span class="quote">&gt; - build.dtd do zmienilem na orginalny</span >
+
+Ten plik jest rownie potrzebny w Tb co about.xhtml, on praktycznie za nic nie
+odpowiada i podmiana jego na oryginalna wersje nic nie zmieni. Wydania
+kompilowane automatycznie umieszczaja tam date i godzine kompilacji, a wydania
+dla windows, spreparowane przez Scotta MacGregora zawieraja ciag zer. Cokolwiek
+by tam nie bylo, nie wplywa to na zawartosc okna about czy UA string.
+
+<span class="quote">&gt; - credits.html poprawilem</span >
+
+Thunderbirds are go! &gt; Ptaki Gromu odlatują! ? LOL
+Wlasnie dlatego zostawilem oryginalna wersje, zeby nie wstawic podobnego do
+tego tlumaczenia. Lepiej poczekac, az ktos z nas wymysli cos bardziej
+oryginalnego.
+
+Pozatym, dlaczego zmieniles Oprogramowanie oparte o platforme Gecko na
+oryginalna wersje (powered by Gecko)? Tlumaczeniem to, calkiem trafne IMO, jest
+autorstwa TIMu i pochodzi z oryginalnego pliku start.html n!Kuriera Poczty 0.4.
+
+
+Marcoos:
+Folder &gt; Folder
+Directory &gt; Katalog</pre>
+    </div>
+
+    <div id="c36" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=44.html#c36">Comment 36</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Piotr Komoda</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-05-05 16:21:51 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Created <span class=""><a href="attachment.cgi%3Fid=34" name="attach_34" title="poprawki2">attachment 34</a> <a href="attachment.cgi%3Fid=34&amp;action=edit.html" title="poprawki2">[details]</a></span>
+poprawki2
+
+Ooops!
+Plik mailViews.dat zaktualizowalem, ale pliku zmian nie...</pre>
+    </div>
+
+    <div id="c37" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=44.html#c37">Comment 37</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Piotr Komoda</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-05-05 18:57:41 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(In reply to <a href="show_bug.cgi%3Fid=44.html#c27">comment #27</a>)
+Ehh, marcoos, marcoos, dziwne praktyki uskuteczniasz :D
+<span class="quote">&gt; Po uruchomieniu Thunderbirda wyświetl poniższą stronę startową w oknie 
+&gt; wiadomości&quot;
+&gt; -&gt; o uruchomieniu Thunderbirda wyświetl poniższą stronę w
+&gt; oknie wiadomości&quot;
+&gt; bez słowa &quot;startową&quot;, przecież jest w nagłówku.</span >
+
+Tak jest w oryginale.  W sumie mozna by sie bez dublowania tej &quot;strony&quot; obejsc,
+ale &quot;bo przecież jest w nagłówku&quot; to dla mnie zaden argument, by to usunac. Tak,
+jak jest IMO poprostu wyglada lepiej i jest bardziej czytelne.
+
+Odnosnie manii dawania wszystkich opisow przy chceckboxach i radio buttonach z
+malej litery. Daj mi chodz jeden sensowny powod, aby to zrobic, poza
+&quot;widzi-mi-sie&quot;. Raz, ze jest tak w oryginale, dwa wyglada lepiej, trzy we
+wszystkich innych programach oraz w samych windows wszysto jest wykonane we
+wlasnie taki sposob. Rownie dobrze moglbyc powiedziec, ze wszyskie pozycje w
+menu powinny byc z malej.
+
+<span class="quote">&gt; Opcje &gt; Języki &gt; Wybierz tryb kodowania blablabla wiadomości
+&gt; brakuje dwukropka na końcu :)</span >
+
+W oryginalnej wersji tez tego drukropka brak, w niemieckiej tak samo...
+
+--
+Wybaczcie moja dzisiejsza zlosliwosc, mialem ciezka noc.</pre>
+    </div>
+
+    <div id="c38" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=44.html#c38">Comment 38</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-05-05 19:06:17 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Pitreck: pamietaj o roznicach miedzy jezykiem angloamerykanskim a polskim. A to,
+ze inni kopiuja zle to nie znaczy ze my musimy.
+W jezyku polskim ztcw z wielkiej litery zaczyna sie zdanie, w jezyku
+angloamerykanskim kazde Wazniejsze Slowo W Materialach Reklamowych...</pre>
+    </div>
+
+    <div id="c39" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=44.html#c39">Comment 39</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Piotr Komoda</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-05-05 19:25:07 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text"><span class="quote">&gt; Do komentarza 28:</span >
+Zrobione :)
+
+(In reply to <a href="show_bug.cgi%3Fid=44.html#c30">comment #30</a>)
+<span class="quote">&gt; Link do strony domowej powinien być taki:
+&gt; Informacje o produkcie &lt;a href=&quot;...&quot;&gt;strona domowa Thunderbirda&lt;/a&gt;
+&gt; a nie taki, jak teraz:
+&gt; Informacje o produkcie strona domowa &lt;a href=&quot;...&quot;&gt;Thunderbirda&lt;/a&gt;</span >
+
+Zrobione :)
+
+<span class="quote">&gt; Do komentarza 30:</span >
+Nadal nie jestem przekonany, to tak jakby zmienic OK, ktory jesli chodzi o
+oprogramowanie juz sie utarl w jezyku polskim, mimo ze nie ma go w slowniku
+poprawnej polszczyzny. Pozatym w tlumaczeniu aplikacji M$ trudno doszukac sie
+zle postawionego przecinka, a przez konstrole przeszly, niepoprawne twoim
+zdaniem, opisy przy checkboxach i radio buttonach. Skoro juz sie w
+&quot;elekronicznym&quot; jezyku tak utarlo, to dlaczego mamy sie wybijac i to zmieniac?
+
+--
+<span class="quote">&gt; - narzedzia-&gt;filtry-&gt;dziennik filtru i dziennik niechcianej poczty sa 
+&gt; za dluuugie. trzeba przeciac z raz czy dwa (popraw pliz)</span >
+
+Bardzo chetnie, ale nie wiem jak to zrobic. Standardowe \n nie dziala...
+Rozmiary okien przywrocilem do wartosci oryginalnych
+
+I jeszcze odnosnie build.dtd, wiem ze wolalbys aby bylo tak jak w oryginale, ale
+kazde wydanie ma inna  godzine zbudowania. Chcesz utrudniac sobie zycie i dla
+kazdego wydania tworzyc oddzielny pl-PL-mail.jar ze zmodyfikowanym tylko
+build.dtd? Nie latwiej zostawic ciag zer?</pre>
+    </div>
+
+    <div id="c40" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=44.html#c40">Comment 40</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Piotr Komoda</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-05-05 21:40:20 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Created <span class=""><a href="attachment.cgi%3Fid=35" name="attach_35" title="poprawki3">attachment 35</a> <a href="attachment.cgi%3Fid=35&amp;action=edit.html" title="poprawki3">[details]</a></span>
+poprawki3
+
+Zmiana rozmiarow okien. Informujcie, czy teraz nie sa za male...</pre>
+    </div>
+
+    <div id="c41" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=44.html#c41">Comment 41</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Wawoczny</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-05-05 21:57:12 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Created <span class=""><a href="attachment.cgi%3Fid=36" name="attach_36" title="Poprawki">attachment 36</a> <a href="attachment.cgi%3Fid=36&amp;action=edit.html" title="Poprawki">[details]</a></span>
+Poprawki
+
+Sugerowane poprawki</pre>
+    </div>
+
+    <div id="c42" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=44.html#c42">Comment 42</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Piotr Komoda</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-05-05 22:23:24 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(In reply to <a href="show_bug.cgi%3Fid=44.html#c41">comment #41</a>)
+<span class="quote">&gt; Created an attachment (id=36)</span >
+Przejzalem to na szybkiego, ale juz 2 rzeczy rzucaja mi sie w oczy:
+
+<span class="quote">&gt;&gt; -pl-PL?pref-mailnews.dtd?bounceSystemDockIcon.label?U?Animate the dock 
+&gt;&gt; icon?Animate the dock icon
+&gt;&gt; +pl-PL?pref-mailnews.dtd?bounceSystemDockIcon.label?U?Animate the dock 
+&gt;&gt; icon?Włącz animacje dla ikony w doku
+&gt; W Windows to się nazywa obszar powiadomień. Dok jest obrzydliwy...</span >
+
+Tylko ze dany string dotyczy tylko i wylacznie MacOS X, a chyba wiesz jak
+wyglada dock w MacOS X, prawda  ;)
+No chyba, ze jego polskie tlumaczenie brzmi inaczej
+
+<span class="quote">&gt; Odmiana! Raz odmieniasz, raz nie. Mozilli Thunderbird, Mozillę Thunderbird</span >
+
+Bo tak jest w oryginale, zajzyj laskawie do brand.dtd, a sie przekonasz, ze
+troche rzeczy sie w Tb 0.6 zmienilo:
+brandShortName &quot;Thunderbird&quot;
+brandFullName &quot;Mozilla Thunderbird&quot;
+vendorShortName &quot;Mozilla Thunderbird&quot;</pre>
+    </div>
+
+    <div id="c43" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=44.html#c43">Comment 43</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-05-05 22:27:25 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Wow :) Dzieki za pomoc Marku!
+Zgadzam sie ze zdecydowana wiekszoscia Twoich uwag, poza:
+
+1) Wydaje mi sie ze zabezpieczajacych brzmi lepiej... Np. Jak jest Dongle z
+kluczami (takie cos do zabezpieczania np. programow) to nie jest to klucz
+bezpieczenstwa a klucz zabezpieczajcy.
+
+Mi sie wydaje ze &quot;klucz zabezpieczajacy&quot; brzmi gorzej od &quot;klucz bezpieczenstwa&quot;,
+tak samo jak &quot;pasy zabezpieczajace&quot; brzmia gorzej od &quot;pasow bezpieczenstwa&quot;...
+
+2)W PL moze sie starszym webmasterom kojarzyć z warstwami NN 4.X &lt;layer&gt;, co
+innego trza by wymyśleć albo zostawić tak jak było
+
+Analogicznie jak angielskim webmasterom. Jesli oni zdecydowali sie redefiniowac
+pojecie layera, to i my mozemy.
+
+3) Firefox.pl na Thunderbird.pl (i reszta wystąpień też)
+
+Na razie raczej zmienimy na firefox.pl/thunderbird. Zalezy jak pojdzie z
+rejestracja domeny.
+
+4) Przecinek przed wymga... A może zamiast trenowania filtru dać naukę?
+
+Lepiej brzmi, masz racje. Ale nadal jakos sztucznie... moze jeszcze inny pomysl?
+
+5) Bez swą?
+
+zdecydowanie
+
+6) W Windows to się nazywa obszar powiadomień. Dok jest obrzydliwy...
+
+Powiem Ci, ze jak zaczynalem tlumaczyc RADM to &quot;model pudelkowy&quot; brzmial
+koszmarnie... teraz juz go znosze. Dok nie jest modnym slowem, ale obszar
+powiadomien jest imno rownie enigmatyczny.
+
+Reszta - 100% racji. Odmiana! Odmiana!!! Mozesz wymiennie stosowac shortName i
+Name, ale musisz odmieniac nazwe zawsze kiedy uzywasz jej w zdaniu.
+Nie moze istniec zdanie &quot;Uzywajac Mozilla Thunderbird jestes fajny&quot;...</pre>
+    </div>
+
+    <div id="c44" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=44.html#c44">Comment 44</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Piotr Komoda</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-05-05 22:38:38 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">ehh, tak to jest jak sie na szybkiego sprawy zalatwia. W poprzednim komentarzu
+nieodpowiedni fragment zacytowalem. Chcialem sie odniesc do Thunderbirda -&gt;
+Mozilli Thunderbird. Oczywiscie wszelkie braki odmiany slowa Mozilla zaraz
+zostana naprawione.</pre>
+    </div>
+
+    <div id="c45" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=44.html#c45">Comment 45</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Wawoczny</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-05-05 22:50:28 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">To ze w oryginale nie ma wszedzie przedrostka Mozilla wcale nie znaczy ze go nie
+mozesz dodac. Samo slowo Thunderbird nie powinno byc odmieniane, dodajac
+przedrostek Mozilla masz mozliwosc ladnej, a przede wszystkim polskiej odmiany.
+To nie jest tak przez Was nie lubiana zmiana MT na Kurier Poczty, a tylko
+uzupelnienie do pelnej nazwy MT ;).</pre>
+    </div>
+
+    <div id="c46" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=44.html#c46">Comment 46</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-05-05 23:02:52 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text"><span class="quote">&gt; Samo slowo Thunderbird nie powinno byc odmieniane</span >
+
+Mozesz rozwinac? Czemu? Thunderbird, Thunderbirda, z Thunderbirdem...</pre>
+    </div>
+
+    <div id="c47" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=44.html#c47">Comment 47</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Wawoczny</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-05-05 23:07:51 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Wydaje mi sie ze nie powinno sie odmieniac, raz ze nie bardzo brzmi a dwa, moze
+jednak &quot;Thunderbird'a&quot; etc. Zbyt wiele mieszania z taka odmiana...</pre>
+    </div>
+
+    <div id="c48" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=44.html#c48">Comment 48</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Piotr Komoda</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-05-05 23:10:37 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Marek, jak slowo daje, ty mnie czasem przerazasz.
+Potrafisz najpierw zjechac czlowieka jak psa, za chwile jestes slodki jak
+6-letnia dziewczynka. W dodatku sciezki twego rozumowania bywaja bardziej
+zawile, niz droga pijaka do domu. No ale nic, w koncu jesli chodzi o tlumaczenie
+to masz wieksze doswiadczenie odemnie, wiec biore sie za poprawki. Zapewnie
+wszystkich nie uzglednie, bo niektore sa dla mnie totalnie niepojete, jak np.
+zamiana &quot;.Print&quot; z &quot;.Drukuj&quot; na &quot;Drukuj&quot;, albo porada zmiany &quot;Wykonaj
+następujące czynności:&quot; na &quot;wykonaj następujące czynności:&quot;, czy tez sugestia
+pisania textow przy-checkboxowych z malej litery bez dwukropka przy mozliwosci
+wyboru...&lt;twisted&gt;</pre>
+    </div>
+
+    <div id="c49" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=44.html#c49">Comment 49</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-05-05 23:17:28 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(In reply to <a href="show_bug.cgi%3Fid=44.html#c47">comment #47</a>)
+<span class="quote">&gt; raz ze nie bardzo brzmi</span >
+
+Moim zdaniem, jeśli Mozilla.org mówi &quot;Thunderbird&quot; a nie &quot;Mozilla Thunderbird
+0.6 powered by Gecko 1.7b&quot;, to powinniśmy mówić &quot;Thunderbird&quot;. 
+
+<span class="quote">&gt; moze jednak &quot;Thunderbird'a&quot;</span >
+
+Nie, apostrofu używamy, jeśli końcówka wyrazu nie zgadza się z wymową:
+Rabalais'go. Saint-Exupery'ego. Ale: Einsteina, Busha, Eisenhowera i 
+Thunderbirda. :)
+
+<span class="quote">&gt; etc. Zbyt wiele mieszania z taka odmiana...</span >
+
+A potem się dziwimy, że nam się tłumaczenia w okienkach nie mieszczą. :D</pre>
+    </div>
+
+    <div id="c50" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=44.html#c50">Comment 50</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Wawoczny</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-05-05 23:20:38 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">I vice versa :P Gdzie znowu zjechalem?
+Stringi z kropka na poczatku maja sie niby nie wyswietlac, a ze to i tak nie
+dziala (moze kiedys dzialalo), wycinamy . i lokalizujemy, mozesz robic jak chcesz.
+Hmmm... To moze wytlumacze &quot;wykonaj następujące czynności:&quot;... Gdy zmienisz na
+mala powstanie pewien ciag (cale zdanie):
+W stosunku do wszystkich przychodzacych wiadomosci, ktore spelniaja wszystkie /
+dowolne ponizsze kryteria [tu brak dwukropka] [np. temat=Kot] wykonaj
+nastepujace czynnosci... Juz wiesz o co biega? Co do checkboxow, tez bym zmienil
+na mala, przynajmniej jakos ujednolicil wszedzie (ale to chyba porada Wojtka)?</pre>
+    </div>
+
+    <div id="c51" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=44.html#c51">Comment 51</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Wawoczny</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-05-05 23:23:27 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text"><span class="quote">&gt; Moim zdaniem, jeśli Mozilla.org mówi &quot;Thunderbird&quot; a nie &quot;Mozilla Thunderbird
+&gt; 0.6 powered by Gecko 1.7b&quot;, to powinniśmy mówić &quot;Thunderbird&quot;. </span >
+
+Eeee... Oni sami nie wiedza co mowia... Gdyby to bylo wazne wszedzie bylaby MT
+albo samo T ;) A ze okienka za male, nie pierwszyzna (niestety nie wszyscy
+programisci M mysla ze tlumaczenie moze byc dluzsze)...</pre>
+    </div>
+
+    <div id="c52" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=44.html#c52">Comment 52</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-05-05 23:27:55 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Pitreck, nie przesadzaj. Dyskutujmy merytorycznie...
+Marku, ale moim zdaniem po to sa dwie formy (juz w encjach - shortname i name)
+zeby moc ich uzywac zaleznie od kontekstu.
+Kiedy piszemy oficjalnie: Mozilla Thunderbird jest wspaniala aplikacja, albo
+Mozilla Thunderbird jest znakiem towarowym, to nie mozna skracac,
+
+ale kiedy piszemy dluzsze zdanie w ktorym nazwa aplikacji ma precyzowac tylko
+czego zdanie dotyczy i byc dodanym podmiotem, to mozemy skracac imho.</pre>
+    </div>
+
+    <div id="c53" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=44.html#c53">Comment 53</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-05-05 23:28:41 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Microsoft też nie zawsze mówi Microsoft(R) Windows(TM) numer.wersji na swój
+system (często po prostu &quot;Windows&quot;).
+
+IMHO w niektórych sytuacjach krótsze bywa lepsze. Jeśli w Mozilli Thunderbird
+padnie samo słowo &quot;Thunderbird&quot;, to jest jasne, że chodzi o MT, a nie o model
+samochodu Forda. :)
+</pre>
+    </div>
+
+    <div id="c54" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=44.html#c54">Comment 54</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Wawoczny</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-05-05 23:40:09 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Jeszcze co do samej odmiany TB, przegladam sobie slowniki MS Windows i tam tez
+nie ma odmiany &quot;Windows&quot;, natomiast wystepuje odmiana &quot;Microsoft&quot; (Microsfotu
+itd.), cos mi sie tu widzi pewna analogia ;)</pre>
+    </div>
+
+    <div id="c55" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=44.html#c55">Comment 55</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Piotr Komoda</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-05-06 00:03:02 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text"><span class="quote">&gt;&gt; pl-PL?HtmlForm.properties?IsIndexPrompt?J?This is a searchable index. Enter 
+&gt;&gt; search keywords: ?To jest indeks łoju. Wpisz hasło wyszukiwania: 
+&gt; Jaki index?</span >
+
+ET3.1 Rulez!
+Jakies sugestie? wyszukiwawczy/wyszukiwania?
+
+<span class="quote">&gt; Obraz -&gt; obrazki? W nawiasach z malej?</span >
+
+Ze w nawiasach z malej jeszcze moge zrozumiec, ale dlaczego obrazki?
+nagasuka.png (obrazki Portable Network Graphics)?
+
+<span class="quote">&gt; A jak ktos ma ICQ? Dotyczy tez reszty wystapien Screen Name.</span >
+
+Taa, wiem ze to dosc idiotyczne, ale to byl jeden z bledow zgloszonych przez
+Wojtka, rozwiazany przez moja &quot;inwencje tworcza&quot;.  
+
+--<a href="http://mozillapl.org/forum/ftopic1129-0-asc-64.html">http://mozillapl.org/forum/ftopic1129-0-asc-64.html</a>
+Wojtek:
+- Komunikator wyświetlany jest w podglądzie książki, na wydruku i na pasku
+powyżej listy wizytówek jako &quot;Identyfikator&quot;. 
+--
+
+Ja to wszystko pozmienialem na JID. Logika jest tu dosc prosta, Jabber za jakis
+czas stanie sie standardem IM, wiec jego obsluga zapewne niedlugo pojawi sie w
+TB. Jak narazie screen name dotyczy w Tb tylko AIM (jedna z ostatnich
+pozostalosci po czasach Netscape)...
+
+<span class="quote">&gt; Skopiowano %s wizytówek</span >
+
+Wiesz, to dosc dziwne brzmi w zestawieniu z liczbami z zakresu 2-4
+
+<span class="quote">&gt; Wydaje mi sie ze zabezpieczajacych brzmi lepiej...</span >
+
+Jeden z bledow wykrytych przez Wojtka:
+&quot;Zapezpieczających? Przed czym?&quot;
+Bezpieczenstwa brzmi IMO zdecydowanie lepiej!
+
+<span class="quote">&gt; Daliśmy Użytkownik bo jest bezosobowe, IMHO forma z (a) o wiele gorzej wygląda</span >
+
+Dla osoby z grupy dyskusyjnej to jeszcze pasuje, ale gdy czytam list od mojego
+najlepszego kumpla i widze:
+&quot;Użytkownik JaT napisał&quot;
+To mnie poprostu skreca! Sorry, ale sa pewne granice w stosowaniu formy
+bezosobowej. Zreszta powyzsze tyczy sie takze korespondencji prywatnej od osob
+obcych (np. list od czytelnika mojej strony), raz ze dziwnie brzmi, dwa, jak dla
+mnie nazywanie osoby obcej uzytkownikiem to wiekszy brak szacunku niz zwracanie
+sie do niej per ty.  
+
+<span class="quote">&gt;&gt; pl-PL?necko.properties?PhishingAuthAccept?J?I understand and will be very</span >
+careful?Rozumiem, zachowam ostrożność
+<span class="quote">&gt; Jakoś inaczej bym to widział</span >
+
+Jestem otwarty na propozycje :)</pre>
+    </div>
+
+    <div id="c56" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=44.html#c56">Comment 56</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Piotr Komoda</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-05-06 00:21:44 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(In reply to <a href="show_bug.cgi%3Fid=44.html#c50">comment #50</a>)
+<span class="quote">&gt; Hmmm... To moze wytlumacze &quot;wykonaj następujące czynności:&quot;... Gdy zmienisz na
+&gt; mala powstanie pewien ciag (cale zdanie):
+&gt; W stosunku do wszystkich przychodzacych wiadomosci, ktore spelniaja wszystkie /
+&gt; dowolne ponizsze kryteria [tu brak dwukropka] [np. temat=Kot] wykonaj
+&gt; nastepujace czynnosci... Juz wiesz o co biega? </span >
+
+Aha, widze. Tylko ze to jest tak jakby proba stworzenia ciagu na sile. Ani w
+oryginalnej, ani w niemieckiej wersji czegos takiego, hmm, nie mozna
+zaobserwowac, ciezko sie doszukac? Nazwij to jak chcesz, ale to jest jak
+ankieta: kilka pytan i kilka mozliwosci odpowiedzi, ale laczy je tylko to, ze
+wszystkie znalazly sie w jednej ankiecie(w naszym przypadku: oknie) o jednym
+tamacie (w naszym przypadku: odpowiedzialnym za filtrowanie wiadomosci). 
+
+<span class="quote">&gt; Co do checkboxow, tez bym zmienil na mala, przynajmniej 
+&gt; jakos ujednolicil wszedzie (ale to chyba porada Wojtka)?</span >
+
+Wszyskie checkboxy i radio buttony sa z duzej, wiec jest to ujednolicone :)</pre>
+    </div>
+
+    <div id="c57" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=44.html#c57">Comment 57</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-05-06 00:45:42 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text"><span class="quote">&gt; Ja to wszystko pozmienialem na JID. Logika jest tu dosc prosta, Jabber za jakis
+&gt; czas stanie sie standardem IM</span >
+
+Logika jest prosta: jeśli coś jest screenname'm, to nie jest JIDem. Jeśli by tam
+było pole &quot;Trabant model&quot; to też byś zmienił na &quot;model Ferrari&quot;? :)
+
+A co do stania się standardem przez Jabbera (czy raczej przyszłe XMPP) - to
+chcemy by tak było, ale żadnych gwarancji nie ma.
+
+</pre>
+    </div>
+
+    <div id="c58" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=44.html#c58">Comment 58</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Piotr Komoda</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-05-06 00:50:36 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(In reply to <a href="show_bug.cgi%3Fid=44.html#c57">comment #57</a>)
+<span class="quote">&gt; Logika jest prosta: jeśli coś jest screenname'm, to nie jest JIDem. Jeśli by tam
+&gt; było pole &quot;Trabant model&quot; to też byś zmienił na &quot;model Ferrari&quot;? :)</span >
+
+Wiem, ze to idiotyczne, wiec nie bede polemizowal. Proponujesz zmiane na
+Identyfikator, Nazwa ekranu czy cos innego?</pre>
+    </div>
+
+    <div id="c59" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=44.html#c59">Comment 59</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Piotr Komoda</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-05-06 03:16:35 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Created <span class="bz_obsolete"><a href="attachment.cgi%3Fid=37" name="attach_37" title="poprawki Marka">attachment 37</a> <a href="attachment.cgi%3Fid=37&amp;action=edit.html" title="poprawki Marka">[details]</a></span>
+poprawki Marka
+
+I jeszcze kilka rzeczy:
+<span class="quote">&gt;&gt;  +pl-PL?am-smime.dtd?passwordAndSecurity.label?U?Passwords and</span >
+Security?Hasła i bezpieczeństwo
+<span class="quote">&gt;i zabezpieczanie</span >
+
+Hasla i zabezpieczanie? Brzmi conajmniej egzotycznie. Hasla i zabezpieczenia
+jeszcze ujdzie, ale jest wogole sens to zmieniac? 
+
+<span class="quote">&gt; Nie pasują mi te rozmiary, ogromny to może być ogórek</span >
+
+Tak, dla mnie to tez nie jest idealne rozwiazanie. Brzmi rownie dziwnie jak
+Extra Extra Large, ale ma ktos lepszy pomysl? 
+
+<span class="quote">&gt; Załacznika -&gt; Załączniki
+&gt;&gt;</span >
+-pl-PL?messenger.dtd?sortByAttachmentsCmd.label?U?Attachments?Otwórz
+załącznik
+<span class="quote">&gt;&gt;</span >
++pl-PL?messenger.dtd?sortByAttachmentsCmd.label?U?Attachments?Załącznika
+
+<span class="quote">&gt; To samo</span >
+
+Sortuj według -&gt; Załączniki ? Nie wydaje mi sie :&gt;
+
+<span class="quote">&gt; O ile pamiętam to te stringi sa jeszcze gdzieś wykorzystywane, nawet 
+&gt; chyba zgłaszałem bład na Bugzilli. Sprawdzić.</span >
+
+Sa wykorzystywane w &quot;Sortuj według&quot;. Najwyrazniej odniosles myslne wrazenie,
+iz zostaly one usuniete.</pre>
+    </div>
+
+    <div id="c60" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=44.html#c60">Comment 60</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Piotr Komoda</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-05-06 07:00:13 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Created <span class=""><a href="attachment.cgi%3Fid=38" name="attach_38" title="poprawki Marka">attachment 38</a> <a href="attachment.cgi%3Fid=38&amp;action=edit.html" title="poprawki Marka">[details]</a></span>
+poprawki Marka
+
+Dodalem junkMail.dtd?adaptiveInfo.label</pre>
+    </div>
+
+    <div id="c61" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=44.html#c61">Comment 61</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Wawoczny</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-05-06 10:10:55 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text"><span class="quote">&gt;&gt;&gt; pl-PL?HtmlForm.properties?IsIndexPrompt?J?This is a searchable index. Enter 
+&gt;&gt;&gt; search keywords: ?To jest indeks łoju. Wpisz hasło wyszukiwania: 
+&gt;Jakies sugestie? wyszukiwawczy/wyszukiwania?</span >
+
+Przeszukiwalny index
+
+<span class="quote">&gt;&gt; Obraz -&gt; obrazki? W nawiasach z malej?
+&gt;Ze w nawiasach z malej jeszcze moge zrozumiec, ale dlaczego obrazki?
+&gt;nagasuka.png (obrazki Portable Network Graphics)?</span >
+
+Bo w innych miejscach sa obrazki (a wszczegolnosci w FF i M), zmien wszystko na
+obrazki albo obrazy (a jak na obrazy to i w FF i M trzeba zmienic).
+
+<span class="quote">&gt;&gt; Skopiowano %s wizytówek
+&gt;Wiesz, to dosc dziwne brzmi w zestawieniu z liczbami z zakresu 2-4</span >
+
+No to Liczba skopiowanych wizytówek: %S
+
+<span class="quote">&gt;Jeden z bledow wykrytych przez Wojtka:
+&gt;&quot;Zapezpieczających? Przed czym?&quot;
+&gt;Bezpieczenstwa brzmi IMO zdecydowanie lepiej!</span >
+
+IMHO nie, a zabezpiecza przed niepowolanym dostepem do Twoich hasel. Urzadzenie
+zabezpieczajace (bezpieczenstwa) nie tylko je przechowuje ale i takze zabezpiecza.
+
+<span class="quote">&gt;To mnie poprostu skreca! Sorry, ale sa pewne granice w stosowaniu formy
+&gt;bezosobowej. Zreszta powyzsze tyczy sie takze korespondencji prywatnej od osob
+&gt;obcych (np. list od czytelnika mojej strony), raz ze dziwnie brzmi, dwa, jak dla
+&gt;mnie nazywanie osoby obcej uzytkownikiem to wiekszy brak szacunku niz zwracanie
+&gt;sie do niej per ty.  </span >
+
+A mnie skreca jak czytam ze moj najlepszy przyjaciel napisał(a), czyzby
+przeszedl operacje zmiany plci?
+Tu by trzeba cos innego wymyslec, z polotem... A moze po prostu &quot;%S, dnia %S&quot;:
+(&quot;Jan Kowalski, dnia 04-05-06:&quot;)?
+
+<span class="quote">&gt;Hasla i zabezpieczanie? Brzmi conajmniej egzotycznie. Hasla i zabezpieczenia
+&gt;jeszcze ujdzie, ale jest wogole sens to zmieniac? </span >
+
+No tak... Hasla i zabezpieczenia
+
+<span class="quote">&gt;&gt; To samo
+&gt;Sortuj według -&gt; Załączniki ? Nie wydaje mi sie :&gt;</span >
+
+Eeee... To samo tylko z koncowka ów... Chodzi o liczbe mnoga...
+
+<span class="quote">&gt;&gt; O ile pamiętam to te stringi sa jeszcze gdzieś wykorzystywane, nawet 
+&gt;&gt; chyba zgłaszałem bład na Bugzilli. Sprawdzić.
+&gt;Sa wykorzystywane w &quot;Sortuj według&quot;. Najwyrazniej odniosles myslne wrazenie,
+&gt;iz zostaly one usuniete.</span >
+
+Racja, moj blad byl zwiazany z SortBy w Historii i Bookmarkach, stringi z SortBy
+wykorzystywane byly jako naglowki kolumn...</pre>
+    </div>
+
+    <div id="c62" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=44.html#c62">Comment 62</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Piotr Komoda</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-05-06 11:07:26 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(In reply to <a href="show_bug.cgi%3Fid=44.html#c61">comment #61</a>)
+<span class="quote">&gt; Przeszukiwalny index</span >
+
+Dzieki! :)
+ 
+<span class="quote">&gt; Bo w innych miejscach sa obrazki (a wszczegolnosci w FF i M), zmien wszystko na
+&gt; obrazki albo obrazy (a jak na obrazy to i w FF i M trzeba zmienic).</span >
+
+Call me stupid, but i still don't get it
+Dlaczego laczyc obrazki/obrazy (liczba mnoga) z rodzajem pliku graficznego
+(liczba pojedyncza). To jest dla mnie poprostu nie pojete! Dlatego ze w
+tlumaczeniu M i Fx jest zle, to mamy to powielac, zeby zgodnosc zachowac?
+ 
+<span class="quote">&gt; No to Liczba skopiowanych wizytówek: %S</span >
+
+Czyli zostaje tak jak bylo :D
+ 
+<span class="quote">&gt; IMHO nie, a zabezpiecza przed niepowolanym dostepem do Twoich hasel. Urzadzenie
+&gt; zabezpieczajace (bezpieczenstwa) nie tylko je przechowuje ale i takze zabezpiecza.</span >
+
+Qrcze, argumenty powoli zaczynaja mi sie konczyc, zaraz zaczne zmyslac ;)
+Ale naprawde te zabezpieczajace mi tu nie pasuje. Roznica pomiedzy
+zabepieczajace a bezpieczenstwa jest dla mnie taka, jak pomiedzy probowac sie
+zabezpieczyc, a byc bezpiecznym. :P
+
+<span class="quote">&gt; A mnie skreca jak czytam ze moj najlepszy przyjaciel napisał(a), czyzby
+&gt; przeszedl operacje zmiany plci?</span >
+
+Juz trzeba sie z tym pogodzic, ze angielski jest jezykiem bezplciowym, a polski
+przeciwnie. U nas wszystko sie odmienia, wiec skoro w pismach urzedowych jest
+Pan/ -i, Pan(i), Panu/ -i, Panu(i), to nie widze przeszkod dla zastosoania
+podobnej praktyki w tlumaczeniu Tb. Zawsze lepsze to niz &quot;Użytkownik Marta
+napisał&quot;, bo to juz jawna dyskryminacja.
+ 
+<span class="quote">&gt; Tu by trzeba cos innego wymyslec, z polotem...</span >
+Ano, przydalo by sie, ale jakos nie jestem w stanie sobie tego wyobrazic...
+zapewne wyszlo by jakies niepowazne dziwadlo, poprostu trudno o rozsadna
+alternatywe. 
+
+Nie wiem skad, ale przypomnialo mi sie &quot;rozkmin ziomka&quot;. Zupelnie nie na temat,
+odnosze jednak dziwne wrazenie, ze proba stworzenia czegos &quot;z polotem&quot; skonczyla
+by sie podobnie. %S napisał (-a): jest poważne, z szacunkiem i poszanowaniem dla
+płci pięknej. Trudno o cos lepszego, lub chocby rownie dobrego. 
+
+<span class="quote">&gt; No tak... Hasla i zabezpieczenia</span >
+
+Niech ci bedzie, zmienione :) 
+
+<span class="quote">&gt; Eeee... To samo tylko z koncowka ów... Chodzi o liczbe mnoga...</span >
+
+Zrobione :)</pre>
+    </div>
+
+    <div id="c63" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=44.html#c63">Comment 63</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Wawoczny</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-05-06 11:12:59 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text"><span class="quote">&gt; Dlaczego laczyc obrazki/obrazy (liczba mnoga) z rodzajem pliku graficznego
+&gt; (liczba pojedyncza). To jest dla mnie poprostu nie pojete! Dlatego ze w
+&gt; tlumaczeniu M i Fx jest zle, to mamy to powielac, zeby zgodnosc zachowac?</span >
+
+Nie chodzi mi o liczbe mnoga a o zdrobnienie, obraz, obrazek...
+W M i FF jest obrazek/obrazki. Zmieniasz na obraz i obrazy to trzeba by i
+zmienic w M FF ale czy to ma sens, nie lepiej po prostu zostawic w zdrobnieniu?
+
+<span class="quote">&gt; Czyli zostaje tak jak bylo :D</span >
+
+Bylo z myslnikiem ;)
+
+<span class="quote">&gt; by sie podobnie. %S napisał (-a): jest poważne, z szacunkiem i poszanowaniem dla
+&gt; płci pięknej. Trudno o cos lepszego, lub chocby rownie dobrego. </span >
+
+Czy w takim razie musi tam byc ten myslnik?</pre>
+    </div>
+
+    <div id="c64" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=44.html#c64">Comment 64</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Piotr Komoda</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-05-06 11:31:16 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(In reply to <a href="show_bug.cgi%3Fid=44.html#c63">comment #63</a>)
+<span class="quote">&gt; Nie chodzi mi o liczbe mnoga a o zdrobnienie, obraz, obrazek...
+&gt; W M i FF jest obrazek/obrazki. Zmieniasz na obraz i obrazy to trzeba by i
+&gt; zmienic w M FF ale czy to ma sens, nie lepiej po prostu zostawic w zdrobnieniu?</span >
+
+Noo, trzeba bylo tak odrazu! :D
+Juz zmieniam!
+ 
+<span class="quote">&gt; &gt; Czyli zostaje tak jak bylo :D
+&gt; Bylo z myslnikiem ;)</span >
+
+Oj, juz nie badzmy tacy drobiazgowi ;) :)
+Ale faktycznie ten dwukropek tam lepiej pasuje...
+
+<span class="quote">&gt; Czy w takim razie musi tam byc ten myslnik?</span >
+
+Nie no, wiesz, ty napisales bez myslnika i zaraz potem dodales, iz masz wrazenie
+jakby twoj przyjaciel zmienil plec. Nie mam zamiaru tu zadnych negatywnych
+odczuc wywolywac LOL
+
+A tak na powaznie, nie, nie musi.</pre>
+    </div>
+
+    <div id="c65" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=44.html#c65">Comment 65</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Piotr Komoda</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-05-06 12:00:26 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Created <span class=""><a href="attachment.cgi%3Fid=40" name="attach_40" title="poprawki Marka 2">attachment 40</a> <a href="attachment.cgi%3Fid=40&amp;action=edit.html" title="poprawki Marka 2">[details]</a></span>
+poprawki Marka 2
+
+Pierwsza roznica moja, reszta zmieniona po krotkiej konwersacji z Markiem :)</pre>
+    </div>
+
+    <div id="c66" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=44.html#c66">Comment 66</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-05-06 12:03:08 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text"><span class="quote">&gt; IMHO nie, a zabezpiecza przed niepowolanym dostepem do Twoich hasel. Urzadzenie
+&gt; zabezpieczajace (bezpieczenstwa) nie tylko je przechowuje ale i takze zabezpiecza.</span >
+
+Marku. Przyznam ci, ze bede tego bronil jak niepodlgelosci.
+Masz racje, ze URZADZENIA moga byc zabezpieczajace, ale juz dowod (czyli
+certyfikat) bezpieczenstwa. 
+Jestem laikiem w kwestii jezyka polskiego, wiec moge sie mylic w nazwach, ale
+uzywam go jako mojego podstawowego jezyka, a pochodze z humanistycznego mocno
+domu - dwojga dziennikarzy, i mam jako takie wyczucie jezyka.
+
+Dlatego moge nie umiec Ci wytlumaczyc jaka przydawka z ktorym przyimkiem ten
+teges, ale bede dowodzil, ze bezpieczenstwa pasuje znacznie lepiej od
+zabezpieczeajacy.
+
+W aplikacji musimy zdecydowac sie na jedna forme - nie mozemy nia rotowac, zatem
+albo bezpieczenstwa albo zabezpieczajacy. I o ile urzadzenei moze imho byc jedno
+i drugie, to juz takie pojecia jak alarm, dowod, stan, dziennik, tryb MUSZA byc
+bezpieczenstwa, bo zabezpieczeajace byc po prostu nie moga... Dlatego optuje za
+bezpieczenstwem, a nie zabezpieczaniem.
+
+No, poza tym Pitreck ma 100% racji, ze zabezpieczac to tryb niedokonany, wcale
+nie mam pewnosci czy udanie, natomiast bezpieczenstwa nie podnosi tematu
+udany/nie udany. On po prostu JEST bezpieczny.</pre>
+    </div>
+
+    <div id="c67" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=44.html#c67">Comment 67</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Piotr Komoda</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-05-12 05:49:16 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Created <span class=""><a href="attachment.cgi%3Fid=41" name="attach_41" title="poprawki4">attachment 41</a> <a href="attachment.cgi%3Fid=41&amp;action=edit.html" title="poprawki4">[details]</a></span>
+poprawki4
+
+Szczegolowy wykaz zmian z wydan RC3 i RC4.</pre>
+    </div>
+
+    <div id="c68" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=44.html#c68">Comment 68</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-05-22 01:52:13 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Tb 0.6 zostalo wydane.
+Z mojej strony QA+.</pre>
+    </div>
+
+    <div id="c69" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=44.html#c69">Comment 69</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Piotr Komoda</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-06-20 00:32:47 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Dobra, to juz chyba mozna zamknac :)</pre>
+    </div>
+
+    <div id="c70" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=44.html#c70">Comment 70</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-06-20 01:29:45 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">A no mozna.</pre>
+    </div>
+
+    <div id="c71" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=44.html#c71">Comment 71</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-03-18 17:21:22 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Masówka. Z &quot;Thunderbird pl-PL&quot; do Lokalizacje/Thunderbird. Sorry for bugspam ;)</pre>
+    </div>
+
+
+  
+
+</td>
+<td>
+</td>
+</tr></table>
+  </div>
+
+    <hr><div id="add_comment" class="bz_section_additional_comments">
+      <table>
+        <tr>
+          <td>
+            <fieldset>
+              <legend>Note</legend>
+              You need to
+              <a href="show_bug.cgi%3Fid=44&amp;GoAheadAndLogIn=1.html">log in</a>
+              before you can comment on or make changes to this bug.
+            </fieldset>
+          </td>
+        </tr> 
+      </table>
+  </div>        
+
+</form>
+
+<hr>
+<ul class="related_actions">
+    <li><a href="show_bug.cgi%3Fformat=multiple&amp;id=44.html">Format For Printing</a></li>
+    <li>&nbsp;-&nbsp;<a href="show_bug.cgi%3Fctype=xml&amp;id=44">XML</a></li>
+    <li>&nbsp;-&nbsp;<a href="enter_bug.cgi%3Fcloned_bug_id=44.html">Clone This Bug</a></li>
+    
+    <li>&nbsp;-&nbsp;<a href="show_bug.cgi%3Fid=44.html#">Top of page </a></li>
+    </ul>
+
+<br>
+</div>
+
+    <div id="footer">
+      <div class="intro"></div>
+<ul id="useful-links">
+  <li id="links-actions"><ul class="links">
+  <li><a href="index.html">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi.html">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi.html">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi.html">Search</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="http://bugs.aviary.pl/buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input type="hidden" id="no_redirect_bottom" name="no_redirect" value="0">
+    <script type="text/javascript">
+      if (history && history.replaceState) {
+        var no_redirect = document.getElementById("no_redirect_bottom");
+        no_redirect.value = 1;
+      }
+    </script>
+    <input class="txt" type="text" id="quicksearch_bottom" name="quicksearch" 
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search" 
+           id="find_bottom"></form>
+  <a href="page.cgi%3Fid=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="report.cgi.html">Reports</a></li>
+
+  <li>
+      <span class="separator">| </span>
+        <a href="request.cgi.html">Requests</a></li>
+
+
+  <li>
+        <span class="separator">| </span>
+        <a href="https://bugzilla.readthedocs.org/en/5.0/using/understanding.html" target="_blank">Help</a>
+      </li>
+    
+      <li id="new_account_container_bottom">
+        <span class="separator">| </span>
+        <a href="createaccount.cgi.html">New&nbsp;Account</a>
+      </li>
+
+    <li id="mini_login_container_bottom">
+  <span class="separator">| </span>
+  <a id="login_link_bottom" href="show_bug.cgi%3Fid=44&amp;GoAheadAndLogIn=1.html"
+     onclick="return show_mini_login_form('_bottom')">Log In</a>
+
+  <form action="show_bug.cgi%3Fid=44.html" method="POST"
+        class="mini_login bz_default_hidden"
+        id="mini_login_bottom">
+    <input id="Bugzilla_login_bottom" required
+           name="Bugzilla_login" class="bz_login"
+        type="email" placeholder="Email Address">
+    <input class="bz_password" name="Bugzilla_password" type="password"
+           id="Bugzilla_password_bottom" required
+           placeholder="Password">
+    <input type="hidden" name="Bugzilla_login_token"
+           value="1469819817-wCcLcZn6cPc5WDuC7MeyqsxAOO_ZuoR0lZucDXiLqI0">
+    <input type="submit" name="GoAheadAndLogIn" value="Log in"
+            id="log_in_bottom">
+    <a href="show_bug.cgi%3Fid=44.html#" onclick="return hide_mini_login_form('_bottom')">[x]</a>
+  </form>
+</li>
+
+
+  <li id="forgot_container_bottom">
+    <span class="separator">| </span>
+    <a id="forgot_link_bottom" href="show_bug.cgi%3Fid=44&amp;GoAheadAndLogIn=1.html#forgot"
+       onclick="return show_forgot_form('_bottom')">Forgot Password</a>
+    <form action="http://bugs.aviary.pl/token.cgi" method="post" id="forgot_form_bottom"
+          class="mini_forgot bz_default_hidden">
+      <label for="login_bottom">Login:</label>
+      <input name="loginname" size="20" id="login_bottom" required
+          type="email" placeholder="Your Email Address">
+      <input id="forgot_button_bottom" value="Reset Password" type="submit">
+      <input type="hidden" name="a" value="reqpw">
+      <input type="hidden" id="token_bottom" name="token"
+             value="1469819817-Ks0emxRTRQWEfK4lLaS_Avq5J3BuyIyLBS20BeUe-Hc">
+      <a href="show_bug.cgi%3Fid=44.html#" onclick="return hide_forgot_form('_bottom')">[x]</a>
+    </form>
+  </li>
+</ul>
+  </li>
+
+  
+
+
+
+
+  
+</ul>
+
+      <div class="outro"></div>
+    </div>
+
+  </body>
+</html>

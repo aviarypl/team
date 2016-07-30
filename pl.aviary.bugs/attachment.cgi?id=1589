@@ -1,0 +1,51 @@
+diff -r ab7a05048f84 pl/default/account/prefs/permissions.html.tmpl
+--- a/pl/default/account/prefs/permissions.html.tmpl	Sat Jun 19 22:57:03 2010 +0200
++++ b/pl/default/account/prefs/permissions.html.tmpl	Fri Jul 09 18:59:06 2010 +0200
+@@ -54,7 +54,13 @@
+           [% IF products && products.size %]
+             <br>
+             <p>
+-              Masz także lokalne uprawnienia „[% privs FILTER html %]”
++			[% privsdesc = {
++               "editcomponents" => "Edycja komponentów",
++               "canconfirm"   => "Potwierdzanie $terms.bledow",
++               "editbugs"   => "Edycja $terms.bledow",
++               } 
++            %]
++              Masz także lokalne uprawnienia „[% privsdesc.$privs FILTER html %]”
+               dla następujących produktów:
+             </p>
+             <p>
+diff -r ab7a05048f84 pl/default/admin/products/edit.html.tmpl
+--- a/pl/default/admin/products/edit.html.tmpl	Sat Jun 19 22:57:03 2010 +0200
++++ b/pl/default/admin/products/edit.html.tmpl	Fri Jul 09 18:59:06 2010 +0200
+@@ -115,11 +115,11 @@
+             [% IF g.group.isactive %]
+               [% group_control.${g.membercontrol} FILTER html %]/
+               [% group_control.${g.othercontrol} FILTER html %]
+-              [% IF g.entry %], ENTRY[% END %]
+-              [% IF g.canedit %], CANEDIT[% END %]
+-              [% IF g.editcomponents %], editcomponents[% END %]
+-              [% IF g.canconfirm %], canconfirm[% END %]
+-              [% IF g.editbugs %], editbugs[% END %]
++              [% IF g.entry %], Zgłaszanie [% terms.bledow %][% END %]
++              [% IF g.canedit %], Edycja produktów[% END %]
++              [% IF g.editcomponents %], Edycja komponentów[% END %]
++              [% IF g.canconfirm %], Potwierdzanie [% terms.bledow %][% END %]
++              [% IF g.editbugs %], Edycja [% terms.bledow %][% END %]
+             [% ELSE %]
+               WYŁĄCZONO
+             [% END %]
+diff -r ab7a05048f84 pl/default/pages/fields.html.tmpl
+--- a/pl/default/pages/fields.html.tmpl	Sat Jun 19 22:57:03 2010 +0200
++++ b/pl/default/pages/fields.html.tmpl	Fri Jul 09 18:59:06 2010 +0200
+@@ -62,7 +62,7 @@
+         <dd>
+           Ten [% terms.blad %] został niedawno dodany do bazy [% terms.bledow %]. 
+           Nikt nie potwierdził, czy dany [% terms.blad %] występuje. Użytkownicy,
+-          którzy mają uprawnienie "canconfirm", mogą potwierdzić [% terms.blad %], 
++          którzy mają uprawnienie „Potwierdzanie [% terms.bledow %]”, mogą potwierdzić [% terms.blad %], 
+           zmieniając jego status na [% get_status("NEW") FILTER html %].
+           Ewentualnie może on być bezpośrednio rozwiązany i oznaczony jako
+           <b>[% get_status("RESOLVED") FILTER html %]</b>.
+

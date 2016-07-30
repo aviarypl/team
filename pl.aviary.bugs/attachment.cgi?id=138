@@ -1,0 +1,153 @@
+=== template/pl/default/attachment/diff-header.html.tmpl
+==================================================================
+--- template/pl/default/attachment/diff-header.html.tmpl   (/2.18/pl-arch)   (revision 17)
++++ template/pl/default/attachment/diff-header.html.tmpl   (/2.18/pl-trunk)   (revision 17)
+@@ -27,7 +27,7 @@
+   [% IF attachid %]
+ Załącznik #[% attachid %] dla [% terms.bledu %] #[% bugid %]
+   [% ELSE %]
+-Różnica pomiędzy #[% oldid %] oraz #[% newid %] dla #[% terms.bledu %] #[% bugid %]
++Różnica pomiędzy #[% oldid %] oraz #[% newid %] dla [% terms.bledu %] #[% bugid %]
+   [% END %]
+ [% END %]
+ 
+=== template/pl/default/attachment/choose.html.tmpl
+==================================================================
+--- template/pl/default/attachment/choose.html.tmpl   (/2.18/pl-arch)   (revision 17)
++++ template/pl/default/attachment/choose.html.tmpl   (/2.18/pl-trunk)   (revision 17)
+@@ -22,21 +22,21 @@
+ [% PROCESS global/variables.none.tmpl %]
+ 
+ [% PROCESS global/header.html.tmpl
+-   title = "Locate attachment"
++   title = "Lokalizacja załącznika"
+  %]
+ 
+ <form method="get" action="attachment.cgi">
+-  <p>Access an attachment by entering its ID into the form below:</p>
+-  <p>Attachment ID: <input name="id" size="6">
+-  <button name="action" value="edit">&nbsp;Edit&nbsp;</button>
+-  <button name="action" value="view">View</button>
++  <p>Pracuj z załącznikiem wpisując jego identyfikator w poniższym formularzu:</p>
++  <p>Załącznik #: <input name="id" size="6">
++  <button name="action" value="edit">&nbsp;Edytuj&nbsp;</button>
++  <button name="action" value="view">Wyświetl</button>
+   </p>
+ </form>
+ 
+ <form method="get" action="show_bug.cgi">
+-  <p>Or, access it from the list of attachments in its associated [% terms.bug %] report:</p>
+-  <p>[% terms.Bug %] ID: <input name="id" size="6">
+-  <input type="submit" name="action" value="View">
++  <p>Lub poprzez dostęp do załączników z raportu [% terms.bledu %]:</p>
++  <p>[% terms.Blad %] #: <input name="id" size="6">
++  <input type="submit" name="action" value="Wyświetl">
+   </p>
+ </form>
+ 
+=== template/pl/default/account/prefs/saved-searches.html.tmpl
+==================================================================
+--- template/pl/default/account/prefs/saved-searches.html.tmpl   (/2.18/pl-arch)   (revision 17)
++++ template/pl/default/account/prefs/saved-searches.html.tmpl   (/2.18/pl-trunk)   (revision 17)
+@@ -19,33 +19,32 @@
+   # Contributor(s): Gervase Markham <gerv@gerv.net>
+   #%]
+ 
+-<p>Your saved searches are as follows:</p>
++<p>Twoje zapisane zapytania:</p>
+ 
+ <blockquote>
+   <table border="1" cellpadding="3">  
+     <tr>
+       <th>
+-        Search
++        Zapytanie
+       </th>
+       <th>
+-        Run
++        Wyszukaj
+       </th>
+       <th>
+-        Edit
++        Edytuj
+       </th>
+       <th>
+-        Forget
++        Zapomnij
+       </th>
+       <th>
+-        Show in
+-        Footer
++        Pokaż w stopce
+       </th>
+     </tr>
+     <tr>
+-      <td>My Bugs</td>
++      <td>Moje błędy</td>
+       <td>
+         [% filtered_username = user.login FILTER url_quote %]
+-        <a href="[% Param('mybugstemplate').replace('%userid%', filtered_username) %]">Run</a>
++        <a href="[% Param('mybugstemplate').replace('%userid%', filtered_username) %]">Wyszukaj</a>
+       </td>
+       <td>
+         &nbsp;
+@@ -64,14 +63,14 @@
+       <tr>
+         <td>[% q.name FILTER html %]</td>
+         <td>
+-          <a href="buglist.cgi?[% q.query FILTER html %]">Run</a>
++          <a href="buglist.cgi?[% q.query FILTER html %]">Wyszukaj</a>
+         </td>
+         <td>
+-          <a href="query.cgi?[% q.query FILTER html %]">Edit</a>
++          <a href="query.cgi?[% q.query FILTER html %]">Edytuj</a>
+         </td>
+         <td>
+           <a href="buglist.cgi?cmdtype=dorem&amp;remaction=forget&amp;namedcmd=
+-                   [% q.name FILTER html %]">Forget</a>
++                   [% q.name FILTER html %]">Zapomnij</a>
+         </td>
+         <td align="center">
+           <input type="checkbox" 
+=== template/pl/default/account/auth/login.html.tmpl
+==================================================================
+--- template/pl/default/account/auth/login.html.tmpl   (/2.18/pl-arch)   (revision 17)
++++ template/pl/default/account/auth/login.html.tmpl   (/2.18/pl-trunk)   (revision 17)
+@@ -90,8 +90,8 @@
+   <input type="submit" name="GoAheadAndLogIn" value="Zaloguj">
+   
+   <p>
+-    (Note: you should make sure cookies are enabled for this site. 
+-    Otherwise, you will frequently be required to re-login.)
++    (Uwaga: Upewnij się że "ciasteczka" są włączone dla tej witryny.
++    W przeciwnym wypadku często będziesz proszony o ponowne zalogowanie się.)
+   </p>
+ </form>
+ 
+=== template/pl/default/global/useful-links.html.tmpl
+==================================================================
+--- template/pl/default/global/useful-links.html.tmpl   (/2.18/pl-arch)   (revision 17)
++++ template/pl/default/global/useful-links.html.tmpl   (/2.18/pl-trunk)   (revision 17)
+@@ -30,7 +30,7 @@
+   <div id="links-actions">
+     <div class="label">Akcje:</div>
+     <div class="links">
+-        <a href="enter_bug.cgi">zgłoś błąd</a> | 
++        <a href="enter_bug.cgi">Zgłoś błąd</a> | 
+         <a href="query.cgi">Szukaj</a> |
+         
+         <input class="btn" type="submit" value="Znajdź"> [% terms.blad %] # 
+=== template/pl/default/search/search-report-select.html.tmpl
+==================================================================
+--- template/pl/default/search/search-report-select.html.tmpl   (/2.18/pl-arch)   (revision 17)
++++ template/pl/default/search/search-report-select.html.tmpl   (/2.18/pl-trunk)   (revision 17)
+@@ -33,7 +33,7 @@
+                    "reporter", "qa_contact", "votes" ] %]
+ 
+   <select name="[% name FILTER html %]">
+-    <option value="">&lt;none&gt;</option>
++    <option value="">&lt;brak&gt;</option>
+     
+     [% FOREACH field = rep_fields %]
+       [% NEXT IF field == "target_milestone" AND !Param('usetargetmilestone') %]
+

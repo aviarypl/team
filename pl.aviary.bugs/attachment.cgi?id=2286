@@ -1,0 +1,100 @@
+diff --git a/browser/chrome/browser/aboutHealthReport.dtd b/browser/chrome/browser/aboutHealthReport.dtd
+--- a/browser/chrome/browser/aboutHealthReport.dtd
++++ b/browser/chrome/browser/aboutHealthReport.dtd
+@@ -1,31 +1,6 @@
+ <!-- This Source Code Form is subject to the terms of the Mozilla Public
+    - License, v. 2.0. If a copy of the MPL was not distributed with this
+    - file, You can obtain one at http://mozilla.org/MPL/2.0/. -->
+ 
+-<!-- metrics.locale-direction instead of the usual local.dir entity, so RTL can skip translating page. -->
+-<!ENTITY abouthealth.locale-direction "ltr">
+-
+ <!-- LOCALIZATION NOTE (abouthealth.pagetitle): Firefox Health Report is a proper noun in en-US, please keep this in mind. -->
+ <!ENTITY abouthealth.pagetitle "&brandShortName; Health Report">
+-<!ENTITY abouthealth.header "&brandFullName; Health Report">
+-
+-<!ENTITY abouthealth.intro.title "Czym jest &brandShortName; Health Report?">
+-
+-<!ENTITY abouthealth.intro-enabled "&brandFullName; zbiera pewne dane na temat Twojego komputera i jego wykorzystania, aby poprawić jakość korzystania z przeglądarki.">
+-<!ENTITY abouthealth.intro-disabled "Nie przesyłasz obecnie danych do organizacji &vendorShortName;. Możesz nam pomóc w ulepszaniu programu &brandShortName; klikając przycisk „&abouthealth.optin;”.">
+-
+-<!ENTITY abouthealth.optin "Pomóż ulepszać program &brandShortName;">
+-<!ENTITY abouthealth.optout "Wyłącz raportowanie">
+-
+-<!ENTITY abouthealth.optout.confirmationPrompt.title "Przestać przesyłać dane?">
+-<!ENTITY abouthealth.optout.confirmationPrompt.message "Czy na pewno chcesz zrezygnować z przesyłania danych i usunąć wszystkie swoje anonimowe dane produktu przechowywane na serwerach organizacji &vendorShortName;?">
+-
+-<!ENTITY abouthealth.show-raw-data "Wyświetl szczegóły">
+-<!ENTITY abouthealth.hide-raw-data "Ukryj szczegóły">
+-
+-<!ENTITY abouthealth.show-report "Wyświetl raport programu &brandShortName;">
+-
+-<!ENTITY abouthealth.details.description-start "Oto dane, które &brandFullName; przesyła, aby funkcja &brandShortName; Health Report mogła działać.   Możesz ">
+-<!ENTITY abouthealth.details-link "dowiedzieć się więcej">
+-<!ENTITY abouthealth.details.description-end " na temat zbieranych i przesyłanych danych.">
+-<!ENTITY abouthealth.no-data-available "Nie ma poprzednich przesłań do wyświetlenia. Spróbuj ponownie później.">
+diff --git a/dom/chrome/dom/dom.properties b/dom/chrome/dom/dom.properties
+--- a/dom/chrome/dom/dom.properties
++++ b/dom/chrome/dom/dom.properties
+@@ -60,16 +60,18 @@
+ RemoveAttributeNodeWarning=Metoda removeAttributeNode() jest przestarzała. Należy korzystać z removeAttribute().
+ CreateAttributeWarning=Metoda document.createAttribute() jest przestarzała. Należy korzystać z element.setAttribute().
+ CreateAttributeNSWarning=Metoda document.createAttributeNS() jest przestarzała. Należy korzystać z element.setAttributeNS().
+ SpecifiedWarning=Własność specified atrybutów jest przestarzała. Zawsze zwraca true.
+ OwnerElementWarning=Własność ownerElement atrybutów jest przestarzała.
+ NodeValueWarning=Własność nodeValue atrybutów jest przestarzała. Należy korzystać z value.
+ TextContentWarning=Własność textContent atrybutów jest przestarzała. Należy korzystać z value.
+ EnablePrivilegeWarning=Metoda enablePrivilege jest przestarzała. Należy używać kodu działającego z uprawnieniami systemowymi (np. rozszerzenia).
++PositionWarning=Własność position zdarzeń postępu XMLHttpRequest jest przestarzała.
++TotalSizeWarning=Własność totalSize zdarzeń postępu XMLHttpRequest jest przestarzała.
+ nsIJSONDecodeDeprecatedWarning=Metoda nsIJSON.decode jest przestarzała. Należy korzystać z JSON.parse.
+ nsIJSONEncodeDeprecatedWarning=Metoda nsIJSON.encode jest przestarzała. Należy korzystać z JSON.stringify.
+ nsIDOMWindowInternalWarning=Interfejs nsIDOMWindowInternal jest przestarzały. Należy korzystać z nsIDOMWindow.
+ InputEncodingWarning=Własność inputEncoding jest przestarzała.
+ # LOCALIZATION NOTE: Do not translate "MozBeforePaint" and "mozRequestAnimationFrame"
+ MozBeforePaintWarning=Zdarzenia MozBeforePaint nie są już obsługiwane. Do mozRequestAnimationFrame musi być przekazany argument callback niebędący wartością null.
+ FullScreenDeniedBlocked=Żądanie przejścia w tryb pełnoekranowy zostało odrzucone, ponieważ użytkownik zablokował tej domenie możliwość przechodzenia w ten tryb.
+ FullScreenDeniedDisabled=Żądanie przejścia w tryb pełnoekranowy zostało odrzucone, ponieważ API trybu pełnoekranowego zostało wyłączone w ustawieniach użytkownika.
+@@ -80,16 +82,17 @@
+ FullScreenDeniedNotInDocument=Żądanie przejścia w tryb pełnoekranowy zostało odrzucone, ponieważ element żądający nie znajduje się już w swoim dokumencie.
+ FullScreenDeniedMovedDocument=Żądanie przejścia w tryb pełnoekranowy zostało odrzucone, ponieważ element żądający został przeniesiony między dokumentami.
+ FullScreenDeniedLostWindow=Żądanie przejścia w tryb pełnoekranowy zostało odrzucone, ponieważ okno już nie istnieje.
+ FullScreenDeniedSubDocFullScreen=Żądanie przejścia w tryb pełnoekranowy zostało odrzucone, ponieważ poddokument dokumentu żądającego jest już w trybie pełnoekranowym.
+ FullScreenDeniedNotDescendant=Żądanie przejścia w tryb pełnoekranowy zostało odrzucone, ponieważ żądający element nie jest elementem potomnym elementu aktualnie będącego w trybie pełnoekranowym.
+ FullScreenDeniedNotFocusedTab=Żądanie przejścia w tryb pełnoekranowy zostało odrzucone, ponieważ żądający element nie znajduje się w karcie mającej aktualnie fokus.
+ RemovedFullScreenElement=Tryb pełnoekranowy został wyłączony, ponieważ element pełnoekranowy został usunięty z dokumentu.
+ FocusedWindowedPluginWhileFullScreen=Tryb pełnoekranowy został wyłączony, ponieważ wtyczka działająca w trybie okna dostała fokus.
++HTMLMultipartXHRWarning=Przetwarzanie HTML w XMLHttpRequest nie jest obsługiwane dla wieloczęściowych odpowiedzi.
+ HTMLSyncXHRWarning=Przetwarzanie HTML w XMLHttpRequest nie jest obsługiwane w trybie synchronicznym.
+ InvalidRedirectChannelWarning=Nie udało się przekierować do %S, ponieważ kanał nie implementuje nsIWritablePropertyBag2.
+ ReportOnlyCSPIgnored=Polityka CSP typu report-only zostanie zignorowana, ponieważ zastosowane są polityki CSP innego typu niż report-only.
+ ResponseTypeSyncXHRWarning=Atrybut responseType obiektu XMLHttpRequest nie jest już obsługiwany w trybie synchronicznym w kontekście okna.
+ WithCredentialsSyncXHRWarning=Atrybut withCredentials obiektu XMLHttpRequest nie jest już obsługiwany w trybie synchronicznym w kontekście okna.
+ TimeoutSyncXHRWarning=Atrybut timeout obiektu XMLHttpRequest nie jest obsługiwany w trybie synchronicznym w kontekście okna.
+ JSONCharsetWarning=Nastąpiła próba zadeklarowania innego kodowania niż UTF-8 dla treści JSON odbieranej przez XMLHttpRequest. Przy dekodowaniu JSON obsługiwane jest tylko kodowanie UTF-8.
+ # LOCALIZATION NOTE: Do not translate decodeAudioData.
+diff --git a/toolkit/chrome/global/aboutTelemetry.properties b/toolkit/chrome/global/aboutTelemetry.properties
+--- a/toolkit/chrome/global/aboutTelemetry.properties
++++ b/toolkit/chrome/global/aboutTelemetry.properties
+@@ -17,16 +17,20 @@
+ 
+ slowSqlStatement = Polecenie
+ 
+ # Note to translators:
+ # - The %1$S will be replaced with the number of the hang
+ # - The %2$S will be replaced with the duration of the hang
+ chrome-hangs-title = %1$S. raport zawieszenia (%2$S sekund)
+ 
++# Note to translators:
++# - The %1$S will be replaced with the number of the late write
++late-writes-title = Późne zapisywania: #%1$S
++
+ stackTitle = Stos:
+ 
+ memoryMapTitle = Mapa pamięci:
+ 
+ errorFetchingSymbols = Podczas pobierania symboli wystąpił błąd. Proszę sprawdzić stan połączenia z Internetem i spróbować ponownie.
+ 
+ histogramSamples = próbki
+ 
+

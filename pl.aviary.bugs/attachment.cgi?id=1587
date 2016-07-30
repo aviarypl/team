@@ -1,0 +1,71 @@
+[%# 3.6PL@aviary.pl %]
+[%# The contents of this file are subject to the Mozilla Public
+  # License Version 1.1 (the "License"); you may not use this file
+  # except in compliance with the License. You may obtain a copy of
+  # the License at http://www.mozilla.org/MPL/
+  #
+  # Software distributed under the License is distributed on an "AS
+  # IS" basis, WITHOUT WARRANTY OF ANY KIND, either express or
+  # implied. See the License for the specific language governing
+  # rights and limitations under the License.
+  #
+  # The Original Code is the Bugzilla Bug Tracking System.
+  #
+  # The Initial Developer of the Original Code is Marc Schumann.
+  # Portions created by Marc Schumann are Copyright (c) 2008 Marc Schumann.
+  # All rights reserved.
+  #
+  # Contributor(s): Marc Schumann <wurblzap@gmail.com>
+  #
+  # Translated by Zespół Aviary.pl <team@aviary.pl>
+  #%]
+
+[%# NOTE: Everywhere you use this template, you must call 
+  # "FILTER remove('^X')" on the result. This is unfortunately the only way
+  # to preserve leading whitespace in comments.
+  #%]
+
+[%# INTERFACE:
+  #   comment: A Bugzilla::Comment object.
+  #   is_bugmail: boolean; True if this comment is going into a plain-text
+  #               bugmail.
+  #%]
+
+[%# Please don't use field-descs here. It can slow down Bugzilla. %]
+[% PROCESS 'global/variables.none.tmpl' %]
+
+[% SET comment_body = comment.body %]
+
+[% IF comment.type == constants.CMT_DUPE_OF %]
+X[% comment_body %]
+
+*** Ten [% terms.blad %] został oznaczony jako duplikat [% terms.blad %] [%+ comment.extra_data %] ***
+[% ELSIF comment.type == constants.CMT_HAS_DUPE %]
+*** [% terms.Blad %] [%+ comment.extra_data %] został oznaczony jako duplikat tego [% terms.bledu %]. ***
+[% ELSIF comment.type == constants.CMT_POPULAR_VOTES %]
+*** Ten [% terms.blad %] został potwierdzony przez głosowanie. ***
+[% ELSIF comment.type == constants.CMT_MOVED_TO %]
+X[% comment_body %]
+
+[%+ terms.Blad %] został przeniesiony do [% Param("move-to-url") %].
+Jeśli przenoszenie zakończy się prawidłowo, [% comment.extra_data %] otrzyma powiadomienie zawierające
+numer nowego [% terms.bledu %] w innej bazie danych.
+Jeśli wszystko zakończyło się pomyślnie, wklej odnośnik do nowego [% terms.bledu %].
+Jeśli nie, otwórz ponownie ten [% terms.blad %].
+[% ELSIF comment.type == constants.CMT_ATTACHMENT_CREATED %]
+Utworzono załącznik attachment [% comment.extra_data %]
+[% IF is_bugmail %]
+  --> [% urlbase _ "attachment.cgi?id=" _ comment.extra_data %]
+[% END %]
+[%+ comment.attachment.description %]
+
+[%+ comment.body %]
+[% ELSIF comment.type == constants.CMT_ATTACHMENT_UPDATED %]
+Komentarz do załącznika [% comment.extra_data %]
+[% IF is_bugmail %]
+  --> [% urlbase _ "attachment.cgi?id=" _ comment.extra_data %]
+[% END %]
+[%+ comment.attachment.description %]
+
+[%+ comment.body %]
+[% END %]

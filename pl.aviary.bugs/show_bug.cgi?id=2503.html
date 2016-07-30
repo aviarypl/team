@@ -1,0 +1,3185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>2503 &ndash; Przyjazny interfejs programów tłumaczonych przez Aviary.pl</title>
+
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<link href="data/assets/7aa6ea67750936a0368541421bdcd5ee.css" rel="stylesheet" type="text/css">
+
+
+
+    
+<script type="text/javascript" src="data/assets/a7c2f3a028f17a9aa60f56dc9d6e732d.js"></script>
+
+    <script type="text/javascript">
+    <!--
+        YAHOO.namespace('bugzilla');
+        YAHOO.util.Event.addListener = function (el, sType, fn, obj, overrideContext) {
+               if ( ("onpagehide" in window || YAHOO.env.ua.gecko) && sType === "unload") { sType = "pagehide"; };
+               var capture = ((sType == "focusin" || sType == "focusout") && !YAHOO.env.ua.ie) ? true : false;
+               return this._addListener(el, this._getType(sType), fn, obj, overrideContext, capture);
+         };
+        if ( "onpagehide" in window || YAHOO.env.ua.gecko) {
+            YAHOO.util.Event._simpleRemove(window, "unload", 
+                                           YAHOO.util.Event._unload);
+        }
+        
+        function unhide_language_selector() { 
+            YAHOO.util.Dom.removeClass(
+                'lang_links_container', 'bz_default_hidden'
+            ); 
+        } 
+        YAHOO.util.Event.onDOMReady(unhide_language_selector);
+
+        
+        var BUGZILLA = {
+            param: {
+                cookiepath: '\/',
+                maxusermatches: 1000
+            },
+            constant: {
+                COMMENT_COLS: 80
+            },
+            string: {
+                
+
+                attach_desc_required:
+                    "You must enter a Description for this attachment.",
+                component_required:
+                    "You must select a Component for this bug.",
+                description_required:
+                    "You must enter a Description for this bug.",
+                short_desc_required:
+                    "You must enter a Summary for this bug.",
+                version_required:
+                    "You must select a Version for this bug."
+            }
+              , api_token: ''
+        };
+
+    if (history && history.replaceState) {
+      if(!document.location.href.match(/show_bug\.cgi/)) {
+        history.replaceState( null,
+                             "2503 – Przyjazny interfejs programów tłumaczonych przez Aviary.pl",
+                             "show_bug.cgi?id=2503" );
+        document.title = "2503 – Przyjazny interfejs programów tłumaczonych przez Aviary.pl";
+      }
+      if (document.location.href.match(/show_bug\.cgi\?.*list_id=/)) {
+        var href = document.location.href;
+        href = href.replace(/[\?&]+list_id=(\d+|cookie)/, '');
+        history.replaceState(null, "2503 – Przyjazny interfejs programów tłumaczonych przez Aviary.pl", href);
+      }
+    }
+    YAHOO.util.Event.onDOMReady(function() {
+      initDirtyFieldTracking();
+
+    });
+    // -->
+    </script>
+<script type="text/javascript" src="data/assets/daf5e0fb6826e6a35280e622913f0c4a.js"></script>
+
+    
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+                       title="Bugzilla" href="search_plugin.cgi">
+    <link rel="shortcut icon" href="images/favicon.ico">
+  </head>
+
+  <body 
+        class="bugs-aviary-pl
+                 bz_bug
+                 bz_status_CONFIRMED
+                 bz_product_Wytyczne
+                 bz_component_Og&#XF3;lne
+                 bz_bug_2503 yui-skin-sam">
+
+  <div id="header"><div id="banner">
+  </div>
+
+    <div id="titles">
+      <span id="title">Bugzilla &ndash; Bug&nbsp;2503</span>
+
+        <span id="subtitle" class="subheader">Przyjazny interfejs programów tłumaczonych przez Aviary.pl</span>
+
+        <span id="information" class="header_addl_info">Last modified: 2010-03-22 11:44:12 CET</span>
+    </div>
+
+
+    <div id="common_links"><ul class="links">
+  <li><a href="index.html">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi.html">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi.html">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi.html">Search</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="http://bugs.aviary.pl/buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input type="hidden" id="no_redirect_top" name="no_redirect" value="0">
+    <script type="text/javascript">
+      if (history && history.replaceState) {
+        var no_redirect = document.getElementById("no_redirect_top");
+        no_redirect.value = 1;
+      }
+    </script>
+    <input class="txt" type="text" id="quicksearch_top" name="quicksearch" 
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search" 
+           id="find_top"></form>
+  <a href="page.cgi%3Fid=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="report.cgi.html">Reports</a></li>
+
+  <li>
+      <span class="separator">| </span>
+        <a href="request.cgi.html">Requests</a></li>
+
+
+  <li>
+        <span class="separator">| </span>
+        <a href="https://bugzilla.readthedocs.org/en/5.0/using/understanding.html" target="_blank">Help</a>
+      </li>
+    
+      <li id="new_account_container_top">
+        <span class="separator">| </span>
+        <a href="createaccount.cgi.html">New&nbsp;Account</a>
+      </li>
+
+    <li id="mini_login_container_top">
+  <span class="separator">| </span>
+  <a id="login_link_top" href="show_bug.cgi%3Fid=2503&amp;GoAheadAndLogIn=1.html"
+     onclick="return show_mini_login_form('_top')">Log In</a>
+
+  <form action="show_bug.cgi%3Fid=2503.html" method="POST"
+        class="mini_login bz_default_hidden"
+        id="mini_login_top">
+    <input id="Bugzilla_login_top" required
+           name="Bugzilla_login" class="bz_login"
+        type="email" placeholder="Email Address">
+    <input class="bz_password" name="Bugzilla_password" type="password"
+           id="Bugzilla_password_top" required
+           placeholder="Password">
+    <input type="hidden" name="Bugzilla_login_token"
+           value="1469821562-0NvJv5ZY2QmK30arHjPp8o7U6kuyosjea3WbTYJKBcI">
+    <input type="submit" name="GoAheadAndLogIn" value="Log in"
+            id="log_in_top">
+    <a href="show_bug.cgi%3Fid=2503.html#" onclick="return hide_mini_login_form('_top')">[x]</a>
+  </form>
+</li>
+
+
+  <li id="forgot_container_top">
+    <span class="separator">| </span>
+    <a id="forgot_link_top" href="show_bug.cgi%3Fid=2503&amp;GoAheadAndLogIn=1.html#forgot"
+       onclick="return show_forgot_form('_top')">Forgot Password</a>
+    <form action="http://bugs.aviary.pl/token.cgi" method="post" id="forgot_form_top"
+          class="mini_forgot bz_default_hidden">
+      <label for="login_top">Login:</label>
+      <input name="loginname" size="20" id="login_top" required
+          type="email" placeholder="Your Email Address">
+      <input id="forgot_button_top" value="Reset Password" type="submit">
+      <input type="hidden" name="a" value="reqpw">
+      <input type="hidden" id="token_top" name="token"
+             value="1469821562-2LCQrcgsyr0XjmF2l3E4t8wSBaLS05cFkYOx0h9_mSI">
+      <a href="show_bug.cgi%3Fid=2503.html#" onclick="return hide_forgot_form('_top')">[x]</a>
+    </form>
+  </li>
+</ul>
+    </div>
+  </div>
+
+  <div id="bugzilla-body">
+
+
+<script type="text/javascript">
+<!--
+
+//-->
+</script>
+
+<form name="changeform" id="changeform" method="post" action="http://bugs.aviary.pl/process_bug.cgi">
+
+  <input type="hidden" name="delta_ts" value="2010-03-22 11:44:12">
+  <input type="hidden" name="id" value="2503">
+  <input type="hidden" name="token" value="1469821562-G__Zu2ZBOdE0fgd_eCrc0F659WEkBcJdo9N2dVaAV3U">
+<div class="bz_short_desc_container edit_form">
+     <a href="show_bug.cgi%3Fid=2503.html"><b>Bug&nbsp;2503</b></a> <span id="summary_container" class="bz_default_hidden">
+      - <span id="short_desc_nonedit_display">Przyjazny interfejs programów tłumaczonych przez Aviary.pl</span>
+     </span>
+
+    <div id="summary_input"><span class="field_label "
+    id="field_label_short_desc">
+
+
+  <a 
+      title="The bug summary is a short sentence which succinctly describes what the bug is about."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#short_desc"
+  >Summary:</a>
+
+</span>Przyjazny interfejs programów tłumaczonych przez Aviary.pl
+    </div>
+  </div>
+  <script type="text/javascript">
+    hideEditableField('summary_container',
+                      'summary_input',
+                      'summary_edit_action',
+                      'short_desc',
+                      'Przyjazny interfejs programów tłumaczonych przez Aviary.pl' );
+  </script>
+  <table class="edit_form">
+    <tr>
+      
+      <td id="bz_show_bug_column_1" class="bz_show_bug_column">     
+        <table>
+          <tr>
+    <th class="field_label">
+      <a href="page.cgi%3Fid=fields.html#bug_status">Status</a>:
+    </th>
+    <td id="bz_field_status">
+      <span id="static_bug_status">CONFIRMED
+      </span>
+    </td>
+  </tr>
+<tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+<tr><th class="field_label "
+    id="field_label_alias">
+
+
+  <a 
+      title="A short, unique name assigned to a bug in order to assist with looking it up and referring to it in other places in Bugzilla."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#alias"
+  >Alias:</a>
+
+</th>
+    <td>
+        None
+    </td>
+  </tr>
+<tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+<tr><th class="field_label "
+    id="field_label_product">
+
+
+  <a 
+      title="Bugs are categorised into Products and Components. Select a Classification to narrow down this list."
+      class="field_help_link"
+      href="describecomponents.cgi.html"
+  >Product:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_product" >Wytyczne
+
+</td>
+    </tr>
+
+    
+    <tr class="bz_default_hidden"><th class="field_label "
+    id="field_label_classification">
+
+
+  <a 
+      title="Bugs are categorised into Classifications, Products and Components. classifications is the top-level categorisation."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#classification"
+  >Classification:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_classification" >Archiwum
+
+</td>
+    </tr>
+        
+    
+    
+    <tr><th class="field_label "
+    id="field_label_component">
+
+
+  <a 
+      title="Components are second-level categories; each belongs to a particular Product. Select a Product to narrow down this list."
+      class="field_help_link"
+      href="describecomponents.cgi%3Fproduct=Wytyczne.html"
+  >Component:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_component" >Ogólne
+
+  (<a href="buglist.cgi%3Fcomponent=Ogólne&amp;product=Wytyczne&amp;bug_status=__open__.html"
+      target="_blank">show other bugs</a>)
+</td>
+    </tr>
+    <tr><th class="field_label "
+    id="field_label_version">
+
+
+  <a 
+      title="The version field defines the version of the software the bug was found in."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#version"
+  >Version:</a>
+
+</th>
+<td>unspecified
+  </td>
+    </tr>
+        
+    
+        
+    <tr><th class="field_label "
+    id="field_label_rep_platform">
+
+
+  <a 
+      title="The hardware platform the bug was observed on. Note: When searching, selecting the option &quot;All&quot; only finds bugs whose value for this field is literally the word &quot;All&quot;."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#rep_platform"
+  >Hardware:</a>
+
+</th>
+      <td class="field_value">Wszystkie
+        Wszystkie
+      </td>
+    </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          
+          <tr>
+      <th class="field_label">
+        <label  accesskey="i">
+          <a href="page.cgi%3Fid=fields.html#importance"><u>I</u>mportance</a></label>:
+      </th>
+      <td>P3
+       normalny
+      </td>
+    </tr>
+          
+          <tr><th class="field_label "
+    id="field_label_assigned_to">
+
+
+  <a 
+      title="The person in charge of resolving the bug."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#assigned_to"
+  >Assignee:</a>
+
+</th>
+      <td><span class="vcard"><span class="fn">Wojciech Kapusta</span>
+</span>
+      </td>
+    </tr>
+
+    <tr><th class="field_label "
+    id="field_label_qa_contact">
+
+
+  <a 
+      title="The person responsible for confirming this bug if it is unconfirmed, and for verifying the fix once the bug has been resolved."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#qa_contact"
+  >QA Contact:</a>
+
+</th>
+      <td><span class="vcard">wytyczne
+</span>
+      </td>
+    </tr>
+    <script type="text/javascript">
+      assignToDefaultOnChange(['product', 'component'],
+        'w.kapusta\x40gmail.com',
+        'wytyczne\x40l10n.bledy');
+    </script>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          <tr><th class="field_label "
+    id="field_label_bug_file_loc">
+
+
+  <a 
+      title="Bugs can have a URL associated with them - for example, a pointer to a web site where the problem is seen."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#bug_file_loc"
+  >URL:</a>
+
+</th>
+    <td>
+      <span id="bz_url_input_area">
+      </span>
+    </td>
+  </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+
+          
+<tr><th class="field_label "
+    id="field_label_dependson">
+
+
+  <a 
+      title="The bugs listed here must be resolved before this bug can be resolved."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#dependson"
+  >Depends on:</a>
+
+</th>
+
+  <td>
+    <span id="dependson_input_area">
+    </span>
+
+  </td>
+  </tr>
+  
+  <tr><th class="field_label "
+    id="field_label_blocked">
+
+
+  <a 
+      title="This bug must be resolved before the bugs listed in this field can be resolved."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#blocked"
+  >Blocks:</a>
+
+</th>
+
+  <td>
+    <span id="blocked_input_area">
+    </span>
+
+  </td>
+  </tr>
+          
+        </table>
+      </td>
+      <td>
+        <div class="bz_column_spacer">&nbsp;</div>
+      </td>
+      
+      <td id="bz_show_bug_column_2" class="bz_show_bug_column">
+        <table>
+        <tr>
+    <th class="field_label">
+      Reported:
+    </th>
+    <td>2009-05-26 06:14 CEST by <span class="vcard"><span class="fn">Leszek Życzkowski</span>
+</span>
+    </td>
+  </tr>
+  
+  <tr>
+    <th class="field_label">
+      Modified:
+    </th>
+    <td>2010-03-22 11:44 CET
+      (<a href="show_activity.cgi%3Fid=2503.html">History</a>)
+    </td>
+  
+  </tr>
+<tr>
+      <th class="field_label">
+        <label  accesskey="a">
+          CC List:
+        </label>
+      </th>
+      <td>10 
+          users
+          <span id="cc_edit_area_showhide_container" class="bz_default_hidden">
+            (<a href="show_bug.cgi%3Fid=2503.html#" id="cc_edit_area_showhide">show</a>)
+          </span>
+        <div id="cc_edit_area">
+          <br>
+            <select id="cc" multiple="multiple" size="5" >
+                <option value="bpiec">bpiec</option>
+                <option value="gandalf">gandalf</option>
+                <option value="hubert+bap">hubert+bap</option>
+                <option value="jmazgaj">jmazgaj</option>
+                <option value="piotr">piotr</option>
+                <option value="pmakowski">pmakowski</option>
+                <option value="smalolepszy">smalolepszy</option>
+                <option value="tbap.AD04">tbap.AD04</option>
+                <option value="tdominikowski">tdominikowski</option>
+                <option value="wadimd">wadimd</option>
+            </select>
+        </div>
+          <script type="text/javascript">
+            hideEditableField( 'cc_edit_area_showhide_container', 
+                               'cc_edit_area', 
+                               'cc_edit_area_showhide', 
+                               '', 
+                               '');  
+          </script>
+      </td>
+    </tr>
+
+<tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+<tr><th class="field_label "
+    id="field_label_see_also">
+
+
+  <a 
+      title="This allows you to refer to bugs in other installations. You can enter a URL to a bug in the 'Add Bug URLs' field to note that that bug is related to this one. You can enter multiple URLs at once by separating them with whitespace. You should normally use this field to refer to bugs in other installations. For bugs in this installation, it is better to use the Depends on and Blocks fields."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#see_also"
+  >See Also:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_see_also" >
+
+</td>
+    </tr> 
+
+<tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+
+
+
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+          <hr id="bz_top_half_spacer">
+      </td>
+    </tr>
+  </table>
+
+  <table id="bz_big_form_parts">
+  <tr>
+  <td>
+
+    
+<script type="text/javascript">
+<!--
+function toggle_display(link) {
+    var table = document.getElementById("attachment_table");
+    var view_all = document.getElementById("view_all");
+    var hide_obsolete_url_parameter = "&hide_obsolete=1";
+    // Store current height for scrolling later
+    var originalHeight = table.offsetHeight;
+    var rows = YAHOO.util.Dom.getElementsByClassName(
+        'bz_tr_obsolete', 'tr', table);
+
+    for (var i = 0; i < rows.length; i++) {
+        bz_toggleClass(rows[i], 'bz_default_hidden');
+    }
+
+    if (YAHOO.util.Dom.hasClass(rows[0], 'bz_default_hidden')) {
+        link.innerHTML = "Show Obsolete";
+        view_all.href = view_all.href + hide_obsolete_url_parameter 
+    }
+    else {
+        link.innerHTML = "Hide Obsolete";
+        view_all.href = view_all.href.replace(hide_obsolete_url_parameter,"");
+    }
+
+    var newHeight = table.offsetHeight;
+    // This scrolling makes the window appear to not move at all.
+    window.scrollBy(0, newHeight - originalHeight);
+
+    return false;
+}
+//-->
+</script>
+
+<br>
+<table id="attachment_table">
+  <tr id="a0">
+    <th colspan="3" class="left">
+      Attachments
+    </th>
+  </tr>
+
+
+
+  <tr class="bz_attach_footer">
+    <td colspan="3">
+        <a href="attachment.cgi%3Fbugid=2503&amp;action=enter.html">Add an attachment</a>
+        (proposed patch, testcase, etc.)
+    </td>
+  </tr>
+</table>
+<br>
+
+  </td>
+  <td>
+  </td>
+  </tr></table>
+
+  
+  <div id="comments"><script src="js/comments.js" type="text/javascript">
+</script>
+
+<script type="text/javascript">
+<!--
+  /* Adds the reply text to the 'comment' textarea */
+  function replyToComment(id, real_id, name) {
+      var prefix = "(In reply to " + name + " from comment #" + id + ")\n";
+      var replytext = "";
+        /* pre id="comment_name_N" */
+        var text_elem = document.getElementById('comment_text_'+id);
+        var text = getText(text_elem);
+        replytext = prefix + wrapReplyText(text);
+
+
+      /* <textarea id="comment"> */
+      var textarea = document.getElementById('comment');
+      if (textarea.value != replytext) {
+          textarea.value += replytext;
+      }
+
+      textarea.focus();
+  } 
+//-->
+</script>
+
+
+<!-- This auto-sizes the comments and positions the collapse/expand links 
+     to the right. -->
+<table class="bz_comment_table">
+<tr>
+<td>
+<div id="c0" class="bz_comment bz_first_comment">
+
+      <div class="bz_first_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2503.html#c0">Description</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Leszek Życzkowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-05-26 06:14:27 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Jest to chyba najlepsze miejsce do dyskusji na temat przyjaznego interfejsu programów tłumaczonych przez Aviary.pl. Wypowiadałem się na ten temat w kilku bugach, ale całościowe podejście do zagadnienia jest bardziej odpowiednią formą dyskusji niż rozpatrywanie poszczególnych sformułowań. Pozwolę sobie przytoczyć kilka moich wypowiedzi:
+
+Bug nr 2223
+„DLACZEGO NA SIŁĘ CHCECIE ROBIĆ BEZDUSZNY INTERFEJS? DLACZEGO KOMPUTER NIE MOŻE
+ZWRACAĆ SIĘ DO UŻYTKOWNIKA OSOBOWO? Rozumiem, że trzeba tak konstruować
+interfejs, aby odnosił się zarówno do osobników obu rodzajów, ale to co
+zobaczyłem w patchach wprawiło mnie w osłupienie! W większości dobrą
+komunikację z użytkownikiem zamieniono na bezduszne, czasami niezgrabne
+komunikaty. Piszę, błagam o przyjazny użytkownikowi interfejs, a skutek jest
+odwrotny.
+W weekend siedziałem w domu i postanowiłem postawić Ubuntu – w końcu trzeba na
+poważnie popracować na Linuksie. Po godzinie pracy zmieniłem polski interfejs
+na angielski, bo nie moglem znieść formy w jakiej Linux zwracał się do mnie –
+początkującego użytkownika tego systemu. Dopiero po tej zmianie poczułem się
+normalnie – komputer zaczął zwracać się do mnie po ludzku. Czy to normalne, że
+pięćdziesięcioparo letni człowiek urodzony, wychowany i żyjący większość swego
+życia w Polsce przełącza interfejs programu na język obcy i stwierdza, że
+dopiero po zmianie języka zaczyna rozumieć program i mieć z nim kontakt?
+Paranoja! Panowie, swoim działaniem doprowadzacie do tego, że interfejs
+Firefoksa zmierza w złym kierunku – odpycha użytkownika od siebie. To jest
+bardzo zła tendencja.”
+
+„Moją ideą jest dialog pomiędzy komputerem a jego użytkownikiem, nawiązanie
+więzi, przyjaznej atmosfery, a nie czytanie bezdusznych, lakonicznych poleceń i
+rozkazów emitowanych przez bezduszną maszynę. Taki interfejs ustawia
+użytkownika na dystans. Może było to dobre jeszcze kilka lat temu, ale w
+obecnej dobie komputeryzacji społeczeństw kiedy byle jakie urządzenie zawiera
+procesor silniejszy niż pierwsze Sinclairy nie jest to wskazane. Oczywiście
+interfejs musi być stworzony z zachowaniem poprawności języka polskiego i
+skierowany do obu płci.
+
+Dla mnie użycie sformułowania „proszę” jest półśrodkiem. Oczywiście jest o
+wiele lepsze niż to, co teraz próbujecie zastosować, ale jego użycie dystansuje
+nieco użytkownika. W interfejsach anglojęzycznych jest ono używane i nie
+wzbraniam się przed stosowaniem go z umiarem w języku polskim, podkreślam – z
+umiarem.”
+
+„Hubert zaproponował przyjęcie zasad określonych w „Poradniku dla tłumaczących
+oprogramowanie firmy Lotus”. W większości zgadzam się z tym co jest tam zawarte
+oprócz: 
+„Wszędzie, gdzie jest to możliwe należy unikać bezpośredniego zwracania się do
+użytkownika” ponieważ kłóci się to z moją filozofia dialogu komputera z
+użytkownikiem. Może w programach typu arkusza kalkulacyjnego jest to OK. Gdyby
+było sformułowanie:
+„Gdzie jest to wskazane, należy unikać bezpośredniego zwracania się do
+użytkownika” 
+natychmiast podpisałbym się pod tym.”
+
+Odnośnik do poradnika Lotusa: <a href="http://www.piotr.kresak.pl/konwen222.htm">http://www.piotr.kresak.pl/konwen222.htm</a>
+
+Od 1999 roku świat poszedł nieco do przodu, ale prawie wszystkie kryteria i zasady tam opisane są IMO, z niewielkimi modyfikacjami, do przyjęcia.</pre>
+    </div>
+
+    <div id="c1" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2503.html#c1">Comment 1</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Tomasz Dominikowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-05-26 06:23:20 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Ja chciałbym tylko dodać, że jeśli ktoś traktuje komputer inaczej niż narzędzie, tylko próbuje mieć jakiś &quot;dialog&quot; czy &quot;kontakt&quot;, to niestety tego nie rozumiem i nie zrozumiem.  
+
+To prawda, że niektóre komunikaty mogą obecnie wyglądać niezgrabnie, ale nie od razu Rzym zbudowano. Jeśli występują problemy, to proszę zgłaszać problemy dotyczące konkretnych przypadków.</pre>
+    </div>
+
+    <div id="c2" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2503.html#c2">Comment 2</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-05-26 06:34:32 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(In reply to <a href="show_bug.cgi%3Fid=2503.html#c0">comment #0</a>)
+<span class="quote">&gt; Od 1999 roku świat poszedł nieco do przodu, ale prawie wszystkie kryteria i
+&gt; zasady tam opisane są IMO, z niewielkimi modyfikacjami, do przyjęcia.</span >
+
+Właśnie w tym rzecz - chcę to przyjąć bez żadnych modyfikacji. Każdy znajdzie tam rzeczy, z którymi się nie zgadza (choć każdy inne), ale każdy musi ustąpić. Zgadzamy się albo na wszystko albo na nic.</pre>
+    </div>
+
+    <div id="c3" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2503.html#c3">Comment 3</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Leszek Życzkowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-05-26 06:54:40 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(In reply to <a href="show_bug.cgi%3Fid=2503.html#c1">comment #1</a>)
+<span class="quote">&gt; Ja chciałbym tylko dodać, że jeśli ktoś traktuje komputer inaczej niż
+&gt; narzędzie, tylko próbuje mieć jakiś &quot;dialog&quot; czy &quot;kontakt&quot;, to niestety tego
+&gt; nie rozumiem i nie zrozumiem.  
+&gt; 
+&gt; To prawda, że niektóre komunikaty mogą obecnie wyglądać niezgrabnie, ale nie od
+&gt; razu Rzym zbudowano. Jeśli występują problemy, to proszę zgłaszać problemy
+&gt; dotyczące konkretnych przypadków.</span >
+
+Teraz rozumiem dlaczego tłumaczenie Ubuntu jest takie toporne. Jeśli trudno ci zrozumieć, że nie chodzi o „komputer” jako maszynę, narzędzie tylko o kontakt z osobami, treścią jaka jest za pomocą tej maszyny przekazywana, to nie zrozumiesz o co mi chodzi. Typowa wypowiedź geeka komputerowego. Podobnie mógłbyś powiedzieć o gazecie, że to kawałek papieru, o grze komputerowej, że to tylko jedynki i zera. Nie tędy droga do dobrego interfejsu.</pre>
+    </div>
+
+    <div id="c4" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2503.html#c4">Comment 4</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Leszek Życzkowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-05-26 06:56:56 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(In reply to <a href="show_bug.cgi%3Fid=2503.html#c2">comment #2</a>)
+<span class="quote">&gt; Właśnie w tym rzecz - chcę to przyjąć bez żadnych modyfikacji. Każdy znajdzie
+&gt; tam rzeczy, z którymi się nie zgadza (choć każdy inne), ale każdy musi ustąpić.
+&gt; Zgadzamy się albo na wszystko albo na nic.</span >
+
+Wiesz, coś to mi przypomina: „Nicea, albo nic!” :)</pre>
+    </div>
+
+    <div id="c5" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2503.html#c5">Comment 5</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Tomasz Dominikowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-05-26 08:03:54 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(In reply to <a href="show_bug.cgi%3Fid=2503.html#c3">comment #3</a>)
+<span class="quote">&gt; (In reply to <a href="show_bug.cgi%3Fid=2503.html#c1">comment #1</a>)
+&gt; &gt; Ja chciałbym tylko dodać, że jeśli ktoś traktuje komputer inaczej niż
+&gt; &gt; narzędzie, tylko próbuje mieć jakiś &quot;dialog&quot; czy &quot;kontakt&quot;, to niestety tego
+&gt; &gt; nie rozumiem i nie zrozumiem.  
+&gt; &gt; 
+&gt; &gt; To prawda, że niektóre komunikaty mogą obecnie wyglądać niezgrabnie, ale nie od
+&gt; &gt; razu Rzym zbudowano. Jeśli występują problemy, to proszę zgłaszać problemy
+&gt; &gt; dotyczące konkretnych przypadków.
+&gt; 
+&gt; Teraz rozumiem dlaczego tłumaczenie Ubuntu jest takie toporne. Jeśli trudno ci
+&gt; zrozumieć, że nie chodzi o „komputer” jako maszynę, narzędzie tylko o kontakt z
+&gt; osobami, treścią jaka jest za pomocą tej maszyny przekazywana, to nie
+&gt; zrozumiesz o co mi chodzi. Typowa wypowiedź geeka komputerowego. Podobnie
+&gt; mógłbyś powiedzieć o gazecie, że to kawałek papieru, o grze komputerowej, że to
+&gt; tylko jedynki i zera. Nie tędy droga do dobrego interfejsu.</span >
+
+Mam kontakt z ludźmi poprzez narzędzie zwane &quot;komputerem&quot;. Komputer nie jest moim pomocnikiem, znajomym czy przyjacielem. Takie podejście jest dla Ciebie &quot;geekowate&quot;, jednak mi się wydaje, że jest dokładnie na odwrót. Możesz się z tą opinią nie zgadzać, jednak ja obstanę przy swoim, typowo utylitarnym podejściem do tego kawałka blachy i krzemu. Nie doklejałbym do mojego podejścia żadnej specjalnej filozofii, jest po prostu racjonalne. I bezduszne, tak samo jak maszyna przed którą siedzisz, a której próbujesz dorobić cechy, których nie posiada.</pre>
+    </div>
+
+    <div id="c6" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2503.html#c6">Comment 6</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Wojciech Kapusta</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-05-26 08:16:58 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Drobny przyczynek do tej dyskusji: nawet programy tekstowe potrafią przemawiać ludzkim głosem:
+
+xgettext: Łańcuch nie-ASCII w text_strings.c:5.
+          Proszę podać kodowanie źródła przy pomocy --from-code</pre>
+    </div>
+
+    <div id="c7" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2503.html#c7">Comment 7</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Leszek Życzkowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-05-26 08:22:31 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(In reply to <a href="show_bug.cgi%3Fid=2503.html#c5">comment #5</a>)
+<span class="quote">&gt; Mam kontakt z ludźmi poprzez narzędzie zwane &quot;komputerem&quot;. Komputer nie jest
+&gt; moim pomocnikiem, znajomym czy przyjacielem. Takie podejście jest dla Ciebie
+&gt; &quot;geekowate&quot;, jednak mi się wydaje, że jest dokładnie na odwrót. Możesz się z tą
+&gt; opinią nie zgadzać, jednak ja obstanę przy swoim, typowo utylitarnym podejściem
+&gt; do tego kawałka blachy i krzemu. Nie doklejałbym do mojego podejścia żadnej
+&gt; specjalnej filozofii, jest po prostu racjonalne. I bezduszne, tak samo jak
+&gt; maszyna przed którą siedzisz, a której próbujesz dorobić cechy, których nie
+&gt; posiada.</span >
+
+Oczywiście zgadzam się, że jest to bezduszna maszyna, kawałek blachy i krzemu, ale „wrzucone” do niej bezduszne zera i jedynki zaczynają do mnie mówić ludzkim głosem. Dopóki tego nie zrozumiesz Twoje tłumaczenia będą bezduszne.</pre>
+    </div>
+
+    <div id="c8" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2503.html#c8">Comment 8</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Piotr Leszczyński</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-05-26 09:01:58 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Wydaje mi się, że &quot;proszę&quot; i inne formy grzecznościowe i bezosobowe miały na celu właśnie uniknięcie brzmienia komunikatów, jakby były rozkazami i zbytniej poufałości... W końcu kiedy zwracamy się do kogoś, kto nie jest nam bliską osobą, unikamy zwrotów typu &quot;zrób&quot;, &quot;zmień&quot;, &quot;pokaż&quot; z szacunku dla niej.
+
+Problem bezdusznej maszyny z blachy i krzemu to nieco inna sprawa. Kwestia tego, czy umawiamy się na to, że mówi do nas komputer. Moim zdaniem raczej nie (wciąż to nie AI konstruuje własne zdania i komunikaty, tylko są to przygotowane wcześniej polecenia, które on tylko wyświetla) - &quot;mówi&quot; do nas umowny byt, taka metafora osoby, powiedzmy, że ktoś z helpdesku, ew. nawet programista, który pisał komunikat (choć wiadomo, że kod i komunikaty pisało wielu ludzi, a potem jeszcze inni wprowadzali do tego zmiany). I z tego punktu widzenia sformułowania bezpośrednie mogłyby być dla mnie uzasadnione (bo nie uważam, że to komputer mówi). Z drugiej strony - czy w Polsce ludzie z helpdesków mówią do nas po imieniu/bezpośrednio? Owszem, raczej nie mówią &quot;należy/winno się&quot;, ale już &quot;proszę&quot; + czas. w bezokoliczniku z reguły tak... :) Warto jednak odpowiedzieć sobie na pytanie, czy narzędzie, którego działanie w dużej mierze zależy od nas (to my włączamy system, my operujemy jego opcjami) nie jest jednak częścią nas. Mówimy przecież o zegarku &quot;przestał chodzić&quot; (a nie &quot;to przestało działać&quot;). Że już nie wspomnę o wulgaryzmach używanych do przedmiotów codziennego użytku: &quot;Ta *** drukarka znowu wciągnęła mi papier&quot; (a nie &quot;wszystko wskazuje na to, że podajnik mojej drukarki po raz kolejny nieprawidłowo funkcjonuje&quot;) itp... Krótko mówiąc - nie byłbym tak zdecydowanie przekonany o traktowaniu komputera czy systemu operacyjnego jako li tylko sprzętu/oprogramowania, mimo, że obiektywnie patrząc są tylko tym sprzętem/oprogramowaniem. Język nadaje jednak przedmiotom i zjawiskom od dawna cechy ludzkie. I nie widzę w tym nic chorego. Zwykłe ułatwianie sobie życia i komunikacji. To czy komunikat jest wyświetlany przez komputer, pralkę, czy zmywarkę do naczyń, niewiele zmienia - wciąż jest to komunikat, który ma być zrozumiały i służący nam, bezpośrednim jego odbiorcom. Jego celem nie jest podkreślanie faktycznego stanu obiektu, jaki go przekazuje.
+
+W związku z powyższymi uwagami i przemyśleniami, jestem jednak po stronie bezpośredniości. Tym bardziej, że przecież istnieje ona od dawna w nazwach opcji i nie wywołuje u nikogo alergii... (np. Zapisz, Skopiuj itd.).</pre>
+    </div>
+
+    <div id="c9" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2503.html#c9">Comment 9</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Bartosz Piec</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-05-26 10:18:23 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(In reply to <a href="show_bug.cgi%3Fid=2503.html#c2">comment #2</a>)
+<span class="quote">&gt; Właśnie w tym rzecz - chcę to przyjąć bez żadnych modyfikacji. Każdy znajdzie
+&gt; tam rzeczy, z którymi się nie zgadza (choć każdy inne), ale każdy musi ustąpić.
+&gt; Zgadzamy się albo na wszystko albo na nic.</span >
+
+Absolutnie się z tym nie zgadzam. To jedne wytyczne tylko są? A nie możemy stworzyć własnych? Co się stanie jak je nieco zmodyfikujemy?</pre>
+    </div>
+
+    <div id="c10" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2503.html#c10">Comment 10</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-05-26 10:27:43 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(In reply to <a href="show_bug.cgi%3Fid=2503.html#c9">comment #9</a>)
+<span class="quote">&gt; Absolutnie się z tym nie zgadzam. To jedne wytyczne tylko są? A nie możemy
+&gt; stworzyć własnych? Co się stanie jak je nieco zmodyfikujemy?</span >
+
+Oczywiście - możemy stworzyć własne. Tylko skoro nie udało się to przez ponad 4 lata, to nie wierzę, że uda się teraz. Każdy ma inne zdanie na temat lokalizacji. 
+
+Jest inne rozwiązanie. Zarząd ogłasza nowe zasady i gotowe. Tyle, że moim zdaniem to wyjście najgorsze z możliwych.
+
+Przyjęcie tamtych zasad lotusowych to kompromis - każdy coś zyska i coś straci.</pre>
+    </div>
+
+    <div id="c11" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2503.html#c11">Comment 11</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Leszek Życzkowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-05-26 11:20:29 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(In reply to <a href="show_bug.cgi%3Fid=2503.html#c10">comment #10</a>)
+<span class="quote">&gt; (In reply to <a href="show_bug.cgi%3Fid=2503.html#c9">comment #9</a>)
+&gt; &gt; Absolutnie się z tym nie zgadzam. To jedne wytyczne tylko są? A nie możemy
+&gt; &gt; stworzyć własnych? Co się stanie jak je nieco zmodyfikujemy?
+&gt; </span >
+
+Tyle razy już pisałem, że te dyskusje prawie nigdy nie kończą się konkretnymi ustaleniami i bugi wiszą latami w zależności od tego co się kierownikowi lokalizacji spodoba, a co nie.
+
+<span class="quote">&gt; Oczywiście - możemy stworzyć własne. Tylko skoro nie udało się to przez ponad 4
+&gt; lata, to nie wierzę, że uda się teraz. Każdy ma inne zdanie na temat
+&gt; lokalizacji. </span >
+
+Całkowicie się z Tobą zgadzam, ale skoro jest zespół, to właśnie można by w końcu ustalić jakieś ogólne zasady — przyjąć myśl przewodnią — chociażby moją filozofię „interfejs przyjazny dla użytkownika” i w wytycznych trochę uszczegółowić. Zwróćcie uwagę, że większość zasad podanych w poradniku lotusowym, to zasady języka polskiego.
+<span class="quote">&gt; Jest inne rozwiązanie. Zarząd ogłasza nowe zasady i gotowe. Tyle, że moim
+&gt; zdaniem to wyjście najgorsze z możliwych.
+&gt; </span >
+Wcale nie! Jeśli przez tyle lat nie udało się wypracować własnych zasad, to Zarząd powinien podjąć decyzję. W każdym zespole jest osoba, która nadaje ton jego poczynaniom. W Aviary.pl jest to Zarząd. Jeśli komuś kierunek nadawany przez Zarząd nie odpowiada może w każdej chwili zrezygnować z projektu, czy członkostwa w zespole. Ja w bugu 2223 określiłem swoje stanowisko — albo przyjazny interfejs, albo aviarowa emerytura.</pre>
+    </div>
+
+    <div id="c12" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2503.html#c12">Comment 12</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Leszek Życzkowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-05-26 11:36:48 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(In reply to <a href="show_bug.cgi%3Fid=2503.html#c8">comment #8</a>)
+<span class="quote">&gt; Wydaje mi się, że &quot;proszę&quot; i inne formy grzecznościowe i bezosobowe miały na
+&gt; celu właśnie uniknięcie brzmienia komunikatów, jakby były rozkazami i zbytniej
+&gt; poufałości... W końcu kiedy zwracamy się do kogoś, kto nie jest nam bliską
+&gt; osobą, unikamy zwrotów typu &quot;zrób&quot;, &quot;zmień&quot;, &quot;pokaż&quot; z szacunku dla niej.
+&gt; </span >
+No nie trzeba tak od razu obcesowo. Przecież pisałem wcześniej, że absolutnie nie wykluczam możliwości używania zwrotów grzecznościowych tam, gdzie jest to potrzebne, a nawet w pewnych okolicznościach wskazane.
+ 
+Problem bezdusznej maszyny z blachy i krzemu to nieco inna sprawa. Kwestia
+<span class="quote">&gt; tego, czy umawiamy się na to, że mówi do nas komputer. Moim zdaniem raczej nie
+&gt; (wciąż to nie AI konstruuje własne zdania i komunikaty, tylko są to
+&gt; przygotowane wcześniej polecenia, które on tylko wyświetla) - &quot;mówi&quot; do nas
+&gt; umowny byt, taka metafora osoby, powiedzmy, że ktoś z helpdesku, ew. nawet
+&gt; programista, który pisał komunikat (choć wiadomo, że kod i komunikaty pisało
+&gt; wielu ludzi, a potem jeszcze inni wprowadzali do tego zmiany). I z tego punktu
+&gt; widzenia sformułowania bezpośrednie mogłyby być dla mnie uzasadnione (bo nie
+&gt; uważam, że to komputer mówi). Z drugiej strony - czy w Polsce ludzie z
+&gt; helpdesków mówią do nas po imieniu/bezpośrednio? Owszem, raczej nie mówią
+&gt; &quot;należy/winno się&quot;, ale już &quot;proszę&quot; + czas. w bezokoliczniku z reguły tak...
+&gt; :) Warto jednak odpowiedzieć sobie na pytanie, czy narzędzie, którego działanie
+&gt; w dużej mierze zależy od nas (to my włączamy system, my operujemy jego opcjami)
+&gt; nie jest jednak częścią nas. Mówimy przecież o zegarku &quot;przestał chodzić&quot; (a
+&gt; nie &quot;to przestało działać&quot;). Że już nie wspomnę o wulgaryzmach używanych do
+&gt; przedmiotów codziennego użytku: &quot;Ta *** drukarka znowu wciągnęła mi papier&quot; (a
+&gt; nie &quot;wszystko wskazuje na to, że podajnik mojej drukarki po raz kolejny
+&gt; nieprawidłowo funkcjonuje&quot;) itp... Krótko mówiąc - nie byłbym tak zdecydowanie
+&gt; przekonany o traktowaniu komputera czy systemu operacyjnego jako li tylko
+&gt; sprzętu/oprogramowania, mimo, że obiektywnie patrząc są tylko tym
+&gt; sprzętem/oprogramowaniem. Język nadaje jednak przedmiotom i zjawiskom od dawna
+&gt; cechy ludzkie. I nie widzę w tym nic chorego. Zwykłe ułatwianie sobie życia i
+&gt; komunikacji. To czy komunikat jest wyświetlany przez komputer, pralkę, czy
+&gt; zmywarkę do naczyń, niewiele zmienia - wciąż jest to komunikat, który ma być
+&gt; zrozumiały i służący nam, bezpośrednim jego odbiorcom. Jego celem nie jest
+&gt; podkreślanie faktycznego stanu obiektu, jaki go przekazuje.
+&gt; 
+&gt; W związku z powyższymi uwagami i przemyśleniami, jestem jednak po stronie
+&gt; bezpośredniości. Tym bardziej, że przecież istnieje ona od dawna w nazwach
+&gt; opcji i nie wywołuje u nikogo alergii... (np. Zapisz, Skopiuj itd.).</span >
+
+Dzięki Piotrze. Bardzo rzeczowa i IMO przekonywująca opinia. Ktoś do nas mówi, komunikuje się z nami. Kto? — ano programista, ktoś kto stworzył to zbiorowisko zer i jedynek i próbuje pokierować nami jak te liczby proste uruchomić, wydobyć coś z nich.</pre>
+    </div>
+
+    <div id="c13" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2503.html#c13">Comment 13</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard">wadimd
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-05-26 14:24:24 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Moim zdaniem formy bezosobowe są dobrym kompromisem pomiędzy &quot;Czy chce pan/pani zapisać plik?&quot;, a &quot;Czy chcesz zapisać plik?&quot;. 
+&quot;Czy zapisać plik?&quot; &quot;Proszę podać PIN&quot; itp. są dla mnie zupełnie ok. Nie mam ochoty nawiązywać żadnych &quot;uczuciowych&quot; kontaktów z programami.
+
+Zauważcie, że w każdym innym języku zwroty program&gt;użytkownik są formą grzecznościową:
+de: Moechten Sie speichern?
+cz: Chcete zapsat?
+fr: Voulez vous enregistrer?
+
+To, że polska grzeczna forma (pan/pani) brzmi bardzo kiepsko wcale nie znaczy, że nagle komputer ma do mnie &quot;mówić&quot; per &quot;ty&quot;. Tomek ma rację - to tylko narzędzie i neutralne wyrażenia pasują tu bardzo dobrze. 
+
+&#64;Teo: poproszę jakiś przykład &quot;odpychającego użytkownika&quot; komunikatu z Ubuntu czy Firefoksa.
+
+btw: To może od razu wprowadźmy teksty typu &quot;Nie mogłem zapisać pliku, podaj nową nazwę&quot; - to na pewno poprawi relacje między przeglądarką a użytkownikiem ;-)
+
+(In reply to <a href="show_bug.cgi%3Fid=2503.html#c8">comment #8</a>)
+
+<span class="quote">&gt; nie jest jednak częścią nas. Mówimy przecież o zegarku &quot;przestał chodzić&quot; (a
+&gt; nie &quot;to przestało działać&quot;). Że już nie wspomnę o wulgaryzmach używanych do
+&gt; przedmiotów codziennego użytku: &quot;Ta *** drukarka znowu wciągnęła mi papier&quot; (a
+&gt; nie &quot;wszystko wskazuje na to, że podajnik mojej drukarki po raz kolejny
+&gt; nieprawidłowo funkcjonuje&quot;) itp</span >
+
+Z tym się wszyscy zgadzają (np: &quot;program NNN przestał odpowiadać&quot;) - pytanie czy ten zegarek/drukarka miałyby wysyłać komunikaty &quot;Piotrek, jest w pół do dwunastej&quot;, albo &quot;Piotrek, weź załaduj mi nowy papier do podajnika&quot;
+
+<span class="quote">&gt; bezpośredniości. Tym bardziej, że przecież istnieje ona od dawna w nazwach
+&gt; opcji i nie wywołuje u nikogo alergii... (np. Zapisz, Skopiuj itd.).</span >
+
+No może za jakiś czas programy zaczną protestować, że polecenia wydajemy w 2 osobie, ale na razie to jest kierunek użytkownik&gt;program, a nie odwrotnie.</pre>
+    </div>
+
+    <div id="c14" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2503.html#c14">Comment 14</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Piotr Leszczyński</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-05-26 15:03:43 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text"><span class="quote">&gt; btw: To może od razu wprowadźmy teksty typu &quot;Nie mogłem zapisać pliku, podaj
+&gt; nową nazwę&quot; - to na pewno poprawi relacje między przeglądarką a użytkownikiem
+&gt; ;-)</span >
+
+Mnie akurat relacje użytkownik-program specjalnie nie interesują (tzn. to ciekawa kwestia ogólnie, ale nie rozpatruję naszej dyskusji w tych kategoriach). Komunikat powinien być zwięzły i przekazywać istotną wiadomość. Ubieranie programu w językowe pludry i żaboty dodaje mu tylko śmieszności.
+
+<span class="quote">&gt; Z tym się wszyscy zgadzają (np: &quot;program NNN przestał odpowiadać&quot;) - pytanie
+&gt; czy ten zegarek/drukarka miałyby wysyłać komunikaty &quot;Piotrek, jest w pół do
+&gt; dwunastej&quot;, albo &quot;Piotrek, weź załaduj mi nowy papier do podajnika&quot;</span >
+
+Szczerze mówiąc nie miałbym nic na przeciwko. To się już dzieje od dawna w większości aplikacji przy logowaniu: &quot;Witaj Rychu itp&quot;. Przy czym to, na czym mi w gruncie rzeczy zależy najbardziej, jest ekonomia komunikatu. A więc ten &quot;Piotrek&quot; jest tak samo dla mnie zbędnym dodatkiem jak &quot;proszę&quot;, &quot;należy&quot; i &quot;użytkownika&quot; (gdy chodzi o &quot;ciebie&quot;). Ten kurtuazyjny ton utrudnia tylko sprawną, błyskawiczną komunikację i precyzyjne przekazywanie treści.
+
+<span class="quote">&gt; &gt; bezpośredniości. Tym bardziej, że przecież istnieje ona od dawna w nazwach
+&gt; &gt; opcji i nie wywołuje u nikogo alergii... (np. Zapisz, Skopiuj itd.).
+&gt; 
+&gt; No może za jakiś czas programy zaczną protestować, że polecenia wydajemy w 2
+&gt; osobie, ale na razie to jest kierunek użytkownik&gt;program, a nie odwrotnie.</span >
+
+Jeśli obraża Cię tekst, to współczuję :) Dopóki to nie istota obdarzona osobowością, jej formy grzecznościowe są dla mnie jak kwiatek do kożucha, niczym więcej. Przede wszystkim chcę wiedzieć co mam zrobić i jak. Tego oczekuję od komunikatu, nie pokłonów i owijania w bawełnę dla efektu.
+Jeśli jednak  tak ważne dla Ciebie jest to jak do Ciebie zwraca się martwy tekst, to może warto zastanowić się nad tym, czy z szacunku dla niego nie zmienić też nazw opcji na &quot;Proszę zapisać&quot;, &quot;Należałoby skopiować&quot; &quot;Mógłbyś łaskawie wkleić&quot; i &quot;Wypadałoby uruchomić się ponownie&quot;.</pre>
+    </div>
+
+    <div id="c15" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2503.html#c15">Comment 15</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard">wadimd
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-05-26 15:13:53 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(In reply to <a href="show_bug.cgi%3Fid=2503.html#c14">comment #14</a>)
+<span class="quote">&gt; 
+&gt; Jeśli obraża Cię tekst, to współczuję :) Dopóki to nie istota obdarzona
+&gt; osobowością, jej formy grzecznościowe są dla mnie jak kwiatek do kożucha,</span >
+Nic nikogo nie obraża - chodzi o dostosowanie się do reguł języka/kultury.
+
+<span class="quote">&gt; niczym więcej. Przede wszystkim chcę wiedzieć co mam zrobić i jak. Tego
+&gt; oczekuję od komunikatu, nie pokłonów i owijania w bawełnę dla efektu.
+&gt; Jeśli jednak  tak ważne dla Ciebie jest to jak do Ciebie zwraca się martwy
+&gt; tekst, to może warto zastanowić się nad tym, czy z szacunku dla niego nie
+&gt; zmienić też nazw opcji na &quot;Proszę zapisać&quot;, &quot;Należałoby skopiować&quot; &quot;Mógłbyś
+&gt; łaskawie wkleić&quot; i &quot;Wypadałoby uruchomić się ponownie&quot;.</span >
+
+Piszę, że to jest polecenie _dla_programu_ i jest całkiem ok w 2. osobie (zapisz, skopiuj itp). Jeśli chodzi o kierunek komunikatu od programu do użytkownika, to w naszym kręgu kulturowym przyjęło się, że &quot;bezpieczną&quot; formą jest forma grzeczna lub bezosobowa. Tyle.</pre>
+    </div>
+
+    <div id="c16" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2503.html#c16">Comment 16</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Leszek Życzkowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-05-26 15:33:26 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(In reply to <a href="show_bug.cgi%3Fid=2503.html#c13">comment #13</a>)
+<span class="quote">&gt; Moim zdaniem formy bezosobowe są dobrym kompromisem pomiędzy &quot;Czy chce pan/pani
+&gt; zapisać plik?&quot;, a &quot;Czy chcesz zapisać plik?&quot;. 
+&gt; &quot;Czy zapisać plik?&quot; &quot;Proszę podać PIN&quot; itp. są dla mnie zupełnie ok. Nie mam
+&gt; ochoty nawiązywać żadnych &quot;uczuciowych&quot; kontaktów z programami.</span >
+
+Przecież nie o takie zwroty chodzi! Nikt nie będzie używał form „Pan/Pani”! Dla
+mnie „Czy chcesz zapisać plik?”, „Czy zapisać plik?” są OK, ale z „Proszę podać
+PIN” zrezygnowałbym na prostszy „Podaj PIN”
+<span class="quote">&gt; Zauważcie, że w każdym innym języku zwroty program&gt;użytkownik są formą
+&gt; grzecznościową:
+&gt; de: Moechten Sie speichern?</span >
+Nie znam niemieckiego.
+<span class="quote">&gt; cz: Chcete zapsat?</span >
+Toż to „Chcesz zapisać?”
+<span class="quote">&gt; fr: Voulez vous enregistrer?</span >
+A tutaj „Czy chcesz zapisać?”
+To są formy osobowe! Tutaj występuje podmiot domyślny, który w języku polskim
+jest dość popularny. W języku angielskim nie występuje i dlatego wszędzie jest
+„you” Nikt nie chce zabraniać używania takich zwrotów.
+<span class="quote">&gt; 
+&gt; To, że polska grzeczna forma (pan/pani) brzmi bardzo kiepsko wcale nie znaczy,
+&gt; że nagle komputer ma do mnie &quot;mówić&quot; per &quot;ty&quot;. Tomek ma rację - to tylko
+&gt; narzędzie i neutralne wyrażenia pasują tu bardzo dobrze.</span >
+
+Zgodnie z moimi oczekiwaniami środowisko Linuksowców będzie obstawało przy
+pełnej bezosobowości.
+<span class="quote">&gt; 
+&gt; &#64;Teo: poproszę jakiś przykład &quot;odpychającego użytkownika&quot; komunikatu z Ubuntu
+&gt; czy Firefoksa.</span >
+
+Z Firefoksa możesz przeczytać mój komentarz w bugu 2223, komentarz #14, akapit
+dotyczący buga 404.
+
+W Ubuntu podam Ci nieco później, bo musiałbym go odpalać i zmieniać wersję na
+polską, ale z tego co zapamiętałem, to juz komunikaty podczas instalacji
+nastręczały mi problemów. (może za mało rozgarnięty jestem) 
+
+<span class="quote">&gt; btw: To może od razu wprowadźmy teksty typu &quot;Nie mogłem zapisać pliku, podaj
+&gt; nową nazwę&quot; - to na pewno poprawi relacje między przeglądarką a użytkownikiem
+&gt; ;-)
+&gt; 
+&gt; Z tym się wszyscy zgadzają (np: &quot;program NNN przestał odpowiadać&quot;) - pytanie
+&gt; czy ten zegarek/drukarka miałyby wysyłać komunikaty &quot;Piotrek, jest w pół do
+&gt; dwunastej&quot;, albo &quot;Piotrek, weź załaduj mi nowy papier do podajnika&quot;</span >
+&gt;
+
+Wadim, trochę powagi… Nikt nigdy czegoś takiego nie proponował. Przeczytałeś
+poradnik dla tłumaczy Lotusa, o którym tutaj piszemy? Coś takiego tam jest?
+
+<span class="quote">&gt; &gt; bezpośredniości. Tym bardziej, że przecież istnieje ona od dawna w nazwach
+&gt; &gt; opcji i nie wywołuje u nikogo alergii... (np. Zapisz, Skopiuj itd.).
+&gt; 
+&gt; No może za jakiś czas programy zaczną protestować, że polecenia wydajemy w 2
+&gt; osobie, ale na razie to jest kierunek użytkownik&gt;program, a nie odwrotnie.</span >
+
+Proszę, nie sprowadzaj dyskusji na taki tor. W ten sposób próbujesz rozmydlić
+temat. Mam nadzieję, że powrócisz do merytorycznej dyskusji.</pre>
+    </div>
+
+    <div id="c17" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2503.html#c17">Comment 17</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Piotr Leszczyński</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-05-26 15:44:04 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(In reply to <a href="show_bug.cgi%3Fid=2503.html#c15">comment #15</a>)
+<span class="quote">&gt; Piszę, że to jest polecenie _dla_programu_ i jest całkiem ok w 2. osobie
+&gt; (zapisz, skopiuj itp). Jeśli chodzi o kierunek komunikatu od programu do
+&gt; użytkownika, to w naszym kręgu kulturowym przyjęło się, że &quot;bezpieczną&quot; formą
+&gt; jest forma grzeczna lub bezosobowa. Tyle.</span >
+
+Skoro zdania w tej kwestii są podzielone w jednym tylko, niewielkim zespole lokalizacyjnym, to myślę, że ta tradycja nie przyjęła się znowu tak mocno albo zaczyna się zmieniać. 
+
+Forma bardziej swobodna jest już od paru ładnych lat obecna w Polsce (w relacjach międzyludzkich) w wielu mediach równolegle z tą &quot;bezpieczną&quot;.
+Nie widzę więc powodów, żeby nie wprowadzić jej do języka _oprogramowania_ otwartego, którego środowisko należy przecież do ludzi idących z duchem czasu, a nie konserwatywnych strażników przeszłości i tradycji.
+W przypadku produktów komercyjnych i tak zostaniemy przy staroświeckiej terminologii i ortodoksyjnych regułach językowych, więc w czym problem?</pre>
+    </div>
+
+    <div id="c18" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2503.html#c18">Comment 18</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Leszek Życzkowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-05-26 15:46:46 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(In reply to <a href="show_bug.cgi%3Fid=2503.html#c14">comment #14</a>)
+Piotrek, całkowicie się z Tobą zgadzam. Właśnie o coś takiego mi chodzi. Ma być zwięźle, zrozumiale, przyjaźnie i po polsku. IMO nie ma żadnych przeszkód, aby tak było. No — może mentalne.
+Swoją drogą chciałbym się dowiedzieć kto i dlaczego wprowadził taką modę w tłumaczeniu na język polski programów linuksowych. Przecież angielskie wersje są zupełnie inne.</pre>
+    </div>
+
+    <div id="c19" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2503.html#c19">Comment 19</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Piotr Leszczyński</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-05-26 17:09:49 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(In reply to <a href="show_bug.cgi%3Fid=2503.html#c18">comment #18</a>)
+<span class="quote">&gt; (In reply to <a href="show_bug.cgi%3Fid=2503.html#c14">comment #14</a>)
+&gt; Piotrek, całkowicie się z Tobą zgadzam. Właśnie o coś takiego mi chodzi. Ma być
+&gt; zwięźle, zrozumiale, przyjaźnie i po polsku. IMO nie ma żadnych przeszkód, aby
+&gt; tak było. No — może mentalne.
+&gt; Swoją drogą chciałbym się dowiedzieć kto i dlaczego wprowadził taką modę w
+&gt; tłumaczeniu na język polski programów linuksowych. Przecież angielskie wersje
+&gt; są zupełnie inne.</span >
+
+Z angielską wersją jest ten problem, że &quot;you&quot; zawiera w sobie zarówno &quot;Ty&quot; jak i  &quot;Pan/Pani/Wy/Państwo&quot; - to pojemne słowo. 
+
+A co do form grzecznościowych i swobodnych, podaję linki do &quot;pomocy&quot; najpopularniejszych portali w Polsce, żeby nie było, że należymy do jakiejś rewolucyjnej frakcji i kalamy nasz krąg kulturowy :)
+
+<a href="http://pomoc.onet.pl/pomoc.html">http://pomoc.onet.pl/pomoc.html</a>
+<a href="http://poczta.wp.pl/pub_pomoc_wp.html">http://poczta.wp.pl/pub_pomoc_wp.html</a>
+<a href="http://poczta.interia.pl/pomoc/?cat=203">http://poczta.interia.pl/pomoc/?cat=203</a>
+<a href="http://nasza-klasa.pl/">http://nasza-klasa.pl/</a>
+
+Na deser zaś cytat z pomocy elektronicznej wersji słownika języka polskiego PWN:
+
+&quot;Aby uzyskać pomoc: 
+
+kliknij na polecenie pomoc znajdujące się w górnym menu
+
+lub 
+
+użyj klawisza F1&quot;
+
+
+Od razu mówię - i w portalach, jakie wymieniłem i w pomocy PWN są zarówno formy grzecznościowe, jak i swobodne, jak &quot;Ty&quot;, &quot;możesz&quot;, &quot;kliknij&quot;, &quot;pamiętaj&quot; itp. Czasem jednej formy jest więcej, czasem mniej, ale we wszystkich przypadkach występują obie. Równolegle, bez wyraźnej preferencji, wg zasad zdrowego rozsądku.
+Nie ma natomiast nigdzie, (i słusznie, moim zdaniem) &quot;politycznie poprawnego&quot; rozróżniania rodzai z użyciem ukośnika (np. &quot;powinieneś/powinnaś&quot;).</pre>
+    </div>
+
+    <div id="c20" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2503.html#c20">Comment 20</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Leszek Życzkowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-05-27 01:20:27 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(In reply to <a href="show_bug.cgi%3Fid=2503.html#c19">comment #19</a>)
+<span class="quote">&gt; Od razu mówię - i w portalach, jakie wymieniłem i w pomocy PWN są zarówno formy
+&gt; grzecznościowe, jak i swobodne, jak &quot;Ty&quot;, &quot;możesz&quot;, &quot;kliknij&quot;, &quot;pamiętaj&quot; itp.
+&gt; Czasem jednej formy jest więcej, czasem mniej, ale we wszystkich przypadkach
+&gt; występują obie. Równolegle, bez wyraźnej preferencji, wg zasad zdrowego
+&gt; rozsądku.
+&gt; Nie ma natomiast nigdzie, (i słusznie, moim zdaniem) &quot;politycznie poprawnego&quot;
+&gt; rozróżniania rodzai z użyciem ukośnika (np. &quot;powinieneś/powinnaś&quot;).</span >
+
+Piotrek, nie prowadzę krucjaty przeciwko takim formom tylko przeciwko oschłemu, technokratycznemu, mało komunikatywnemu interfejsowi. W naszym przypadku zaczyna objawiać się to obsesyjnym unikaniem form bezpośrednich. Wszystko jest dopuszczalne, ale w ramach rozsądku, byleby użytkownik nie odczuwał dystansu pomiędzy tym co jest wyświetlane na monitorze, a nim. Suche lakoniczne i bezosobowe formy taki dystans tworzą. Odnoszę wrażenie, że przydałyby się zajęcia specjalistów od komunikacji. Wówczas dowiedzielibyśmy się w jaki sposób zainteresować, zwrócić uwagę interlokutora (co do tego zgadzamy się, że jest to dialog pomiędzy użytkownikiem, a jak to określiłeś przedstawicielem helpdesku) na to co jest ważne i zrobić to w przyjazny dla niego sposób.</pre>
+    </div>
+
+    <div id="c21" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2503.html#c21">Comment 21</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Leszek Życzkowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-05-27 01:29:15 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(In reply to <a href="show_bug.cgi%3Fid=2503.html#c19">comment #19</a>)
+<span class="quote">&gt; Nie ma natomiast nigdzie, (i słusznie, moim zdaniem) &quot;politycznie poprawnego&quot;
+&gt; rozróżniania rodzai z użyciem ukośnika (np. &quot;powinieneś/powinnaś&quot;).</span >
+
+Specjalnie wydzieliłem tę część Twojej wypowiedzi ponieważ tutaj jest właśnie miejsce na formy bezosobowe. Takiej konstrukcji można używać jeśli nie da się zrobić czegoś ładnego w formie bezosobowej.
+
+W pomocy Onetu jest za to tylko rodzaj męski, i nie należy IMO interpretować tego jako odniesienie do użytkownika, bo wcześniej nie wspomina się o użytkowniku tylko używa formy bezosobowej.</pre>
+    </div>
+
+    <div id="c22" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2503.html#c22">Comment 22</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Wojciech Kapusta</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-05-27 01:33:37 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Trochę w tym wszystkim jest przesady. &quot;Bez nerw&quot;, Panowie!
+
+Na pewno trzeba ograniczyć używania słowa &quot;należy&quot;, które ostatnio stało się
+bardzo modnym panaceum na wszelkie zawiłości stylistyczne. Przytoczony przeze
+mnie przykład komunikatu Gettextu wskazuje, że przy pewnym zaangażowaniu
+tłumacza i niepowtarzaniu bez końca takiego samego sformułowania można osiągnąć
+wcale przyjemnie brzmiące komunikaty.
+
+Ale abstrahując od tego typu pomyłek, czy może bezbarwności stylistycznej,
+formy bezosobowe są dobrym rozwiązaniem, co zresztą wyżej napisał Wadim. Gdyby
+język polski miał firmę typu rosyjskiego &quot;wy&quot; czy niemieckiego &quot;Sie&quot;, bez
+rozróżniania płci, byłbym pierwszym, który optowałby za używaniem wyłącznie
+formy grzecznościowej. Specyfika języka polskiego powoduje, że tak się nie da.
+Z kolei forma &quot;ty&quot; (w połączeniu z rodzajem męskim) jest nie do przyjęcia z
+powodów, o których n razy dyskutowaliśmy. Jak słusznie zauważył Wadim, poważni
+ludzie nie chcą, żeby komputer mówił do nich np. &quot;wpisałeś złą datę; popraw
+to&quot;. Sformułowanie &quot;wpisano błędną datę; proszę poprawić&quot; jest chyba najlepszym
+rozwiązaniem - połączeniem eleganckiego zwracania się do użytkownika dowolnej
+płci, wieku i stanowiska z ładnym, nieco robocim stylem.
+
+Z tym, że (może się powtarzam, ale też nad tym ubolewam) nasi tłumacze powinni
+zwracać większą uwagę na stylistykę tych komunikatów. Zaczynanie do znudzenia
+każdego zdania od &quot;Należy ...&quot; oraz dziwne wplatanie użytkownika wszędzie,
+gdzie w oryginale jest you czy your nie świadczy o profesjonalizmie i prowadzi
+do takich dziwadeł, o których pisał Leszek na początku niniejszej dyskusji.</pre>
+    </div>
+
+    <div id="c23" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2503.html#c23">Comment 23</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Leszek Życzkowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-05-27 02:01:29 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(In reply to <a href="show_bug.cgi%3Fid=2503.html#c22">comment #22</a>)
+Wojtku, wszystko o czym piszesz mieści się w mojej filozofii. Powtarzam jeszcze raz INTERFEJS PRZYJAZNY UŻYTKOWNIKOWI i zgodny z zasadami języka polskiego i zdrowym rozsądkiem. Z praktyki wynika, że nie można tego zostawić samopas i liczyć na rozsądek tłumaczy. Trzeba to w jakiś sposób zapisać , żeby nie nazwać skodyfikować. Przytoczony przez Huberta poradnik jest takim gotowcem, który można wykorzystać. Nawiązałem kontakt z autorem i wyraża zgodę na jego wykorzystanie. Nadmienił jednak, że obecnie miałby on nieco inny kształt, bo przez 10 lat zmieniły się nieco pewne zasady i jego spojrzenie na tłumaczenia programów komputerowych. Człowiek zawodowo zajmuje się tłumaczeniem programów. Zmiana tego spojrzenia dotyczy właśnie form bezosobowych. Oto fragment maila od niego dotyczący tej kwestii:
+
+„Szczerze mówiąc, dawno nie wracałem do swojego poradnika i już tak dobrze go
+nie pamiętam. Zaskoczyło mnie jednak to, że mój poradnik stwarza wrażanie,
+że jestem przeciwnikiem bezpośredniego zwracania się w interfejsie do
+użytkownika. Może od czasu napisania go przeszedłem transformację, której
+sobie do końca nie uzmysławiam”
+
+„Uważam, że interfejs powinien oczywiście być prosty i pisany w formie
+bezpośredniej. Dlatego (przykładowo) popieram formę &quot;kliknij&quot;, a nie &quot;proszę
+kliknąć&quot;, &quot;kliknijcie Państwo&quot; czy inne dziwolągi. Należy tylko pamiętać o
+zasadzie niesugerowania męskiej płci użytkownika i w zasadzie to tyle.”
+
+Całkowicie zgadzam się z tym zgadzam.</pre>
+    </div>
+
+    <div id="c24" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2503.html#c24">Comment 24</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Joanna Mazgaj</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-05-27 12:26:48 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Postaram się odnieść w komentarzu do kilku wypowiedzi od razu.
+
+Pierwsza uwaga: Leszku, ton prowadzenia przez Ciebie dyskusji jest strasznie agresywny. Jednoznacznie widać, że nie przyszedłeś tutaj, żeby przedyskutować, ale aby narzucić nam swoje już wyrobione zdanie i nic co powiemy tego nie zmieni. W dodatku jesteś trochę nieuprzejmy. Odpuść trochę, bardzo Cię proszę, bo w takiej atmosferze mi osobiście odechciewa się jakiejkolwiek polemiki.
+
+Druga uwaga: zgadzam się w pełni z tym co powiedział Wadim w komentarzu #13. Również nie jestem zwolennikiem zwracania się osobowo do użytkownika.
+Wszystkie podane przez niego przykłady w obcych językach to są formy grzecznościowe &quot;czy chciałby Pan/Pani&quot; [na tyle znam zarówno niemiecki, czeski jak i francuski]. Problem polega na tym, że u nas wymaga to uwzględnienia rodzajów żeńskiego i męskiego i wychodzi takie Pan/Pani, które w interfejsie wyglądałoby co najmniej dziwnie.
+
+Specyfika angielskiego You polega na tym, jak ktoś tu wspomniał, że jest to słowo bardzo pojemne: zawiera w sobie zarówno Ty jak i Pan/Pani/Państwo. Nie ma nic dziwnego w tym, że kasjer w sklepie mówi do klienta You, że 10-letni dzieciak do 60-letniego sąsiada też mówi You, że pracownik do prezesa mówi You i każdy program komputerowy mówi do użytkownika You.
+Specyfika naszego kraju sprawia, że zwracanie się bezpośrednio do kogoś 'Ty' jest zarezerwowane dla wąskiej grupy ludzi. Nie wyobrażam sobie, że kasjer w sklepie mówi do mnie 'Ty' [lub odwrotnie, klienci do mnie mówią na 'Ty'], że z sąsiadką w średnim wieku jestem na 'Ty' itd. Na takie relacje zazwyczaj wymagana jest zgoda obu stron, nie mówiąc już o tym, że domyślne traktowanie kogoś taką formą oznacza zazwyczaj brak kultury. Stąd rezygnacja z formy osobowej w oprogramowaniu jest przeniesieniem tych relacji kulturowych na świat zerojedynkowy.
+A także, jak to również napisał Wadim, forma bezosobowa jest próbą kompromisu między oryginalnym angielskim You a naszym Pan/Pani. 
+
+Zupełnie inna kwestia to jakość takiego [naszego] tłumaczenia: weź pod uwagę, że gro osób w aviary to tłumacze-hobbyści a nie wykształceni w tym kierunku zawodowcy. Stylistyka może kuleć, szyk zdania może być kalką angielskiego oryginału i dlatego być może część komunikatów do Ciebie &quot;nie trafia&quot;. Nad tym trzeba po prostu popracować i postarać się, aby w formie na jaką się decydujemy brzmiały naturalnie.</pre>
+    </div>
+
+    <div id="c25" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2503.html#c25">Comment 25</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-05-27 12:50:11 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(In reply to <a href="show_bug.cgi%3Fid=2503.html#c24">comment #24</a>)
+<span class="quote">&gt; Postaram się odnieść w komentarzu do kilku wypowiedzi od razu.
+&gt; 
+&gt; Pierwsza uwaga: Leszku, ton prowadzenia przez Ciebie dyskusji jest strasznie
+&gt; agresywny.</span >
+
+Mam bardzo podobne odczucie. Duzo wykrzyknikow, emocjonalnie nacechowanych przymiotnikow, nawolywan, wezwan do przyjecia &quot;slusznej&quot; linii itp. powoduje, ze czytam, ale nie mam ochoty sie udzielac, bo jest nieprzyjemnie.</pre>
+    </div>
+
+    <div id="c26" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2503.html#c26">Comment 26</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Tomasz Dominikowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-05-27 14:37:48 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(In reply to <a href="show_bug.cgi%3Fid=2503.html#c25">comment #25</a>)
+<span class="quote">&gt; (In reply to <a href="show_bug.cgi%3Fid=2503.html#c24">comment #24</a>)
+&gt; &gt; Postaram się odnieść w komentarzu do kilku wypowiedzi od razu.
+&gt; &gt; 
+&gt; &gt; Pierwsza uwaga: Leszku, ton prowadzenia przez Ciebie dyskusji jest strasznie
+&gt; &gt; agresywny.
+&gt; 
+&gt; Mam bardzo podobne odczucie. Duzo wykrzyknikow, emocjonalnie nacechowanych
+&gt; przymiotnikow, nawolywan, wezwan do przyjecia &quot;slusznej&quot; linii itp. powoduje,
+&gt; ze czytam, ale nie mam ochoty sie udzielac, bo jest nieprzyjemnie.</span >
+
+Dokładnie takie wrażenie odniosłem. Nie mam ochoty się kłócić, walczyć, argumentować... Mamy w GNOME wytyczne, które nie były sekretem i nie są. Nam wydają się zupełnie sensowne, tłumaczenie jest spójne, dużo wysiłku w to poszło, a tu nagle wielkie przebudzenie, żeby z komputera robić ludzką postać, jakiś poradnik Lotusowy sprzed 10 lat o którym dopiero teraz się dowiaduję, a który ma być podstawą dyskusji typu wóz albo przewóz... Nie mogę tego traktować poważnie, dlatego mówię pass.
+
+Jednocześnie liczę na rozsądek zarządu, ponieważ podporządkuję się jego ewentualnej decyzji (bo nie ma tutaj szans na konsensus bez jego interwencji).</pre>
+    </div>
+
+    <div id="c27" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2503.html#c27">Comment 27</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Leszek Życzkowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-05-27 14:50:40 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(In reply to <a href="show_bug.cgi%3Fid=2503.html#c24">comment #24</a>)
+<span class="quote">&gt; Postaram się odnieść w komentarzu do kilku wypowiedzi od razu.
+&gt; 
+&gt; Pierwsza uwaga: Leszku, ton prowadzenia przez Ciebie dyskusji jest strasznie
+&gt; agresywny. </span >
+Joasiu, widać, że mało mnie znasz, ale inni wiedzą, że nie owijam w bawełnę i walę prosto z mostu. Owijanie w bawełnę, bawienie się w konwenanse skutkuje niezamkniętymi bugami po 2 lata. Ktoś musi trochę pokrzyczeć, aby zwrócić uwagę na niezdrowe tendencje jakie rozprzestrzeniają się w tłumaczeniach Aviary (vide komentarze Wojciecha i Piotra).
+
+<span class="quote">&gt; Jednoznacznie widać, że nie przyszedłeś tutaj, żeby przedyskutować,
+&gt; ale aby narzucić nam swoje już wyrobione zdanie i nic co powiemy tego nie
+&gt; zmieni. </span >
+
+Przecież wyraźnie to napisałem. Tego buga założyłem nie po to, abyście mnie przekonali, że nie mam racji, ale po to, aby zwrócić po raz kolejny uwagę na dziwną tendencję rozprzestrzeniającą się w tłumaczeniach i walczyć o poprawę stylu tłumaczeń. Nikomu nie narzucam swojego zdania, ja go tylko prezentuję. Możesz się z nim zgadzać albo nie. Takie jest Twoje prawo. Oczywiście, że nikt mnie nie przekona, że interfejs programu używanego przez miliony ludzi ma być oschły, techniczny niezachęcający do korzystania z niego. Ma być przyjazny dla użytkownika. Wspominałem wcześniej o konsultacjach ze specjalistą od komunikacji pomiędzy ludźmi, Ja dzisiaj taką konsultację odbyłem na swój własny użytek — trzeba się uczyć całe życie. Bardzo dużo mi to dało i utwierdziło mnie w przekonaniu, że mam raję, więc tym bardziej Twoja opinia mojego zdania nie zmieni.
+
+<span class="quote">&gt; Druga uwaga: zgadzam się w pełni z tym co powiedział Wadim w komentarzu #13.
+&gt; Również nie jestem zwolennikiem zwracania się osobowo do użytkownika.
+&gt; Wszystkie podane przez niego przykłady w obcych językach to są formy
+&gt; grzecznościowe &quot;czy chciałby Pan/Pani&quot; [na tyle znam zarówno niemiecki, czeski
+&gt; jak i francuski]. </span >
+
+W którym przykładzie występuje określenie Pan/Pani?
+ 
+<span class="quote">&gt; Specyfika angielskiego You polega na tym, jak ktoś tu wspomniał, że jest to
+&gt; słowo bardzo pojemne: zawiera w sobie zarówno Ty jak i Pan/Pani/Państwo. </span >
+
+Wydawało mi się, że w angielskim Pani/Pan to Mistress i Mister a jeszcze z większym szacunkiem to Lady/Gentleman, a także Madam. Czy czasem nie naginasz interpretacji?
+
+Za słownikiem Cambridge:
+„you (PERSON/PEOPLE ADDRESSED) 
+pronoun
+used to refer to the person or people being spoken or written to:
+You look nice.
+I love you.
+You said I could go with you.
+You're coming tonight, aren't you?
+Are you two ready?
+You painted that yourself? You clever girl!”
+oraz
+„you (PEOPLE GENERALLY) 
+pronoun
+people in general:
+You learn to accept these things as you get older.
+You can't get a driving licence till you're seventeen in this country.
+Too much alcohol is bad for you.
+How do you get this thing to start?”
+
+Tylko ze względu na specyfikę naszego języka (częste używanie form grzecznościowych) w polskich słownikach określa się, że można tłumaczyć  Pan, Pani, Państwo.
+
+<span class="quote">&gt; Zupełnie inna kwestia to jakość takiego [naszego] tłumaczenia: weź pod uwagę,
+&gt; że gro osób w aviary to tłumacze-hobbyści a nie wykształceni w tym kierunku
+&gt; zawodowcy. Stylistyka może kuleć, szyk zdania może być kalką angielskiego
+&gt; oryginału i dlatego być może część komunikatów do Ciebie &quot;nie trafia&quot;. Nad tym
+&gt; trzeba po prostu popracować i postarać się, aby w formie na jaką się decydujemy
+&gt; brzmiały naturalnie.</span >
+
+Ja też jestem tłumaczem hobbystą, ale staram się nie robić nic na „odwalonego”, nie oznacza to, że robię wszystko perfekcyjnie — staram się. Uważam, że lepiej nic nie robić niż odstawiać fuchę.</pre>
+    </div>
+
+    <div id="c28" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2503.html#c28">Comment 28</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Leszek Życzkowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-05-27 15:03:23 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(In reply to <a href="show_bug.cgi%3Fid=2503.html#c25">comment #25</a>)
+<span class="quote">&gt; (In reply to <a href="show_bug.cgi%3Fid=2503.html#c24">comment #24</a>)
+&gt; &gt; Postaram się odnieść w komentarzu do kilku wypowiedzi od razu.
+&gt; &gt; 
+&gt; &gt; Pierwsza uwaga: Leszku, ton prowadzenia przez Ciebie dyskusji jest strasznie
+&gt; &gt; agresywny.
+&gt; 
+&gt; Mam bardzo podobne odczucie. Duzo wykrzyknikow, emocjonalnie nacechowanych
+&gt; przymiotnikow, nawolywan, wezwan do przyjecia &quot;slusznej&quot; linii itp. powoduje,
+&gt; ze czytam, ale nie mam ochoty sie udzielac, bo jest nieprzyjemnie.</span >
+
+Zbyszku, Bugzilla, to nie portal towarzyski. Na piwo możemy się zawsze umówić. To jest moja „słuszna linia” i wcale nie musisz się z nią zgadzać. Ja nikomu jej nie narzucam, tylko proponuję, apeluję o przyjazny dla zwykłego użytkownika interfejs — podkreślam ZWYKŁEGO UŻYTKOWNIKA. Chciałbyś, aby Aviary było towarzystwem wzajemnej adoracji? Żeby nie można było wyrazić swojej opinii, bo się kogoś urazi? Jeśli tak, to ja dziękuję — nie piszę się na takie numery.</pre>
+    </div>
+
+    <div id="c29" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2503.html#c29">Comment 29</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Leszek Życzkowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-05-27 15:24:34 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(In reply to <a href="show_bug.cgi%3Fid=2503.html#c26">comment #26</a>)
+ Mamy w GNOME wytyczne, które nie były sekretem i nie są. Nam
+<span class="quote">&gt; wydają się zupełnie sensowne, tłumaczenie jest spójne, dużo wysiłku w to
+&gt; poszło, a tu nagle wielkie przebudzenie, żeby z komputera robić ludzką postać,
+&gt; jakiś poradnik Lotusowy sprzed 10 lat o którym dopiero teraz się dowiaduję, a
+&gt; który ma być podstawą dyskusji typu wóz albo przewóz... Nie mogę tego traktować
+&gt; poważnie, dlatego mówię pass.
+&gt; 
+&gt; Jednocześnie liczę na rozsądek zarządu, ponieważ podporządkuję się jego
+&gt; ewentualnej decyzji (bo nie ma tutaj szans na konsensus bez jego interwencji).</span >
+
+Poradnik dla tłumaczy Lotusa zaproponował Hubert (dla przypomnienia prezes Zarządu) rzeczywiście stawiając sprawę wóz albo przewóz. Ja zgadzam się z większością zawartych w tym poradniku zapisów, bo trudno nie zgodzić się z zasadami języka polskiego. Czy będziesz się opierał na innych naukowych publikacjach, czy na tym poradniku, będzie to samo, bo przytoczone w poradniku zasady języka polskiego są nadal aktualne. W tym poradniku są zebrane te, które są istotne dla tłumaczy oprogramowania komputerowego. Gdybyś przeczytał uważnie mój komentarz #23 dowiedziałbyś się, że autor tegoż poradnika od czasu jego stworzenia zmienił zdanie na temat formy bezosobowej interfejsu. Zapoznaj się z poradnikiem i podyskutuj merytorycznie nad jego zawartością, a nie cedujesz wszystko na Zarząd.</pre>
+    </div>
+
+    <div id="c30" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2503.html#c30">Comment 30</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Joanna Mazgaj</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-05-28 12:19:53 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text"><span class="quote">&gt; Joasiu, widać, że mało mnie znasz, ale inni wiedzą, że nie owijam w bawełnę i
+&gt; walę prosto z mostu. Owijanie w bawełnę, bawienie się w konwenanse skutkuje
+&gt; niezamkniętymi bugami po 2 lata. Ktoś musi trochę pokrzyczeć, aby zwrócić uwagę
+&gt; na niezdrowe tendencje jakie rozprzestrzeniają się w tłumaczeniach Aviary (vide
+&gt; komentarze Wojciecha i Piotra).</span >
+
+Walenie prosto z mostu i nie owijanie w bawełnę niekoniecznie jest synonimem bycia nieuprzejmym i wyrażania się agresywnie. A ja nie zarzuciłam Tobie,  że walisz prosto z mostu, tylko że ton Twojej wypowiedzi jest agresywny oraz że jesteś nieuprzejmy. Można wyrażać swoje zdanie stanowczo i bez wywoływania u Twoich rozmówców takiego wrażenia. I o coś takiego prosiłam i nadal proszę.
+
+
+<span class="quote">&gt; W którym przykładzie występuje określenie Pan/Pani?</span >
+
+Podane przykłady to nie jest &quot;czy [Ty] chciałbyś&quot; tylko &quot;czy Pan/Pani chciałby/ałaby&quot;. Konkretnie w którym przypadku masz wątpliwości? Są to zaimki osobowe, w przypadku francuskiego druga osoba liczby mnogiej, w przypadku czeskiego również, w przypadku niemieckiego trzecia osoba. To występujące w tych językach formy grzecznościowe, odpowiedniki naszego Pan/Pani/Państwo. I ładne są do tłumaczenia, bo nie trzeba dodatkowo rozróżniać ani rodzaju, ani liczby. Chyba, że masz tutaj wątpliwości co do moich kompetencji językowych we wszystkich trzech użytych językach?
+
+<span class="quote">&gt;&gt; Specyfika angielskiego You polega na tym, jak ktoś tu wspomniał, że jest to
+&gt;&gt; słowo bardzo pojemne: zawiera w sobie zarówno Ty jak i Pan/Pani/Państwo. </span >
+
+<span class="quote">&gt; Wydawało mi się, że w angielskim Pani/Pan to Mistress i Mister a jeszcze z
+&gt; większym szacunkiem to Lady/Gentleman, a także Madam. Czy czasem nie naginasz
+&gt; interpretacji?</span >
+
+Nikt tutaj nie twierdzi, że Lady/Gentleman/Madam/Mistress/Mister to nie są odpowiedniki naszego Pan/Pani.
+Twierdzę natomiast [i innni, zdaje się, też], że angielskie 'You' zawiera w sobie zarówno Ty, jak i Pan/Pani/Państwo.
+Podałam Tobie kilka przykladów sytuacji, w których osoba anglojęzyczna mówi 'You' ale polskojęzyczna użyłaby 'Pan/Pani' - do których to przykładów się w ogóle nie odniosłeś, więc pozwolę sobie raz jeszcze je przytoczyć:
+Nie ma
+nic dziwnego w tym, że kasjer w sklepie mówi do klienta You, że 10-letni
+dzieciak do 60-letniego sąsiada też mówi You, że pracownik do prezesa mówi You
+i każdy program komputerowy mówi do użytkownika You.
+Specyfika naszego kraju sprawia, że zwracanie się bezpośrednio do kogoś 'Ty'
+jest zarezerwowane dla wąskiej grupy ludzi. Nie wyobrażam sobie, że kasjer w
+sklepie mówi do mnie 'Ty' [lub odwrotnie, klienci do mnie mówią na 'Ty'], że z
+sąsiadką w średnim wieku jestem na 'Ty' itd. Na takie relacje zazwyczaj
+wymagana jest zgoda obu stron, nie mówiąc już o tym, że domyślne traktowanie
+kogoś taką formą oznacza zazwyczaj brak kultury. Stąd rezygnacja z formy
+osobowej w oprogramowaniu jest przeniesieniem tych relacji kulturowych na świat
+zerojedynkowy.
+
+
+Weź pod uwagę, że specyfika kulturowa ma tutaj elementarne znaczenie i powinna zostać uwzględniona w tłumaczeniu. To, że słownik Cambridge mówi o 'Personal Address' a nie wspomina o 'Formal address' to jeszcze nic nie oznacza, bo oni nie muszą sobie nad tym łamać głowy. Polskie słowniki nie dla fanaberii umieszczają Pan/Pani zaraz po Ty [a przynajmniej mój PWN-OXF tak ma] i potem dopiero jest reszta.
+
+Na zakończenie pozwolę sobie zacytować fragmenty 'Poradnika tłumacza - z angielskiego na nasze' Arkadiusza Belczyka [Wydawnictwo IDEA, Kraków 2004], w którym poświęca on prawie 4 strony na wyjaśnienia dotyczące 'You':
+
+&quot;Jednym z największych nieporozumień leksykalnych dotyczących języka angielskiego jest utożsamianie zaimka you z polskim ty i automatyczne tłumaczenie w ten sposób wszelkich zawierających go wyrażeń. Zacznijmy zatem od przypomnienia: you w rzeczywistości nie tylko nie precyzuje liczby (a więc równie dobrze może znaczyć wy), ale też wcale nie musi sugerować żadnej poufałości ze strony mówiącego czy piszącego. You to także polskie Pan/Pani/Państwo. Co więcej, bardzo często słowo to jest używane w angielszczyźnie całkowicie bezosobowo, jako bardziej kolokwialny wariant zaimka one. Zamiast 'to be admitted, one has to queue outside' Anglik powie 'to be admitted, you have to queue outside' mając na myśli prawdę ogólną: 'Żeby wejść, trzeba poczekać w kolejce na zewnątrz' a niekoniecznie zwracając się bezpośrednio do rozmówcy (który może pozostać w ogóle niezdefiniowany) 'Żeby wejść, musisz poczekać w kolejce na zewnątrz'. [str. 35] [...]. 
+Przy zdaniu 'You shouldn't smoke in bed' do wszystkich nie powinieneś/nie powinnaś dochodzi jeszcze [...] ewentualność - wspomniana wyżej (i bardzo w tym przypadku prawdopodobna) bezosobowość: Nie powinno się/Nie należy palić w łóżku. Sprowadzanie tylu możliwości do jednego Ty to zwyczajne lenistwo, niechlujstwo i bezmyślność, których efektem jest zaśmiecanie języka polskiego obcym mu spoufalaniem się z odbiorcą [str. 36] [...]
+Konsekwencją popularności w języku angielskim tego nieskonkretyzowanego you są znacznie częściej spotykane niż w języku polskim zdania rozkazujące, zwłaszcza w formie rad, wskazówek, spostrzeżeń. Co robić w takich przypadkach? Na pewno nie należy ślepo powtarzać trybu rozkazującego, a zastanowić się jak zwykle, co przypuszczalnie powiedziałby wówczas polski autor. Nierzadko zadnie można tak przekształcić, by kłopotliwą konstrukcję w ogóle zlikwidować:
+Navigate the menu with the keyboard arrows - Do poruszania się po menu służą strzałki na klawiaturze
+To close the window, just left-click anywhere outside it - Aby zamknąć okno, wystarczy w dowolnym miejscu poza jego obręcem kliknąć lewym przyciskiem myszki. [str.37]&quot;
+
+
+Podsumowując, jestem przeciwna zmianie obecnej strategii tłumaczenia i uważam, że moje argumenty wyjaśniają to w sposób wystarczająco przejrzysty.</pre>
+    </div>
+
+    <div id="c31" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2503.html#c31">Comment 31</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Staś Małolepszy :stas</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-05-28 13:51:09 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(In reply to <a href="show_bug.cgi%3Fid=2503.html#c30">comment #30</a>)
+
+<span class="quote">&gt; łóżku. Sprowadzanie tylu możliwości do jednego Ty to zwyczajne lenistwo,
+&gt; niechlujstwo i bezmyślność, których efektem jest zaśmiecanie języka polskiego
+&gt; obcym mu spoufalaniem się z odbiorcą [str. 36] [...]</span >
+
+Zgadzam się z przytoczonymi w tym tekście przykładami, ale chciałbym zauważyć, że użyty przez autora język jest niepotrzebnie bardzo emocjonalny. Proponuję nie sugerować się wydźwiękiem tej wypowiedzi, bo to nie jest tak, że jeśli ktoś używa &quot;ty&quot;, to jest głupi, bezmyślny i zaśmieca język.
+
+Angielskie &quot;you&quot; jest, obok wielu zastosowań, także formą grzecznościową. Jest to fakt. Nie wydaje mi się jednak, żeby komunikat komputera do użytkownika, który brzmi &quot;zrób cośtam i spróbuj ponownie&quot; był nieuprzejmy. Jest oszczędny, komunikuje bardzo dobrze treść i jest elastyczny. Używanie &quot;proszę&quot; jest uprzejme ale nieoszczędne. Słowa w naszym języku są na tyle długie, że powinniśmy starać się tworzyć reguły, które faworyzują krótsze tłumaczenia. &quot;Proszę&quot; ma również tę wadę, że w przypadku dłuższych, złożonych komunikatów, trzeba go używać kilkakrotnie, co prowadzi do sztucznie i brzydko brzmiących powtórzeń, albo ewentualnie stylistycznej ekwilibrystyki celem ich uniknięcia -- obie strategie są mało efektywne. Używanie form osobowych w takich przypadkach (wcale nierzadkich) wydaje się być lepszym rozwiązaniem.
+
+W żadnym wypadku żaden interfejs nie powinien IMO zwracać się do uzytkownika per Pan/Pani. Podobnie &quot;Państwo&quot; mnie razi.
+
+Podsumowując: moim zdaniem, komputer powinien zwracać się do użytkownika bezosobowo (nalezy, mozna), ale bez przesady (antyprzyklady: &quot;uzytkownik powinien&quot;), albo osobowo w drugiej osobie liczby pojedynczej (&quot;zrob, wlacz, uruchom, kliknij&quot;). &quot;Proszę&quot; powinno być unikane.</pre>
+    </div>
+
+    <div id="c32" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2503.html#c32">Comment 32</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-05-28 14:17:57 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text"><span class="quote">&gt; Nie wydaje mi się jednak, żeby komunikat komputera do użytkownika,</span >
+który brzmi &quot;zrób cośtam i spróbuj ponownie&quot; był nieuprzejmy.
+
+Nie, nie jest nieuprzejmy. Jest drazniaco bezposredni. Jest dla mnie tak bezposredni jak powiedzenie do osoby znacznie starszej w sklepiej &quot;Mozesz sie przesunac?&quot;.
+
+Problem z jezykiem polskim jest taki, ze *nie ma* innego brzmienia zwrotu bezposredniego niz poufalosc. Nie jestesmy pierwsi, ktorzy tego probuja. W sieciach kawiarn slychac &quot;Duza latte dla Marka!&quot;, &quot;Marku, oto Twoja kawa&quot; i tak dalej. Jednym sie to podoba innym nie.
+
+Nie mam najmniejszych watpliwosci, ze:
+a) Nasz jezyk rozwija sie i idzie w kierunku uznania drugiej formy liczby pojedynczej za pelnoprawny sposob zwracania sie do obcej sobie osoby w &quot;normalnych&quot; warunkach.
+b) &quot;Brzytwa Malolepszego&quot; - j. polski jest tak dlugi i tak zlozony, ze majac do wyboru dwa ciagi znakowe rownie dobrze oddajace tresc zawsze powinnismy wybierac krotszy
+
+
+Jednoczesnie mam watpliwosc wynikajaca z tego, ze:
+c) majac dwa ciagi powinnismy wybierac ten, ktory bedzie bardziej powszechnie akceptowany i &quot;bezpieczny&quot;.
+
+Wybierajac &quot;Ty&quot;, ulatwimy wielu ludziom, ale mozemy (i jestem przekonany, ze bez nalezytej uwagi zrobimy to) spowodowac, ze wiele osob poczuje ze cos jest nie tak czytajac to.
+Nie uzywajac &quot;Ty&quot; nikt nie poczuje sie z tym zle.
+
+Zatem punkt a) wskazuje kierunek, ale punkty b i c w tym wypadku sa sprzeczne. Pytanie dla mnie, ktory z tych dwoch powinien byc dla nas wazniejszy.</pre>
+    </div>
+
+    <div id="c33" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2503.html#c33">Comment 33</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Leszek Życzkowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-05-28 14:35:26 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(In reply to <a href="show_bug.cgi%3Fid=2503.html#c30">comment #30</a>)
+Joasiu,
+Jak widzisz wyciąłem cały tekst z cytatu, bo IMO polemika z poszczególnymi fragmentami do niczego nie prowadzi. Zagadamy się, po obrażamy i jeszcze coś innego… Nie chodzi mi o akademickie dyskusje, a proszę, błagam nie po raz pierwszy o „przyjazny dla zwykłego użytkownika interfejs”. Obsesyjne uciekanie od formy osobowej doprowadziło do przytaczanych już wcześniej wypaczeń. IMO w przyjaznym interfejsie jest miejsce na wszystkie formy. Dla mnie przyjazny interfejs, to proste, krótkie — nie zapominajmy, że jesteśmy ograniczeni miejscem — logiczne komunikaty napisane poprawną polszczyzną ze szczególnym naciskiem na prawidłową składnię, rytm i formę. Jeżeli ktoś przyjmuje zasadę, że do użytkownika zwraca się bezduszna maszyna, to IMO nigdy nie stworzy przyjaznego interfejsu. Może on być poprawny językowo, ale będzie oschły trzymający użytkownika na dystans. Nigdy nie zgodzę się z tym, że zwraca się do mnie maszyna. Komunikuje się ze mną twórca oprogramowania. To on poprzez interfejs prowadzi mnie poprzez poszczególne elementy programu, podpowiada mi co mam zrobić, pyta mnie co chcę zrobić — komunikuje się ze mną w formie tekstowej. Jeśli te komunikaty będą, jak wcześniej wspomniałem, proste, krótkie, zrozumiałe, nawiązujące kontakt z użytkownikiem i napisane poprawną polszczyzną, będzie to przyjazny interfejs.
+W tym momencie chciałbym zwrócić Ci uwagę, że cały czas, prawie we wszystkich wypowiedziach podkreślam kwestę poprawnej polszczyzny. Dla mnie poprawna polszczyzna nie jest tylko przestrzeganiem zasad gramatyki, interpunkcji, składni ale także uwarunkowań kulturowych. Dobre tłumaczenie uwzględnia wszystkie aspekty języka. Wszystkie, to znaczy też i osobowe formy. Dlatego nie zgadzam się z forsowaniem tylko bezosobowej formy.
+Chciałbym abyśmy dyskutowali nad takimi zagadnieniami, a nie rozwodzili się nad tłumaczeniem słowa „you”.</pre>
+    </div>
+
+    <div id="c34" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2503.html#c34">Comment 34</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Leszek Życzkowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-05-28 14:55:33 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(In reply to <a href="show_bug.cgi%3Fid=2503.html#c32">comment #32</a>) 
+<span class="quote">&gt; Wybierajac &quot;Ty&quot;, ulatwimy wielu ludziom, ale mozemy (i jestem przekonany, ze
+&gt; bez nalezytej uwagi zrobimy to) spowodowac, ze wiele osob poczuje ze cos jest
+&gt; nie tak czytajac to.</span >
+
+Nie zastanawiałeś się nad tym, że wielu użytkowników traktuje programy jako „swoje
+”? Program jest jego własnością, bo go kupił, bo pobrał darmowy program, który bardzo mu się podoba, bo dostosował sobie Firefoksa tak, jak chciał — ten program jest jego, więc dlaczego nie może komunikować się z nim w formie osobowej?</pre>
+    </div>
+
+    <div id="c35" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2503.html#c35">Comment 35</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Tomasz Dominikowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-05-28 15:56:05 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(In reply to <a href="show_bug.cgi%3Fid=2503.html#c34">comment #34</a>)
+<span class="quote">&gt; (In reply to <a href="show_bug.cgi%3Fid=2503.html#c32">comment #32</a>) 
+&gt; &gt; Wybierajac &quot;Ty&quot;, ulatwimy wielu ludziom, ale mozemy (i jestem przekonany, ze
+&gt; &gt; bez nalezytej uwagi zrobimy to) spowodowac, ze wiele osob poczuje ze cos jest
+&gt; &gt; nie tak czytajac to.
+&gt; 
+&gt; Nie zastanawiałeś się nad tym, że wielu użytkowników traktuje programy jako
+&gt; „swoje
+&gt; ”? Program jest jego własnością, bo go kupił, bo pobrał darmowy program, który
+&gt; bardzo mu się podoba, bo dostosował sobie Firefoksa tak, jak chciał — ten
+&gt; program jest jego, więc dlaczego nie może komunikować się z nim w formie
+&gt; osobowej?</span >
+(miałem się nie odzywać już, ale...)
+
+To typowa wypowiedź geeka komputerowego, który wiąże sentymentalne wartości z programami komputerowymi. Program jest bezosobowy, niezależnie jak bardzo jest &quot;ładny&quot;. 
+
+Całość rozbija się o fundamentalnie różne pojmowanie oprogramowania.
+
+Jako użytkownik środowiska GNOME od przeszło 5 lat, nie znoszę jak oprogramowanie wchodzi mi w drogę, jego spoufalanie powoduje tylko zgrzyt zębów. Dlatego wycięliśmy w pień &quot;Czy chcesz&quot; z zapytań do użytkownika, a jedynie &quot;proszę&quot; ma większy priorytet niż ekonomiczność przekazu, gdyż inaczej brzmiało by to jak rozkaz (&quot;należy&quot; nie pasuje wszędzie do kontekstu). Do tego przesuwamy sedno komunikatów na początek, aby od razu było wiadomo o co chodzi, bez czytania kwiecistych rozprawek (zamiast &quot;Połączenie nie powiodło się&quot; mamy coś na kształt &quot;Nieudane połączenie&quot;). Skracamy treść przy przyciskach radiowych i kratkach do zaznaczania, aby pozbyć się powtarzanych słów. Myślę, że wypracowaliśmy dobry balans między ekonomicznością, a taktem. 
+
+Nie sądzę, aby ktokolwiek lubił czytać jakiekolwiek komunikaty czy treści opcji w oprogramowaniu. Traktowane jest to jako konieczność, więc skracamy, idziemy do sedna, nie spoufalamy się, nie robimy teatrzyku w postaci Pana Komputera. 
+
+I teraz... gdyby to był poważny problem, na tyle poważny, że użytkownicy staliby z powodu bezosobowości interfejsu przed nieistniejącą siedzibą Aviary.pl z pochodniami, wykrzykując &quot;ja kocham mój komputer, oddawać mi osobowość mojego komputera!&quot;, to bym się zastanowił. Jednak jest to (z braku lepszego określenia) non-issue, problem wyimaginowany, ciekawe teoretyczne zagadnienie w obrębie środowiska tłumaczy, którzy będą teraz dalej dywagować nad rzeczowością argumentów, co nie zmienia faktu, że jest to nadal non-issue dla ZU. 
+
+Jedyna rzecz, jaka mnie w tej chwili martwi, to jeśli jakimś sposobem osobowość zostanie przepchnięta, to nasze (i tak skromne) zasoby dla GNOME zostaną, mówiąc kolokwialnie, udupione bezsensownymi (moim oczywiście zdaniem) modyfikacjami wszystkich programów, zamiast pracować nad tłumaczeniem nowej wersji (co jest i tak samo w sobie sporym przedsięwzięciem). Jasne, można to robić stopniowo. Ujednolicenie bezosobowości i skracanie trwała koło roku o ile się nie mylę. Teraz mielibyśmy znowu wszystko przewracać do góry nogami? W imię czego?</pre>
+    </div>
+
+    <div id="c36" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2503.html#c36">Comment 36</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Leszek Życzkowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-05-28 16:50:56 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(In reply to <a href="show_bug.cgi%3Fid=2503.html#c35">comment #35</a>)
+Odpowiedź sumaryczna, aby nie rozwadniać dyskusji.
+Gdybyś mnie znał (pojawił się na jakimś spotkaniu Aviary) nie określałbyś mnie mianem geeka.
+Spowodowałeś taką formę tłumaczenia, bo Tobie to odpowiada, bo to Ty jesteś geekiem wśród, których zainteresowanie wolnym oprogramowaniem jest na piedestale. Lepiej obracać się w tym samym kręgu niż posłuchać zdania osób, które postrzegają to tłumaczenie inaczej. Ja przełączyłem sobie interfejs w Ubuntu na angielski, bo mogłem go normalnie czytać. Owszem, może ktoś powiedzieć, że mam zboczenie, że się czepiam, że wymagam od tłumaczenia wolnego oprogramowania nie wiem jakiej jakości — może! Ale, aby Linux zdobywał coraz większą rzeszę użytkowników jego interfejs powinien być bardziej ukierunkowany na ZU, a nie odpychał ZU swoją formą. Windows, na którym prawie każdy zwolennik wolnego oprogramowania wiesza psy rozpowszechnił się też dzięki wielu lokalizacjom a w przypadku polskiej lokalizacji dobrą jej jakością. Pomijam trafność wielu określeń stosowanych przez M$ — chodzi mi o jakość tłumaczenia. Trzeba brać przykład z prymusów, a jeśli chodzi o marketing i poprawność lokalizacji, Windows jest prymusem pomijając jego jakość jako oprogramowania. Podobnie jest z Gazetą Wyborczą. Coby o niej nie mówić, nie zgadzać się z jej linią polityczną i nie tylko, jedno jest pewne — treści pisane są świetnej jakości polszczyzną pod każdym względem.
+Tak więc szanowny kolego trzeba popatrzeć na świat szerzej, nie tylko przez okulary geeka. O, cholera! Noszę okulary, więc zapewne jestem geekiem. :)</pre>
+    </div>
+
+    <div id="c37" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2503.html#c37">Comment 37</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Bartosz Piec</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-05-29 02:06:09 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(In reply to <a href="show_bug.cgi%3Fid=2503.html#c32">comment #32</a>)
+<span class="quote">&gt; Nie, nie jest nieuprzejmy. Jest drazniaco bezposredni. Jest dla mnie tak
+&gt; bezposredni jak powiedzenie do osoby znacznie starszej w sklepiej &quot;Mozesz sie
+&gt; przesunac?&quot;.</span >
+
+Ale w sklepie nie mówi program, tylko osoba. Tutaj to program się zwraca do użytkownika, a nie inna (może dużo młodsza) osoba.</pre>
+    </div>
+
+    <div id="c38" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2503.html#c38">Comment 38</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Piotr Leszczyński</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-05-29 06:17:17 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Po raz n-ty zwolennicy wyłącznego stosowania form grzecznościowych i podkreślania tego, że to komputer _mówi_ i program _zwraca się_ a wszelkie sentymentalne wartości jakie tym przedmiotom przyczepiają inni (najczęściej dziwacy, zboczeńcy i cykliści) podają zaraz za przykład relacje międzyludzkie i do nich porównują podkreślane przez siebie relacje program-użytkownik. 
+
+Przy czym nie mają nic przeciw temu, że zegarki pokazują suche cyfry bez żadnych dodatków w rodzaju &quot;proszę&quot;, piloty tv przestają działać, bez kurtuazyjnego &quot;do widzenia, było miło&quot;, albo &quot;moja bateria się skończyła&quot;, a pralki po skończonym praniu wydają z siebie piski pozbawione dodatkowych informacji i form grzecznościowych - a wszyscy wiedzą - czas wyłączyć ustrojstwo.
+
+Jak rozumiem wszyscy z nich mają na drzwiach lodówek naklejone &quot;dzień dobry, jakżesz Pan/Pani się czuje dziś dnia, uprzejmie proszę otworzyć i sprawdzić zawartość, aby przekonać się, czy trzeba iść do sklepu&quot;. Lakoniczne &quot;ping&quot; tostera kompensują zaś wydrapanym cyrklem na jego boku &quot;Po usłyszeniu dźwięku 'ping' proszę uprzejmie wyjąć z mojego kawałka blachy kawałek przepysznego pieczywka tostowego. Kłaniam się nisko, całuję rączki małżonki/małżonka. Wyrazy najwyższego szacunku dla Państwa dzieci/dziecka/kota/legwana bądź papugi/tarantuli sąsiadki/sąsiada. To byłem ja - toster, bynajmniej nie człowiek.&quot;
+
+W związku z tym zastanawiam się i martwi mnie nieco ich z lekka schizofreniczny stan. Ale jak rozumiem chodzi po prostu o to, że nie chce im się już zmieniać tego, nad czym tak długo pracowali i tu tkwi sedno całego problemu i powód sprzecznej argumentacji.
+
+Nikt przecież ze zwolenników większej bezpośredniości nie upierał się, że wszystkie formy grzecznościowe mają być zastąpione bezpośrednimi. Chodzi o tendencję, jaką można wprowadzić i jaką widać w wymienionych przeze mnie niedawno portalach. Jeśli miliony użytkowników najpopularniejszych portali w Polsce nie protestują (że zastosuję podobne porównanie do tego o &quot;użytkownikach z pochodniami&quot;) przeciwko formom bezpośrednim, może warto zastanowić się, że to być może jeden z kluczy do popularności tych, a nie innych serwisów.
+
+Moim zdaniem, w bardzo wielu przypadkach programowe skracanie i uogólnianie przy dodawaniu form grzecznościowych zaciera niejednokrotnie komunikat, a pamiętajmy, że nie tłumaczymy tekstów urzędowych, zaproszeń na bal maskowy ani poezji barokowej tylko teksty użytkowe - których pierwszym i najważniejszym celem jest komunikatywność, a nie koturnowa uprzejmość względem wszystkich ludzi każdej rasy, płci, wieku, pochodzenia, stanowiska i uposażenia.
+
+Wystarczy przejrzeć inne teksty użytkowe, książki informatyczne, instrukcje obsługi, żeby zobaczyć, że w miejscu, gdzie prosi się o formę bezpośrednią, jest ona używana i to bardzo powszechnie (np. w tym powtarzanym po raz kolejny przykładzie &quot;kliknij&quot; - czyli w długich listach poleceń jakiejś procedury). Tak jak w portalach, które wymieniałem, formy grzecznościowe są wciąż używane i nie twierdzę, że są one złem tego świata. Mówię tylko, że nie można się upierać, że formy bezpośrednie zakładają jakiś brak szacunku dla kogokolwiek, albo, że są marginesem - formami ludzi prostych, niepoważnych i zbyt młodych, żeby wiedzieć co to seks. To daleko idące uproszczenie i tworzenie alternatywnych rzeczywistości służące wyłącznie obronie swoich racji (czyt. status quo).</pre>
+    </div>
+
+    <div id="c39" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2503.html#c39">Comment 39</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Piotr Makowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-05-29 09:51:50 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Jako tłumacz hobbysta, z coraz większą wiedzą, jednak wciąż początkujący, celowo nie wypowiadam się od pewnego czasu w tego rodzaju dyskusjach. Raczej z rezerwą się przyglądam, analizuję, wyciągam wnioski. W swoich tłumaczeniach podążam ścieżkami bardziej doświadczonych kolegów i koleżanek z Aviary.pl.
+
+Jednakże wobec tego buga nie mogę pozostać obojętny. Wręcz oszałamia mnie zaangażowanie, z jakim próbujesz udowodnić swoją rację, Leszku. Zastanawiam się, czy na prawdę wierzysz, że tak ogromne znaczenie dla popularności danego oprogramowania ma fakt używania/nieużywania bezpośrednich zwrotów do użytkownika w interfejsie?
+
+Jeszcze nigdy nie czytałem narzekań użytkownika GNOME na sztywne tłumaczenie interfejsu. Gdyby tak było, pewnie bym się zastanowił nad słusznością bronionej przez nas zasady.
+
+Choć z drugiej strony faktem jest, że mi też zwroty bezpośrednie wydają się być bardziej naturalne, bardziej oczywiste. Może dlatego, że ludzie ogólnie mają tendencję do personifikowania otaczającego ich świata (&quot;głupi telewizor!&quot;, o komputerze: &quot;ON się zawiesił) i wcale ich nie dziwi, gdy komputer daje im bezpośrednie komunikaty. Może po prostu dlatego, że najpopularniejszym systemem w Polsce jest Windows, gdzie tłumacze od lat pielęgnują zasadę zwrotów bezpośrednich i ZU są do takiego sposobu komunikacji z komputerem przyzwyczajeni.
+
+Jednak prócz tego wrażenia, które ma część osób, że taka forma brzmi lepiej, naturalniej, w zasadzie wielu racjonalnych argumentów na jej obronę nie widzę. Tym bardziej jestem przeciwny mieszaniu w interfejsie. Włożyliśmy sporo pracy w doprowadzenie np. takiego GNOME do stanu, w którym jest teraz.</pre>
+    </div>
+
+    <div id="c40" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2503.html#c40">Comment 40</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Leszek Życzkowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-05-29 10:50:30 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(In reply to <a href="show_bug.cgi%3Fid=2503.html#c38">comment #38</a>)
+Piotrze, ponownie się z Tobą zgadzam.</pre>
+    </div>
+
+    <div id="c41" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2503.html#c41">Comment 41</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Leszek Życzkowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-05-29 11:32:58 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(In reply to <a href="show_bug.cgi%3Fid=2503.html#c39">comment #39</a>)
+<span class="quote">&gt; Jednakże wobec tego buga nie mogę pozostać obojętny. Wręcz oszałamia mnie
+&gt; zaangażowanie, z jakim próbujesz udowodnić swoją rację, Leszku. Zastanawiam
+&gt; się, czy na prawdę wierzysz, że tak ogromne znaczenie dla popularności danego
+&gt; oprogramowania ma fakt używania/nieużywania bezpośrednich zwrotów do
+&gt; użytkownika w interfejsie?</span >
+
+Tak wierzę! Mało tego, mam konkretne przykłady. Rozmawiałem z wieloma znajomymi na temat Linuksa — rozmawiałem, bo wówczas jeszcze sam nie miałem go zainstalowanego. Prawie każdy podchodził do tego tematu jak do jeża. Zapewne dlatego, że nie są biegli w technice komputerowej. Dla nich komputer jest pomocnym narzędziem w pracy i służy rozrywce, są po prostu ZU. Kilku z nich pokusiło się o instalację Ubuntu, bo to chyba najpopularniejsza dystrybucja w Polsce, ale niestety zrezygnowali z niego ze względu na dostępność programów do jakich się przyzwyczaili na Windowsie i…, jak mi mówili niezrozumiałością interfejsu. Po zainstalowaniu Ubuntu na swoim komputerze stwierdziłem, że jeśli chodzi o interfejs, to mają rację. Kwestie dotyczące programów można przy odrobinie dobrych chęci pominąć.
+Nie chodzi mi o totalne używanie bezpośrednich zwrotów, tylko „przyjazny interfejs”, którego nie można zbudować za pomocą form bezosobowych.
+Linux zasługuje na to, aby go upowszechniać, ale trzeba dać mu szansę — stworzyć interfejs łatwy do „łyknięcia” przez ZU. Firefox, to zupełnie inna sprawa. To jest program, który ma już swoje — właściwe :) — miejsce i tutaj jeszcze bardziej istotną kwestią jest jego piękny interfejs. Trzeba pamiętać, że jest on używany przynajmniej w 90% przez użytkowników Windowsa i nie na darmo Mozilla stworzyła wersje na 3 najpopularniejsze platformy, ale nie po to, aby używać form bezosobowych, tylko grafiki i sformułowań specyficznych dla danej platformy. W przywołanym przez Huberta poradniku autor pisze, że należy zwrócić uwagę na specyfikę platformy na jakiej dany program będzie pracował i jest to zalecenie, IMO, ze wszech miar właściwe.
+ 
+<span class="quote">&gt; Jeszcze nigdy nie czytałem narzekań użytkownika GNOME na sztywne tłumaczenie
+&gt; interfejsu. Gdyby tak było, pewnie bym się zastanowił nad słusznością bronionej
+&gt; przez nas zasady.</span >
+
+Nie będą oni narzekali, bo w większości są to zwolennicy i wielbiciele wolnego oprogramowania. Wiedzą, że tłumaczenie robią tacy sami jak oni zapaleńcy i na dodatek hobbystycznie. Wybaczają im to. :)
+
+<span class="quote">&gt; Jednak prócz tego wrażenia, które ma część osób, że taka forma brzmi lepiej,
+&gt; naturalniej, w zasadzie wielu racjonalnych argumentów na jej obronę nie widzę.
+&gt; Tym bardziej jestem przeciwny mieszaniu w interfejsie. Włożyliśmy sporo pracy w
+&gt; doprowadzenie np. takiego GNOME do stanu, w którym jest teraz.</span >
+
+Nikt nie neguje włożonego ogromu pracy, żąda natychmiastowych zmian. Chodzi mi tylko o obranie kierunku na przyszłość, aby nie brnąć dalej z takimi potworkami jakie były wcześniej przytaczane.</pre>
+    </div>
+
+    <div id="c42" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2503.html#c42">Comment 42</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Tomasz Dominikowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-05-29 13:24:33 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(In reply to <a href="show_bug.cgi%3Fid=2503.html#c41">comment #41</a>)
+<span class="quote">&gt; (In reply to <a href="show_bug.cgi%3Fid=2503.html#c39">comment #39</a>)
+&gt; &gt; Jednakże wobec tego buga nie mogę pozostać obojętny. Wręcz oszałamia mnie
+&gt; &gt; zaangażowanie, z jakim próbujesz udowodnić swoją rację, Leszku. Zastanawiam
+&gt; &gt; się, czy na prawdę wierzysz, że tak ogromne znaczenie dla popularności danego
+&gt; &gt; oprogramowania ma fakt używania/nieużywania bezpośrednich zwrotów do
+&gt; &gt; użytkownika w interfejsie?
+&gt; 
+&gt; Tak wierzę! Mało tego, mam konkretne przykłady. Rozmawiałem z wieloma znajomymi
+&gt; na temat Linuksa — rozmawiałem, bo wówczas jeszcze sam nie miałem go
+&gt; zainstalowanego. Prawie każdy podchodził do tego tematu jak do jeża. Zapewne
+&gt; dlatego, że nie są biegli w technice komputerowej. Dla nich komputer jest
+&gt; pomocnym narzędziem w pracy i służy rozrywce, są po prostu ZU. Kilku z nich
+&gt; pokusiło się o instalację Ubuntu, bo to chyba najpopularniejsza dystrybucja w
+&gt; Polsce, ale niestety zrezygnowali z niego ze względu na dostępność programów do
+&gt; jakich się przyzwyczaili na Windowsie i…, jak mi mówili niezrozumiałością
+&gt; interfejsu.</span >
+
+I tu mamy kolejną rozbieżność filozoficzną.
+
+Zabrzmi to pewnie nieciekawie dla Ciebie, ale ideą wolnego oprogramowania jest tworzenie dobrego oprogramowania, a liczba użytkowników nigdy nie miała znaczenia. Na popularyzacji Ubuntu zależeć może firmie Canonical, mi natomiast absolutnie nie zależy na napływie nowych użytkowników. Zależy mi natomiast bardzo na dobrej jakości tłumaczenia, bo sam używam tego oprogramowania. 
+
+Natomiast teoria, że Ubuntu jest odrzucane przez nowych użytkowników ze względu na niezrozumiałość interfejsu, implikując, że chodzi tutaj o formę bezosobową, rozbawiło mnie. Jasne, zrezygnowali z Ubuntu przez nas, tłumaczy. Był to znaczący czynnik.</pre>
+    </div>
+
+    <div id="c43" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2503.html#c43">Comment 43</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Leszek Życzkowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-05-29 15:12:25 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(In reply to <a href="show_bug.cgi%3Fid=2503.html#c42">comment #42</a>)
+<span class="quote">&gt; I tu mamy kolejną rozbieżność filozoficzną.
+&gt; 
+&gt; Zabrzmi to pewnie nieciekawie dla Ciebie, ale ideą wolnego oprogramowania jest
+&gt; tworzenie dobrego oprogramowania, a liczba użytkowników nigdy nie miała
+&gt; znaczenia. Na popularyzacji Ubuntu zależeć może firmie Canonical, mi natomiast
+&gt; absolutnie nie zależy na napływie nowych użytkowników. Zależy mi natomiast
+&gt; bardzo na dobrej jakości tłumaczenia, bo sam używam tego oprogramowania. </span >
+
+Ta jakość tłumaczenia ma oczywiście być wg twoich założeń.
+Żałuję, że nazwałem cię geekiem. To co prezentujesz w tej wypowiedzi upoważnia mnie do nazwania cię nerdem. 
+ 
+<span class="quote">&gt; Natomiast teoria, że Ubuntu jest odrzucane przez nowych użytkowników ze względu
+&gt; na niezrozumiałość interfejsu, implikując, że chodzi tutaj o formę bezosobową,
+&gt; rozbawiło mnie. Jasne, zrezygnowali z Ubuntu przez nas, tłumaczy. Był to
+&gt; znaczący czynnik.</span >
+
+Czytaj tekst ze zrozumieniem. Napisałem, że podstawową przyczyną odrzucenia przez te osoby Ubuntu było brak oprogramowania, do którego przyzwyczaili się korzystając z Windowsa. Ani razu w tym fragmencie wypowiedzi nie wspomniałem o formie bezosobowej.</pre>
+    </div>
+
+    <div id="c44" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2503.html#c44">Comment 44</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-05-29 15:58:17 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(In reply to <a href="show_bug.cgi%3Fid=2503.html#c43">comment #43</a>)
+
+<span class="quote">&gt; Żałuję, że nazwałem cię geekiem. To co prezentujesz w tej wypowiedzi upoważnia
+&gt; mnie do nazwania cię nerdem. </span >
+
+Uwazam, ze takie zdania sa ponizej poziomu tego forum.
+
+Tutaj, jesli sie nie myle, mamy dyskutowac na temat wartosci merytorycznych i decyzji ktore pozwola nam lepiej tlumaczyc oprogramowanie na jezyk polski. Ty zas, co juz pisalem wczesniej, zachowujesz sie, w moim odczuciu, nie bezposrednio (jak twierdzisz), tylko agresywnie.
+
+Przeprowadzasz wycieczki personalne, nazywasz ludzi geekami lub nerdami, informujesz ich, ze ich odpowiedz jest &quot;typowa&quot;, szufladkujesz, dezawuujesz wartosc zdania rozmowcy &quot;bo to dla takich jak Ty normalne&quot; - tym podobne zdania sa absolutnie poza merytoryczna dyskusja do ktorej nawolywales.
+
+Jak sam widzisz, dyskusja toczy sie i jasno widac, ze zdania sa podzielone. Uszanuj prosze prawo drugiej strony do swojego zdania i przestan imputowac im zla wole, brak wiedzy, skrzywienie lub inne cechy ktore pozwolilyby uznac Twoje prawde za &quot;lepsiejsza&quot; bez rozpatrywania argumentow.
+
+Przyznam, ze nie wiem co dalej zrobic z ta dyskusja, aby przyniosla ona jakis wymierny efekt. Mam wrazenie, ze nie udaje nam sie wyekstrahowac listy argumentow za i przeciw, a zamiast tego kazdy okopuje sie w swoim okopie.
+
+Czy mialoby sens spisanie argumentow na wiki i ewentualnie przeprowadzenie glosowania? Czy moze lepiej by bylo zorganizowac konferencje np. na skype i przedyskutowac to?
+Wydaje mi sie, ze temat podniesiony przez Leszka jest bardzo wazny, i warto zbudowac spojne stanowisko Aviary.pl, ale nie wydaje mi sie, aby ta dyskusja przyblizyla nas do takiego stanowiska :(</pre>
+    </div>
+
+    <div id="c45" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2503.html#c45">Comment 45</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-05-29 16:03:14 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(In reply to <a href="show_bug.cgi%3Fid=2503.html#c44">comment #44</a>)
+<span class="quote">&gt; Czy mialoby sens spisanie argumentow na wiki i ewentualnie przeprowadzenie
+&gt; glosowania? Czy moze lepiej by bylo zorganizowac konferencje np. na skype i
+&gt; przedyskutowac to?</span >
+
+Nie sprawdzałeś poczty? <a href="http://wiki.aviary.pl/Poradnik_t%C5%82umaczy_Lotusa:Rozbie%C5%BCno%C5%9Bci">http://wiki.aviary.pl/Poradnik_t%C5%82umaczy_Lotusa:Rozbie%C5%BCno%C5%9Bci</a></pre>
+    </div>
+
+    <div id="c46" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2503.html#c46">Comment 46</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Leszek Życzkowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-05-29 16:53:41 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(In reply to <a href="show_bug.cgi%3Fid=2503.html#c44">comment #44</a>)
+Zbyszku, Beż komentarzy do poszczególnych fragmentów Twojej wypowiedzi — zauważ, że robię to wielokrotnie w tej dyskusji — dodam tylko jedno zdanie.
+Nie będę mówił, że nic się nie stało, jak ktoś plecie bzdury czytając tylko to co mu odpowiada.
+Z tego co mi wiadomo, to określenie „geek” w polskim slangu ma pozytywne zabarwienie. Jeśli ktoś tego nie rozumie, to nie moja wina. Ostatnia wypowiedź Tomasza Dominikowskiego nie pozostawia żadnych złudzeń, co do jego postawy. Taka postawa, IMO, zasługuje na określenie jakiego użyłem.
+
+Wracając do meritum sprawy:
+„Wydaje mi sie, ze temat podniesiony przez Leszka jest bardzo wazny, i warto
+zbudowac spojne stanowisko Aviary.pl”
+
+Od początku prezentuję takie stanowisko. Hubert zaproponował wsparcie się poradnikiem dla tłumaczy Lotusa, ale pomysł ten nie za bardzo przypadł do gustu, bo mało na ten temat było wypowiedzi. Wspomniany wcześniej TD zarzucił tylko wiek poradnika bez odniesienia się do jego merytorycznej zawartości.
+
+Jeśli skoncentrujemy się na meritum zagadnienia, może w końcu wypracujemy spójne stanowisko i kierunek w jakim będą zdążały nasze tłumaczenia. Może w końcu nadszedł czas, po 4 latach niemożności wypracowania spójnego stanowiska, aby to uczynić. Mam nadzieję, że tak się stanie.</pre>
+    </div>
+
+    <div id="c47" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2503.html#c47">Comment 47</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Tomasz Dominikowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-05-29 17:33:47 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Ależ dajcie spokój, ja się nie obrażam. Robi się z tego coraz większy dramat, a tego się właśnie obawiałem.
+
+Zaszufladkowanie do niczego nie prowadzi. Oprogramowanie jakie tłumacze jest również  dla &quot;nerdów&quot; i &quot;geeków&quot;, w zasadzie dopiero teraz próg jest na tyle niski, że i ZU mogą go używać. Co nie oznacza ani tego, że mamy cokolwiek zmienić, ani tego, że obecne wytyczne GNOME są nieprzyjazne czy wręcz nieprawidłowe dla odbiorcy. Leszek uważa, że są nieprzyjazne i nieprawidłowe. Nie przekona mnie do swojej racji, ponieważ jego argumenty do mnie nie przemawiają (co już napisałem kilkakrotnie). Natomiast za mną stoi niedość że sporo roboty (wszystkich obecnych autorów tłumaczenia GNOME), to jeszcze ogólny, wypracowany konsensus bez którego powyższe nie byłoby możliwe w spójnej postaci. 
+
+Filozofię (niezależnie jaką dostała etykietę, to bez różnicy) w skrócie opisałem. Argumenty przytoczyłem w <a href="show_bug.cgi%3Fid=2503.html#c35">comment 35</a>. Punkt 8.44 z poradnika lotusowego całkiem nieźle opisuje gnomową pozycję, robi tylko dwa drobne wyjątki, których w GNOME nie robimy, stosujemy &quot;proszę&quot;, &quot;należy&quot; lub inną formę, zależnie od kontekstu. 
+
+Nie przyklejajmy więc tego typu etykiet pochopnie, skoro prawie identyczne w pewnych aspektach wytyczne istniały już wiele lat wcześniej, do których sami doszliśmy, a o których dowiedziałem się dopiero niedawno. Bo wtedy i pana Piotra Kresaka, autora lotusowych wytycznych, trzeba by określić mianem co najmniej &quot;geeka&quot; ;]</pre>
+    </div>
+
+    <div id="c48" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2503.html#c48">Comment 48</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Leszek Życzkowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-06-01 10:28:00 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Komentarz ten dedykuję Wadimowi, bo obiecałem, że podam przykłady IMO niespójnego i złego tłumaczenia interfejsu Ubuntu. Zastosowałem tutaj zalecenia „poradnika Lotusa” i sposób analizy tam prezentowany.
+
+Zdanie: Language Support
+
+Tłumaczenie aktualne: Języki
+
+Uwagi: Jest to pozycja menu i określenie „Języki” nie zawiera informacji o jakie języki chodzi. 
+Użytkownik powinien dostać jasną informację, gdzie zostanie przeniesiony po kliknięciu tego menu.
+
+Tłumaczenie moje: Obsługa języków
+
+
+A to moje uwagi do jednego okna dialogowego zmiany języka interfejsu:
+
+Zdanie: Update standard folders to current language?
+
+Tłumaczenie aktualne: Zaktualizować standardowe foldery do bieżącego języka?
+
+Uwagi: Tłumaczenie słowo w słowo. Użycie „standardowe” zbyteczne ponieważ poniżej jest wyświetlona lista folderów, których nazwy zostaną zmienione i nie jest istotne, czy są to nazwy standardowych folderów czy jakichś innych – zaśmiecanie interfejsu.
+
+Tłumaczenie moje: Aktualizacja nazw folderów
+
+Komentarz do mojego tłumaczenia: Okno dialogowe pojawia się po zmianie języka interfejsu i wiadomo, że chodzi o zmianę nazw folderów na nowy język interfejsu. Nie ma potrzeby stosowania zdania pytającego. W dalszej części dialogu jest wyjaśnione o co chodzi.
+
+
+Zdanie: You have logged in in a new language. You can automatically update the names of some standard folders in your home folder to match this language. The update would change the following folders:
+
+Tłumaczenie aktualne: Logowanie odbyło się w nowym języku. Można zaktualizować nazwy standardowych folderów w folderze domowym do nowego języka. Aktualizacja bierze pod uwagę następujące foldery:
+
+Uwagi: Niepotrzebne powtarzanie „nowego języka”. Nieprawidłowa składnia. Kolejne powtórzenie zbytecznego słowa „standardowych” (wszystkie omawiane określenia są w tym samym oknie dialogowym). Pominięcie tłumaczenia „automatically” wypacza sens przekazywanej informacji ponieważ chodzi tutaj o automatyczną aktualizację, a ni o przekazanie informacji, że można zaktualizować foldery. Ostatnie zdanie woła o pomstę do nieba! Lepsze byłoby tłumaczenie słowo w słowo.
+
+Tłumaczenie moje: Logowanie odbyło się z użyciem zmienionych ustawień języka interfejsu. Można do nowego języka automatycznie zaktualizować nazwy folderów znajdujących się w folderze domowym. W trakcie aktualizacji zostaną zmienione nazwy następujących folderów:
+
+Zdanie: Current folder name, New folder name
+
+Tłumaczenie aktualne:Bieżąca nazwa folderu, Nowa nazwa folderu
+
+Uwagi: Tłumaczenie słowo w słowo. Są to nazwy kolumn w oknie zmiany ustawień języka interfejsu. Zbyteczne użycie nazwy „folder”, ponieważ w zdaniu wprowadzającym użyto określenia „folder”.
+
+Tłumaczenie moje: Aktualna nazwa, Nowa nazwa
+
+
+Zdanie: Note tht existing content will not be moved
+
+Tłumaczenie aktualne: Bieżąca zawartość nie zostanie przeniesiona
+ 
+Uwagi: Błąd znaczeniowy. Słowo „bieżąca” w tym kontekście nie pasuje. Generalnie słowo to jest nadużywane.
+
+Tłumaczenie moje: Informacja! Istniejąca zawartość nie zostanie przeniesiona
+
+
+Zdanie: Don't ask me this again
+
+Tłumaczenie aktualne: Nie zadawaj pytania ponownie
+
+Uwagi: W zasadzie nic specjalnego nie można temu tłumaczeniu zarzucić, ale wydaje mi się, że można to zgrabniej przetłumaczyć - tak, jak jest w Firefoksie.
+
+Tłumaczenie moje: Nie pytaj ponownie
+
+A to zestawienie porównawcze aktualnego tłumaczenia z wersja proponowaną przeze mnie:
+
+Zaktualizować standardowe foldery do bieżącego języka?
+Logowanie odbyło się w nowym języku. Można zaktualizować nazwy standardowych folderów w folderze domowym do nowego języka. Aktualizacja bierze pod uwagę następujące foldery:
+Bieżąca nazwa folderu       Nowa nazwa folderu
+Bieżąca zawartość nie zostanie przeniesiona
+Nie zadawaj pytania ponownie
+
+Aktualizacja nazw folderów
+Logowanie odbyło się z użyciem zmienionych ustawień języka interfejsu. Można do nowego języka automatycznie zaktualizować nazwy folderów znajdujących się w folderze domowym. W trakcie aktualizacji zostaną zmienione nazwy następujących folderów:
+Aktualna nazwa       Nowa nazwa
+Informacja: Istniejąca zawartość nie zostanie przeniesiona
+Nie pytaj ponownie</pre>
+    </div>
+
+    <div id="c49" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2503.html#c49">Comment 49</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Tomasz Dominikowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-06-01 11:29:44 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(In reply to <a href="show_bug.cgi%3Fid=2503.html#c48">comment #48</a>)
+<span class="quote">&gt; Komentarz ten dedykuję Wadimowi, bo obiecałem, że podam przykłady IMO
+&gt; niespójnego i złego tłumaczenia interfejsu Ubuntu. Zastosowałem tutaj zalecenia
+&gt; „poradnika Lotusa” i sposób analizy tam prezentowany.
+&gt; 
+&gt; Zdanie: Language Support
+&gt; 
+&gt; Tłumaczenie aktualne: Języki</span >
+
+To program z Ubuntu, a nie z GNOME. 
+ 
+<span class="quote">&gt; A to moje uwagi do jednego okna dialogowego zmiany języka interfejsu:
+&gt; 
+&gt; Zdanie: Update standard folders to current language?</span >
+
+Tłumaczenie xdg-user-dirs-gtk zostało ostatnim razem zaktualizowane przez Artura Flintę 7 lutego 2008 roku, jeszcze jako GNOME PL. Znajduje się w zestawie o niskim priorytecie - gnome-extras. Nikt tego tłumaczenia nie sprawdzał (są jeszcze np. &quot;foldery&quot; i forma osobowa) od tamtego czasu. 
+
+To bardzo kiepski przykład na problem z naszymi wytycznymi, bo wtedy jeszcze nie było żadnych konkretnych wytycznych.</pre>
+    </div>
+
+    <div id="c50" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2503.html#c50">Comment 50</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Leszek Życzkowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-06-01 12:41:38 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(In reply to <a href="show_bug.cgi%3Fid=2503.html#c49">comment #49</a>)
+Tomek, Już prosiłem cię abyś czytał ze zrozumieniem. Napisałem wyraźnie, że chodzi o Ubuntu i że obiecałem Wadimowi wskazanie lapsusów w Ubuntu, bo o to mnie prosił.
+Mnie nie interesuje kto, kiedy i co pozmieniał. Chętnie podyskutuję z tobą o jakości tłumaczenia, a nie o personaliach i poziomach priorytetów.</pre>
+    </div>
+
+    <div id="c51" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2503.html#c51">Comment 51</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Wojciech Kapusta</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2010-03-22 11:44:12 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Kiedyś, na niestety nieistniejącym już forum LinuxUser, czy jakoś tam, jeden z kolegów napisał:
+
+&quot;Tyle mądrych słów, że nie wiadomo z której strony zacząć czytać.&quot;
+
+Tak więc proszę o danie mi jeszcze kilku dni na przeanalizowanie Waszych kwiecistych wypowiedzi i sformułowanie propozycji ustaleń.
+
+PS.
+Proszę już niczego nie dopisywać! :-(</pre>
+    </div>
+
+
+  
+
+</td>
+<td>
+</td>
+</tr></table>
+  </div>
+
+    <hr><div id="add_comment" class="bz_section_additional_comments">
+      <table>
+        <tr>
+          <td>
+            <fieldset>
+              <legend>Note</legend>
+              You need to
+              <a href="show_bug.cgi%3Fid=2503&amp;GoAheadAndLogIn=1.html">log in</a>
+              before you can comment on or make changes to this bug.
+            </fieldset>
+          </td>
+        </tr> 
+      </table>
+  </div>        
+
+</form>
+
+<hr>
+<ul class="related_actions">
+    <li><a href="show_bug.cgi%3Fformat=multiple&amp;id=2503.html">Format For Printing</a></li>
+    <li>&nbsp;-&nbsp;<a href="show_bug.cgi%3Fctype=xml&amp;id=2503">XML</a></li>
+    <li>&nbsp;-&nbsp;<a href="enter_bug.cgi%3Fcloned_bug_id=2503.html">Clone This Bug</a></li>
+    
+    <li>&nbsp;-&nbsp;<a href="show_bug.cgi%3Fid=2503.html#">Top of page </a></li>
+    </ul>
+
+<br>
+</div>
+
+    <div id="footer">
+      <div class="intro"></div>
+<ul id="useful-links">
+  <li id="links-actions"><ul class="links">
+  <li><a href="index.html">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi.html">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi.html">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi.html">Search</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="http://bugs.aviary.pl/buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input type="hidden" id="no_redirect_bottom" name="no_redirect" value="0">
+    <script type="text/javascript">
+      if (history && history.replaceState) {
+        var no_redirect = document.getElementById("no_redirect_bottom");
+        no_redirect.value = 1;
+      }
+    </script>
+    <input class="txt" type="text" id="quicksearch_bottom" name="quicksearch" 
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search" 
+           id="find_bottom"></form>
+  <a href="page.cgi%3Fid=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="report.cgi.html">Reports</a></li>
+
+  <li>
+      <span class="separator">| </span>
+        <a href="request.cgi.html">Requests</a></li>
+
+
+  <li>
+        <span class="separator">| </span>
+        <a href="https://bugzilla.readthedocs.org/en/5.0/using/understanding.html" target="_blank">Help</a>
+      </li>
+    
+      <li id="new_account_container_bottom">
+        <span class="separator">| </span>
+        <a href="createaccount.cgi.html">New&nbsp;Account</a>
+      </li>
+
+    <li id="mini_login_container_bottom">
+  <span class="separator">| </span>
+  <a id="login_link_bottom" href="show_bug.cgi%3Fid=2503&amp;GoAheadAndLogIn=1.html"
+     onclick="return show_mini_login_form('_bottom')">Log In</a>
+
+  <form action="show_bug.cgi%3Fid=2503.html" method="POST"
+        class="mini_login bz_default_hidden"
+        id="mini_login_bottom">
+    <input id="Bugzilla_login_bottom" required
+           name="Bugzilla_login" class="bz_login"
+        type="email" placeholder="Email Address">
+    <input class="bz_password" name="Bugzilla_password" type="password"
+           id="Bugzilla_password_bottom" required
+           placeholder="Password">
+    <input type="hidden" name="Bugzilla_login_token"
+           value="1469821562-0NvJv5ZY2QmK30arHjPp8o7U6kuyosjea3WbTYJKBcI">
+    <input type="submit" name="GoAheadAndLogIn" value="Log in"
+            id="log_in_bottom">
+    <a href="show_bug.cgi%3Fid=2503.html#" onclick="return hide_mini_login_form('_bottom')">[x]</a>
+  </form>
+</li>
+
+
+  <li id="forgot_container_bottom">
+    <span class="separator">| </span>
+    <a id="forgot_link_bottom" href="show_bug.cgi%3Fid=2503&amp;GoAheadAndLogIn=1.html#forgot"
+       onclick="return show_forgot_form('_bottom')">Forgot Password</a>
+    <form action="http://bugs.aviary.pl/token.cgi" method="post" id="forgot_form_bottom"
+          class="mini_forgot bz_default_hidden">
+      <label for="login_bottom">Login:</label>
+      <input name="loginname" size="20" id="login_bottom" required
+          type="email" placeholder="Your Email Address">
+      <input id="forgot_button_bottom" value="Reset Password" type="submit">
+      <input type="hidden" name="a" value="reqpw">
+      <input type="hidden" id="token_bottom" name="token"
+             value="1469821562-2LCQrcgsyr0XjmF2l3E4t8wSBaLS05cFkYOx0h9_mSI">
+      <a href="show_bug.cgi%3Fid=2503.html#" onclick="return hide_forgot_form('_bottom')">[x]</a>
+    </form>
+  </li>
+</ul>
+  </li>
+
+  
+
+
+
+
+  
+</ul>
+
+      <div class="outro"></div>
+    </div>
+
+  </body>
+</html>

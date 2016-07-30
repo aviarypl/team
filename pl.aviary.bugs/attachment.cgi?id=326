@@ -1,0 +1,121 @@
+=== groups/create.html.tmpl
+==================================================================
+--- groups/create.html.tmpl  (revision 61)
++++ groups/create.html.tmpl  (local)
+@@ -1,4 +1,4 @@
+-﻿[%# 1.0@bugzilla.org %]
++[%# 1.0@bugzilla.org %]
+ [%# The contents of this file are subject to the Mozilla Public
+   # License Version 1.1 (the "License"); you may not use this file
+   # except in compliance with the License. You may obtain a copy of
+@@ -25,14 +25,14 @@
+ 
+ [% PROCESS global/header.html.tmpl
+   title = "Dodawanie grupy"
+-  h2 = "Strona ta umożliwia zdefiniowanie nowej grupy użytkownika."
++  h2 = "Strona ta umożliwia zdefiniowanie nowej grupy użytkowników."
+ %]
+ 
+ <form method="post" action="editgroups.cgi">
+   <table border="1" cellpadding="4" cellspacing="0"><tr>
+-    <th>Nowa nazwa</th>
+-    <th>Nowy opis</th>
+-    <th>Nowe wyrażenie regularne użytkownika</th>
++    <th>Nazwa</th>
++    <th>Opis</th>
++    <th>Wyrażenie regularne dla użytkowników</th>
+     <th>Używaj dla [% terms.bledow %]</th>
+   </tr><tr>
+     <td><input size="20" name="name"></td>
+@@ -43,38 +43,38 @@
+ 
+   <input type="checkbox" name="insertnew" value="1"
+     [% IF Param("makeproductgroups") %] checked[% END %]>
+-    Wstaw nową grupę do wszystkich istniejących produktów.<p>
++    Dodaj grupę dla wszystkich istniejących produktów.<p>
+   <input type="submit" value="Dodaj">
+   <input type="hidden" name="action" value="new">
+ </form>
+ 
+-<p><b>Nazwa</b> jest używana w funkcji UserInGroup() w napisanym przez Ciebie
+-pliku cgi używającym określonej grupy. Może być również używana 
+-przez osoby wysyłające [% terms.bledy %] przez e-mail aby ograniczyć [% terms.blad %]
+-do określonego zestawu grup. Nie może zawierać spacji.</p>
++<p><b>Nazwa</b> jest używana w funkcji UserInGroup() w stworzonych przez Ciebie
++plikach cgi. Może być również używana przez osoby wysyłające [% terms.bledy %] 
++przez e-mail aby ograniczyć widoczność [% terms.bledu %] do osób należących do
++określonego zestawu grup. Nie może zawierać spacji.</p>
+ 
+ <p><b>Opis</b> jest tym co pojawi się w raportach [% terms.bledow %]
+-dla członków grupy, gdzie mogą oni wybrać czy 
+-[% terms.blad %] będzie wyświetlany jedynie dla innych z tej samej grupy.</p>
++dla członków grupy, gdzie mogą oni wybrać czy [% terms.blad %] będzie
++wyświetlany jedynie dla innych osób z tej samej grupy.</p>
+ 
+ <p>Flaga <b>Używaj dla [% terms.bledow %]</b> określa czy grupa
+ może być używana dla [% terms.bledow %]. Jeśli zostanie ona odznaczona
+-nie będzie możliwe dodawanie [% terms.bledow %] do tej grupy przez użytkowników,
+-jednak [% terms.bledy %] będące już w grupie, pozostaną w niej.
+-Jest to mniej drastyczny sposób na powstrzymanie rośnięcia grupy
+-niż jej usunięcie. <b>Uwaga: Jeśli tworzysz grupę,
+-prawdopodobnie chcesz, aby jej użycie było możliwe przez wszystkie 
+-[% terms.bledy %], zostaw to pole zaznaczone.</b></p>
++nie będzie możliwe dodawanie nowych [% terms.bledow %] do tej grupy,
++jednakże [% terms.bledy %] będące już w grupie, pozostaną w niej.
++Jest to mniej drastyczny sposób na powstrzymanie wzrostu grupy
++niż jej usunięcie. <b>Uwaga: Jeśli tworzysz nową grupę,
++prawdopodobnie chcesz, aby możliwe było dodawanie 
++[% terms.bledow %] do grupy, pozostaw to pole zaznaczone.</b></p>
+ 
+-<p><b>Wyrażenie regularne użytkownika</b> jest opcjonalne, 
++<p><b>Wyrażenie regularne dla użytkowników</b> jest opcjonalne, 
+ w przypadku wypełnienia, automatycznie udzieli członkostwa
+ w tej grupie każdemu, kogo adres e-mail
+ pasuje do tego wyrażenia regularnego.</p>
+ 
+ <p>Domyślnie nowa grupa będzie skojarzona z istniejącymi 
+-produktami. Odznaczając opcję "Wstaw nową grupę do wszystkich 
++produktami. Odznaczając opcję "Dodaj grupę dla wszystkich 
+ istniejących produktów" zapobiegniesz temu i grupa będzie 
+-widoczna jedynie, gdy została dodana do produktu.</p>
++widoczna jedynie, gdy zostanie dodana do produktu.</p>
+ 
+ <p>Wróć do <a href="./">strony głównej [% terms.bledow %]</a>
+ 
+=== products/groupcontrol/confirm-edit.html.tmpl
+==================================================================
+--- products/groupcontrol/confirm-edit.html.tmpl  (revision 61)
++++ products/groupcontrol/confirm-edit.html.tmpl  (local)
+@@ -26,24 +26,24 @@
+ 
+ [% FOREACH group = mandatory_groups %]
+ <P>
+-grupa '[% group.name FILTER html %]' wp�ywa na [% group.count %] 
++grupa '[% group.name FILTER html %]' wpływa na [% group.count %] 
+ [%+ PROCESS ODMIEN c=group.count o1=terms.blad o2=terms.bledy o3=terms.bledow %] 
+-dla kt�rych grupa jest wymagana i b�dzie dodana.
++dla których grupa jest wymagana i będzie dodana.
+ [% END %]
+ 
+ [% FOREACH group = na_groups %]
+ <P>
+-grupa '[% group.name FILTER html %]' wp�ywa na [% group.count %]&nbsp;
++grupa '[% group.name FILTER html %]' wpływa na [% group.count %]&nbsp;
+ [% PROCESS ODMIEN c=group.count o1=terms.blad o2=terms.bledy o3=terms.bledow %] 
+-dla kt�rych grupa nie jest ju� dost�pna i zostanie usuni�ta.[% END %]
++dla których grupa nie jest już dostępna i zostanie usunięta.[% END %]
+ <form method="post" >
+ 
+   [% PROCESS "global/hidden-fields.html.tmpl" exclude="^Bugzilla_(login|password)$" %]
+ 
+   <br>
+-     Kliknij przycisk "Kontynuuj" aby dokona� zmiany, ��cznie 
+-     ze zmianami wymienionymi powy�ej. Je�li nie chcesz tych 
+-     zmian, wr�� do poprzedniej strony.
++     Kliknij przycisk "Kontynuuj" aby dokonać zmiany, łącznie 
++     ze zmianami wymienionymi powyżej. Jeśli nie chcesz tych 
++     zmian, wróć do poprzedniej strony.
+   <p>
+     <input type="hidden" name="confirmed" value="confirmed">
+     <input type="submit" value="Kontynuuj">
+

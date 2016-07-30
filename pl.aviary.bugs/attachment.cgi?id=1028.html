@@ -1,0 +1,36 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Witamy w Firefoksie';
+    $body_id    = 'firstrun';
+    $body_class = 'portal-page';
+    
+    $extra_headers = <<<EXTRA_HEADERS
+    <link rel="stylesheet" type="text/css" href="http://bugs.aviary.pl/style/tignish/firstrun-page.css" media="screen" />
+EXTRA_HEADERS;
+    $extra_feature = <<<EXTRA_FEATURE
+<div id="tab-close"><p>Kliknij przycisk zamykania na tej karcie, aby przejść do swojej strony startowej</p></div>
+EXTRA_FEATURE;
+
+    @include_once "{$config['file_root']}/{$lang}/includes/header-portal-pages.inc.php";
+?>
+
+<div id="main-feature">
+	<h2>Firefox 3 &ndash; witamy</h2>
+	<p>Dziękujemy za ściągnięcie najbezpieczniejszej, najszybszej i najbardziej modyfikowalnej wersji Firefoksa, jaka ukazała się do tej pory. Aby zacząć z niej korzystać, zamknij tę kartę, jak pokazano wyżej.</p>
+</div>
+
+<div id="main-content">
+	<div>
+		<h3>Dowiedz się więcej</h3>
+		<p>Zastanawiasz się, co teraz? Na naszej stronie „Pierwsze kroki z Firefoksem” możesz znaleźć listę polecanych witryn oraz dodatkowe informacje na temat Firefoksa. <a href="http://bugs.aviary.pl/&lt;?=$lang?&gt;/firefox/central/">Odwiedź Pierwsze kroki z Firefoksem</a></p>
+	</div>
+	<div>
+		<h3>Pytania?</h3>
+		<p>Nasze strony Wsparcia zawierają sporo odpowiedzi. Znajdziesz tam także linki do miejsc, gdzie możesz porozmawiać na żywo z innymi użytkownikami, którzy pomogą rozwiązać bardziej zawiłe problemy. <a href="http://support.mozilla.com/<?=$lang?>/kb/">Odwiedź strony Wsparcia</a></p>
+	</div>
+</div>
+
+
+<?php
+    @include_once "{$config['file_root']}/{$lang}/includes/footer-portal-pages.inc.php";
+?>

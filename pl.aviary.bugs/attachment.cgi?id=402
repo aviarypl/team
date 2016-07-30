@@ -1,0 +1,239 @@
+Index: trunk/locale/pl-PL/navigator/navigator.dtd
+===================================================================
+--- trunk/locale/pl-PL/navigator/navigator.dtd	(revision 9)
++++ trunk/locale/pl-PL/navigator/navigator.dtd	(working copy)
+@@ -2,10 +2,10 @@
+ <!ENTITY mainWindow.titlemodifier "&brandShortName;" >
+ <!ENTITY mainWindow.titlemodifiermenuseparator " - " >
+ <!ENTITY nothingAvailable.label "(Niczego nie znaleziono)" >
+-<!ENTITY browserCmd.label "Nowe okno Nawigatora" >
+-<!ENTITY browserCmd.accesskey "g" >
+-<!ENTITY tabCmd.label "Panel Nawigatora" >
+-<!ENTITY tabCmd.accesskey "P" >
++<!ENTITY browserCmd.label "Nowe okno" >
++<!ENTITY browserCmd.accesskey "N" >
++<!ENTITY tabCmd.label "Karta" >
++<!ENTITY tabCmd.accesskey "K" >
+ <!ENTITY tabCmd.commandkey "t" >
+ <!ENTITY openCmd.label "Otwórz adres internetowy..." >
+ <!ENTITY openCmd.accesskey "i" >
+@@ -37,8 +37,8 @@
+ <!ENTITY navbarCmd.accesskey "n" >
+ <!ENTITY personalbarCmd.label "Osobisty pasek narzędzi" >
+ <!ENTITY personalbarCmd.accesskey "O" >
+-<!ENTITY tabbarCmd.label "Pasek paneli" >
+-<!ENTITY tabbarCmd.accesskey "p" >
++<!ENTITY tabbarCmd.label "Pasek kart" >
++<!ENTITY tabbarCmd.accesskey "P" >
+ <!ENTITY taskbarCmd.label "Pasek stanu" >
+ <!ENTITY taskbarCmd.accesskey "s" >
+ <!ENTITY componentbarCmd.label "Pasek komponentów" >
+@@ -60,7 +60,7 @@
+ <!ENTITY translateMenu.label "Przetłumacz dokument" >
+ <!ENTITY translateMenu.accesskey "t" >
+ <!ENTITY translate.commandKey "t" >
+-<!ENTITY closeOtherTabs.label "Zamknij pozostałe panele" >
++<!ENTITY closeOtherTabs.label "Zamknij pozostałe karty" >
+ <!ENTITY closeWindow.label "Zamknij okno" >
+ <!ENTITY bidiMenu.label "Opcje tekstu dwukierunkowego" >
+ <!ENTITY directionBidiMenu.label "Domyślny kierunek" >
+@@ -121,7 +121,7 @@
+ <!ENTITY addCurPageCmd.commandkey "d" >
+ <!ENTITY addCurPageAsCmd.label "Archiwizuj zakładkę..." >
+ <!ENTITY addCurPageAsCmd.accesskey "A" >
+-<!ENTITY addCurTabsAsCmd.label "Dodaj do zakładek jako grupę paneli..." >
++<!ENTITY addCurTabsAsCmd.label "Dodaj do zakładek jako grupę kart..." >
+ <!ENTITY addCurTabsAsCmd.accesskey "G" >
+ <!ENTITY manBookmarksCmd.label "Menedżer zakładek..." >
+ <!ENTITY manBookmarksCmd.accesskey "z" >
+Index: trunk/locale/pl-PL/navigator/navigator.properties
+===================================================================
+--- trunk/locale/pl-PL/navigator/navigator.properties	(revision 9)
++++ trunk/locale/pl-PL/navigator/navigator.properties	(working copy)
+@@ -37,13 +37,13 @@
+ switchskins=Nowy schemat zostanie u\u017cyty po ponownym uruchomieniu programu.
+ switchskinstitle=Zastosuj schemat
+ showskinsdescription=true
+-tabs.closeTab=Zamknij panel
++tabs.closeTab=Zamknij kart\u0119
+ tabs.close=Zamknij
+ tabs.closeWarningTitle=Ostrze\u017cenie
+-tabs.closeWarning=Bie\u017c\u0105ce okno przegl\u0105daki zawiera wi\u0119cej ni\u017c jeden otwarty panel (%S). Czy na pewno zamkn\u0105\u0107 to okno przegl\u0105darki i wszystkie otwarte panele?
+-tabs.closeButton=Zamknij wszystkie panele
+-tabs.closeWarningPromptMe=Ostrzegaj przy zamykaniu okna zawieraj\u0105cego wiele paneli
+-tabs.historyItem=Grupa paneli
++tabs.closeWarning=Bie\u017c\u0105ce okno przegl\u0105daki zawiera wi\u0119cej ni\u017c jedn\u0105 otwart\u0105 kart\u0119 (%S). Czy na pewno zamkn\u0105\u0107 to okno przegl\u0105darki i wszystkie otwarte karty?
++tabs.closeButton=Zamknij wszystkie karty
++tabs.closeWarningPromptMe=Ostrzegaj przy zamykaniu okna zawieraj\u0105cego wiele kart
++tabs.historyItem=Grupa kart
+ searchFor=Szukaj w %S "%S"
+ switchJVMTitle=Wybierz wersj\u0119 \u015brodowiska Java
+ switchJVMFailed=Zmiana wersji \u015brodowiska Java nie powiod\u0142a si\u0119
+Index: trunk/locale/editor/tabeditor.dtd
+===================================================================
+--- trunk/locale/editor/tabeditor.dtd	(revision 9)
++++ trunk/locale/editor/tabeditor.dtd	(working copy)
+@@ -37,7 +37,7 @@
+    - ***** END LICENSE BLOCK ***** -->
+ 
+ <!ENTITY untitledDocument.label      "(Bez nazwy)">
+-<!ENTITY closeTab.label              "Zamknij panel">
++<!ENTITY closeTab.label              "Zamknij kartę">
+ <!ENTITY closeTab.accesskey          "z">
+-<!ENTITY closeOtherTabs.label        "Zamknij inne panele">
++<!ENTITY closeOtherTabs.label        "Zamknij inne karty">
+ <!ENTITY closeOtherTabs.accesskey    "a">
+Index: trunk/locale/editor/Nvu-totd-en.rdf
+===================================================================
+--- trunk/locale/editor/Nvu-totd-en.rdf	(revision 9)
++++ trunk/locale/editor/Nvu-totd-en.rdf	(working copy)
+@@ -118,8 +118,8 @@
+     </item>
+ 
+     <item>
+-      <title>...możesz otworzyć nowy panel naciskając kombinację klawiszy?</title>
+-      <description>Control+t (Command+t w Mac OS X) otworzy nowy, pusty panel.</description>
++      <title>...możesz otworzyć nową kartę naciskając kombinację klawiszy?</title>
++      <description>Control+t (Command+t w Mac OS X) otworzy nową, pustą kartę.</description>
+     </item>
+ 
+   </channel>
+Index: trunk/locale/editor/pref-composer.dtd
+===================================================================
+--- trunk/locale/editor/pref-composer.dtd	(revision 9)
++++ trunk/locale/editor/pref-composer.dtd	(working copy)
+@@ -77,4 +77,4 @@
+ <!ENTITY  useCSS.label              "Użyj stylów CSS zamiast elementów HTML i atrybutów">
+ 
+ <!ENTITY  siteManager.label         "Menedżer Stron">
+-<!ENTITY  openInNewTab.label        "Zawsze otwieraj dokument w nowym panelu">
++<!ENTITY  openInNewTab.label        "Zawsze otwieraj dokument w nowej karcie">
+Index: trunk/locale/editor/editorOverlay.dtd
+===================================================================
+--- trunk/locale/editor/editorOverlay.dtd	(revision 9)
++++ trunk/locale/editor/editorOverlay.dtd	(working copy)
+@@ -51,7 +51,7 @@
+ <!ENTITY newOtherCmd.label "Więcej opcji...">
+ 
+ <!ENTITY newMenu.label "Nowy" >
+-<!ENTITY newTab.label "Strona w nowym panelu">
++<!ENTITY newTab.label "Strona w nowej karcie">
+ <!ENTITY openFileCmd.label "Otwórz plik..." >
+ <!ENTITY fileopen.accesskey "o" >
+ <!ENTITY fileopen.keybinding "o" >
+Index: trunk/locale/global/tabbrowser.dtd
+===================================================================
+--- trunk/locale/global/tabbrowser.dtd	(revision 9)
++++ trunk/locale/global/tabbrowser.dtd	(working copy)
+@@ -1,12 +1,12 @@
+ <!ENTITY untitledTab "(Bez nazwy)" >
+-<!ENTITY newTab.label "Nowy panel" >
++<!ENTITY newTab.label "Nowa karta" >
+ <!ENTITY newTab.accesskey "N" >
+-<!ENTITY closeTab.label "Zamknij panel" >
++<!ENTITY closeTab.label "Zamknij kartę" >
+ <!ENTITY closeTab.accesskey "Z" >
+ <!ENTITY closeOtherTabs.accesskey "i" >
+-<!ENTITY closeOtherTabs.label "Zamknij inne panele" >
+-<!ENTITY reloadAllTabs.label "Odśwież wszystkie panele" >
++<!ENTITY closeOtherTabs.label "Zamknij inne karty" >
++<!ENTITY reloadAllTabs.label "Odśwież wszystkie karty" >
+ <!ENTITY reloadAllTabs.accesskey "w" >
+-<!ENTITY reloadTab.label "Odśwież panel" >
+-<!ENTITY reloadTab.accesskey "p" >
+-<!ENTITY newTabButton.tooltip "Otwórz nowy panel" >
++<!ENTITY reloadTab.label "Odśwież kartę" >
++<!ENTITY reloadTab.accesskey "d" >
++<!ENTITY newTabButton.tooltip "Otwórz nową kartę" >
+Index: trunk/locale/global/tabbrowser.properties
+===================================================================
+--- trunk/locale/global/tabbrowser.properties	(revision 9)
++++ trunk/locale/global/tabbrowser.properties	(working copy)
+@@ -1,6 +1,6 @@
+ tabs.loading=\u0141adowanie...
+ tabs.untitled=(Bez nazwy)
+-tabs.closeTab=Zamknij panel
++tabs.closeTab=Zamknij kart\u0119
+ tabs.close=Zamknij
+ browsewithcaret.checkMsg=Nie pokazuj wi\u0119cej tego dialogu.
+ browsewithcaret.checkWindowTitle=Przegl\u0105danie z u\u017cyciem kursora
+@@ -8,8 +8,8 @@
+ browsewithcaret.checkButtonLabel=Tak
+ 
+ tabs.closeWarningTitle=Potwierd\u017a zamkni\u0119cie
+-tabs.closeWarningOne=Zamierzasz zamkn\u0105\u0107 %S otwarty panel. Czy jeste\u015b pewien, \u017ce chcesz kontynuowa\u0107?
+-tabs.closeWarningMultiple=Zamierzasz zamkn\u0105\u0107 %S otwartych paneli. Czy jeste\u015b pewien, \u017ce chcesz kontynuowa\u0107?
++tabs.closeWarningOne=Zamierzasz zamkn\u0105\u0107 %S otwart\u0105 kart\u0119. Czy jeste\u015b pewien, \u017ce chcesz kontynuowa\u0107?
++tabs.closeWarningMultiple=Zamierzasz zamkn\u0105\u0107 %S otwartych kart. Czy jeste\u015b pewien, \u017ce chcesz kontynuowa\u0107?
+ tabs.closeButtonOne=Zamknij panel
+-tabs.closeButtonMultiple=Zamknij panele
+-tabs.closeWarningPromptMe=Ostrzegaj mnie przed zamkni\u0119ciem wielu paneli
++tabs.closeButtonMultiple=Zamknij karty
++tabs.closeWarningPromptMe=Ostrzegaj mnie przed zamkni\u0119ciem wielu kart
+Index: trunk/locale/communicator/pref/pref-navigator.dtd
+===================================================================
+--- trunk/locale/communicator/pref/pref-navigator.dtd	(revision 9)
++++ trunk/locale/communicator/pref/pref-navigator.dtd	(working copy)
+@@ -3,7 +3,7 @@
+ <!ENTITY navRadio "Wyświetl" >
+ <!ENTITY navStartPageMenu.label "przy starcie przeglądarki" >
+ <!ENTITY newWinPageMenu.label "po otwarciu okna" >
+-<!ENTITY newTabPageMenu.label "po otwarciu panelu" >
++<!ENTITY newTabPageMenu.label "po otwarciu karty" >
+ 
+ <!ENTITY blankPageRadio.label "Pustą stronę" >
+ <!ENTITY blankPageRadio.accesskey "n" >
+@@ -13,13 +13,13 @@
+ <!ENTITY lastPageRadio.accesskey "O" >
+ 
+ <!ENTITY header2.label "Strona domowa" >
+-<!ENTITY homePageIntro.label "Naciśnięcie przycisku Strona domowa wyświetli poniższą stronę lub grupę stron w oddzielnych panelach." >
++<!ENTITY homePageIntro.label "Naciśnięcie przycisku Strona domowa wyświetli poniższą stronę lub grupę stron w oddzielnych kartach." >
+ <!ENTITY location.label "Adres:" >
+ <!ENTITY location.accesskey "a" >
+ <!ENTITY useCurrent.label "Użyj bieżącej strony" >
+ <!ENTITY useCurrent.accesskey "u" >
+-<!ENTITY useCurrentGroup.label "Użyj bieżących paneli" >
+-<!ENTITY useCurrentGroup.accesskey "p" >
++<!ENTITY useCurrentGroup.label "Użyj bieżących kart" >
++<!ENTITY useCurrentGroup.accesskey "k" >
+ <!ENTITY browseFile.label "Wybierz plik..." >
+ <!ENTITY browseFile.accesskey "W" >
+ <!ENTITY useDefault.label "Przywróć domyślne" >
+Index: trunk/locale/communicator/pref/pref-tabs.dtd
+===================================================================
+--- trunk/locale/communicator/pref/pref-tabs.dtd	(revision 9)
++++ trunk/locale/communicator/pref/pref-tabs.dtd	(working copy)
+@@ -1,10 +1,10 @@
+-<!ENTITY tabHeader.label "Przeglądanie przy użyciu paneli" >
+-<!ENTITY tabDisplay.label "Wyświetlanie paneli" >
+-<!ENTITY autoHide.label "Ukryj pasek paneli, jeżeli otwarty jest tylko jeden panel" >
+-<!ENTITY background.label "Wczytaj strony otwierane w nowych panelach w tle" >
++<!ENTITY tabHeader.label "Przeglądanie przy użyciu kart" >
++<!ENTITY tabDisplay.label "Wyświetlanie kart" >
++<!ENTITY autoHide.label "Ukryj pasek kart, jeżeli otwarta jest tylko jedna karta" >
++<!ENTITY background.label "Wczytaj strony otwierane w nowych kartach w tle" >
+ <!ENTITY loadGroup.label "Podczas otwierania grupy zakładek" >
+-<!ENTITY loadGroupAppend.label "Otwórz wszystkie jako nowe panele" >
++<!ENTITY loadGroupAppend.label "Otwórz wszystkie jako nowe karty" >
+ <!ENTITY loadGroupAppend.accesskey "O" >
+-<!ENTITY loadGroupReplace.label "Otwórz w bieżących panelach" >
+-<!ENTITY loadGroupReplace.accesskey "P" >
+-<!ENTITY openTabs.label "Otwórz strony w nowym panelu zamiast w nowym oknie, jeżeli:" >
++<!ENTITY loadGroupReplace.label "Otwórz w bieżących kartach" >
++<!ENTITY loadGroupReplace.accesskey "b" >
++<!ENTITY openTabs.label "Otwórz strony w nowej karcie zamiast w nowym oknie, jeżeli:" >
+Index: trunk/locale/communicator/openLocation.dtd
+===================================================================
+--- trunk/locale/communicator/openLocation.dtd	(revision 9)
++++ trunk/locale/communicator/openLocation.dtd	(working copy)
+@@ -45,7 +45,7 @@
+ <!ENTITY caption.label "Otwórz adres internetowy" >
+ <!ENTITY openWhere.label "W którym oknie otworzyć:" >
+ <!ENTITY openWhere.accesskey "O" >
+-<!ENTITY newTab.label "Nowy panel">
++<!ENTITY newTab.label "nowej karcie">
+ <!ENTITY editNewWindow.label "Nowe okno">
+ 
+ <!ENTITY documentTypeCaption.label "Jaki rodzaj dokumentu chcesz utworzyć?">
+

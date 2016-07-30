@@ -1,0 +1,169 @@
+diff --git a/dom/chrome/nsWebBrowserPersist.properties b/dom/chrome/nsWebBrowserPersist.properties
+--- a/dom/chrome/nsWebBrowserPersist.properties
++++ b/dom/chrome/nsWebBrowserPersist.properties
+@@ -36,15 +36,15 @@
+ # the terms of any one of the MPL, the GPL or the LGPL.
+ #
+ # ***** END LICENSE BLOCK *****
+ 
+ readError=Plik %S nie może zostać zapisany, ponieważ nie można odczytać pliku źródłowego.\n\nNależy spróbować później lub skontaktować się z administratorem serwera.
+ writeError=Plik %S nie może zostać zapisany, ponieważ wystąpił nieznany błąd.\n\nNależy spróbować zapisać plik w innym katalogu docelowym.
+ launchError=Plik %S nie może zostać otwarty, ponieważ wystąpił nieznany błąd.\n\nNależy spróbować zapisać plik na dysk, a następnie ponownie go otworzyć.
+ diskFull=Za mało miejsca na dysku, aby zapisać plik %S.\n\nZwolnij wymaganą ilość miejsca na dysku i spróbuj jeszcze raz zapisać plik lub wybierz inny katalog docelowy.
+-readOnly=Plik %S nie może zostać zapisany, ponieważ dysk, katalog lub plik chroniony jest przed zapisem.\n\nNależy zmienić prawa dostępu, a następnie spróbować ponownie lub wybrać inny katalog docelowy.
+-accessError=Plik %S nie może zostać zapisany, ponieważ nie można zmienić zawartości tego katalogu.\n\nNależy zmienić właściwości katalogu, a następnie spróbować ponownie lub wybrać inny katalog docelowy.
++readOnly=Plik %S nie może zostać zapisany, ponieważ dysk, folder lub plik chroniony jest przed zapisem.\n\nNależy zmienić prawa dostępu, a następnie spróbować ponownie lub wybrać inny folder docelowy.
++accessError=Plik %S nie może zostać zapisany, ponieważ nie można zmienić zawartości tego folderu.\n\nNależy zmienić właściwości folderu, a następnie spróbować ponownie lub wybrać inny folder docelowy.
+ helperAppNotFound=Plik %S nie może zostać otwarty, ponieważ powiązana z nim aplikacja pomocnicza nie istnieje. Zmień powiązania dla tego typu pliku w preferencjach.
+ noMemory=Brakuje dostępnej pamięci do zakończenia wybranej operacji.\n\nNależy zakończyć pracę niektórych aplikacji, a następnie spróbować ponownie.
+ title=Pobieranie %S
+ fileAlreadyExistsError=%S nie może zostać zapisany, ponieważ istnieje już plik o nazwie takiej samej jak katalog "_files".\n\nSpróbuj zapisać w innym miejscu.
+ fileNameTooLongError=%S nie może zostać zapisany, ponieważ nazwa pliku jest zbyt długa.\n\nSpróbuj zapisać pod krótszą nazwą.
+diff --git a/toolkit/chrome/global/xpinstall/xpinstall.properties b/toolkit/chrome/global/xpinstall/xpinstall.properties
+--- a/toolkit/chrome/global/xpinstall/xpinstall.properties
++++ b/toolkit/chrome/global/xpinstall/xpinstall.properties
+@@ -35,19 +35,19 @@ DeleteComponent=Usuwanie komponentu: %s
+ DeleteComponent=Usuwanie komponentu: %s
+ Execute=Wykonywanie: %s
+ ExecuteWithArgs=Wykonywanie: %s z argumentem: %s
+ CopyFile=Kopiowanie pliku: %s do %s
+ ExecuteFile=Wykonywanie pliku: %s
+ ExecuteFileWithArgs=Wykonywanie pliku: %s z argumentem: %s
+ MoveFile=Przenoszenie pliku: %s to %s
+ RenameFile=Zmiana nazwy pliku: %s na %s
+-CreateFolder=Tworzenie katalogu: %s
+-RemoveFolder=Usuwanie katalogu: %s
+-RenameFolder=Zmiana nazwy katalogu: %s na %s
++CreateFolder=Tworzenie folderu: %s
++RemoveFolder=Usuwanie folderu: %s
++RenameFolder=Zmiana nazwy folderu: %s na %s
+ WindowsShortcut=Skrót: %s
+ MacAlias=Alias Mac: %s
+ WindowsRegisterServer=Serwer rejestru Windows: %s
+ UnknownFileOpCommand=Nieznane polecenie operacji na pliku!
+ Patch=Instalacja poprawek w: %s
+ Uninstall=Dezinstalacja: %s
+ RegSkin=Rejestrowanie motywu: %s
+ RegLocale=Rejestrowanie ustawień językowych: %s
+diff --git a/toolkit/chrome/mozapps/downloads/unknownContentType.properties b/toolkit/chrome/mozapps/downloads/unknownContentType.properties
+--- a/toolkit/chrome/mozapps/downloads/unknownContentType.properties
++++ b/toolkit/chrome/mozapps/downloads/unknownContentType.properties
+@@ -41,17 +41,17 @@ title=Otwieranie %S
+ title=Otwieranie %S
+ saveDialogTitle=Wprowadź nazwę pliku...
+ defaultApp=%S (domyślny)
+ chooseAppFilePickerTitle=Wybierz aplikację pomocniczą
+ badApp=Wybrana aplikacja ("%S") nie może zostać odnaleziona. Należy sprawdzić poprawność wprowadzonej nazwy pliku lub wybrać inną aplikację.
+ badApp.title=Nie znaleziono aplikacji
+ badPermissions=Nie udało się zapisać pliku, ponieważ użytkownik nie ma wystarczających uprawnień. Należy wybrać inny katalog.
+ badPermissions.title=Brak uprawnień do zapisu
+-selectDownloadDir=Wybierz katalog dla pobranych plików
++selectDownloadDir=Wybierz folder dla pobranych plików
+ unknownAccept.label=Zapisz plik
+ unknownCancel.label=Anuluj
+ fileType=plik %S
+ 
+ # LOCALIZATION NOTE (wpsDefaultOS2): OS/2 only, WPS refers to the Workplace Shell and should probably not be translated
+ wpsDefaultOS2=Domyślny WPS
+ # LOCALIZATION NOTE (classViewerOS2): OS/2 only
+ classViewerOS2=Przeglądarka dla klasy %S
+diff --git a/toolkit/chrome/mozapps/extensions/extensions.properties b/toolkit/chrome/mozapps/extensions/extensions.properties
+--- a/toolkit/chrome/mozapps/extensions/extensions.properties
++++ b/toolkit/chrome/mozapps/extensions/extensions.properties
+@@ -1,23 +1,23 @@ aboutWindowTitle=O dodatku %S
+ aboutWindowTitle=O dodatku %S
+ aboutWindowCloseButton=Zamknij
+ aboutWindowVersionString=wersja %S
+ aboutAddon=%S - informacje
+-updatingMsg=Poszukiwanie aktualizacji...                                    
++updatingMsg=Poszukiwanie aktualizacji...
+ updateCompatibilityMsg=Aktualizacja kompatybilności została zastosowana.
+ updateNoUpdateMsg=Nie znaleziono żadnych aktualizacji.
+ updateErrorMessage=Podczas poszukiwania aktualizacji dla elementu %S wystąpił błąd.
+ updateDisabledMessage=Aktualizacje dla elementu %S zostały wyłączone.
+-updateReadOnlyMessage=Aktualizacja nieobsługiwana (miejsce instalacji jest tylko do odczytu).     
++updateReadOnlyMessage=Aktualizacja nieobsługiwana (miejsce instalacji jest tylko do odczytu).
+ updateNotManagedMessage=Aktualizacja nieobsługiwana (miejsce instalacji nie jest zarządzane przez %S).
+ incompatibleUpdateMessage=Program %S sprawdza dostępność aktualizacji dotyczących kompatybilności dla elementu %S.
+ installSuccess=Instalacja zakończona powodzeniem.
+ installWaiting=Oczekiwanie...
+-droppedInWarning=W katalogu rozszerzeń znaleziono następujące elementy. Czy chcesz je zainstalować?
++droppedInWarning=W folderze rozszerzeń znaleziono następujące elementy. Czy chcesz je zainstalować?
+ updateNotificationTitle=Znaleziono aktualizacje dla dodatków
+ updateNotificationText=Program %S znalazł aktualizację dla 1 z zainstalowanych dodatków
+ multipleUpdateNotificationText=Program %S znalazł aktualizacje dla %S zainstalowanych dodatków
+ 
+ uninstallButton=Odinstaluj
+ disableButton=Wyłącz
+ cancelButton=Anuluj
+ restartMessage=Dokończenie zmian wymaga ponownego uruchomienia programu %S.
+@@ -100,17 +100,17 @@ safeModeMsg=Wszystkie dodatki zostały w
+ safeModeMsg=Wszystkie dodatki zostały wyłączone przez tryb awaryjny.
+ disabledCompatMsg=Sprawdzanie zgodności dodatków jest wyłączone. Pewne dodatki mogą być niekompatybilne.
+ disabledUpdateSecurityMsg=Sprawdzanie bezpieczeństwa aktualizacji jest wyłączone. Aktualizacje mogą potencjalnie stwarzać zagrożenie.
+ noUpdatesMsg=Nie odnaleziono żadnych aktualizacji.
+ offlineUpdateMsg2=%S jest obecnie w trybie offline i nie może zaktualizować dodatków. Kliknij przycisk "Przejdź do trybu online" i spróbuj ponownie.
+ offlineSearchMsg=%S jest obecnie w trybie offline i nie może wyszukiwać dodatków. Kliknij przycisk "Przejdź do trybu online" i spróbuj ponownie.
+ enableButtonLabel=Włącz
+ enableButtonAccesskey=W
+-goOnlineButtonLabel=Przejdź do trybu online                                                   
++goOnlineButtonLabel=Przejdź do trybu online
+ goOnlineButtonAccesskey=P
+ 
+ newUpdateWindowTitle=Aktualizacje dodatków do programu %S
+ newUpdatesAvailableMsg=Dostępne są nowe aktualizacje dla zainstalowanych dodatków.
+ 
+ searchResults=Wszystkie wyniki (%S)
+ 
+ eulaHeader=%S wymaga akceptacji poniższej umowy licencyjnej przed rozpoczęciem instalacji:
+diff --git a/toolkit/chrome/mozapps/profile/profileSelection.dtd b/toolkit/chrome/mozapps/profile/profileSelection.dtd
+--- a/toolkit/chrome/mozapps/profile/profileSelection.dtd
++++ b/toolkit/chrome/mozapps/profile/profileSelection.dtd
+@@ -35,15 +35,15 @@
+ <!ENTITY            newButton.label        "Utwórz nowy profil...">
+ <!ENTITY            newButton.accesskey    "N">
+ <!ENTITY            renameButton.label     "Zmień nazwę profilu...">
+ <!ENTITY            renameButton.accesskey "Z">
+ <!ENTITY            deleteButton.label     "Usuń profil...">
+ <!ENTITY            deleteButton.accesskey "U">
+ 
+ <!-- manager entities -->
+-<!ENTITY            pmDescription.label    "&brandShortName; przechowuje informacje o Twoich ustawieniach i preferencjach w Twoim katalogu profilu.">
++<!ENTITY            pmDescription.label    "&brandShortName; przechowuje informacje o Twoich ustawieniach i preferencjach w profilu.">
+ 
+ <!ENTITY            offlineState.label    "Pracuj w trybie offline">
+ <!ENTITY            offlineState.accesskey "P">
+ 
+ <!ENTITY            autoSelect.label       "Nie wyświetlaj tego okna przy uruchamianiu">
+ <!ENTITY            autoSelect.accesskey   "w">
+diff --git a/toolkit/chrome/mozapps/profile/profileSelection.properties b/toolkit/chrome/mozapps/profile/profileSelection.properties
+--- a/toolkit/chrome/mozapps/profile/profileSelection.properties
++++ b/toolkit/chrome/mozapps/profile/profileSelection.properties
+@@ -15,23 +15,23 @@ profileLocked2=%S nie może użyć profi
+ profileLocked2=%S nie może użyć profilu "%S", ponieważ profil ten jest używany przez inną aplikację.\n\nAby kontynuować, zamknij działającą instancję %S lub wybierz inny profil.
+ 
+ renameProfileTitle=Zmiana nazwy profilu
+ renameProfilePrompt=Zmień nazwę profilu "%S" na:
+ 
+ profileNameInvalidTitle=Nieprawidłowa nazwa profilu
+ profileNameInvalid="%S" nie jest dozwoloną nazwą dla profilu.
+ 
+-chooseFolder=Wybierz katalog profilu
++chooseFolder=Wybierz folder profilu
+ profileNameEmpty=Nazwa profilu musi składać się przynajmniej z jednego znaku.
+ invalidChar=Znak "%S" nie może zostać użyty w nazwie profilu. Należy wprowadzić inną nazwę.
+ 
+ deleteTitle=Usunięcie profilu
+-deleteProfileConfirm=Usunięcie profilu spowoduje usunięcie go z listy dostępnych profili. Czynności tej nie można cofnąć.\nWraz z profilem możliwe jest również usunięcie wszystkich jego plików, zawierających ustawienia, certyfikaty i inne dane osobiste użytkownika. Wybranie tej opcji spowoduje usunięcie katalogu "%S" i jest operacją nieodwracalną.\nCzy chcesz usunąć pliki profilu?
++deleteProfileConfirm=Usunięcie profilu spowoduje usunięcie go z listy dostępnych profili. Czynności tej nie można cofnąć.\nWraz z profilem możliwe jest również usunięcie wszystkich jego plików, zawierających ustawienia, certyfikaty i inne dane osobiste użytkownika. Wybranie tej opcji spowoduje usunięcie folderu "%S" i jest operacją nieodwracalną.\nCzy chcesz usunąć pliki profilu?
+ deleteFiles=Usuń pliki
+ dontDeleteFiles=Nie usuwaj plików
+ 
+-profileCreationFailed=Utworzenie nowego profilu nie powiodło się, prawdopodobną przyczyną był brak praw zapisu w wybranym katalogu profilu.
++profileCreationFailed=Utworzenie nowego profilu nie powiodło się, prawdopodobną przyczyną był brak praw zapisu w wybranym folderze profilu.
+ profileCreationFailedTitle=Błąd tworzenia nowego profilu
+ profileExists=Profil o podanej nazwie już istnieje. Należy wybrać inną nazwę.
+ profileExistsTitle=Profil już istnieje
+ profileFinishText=Naciśnij przycisk Zakończ, aby utworzyć nowy profil.
+ profileFinishTextMac=Naciśnij przycisk Gotowe, aby utworzyć nowy profil.
+

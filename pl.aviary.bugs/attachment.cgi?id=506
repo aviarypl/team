@@ -1,0 +1,440 @@
+Index: trunk/locale/pl-PL/cascades/EdCssProps.dtd
+===================================================================
+--- trunk/locale/pl-PL/cascades/EdCssProps.dtd	(revision 22)
++++ trunk/locale/pl-PL/cascades/EdCssProps.dtd	(working copy)
+@@ -244,3 +244,29 @@
+ <!ENTITY cueBefore.label                    "Utnij przed:">
+ <!ENTITY pauseAfter.label                   "Pauza po:">
+ <!ENTITY cueAfter.label                     "Utnij po:">
++
++
++<!ENTITY listTab.label                      "Listy">
++
++<!ENTITY listStyleType.label                "Styl listy:">
++<!ENTITY noneListStyleType.label            "żaden (none)">
++<!ENTITY discListStyleType.label            "dysk (disc)">
++<!ENTITY circleListStyleType.label          "kółko (circle)">
++<!ENTITY squareListStyleType.label          "kwadrat (square)">
++<!ENTITY decimalListStyleType.label         "cyfry arabskie (decimal)">
++<!ENTITY decimalLeadingZeroListStyleType.label "cyfry arabskie z poprzedzającym zerem (decimal-leading-zero)">
++<!ENTITY lowerRomanListStyleType.label      "małe cyfry rzymskie (lower-roman)">
++<!ENTITY upperRomanListStyleType.label      "wielkie cyfry rzymskie (upper-roman)">
++<!ENTITY lowerGreekListStyleType.label      "małe litery greckie (lower-greek)">
++<!ENTITY lowerAlphaListStyleType.label      "małe litery łacińskie (lower-alpha)">
++<!ENTITY upperAlphaListStyleType.label      "wielkie litery łacińskie (upper-alpha)">
++<!ENTITY armenianListStyleType.label        "armeński">
++<!ENTITY georgianListStyleType.label        "gruźiński">
++
++
++<!ENTITY listStyleImage.label    "Styl obrazka listy:">
++
++<!ENTITY listStylePosition.label "Styl pozycji listy:">
++<!ENTITY insideListStylePosition.label   "wewnątrz (inside)">
++<!ENTITY outsideListStylePosition.label    "na zewnątrz (outside)">
++
+Index: trunk/locale/editor/EditorLinkProperties.dtd
+===================================================================
+--- trunk/locale/editor/EditorLinkProperties.dtd	(revision 22)
++++ trunk/locale/editor/EditorLinkProperties.dtd	(working copy)
+@@ -73,8 +73,11 @@
+ 
+ <!ENTITY targetBox.label "Cel odnośnika">
+ <!ENTITY userDefinedTarget.label "Odnośnik ma zostać otwarty">
+-<!ENTITY topRadio.label "w tym samym oknie zamiast aktualnych zestawów ramek">
++<!ENTITY topRadio.label "w tym samym oknie bez zestawu ramek">
+ <!ENTITY blankRadio.label "w nowym oknie">
+ <!ENTITY parentRadio.label "w nadrzędnym zestawie ramek">
+ <!ENTITY selfRadio.label "w aktualnej ramce">
+ <!ENTITY userDefinedRadio.label "w ramce o nazwie:">
++
++<!ENTITY technoratiTag.label "Znaczniki Technorati">
++<!ENTITY technoratiTagCheckbox.label "To jest znacznik Technorati">
+Index: trunk/locale/editor/editor.properties
+===================================================================
+--- trunk/locale/editor/editor.properties	(revision 22)
++++ trunk/locale/editor/editor.properties	(working copy)
+@@ -24,6 +24,7 @@
+ None=Brak
+ none=brak
+ OpenHTMLFile=Otw\u00f3rz plik HTML
++XHTMLfiles=Pliki XHTML
+ SelectImageFile=Wybierz plik obrazka
+ SaveDocument=Zapisz stron\u0119
+ SaveDocumentAs=Zapisz wiadomo\u015b\u0107 jako
+@@ -209,6 +210,7 @@
+ # TEMPLATES
+ #
+ DocumentIsTemplate=Ten dokument jest szablonem
++HTMLtemplates=Szablony HTML
+ #
+ # Class dropdown menu
+ #
+Index: trunk/locale/editor/tabeditor.dtd
+===================================================================
+--- trunk/locale/editor/tabeditor.dtd	(revision 22)
++++ trunk/locale/editor/tabeditor.dtd	(working copy)
+@@ -41,3 +41,9 @@
+ <!ENTITY closeTab.accesskey          "z">
+ <!ENTITY closeOtherTabs.label        "Zamknij inne panele">
+ <!ENTITY closeOtherTabs.accesskey    "a">
++<!ENTITY newTab.label                "Nowy panel">
++<!ENTITY newTab.accesskey            "N">
++<!ENTITY revert.label                "Przywróć">
++<!ENTITY revert.accesskey            "P">
++<!ENTITY refreshImages.label         "Odśwież obrazki">
++<!ENTITY refreshImages.accesskey     "O">
+Index: trunk/locale/editor/pref-editing.dtd
+===================================================================
+--- trunk/locale/editor/pref-editing.dtd	(revision 22)
++++ trunk/locale/editor/pref-editing.dtd	(working copy)
+@@ -5,14 +5,6 @@
+ <!ENTITY  authorName.accesskey      "A">
+ <!ENTITY  pageColorHeader           "Domyślny wygląd strony">
+ 
+-<!ENTITY dialect.label              "Kod">
+-<!ENTITY markupLanguage.label       "Język:">
+-<!ENTITY dtd.label                  "DTD:">
+-<!ENTITY htmlMarkupLanguage.label   "HTML 4">
+-<!ENTITY xhtmlMarkupLanguage.label  "XHTML 1">
+-<!ENTITY looseDTD.label             "Transitional">
+-<!ENTITY strictDTD.label            "Strict">
+-
+ <!ENTITY defaultColorsRadio.label   "Domyślne kolory przeglądarki (Nie definiuj kolorów na stronie)">
+ <!ENTITY defaultColors.accesskey    "D">
+ <!ENTITY customColorsRadio.label    "Użyj własnych kolorów:">
+Index: trunk/locale/editor/Nvu-totd-en.rdf
+===================================================================
+--- trunk/locale/editor/Nvu-totd-en.rdf	(revision 22)
++++ trunk/locale/editor/Nvu-totd-en.rdf	(working copy)
+@@ -45,38 +45,38 @@
+     <link>http://www.nvu.com/</link>
+     <description>Archiwum porad dnia Nvu</description>
+     <language>pl-pl</language>
+-  
++
+     <item>
+       <title>...możesz przesuwać elementy?</title>
+       <description>Po prostu umieść kursor w bloku, który chciałbyś przesunąć, a następnie
+-                  kliknij pojedynczo na przycisku warstwy, aby blok mogł być poruszany.
++                  kliknij raz na przycisku warstwy, aby blok mogł być poruszany.
+       </description>
+     </item>
+-  
++
+     <item>
+       <title>...możesz dostosować paski narzędzi?</title>
+-      <description>Wybierz z menu "Widok > Pokaż/Ukryj > Dostosuj paski narzędzi", aby otworzyć panel konfiguracji pasków narzędzi. Nasŧepnie użyj metody "przeciągnij i upuść", aby dodawać, przesuwać lub usuwać przyciski oraz separatory.
++      <description>Wybierz z menu Widok > Pokaż/Ukryj > Dostosuj paski narzędzi, aby otworzyć panel konfiguracji pasków narzędzi. Następnie użyj metody "przeciągnij i upuść", aby dodawać, przesuwać lub usuwać przyciski oraz separatory.
+       </description>
+     </item>
+-  
++
+     <item>
+       <title>...możesz dodać własny pasek narzędzi?</title>
+-      <description>Wybierz z menu "Widok > Pokaż/Ukryj > Dostosuj paski narzędzi > Sformatuj paski", aby otworzyć panel konfiguracji pasków narzędzi. Następnie kliknij na przycisku "Dodaj nowy pasek narzędzi". Puste paski narzędzi automatycznie są ukrywane kiedy panel konfiguracji pasków jest zamknięty.</description>
++      <description>Wybierz z menu Widok > Pokaż/Ukryj > Dostosuj paski narzędzi > Sformatuj paski, aby otworzyć panel konfiguracji pasków narzędzi. Następnie kliknij na przycisku "Dodaj nowy pasek narzędzi". Puste paski narzędzi są automatycznie ukrywane, gdy panel konfiguracji pasków jest zamknięty.</description>
+     </item>
+-  
++
+     <item>
+       <title>...Nvu posiada edytor CSS?</title>
+-      <description>Nvu zawiera  edytor CSS CaScadeS. Można go otworzyć z menu Narzędzia->Edytor CSS.</description>
++      <description>Nvu zawiera edytor CSS CaScadeS. Można go otworzyć z menu Narzędzia > Edytor CSS.</description>
+     </item>
+-  
++
+     <item>
+       <title>...Nvu posiada menedżera stron?</title>
+-      <description>Wciśnij klawisz F9, lub z menu wybierz "Widok > Pokaż/Ukryj > Menedżer Stron", aby pokazać lub ukryć ten menedżer.</description>
++      <description>Aby pokazać lub ukryć menedżera stron, wciśnij klawisz F9 lub z menu wybierz Widok > Pokaż/Ukryj > Menedżer Stron.</description>
+     </item>
+ 
+     <item>
+       <title>...możesz przypisać style CSS do dowolnego elementu?</title>
+-      <description>Umieść kursor w elemencie, któremu chcesz nadać styl i wciśnij prawy przycisk myszy na znaczniku elementu w pasku struktury na dole głównego okna Nvu. Okno "Wewnętrznych styli" pozwoli przypisać dowolne style do tego elementu.
++      <description>Umieść kursor w elemencie, któremu chcesz nadać styl i wciśnij prawy przycisk myszy na znaczniku elementu w pasku struktury na dole głównego okna Nvu. Okno "Wewnętrznych stylów" pozwoli przypisać dowolne style do tego elementu.
+       </description>
+     </item>
+ 
+@@ -93,7 +93,7 @@
+ 
+     <item>
+       <title>...możesz bardzo łatwo dostosować pasek narzędzi?</title>
+-      <description>Po prostu kliknij na nim prawym klawiszem myszy...</description>
++      <description>Po prostu kliknij na nim prawym klawiszem myszy.</description>
+     </item>
+ 
+     <item>
+@@ -102,7 +102,7 @@
+     </item>
+ 
+     <item>
+-      <title>...Nvu może automatycznie otworzyć dokument przy starcie?</title>
++      <title>...Nvu może automatycznie otworzyć dokument podczas uruchomienia?</title>
+       <description>Skorzystaj z opcji linii komend: nvu adres</description>
+     </item>
+ 
+@@ -114,19 +114,33 @@
+     <item>
+       <title>...Nvu jest wieloplatformowy?</title>
+       <description>Nvu istnieje na wielu systemach operacyjnych, takich jak
+-                   Windows, Mac OS X, wielu odmianach Linuksa, OS/2, ...</description>
++                   Windows, Mac OS X, wielu odmianach Linuksa, OS/2 i innych.</description>
+     </item>
+ 
+     <item>
+       <title>...możesz otworzyć nowy panel naciskając kombinację klawiszy?</title>
+       <description>Control+t (Command+t w Mac OS X) otworzy nowy, pusty panel.</description>
+     </item>
+-    
++
+     <item>
+       <title>...możesz otworzyć nowe okno naciskając kombinację klawiszy?</title>
+-      <description>Control++shift+t (Command+shift+t w Mac OS X) otworzy nowe, puste okno.</description>
++      <description>Control+Shift+t (Command+Shift+t w Mac OS X) otworzy nowe, puste okno.</description>
+     </item>
++    <item>
++      <title>...możesz zmienić obramowanie pojedynczej komórki tabeli?</title>
++      <description>Wystarczy umieścić kursor w tej komórce, otworzyć menu kontekstowe klikając prawym przyciskiem myszy na jej znaczniku w pasku struktury na dole okna głównego i wybrać Styl w znaczniku &gt; Właściwości obramowania.</description>
++    </item>
+ 
++    <item>
++      <title>...możesz zamknąć panel jednym kliknięciem?</title>
++      <description>Wystarczy nacisnąć środkowy klawisz myszy na panelu.</description>
++    </item>
++
++    <item>
++      <title>...możesz zamknąć aktywny panel jedną kombinacją klawiszy?</title>
++      <description>Ctrl+F4 zamyka aktywny panel.</description>
++    </item>
++
+   </channel>
+ </rss>
+ 
+Index: trunk/locale/editor/aboutDialog.dtd
+===================================================================
+--- trunk/locale/editor/aboutDialog.dtd	(revision 22)
++++ trunk/locale/editor/aboutDialog.dtd	(working copy)
+@@ -37,10 +37,10 @@
+    - ***** END LICENSE BLOCK ***** -->
+ 
+ 
+-<!ENTITY aboutDialog.title      "O &brandShortName;">
++<!ENTITY aboutDialog.title      "O programie &brandShortName;">
+ <!ENTITY copyright              "Informacje o prawach i współtwórcach">
+ <!ENTITY copyrightLink          "http://nvu.com/about.html">
+ <!ENTITY credits                "Podziękowania">
+ <!ENTITY aboutVersion           "wersja">
+-<!ENTITY copyrightText          "&#169;1998-2005 Współtwórcy. Wszelkie prawa zastrzeżone.">
+-<!ENTITY aboutLink              "&lt; O &brandShortName;">
++<!ENTITY copyrightText          "&#169;1998-2005 Współtwórcy. Wszelkie prawa zastrzeżone. Nvu oraz logo Nvu są znakami zastrzeżonymi Linspire Inc.">
++<!ENTITY aboutLink              "&lt; O programie &brandShortName;">
+Index: trunk/locale/editor/credits.html
+===================================================================
+--- trunk/locale/editor/credits.html	(revision 22)
++++ trunk/locale/editor/credits.html	(working copy)
+@@ -55,7 +55,11 @@
+       
+       .credit {
+         text-align: center;
+-      } 
++        margin: 0px;
++      }
++      .credit > h4 {
++        margin: 0px;
++      }
+       
+       .footnote {
+         font-size: x-small;
+@@ -102,7 +106,7 @@
+       
+       function runCredits()
+       {
+-        gCreditsInterval = setInterval("creditsCallback()", 25);  
++        gCreditsInterval = setInterval("creditsCallback()", 1);  
+       }
+       
+       function creditsCallback()
+@@ -180,29 +184,101 @@
+             R.J. Keller<br>
+             Kamal Deep Singh Sahambi<br>
+             Michael Pyne<br>
+-            <em>Idefix</em> na forach Nvu
++            <em>Idefix</em> na forach Nvu<br>
++            Robert Cheramy
+           </div>
+         </div>
+ 
+         <div class="creditsGroup">
+-          <h3>Lokalizacja</h3>
++          <h3>Lokalizacje</h3>
+           <div class="credit">
+-            grupa AviaryPL<br>
++            <h4>fr-FR</h4>
++            S�astien Desvignes<br>
++            C�ric Corazza<br>
++            Flore Allemandou<br>
++            the Frenchmozilla team
+           </div>
+-        </div>
+-
+-        <div class="creditsGroup">
+-          <h3>Skład AviaryPL</h3>
+           <div class="credit">
++            <h4>ru-RU</h4>
++            Alexey Gubanov<br>
++            Alexander Slovesnik<br>
++            Yury Merkulov<br>
++            Vlad Merzhevich<br>
++            Miroslav Skaldov
++          </div>
++          <div class="credit">
++            <h4>nl-NL</h4>
++            Gert-Paul van der Beek<br>
++            Marcel Herda<br>
++            Martijn Ras<br>
++            Martijn Weisbeek
++          </div>
++          <div class="credit">
++            <h4>it-IT</h4>
++            Andrea Sanavia<br>
++            Marco Ratini<br>
++            Carlo Gandolfi<br>
++            Ricardo Fusaroli<br>
++            Claudia Mongini<br>
++            MozillaItalia.org team 
++          </div>
++          <div class="credit">
++            <h4>de-DE</h4>
++            Thorsten Fritz<br>
++            Marcel Herda<br>
++            Peter Weilbacher
++          </div>
++          <div class="credit">
++            <h4>fi-FI</h4>
++            Jussi Bergstr�<br>
++            The Finnish Mozilla l10n Team
++          </div>
++          <div class="credit">
++            <h4>zh-TW</h4>
++            Hung-Te Lin<br>
++            Po-Chiang Chao
++          </div>
++          <div class="credit">
++            <h4>pl-PL</h4>
++            Stanis&#322;aw&#160;Ma&#322;olepszy<br>
+             Zbigniew Braniecki<br>
+-            Marek Stępień<br>
++            Marek St&#281;pie&#324;<br>
++            Piotr Pielach<br>
+             Piotr Komoda<br>
+-            Stanisław Małolepszy<br>
++            Irek Chmielowiec<br>
++            Pawe&#322; Chmielewski<br>
+             Wadim Dziedzic<br>
+-            Irek Chmielowiec<br>
+-            Paweł Chmielewski<br>
+-            Piotr Pielach<br>
+-            </div>
++            Piotr Chyli&#324;ski
++          </div>
++          <div class="credit">
++            <h4>jp-JP</h4>
++            &#12418;&#12392;&#12402;&#12371;
++          </div>
++          <div class="credit">
++            <h4>hu-HU</h4>
++            T�� Andr�<br>
++            Gazdag Andr�
++          </div>
++          <div class="credit">
++            <h4>es-ES</h4>
++            The NAVE Project
++          </div>
++          <div class="credit">
++            <h4>ca-AD</h4>
++            Gerard Farr� i Ballabriga<br>
++            Softcatala
++          </div>
++          <div class="credit">
++            <h4>cs-CZ</h4>
++            Pavel Petric<br>
++            Pavel Cvrcek<br>
++            Adam Hauner
++          </div>
++          <div class="credit">
++            <h4>da-DK</h4>
++            Kim Ludvigsen<br>
++            Det danske Mozilla-team
++          </div>
+         </div>
+         
+         <div class="creditsGroup">
+@@ -215,7 +291,10 @@
+ 
+         <div class="creditsGroup">        
+           <h3>Kontrola jakości</h3>
+-          <div class="credit">Georgi Damyanov</div>
++          <div class="credit">
++            Georgi Damyanov<br>
++            Mark Sepeda
++          </div>
+ 
+           <h3>Specjalne podziękowania dla</h3>
+           <div class="credit">Zespół Linspire</div>
+Index: trunk/locale/editor/editorOverlay.dtd
+===================================================================
+--- trunk/locale/editor/editorOverlay.dtd	(revision 22)
++++ trunk/locale/editor/editorOverlay.dtd	(working copy)
+@@ -642,8 +642,12 @@
+ <!ENTITY aboutmenu.accesskey      "O">
+ <!ENTITY localizingnvu.accesskey  "L">
+ <!ENTITY localizingNvu.label      "Lokalizacja Nvu">
+-<!ENTITY userGuideMenu.label      "Przewodnik użytkownika (on-line)">
++<!ENTITY userGuideMenu.label      "Przewodnik użytkownika">
+ <!ENTITY userguidemenu.accesskey  "u">
++<!ENTITY aboutLinspire.label      "O Linspire Inc.">
++<!ENTITY aboutlinspire.accesskey  "n">
++<!ENTITY aboutDI.label            "O Disruptive Innovations">
++<!ENTITY aboutDI.accesskey        "I">
+ 
+ <!ENTITY leftGlued.tooltip        "Przyklej do lewej krawędzi">
+ <!ENTITY rightGlued.tooltip       "Przyklej do prawej krawędzi">
+Index: trunk/locale/communicator/pref/pref-helpers.dtd
+===================================================================
+--- trunk/locale/communicator/pref/pref-helpers.dtd	(revision 22)
++++ trunk/locale/communicator/pref/pref-helpers.dtd	(working copy)
+@@ -57,10 +57,21 @@
+ <!ENTITY specialChars.description      "Zapisuj poniższe znaki za pomocą encji:">
+ <!ENTITY basicEncoding.label           "Tylko &amp; &lt; &gt; ' i twarda spacja">
+ <!ENTITY latin1EntitiesEncoding.label  "Powyższe oraz znaki z zestawu Latin-1">
+-<!ENTITY htmlEntitiesEncoding.label    "Wszystkie znaki, które wg specyfikacji HTML można zapisać za pomocą encji">
++<!ENTITY htmlEntitiesEncoding.label    "Znaki specjalne HTML 4">
+ <!ENTITY allEntitiesEncoding.label     "Użyj notacji &amp;#..; dla wszystkich znaków spoza tablicy ASCII">
+ 
+ <!ENTITY realtimeSpellCheck.label      "Sprawdzanie pisowni">
+ 
+ <!ENTITY spellCheckRealTime.label      "Podkreślaj błędnie napisane wyrazy">
+ <!ENTITY spellCheckRealTime.accesskey  "P">
++
++<!ENTITY dialect.label                 "Składnia">
++<!ENTITY markupLanguage.label          "Język:">
++<!ENTITY dtd.label                     "DTD:">
++<!ENTITY htmlMarkupLanguage.label      "HTML 4">
++<!ENTITY xhtmlMarkupLanguage.label     "XHTML 1">
++<!ENTITY looseDTD.label                "Transitional">
++<!ENTITY strictDTD.label               "Strict">
++
++<!ENTITY noGTEncoding.label            "Nie konwertuj '&gt;' poza wartościami atrybutów">
++<!ENTITY noEscaping.label              "Nie konwertuj znaków specjalnych w wartościach atrybutów">
+Index: trunk/locale/editor-region/region.properties
+===================================================================
+--- trunk/locale/editor-region/region.properties	(revision 22)
++++ trunk/locale/editor-region/region.properties	(working copy)
+@@ -5,3 +5,5 @@
+ editor.bugReports.url=http://www.nvu.com/bugreport2.php
+ editor.L10N.url=http://glazman.org/nvu/NVU-L10N.html
+ editor.CCuserGuide.url=http://www.nvudev.org/guide/1.0PR
++editor.aboutLinspire.url=http://www.linspire.com/
++editor.aboutDI.url=http://disruptive-innovations.com
+

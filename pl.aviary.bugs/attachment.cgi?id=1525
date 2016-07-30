@@ -1,0 +1,301 @@
+diff --git a/mobile/chrome/browser.dtd b/mobile/chrome/browser.dtd
+--- a/mobile/chrome/browser.dtd
++++ b/mobile/chrome/browser.dtd
+@@ -1,8 +1,10 @@
++<!ENTITY urlbar.emptytext      "Wpisz szukaną frazę lub adres">
++
+ <!ENTITY back.label            "Wstecz">
+ <!ENTITY forward.label         "Do przodu">
+ <!ENTITY reload.label          "Odśwież">
+ <!ENTITY stop.label            "Zatrzymaj">
+ <!ENTITY go.label              "Przejdź">
+ <!ENTITY openLocation.label    "Otwórz lokację">
+ <!ENTITY star.label            "Gwiazdka">
+ <!ENTITY newtab.label          "Nowa karta">
+@@ -24,17 +26,16 @@
+ <!ENTITY helperApp.open            "Otwórz">
+ <!ENTITY helperApp.save            "Zapisz">
+ <!ENTITY helperApp.nothing         "Nic">
+ <!ENTITY formHelper.previous       "Poprzedni">
+ <!ENTITY formHelper.next           "Następny">
+ <!ENTITY formHelper.done           "Gotowe">
+ <!ENTITY addonsHeader.label        "Dodatki">
+ <!ENTITY addonsLocal.label         "Twoje dodatki">
+-<!ENTITY addonsUpdate.label        "Znajdź aktualizacje">
+ <!ENTITY addonsRepo.label          "Pobierz dodatki">
+ <!ENTITY addonsRecommended.label   "Polecane">
+ <!ENTITY addonsSearch.label        "Szukaj">
+ <!ENTITY addonsSearch2.emptytext   "Przeszukaj katalog">
+ <!ENTITY addonsSearch.recommended  "Polecane">
+ <!ENTITY addonOptions.label        "Opcje">
+ <!ENTITY addonEnable.label         "Włącz">
+ <!ENTITY addonDisable.label        "Wyłącz">
+@@ -49,17 +50,16 @@
+ <!ENTITY downloadCancel.label      "Anuluj">
+ <!ENTITY downloadPause.label       "Wstrzymaj">
+ <!ENTITY downloadResume.label      "Kontynuuj">
+ <!ENTITY downloadRetry.label       "Pobierz ponownie">
+ <!ENTITY downloadRemove.label      "Usuń">
+ <!ENTITY downloadFailed.label      "Pobieranie nie powiodło się">
+ <!ENTITY noResults.label           "Brak wyników">
+ <!ENTITY allBookmarks.label        "Pokaż wszystkie zakładki">
+-<!ENTITY searchEngine.addSearch    "Dodaj wyszukiwarkę:">
+ <!ENTITY bookmarkPopup.label       "Zakładka dodana">
+ <!ENTITY bookmarkRemove.label      "Usuń">
+ <!ENTITY bookmarkEdit.label        "Edytuj">
+ 
+ <!ENTITY identity.unverifiedsite2 "Ta witryna nie dostarcza informacji o swojej tożsamości.">
+ <!ENTITY identity.connectedTo2 "Połączono z">
+ <!-- Localization note (identity.runBy) : This string appears between a
+ domain name (above) and an organization name (below). E.g.
+@@ -81,9 +81,11 @@ just addresses the organization to follo
+ <!ENTITY consoleMessages.label     "Wiadomości">
+ <!ENTITY consoleCodeEval.label     "Kod:">
+ <!ENTITY consoleClear.label        "Wyczyść">
+ <!ENTITY consoleEvaluate.label     "…">
+ <!ENTITY consoleErrFile.label      "Kod źródłowy:">
+ <!ENTITY consoleErrLine.label      "Linia:">
+ <!ENTITY consoleErrColumn.label    "Kolumna:">
+ 
++<!ENTITY contextOpenInNewTab.label "Otwórz odnośnik w nowej karcie">
++<!ENTITY contextSaveImage.label    "Zapisz obrazek">
+ 
+diff --git a/mobile/chrome/browser.properties b/mobile/chrome/browser.properties
+--- a/mobile/chrome/browser.properties
++++ b/mobile/chrome/browser.properties
+@@ -1,24 +1,33 @@
+ # Add-on Manager
+ addonsLocalNone.label=Brak zainstalowanych dodatków
+ addonsSearchStart.label=Trwa szukanie dodatków…
+ addonsSearchStart.button=Anuluj
+ addonsSearchNone.search = Brak wyników
+ addonsSearchNone.recommended = Brak polecanych rozszerzeń
+ addonsSearchNone.button = Spróbuj ponownie
+-
+-
+ addonsSearchFail.label=%S nie mógł pobrać dodatków
+ addonsSearchFail.button=OK
+ addonsSearchSuccess2.button = Wyczyść zapytanie
++addonsBrowseAll.label=Przeglądaj wszystkie dodatki
++addonsBrowseAll.description=można znaleźć wiele na addons.mozilla.org
++
++# LOCALIZATION NOTE (addonsSearchMore.label): Semi-colon list of plural forms.
++# See: http://developer.mozilla.org/en/docs/Localization_and_Plurals
++# #1 total number of add-ons that match the search terms
++addonsSearchMore.label=Pokaż wynik;Pokaż #1 wyniki;Pokaż #1 wyników
++
++# LOCALIZATION NOTE (addonsSearchMore.description): Semi-colon list of plural forms.
++# See: http://developer.mozilla.org/en/docs/Localization_and_Plurals
++# #1 number of search results currently visible
++addonsSearchMore.description=Jeśli ten wynik nie jest tym czego szukasz, spróbuj tego;Jeśli te #1 wyniki nie są tym czego szukasz, spróbuj tego;Jeśli te #1 wyników nie są tym czego szukasz, spróbuj tego
++
+ addonsSearchEngine.description = Wyszukiwarka zintegrowana
+ 
+-
+-
+ addonsConfirmInstall.title=Instalacja dodatku
+ addonsConfirmInstall.install=Zainstaluj
+ 
+ addonType.2=Rozszerzenie
+ addonType.4=Motyw
+ addonType.8=Lokalizacja
+ addonType.1024=Wyszukiwarka
+ 
+@@ -43,50 +52,46 @@ donwloadsYesterday=Wczoraj
+ downloadsMonthDate=#2 #1
+ downloadsEmpty = Lista jest pusta
+ 
+ 
+ # Alerts
+ alertAddons=Dodatki
+ alertAddonsInstalling = Instalowanie rozszerzenia
+ alertAddonsInstalled = Instalacja zakończona. Wymagane ponowne uruchomienie.
+-
+-
+-
+ alertAddonsFail=Instalacja zakończona niepowodzeniem
+ 
+ # LOCALIZATION NOTE (alertAddonsDisabled): Semi-colon list of plural forms.
+ # See: http://developer.mozilla.org/en/docs/Localization_and_Plurals
+ # #1 number of add-ons
+ alertAddonsDisabled=Wyłączono #1 niekompatybilny dodatek;Wyłączono #1 niekompatybilne dodatki;Wyłączono #1 niekompatybilnych dodatków
+ 
+ alertDownloads=Pobieranie plików
+ alertDownloadsStart=Pobieranie: %S
+ alertDownloadsDone=Zakończono pobieranie pliku %S
+ 
+ # Notifications
+-notificationRestart.label=Uruchom ponownie, aby wprowadzić zmiany.
+-notificationRestart.button=Uruchom ponownie
++notificationRestart.normal=Uruchom ponownie, aby wprowadzić zmiany.
++notificationRestart.update=Rozszerzenia zaktualizowane. Uruchom ponownie, aby wprowadzić zmiany.
++notificationRestart.button=Restart
+ 
+ # Popup Blocker
+ popupWarning=Program %S nie pozwolił tej witrynie na otwieranie wyskakujących okien.
+ popupWarningMultiple=Program %S nie pozwolił tej witrynie na otwarcie %S wyskakujących okien.
+ popupButtonAllowOnce=Pokaż
+ popupButtonAlwaysAllow2=Zawsze pokazuj
+ popupButtonNeverWarn2=Nigdy nie pokazuj
+ 
+ # XPInstall
+ xpinstallPromptWarning=Program %S nie pozwolił tej witrynie (%S) zapytać o zgodę na instalację oprogramowania.
+ xpinstallPromptAllowButton=Zezwól
+-
+ xpinstallDisabledMessageLocked=Instalacja oprogramowania została wyłączona przez administratora systemu.
+ xpinstallDisabledMessage=Instalacja oprogramowania jest obecnie wyłączona. Kliknij Włącz i spróbuj ponownie.
+ xpinstallDisabledButton=Włącz
+ 
+-
+ # Site Identity
+ identity.identified.verifier=Tożsamość zweryfikowana przez: %S
+ identity.identified.verified_by_you=Użytkownik dodał wyjątek od reguł bezpieczeństwa dla tej witryny.
+ identity.identified.state_and_country=%S, %S
+ identity.identified.title_with_country=%S (%S)
+ identity.encrypted2=Szyfrowane
+ identity.unencrypted2=Nie szyfrowane
+ identity.unknown.tooltip=Ta witryna nie dostarcza informacji o swej tożsamości.
+@@ -101,13 +106,44 @@ geolocation.siteWantsToKnow=%S chce pozn
+ # LOCALIZATION NOTE (newtabpopup): Semi-colon list of plural forms.
+ # See: http://developer.mozilla.org/en/docs/Localization_and_Plurals
+ # #1 number of tabs
+ newtabpopup.opened=Otwarto nową kartę;Otwarto #1 nowe karty;Otwarto #1 nowych kart
+ 
+ # Error Console
+ typeError=Błąd:
+ typeWarning=Ostrzeżenie:
++
++# Offline web applications
+ offlineApps.available = %S chce przechować dane na twoim komputerze do wykorzystania w trybie offline.
+ offlineApps.allow = Zezwól
+ offlineApps.never = Nie zezwalaj
+ offlineApps.notNow = Nie teraz
++
++# Bookmark List
+ bookmarkList.desktop = Zakładki z komputera
++
++# Closing Tabs
++tabs.closeWarningTitle=Potwierdź zamknięcie
++
++# LOCALIZATION NOTE (tabs.closeWarning): Semi-colon list of plural forms.
++# See: http://developer.mozilla.org/en/docs/Localization_and_Plurals
++# #1 number of tabs (must be greater than 1)
++tabs.closeWarning=NOT USED;Zostaną zamknięte #1 karty. Kontynuować?;Zostaną zamknięte #1 kart. Kontynuować?
++
++tabs.closeButton=Zamknij karty
++tabs.closeWarningPromptMe=Ostrzegaj przed zamknięciem wielu kart
++
++# Homepage
++# LOCALIZATION NOTE: homepage.custom2 is the text displayed on the selector button if
++# the user selects a webpage to be the startpage. We can't display the entire URL
++# or webpage title on the menulist
++homepage.custom2=Twoja strona
++
++# Page Actions
++pageactions.saveas.pdf=Zapisz jako PDF
++pageactions.search.addNew=Dodaj silnik wyszukiwania
++pageactions.password.forget=Usuń hasło
++pageactions.reset=Wyczyść ustawienia strony
++pageactions.geo=Adres
++pageactions.popup=Wyskakujące okna
++pageactions.offline-app=Dane dla trybu offline
++pageactions.password=Hasło
+diff --git a/mobile/chrome/firstrun.dtd b/mobile/chrome/firstrun.dtd
+--- a/mobile/chrome/firstrun.dtd
++++ b/mobile/chrome/firstrun.dtd
+@@ -1,8 +1,13 @@
+-<!ENTITY welcome.title                      "Witaj w programie &brandShortName;">
+-<!ENTITY intro.description                  "Synchronizuj swój PC z komórką przez Weave Sync. Dostosuj do siebie rozszerzeniami. Przeglądaj korzystając z inteligentnego paska adresu i wiele, wiele więcej.">
+-<!ENTITY weave.title                        "Firefox zawsze pod ręką">
+-<!ENTITY weave.description                  "Korzystaj z Wave Sync, aby dostać się do swojego Firefoksa i mieć dostęp do historii przeglądania, zakładek, zapisanych haseł i kart zarówno na komputerze, jak i na komórce.">
+-<!ENTITY weave.linkLabel                    "Pobierz rozszerzenie Weave Sync">
+-<!ENTITY getPersonal.title                  "Spersonalizuj">
+-<!ENTITY getPersonal.description            "Dostosuj program &brandShortName; do siebie. Oto pierwsza przeglądarka z dodatkami na komórkę.">
+-<!ENTITY getPersonal.linkLabel              "Pobierz rozszerzenia dla swojej komórki">
++<!ENTITY firstrun.title                "Witaj w &brandShortName;">
++<!ENTITY firstrun.heading              "Aby pomóc Ci rozpocząć, poniżej zamieścilismy kilka najpopularniejszych funkcji i dodatków, które pozwolą Ci w pełni wykorzystać program &brandShortName;.">
++<!ENTITY firstrun.recommended          "Polecane:">
++<!ENTITY firstrun.weave.title          "Pobierz Weave Sync">
++<!ENTITY firstrun.weave.description    "Współdziel historię, hasła, zakładki i karty programu &brandShortName; między komputerem i urządzeniem mobilnym">
++<!ENTITY firstrun.starter.title        "Pobierz kolekcję startową dodatków">
++<!ENTITY firstrun.starter.description  "Zainstaluj polecane dodatki, aby rozszerzyć możliwości programu &brandShortName;">
++<!ENTITY firstrun.tour.title           "Pierwsze kroki">
++<!ENTITY firstrun.tour.description     "Obejrzyj ten klip, aby poznać funkcje i możliwości tego programu">
++<!ENTITY firstrun.features             "Pokaż więcej funkcji">
++<!ENTITY firstrun.faq                  "FAQ">
++<!ENTITY firstrun.privacy              "Polityka prywatności">
++<!ENTITY firstrun.follow               "Śledź nas na:">
+diff --git a/mobile/chrome/overrides/appstrings.properties b/mobile/chrome/overrides/appstrings.properties
+--- a/mobile/chrome/overrides/appstrings.properties
++++ b/mobile/chrome/overrides/appstrings.properties
+@@ -58,8 +58,9 @@ unsafeContentType=Otwierana strona nie m
+ externalProtocolTitle=Żądanie zewnętrznego protokołu
+ externalProtocolPrompt=Aby obsłużyć odnośnik %1$S: musi zostać uruchomiona zewnętrzna aplikacja.\n\n\nZażądany odnośnik:\n\n%2$S\n\nAplikacja: %3$S\n\n\nJeśli to żądanie pojawiło się niespodziewanie, może to być próba wykorzystania błędu w aplikacji zewnętrznej. W razie jakichkolwiek wątpliwości anuluj to żądanie.\n
+ #LOCALIZATION NOTE (externalProtocolUnknown): The following string is shown if the application name can't be determined
+ externalProtocolUnknown=<Nieznana>
+ externalProtocolChkMsg=Zapamiętaj mój wybór dla wszystkich odnośników tego rodzaju.
+ externalProtocolLaunchBtn=Uruchom aplikację
+ malwareBlocked=Witryna %S została zgłoszona jako witryna stanowiąca zagrożenie i została zablokowana zgodnie z ustawieniami bezpieczeństwa.
+ phishingBlocked=Witryna %S została zgłoszona jako przypadek oszustwa mającego na celu wyłudzenie danych osobowych i informacji finansowych.
++cspFrameAncestorBlocked=Ta strona posiada politykę bezpieczeństwa treści, która nie pozwala na osadzenie jej w taki sposób.
+diff --git a/mobile/chrome/overrides/netError.dtd b/mobile/chrome/overrides/netError.dtd
+--- a/mobile/chrome/overrides/netError.dtd
++++ b/mobile/chrome/overrides/netError.dtd
+@@ -154,16 +154,20 @@
+ ">
+ 
+ <!ENTITY phishingBlocked.title "Prawdopodobne oszustwo!">
+ <!ENTITY phishingBlocked.longDesc "
+ <p>Wprowadzanie jakichkolwiek informacji osobistych na tej stronie może skutkować kradzieżą tożsamości lub inną malwersacją.</p>
+ <p>Tego rodzaju fałszerstwa określa się mianem phishingu. Atak ten polega na utworzeniu przez przestępców podrobionej strony lub wiadomości udającej źródło godne zaufania.</p>
+ ">
+ 
++<!ENTITY cspFrameAncestorBlocked.title "Zablokowane przez politykę bezpieczeństwa treści">
++<!ENTITY cspFrameAncestorBlocked.longDesc "<p>Przeglądarka uniemożliwiła tej stronie wczytanie treści w ten sposób, ponieważ strona posiada politykę bezpieczeństwa treści, która na to nie pozwala.</p>">
++
++
+ <!ENTITY securityOverride.linkText "Lub dodaj wyjątek…">
+ <!ENTITY securityOverride.getMeOutOfHereButton "Zabierz mnie stąd!">
+ <!ENTITY securityOverride.exceptionButtonLabel "Dodaj wyjątek…">
+ 
+ <!-- LOCALIZATION NOTE (securityOverride.warningText) - Do not translate the
+ contents of the <xul:button> tags.  The only language content is the label= field,
+ which uses strings already defined above. The button is included here (instead of
+ netError.xhtml) because it exposes functionality specific to firefox. -->
+diff --git a/mobile/chrome/preferences.dtd b/mobile/chrome/preferences.dtd
+--- a/mobile/chrome/preferences.dtd
++++ b/mobile/chrome/preferences.dtd
+@@ -7,8 +7,14 @@
+ <!ENTITY enablePlugins.title                       "Włącz wtyczki">
+ <!ENTITY privacy.title                             "Prywatność i bezpieczeństwo">
+ <!ENTITY allowCookies.title                        "Akceptuj ciasteczka">
+ <!ENTITY clearPrivateData2.title                   "Wyczyść dane prywatne">
+ <!ENTITY clearPrivateData.button                   "Wyczyść">
+ <!ENTITY rememberPasswords.title                   "Pamiętaj hasła">
+ <!ENTITY language.title                            "Język">
+ <!ENTITY language.auto                             "Automatycznie">
++<!ENTITY defaultBrowser.title                      "Domyślna przeglądarka">
++<!ENTITY defaultBrowser.description                "Ustaw program &brandShortName; jako domyślną przeglądarkę">
++<!ENTITY homepage.title                            "Strona startowa">
++<!ENTITY homepage.none                             "Bez nazwy">
++<!ENTITY homepage.default                          "&brandShortName; Start">
++<!ENTITY homepage.currentpage                      "Użyj aktualnej strony">
+diff --git a/mobile/chrome/region.properties b/mobile/chrome/region.properties
+--- a/mobile/chrome/region.properties
++++ b/mobile/chrome/region.properties
+@@ -1,14 +1,13 @@
+ # Default search engine
+ browser.search.defaultenginename=Google
+ 
+ # Search engine order (order displayed in the search bar dropdown)s
+ browser.search.order.1=Google
+-browser.search.order.2=Yahoo
+ 
+ # This is the default set of web based feed handlers shown in the reader
+ # selection UI
+ browser.contentHandlers.types.0.title=Startowy.com
+ browser.contentHandlers.types.0.uri=http://www.startowy.com/dodajrss.html?zrodlo=%s
+ browser.contentHandlers.types.1.title=My Yahoo
+ browser.contentHandlers.types.1.uri=http://add.my.yahoo.com/rss?url=%s
+ browser.contentHandlers.types.2.title=Google
+

@@ -1,0 +1,370 @@
+Index: mail/chrome/messenger/AccountWizard.dtd
+===================================================================
+RCS file: /l10n/l10n/pl/mail/chrome/messenger/AccountWizard.dtd,v
+retrieving revision 1.2
+diff -u -r1.2 AccountWizard.dtd
+--- mail/chrome/messenger/AccountWizard.dtd	25 May 2005 13:16:01 -0000	1.2
++++ mail/chrome/messenger/AccountWizard.dtd	27 Oct 2005 21:16:50 -0000
+@@ -37,7 +37,7 @@
+ <!ENTITY popType.label "Serwer POP">
+ <!ENTITY popType.accesskey "P">
+ <!ENTITY nntpType.label "Serwer grup dyskusyjnych">
+-<!ENTITY haveSmtp1.prefix "Zostanie użyty domyśny serwer poczty wychodzącej (SMTP) - &quot;">
++<!ENTITY haveSmtp1.prefix "Zostanie użyty domyślny serwer poczty wychodzącej (SMTP) - &quot;">
+ <!ENTITY haveSmtp1.suffix "&quot;. Ustawienia serwera poczty wychodzącej można zmieniać za pomocą opcji dostępnych w oknie konfiguracji kont.">
+ <!ENTITY loginTitle.label "Nazwa użytkownika">
+ <!ENTITY usernameDesc.label "Wprowadź nazwę użytkownika, która zostanie użyta podczas połączenia z serwerem poczty przychodzącej">
+@@ -63,6 +63,6 @@
+ <!ENTITY smtpServerNamePrefix.label "Nazwa serwera poczty wychodzącej (SMTP):">
+ <!ENTITY newsServerNamePrefix.label "Nazwa serwera grup dyskusyjnych (NNTP):">
+ <!ENTITY downloadOnLogin.label "Pobierz wiadomości">
+-<!ENTITY deferStorageDesc.label "Odznaczenie tego pola wyboru spowoduje, że poczta dla tego konta będzie przechowywana w swoim własnym katalogu. Konto to będzie wtedy widoczne jako konto najwyższego poziomu. W przeciwnym wypadku konto to stanie się częścią globalnej skrzynki odbiorczej.">
++<!ENTITY deferStorageDesc.label "Odznaczenie poniższego pola wyboru spowoduje, że poczta dla tego konta będzie przechowywana w swoim własnym katalogu. Konto to będzie wtedy widoczne jako konto najwyższego poziomu. W przeciwnym wypadku konto to stanie się częścią globalnej skrzynki odbiorczej.">
+ <!ENTITY deferStorage.label "Używaj globalnej skrzynki odbiorczej (poczta będzie przechowywana w folderach lokalnych)">
+ <!ENTITY clickFinish.label 'Kliknij przycisk "Zakończ", aby zapamiętać wprowadzone dane i zakończyć konfigurację konta.'>
+\ No newline at end of file
+Index: mail/chrome/messenger/FilterEditor.dtd
+===================================================================
+RCS file: /l10n/l10n/pl/mail/chrome/messenger/FilterEditor.dtd,v
+retrieving revision 1.4
+diff -u -r1.4 FilterEditor.dtd
+--- mail/chrome/messenger/FilterEditor.dtd	2 Aug 2005 21:19:53 -0000	1.4
++++ mail/chrome/messenger/FilterEditor.dtd	27 Oct 2005 21:16:50 -0000
+@@ -28,7 +28,7 @@
+ <!ENTITY highestPriorityCmd.label "Najwyższy">
+ 
+ <!ENTITY conditionDesc.label "W stosunku do wszystkich przychodzących wiadomości, które">
+-<!ENTITY filterActionDesc.label "Wykonaj następujące czynności:">
++<!ENTITY filterActionDesc.label "...wykonaj następujące czynności:">
+ <!ENTITY filterActionDesc.accesskey "y">
+ 
+ <!ENTITY newFolderButton.label "Nowy folder...">
+Index: mail/chrome/messenger/am-advanced.dtd
+===================================================================
+RCS file: /l10n/l10n/pl/mail/chrome/messenger/am-advanced.dtd,v
+retrieving revision 1.3
+diff -u -r1.3 am-advanced.dtd
+--- mail/chrome/messenger/am-advanced.dtd	31 May 2005 15:58:11 -0000	1.3
++++ mail/chrome/messenger/am-advanced.dtd	27 Oct 2005 21:16:50 -0000
+@@ -4,7 +4,7 @@
+ <!ENTITY smtpServer.label "Konfiguracja serwera poczty wychodzącej (SMTP)">
+ 
+ <!-- LOCALIZATION NOTE (smtpDesc.label): do not translate "SMTP" in below line -->
+-<!ENTITY smtpDesc.label "Jeśli zajdzie taka potrzeba, każde konto można skonfigurować w taki sposób, aby korzystało z osobnego serwera poczty wychodzącej (SMTP). Ten ekran służy do dodawania, usuwania lub edycji ustawień serwerów. Aby przypisać serwer poczty wychodzącej danemu kontu, należy przejść do ekranu konfiguracji tego konta.">
++<!ENTITY smtpDesc.label 'Jeśli zajdzie taka potrzeba, każde konto można skonfigurować w taki sposób, aby korzystało z osobnego serwera poczty wychodzącej (SMTP). Ten ekran służy do dodawania, usuwania lub edycji ustawień serwerów. Przypisanie wybranego serwera poczty wychodzącej do określonego konta należy wykonać w oknie konfiguracji tego konta, opcja "Serwer poczty wychodzącej (SMTP)".'>
+ 
+ <!ENTITY smtpListAdd.label  "Dodaj...">
+ <!ENTITY smtpListAdd.accesskey  "d">
+Index: mail/chrome/messenger/am-copies.dtd
+===================================================================
+RCS file: /l10n/l10n/pl/mail/chrome/messenger/am-copies.dtd,v
+retrieving revision 1.4
+diff -u -r1.4 am-copies.dtd
+--- mail/chrome/messenger/am-copies.dtd	9 Jun 2005 18:38:27 -0000	1.4
++++ mail/chrome/messenger/am-copies.dtd	27 Oct 2005 21:16:50 -0000
+@@ -28,6 +28,6 @@
+ <!ENTITY templatesFolderOn.accesskey "z">
+ <!ENTITY templateInOtherFolder.label "Innym folderze:">
+ <!ENTITY templateInOtherFolder.accesskey "n">
+-<!ENTITY specialFoldersTitle.label "Szkice i Szablony">
++<!ENTITY specialFoldersTitle.label "Szkice i szablony">
+ <!ENTITY keepDrafts.label "Szkice wiadomości przechowuj w:">
+ <!ENTITY keepTempltes.label "Szablony wiadomości przechowuj w:">
+\ No newline at end of file
+Index: mail/chrome/messenger/folderProps.dtd
+===================================================================
+RCS file: /l10n/l10n/pl/mail/chrome/messenger/folderProps.dtd,v
+retrieving revision 1.3
+diff -u -r1.3 folderProps.dtd
+--- mail/chrome/messenger/folderProps.dtd	5 Jun 2005 00:23:38 -0000	1.3
++++ mail/chrome/messenger/folderProps.dtd	27 Oct 2005 21:16:50 -0000
+@@ -67,7 +67,7 @@
+ 
+ <!ENTITY folderOfflineTab.label "Tryb offline">
+ 
+-<!ENTITY folderCheckForNewMessages.label "Pobierz nowe wiadomości z tego folderu">
++<!ENTITY folderCheckForNewMessages.label "Sprawdzaj, czy są dostępne nowe wiadomości dla tego folderu">
+ <!ENTITY folderCheckForNewMessages.accesskey   "n">
+ 
+ <!ENTITY offlineFolder.check.label "Wybrany folder będzie dostępny w trybie offline.">
+Index: mail/chrome/messenger/junkMail.dtd
+===================================================================
+RCS file: /l10n/l10n/pl/mail/chrome/messenger/junkMail.dtd,v
+retrieving revision 1.4
+diff -u -r1.4 junkMail.dtd
+--- mail/chrome/messenger/junkMail.dtd	8 Jun 2005 14:32:50 -0000	1.4
++++ mail/chrome/messenger/junkMail.dtd	27 Oct 2005 21:17:18 -0000
+@@ -7,14 +7,14 @@
+ 
+ <!-- Settings tab -->
+ <!ENTITY move.label "Przenieś otrzymane wiadomości, które zostały oznaczone jako niechciane, do:">
+-<!ENTITY otherFolder.label "Innego folderu:">
+-<!ENTITY junkFolderOn.label "Folderu Niechciane konta:">
++<!ENTITY otherFolder.label "innego folderu:">
++<!ENTITY junkFolderOn.label 'folderu "Niechciane" konta:'>
+ <!ENTITY purge1.label "Wiadomości oznaczone jako niechciane usuwaj automatycznie po upływie">
+ <!ENTITY purge1.accesskey "u">
+ <!ENTITY purge2.label "dni">
+ <!ENTITY manualMark.label "W przypadku ręcznego oznaczenia wiadomości jako niechcianej:">
+-<!ENTITY manualMarkModeMove.label "Przenieś wiadomości do folderu Niechciane">
+-<!ENTITY manualMarkModeDelete.label "Usuń wiadomości">
++<!ENTITY manualMarkModeMove.label 'przenieś wiadomości do folderu "Niechciane"'>
++<!ENTITY manualMarkModeDelete.label "usuń wiadomości">
+ <!ENTITY renderWithSafeHtml.label "Wyświetlając niechciane wiadomości ignoruj znaczniki HTML, które mogą naruszyć prywatność użytkownika">
+ <!ENTITY log.label "Dziennik niechcianej poczty">
+ <!ENTITY handling.label "Czynności wykonywane automatycznie">
+@@ -29,7 +29,7 @@
+ <!-- Adaptive Filter tab -->
+ 
+ <!ENTITY adaptiveCaption.label "Inteligentny filtr">
+-<!ENTITY trainingWarning.label 'Po uruchomieniu filtru niechcianej poczty należy rozpocząć sesję treningową, wskazując niepożądane wiadomości za pomocą przycisku Niechciana, znajdującego się na pasku narzędzi. Wszystkie wiadomości nieprawidłowo rozpoznane jako niechciane należy oznaczać jako pożądane. Filtr analizując działania użytkownika "uczy się" i dostosowywuje się do jego preferencji. Gdy skuteczność filtru będzie sadysfakcjonująca, użytkownik może zdecydować, aby wiadomości rozpoznane jako niechciane były automatycznie przenoszone do specjalnego folderu bądź też od razu usuwane.'>
++<!ENTITY trainingWarning.label 'Po uruchomieniu filtru niechcianej poczty należy rozpocząć sesję treningową, wskazując niepożądane wiadomości za pomocą przycisku Niechciana, znajdującego się na pasku narzędzi. Wszystkie wiadomości nieprawidłowo rozpoznane jako niechciane należy oznaczać jako pożądane. Filtr analizując działania użytkownika "uczy się" i dostosowywuje się do jego preferencji. Gdy skuteczność filtru będzie satysfakcjonująca, użytkownik może zdecydować, aby wiadomości rozpoznane jako niechciane były automatycznie przenoszone do specjalnego folderu bądź też od razu usuwane.'>
+ <!ENTITY level.label "Włącz filtr niechcianej poczty dla bieżącego konta">
+ <!ENTITY level.accesskey "E">
+ 
+Index: mail/chrome/messenger/mailViewList.dtd
+===================================================================
+RCS file: /l10n/l10n/pl/mail/chrome/messenger/mailViewList.dtd,v
+retrieving revision 1.2
+diff -u -r1.2 mailViewList.dtd
+--- mail/chrome/messenger/mailViewList.dtd	25 May 2005 13:16:01 -0000	1.2
++++ mail/chrome/messenger/mailViewList.dtd	27 Oct 2005 21:17:18 -0000
+@@ -1,2 +1,2 @@
+-<!ENTITY mailViewListTitle.label "Dostosuj Widoki wiadomości">
++<!ENTITY mailViewListTitle.label "Dostosuj widoki wiadomości">
+ <!ENTITY viewName.label "Nazwa">
+Index: mail/chrome/messenger/markByDate.dtd
+===================================================================
+RCS file: /l10n/l10n/pl/mail/chrome/messenger/markByDate.dtd,v
+retrieving revision 1.2
+diff -u -r1.2 markByDate.dtd
+--- mail/chrome/messenger/markByDate.dtd	25 May 2005 13:16:01 -0000	1.2
++++ mail/chrome/messenger/markByDate.dtd	27 Oct 2005 21:17:18 -0000
+@@ -39,7 +39,7 @@
+    - ***** END LICENSE BLOCK ***** -->
+ 
+ <!ENTITY messageMarkByDate.label "Oznacz wiadomości jako przeczytane, według daty">
+-<!ENTITY markByDateLower.label "Oznacz wiadomości jako przeczytane od">
++<!ENTITY markByDateLower.label "Oznacz wiadomości jako przeczytane, od:">
+ <!ENTITY markByDateLower.accesskey "o">
+-<!ENTITY markByDateUpper.accesskey "D">
+-<!ENTITY markByDateUpper.label "Do:">
+\ No newline at end of file
++<!ENTITY markByDateUpper.accesskey "d">
++<!ENTITY markByDateUpper.label "do:">
+\ No newline at end of file
+Index: mail/chrome/messenger/messenger.dtd
+===================================================================
+RCS file: /l10n/l10n/pl/mail/chrome/messenger/messenger.dtd,v
+retrieving revision 1.9.2.5
+diff -u -r1.9.2.5 messenger.dtd
+--- mail/chrome/messenger/messenger.dtd	11 Oct 2005 02:15:26 -0000	1.9.2.5
++++ mail/chrome/messenger/messenger.dtd	27 Oct 2005 21:17:29 -0000
+@@ -87,7 +87,7 @@
+ <!ENTITY folderPropsCmd.accesskey "i">
+ <!ENTITY accountManagerCmd.label "Konfiguracja kont...">
+ <!ENTITY accountManagerCmd.accesskey "g">
+-<!ENTITY accountManagerCmdUnix.accesskey "A">
++<!ENTITY accountManagerCmdUnix.accesskey "g">
+ <!ENTITY undoDeleteMsgCmd.label "Cofnij usuwanie wiadomości">
+ <!ENTITY redoDeleteMsgCmd.label "Powtórz usuwanie wiadomości">
+ <!ENTITY undoMoveMsgCmd.label "Cofnij przenoszenie wiadomości">
+@@ -288,7 +288,7 @@
+ <!ENTITY newNewMsgCmd.label "Wiadomość">
+ <!ENTITY newNewMsgCmd.accesskey "M">
+ <!ENTITY replyMsgCmd.label "Odpowiedz">
+-<!ENTITY replyMsgCmd.accesskey "O">
++<!ENTITY replyMsgCmd.accesskey "d">
+ <!ENTITY replyMsgCmd.key "r">
+ <!ENTITY replySenderCmd.label "Odpowiedz tylko nadawcy">
+ <!ENTITY replySenderCmd.accesskey "n">
+@@ -300,11 +300,11 @@
+ <!ENTITY forwardMsgCmd.label "Przekaż">
+ <!ENTITY forwardMsgCmd.accesskey "P">
+ <!ENTITY forwardMsgCmd.key "l">
+-<!ENTITY forwardAsMenu.label "Przekaż wiadomość">
++<!ENTITY forwardAsMenu.label "Przekaż jako">
+ <!ENTITY forwardAsMenu.accesskey "z">
+ <!ENTITY forwardAsInline.label "Bezpośrednio">
+ <!ENTITY forwardAsInline.accesskey "B">
+-<!ENTITY forwardAsAttachmentCmd.label "Jako załącznik">
++<!ENTITY forwardAsAttachmentCmd.label "Załącznik">
+ <!ENTITY forwardAsAttachmentCmd.accesskey "z">
+ <!ENTITY editMsgAsNewCmd.label "Edytuj wiadomość jako nową">
+ <!ENTITY editMsgAsNewCmd.accesskey "E">
+@@ -347,7 +347,7 @@
+ <!ENTITY labelCmd5.accesskey "5">
+ <!ENTITY labelCmd5.key "5">
+ <!ENTITY markMenu.label "Oznacz">
+-<!ENTITY markMenu.accesskey "a">
++<!ENTITY markMenu.accesskey "c">
+ <!ENTITY markAsReadCmd.label "Jako przeczytaną">
+ <!ENTITY markAsReadCmd.accesskey "p">
+ <!ENTITY markAsReadCmd.key "m">
+Index: mail/chrome/messenger/msgmdn.properties
+===================================================================
+RCS file: /l10n/l10n/pl/mail/chrome/messenger/msgmdn.properties,v
+retrieving revision 1.2
+diff -u -r1.2 msgmdn.properties
+--- mail/chrome/messenger/msgmdn.properties	25 May 2005 13:16:02 -0000	1.2
++++ mail/chrome/messenger/msgmdn.properties	27 Oct 2005 21:17:29 -0000
+@@ -1,3 +1,43 @@
++#***** BEGIN LICENSE BLOCK *****
++#Version: MPL 1.1/GPL 2.0/LGPL 2.1
++#
++#The contents of this file are subject to the Mozilla Public License Version 
++#1.1 (the "License"); you may not use this file except in compliance with 
++#the License. You may obtain a copy of the License at 
++#http://www.mozilla.org/MPL/
++#
++#Software distributed under the License is distributed on an "AS IS" basis,
++#WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
++#for the specific language governing rights and limitations under the
++#License.
++#
++#The Original Code is mozilla.
++#
++#The Initial Developer of the Original Code is
++#  Jeff Tsai <jt95070@netscape.net>.
++#Portions created by the Initial Developer are Copyright (C) 2002
++#the Initial Developer. All Rights Reserved.
++#
++#Contributor(s):
++#    Seth Spitzer <sspitzer@netscape.com>
++#    Marek Wawoczny <gmbh@mozillapl.org> (Polish translation)
++#    Piotr Bartecki <pbartecki@mozillapl.org> (Polish translation)
++#    Piotr Komoda <gorky@civ.pl> (Polish translation)
++#
++#Alternatively, the contents of this file may be used under the terms of
++#either the GNU General Public License Version 2 or later (the "GPL"), or
++#the GNU Lesser General Public License Version 2.1 or later (the "LGPL"),
++#in which case the provisions of the GPL or the LGPL are applicable instead
++#of those above. If you wish to allow use of your version of this file only
++#under the terms of either the GPL or the LGPL, and not to allow others to
++#use your version of this file under the terms of the MPL, indicate your
++#decision by deleting the provisions above and replace them with the notice
++#and other provisions required by the GPL or the LGPL. If you do not delete
++#the provisions above, a recipient may use your version of this file under
++#the terms of any one of the MPL, the GPL or the LGPL.
++#
++#***** END LICENSE BLOCK *****
++## Msg Mdn Report strings
+ MsgMdnDisplayed=Uwaga: To potwierdzenie dostarczenia wiadomosci oznacza tylko, ze wiadomosc zostala wyswietlona na komputerze adresata. Nie ma zadnej gwarancji, ze tresc tej wiadomosci zostala przeczytana lub zrozumiana.
+ MsgMdnDispatched=Wiadomosc zostala wydrukowana, przefaksowana lub przekazana bez wyswietlania osobie, do ktorej byla adresowana. Nie ma zadnej gwarancji, ze tresc tej wiadomosci zostala przeczytana lub zrozumiana.
+ MsgMdnProcessed=Wiadomosc zostala przetworzona przez program pocztowy adresata bez wyswietlania osobie, do ktorej byla adresowana. Nie ma zadnej gwarancji, ze tresc tej wiadomosci zostala przeczytana lub zrozumiana.
+@@ -5,7 +45,8 @@
+ MsgMdnDenied=Adresat wiadomosci nie zyczy sobie odsylania potwierdzenia dostarczenia wiadomosci do nadawcy.
+ MsgMdnFailed=Wystapil blad. Prawidlowe potwierdzenie dostarczenia wiadomosci nie moglo zostac wygenerowane albo wyslane do nadawcy.
+ MsgMdnWishToSend=Nadawca tej wiadomo\u015Bci poprosi\u0142 o potwierdzenie dostarczenia wiadomo\u015Bci.\nCzy wys\u0142a\u0107 potwierdzenie dostarczenia wiadomo\u015Bci?
+-MsgMdnMsgSentTo=To jest potwierdzenie dostarczenia wiadomosci dla wiadomosci, ktora zostala wyslana do %S.
++# LOCALIZATION NOTE : Do not translate the word "%S" below.
++MsgMdnMsgSentTo=To jest potwierdzenie dostarczenia wiadomosci, ktora zostala wyslana na adres %S.
+ MdnDisplayedReceipt=Potwierdzenie dostarczenia wiadomosci (wyswietlono)
+ MdnDispatchedReceipt=Potwierdzenie dostarczenia wiadomosci (dostarczono)
+ MdnProcessedReceipt=Potwierdzenie dostarczenia wiadomosci (przetworzone)
+Index: mail/chrome/messenger/search-attributes.properties
+===================================================================
+RCS file: /l10n/l10n/pl/mail/chrome/messenger/search-attributes.properties,v
+retrieving revision 1.2
+diff -u -r1.2 search-attributes.properties
+--- mail/chrome/messenger/search-attributes.properties	25 May 2005 13:16:02 -0000	1.2
++++ mail/chrome/messenger/search-attributes.properties	27 Oct 2005 21:17:29 -0000
+@@ -1,5 +1,5 @@
+ 0=Temat
+-1=Od
++1=Nadawca
+ 2=Tre\u015B\u0107
+ 3=Data
+ 4=Priorytet
+Index: mail/chrome/messenger/preferences/advanced.dtd
+===================================================================
+RCS file: /l10n/l10n/pl/mail/chrome/messenger/preferences/advanced.dtd,v
+retrieving revision 1.10
+diff -u -r1.10 advanced.dtd
+--- mail/chrome/messenger/preferences/advanced.dtd	9 Aug 2005 01:22:55 -0000	1.10
++++ mail/chrome/messenger/preferences/advanced.dtd	27 Oct 2005 21:17:29 -0000
+@@ -24,7 +24,7 @@
+ <!ENTITY reuseExpRadio1.label          "Istniejącym oknie wiadomości">
+ <!ENTITY reuseExpRadio1.accesskey      "m">
+ <!ENTITY connectionTimeout.label       "Limit czasu prób połączenia: ">
+-<!ENTITY connectionTimeout.accesskey   "b">
++<!ENTITY connectionTimeout.accesskey   "s">
+ <!ENTITY connectionSeconds.label       "sekund">
+ <!ENTITY configEditDesc.label          "Zaawansowana konfiguracja">
+ <!ENTITY configEdit.label              "Edytor ustawień...">
+@@ -32,7 +32,7 @@
+ 
+ <!-- Update -->
+ <!ENTITY autoCheck.label                "Automatycznie sprawdzaj dostępność aktualizacji dla:">
+-<!ENTITY enableAppUpdate.label          "programu &brandShortName;">
++<!ENTITY enableAppUpdate.label          "Programu &brandShortName;">
+ <!ENTITY enableAppUpdate.accesskey      "g">
+ <!ENTITY enableExtensionUpdate.label    "Zainstalowanych rozszerzeń i motywów">
+ <!ENTITY enableExtensionUpdate.accesskey "h">
+Index: mail/chrome/messenger-newsblog/am-newsblog.dtd
+===================================================================
+RCS file: /l10n/l10n/pl/mail/chrome/messenger-newsblog/am-newsblog.dtd,v
+retrieving revision 1.3.2.1
+diff -u -r1.3.2.1 am-newsblog.dtd
+--- mail/chrome/messenger-newsblog/am-newsblog.dtd	12 Sep 2005 21:03:27 -0000	1.3.2.1
++++ mail/chrome/messenger-newsblog/am-newsblog.dtd	27 Oct 2005 21:17:32 -0000
+@@ -4,14 +4,14 @@
+ <!ENTITY biffStart.accesskey "k">
+ <!ENTITY biffEnd.label "minut">
+ 
+-<!ENTITY loginAtStartup.label "Sprawdzaj, czy są nowe artykuły podczas uruchamiana programu"> 
++<!ENTITY loginAtStartup.label "Sprawdzaj podczas uruchamiania, czy są nowe artykuły"> 
+ <!ENTITY loginAtStartup.accesskey "C">
+ 
+ <!ENTITY useQuickMode.label "Domyślnie pokazuj podsumowanie artykułu, zamiast wczytywać stronę internetową"> 
+ <!ENTITY useQuickMode.accesskey "D">
+ 
+ <!ENTITY manageSubscriptions.label "Menedżer kanałów RSS..."> 
+-<!ENTITY manageSubscriptions.accesskey "M">
++<!ENTITY manageSubscriptions.accesskey "r">
+ 
+ <!-- entities from defaults/isp/rss.rdf -->
+ <!ENTITY rss.accountName            "Aktualności i blogi">
+Index: mail/chrome/messenger-newsblog/newsblog.dtd
+===================================================================
+RCS file: /l10n/l10n/pl/mail/chrome/messenger-newsblog/newsblog.dtd,v
+retrieving revision 1.2
+diff -u -r1.2 newsblog.dtd
+--- mail/chrome/messenger-newsblog/newsblog.dtd	25 May 2005 13:16:02 -0000	1.2
++++ mail/chrome/messenger-newsblog/newsblog.dtd	27 Oct 2005 21:17:32 -0000
+@@ -1,3 +1,3 @@
+ <!-- folder pane context menu item -->
+ <!ENTITY folderContextRSSSubscribe.label    "Menedżer kanałów RSS...">
+-<!ENTITY folderContextRSSSubscribe.accesskey   "M">
+\ No newline at end of file
++<!ENTITY folderContextRSSSubscribe.accesskey   "r">
+\ No newline at end of file
+Index: security/manager/chrome/pippki/certManager.dtd
+===================================================================
+RCS file: /l10n/l10n/pl/security/manager/chrome/pippki/certManager.dtd,v
+retrieving revision 1.1
+diff -u -r1.1 certManager.dtd
+--- security/manager/chrome/pippki/certManager.dtd	16 Apr 2005 17:24:42 -0000	1.1
++++ security/manager/chrome/pippki/certManager.dtd	27 Oct 2005 21:17:32 -0000
+@@ -17,7 +17,10 @@
+    - Rights Reserved.
+    - 
+    - Contributor(s):
+-   -   Ian McGreer <mcgreer@netscape.com>
++   -    Ian McGreer <mcgreer@netscape.com>
++   -    Marek Wawoczny <gmbh@mozillapl.org> (Polish translation)
++   -    Piotr Bartecki <pbartecki@mozillapl.org> (Polish translation)
++   -    Piotr Komoda <gorky@civ.pl> (Polish translation)
+   -->
+ 
+ <!ENTITY certmgr.title "Menedżer certyfikatów" >
+@@ -78,7 +81,7 @@
+ <!ENTITY certmgr.editca.label "Edytuj ustawienia zaufania ośrodka certyfikacji" >
+ <!ENTITY certmgr.add.label "Dodaj" >
+ <!ENTITY certmgr.delete.label "Usuń" >
+-<!ENTITY certmgr.backup.label "Kopia Zapasowa" >
++<!ENTITY certmgr.backup.label "Kopia zapasowa" >
+ <!ENTITY certmgr.backupall.label "Wykonaj kopię zapasową" >
+ <!ENTITY certmgr.restore.label "Importuj" >
+ <!ENTITY certmgr.details.label "Pola certyfikatu" >
+

@@ -1,0 +1,61 @@
+Index: release-notes-help.gnome-3-2.pl.po
+===================================================================
+--- release-notes-help.gnome-3-2.pl.po	(wersja 2113)
++++ release-notes-help.gnome-3-2.pl.po	(kopia robocza)
+@@ -430,6 +430,7 @@
+ msgstr "Pola wprowadzania mogą teraz zawierać podpowiedzi. Proszę zobaczyć funkcję <function>gtk_entry_set_placeholder_text</function>."
+ 
+ # jm: może 'jest ważne' na sam koniec?
++# LJ: wywaliłbym wiele, zaczynając to zdanie od Więcej
+ #: C/rndevelopers.xml:82(para)
+ msgid "Many more widgets support height-for-width geometry management. It is important to set reasonable sizes on labels and check window sizes."
+ msgstr "Wiele więcej widżetów obsługuje zarządzanie geometrią wysokości względem szerokości. Ważne jest ustawienie rozsądnych rozmiarów etykiet i okien."
+@@ -442,6 +443,7 @@
+ msgid "<classname>GtkOverlay</classname> for floating controls over a content area, as seen in web browsers."
+ msgstr "Widżet <classname>GtkOverlay</classname> dla kontrolek pływających nad obszarem treści, podobnie jak w przeglądarkach WWW."
+ 
++# LJ: a tu wcięło słowo widżet, IMNSHO przez to krzywo wygląda
+ #: C/rndevelopers.xml:94(para)
+ msgid "<classname>GtkFontChooserDialog</classname>, a new font selection dialog."
+ msgstr "<classname>GtkFontChooserDialog</classname>, nowe okno wyboru czcionki."
+@@ -458,6 +460,7 @@
+ msgid "The HTML backend <application>Broadway</application>, which renders in a browser by using websockets, <ulink url=\"http://blogs.gnome.org/alexl/2011/03/15/gtk-html-backend-update/\">has been improved</ulink> but is still experimental. This potentially allows you to either run your own apps on your server and access it from anywhere, or to put it on a public server that spawns a new instance of the application for every user. Note that this requires compiling GTK+ with <varname>--enable-x11-backend --enable-broadway-backend</varname> and environment variable <envar>GDK_BACKEND</envar> at runtime."
+ msgstr "<ulink url=\"http://blogs.gnome.org/alexl/2011/03/15/gtk-html-backend-update/\">Ulepszony został</ulink> mechanizm HTML o nazwie <application>Broadway</application>, wyświetlający programy w przeglądarce za pomocą WebSockets, ale wciąż jest w fazie eksperymentalnej. Potencjalnie pozwala on na uruchamianie programów na własnym serwerze i dostęp do nich z dowolnego miejsca, lub umieszczenie programu na serwerze publicznym, który będzie udostępniał osobną kopię programu dla każdego użytkownika. Należy zwrócić uwagę, że do jego działania wymagane jest skompilowanie biblioteki GTK+ z włączoną opcją <varname>--enable-x11-backend --enable-broadway-backend</varname> i ustawienie zmiennej środowiskowej <envar>GDK_BACKEND</envar> podczas uruchamiania."
+ 
++# LJ: w celu ułatwienia pisania testów
+ #: C/rndevelopers.xml:114(para)
+ msgid "Support for reftests <ulink url=\"http://blogs.gnome.org/otte/2011/05/05/reftests/\">has been added</ulink> to make it easier to write test cases."
+ msgstr "Dodano obsługę <ulink url=\"http://blogs.gnome.org/otte/2011/05/05/reftests/\">reftests</ulink>, co ułatwi pisanie testów."
+@@ -482,6 +485,7 @@
+ msgid "<classname>ClutterState</classname> transitions can be bound to object signals when creating a scene in <classname>ClutterScript</classname>."
+ msgstr "Przekształcenia <classname>ClutterState</classname> mogą być dowiązywane do sygnałów obiektów podczas tworzenia sceny w <classname>ClutterScript</classname>."
+ 
++# LJ: _C_airo ?
+ #: C/rndevelopers.xml:143(para)
+ msgid "Improved <ulink url=\"http://developer.gnome.org/clutter/1.8/ClutterCairoTexture.html#ClutterCairoTexture-draw\">Cairo drawing integration</ulink>."
+ msgstr "Ulepszona <ulink url=\"http://developer.gnome.org/clutter/1.8/ClutterCairoTexture.html#ClutterCairoTexture-draw\">integracja rysowania z biblioteką cairo</ulink>."
+@@ -490,6 +494,7 @@
+ msgid "<classname>Cogl</classname>, the GPU programming interface used by Clutter, is exposed as a separate library."
+ msgstr "<classname>Cogl</classname>, interfejs programowania procesora graficznego używany przez bibliotekę Clutter, został wydzielony do oddzielnej biblioteki."
+ 
++# LJ: wykorzystanie przestarzałych
+ #: C/rndevelopers.xml:153(title)
+ msgid "Use of Deprecated Libraries"
+ msgstr "Użycie przestarzałych bibliotek"
+@@ -514,6 +519,7 @@
+ msgid "Several packages, such as the <application>Epiphany</application> web browser, have been converted from using <ulink url=\"http://developer.gnome.org/gio/2.30/ch29.html\"><application>dbus-glib</application> to <classname>GDBus</classname></ulink> and from <ulink url=\"http://developer.gnome.org/gtk3/3.2/gtk-migrating-GtkApplication.html\"><application>libunique</application> to <classname>G(tk)Application</classname></ulink>."
+ msgstr "Część pakietów, takich jak przeglądarka WWW <application>Epiphany</application> zostało przekonwertowanych z używania dowiązań <ulink url=\"http://developer.gnome.org/gio/2.30/ch29.html\"><application>dbus-glib</application> do dowiązań <classname>GDBus</classname></ulink> oraz z biblioteki <ulink url=\"http://developer.gnome.org/gtk3/3.2/gtk-migrating-GtkApplication.html\"><application>libunique</application> do interfejsu <classname>G(tk)Application</classname></ulink>."
+ 
++# LJ: środowiska
+ #: C/rndevelopers.xml:179(title)
+ msgid "Easier to Compile GNOME With JHBuild"
+ msgstr "Łatwiejsze kompilowanie GNOME za pomocą JHBuild"
+@@ -535,6 +541,7 @@
+ msgid "Other GNOME Platform improvements in GNOME 3.2 include:"
+ msgstr "Inne ulepszenia platformy programistycznej GNOME w wersji 3.2 obejmują:"
+ 
++# LJ: PyGObject 2 i 3 mogą być instalowane równolegle
+ #: C/rndevelopers.xml:200(para)
+ msgid "The classic (static) Python bindings were removed for PyGObject 3.0 and only dynamic Python bindings are provided (via introspection). PyGObject 2 and 3 are parallel-installable as introspection is turned off by default in the PyGObject 2 packages. Information on <ulink url=\"http://www.j5live.com/2011/08/14/announce-pygobject-2-90-1-released-3-0-pre-release/\">how to port applications from PyGObject 2 to PyGObject 3</ulink> is available."
+ msgstr "Klasyczne (statyczne) dowiązania do języka Python zostały usunięte z PyGObject 3.0. Dostarczane są tylko dowiązania dynamiczne (przez introspekcję). Biblioteki PyGObject 2 i 3 można instalować równolegle, ponieważ introspekcja jest domyślnie wyłączona w pakietach PyGObject 2. Dostępne są informacje o <ulink url=\"http://www.j5live.com/2011/08/14/announce-pygobject-2-90-1-released-3-0-pre-release/\">przenoszeniu programów z PyGObject 2 do PyGObject 3</ulink>."
+

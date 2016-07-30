@@ -1,0 +1,41 @@
+=== default/global/user-error.html.tmpl
+==================================================================
+--- default/global/user-error.html.tmpl  (revision 59)
++++ default/global/user-error.html.tmpl  (local)
+@@ -38,16 +38,6 @@
+ 
+ [% DEFAULT title = "Błąd" %]
+ 
+-[% BLOCK ODMIEN -%]
+-  [%- IF c == 1 -%]
+-    [%- o1 -%]
+-  [%- ELSIF (c % 100 < 10 || c % 100 > 20) && c % 10 > 1 && c % 10 < 5 -%]
+-    [%- o2 -%]
+-  [%- ELSE -%]
+-    [%- o3 -%]
+-  [%- END -%]
+-[%- END %]
+-
+ [% error_message = BLOCK %]
+   [% IF    error == "account_creation_disabled" %]
+     [% title = "Tworzenie kont wyłączone" %]
+=== default/global/variables.none.tmpl
+==================================================================
+--- default/global/variables.none.tmpl  (revision 59)
++++ default/global/variables.none.tmpl  (local)
+@@ -78,3 +78,14 @@
+     }
+   }  
+ %]
++
++[% BLOCK ODMIEN -%]
++  [%- IF c == 1 -%]
++    [%- o1 -%]
++  [%- ELSIF (c % 100 < 10 || c % 100 > 20) && c % 10 > 1 && c % 10 < 5 -%]
++    [%- o2 -%]
++  [%- ELSE -%]
++    [%- o3 -%]
++  [%- END -%]
++[%- END %]
++
+

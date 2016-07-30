@@ -1,0 +1,26 @@
+diff -r a4b2ffb41014 template/pl/default/admin/flag-type/edit.html.tmpl
+--- a/template/pl/default/admin/flag-type/edit.html.tmpl	Sun May 01 17:11:16 2011 +0200
++++ b/template/pl/default/admin/flag-type/edit.html.tmpl	Sat May 07 14:02:32 2011 +0200
+@@ -143,9 +143,9 @@
+       <th>Klucz sortowania:</th>
+       <td>
+         Liczba z zakresu 1-32767, według której flaga będzie sortowana
+         w czasie wyświetlania na liście. Jeśli kolejność, w jakiej flagi 
+-        zostaną wyświetlone nie jest ważna lub jeśli mają być wyświetlane
++        zostaną wyświetlone, nie jest ważna lub jeśli mają być wyświetlane
+         w porządku alfabetycznym, należy zignorować to pole.<br>
+         <input type="text" name="sortkey" value="[% type.sortkey || 1 %]" size="5" maxlength="5">
+       </td>
+     </tr>
+@@ -170,9 +170,9 @@
+ 
+     <tr>
+       <th>Lista obserwatorów:</th>
+       <td>
+-        Jeśli flaga jest flagą pytającą, to tutaj można określić kto dostanie e-mailem kopię informacji
++        Jeśli flaga jest flagą pytającą, to tutaj można określić, kto dostanie e-mailem kopię informacji
+         o jej umieszczeniu. Jest to rozdzielona przecinkami lista pełnych adresów e-mail,
+         które nie muszą być loginami [% terms.Bugzilli %].
+         [% IF Param('emailsuffix') %]
+           Należy pamiętać, że skonfigurowany sufiks adresu e-mail
+

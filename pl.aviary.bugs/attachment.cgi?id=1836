@@ -1,0 +1,13 @@
+diff -r 900e89f6dfc2 template/pl/default/bug/process/verify-new-product.html.tmpl
+--- a/template/pl/default/bug/process/verify-new-product.html.tmpl	Tue May 10 10:07:05 2011 +0200
++++ b/template/pl/default/bug/process/verify-new-product.html.tmpl	Tue May 10 18:59:45 2011 +0200
+@@ -126,6 +126,6 @@
+     <p>Następujące grupy nie są prawidłowe dla produktu <b>[% product.name FILTER html %]</b>
+     lub nie masz uprawnień do ograniczenia [% terms.bledow %] do tych grup.</p>
+-    Dostęp do tych [% terms.bledow %] nie będzie już ograniczony i jeśli nie zostaną
+-    przypisane do innej grupy mogą stać się ogólnodostępne:<br>
++    Dostęp do tych [% terms.bledow %] nie będzie już ograniczony i, jeśli nie zostaną
++    przypisane do innej grupy, mogą stać się ogólnodostępne:<br>
+     [% FOREACH group = old_groups %]
+       <input type="checkbox" id="group_[% group.id FILTER html %]"
+

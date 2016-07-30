@@ -1,0 +1,76 @@
+=== template/pl/default/pages/voting.html.tmpl
+==================================================================
+--- template/pl/default/pages/voting.html.tmpl   (/2.18/pl-patch)   (revision 19)
++++ template/pl/default/pages/voting.html.tmpl   (/2.18/pl-trunk)   (revision 19)
+@@ -23,43 +23,45 @@
+ [% PROCESS global/variables.none.tmpl %]
+ [% INCLUDE global/header.html.tmpl title = "Voting" %]
+ 
+-<p>[% terms.Bugzilla %] has a "voting" feature. Each product allows users to 
+-have a certain number of votes. (Some products may not allow any, which means 
+-you can't vote on things in that product at all.) With your vote, you indicate
+-which [% terms.bugs %] you think are the most important to be fixed.</p>
++<p>[% terms.Bugzilla %] posiada opcję "głosowania". Dla każdego produktu użytkownik
++ma możliwość oddania określonej liczby głosów (niektóre produkty mogą nie pozwalać
++na oddanie głosu, tym samym nie można głosować na [% terms.bledy %] danego produktu).
++Głosując na [% terms.blad %] można określić, które, naszym zdaniem, [% terms.bledy %]
++powinny być rozwiązane w pierwszej kolejności.</p>
+ 
+-<p>Depending on how the administrator has configured the relevant product,
+-you may be able to vote for the same [% terms.bug %] more than one time. But 
+-remember, you only have so many votes to use in total! So, you can either vote 
+-a little for many [% terms.bugs %], or vote a lot for a few [% terms.bugs %].
+-</p>
++<p>W zależności od tego jak administrator skonfigurował odpowiedni produkt, możliwe
++jest oddanie na [% terms.blad %] więcej niż jednego głosu. Należy jednak zauważyć
++że łączna liczba głosów dla produktu nie może przekroczyć wartości określonej przez
++administratora. Można więc głosować na wiele [% terms.bledow %] oddając po
++niewielkiej liczbie głosów, lub zaledwie na kilka [% terms.bledow %], dużą
++ilością głosów.</p>
+ 
+-<p>To look at votes:</p>
++<p>Aby zobaczyć głosy:</p>
+ 
+ <ul>
+-  <li>Go to the query page. Do a normal query, but enter 1 in the "At least
+-  ___ votes" field. This will show you items that match your query that
+-  have at least one vote.</li>
++  <li>Wejdź na stronę zapytań. Wybierz normalne wyszukiwanie. W pole
++  "Co najmniej ___ głosów" wpisz 1. Dzięki temu możesz zobaczyć [% terms.bledy %],
++  na które ktoś oddał głos.</li>
+ </ul>
+ 
+-<p>To vote for [% terms.abug %]:</p>
++<p>Aby zagłosować na [% terms.blad %]:</p>
+ 
+ <ul>
+-  <li>Bring up the [% terms.bug %] in question.</li>
++  <li>Otwórz stronę odpowiedniego [% terms.bledu %].</li>
+ 
+-  <li>Click on the "Vote for this [% terms.bug %]" link that appears just 
+-  above the "Additional Comments" field. (If no such link appears, then voting 
+-  may not be allowed in this [% terms.bug %]'s product.)</li>
++  <li>Kliknij na "Głosuj na ten [% terms.blad %]", który powinien znajdować się tuż nad
++  polem  "Dodatkowe Komentarze" (jeśli nie ma takiego przycisku, produkt do którego
++  przypisano ten błąd, nie pozwala na oddawanie głosów).</li>
+ 
+-  <li>Indicate how many votes you want to give this [% terms.bug %]. This page 
+-  also displays how many votes you've given to other [% terms.bugs %], so you 
+-  may rebalance your votes as necessary.</li>
++  <li>Wpisz liczbę głosów którą chcesz oddać na [% terms.blad %]. Na tej stronie
++  można również zobaczyć głosy oddane na inne [% terms.bledy %] i jeśli potrzeba
++  powtórnie rozdysponować swoje głosy.</li>
+ </ul>
+ 
+-<p>You will automatically get email notifying you of any changes that occur
+-on [% terms.bugs %] you vote for.</p>
++<p>Zostaniesz poinformowany poprzez e-mail, o wszystkich zmianach dla [% terms.bledow %]
++na które zagłosowałeś.</p>
+ 
+-<p>You may review your votes at any time by clicking on the "<a href=
+-"votes.cgi?action=show_user">My Votes</a>" link in the page footer.</p>
++<p>W każdej chwili możesz przejrzeć swoje głosy, klikając na odnośnik "<a href=
++"votes.cgi?action=show_user">Moje głosy</a>" znajdujący sie w stopce każdej strony.</p>
+ 
+ [% INCLUDE global/footer.html.tmpl %]
+

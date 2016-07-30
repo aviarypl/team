@@ -1,0 +1,437 @@
+Index: pl/dom/chrome/layout/svg.properties
+===================================================================
+RCS file: pl/dom/chrome/layout/svg.properties
+diff -N pl/dom/chrome/layout/svg.properties
+--- /dev/null	1 Jan 1970 00:00:00 -0000
++++ pl/dom/chrome/layout/svg.properties	14 Jun 2005 14:57:35 -0000
+@@ -0,0 +1,37 @@
++# ***** BEGIN LICENSE BLOCK *****
++# Version: MPL 1.1/GPL 2.0/LGPL 2.1
++#
++# The contents of this file are subject to the Mozilla Public License Version
++# 1.1 (the "License"); you may not use this file except in compliance with
++# the License. You may obtain a copy of the License at
++# http://www.mozilla.org/MPL/
++#
++# Software distributed under the License is distributed on an "AS IS" basis,
++# WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
++# for the specific language governing rights and limitations under the
++# License.
++#
++# The Original Code is Mozilla SVG Project.
++#
++# The Initial Developer of the Original Code is IBM Corporation.
++# Portions created by the Initial Developer are Copyright (C) 2005
++# the Initial Developer. All Rights Reserved.
++#
++# Contributor(s):
++#
++# Alternatively, the contents of this file may be used under the terms of
++# either the GNU General Public License Version 2 or later (the "GPL"), or
++# the GNU Lesser General Public License Version 2.1 or later (the "LGPL"),
++# in which case the provisions of the GPL or the LGPL are applicable instead
++# of those above. If you wish to allow use of your version of this file only
++# under the terms of either the GPL or the LGPL, and not to allow others to
++# use your version of this file under the terms of the MPL, indicate your
++# decision by deleting the provisions above and replace them with the notice
++# and other provisions required by the GPL or the LGPL. If you do not delete
++# the provisions above, a recipient may use your version of this file under
++# the terms of any one of the MPL, the GPL or the LGPL.
++#
++# ***** END LICENSE BLOCK *****
++
++gdiplus_missing_dialog_title = Brak biblioteki GDI+
++gdiplus_missing_dialog_message = Aby m\u00f3c natywnie wy\u015bwietli\u0107 SVG na tej stronie niezb\u0119dna jest instalacja biblioteki GDI+.\n W celu uzyskania dalszych informacji prosz\u0119 otworzy\u0107 stron\u0119:\nhttp://www.mozilla.org/projects/svg/gdiplus/
+Index: pl/toolkit/chrome/global/textcontext.dtd
+===================================================================
+RCS file: /l10n/l10n/pl/toolkit/chrome/global/textcontext.dtd,v
+retrieving revision 1.1
+diff -u -r1.1 textcontext.dtd
+--- pl/toolkit/chrome/global/textcontext.dtd	16 Apr 2005 17:33:10 -0000	1.1
++++ pl/toolkit/chrome/global/textcontext.dtd	14 Jun 2005 14:57:35 -0000
+@@ -6,8 +6,6 @@
+ <!ENTITY pasteCmd.accesskey "e" >
+ <!ENTITY undoCmd.label "Cofnij" >
+ <!ENTITY undoCmd.accesskey "C" >
+-<!ENTITY redoCmd.label "Przywróć" >
+-<!ENTITY redoCmd.accesskey "r" >
+ <!ENTITY selectAllCmd.label "Zaznacz wszystko" >
+ <!ENTITY selectAllCmd.accesskey "a" >
+ <!ENTITY deleteCmd.label "Usuń" >
+Index: pl/toolkit/chrome/mozapps/extensions/extensions.dtd
+===================================================================
+RCS file: /l10n/l10n/pl/toolkit/chrome/mozapps/extensions/extensions.dtd,v
+retrieving revision 1.3
+diff -u -r1.3 extensions.dtd
+--- pl/toolkit/chrome/mozapps/extensions/extensions.dtd	16 May 2005 13:48:49 -0000	1.3
++++ pl/toolkit/chrome/mozapps/extensions/extensions.dtd	14 Jun 2005 14:57:36 -0000
+@@ -41,6 +41,8 @@
+ <!ENTITY cmd.moveUp.accesskey             "g">
+ <!ENTITY cmd.moveDn.label                 "Przesuń w dól">
+ <!ENTITY cmd.moveDn.accesskey             "d">
++<!ENTITY cmd.showFolder.label             "Pokaż zawartość elementu...">
++<!ENTITY cmd.showFolder.accesskey         "P">
+ 
+ <!-- Extension Items -->
+ <!ENTITY options.tooltip                  "Opcje">
+Index: pl/toolkit/chrome/mozapps/extensions/extensions.properties
+===================================================================
+RCS file: /l10n/l10n/pl/toolkit/chrome/mozapps/extensions/extensions.properties,v
+retrieving revision 1.5
+diff -u -r1.5 extensions.properties
+--- pl/toolkit/chrome/mozapps/extensions/extensions.properties	2 Jun 2005 23:08:18 -0000	1.5
++++ pl/toolkit/chrome/mozapps/extensions/extensions.properties	14 Jun 2005 14:57:36 -0000
+@@ -19,7 +19,7 @@
+ droppedInWarning=W katalogu rozszerze\u0144 znaleziono nast\u0119puj\u0105ce elementy. Czy chcesz je zainstalowa\u0107?
+ disabledBySafeMode=%S jest zablokowany przez tryb awaryjny.
+ 
+-extensions.update.url=https://update.mozilla.org/update/VersionCheck.php?reqVersion=%REQ_VERSION%&id=%ITEM_ID%&version=%ITEM_VERSION%&maxAppVersion=%ITEM_MAXAPPVERSION%&appID=%APP_ID%&appVersion=%APP_VERSION%
++extensions.update.url=https://addons.mozilla.org/update/VersionCheck.php?reqVersion=%REQ_VERSION%&id=%ITEM_ID%&version=%ITEM_VERSION%&maxAppVersion=%ITEM_MAXAPPVERSION%&appID=%APP_ID%&appVersion=%APP_VERSION%&appOS=%APP_OS%&appABI=%APP_ABI%
+ extensions.getMoreExtensionsURL=https://update.mozilla.org/extensions/?application=%APPID%
+ extensions.getMoreThemesURL=https://update.mozilla.org/themes/?application=%APPID%
+ 
+@@ -49,7 +49,8 @@
+ incompatibleExtension=Zablokowane - niekompatybilne z %S %S
+ invalidGUIDMessage="%S" nie m\u00f3g\u0142 by\u0107 zainstalowany z powodu b\u0142\u0119du w jego manife\u015bcie instalacji. ("%S" nie jest prawid\u0142owym GUID). Poinformuj o tym problemie autora tego elementu.
+ invalidVersionMessage=%S nie m\u00f3g\u0142 zainstalowa\u0107 "%S" poniewa\u017c informacja o jego wersji ("%S") jest niepoprawna. Prosz\u0119 skontaktowa\u0107 si\u0119 z autorem w sprawie tego problemu.
+- 
++incompatiblePlatformMessage=Element "%S" nie m\u00f3g\u0142 zosta\u0107 zainstalowany poniewa\u017c nie jest kompatybilny z architektur\u0105 programu %S (%S). Prosz\u0119 skontaktowa\u0107 si\u0119 z autorem tego elementu.
++
+ missingFileTitle=Brak pliku
+ missingFileMessage=%S nie m\u00f3g\u0142 za\u0142adowa\u0107 tego elementu poniewa\u017c brakuje pliku %S.
+ missingFileConsoleMessage=Nie uda\u0142o si\u0119 zainstalowa\u0107 elementu z %S poniewa\u017c:  %S nie zosta\u0142 dostarczony na g\u0142\u00f3wnym poziomie pliku jar/xpi.
+Index: pl/toolkit/chrome/mozapps/extensions/update.dtd
+===================================================================
+RCS file: /l10n/l10n/pl/toolkit/chrome/mozapps/extensions/update.dtd,v
+retrieving revision 1.1
+diff -u -r1.1 update.dtd
+--- pl/toolkit/chrome/mozapps/extensions/update.dtd	16 Apr 2005 17:33:10 -0000	1.1
++++ pl/toolkit/chrome/mozapps/extensions/update.dtd	14 Jun 2005 14:57:36 -0000
+@@ -1,5 +1,82 @@
+-<!ENTITY  update.title            "Sprawdzanie aktualizacji">
+-<!ENTITY  intro.label             "&brandShortName; sprawdza czy są dostępne aktualizacje...">
++<!ENTITY  updateWizard.title              "&brandShortName; - Aktualizacja ">
+ 
++<!ENTITY  mismatch.title                  "Niekompatybilne komponenty">
++<!ENTITY  mismatch.intro1.label           "Poniższe komponenty są niezgodne z nową wersją 
++                                           programu &brandShortName;, która właśnie została zainstalowana:">
++<!ENTITY  mismatch.intro2.label           "Zostały one wyłączone do czasu zainstalowania kompatybilnych wersji.">
++<!ENTITY  mismatch.intro3.label           "&brandShortName; może sprawdzić, czy są już dostępne, i zainstalować nowe kompatybilne wersje tych komponentów.">
+ 
++<!ENTITY  checking.title                  "Sprawdzanie aktualizacji">
++<!ENTITY  checking.intro.label            "&brandShortName; sprawdza, czy są dostępne aktualizacje...">
+ 
++<!ENTITY  checking.status                 "Może to potrwać kilka minut...">
++
++<!ENTITY  version.title                   "Sprawdzanie aktualizacji kompatybilnościowych">
++<!ENTITY  version.intro.label             "&brandShortName; sprawdza, czy są dostępne aktualizacje kompatybilnościowe rozszerzeń i motywów...">
++<!ENTITY  version.status                  "Może to potrwać kilka minut...">
++
++<!ENTITY  found.title                     "Znaleziono aktualizacje">
++<!ENTITY  found.intro.label               "Program &brandShortName; znalazł następujące aktualizacje:">
++
++<!ENTITY  from.label                      "z: ">
++
++<!-- [marcoos] cholera, do czego są te 4 accesskeys? strzelam: łaTki, Komponenty, Rozszerzenia, pakiety Językowe -->
++<!ENTITY  found.updatetype.patches.accesskey    "t">
++<!ENTITY  found.updatetype.components.accesskey "k">
++<!ENTITY  found.updatetype.addons.accesskey     "r">
++<!ENTITY  found.updatetype.languages.accesskey  "j">
++
++<!ENTITY  found.criticalUpdates.label           "Dla programu &brandShortName; dostępne są następujące krytyczne aktualizacje:">
++
++<!ENTITY  found.criticalUpdates.info            "Należy je zainstalować jak najszybciej, by chronić komputer przed niebezpieczeństwem ataku.">
++
++<!ENTITY  found.app.infoLink                    "Więcej informacji...">
++
++<!ENTITY  found.components.label                "Następujące komponenty i wtyczki są dostępne:">
++
++<!ENTITY  found.components.info                 "Instalacja tych komponentów może uprzyjemnić korzystanie z przeglądarki.">
++
++<!ENTITY  found.addons.label                    "Dostępne są następujące aktualizacje dla już zainstalowanych rozszerzeń i motywów">
++
++<!ENTITY  found.languages.label                 "Dostępne są następujące pakiety językowe:">
++
++<!ENTITY  installing.title                "Instalacja aktualizacji">
++<!ENTITY  installing.intro.label          "Trwa pobieranie i instalacja aktualizacji...">
++<!ENTITY  installing.disclaimer.label     "XXXben - this will not work until we have a scriptable API to XPInstall.">
++
++<!ENTITY  noupdates.title                 "Nie znaleziono aktualizacji">
++<!ENTITY  noupdates.intro.user.label      "Program &brandShortName; nie znalazł żadnych aktualizacji.">
++
++<!ENTITY  noupdates.intro.mismatch.label  "Program &brandShortName; nie znalazł żadnych aktualizacji - wersje kompatybilne mogą być w tym momencie niedostępne.">
++<!ENTITY  noupdates.intro2.mismatch.label "Program &brandShortName; będzie cyklicznie sprawdzał i informował jeśli pojawią się jakieś aktualizacje.">
++<!ENTITY  noupdates.intro3.mismatch.label "Program &brandShortName; może sprawdzać cyklicznie i informować jeśli pojawią się wersje kompatybilne.">
++<!ENTITY  noupdates.enableChecking.label  "Zezwól programowi &brandShortName; na sprawdzanie aktualizacji.">
++
++<!ENTITY  finished.title                  "Aktualizacja zakończona">
++<!ENTITY  finished.updated.label          "Dostępne aktualizacje zostały zainstalowane. Aby dokończyć proces aktualizacji, konieczne może być ponowne uruchomienie programu.">
++<!ENTITY  finished.remaining.label        "Niektóre niekompatybilne komponenty nie zostały zaktualizowane. Prawdopodobnie w obecnej chwili nie są dla nich dostępne żadne aktualizacje. Program &brandShortName; będzie cyklicznie sprawdzał i poinformuje kiedy pojawią się aktualizacje.">
++<!ENTITY  finished.remaining2.label       "Niektóre niekompatybilne komponenty nie zostały zaktualizowane. Prawdopodobnie w obecnej chwili nie są dla nich dostępne żadne aktualizacje. Program &brandShortName; może cyklicznie sprawdzać i informować kiedy pojawią się aktualizacje.">
++<!ENTITY  finished.error.label            "Nie udało się pobrać i zainstalować niektórych aktualizacji.">
++<!ENTITY  finished.enableChecking.label   "Zezwól programowi &brandShortName; na sprawdzanie aktualizacji.">
++<!ENTITY  finished.mismatch.label         "Proszę nacisnąć Zakończ, aby kontynuować uruchamianie programu &brandShortName;.">
++
++<!ENTITY  optional.title                  "Komponenty opcjonalne">
++<!ENTITY  optional.intro.label            "Proszę wybrać dodatkowe komponenty, które mają zostać zainstalowane, a następnie kliknąć przycisk 'Zainstaluj teraz'.">
++
++<!ENTITY  errors.title                    "Problemy podczas aktualizacji">
++<!ENTITY  errors.intro.label              "Program &brandShortName; napotkał problemy podczas aktualizacji i w rezultacie nie wszystkie komponenty zostały zaktualizowane.">
++<!ENTITY  errors.details.label            "Szczegóły">
++<!ENTITY  errors.details.accesskey        "S">
++
++<!ENTITY  updateCheckError.description    "&brandShortName; napotkał problemy podczas próby znalezienia aktualizacji niektórych elementów.">
++<!ENTITY  updateCheckError.label          "Szczegóły">
++<!ENTITY  updateCheckError.accesskey      "S">
++
++<!ENTITY  resolveMaxVersion.title         "Sprawdzanie dostępności kompatybilnych rozszerzeń i motywów...">
++<!ENTITY  resolveMaxVersion.intro1.label  "&brandShortName; sprawdza dostępność aktualizacji kompatybilnościowych dla zainstalowanych rozszerzeń i motywów...">
++
++<!ENTITY  restart.title                   "Aktualizacja zakończona">
++<!ENTITY  restart.updated.label           "W celu dokończenia procesu aktualizacji, wymagane jest ponowne uruchomienie programu.">
++
++<!ENTITY  resetHomepage.label             "Użyj strony startowej programu &brandShortName; jako strony domowej">
++<!ENTITY  resetHomepage.accesskey         "U">
+\ No newline at end of file
+Index: pl/toolkit/chrome/mozapps/extensions/update.properties
+===================================================================
+RCS file: pl/toolkit/chrome/mozapps/extensions/update.properties
+diff -N pl/toolkit/chrome/mozapps/extensions/update.properties
+--- /dev/null	1 Jan 1970 00:00:00 -0000
++++ pl/toolkit/chrome/mozapps/extensions/update.properties	14 Jun 2005 14:57:36 -0000
+@@ -0,0 +1,52 @@
++mismatchCheckNow=Sprawd\u017a teraz
++mismatchCheckNowAccesskey=S
++mismatchDontCheck=Nie sprawdzaj
++mismatchDontCheckAccesskey=N
++installButtonText=Instaluj teraz
++installButtonTextAccesskey=I
++nextButtonText=Dalej >
++nextButtonTextAccesskey=D
++cancelButtonText=Anuluj
++cancelButtonTextAccesskey=A
++app.update.url=https://aus.mozilla.org/update/firefox/pl.rdf
++
++updatesAvailableTitle=Nowe aktualizacje s\u0105 dost\u0119pne
++updatesAvailableText=Poka\u017c aktualizacje
++
++checkingPrefix=Sprawdzanie aktualizacji dla elementu %S ...
++downloadingPrefix=Pobieranie: %S
++installingPrefix=Instalacja: %S
++closeButton=Zamknij
++
++installErrorDescription=Poni\u017csze komponenty nie mog\u0142y zosta\u0107 zainstalowane z powodu b\u0142\u0119d\u00f3w (plik nie m\u00f3g\u0142 zosta\u0107 pobrany, by\u0142 nieprawid\u0142owy lub wyst\u0105pi\u0142 inny problem).
++checkingErrorDescription=%S nie m\u00f3g\u0142 sprawdzi\u0107 aktualizacji dla podanych komponent\u00f3w (serwer(y) aktualizacji nie odpowiada\u0142, lub nie zosta\u0142 znaleziony). 
++installErrorItemFormat=%S (%S)
++
++versionUpdateComplete=Aktualizacja zestawienia kompatybilno\u015bci wersji zako\u0144czona
++
++updatesAvailableTooltip-0=Aktualizacja dost\u0119pna
++updatesAvailableTooltip-1=Aktualizacje dost\u0119pne
++updatesAvailableTooltip-2=Krytyczne aktualizacje dost\u0119pne
++
++updatesCheckForUpdatesTooltip=Prosz\u0119 klikn\u0105\u0107 dwukrotnie tutaj, aby sprawdzi\u0107 dost\u0119pno\u015b\u0107 aktualizacji
++
++installTextNoFurtherActions=Nale\u017cy wybra\u0107 aktualizacje, kt\u00f3re maj\u0105 zosta\u0107 zainstalowane i wybra\u0107 przycisk Instaluj, aby rozpocz\u0105\u0107 instalacj\u0119.
++installTextFurtherCations=Nale\u017cy wybra\u0107 aktualizacje, kt\u00f3re maj\u0105 zosta\u0107 zainstalowane oraz wybra\u0107 przycisk Dalej, aby kontynuowa\u0107.
++
++appNameAndVersionFormat=%S %S
++updateTypePatches=Aktualizacje krytyczne (%S)
++updateTypeComponents=Opcjonalne komponenty (%S)
++updateTypeExtensions=Rozszerzenia i Motywy (%S)
++updateTypeLangPacks=Paczki j\u0119zykowe (%S)
++
++foundAppLabel=Program %S %S jest dost\u0119pny. Jest wysoce zalecane, aby zainstalowa\u0107 t\u0119 aktualizacje jak najszybciej.
++foundAppFeatures=Nowe funkcjonalno\u015bci w programie %S %S:
++foundAppInfoLink=Wi\u0119cej informacji na temat programu %S %S ...
++foundInstructions=Nale\u017cy wybra\u0107 aktualizacje, kt\u00f3re maj\u0105 zosta\u0107 zainstalowane i wybrac przycisk Instaluj, aby rozpocz\u0105\u0107 instalacj\u0119.
++foundInstructionsAppComps=Nale\u017cy wybra\u0107 aktualizacje, kt\u00f3re maj\u0105 zosta\u0107 zainstalowane oraz wybra\u0107 przycisk Dalej, aby kontynuowa\u0107.
++
++appupdateperformedtitle=Wymagane ponowne uruchomienie
++appupdateperformedmessage=Program %S zosta\u0142 zaktualizowany w trakcie tej sesji. Prosz\u0119 uruchomi\u0107 ponownie %S przed rozpocz\u0119ciem innych aktualizacji.
++
++updatesdisabledtitle=Aktualizacje wy\u0142\u0105czone
++updatesdisabledmessage=Aktualizacje zosta\u0142y wy\u0142\u0105czone przez administratora tego systemu.
+\ No newline at end of file
+Index: pl/toolkit/chrome/mozapps/update/incompatible.dtd
+===================================================================
+RCS file: pl/toolkit/chrome/mozapps/update/incompatible.dtd
+diff -N pl/toolkit/chrome/mozapps/update/incompatible.dtd
+--- /dev/null	1 Jan 1970 00:00:00 -0000
++++ pl/toolkit/chrome/mozapps/update/incompatible.dtd	14 Jun 2005 14:57:36 -0000
+@@ -0,0 +1,11 @@
++
++<!ENTITY  incompatible.title        "Niekompatybilne elementy">
++<!ENTITY  incompatible.intro        "Poniższe elementy nie są kompatybilne z tą aktualizacją programu &brandShortName; i
++                                     po jej instalacji zostaną wyłączone:">
++<!ENTITY  incompatible.update       "Program &brandShortName; będzie okresowo sprawdzał czy są dostępne ich aktualizacje
++                                     na wypadek gdyby pojawiła się wersja kompatybilna.">
++<!ENTITY  incompatible.suffix       "Aktualizacje programu &brandShortName; zawierają ważne poprawki bezpieczeństwa.
++                                     W celu zachowania bezpieczeństwa bardzo zalecana jest aktualizacja programu &brandShortName; 
++                                     nawet gdyby niektóre z rozszerzeń i motywów miały stać się niekompatybilne.">
++
++<!ENTITY  closebutton.label         "Zamknij">
+Index: pl/toolkit/chrome/mozapps/update/update.dtd
+===================================================================
+RCS file: pl/toolkit/chrome/mozapps/update/update.dtd
+diff -N pl/toolkit/chrome/mozapps/update/update.dtd
+--- pl/toolkit/chrome/mozapps/update/update.dtd	21 May 2005 20:26:30 -0000	1.2
++++ /dev/null	1 Jan 1970 00:00:00 -0000
+@@ -1,81 +0,0 @@
+-<!ENTITY  updateWizard.title              "&brandShortName; - Aktualizacja ">
+-
+-<!ENTITY  mismatch.title                  "Niekompatybilne komponenty">
+-<!ENTITY  mismatch.intro1.label           "Poniższe komponenty są niezgodne z nową wersją 
+-                                           programu &brandShortName;, która właśnie została zainstalowana:">
+-<!ENTITY  mismatch.intro2.label           "Zostały one wyłączone do czasu zainstalowania kompatybilnych wersji.">
+-<!ENTITY  mismatch.intro3.label           "&brandShortName; może sprawdzić, czy są już dostępne, i zainstalować nowe kompatybilne wersje tych komponentów.">
+-
+-<!ENTITY  checking.title                  "Sprawdzanie aktualizacji">
+-<!ENTITY  checking.intro.label            "&brandShortName; sprawdza, czy są dostępne aktualizacje...">
+-
+-<!ENTITY  checking.status                 "Może to potrwać kilka minut...">
+-
+-<!ENTITY  version.title                   "Sprawdzanie aktualizacji kompatybilnościowych">
+-<!ENTITY  version.intro.label             "&brandShortName; sprawdza, czy są dostępne aktualizacje kompatybilnościowe rozszerzeń i motywów...">
+-<!ENTITY  version.status                  "Może to potrwać kilka minut...">
+-
+-<!ENTITY  found.title                     "Znaleziono aktualizacje">
+-<!ENTITY  found.intro.label               "&brandShortName; znalazł następujące dostępne aktualizacje:">
+-
+-<!ENTITY  from.label                      "z: ">
+-
+-<!-- [marcoos] cholera, do czego są te 4 accesskeys? strzelam: łaTki, Komponenty, Rozszerzenia, pakiety Językowe -->
+-<!ENTITY  found.updatetype.patches.accesskey    "t">
+-<!ENTITY  found.updatetype.components.accesskey "k">
+-<!ENTITY  found.updatetype.addons.accesskey     "r">
+-<!ENTITY  found.updatetype.languages.accesskey  "j">
+-
+-<!ENTITY  found.criticalUpdates.label           "Dla programu &brandShortName; dostępne są następujące krytyczne aktualizacje:">
+-
+-<!ENTITY  found.criticalUpdates.info            "Należy je zainstalować jak najszybciej, by chronić komputer przed niebezpieczeństwem ataku.">
+-
+-<!ENTITY  found.app.infoLink                    "Więcej informacji...">
+-
+-<!ENTITY  found.components.label                "Następujące komponenty i wtyczki są dostępne:">
+-
+-<!ENTITY  found.components.info                 "Instalacja tych komponentów może uprzyjemnić korzystanie z przeglądarki.">
+-
+-<!ENTITY  found.addons.label                    "Dostępne są następujące aktualizacje dla już zainstalowanych rozszerzeń i motywów">
+-
+-<!ENTITY  found.languages.label                 "Dostępne są następujące pakiety językowe:">
+-
+-<!ENTITY  installing.title                "Instalacja aktualizacji">
+-<!ENTITY  installing.intro.label          "Trwa pobieranie i instalacja aktualizacji...">
+-<!ENTITY  installing.disclaimer.label     "XXXben - this will not work until we have a scriptable API to XPInstall.">
+-
+-<!ENTITY  noupdates.title                 "Nie znaleziono aktualizacji">
+-<!ENTITY  noupdates.intro.user.label      "&brandShortName; nie znalazł żadnych aktualizacji.">
+-
+-<!ENTITY  noupdates.intro.mismatch.label  "&brandShortName; nie znalazł żadnych aktualizacji - wersje kompatybilne mogę być w tym momencie niedostępne.">
+-<!ENTITY  noupdates.intro2.mismatch.label "&brandShortName; będzie cyklicznie sprawdzał i informował jeśli pojawią sie jakieś aktualizacje.">
+-<!ENTITY  noupdates.intro3.mismatch.label "&brandShortName; może sprawdzać cyklicznie i informować jeśli pojawią się wersje kompatybilne.">
+-<!ENTITY  noupdates.enableChecking.label  "Zezwól programowi &brandShortName; na sprawdzanie aktualizacji.">
+-
+-<!ENTITY  finished.title                  "Aktualizacja zakończona">
+-<!ENTITY  finished.updated.label          "Dostępne aktualizacje zostały zainstalowane. Aby dokończyć proces aktualizacji, konieczne może być ponowne uruchomienie programu.">
+-<!ENTITY  finished.remaining.label        "Niektóre, niekompatybilne komponenty nie zostały zaktualizowane, prawdopodobnie nie są w tym momencie dostępne. &brandShortName; będzie cyklicznie sprawdzał i poinformuje kiedy pojawią się aktualizacje.">
+-<!ENTITY  finished.remaining2.label       "Niektóre, niekompatybilne komponenty nie zostały zaktualizowane, prawdopodobnie nie są w tym momencie dostępne. &brandShortName; może cyklicznie sprawdzać i informować kiedy pojawią się aktualizacje.">
+-<!ENTITY  finished.error.label            "Nie udało się pobrać i zainstalować niektórych aktualizacji.">
+-<!ENTITY  finished.enableChecking.label   "Zezwól programowi &brandShortName; na sprawdzanie aktualizacji.">
+-<!ENTITY  finished.mismatch.label         "Naciśnij Zakończ, aby kontynuować uruchamianie programu &brandShortName;.">
+-
+-<!ENTITY  optional.title                  "Komponenty opcjonalne">
+-<!ENTITY  optional.intro.label            "Wybierz dodatkowe komponenty, które chcesz zainstalować, a następnie kliknij przycisk 'Zainstaluj teraz'.">
+-                                           
+-<!ENTITY  errors.title                    "Problemy podczas aktualizacji">
+-<!ENTITY  errors.intro.label              "&brandShortName; napotkał problemy podczas aktualizacji i w rezultacie nie wszystkie komponenty zostały zaktualizowane.">
+-<!ENTITY  errors.details.label            "Szczegóły">
+-<!ENTITY  errors.details.accesskey        "S">
+-
+-<!ENTITY  updateCheckError.description    "&brandShortName; napotkał problemy podczas próby znalezienia aktualizacji niektórych elementów.">
+-<!ENTITY  updateCheckError.label          "Szczegóły">
+-<!ENTITY  updateCheckError.accesskey      "S">
+-
+-<!ENTITY  resolveMaxVersion.title         "Sprawdzanie dostępności kompatybilnych rozszerzeń i motywów...">
+-<!ENTITY  resolveMaxVersion.intro1.label  "&brandShortName; sprawdza dostępność aktualizacji kompatybilnościowych dla Twoich rozszerzeń i motywów...">
+-
+-<!ENTITY  restart.title                   "Aktualizacja zakończona">
+-<!ENTITY  restart.updated.label           "Program &brandShortName; pobrał i zainstalował aktualizację. Musisz go jednak uruchomić ponownie, by dokończyć proces aktualizacji.">
+-
+-
+Index: pl/toolkit/chrome/mozapps/update/updates.dtd
+===================================================================
+RCS file: pl/toolkit/chrome/mozapps/update/updates.dtd
+diff -N pl/toolkit/chrome/mozapps/update/updates.dtd
+--- /dev/null	1 Jan 1970 00:00:00 -0000
++++ pl/toolkit/chrome/mozapps/update/updates.dtd	14 Jun 2005 14:57:36 -0000
+@@ -0,0 +1,47 @@
++<!ENTITY  updateWizard.title              "Aktualizacja aplikacji">
++
++<!ENTITY  checking.title                  "Sprawdzanie aktualizacji">
++<!ENTITY  checking.label                  "&brandShortName; sprawdza, czy są dostępne aktualizacje...">
++
++<!ENTITY  cancel.label                    "Anuluj">
++<!ENTITY  cancel.accesskey                "A">
++
++<!ENTITY  updatesfound.title              "Dostępne aktualizacje">
++
++<!ENTITY  forMoreInfo.label               "Aby uzyskać więcej informacji, proszę">
++<!ENTITY  clickHere.label                 "kliknąć tutaj">
++<!ENTITY  updateAvailable.placeholder     "To jest linia tekstu, która powinna powinna wygodnie przełamać się 
++                                           na dwie linie w danym języku.">
++
++<!ENTITY  incompatible.warning            "Ta aktualizacja spowoduje, że niektóre z rozszerzeń lub motywów 
++                                           przestaną działać, póki nie zostaną zaktualizaowane.">
++<!ENTITY  listIncompatible.label          "Pokaż listę">
++<!ENTITY  listIncompatible.accesskey      "P">
++
++<!ENTITY  later.label                     "Nie teraz">
++<!ENTITY  later.accesskey                 "n">
++<!ENTITY  download.label                  "Pobierz i Zainstaluj &#0187;">
++<!ENTITY  download.accesskey              "o">
++
++<!ENTITY  upgrade.evangelism              "Aktualizacja programu &brandShortName; przez wybranie Pobierz i Zainstaluj &#0187;
++                                           jest wysoce zalecana.">
++
++<!ENTITY  license.title                   "Warunki licencji">
++<!ENTITY  license.intro                   "Aby zainstalować aktualizację należy zaakceptować warunki licencji. Proszę przeczytać uważnie:">
++<!ENTITY  license.instructions            "W przypadku akceptacji warunków licencji, należy wybrać przycisk 'Zgadzam się' poniżej, aby kontynuować instalację akutalizacji.">
++
++<!ENTITY  downloading.intro               "Poniższe aktualizacje są (za)instalowane:">
++<!ENTITY  showCompletedUpdates.label      "Pokaż stare aktualizacje na liście">
++<!ENTITY  showCompletedUpdates.accesskey  "o">
++
++<!ENTITY  details.link                    "Szczegóły">
++<!ENTITY  pause.label                     "Wstrzymaj">
++<!ENTITY  pause.accesskey                 "s">
++<!ENTITY  close.label                     "Zamknij">
++<!ENTITY  close.accesskey                 "Z">
++
++<!ENTITY  error.label                     "Podczas instalacji aktualizacji pojawiły się problemy. Program &brandShortName;
++                                           nie mógł zostać zaktualizowany z powodu:">
++
++<!ENTITY  errorManual.label               "Można dokonać ręcznej aktualizacji programu &brandShortName; poprzez otworzenie
++                                           tego odnośnika i pobranie najnowszej wersji:">
+Index: pl/toolkit/chrome/mozapps/update/updates.properties
+===================================================================
+RCS file: pl/toolkit/chrome/mozapps/update/updates.properties
+diff -N pl/toolkit/chrome/mozapps/update/updates.properties
+--- /dev/null	1 Jan 1970 00:00:00 -0000
++++ pl/toolkit/chrome/mozapps/update/updates.properties	14 Jun 2005 14:57:36 -0000
+@@ -0,0 +1,14 @@
++updateName=%S %S
++updateType_major=Nowa wersja
++updateType_minor=Akutalizacja bezpiecze\u0144stwa
++introType_minor=Dost\u0119pna jest wa\u017cna aktualizacja bezpiecze\u0144stwa dla elementu %S:
++introType_major=Nowa wersja elementu %S jest dost\u0119pna:
++verificationError=Program %S nie m\u00f3g\u0142 potwierdzi\u0107 integralno\u015bci pakietu aktualizacyjnego
++app.update.manual.url=http://www.mozilla.org/update
++# This should be empty unless you wish to override the URL used to discover
++# available updates.
++app.update.url.override=
++errorsPageHeader=Aktualizacja nieudana
++IAgreeLabel=Zgadzam si\u0119
++license404Error=Plik licencji nie m\u00f3g\u0142 zosta\u0107 znaleziony. Nale\u017cy skontaktowa\u0107 si\u0119 z dystrybutorem.
++downloadingLicense=Pobieranie tekstu licencji...
+

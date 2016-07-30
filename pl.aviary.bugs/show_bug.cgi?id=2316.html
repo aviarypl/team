@@ -1,0 +1,1975 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>2316 &ndash; UiK: empathy</title>
+
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<link href="data/assets/7aa6ea67750936a0368541421bdcd5ee.css" rel="stylesheet" type="text/css">
+
+
+
+    
+<script type="text/javascript" src="data/assets/a7c2f3a028f17a9aa60f56dc9d6e732d.js"></script>
+
+    <script type="text/javascript">
+    <!--
+        YAHOO.namespace('bugzilla');
+        YAHOO.util.Event.addListener = function (el, sType, fn, obj, overrideContext) {
+               if ( ("onpagehide" in window || YAHOO.env.ua.gecko) && sType === "unload") { sType = "pagehide"; };
+               var capture = ((sType == "focusin" || sType == "focusout") && !YAHOO.env.ua.ie) ? true : false;
+               return this._addListener(el, this._getType(sType), fn, obj, overrideContext, capture);
+         };
+        if ( "onpagehide" in window || YAHOO.env.ua.gecko) {
+            YAHOO.util.Event._simpleRemove(window, "unload", 
+                                           YAHOO.util.Event._unload);
+        }
+        
+        function unhide_language_selector() { 
+            YAHOO.util.Dom.removeClass(
+                'lang_links_container', 'bz_default_hidden'
+            ); 
+        } 
+        YAHOO.util.Event.onDOMReady(unhide_language_selector);
+
+        
+        var BUGZILLA = {
+            param: {
+                cookiepath: '\/',
+                maxusermatches: 1000
+            },
+            constant: {
+                COMMENT_COLS: 80
+            },
+            string: {
+                
+
+                attach_desc_required:
+                    "You must enter a Description for this attachment.",
+                component_required:
+                    "You must select a Component for this bug.",
+                description_required:
+                    "You must enter a Description for this bug.",
+                short_desc_required:
+                    "You must enter a Summary for this bug.",
+                version_required:
+                    "You must select a Version for this bug."
+            }
+              , api_token: ''
+        };
+
+    if (history && history.replaceState) {
+      if(!document.location.href.match(/show_bug\.cgi/)) {
+        history.replaceState( null,
+                             "2316 – UiK: empathy",
+                             "show_bug.cgi?id=2316" );
+        document.title = "2316 – UiK: empathy";
+      }
+      if (document.location.href.match(/show_bug\.cgi\?.*list_id=/)) {
+        var href = document.location.href;
+        href = href.replace(/[\?&]+list_id=(\d+|cookie)/, '');
+        history.replaceState(null, "2316 – UiK: empathy", href);
+      }
+    }
+    YAHOO.util.Event.onDOMReady(function() {
+      initDirtyFieldTracking();
+
+    });
+    // -->
+    </script>
+<script type="text/javascript" src="data/assets/daf5e0fb6826e6a35280e622913f0c4a.js"></script>
+
+    
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+                       title="Bugzilla" href="search_plugin.cgi">
+    <link rel="shortcut icon" href="images/favicon.ico">
+  </head>
+
+  <body 
+        class="bugs-aviary-pl
+                 bz_bug
+                 bz_status_RESOLVED
+                 bz_product_GNOME
+                 bz_component_Og&#XF3;lne
+                 bz_bug_2316 yui-skin-sam">
+
+  <div id="header"><div id="banner">
+  </div>
+
+    <div id="titles">
+      <span id="title">Bugzilla &ndash; Bug&nbsp;2316</span>
+
+        <span id="subtitle" class="subheader">UiK: empathy</span>
+
+        <span id="information" class="header_addl_info">Last modified: 2009-09-13 10:45:24 CEST</span>
+    </div>
+
+
+    <div id="common_links"><ul class="links">
+  <li><a href="index.html">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi.html">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi.html">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi.html">Search</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="http://bugs.aviary.pl/buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input type="hidden" id="no_redirect_top" name="no_redirect" value="0">
+    <script type="text/javascript">
+      if (history && history.replaceState) {
+        var no_redirect = document.getElementById("no_redirect_top");
+        no_redirect.value = 1;
+      }
+    </script>
+    <input class="txt" type="text" id="quicksearch_top" name="quicksearch" 
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search" 
+           id="find_top"></form>
+  <a href="page.cgi%3Fid=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="report.cgi.html">Reports</a></li>
+
+  <li>
+      <span class="separator">| </span>
+        <a href="request.cgi.html">Requests</a></li>
+
+
+  <li>
+        <span class="separator">| </span>
+        <a href="https://bugzilla.readthedocs.org/en/5.0/using/understanding.html" target="_blank">Help</a>
+      </li>
+    
+      <li id="new_account_container_top">
+        <span class="separator">| </span>
+        <a href="createaccount.cgi.html">New&nbsp;Account</a>
+      </li>
+
+    <li id="mini_login_container_top">
+  <span class="separator">| </span>
+  <a id="login_link_top" href="show_bug.cgi%3Fid=2316&amp;GoAheadAndLogIn=1.html"
+     onclick="return show_mini_login_form('_top')">Log In</a>
+
+  <form action="show_bug.cgi%3Fid=2316.html" method="POST"
+        class="mini_login bz_default_hidden"
+        id="mini_login_top">
+    <input id="Bugzilla_login_top" required
+           name="Bugzilla_login" class="bz_login"
+        type="email" placeholder="Email Address">
+    <input class="bz_password" name="Bugzilla_password" type="password"
+           id="Bugzilla_password_top" required
+           placeholder="Password">
+    <input type="hidden" name="Bugzilla_login_token"
+           value="1469821430-OjI8D8bklajXQ8nyNAQXt1kbKqf02-Olro9buPg0Vks">
+    <input type="submit" name="GoAheadAndLogIn" value="Log in"
+            id="log_in_top">
+    <a href="show_bug.cgi%3Fid=2316.html#" onclick="return hide_mini_login_form('_top')">[x]</a>
+  </form>
+</li>
+
+
+  <li id="forgot_container_top">
+    <span class="separator">| </span>
+    <a id="forgot_link_top" href="show_bug.cgi%3Fid=2316&amp;GoAheadAndLogIn=1.html#forgot"
+       onclick="return show_forgot_form('_top')">Forgot Password</a>
+    <form action="http://bugs.aviary.pl/token.cgi" method="post" id="forgot_form_top"
+          class="mini_forgot bz_default_hidden">
+      <label for="login_top">Login:</label>
+      <input name="loginname" size="20" id="login_top" required
+          type="email" placeholder="Your Email Address">
+      <input id="forgot_button_top" value="Reset Password" type="submit">
+      <input type="hidden" name="a" value="reqpw">
+      <input type="hidden" id="token_top" name="token"
+             value="1469821430--VdtTpcT3iDHWAybjBgpOOqBr_43NYsvW0KQKnYJNt0">
+      <a href="show_bug.cgi%3Fid=2316.html#" onclick="return hide_forgot_form('_top')">[x]</a>
+    </form>
+  </li>
+</ul>
+    </div>
+  </div>
+
+  <div id="bugzilla-body">
+
+
+<script type="text/javascript">
+<!--
+
+//-->
+</script>
+
+<form name="changeform" id="changeform" method="post" action="http://bugs.aviary.pl/process_bug.cgi">
+
+  <input type="hidden" name="delta_ts" value="2009-09-13 10:45:24">
+  <input type="hidden" name="id" value="2316">
+  <input type="hidden" name="token" value="1469821430-1uMjZfp3AK1TE67DdcXyiYAn0JK-2LQI8yXlLWNjH2o">
+<div class="bz_short_desc_container edit_form">
+     <a href="show_bug.cgi%3Fid=2316.html"><b>Bug&nbsp;2316</b></a> <span id="summary_container" class="bz_default_hidden">
+      - <span id="short_desc_nonedit_display">UiK: empathy</span>
+     </span>
+
+    <div id="summary_input"><span class="field_label "
+    id="field_label_short_desc">
+
+
+  <a 
+      title="The bug summary is a short sentence which succinctly describes what the bug is about."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#short_desc"
+  >Summary:</a>
+
+</span>UiK: empathy
+    </div>
+  </div>
+  <script type="text/javascript">
+    hideEditableField('summary_container',
+                      'summary_input',
+                      'summary_edit_action',
+                      'short_desc',
+                      'UiK: empathy' );
+  </script>
+  <table class="edit_form">
+    <tr>
+      
+      <td id="bz_show_bug_column_1" class="bz_show_bug_column">     
+        <table>
+          <tr>
+    <th class="field_label">
+      <a href="page.cgi%3Fid=fields.html#bug_status">Status</a>:
+    </th>
+    <td id="bz_field_status">
+      <span id="static_bug_status">RESOLVED
+          FIXED
+      </span>
+    </td>
+  </tr>
+<tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+<tr><th class="field_label "
+    id="field_label_alias">
+
+
+  <a 
+      title="A short, unique name assigned to a bug in order to assist with looking it up and referring to it in other places in Bugzilla."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#alias"
+  >Alias:</a>
+
+</th>
+    <td>
+        None
+    </td>
+  </tr>
+<tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+<tr><th class="field_label "
+    id="field_label_product">
+
+
+  <a 
+      title="Bugs are categorised into Products and Components. Select a Classification to narrow down this list."
+      class="field_help_link"
+      href="describecomponents.cgi.html"
+  >Product:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_product" >GNOME
+
+</td>
+    </tr>
+
+    
+    <tr class="bz_default_hidden"><th class="field_label "
+    id="field_label_classification">
+
+
+  <a 
+      title="Bugs are categorised into Classifications, Products and Components. classifications is the top-level categorisation."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#classification"
+  >Classification:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_classification" >Tłumaczenia oprogramowania
+
+</td>
+    </tr>
+        
+    
+    
+    <tr><th class="field_label "
+    id="field_label_component">
+
+
+  <a 
+      title="Components are second-level categories; each belongs to a particular Product. Select a Product to narrow down this list."
+      class="field_help_link"
+      href="describecomponents.cgi%3Fproduct=GNOME.html"
+  >Component:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_component" >Ogólne
+
+  (<a href="buglist.cgi%3Fcomponent=Ogólne&amp;product=GNOME&amp;bug_status=__open__.html"
+      target="_blank">show other bugs</a>)
+</td>
+    </tr>
+    <tr><th class="field_label "
+    id="field_label_version">
+
+
+  <a 
+      title="The version field defines the version of the software the bug was found in."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#version"
+  >Version:</a>
+
+</th>
+<td>GNOME2-28
+  </td>
+    </tr>
+        
+    
+        
+    <tr><th class="field_label "
+    id="field_label_rep_platform">
+
+
+  <a 
+      title="The hardware platform the bug was observed on. Note: When searching, selecting the option &quot;All&quot; only finds bugs whose value for this field is literally the word &quot;All&quot;."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#rep_platform"
+  >Hardware:</a>
+
+</th>
+      <td class="field_value">Wszystkie
+        Wszystkie
+      </td>
+    </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          
+          <tr>
+      <th class="field_label">
+        <label  accesskey="i">
+          <a href="page.cgi%3Fid=fields.html#importance"><u>I</u>mportance</a></label>:
+      </th>
+      <td>P3
+       normalny
+      </td>
+    </tr>
+          
+          <tr><th class="field_label "
+    id="field_label_assigned_to">
+
+
+  <a 
+      title="The person in charge of resolving the bug."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#assigned_to"
+  >Assignee:</a>
+
+</th>
+      <td><span class="vcard"><span class="fn">Piotr Drąg</span>
+</span>
+      </td>
+    </tr>
+
+    <tr><th class="field_label "
+    id="field_label_qa_contact">
+
+
+  <a 
+      title="The person responsible for confirming this bug if it is unconfirmed, and for verifying the fix once the bug has been resolved."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#qa_contact"
+  >QA Contact:</a>
+
+</th>
+      <td><span class="vcard">gnome
+</span>
+      </td>
+    </tr>
+    <script type="text/javascript">
+      assignToDefaultOnChange(['product', 'component'],
+        'piotrdrag\x40gmail.com',
+        'gnome\x40l10n.bledy');
+    </script>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          <tr><th class="field_label "
+    id="field_label_bug_file_loc">
+
+
+  <a 
+      title="Bugs can have a URL associated with them - for example, a pointer to a web site where the problem is seen."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#bug_file_loc"
+  >URL:</a>
+
+</th>
+    <td>
+      <span id="bz_url_input_area">
+      </span>
+    </td>
+  </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+
+          
+<tr><th class="field_label "
+    id="field_label_dependson">
+
+
+  <a 
+      title="The bugs listed here must be resolved before this bug can be resolved."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#dependson"
+  >Depends on:</a>
+
+</th>
+
+  <td>
+    <span id="dependson_input_area">
+    </span>
+
+  </td>
+  </tr>
+  
+  <tr><th class="field_label "
+    id="field_label_blocked">
+
+
+  <a 
+      title="This bug must be resolved before the bugs listed in this field can be resolved."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#blocked"
+  >Blocks:</a>
+
+</th>
+
+  <td>
+    <span id="blocked_input_area">
+    </span>
+
+  </td>
+  </tr>
+          
+        </table>
+      </td>
+      <td>
+        <div class="bz_column_spacer">&nbsp;</div>
+      </td>
+      
+      <td id="bz_show_bug_column_2" class="bz_show_bug_column">
+        <table>
+        <tr>
+    <th class="field_label">
+      Reported:
+    </th>
+    <td>2009-01-29 13:13 CET by <span class="vcard">wadimd
+</span>
+    </td>
+  </tr>
+  
+  <tr>
+    <th class="field_label">
+      Modified:
+    </th>
+    <td>2009-09-13 10:45 CEST
+      (<a href="show_activity.cgi%3Fid=2316.html">History</a>)
+    </td>
+  
+  </tr>
+<tr>
+      <th class="field_label">
+        <label  accesskey="a">
+          CC List:
+        </label>
+      </th>
+      <td>4 
+          users
+          <span id="cc_edit_area_showhide_container" class="bz_default_hidden">
+            (<a href="show_bug.cgi%3Fid=2316.html#" id="cc_edit_area_showhide">show</a>)
+          </span>
+        <div id="cc_edit_area">
+          <br>
+            <select id="cc" multiple="multiple" size="5" >
+                <option value="jmazgaj">jmazgaj</option>
+                <option value="leszekz">leszekz</option>
+                <option value="piotrdrag">piotrdrag</option>
+                <option value="tdominikowski">tdominikowski</option>
+            </select>
+        </div>
+          <script type="text/javascript">
+            hideEditableField( 'cc_edit_area_showhide_container', 
+                               'cc_edit_area', 
+                               'cc_edit_area_showhide', 
+                               '', 
+                               '');  
+          </script>
+      </td>
+    </tr>
+
+<tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+<tr><th class="field_label "
+    id="field_label_see_also">
+
+
+  <a 
+      title="This allows you to refer to bugs in other installations. You can enter a URL to a bug in the 'Add Bug URLs' field to note that that bug is related to this one. You can enter multiple URLs at once by separating them with whitespace. You should normally use this field to refer to bugs in other installations. For bugs in this installation, it is better to use the Depends on and Blocks fields."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#see_also"
+  >See Also:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_see_also" >
+
+</td>
+    </tr> 
+
+<tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+
+<tr>
+      <th class="field_label">
+        <label>Flags:</label>
+      </th>
+      <td><span title="Tomasz Dominikowski">tdominikowski</span>:
+      <span class="nowrap">GNOME_Review+</span><br>
+      </td>
+    </tr>
+
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+          <hr id="bz_top_half_spacer">
+      </td>
+    </tr>
+  </table>
+
+  <table id="bz_big_form_parts">
+  <tr>
+  <td>
+
+    
+<script type="text/javascript">
+<!--
+function toggle_display(link) {
+    var table = document.getElementById("attachment_table");
+    var view_all = document.getElementById("view_all");
+    var hide_obsolete_url_parameter = "&hide_obsolete=1";
+    // Store current height for scrolling later
+    var originalHeight = table.offsetHeight;
+    var rows = YAHOO.util.Dom.getElementsByClassName(
+        'bz_tr_obsolete', 'tr', table);
+
+    for (var i = 0; i < rows.length; i++) {
+        bz_toggleClass(rows[i], 'bz_default_hidden');
+    }
+
+    if (YAHOO.util.Dom.hasClass(rows[0], 'bz_default_hidden')) {
+        link.innerHTML = "Show Obsolete";
+        view_all.href = view_all.href + hide_obsolete_url_parameter 
+    }
+    else {
+        link.innerHTML = "Hide Obsolete";
+        view_all.href = view_all.href.replace(hide_obsolete_url_parameter,"");
+    }
+
+    var newHeight = table.offsetHeight;
+    // This scrolling makes the window appear to not move at all.
+    window.scrollBy(0, newHeight - originalHeight);
+
+    return false;
+}
+//-->
+</script>
+
+<br>
+<table id="attachment_table">
+  <tr id="a0">
+    <th colspan="3" class="left">
+      Attachments
+    </th>
+  </tr>
+
+
+
+  <tr class="bz_attach_footer">
+    <td colspan="3">
+        <a href="attachment.cgi%3Fbugid=2316&amp;action=enter.html">Add an attachment</a>
+        (proposed patch, testcase, etc.)
+    </td>
+  </tr>
+</table>
+<br>
+
+  </td>
+  <td>
+  </td>
+  </tr></table>
+
+  
+  <div id="comments"><script src="js/comments.js" type="text/javascript">
+</script>
+
+<script type="text/javascript">
+<!--
+  /* Adds the reply text to the 'comment' textarea */
+  function replyToComment(id, real_id, name) {
+      var prefix = "(In reply to " + name + " from comment #" + id + ")\n";
+      var replytext = "";
+        /* pre id="comment_name_N" */
+        var text_elem = document.getElementById('comment_text_'+id);
+        var text = getText(text_elem);
+        replytext = prefix + wrapReplyText(text);
+
+
+      /* <textarea id="comment"> */
+      var textarea = document.getElementById('comment');
+      if (textarea.value != replytext) {
+          textarea.value += replytext;
+      }
+
+      textarea.focus();
+  } 
+//-->
+</script>
+
+
+<!-- This auto-sizes the comments and positions the collapse/expand links 
+     to the right. -->
+<table class="bz_comment_table">
+<tr>
+<td>
+<div id="c0" class="bz_comment bz_first_comment">
+
+      <div class="bz_first_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2316.html#c0">Description</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard">wadimd
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-01-29 13:13:17 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">j.w.</pre>
+    </div>
+
+    <div id="c1" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2316.html#c1">Comment 1</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Tomasz Dominikowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-02-01 10:33:03 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Biorę.</pre>
+    </div>
+
+    <div id="c2" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2316.html#c2">Comment 2</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Tomasz Dominikowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-02-01 14:50:40 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Tłumaczenie wstępnie uzupełnione. Wylądowało w SVN Aviary (empathy.HEAD.pl.po).
+
+Stan sprzed tłumaczenia: 77% (368/68/38)
+Stan po uzupełnieniu: 100%
+
+Ciągi zmienione oznaczone komentarzem td.
+
+PS Musimy coś zrobić z tym &quot;focus&quot; - zaznaczenie, aktywacja, skupienie...</pre>
+    </div>
+
+    <div id="c3" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2316.html#c3">Comment 3</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Joanna Mazgaj</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-02-07 10:56:48 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Review zrobione. Uwagi w komentarzach.
+
+Wysyłanie       empathy.HEAD.pl.po
+Przesyłanie treści pliku .
+Zatwierdzona wersja 587.</pre>
+    </div>
+
+    <div id="c4" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2316.html#c4">Comment 4</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Tomasz Dominikowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-02-14 09:45:24 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Poprawione, wysłane gdzie trzeba. Dzięki!</pre>
+    </div>
+
+    <div id="c5" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2316.html#c5">Comment 5</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Tomasz Dominikowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-02-26 05:27:24 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Proszę chętnych o sprawdzenie kilku ciągów oznaczonych &quot;td&quot; (string freeze exception). Leży w SVN Aviary.</pre>
+    </div>
+
+    <div id="c6" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2316.html#c6">Comment 6</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard">wadimd
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-02-26 14:21:20 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">rev. w svn rewizja 666 (!)</pre>
+    </div>
+
+    <div id="c7" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2316.html#c7">Comment 7</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Tomasz Dominikowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-03-01 10:50:24 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Wysłane. Dzięki! 
+
+PS Nie jestem przesądny :P</pre>
+    </div>
+
+    <div id="c8" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2316.html#c8">Comment 8</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Tomasz Dominikowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-08-03 14:53:41 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Gandalf robi empathy na 2.28. &quot;Mentor&quot;: ja.</pre>
+    </div>
+
+    <div id="c9" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2316.html#c9">Comment 9</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Tomasz Dominikowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-08-17 15:37:34 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Teo robi empathy :]</pre>
+    </div>
+
+    <div id="c10" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2316.html#c10">Comment 10</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Tomasz Dominikowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-08-20 05:15:25 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Podesłałem tłumaczenie Teo do SVN, uprzednio aktualizując je z git master (tylko dwa fuzzy). Piotr, ja chciałem się dzisiaj zająć m.in. gnome-media, masz czas na review? Trzeba przede wszystkim lecieć słownikiem, bo jest np. lokalizacja zamiast położenie, itd. Było testowane na żywo, tylko gconf schemas mogą być ewentualnie w nieprawidłowej formie (nie sprawdzałem).</pre>
+    </div>
+
+    <div id="c11" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2316.html#c11">Comment 11</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Leszek Życzkowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-08-20 09:22:05 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(In reply to <a href="show_bug.cgi%3Fid=2316.html#c10">comment #10</a>)
+<span class="quote">&gt; Podesłałem tłumaczenie Teo do SVN, uprzednio aktualizując je z git master
+&gt; (tylko dwa fuzzy). Piotr, ja chciałem się dzisiaj zająć m.in. gnome-media, masz
+&gt; czas na review? Trzeba przede wszystkim lecieć słownikiem, bo jest np.
+&gt; lokalizacja zamiast położenie, itd. </span >
+Użycie określenia „położenie” w odniesieniu do systemu plików jest niecelowe ponieważ jest mniej precyzyjne niż „lokalizacja”. Słowo „lokalizacja” o wiele dokładniej precyzuje o co chodzi.
+SJP PWN:
+#
+ położenie
+  1. «miejsce, w którym się coś znajduje, pozycja zajmowana przez dany przedmiot w stosunku do otoczenia»
+  2. «sytuacja, w jakiej się ktoś znajduje»
+
+*
+ lokalizacja
+  1. «miejsce, w którym znajduje się lub ma się znaleźć jakiś obiekt»
+  2. «określenie położenia jakiegoś obiektu»
+  3. «ograniczenie skutków jakiegoś zjawiska do pewnego obszaru»
+
+Zwróć uwagę na wydźwięk znaczeniowy tych dwóch określeń. Położenie mówi o miejscu, w którym „coś” oraz „przedmiot” się znajduje, zaś lokalizacja o miejscu, w którym „obiekt” się znajduje lub ma się znaleźć – tak jak pliki, które znajdują się w określonym miejscu lub mają się w nim znaleźć. To jest właśnie większa precyzja lokalizacji niż położenia. Oprócz tego drugie znaczenie „położenia” w żaden sposób nie pasuje do naszych celów, a lokalizacji – tak. Uparty interpretator mógłby nawet 3 znaczenie „lokalizacji” dopasować do zdarzeń komputerowych. :)</pre>
+    </div>
+
+    <div id="c12" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2316.html#c12">Comment 12</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Tomasz Dominikowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-08-20 10:05:41 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Leszku, masz rację, że wyraz &quot;lokalizacja&quot; jest bardziej precyzyjny. Kontekst, w jakim używane jest w programie empathy to jednak położenie geograficzne (usługa &quot;geolocation&quot;). Nie ma natomiast w zasadzie nigdzie okazji do jakiegokolwiek niezrozumienia czy pomyłki, która by wynikała z użycia słowa &quot;położenie&quot; zamiast &quot;lokalizacja&quot;. Mówiąc wprost: z tego się nie strzela.
+
+Jeśli zajrzysz do naszego oficjalnego słownika na slowniki.lokalne.net, to tłumaczeniem &quot;location&quot; od dawna było &quot;położenie&quot;. Używane jest wszędzie w GNOME, a pewnie wiesz, że ujednolicenie słownictwa nie jest łatwym zadaniem przy tak &quot;sfragmentowanym&quot; projekcie.
+
+Chodzi mi o to, że niezależnie od trafności Twojej argumentacji dotyczącej tego czy innego słowa, nie będziemy zmieniać go na tym etapie. GNOME 2.28 będzie wydane już niedługo, za 4 dni rozpoczyna się string freeze. 
+
+Takiej globalnej zmiany możemy dokonać przy następnym cyklu, a dyskusje na temat słownictwa proszę... nie, błagam, zostawmy na po 2.28.
+
+Dotyczy się to wszystkich innych słówek czy form w podobnej sytuacji, jeśli takowe wystąpią podczas review. Jeśli będą sprzeczne z obecnym słownikiem i wytycznymi, to na pewno będą wytknięte. Tu nie chodzi o walkę za wszelką cenę o swoją rację, a o ukończenie GNOME 2.28 na czas i to jest dla nas priorytetem.</pre>
+    </div>
+
+    <div id="c13" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2316.html#c13">Comment 13</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Leszek Życzkowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-08-20 10:14:19 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(In reply to <a href="show_bug.cgi%3Fid=2316.html#c12">comment #12</a>) 
+<span class="quote">&gt; Dotyczy się to wszystkich innych słówek czy form w podobnej sytuacji, jeśli
+&gt; takowe wystąpią podczas review. Jeśli będą sprzeczne z obecnym słownikiem i
+&gt; wytycznymi, to na pewno będą wytknięte. Tu nie chodzi o walkę za wszelką cenę o
+&gt; swoją rację, a o ukończenie GNOME 2.28 na czas i to jest dla nas priorytetem.</span >
+
+Zatem cel nadrzędny (Gnome 2.28) jest teraz najważniejszy i odkładam swój potężny topór na bok, ale nie przepuszczę później. :D</pre>
+    </div>
+
+    <div id="c14" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2316.html#c14">Comment 14</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Tomasz Dominikowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-08-20 10:29:51 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">/me kradnie topór i zakopuje go w nieznanej... nieznanym położeniu.</pre>
+    </div>
+
+    <div id="c15" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2316.html#c15">Comment 15</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Piotr Drąg</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-08-22 05:31:32 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Review w svn. Sporo rzeczy do poprawienia globalnie. Konwersacja, nick, status, autoryzacja, przyłącz, obrazek, nazwy kodowań, brak przecinków przed czy, błędne cudzysłowy, błędne wielokropki, szyk, osobowość, forma w schematach GConf, sporo błędów słownikowych... A lokalizacja, aczkolwiek ładnie została tu uzasadniona, przeze mnie zaakceptowana nigdy nie będzie.</pre>
+    </div>
+
+    <div id="c16" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2316.html#c16">Comment 16</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Leszek Życzkowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-08-23 17:27:31 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(In reply to <a href="show_bug.cgi%3Fid=2316.html#c15">comment #15</a>)
+<span class="quote">&gt; Review w svn. Sporo rzeczy do poprawienia globalnie. Konwersacja, nick, status,
+&gt; autoryzacja, przyłącz, obrazek, nazwy kodowań, brak przecinków przed czy,
+&gt; błędne cudzysłowy, błędne wielokropki, szyk, osobowość, forma w schematach
+&gt; GConf, sporo błędów słownikowych... A lokalizacja, aczkolwiek ładnie została tu
+&gt; uzasadniona, przeze mnie zaakceptowana nigdy nie będzie.</span >
+
+Szanowny kolego recenzencie.
+Dziękuję za pomocne uwagi, a teraz kilka moich uwag:
+
+Nie tłumacz dosłownie i nie stosuj kalek językowych – tłumacz na język polski, czyli oddawaj treść oryginalną w języku polskim stsując jego specyficzne uwarunkowania styl i ducha. Zwracaj uwagę na spójność wersji oryginalnej (często jest niespójna, a w tym przypadku przejawia się to użyciem określeń „status” i „state” do określenia tego samego - statusu użytkownika). To samo dotyczy stosowania znaków typograficznych. Znaki te muszą być polskie. Zatem twoje uwagi dotyczące cudzysłowów, wielokropka czy myślnika (nie myl z dywizem uzyskiwanym z klawiatury) są niewłaściwe.
+Proponujesz wielokrotnie przeczytanie jeszcze raz bez sprawdzenia w interfejsie, jak wygląda i brzmi moje tłumaczenie – błąd. Mały przykład: „The hash of the received file and the sent one do not match” tłumacząc wg twoich zaleceń brzmiałoby – „Suma kontrolna odebranego i wysłanego pliku się nie zgadzają”. Moje tłumaczenie jest krótkie, treściwe i w pełni oddające sens treści angielskiej – „Sumy kontrolne pliku się nie zgadzają” 
+
+
+Czat, nick, login, audio to wyrazy aktualnie obecne w języku polskim – vide SJP PWN i nie ma żadnych przeszkód, aby je stosować, tym bardziej, że w tym przypadku bardzo dobrze pasuję i są używane przez osoby korzystające z komunikatorów. (vontfix)
+
+„schemat gconf” to rozszerzone ustawienia (preferencje) zatem nie ma żadnych przeszkód, aby stosować taką samą formę jak dla ogólnodostępnych preferencji. (vontfix)
+
+Dodanie „Wi-Fi” wyjaśnia o jaką sieć chodzi (sieć używaną przez usługę geolokalizacji). Samo „sieć” dla kogoś mniej obeznanego jest za mało precyzyjne. Może oznaczać Internet, sieć lokalną, sieć rozległą itp.
+
+Połącz, Zignoruj, Zezwól, Wyświetl, to polecenia w formie dokonanej, czyli do stosowania jednorazowego. Nadają się do stosowania w menu i poleceniach do natychmiastowego wykonania. W preferencjach, należy używać formy niedokonanej, ponieważ dana czynność będzie wykonywana wielokrotnie, aż do jej ponownej zmiany w preferencjach. Jest to bardzo częsty błąd niedoświadczonych tłumaczy.
+
+„Wyskakujące powiadomienia” – kalka językowa. Nie ma potrzeby używania określenia „wyskakujące”. (vontfix)
+
+„Nadchodzących” – to jest niewłaściwa forma, bo powiadomienie dźwiękowe jest odtwarzane po otrzymaniu, a nie gdy coś nadchodzi, czyli zbliża się. (vontfix)
+
+„Rozmowa i Połączenie dźwiękowe, żeby to rozróżnić od zwykłej, tekstowej &quot;rozmowy&quot; (conversation).” vide <a href="http://sjp.pwn.pl/lista.php?co=rozmowa">http://sjp.pwn.pl/lista.php?co=rozmowa</a>. W przyjętej przeze mnie konwencji czat, konwersacja, rozmowa, wideorozmowa jest duża zgodność z oryginałem i zasadami języka polskiego (w języku polskim nie ma określenia rozmowy tekstowe  vide wyjaśnienie w SJP) i wszystko ma sens. (vontfix)
+
+„Request” – prawie wszystkie słowniki podają jako pierwsze tłumaczenie „prosić”. W zastosowaniach technicznych tłumaczy się jako „żądać” w odniesieniu do polecenia sygnalizującego zapoczątkowanie działania lub protokołu. W tym przypadku chodzi o prośbę zmiany statusu, a nie zapoczątkowanie działania. (vontfix)
+
+Uwaga dotycząca drugiego uczestnika. Przesyłanie pliku zostało anulowane przez odbiorcę, bo anulował je drugi uczestnik tej operacji, którym był odbiorca. Zatem w tym przypadku mogłem użyć zamiast określenia „drugi uczestnik” – odbiorca. W drugim przypadku, takiej możliwości nie ma. (vontfix)
+
+Identyfikator, adres – Jeśli w interfejsie jest miejsce na użycie „identyfikator” zamiast ID stosuję to, jeśli nie, zostaje ID, które jest szeroko stosowane w tłumaczeniach vide <a href="http://en.pl.open-tran.eu/suggest/ID">http://en.pl.open-tran.eu/suggest/ID</a>. To samo z adresami. vontfix
+
+„Przekonwertować” nie ma takiego słowa w języku polskim (vontfix)
+
+„Obraz” – określenie obraz nie jest właściwym określeniem dla elementów graficznych niewielkich rozmiarów. Obraz kojarzy się z grafiką dużych rozmiarów (zazwyczaj obrazem wykonanym technikami malarskimi). W odniesieniu do określeń komputerowych jest stosowany do określenia obrazu dysku CD czy DVD. Dla grafik komputerowych powinno używać się określenia obrazek, bo jest to grafika w przeważającej większości mała. (vontfix)
+
+„Dołączył” – Sprawdź <a href="http://sjp.pwn.pl/lista.php?co=do%B3%B1czy%E6">http://sjp.pwn.pl/lista.php?co=do%B3%B1czy%E6</a> i <a href="http://sjp.pwn.pl/lista.php?co=przy%B3%B1czy%E6">http://sjp.pwn.pl/lista.php?co=przy%B3%B1czy%E6</a>. Komentarz zbyteczny. (vontfix)
+
+„Autoryzacja” – wersja, jaką pobrałem z repo i na której rozpocząłem pracę zawierała takie tłumaczenie. Ta kwestia jest do sprawdzenia. Gdzie to występuje w interfejsie, bo niestety nie trafiłem na to.
+
+„Longitude itp.” – To zależy od miejsca. Nie mogłem tego sprawdzić w interfejsie, bo elementy dotyczące geolokalizacji nie wyświetlały się u mnie, chociaż pracuję na Gnome Development Kit.
+
+„Wyszukaj” – <a href="http://sjp.pwn.pl/lista.php?co=wyszukaj">http://sjp.pwn.pl/lista.php?co=wyszukaj</a> vs <a href="http://sjp.pwn.pl/lista.php?co=szukaj">http://sjp.pwn.pl/lista.php?co=szukaj</a> (vontfix)
+
+„Zapisane szablony” – sprawdź w interfejsie. (vontfix)
+
+„Bieżący” – porównaj <a href="http://sjp.pwn.pl/lista.php?co=bie%BF%B1cy">http://sjp.pwn.pl/lista.php?co=bie%BF%B1cy</a> i <a href="http://sjp.pwn.pl/lista.php?co=aktualny">http://sjp.pwn.pl/lista.php?co=aktualny</a> (vontfix)
+
+Kodowanie. Tutaj trzeba wyjaśnić pewne kwestie. Masz rację ale nie dlatego, że jest to kodowanie, tylko dlatego, że jest to przymiotnik. Prawidłowo tłumaczono „polski” w odniesieniu do nazwy języka polskiego, ale wyszły pewne dziwolągi i w interfejsach jest tak, że większość nazw języków jest pisana dużą literą, a „polski” małą i wygląda to dziwnie. To samo odnosi się do nazw kodowania. W Aviary dla produktów mozillowych przyjęliśmy, aby ujednolicić z nazwami innych języków i kodowań pisanie dużą literą. Czas, aby i w linuksowych produktach było tak samo, bo źle wygląda to w interfejsach. Nie musimy się negatywnie wyróżniać. (vontfix)
+
+Licencja – czas poprawić tłumaczenie licencji na wiki. Jest tłumaczona dosłownie, niegramatycznie i niezrozumiale.
+
+„Zaimportuj” vs „importuj”. SO PWN obie formy podaje jako poprawne.  (vontfix)
+
+„Wejście dźwięku” vs „Wejście audio”. Wejście dźwięku nie może być absolutnie! Może być ewentualnie „Wejście dźwiękowe”, bo chodzi tutaj o typ wejścia. Ponieważ „audio” jest obecne w SJP PWN lepszym jest zastosowanie „Wejście audio”. (vontfix)
+
+Uwaga dotycząca mikrofonu i włączania jest nietrafiona ponieważ użycie tego przycisku powoduje wyłączenie/włączenie dźwięku. Tak samo jest z wideo. (vontfix)
+
+„W oryginale nie ma emotikony, tylko zwykły uśmiech” – po rozwinięciu menu „Wstaw emotikonę” wyświetla się wykaz dostępnych emotikon. Nie sprawdziłeś tego w interfejsie. (vontfix)
+
+„W oryginale nie ma wielokropka” – tak nie ma. Czy to oznacza, że dla trwającej czynności nie można go dodać? Można. (vontfix)
+
+„Nieaktywny” vs „nieaktywowany”. Obie formy są poprawne. Zmieniłem na proponowaną.
+
+Uwaga dotycząca szyku „Nazwa komputera w certyfikacie się nie zgadza” – poczytaj na temat używania i umiejscawiania partykuły „się”.  (vontfix)
+
+„Normalna” – co to jest normalna? Czy wielkość o zmniejszonych odstępach (kompaktowa) jest nienormalna? Też jest normalna. Standardowa, bo to jest wielkość określona domyślnie przez autorów. Użyję zatem określenia „Domyślna”
+
+„Lista” – czym jest lista? – wykazem.  (vontfix)
+
+Uwagi dotyczące szyku „Zalogowanie kontaktu” i dalszych. To są określenia zdarzeń, które powodują odtworzenie powiadomienia dźwiękowego. Jest to dopasowane do całości tego okna ustawień.  (vontfix)
+
+„Połącz, brak spacji na końcu” – Brak spacji na końcu to błąd autorów. Połącz – vide uwagi dotyczące formy niedokonanej.  (vontfix)
+
+„Położenie” – to jest etykieta karty poświęconej usłudze geolokalizacji. Położenie w tym przypadku jest mało precyzyjne i we wcześniejszych wypowiedziach w tym wątku pewne kwestie z tym związane wyjaśniłem.  (vontfix)
+
+W kilku miejscach zastosowałem skrót klawiszowy, chociaż w oryginale go nie ma. Działają prawidłowo, więc dlaczego nie poprawić błędów autorów. Jest to zwykłe pominięcie tych skrótów. Możesz zgłosić buga. 
+
+No koniec wyjaśnienie na temat „osobowość”. Obsesyjne unikanie form osobowych prowadzi do tworzenia potworków językowych niezrozumiałych dla nikogo, czasami nawet dla samego tłumacza. :) W oknach dialogowych jest nawet wskazane używanie formy osobowej. Skoro chcesz unikać za wszelką cenę form osobowych, to dla wszystkich poleceń np. „Zapisz” użyj „Proszę zapisać” itd, itp. Wskazany jest zdrowy rozsądek.</pre>
+    </div>
+
+    <div id="c17" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2316.html#c17">Comment 17</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Piotr Drąg</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-08-24 11:39:13 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Popraw na razie to, z czym się zgadzasz, i usuń komentarze z tych ciągów. O reszcie pomyślimy później, kiedy wszyscy będziemy mieli więcej czasu.</pre>
+    </div>
+
+    <div id="c18" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2316.html#c18">Comment 18</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Leszek Życzkowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-08-24 11:52:43 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(In reply to <a href="show_bug.cgi%3Fid=2316.html#c17">comment #17</a>)
+<span class="quote">&gt; Popraw na razie to, z czym się zgadzasz, i usuń komentarze z tych ciągów. O
+&gt; reszcie pomyślimy później, kiedy wszyscy będziemy mieli więcej czasu.</span >
+
+Przed napisaniem mojego komentarza wrzuciłem do SVN to co zaakceptowałem, zaktualizowałem do dzisiejszych zmian i jeszcze kilka drobnych poprawek.</pre>
+    </div>
+
+    <div id="c19" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2316.html#c19">Comment 19</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Tomasz Dominikowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-08-24 11:55:43 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Ja jeszcze tylko proszę tłumacza o dochowanie formalności, w postaci usunięcia komentarzy z tych ciągów, które zostały poprawione wg review, żeby się nie mieszały z niepoprawionymi. Jeśli to już zostało zrobione, to OK.</pre>
+    </div>
+
+    <div id="c20" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2316.html#c20">Comment 20</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard">wadimd
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-08-24 12:03:32 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">
+Po 1. proszę pamiętać, że korekta i odpowiedzi mają dotyczyć _tylko_ tłumaczenia, a nie osób!
+
+Po 2.
+Standardy i słownik tłumaczenia Gnome są ustalone - przy tak dużym projekcie nie możemy pozwolić sobie na to, że w jednym programie nagle odchodzimy od reguł, które zastosowane są w kilkudziesięciu innych tłumaczeniach, dodajemy jakieś słowa, których w oryginale nie ma, albo poważnie skracamy całe komunikaty. Podoba się, czy nie - takie są zasady i tutaj nie jest miejsce na dyskusję na ten temat.
+
+Takie rzeczy można sobie robić w pojedynczym programie, którym ciągle opiekuje się jedna osoba, ale nie tutaj, gdzie za kilka miesięcy plikiem zajmie się ktoś inny, kto być może &quot;nie zobaczy przeszkód&quot; dla jeszcze innego tłumaczenia...
+
+Po 3.
+Jest tu jeszcze szansa na jakąś współpracę? Jeśli nie, to plikiem zajmie się jeszcze ktoś inny.
+
+ps. jeśli mamy się decydować na jakieś poważne zmiany typu formy osobowe itp, to pytam od razu o ochotników, którzy są chętni do przekopania się przez 70 tysięcy ciągów z GNOME i GNOME Extras.</pre>
+    </div>
+
+    <div id="c21" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2316.html#c21">Comment 21</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Leszek Życzkowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-08-24 12:15:01 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(In reply to <a href="show_bug.cgi%3Fid=2316.html#c20">comment #20</a>)
+<span class="quote">&gt; Po 3.
+&gt; Jest tu jeszcze szansa na jakąś współpracę? Jeśli nie, to plikiem zajmie się
+&gt; jeszcze ktoś inny.
+&gt; </span >
+
+W takim układzie nie widzę miejsca dla siebie. Dziękuję.</pre>
+    </div>
+
+    <div id="c22" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2316.html#c22">Comment 22</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Tomasz Dominikowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-08-24 12:20:32 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Piotr Drąg robi tłumaczenie. Ja się zajmę review.</pre>
+    </div>
+
+    <div id="c23" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2316.html#c23">Comment 23</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Leszek Życzkowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-08-24 12:55:45 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(In reply to <a href="show_bug.cgi%3Fid=2316.html#c22">comment #22</a>)
+<span class="quote">&gt; Piotr Drąg robi tłumaczenie. Ja się zajmę review.</span >
+Przywróciłem nieuwzględnione rewiew.</pre>
+    </div>
+
+    <div id="c24" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2316.html#c24">Comment 24</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Leszek Życzkowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-08-24 13:00:08 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(In reply to <a href="show_bug.cgi%3Fid=2316.html#c23">comment #23</a>)
+<span class="quote">&gt; (In reply to <a href="show_bug.cgi%3Fid=2316.html#c22">comment #22</a>)
+&gt; &gt; Piotr Drąg robi tłumaczenie. Ja się zajmę review.
+&gt; Przywróciłem nieuwzględnione rewiew.</span >
+
+Na podsumowanie dodam jeszcze, że rewiew kłóci się z zasadami określonymi na stronach projektu na wiki.aviary.</pre>
+    </div>
+
+    <div id="c25" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2316.html#c25">Comment 25</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Piotr Drąg</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-08-29 16:12:13 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Zaktualizowane tłumaczenie czeka na review w svn.</pre>
+    </div>
+
+    <div id="c26" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2316.html#c26">Comment 26</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Tomasz Dominikowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-08-30 07:40:16 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Review w SVN.</pre>
+    </div>
+
+    <div id="c27" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2316.html#c27">Comment 27</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Piotr Drąg</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-09-07 08:17:09 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Gotowe.</pre>
+    </div>
+
+    <div id="c28" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2316.html#c28">Comment 28</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Tomasz Dominikowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-09-07 08:28:13 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">613 przetłumaczonych komunikatów, 7 tłumaczeń budzi wątpliwości, 1 nie przetłumaczony komunikat.
+
+Po zmerdżowaniu z master. Możesz uzupełnić?</pre>
+    </div>
+
+    <div id="c29" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2316.html#c29">Comment 29</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Piotr Drąg</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-09-07 08:36:57 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Parę stringów oznaczonych pd.</pre>
+    </div>
+
+    <div id="c30" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2316.html#c30">Comment 30</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Tomasz Dominikowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-09-07 08:41:37 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Review w SVN.</pre>
+    </div>
+
+    <div id="c31" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2316.html#c31">Comment 31</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Piotr Drąg</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-09-07 08:48:07 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Gotowe.</pre>
+    </div>
+
+    <div id="c32" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2316.html#c32">Comment 32</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Tomasz Dominikowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-09-07 08:53:48 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Wysłane. Dzięki!</pre>
+    </div>
+
+    <div id="c33" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2316.html#c33">Comment 33</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Tomasz Dominikowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-09-13 10:45:24 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Wysłane poprawki kontekstowe i skrótów (autor: Piotr Drąg).</pre>
+    </div>
+
+
+  
+
+</td>
+<td>
+</td>
+</tr></table>
+  </div>
+
+    <hr><div id="add_comment" class="bz_section_additional_comments">
+      <table>
+        <tr>
+          <td>
+            <fieldset>
+              <legend>Note</legend>
+              You need to
+              <a href="show_bug.cgi%3Fid=2316&amp;GoAheadAndLogIn=1.html">log in</a>
+              before you can comment on or make changes to this bug.
+            </fieldset>
+          </td>
+        </tr> 
+      </table>
+  </div>        
+
+</form>
+
+<hr>
+<ul class="related_actions">
+    <li><a href="show_bug.cgi%3Fformat=multiple&amp;id=2316.html">Format For Printing</a></li>
+    <li>&nbsp;-&nbsp;<a href="show_bug.cgi%3Fctype=xml&amp;id=2316">XML</a></li>
+    <li>&nbsp;-&nbsp;<a href="enter_bug.cgi%3Fcloned_bug_id=2316.html">Clone This Bug</a></li>
+    
+    <li>&nbsp;-&nbsp;<a href="show_bug.cgi%3Fid=2316.html#">Top of page </a></li>
+    </ul>
+
+<br>
+</div>
+
+    <div id="footer">
+      <div class="intro"></div>
+<ul id="useful-links">
+  <li id="links-actions"><ul class="links">
+  <li><a href="index.html">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi.html">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi.html">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi.html">Search</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="http://bugs.aviary.pl/buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input type="hidden" id="no_redirect_bottom" name="no_redirect" value="0">
+    <script type="text/javascript">
+      if (history && history.replaceState) {
+        var no_redirect = document.getElementById("no_redirect_bottom");
+        no_redirect.value = 1;
+      }
+    </script>
+    <input class="txt" type="text" id="quicksearch_bottom" name="quicksearch" 
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search" 
+           id="find_bottom"></form>
+  <a href="page.cgi%3Fid=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="report.cgi.html">Reports</a></li>
+
+  <li>
+      <span class="separator">| </span>
+        <a href="request.cgi.html">Requests</a></li>
+
+
+  <li>
+        <span class="separator">| </span>
+        <a href="https://bugzilla.readthedocs.org/en/5.0/using/understanding.html" target="_blank">Help</a>
+      </li>
+    
+      <li id="new_account_container_bottom">
+        <span class="separator">| </span>
+        <a href="createaccount.cgi.html">New&nbsp;Account</a>
+      </li>
+
+    <li id="mini_login_container_bottom">
+  <span class="separator">| </span>
+  <a id="login_link_bottom" href="show_bug.cgi%3Fid=2316&amp;GoAheadAndLogIn=1.html"
+     onclick="return show_mini_login_form('_bottom')">Log In</a>
+
+  <form action="show_bug.cgi%3Fid=2316.html" method="POST"
+        class="mini_login bz_default_hidden"
+        id="mini_login_bottom">
+    <input id="Bugzilla_login_bottom" required
+           name="Bugzilla_login" class="bz_login"
+        type="email" placeholder="Email Address">
+    <input class="bz_password" name="Bugzilla_password" type="password"
+           id="Bugzilla_password_bottom" required
+           placeholder="Password">
+    <input type="hidden" name="Bugzilla_login_token"
+           value="1469821430-OjI8D8bklajXQ8nyNAQXt1kbKqf02-Olro9buPg0Vks">
+    <input type="submit" name="GoAheadAndLogIn" value="Log in"
+            id="log_in_bottom">
+    <a href="show_bug.cgi%3Fid=2316.html#" onclick="return hide_mini_login_form('_bottom')">[x]</a>
+  </form>
+</li>
+
+
+  <li id="forgot_container_bottom">
+    <span class="separator">| </span>
+    <a id="forgot_link_bottom" href="show_bug.cgi%3Fid=2316&amp;GoAheadAndLogIn=1.html#forgot"
+       onclick="return show_forgot_form('_bottom')">Forgot Password</a>
+    <form action="http://bugs.aviary.pl/token.cgi" method="post" id="forgot_form_bottom"
+          class="mini_forgot bz_default_hidden">
+      <label for="login_bottom">Login:</label>
+      <input name="loginname" size="20" id="login_bottom" required
+          type="email" placeholder="Your Email Address">
+      <input id="forgot_button_bottom" value="Reset Password" type="submit">
+      <input type="hidden" name="a" value="reqpw">
+      <input type="hidden" id="token_bottom" name="token"
+             value="1469821430--VdtTpcT3iDHWAybjBgpOOqBr_43NYsvW0KQKnYJNt0">
+      <a href="show_bug.cgi%3Fid=2316.html#" onclick="return hide_forgot_form('_bottom')">[x]</a>
+    </form>
+  </li>
+</ul>
+  </li>
+
+  
+
+
+
+
+  
+</ul>
+
+      <div class="outro"></div>
+    </div>
+
+  </body>
+</html>

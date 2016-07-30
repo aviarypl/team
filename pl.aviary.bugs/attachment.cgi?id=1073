@@ -1,0 +1,197 @@
+Index: trunk/pl/flock/chrome/flock/oobe/oobeOverlay.dtd
+===================================================================
+--- trunk/pl/flock/chrome/flock/oobe/oobeOverlay.dtd	(wersja 3006)
++++ trunk/pl/flock/chrome/flock/oobe/oobeOverlay.dtd	(kopia robocza)
+@@ -1,5 +1,5 @@
+ <!ENTITY flock.oobe.confirm.title       "Witamy w programie &brandShortName;">
+-<!ENTITY flock.oobe.confirm.description "Postanowiłeś całkowicie wyłączyć stronę z podpowiedziami. W przyszłości możesz w każdej chwili zobaczyć klipy z instrukcjami poprzez Pomoc programu &brandShortName;.">
++<!ENTITY flock.oobe.confirm.description "Strona z podpowiedziami została całkowicie wyłączona. W przyszłości można w każdej chwili wyświetlić klipy z instrukcjami poprzez Pomoc programu &brandShortName;.">
+ <!ENTITY flock.oobe.confirm.button      "OK">
+ <!ENTITY flock.oobe.dialog.title        "Przewodnik programu &brandShortName;">
+ <!ENTITY flock.oobe.dialog.checkBox     "Pokazuj tę stronę przy każdym uruchomieniu programu &brandShortName;">
+@@ -7,35 +7,35 @@
+ 
+ <!ENTITY flock.oobe.tutorial.flashWarning "Aby wyświetlić przewodnik, wymagana jest wtyczka flash.">
+ 
+-<!ENTITY flock.oobe.tutorial.title  "Przewodnik programu &brandShortName;">
++<!ENTITY flock.oobe.tutorial.title        "Przewodnik programu &brandShortName;">
+ 
+-<!ENTITY flock.oobe.tutorial.flockHeader.header     "Wykorzystaj Flocka w pełni"> <!-- FIXME &brandShortName; -->
+-<!ENTITY flock.oobe.tutorial.flockHeader.subHeader  "Zapoznaj się z informacjami poniżej, aby skorzystać ze wszystkiego, co &brandShortName; może Ci zaoferować.">
++<!ENTITY flock.oobe.tutorial.flockHeader.header         "Wykorzystaj Flocka w pełni"> <!-- FIXME &brandShortName; -->
++<!ENTITY flock.oobe.tutorial.flockHeader.subHeader      "Zapoznaj się z informacjami poniżej, aby skorzystać ze wszystkiego, co &brandShortName; może zaoferować.">
+ 
+-<!ENTITY flock.oobe.tutorial.makeFlockYours.header    "&brandShortName; po Twojemu">
+-<!ENTITY flock.oobe.tutorial.makeFlockYours.subHeader "Dostosuj Flocka do własnych potrzeb przy pomocy rozszerzeń, pasków narzędzi i nowych motywów!">
+-<!ENTITY flock.oobe.tutorial.makeFlockYours.link      "Zobacz Dodatki">
+-<!ENTITY flock.oobe.tutorial.makeFlockYours.link.href "http://extensions.flock.com">
++<!ENTITY flock.oobe.tutorial.makeFlockYours.header      "&brandShortName; po Twojemu">
++<!ENTITY flock.oobe.tutorial.makeFlockYours.subHeader   "Dostosuj Flocka do własnych potrzeb przy pomocy rozszerzeń, pasków narzędzi i nowych motywów!">
++<!ENTITY flock.oobe.tutorial.makeFlockYours.link        "Zobacz Dodatki">
++<!ENTITY flock.oobe.tutorial.makeFlockYours.link.href   "http://extensions.flock.com">
+ 
+ <!ENTITY flock.oobe.tutorial.seeTutorialAgain.header    "Obejrzyj Przewodnik programu &brandShortName; jeszcze raz">
+-<!ENTITY flock.oobe.tutorial.seeTutorialAgain.subHeader "Obejrzyj klipy video Przewodnika programu &brandShortName;, aby dowiedzieć się więcej na temat tego, jak działa &brandShortName;.">
++<!ENTITY flock.oobe.tutorial.seeTutorialAgain.subHeader "Zobacz Przewodnik programu &brandShortName; ponownie, aby dowiedzieć się więcej na temat tego, jak działa &brandShortName;.">
+ <!ENTITY flock.oobe.tutorial.seeTutorialAgain.link      "Uruchom Przewodnik programu &brandShortName;">
+ 
+ <!ENTITY flock.oobe.tutorial.faq.header    "Często zadawane pytania (FAQ)">
+-<!ENTITY flock.oobe.tutorial.faq.subHeader "Potrzebujesz odpowiedzi?  Sprawdź najpierw strony z odpowiedziami na pytania.">
+-<!ENTITY flock.oobe.tutorial.faq.link "Zobacz FAQ">
++<!ENTITY flock.oobe.tutorial.faq.subHeader "Potrzebujesz odpowiedzi? Sprawdź najpierw strony z odpowiedziami na pytania.">
++<!ENTITY flock.oobe.tutorial.faq.link      "Zobacz FAQ">
+ <!ENTITY flock.oobe.tutorial.faq.link.href "http://flock.com/faq">
+ 
+-<!ENTITY flock.oobe.tutorial.flockForums.header    "Fora programu &brandShortName;">
+-<!ENTITY flock.oobe.tutorial.flockForums.subHeader "Masz problem lub pytanie? Zapytaj innych użytkowników na Forach.">
+-<!ENTITY flock.oobe.tutorial.flockForums.link      "Zobacz Fora">
+-<!ENTITY flock.oobe.tutorial.flockForums.link.href "http://flock.com/forums">
++<!ENTITY flock.oobe.tutorial.flockForums.header     "Fora programu &brandShortName;">
++<!ENTITY flock.oobe.tutorial.flockForums.subHeader  "Masz problem lub pytanie? Zapytaj innych użytkowników na forach.">
++<!ENTITY flock.oobe.tutorial.flockForums.link       "Zobacz fora">
++<!ENTITY flock.oobe.tutorial.flockForums.link.href  "http://flock.com/forums">
+ 
+-<!ENTITY flock.oobe.tutorial.shareFlock.header    "Dziel się Flockiem"> <!-- FIXME &brandShortName; -->
+-<!ENTITY flock.oobe.tutorial.shareFlock.subHeader "Kochasz Flocka? Poinformuj wszystkich o swojej nowej ulubionej przeglądarce.">
+-<!ENTITY flock.oobe.tutorial.shareFlock.link      "Dziel się Flockiem"> <!-- FIXME &brandShortName; -->
+-<!ENTITY flock.oobe.tutorial.shareFlock.link.href "https://secure.flock.com/shareflockform/">
++<!ENTITY flock.oobe.tutorial.shareFlock.header      "Dziel się Flockiem"> <!-- FIXME &brandShortName; -->
++<!ENTITY flock.oobe.tutorial.shareFlock.subHeader   "Kochasz Flocka? Poinformuj wszystkich o swojej nowej ulubionej przeglądarce.">
++<!ENTITY flock.oobe.tutorial.shareFlock.link        "Dziel się Flockiem"> <!-- FIXME &brandShortName; -->
++<!ENTITY flock.oobe.tutorial.shareFlock.link.href   "https://secure.flock.com/shareflockform/">
+ 
+ <!ENTITY flock.oobe.tutorial.needMoreHelp.header    "Potrzebujesz więcej pomocy?">
+ <!ENTITY flock.oobe.tutorial.needMoreHelp.subHeader "Przeczytaj nasze poradniki użytkownika i zobacz, jak startuje Twoja przeglądarka.">
+-<!ENTITY flock.oobe.tutorial.needMoreHelp.link   "Zobacz poradniki użytkownika">
++<!ENTITY flock.oobe.tutorial.needMoreHelp.link      "Zobacz poradniki użytkownika">
+Index: trunk/pl/flock/chrome/flock/oobe/gettingStarted.properties
+===================================================================
+--- trunk/pl/flock/chrome/flock/oobe/gettingStarted.properties	(wersja 3006)
++++ trunk/pl/flock/chrome/flock/oobe/gettingStarted.properties	(kopia robocza)
+@@ -24,15 +24,15 @@
+ flock.oobe.serviceTypes.blog.text        = Zaloguj się do bloga, aby dodać jego obsługę i łatwo korzystać z niego przy pomocy wbudowanych narzędzi Flocka.
+ 
+ flock.oobe.serviceTypes.favorites.header = Zapamiętuj ulubione jednym kliknięciem
+-flock.oobe.serviceTypes.favorites.text   = Wybierz nibieską gwiazdkę, aby dodoać stronę do ulubionych (nazywanych także zakładkami). Łatwo zarządzaj swoimi ulubionymi przy pomocy panelu Ulubionych.
++flock.oobe.serviceTypes.favorites.text   = Wybierz niebieską gwiazdkę, aby dodać stronę do ulubionych (nazywanych także zakładkami). Łatwo zarządzaj swoimi ulubionymi przy pomocy panelu Ulubionych.
+ 
+ flock.oobe.serviceTypes.feeds.header     = Pozwól wiadomościom spływać do Ciebie
+-flock.oobe.serviceTypes.feeds.text       = Gdy ikona aktualności zostaje podświetlona na pomarańczowo, strona udostępnia źródło aktualności. Wybierz ikonę, aby zasubskrybować wiadomości ze strony i otrzymywać powiadomienia poprzez panel Aktualności.
++flock.oobe.serviceTypes.feeds.text       = Gdy ikona aktualności zostaje podświetlona na pomarańczowo, strona udostępnia źródło aktualności. Wybierz ikonę, aby subskrybować wiadomości ze strony i otrzymywać powiadomienia poprzez panel Aktualności.
+ 
+ flock.oobe.serviceTypes.myworld.header   = Twoja strona startowa
+ flock.oobe.serviceTypes.myworld.text     = Otwórz stronę "Wokół mnie", aby sprawdzić ostatnie wiadomości, ulubione czy media. Nie podba się tytuł? Wybierz go i zmień.
+ 
+-flock.oobe.serviceTypes.people.header    = Flock łączy z przyjaciółmi
++flock.oobe.serviceTypes.people.header    = Flock łączy ze znajomymi
+ flock.oobe.serviceTypes.people.text      = Zaloguj się do jednego ze wspieranych serwisów, aby dodać znajomych do listy kontaktów w panelu bocznym.
+ 
+ flock.oobe.serviceTypes.onlinefaves.header = Przechowuj publiczne ulubione w zasięgu ręki
+@@ -45,7 +45,7 @@
+ flock.oobe.serviceTypes.upload.text      = Zaloguj się do jednego ze wspieranych serwisów zdjęć, aby łatwo wgrywać aż do tysiąca zdjęć.
+ 
+ flock.oobe.serviceTypes.webmail.header   = Otrzymuj powiadomienia o nadchodzącej poczcie
+-flock.oobe.serviceTypes.webmail.text     = Zaloguj się do wspieranego serwsu poczty a Flock da znać gdy nadejdzie poczta.
++flock.oobe.serviceTypes.webmail.text     = Zaloguj się do wspieranego serwisu poczty a Flock da znać gdy nadejdzie poczta.
+ 
+ flock.oobe.mediaServices.flickr.mediaQuery      = special:interestingness
+ flock.oobe.mediaServices.revver.mediaQuery      = special:picks
+Index: branches/jailbird/pl/flock/chrome/flock/oobe/oobeOverlay.dtd
+===================================================================
+--- branches/jailbird/pl/flock/chrome/flock/oobe/oobeOverlay.dtd	(wersja 3006)
++++ branches/jailbird/pl/flock/chrome/flock/oobe/oobeOverlay.dtd	(kopia robocza)
+@@ -1,5 +1,5 @@
+ <!ENTITY flock.oobe.confirm.title       "Witamy w programie &brandShortName;">
+-<!ENTITY flock.oobe.confirm.description "Postanowiłeś całkowicie wyłączyć stronę z podpowiedziami. W przyszłości możesz w każdej chwili zobaczyć klipy z instrukcjami poprzez Pomoc programu &brandShortName;.">
++<!ENTITY flock.oobe.confirm.description "Strona z podpowiedziami została całkowicie wyłączona. W przyszłości można w każdej chwili wyświetlić klipy z instrukcjami poprzez Pomoc programu &brandShortName;.">
+ <!ENTITY flock.oobe.confirm.button      "OK">
+ <!ENTITY flock.oobe.dialog.title        "Przewodnik programu &brandShortName;">
+ <!ENTITY flock.oobe.dialog.checkBox     "Pokazuj tę stronę przy każdym uruchomieniu programu &brandShortName;">
+@@ -7,35 +7,35 @@
+ 
+ <!ENTITY flock.oobe.tutorial.flashWarning "Aby wyświetlić przewodnik, wymagana jest wtyczka flash.">
+ 
+-<!ENTITY flock.oobe.tutorial.title  "Przewodnik programu &brandShortName;">
++<!ENTITY flock.oobe.tutorial.title        "Przewodnik programu &brandShortName;">
+ 
+-<!ENTITY flock.oobe.tutorial.flockHeader.header     "Wykorzystaj Flocka w pełni"> <!-- FIXME &brandShortName; -->
+-<!ENTITY flock.oobe.tutorial.flockHeader.subHeader  "Zapoznaj się z informacjami poniżej, aby skorzystać ze wszystkiego, co &brandShortName; może Ci zaoferować.">
++<!ENTITY flock.oobe.tutorial.flockHeader.header         "Wykorzystaj Flocka w pełni"> <!-- FIXME &brandShortName; -->
++<!ENTITY flock.oobe.tutorial.flockHeader.subHeader      "Zapoznaj się z informacjami poniżej, aby skorzystać ze wszystkiego, co &brandShortName; może zaoferować.">
+ 
+-<!ENTITY flock.oobe.tutorial.makeFlockYours.header    "&brandShortName; po Twojemu">
+-<!ENTITY flock.oobe.tutorial.makeFlockYours.subHeader "Dostosuj Flocka do własnych potrzeb przy pomocy rozszerzeń, pasków narzędzi i nowych motywów!">
+-<!ENTITY flock.oobe.tutorial.makeFlockYours.link      "Zobacz Dodatki">
+-<!ENTITY flock.oobe.tutorial.makeFlockYours.link.href "http://extensions.flock.com">
++<!ENTITY flock.oobe.tutorial.makeFlockYours.header      "&brandShortName; po Twojemu">
++<!ENTITY flock.oobe.tutorial.makeFlockYours.subHeader   "Dostosuj Flocka do własnych potrzeb przy pomocy rozszerzeń, pasków narzędzi i nowych motywów!">
++<!ENTITY flock.oobe.tutorial.makeFlockYours.link        "Zobacz Dodatki">
++<!ENTITY flock.oobe.tutorial.makeFlockYours.link.href   "http://extensions.flock.com">
+ 
+ <!ENTITY flock.oobe.tutorial.seeTutorialAgain.header    "Obejrzyj Przewodnik programu &brandShortName; jeszcze raz">
+-<!ENTITY flock.oobe.tutorial.seeTutorialAgain.subHeader "Obejrzyj klipy video Przewodnika programu &brandShortName;, aby dowiedzieć się więcej na temat tego, jak działa &brandShortName;.">
++<!ENTITY flock.oobe.tutorial.seeTutorialAgain.subHeader "Zobacz Przewodnik programu &brandShortName; ponownie, aby dowiedzieć się więcej na temat tego, jak działa &brandShortName;.">
+ <!ENTITY flock.oobe.tutorial.seeTutorialAgain.link      "Uruchom Przewodnik programu &brandShortName;">
+ 
+ <!ENTITY flock.oobe.tutorial.faq.header    "Często zadawane pytania (FAQ)">
+-<!ENTITY flock.oobe.tutorial.faq.subHeader "Potrzebujesz odpowiedzi?  Sprawdź najpierw strony z odpowiedziami na pytania.">
+-<!ENTITY flock.oobe.tutorial.faq.link "Zobacz FAQ">
++<!ENTITY flock.oobe.tutorial.faq.subHeader "Potrzebujesz odpowiedzi? Sprawdź najpierw strony z odpowiedziami na pytania.">
++<!ENTITY flock.oobe.tutorial.faq.link      "Zobacz FAQ">
+ <!ENTITY flock.oobe.tutorial.faq.link.href "http://flock.com/faq">
+ 
+-<!ENTITY flock.oobe.tutorial.flockForums.header    "Fora programu &brandShortName;">
+-<!ENTITY flock.oobe.tutorial.flockForums.subHeader "Masz problem lub pytanie? Zapytaj innych użytkowników na Forach.">
+-<!ENTITY flock.oobe.tutorial.flockForums.link      "Zobacz Fora">
+-<!ENTITY flock.oobe.tutorial.flockForums.link.href "http://flock.com/forums">
++<!ENTITY flock.oobe.tutorial.flockForums.header     "Fora programu &brandShortName;">
++<!ENTITY flock.oobe.tutorial.flockForums.subHeader  "Masz problem lub pytanie? Zapytaj innych użytkowników na forach.">
++<!ENTITY flock.oobe.tutorial.flockForums.link       "Zobacz fora">
++<!ENTITY flock.oobe.tutorial.flockForums.link.href  "http://flock.com/forums">
+ 
+-<!ENTITY flock.oobe.tutorial.shareFlock.header    "Dziel się Flockiem"> <!-- FIXME &brandShortName; -->
+-<!ENTITY flock.oobe.tutorial.shareFlock.subHeader "Kochasz Flocka? Poinformuj wszystkich o swojej nowej ulubionej przeglądarce.">
+-<!ENTITY flock.oobe.tutorial.shareFlock.link      "Dziel się Flockiem"> <!-- FIXME &brandShortName; -->
+-<!ENTITY flock.oobe.tutorial.shareFlock.link.href "https://secure.flock.com/shareflockform/">
++<!ENTITY flock.oobe.tutorial.shareFlock.header      "Dziel się Flockiem"> <!-- FIXME &brandShortName; -->
++<!ENTITY flock.oobe.tutorial.shareFlock.subHeader   "Kochasz Flocka? Poinformuj wszystkich o swojej nowej ulubionej przeglądarce.">
++<!ENTITY flock.oobe.tutorial.shareFlock.link        "Dziel się Flockiem"> <!-- FIXME &brandShortName; -->
++<!ENTITY flock.oobe.tutorial.shareFlock.link.href   "https://secure.flock.com/shareflockform/">
+ 
+ <!ENTITY flock.oobe.tutorial.needMoreHelp.header    "Potrzebujesz więcej pomocy?">
+ <!ENTITY flock.oobe.tutorial.needMoreHelp.subHeader "Przeczytaj nasze poradniki użytkownika i zobacz, jak startuje Twoja przeglądarka.">
+-<!ENTITY flock.oobe.tutorial.needMoreHelp.link   "Zobacz poradniki użytkownika">
++<!ENTITY flock.oobe.tutorial.needMoreHelp.link      "Zobacz poradniki użytkownika">
+Index: branches/jailbird/pl/flock/chrome/flock/oobe/gettingStarted.properties
+===================================================================
+--- branches/jailbird/pl/flock/chrome/flock/oobe/gettingStarted.properties	(wersja 3006)
++++ branches/jailbird/pl/flock/chrome/flock/oobe/gettingStarted.properties	(kopia robocza)
+@@ -24,15 +24,15 @@
+ flock.oobe.serviceTypes.blog.text        = Zaloguj się do bloga, aby dodać jego obsługę i łatwo korzystać z niego przy pomocy wbudowanych narzędzi Flocka.
+ 
+ flock.oobe.serviceTypes.favorites.header = Zapamiętuj ulubione jednym kliknięciem
+-flock.oobe.serviceTypes.favorites.text   = Wybierz nibieską gwiazdkę, aby dodoać stronę do ulubionych (nazywanych także zakładkami). Łatwo zarządzaj swoimi ulubionymi przy pomocy panelu Ulubionych.
++flock.oobe.serviceTypes.favorites.text   = Wybierz niebieską gwiazdkę, aby dodać stronę do ulubionych (nazywanych także zakładkami). Łatwo zarządzaj swoimi ulubionymi przy pomocy panelu Ulubionych.
+ 
+ flock.oobe.serviceTypes.feeds.header     = Pozwól wiadomościom spływać do Ciebie
+-flock.oobe.serviceTypes.feeds.text       = Gdy ikona aktualności zostaje podświetlona na pomarańczowo, strona udostępnia źródło aktualności. Wybierz ikonę, aby zasubskrybować wiadomości ze strony i otrzymywać powiadomienia poprzez panel Aktualności.
++flock.oobe.serviceTypes.feeds.text       = Gdy ikona aktualności zostaje podświetlona na pomarańczowo, strona udostępnia źródło aktualności. Wybierz ikonę, aby subskrybować wiadomości ze strony i otrzymywać powiadomienia poprzez panel Aktualności.
+ 
+ flock.oobe.serviceTypes.myworld.header   = Twoja strona startowa
+ flock.oobe.serviceTypes.myworld.text     = Otwórz stronę "Wokół mnie", aby sprawdzić ostatnie wiadomości, ulubione czy media. Nie podba się tytuł? Wybierz go i zmień.
+ 
+-flock.oobe.serviceTypes.people.header    = Flock łączy z przyjaciółmi
++flock.oobe.serviceTypes.people.header    = Flock łączy ze znajomymi
+ flock.oobe.serviceTypes.people.text      = Zaloguj się do jednego ze wspieranych serwisów, aby dodać znajomych do listy kontaktów w panelu bocznym.
+ 
+ flock.oobe.serviceTypes.onlinefaves.header = Przechowuj publiczne ulubione w zasięgu ręki
+@@ -45,7 +45,7 @@
+ flock.oobe.serviceTypes.upload.text      = Zaloguj się do jednego ze wspieranych serwisów zdjęć, aby łatwo wgrywać aż do tysiąca zdjęć.
+ 
+ flock.oobe.serviceTypes.webmail.header   = Otrzymuj powiadomienia o nadchodzącej poczcie
+-flock.oobe.serviceTypes.webmail.text     = Zaloguj się do wspieranego serwsu poczty a Flock da znać gdy nadejdzie poczta.
++flock.oobe.serviceTypes.webmail.text     = Zaloguj się do wspieranego serwisu poczty a Flock da znać gdy nadejdzie poczta.
+ 
+ flock.oobe.mediaServices.flickr.mediaQuery      = special:interestingness
+ flock.oobe.mediaServices.revver.mediaQuery      = special:picks
+

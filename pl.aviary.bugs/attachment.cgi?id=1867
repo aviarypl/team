@@ -1,0 +1,171 @@
+diff --git a/toolkit/chrome/global/commonDialogs.properties b/toolkit/chrome/global/commonDialogs.properties
+--- a/toolkit/chrome/global/commonDialogs.properties
++++ b/toolkit/chrome/global/commonDialogs.properties
+@@ -16,12 +16,12 @@ ScriptDlgGenericHeading=[Aplikacja JavaS
+ ScriptDlgHeading=Komunikat ze strony %S:
+ ScriptDialogLabel=Zabroń tej stronie otwierać kolejne okna dialogowe
+ ScriptDialogPreventTitle=Potwierdzenie ustawień okien dialogowych
+ # LOCALIZATION NOTE (EnterLoginForRealm, EnterLoginForProxy):
+ # %1 is an untrusted string provided by a remote server. It could try to
+ # take advantage of sentence structure in order to mislead the user (see
+ # bug 244273). %1 should be integrated into the translated sentences as
+ # little as possible. %2 is the url of the site being accessed.
+-EnterLoginForRealm=Witryna %2$S prosi o podanie nazwy użytkownika i hasła. Komunikat witryny: "%1$S"
+-EnterLoginForProxy=Serwer proxy %2$S prosi o podanie nazwy użytkownika i hasła. Komunikat witryny: "%1$S"
++EnterLoginForRealm=Witryna %2$S prosi o podanie nazwy użytkownika i hasła. Komunikat witryny: „%1$S”
++EnterLoginForProxy=Serwer proxy %2$S prosi o podanie nazwy użytkownika i hasła. Komunikat witryny: „%1$S”
+ EnterUserPasswordFor=Podaj nazwę użytkownika i hasła dla %1$S
+ EnterPasswordFor=Podaj hasło użytkownika %1$S na serwerze %2$S
+diff --git a/toolkit/chrome/global/config.properties b/toolkit/chrome/global/config.properties
+--- a/toolkit/chrome/global/config.properties
++++ b/toolkit/chrome/global/config.properties
+@@ -45,14 +45,14 @@ locked=zablokowany
+ 
+ # Type column values
+ string=łańcuch
+ int=liczba całkowita
+ bool=wartość logiczna
+ 
+ # Preference prompts
+ # %S is replaced by one of the type column values above
+-new_title=Nowe ustawienie typu "%S"
++new_title=Nowe ustawienie typu „%S”
+ new_prompt=Wprowadź nazwę nowego ustawienia
+-modify_title=Wprowadź wartość ustawienia typu "%S"
++modify_title=Wprowadź wartość ustawienia typu „%S”
+ 
+ nan_title=Nieprawidłowa wartość
+ nan_text=Wprowadzony tekst nie jest liczbą.
+diff --git a/toolkit/chrome/global/xpinstall/xpinstall.properties b/toolkit/chrome/global/xpinstall/xpinstall.properties
+--- a/toolkit/chrome/global/xpinstall/xpinstall.properties
++++ b/toolkit/chrome/global/xpinstall/xpinstall.properties
+@@ -50,18 +50,18 @@ UnknownFileOpCommand=Nieznane polecenie 
+ Patch=Instalacja poprawek w: %s
+ Uninstall=Dezinstalacja: %s
+ RegSkin=Rejestrowanie motywu: %s
+ RegLocale=Rejestrowanie ustawień językowych: %s
+ RegContent=Rejestrowanie zawartości: %s
+ RegPackage=Rejestrowanie pakietu: %s
+ ApplyNowSkin=Użyj tego motywu
+ ApplyNowLocale=Użyj tych ustawień lokalnych
+-ConfirmSkin=Zainstalować motyw "%1$S" z %2$S?
+-ConfirmLocale=Zainstalować ustawienia lokalne "%1$S" z %2$S?
++ConfirmSkin=Zainstalować motyw „%1$S” z %2$S?
++ConfirmLocale=Zainstalować ustawienia lokalne „%1$S” z %2$S?
+ OK=Zainstaluj
+ progress.queued=W kolejce
+ progress.downloading=Pobieranie…
+ progress.downloaded=Pobieranie zakończono
+ progress.installing=Instalowanie…
+ Unsigned=Niepodpisany
+ ERROR=BŁĄD
+ error0=Instalacja się powiodła
+diff --git a/toolkit/chrome/mozapps/downloads/downloads.properties b/toolkit/chrome/mozapps/downloads/downloads.properties
+--- a/toolkit/chrome/mozapps/downloads/downloads.properties
++++ b/toolkit/chrome/mozapps/downloads/downloads.properties
+@@ -111,17 +111,17 @@ chooseAppFilePickerTitle=Otwórz za pomo
+ 
+ # LOCALIZATION NOTE (downloadsTitleFiles, downloadsTitlePercent): Semi-colon list of
+ # plural forms. See: http://developer.mozilla.org/en/docs/Localization_and_Plurals
+ # #1 number of files; #2 overall download percent (only for downloadsTitlePercent)
+ # examples: 2% of one file - Downloads; 22% of 11 files - Downloads
+ downloadsTitleFiles=#1 plik - Pobieranie plików;#1 pliki - Pobieranie plików;#1 plików - Pobieranie plików
+ downloadsTitlePercent=#2% z #1 pliku - Pobieranie plików;#2% z #1 plików - Pobieranie plików;#2% z #1 plików - Pobieranie plików
+ 
+-fileExecutableSecurityWarning=Uwaga: Rozpoczęto uruchamianie pliku wykonywalnego "%S". Pliki wykonywalne mogą zawierać wirusy lub inny niebezpieczny kod, który może uszkodzić komputer. Zaleca się zachowanie ostrożności przy otwieraniu plików tego typu. Czy na pewno uruchomić "%S"?
++fileExecutableSecurityWarning=Uwaga: Rozpoczęto uruchamianie pliku wykonywalnego „%S”. Pliki wykonywalne mogą zawierać wirusy lub inny niebezpieczny kod, który może uszkodzić komputer. Zaleca się zachowanie ostrożności przy otwieraniu plików tego typu. Czy na pewno uruchomić „%S”?
+ fileExecutableSecurityWarningTitle=Uruchamianie pliku wykonywalnego!
+ fileExecutableSecurityWarningDontAsk=Nie pytaj ponownie
+ 
+ displayNameDesktop=Pulpit
+ # Desktop folder name for downloaded files
+ # FIXME: en-US: downloadsFolder=Downloads
+ # Wg http://windowshelp.microsoft.com/Windows/pl-pl/help/b8f62a7d-381a-4253-a52e-04883e076bbe1045.mspx
+ # w Viście PL mamy "Pobieranie", co jest dość niefajne, ale cóż…
+diff --git a/toolkit/chrome/mozapps/downloads/unknownContentType.properties b/toolkit/chrome/mozapps/downloads/unknownContentType.properties
+--- a/toolkit/chrome/mozapps/downloads/unknownContentType.properties
++++ b/toolkit/chrome/mozapps/downloads/unknownContentType.properties
+@@ -37,17 +37,17 @@
+ # the terms of any one of the MPL, the GPL or the LGPL.
+ #
+ # ***** END LICENSE BLOCK *****
+ 
+ title=Otwieranie %S
+ saveDialogTitle=Wprowadź nazwę pliku…
+ defaultApp=%S (domyślny)
+ chooseAppFilePickerTitle=Wybierz aplikację pomocniczą
+-badApp=Wybrana aplikacja ("%S") nie może zostać odnaleziona. Należy sprawdzić poprawność wprowadzonej nazwy pliku lub wybrać inną aplikację.
++badApp=Wybrana aplikacja („%S”) nie może zostać odnaleziona. Należy sprawdzić poprawność wprowadzonej nazwy pliku lub wybrać inną aplikację.
+ badApp.title=Nie znaleziono aplikacji
+ badPermissions=Nie udało się zapisać pliku, ponieważ użytkownik nie ma wystarczających uprawnień. Należy wybrać inny katalog.
+ badPermissions.title=Brak uprawnień do zapisu
+ selectDownloadDir=Wybierz folder dla pobranych plików
+ unknownAccept.label=Zapisz plik
+ unknownCancel.label=Anuluj
+ fileType=plik %S
+ 
+diff --git a/toolkit/chrome/mozapps/profile/profileSelection.properties b/toolkit/chrome/mozapps/profile/profileSelection.properties
+--- a/toolkit/chrome/mozapps/profile/profileSelection.properties
++++ b/toolkit/chrome/mozapps/profile/profileSelection.properties
+@@ -1,17 +1,17 @@
+ # LOCALIZATION NOTE: Do not translate <html:br/>
+ 
+ restartTitle=Zamknij program %S
+ restartMessageNoUnlocker=Program %S został już uruchomiony, ale nie odpowiada. Aby otworzyć nowe okno, należy najpierw zakończyć istniejący proces programu %S lub uruchomić ponownie system.
+ restartMessageUnlocker=Program %S został już uruchomiony, ale nie odpowiada. Aby otworzyć nowe okno, należy najpierw zakończyć stary proces programu %S.
+ restartMessageNoUnlockerMac=Kopia programu %S jest już otwarta. Tylko jedna kopia programu %S może być otwarta jednocześnie.
+ restartMessageUnlockerMac=Kopia programu %S jest już otwarta. Działająca kopia programu %S zostanie zakończona, aby otworzyć tę kopię.
+ 
+-profileTooltip=Profile: '%S' - Ścieżka: '%S'
++profileTooltip=Profile: „%S” - Ścieżka: „%S”
+ 
+ pleaseSelectTitle=Wybór profilu
+ pleaseSelect=Aby rozpocząć pracę z programem %S, należy wybrać istniejący profil lub utworzyć nowy.
+ 
+ profileLockedTitle=Profil w użyciu
+ profileLocked2=%S nie może użyć profilu „%S”, ponieważ jest on aktualnie używany.\n\nAby kontynuować, zamknij działającą instancję programu %S lub wybierz inny profil.
+ 
+ renameProfileTitle=Zmiana nazwy profilu
+diff --git a/toolkit/chrome/mozapps/update/updates.dtd b/toolkit/chrome/mozapps/update/updates.dtd
+--- a/toolkit/chrome/mozapps/update/updates.dtd
++++ b/toolkit/chrome/mozapps/update/updates.dtd
+@@ -19,17 +19,17 @@
+ 
+ <!ENTITY  incompatibleCheck.title         "Sprawdzanie kompatybilności dodatków">
+ <!ENTITY  incompatibleCheck.label         "Szukanie nowszych wersji zainstalowanych dodatków…">
+ 
+ <!ENTITY  clickHere.label                 "Wyświetl więcej informacji o tej aktualizacji…">
+ 
+ <!ENTITY  evangelism.desc                 "Aktualizacja programu &brandShortName; jest wysoce zalecana.">
+ 
+-<!ENTITY  license.instructions            'Jeśli akceptujesz warunki licencji, kliknij przycisk "Zgadzam się", aby kontynuować instalację aktualizacji.'>
++<!ENTITY  license.instructions            "Jeśli akceptujesz warunki licencji, kliknij przycisk „Zgadzam się”, aby kontynuować instalację aktualizacji.">
+ 
+ <!ENTITY  license.titleText               "Umowa licencyjna oprogramowania">
+ <!ENTITY  license.introText               "Warunki korzystania z tego oprogramowania">
+ <!ENTITY  license.instructionText         "Prosimy zapoznać się z poniższą umową licencyjną. Aby przeczytać dalszą część umowy, należy użyć paska przewijania">
+ <!ENTITY  license.accept                  "Akceptuję warunki umowy licencyjnej">
+ <!ENTITY  license.accept.accesskey        "c">
+ <!ENTITY  license.decline                 "NIE akceptuję warunków umowy licencyjnej">
+ <!ENTITY  license.decline.accesskey       "t">
+diff --git a/toolkit/chrome/search/search.properties b/toolkit/chrome/search/search.properties
+--- a/toolkit/chrome/search/search.properties
++++ b/toolkit/chrome/search/search.properties
+@@ -1,15 +1,15 @@
+ addEngineConfirmTitle=Dodawanie wyszukiwarki
+ addEngineConfirmation=Czy dodać wyszukiwarkę %S do paska wyszukiwania?\n\nŹródło: %S
+ addEngineUseNowText=&Ustaw jako aktywną
+ addEngineAddButtonLabel=Dodaj
+ 
+ error_loading_engine_title=Błąd pobierania
+ # LOCALIZATION NOTE (error_loading_engine_msg2): %1$S = brandShortName, %2$S = location
+ error_loading_engine_msg2=Program %S nie mógł pobrać wtyczki dla wyszukiwarki z adresu:\n%S
+-error_duplicate_engine_msg=Program %S nie mógł zainstalować wtyczki dla wyszukiwarki z "%S", ponieważ wtyczka o tej nazwie już istnieje.
++error_duplicate_engine_msg=Program %S nie mógł zainstalować wtyczki dla wyszukiwarki z „%S”, ponieważ wtyczka o tej nazwie już istnieje.
+ 
+ error_invalid_engine_title=Błąd instalacji
+ # LOCALIZATION NOTE (error_invalid_engine_msg): %S = brandShortName
+ error_invalid_engine_msg=Ta wyszukiwarka nie jest obsługiwana przez program %S i nie może zostać zainstalowana.
+ 
+ suggestion_label=Podpowiedzi
+

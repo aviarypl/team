@@ -1,0 +1,86 @@
+diff -r 900e89f6dfc2 template/pl/default/global/user-error.html.tmpl
+--- a/template/pl/default/global/user-error.html.tmpl	Tue May 10 10:07:05 2011 +0200
++++ b/template/pl/default/global/user-error.html.tmpl	Thu May 12 10:37:24 2011 +0200
+@@ -89,5 +89,5 @@
+   [% ELSIF error == "alias_has_comma_or_space" %]
+     [% title = "Nieprawidłowe znaki w aliasie" %]
+-    Alias, który podano <em>[% alias FILTER html %]</em>
++    Alias, który podano <em>[% alias FILTER html %]</em>,
+     zawiera przecinki lub spacje. Aliasy nie mogą zawierać tych
+     znaków, ponieważ są one używane jako separatory aliasów na liście.
+@@ -338,5 +338,5 @@
+   [% ELSIF error == "classification_has_products" %]
+      W tej kategorii nadal istnieją produkty. Przed
+-     usunięciem kategorii, należy przepisać te produkty do
++     usunięciem kategorii należy przepisać te produkty do
+      innej kategorii.
+ 
+@@ -357,5 +357,5 @@
+     [% title = BLOCK %]Komponent ma przypisane [% terms.bledy %][% END %]
+     Znaleziono [% nb FILTER html %] [%+ PROCESS ODMIEN c=nb o1="$terms.blad" o2="$terms.bledy" o3="$terms.bledow" %]!
+-    Przed usunięciem komponentu, należy przepisać [% PROCESS ODMIEN c=nb o1="ten $terms.blad" o2="te $terms.bledy" o3="te $terms.bledy" %] do
++    Przed usunięciem komponentu należy przepisać [% PROCESS ODMIEN c=nb o1="ten $terms.blad" o2="te $terms.bledy" o3="te $terms.bledy" %] do
+     innego komponentu.
+ 
+@@ -533,5 +533,5 @@
+     „[% field.description FILTER html %]” i nie może być usunięta.
+     [% IF user.in_group('tweakparams') %]
+-      Przed usunięciem, należy <a href="editparams.cgi?section=bugfields#
++      Przed usunięciem należy <a href="editparams.cgi?section=bugfields#
+       [%- param_name FILTER url_quote %]">zmienić</a> wartość domyślną.
+     [% END %]
+@@ -613,5 +613,5 @@
+     [% IF attach_id && attach_id > 0 %], załączniku [% attach_id FILTER html %][% END %],
+     lecz dostęp do tego [% terms.bledu %] został ograniczony wyłącznie do określonych grup.
+-    Osoba, którą poproszono o zweryfikowanie flagi nie należy do żadnej z tych grup.
++    Osoba, którą poproszono o zweryfikowanie flagi, nie należy do żadnej z tych grup.
+     Proszę poprosić kogoś innego o dokonanie weryfikacji lub umożliwić dostęp do
+     tego [% terms.bledu %] dla obserwatorów i dodać tę osobę do listy obserwatorów.
+@@ -629,5 +629,5 @@
+     załączniku [% attach_id FILTER html %], lecz dostęp do tego załącznika mają wyłącznie
+     osoby należące do grupy [% Param("insidergroup") FILTER html %]. Osoba, którą poproszono o
+-    zweryfikowanie flagi nie należy do niej. Proszę poprosić kogoś innego o dokonanie weryfikacji
++    zweryfikowanie flagi, nie należy do niej. Proszę poprosić kogoś innego o dokonanie weryfikacji
+     lub poprosić administratora o dodanie tej osoby do grupy.
+ 
+@@ -702,5 +702,5 @@
+     <a href="editgroups.cgi?action=del&amp;group=
+              [%- group.id FILTER url_quote %]">rekordy</a>
+-    odnoszące się do tej grupy. Przed usunięciem grupy, należy usunąć
++    odnoszące się do tej grupy. Przed usunięciem grupy należy usunąć
+     wszystkie odniesienia do niej.
+ 
+@@ -993,5 +993,5 @@
+ 
+   [% ELSIF error == "json_rpc_get_method_required" %]
+-    Gdy używasz JSON-RPC korzystając z metody GET, należy podać parametr „method”.
++    Gdy używasz JSON-RPC, korzystając z metody GET, należy podać parametr „method”.
+     Więcej szczegółów znajdziesz w dokumentacji
+     [%+ docs_urlbase FILTER html %]api/Bugzilla/WebService/Server/JSONRPC.html
+@@ -1038,5 +1038,5 @@
+   [% ELSIF error == "login_required_for_pronoun" %]
+     [% title = "Wymagana nazwa użytkownika" %]
+-    Nie można użyć %user% nie będąc zalogowanym, ponieważ zmienna %user% odnosi się
++    Nie można użyć %user%, nie będąc zalogowanym, ponieważ zmienna %user% odnosi się
+     do nieznanej w tym momencie nazwy użytkownika.
+ 
+@@ -1369,5 +1369,5 @@
+                          'milestones.html' => 'O wersjach docelowych'} %]
+     Należy <a href="editmilestones.cgi?action=add&amp;product=[% product FILTER url_quote %]">
+-    utworzyć wersję docelową „[% milestone FILTER html %]”</a> zanim będzie
++    utworzyć wersję docelową „[% milestone FILTER html %]”</a>, zanim będzie
+     można ją uczynić domyślną wersją docelową dla produktu „[% product FILTER html %]”.
+ 
+@@ -1555,9 +1555,9 @@
+     [% title = "Sesja sudo jest aktywna" %]
+     Trwa sesja sudo z tożsamością [% target FILTER html %].  
+-    Przed rozpoczęciem nowej sesji, należy zakończyć (odnośnik w stopce) trwającą sesję.
++    Przed rozpoczęciem nowej sesji należy zakończyć (odnośnik w stopce) trwającą sesję.
+ 
+   [% ELSIF error == "sudo_password_required" %]
+     [% title = "Wymagane hasło" %]
+-    Aby rozpocząć sesję sudo wymagane jest podanie hasła do [% terms.Bugzilli %].
++    Aby rozpocząć sesję sudo, wymagane jest podanie hasła do [% terms.Bugzilli %].
+     Proszę <a href="relogin.cgi?action=prepare-sudo&target_login=
+     [%- target_login FILTER html %]&reason=
+

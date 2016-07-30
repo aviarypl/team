@@ -1,0 +1,3394 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>94 &ndash; Lokalizacja Nvu 0.3</title>
+
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<link href="data/assets/7aa6ea67750936a0368541421bdcd5ee.css" rel="stylesheet" type="text/css">
+
+
+
+    
+<script type="text/javascript" src="data/assets/a7c2f3a028f17a9aa60f56dc9d6e732d.js"></script>
+
+    <script type="text/javascript">
+    <!--
+        YAHOO.namespace('bugzilla');
+        YAHOO.util.Event.addListener = function (el, sType, fn, obj, overrideContext) {
+               if ( ("onpagehide" in window || YAHOO.env.ua.gecko) && sType === "unload") { sType = "pagehide"; };
+               var capture = ((sType == "focusin" || sType == "focusout") && !YAHOO.env.ua.ie) ? true : false;
+               return this._addListener(el, this._getType(sType), fn, obj, overrideContext, capture);
+         };
+        if ( "onpagehide" in window || YAHOO.env.ua.gecko) {
+            YAHOO.util.Event._simpleRemove(window, "unload", 
+                                           YAHOO.util.Event._unload);
+        }
+        
+        function unhide_language_selector() { 
+            YAHOO.util.Dom.removeClass(
+                'lang_links_container', 'bz_default_hidden'
+            ); 
+        } 
+        YAHOO.util.Event.onDOMReady(unhide_language_selector);
+
+        
+        var BUGZILLA = {
+            param: {
+                cookiepath: '\/',
+                maxusermatches: 1000
+            },
+            constant: {
+                COMMENT_COLS: 80
+            },
+            string: {
+                
+
+                attach_desc_required:
+                    "You must enter a Description for this attachment.",
+                component_required:
+                    "You must select a Component for this bug.",
+                description_required:
+                    "You must enter a Description for this bug.",
+                short_desc_required:
+                    "You must enter a Summary for this bug.",
+                version_required:
+                    "You must select a Version for this bug."
+            }
+              , api_token: ''
+        };
+
+    if (history && history.replaceState) {
+      if(!document.location.href.match(/show_bug\.cgi/)) {
+        history.replaceState( null,
+                             "94 – Lokalizacja Nvu 0.3",
+                             "show_bug.cgi?id=94" );
+        document.title = "94 – Lokalizacja Nvu 0.3";
+      }
+      if (document.location.href.match(/show_bug\.cgi\?.*list_id=/)) {
+        var href = document.location.href;
+        href = href.replace(/[\?&]+list_id=(\d+|cookie)/, '');
+        history.replaceState(null, "94 – Lokalizacja Nvu 0.3", href);
+      }
+    }
+    YAHOO.util.Event.onDOMReady(function() {
+      initDirtyFieldTracking();
+
+    });
+    // -->
+    </script>
+<script type="text/javascript" src="data/assets/daf5e0fb6826e6a35280e622913f0c4a.js"></script>
+
+    
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+                       title="Bugzilla" href="search_plugin.cgi">
+    <link rel="shortcut icon" href="images/favicon.ico">
+  </head>
+
+  <body 
+        class="bugs-aviary-pl
+                 bz_bug
+                 bz_status_VERIFIED
+                 bz_product_Nvu_KompoZer
+                 bz_component_Og&#XF3;lne
+                 bz_bug_94 yui-skin-sam">
+
+  <div id="header"><div id="banner">
+  </div>
+
+    <div id="titles">
+      <span id="title">Bugzilla &ndash; Bug&nbsp;94</span>
+
+        <span id="subtitle" class="subheader">Lokalizacja Nvu 0.3</span>
+
+        <span id="information" class="header_addl_info">Last modified: 2009-01-01 08:23:27 CET</span>
+    </div>
+
+
+    <div id="common_links"><ul class="links">
+  <li><a href="index.html">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi.html">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi.html">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi.html">Search</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="http://bugs.aviary.pl/buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input type="hidden" id="no_redirect_top" name="no_redirect" value="0">
+    <script type="text/javascript">
+      if (history && history.replaceState) {
+        var no_redirect = document.getElementById("no_redirect_top");
+        no_redirect.value = 1;
+      }
+    </script>
+    <input class="txt" type="text" id="quicksearch_top" name="quicksearch" 
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search" 
+           id="find_top"></form>
+  <a href="page.cgi%3Fid=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="report.cgi.html">Reports</a></li>
+
+  <li>
+      <span class="separator">| </span>
+        <a href="request.cgi.html">Requests</a></li>
+
+
+  <li>
+        <span class="separator">| </span>
+        <a href="https://bugzilla.readthedocs.org/en/5.0/using/understanding.html" target="_blank">Help</a>
+      </li>
+    
+      <li id="new_account_container_top">
+        <span class="separator">| </span>
+        <a href="createaccount.cgi.html">New&nbsp;Account</a>
+      </li>
+
+    <li id="mini_login_container_top">
+  <span class="separator">| </span>
+  <a id="login_link_top" href="show_bug.cgi%3Fid=94&amp;GoAheadAndLogIn=1.html"
+     onclick="return show_mini_login_form('_top')">Log In</a>
+
+  <form action="show_bug.cgi%3Fid=94.html" method="POST"
+        class="mini_login bz_default_hidden"
+        id="mini_login_top">
+    <input id="Bugzilla_login_top" required
+           name="Bugzilla_login" class="bz_login"
+        type="email" placeholder="Email Address">
+    <input class="bz_password" name="Bugzilla_password" type="password"
+           id="Bugzilla_password_top" required
+           placeholder="Password">
+    <input type="hidden" name="Bugzilla_login_token"
+           value="1469819853-7u6c3n2dBxnsogXXoydk9gGNGq78s2Zth3XfChXCZ1I">
+    <input type="submit" name="GoAheadAndLogIn" value="Log in"
+            id="log_in_top">
+    <a href="show_bug.cgi%3Fid=94.html#" onclick="return hide_mini_login_form('_top')">[x]</a>
+  </form>
+</li>
+
+
+  <li id="forgot_container_top">
+    <span class="separator">| </span>
+    <a id="forgot_link_top" href="show_bug.cgi%3Fid=94&amp;GoAheadAndLogIn=1.html#forgot"
+       onclick="return show_forgot_form('_top')">Forgot Password</a>
+    <form action="http://bugs.aviary.pl/token.cgi" method="post" id="forgot_form_top"
+          class="mini_forgot bz_default_hidden">
+      <label for="login_top">Login:</label>
+      <input name="loginname" size="20" id="login_top" required
+          type="email" placeholder="Your Email Address">
+      <input id="forgot_button_top" value="Reset Password" type="submit">
+      <input type="hidden" name="a" value="reqpw">
+      <input type="hidden" id="token_top" name="token"
+             value="1469819853-FuYbgZuQv-kbWuQQHCRsyfAs07Oga4Kc0Qw7jbc5amU">
+      <a href="show_bug.cgi%3Fid=94.html#" onclick="return hide_forgot_form('_top')">[x]</a>
+    </form>
+  </li>
+</ul>
+    </div>
+  </div>
+
+  <div id="bugzilla-body">
+
+
+<script type="text/javascript">
+<!--
+
+//-->
+</script>
+
+<form name="changeform" id="changeform" method="post" action="http://bugs.aviary.pl/process_bug.cgi">
+
+  <input type="hidden" name="delta_ts" value="2009-01-01 08:23:27">
+  <input type="hidden" name="id" value="94">
+  <input type="hidden" name="token" value="1469819853-kMllqncXPJ6jOx9NxwPvHFYPGxVOZ6gLoLsD_XO21oA">
+<div class="bz_short_desc_container edit_form">
+     <a href="show_bug.cgi%3Fid=94.html"><b>Bug&nbsp;94</b></a> <span id="summary_container" class="bz_default_hidden">
+      - <span id="short_desc_nonedit_display">Lokalizacja Nvu 0.3</span>
+     </span>
+
+    <div id="summary_input"><span class="field_label "
+    id="field_label_short_desc">
+
+
+  <a 
+      title="The bug summary is a short sentence which succinctly describes what the bug is about."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#short_desc"
+  >Summary:</a>
+
+</span>Lokalizacja Nvu 0.3
+    </div>
+  </div>
+  <script type="text/javascript">
+    hideEditableField('summary_container',
+                      'summary_input',
+                      'summary_edit_action',
+                      'short_desc',
+                      'Lokalizacja Nvu 0.3' );
+  </script>
+  <table class="edit_form">
+    <tr>
+      
+      <td id="bz_show_bug_column_1" class="bz_show_bug_column">     
+        <table>
+          <tr>
+    <th class="field_label">
+      <a href="page.cgi%3Fid=fields.html#bug_status">Status</a>:
+    </th>
+    <td id="bz_field_status">
+      <span id="static_bug_status">VERIFIED
+          INVALID
+      </span>
+    </td>
+  </tr>
+<tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+<tr><th class="field_label "
+    id="field_label_alias">
+
+
+  <a 
+      title="A short, unique name assigned to a bug in order to assist with looking it up and referring to it in other places in Bugzilla."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#alias"
+  >Alias:</a>
+
+</th>
+    <td>
+        None
+    </td>
+  </tr>
+<tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+<tr><th class="field_label "
+    id="field_label_product">
+
+
+  <a 
+      title="Bugs are categorised into Products and Components. Select a Classification to narrow down this list."
+      class="field_help_link"
+      href="describecomponents.cgi.html"
+  >Product:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_product" >Nvu/KompoZer
+
+</td>
+    </tr>
+
+    
+    <tr class="bz_default_hidden"><th class="field_label "
+    id="field_label_classification">
+
+
+  <a 
+      title="Bugs are categorised into Classifications, Products and Components. classifications is the top-level categorisation."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#classification"
+  >Classification:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_classification" >Archiwum
+
+</td>
+    </tr>
+        
+    
+    
+    <tr><th class="field_label "
+    id="field_label_component">
+
+
+  <a 
+      title="Components are second-level categories; each belongs to a particular Product. Select a Product to narrow down this list."
+      class="field_help_link"
+      href="describecomponents.cgi%3Fproduct=Nvu%252FKompoZer.html"
+  >Component:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_component" >Ogólne
+
+  (<a href="buglist.cgi%3Fcomponent=Ogólne&amp;product=Nvu%252FKompoZer&amp;bug_status=__open__.html"
+      target="_blank">show other bugs</a>)
+</td>
+    </tr>
+    <tr><th class="field_label "
+    id="field_label_version">
+
+
+  <a 
+      title="The version field defines the version of the software the bug was found in."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#version"
+  >Version:</a>
+
+</th>
+<td>nieokreślona
+  </td>
+    </tr>
+        
+    
+        
+    <tr><th class="field_label "
+    id="field_label_rep_platform">
+
+
+  <a 
+      title="The hardware platform the bug was observed on. Note: When searching, selecting the option &quot;All&quot; only finds bugs whose value for this field is literally the word &quot;All&quot;."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#rep_platform"
+  >Hardware:</a>
+
+</th>
+      <td class="field_value">Wszystkie
+        Wszystkie
+      </td>
+    </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          
+          <tr>
+      <th class="field_label">
+        <label  accesskey="i">
+          <a href="page.cgi%3Fid=fields.html#importance"><u>I</u>mportance</a></label>:
+      </th>
+      <td>P2
+       trywialny
+      </td>
+    </tr>
+          
+          <tr><th class="field_label "
+    id="field_label_assigned_to">
+
+
+  <a 
+      title="The person in charge of resolving the bug."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#assigned_to"
+  >Assignee:</a>
+
+</th>
+      <td><span class="vcard"><span class="fn">Domel</span>
+</span>
+      </td>
+    </tr>
+
+    <tr><th class="field_label "
+    id="field_label_qa_contact">
+
+
+  <a 
+      title="The person responsible for confirming this bug if it is unconfirmed, and for verifying the fix once the bug has been resolved."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#qa_contact"
+  >QA Contact:</a>
+
+</th>
+      <td><span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+      </td>
+    </tr>
+    <script type="text/javascript">
+      assignToDefaultOnChange(['product', 'component'],
+        'gandalf\x40aviary.pl',
+        'nvu-kompozer\x40l10n.bledy');
+    </script>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          <tr><th class="field_label "
+    id="field_label_bug_file_loc">
+
+
+  <a 
+      title="Bugs can have a URL associated with them - for example, a pointer to a web site where the problem is seen."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#bug_file_loc"
+  >URL:</a>
+
+</th>
+    <td>
+      <span id="bz_url_input_area">
+          <a href="http://nvu.com"
+             rel="noreferrer">http://nvu.com</a>
+      </span>
+    </td>
+  </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+
+          
+<tr><th class="field_label "
+    id="field_label_dependson">
+
+
+  <a 
+      title="The bugs listed here must be resolved before this bug can be resolved."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#dependson"
+  >Depends on:</a>
+
+</th>
+
+  <td>
+    <span id="dependson_input_area">
+    </span>
+
+  </td>
+  </tr>
+  
+  <tr><th class="field_label "
+    id="field_label_blocked">
+
+
+  <a 
+      title="This bug must be resolved before the bugs listed in this field can be resolved."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#blocked"
+  >Blocks:</a>
+
+</th>
+
+  <td>
+    <span id="blocked_input_area">
+    </span>
+
+  </td>
+  </tr>
+          
+        </table>
+      </td>
+      <td>
+        <div class="bz_column_spacer">&nbsp;</div>
+      </td>
+      
+      <td id="bz_show_bug_column_2" class="bz_show_bug_column">
+        <table>
+        <tr>
+    <th class="field_label">
+      Reported:
+    </th>
+    <td>2004-06-14 10:32 CEST by <span class="vcard"><span class="fn">Domel</span>
+</span>
+    </td>
+  </tr>
+  
+  <tr>
+    <th class="field_label">
+      Modified:
+    </th>
+    <td>2009-01-01 08:23 CET
+      (<a href="show_activity.cgi%3Fid=94.html">History</a>)
+    </td>
+  
+  </tr>
+<tr>
+      <th class="field_label">
+        <label  accesskey="a">
+          CC List:
+        </label>
+      </th>
+      <td>6 
+          users
+          <span id="cc_edit_area_showhide_container" class="bz_default_hidden">
+            (<a href="show_bug.cgi%3Fid=94.html#" id="cc_edit_area_showhide">show</a>)
+          </span>
+        <div id="cc_edit_area">
+          <br>
+            <select id="cc" multiple="multiple" size="5" >
+                <option value="akalla">akalla</option>
+                <option value="cleriic">cleriic</option>
+                <option value="gandalf">gandalf</option>
+                <option value="hubert+bap">hubert+bap</option>
+                <option value="jklawiter">jklawiter</option>
+                <option value="mszpak">mszpak</option>
+            </select>
+        </div>
+          <script type="text/javascript">
+            hideEditableField( 'cc_edit_area_showhide_container', 
+                               'cc_edit_area', 
+                               'cc_edit_area_showhide', 
+                               '', 
+                               '');  
+          </script>
+      </td>
+    </tr>
+
+<tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+<tr><th class="field_label "
+    id="field_label_see_also">
+
+
+  <a 
+      title="This allows you to refer to bugs in other installations. You can enter a URL to a bug in the 'Add Bug URLs' field to note that that bug is related to this one. You can enter multiple URLs at once by separating them with whitespace. You should normally use this field to refer to bugs in other installations. For bugs in this installation, it is better to use the Depends on and Blocks fields."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#see_also"
+  >See Also:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_see_also" >
+
+</td>
+    </tr> 
+
+<tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+
+
+
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+          <hr id="bz_top_half_spacer">
+      </td>
+    </tr>
+  </table>
+
+  <table id="bz_big_form_parts">
+  <tr>
+  <td>
+
+    
+<script type="text/javascript">
+<!--
+function toggle_display(link) {
+    var table = document.getElementById("attachment_table");
+    var view_all = document.getElementById("view_all");
+    var hide_obsolete_url_parameter = "&hide_obsolete=1";
+    // Store current height for scrolling later
+    var originalHeight = table.offsetHeight;
+    var rows = YAHOO.util.Dom.getElementsByClassName(
+        'bz_tr_obsolete', 'tr', table);
+
+    for (var i = 0; i < rows.length; i++) {
+        bz_toggleClass(rows[i], 'bz_default_hidden');
+    }
+
+    if (YAHOO.util.Dom.hasClass(rows[0], 'bz_default_hidden')) {
+        link.innerHTML = "Show Obsolete";
+        view_all.href = view_all.href + hide_obsolete_url_parameter 
+    }
+    else {
+        link.innerHTML = "Hide Obsolete";
+        view_all.href = view_all.href.replace(hide_obsolete_url_parameter,"");
+    }
+
+    var newHeight = table.offsetHeight;
+    // This scrolling makes the window appear to not move at all.
+    window.scrollBy(0, newHeight - originalHeight);
+
+    return false;
+}
+//-->
+</script>
+
+<br>
+<table id="attachment_table">
+  <tr id="a0">
+    <th colspan="3" class="left">
+      Attachments
+    </th>
+  </tr>
+
+
+      <tr id="a1" class="bz_contenttype_application_zip">
+        <td>
+            <a href="attachment.cgi%3Fid=94"
+               title="View the content of the attachment">
+          <b>Tłumaczenie folderu wallet na język polski</b></a>
+
+          <span class="bz_attach_extra_info">
+              (6.65 KB,
+                application/zip)
+
+            <br>
+            <a href="show_bug.cgi%3Fid=94.html#attach_94"
+               title="Go to the comment associated with the attachment">2004-06-27 21:09 CEST</a>,
+
+            <span class="vcard"><span class="fn">Paweł Swaczyna</span>
+</span>
+          </span>
+        </td>
+
+          <td class="bz_attach_flags">
+              <i>no flags</i>
+          </td>
+
+        <td>
+          <a href="attachment.cgi%3Fid=94&amp;action=edit.html">Details</a>
+        </td>
+      </tr>
+      <tr id="a2" class="bz_contenttype_application_zip">
+        <td>
+            <a href="attachment.cgi%3Fid=96"
+               title="View the content of the attachment">
+          <b>en-US.jar\autoconfig</b></a>
+
+          <span class="bz_attach_extra_info">
+              (908 bytes,
+                application/zip)
+
+            <br>
+            <a href="show_bug.cgi%3Fid=94.html#attach_96"
+               title="Go to the comment associated with the attachment">2004-06-29 21:40 CEST</a>,
+
+            <span class="vcard"><span class="fn">Piotr Pielach</span>
+</span>
+          </span>
+        </td>
+
+          <td class="bz_attach_flags">
+              <i>no flags</i>
+          </td>
+
+        <td>
+          <a href="attachment.cgi%3Fid=96&amp;action=edit.html">Details</a>
+        </td>
+      </tr>
+      <tr id="a3" class="bz_contenttype_application_zip">
+        <td>
+            <a href="attachment.cgi%3Fid=97"
+               title="View the content of the attachment">
+          <b>en-US.jar\cookie\</b></a>
+
+          <span class="bz_attach_extra_info">
+              (6.93 KB,
+                application/zip)
+
+            <br>
+            <a href="show_bug.cgi%3Fid=94.html#attach_97"
+               title="Go to the comment associated with the attachment">2004-06-29 21:42 CEST</a>,
+
+            <span class="vcard"><span class="fn">Piotr Pielach</span>
+</span>
+          </span>
+        </td>
+
+          <td class="bz_attach_flags">
+              <i>no flags</i>
+          </td>
+
+        <td>
+          <a href="attachment.cgi%3Fid=97&amp;action=edit.html">Details</a>
+        </td>
+      </tr>
+      <tr id="a4" class="bz_contenttype_application_zip">
+        <td>
+            <a href="attachment.cgi%3Fid=98"
+               title="View the content of the attachment">
+          <b>en-US.jar\communicator\</b></a>
+
+          <span class="bz_attach_extra_info">
+              (15.61 KB,
+                application/zip)
+
+            <br>
+            <a href="show_bug.cgi%3Fid=94.html#attach_98"
+               title="Go to the comment associated with the attachment">2004-06-29 21:58 CEST</a>,
+
+            <span class="vcard"><span class="fn">Piotr Pielach</span>
+</span>
+          </span>
+        </td>
+
+          <td class="bz_attach_flags">
+              <i>no flags</i>
+          </td>
+
+        <td>
+          <a href="attachment.cgi%3Fid=98&amp;action=edit.html">Details</a>
+        </td>
+      </tr>
+      <tr id="a5" class="bz_contenttype_application_x-zip-compressed">
+        <td>
+            <a href="attachment.cgi%3Fid=99"
+               title="View the content of the attachment">
+          <b>en-US.jar\communicator\wallet</b></a>
+
+          <span class="bz_attach_extra_info">
+              (7.79 KB,
+                application/x-zip-compressed)
+
+            <br>
+            <a href="show_bug.cgi%3Fid=94.html#attach_99"
+               title="Go to the comment associated with the attachment">2004-06-29 22:04 CEST</a>,
+
+            <span class="vcard"><span class="fn">Piotr Pielach</span>
+</span>
+          </span>
+        </td>
+
+          <td class="bz_attach_flags">
+              <i>no flags</i>
+          </td>
+
+        <td>
+          <a href="attachment.cgi%3Fid=99&amp;action=edit.html">Details</a>
+        </td>
+      </tr>
+      <tr id="a6" class="bz_contenttype_application_x-zip-compressed">
+        <td>
+            <a href="attachment.cgi%3Fid=100"
+               title="View the content of the attachment">
+          <b>en-US.jar\communicator\sidebar</b></a>
+
+          <span class="bz_attach_extra_info">
+              (4.03 KB,
+                application/x-zip-compressed)
+
+            <br>
+            <a href="show_bug.cgi%3Fid=94.html#attach_100"
+               title="Go to the comment associated with the attachment">2004-06-29 22:10 CEST</a>,
+
+            <span class="vcard"><span class="fn">Piotr Pielach</span>
+</span>
+          </span>
+        </td>
+
+          <td class="bz_attach_flags">
+              <i>no flags</i>
+          </td>
+
+        <td>
+          <a href="attachment.cgi%3Fid=100&amp;action=edit.html">Details</a>
+        </td>
+      </tr>
+      <tr id="a7" class="bz_contenttype_application_octet-stream bz_tr_obsolete bz_default_hidden">
+        <td>
+            <a href="attachment.cgi%3Fid=101"
+               title="View the content of the attachment">
+          <b><span class="bz_obsolete">pl-unix.jar</span></b></a>
+
+          <span class="bz_attach_extra_info">
+              (5.93 KB,
+                application/octet-stream)
+
+            <br>
+            <a href="show_bug.cgi%3Fid=94.html#attach_101"
+               title="Go to the comment associated with the attachment">2004-06-29 22:33 CEST</a>,
+
+            <span class="vcard"><span class="fn">Staś Małolepszy :stas</span>
+</span>
+          </span>
+        </td>
+
+          <td class="bz_attach_flags">
+              <i>no flags</i>
+          </td>
+
+        <td>
+          <a href="attachment.cgi%3Fid=101&amp;action=edit.html">Details</a>
+        </td>
+      </tr>
+      <tr id="a8" class="bz_contenttype_application_octet-stream bz_tr_obsolete bz_default_hidden">
+        <td>
+            <a href="attachment.cgi%3Fid=102"
+               title="View the content of the attachment">
+          <b><span class="bz_obsolete">pl-mac.jar</span></b></a>
+
+          <span class="bz_attach_extra_info">
+              (5.37 KB,
+                application/octet-stream)
+
+            <br>
+            <a href="show_bug.cgi%3Fid=94.html#attach_102"
+               title="Go to the comment associated with the attachment">2004-06-29 22:34 CEST</a>,
+
+            <span class="vcard"><span class="fn">Staś Małolepszy :stas</span>
+</span>
+          </span>
+        </td>
+
+          <td class="bz_attach_flags">
+              <i>no flags</i>
+          </td>
+
+        <td>
+          <a href="attachment.cgi%3Fid=102&amp;action=edit.html">Details</a>
+        </td>
+      </tr>
+      <tr id="a9" class="bz_contenttype_application_octet-stream bz_tr_obsolete bz_default_hidden">
+        <td>
+            <a href="attachment.cgi%3Fid=103"
+               title="View the content of the attachment">
+          <b><span class="bz_obsolete">pl-win.jar</span></b></a>
+
+          <span class="bz_attach_extra_info">
+              (5.77 KB,
+                application/octet-stream)
+
+            <br>
+            <a href="show_bug.cgi%3Fid=94.html#attach_103"
+               title="Go to the comment associated with the attachment">2004-06-29 22:34 CEST</a>,
+
+            <span class="vcard"><span class="fn">Staś Małolepszy :stas</span>
+</span>
+          </span>
+        </td>
+
+          <td class="bz_attach_flags">
+              <i>no flags</i>
+          </td>
+
+        <td>
+          <a href="attachment.cgi%3Fid=103&amp;action=edit.html">Details</a>
+        </td>
+      </tr>
+      <tr id="a10" class="bz_contenttype_application_x-zip-compressed">
+        <td>
+            <a href="attachment.cgi%3Fid=104"
+               title="View the content of the attachment">
+          <b>en-US.jar\communicator\profile</b></a>
+
+          <span class="bz_attach_extra_info">
+              (5.48 KB,
+                application/x-zip-compressed)
+
+            <br>
+            <a href="show_bug.cgi%3Fid=94.html#attach_104"
+               title="Go to the comment associated with the attachment">2004-06-29 22:36 CEST</a>,
+
+            <span class="vcard"><span class="fn">Piotr Pielach</span>
+</span>
+          </span>
+        </td>
+
+          <td class="bz_attach_flags">
+              <i>no flags</i>
+          </td>
+
+        <td>
+          <a href="attachment.cgi%3Fid=104&amp;action=edit.html">Details</a>
+        </td>
+      </tr>
+      <tr id="a11" class="bz_contenttype_application_zip">
+        <td>
+            <a href="attachment.cgi%3Fid=106"
+               title="View the content of the attachment">
+          <b>pl-mac.zip</b></a>
+
+          <span class="bz_attach_extra_info">
+              (6.61 KB,
+                application/zip)
+
+            <br>
+            <a href="show_bug.cgi%3Fid=94.html#attach_106"
+               title="Go to the comment associated with the attachment">2004-07-03 23:22 CEST</a>,
+
+            <span class="vcard"><span class="fn">Staś Małolepszy :stas</span>
+</span>
+          </span>
+        </td>
+
+          <td class="bz_attach_flags">
+              <i>no flags</i>
+          </td>
+
+        <td>
+          <a href="attachment.cgi%3Fid=106&amp;action=edit.html">Details</a>
+        </td>
+      </tr>
+      <tr id="a12" class="bz_contenttype_application_zip">
+        <td>
+            <a href="attachment.cgi%3Fid=107"
+               title="View the content of the attachment">
+          <b>pl-unix.zip</b></a>
+
+          <span class="bz_attach_extra_info">
+              (7.02 KB,
+                application/zip)
+
+            <br>
+            <a href="show_bug.cgi%3Fid=94.html#attach_107"
+               title="Go to the comment associated with the attachment">2004-07-03 23:23 CEST</a>,
+
+            <span class="vcard"><span class="fn">Staś Małolepszy :stas</span>
+</span>
+          </span>
+        </td>
+
+          <td class="bz_attach_flags">
+              <i>no flags</i>
+          </td>
+
+        <td>
+          <a href="attachment.cgi%3Fid=107&amp;action=edit.html">Details</a>
+        </td>
+      </tr>
+      <tr id="a13" class="bz_contenttype_application_zip">
+        <td>
+            <a href="attachment.cgi%3Fid=108"
+               title="View the content of the attachment">
+          <b>pl-win.zip</b></a>
+
+          <span class="bz_attach_extra_info">
+              (7.00 KB,
+                application/zip)
+
+            <br>
+            <a href="show_bug.cgi%3Fid=94.html#attach_108"
+               title="Go to the comment associated with the attachment">2004-07-03 23:23 CEST</a>,
+
+            <span class="vcard"><span class="fn">Staś Małolepszy :stas</span>
+</span>
+          </span>
+        </td>
+
+          <td class="bz_attach_flags">
+              <i>no flags</i>
+          </td>
+
+        <td>
+          <a href="attachment.cgi%3Fid=108&amp;action=edit.html">Details</a>
+        </td>
+      </tr>
+      <tr id="a14" class="bz_contenttype_application_octet-stream">
+        <td>
+            <a href="attachment.cgi%3Fid=109"
+               title="View the content of the attachment">
+          <b>Katalog global PL</b></a>
+
+          <span class="bz_attach_extra_info">
+              (27.25 KB,
+                application/octet-stream)
+
+            <br>
+            <a href="show_bug.cgi%3Fid=94.html#attach_109"
+               title="Go to the comment associated with the attachment">2004-07-05 21:22 CEST</a>,
+
+            <span class="vcard"><span class="fn">Szpak</span>
+</span>
+          </span>
+        </td>
+
+          <td class="bz_attach_flags">
+              <i>no flags</i>
+          </td>
+
+        <td>
+          <a href="attachment.cgi%3Fid=109&amp;action=edit.html">Details</a>
+        </td>
+      </tr>
+      <tr id="a15" class="bz_contenttype_application_x-zip-compressed">
+        <td>
+            <a href="attachment.cgi%3Fid=110"
+               title="View the content of the attachment">
+          <b>en-US.jar\communicator\pref</b></a>
+
+          <span class="bz_attach_extra_info">
+              (27.95 KB,
+                application/x-zip-compressed)
+
+            <br>
+            <a href="show_bug.cgi%3Fid=94.html#attach_110"
+               title="Go to the comment associated with the attachment">2004-07-11 14:21 CEST</a>,
+
+            <span class="vcard"><span class="fn">Piotr Pielach</span>
+</span>
+          </span>
+        </td>
+
+          <td class="bz_attach_flags">
+              <i>no flags</i>
+          </td>
+
+        <td>
+          <a href="attachment.cgi%3Fid=110&amp;action=edit.html">Details</a>
+        </td>
+      </tr>
+      <tr id="a16" class="bz_contenttype_application_x-zip-compressed">
+        <td>
+            <a href="attachment.cgi%3Fid=111"
+               title="View the content of the attachment">
+          <b>en-US.jar\communicator\</b></a>
+
+          <span class="bz_attach_extra_info">
+              (2.14 KB,
+                application/x-zip-compressed)
+
+            <br>
+            <a href="show_bug.cgi%3Fid=94.html#attach_111"
+               title="Go to the comment associated with the attachment">2004-07-11 14:36 CEST</a>,
+
+            <span class="vcard"><span class="fn">Piotr Pielach</span>
+</span>
+          </span>
+        </td>
+
+          <td class="bz_attach_flags">
+              <i>no flags</i>
+          </td>
+
+        <td>
+          <a href="attachment.cgi%3Fid=111&amp;action=edit.html">Details</a>
+        </td>
+      </tr>
+      <tr id="a17" class="bz_contenttype_application_octet-stream">
+        <td>
+            <a href="attachment.cgi%3Fid=112"
+               title="View the content of the attachment">
+          <b>Katalog cascades</b></a>
+
+          <span class="bz_attach_extra_info">
+              (42.07 KB,
+                application/octet-stream)
+
+            <br>
+            <a href="show_bug.cgi%3Fid=94.html#attach_112"
+               title="Go to the comment associated with the attachment">2004-07-11 15:42 CEST</a>,
+
+            <span class="vcard"><span class="fn">Szpak</span>
+</span>
+          </span>
+        </td>
+
+          <td class="bz_attach_flags">
+              <i>no flags</i>
+          </td>
+
+        <td>
+          <a href="attachment.cgi%3Fid=112&amp;action=edit.html">Details</a>
+        </td>
+      </tr>
+      <tr id="a18" class="bz_contenttype_application_x-zip-compressed">
+        <td>
+            <a href="attachment.cgi%3Fid=113"
+               title="View the content of the attachment">
+          <b>en-US.jar\communicator\</b></a>
+
+          <span class="bz_attach_extra_info">
+              (10.79 KB,
+                application/x-zip-compressed)
+
+            <br>
+            <a href="show_bug.cgi%3Fid=94.html#attach_113"
+               title="Go to the comment associated with the attachment">2004-07-11 16:04 CEST</a>,
+
+            <span class="vcard"><span class="fn">Piotr Pielach</span>
+</span>
+          </span>
+        </td>
+
+          <td class="bz_attach_flags">
+              <i>no flags</i>
+          </td>
+
+        <td>
+          <a href="attachment.cgi%3Fid=113&amp;action=edit.html">Details</a>
+        </td>
+      </tr>
+      <tr id="a19" class="bz_contenttype_application_x-zip-compressed">
+        <td>
+            <a href="attachment.cgi%3Fid=114"
+               title="View the content of the attachment">
+          <b>en-US.jar\editor\</b></a>
+
+          <span class="bz_attach_extra_info">
+              (64.93 KB,
+                application/x-zip-compressed)
+
+            <br>
+            <a href="show_bug.cgi%3Fid=94.html#attach_114"
+               title="Go to the comment associated with the attachment">2004-07-11 22:12 CEST</a>,
+
+            <span class="vcard"><span class="fn">Piotr Pielach</span>
+</span>
+          </span>
+        </td>
+
+          <td class="bz_attach_flags">
+              <i>no flags</i>
+          </td>
+
+        <td>
+          <a href="attachment.cgi%3Fid=114&amp;action=edit.html">Details</a>
+        </td>
+      </tr>
+
+  <tr class="bz_attach_footer">
+    <td colspan="3">
+        <span class="bz_attach_view_hide">
+            <a href="show_bug.cgi%3Fid=94.html#a0" onclick="return toggle_display(this);">Show
+              Obsolete</a> (3)
+            <a id="view_all" href="attachment.cgi%3Fbugid=94&amp;action=viewall&amp;hide_obsolete=1.html">View All</a>
+        </span>
+        <a href="attachment.cgi%3Fbugid=94&amp;action=enter.html">Add an attachment</a>
+        (proposed patch, testcase, etc.)
+    </td>
+  </tr>
+</table>
+<br>
+
+  </td>
+  <td>
+  </td>
+  </tr></table>
+
+  
+  <div id="comments"><script src="js/comments.js" type="text/javascript">
+</script>
+
+<script type="text/javascript">
+<!--
+  /* Adds the reply text to the 'comment' textarea */
+  function replyToComment(id, real_id, name) {
+      var prefix = "(In reply to " + name + " from comment #" + id + ")\n";
+      var replytext = "";
+        /* pre id="comment_name_N" */
+        var text_elem = document.getElementById('comment_text_'+id);
+        var text = getText(text_elem);
+        replytext = prefix + wrapReplyText(text);
+
+
+      /* <textarea id="comment"> */
+      var textarea = document.getElementById('comment');
+      if (textarea.value != replytext) {
+          textarea.value += replytext;
+      }
+
+      textarea.focus();
+  } 
+//-->
+</script>
+
+
+<!-- This auto-sizes the comments and positions the collapse/expand links 
+     to the right. -->
+<table class="bz_comment_table">
+<tr>
+<td>
+<div id="c0" class="bz_comment bz_first_comment">
+
+      <div class="bz_first_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=94.html#c0">Description</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Domel</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-06-14 10:32:58 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Poszukiwane sa osoby, ktore pomogly by w tlumaczeniu nvu 0.3.</pre>
+    </div>
+
+    <div id="c1" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=94.html#c1">Comment 1</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-06-14 20:32:15 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">ccing me</pre>
+    </div>
+
+    <div id="c2" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=94.html#c2">Comment 2</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Piotr Pielach</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-06-16 13:11:15 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Jestem gotów :)
+
+Co? Jak? Gdzie? i kiedy zaczynamy?</pre>
+    </div>
+
+    <div id="c3" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=94.html#c3">Comment 3</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Domel</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-06-18 12:21:53 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">konferencja na jabberze w piatek (18 czerwiec 2004) o 19:00
+serwer: chrome.pl
+pokoj: nvu
+
+Jesli ktos nie moze to prosze o kontakt na jabberze domel [na] chrome.pl</pre>
+    </div>
+
+    <div id="c4" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=94.html#c4">Comment 4</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Domel</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-06-18 12:33:15 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Przepraszam serwer podany wyzej jest nieprawidlowy
+_powinno byc_
+chat.chrome.pl</pre>
+    </div>
+
+    <div id="c5" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=94.html#c5">Comment 5</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-06-20 22:43:26 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Domel:
+<a href="http://webperso.easyconnect.fr/danielglazman/weblog/dotclear/index.php?2004/06/20/397-nvu-localization">http://webperso.easyconnect.fr/danielglazman/weblog/dotclear/index.php?2004/06/20/397-nvu-localization</a>
+
+Zglaszales juz?</pre>
+    </div>
+
+    <div id="c6" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=94.html#c6">Comment 6</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Paweł Swaczyna</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-06-27 21:09:12 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Created <span class=""><a href="attachment.cgi%3Fid=94" name="attach_94" title="Tłumaczenie folderu wallet na język polski">attachment 94</a> <a href="attachment.cgi%3Fid=94&amp;action=edit.html" title="Tłumaczenie folderu wallet na język polski">[details]</a></span>
+Tłumaczenie folderu wallet na język polski
+
+Plik spakowny ZIPem tłumaczenia folderu
+{NVU}/chrome/en-US.jar/locale/en-US/wallet
+
+Zawartość stringów identyczna z wersją przetłumaczoną NVU pl-PL 0.1</pre>
+    </div>
+
+    <div id="c7" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=94.html#c7">Comment 7</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Domel</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-06-27 22:41:23 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Bardzo prosze wysylanie tlumaczen w zalacznikach na bugzille tak jak zrobil to
+Paweł Swaczyna to znaczy: pojedynczy katalog spakowany zipem (moze byc inny
+paker ale niech bedzie cywilizowany ;) ). Pakujemy po jednym katalogu! (czyli
+jak ktos tlumaczy np 3 katalogi to niech wysyla 3 zalaczniki). Prosilbym bardzo
+to rowniez wysylac na maila ddooss // wp.pl</pre>
+    </div>
+
+    <div id="c8" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=94.html#c8">Comment 8</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Piotr Pielach</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-06-29 21:40:41 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Created <span class=""><a href="attachment.cgi%3Fid=96" name="attach_96" title="en-US.jar\autoconfig">attachment 96</a> <a href="attachment.cgi%3Fid=96&amp;action=edit.html" title="en-US.jar\autoconfig">[details]</a></span>
+en-US.jar\autoconfig</pre>
+    </div>
+
+    <div id="c9" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=94.html#c9">Comment 9</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Piotr Pielach</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-06-29 21:42:49 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Created <span class=""><a href="attachment.cgi%3Fid=97" name="attach_97" title="en-US.jar\cookie\">attachment 97</a> <a href="attachment.cgi%3Fid=97&amp;action=edit.html" title="en-US.jar\cookie\">[details]</a></span>
+en-US.jar\cookie\
+
+\cookie\ - prawdopodobnie nie używany, choć zmienił się od 0.1
+\autoconfig\ (powyżej wrzucony) - prawdopodobnie nie używany, nie zmienił
+się od 0.1</pre>
+    </div>
+
+    <div id="c10" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=94.html#c10">Comment 10</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Piotr Pielach</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-06-29 21:58:39 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Created <span class=""><a href="attachment.cgi%3Fid=98" name="attach_98" title="en-US.jar\communicator\">attachment 98</a> <a href="attachment.cgi%3Fid=98&amp;action=edit.html" title="en-US.jar\communicator\">[details]</a></span>
+en-US.jar\communicator\
+
+en-US.jar\communicator\
+
+Spakowanych kilka podfolderów folderu communicator, które nie zmieniły się
+od 0.1 i wydaje mi się że też nie są używane.
+(directory, downloadmanager, layout, search, security, webservices, xml,
+xpinstall)</pre>
+    </div>
+
+    <div id="c11" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=94.html#c11">Comment 11</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Piotr Pielach</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-06-29 22:04:48 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Created <span class=""><a href="attachment.cgi%3Fid=99" name="attach_99" title="en-US.jar\communicator\wallet">attachment 99</a> <a href="attachment.cgi%3Fid=99&amp;action=edit.html" title="en-US.jar\communicator\wallet">[details]</a></span>
+en-US.jar\communicator\wallet
+
+W większości powtórka ze stringów z 0.1, + kilka nowych używanych.
+Pliki: SignonViewer.dtd, SignonViewer.properties, wallet.properties
+przetłumaczone są w całości.
+Pliki: CookieViewer.dtd, WalletViewer.dtd, CookieViewer.properties - zmieniły
+się od 0.1 - nie są przetłumaczone [chyba nieużywane]
+Pozostałe pliki - nie zmieniły się, nie używane</pre>
+    </div>
+
+    <div id="c12" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=94.html#c12">Comment 12</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Jakub Klawiter</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-06-29 22:07:57 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">CC</pre>
+    </div>
+
+    <div id="c13" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=94.html#c13">Comment 13</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Piotr Pielach</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-06-29 22:10:06 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Created <span class=""><a href="attachment.cgi%3Fid=100" name="attach_100" title="en-US.jar\communicator\sidebar">attachment 100</a> <a href="attachment.cgi%3Fid=100&amp;action=edit.html" title="en-US.jar\communicator\sidebar">[details]</a></span>
+en-US.jar\communicator\sidebar
+
+Plik: SidebarOverlay.dtd - właściwie to samo co 0.1, choć niektóre stringi
+wydają mi się nie używane
+Pozostałe pliki nie zmieniły sięod 0.1, nie przetłumaczone, nie używane</pre>
+    </div>
+
+    <div id="c14" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=94.html#c14">Comment 14</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Staś Małolepszy :stas</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-06-29 22:33:31 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Created <span class="bz_obsolete"><a href="attachment.cgi%3Fid=101" name="attach_101" title="pl-unix.jar">attachment 101</a> <a href="attachment.cgi%3Fid=101&amp;action=edit.html" title="pl-unix.jar">[details]</a></span>
+pl-unix.jar</pre>
+    </div>
+
+    <div id="c15" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=94.html#c15">Comment 15</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Staś Małolepszy :stas</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-06-29 22:34:07 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Created <span class="bz_obsolete"><a href="attachment.cgi%3Fid=102" name="attach_102" title="pl-mac.jar">attachment 102</a> <a href="attachment.cgi%3Fid=102&amp;action=edit.html" title="pl-mac.jar">[details]</a></span>
+pl-mac.jar</pre>
+    </div>
+
+    <div id="c16" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=94.html#c16">Comment 16</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Staś Małolepszy :stas</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-06-29 22:34:26 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Created <span class="bz_obsolete"><a href="attachment.cgi%3Fid=103" name="attach_103" title="pl-win.jar">attachment 103</a> <a href="attachment.cgi%3Fid=103&amp;action=edit.html" title="pl-win.jar">[details]</a></span>
+pl-win.jar</pre>
+    </div>
+
+    <div id="c17" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=94.html#c17">Comment 17</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Piotr Pielach</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-06-29 22:36:24 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Created <span class=""><a href="attachment.cgi%3Fid=104" name="attach_104" title="en-US.jar\communicator\profile">attachment 104</a> <a href="attachment.cgi%3Fid=104&amp;action=edit.html" title="en-US.jar\communicator\profile">[details]</a></span>
+en-US.jar\communicator\profile
+
+Większość stringów z 0.1 + kilka nowych/zmienionych
+Plik: migration.properties - nie przetłumaczony (jak w 0.1), prawdopodobnie
+nie używany</pre>
+    </div>
+
+    <div id="c18" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=94.html#c18">Comment 18</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Staś Małolepszy :stas</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-06-29 22:40:47 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">miałem do zrobienia:
+en-unix.jar, en-win.jar i en-mac.jar
+Przejrzałem je wszystkie i wyszło mi, że od czasów 0.1 nic się nie zmieniło.
+Załączam tu pliki z paczki z 0.1, by nie było bałaganu i żeby Domel nie musiał
+później szukać gdzies indziej.
+
+W praniu wyjdzie, czy na pewno wszystko jest tak samo. Bo chyba Domel to złoży
+raz, a pózniej raz jeszcze sprawdzimy wszystko i ewentualnie dotłumaczymy, tak?
+
+Porozglądałem sie też po en-US.jar/editor i widzę, że tam wszystko prawie
+przetłumaczone oprócz plików związanych jakoś z drukowaniem. Rozumiem, że tak ma
+być?
+
+W niektórych plikach pojawia się &quot;intl.charset.default=ISO-8859-1&quot; (np.
+global-platform/intl.properties, navigator-platform/navigator.properties) Czy
+cos z tym trzeba zrobić?
+
+Pierwszy raz robię coś takiego, stąd tyle pytań.. Poza tym, strasznie ciężko
+poruszać mi się jest w tym gąszczu katalogów, wersji, języków.. jednym słowem -
+gubię się. Zdecydowanie łatwiej pracuje mi się z helpem fx.;) Może nim właśnie
+powinienem się zajać?</pre>
+    </div>
+
+    <div id="c19" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=94.html#c19">Comment 19</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Piotr Pielach</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-06-29 23:09:24 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text"> 
+<span class="quote">&gt; Porozglądałem sie też po en-US.jar/editor i widzę, że tam wszystko prawie
+&gt; przetłumaczone oprócz plików związanych jakoś z drukowaniem. Rozumiem, 
+&gt; że tak ma być?</span >
+
+Ten folder jest w trakcie tłumaczenia... Praktycznie każdy plik będzie w nim
+przetłumaczony...</pre>
+    </div>
+
+    <div id="c20" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=94.html#c20">Comment 20</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Domel</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-07-01 13:58:17 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(W odpowiedzi na komentarz #18)
+<span class="quote">&gt; Pierwszy raz robię coś takiego, stąd tyle pytań.. Poza tym, strasznie ciężko
+&gt; poruszać mi się jest w tym gąszczu katalogów, wersji, języków.. jednym słowem -
+&gt; gubię się. Zdecydowanie łatwiej pracuje mi się z helpem fx.;) </span >
+Sluze pomoca, jesli czegos nie wiesz napewno Ci pomozemy. Pisz na bugzilli lub
+wal do mnie na jabbera :)
+
+<span class="quote">&gt; Może nim właśnie
+&gt; powinienem się zajać?</span >
+Hmm... Decyzje musisz podjac sam. Oczywisice nie ukrywam, ze bylo by mi smutno
+ze jeden z najlepszych tlumaczy odchodzi z zespolu... 
+
+</pre>
+    </div>
+
+    <div id="c21" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=94.html#c21">Comment 21</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Staś Małolepszy :stas</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-07-03 23:22:48 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Created <span class=""><a href="attachment.cgi%3Fid=106" name="attach_106" title="pl-mac.zip">attachment 106</a> <a href="attachment.cgi%3Fid=106&amp;action=edit.html" title="pl-mac.zip">[details]</a></span>
+pl-mac.zip</pre>
+    </div>
+
+    <div id="c22" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=94.html#c22">Comment 22</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Staś Małolepszy :stas</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-07-03 23:23:26 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Created <span class=""><a href="attachment.cgi%3Fid=107" name="attach_107" title="pl-unix.zip">attachment 107</a> <a href="attachment.cgi%3Fid=107&amp;action=edit.html" title="pl-unix.zip">[details]</a></span>
+pl-unix.zip</pre>
+    </div>
+
+    <div id="c23" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=94.html#c23">Comment 23</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Staś Małolepszy :stas</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-07-03 23:23:46 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Created <span class=""><a href="attachment.cgi%3Fid=108" name="attach_108" title="pl-win.zip">attachment 108</a> <a href="attachment.cgi%3Fid=108&amp;action=edit.html" title="pl-win.zip">[details]</a></span>
+pl-win.zip</pre>
+    </div>
+
+    <div id="c24" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=94.html#c24">Comment 24</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Staś Małolepszy :stas</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-07-03 23:27:32 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Dodałem raz jeszcze te trzy katalogi, tym razem spakowane zipem, bo mój paker
+chyba coś psuje i potem jako jar nie chce mi to dzialać.
+   Wszystko przetłumaczyłem ręcznie, nie powinno być z tym problemów, ale tak
+jak mówię - nie miałem mozliwości sprawdzenia tego w działającym nvu.
+
+Jutro wyjeżdżam na dwa tygodnie, więc to jakby koniec. Strasznie mi głupio, że
+tak w sumie niewiele zrobiłem (choć tyle dostałem od Domela ;)), no ale teraz
+jakby już trochę jestem z tym bardziej zaznajomiony. Co nie zmienia faktu, że
+helpa tłumaczy się łatwiej :)
+
+</pre>
+    </div>
+
+    <div id="c25" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=94.html#c25">Comment 25</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Szpak</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-07-04 16:40:00 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Witam
+
+Mam pytanie. Czy w:
+utf-16le.title = Unikod (UTF-16 Little Endian)
+utf-16be.title = Unikod (UTF-16 Big Endian)
+utf-32le.title = Unikod (UTF-32 Little Endian)
+utf-32be.title = Unikod (UTF-32 Big Endian)
+
+endiany sie tlumaczy? W firefoxie nie sa przetlumaczone a w Mozilli 1.6 ich nie ma.</pre>
+    </div>
+
+    <div id="c26" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=94.html#c26">Comment 26</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-07-04 17:11:12 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Nie. </pre>
+    </div>
+
+    <div id="c27" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=94.html#c27">Comment 27</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Domel</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-07-04 19:25:03 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(W odpowiedzi na komentarz #25)
+<span class="quote">&gt; endiany sie tlumaczy? W firefoxie nie sa przetlumaczone a w Mozilli 1.6 ich</span >
+nie ma.
+Skoro w FF nie sa przetlumaczone automatycznie jest to wiadomosc ze sie nie
+tlumaczy. Poniewaz, przyswieca nam cel jednolitosc przede wszystkim? 
+
+</pre>
+    </div>
+
+    <div id="c28" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=94.html#c28">Comment 28</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Szpak</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-07-04 19:36:35 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">downloadProgress.properties:
+
+close=Close
+unknown=Unknown Error
+error=Close. Press Close button to close dialog.
+
+Zastanawiam sie jak przetlumaczyc &quot;error&quot; (tego nie ma w firefoxie). 
+W sumie nie wiem, kiedy to sie pokazuje, wiec w ostatecznosci mozna zostawic bez
+zmian.
+</pre>
+    </div>
+
+    <div id="c29" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=94.html#c29">Comment 29</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Szpak</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-07-04 20:02:51 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Kolejne pytanie:
+
+fontpackage.dtd (dialog do pobierania czcionek):
+
+&lt;!ENTITY install &quot;Use the Regional Options Control Panel to install these
+components.&quot;&gt;
+
+W firefoxie tego nie ma. Proponuje takie tlumaczenie:
+&quot;Użyj regionalnych opcji panelu sterowania do zainstalowania tych komponentów.&quot;
+(tylko &quot;regionalnych&quot; tak mi przecietnie pasuje). Jakies lepsze propozycje?
+</pre>
+    </div>
+
+    <div id="c30" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=94.html#c30">Comment 30</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Szpak</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-07-04 20:50:54 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">I jeszcze jedna niepewnosc:
+
+fontpackage.properties:
+name_ja=Japanese Text Display
+name_ko=Korean Text Display
+name_zh-tw=Traditional Chinese Text Display
+name_zh-cn=Simplified Chinese Text Display
+
+Nie widzialem nigdzie tego komunikatu i watpie aby ktos robil strony z takimi
+czcionkami, uzywajac polskiego interfejsu, ale jak ktos wie kiedy to jest to
+moglby zaproponowac odpowiednia polska forme.</pre>
+    </div>
+
+    <div id="c31" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=94.html#c31">Comment 31</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Szpak</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-07-05 21:22:16 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Created <span class=""><a href="attachment.cgi%3Fid=109" name="attach_109" title="Katalog global PL">attachment 109</a> <a href="attachment.cgi%3Fid=109&amp;action=edit.html" title="Katalog global PL">[details]</a></span>
+Katalog global PL
+
+Przesylam tlumaczenie katalogu &quot;Global&quot;. Czesc bylo wziete z 0.1, czesc z
+firefoxa, czesc sam tlumaczylem. W nieprzetlumaczonych rzeczy zostalo to co
+pisalem na bugzilli (nikt nic nie zasugerowal od wczoraj) oraz pliki ns* (np.
+sciagnie plikow itp., chyba to nie wystepuje w Nvu) i
+ldapAutoCompErrs.properties. W pliku contents.rdf trzeba poprawic wg potrzeb
+(bo np. nie ma <a href="http://www.mozilla.org/locales/pl-PL.gif">http://www.mozilla.org/locales/pl-PL.gif</a> i paru innych rzeczy).
+
+Kody do znakow UTF bralem z jakies strony, wiec mam nadzieje, ze jest jeden
+standard (anaczej w properties beda czasem krzaki :) ).
+
+Jezeli ktos nie ma tara/gzipa to moge poszukac zwyklego zipa.
+
+Staralem sie, aby nie bylo bledow, ale troche tego bylo, a byly naciski, aby to
+szybko zrobic.</pre>
+    </div>
+
+    <div id="c32" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=94.html#c32">Comment 32</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Szpak</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-07-08 23:32:05 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">W zeszlym tygodniu sprawa tlumaczenia byla bardzo pilna. Cos sie zmienilo w tym
+tygodniu? (cos przegapilem?). Moze znowu zawiodly kolejne osoby majace robic
+tlumaczenia? Albo cos sie zlego stalo z koordynatorem?
+Tempo prac jakby spadlo. Ma ktos jakies informacje?</pre>
+    </div>
+
+    <div id="c33" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=94.html#c33">Comment 33</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Domel</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-07-08 23:36:52 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(W odpowiedzi na komentarz #32)
+<span class="quote">&gt; Moze znowu zawiodly kolejne osoby majace robic
+&gt; tlumaczenia? </span >
+Tak jeszcze nie ma wszystkich tlumaczen.
+
+<span class="quote">&gt; Albo cos sie zlego stalo z koordynatorem?</span >
+Ze mna wszystko OK, ale lacze nie bardzo :(</pre>
+    </div>
+
+    <div id="c34" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=94.html#c34">Comment 34</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Domel</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-07-08 23:39:26 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Poczukuje chetnych do tlumaczenia cascades.jar, venkman.jar i tipoftheday.jar.
+Pierwszy z plikow pokrywa sie w wiekszosci z 0.1, venkman.jar to chyba to samo a
+tipoftheday.jar to nowosc ale malo tlumaczenia.</pre>
+    </div>
+
+    <div id="c35" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=94.html#c35">Comment 35</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Piotr Pielach</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-07-11 14:21:06 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Created <span class=""><a href="attachment.cgi%3Fid=110" name="attach_110" title="en-US.jar\communicator\pref">attachment 110</a> <a href="attachment.cgi%3Fid=110&amp;action=edit.html" title="en-US.jar\communicator\pref">[details]</a></span>
+en-US.jar\communicator\pref</pre>
+    </div>
+
+    <div id="c36" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=94.html#c36">Comment 36</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Piotr Pielach</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-07-11 14:36:30 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Created <span class=""><a href="attachment.cgi%3Fid=111" name="attach_111" title="en-US.jar\communicator\">attachment 111</a> <a href="attachment.cgi%3Fid=111&amp;action=edit.html" title="en-US.jar\communicator\">[details]</a></span>
+en-US.jar\communicator\
+
+en-US.jar\communicator\dom
+en-US.jar\communicator\history
+
+Te dwa foldery zmieniły swoją zawartość od 0.1, ale wydaje mi się że mimo
+tego nie są używane! Daltego nie tłumaczyłem ich.</pre>
+    </div>
+
+    <div id="c37" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=94.html#c37">Comment 37</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Szpak</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-07-11 15:42:29 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Created <span class=""><a href="attachment.cgi%3Fid=112" name="attach_112" title="Katalog cascades">attachment 112</a> <a href="attachment.cgi%3Fid=112&amp;action=edit.html" title="Katalog cascades">[details]</a></span>
+Katalog cascades
+
+Katalog cascades. Nie zauwazylem zmian w lokalizacji od wersji 0.1.</pre>
+    </div>
+
+    <div id="c38" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=94.html#c38">Comment 38</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Adrian Kalla :Adrianer</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-07-11 16:00:10 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text"><span class="quote">&gt;Te dwa foldery zmieniły swoją zawartość od 0.1, ale wydaje mi się że mimo
+&gt;tego nie są używane! Daltego nie tłumaczyłem ich.</span >
+
+sorry, że się wtrącam, ale na mój gust powinno się WSZYSTKO tłumaczyć, bo na 99%
+jednak gdzieś to jest, choć mogłeś tego nigdy nie zauważyć. A jak kiedy zostanie
+to użyte, to już nie będziesz pamiętał, aby to przetłumaczyć. Pozatym wszystkie
+nie używane stringi wylatują z locali... więc naprawdę nie podejrzewam, żeby to
+nigdzie nie było użyte. Taką mamy minimum strategię z Mozillą Suite - wszystko
+tłumaczymy na co napotkamy.</pre>
+    </div>
+
+    <div id="c39" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=94.html#c39">Comment 39</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Piotr Pielach</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-07-11 16:04:10 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Created <span class=""><a href="attachment.cgi%3Fid=113" name="attach_113" title="en-US.jar\communicator\">attachment 113</a> <a href="attachment.cgi%3Fid=113&amp;action=edit.html" title="en-US.jar\communicator\">[details]</a></span>
+en-US.jar\communicator\
+
+Reszta folderu communicator.</pre>
+    </div>
+
+    <div id="c40" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=94.html#c40">Comment 40</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Piotr Pielach</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-07-11 16:12:09 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(W odpowiedzi na komentarz #38)
+<span class="quote">&gt; sorry, że się wtrącam, ale na mój gust powinno się WSZYSTKO tłumaczyć, bo na 99%
+&gt; jednak gdzieś to jest, choć mogłeś tego nigdy nie zauważyć. A jak kiedy zostanie
+&gt; to użyte, to już nie będziesz pamiętał, aby to przetłumaczyć. Pozatym wszystkie
+&gt; nie używane stringi wylatują z locali... więc naprawdę nie podejrzewam, żeby to
+&gt; nigdzie nie było użyte. Taką mamy minimum strategię z Mozillą Suite - wszystko
+&gt; tłumaczymy na co napotkamy.</span >
+
+Problem w tym, Twórcy NVU skopiowali chrome Mozilli i tylko część stringów
+używają! Dlatego tłumaczymy tylko to co jest używane...
+Przynajmniej tak mam w en-US.jar - szacuję, że tylko około 45% stringów jest
+używane...</pre>
+    </div>
+
+    <div id="c41" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=94.html#c41">Comment 41</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Domel</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-07-11 16:22:30 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Dobra, klika wiadomosci:
+1. Potrzebny jest plik US.jar
+2. Pliki zewnetrzne takie jak:
+2.1 cascades.jar
+2.2 en-win.jar
+2.3 en-unix.jar
+2.4 en-mac.jar (tylko podejrzenia bo nie mam jak sprawdzic)
+zostaly zlozone.
+3. Sa problemy z en-US.jar ale pracuje nad tym
+4. Dalej nikt oficjalnie sie nie zglosil do tlumaczenia innych &quot;zewnetrznych&quot;
+plikow.</pre>
+    </div>
+
+    <div id="c42" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=94.html#c42">Comment 42</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Domel</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-07-11 17:13:23 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Katalog global mi nie dziala. Czy ktos moze potwierdzic/zaprzeczyc?</pre>
+    </div>
+
+    <div id="c43" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=94.html#c43">Comment 43</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Piotr Pielach</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-07-11 17:34:37 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(W odpowiedzi na komentarz #42)
+<span class="quote">&gt; Katalog global mi nie dziala. Czy ktos moze potwierdzic/zaprzeczyc?</span >
+
+A dokładniej?  Jaki objaw, gdzie go można znaleźć?
+
+Na razie sprawdziłem pliki dtd - kodowanie mają ok.
+Wrzuciłem je do Nvu i na razie nie znalazłem problemów.</pre>
+    </div>
+
+    <div id="c44" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=94.html#c44">Comment 44</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Piotr Pielach</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-07-11 18:53:03 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Jak przetłumaczyć &quot;Markup cleaner&quot;? 
+Bo nie wiem czy istnieje jakieś &quot;zwyczajowe&quot; tłumaczenie!?</pre>
+    </div>
+
+    <div id="c45" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=94.html#c45">Comment 45</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Piotr Pielach</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-07-11 22:12:53 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Created <span class=""><a href="attachment.cgi%3Fid=114" name="attach_114" title="en-US.jar\editor\">attachment 114</a> <a href="attachment.cgi%3Fid=114&amp;action=edit.html" title="en-US.jar\editor\">[details]</a></span>
+en-US.jar\editor\
+
+Ten folder jest w 99,5% gotowy - to co zostało to kilka stringów, nad
+którymi się jeszcze zastanawiam i nie wiem do końca jak je przetłumaczyć
+:(
+Jeśli nic do jutra nie wymyślę to je tutaj opiszę.</pre>
+    </div>
+
+    <div id="c46" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=94.html#c46">Comment 46</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Szpak</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-07-11 23:28:23 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">W katalogu cascades (ktory wysylalem dzisiaj) w EdCssProps.dtd znalazlem nie
+przetlumaczone:
+&lt;!ENTITY fontData.label     &quot;Font data&quot;&gt;
+(tak juz bylo w 0.1 PL). Nie uzywam edytora CSS i nie wiem, gdzie to wystepuje
+(i co konkretnie oznacza - dane czcionki?). Moglby ktos to sprawdzic?
+A moze bylo to specjalnie nie przetlumaczone?
+
+Druga sprawa.
+Planujemy zrobic tylko polskiego language packa (jak do 0.1) czy calego NvuPL?
+Bo w sumie jak sie zastanowilem to nie wiem, czym mialby sie roznic polski Nvu
+od oryginalnego (oprocz polskiej wersji jezykowej) i czy bylby na niego &quot;popyt&quot;
+(przynajmniej w wersji 0.3).</pre>
+    </div>
+
+    <div id="c47" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=94.html#c47">Comment 47</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Domel</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-07-12 13:04:16 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(W odpowiedzi na komentarz #43)
+<span class="quote">&gt; &gt; Katalog global mi nie dziala. Czy ktos moze potwierdzic/zaprzeczyc?
+&gt; 
+&gt; A dokładniej?  Jaki objaw, gdzie go można znaleźć?</span >
+Zadne stringi u mnie nie sa przetlumaczone... Dziwne - wiem :) ale sprawdzalem
+kilka krotnie. Znaczy dtd sa polskie a Nvu wyswietla wszystko po angielsku. 
+Bo to ze kodowanie itp jest OK to jak wiem pytam tylko czy ktos to uruchomil?</pre>
+    </div>
+
+    <div id="c48" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=94.html#c48">Comment 48</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Domel</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-07-12 13:05:28 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(W odpowiedzi na komentarz #44)
+<span class="quote">&gt; Jak przetłumaczyć &quot;Markup cleaner&quot;? 
+&gt; Bo nie wiem czy istnieje jakieś &quot;zwyczajowe&quot; tłumaczenie!?</span >
+Nie spotkalem sie z zadnym sensownym tlumaczeniem zlowa Markup. Wiec moze &quot;Czysc
+kod&quot;.
+
+</pre>
+    </div>
+
+    <div id="c49" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=94.html#c49">Comment 49</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Domel</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-07-12 13:08:26 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(W odpowiedzi na komentarz #46)
+<span class="quote">&gt; Moglby ktos to sprawdzic?</span >
+No wlasnie nie wiem, nie moge tego znalesc.
+
+<span class="quote">&gt; A moze bylo to specjalnie nie przetlumaczone?</span >
+Specjalnie to napewno, nie wiec mozesz spokojnie tlumaczyc.
+<span class="quote">&gt; 
+&gt; Druga sprawa.
+&gt; Planujemy zrobic tylko polskiego language packa (jak do 0.1) czy calego NvuPL?</span >
+Najpierw paczka. Potem zobaczymy jak dalej. planuje caly wydac w 0.4 ale jesli
+dobrze pojdzie to czemu nie NvuPL 0.3 :)
+
+<span class="quote">&gt; Bo w sumie jak sie zastanowilem to nie wiem, czym mialby sie roznic polski Nvu
+&gt; od oryginalnego (oprocz polskiej wersji jezykowej) i czy bylby na niego &quot;popyt&quot;</span >
+Plany sa ale narazie nie chcem o  tym pisac. Bo sa to bardzo odlegle plany...
+
+</pre>
+    </div>
+
+    <div id="c50" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=94.html#c50">Comment 50</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Domel</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-07-15 12:56:52 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Chodza sluchy ze editor niektorym z Was chodzi. Jesli tak to podeslijcie to na
+bugzille. Zeby nie komplikowac sprawy to niech to bedzie podmianka en-US.jar
+(czyli wszystko oprocz rdf'ow).</pre>
+    </div>
+
+    <div id="c51" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=94.html#c51">Comment 51</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Szpak</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-07-19 19:28:08 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(W odpowiedzi na komentarz #50)
+<span class="quote">&gt; Chodza sluchy ze editor niektorym z Was chodzi. Jesli tak to podeslijcie to na
+&gt; bugzille. Zeby nie komplikowac sprawy to niech to bedzie podmianka en-US.jar
+&gt; (czyli wszystko oprocz rdf'ow).</span >
+
+Mam nadzieje, ze nadal dziala Ci ten editor, ktory wyslalem. Zostalo jeszcze cos
+duzego do przetlumaczenia (bo w venkman.jar i tipoftheday.jar chyba nie ma
+zadnych lokali), a moze sa jeszcze ludzie, ktorzy chetnie by cos przetlumaczyli,
+a nie wiedza co ;)</pre>
+    </div>
+
+    <div id="c52" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=94.html#c52">Comment 52</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Domel</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-07-19 22:10:26 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(W odpowiedzi na komentarz #51)
+<span class="quote">&gt; duzego do przetlumaczenia (bo w venkman.jar i tipoftheday.jar chyba nie ma
+&gt; zadnych lokali), a moze sa jeszcze ludzie, ktorzy chetnie by cos przetlumaczyli,
+&gt; a nie wiedza co ;)</span >
+venkman.jar ma lokale i co calkiem sporo ;) Fakt nie sa w formie dtd ale sa w
+formie properties
+
+</pre>
+    </div>
+
+    <div id="c53" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=94.html#c53">Comment 53</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Szpak</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-08-24 23:44:57 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(W odpowiedzi na komentarz #52)
+<span class="quote">&gt; (W odpowiedzi na komentarz #51)
+&gt; &gt; duzego do przetlumaczenia (bo w venkman.jar i tipoftheday.jar chyba nie ma
+&gt; &gt; zadnych lokali), a moze sa jeszcze ludzie, ktorzy chetnie by cos przetlumaczyli,
+&gt; &gt; a nie wiedza co ;)
+&gt; venkman.jar ma lokale i co calkiem sporo ;) Fakt nie sa w formie dtd ale sa w
+&gt; formie properties</span >
+
+Fakt w katalogu locale pare jest. Czy oprocz tego jest cos jeszcze do
+przetlumaczenia?  
+W ogole ten projekt (tlumaczenie 0.3) sie jakos kreci (nie mowiac juz o 0.41)?
+
+Szpak</pre>
+    </div>
+
+    <div id="c54" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=94.html#c54">Comment 54</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Domel</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-08-25 11:44:54 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(W odpowiedzi na komentarz #53)
+<span class="quote">&gt; W ogole ten projekt (tlumaczenie 0.3) sie jakos kreci (nie mowiac juz o 0.41)?</span >
+Tak to znaczy moze dokladnie: bedzie sie krecil. Narazie prawie nikogo nie ma
+dostepnego na jabberze. Na 9 osob tlumaczacych widze na codzien 1-2 osoby. A sa
+sprawy organizacyjne i techniczne do omowienia. 
+Zdaje sobie sprawe ze &quot;problem&quot; pod tytulem &quot;wakacje&quot; nie da sie przeskoczyc.
+Wiec czekamy. BTW mnie tez w domu nie ma.
+
+</pre>
+    </div>
+
+    <div id="c55" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=94.html#c55">Comment 55</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Domel</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-02-16 19:47:47 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Nieaktualny - INVALID</pre>
+    </div>
+
+    <div id="c56" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=94.html#c56">Comment 56</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-03-18 17:09:32 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Masowka - zmiana produktu na Lokalizacje, komponent Nvu.</pre>
+    </div>
+
+    <div id="c57" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=94.html#c57">Comment 57</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-05-03 04:31:39 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">mass-change - można odfiltrować po treści: hubert-przenosi-produkty</pre>
+    </div>
+
+    <div id="c58" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=94.html#c58">Comment 58</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-01-01 08:23:27 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Verified.</pre>
+    </div>
+
+
+  
+
+</td>
+<td>
+</td>
+</tr></table>
+  </div>
+
+    <hr><div id="add_comment" class="bz_section_additional_comments">
+      <table>
+        <tr>
+          <td>
+            <fieldset>
+              <legend>Note</legend>
+              You need to
+              <a href="show_bug.cgi%3Fid=94&amp;GoAheadAndLogIn=1.html">log in</a>
+              before you can comment on or make changes to this bug.
+            </fieldset>
+          </td>
+        </tr> 
+      </table>
+  </div>        
+
+</form>
+
+<hr>
+<ul class="related_actions">
+    <li><a href="show_bug.cgi%3Fformat=multiple&amp;id=94.html">Format For Printing</a></li>
+    <li>&nbsp;-&nbsp;<a href="show_bug.cgi%3Fctype=xml&amp;id=94">XML</a></li>
+    <li>&nbsp;-&nbsp;<a href="enter_bug.cgi%3Fcloned_bug_id=94.html">Clone This Bug</a></li>
+    
+    <li>&nbsp;-&nbsp;<a href="show_bug.cgi%3Fid=94.html#">Top of page </a></li>
+    </ul>
+
+<br>
+</div>
+
+    <div id="footer">
+      <div class="intro"></div>
+<ul id="useful-links">
+  <li id="links-actions"><ul class="links">
+  <li><a href="index.html">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi.html">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi.html">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi.html">Search</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="http://bugs.aviary.pl/buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input type="hidden" id="no_redirect_bottom" name="no_redirect" value="0">
+    <script type="text/javascript">
+      if (history && history.replaceState) {
+        var no_redirect = document.getElementById("no_redirect_bottom");
+        no_redirect.value = 1;
+      }
+    </script>
+    <input class="txt" type="text" id="quicksearch_bottom" name="quicksearch" 
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search" 
+           id="find_bottom"></form>
+  <a href="page.cgi%3Fid=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="report.cgi.html">Reports</a></li>
+
+  <li>
+      <span class="separator">| </span>
+        <a href="request.cgi.html">Requests</a></li>
+
+
+  <li>
+        <span class="separator">| </span>
+        <a href="https://bugzilla.readthedocs.org/en/5.0/using/understanding.html" target="_blank">Help</a>
+      </li>
+    
+      <li id="new_account_container_bottom">
+        <span class="separator">| </span>
+        <a href="createaccount.cgi.html">New&nbsp;Account</a>
+      </li>
+
+    <li id="mini_login_container_bottom">
+  <span class="separator">| </span>
+  <a id="login_link_bottom" href="show_bug.cgi%3Fid=94&amp;GoAheadAndLogIn=1.html"
+     onclick="return show_mini_login_form('_bottom')">Log In</a>
+
+  <form action="show_bug.cgi%3Fid=94.html" method="POST"
+        class="mini_login bz_default_hidden"
+        id="mini_login_bottom">
+    <input id="Bugzilla_login_bottom" required
+           name="Bugzilla_login" class="bz_login"
+        type="email" placeholder="Email Address">
+    <input class="bz_password" name="Bugzilla_password" type="password"
+           id="Bugzilla_password_bottom" required
+           placeholder="Password">
+    <input type="hidden" name="Bugzilla_login_token"
+           value="1469819853-7u6c3n2dBxnsogXXoydk9gGNGq78s2Zth3XfChXCZ1I">
+    <input type="submit" name="GoAheadAndLogIn" value="Log in"
+            id="log_in_bottom">
+    <a href="show_bug.cgi%3Fid=94.html#" onclick="return hide_mini_login_form('_bottom')">[x]</a>
+  </form>
+</li>
+
+
+  <li id="forgot_container_bottom">
+    <span class="separator">| </span>
+    <a id="forgot_link_bottom" href="show_bug.cgi%3Fid=94&amp;GoAheadAndLogIn=1.html#forgot"
+       onclick="return show_forgot_form('_bottom')">Forgot Password</a>
+    <form action="http://bugs.aviary.pl/token.cgi" method="post" id="forgot_form_bottom"
+          class="mini_forgot bz_default_hidden">
+      <label for="login_bottom">Login:</label>
+      <input name="loginname" size="20" id="login_bottom" required
+          type="email" placeholder="Your Email Address">
+      <input id="forgot_button_bottom" value="Reset Password" type="submit">
+      <input type="hidden" name="a" value="reqpw">
+      <input type="hidden" id="token_bottom" name="token"
+             value="1469819853-FuYbgZuQv-kbWuQQHCRsyfAs07Oga4Kc0Qw7jbc5amU">
+      <a href="show_bug.cgi%3Fid=94.html#" onclick="return hide_forgot_form('_bottom')">[x]</a>
+    </form>
+  </li>
+</ul>
+  </li>
+
+  
+
+
+
+
+  
+</ul>
+
+      <div class="outro"></div>
+    </div>
+
+  </body>
+</html>

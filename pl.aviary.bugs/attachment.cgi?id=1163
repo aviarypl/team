@@ -1,0 +1,195 @@
+diff --git a/dom/chrome/appstrings.properties b/dom/chrome/appstrings.properties
+--- a/dom/chrome/appstrings.properties
++++ b/dom/chrome/appstrings.properties
+@@ -50,18 +50,18 @@ resendButton.label=Prześlij ponownie
+ 
+ unknownSocketType=Ten dokument nie może zostać wyświetlony, dopóki nie zostanie zainstalowany Menedżer zabezpieczeń (PSM). Pobierz i zainstaluj Menedżer zabezpieczeń (PSM) i spróbuj ponownie, lub skontaktuj się z administratorem systemu.
+ netReset=Dokument nie zawiera żadnych danych.
+ netOffline=Wybrany dokument nie może zostać wyświetlony podczas pracy w trybie offline. Należy przełączyć się w tryb online, odznaczając opcję Pracuj w trybie offline, w menu Plik, a następnie spróbować ponownie.
+ isprinting=Strona nie może zostać zmieniona podczas wydruku, lub kiedy włączony jest podgląd wydruku.
+ deniedPortAccess=Dostęp do portu o podanym numerze został zablokowany z przyczyn bezpieczeństwa.
+ proxyResolveFailure=Odnalezienie serwera proxy było niemożliwe. Sprawdź poprawność ustawień serwerów proxy, a następnie spróbuj ponownie.
+ proxyConnectFailure=Połączenie zostało odrzucone podczas próby kontaktu z serwerem proxy. Sprawdź poprawność ustawień serwerów proxy, a następnie spróbuj ponownie.
+-contentEncodingError=Otwierana strona nie może zostać wyświetlona, ponieważ używa nieprawidłowych lub nieobsługiwanych metod kompresji. 
+-unsafeContentType=Otwierana strona nie może zostać wyświetlona, ponieważ umieszczona jest w pliku, którego otwarcie może nie być bezpieczne. Prosimy poinformować właścicieli witryny o tym problemie.
++contentEncodingError=Otwierana strona nie może zostać wyświetlona, ponieważ używa nieprawidłowych lub nieobsługiwanych metod kompresji.
++unsafeContentType=Otwierana strona nie może zostać wyświetlona, ponieważ umieszczona jest w pliku, którego otwarcie może nie być bezpieczne. Proszę poinformować właścicieli witryny o tym problemie.
+ externalProtocolTitle=Próba otwarcia zewnętrznego protokołu
+ externalProtocolPrompt=Aby obsłużyć odnośnik %1$S: musi zostać uruchomiona zewnętrzna aplikacja.\n\n\nZażądany odnośnik:\n\n%2$S\n\nAplikacja: %3$S\n\n\nJeśli to żądanie pojawiło się niespodziewanie, może to być próba wykorzystania błędu w aplikacji zewnętrznej. W razie jakichkolwiek wątpliwości anuluj to żądanie.\n
+ #LOCALIZATION NOTE (externalProtocolUnknown): The following string is shown if the application name can't be determined
+ externalProtocolUnknown=<Nieznana>
+ externalProtocolChkMsg=Zapamiętaj mój wybór dla wszystkich odnośników tego rodzaju.
+ externalProtocolLaunchBtn=Uruchom aplikację
+ malwareBlocked=Witryna %S została zgłoszona jako witryna stanowiąca zagrożenie i została zablokowana zgodnie z ustawieniami bezpieczeństwa.
+ phishingBlocked=Witryna %S została zgłoszona jako przypadek oszustwa mającego na celu wyłudzenie danych osobowych i informacji finansowych.
+diff --git a/dom/chrome/netError.dtd b/dom/chrome/netError.dtd
+--- a/dom/chrome/netError.dtd
++++ b/dom/chrome/netError.dtd
+@@ -23,22 +23,22 @@
+ 
+ <!ENTITY netInterrupt.title "Przerwano przesyłanie danych">
+ <!ENTITY netInterrupt.longDesc "<p>Przeglądarka nawiązała połączenie, ale zostało ono przerwane podczas przesyłania informacji. Spróbuj ponownie.</p><ul><li>Nie możesz oglądać innych witryn? Sprawdź swoje połączenie z siecią.</li><li>Jeśli nadal występują problemy, skonsultuj się z administratorem sieci lub dostawcą usług internetowych.</li></ul>">
+ 
+ <!ENTITY netOffline.title "Tryb offline">
+ <!ENTITY netOffline.longDesc "<p>Przeglądarka pracuje w trybie offline i nie może pobrać żądanego elementu. </p><ul><li>Czy komputer podłączony jest do działającej sieci?</li><li>Przestaw przeglądarkę na tryb online i spróbuj ponownie.</li></ul>">
+ 
+ <!ENTITY contentEncodingError.title "Błąd kodowania zawartości">
+-<!ENTITY contentEncodingError.longDesc "<p>Otwierana strona nie może zostać wyświetlona, ponieważ używa nieprawidłowych lub nieobsługiwanych metod kompresji.</p><ul><li>Prosimy poinformować właścicieli witryny o tym problemie.</li></ul>">
++<!ENTITY contentEncodingError.longDesc "<p>Otwierana strona nie może zostać wyświetlona, ponieważ używa nieprawidłowych lub nieobsługiwanych metod kompresji.</p><ul><li>Proszę poinformować właścicieli witryny o tym problemie.</li></ul>">
+ 
+ <!ENTITY unsafeContentType.title "Niebezpieczny typ pliku">
+ <!ENTITY unsafeContentType.longDesc "
+ <ul>
+-  <li>Prosimy poinformować właścicieli witryny o tym problemie.</li>
++  <li>Proszę poinformować właścicieli witryny o tym problemie.</li>
+ </ul>
+ ">
+ 
+ <!ENTITY netReset.title "Przerwane połączenie">
+ <!ENTITY netReset.longDesc "<p>Połączenie sieciowe zostało przerwane podczas negocjacji. Spróbuj ponownie.</p>">
+ 
+ <!ENTITY netTimeout.title "Przekroczono limit czasu połączenia">
+ <!ENTITY netTimeout.longDesc "<p>Witryna przez dłuższy czas nie odpowiedziała na żądanie połączenia i przeglądarka przestała czekać na odpowiedź.</p><ul><li>Możliwe, że serwer tymczasowo nie działa lub jest nadmiernie obciążony. Jeśli tak, spróbuj ponownie później.</li><li>Nie możesz oglądać innych witryn? Sprawdź swoje połączenie z siecią.</li><li>Czy Twój komputer lub sieć jest chroniona przez zaporę sieciową lub serwer proxy? Ich nieprawidłowa konfiguracja może powodować problemy z przeglądaniem witryn internetowych.</li><li>Jeśli nadal występują problemy, skonsultuj się z administratorem sieci lub dostawcą usług internetowych.</li></ul>">
+@@ -69,17 +69,17 @@ autentyczności otrzymanych danych.</p><
+ </ul>
+ ">
+ 
+ <!ENTITY malwareBlocked.title "Witryna podejrzewana o dokonywanie ataków!">
+ <!ENTITY malwareBlocked.longDesc "
+ <p>Tego rodzaju witryny mogą próbować instalować oprogramowanie wykradające poufne dane, używające komputera do pośredniczenia w atakach lub uszkadzające system.</p>
+ <p>Właściciele witryn, które zostały błędnie uznane za podejrzane, mogą <a href='http://www.stopbadware.org/home/reviewinfo'>poprosić o ponowne ich sprawdzenie</a>.</p>">
+ 
+-<!ENTITY phishingBlocked.title "Prawdopodobne oszustwo!">                        
++<!ENTITY phishingBlocked.title "Prawdopodobne oszustwo!">
+ <!ENTITY phishingBlocked.longDesc "
+ <p>Wprowadzanie jakichkolwiek informacji osobistych na tej stronie może skutkować
+ kradzieżą tożsamości lub inną malwersacją.</p>
+ <p>Tego rodzaju fałszerstwa określa się mianem phishingu. Atak ten polega na utworzeniu
+ przez przestępców podrobionej strony lub wiadomości udającej źródło godne zaufania.
+ </p>
+ ">
+ 
+diff --git a/dom/chrome/storage.properties b/dom/chrome/storage.properties
+--- a/dom/chrome/storage.properties
++++ b/dom/chrome/storage.properties
+@@ -30,9 +30,9 @@
+ # use your version of this file under the terms of the MPL, indicate your
+ # decision by deleting the provisions above and replace them with the notice
+ # and other provisions required by the GPL or the LGPL. If you do not delete
+ # the provisions above, a recipient may use your version of this file under
+ # the terms of any one of the MPL, the GPL or the LGPL.
+ #
+ # ***** END LICENSE BLOCK *****
+ 
+-storageWriteError=Podczas zapisywania danych na dysk wystąpił błąd. Może to być spowodowane brakiem wolnego miejsca.\n\nProsimy ponownie uruchomić ten program
++storageWriteError=Podczas zapisywania danych na dysk wystąpił błąd. Może to być spowodowane brakiem wolnego miejsca.\n\nProszę ponownie uruchomić ten program
+diff --git a/extensions/reporter/chrome/reportWizard.dtd b/extensions/reporter/chrome/reportWizard.dtd
+--- a/extensions/reporter/chrome/reportWizard.dtd
++++ b/extensions/reporter/chrome/reportWizard.dtd
+@@ -1,22 +1,22 @@
+ <!-- Entities for the Sample Extension Options Dialog go here -->
+ <!ENTITY reportWizard.title                         "Zgłoszenie niedziałającej witryny">
+ 
+ <!ENTITY privacyNotice.label                        "Polityka prywatności">
+-<!ENTITY reportWizardPrivacy.description            "To narzędzie umożliwia poinformowanie zespołu Mozilla Evangelism o witrynach niedziałających poprawnie w programie &brandShortName;. W ten sposób pomagasz nam zapewnić możliwie najwyższą jakość programu &brandShortName;. Prosimy poświęcić parę minut na przeczytanie o sposobach wykorzystywania przez nas przekazywanych nam przez to narzędzie informacji.">
++<!ENTITY reportWizardPrivacy.description            "To narzędzie umożliwia poinformowanie zespołu Mozilla Evangelism o witrynach niedziałających poprawnie w programie &brandShortName;. W ten sposób pomagasz nam zapewnić możliwie najwyższą jakość programu &brandShortName;. Proszę poświęcić parę minut na przeczytanie o sposobach wykorzystywania przez nas przekazywanych nam przez to narzędzie informacji.">
+ 
+ <!ENTITY reportWizardMustAgree.description          "Aby kontynuować, musisz zgodzić się na warunki powyższej polityki prywatności.">
+ 
+ <!ENTITY dontShowPrivacyStatement.label             "Przeczytałem i zgadzam się z powyższą polityką prywatności">
+ <!ENTITY dontShowPrivacyStatement.accesskey         "P">
+ 
+ <!ENTITY reportForm.label                           "Wypełnij zgłoszenie">
+ 
+-<!ENTITY reportForm.description                     "Prosimy podać więcej informacji o napotkanym problemie:">
++<!ENTITY reportForm.description                     "Proszę podać więcej informacji o napotkanym problemie:">
+ 
+ <!ENTITY reportForm.url.title                       "Adres URL witryny:">
+ <!ENTITY reportForm.url.accesskey                   "U">
+ 
+ <!ENTITY reportForm.behind_login.title              "Witryna jest zabezpieczona hasłem"><!-- No ":" at the end -->
+ <!ENTITY reportForm.behind_login.accesskey          "b">                        
+ 
+ <!ENTITY reportForm.problem_type.title              "Rodzaj problemu:">
+diff --git a/toolkit/chrome/mozapps/update/updates.dtd b/toolkit/chrome/mozapps/update/updates.dtd
+--- a/toolkit/chrome/mozapps/update/updates.dtd
++++ b/toolkit/chrome/mozapps/update/updates.dtd
+@@ -3,30 +3,30 @@
+ <!ENTITY  window.width                    "37em"><!-- en-US: 36 -->
+ <!ENTITY  window.macWidth                 "40em"><!-- en-US: 39 -->
+ 
+ <!ENTITY  checking.title                  "Sprawdzanie aktualizacji">
+ <!ENTITY  updateCheck.label               "Sprawdzanie dostępności aktualizacji dla programu &brandShortName;…">
+ 
+ <!ENTITY  noupdatesfound.title            "Nie znaleziono żadnych aktualizacji">
+ <!ENTITY  noupdatesautoenabled.intro      "Brak dostępnych aktualizacji. &brandShortName; okresowo sprawdza dostępność aktualizacji.">
+-<!ENTITY  noupdatesautodisabled.intro     "Brak dostępnych aktualizacji. Prosimy sprawdzić później lub włączyć automatyczne sprawdzanie dostępności aktualizacji w programie &brandShortName;">
++<!ENTITY  noupdatesautodisabled.intro     "Brak dostępnych aktualizacji. Proszę sprawdzić później lub włączyć automatyczne sprawdzanie dostępności aktualizacji w programie &brandShortName;">
+ 
+ <!ENTITY  incompatibleCheck.title         "Sprawdzanie kompatybilności dodatków">
+ <!ENTITY  incompatibleCheck.label         "Sprawdzanie dostępności aktualizacji dla dodatków…">
+ 
+ <!ENTITY  clickHere.label                 "Wyświetl więcej informacji o tej aktualizacji...">
+ 
+ <!ENTITY  evangelism.desc                 "Aktualizacja programu &brandShortName; jest wysoce zalecana.">
+ 
+ <!ENTITY  license.instructions            'Jeśli akceptujesz warunki licencji, kliknij przycisk "Zgadzam się", aby kontynuować instalację aktualizacji.'>
+ 
+ <!ENTITY  license.titleText               "Umowa licencyjna oprogramowania">
+ <!ENTITY  license.introText               "Warunki korzystania z tego oprogramowania">
+-<!ENTITY  license.instructionText         "Prosimy zapoznać się z poniższą umową licencyjną. Aby przeczytać dalszą część umowy, należy użyć paska przewijania">
++<!ENTITY  license.instructionText         "Proszę zapoznać się z poniższą umową licencyjną. Aby przeczytać dalszą część umowy, należy użyć paska przewijania">
+ <!ENTITY  license.accept                  "Akceptuję warunki umowy licencyjnej">
+ <!ENTITY  license.accept.accesskey        "c">
+ <!ENTITY  license.decline                 "NIE akceptuję warunków umowy licencyjnej">
+ <!ENTITY  license.decline.accesskey       "t">
+ 
+ <!ENTITY  incompatibleList.title          "Niekompatybilne dodatki">
+ 
+ <!ENTITY  downloading.title               "Pobieranie aktualizacji">
+diff --git a/toolkit/chrome/mozapps/update/updates.properties b/toolkit/chrome/mozapps/update/updates.properties
+--- a/toolkit/chrome/mozapps/update/updates.properties
++++ b/toolkit/chrome/mozapps/update/updates.properties
+@@ -24,17 +24,17 @@ intro_minor_app=Dostępna jest aktualiza
+ 
+ verificationError=Program %S nie mógł potwierdzić integralności pakietu aktualizacyjnego
+ errorsPageHeader=Aktualizacja nieudana
+ licenseContentNotFound=Plik licencji dla tej wersji nie został odnaleziony. Aby uzyskać więcej informacji, odwiedź stronę %S.
+ updateMoreInfoContentNotFound=Dodatkowe informacje na temat tej aktualizacji nie zostały odnalezione. Aby uzyskać więcej informacji, odwiedź stronę %S.
+ resumePausedAfterCloseTitle=Aktualizacja oprogramowania
+ resumePausedAfterCloseMsg=Wstrzymano pobieranie tej aktualizacji. Czy ma ona zostać pobrana w tle, bez przerywania pracy z programem %S?
+ updaterIOErrorTitle=Błąd aktualizacji oprogramowania
+-updaterIOErrorMsg=Nie udało się zainstalować aktualizacji. Prosimy upewnić się, że na komputerze nie są uruchomione inne kopie programu %S, a następnie uruchomić program %S ponownie.
++updaterIOErrorMsg=Nie udało się zainstalować aktualizacji. Proszę upewnić się, że na komputerze nie są uruchomione inne kopie programu %S, a następnie uruchomić program %S ponownie.
+ okButton=OK
+ okButton.accesskey=O
+ askLaterButton=Zapytaj później
+ askLaterButton.accesskey=Z
+ noThanksButton=Nie, dziękuję
+ noThanksButton.accesskey=N
+ updateButton_minor=Zaktualizuj program %S
+ updateButton_minor.accesskey=a
+@@ -88,17 +88,17 @@ check_error-404=Plik XML aktualizacji ni
+ check_error-404=Plik XML aktualizacji nie został odnaleziony (404)
+ check_error-500=Wewnętrzny błąd serwera (500)
+ check_error-2152398849=Błąd (z nieznanych przyczyn)
+ check_error-2152398861=Odmowa połączenia
+ check_error-2152398862=Upłynął limit czasu połączenia
+ # NS_ERROR_OFFLINE
+ check_error-2152398864=Sieć jest niedostępna (przejdź do trybu online)
+ check_error-2152398867=Port niedozwolony
+-check_error-2152398868=Nie otrzymano żadnych danych (prosimy spróbować ponownie)
+-check_error-2152398878=Serwer aktualizacji nie został odnaleziony (prosimy sprawdzić połączenie z Internetem)
+-check_error-2152398890=Serwer proxy nie został odnaleziony (prosimy sprawdzić połączenie z Internetem)
++check_error-2152398868=Nie otrzymano żadnych danych (proszę spróbować ponownie)
++check_error-2152398878=Serwer aktualizacji nie został odnaleziony (proszę sprawdzić połączenie z Internetem)
++check_error-2152398890=Serwer proxy nie został odnaleziony (proszę sprawdzić połączenie z Internetem)
+ # NS_ERROR_DOCUMENT_NOT_CACHED
+ check_error-2152398918=Sieć jest niedostępna (przejdź do trybu online)
+-check_error-2152398919=Przesyłanie danych zostało przerwane (prosimy spróbować ponownie)
++check_error-2152398919=Przesyłanie danych zostało przerwane (proszę spróbować ponownie)
+ check_error-2152398920=Odmowa połączenia z serwerem proxy
+-check_error-2153390069=Certyfikat serwera utracił ważność (prosimy poprawić czas systemowy, jeśli jest nieprawidłowy)
++check_error-2153390069=Certyfikat serwera utracił ważność (proszę poprawić czas systemowy, jeśli jest nieprawidłowy)
+ check_error-verification_failed=Nie udało się zweryfikować integralności aktualizacji
+

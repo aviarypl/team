@@ -1,0 +1,259 @@
+=== default/pages/bug-writing.html.tmpl
+==================================================================
+--- default/pages/bug-writing.html.tmpl   (/2.18/pl-patch/template/pl)   (revision 43)
++++ default/pages/bug-writing.html.tmpl   (/2.18/pl-trunk/template/pl)   (revision 43)
+@@ -26,7 +26,7 @@
+   #%]
+   
+ [% PROCESS global/variables.none.tmpl %] 
+-[% INCLUDE global/header.html.tmpl title = "$terms.Bug Writing Guidelines" %] 
++[% INCLUDE global/header.html.tmpl title = "Wytyczne zgłaszania $terms.bledow" %] 
+ 
+ <h3>Dlaczego powinieneś to przeczytać</h3>
+ 
+@@ -57,152 +57,146 @@
+     <br>
+     </li>
+ 
+-    <li><b>Specific.</b> The quicker the engineer can isolate the 
+-    [% terms.bug %] to a specific area, the more likely she'll expediently 
+-    fix it. (If a programmer or tester has to decipher [% terms.abug %], 
+-    they may spend more time cursing the submitter than solving the 
+-    problem.)<br>
++    <li><b>Specific.</b> Im szybciej programista będzie w stanie określić
++    zasięg występowania [% terms.bledu %], tym szybciej będzie w stanie
++    go rozwiązać (jeśli programista lub osoba testujące będzie zmuszony
++    odcyfrowywać [% terms.blad %], prawdopodobnie więcej czasu spędzi ona
++    na klęciu na zgłaszającego niż na rzeczywistym rozwiązywaniu problemu).
+     <br>
+-    [ <a href="#tips" name="Anchor">Tell Me More</a> ]</li>
++    <br>
++    [ <a href="#tips" name="Anchor">Pokaż więcej</a> ]</li>
+   </ol>
+ 
+-  <p>Let's say the application you're testing is a web browser. You crash
+-  at foo.com, and want to write up a [% terms.bug %] report:</p>
++  <p>Przyjmijmy że aplikacja którą testujesz to przeglądarka internetowa.
++  Podczas przeglądania strony foo.com program wyłączył się z błędem, a Ty
++  postanowiłeś zgłosić [% terms.blad %] tyczący się tego problemu:</p>
+ 
+   <blockquote>
+-    <p><b>BAD:</b> "My browser crashed. I think I was on www.foo.com. I
+-    play golf with Bill Gates, so you better fix this problem, or I'll
+-    report you to him. By the way, your Back icon looks like a squashed
+-    rodent. UGGGLY. And my grandmother's home page is all messed up in your
+-    browser. Thx 4 UR help."</p>
++    <p><b>ŹLE:</b> "Moja przeglądarka wywaliła się. Myślę że to było na
++    stronie  www.foo.com. Grywam w golfa z Billem Gatesem, więc lepiej
++    naprawcie ten błąd, albo powiem mu o tym. A tak w ogóle to ikonka Wstecz
++    wygląda jak zmiażdżony gryzoń. PASKUDZTWO. A strona mojej babcie strasznie
++    rozjeżdza się w waszej przeglądarce."</p>
+ 
+-    <p><b>GOOD:</b> "I crashed each time I went to www.foo.com, using the
+-    2002-02-25 build on a Windows 2000 system. I also rebooted into Linux,
+-    and reproduced this problem using the 2002-02-24 Linux build.</p>
++    <p><b>DOBRZE:</b> "Przeglądarka wywala się za każdym razem kiedy odwiedzę
++    www.foo.com, używając przeglądarki z dnia 2002-02-25 na Windows 2000. Mogę
++    powtórzyć ten błąd w Linuksowej wersji z dnia 2002-02-24.</p>
+ 
+-    <p>It again crashed each time upon drawing the Foo banner at the top of
+-    the page. I broke apart the page, and discovered that the following
+-    image link will crash the application reproducibly, unless you remove
+-    the "border=0" attribute:</p>
++    <p>Wygląda na to, że błąd występuje przy wyświetleniu banera Foo znajdującego
++    się na samej górze strony. Popracowałem nad tą stroną i zauważyłem że
++    ten błąd występuje do czasu usunięcia atrybutu "border=0":</p>
+ 
+     <p><tt>&lt;IMG SRC="http://www.foo.com/images/topics/topicfoos.gif"
+     width="34" height="44" border="0" alt="News"&gt;</tt></p>
+   </blockquote>
+ </blockquote>
+ 
+-<h3>How to Enter your Useful [% terms.Bug %] Report 
+-    into [% terms.Bugzilla %]:</h3>
++<h3>Jak zgłosić swój Użyteczny Raport o [% terms.Bledzie %] w 
++  [% terms.Bugzilli %]:</h3>
+ 
+ <blockquote>
+-  <p>Before you enter your [% terms.bug %], use [% terms.Bugzilla %]'s 
+-  <a href="query.cgi">search page</a> to determine whether the defect 
+-  you've discovered is a known, already-reported [% terms.bug %]. If 
+-  your [% terms.bug %] is the 37th duplicate of a known issue,
+-  you're more likely to annoy the engineer. (Annoyed engineers fix fewer
+-  [% terms.bugs %].)</p>
++  <p>Zanim zgłosisz [% terms.blad %], użyj <a href="query.cgi">wyszukiwania</a>
++  w [% terms.Bugzilli %] aby zobaczyć czy dany problem nie jest znany i został
++  już zgłoszony. Jeśli Twój raport zostanie 37 duplikatem [% terms.bledu %]
++  prawdopodobnie zdenerwuje to tylko programistę (Zirytowany programista rozwiązuje
++  mniej [% terms.bledow %].)</p>
+ 
+-  <p>Next, be sure to reproduce your [% terms.bug %] using a recent build. 
+-  Engineers tend to be most interested in problems affecting the code base 
+-  that they're actively working on. After all, the [% terms.bug %] you're 
+-  reporting may already be fixed.</p>
++  <p>Następnie upewnij się że [% terms.blad %] nadal występuje w najnowszej
++  wersji. Osoby rozwiązujące [% terms.bledy %] są najbardziej zainteresowane
++  problemami które występują w kodzie nad którym aktualnie pracują. Poza tym 
++  [% terms.blad %] który zamierzasz zgłosić mógł już zostać naprawiony.</p>
+ 
+-  <p>If you've discovered a new [% terms.bug %] using a current build, report 
+-  it in [% terms.Bugzilla %]:</p>
++  <p>Jeśli znalazłeś nowy błąd występującym w aktualnej wersji, zgłoś go w 
++  [% terms.Bugzilli %]:</p>
+ 
+   <ol>
+-    <li>From your [% terms.Bugzilla %] main page, choose 
+-    "<a href="enter_bug.cgi">Enter a new [% terms.bug %]</a>".</li>
++    <li>Na głównej stronie [% terms.Bugzilli %] wybierz
++    "<a href="enter_bug.cgi">Dodawanie nowego raportu o [% terms.bledzie %]</a>".</li>
+ 
+-    <li>Select the product that you've found a [% terms.bug %] in.</li>
++    <li>Wybierz produkt w którym znalazłeś [% terms.blad %].</li>
+ 
+-    <li>Enter your e-mail address, password, and press the "Login" button.
+-    (If you don't yet have a password, leave the password field empty, and
+-    press the "E-mail me a password" button instead. You'll quickly receive
+-    an e-mail message with your password.)</li>
++    <li>Podaj swój adres e-mail, hasło i wciśnij przycisk "Zaloguj" (Jeśli jeszcze
++    nie masz hasła, pozostaw to pole puste i wciśnij "Wyślij mi hasło". Powinieneś
++    wkrótce otrzymać wiadomość ze swoim nowym hasłem).</li>
+   </ol>
+ 
+-  <p>Now, fill out the form. Here's what it all means:</p>
++  <p>Wypełnij formularz. Znaczenie poszczególnych pól:</p>
+ 
+-  <p><b>Where did you find the [% terms.bug %]?</b></p>
++  <p><b>Gdzie [% terms.blad %] został wykryty?</b></p>
+ 
+   <blockquote>
+-    <p><b>Product: In which product did you find the [% terms.bug %]?</b><br>
+-     You just specified this on the last page, so you can't edit it
+-    here.</p>
++    <p><b>Produkt: W którym produkcie został znaleziony ten [% terms.blad %]?</b><br>
++     Wartość dla tego pola podałeś na poprzedniej stronie, więc jego edycja jest
++     niemożliwa.</p>
+ 
+-    <p><b>Version: In which product version did you find 
+-          the [% terms.bug %]?</b><br>
+-     (If applicable)</p>
++    <p><b>Wersja: W której wersji produktu znalazłeś [% terms.blad %]?</b><br>
++     (jeśli dostępne)</p>
+ 
+-    <p><b>Component: In which component does the [% terms.bug %] 
+-          exist?</b><br>
+-    [% terms.Bugzilla %] requires that you select a component to enter 
+-    a [% terms.bug %]. (Not sure which to choose? Click on the Component link. 
+-    You'll see a description of each component, to help you make the best 
+-    choice.)</p>
++    <p><b>Komponent: W którym komponencie istnieje ten [% terms.blad %]?</b><br>
++    [% terms.Bugzilla %] wymaga wyboru komponentu podczas procesu zgłaszania
++    [% terms.bledu %] (nie jesteś pewien który wybrać? Kliknij na odnośniku Komponent.
++    Spowoduje to wyświetlenie opisu dla każdego komponentu, co, być może, pomoże Ci
++    wybrać ten właściwy).</p>
+ 
+-    <p><b>OS: On which Operating System (OS) did you find 
+-          this [% terms.bug %]?</b>
+-    (e.g. Linux, Windows 2000, Mac OS 9.)<br>
+-    If you know the [% terms.bug %] happens on all OSs, choose 'All'. 
+-    Otherwise, select the OS that you found the [% terms.bug %] on, or 
+-    "Other" if your OS isn't listed.</p>
++    <p><b>OS: Na jakim systemie operacyjnym znalazłeś [% terms.blad %]?</b>
++    (np. Linux, Windows 2000, Mac OS 9.)<br>
++    Jeśli wiesz że ten problem występuje na każdym systemie operacyjnym, wybierz 'Wszytkie'. 
++    W przeciwnym wypadku wybierz OS na którym udało Ci się zlokalizować [% terms.blad %],
++    lub 'Inny' jeśli Twojego systemu operacyjnego nie ma na liście.</p>
+   </blockquote>
+ 
+-  <p><b>How important is the [% terms.bug %]?</b></p>
++  <p><b>Jak ważny jest ten [% terms.blad %]?</b></p>
+ 
+   <blockquote>
+-    <p><b>Severity: How damaging is the [% terms.bug %]?</b><br>
+-     This item defaults to 'normal'. If you're not sure what severity your
+-    [% terms.bug %] deserves, click on the Severity link. You'll see a
+-    description of each severity rating.<br>
++    <p><b>Waga błędu: w jakim stopniu poważny jest dany [% terms.blad %]?</b><br>
++     Wartością domyślną pola jest 'normalny'. Jeśli nie jesteś pewny jaką wagę przypisać
++     [% terms.bledowi %], kliknij na donośniku Waga błędu. Zostanie wyświetlona strona na
++     której opisane są poszczególne wagi błędów.<br>
+     </p>
+   </blockquote>
+ 
+-  <p><b>Who will be following up on the [% terms.bug %]?</b></p>
++  <p><b>Kto będzie śledził dany [% terms.blad %]?</b></p>
+ 
+   <blockquote>
+-    <p><b>Assigned To: Which engineer should be responsible for fixing
+-    this [% terms.bug %]?</b><br>
+-    [% terms.Bugzilla %] will automatically assign the [% terms.bug %] to a
+-    default engineer upon submitting [% terms.abug %] report. If you'd prefer
+-    to directly assign the [% terms.bug %] to someone else, enter their e-mail
+-    address into this field. (To see the list of default engineers for each
+-    component, click on the Component link.)</p>
++    <p><b>Przypisany do: Która osoba jest odpowiedzialna za rozwiązanie 
++    [% terms.bledu %]?</b><br>
++    [% terms.Bugzilla %] automatycznie przypisze [% terms.blad %] osobie, która
++    została ustawiona jako domyślna dla danego komponentu. Jeśli chcesz przypisać
++    [% terms.blad %] innej osobie, wpisz jej adres e-mail w tym polu (aby zobaczyć
++    kto jest osobą domyślnie przypisaną do danego komponentu, kliknij na odnośniku
++    Komponent).</p>
+ 
+-    <p><b>Cc: Who else should receive e-mail updates on changes to this
+-    [% terms.bug %]?</b><br>
+-     List the full e-mail addresses of other individuals who should receive
+-    an e-mail update upon every change to the [% terms.bug %] report. You can
+-    enter as many e-mail addresses as you'd like, separated by spaces or 
+-    commas, as long as those people have [% terms.Bugzilla %] accounts.</p>
++    <p><b>Obserwatorzy: Kto jeszcze powinien otrzymywać wiadomości dotyczące zmian
++    w tym [% terms.bledzie %]?</b><br>
++     Podaj listę osób która, twoim zdaniem, powinna otrzymywać powiadomienia o
++    wszystkich zmianach tego raportu [% terms.bledu %]. Możesz podać dowolną liczbę
++    adresów e-mail, oddzielonych spacją lub przecinkiem, osób które mają konto w 
++    [% terms.Bugzilli %].</p>
+   </blockquote>
+ 
+-  <p><b>What else can you tell the engineer about the [% terms.bug %]?</b></p>
++  <p><b>Co jeszcze można powiedzieć o tym [% terms.bledzie %]?</b></p>
+ 
+   <blockquote>
+-    <p><b>Summary:</b> <b>How would you describe the [% terms.bug %], in 
+-    approximately 60 or fewer characters?</b><br>
+-     A good summary should <b>quickly and uniquely identify [% terms.abug %]
+-    report</b>. Otherwise, an engineer cannot meaningfully identify your
+-    [% terms.bug %] by its summary, and will often fail to pay attention to 
+-    your [% terms.bug %] report when skimming through a 10 
+-    page [% terms.bug %] list.<br>
++    <p><b>Podsumowanie:</b> <b>W jaki sposób mógłbyś opisać [% terms.blad %] w
++    około 60 znakach?</b><br>
++     Dobre podsumowanie powinno <b>szybko i jednoznacznie opisywać [% terms.blad %]</b>.
++    W przeciwnym przypadku programista nie będzie w stanie jednoznacznie zidentyfikować
++    Twojego [% terms.bledy %], co może sprawić, że zostanie on niezauważony podczas
++    przeglądania 10 stronicowej listy [% terms.bledow %].<br>
+     <br>
+-     A useful summary might be "<tt>PCMCIA install fails on Tosh Tecra
+-    780DVD w/ 3c589C</tt>". "<tt>Software fails</tt>" or "<tt>install
+-    problem</tt>" would be examples of a bad summary.<br>
++     Przykładem dobrego podsumowania może być "<tt>Instalacja PCMCIA nie udała się na
++    Tosh Tecra 780DVD z 3c589C</tt>". Z kolei "<tt>Program nie działa</tt>" albo
++    "<tt>Problem z instalacją</tt>" są przykładami złego podsumowania.<br>
+     <br>
+-     [ <a href="#summary">Tell Me More</a> ]<br>
++     [ <a href="#summary">Pokaż więcej</a> ]<br>
+     <br>
+-     <b>Description:</b><br>
+-     Please provide a detailed problem report in this field. Your 
+-     [% terms.bug %]'s recipients will most likely expect the following 
+-     information:</p>
++     <b>Opis:</b><br>
++     W tym polu proszę podać wyczerpujący opis problemu. Czytelnicy Twojego raportu
++     prawdopodobnie będą oczekiwać co najmniej tych informacji:</p>
+ 
+     <blockquote>
+-      <p><b>Overview Description:</b> More detailed expansion of
+-      summary.</p>
++      <p><b>Ogólny opis:</b> Nieco bardziej szczegółowe rozwinięcie zawartości
++      podsumowania.</p>
+ 
+       <blockquote>
+ <pre>
+

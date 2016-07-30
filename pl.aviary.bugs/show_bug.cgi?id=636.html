@@ -1,0 +1,3280 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>636 &ndash; Nie działa pokazywanie lokalizacji na mapie</title>
+
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<link href="data/assets/7aa6ea67750936a0368541421bdcd5ee.css" rel="stylesheet" type="text/css">
+
+
+
+    
+<script type="text/javascript" src="data/assets/a7c2f3a028f17a9aa60f56dc9d6e732d.js"></script>
+
+    <script type="text/javascript">
+    <!--
+        YAHOO.namespace('bugzilla');
+        YAHOO.util.Event.addListener = function (el, sType, fn, obj, overrideContext) {
+               if ( ("onpagehide" in window || YAHOO.env.ua.gecko) && sType === "unload") { sType = "pagehide"; };
+               var capture = ((sType == "focusin" || sType == "focusout") && !YAHOO.env.ua.ie) ? true : false;
+               return this._addListener(el, this._getType(sType), fn, obj, overrideContext, capture);
+         };
+        if ( "onpagehide" in window || YAHOO.env.ua.gecko) {
+            YAHOO.util.Event._simpleRemove(window, "unload", 
+                                           YAHOO.util.Event._unload);
+        }
+        
+        function unhide_language_selector() { 
+            YAHOO.util.Dom.removeClass(
+                'lang_links_container', 'bz_default_hidden'
+            ); 
+        } 
+        YAHOO.util.Event.onDOMReady(unhide_language_selector);
+
+        
+        var BUGZILLA = {
+            param: {
+                cookiepath: '\/',
+                maxusermatches: 1000
+            },
+            constant: {
+                COMMENT_COLS: 80
+            },
+            string: {
+                
+
+                attach_desc_required:
+                    "You must enter a Description for this attachment.",
+                component_required:
+                    "You must select a Component for this bug.",
+                description_required:
+                    "You must enter a Description for this bug.",
+                short_desc_required:
+                    "You must enter a Summary for this bug.",
+                version_required:
+                    "You must select a Version for this bug."
+            }
+              , api_token: ''
+        };
+
+    if (history && history.replaceState) {
+      if(!document.location.href.match(/show_bug\.cgi/)) {
+        history.replaceState( null,
+                             "636 – Nie działa pokazywanie lokalizacji na mapie",
+                             "show_bug.cgi?id=636" );
+        document.title = "636 – Nie działa pokazywanie lokalizacji na mapie";
+      }
+      if (document.location.href.match(/show_bug\.cgi\?.*list_id=/)) {
+        var href = document.location.href;
+        href = href.replace(/[\?&]+list_id=(\d+|cookie)/, '');
+        history.replaceState(null, "636 – Nie działa pokazywanie lokalizacji na mapie", href);
+      }
+    }
+    YAHOO.util.Event.onDOMReady(function() {
+      initDirtyFieldTracking();
+
+    });
+    // -->
+    </script>
+<script type="text/javascript" src="data/assets/daf5e0fb6826e6a35280e622913f0c4a.js"></script>
+
+    
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+                       title="Bugzilla" href="search_plugin.cgi">
+    <link rel="shortcut icon" href="images/favicon.ico">
+  </head>
+
+  <body 
+        class="bugs-aviary-pl
+                 bz_bug
+                 bz_status_VERIFIED
+                 bz_product_Thunderbird
+                 bz_component_Og&#XF3;lne
+                 bz_bug_636 yui-skin-sam">
+
+  <div id="header"><div id="banner">
+  </div>
+
+    <div id="titles">
+      <span id="title">Bugzilla &ndash; Bug&nbsp;636</span>
+
+        <span id="subtitle" class="subheader">Nie działa pokazywanie lokalizacji na mapie</span>
+
+        <span id="information" class="header_addl_info">Last modified: 2010-05-13 05:53:18 CEST</span>
+    </div>
+
+
+    <div id="common_links"><ul class="links">
+  <li><a href="index.html">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi.html">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi.html">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi.html">Search</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="http://bugs.aviary.pl/buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input type="hidden" id="no_redirect_top" name="no_redirect" value="0">
+    <script type="text/javascript">
+      if (history && history.replaceState) {
+        var no_redirect = document.getElementById("no_redirect_top");
+        no_redirect.value = 1;
+      }
+    </script>
+    <input class="txt" type="text" id="quicksearch_top" name="quicksearch" 
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search" 
+           id="find_top"></form>
+  <a href="page.cgi%3Fid=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="report.cgi.html">Reports</a></li>
+
+  <li>
+      <span class="separator">| </span>
+        <a href="request.cgi.html">Requests</a></li>
+
+
+  <li>
+        <span class="separator">| </span>
+        <a href="https://bugzilla.readthedocs.org/en/5.0/using/understanding.html" target="_blank">Help</a>
+      </li>
+    
+      <li id="new_account_container_top">
+        <span class="separator">| </span>
+        <a href="createaccount.cgi.html">New&nbsp;Account</a>
+      </li>
+
+    <li id="mini_login_container_top">
+  <span class="separator">| </span>
+  <a id="login_link_top" href="show_bug.cgi%3Fid=636&amp;GoAheadAndLogIn=1.html"
+     onclick="return show_mini_login_form('_top')">Log In</a>
+
+  <form action="show_bug.cgi%3Fid=636.html" method="POST"
+        class="mini_login bz_default_hidden"
+        id="mini_login_top">
+    <input id="Bugzilla_login_top" required
+           name="Bugzilla_login" class="bz_login"
+        type="email" placeholder="Email Address">
+    <input class="bz_password" name="Bugzilla_password" type="password"
+           id="Bugzilla_password_top" required
+           placeholder="Password">
+    <input type="hidden" name="Bugzilla_login_token"
+           value="1469820239-oAn7pO6ZhELODdw1Y3q7HAdYVQBOCXdb_tmGtcHbma0">
+    <input type="submit" name="GoAheadAndLogIn" value="Log in"
+            id="log_in_top">
+    <a href="show_bug.cgi%3Fid=636.html#" onclick="return hide_mini_login_form('_top')">[x]</a>
+  </form>
+</li>
+
+
+  <li id="forgot_container_top">
+    <span class="separator">| </span>
+    <a id="forgot_link_top" href="show_bug.cgi%3Fid=636&amp;GoAheadAndLogIn=1.html#forgot"
+       onclick="return show_forgot_form('_top')">Forgot Password</a>
+    <form action="http://bugs.aviary.pl/token.cgi" method="post" id="forgot_form_top"
+          class="mini_forgot bz_default_hidden">
+      <label for="login_top">Login:</label>
+      <input name="loginname" size="20" id="login_top" required
+          type="email" placeholder="Your Email Address">
+      <input id="forgot_button_top" value="Reset Password" type="submit">
+      <input type="hidden" name="a" value="reqpw">
+      <input type="hidden" id="token_top" name="token"
+             value="1469820239-wrWJcNt6VBDhkAItTwmgpzvSRmPDW0zeLyfID1dOAm8">
+      <a href="show_bug.cgi%3Fid=636.html#" onclick="return hide_forgot_form('_top')">[x]</a>
+    </form>
+  </li>
+</ul>
+    </div>
+  </div>
+
+  <div id="bugzilla-body">
+
+
+<script type="text/javascript">
+<!--
+
+//-->
+</script>
+
+<form name="changeform" id="changeform" method="post" action="http://bugs.aviary.pl/process_bug.cgi">
+
+  <input type="hidden" name="delta_ts" value="2010-05-13 05:53:18">
+  <input type="hidden" name="id" value="636">
+  <input type="hidden" name="token" value="1469820239--G1kbGyd07O14Pt-oY9rAWQkas71I448amHbiI6kfF4">
+<div class="bz_short_desc_container edit_form">
+     <a href="show_bug.cgi%3Fid=636.html"><b>Bug&nbsp;636</b></a> <span id="summary_container" class="bz_default_hidden">
+      - <span id="short_desc_nonedit_display">Nie działa pokazywanie lokalizacji na mapie</span>
+     </span>
+
+    <div id="summary_input"><span class="field_label "
+    id="field_label_short_desc">
+
+
+  <a 
+      title="The bug summary is a short sentence which succinctly describes what the bug is about."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#short_desc"
+  >Summary:</a>
+
+</span>Nie działa pokazywanie lokalizacji na mapie
+    </div>
+  </div>
+  <script type="text/javascript">
+    hideEditableField('summary_container',
+                      'summary_input',
+                      'summary_edit_action',
+                      'short_desc',
+                      'Nie działa pokazywanie lokalizacji na mapie' );
+  </script>
+  <table class="edit_form">
+    <tr>
+      
+      <td id="bz_show_bug_column_1" class="bz_show_bug_column">     
+        <table>
+          <tr>
+    <th class="field_label">
+      <a href="page.cgi%3Fid=fields.html#bug_status">Status</a>:
+    </th>
+    <td id="bz_field_status">
+      <span id="static_bug_status">VERIFIED
+          FIXED
+      </span>
+    </td>
+  </tr>
+<tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+<tr><th class="field_label "
+    id="field_label_alias">
+
+
+  <a 
+      title="A short, unique name assigned to a bug in order to assist with looking it up and referring to it in other places in Bugzilla."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#alias"
+  >Alias:</a>
+
+</th>
+    <td>
+        None
+    </td>
+  </tr>
+<tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+<tr><th class="field_label "
+    id="field_label_product">
+
+
+  <a 
+      title="Bugs are categorised into Products and Components. Select a Classification to narrow down this list."
+      class="field_help_link"
+      href="describecomponents.cgi.html"
+  >Product:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_product" >Thunderbird
+
+</td>
+    </tr>
+
+    
+    <tr class="bz_default_hidden"><th class="field_label "
+    id="field_label_classification">
+
+
+  <a 
+      title="Bugs are categorised into Classifications, Products and Components. classifications is the top-level categorisation."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#classification"
+  >Classification:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_classification" >Tłumaczenia oprogramowania
+
+</td>
+    </tr>
+        
+    
+    
+    <tr><th class="field_label "
+    id="field_label_component">
+
+
+  <a 
+      title="Components are second-level categories; each belongs to a particular Product. Select a Product to narrow down this list."
+      class="field_help_link"
+      href="describecomponents.cgi%3Fproduct=Thunderbird.html"
+  >Component:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_component" >Ogólne
+
+  (<a href="buglist.cgi%3Fcomponent=Ogólne&amp;product=Thunderbird&amp;bug_status=__open__.html"
+      target="_blank">show other bugs</a>)
+</td>
+    </tr>
+    <tr><th class="field_label "
+    id="field_label_version">
+
+
+  <a 
+      title="The version field defines the version of the software the bug was found in."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#version"
+  >Version:</a>
+
+</th>
+<td>1.0
+  </td>
+    </tr>
+        
+    
+        
+    <tr><th class="field_label "
+    id="field_label_rep_platform">
+
+
+  <a 
+      title="The hardware platform the bug was observed on. Note: When searching, selecting the option &quot;All&quot; only finds bugs whose value for this field is literally the word &quot;All&quot;."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#rep_platform"
+  >Hardware:</a>
+
+</th>
+      <td class="field_value">Wszystkie
+        Wszystkie
+      </td>
+    </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          
+          <tr>
+      <th class="field_label">
+        <label  accesskey="i">
+          <a href="page.cgi%3Fid=fields.html#importance"><u>I</u>mportance</a></label>:
+      </th>
+      <td>P2
+       trywialny
+      </td>
+    </tr>
+          
+          <tr><th class="field_label "
+    id="field_label_assigned_to">
+
+
+  <a 
+      title="The person in charge of resolving the bug."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#assigned_to"
+  >Assignee:</a>
+
+</th>
+      <td><span class="vcard"><span class="fn">Piotr Komoda</span>
+</span>
+      </td>
+    </tr>
+
+    <tr><th class="field_label "
+    id="field_label_qa_contact">
+
+
+  <a 
+      title="The person responsible for confirming this bug if it is unconfirmed, and for verifying the fix once the bug has been resolved."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#qa_contact"
+  >QA Contact:</a>
+
+</th>
+      <td><span class="vcard"><span class="fn">Piotr Pielach</span>
+</span>
+      </td>
+    </tr>
+    <script type="text/javascript">
+      assignToDefaultOnChange(['product', 'component'],
+        'nobody\x40aviary.pl',
+        'thunderbird\x40l10n.bledy');
+    </script>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          <tr><th class="field_label "
+    id="field_label_bug_file_loc">
+
+
+  <a 
+      title="Bugs can have a URL associated with them - for example, a pointer to a web site where the problem is seen."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#bug_file_loc"
+  >URL:</a>
+
+</th>
+    <td>
+      <span id="bz_url_input_area">
+      </span>
+    </td>
+  </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+
+          
+<tr><th class="field_label "
+    id="field_label_dependson">
+
+
+  <a 
+      title="The bugs listed here must be resolved before this bug can be resolved."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#dependson"
+  >Depends on:</a>
+
+</th>
+
+  <td>
+    <span id="dependson_input_area">
+    </span>
+
+  </td>
+  </tr>
+  
+  <tr><th class="field_label "
+    id="field_label_blocked">
+
+
+  <a 
+      title="This bug must be resolved before the bugs listed in this field can be resolved."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#blocked"
+  >Blocks:</a>
+
+</th>
+
+  <td>
+    <span id="blocked_input_area">
+    </span>
+<a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - [tracking] Lokalizacja Thunderbirda 1.5"
+   href="show_bug.cgi%3Fid=517.html">517</a> 
+  </td>
+  </tr>
+
+    <tr>
+      <th>&nbsp;</th>
+
+      <td id="show_dependency_tree_or_graph">
+        Show dependency <a href="showdependencytree.cgi%3Fid=636&amp;hide_resolved=1.html">tree</a>
+
+          /&nbsp;<a href="showdependencygraph.cgi%3Fid=636.html">graph</a>
+      </td>
+    </tr>
+          
+        </table>
+      </td>
+      <td>
+        <div class="bz_column_spacer">&nbsp;</div>
+      </td>
+      
+      <td id="bz_show_bug_column_2" class="bz_show_bug_column">
+        <table>
+        <tr>
+    <th class="field_label">
+      Reported:
+    </th>
+    <td>2005-10-09 20:01 CEST by <span class="vcard"><span class="fn">Bartosz Piec</span>
+</span>
+    </td>
+  </tr>
+  
+  <tr>
+    <th class="field_label">
+      Modified:
+    </th>
+    <td>2010-05-13 05:53 CEST
+      (<a href="show_activity.cgi%3Fid=636.html">History</a>)
+    </td>
+  
+  </tr>
+<tr>
+      <th class="field_label">
+        <label  accesskey="a">
+          CC List:
+        </label>
+      </th>
+      <td>3 
+          users
+          <span id="cc_edit_area_showhide_container" class="bz_default_hidden">
+            (<a href="show_bug.cgi%3Fid=636.html#" id="cc_edit_area_showhide">show</a>)
+          </span>
+        <div id="cc_edit_area">
+          <br>
+            <select id="cc" multiple="multiple" size="5" >
+                <option value="bpiec">bpiec</option>
+                <option value="gandalf">gandalf</option>
+                <option value="marcoos+bugs">marcoos+bugs</option>
+            </select>
+        </div>
+          <script type="text/javascript">
+            hideEditableField( 'cc_edit_area_showhide_container', 
+                               'cc_edit_area', 
+                               'cc_edit_area_showhide', 
+                               '', 
+                               '');  
+          </script>
+      </td>
+    </tr>
+
+<tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+<tr><th class="field_label "
+    id="field_label_see_also">
+
+
+  <a 
+      title="This allows you to refer to bugs in other installations. You can enter a URL to a bug in the 'Add Bug URLs' field to note that that bug is related to this one. You can enter multiple URLs at once by separating them with whitespace. You should normally use this field to refer to bugs in other installations. For bugs in this installation, it is better to use the Depends on and Blocks fields."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#see_also"
+  >See Also:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_see_also" >
+
+</td>
+    </tr> 
+
+<tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+
+
+
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+          <hr id="bz_top_half_spacer">
+      </td>
+    </tr>
+  </table>
+
+  <table id="bz_big_form_parts">
+  <tr>
+  <td>
+
+    
+<script type="text/javascript">
+<!--
+function toggle_display(link) {
+    var table = document.getElementById("attachment_table");
+    var view_all = document.getElementById("view_all");
+    var hide_obsolete_url_parameter = "&hide_obsolete=1";
+    // Store current height for scrolling later
+    var originalHeight = table.offsetHeight;
+    var rows = YAHOO.util.Dom.getElementsByClassName(
+        'bz_tr_obsolete', 'tr', table);
+
+    for (var i = 0; i < rows.length; i++) {
+        bz_toggleClass(rows[i], 'bz_default_hidden');
+    }
+
+    if (YAHOO.util.Dom.hasClass(rows[0], 'bz_default_hidden')) {
+        link.innerHTML = "Show Obsolete";
+        view_all.href = view_all.href + hide_obsolete_url_parameter 
+    }
+    else {
+        link.innerHTML = "Hide Obsolete";
+        view_all.href = view_all.href.replace(hide_obsolete_url_parameter,"");
+    }
+
+    var newHeight = table.offsetHeight;
+    // This scrolling makes the window appear to not move at all.
+    window.scrollBy(0, newHeight - originalHeight);
+
+    return false;
+}
+//-->
+</script>
+
+<br>
+<table id="attachment_table">
+  <tr id="a0">
+    <th colspan="3" class="left">
+      Attachments
+    </th>
+  </tr>
+
+
+      <tr id="a1" class="bz_contenttype_text_plain bz_patch bz_tr_obsolete bz_default_hidden">
+        <td>
+            <a href="attachment.cgi%3Fid=605"
+               title="View the content of the attachment">
+          <b><span class="bz_obsolete">Patch v1.0</span></b></a>
+
+          <span class="bz_attach_extra_info">
+              (3.73 KB,
+                patch)
+
+            <br>
+            <a href="show_bug.cgi%3Fid=636.html#attach_605"
+               title="Go to the comment associated with the attachment">2005-10-12 13:41 CEST</a>,
+
+            <span class="vcard"><span class="fn">Piotr Komoda</span>
+</span>
+          </span>
+        </td>
+
+          <td class="bz_attach_flags">
+              <i>no flags</i>
+          </td>
+
+        <td>
+          <a href="attachment.cgi%3Fid=605&amp;action=edit.html">Details</a>
+        </td>
+      </tr>
+      <tr id="a2" class="bz_contenttype_image_png">
+        <td>
+            <a href="attachment.cgi%3Fid=606"
+               title="View the content of the attachment">
+          <b>Łódź i Maporama</b></a>
+
+          <span class="bz_attach_extra_info">
+              (52.59 KB,
+                image/png)
+
+            <br>
+            <a href="show_bug.cgi%3Fid=636.html#attach_606"
+               title="Go to the comment associated with the attachment">2005-10-12 17:01 CEST</a>,
+
+            <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+          </span>
+        </td>
+
+          <td class="bz_attach_flags">
+              <i>no flags</i>
+          </td>
+
+        <td>
+          <a href="attachment.cgi%3Fid=606&amp;action=edit.html">Details</a>
+        </td>
+      </tr>
+      <tr id="a3" class="bz_contenttype_text_plain bz_patch bz_tr_obsolete bz_default_hidden">
+        <td>
+            <a href="attachment.cgi%3Fid=607"
+               title="View the content of the attachment">
+          <b><span class="bz_obsolete">Patch v2.0</span></b></a>
+
+          <span class="bz_attach_extra_info">
+              (4.00 KB,
+                patch)
+
+            <br>
+            <a href="show_bug.cgi%3Fid=636.html#attach_607"
+               title="Go to the comment associated with the attachment">2005-10-12 19:28 CEST</a>,
+
+            <span class="vcard"><span class="fn">Piotr Komoda</span>
+</span>
+          </span>
+        </td>
+
+          <td class="bz_attach_flags">
+              <i>no flags</i>
+          </td>
+
+        <td>
+          <a href="attachment.cgi%3Fid=607&amp;action=edit.html">Details</a>
+        </td>
+      </tr>
+      <tr id="a4" class="bz_contenttype_image_jpeg bz_tr_obsolete bz_default_hidden">
+        <td>
+            <a href="attachment.cgi%3Fid=608"
+               title="View the content of the attachment">
+          <b><span class="bz_obsolete">Zrzut ekranu</span></b></a>
+
+          <span class="bz_attach_extra_info">
+              (33.16 KB,
+                image/jpeg)
+
+            <br>
+            <a href="show_bug.cgi%3Fid=636.html#attach_608"
+               title="Go to the comment associated with the attachment">2005-10-12 19:41 CEST</a>,
+
+            <span class="vcard"><span class="fn">Piotr Komoda</span>
+</span>
+          </span>
+        </td>
+
+          <td class="bz_attach_flags">
+              <i>no flags</i>
+          </td>
+
+        <td>
+          <a href="attachment.cgi%3Fid=608&amp;action=edit.html">Details</a>
+        </td>
+      </tr>
+      <tr id="a5" class="bz_contenttype_text_plain bz_patch bz_tr_obsolete bz_default_hidden">
+        <td>
+            <a href="attachment.cgi%3Fid=609"
+               title="View the content of the attachment">
+          <b><span class="bz_obsolete">Patch v2.1</span></b></a>
+
+          <span class="bz_attach_extra_info">
+              (3.91 KB,
+                patch)
+
+            <br>
+            <a href="show_bug.cgi%3Fid=636.html#attach_609"
+               title="Go to the comment associated with the attachment">2005-10-12 20:44 CEST</a>,
+
+            <span class="vcard"><span class="fn">Piotr Komoda</span>
+</span>
+          </span>
+        </td>
+
+          <td class="bz_attach_flags">
+                  <span title="Marek Stępień">marcoos+bugs</span>:
+                review-
+                <br>
+          </td>
+
+        <td>
+          <a href="attachment.cgi%3Fid=609&amp;action=edit.html">Details</a>
+        </td>
+      </tr>
+      <tr id="a6" class="bz_contenttype_text_plain bz_patch bz_tr_obsolete bz_default_hidden">
+        <td>
+            <a href="attachment.cgi%3Fid=610"
+               title="View the content of the attachment">
+          <b><span class="bz_obsolete">Patch v2.2</span></b></a>
+
+          <span class="bz_attach_extra_info">
+              (3.91 KB,
+                patch)
+
+            <br>
+            <a href="show_bug.cgi%3Fid=636.html#attach_610"
+               title="Go to the comment associated with the attachment">2005-10-14 04:03 CEST</a>,
+
+            <span class="vcard"><span class="fn">Piotr Komoda</span>
+</span>
+          </span>
+        </td>
+
+          <td class="bz_attach_flags">
+              <i>no flags</i>
+          </td>
+
+        <td>
+          <a href="attachment.cgi%3Fid=610&amp;action=edit.html">Details</a>
+        </td>
+      </tr>
+      <tr id="a7" class="bz_contenttype_image_jpeg bz_tr_obsolete bz_default_hidden">
+        <td>
+            <a href="attachment.cgi%3Fid=611"
+               title="View the content of the attachment">
+          <b><span class="bz_obsolete">Zrzut ekranu patcha 2.2</span></b></a>
+
+          <span class="bz_attach_extra_info">
+              (31.66 KB,
+                image/jpeg)
+
+            <br>
+            <a href="show_bug.cgi%3Fid=636.html#attach_611"
+               title="Go to the comment associated with the attachment">2005-10-14 04:04 CEST</a>,
+
+            <span class="vcard"><span class="fn">Piotr Komoda</span>
+</span>
+          </span>
+        </td>
+
+          <td class="bz_attach_flags">
+              <i>no flags</i>
+          </td>
+
+        <td>
+          <a href="attachment.cgi%3Fid=611&amp;action=edit.html">Details</a>
+        </td>
+      </tr>
+      <tr id="a8" class="bz_contenttype_text_plain bz_patch bz_tr_obsolete bz_default_hidden">
+        <td>
+            <a href="attachment.cgi%3Fid=613"
+               title="View the content of the attachment">
+          <b><span class="bz_obsolete">Patch v3.0</span></b></a>
+
+          <span class="bz_attach_extra_info">
+              (3.73 KB,
+                patch)
+
+            <br>
+            <a href="show_bug.cgi%3Fid=636.html#attach_613"
+               title="Go to the comment associated with the attachment">2005-10-15 18:24 CEST</a>,
+
+            <span class="vcard"><span class="fn">Piotr Komoda</span>
+</span>
+          </span>
+        </td>
+
+          <td class="bz_attach_flags">
+              <i>no flags</i>
+          </td>
+
+        <td>
+          <a href="attachment.cgi%3Fid=613&amp;action=edit.html">Details</a>
+        </td>
+      </tr>
+      <tr id="a9" class="bz_contenttype_text_plain bz_patch">
+        <td>
+            <a href="attachment.cgi%3Fid=667"
+               title="View the content of the attachment">
+          <b>Patch v4.0 (wrzucony)</b></a>
+
+          <span class="bz_attach_extra_info">
+              (3.63 KB,
+                patch)
+
+            <br>
+            <a href="show_bug.cgi%3Fid=636.html#attach_667"
+               title="Go to the comment associated with the attachment">2005-10-29 15:16 CEST</a>,
+
+            <span class="vcard"><span class="fn">Piotr Komoda</span>
+</span>
+          </span>
+        </td>
+
+          <td class="bz_attach_flags">
+              <i>no flags</i>
+          </td>
+
+        <td>
+          <a href="attachment.cgi%3Fid=667&amp;action=edit.html">Details</a>
+        </td>
+      </tr>
+
+  <tr class="bz_attach_footer">
+    <td colspan="3">
+        <span class="bz_attach_view_hide">
+            <a href="show_bug.cgi%3Fid=636.html#a0" onclick="return toggle_display(this);">Show
+              Obsolete</a> (7)
+            <a id="view_all" href="attachment.cgi%3Fbugid=636&amp;action=viewall&amp;hide_obsolete=1.html">View All</a>
+        </span>
+        <a href="attachment.cgi%3Fbugid=636&amp;action=enter.html">Add an attachment</a>
+        (proposed patch, testcase, etc.)
+    </td>
+  </tr>
+</table>
+<br>
+
+  </td>
+  <td>
+  </td>
+  </tr></table>
+
+  
+  <div id="comments"><script src="js/comments.js" type="text/javascript">
+</script>
+
+<script type="text/javascript">
+<!--
+  /* Adds the reply text to the 'comment' textarea */
+  function replyToComment(id, real_id, name) {
+      var prefix = "(In reply to " + name + " from comment #" + id + ")\n";
+      var replytext = "";
+        /* pre id="comment_name_N" */
+        var text_elem = document.getElementById('comment_text_'+id);
+        var text = getText(text_elem);
+        replytext = prefix + wrapReplyText(text);
+
+
+      /* <textarea id="comment"> */
+      var textarea = document.getElementById('comment');
+      if (textarea.value != replytext) {
+          textarea.value += replytext;
+      }
+
+      textarea.focus();
+  } 
+//-->
+</script>
+
+
+<!-- This auto-sizes the comments and positions the collapse/expand links 
+     to the right. -->
+<table class="bz_comment_table">
+<tr>
+<td>
+<div id="c0" class="bz_comment bz_first_comment">
+
+      <div class="bz_first_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=636.html#c0">Description</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Bartosz Piec</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-10-09 20:01:10 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">W książce adresowej Tb, jak uzupełniony jest adres kontaktu, można kliknąć
+przycisk &quot;Pokaż mapę&quot;. W wielu przypadkach pokazanie mapy nie działa (skutkuje
+to komunikatem &quot;Error Code: 400 mqs.geocode failed.&quot;). Doszliśmy z Pitreckiem do
+tego, że powodem jest nazwa kraju przekazywanego w query stringu (ja miałem
+POLSKA. Po zmianie na POLAND wszystko działa).
+
+W związku z tym uważam, że żadna mapa nie będzie działać zawsze, bo użytkownik
+może wpisywać różne nazwy w polu &quot;Kraj&quot; (a pewnie rzadko to będzie POLAND). Czy
+w takim razie nie warto uznać, że domyślnym krajem jest Polska i używać jakiegoś
+naszego serwisu, np. mapa.szukacz.pl? Ewentualnie (jeżele MoFo będzie miała coś
+przeciw) używać dalej MapQuest, ale z wpisanym POLAND na sztywno.</pre>
+    </div>
+
+    <div id="c1" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=636.html#c1">Comment 1</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-10-09 22:48:56 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Zgłoś to na mozilla.org, to jest ewidentny błąd w Tb, nie ma nic wspólnego z
+lokalizacją.
+
+(Dałbym Invalid, ale nie chcę bruździć Pitrckowi ;-))</pre>
+    </div>
+
+    <div id="c2" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=636.html#c2">Comment 2</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Piotr Komoda</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-10-10 01:36:09 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Po krotkiej dyskusji z Marcoosem uznalismy, ze lepiej jednak to przekazac b.m.o,
+niech oni nad tym glowkuja. Jak sie okazuje,  mapquest z czescia nazw krajow
+zapisanych w natywnym jezyku sobie radzi, a z czescia nie.
+
+<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=230673">https://bugzilla.mozilla.org/show_bug.cgi?id=230673</a></pre>
+    </div>
+
+    <div id="c3" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=636.html#c3">Comment 3</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Piotr Komoda</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-10-12 04:48:37 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Otwieram ponownie, gdyz hamerykanie sie na nas wypieli i dali Google Maps:
+<a href="http://bonsai.mozilla.org/cvsview2.cgi?diff_mode=context&amp;whitespace_mode=show&amp;subdir=mozilla/mail/locales/en-US/chrome/messenger-region&amp;command=DIFF_FRAMESET&amp;file=region.properties&amp;rev1=1.6&amp;rev2=1.7&amp;root=/cvsroot">http://bonsai.mozilla.org/cvsview2.cgi?diff_mode=context&amp;whitespace_mode=show&amp;subdir=mozilla/mail/locales/en-US/chrome/messenger-region&amp;command=DIFF_FRAMESET&amp;file=region.properties&amp;rev1=1.6&amp;rev2=1.7&amp;root=/cvsroot</a>
+<a href="http://bonsai.mozilla.org/cvsview2.cgi?diff_mode=context&amp;whitespace_mode=show&amp;subdir=mozilla/mail/locales/en-US/chrome/messenger-region&amp;command=DIFF_FRAMESET&amp;file=region.properties&amp;rev1=1.4.2.2&amp;rev2=1.4.2.3&amp;root=/cvsroot">http://bonsai.mozilla.org/cvsview2.cgi?diff_mode=context&amp;whitespace_mode=show&amp;subdir=mozilla/mail/locales/en-US/chrome/messenger-region&amp;command=DIFF_FRAMESET&amp;file=region.properties&amp;rev1=1.4.2.2&amp;rev2=1.4.2.3&amp;root=/cvsroot</a>
+
+Proponuje zmiane na Maporama, dokladny jak szukacz, a miedzynarodowy, a w
+dodatku dostepny takze z polskim interfejsem. 
+Wada: Adres wyszukiwania przekazywany z Thunderbirda nie moze zawierac nazwy
+kraju (obojetnie w jakim jezyku), a jedynie jego kod (np. PL). Nie jest to
+wielkim problemem, gdyz mozna zmienic kilka stringow w tłumaczeniu, tak, aby
+zmusic użytkowników do wpisywania we wlasciwosciach kontaktu kodu kraju.</pre>
+    </div>
+
+    <div id="c4" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=636.html#c4">Comment 4</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Piotr Komoda</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-10-12 13:41:47 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Created <span class="bz_obsolete"><a href="attachment.cgi%3Fid=605" name="attach_605" title="Patch v1.0">attachment 605</a> <a href="attachment.cgi%3Fid=605&amp;action=edit.html" title="Patch v1.0">[details]</a></span>
+Patch v1.0
+
+Patch, ktory zmienia MapQuest na Maporama + zmiana &quot;Panstwo&quot; na &quot;Kod kraju&quot; w
+tlumaczeniu, aby zmusic uzytkownikow do wpisywania w to pole danych, ktore
+zaakceptuje Maporama.</pre>
+    </div>
+
+    <div id="c5" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=636.html#c5">Comment 5</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-10-12 13:51:01 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Imho to jest bez sensu.
+Ksiazka adresowa do ktorej mialbym wpisywac kod kraju jest mniej przydatna niz
+ta do ktorej wpisuje panstwo.
+Mapa to mily dodatek, ale tylko dodatek.
+Wyobraz sobie, ze masz przypominac sobie kody panstw takich jak Burkina Faso,
+Brunea czy Trynidad i Tobago, bo aplikacja Ci tak kaze....</pre>
+    </div>
+
+    <div id="c6" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=636.html#c6">Comment 6</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-10-12 14:36:17 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(W odpowiedzi na komentarz #4)
+<span class="quote">&gt; aby zmusic uzytkownikow do wpisywania w to pole danych, ktore
+&gt; zaakceptuje Maporama.</span >
+
+Chyba żartujesz :) Nikt nie będzie zamiast nazwy państwa wpisywał jego kodu.
+Poza tym to nie rozwiązuje problemu. Wystarczy jako miasto wpisać Łódź... Niech
+zostanie to maps.google.com. Skoro MoFo tak chce...</pre>
+    </div>
+
+    <div id="c7" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=636.html#c7">Comment 7</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Bartosz Piec</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-10-12 16:04:35 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">A czy naprawdę nie możemy założyć, że każdy wpis dotyczy Polski? W ten sposób
+nie będzie działała pewnie część wpisów użytkowników, ale pewnie mniejsza część
+niż obecnie.
+Co do Łodzi, to nie wiem o co chodzi, bo bez problemu Maporama/mapa.szukacz
+wyświetli to miasto.
+A maps.google.com są IMO bez sensu, bo nawet Krakowa nie wyświetlają. Pewnie
+jest tylko Warszawa i to jeszcze w takim powiększeniu, że masakra...</pre>
+    </div>
+
+    <div id="c8" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=636.html#c8">Comment 8</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-10-12 17:01:52 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Created <span class=""><a href="attachment.cgi%3Fid=606" name="attach_606" title="Łódź i Maporama">attachment 606</a> <a href="attachment.cgi%3Fid=606&amp;action=edit.html" title="Łódź i Maporama">[details]</a></span>
+Łódź i Maporama
+
+<span class="quote">&gt; Co do Łodzi, to nie wiem o co chodzi, bo bez problemu Maporama/mapa.szukacz
+&gt; wyświetli to miasto.</span >
+
+No nie wiem czy bez problemu ;)</pre>
+    </div>
+
+    <div id="c9" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=636.html#c9">Comment 9</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-10-12 17:58:39 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Broń boże, żadne &quot;kod kraju&quot;. To jest książka adresowa dla ludzi, a nie
+konfiguracja globalnego DNSa czy coś. :)</pre>
+    </div>
+
+    <div id="c10" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=636.html#c10">Comment 10</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Piotr Komoda</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-10-12 18:53:18 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(W odpowiedzi na komentarz #5)
+<span class="quote">&gt; Imho to jest bez sensu.
+&gt; Ksiazka adresowa do ktorej mialbym wpisywac kod kraju jest mniej 
+&gt; przydatna niz ta do ktorej wpisuje panstwo.
+&gt; Mapa to mily dodatek, ale tylko dodatek.
+&gt; Wyobraz sobie, ze masz przypominac sobie kody panstw takich jak Burkina 
+&gt; Faso, Brunea czy Trynidad i Tobago, bo aplikacja Ci tak kaze....</span >
+
+Spojrz na to z innej strony, jesli masz znajomego w innym kraju, lub sie
+interesujesz jakims krajem, to znasz jego kod i nie robi ci roznicy, czy
+wpisujesz pelna nazwe czy kod, czy widzisz we wlasciwosciach nazwe czy kod.
+Jednak ma to znaczenie dla Maporamy, i nie ma innego sposobu na przekazanie tej
+informacji uzytkownikom, niz poprzez edycje stringow ab. Naprawde nie chce, i
+watpie aby ktokolwiek chcial otrzymywac kilka razy na miesiac maila lub raport
+na bz, ze mapa nie dziala. Helpa Tb nie ma, do wiki zadko kiedy kto zaglada, a
+juz szczegolnie w takiej sprawie watpie aby ktokolwiek wpadl na to, zeby tam sie
+udac. Po prostu uzna to za blad programu. Mozna jedynie zamiast kod kraju
+wprowadzic zmiane Kraj/Panstwo (kod), co by sugerowalo uzytkownikowi co ma
+wpisac, jesli chce korzystac z mapy, ale nie narzucalo, ze musi wpisywac kod.
+Moze to i jest mily dodatek, ale jednak jest to jedna z funkcji programu i jesli
+nie dziala, to tracimy na tym my, Thunderbird i Mozilla.org.</pre>
+    </div>
+
+    <div id="c11" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=636.html#c11">Comment 11</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Piotr Komoda</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-10-12 19:04:00 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(W odpowiedzi na komentarz #6)
+<span class="quote">&gt; Niech zostanie to maps.google.com. Skoro MoFo tak chce...</span >
+
+Nie, MoFo tak nie chce. Google weszlo do en-US, ale zespoly lokalizacyjne moga
+zostawic MapQuest lub wstawic inny serwis, ktory bardziej im odpowiada.
+Google Maps jest dla krajow innych niz USA tak samo funkcjonalne, jak dla nas
+MapQuest czy Maporama z wpisanym jako kraj w wizytowce &quot;Polska&quot;, czyli wogole
+nie funkcjonalne :P</pre>
+    </div>
+
+    <div id="c12" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=636.html#c12">Comment 12</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Bartosz Piec</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-10-12 19:27:11 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">A tak na marginesie. Skoro MoFo zmienia na Google Maps, które pokazuje tylko USA
+i Kanadę (może coś jeszcze, ale niewiele), to dlaczego nie mamy tego zmienić na
+mapa.szukacz.pl?
+
+I niestety jednak maporama nie pokaże Łodzi :(</pre>
+    </div>
+
+    <div id="c13" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=636.html#c13">Comment 13</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Piotr Komoda</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-10-12 19:28:43 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Created <span class="bz_obsolete"><a href="attachment.cgi%3Fid=607" name="attach_607" title="Patch v2.0">attachment 607</a> <a href="attachment.cgi%3Fid=607&amp;action=edit.html" title="Patch v2.0">[details]</a></span>
+Patch v2.0
+
+Mniej radykalne rozwiazanie, nie narzucajace uzytkownikom, ze moga we
+wlasciwosciach kontaktu wpisywac jedynie kod kraju. Dlugosc jak i tresc tekstu
+mozna jeszcze dopracowac. Za chwile wrzuce screena.</pre>
+    </div>
+
+    <div id="c14" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=636.html#c14">Comment 14</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Piotr Komoda</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-10-12 19:41:45 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Created <span class="bz_obsolete"><a href="attachment.cgi%3Fid=608" name="attach_608" title="Zrzut ekranu">attachment 608</a> <a href="attachment.cgi%3Fid=608&amp;action=edit.html" title="Zrzut ekranu">[details]</a></span>
+Zrzut ekranu
+
+Pod windows jeszcze jakos to wyglada, ale boje sie ze pod Linuksem sie
+rozpiepszy, dlatego dobrze bylo by to skrocic. Wszelkie propozycje mile
+widziane :-)</pre>
+    </div>
+
+    <div id="c15" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=636.html#c15">Comment 15</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Piotr Komoda</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-10-12 19:46:57 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(W odpowiedzi na komentarz #12)
+<span class="quote">&gt; A tak na marginesie. Skoro MoFo zmienia na Google Maps, które pokazuje 
+&gt; tylko USA i Kanadę (może coś jeszcze, ale niewiele), to dlaczego nie mamy 
+&gt; tego zmienić na mapa.szukacz.pl?</span >
+
+Poczatkowo tez bylem za tym, jednak Marcoos uswiadomil mi problem polonii. Poza
+tym, szukacz wykrzacza sie, jesli w polu adresu wpisane sa skroty ul., al. lub
+pl. oraz numer domu :-/</pre>
+    </div>
+
+    <div id="c16" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=636.html#c16">Comment 16</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Piotr Komoda</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-10-12 20:44:42 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Created <span class="bz_obsolete"><a href="attachment.cgi%3Fid=609" name="attach_609" title="Patch v2.1">attachment 609</a> <a href="attachment.cgi%3Fid=609&amp;action=edit.html" title="Patch v2.1">[details]</a></span>
+Patch v2.1
+
+Krotsza i IMO ladniejsza wersja. Ze taka informacje jest nam potrzebna raczej
+nie ma co dyskutowac, pozostaje jedynie kwestia ustalenia finalnej tresci
+tekstu.
+
+Prosil bym o opinie.</pre>
+    </div>
+
+    <div id="c17" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=636.html#c17">Comment 17</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-10-12 21:04:36 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Comment on <span class="bz_obsolete"><a href="attachment.cgi%3Fid=609" name="attach_609" title="Patch v2.1">attachment 609</a> <a href="attachment.cgi%3Fid=609&amp;action=edit.html" title="Patch v2.1">[details]</a></span>
+Patch v2.1
+
+O Jezu!!!! r-</pre>
+    </div>
+
+    <div id="c18" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=636.html#c18">Comment 18</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-10-12 21:07:57 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">To naprawdę nie jest miejsce na żaden kod kraju. Nie należy tego w ogóle
+udziwniać - to jest zabieranie się do problemu od d* strony.
+
+1. W tym miejscu *musi* być &quot;Państwo&quot;/&quot;Kraj&quot;
+2. Żadnych dziwacznych dopisków do innych elementów (no sorry, ale przecież to
+jest kuriozum!)
+
+Jeśli chcesz poprawić ten błąd, popraw URL do mapy, może skontaktuj się z
+autorami danych stron z mapami (mogli by być zainteresowani umieszczeniem ich
+linków w takim programie jak Thunderbird) -- ale NIE twórz takich DZIWACTW!</pre>
+    </div>
+
+    <div id="c19" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=636.html#c19">Comment 19</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Piotr Komoda</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-10-12 21:59:15 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(W odpowiedzi na komentarz #18)
+<span class="quote">&gt; To naprawdę nie jest miejsce na żaden kod kraju. Nie należy tego w ogóle
+&gt; udziwniać - to jest zabieranie się do problemu od d* strony.</span >
+
+W tym konkretnym przypadku jest to IMO najlepsze rozwiazanie.
+ 
+<span class="quote">&gt; 1. W tym miejscu *musi* być &quot;Państwo&quot;/&quot;Kraj&quot;</span >
+
+Wiesz, jest takie powiedzenie: &quot;Musi to na Rusi, w Polsce kto chce&quot;. User moze
+sobie tam trzymac co uwaza, nazwe angielska, nazwe w jego jezyku, kod kraju.
+Przez wiekszosc czasu zapewne bedzie tam nazwa, a jesli zechce skorzystac z
+mapy, to ma podpowiedz co musi zmienic. W ten sposob nie bedzie musial szukac,
+domyslac sie, ani tez nie bedzie nam glowy zawracal falszywymi doniesieniami o
+bledzie programu. Jak sobie zmieni, to moze tak miec na stale, lub tylko na czas
+sprawdzenia na mapie.
+
+<span class="quote">&gt; 2. Żadnych dziwacznych dopisków do innych elementów (no sorry, ale 
+&gt; przecież to jest kuriozum!)</span >
+
+Nie eleganckie, dziwaczne - zgodze sie, ale do czasu dolaczenia helpa to jedyne
+sensowne rozwiazanie. Inaczej bedziemy mieli ficzer, ktory nie dziala, zupelnie
+jak mozliwosc zamowienia odbitek online w Windows XP :-/
+
+<span class="quote">&gt; Jeśli chcesz poprawić ten błąd, popraw URL do mapy</span >
+
+W jaki sposob? Poprzez wstawienie na stale &quot;pl&quot; w miejsce kraju? Marne to
+rozwiazanie, a inaczej sie urla &quot;poprawic&quot; nie da.
+
+<span class="quote">&gt; może skontaktuj się z autorami danych stron z mapami 
+&gt; (mogli by być zainteresowani umieszczeniem ich linków w takim 
+&gt; programie jak Thunderbird) </span >
+
+Wystepujac w imieniu zespolu lokalizacyjnego mam raczej male szanse, to raz, dwa
+oni juz maja wypracowana metode dziala dla swojego serwisu, metode, ktora jest
+prosta i sie sprawdza. Latwiej by nam bylo napisac patcha dla Tb do lepszej
+obslugi Maporamy i wywalczyc jego wlaczenie, niz im (Maporamie) to pozmieniac. W
+zwiazku z powyzszym, myslisz, ze latwo bedzie cos wskurac?
+
+<span class="quote">&gt; ale NIE twórz takich DZIWACTW!</span >
+
+Okolicznosci i troska o uzytkownikow oraz o wlasne nerwy mnie do tego zmuszaja.
+Jesli masz inny pomysl, ktory pokryje problem polonii oraz niewiedzy
+uzytkownikow, to bardzo chetnie Cie wyslucham.</pre>
+    </div>
+
+    <div id="c20" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=636.html#c20">Comment 20</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Piotr Komoda</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-10-12 22:13:46 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(W odpowiedzi na komentarz #19)
+
+<span class="quote">&gt; Nie eleganckie, dziwaczne - zgodze sie, ale do czasu dolaczenia helpa to 
+&gt; jedyne sensowne rozwiazanie. </span >
+
+Zreszta, podobnie jest z opisem filtru antyspamowego czy ochrony przed
+Phishingiem, tam tez jest wiecej tekstu niz potrzeba i jest dostepne w
+oryginale. Ponadno opis jest jak dla 4-ro latka, a wszystko po to, aby user nie
+musial szukac i bysmy sami mieli mniej pracy. Jak pojawi sie help, te dlugasne
+opisy w UI znikna.</pre>
+    </div>
+
+    <div id="c21" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=636.html#c21">Comment 21</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-10-13 01:08:55 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Jestem calkowicie przeciwny jakimkolwiek sugestiom, ze uzytkownik ma
+gdziekolwiek wpisac KOD panstwa...
+To tak jakby w bookmarkach mial wpisac IP, zeby zadzialala usluga lokalizowania
+strony na mapie swiata - bez sensu... Bardziej to to zaszkodzi niz pomoze.
+Podstawowa funkcja ksiazki NIE jest wyswietlanie mapy... To dodatkowy ficzer, i
+jego wprowadzenie nie moze sie wiazac z obnizeniem funkcjonalnosci podstawowej.</pre>
+    </div>
+
+    <div id="c22" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=636.html#c22">Comment 22</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Piotr Komoda</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-10-13 03:11:05 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Gandalf, nie obraz sie, ale majaczysz jak potluczony.
+
+(W odpowiedzi na komentarz #21)
+<span class="quote">&gt; Jestem calkowicie przeciwny jakimkolwiek sugestiom, ze uzytkownik ma
+&gt; gdziekolwiek wpisac KOD panstwa...</span >
+
+SUGESTIA:
+&quot;oddziaływanie psychiczne, wywieranie wpływu na myśli, przekonania, zachowanie
+drugiej osoby lub całej grupy, często bez odwoływania się do racjonalnej
+argumentacji; poddawanie, podsuwanie komuś jakichś myśli, opinii&quot;
+-&gt; <a href="http://sjp.pwn.pl/haslo.php?id=59513">http://sjp.pwn.pl/haslo.php?id=59513</a>
+
+To nie jest sugestia, to jest jedynie informacja, ktora mowi jakiej modyfikacji
+nalezy dokonac, jesli chce sie skorzystac z mapy. Albo inaczej, u osob, ktore
+maja wpisany adres we wlasciwociach kontaktu w polu Panstwo bedzie widniala
+nazwa kraju. Tak ma byc, od tego jest wizytowka, ja ich nie naklaniam, nie
+przekonuje by wpisywali tam co innego. Masz racje, mapa to dodatkowy ficzer, ale
+co jesli ktos zechce z niego skorzystac, kliknie na przycisk i pojawi mu sie
+strona z bledem? W takiej sytuacji we wlasciwosciach kontaktu zjadzie informacje
+co ma (tymczasowo) zrobic, aby to zadzialalo. Wlasnie tam, bo nie ma gdzie
+indziej tego umiescic, nie ma helpa. Jesli tej informacji nie bedzie, to uzna
+takie zachowanie (otwarcie strony z bledem) za blad w programie i zglosi to na
+nasza bz.
+
+<span class="quote">&gt; Podstawowa funkcja ksiazki NIE jest wyswietlanie mapy... To dodatkowy 
+&gt; ficzer, i jego wprowadzenie nie moze sie wiazac z obnizeniem 
+&gt; funkcjonalnosci podstawowej.</span >
+
+Przepraszam Cie bardzo, ale w jaki sposob poprzez dodanie informacji w oknie
+wizytowki (bo, mowie to po raz n-ty, nie mam gdzie indziej) obnizam podstawowa
+funkcjonalnosc programu? Moze jestem glupi, ale ja na prawde tego nie rozumiem :P
+
+---
+To, co mowisz moglbym uznac za prawdziwe i przyznac Ci racje, gdybysmy mowili o
+pierwszym patchu, ale v2.1 to zupelnie inna bajka...</pre>
+    </div>
+
+    <div id="c23" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=636.html#c23">Comment 23</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-10-13 10:15:49 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text"><span class="quote">&gt; Gandalf, nie obraz sie, ale majaczysz jak potluczony.</span >
+
+Nie obrazam sie, przyzwyczailem sie, ze kiedy brakuje Ci argumentow
+merytorycznych masz zwyczaj atakowac personalnie rozmowcow inwektywami. Moja
+ocene takich zachowan znasz.
+
+<span class="quote">&gt; Masz racje, mapa to dodatkowy ficzer, ale co jesli ktos zechce z niego skorzystac,</span >
+
+Jesli nie umiemy w sposob prosty wprowadzic danej funkcjonalnosci, to jej nie
+wprowadzamy i zglaszamy blad w b.m.o z prosba o umozliwienie tego. 
+
+Pitreck. Widze trzy wyjscia ktore moge zaakceptowac:
+
+1) Zostaje wersja oryginalna + w helpie moze pojawic sie informacja, ze cos tam
+zadziala jesli podamy kod panstwa.
+2) Kontaktujesz sie z maporama z prosba o funkcjonalnosc (tak jak ja to zrobilem
+z PBI i Merlinem)
+3) Ponad 2/3 zespolu (min 7 osob) zgadza sie z Twoja propozycja.
+
+Innego wyjscia nie widze, poniewaz takie cos jak zaproponowales wyglada imho
+katastrofalnie i nie moge zgodzic sie na smiecenie UI w celu wyjasnienia
+uzytkownikowi jak ma korzystac z dirty hacka ktory mu proponujemy.</pre>
+    </div>
+
+    <div id="c24" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=636.html#c24">Comment 24</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-10-13 10:40:46 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Piotrek: wytłumacz mi jedno. Czy to, że ta Maporama nie radzi sobie z polskimi
+znakami diakrytycznymi (komentarz 8) jest dla Ciebie w ogóle nieistotne? Bo dla
+mnie to już jest dyskwalifikujące i dyskusja kody vs. nazwa państwa i tak nie ma
+sensu.</pre>
+    </div>
+
+    <div id="c25" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=636.html#c25">Comment 25</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Piotr Komoda</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-10-13 13:04:57 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(W odpowiedzi na komentarz #23)
+<span class="quote">&gt; Nie obrazam sie, przyzwyczailem sie, ze kiedy brakuje Ci argumentow
+&gt; merytorycznych masz zwyczaj atakowac personalnie rozmowcow inwektywami. </span >
+
+Wypraszam sobie, moje wypowiedzi bywaja agresywne, ale rzucanie obelgami w
+czyims kierunku jest u mnie rzadkoscia. To raz, dwa, ze IMO w tej dyskusji
+najwiecej rzeczowych argumentow padlo z mojej strony. Natomiast Twoja
+argumentacja przybiera postac &quot;a mnie sie nie podoba&quot;.
+
+<span class="quote">&gt; Jesli nie umiemy w sposob prosty wprowadzic danej funkcjonalnosci, to jej 
+&gt; nie wprowadzamy i zglaszamy blad w b.m.o z prosba o umozliwienie tego. </span >
+
+Po pierwsze nic nie wprowadzamy, funkcjonalnosc pokazywania adresu na mapie juz
+jest w Tb.  Jedyne co wprowadzamy, to dodatkowa informacje, ktora jest potrzebna
+uzytkownikom, aby wiedzieli, jak z tej funkcjonalnosci korzystac. Po drugie,
+mozemy udac sie z tym na b.m.o, ale jesli sami nie zrobimy patcha i nie
+zawalczymy o jego wlaczenie, zgloszony blad nawet nie drgnie przez kilkanascie
+miesiecy, moze nawet kilka lat.
+
+<span class="quote">&gt; Pitreck. Widze trzy wyjscia ktore moge zaakceptowac:
+&gt; 
+&gt; 1) Zostaje wersja oryginalna + w helpie moze pojawic sie informacja, ze cos 
+&gt; tam zadziala jesli podamy kod panstwa.</span >
+
+A moge zapytac jak to sobie wyobrazasz, skoro Tb nie ma helpa i raczej wczesniej
+jak w 2.0 miec go nie bedzie?
+
+<span class="quote">&gt; 2) Kontaktujesz sie z maporama z prosba o funkcjonalnosc (tak jak ja to 
+&gt; zrobilem z PBI i Merlinem)</span >
+
+Pisalem juz o tym, co to dla nich oznacza i jakie sa na to szanse...
+
+<span class="quote">&gt; 3) Ponad 2/3 zespolu (min 7 osob) zgadza sie z Twoja propozycja.</span >
+
+Do tej pory zasada mowila o min. jednoglosowej przewadze, czyli min. 5 osobach.
+Skad sie wzielo te 7? Starasz sie zmniejszyc moje szanse? ;-)
+
+<span class="quote">&gt; Innego wyjscia nie widze, poniewaz takie cos jak zaproponowales wyglada &gt; imho</span >
+katastrofalnie i nie moge zgodzic sie na smiecenie UI w celu 
+<span class="quote">&gt; wyjasnienia uzytkownikowi jak ma korzystac z dirty hacka ktory 
+&gt; mu proponujemy.</span >
+
+To, co nazywasz smieceniem UI, a co wg. mnie jest dodatkowa informacja dla
+uzytkownika, ktorej nie ma gdzie indziej umiescic, bo nie ma helpa, jest w Tb
+rzecza powszechna i podawalem juz tutaj tego przyklady. Naprawde, tych kilka
+dodatkowych slow nie zmienia wiele w wygladzie okienka, nie daje wrazenia
+wpakowania tam tego elementu na sile, a jednak bedzie pomocne, przydatne dla
+uzytkownikow.
+
+Probujac zablokowac te zmiane ograniczysz funkcjonalnosc programu, na co z kolei
+ja zgodzic sie nie moge.</pre>
+    </div>
+
+    <div id="c26" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=636.html#c26">Comment 26</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Piotr Komoda</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-10-13 13:20:18 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(W odpowiedzi na komentarz #24)
+<span class="quote">&gt; Piotrek: wytłumacz mi jedno. Czy to, że ta Maporama nie radzi sobie z 
+&gt; polskimi znakami diakrytycznymi (komentarz 8) jest dla Ciebie w ogóle 
+&gt; nieistotne? Bo dla mnie to już jest dyskwalifikujące i dyskusja kody vs. nazwa 
+&gt; państwa i tak nie ma sensu.</span >
+
+Jest istotne, jednak majac do wyboru:
+1) Niepokazywanie ulic i map mniejszych miast (MapQuest)
+2) Wyswietlanie bledu i tym samym nie pokazanie zadnej mapy, jesli w adresie
+jest &quot;ul.&quot;, &quot;al.&quot;, &quot;pl.&quot; i/lub numer budynku (mapa.szukacz.pl)
+3) Nie radzenie sobie ze znakami diakrycznymi, ktore jest minimalizowane przez
+mozliwosc ogdadywania przez serwis, o jaka nazwe miasta/adres uzytkownikowi
+chodzilo (Maporama)
+
+Wybieram najmniejsze zlo i najwieksza funkcjonalnosc, czyli opcje numer 3. Jesli
+zas o Lodz chodzi, to problemem jest tu taki, ze Maporama wyklada sie z powodu
+pierwszej pl-litery w nazwie. Wpiszesz &quot;Lódź&quot; i otrzymasz mape. To drobna wada w
+porownaniu do tego, co ten serwis oferuje.</pre>
+    </div>
+
+    <div id="c27" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=636.html#c27">Comment 27</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-10-13 13:30:57 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text"><span class="quote">&gt; moje wypowiedzi bywaja agresywne, ale rzucanie obelgami w czyims kierunku jest</span >
+u mnie rzadkoscia.
+
+&quot;majacze jak potluczony&quot;, tak?
+
+<span class="quote">&gt; ze IMO w tej dyskusji najwiecej rzeczowych argumentow padlo z mojej strony.</span >
+Natomiast Twoja argumentacja przybiera postac &quot;a mnie sie nie podoba&quot;.
+
+Duzo latwiej bedzie Ci rozmawiac z ludzmi, jesli odpuscisz sobie probe oceniania
+swoich argumentow, bo wowczas zawsze sprowadzisz ja na poziom &quot;moim zdaniem ja
+mam racje&quot;. To oczywiste, ze Twoim zdaniem Ty przedstawiasz rzeczowe argumenty,
+a ja nie. Analogicznie, ja widze Twoje powody jako niezbyt sensowne, natomiast
+swoja argumentacje odbieram jako swietna.
+Dlatego, jesli chcesz rozmawiac, daruj sobie ocenianie jakosci wypowiedzi,
+dyskutuj nad argumentami, obalaj te, ktore potrafisz i przedstawiaj swoje. Nie
+oceniaj.
+
+<span class="quote">&gt; Jedyne co wprowadzamy, to dodatkowa informacje, ktora jest potrzebna</span >
+uzytkownikom, aby wiedzieli, jak z tej funkcjonalnosci korzystac. Po drugie,
+mozemy udac sie z tym na b.m.o, ale jesli sami nie zrobimy patcha i nie
+zawalczymy o jego wlaczenie, zgloszony blad nawet nie drgnie przez kilkanascie
+miesiecy, moze nawet kilka lat.
+
+Tak, tak moze byc. Niestety takie sa reguly pracy w projekcie. To ze cos Ci sie
+nie podoba nie oznacza, ze mozesz to dowolnie zmieniac.
+Dodatkowa informacja zasmieca interfejs, jej waga jest absolutnie niewspolmierna
+do zysku, a koszty jakie ponosi przejzystosc interejsu przewazaja moim zdaniem
+dalece zysk w postaci mozliwosci (w pewnych bardzo specyficznych sytuacjach)
+wyswietlenia polozenia uzytkownika na mapie.
+
+<span class="quote">&gt; Skad sie wzielo te 7? Starasz sie zmniejszyc moje szanse? ;-)</span >
+
+Nie. Po prostu absolutnie sie na ta zmiane nie zgadzam. Jesli ja mam byc nadal
+szefem zespolu, to mam prawo zawetowac takie propozycje, ktore znajduje jako
+absolutnie szkodliwe dla jakosci produktu. 
+
+<span class="quote">&gt; Naprawde, tych kilka</span >
+dodatkowych slow nie zmienia wiele w wygladzie okienka, nie daje wrazenia
+wpakowania tam tego elementu na sile, a jednak bedzie pomocne, przydatne dla
+uzytkownikow.
+
+Mylisz sie. Zmienia wiele. Smieci interfejs, zmienijsza jego przejzystosc,
+ujawnia niedopracowanie aplikacji (czego w UI byc NIE MOZE), i zmniejsza
+funkcjonalnosc podstawowa - proponuje uzytkownikowi wpisywanie do pola Kraj,
+kodu kraju.
+Pitreck. Nikt nie zna i nikt nie pamieta kodu krajow. Podalem analogie z
+Bookmarkami, ktorej nie raczyles skomentowac (jak rozumiem z braku argumentow),
+i jej sie bede trzymal.
+Proponowanie uzytkownikowi podania kodu kraju w glownym interfejsie to tak,
+jakby proponowac uzytkownikowi wpisanie adresu IP w zakladkach. I jesli zyskiem
+jest mozliwosc pokazania serwisu czy uzytkownika na mapie (naprawde, malo
+znaczca funkcjonalnosc), a kosztem jest dodatkowe kilkanascie slow opisu (!!!) w
+okienku bezopisowym, to moim zdaniem koszty bardzo dalece przewazaja zyski.
+
+<span class="quote">&gt; Probujac zablokowac te zmiane ograniczysz funkcjonalnosc programu, na co z kolei</span >
+ja zgodzic sie nie moge.
+
+Funkcjonalnosc i tak jest dalece ograniczona. Kodu kraju nikt nie bedzie
+wpisywal, obudz sie. 90% ludzi nie zrozumie opisu, 80% nie bedzie chciala go
+czytac, 70% nie jest zainteresowana koniecznoscia wpisywania kodu kraju... to
+bez sensu.
+
+Proponuje w takim razie poprosic Mozilla.org o usuniecie tej funkcjonalnosci z
+buildow l10n, poniewaz nie jestesmy w stanie zapewnic jej dzialania...
+
+Btw. Powiedz. Jak sobie wyobrazasz support userow ktorym bedziesz tlumaczyl co i
+jak maja wpisywac, gdzie szukac kodow krajow, dlaczego nazwy miast z polskimi
+znakami nie dzialaja, ktore miasta widac, a ktore nie, kiedy i w jakich
+wypadkach to to ma szanse zadzialac, a kiedy nie zadziala i w ogole dlaczego to
+wszystko zamiast zwyklej ksiazki adresowej?
+Piszesz, ze &quot;to, ze Lodz nie dziala, to droby blad&quot; - cala funkcjonalnosc jest
+bardzo drobna i pelna bledow, to nie nadaje sie na publiczne wydanie stabilnej
+aplikacji dla uzytkownikow, nie spelnia w zadnym stopniu QA jaki zaklada
+Mozilla.org. Zrozum to.
+
+Powtarzam, jestem absolutnie przeciwny wprowadzaniu tak watpliwie dzialajacej
+funkcji w sposob tak zasmiecajacy UI. Jesli jestes nadal zainteresowany
+forsowaniu swojej propozycji, wyslij prosze propozycje na team&#64; i spytaj kto
+popiera ja popiera.
+
+Jesli bedzie trzeba spytam o zdanie QA Mozilli.org.</pre>
+    </div>
+
+    <div id="c28" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=636.html#c28">Comment 28</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-10-13 15:17:22 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(W odpowiedzi na komentarz #26)
+
+<span class="quote">&gt; Wybieram najmniejsze zlo i najwieksza funkcjonalnosc, czyli opcje numer 3. Jesli
+&gt; zas o Lodz chodzi, to problemem jest tu taki, ze Maporama wyklada sie z powodu
+&gt; pierwszej pl-litery w nazwie. Wpiszesz &quot;Lódź&quot; i otrzymasz mape. To drobna wada w
+&gt; porownaniu do tego, co ten serwis oferuje.</span >
+
+Taaa, już to widzę jak ktoś wpisuje &quot;Lódź&quot; :)</pre>
+    </div>
+
+    <div id="c29" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=636.html#c29">Comment 29</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Piotr Komoda</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-10-14 03:03:42 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(W odpowiedzi na komentarz #27)
+<span class="quote">&gt; &gt; moje wypowiedzi bywaja agresywne, ale rzucanie obelgami w czyims 
+&gt; &gt; kierunku jest u mnie rzadkoscia.
+&gt; 
+&gt; &quot;majacze jak potluczony&quot;, tak?</span >
+
+Tak, a teraz przejzyj historie dyskusji z moim udzialem, zobacz gdzie
+zachowywalem sie agresywnie, a gdzie rzucalem obelgami. Wtedy zrozumiesz
+dlaczego napisalem, ze to rzadkosc. 
+
+<span class="quote">&gt; Duzo latwiej bedzie Ci rozmawiac z ludzmi, jesli odpuscisz sobie probe 
+&gt; oceniania swoich argumentow, bo wowczas zawsze sprowadzisz ja na 
+&gt; poziom &quot;moim zdaniem ja mam racje&quot;. To oczywiste, ze Twoim zdaniem Ty 
+&gt; przedstawiasz rzeczowe argumenty, a ja nie. </span >
+
+To bylo akutar porownianie do moich poprzednich sporow, np. w dyskusji
+dotyczacej unikodu to Wy wygrywaliscie w bitwie na rzeczowe argumenty, teraz
+jakby sytuacja sie odwrocila, odnosze wrazenie, ze Tym razem radze sobie lepiej
+niz poprzednio i radze sobie lepiej niz Wy.
+
+<span class="quote">&gt; Analogicznie, ja widze Twoje powody jako niezbyt sensowne, natomiast
+&gt; swoja argumentacje odbieram jako swietna.</span >
+
+Coz, w takim razie ja mam odrobine wiecej samokrytyki...
+
+<span class="quote">&gt; Dlatego, jesli chcesz rozmawiac, daruj sobie ocenianie jakosci wypowiedzi,
+&gt; dyskutuj nad argumentami, obalaj te, ktore potrafisz i przedstawiaj swoje. </span >
+
+To tez glownie robie, obalam i przedstawiam swoje, a ze dyskusja zeszla chwilowo
+na temat oceny sporu...
+
+<span class="quote">&gt; Tak, tak moze byc. Niestety takie sa reguly pracy w projekcie. To ze cos 
+&gt; Ci sie nie podoba nie oznacza, ze mozesz to dowolnie zmieniac.</span >
+
+Wiem, ze nie moge niczego od tak sobie dowolnie zmieniac w Tb, dlatego probuje
+rozwiazac problem przez tymczasowa, drobna zmiane w lokalizacji. Sam patcha nie
+napisze, bo nie umiem, nikt ze Mozilla.org tego dla mnie nie zrobi, marne tez
+widze szanse, aby ktos z contributorow sie tym zajal. Na Was tez raczej liczyc
+nie moge. Efekt tego taki, ze jesli chociazby ta drobna zmiana w lokalizacji nie
+wejdzie, przez nie wiadomo ile jeszcze czasu bedziemy mieli niefunkcjonalny
+ficzer, a tego wlasnie probuje uniknac.
+
+<span class="quote">&gt; Dodatkowa informacja zasmieca interfejs, jej waga jest absolutnie 
+&gt; niewspolmierna do zysku, a koszty jakie ponosi przejzystosc interejsu 
+&gt; przewazaja moim zdaniem dalece zysk w postaci mozliwosci (w pewnych 
+&gt; bardzo specyficznych sytuacjach) wyswietlenia polozenia uzytkownika 
+&gt; na mapie.</span >
+
+A ja uwazam, ze wyolbrzymiasz sprawe. Te 9 dodatkowych slow wiele nie zmienia,
+rozwiazania 1.0 i 2.0 byly pod wzgledem QA i przejrzystosci o wiele gorsze. Jako
+rozwiazanie tymczasowe uwazam, ze patch v2.1 jest najlepsza z obecnych propozycja.
+ 
+<span class="quote">&gt; Nie. Po prostu absolutnie sie na ta zmiane nie zgadzam. Jesli ja mam byc 
+&gt; nadal szefem zespolu, to mam prawo zawetowac takie propozycje, ktore 
+&gt; znajduje jako absolutnie szkodliwe dla jakosci produktu. </span >
+
+Miej te prawo veta, jednak uwazam, ze jesli wykorzystasz je dla zablokowania tak
+drobnej i ponadto tymczasowej (na jedno lub dwa glowne wydania) zmiany, to
+bedzie to naduzycie. 
+
+<span class="quote">&gt; Mylisz sie. Zmienia wiele. Smieci interfejs, zmienijsza jego przejzystosc,
+&gt; ujawnia niedopracowanie aplikacji (czego w UI byc NIE MOZE), i zmniejsza
+&gt; funkcjonalnosc podstawowa - proponuje uzytkownikowi wpisywanie do 
+&gt; pola Kraj, kodu kraju.</span >
+
+Czyli Twoim zdaniem lepiej po prostu nic nie pisac, udawac, ze problemu nie ma,
+a jak user kliknie na przycisk i zobaczy strone z bledem, to niech sie sam
+zastanawia co jest nie tak i pisze nam maile oraz zaklada bledy na b.a.p, jak
+ten tutaj :-/
+Nadal jestem zdania, ze ten opis nie wplywa niegatywnie na interfejs, jest
+mozliwie najkrotszy i umieszczony w miejscu, ktore najmniej sie narzuca
+uzytkownikowi. Sluchaj, jestem w stanie sie zgodzic, ze tekst mowiacy &quot;aby mapa
+dzialala&quot; nie jest najlepszym pomyslem, ale jak mowilem, jego tresc mozna
+jeszcze dopracowac, natomiast koniecznosci jego tymczasowego wprowadzenia nie
+widze sensu dyskutowac. Przy odpowiednim dobraniu slow ten tekst bedzie tylko
+sluzyl na nasza korzysc. A co do zmniejszania funkcjnalnosci, juz znasz moje zdanie.
+
+<span class="quote">&gt; Pitreck. Nikt nie zna i nikt nie pamieta kodu krajow. </span >
+
+Wg. mnie takie twierdzenie jest obrazliwe dla uzytkownikow. Moglbym sie zalozyc,
+sie wiecej osob zna kody najwazniejszych w swiecie jak i czesci sasiadujacych z
+Polska krajow, niz jest w stanie sie zorientowac sie po rejestracji z jakiego
+miasta ten samochod pochodzi.
+
+<span class="quote">&gt; Podalem analogie z Bookmarkami, ktorej nie raczyles skomentowac 
+&gt; (jak rozumiem z braku argumentow), i jej sie bede trzymal.</span >
+
+Nie, po prostu uznalem to porownanie za nieadekwatne do naszego problemu (i tym
+samym nie warte komentowania), gdyz gdyby cos takiego weszlo do Firefoksa to i
+owszem, odpowiedni opis znalazl by sie w pomocy (ktorej Tb nie ma), ale
+jednoczesnie doszlo by kilka nowych elementow UI ulatwiajacych korzystanie z tej
+funcjonalnosci.
+
+<span class="quote">&gt; &gt; Probujac zablokowac te zmiane ograniczysz funkcjonalnosc programu, 
+&gt; &gt; na co z kolei ja zgodzic sie nie moge.
+&gt; 
+&gt; Funkcjonalnosc i tak jest dalece ograniczona. Kodu kraju nikt nie bedzie
+&gt; wpisywal, obudz sie. 90% ludzi nie zrozumie opisu, 80% nie bedzie chciala 
+&gt; go czytac, 70% nie jest zainteresowana koniecznoscia wpisywania kodu 
+&gt; kraju... to bez sensu.</span >
+
+Uwierz mi, ci, co beda chcieli skorzystac z mapy, beda wiedzieli o co chodzi,
+beda znali kod i to dla nich jest ta informacja. Reszta nawet nie zauwazy tego
+opisu lub wogole nie bedzie zagladala do wlasciwosci kontaktu. 
+
+<span class="quote">&gt; Proponuje w takim razie poprosic Mozilla.org o usuniecie tej 
+&gt; funkcjonalnosci z buildow l10n, poniewaz nie jestesmy w stanie 
+&gt; zapewnic jej dzialania...</span >
+
+To mi cos przypomina:  &quot;Chcesz pozbyc sie temperatury, zbij termometr&quot;. To jest
+najprostrze i jednoczesnie najbardziej prymitywne rozwiazanie. Ja osobiscie wole
+powalczyc o patcha, a do czasu jego wlaczenia dodac ten text. 
+ 
+<span class="quote">&gt; Btw. Powiedz. Jak sobie wyobrazasz support userow ktorym bedziesz 
+&gt; tlumaczyl co i jak maja wpisywac, gdzie szukac kodow krajow, </span >
+
+Nic nie bede musial tlumaczyc, jak juz powiedzialem, dla tych, ktorzy beda
+chcieli z tego skorzystac, dodatkowa informacja we wslasciwosciach jest
+wszystkim, czego moga potrzebowac.
+
+<span class="quote">&gt; dlaczego nazwy miast z polskimi znakami nie dzialaja</span >
+
+Dzialaja, jedyny jak na razie wykryty problem jest z Lodzia.
+  
+<span class="quote">&gt; w jakich wypadkach to to ma szanse zadzialac, a kiedy nie zadziala </span >
+
+W przypadku Maporamy ma najwieksze szanse zadzialac, inne serwisy sprawiaja
+wieksze problemy.
+
+<span class="quote">&gt; i w ogole dlaczego to wszystko zamiast zwyklej ksiazki adresowej?</span >
+
+Nie zamiast, to dodatek, wzbogacenie podstawowej funkcjonalnosci, nie zamiennik.
+
+<span class="quote">&gt; Piszesz, ze &quot;to, ze Lodz nie dziala, to droby blad&quot; - cala funkcjonalnosc jest
+&gt; bardzo drobna i pelna bledow, to nie nadaje sie na publiczne wydanie 
+&gt; stabilnej aplikacji dla uzytkownikow, nie spelnia w zadnym stopniu QA jaki 
+&gt; zaklada Mozilla.org. Zrozum to.</span >
+
+No wlasnie nie rozumiem, od 0.1 do 1.0.x (i caly czas zreszta) Tb korzysta z
+serwisu, ktory jest o wiele mniej funkcjonalny i bardziej zabugowany niz
+Maporama. Probuje go zmienic na cos lepszego i przydatnego dla wiekszej ilosci
+osob, ale co wymaga dodatkowego opisu do czasu wprowadzenia poprawki do samego
+Tb, a Ty kontrargumentujesz to nie zgodnoscia z QA...
+
+<span class="quote">&gt; Jesli jestes nadal zainteresowany forsowaniu swojej propozycji, wyslij 
+&gt; prosze propozycje na team&#64; i spytaj kto ja popiera.</span >
+
+Tak tez zrobie.
+ 
+<span class="quote">&gt; Jesli bedzie trzeba spytam o zdanie QA Mozilli.org.</span >
+
+Duzo zalezy od sposobu zadania pytania, a i tak podejrzewam, ze skonczy sie to
+jak z unikodem, bez wzgledu na tresc odpowiedzi przeciwnicy tej propozycji
+zrozumieja ja po swojemu. Szkoda na to czasu i nerwow IMO. Juz lepiej wyslac do
+kogos z Mozilla.org list z wyjasnieniem naszej sytuacji i prosba o rade.</pre>
+    </div>
+
+    <div id="c30" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=636.html#c30">Comment 30</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Piotr Komoda</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-10-14 03:07:28 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(W odpowiedzi na komentarz #28)
+<span class="quote">&gt; Taaa, już to widzę jak ktoś wpisuje &quot;Lódź&quot; :)</span >
+
+Hehe, coz, ja tez nie, ale w przypadku obecnego MapQuest lista nazw miast, ktore
+nie zadzialaja lub nie zostana odnalezione jest nieporownywalnie wieksza.</pre>
+    </div>
+
+    <div id="c31" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=636.html#c31">Comment 31</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Piotr Komoda</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-10-14 04:03:17 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Created <span class="bz_obsolete"><a href="attachment.cgi%3Fid=610" name="attach_610" title="Patch v2.2">attachment 610</a> <a href="attachment.cgi%3Fid=610&amp;action=edit.html" title="Patch v2.2">[details]</a></span>
+Patch v2.2
+
+Poprzedni patch mial tresc informacji sugerujaca ulomnosc programu, dlatego
+wprowadzam nowy.</pre>
+    </div>
+
+    <div id="c32" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=636.html#c32">Comment 32</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Piotr Komoda</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-10-14 04:04:40 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Created <span class="bz_obsolete"><a href="attachment.cgi%3Fid=611" name="attach_611" title="Zrzut ekranu patcha 2.2">attachment 611</a> <a href="attachment.cgi%3Fid=611&amp;action=edit.html" title="Zrzut ekranu patcha 2.2">[details]</a></span>
+Zrzut ekranu patcha 2.2</pre>
+    </div>
+
+    <div id="c33" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=636.html#c33">Comment 33</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-10-14 10:07:10 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text"><span class="quote">&gt; odnosze wrazenie, ze Tym razem radze sobie lepiej niz poprzednio i radze sobie</span >
+lepiej niz Wy.
+
+Bedziesz sie bardzo frustrowal, jesli w dyskusji bedziesz probowal sam oceniac
+kto ma lepsze argumenty bedac jednoczesnie strona konfliktu.
+
+<span class="quote">&gt; Coz, w takim razie ja mam odrobine wiecej samokrytyki...</span >
+
+Gdzie? Tam gdzie piszesz, ze &quot;odnosisz wrazenie ze radzisz sobie lepiej&quot;, czy
+tam gdzie piszesz &quot;moje argumenty sa rzeczowe a ty majaczysz&quot;?
+Pitreck. Praca nad aplikacja NIE jest rozgrywka w ktorej oddajemy cios za cios,
+i raz wygrywa jeden, raz drugi... to nie pilka nozna.
+Za kazdym razem jedynym celem powinna byc jakosc aplikacji i naprawde, najmniej
+wazne jest &quot;kto wygra&quot;, bo wygrac ma uzytkownik.
+Wiec prosze, przestan myslec i uzywac porownan do jakiejs przepychanki, kto ma
+wiecej zwolennikow, kto jest silniejszy, kto kiedy wygral - bo uwierz, to kto
+mial racje w przypadku jakiegos innego problemu nie ma ZADNEGO zwiazku z
+najlepszym rozwiazaniem dla tych map.
+Innymi slowy, przestan patrzec na produkt przez pryzmat wlasnych ambicji.
+
+<span class="quote">&gt; rozwiazania 1.0 i 2.0 byly pod wzgledem QA i przejrzystosci o wiele gorsze.</span >
+
+I jaki to ma wplyw na to, czy pomysl jest generalnie dobry? Ze co? &quot;Ustapiles&quot;?
+To nie jest targ, to nie jest polityka. Tu chodzi o produkt i jesli pomysl
+wplywania na UI jest zly, to nie ma znaczenia ile jeszcze &quot;wersji&quot; przedstawisz.
+
+<span class="quote">&gt; Jako rozwiazanie tymczasowe uwazam, ze patch v2.1 jest najlepsza z obecnych</span >
+propozycja.
+
+I po raz kolejny... Po napisaniu 100 slow, pisanie na zakonczenie &quot;uwazam, ze
+moja propozycja jest dobra&quot; jest bez sensu. To jest lanie wody. A jak mogloby
+byc inaczej? :)
+Oczywiscie, ze uwazasz, ze masz racje, masz argumenty itp. Inaczej bys sie nie
+klocil.
+
+<span class="quote">&gt; Czyli Twoim zdaniem lepiej po prostu nic nie pisac, udawac, ze problemu nie ma,</span >
+a jak user kliknie na przycisk i zobaczy strone z bledem, to niech sie sam
+zastanawia co jest nie tak i pisze nam maile oraz zaklada bledy na b.a.p, jak
+ten tutaj :-/
+
+Moim zdaniem rozwiazaniem jest wycofanie tej funkcjonalnosci do czasu mozliwosci
+jej wykorzystania - czyli zaproponowanie MoFo mozliwosci usuniecia map w
+lokalizacjach, ktore nie moga z nich korzystac.
+
+<span class="quote">&gt; Ja osobiscie wole powalczyc o patcha, a do czasu jego wlaczenia dodac ten text. </span >
+
+Ojakiego patcha? W sensie, jak chcialbys to &quot;docelowo&quot; rozwiazac? Bo caly czas
+probojesz zminimalizowac wplyw tego patcha piszac, ze to tymczasowo...
+Przypominam, ze jesli ten patch wejdzie, to na cala linie 1.5. A to jest
+przynajmniej 3 lata zycia aplikacji. Jesli dla Ciebie to jest tymczasowe, to
+gratuluje.
+
+<span class="quote">&gt; Nie zamiast, to dodatek, wzbogacenie podstawowej funkcjonalnosci, nie zamiennik.</span >
+
+&quot;Aby nowa wymyslna funkcja zadzialala, musisz drogi uzytkowniku, ograniczyc
+dzialanie podstawowej i wpisac kod kraju w pola Panstwo. Sorry, tak wyszlo&quot; -
+swietne, naprawde, swietne myslenie o jakosci aplikacji.
+
+<span class="quote">&gt;  Juz lepiej wyslac do kogos z Mozilla.org list z wyjasnieniem naszej sytuacji</span >
+i prosba o rade.
+
+Swietnie, juz to robie z CC do team&#64;.</pre>
+    </div>
+
+    <div id="c34" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=636.html#c34">Comment 34</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Piotr Komoda</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-10-14 11:46:48 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(W odpowiedzi na komentarz #33)
+<span class="quote">&gt; Bedziesz sie bardzo frustrowal, jesli w dyskusji bedziesz probowal 
+&gt; sam oceniac kto ma lepsze argumenty bedac jednoczesnie strona konfliktu.</span >
+
+Heh, skad ja to znam, choc i bez tego oceniania nasze spory przysparzaja mi
+wystarczajaco duzo nerwow...
+
+<span class="quote">&gt; &gt; Coz, w takim razie ja mam odrobine wiecej samokrytyki...
+&gt; 
+&gt; Gdzie? Tam gdzie piszesz, ze &quot;odnosisz wrazenie ze radzisz sobie lepiej&quot;, 
+&gt; czy tam gdzie piszesz &quot;moje argumenty sa rzeczowe a ty majaczysz&quot;?</span >
+
+Nie, jak sam napisales, wg. Ciebie Twoja argumentacja zawsze jest swietna. Ja
+nie zawsze widze przewage swojej argumentacji i stad tez twierdze, ze mam wiecej
+samokrytyki... bo nie wiem jak to inaczej mozna nazwac.
+
+<span class="quote">&gt; Pitreck. Praca nad aplikacja NIE jest rozgrywka w ktorej oddajemy cios 
+&gt; za cios, i raz wygrywa jeden, raz drugi... to nie pilka nozna.
+&gt; Za kazdym razem jedynym celem powinna byc jakosc aplikacji i naprawde, 
+&gt; najmniej wazne jest &quot;kto wygra&quot;, bo wygrac ma uzytkownik.</span >
+
+Nie sposob mi tutaj nie przyznac Ci racji, jednak ja juz taki poprostu bylem,
+jestem i szybko sie nie zmienie. Nie potrafie takich sporow traktowac inaczej,
+niz ambicjonalnie, nie potrafie traktowac tego inaczej jak walki, walki w
+obronie czegos, co uwazam za lepsze dla uzytkownikow i dla zespolu, niz to, co
+proponuje przeciwna strona konfliktu. 
+
+<span class="quote">&gt; I jaki to ma wplyw na to, czy pomysl jest generalnie dobry? Ze co? 
+&gt; &quot;Ustapiles&quot;?</span >
+
+Ze ustapilem tez, ale wazny jest nie tylko pomysl, ale i samo wykonanie. Ciagle
+twierdzisz, ze to element zbedny, zasmiecanie, pokazywanie ulomnosci programu,
+wymuszanie czegos na uzytkowniku. Staram sie wiec skrocic i &quot;zmiekczyc&quot; tekst,
+aby zajmowal najmniej, nie klul w oczy, nie swiadczyl o nas negatywnie. Staram
+sie dojsc do rozwiazania, ktore bedziesz w stanie zaapceptowac poprzez
+adresowanie Twoich kontrargumentow.
+
+<span class="quote">&gt; &gt; Ja osobiscie wole powalczyc o patcha, a do czasu jego wlaczenia 
+&gt; dodac ten text. 
+&gt; 
+&gt; Ojakiego patcha? W sensie, jak chcialbys to &quot;docelowo&quot; rozwiazac?</span >
+
+Jak na razie widze dwie mozliwosci: 
+1) rozwijania lista, z ktorej wybieralo by sie kraj, a program przekazywal by do
+URLa serwisu mapowego kod kraju lub nazwe angielska, w zaleznosci od potrzeb i
+tego jaka preferencje ustawia user lub zespol lokalizacyjny. 
+2) mechanizm, ktory porownywal by to, co wpisal uzytkownik z lista krajow i ich
+nazwami w jezyku, w ktorym jest dana lokalizacja i na tej podstawie przeriabial
+to na potrzeby URLa w oparciu o ustawiona preferencje (nazwa angielska lub kod).
+
+<span class="quote">&gt; Przypominam, ze jesli ten patch wejdzie, to na cala linie 1.5. A to jest
+&gt; przynajmniej 3 lata zycia aplikacji.</span >
+
+Przesadzasz, wraz z premiera wersji 2.0 przestana wychodzic aktualizacje dla
+linii 1.5, a liczba uzytkownikow tej drugiej zmaleje niemalze do granicy bledu
+statystycznego, jak to jest obecnie z wydaniami pre-1.0.
+
+<span class="quote">&gt; &quot;Aby nowa wymyslna funkcja zadzialala, musisz drogi uzytkowniku, 
+&gt; ograniczyc dzialanie podstawowej i wpisac kod kraju w pola Panstwo. 
+&gt; Sorry, tak wyszlo&quot; - swietne, naprawde, swietne myslenie o jakosci 
+&gt; aplikacji.</span >
+
+Gandalf, do tego trzeba podejsciowo  ;-)
+&quot;Tip: Podstawowa funkcja, jaka oferuje ksiazka adresowa programu Thunderbird
+jest rozbudowana mozliwosc edycji informacji o kontakcie, jednakze program
+Thunderbird oferuje takze mozliwosc wyswietlenia mapy z adresem zamieszkania lub
+pracy osob znajdujacych sie w ksiazce. Aby tego dokonac, wystaczy we
+wlasciwosciach kontaktu zastapic nazwe panstwa kodem danego kraju, a nastepnie
+kliknac przycisk 'Pokaz mape' w okienku podgladu kontaktu.&quot;</pre>
+    </div>
+
+    <div id="c35" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=636.html#c35">Comment 35</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-10-14 12:08:03 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(W odpowiedzi na komentarz #34)
+<span class="quote">&gt; Przesadzasz, wraz z premiera wersji 2.0 przestana wychodzic aktualizacje dla
+&gt; linii 1.5, a liczba uzytkownikow tej drugiej zmaleje niemalze do granicy bledu
+&gt; statystycznego, jak to jest obecnie z wydaniami pre-1.0.</span >
+
+Mozilla.org gwarantuje 2-letni support do kazdej wydanej wersji. To oznacza, ze
+od wydania Tb 1.5 do momentu,kiedy wersja ta bedzie przestarzala mijaja 3 lata.</pre>
+    </div>
+
+    <div id="c36" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=636.html#c36">Comment 36</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Piotr Komoda</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-10-14 12:40:32 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(W odpowiedzi na komentarz #35)
+<span class="quote">&gt; Mozilla.org gwarantuje 2-letni support do kazdej wydanej wersji. To oznacza, 
+&gt; ze od wydania Tb 1.5 do momentu,kiedy wersja ta bedzie przestarzala mijaja 
+&gt; 3 lata.</span >
+
+Coz, o tym nie wiedzialem, ale to i tak nie ma wiekszego znaczenia, gdyz po roku
+do poltora od premiery liczba uzytkownikow Tb 1.5 bedzie marginalna. Wazniejsze
+jest to, kiedy wycofamy ten opis na rzecz programowo lepszej obslugi lub
+przynajmniej wpisu w helpie.</pre>
+    </div>
+
+    <div id="c37" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=636.html#c37">Comment 37</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-10-14 12:59:46 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(W odpowiedzi na komentarz #36)
+<span class="quote">&gt; Coz, o tym nie wiedzialem, ale to i tak nie ma wiekszego znaczenia, gdyz po roku
+&gt; do poltora od premiery liczba uzytkownikow Tb 1.5 bedzie marginalna.
+&gt; Wazniejsze jest to, kiedy wycofamy ten opis na rzecz programowo lepszej</span >
+obslugi lub
+<span class="quote">&gt; przynajmniej wpisu w helpie.</span >
+
+Nie mozesz przewidywac popularyzacji produktu na poltora roku do przodu!!!!
+Nie wiesz ile osob bedzie uzywac Tb 1.5, kiedy wyjdzie Tb 2.0, jak sie przyjmie
+1.5 a jak 2.0. Z powodu takiej ilosci niewiadomych nie wolno nam wydawac
+produktu z zalozeniem, ze to tylko tymczasowo i potem to poprawimy.
+</pre>
+    </div>
+
+    <div id="c38" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=636.html#c38">Comment 38</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Piotr Komoda</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-10-14 13:20:20 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(W odpowiedzi na komentarz #37)
+Dramatyzujesz, nie wprowadzamy jakiejs nowej, rozbudowaniej i niedopracowanej
+funkcjonalnosci z zalozeniem, ze to poprawimy. Zmieniamy adres na mniej
+problematyczny i bardziej funkcjonalny niz poprzedni, ale nadal nie pozbawiony
+wad, a takze dodajemy jeden krotki opis do niego. Z tego ficzera korzystac
+bedzie skromny % uzytkownikow, wiec impact tego czynu jest nie wielki. Co do
+dat, nie mam krysztalowej kuli, wiec pewnosci miec nie moge, jednak w oparciu o
+to, co jest mi wiadome moge wysuwac ostrozne domysly.</pre>
+    </div>
+
+    <div id="c39" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=636.html#c39">Comment 39</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Piotr Komoda</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-10-15 18:24:44 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Created <span class="bz_obsolete"><a href="attachment.cgi%3Fid=613" name="attach_613" title="Patch v3.0">attachment 613</a> <a href="attachment.cgi%3Fid=613&amp;action=edit.html" title="Patch v3.0">[details]</a></span>
+Patch v3.0
+
+Ani Gandalfowi ani Axelowi Hechtowi i Scottowi MacGregorowi nie spodobal sie
+pomysl z dodatkowym opisem, jednoczesnie ci ostatni dwaj zaproponowali, by
+umiescic ta informacje na stronie lub w readme, co ja uwazam, ze sie nie
+sprawdzi. W zwiazku z powyszym widze tylko jedno wyjscie, hardokowac kod
+naszego kraju w URLu uslugi dla Tb 1.5. Dodatkowo patch tez zmienia jedna rzecz
+zasugerowana przez Gandalfa.</pre>
+    </div>
+
+    <div id="c40" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=636.html#c40">Comment 40</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Piotr Komoda</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-10-15 18:33:19 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Comment on <span class="bz_obsolete"><a href="attachment.cgi%3Fid=613" name="attach_613" title="Patch v3.0">attachment 613</a> <a href="attachment.cgi%3Fid=613&amp;action=edit.html" title="Patch v3.0">[details]</a></span>
+Patch v3.0
+
+Zwierz=r?
+Gandalf=sr?</pre>
+    </div>
+
+    <div id="c41" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=636.html#c41">Comment 41</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Wojciech Kapusta</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-10-17 16:30:24 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(W odpowiedzi na komentarz #40)
+Panowie, dyskusja ta przypomina mi debatę w piaskownicy na temat wyższości
+Hymena nad ActionManem.
+
+Pobawiłem się z mapami mojej aglomeracji - o jakimkolwiek działaniu można mówić
+jedynie w przypadku mapa.szukacz (pomijam tu katastrofalną jakość map planu
+miasta) i mapquest (mapy może i niezłe, ale brak zbliżenia). Obawiam się, że
+podobnie jest w przypadku większości użytkowników. Tak więc 'bajer' ten - z
+naszego punktu widzenia - nie ma większej funkcjonalności.
+
+MF ma dość amerykocentryczne podejście i nie należy się spodziewać, żeby
+przyjęła z radością plany zmian w TB, w celu ułatwienia korzystania z tego
+bajeru użytkownikom z Polski, wzgl. polskojęzycznym. Dość wspomnieć niepolski i
+nieeuropejski układ pól książki adresowej, nieprzydatny np. do wydrukowania
+sobie koperty czy wizytówki.
+
+Rozwiązanie proponowane przez Piotra jest niezłe (w zasadzie wystarczyłaby nawet
+jedna informacja 'aby skorzystać z mapy...'), ale:
+1. trąci prowizorką, żeby nie powiedzieć nieprofesjonalizmem - porządny program
+powinien to sam sobie zrobić;
+2. tak czy owak przydatność i funkcjonalność są wątpliwe; być może mieszkańcy
+miasta Łódź mieliby z tego jakiś pożytek, ale nie wierzę, że będzie to zawsze
+działało.
+
+Jestem zdania, że najlepiej byłoby to wyrzucić w ogóle. W obecnej postaci będzie
+z tego więcej zamieszania niż pożytku. Lepszym rozwiązaniem byłoby ewentualnie
+rozszerzenie, w którym użytkownik samodzielnie skonfigurowałby sobie żądany
+serwer map, wpisywałby kody, Poland wzgl. Polska itd. Obecnie istniejący moduł
+wymaga dopracowania i opracowania pomocy a organizacje oferujące mapy -
+dopasowania swoich wyszukiwarek do użytkowników nieposługujących się językiem
+angielskim.
+
+Warto rozważyć dodanie odpowiedniej informacji w oknie, w którym znajdują się
+przyciski &quot;Pokaż mapę&quot;.</pre>
+    </div>
+
+    <div id="c42" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=636.html#c42">Comment 42</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-10-21 19:13:34 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Comment on <span class="bz_obsolete"><a href="attachment.cgi%3Fid=613" name="attach_613" title="Patch v3.0">attachment 613</a> <a href="attachment.cgi%3Fid=613&amp;action=edit.html" title="Patch v3.0">[details]</a></span>
+Patch v3.0
+
+sr+</pre>
+    </div>
+
+    <div id="c43" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=636.html#c43">Comment 43</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Staś Małolepszy :stas</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-10-21 19:40:11 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">IMHO są tylko dwa wyjścia:
+1. wyłączyć,
+2. hardkodować.
+
+Uważam, że podpowiedzi w UI są niedopuszczalne. Wygladają nieprofesjonalnie i
+prowizorycznie, tymczasowo, co może popsuć wizerunek programu.
+
+Dodatkowo uważam, że książka adresowa jest dla użykownika, a nie dla serwisu 
+mapowego, zatem użytkownik ma prawo do wpisywania w polu Kraj co tylko sobie
+zażyczy. Program/serwis powinien to zrozumiec, o ile tylko będzie to zapisane w
+jakimś znanym języku  - jesli tego nie potrafi, ficzer jest niekompletny i nie
+powinien byc dostępny w wydaniu finalnym.
+
+Jestem raczej za wyłączeniem opcji w ogóle, ale jestem też otwarty a argumenty
+za hardkodowaniem.</pre>
+    </div>
+
+    <div id="c44" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=636.html#c44">Comment 44</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Piotr Komoda</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-10-29 15:16:30 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Created <span class=""><a href="attachment.cgi%3Fid=667" name="attach_667" title="Patch v4.0 (wrzucony)">attachment 667</a> <a href="attachment.cgi%3Fid=667&amp;action=edit.html" title="Patch v4.0 (wrzucony)">[details]</a></span>
+Patch v4.0 (wrzucony)
+
+Damy jednak szukacza, udalo sie nam z nimi dogadac.</pre>
+    </div>
+
+    <div id="c45" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=636.html#c45">Comment 45</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Piotr Komoda</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-10-29 15:17:32 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Comment on <span class=""><a href="attachment.cgi%3Fid=667" name="attach_667" title="Patch v4.0 (wrzucony)">attachment 667</a> <a href="attachment.cgi%3Fid=667&amp;action=edit.html" title="Patch v4.0 (wrzucony)">[details]</a></span>
+Patch v4.0 (wrzucony)
+
+Gandalf=sr?</pre>
+    </div>
+
+    <div id="c46" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=636.html#c46">Comment 46</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Piotr Komoda</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-10-29 17:23:58 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Comment on <span class=""><a href="attachment.cgi%3Fid=667" name="attach_667" title="Patch v4.0 (wrzucony)">attachment 667</a> <a href="attachment.cgi%3Fid=667&amp;action=edit.html" title="Patch v4.0 (wrzucony)">[details]</a></span>
+Patch v4.0 (wrzucony)
+
+Wszedl do b&amp;t</pre>
+    </div>
+
+    <div id="c47" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=636.html#c47">Comment 47</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Piotr Komoda</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-10-29 17:24:39 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Zamykam.</pre>
+    </div>
+
+
+  
+
+</td>
+<td>
+</td>
+</tr></table>
+  </div>
+
+    <hr><div id="add_comment" class="bz_section_additional_comments">
+      <table>
+        <tr>
+          <td>
+            <fieldset>
+              <legend>Note</legend>
+              You need to
+              <a href="show_bug.cgi%3Fid=636&amp;GoAheadAndLogIn=1.html">log in</a>
+              before you can comment on or make changes to this bug.
+            </fieldset>
+          </td>
+        </tr> 
+      </table>
+  </div>        
+
+</form>
+
+<hr>
+<ul class="related_actions">
+    <li><a href="show_bug.cgi%3Fformat=multiple&amp;id=636.html">Format For Printing</a></li>
+    <li>&nbsp;-&nbsp;<a href="show_bug.cgi%3Fctype=xml&amp;id=636">XML</a></li>
+    <li>&nbsp;-&nbsp;<a href="enter_bug.cgi%3Fcloned_bug_id=636.html">Clone This Bug</a></li>
+    
+    <li>&nbsp;-&nbsp;<a href="show_bug.cgi%3Fid=636.html#">Top of page </a></li>
+    </ul>
+
+<br>
+</div>
+
+    <div id="footer">
+      <div class="intro"></div>
+<ul id="useful-links">
+  <li id="links-actions"><ul class="links">
+  <li><a href="index.html">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi.html">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi.html">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi.html">Search</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="http://bugs.aviary.pl/buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input type="hidden" id="no_redirect_bottom" name="no_redirect" value="0">
+    <script type="text/javascript">
+      if (history && history.replaceState) {
+        var no_redirect = document.getElementById("no_redirect_bottom");
+        no_redirect.value = 1;
+      }
+    </script>
+    <input class="txt" type="text" id="quicksearch_bottom" name="quicksearch" 
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search" 
+           id="find_bottom"></form>
+  <a href="page.cgi%3Fid=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="report.cgi.html">Reports</a></li>
+
+  <li>
+      <span class="separator">| </span>
+        <a href="request.cgi.html">Requests</a></li>
+
+
+  <li>
+        <span class="separator">| </span>
+        <a href="https://bugzilla.readthedocs.org/en/5.0/using/understanding.html" target="_blank">Help</a>
+      </li>
+    
+      <li id="new_account_container_bottom">
+        <span class="separator">| </span>
+        <a href="createaccount.cgi.html">New&nbsp;Account</a>
+      </li>
+
+    <li id="mini_login_container_bottom">
+  <span class="separator">| </span>
+  <a id="login_link_bottom" href="show_bug.cgi%3Fid=636&amp;GoAheadAndLogIn=1.html"
+     onclick="return show_mini_login_form('_bottom')">Log In</a>
+
+  <form action="show_bug.cgi%3Fid=636.html" method="POST"
+        class="mini_login bz_default_hidden"
+        id="mini_login_bottom">
+    <input id="Bugzilla_login_bottom" required
+           name="Bugzilla_login" class="bz_login"
+        type="email" placeholder="Email Address">
+    <input class="bz_password" name="Bugzilla_password" type="password"
+           id="Bugzilla_password_bottom" required
+           placeholder="Password">
+    <input type="hidden" name="Bugzilla_login_token"
+           value="1469820239-oAn7pO6ZhELODdw1Y3q7HAdYVQBOCXdb_tmGtcHbma0">
+    <input type="submit" name="GoAheadAndLogIn" value="Log in"
+            id="log_in_bottom">
+    <a href="show_bug.cgi%3Fid=636.html#" onclick="return hide_mini_login_form('_bottom')">[x]</a>
+  </form>
+</li>
+
+
+  <li id="forgot_container_bottom">
+    <span class="separator">| </span>
+    <a id="forgot_link_bottom" href="show_bug.cgi%3Fid=636&amp;GoAheadAndLogIn=1.html#forgot"
+       onclick="return show_forgot_form('_bottom')">Forgot Password</a>
+    <form action="http://bugs.aviary.pl/token.cgi" method="post" id="forgot_form_bottom"
+          class="mini_forgot bz_default_hidden">
+      <label for="login_bottom">Login:</label>
+      <input name="loginname" size="20" id="login_bottom" required
+          type="email" placeholder="Your Email Address">
+      <input id="forgot_button_bottom" value="Reset Password" type="submit">
+      <input type="hidden" name="a" value="reqpw">
+      <input type="hidden" id="token_bottom" name="token"
+             value="1469820239-wrWJcNt6VBDhkAItTwmgpzvSRmPDW0zeLyfID1dOAm8">
+      <a href="show_bug.cgi%3Fid=636.html#" onclick="return hide_forgot_form('_bottom')">[x]</a>
+    </form>
+  </li>
+</ul>
+  </li>
+
+  
+
+
+
+
+  
+</ul>
+
+      <div class="outro"></div>
+    </div>
+
+  </body>
+</html>

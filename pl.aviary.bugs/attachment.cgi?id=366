@@ -1,0 +1,720 @@
+Index: trunk/locale/pinger/pinger.dtd
+===================================================================
+--- trunk/locale/pinger/pinger.dtd	(revision 3)
++++ trunk/locale/pinger/pinger.dtd	(working copy)
+@@ -36,7 +36,7 @@
+    - ***** END LICENSE BLOCK ***** -->
+ 
+ <!ENTITY pingerWindow.title         "Daj nam znać...">
+-<!ENTITY pingerMainText1.desc        "Możesz pomóc Nvu jednym kliknięciem: naciśnij przycisk OK, aby dać nam znać, że pobrałeś Nvu. Zostanie wysłana tylko krótka informacja do serwera aby zwiększyć licznik pobrań. Żadne Twoje dane nie zostaną przesłane.">
++<!ENTITY pingerMainText1.desc        "Możesz pomóc Nvu jednym kliknięciem: naciśnij przycisk OK, aby dać nam znać, że pobrałeś Nvu. Zostanie wysłana tylko krótka informacja do serwera, aby zwiększyć licznik pobrań. Żadne Twoje dane nie zostaną przesłane.">
+ <!ENTITY pingerMainText2.desc        "UWAGA: jeśli łączysz się z Internetem poprzez serwer proxy, skonfiguruj najpierw swoje połączenie.">
+ <!ENTITY pingerMainText3.desc        "To okno dialogowe nie pojawi się już więcej (do czasu aktualizacji Nvu do nowszej wersji).">
+ <!ENTITY nvuAuthors.label            "Autorzy Nvu">
+Index: trunk/locale/editor/pref-toolbars.dtd
+===================================================================
+--- trunk/locale/editor/pref-toolbars.dtd	(revision 3)
++++ trunk/locale/editor/pref-toolbars.dtd	(working copy)
+@@ -35,38 +35,38 @@
+    - ***** END LICENSE BLOCK ***** -->
+ 
+ 
+-<!ENTITY header.title "Paski narz�dzi" >
++<!ENTITY header.title "Paski narzędzi" >
+ 
+-<!ENTITY composition.caption "Wy�wietl poni�sze przyciski na pasku narz�dzi edycji:" >
++<!ENTITY composition.caption "Wyświetl poniższe przyciski na pasku narzędzi edycji:" >
+ 
+ <!ENTITY new.label "Nowy" >
+-<!ENTITY open.label "Otw�rz" >
++<!ENTITY open.label "Otwórz" >
+ <!ENTITY save.label "Zapisz" >
+ <!ENTITY publish.label "Publikuj" >
+-<!ENTITY preview.label "Podgl�d" >
++<!ENTITY preview.label "Podgląd" >
+ <!ENTITY cut.label "Wytnij" >
+ <!ENTITY copy.label "Kopiuj" >
+ <!ENTITY paste.label "Wklej" >
+ <!ENTITY print.label "Drukuj" >
+-<!ENTITY find.label "Znajd�" >
++<!ENTITY find.label "Znajdź" >
+ <!ENTITY image.label "Obrazek" >
+ <!ENTITY hline.label "Linia pozioma" >
+ <!ENTITY table.label "Tabela" >
+-<!ENTITY link.label "Odno�nik" >
++<!ENTITY link.label "Odnośnik" >
+ <!ENTITY anchor.label "Kotwica" >
+ 
+-<!ENTITY formatting.caption "Wy�wietl poni�sze przyciski na pasku narz�dzi formatowania:" >
++<!ENTITY formatting.caption "Wyświetl poniższe przyciski na pasku narzędzi formatowania:" >
+ 
+-<!ENTITY smaller.label "Pomniejsz czcionk�" >
+-<!ENTITY larger.label "Powi�ksz czcionk�" >
++<!ENTITY smaller.label "Pomniejsz czcionkę" >
++<!ENTITY larger.label "Powiększ czcionkę" >
+ <!ENTITY bold.label "Pogrubienie" >
+ <!ENTITY bullets.label "Wypunktowanie" >
+ <!ENTITY numbers.label "Numerowanie" >
+ <!ENTITY italic.label "Kursywa" >
+-<!ENTITY outdent.label "Zmniejsz wci�cie" >
+-<!ENTITY indent.label "Zwi�ksz wci�cie" >
+-<!ENTITY underline.label "Podkre�lenie" >
++<!ENTITY outdent.label "Zmniejsz wcięcie" >
++<!ENTITY indent.label "Zwiększ wcięcie" >
++<!ENTITY underline.label "Podkreślenie" >
+ 
+ <!ENTITY absolutePosition.label "Pozycjonowanie absolutne" >
+-<!ENTITY decreaseZIndex.label "Przenie� pod sp�d" >
+-<!ENTITY increaseZIndex.label "Przenie� na wierzch" >
+\ No newline at end of file
++<!ENTITY decreaseZIndex.label "Przenieś pod spód" >
++<!ENTITY increaseZIndex.label "Przenieś na wierzch" >
+\ No newline at end of file
+Index: trunk/locale/editor/EditConflict.dtd
+===================================================================
+--- trunk/locale/editor/EditConflict.dtd	(revision 3)
++++ trunk/locale/editor/EditConflict.dtd	(working copy)
+@@ -22,7 +22,7 @@
+ 
+ <!-- Window title -->
+ <!ENTITY windowTitle.label "Wybór zmian w edycji">
+-<!ENTITY conflictWarning.label "Ta strona została zmodyfikowana przez inny program, ale istnieje również niezapisana wersja ze zmianami dokonanymi w Kompozytorze.">
+-<!ENTITY conflictResolve.label "Wybierz, która wersję zachować:">
++<!ENTITY conflictWarning.label "Ta strona została zmodyfikowana przez inny program, ale istnieje również niezapisana wersja ze zmianami dokonanymi w programie &brandShortName;.">
++<!ENTITY conflictResolve.label "Wybierz, którą wersję zachować:">
+ <!ENTITY keepCurrentPageButton.label "Zachowaj aktualne zmiany na stronie">
+ <!ENTITY useOtherPageButton.label "Wprowadź zmiany z innego programu">
+Index: trunk/locale/editor/EdConvertToTable.dtd
+===================================================================
+--- trunk/locale/editor/EdConvertToTable.dtd	(revision 3)
++++ trunk/locale/editor/EdConvertToTable.dtd	(working copy)
+@@ -23,7 +23,7 @@
+ 
+ <!-- Window title -->
+ <!ENTITY windowTitle.label "Zamień na tabelę">
+-<!ENTITY instructions1.label   "Kompozytor tworzy nowy wiersz dla każdego paragrafu w sekcji.">
++<!ENTITY instructions1.label   "&brandShortName; tworzy nowy wiersz dla każdego paragrafu w sekcji.">
+ <!ENTITY instructions2.label   "Wybierz znak użyty do podzielenia sekcji na kolumny:">
+ <!ENTITY commaRadio.label      "Przecinek">
+ <!ENTITY spaceRadio.label      "Spacja">
+Index: trunk/locale/editor/EdAdvancedEdit.dtd
+===================================================================
+--- trunk/locale/editor/EdAdvancedEdit.dtd	(revision 3)
++++ trunk/locale/editor/EdAdvancedEdit.dtd	(working copy)
+@@ -26,7 +26,7 @@
+ <!ENTITY AttValue.label                 "Wartość: ">
+ <!ENTITY PropertyName.label             "Właściwość: ">
+ <!ENTITY currentattributesfor.label     "Aktualne atrybuty dla: ">
+-<!ENTITY tree.attributeHeader.label     "Attrybut">
++<!ENTITY tree.attributeHeader.label     "Atrybut">
+ <!ENTITY tree.propertyHeader.label      "Właściwość">
+ <!ENTITY tree.valueHeader.label         "Wartość">
+ <!ENTITY tabHTML.label                  "Atrybuty HTML">
+Index: trunk/locale/editor/EditorInsertChars.dtd
+===================================================================
+--- trunk/locale/editor/EditorInsertChars.dtd	(revision 3)
++++ trunk/locale/editor/EditorInsertChars.dtd	(working copy)
+@@ -28,8 +28,8 @@
+ <!ENTITY letter.accessKey "L" >
+ <!ENTITY character.label "Znak:" >
+ <!ENTITY character.accessKey "Z" >
+-<!ENTITY accentUpper.label "Znak diaktryczny - Duże litery" >
+-<!ENTITY accentLower.label "Znak diaktryczny - Małe litery" >
+-<!ENTITY otherUpper.label "Inne znaki - Duże litery" >
++<!ENTITY accentUpper.label "Znak diakrytyczny - Wielkie litery" >
++<!ENTITY accentLower.label "Znak diakrytyczny - Małe litery" >
++<!ENTITY otherUpper.label "Inne znaki - Wielkie litery" >
+ <!ENTITY otherLower.label "Inne znaki - Małe litery" >
+ <!ENTITY commonSymbols.label "Typowe symbole" >
+Index: trunk/locale/editor/editorNavigatorOverlay.dtd
+===================================================================
+--- trunk/locale/editor/editorNavigatorOverlay.dtd	(revision 3)
++++ trunk/locale/editor/editorNavigatorOverlay.dtd	(working copy)
+@@ -1,6 +1,6 @@
+-<!ENTITY editPageCmd.label "Edytuj stronę w Kompozytorze Stron" >
+-<!ENTITY editPageCmd.accesskey "e" >
++<!ENTITY editPageCmd.label "Edytuj stronę w programie &brandShortName;" >
++<!ENTITY editPageCmd.accesskey "E" >
+ 
+-<!ENTITY editLinkCmd.label "Edytuj odnośnik w Kompozytorze Stron" >
+-<!ENTITY editLinkCmd.accesskey "e" >
++<!ENTITY editLinkCmd.label "Edytuj odnośnik w programie &brandShortName;" >
++<!ENTITY editLinkCmd.accesskey "E" >
+ 
+Index: trunk/locale/editor/EdDialogOverlay.dtd
+===================================================================
+--- trunk/locale/editor/EdDialogOverlay.dtd	(revision 3)
++++ trunk/locale/editor/EdDialogOverlay.dtd	(working copy)
+@@ -23,14 +23,14 @@
+ 
+ <!ENTITY AdvancedEditButton.label "Edycja zaawansowana...">
+ <!ENTITY AdvancedEditButton.accessKey "E">
+-<!ENTITY AdvancedEditButton.tooltip "Dodaj lub modyfikuj atrybuty HTML, atrybuty stylów, oraz JavaScript">
++<!ENTITY AdvancedEditButton.tooltip "Dodaj lub modyfikuj atrybuty HTML, atrybuty stylów oraz JavaScript">
+ <!ENTITY chooseButton.label "Wybierz plik...">
+ <!ENTITY chooseFile.accessKey "W">
+ <!ENTITY chooseFileLink.accessKey "W">
+ <!ENTITY makeUrlRelative.label "Adres URL jest relatywny do adresu strony">
+ <!ENTITY makeUrlRelative.accessKey "A">
+-<!ENTITY makeUrlRelative.tooltip "Zmień między relatywnym i absolutnym adresem URL. Strona musi być najpierw zapisana.">
++<!ENTITY makeUrlRelative.tooltip "Zmiana adresu URL na relatywny lub absolutny. Aby użyć tej funkcji, należy najpierw zapisać stronę.">
+ 
+ <!-- Shared by Link and Image dialogs -->
+-<!ENTITY LinkURLEditField.label "Wprowadź adres strony WWW, lokalnego plik lub adres e-mail, albo zaznacz uchwyt lub nagłówek z listy:">
++<!ENTITY LinkURLEditField.label "Wprowadź adres strony WWW, nazwę pliku lokalnego lub wybierz Zakładkę albo Nagłówek z poniższej listy:">
+ <!ENTITY LinkURLEditField.accessKey "o">
+Index: trunk/locale/editor/EdColorPicker.dtd
+===================================================================
+--- trunk/locale/editor/EdColorPicker.dtd	(revision 3)
++++ trunk/locale/editor/EdColorPicker.dtd	(working copy)
+@@ -63,5 +63,5 @@
+ <!ENTITY lastPickedColor.label "Ostatnio wybrany kolor">
+ <!ENTITY lastPickedColor.accessKey "O">
+ 
+-<!ENTITY hexColor.label            "Heks:">
++<!ENTITY hexColor.label            "Szesnastkowo:">
+ <!ENTITY nameColor.label           "Nazwa:">
+Index: trunk/locale/wallet/pref-passwords.dtd
+===================================================================
+--- trunk/locale/wallet/pref-passwords.dtd	(revision 3)
++++ trunk/locale/wallet/pref-passwords.dtd	(working copy)
+@@ -1,13 +1,14 @@
+ <!ENTITY lHeader "Hasła" >
+ <!ENTITY rHeader "Menedżer haseł" >
+ <!ENTITY signonHeader.label "Menedżer haseł" >
+-<!ENTITY signonDescription.label "Menedżer haseł jest aplikacją, za pomocą której zarządzane są informacje niezbędne do zalogowania się na witryny zabezpieczone hasłem, serwery poczty, serwery grup dyskusyjnych itp. Na wyraźne życzenie użytkownika dane te mogą być zachowywane w jego profilu, a następnie automatycznie wprowadzane w odpowiednie pola podczas kolejnych połączeń." >
++<!ENTITY signonDescription.label "Menedżer haseł jest aplikacją, za pomocą której można
++zarządzać informacjami niezbędnymi do zalogowania się na witryny zabezpieczone hasłem, serwery poczty, serwery grup dyskusyjnych itp. Na wyraźne życzenie użytkownika dane te mogą być zachowywane w jego profilu, a następnie automatycznie wprowadzane w odpowiednie pola podczas kolejnych połączeń." >
+ <!ENTITY signonEnabled.label "Włącz zapamiętywanie haseł" >
+ <!ENTITY signonEnabled.accesskey "z" >
+ <!ENTITY viewSignons.label "Menedżer haseł" >
+ <!ENTITY viewSignons.accesskey "M" >
+ <!ENTITY encryptHeader.label "Szyfrowanie i utajnianie" >
+-<!ENTITY encryptDescription.label "Wszystkie poufne dane przechowywane przez Mozillę na dysku są domyślnie utajniane, jednakże bezpieczniejsze jest dodatkowe zaszyfrowanie tych danych, aby znacznie utrudnić odczytanie ich przez osoby niepowołane. Dostęp do zaszyfrowanych danych jest zabezpieczony głównym hasłem." >
++<!ENTITY encryptDescription.label "Wszystkie poufne dane przechowywane przez program &brandShortName; na dysku są domyślnie utajniane, jednakże bezpieczniejsze jest dodatkowe zaszyfrowanie tych danych, aby znacznie utrudnić odczytanie ich przez osoby niepowołane. Dostęp do zaszyfrowanych danych jest zabezpieczony głównym hasłem." >
+ <!ENTITY encryptEnabled.label "Użyj szyfrowania przy zachowywaniu poufnych danych." >
+ <!ENTITY encryptEnabled.accesskey "n" >
+ <!ENTITY encryptExpire.label "Unieważnij główne hasło po każdym użyciu" >
+Index: trunk/locale/mozapps/extensions/extensions.dtd
+===================================================================
+--- trunk/locale/mozapps/extensions/extensions.dtd	(revision 3)
++++ trunk/locale/mozapps/extensions/extensions.dtd	(working copy)
+@@ -6,7 +6,7 @@
+ 
+ <!-- Command Bar items -->
+ <!ENTITY cmd.uninstall.label              "Odinstaluj">
+-<!ENTITY cmd.uninstall.tooltip            "Odinstalowuje wybrane rozszerzenie">
++<!ENTITY cmd.uninstall.tooltip            "Odinstalowywuje wybrane rozszerzenie">
+ <!ENTITY cmd.uninstall.accesskey          "i">
+ <!ENTITY cmd.update.label                 "Aktualizuj">
+ <!ENTITY cmd.update.accesskey             "u">
+@@ -38,7 +38,7 @@
+ <!ENTITY cmd.moveToTop.accesskey          "n">
+ <!ENTITY cmd.moveUp.label                 "Przesuń w górę">
+ <!ENTITY cmd.moveUp.accesskey             "g">
+-<!ENTITY cmd.moveDn.label                 "Przesuń w dól">
++<!ENTITY cmd.moveDn.label                 "Przesuń w dół">
+ <!ENTITY cmd.moveDn.accesskey             "d">
+ 
+ <!-- Extension Items -->
+@@ -47,10 +47,10 @@
+ <!ENTITY about.tooltip                    "O rozszerzeniu">
+ <!ENTITY homepage.tooltip                 "Strona domowa">
+ 
+-<!ENTITY extensionItem.toBeDisabled.label     "Ten element będzie wyłączony po ponownym uruchomieniu Firefoksa.">
+-<!ENTITY extensionItem.toBeEnabled.label      "Ten element będzie włączony po ponownym uruchomieniu Firefoksa.">
+-<!ENTITY extensionItem.toBeInstalled.label    "Ten element zostanie zainstalowany po ponownym uruchomieniu Firefoksa.">
+-<!ENTITY extensionItem.toBeUninstalled.label  "Ten element zostanie odinstalowany po ponownym uruchomieniu Firefoksa.">
++<!ENTITY extensionItem.toBeDisabled.label     "Ten element będzie wyłączony po ponownym uruchomieniu programu &brandShortName;.">
++<!ENTITY extensionItem.toBeEnabled.label      "Ten element będzie włączony po ponownym uruchomieniu programu &brandShortName;.">
++<!ENTITY extensionItem.toBeInstalled.label    "Ten element zostanie zainstalowany po ponownym uruchomieniu programu &brandShortName;.">
++<!ENTITY extensionItem.toBeUninstalled.label  "Ten element zostanie odinstalowany po ponownym uruchomieniu programu &brandShortName;.">
+ <!ENTITY extensionItem.done.label             "Instalacja powiodła się">
+ <!ENTITY extensionItem.waiting.label          "Oczekiwanie...">
+ <!ENTITY extensionItem.installing.label       "Instalowanie...">
+Index: trunk/locale/communicator/utilityOverlay.dtd
+===================================================================
+--- trunk/locale/communicator/utilityOverlay.dtd	(revision 3)
++++ trunk/locale/communicator/utilityOverlay.dtd	(working copy)
+@@ -16,7 +16,7 @@
+ <!ENTITY newPageFromDraftCmd.label "Nowa strona ze szkicu" >
+ <!ENTITY newPageFromDraftCmd.accesskey "s" >
+ <!-- LOCALIZATION NOTE  (newNavigatorCmd.label): Do NOT translate "Navigator" -->
+-<!ENTITY newNavigatorCmd.label "Okno Nawigatora" >
++<!ENTITY newNavigatorCmd.label "Navigator Window" >
+ <!ENTITY newNavigatorCmd.key "N" >
+ <!ENTITY newNavigatorCmd.accesskey "N" >
+ 
+@@ -66,8 +66,8 @@
+ 
+ <!ENTITY releaseCmd.label "Informacje o wersji programu" >
+ <!ENTITY releaseCmd.accesskey "I" >
+-<!ENTITY aboutCmd.label "O Mozilli" >
+-<!ENTITY aboutCmd.accesskey "M" >
++<!ENTITY aboutCmd.label "O &brandShortName;" >
++<!ENTITY aboutCmd.accesskey "O" >
+ <!ENTITY aboutCommPluginsCmd.label "O wtyczkach" >
+ <!ENTITY aboutCommPluginsCmd.accesskey "w" >
+ 
+Index: trunk/locale/communicator/wallet/WalletViewer.dtd
+===================================================================
+--- trunk/locale/communicator/wallet/WalletViewer.dtd	(revision 3)
++++ trunk/locale/communicator/wallet/WalletViewer.dtd	(working copy)
+@@ -92,8 +92,8 @@
+ <!ENTITY miscLicense.accesskey "J" >
+ <!ENTITY miscLicenseState.label "województwo:" >
+ <!ENTITY miscLicenseState.accesskey "w" >
+-<!ENTITY miscMaiden.label "Panieńskie nazwisko matki:" >
+-<!ENTITY miscMaiden.accesskey "P" >
++<!ENTITY miscMaiden.label "Nazwisko panieńskie matki:" >
++<!ENTITY miscMaiden.accesskey "p" >
+ <!ENTITY miscBirthday.label "Urodziny:" >
+ <!ENTITY miscBirthday.accesskey "U" >
+ <!ENTITY miscBirthdayMonth.label "miesiąc" >
+Index: trunk/locale/communicator/wallet/WalletEditor.dtd
+===================================================================
+--- trunk/locale/communicator/wallet/WalletEditor.dtd	(revision 3)
++++ trunk/locale/communicator/wallet/WalletEditor.dtd	(working copy)
+@@ -1,4 +1,4 @@
+-<!ENTITY     div.walletdataonsystem.label   "Następujące dane formularza zostały zapisane dla Ciebie." >
++<!ENTITY     div.walletdataonsystem.label   "Następujące dane formularza zostały dla Ciebie zapisane." >
+ <!ENTITY     treehead.schemaname.label      "Nazwa pola" >
+ <!-- String is of the form: treehead.entries.label %value% treehead.entries1.label -->
+ <!ENTITY     treehead.entries.label         "Wartości dla" >
+Index: trunk/locale/communicator/aboutPopups.dtd
+===================================================================
+--- trunk/locale/communicator/aboutPopups.dtd	(revision 3)
++++ trunk/locale/communicator/aboutPopups.dtd	(working copy)
+@@ -1,7 +1,7 @@
+ <!ENTITY windowtitle.label "Informacje o blokowaniu wyskakujących okien" >
+ 
+-<!ENTITY popupDesc.label "Oglądana witryna otworzyła nowe okno przeglądarki, zwane wyskakującym, bez udziału lub pozwolenia użytkownika. Takie okna, zawierające najczęściej niezamawiane treści lub reklamy mogą być na życzenie użytkownika automatycznie blokowane przez Mozillę. W przypadku, gdy wyskakujące okno zostanie zablokowane, Mozilla może wyświetlić odpowiednią ikonę na pasku stanu, o ile zostanie zaznaczona odpowiednia opcja w preferencjach." >
+-<!ENTITY popupDescAlt.label "Mozilla może automatycznie blokować wyświetlanie wyskakujących okien w odniesieniu do poszczególnych witryn. W przypadku, gdy wyskakujące okno zostanie zablokowane, Mozilla może wyświetlić odpowiednią ikonę na pasku stanu." >
++<!ENTITY popupDesc.label "Oglądana witryna otworzyła nowe okno przeglądarki, zwane wyskakującym, bez udziału lub pozwolenia użytkownika. Takie okna, zawierające najczęściej niezamawiane treści lub reklamy mogą być na życzenie użytkownika automatycznie blokowane przez program &brandShortName;. W przypadku, gdy wyskakujące okno zostanie zablokowane, &brandShortName; może wyświetlić odpowiednią ikonę na pasku stanu, o ile zostanie zaznaczona odpowiednia opcja w preferencjach." >
++<!ENTITY popupDescAlt.label "&brandShortName; może automatycznie blokować wyświetlanie wyskakujących okien w odniesieniu do poszczególnych witryn. W przypadku, gdy wyskakujące okno zostanie zablokowane, &brandShortName; może wyświetlić odpowiednią ikonę na pasku stanu." >
+ <!ENTITY popupNote1.label "Aby zmienić lub wyświetlić bieżące ustawienia kontrolowania wyskakujących okien, należy wybrać Preferencje z menu Edycja, a następnie w kategorii Prywatność i zabezpieczenia wskazać Wyskakujące okna." >
+ <!ENTITY popupNote2.label "Czy włączyć blokowanie wyskakujących okien i otworzyć ustawienia blokowania?" >
+ 
+Index: trunk/locale/communicator/pref/preftree.dtd
+===================================================================
+--- trunk/locale/communicator/pref/preftree.dtd	(revision 3)
++++ trunk/locale/communicator/pref/preftree.dtd	(working copy)
+@@ -1 +1,35 @@
+-<!-- extracted from content/preftree.xul --><!--LOCALIZATION NOTE : FILE Lists preferences categories that appear on the left of the preferences dialog --><!ENTITY appear.label "Wygląd"><!ENTITY fonts.label "Czcionki"><!ENTITY colors.label "Kolory"><!ENTITY themes.label "Motywy"><!--LOCALIZATION NOTE (navigator.label): DONT_TRANSLATE --><!ENTITY navigator.label "Navigator"><!ENTITY history.label "Historia"><!ENTITY bidi.label "Opcje tekstu dwukierunkowego"><!ENTITY languages.label "Języki"><!ENTITY applications.label "Aplikacje pomocnicze"><!--LOCALIZATION NOTE (smartBrowse.label): DONT_TRANSLATE --><!ENTITY smartBrowse.label "Przeglądanie" ><!ENTITY tabWindows.label "Przeglądanie w panelach"><!ENTITY compose.label "Kompozytor"><!ENTITY editing.label "Ustawienia nowej strony"><!ENTITY publish.label "Publikowanie"><!ENTITY offline.label "Tryb offline"><!ENTITY security.label "Prywatność i zabezpieczenia"><!ENTITY advance.label "Zaawansowane"><!ENTITY down.label "Pobierz"><!ENTITY cache.label "Pamięć podręczna"><!ENTITY proxies.label "Serwery proxy"><!ENTITY httpnetworking.label "Ustawienia HTTP"><!ENTITY smart.label "Instalacja oprogramowania"><!ENTITY debug.label  "Debug"><!ENTITY debug1.label "Events"><!ENTITY debug2.label "Networking"><!ENTITY download.label "Pobieranie plików"><!ENTITY keynav.label "Klawiatura"><!ENTITY search.label "Wyszukiwanie"><!ENTITY policies.label "Ustawienia bezpieczeństwa"><!ENTITY mousewheel.label "Przewijanie"><!ENTITY scriptsAndWindows.label "Skrytpy i wtyczki">
+\ No newline at end of file
++<!-- extracted from content/preftree.xul -->
++<!--LOCALIZATION NOTE : FILE Lists preferences categories that appear on the left of the preferences dialog -->
++<!ENTITY appear.label "Wygląd">
++<!ENTITY fonts.label "Czcionki">
++<!ENTITY colors.label "Kolory">
++<!ENTITY themes.label "Motywy">
++<!--LOCALIZATION NOTE (navigator.label): DONT_TRANSLATE -->
++<!ENTITY navigator.label "Navigator">
++<!ENTITY history.label "Historia">
++<!ENTITY bidi.label "Opcje tekstu dwukierunkowego">
++<!ENTITY languages.label "Języki">
++<!ENTITY applications.label "Aplikacje pomocnicze">
++<!--LOCALIZATION NOTE (smartBrowse.label): DONT_TRANSLATE -->
++<!ENTITY smartBrowse.label "Smart Browsing" >
++<!ENTITY tabWindows.label "Przeglądanie w panelach">
++<!ENTITY compose.label "Kompozytor">
++<!ENTITY editing.label "Ustawienia nowej strony">
++<!ENTITY publish.label "Publikowanie">
++<!ENTITY offline.label "Tryb offline">
++<!ENTITY security.label "Prywatność i zabezpieczenia">
++<!ENTITY advance.label "Zaawansowane">
++<!ENTITY down.label "Pobierz">
++<!ENTITY cache.label "Pamięć podręczna">
++<!ENTITY proxies.label "Serwery proxy">
++<!ENTITY httpnetworking.label "Ustawienia HTTP">
++<!ENTITY smart.label "Instalacja oprogramowania">
++<!ENTITY debug.label  "Debug">
++<!ENTITY debug1.label "Events">
++<!ENTITY debug2.label "Networking">
++<!ENTITY download.label "Pobieranie plików">
++<!ENTITY keynav.label "Klawiatura">
++<!ENTITY search.label "Wyszukiwanie">
++<!ENTITY policies.label "Ustawienia bezpieczeństwa">
++<!ENTITY mousewheel.label "Przewijanie">
++<!ENTITY scriptsAndWindows.label "Skrytpy i wtyczki">
+Index: trunk/locale/communicator/pref/pref-fonts.dtd
+===================================================================
+--- trunk/locale/communicator/pref/pref-fonts.dtd	(revision 3)
++++ trunk/locale/communicator/pref/pref-fonts.dtd	(working copy)
+@@ -1 +1,87 @@
+-<!-- extracted from content/pref-fonts.xul --><!-- LOCALIZATION NOTE : FILE 'Fonts' prefs dialog --><!ENTITY  lHeader                                 "Czcionki"><!ENTITY  language.label                          "Czcionki:"><!ENTITY  language.accesskey                      "C"><!ENTITY  typefaces.label                         "Krój czcionki"><!ENTITY  sizes.label                             "Rozmiar (piksele)"><!ENTITY  proportional.label                      "Proporcjonalna:"><!ENTITY  proportional.accesskey                  "P"><!ENTITY  serif.label                             "Szeryfowa:"><!ENTITY  serif.accesskey                         "S"><!ENTITY  sans-serif.label                        "Bezszeryfowa:"><!ENTITY  sans-serif.accesskey                    "B"><!ENTITY  monospace.label                         "O stałej szerokości:"><!ENTITY  monospace.accesskey                     "O"><!-- LOCALIZATION NOTE (fantasy.label): 'Fantasy' means 'Ornate' --><!ENTITY  fantasy.label                           "Fantazyjna:"><!ENTITY  fantasy.accesskey                       "F"><!ENTITY  cursive.label                           "Kursywa:"><!ENTITY  cursive.accesskey                       "K"><!ENTITY  fontsize.units                          "pikseli"><!ENTITY  font.langGroup.latin1                   "Zachodnie"><!ENTITY  font.langGroup.latin2                   "Środkowoeuropejskie"><!ENTITY  font.langGroup.japanese                 "Japońskie"><!ENTITY  font.langGroup.trad-chinese             "Chińskie tradycyjne (Tajwan)"><!ENTITY  font.langGroup.simpl-chinese            "Chińskie uproszczone"><!ENTITY  font.langGroup.trad-chinese-hk          "Chińskie tradycyjne (Hong Kong)"><!ENTITY  font.langGroup.korean                   "Koreańskie"><!ENTITY  font.langGroup.cyrillic                 "Cyrylica"><!ENTITY  font.langGroup.baltic                   "Bałtyckie"><!ENTITY  font.langGroup.el                       "Greckie"><!ENTITY  font.langGroup.turkish                  "Tureckie"><!ENTITY  font.langGroup.unicode                  "Unikod"><!ENTITY  font.langGroup.user-def                 "Użytkownika"><!ENTITY  font.langGroup.thai                     "Tajskie"><!ENTITY  font.langGroup.hebrew                   "Hebrajskie"><!ENTITY  font.langGroup.arabic                   "Arabskie"><!ENTITY  font.langGroup.devanagari               "Symboliczne: Devanagari"><!ENTITY  font.langGroup.tamil                    "Tamilskie"><!-- Minimum font size --><!ENTITY minSize.label                            "Minimalny rozmiar czcionki:"><!ENTITY minSize.accesskey                        "M"><!ENTITY minSize.none                             "Brak"><!-- default font type --><!ENTITY  useDefaultFontSerif.label               "Szeryfowe"><!ENTITY  useDefaultFontSansSerif.label           "Bezszeryfowe"><!ENTITY  newLanguages.label                      'Nowe języki mogą być skonfigurowane przy użyciu panelu "Języki".'><!ENTITY  useDocumentFonts.label                  "Zezwalaj na użycie czcionek zadeklarowanych w wyświetlanych dokumentach"><!ENTITY  useDocumentFonts.accesskey              "e"><!-- leaving this stuff in for now --><!ENTITY  header2                                 "Kiedy strona używa określonych przez jej twórcę czcionek"><!ENTITY  useDefaultFont.label                    "Use my default fonts, ignoring the fonts the page has chosen"><!ENTITY  useDefaultFont.accesskey                "u"><!-- LOCALIZATION NOTE (useDocFontNonDynamic): Translate 'Dynamic Fonts' according to Netscape Glossary --><!ENTITY  useDocFontNonDynamic.label              "Use the fonts chosen by the page"><!ENTITY  useDocFontNonDynamic.accesskey          "p"><!-- LOCALIZATION NOTE (useDocFontDynamic): Translate 'Dynamic Fonts' according to Netscape Glossary --><!ENTITY  useDocFontDynamic.label                 "Use all the fonts chosen by the page"><!ENTITY  useDocFontDynamic.accesskey             "a"><!-- font scaling --><!ENTITY  resolution.label                        "Rozdzielczość wyświetlania:"><!ENTITY  resolution.accesskey                    "R"><!-- LOCALIZATION NOTE (resolution.dpi): dpi stands for "dots per inch" --><!ENTITY  resolution.dpi                          "dpi"><!-- LOCALIZATION NOTE (resolution.dpi): $val will be replaced by a numeric dpi value. --><!ENTITY  resolution.dpival                       "$val &resolution.dpi;"><!ENTITY  resolution.system.label                 "Ustawienia systemu"><!ENTITY  resolution.other                        "Inna..."><!-- screen calibration dialog --><!ENTITY  calibrateDialog.title                   "Kalibracja rozdzielczości"><!ENTITY  calibrate.instructions                  "Długość powyższej linii jest równa:"><!ENTITY  units.inches                            "cali"><!ENTITY  units.centimetres                       "centymetrów">
+\ No newline at end of file
++<!-- extracted from content/pref-fonts.xul -->
++
++<!-- LOCALIZATION NOTE : FILE 'Fonts' prefs dialog -->
++<!ENTITY  lHeader                                 "Czcionki">
++
++<!ENTITY  language.label                          "Czcionki:">
++<!ENTITY  language.accesskey                      "C">
++
++<!ENTITY  typefaces.label                         "Krój">
++<!ENTITY  sizes.label                             "Rozmiar (piksele)">
++
++<!ENTITY  proportional.label                      "Proporcjonalna:">
++<!ENTITY  proportional.accesskey                  "P">
++
++<!ENTITY  serif.label                             "Szeryfowa:">
++<!ENTITY  serif.accesskey                         "S">
++<!ENTITY  sans-serif.label                        "Bezszeryfowa:">
++<!ENTITY  sans-serif.accesskey                    "B">
++<!ENTITY  monospace.label                         "O stałej szerokości:">
++<!ENTITY  monospace.accesskey                     "O">
++<!-- LOCALIZATION NOTE (fantasy.label): 'Fantasy' means 'Ornate' -->
++<!ENTITY  fantasy.label                           "Ozdobna:">
++<!ENTITY  fantasy.accesskey                       "O">
++<!ENTITY  cursive.label                           "Kursywa:">
++<!ENTITY  cursive.accesskey                       "K">
++
++<!ENTITY  fontsize.units                          "pikseli">
++
++<!ENTITY  font.langGroup.latin1                   "Zachodnie">
++<!ENTITY  font.langGroup.latin2                   "Środkowoeuropejskie">
++<!ENTITY  font.langGroup.japanese                 "Japońskie">
++<!ENTITY  font.langGroup.trad-chinese             "Chińskie tradycyjne (Tajwan)">
++<!ENTITY  font.langGroup.simpl-chinese            "Chińskie uproszczone">
++<!ENTITY  font.langGroup.trad-chinese-hk          "Chińskie tradycyjne (Hong Kong)">
++<!ENTITY  font.langGroup.korean                   "Koreańskie">
++<!ENTITY  font.langGroup.cyrillic                 "Cyrylica">
++<!ENTITY  font.langGroup.baltic                   "Bałtyckie">
++<!ENTITY  font.langGroup.el                       "Greckie">
++<!ENTITY  font.langGroup.turkish                  "Tureckie">
++<!ENTITY  font.langGroup.unicode                  "Unikod">
++<!ENTITY  font.langGroup.user-def                 "Użytkownika">
++<!ENTITY  font.langGroup.thai                     "Tajskie">
++<!ENTITY  font.langGroup.hebrew                   "Hebrajskie">
++<!ENTITY  font.langGroup.arabic                   "Arabskie">
++<!ENTITY  font.langGroup.devanagari               "Symboliczne: Devanagari">
++<!ENTITY  font.langGroup.tamil                    "Tamilskie">
++<!-- Minimum font size -->
++<!ENTITY minSize.label                            "Minimalny rozmiar czcionki:">
++<!ENTITY minSize.accesskey                        "M">
++<!ENTITY minSize.none                             "Brak">
++
++<!-- default font type -->
++<!ENTITY  useDefaultFontSerif.label               "Szeryfowe">
++<!ENTITY  useDefaultFontSansSerif.label           "Bezszeryfowe">
++
++<!ENTITY  newLanguages.label                      'Nowe języki mogą być skonfigurowane przy użyciu panelu "Języki".'>
++
++<!ENTITY  useDocumentFonts.label                  "Zezwalaj na użycie czcionek zadeklarowanych w wyświetlanych dokumentach">
++<!ENTITY  useDocumentFonts.accesskey              "e">
++
++<!-- leaving this stuff in for now -->
++
++<!ENTITY  header2                                 "Kiedy strona używa określonych przez jej twórcę czcionek">
++<!ENTITY  useDefaultFont.label                    "Użyj moich domyślnych czcionek ignorując czcionki określone przez twórcę stronyn">
++<!ENTITY  useDefaultFont.accesskey                "m">
++<!-- LOCALIZATION NOTE (useDocFontNonDynamic): Translate 'Dynamic Fonts' according to Netscape Glossary -->
++<!ENTITY  useDocFontNonDynamic.label              "Użyj czcionek określonych przez twórcę strony">
++<!ENTITY  useDocFontNonDynamic.accesskey          "t">
++<!-- LOCALIZATION NOTE (useDocFontDynamic): Translate 'Dynamic Fonts' according to Netscape Glossary -->
++<!ENTITY  useDocFontDynamic.label                 "Użyj wszystkich czcionek określonych przez twórcę strony">
++<!ENTITY  useDocFontDynamic.accesskey             "w">
++
++<!-- font scaling -->
++<!ENTITY  resolution.label                        "Rozdzielczość wyświetlania:">
++<!ENTITY  resolution.accesskey                    "R">
++<!-- LOCALIZATION NOTE (resolution.dpi): dpi stands for "dots per inch" -->
++<!ENTITY  resolution.dpi                          "dpi">
++<!-- LOCALIZATION NOTE (resolution.dpi): $val will be replaced by a numeric dpi value. -->
++<!ENTITY  resolution.dpival                       "$val &resolution.dpi;">
++<!ENTITY  resolution.system.label                 "Ustawienia systemu">
++<!ENTITY  resolution.other                        "Inna...">
++
++<!-- screen calibration dialog -->
++<!ENTITY  calibrateDialog.title                   "Kalibracja rozdzielczości">
++<!ENTITY  calibrate.instructions                  "Długość powyższej linii jest równa:">
++<!ENTITY  units.inches                            "cali">
++<!ENTITY  units.centimetres                       "centymetrów">
+Index: trunk/locale/communicator/pref/pref-appearance.dtd
+===================================================================
+--- trunk/locale/communicator/pref/pref-appearance.dtd	(revision 3)
++++ trunk/locale/communicator/pref/pref-appearance.dtd	(working copy)
+@@ -1,12 +1,12 @@
+ <!-- extracted from content/pref-appearance.xul -->
+ 
+ <!--LOCALIZATION NOTE : FILE The Appearance prefs dialog.  -->
+-<!ENTITY lHeader "Appearance">
++<!ENTITY lHeader "Wygląd">
+ <!--LOCALIZATION NOTE (onStartLegend.label): Don't translate "&brandShortName;".
+     Place &brandShortName; in the phrase where the name of the application should
+ 	 appear
+ -->
+-<!ENTITY onStartLegend.label "Podczas uruchamiania programu &brandShortName; otw�rz">
++<!ENTITY onStartLegend.label "Podczas uruchamiania programu &brandShortName; otwórz">
+ <!ENTITY appear "Wygląd">
+ <!--LOCALIZATION NOTE (navCheck.label): DONT_TRANSLATE -->
+ <!ENTITY navCheck.label "Navigator">
+@@ -17,7 +17,7 @@
+ <!ENTITY calCheck.label "Kalendarz">
+ <!ENTITY calCheck.accesskey "a">
+ <!ENTITY showToolsLegend.label "Pokaż paski narzędzi jako">
+-<!ENTITY picsNtextRadio.label "Obrazki o tekst">
++<!ENTITY picsNtextRadio.label "Obrazki i tekst">
+ <!ENTITY picsNtextRadio.accesskey "O">
+ <!ENTITY picsOnlyRadio.label "Tylko obrazki">
+ <!ENTITY picsOnlyRadio.accesskey "b">
+Index: trunk/locale/communicator/pref/pref-winhooks.dtd
+===================================================================
+--- trunk/locale/communicator/pref/pref-winhooks.dtd	(revision 3)
++++ trunk/locale/communicator/pref/pref-winhooks.dtd	(working copy)
+@@ -4,7 +4,8 @@
+ 
+ <!-- These entities are used on the "File Types" section of the dialog. -->
+ <!ENTITY files.label "Typy plików" >
+-<!ENTITY files.text "Zaznacz typy plików, do otwierania których system operacyjny Windows będzie używał Mozilli:" >
++<!ENTITY files.text "Zaznacz typy plików, do otwierania których system
++operacyjny Windows będzie używał programu &brandShortName;:" >
+ <!ENTITY html.label "Dokumenty HTML" >
+ <!ENTITY html.accesskey "H" >
+ <!ENTITY jpeg.label "Obrazki JPEG" >
+@@ -30,7 +31,7 @@
+ 
+ <!-- These entities are used on the "Internet Shortcuts" section of the dialog. -->
+ <!ENTITY shortcuts.label "Skróty internetowe" >
+-<!ENTITY shortcuts.text "Zaznacz protokoły, do obsługi których system operacyjny Windows będzie używał Mozilli:" >
++<!ENTITY shortcuts.text "Zaznacz protokoły, do obsługi których system operacyjny Windows będzie używał programu &brandShortName;:" >
+ <!ENTITY http.label "http: (Protokół transferu hipertekstów)" >
+ <!ENTITY http.accesskey "H" >
+ <!ENTITY https.label "https: (Bezpieczny protokół transferu hipertekstów)" >
+Index: trunk/locale/communicator/pref/prefutilities.properties
+===================================================================
+--- trunk/locale/communicator/pref/prefutilities.properties	(revision 3)
++++ trunk/locale/communicator/pref/prefutilities.properties	(working copy)
+@@ -5,13 +5,13 @@
+ applyThemePrefix=Zastosuj %theme_name% 
+ uninstallThemePrefix=Odinstaluj %theme_name% 
+ 
+-oldTheme=Wybrany motyw zosta\u0142 zaprojektowany dla poprzedniej wersji Mozilli i nie jest kompatybilny z obecnie u\u017cywan\u0105 wersj\u0105. Aby pobra\u0107 zaktualizowan\u0105 wersj\u0119 motywu nale\u017cy po\u0142\u0105czy\u0107 si\u0119 z serwerem motyw\u00f3w Mozilli. Mo\u017cliwe jest usuni\u0119cie tego motywu przez naci\u015bni\u0119cie na przycisk "Odinstaluj %theme_name%".
++oldTheme=Wybrany motyw zosta\u0142 zaprojektowany dla poprzedniej wersji program %brand% i nie jest kompatybilny z obecnie u\u017cywan\u0105 wersj\u0105. Aby pobra\u0107 zaktualizowan\u0105 wersj\u0119 motywu nale\u017cy po\u0142\u0105czy\u0107 si\u0119 z serwerem motyw\u00f3w. Mo\u017cliwe jest usuni\u0119cie tego motywu przez naci\u015bni\u0119cie na przycisk "Odinstaluj %theme_name%".
+ 
+ enableExtension=W\u0142\u0105cz rozszerzenie
+ disableExtension=Wy\u0142\u0105cz rozszerzenie
+ 
+ prefSaveFailedAlert=Wyst\u0105pi\u0142 b\u0142\u0105d podczas zapisywania pliku preferencji. Wszystkie zmiany dokonane w preferencjach zostan\u0105 utracone pod koniec bie\u017c\u0105cej sesji.
+ prefSaveFailedTitle=B\u0142\u0105d zapisu
+-
++
+ labelDefaultFont=labelDefaultFont=Domy\u015blna (%font_family%)
+ choosefile=Wybierz plik
+Index: trunk/locale/communicator/pref/pref-offline.dtd
+===================================================================
+--- trunk/locale/communicator/pref/pref-offline.dtd	(revision 3)
++++ trunk/locale/communicator/pref/pref-offline.dtd	(working copy)
+@@ -8,6 +8,6 @@
+     Place "&brandShortName;" in the phrase where the name of the application should
+ 	 appear
+ -->
+-<!ENTITY textStart "Podczas uruchamiania Mozilli:" >
++<!ENTITY textStart "Podczas uruchamiania programu &brandShortName;:" >
+ <!ENTITY radioAskMode "Zapytaj w jakim trybie (online/offline) rozpocząć pracę" >
+ <!ENTITY radioUsePrev "Użyj trybu (online/offline), który był aktywny podczas zamykania programu" >
+Index: trunk/locale/communicator/pref/pref-smartupdate.dtd
+===================================================================
+--- trunk/locale/communicator/pref/pref-smartupdate.dtd	(revision 3)
++++ trunk/locale/communicator/pref/pref-smartupdate.dtd	(working copy)
+@@ -8,12 +8,12 @@
+ <!ENTITY enableNotification.accesskey "n" >
+ <!ENTITY requireConfirmation.label "Żądaj potwierdzenia przed instalacją" >
+ <!--LOCALIZATION NOTE (selectUninstall.label): A large list box appears below this label -->
+-<!ENTITY selectUninstall.label "Aby odinstalować program wybierz go z listy, a następnie użyj przycisku Odinstaluj" >
++<!ENTITY selectUninstall.label "Aby odinstalować program, wybierz go z listy, a następnie użyj przycisku Odinstaluj" >
+ <!ENTITY uninstallButton.label "Odinstaluj" >
+ <!ENTITY uninstallButton.accesskey "u" >
+ 
+ <!ENTITY updateNotifications.label "Automatyczna aktualizacja" >
+-<!ENTITY updateNotifications.desc "Sprawdź automatycznie, czy są dostępne nowe wersje Mozilli. Uwaga: Podczas wykonywania tej operacji nie zostaną wysłane żadne poufne lub prywatne informacje." >
++<!ENTITY updateNotifications.desc "Sprawdź automatycznie, czy są dostępne nowe wersje tego programu. Podczas wykonywania tej operacji nie zostaną wysłane żadne poufne ani prywatne informacje." >
+ <!ENTITY enableUN.label "Sprawdź, czy dostępne są nowe wersje:" >
+ <!ENTITY enableUN.accesskey "c" >
+ <!ENTITY weekly.label "co tydzień" >
+Index: trunk/locale/communicator/pref/pref-proxies.dtd
+===================================================================
+--- trunk/locale/communicator/pref/pref-proxies.dtd	(revision 3)
++++ trunk/locale/communicator/pref/pref-proxies.dtd	(working copy)
+@@ -38,4 +38,4 @@
+ <!ENTITY SOCKSport.accesskey "t" >
+ <!ENTITY noproxy.label "Nie używaj proxy dla:" >
+ <!ENTITY noproxy.accesskey "n" >
+-<!ENTITY noproxyExplain.label "Przykład: .mozilla.org, .firma.com.pl" >
++<!ENTITY noproxyExplain.label "Przykład: .mozilla.org, .com.pl" >
+Index: trunk/locale/communicator/pref/pref-history.dtd
+===================================================================
+--- trunk/locale/communicator/pref/pref-history.dtd	(revision 3)
++++ trunk/locale/communicator/pref/pref-history.dtd	(working copy)
+@@ -2,7 +2,7 @@
+ 
+ <!ENTITY header3.label "Przeglądanie Historii" >
+ <!ENTITY historyPages.label "Informacje o wszystkich odwiedzonych przez użytkownika stronach WWW zapisywane są w Historii, co umożliwia wyświetlanie ich w trybie offline." >
+-<!ENTITY pageHis.label "Mozilla zapamięta strony odwiedzone w ciągu ostatnich" >
++<!ENTITY pageHis.label "&brandShortName; zapamięta strony odwiedzone w ciągu ostatnich" >
+ <!ENTITY pageHis.accesskey "p" >
+ <!ENTITY days.label "dni." >
+ <!ENTITY clearHistory.label "Wyczyść Historię" >
+Index: trunk/locale/communicator/pref/pref-colors.dtd
+===================================================================
+--- trunk/locale/communicator/pref/pref-colors.dtd	(revision 3)
++++ trunk/locale/communicator/pref/pref-colors.dtd	(working copy)
+@@ -1 +1,29 @@
+-<!-- extracted from content/pref-colors.xul --><!-- LOCALIZATION NOTE : FILE Color management prefs --><!ENTITY  lHeader                         "Kolory"><!ENTITY  color                           "Tekst i tło"><!ENTITY  textColor.label                 "Tekst:"><!ENTITY  textColor.accesskey             "T"><!ENTITY  backgroundColor.label           "Tło:"><!ENTITY  backgroundColor.accesskey       "o"><!ENTITY  useSystemColors.label           "Użyj kolorów systemowych"><!ENTITY  useSystemColors.accesskey       "s"><!ENTITY  underlineLinks.label            "Podkreślaj odnośniki"><!ENTITY  underlineLinks.accesskey        "P"><!ENTITY  links                           "Kolor odnośników"><!ENTITY  linkColor.label                 "Nieodwiedzone odnośniki:"><!ENTITY  linkColor.accesskey             "N"><!ENTITY  activeLinkColor.label           "Aktywne odnośniki:"><!ENTITY  activeLinkColor.accesskey       "A"><!ENTITY  visitedLinkColor.label          "Odwiedzone odnośniki:"><!ENTITY  visitedLinkColor.accesskey      "d"><!-- LOCALIZATION NOTE (someProvColors): This is the start of a sentence and will be followed by the following radio buttons. --><!ENTITY  someProvColors                  "W przypadku, gdy kolor tła i tekstu został określony w dokumencie"><!-- LOCALIZATION NOTE (alwaysUseDocColors.label): This is option one, and it appends to 'someProvColors' above. --><!ENTITY  alwaysUseDocumentColors.label   "Zawsze używaj kolorów i tła zdefiniowanych przez stronę"><!ENTITY  alwaysUseDocumentColors.accesskey "Z"><!-- LOCALIZATION NOTE (ignoreDocColors.label): This is option two, and it appends to 'someProvColors' above.  --><!ENTITY  useMyColors.label               "Użyj kolorów użytkownika, ignorując kolory oraz tło zdefiniowane w kodzie strony"><!ENTITY  useMyColors.accesskey           "U">
+\ No newline at end of file
++<!-- extracted from content/pref-colors.xul -->
++
++<!-- LOCALIZATION NOTE : FILE Color management prefs -->
++<!ENTITY  lHeader                         "Kolory">
++<!ENTITY  color                           "Tekst i tło">
++<!ENTITY  textColor.label                 "Tekst:">
++<!ENTITY  textColor.accesskey             "T">
++<!ENTITY  backgroundColor.label           "Tło:">
++<!ENTITY  backgroundColor.accesskey       "o">
++<!ENTITY  useSystemColors.label           "Użyj kolorów systemowych">
++<!ENTITY  useSystemColors.accesskey       "s">
++
++<!ENTITY  underlineLinks.label            "Podkreślaj odnośniki">
++<!ENTITY  underlineLinks.accesskey        "P">
++<!ENTITY  links                           "Kolor odnośników">
++<!ENTITY  linkColor.label                 "Nieodwiedzone odnośniki:">
++<!ENTITY  linkColor.accesskey             "N">
++<!ENTITY  activeLinkColor.label           "Aktywne odnośniki:">
++<!ENTITY  activeLinkColor.accesskey       "A">
++<!ENTITY  visitedLinkColor.label          "Odwiedzone odnośniki:">
++<!ENTITY  visitedLinkColor.accesskey      "d">
++<!-- LOCALIZATION NOTE (someProvColors): This is the start of a sentence and will be followed by the following radio buttons. -->
++<!ENTITY  someProvColors                  "W przypadku, gdy kolor tła i tekstu został określony w dokumencie">
++<!-- LOCALIZATION NOTE (alwaysUseDocColors.label): This is option one, and it appends to 'someProvColors' above. -->
++<!ENTITY  alwaysUseDocumentColors.label   "Zawsze używaj kolorów i tła zdefiniowanych przez stronę">
++<!ENTITY  alwaysUseDocumentColors.accesskey "Z">
++<!-- LOCALIZATION NOTE (ignoreDocColors.label): This is option two, and it appends to 'someProvColors' above.  -->
++<!ENTITY  useMyColors.label               "Użyj kolorów użytkownika, ignorując kolory oraz tło zdefiniowane w kodzie strony">
++<!ENTITY  useMyColors.accesskey           "U">
+Index: trunk/locale/communicator/pref/pref-advanced.dtd
+===================================================================
+--- trunk/locale/communicator/pref/pref-advanced.dtd	(revision 3)
++++ trunk/locale/communicator/pref/pref-advanced.dtd	(working copy)
+@@ -17,10 +17,10 @@
+ <!ENTITY imageBlocking.accesskey      "B">
+ 
+ <!ENTITY perfTitle.label              "Szybki start">
+-<!ENTITY enableTurbo.label            "Utrzymuj biblioteki programu &brandShortName; w pamięci zminimalizować czas uruchamiania">
++<!ENTITY enableTurbo.label            "Utrzymuj biblioteki programu &brandShortName; w pamięci, by zminimalizować czas uruchamiania">
+ <!ENTITY enableTurboCheck.accesskey   "S">
+ 
+-<!ENTITY perfdescription.label        "Po włączeniu funkcji szybkiego startu niektóre biblioteki programu będą uruchomione w tle i przechowywane w pamięci RAM komputera, nawet gdy Mozilla nie będzie uruchomiona. Pozwala to na skrócenie czasu uruchamiania poszczególnych komponentów.">
++<!ENTITY perfdescription.label        "Po włączeniu funkcji szybkiego startu niektóre biblioteki programu będą uruchomione w tle i przechowywane w pamięci RAM komputera, nawet gdy program &brandShortName; nie będzie uruchomiony. Pozwala to na skrócenie czasu uruchamiania poszczególnych komponentów.">
+ 
+ <!ENTITY jvm.configuration            "Wybierz wersję środowiska Java (wymaga ponownego uruchomienia programu)">
+ <!ENTITY jvm.name                     "Wersja">
+Index: trunk/locale/communicator/pref/pref-languages.dtd
+===================================================================
+--- trunk/locale/communicator/pref/pref-languages.dtd	(revision 3)
++++ trunk/locale/communicator/pref/pref-languages.dtd	(working copy)
+@@ -5,7 +5,6 @@
+ <!ENTITY languages.customize.rHeader "Języki, w których oglądane są strony WWW" >
+ <!ENTITY langtitle.label "Języki" >
+ <!ENTITY languages.customize.prefAddLangDescript "Wybierz język, który zostanie dodany do listy preferencji." >
+-<!ENTITY languages.customize.prefAddLangDescript "Wybierz język, który zostanie dodany do listy preferencji." >
+ <!ENTITY languages.customize.engOrder.label "J" >
+ <!ENTITY languages.customize.engOption.label "Angielski" >
+ <!ENTITY languages.customize.addButton.label "Dodaj..." >
+Index: trunk/locale/communicator/pref/pref-applications-edit.dtd
+===================================================================
+--- trunk/locale/communicator/pref/pref-applications-edit.dtd	(revision 3)
++++ trunk/locale/communicator/pref/pref-applications-edit.dtd	(working copy)
+@@ -1 +1,24 @@
+-<!ENTITY  editType.label                        "Edytuj typ"><!ENTITY  newType.label                         "Nowy typ"><!ENTITY  extension.label                       "Rozszerzenie:"><!ENTITY  extension.accesskey                   "R"><!--LOCALIZATION NOTE (mimeType): 'MIME' should not be translated --><!ENTITY  mimetype.label                        "Typ MIME:"><!ENTITY  mimetype.accesskey                    "M"><!ENTITY  description.label                     "Opis typu:"><!ENTITY  description.accesskey                 "t"><!ENTITY  handling.label                        "Domyślnie, pliki tego typu:"><!ENTITY  useDefault.label                      "Otwórz za pomocą domyślnej aplikacji"><!ENTITY  useDefault.accesskey                  "O"><!ENTITY  saveToDisk.label                      "Zachowaj na dysku"><!ENTITY  saveToDisk.accesskey                  "Z"><!ENTITY  application.label                     "Otwórz za pomocą:"><!ENTITY  application.accesskey                 "w"><!ENTITY  browse.label                          "Wybierz..."><!ENTITY  browse.accesskey                      "y"><!ENTITY  askBeforeOpen.label                   "Zawsze pytaj przed rozpoczęciem pobierania plików tego typu"><!ENTITY  askBeforeOpen.accesskey               "a">
+\ No newline at end of file
++
++<!ENTITY  editType.label                        "Edytuj typ">
++<!ENTITY  newType.label                         "Nowy typ">
++<!ENTITY  extension.label                       "Rozszerzenie:">
++<!ENTITY  extension.accesskey                   "R">
++<!--LOCALIZATION NOTE (mimeType): 'MIME' should not be translated -->
++<!ENTITY  mimetype.label                        "Typ MIME:">
++<!ENTITY  mimetype.accesskey                    "M">
++<!ENTITY  description.label                     "Opis typu:">
++<!ENTITY  description.accesskey                 "t">
++
++<!ENTITY  handling.label                        "Domyślnie, pliki tego typu:">
++<!ENTITY  useDefault.label                      "Otwórz za pomocą domyślnej aplikacji">
++<!ENTITY  useDefault.accesskey                  "O">
++<!ENTITY  saveToDisk.label                      "Zachowaj na dysku">
++<!ENTITY  saveToDisk.accesskey                  "Z">
++<!ENTITY  application.label                     "Otwórz za pomocą:">
++<!ENTITY  application.accesskey                 "w">
++
++<!ENTITY  browse.label                          "Wybierz...">
++<!ENTITY  browse.accesskey                      "y">
++
++<!ENTITY  askBeforeOpen.label                   "Zawsze pytaj przed rozpoczęciem pobierania plików tego typu">
++<!ENTITY  askBeforeOpen.accesskey               "a">
+Index: trunk/locale/communicator/history/history.properties
+===================================================================
+--- trunk/locale/communicator/history/history.properties	(revision 3)
++++ trunk/locale/communicator/history/history.properties	(working copy)
+@@ -1,7 +1,7 @@
+ deleteHost=Usu\u0144 wszystkie z %S
+ deleteDomain=Usu\u0144 domen\u0119 %S
+-deleteHostNoSelection=Usu\u0144 hosta
+-deleteDomainNoSelection=Usu\u0144 domen
++deleteHostNoSelection=Usu\u0144 host
++deleteDomainNoSelection=Usu\u0144 domen\u0119
+ 
+ finduri-AgeInDays-is-0=Dzi\u015b
+ finduri-AgeInDays-is-1=Wczoraj
+Index: trunk/locale/communicator/history/historyTreeOverlay.dtd
+===================================================================
+--- trunk/locale/communicator/history/historyTreeOverlay.dtd	(revision 3)
++++ trunk/locale/communicator/history/historyTreeOverlay.dtd	(working copy)
+@@ -2,7 +2,7 @@
+ <!ENTITY tree.header.name.akey               "T">
+ <!ENTITY tree.header.url.label               "Adres">
+ <!ENTITY tree.header.url.akey                "A">
+-<!ENTITY tree.header.date.label              "Ostatnio odiwedzone">
++<!ENTITY tree.header.date.label              "Ostatnio odwiedzone">
+ <!ENTITY tree.header.date.akey               "O">
+ <!ENTITY tree.header.firstvisitdate.label    "Data pierwszych odwiedzin">
+ <!ENTITY tree.header.firstvisitdate.akey     "D">
+Index: trunk/locale/communicator/tasksOverlay.dtd
+===================================================================
+--- trunk/locale/communicator/tasksOverlay.dtd	(revision 3)
++++ trunk/locale/communicator/tasksOverlay.dtd	(working copy)
+@@ -4,8 +4,8 @@
+ <!ENTITY navigatorCmd.accesskey "N" >
+ <!ENTITY navigatorCmd.commandkey "1" >
+ <!-- LOCALIZATION NOTE (editorCmd.label): DONT_TRANSLATE -->
+-<!ENTITY editorCmd.label "Kompozytor Stron" >
+-<!ENTITY editorCmd.accesskey "K" >
++<!ENTITY editorCmd.label "Composer">
++<!ENTITY editorCmd.accesskey "c">
+ <!ENTITY editorCmd.commandkey "4" >
+ <!ENTITY securityInfoCmd.label "Informacje o zabezpieczeniach" >
+ <!ENTITY securityInfoCmd.accesskey "z" >
+@@ -15,8 +15,8 @@
+ <!ENTITY javaScriptConsoleCmd.accesskey "K" >
+ 
+ <!-- LOCALIZATION NOTE (privacyMenu.label): DONT_TRANSLATE -->
+-<!ENTITY privacyMenu.label "Prywatność i zabezpieczenia" >
+-<!ENTITY privacyMenu.accesskey "z" >
++<!ENTITY privacyMenu.label "Privacy &amp; Security">
++<!ENTITY privacyMenu.accesskey "p">
+ 
+ <!ENTITY taskNavigator.tooltip "Nawigator" >
+ <!ENTITY taskComposer.tooltip "Kompozytor Stron" >
+Index: trunk/locale/communicator/sidebar/sidebar.properties
+===================================================================
+--- trunk/locale/communicator/sidebar/sidebar.properties	(revision 3)
++++ trunk/locale/communicator/sidebar/sidebar.properties	(working copy)
+@@ -1,6 +1,6 @@
+ addPanelConfirmTitle=Dodaj panel do Sidebar
+ addPanelConfirmMessage=Doda\u0107 panel "%title%" do %name%?##\u0179r\u00f3d\u0142o: %url%
+-persistentPanelWarning=Dodawany panel Sidebar mo\u017ce przesy\u0142a\u0107 dane poprzez internet oraz wykonywa\u0107 skrypty JavaScript nawet wtedy gdy %name% jest zamkni\u0119ty.
++persistentPanelWarning=Dodawany panel Sidebar mo\u017ce przesy\u0142a\u0107 dane poprzez Internet oraz wykonywa\u0107 skrypty JavaScript nawet wtedy gdy %name% jest zamkni\u0119ty.
+ 
+ dupePanelAlertTitle=Sidebar
+ dupePanelAlertMessage=%url% ju\u017c istnieje w %name%.
+

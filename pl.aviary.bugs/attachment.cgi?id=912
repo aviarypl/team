@@ -1,0 +1,150 @@
+Index: pl/calendar/chrome/calendar/menuOverlay.dtd
+===================================================================
+RCS file: /l10n/l10n/pl/calendar/chrome/calendar/menuOverlay.dtd,v
+retrieving revision 1.2.2.11
+diff -u -8 -r1.2.2.11 menuOverlay.dtd
+--- pl/calendar/chrome/calendar/menuOverlay.dtd	18 Aug 2007 15:08:33 -0000	1.2.2.11
++++ pl/calendar/chrome/calendar/menuOverlay.dtd	4 Sep 2007 06:12:57 -0000
+@@ -18,16 +18,17 @@
+    - Portions created by the Initial Developer are Copyright (C) 2001
+    - the Initial Developer. All Rights Reserved.
+    -
+    - Contributor(s): Garth Smedley <garths@oeone.com>
+    -                 Mike Potter <mikep@oeone.com>
+    -                 Chris Charabaruk <coldacid@meldstar.com>
+    -                 Matthew Willis <mattwillis@gmail.com>
+    -                 Stefan Sitter <ssitter@googlemail.com>
++   -                 Berend Cornelius <berend.cornelius@sun.com>
+    -                 Kacper Mikke <kacper@k-raj.com.pl> (Polish localization)
+    -                 Marek Stępień <marcoos@aviary.pl> (Polish localization)
+    -
+    - Alternatively, the contents of this file may be used under the terms of
+    - either the GNU General Public License Version 2 or later (the "GPL"), or
+    - the GNU Lesser General Public License Version 2.1 or later (the "LGPL"),
+    - in which case the provisions of the GPL or the LGPL are applicable instead
+    - of those above. If you wish to allow use of your version of this file only
+@@ -36,18 +37,18 @@
+    - decision by deleting the provisions above and replace them with the notice
+    - and other provisions required by the LGPL or the GPL. If you do not delete
+    - the provisions above, a recipient may use your version of this file under
+    - the terms of any one of the MPL, the GPL or the LGPL.
+    -
+    - ***** END LICENSE BLOCK ***** -->
+ 
+ <!-- Event Menu -->
+-<!ENTITY event.menu.title                       "Wydarzenie">
+-<!ENTITY eventMenuCmd.accesskey                 "v">
++<!ENTITY event.menu.label                       "Wydarzenie">
++<!ENTITY event.menu.accesskey                   "W">
+ 
+ <!ENTITY event.new.event                        "Nowe wydarzenie…">
+ <!ENTITY event.new.event.key                    "N">
+ <!ENTITY event.new.event.accesskey              "n">
+ 
+ <!ENTITY event.new.todo                         "Nowe zadanie…">
+ <!ENTITY event.new.todo.key                     "T">
+ <!ENTITY event.new.todo.accesskey               "d">
+@@ -155,16 +156,20 @@
+ <!ENTITY calendar.selectall.label               "Zaznacz wszystko">
+ <!ENTITY calendar.selectall.key                 "A">
+ <!ENTITY calendar.selectall.accesskey           "a">
+ 
+ <!ENTITY toolbarsMenu.label                     "Paski narzędzi">
+ <!ENTITY toolbarsMenu.accesskey                 "P">
+ 
+ <!ENTITY calendar.toolbar.label                 "Pasek narzędzi kalendarza">
++<!ENTITY calendar.toolbar.accesskey             "k">
++
++<!ENTITY mode.toolbar.label                     "Pasek narzędzi trybu pracy">
++<!ENTITY mode.toolbar.accesskey                 "t">                            
+ 
+ <!ENTITY calendar.menu.customize.label          "Dostosuj…">
+ <!ENTITY calendar.menu.customize.accesskey      "D">
+ 
+ <!ENTITY calendar.preferences.label             "Preferencje…">
+ <!ENTITY calendar.preferences.accesskey         "r">
+ 
+ <!ENTITY showSearchToolbarCmd.label             "Pasek wyszukiwania">
+@@ -277,8 +282,45 @@
+ <!ENTITY servicesMenuMac.label          "Usługi">
+ <!ENTITY hideThisAppCmdMac.label        "Ukryj &brandShortName;">
+ <!ENTITY hideThisAppCmdMac.commandkey   "H">
+ <!ENTITY hideThisAppCmdMac.modifiers    "accel">
+ <!ENTITY hideOtherAppsCmdMac.label      "Ukryj pozostałe">
+ <!ENTITY hideOtherAppsCmdMac.commandkey "H">
+ <!ENTITY hideOtherAppsCmdMac.modifiers  "accel,alt">
+ <!ENTITY showAllAppsCmdMac.label        "Pokaż wszystkie">
++
++<!ENTITY calendar.importcalendar.label          "Importuj kalendarz…">           
++<!ENTITY calendar.importcalendar.accesskey      "I">                            
++<!ENTITY calendar.delete.label                  "Usuń">                       
++<!ENTITY calendar.delete.accesskey              "U">                            
++<!ENTITY showCalendarlist.label                 "Lista kalendarzy">                
++<!ENTITY showCalendarlist.accesskey             "L">                            
++<!ENTITY showCurrentView.label                  "Bieżący widok">                 
++<!ENTITY showCurrentView.accesskey              "B">                            
++<!ENTITY task.menu.label                        "Zadanie">                         
++<!ENTITY task.menu.accesskey                    "Z">                            
++<!ENTITY day.menu.label                         "Dzień">                          
++<!ENTITY day.menu.accesskey                     "D">                            
++<!ENTITY week.menu.label                        "Tydzień">                         
++<!ENTITY week.menu.accesskey                    "T">                            
++<!ENTITY month.menu.label                       "Miesiąc">                        
++<!ENTITY month.menu.accesskey                   "M">                            
++<!ENTITY next.menu.label                        "Następny">                         
++<!ENTITY next.menu.accesskey                    "N">                            
++<!ENTITY previous.menu.label                    "Poprzedni">                     
++<!ENTITY previous.menu.accesskey                "P">                            
++<!ENTITY calendar.subscribeshort.label          "Subskrybuj…">                 
++<!ENTITY calendar.subscribeshort.accesskey      "S">                            
++<!ENTITY calendar.unsubscribeshort.label        "Zrezygnuj z subskrypcji…">               
++<!ENTITY calendar.unsubscribeshort.accesskey    "r">                            
++<!ENTITY calendar.properties.label              "Właściwości kalendarza…">       
++<!ENTITY calendar.properties.accesskey          "W">                            
++<!ENTITY calendar.showtasks.label               "Pokaż zadania…">                
++<!ENTITY calendar.showtasks.accesskey           "P">                            
++<!ENTITY series.selectpastevents.label          "Minione zdarzenia z tej serii"> 
++<!ENTITY series.selectpastevents.accesskey      "M">                            
++<!ENTITY series.selectfutureevents.label        "Przyszłe zdarzenia z tej serii"> 
++<!ENTITY series.selectfutureevents.accesskey    "P">                            
++<!ENTITY series.selectallevents.label           "Wszystkie zdarzenia z tej serii">    
++<!ENTITY series.selectallevents.accesskey       "S">                            
++<!ENTITY calendar.selectallevents.label         "Wszystkie zdarzenia z tego kalendarza">  
++<!ENTITY calendar.selectallevents.accesskey     "K">
+Index: pl/calendar/chrome/lightning/lightning.dtd
+===================================================================
+RCS file: /l10n/l10n/pl/calendar/chrome/lightning/lightning.dtd,v
+retrieving revision 1.1.2.11
+diff -u -8 -r1.1.2.11 lightning.dtd
+--- pl/calendar/chrome/lightning/lightning.dtd	12 Jul 2007 18:43:40 -0000	1.1.2.11
++++ pl/calendar/chrome/lightning/lightning.dtd	4 Sep 2007 06:12:58 -0000
+@@ -60,21 +60,25 @@
+ 
+ <!-- Messenger Sidebar -->
+ <!ENTITY lightning.sidebar.agenda.label      "Agenda">
+ <!ENTITY lightning.sidebar.todo.label        "Do zrobienia">
+ <!ENTITY lightning.sidebar.calendars.label   "Kalendarze">
+ <!ENTITY lightning.calendar.label            "Kalendarz">
+ <!ENTITY lightning.calendar.accesskey        "K">
+ <!ENTITY lightning.sidebar.showCompletedTasks.label "Pokaż zakończone zadania">
++<!ENTITY lightning.sidebar.showCompletedTasks.accesskey "z">
+ 
+ <!-- Mode Toolbar -->
+-<!ENTITY lightning.toolbar.mail.label      "Poczta">
+-<!ENTITY lightning.toolbar.calendar.label  "Kalendarz">
+-<!ENTITY lightning.toolbar.task.label      "Zadanie">
++<!ENTITY lightning.toolbar.mail.label         "Poczta">
++<!ENTITY lightning.toolbar.mail.accesskey     "o">
++<!ENTITY lightning.toolbar.calendar.label     "Kalendarz">
++<!ENTITY lightning.toolbar.calendar.accesskey "K">
++<!ENTITY lightning.toolbar.task.label         "Zadanie">
++<!ENTITY lightning.toolbar.task.accesskey     "Z">
+ 
+ <!-- Customize Toolbar Dialog -->
+ <!ENTITY customize.toolbar.selector.label    "Pasek narzędzi:">
+ <!ENTITY customize.toolbar.selector.mode     "Tryb wyświetlania">
+ <!ENTITY customize.toolbar.selector.mail     "Poczta">
+ <!ENTITY customize.toolbar.selector.calendar "Kalendarz">
+ <!ENTITY customize.toolbar.location.label    "Położenie:">
+ <!ENTITY customize.toolbar.location.top      "Góra">
+

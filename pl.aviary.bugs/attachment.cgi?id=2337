@@ -1,0 +1,277 @@
+diff -r 802356c50732 browser/chrome/browser/browser.dtd
+--- a/browser/chrome/browser/browser.dtd	Sat Aug 17 14:37:10 2013 +0200
++++ b/browser/chrome/browser/browser.dtd	Wed Aug 21 22:41:50 2013 +0200
+@@ -13,3 +13,2 @@
+ <!ENTITY mainWindow.titlemodifiermenuseparator " - " >
+-
+ <!-- LOCALIZATION NOTE (mainWindow.titlePrivateBrowsingSuffix): This will be appended to the window's title
+@@ -40,3 +39,2 @@ can reach it easily. -->
+ <!ENTITY  unpinTab.accesskey                 "n">
+-
+ <!ENTITY moveToGroup.label                   "Przenieś do grupy">
+@@ -50,2 +48,7 @@ can reach it easily. -->
+ <!ENTITY undoCloseTab.accesskey              "P">
++<!-- LOCALIZATION NOTE (undoCloseTabs.label) : This label is used
++when the previous tab-closing operation closed more than one tab. It
++replaces the undoCloseTab.label and will use the same accesskey as the
++undoCloseTab.label so users will not need to learn new keyboard controls. -->
++<!ENTITY undoCloseTabs.label                 "Cofnij zamknięcie kart">
+ <!ENTITY closeTab.label                      "Zamknij kartę" >
+@@ -77,3 +80,2 @@ can reach it easily. -->
+ <!ENTITY navbarCmd.label "Pasek narzędzi nawigacyjnych" >
+-<!ENTITY navbarCmd.accesskey "n" >
+ <!ENTITY personalbarCmd.label "Pasek zakładek" >
+@@ -81,4 +83,2 @@ can reach it easily. -->
+ <!ENTITY bookmarksToolbarItem.label "Elementy paska zakładek" >
+-<!ENTITY addonBarCmd.label "Pasek dodatków" >
+-<!ENTITY addonBarCmd.accesskey "a" >
+ 
+@@ -111,5 +111,4 @@ These should match what Safari and other
+ <!ENTITY fullscreenExitButton.label "Zabroń">
+-<!ENTITY fullscreenApproval.value "Zezwolić na tryb pełnoekranowy?">
+ 
+-<!ENTITY fullscreenExitHint.value "W dowolnym momencie naciśnij ESC, by opuścić tryb pełnoekranowy.">
++<!ENTITY fullscreenExitHint2.value "Naciśnij ESC w dowolnej chwili, by wyjść.">
+ <!ENTITY leaveDOMFullScreen.label "Opuść tryb pełnoekranowy">
+@@ -120,10 +119,2 @@ These should match what Safari and other
+ 
+-<!ENTITY findOnCmd.label "Znajdź na tej stronie…" >
+-<!ENTITY findOnCmd.accesskey "Z" >
+-<!ENTITY findOnCmd.commandkey "f" >
+-<!ENTITY findAgainCmd.label "Znajdź następne" >
+-<!ENTITY findAgainCmd.accesskey "n" >
+-<!ENTITY findAgainCmd.commandkey "g" >
+-<!ENTITY findAgainCmd.commandkey2 "VK_F3" >
+-
+ <!ENTITY bookmarksMenu.label "Zakładki" >
+@@ -173,3 +164,2 @@ These should match what Safari and other
+ <!ENTITY searchItem.title "Znajdź" >
+-<!ENTITY throbberItem.title "Wskaźnik aktywności" >
+ <!ENTITY bookmarksItem.title "Zakładki" >
+@@ -177,4 +167,2 @@ These should match what Safari and other
+ <!-- Toolbar items -->
+-<!ENTITY appMenuButton.label          "Menu">
+-<!ENTITY appMenuButton.tooltip        "Otwórz menu programu &brandShortName;">
+ <!ENTITY homeButton.label             "Strona startowa" >
+@@ -184,7 +172,3 @@ These should match what Safari and other
+ 
+-<!ENTITY feedButton.label             "Subskrybuj">
+-<!ENTITY feedButton.tooltip           "Subskrybuj tę stronę…">
+-
+ <!ENTITY bookmarksButton.label          "Zakładki">
+-<!ENTITY bookmarksButton.tooltip        "Wyświetl zakładki">
+ <!ENTITY bookmarksCmd.commandkey        "b">
+@@ -204,3 +188,2 @@ These should match what Safari and other
+ <!ENTITY historyButton.label            "Historia">
+-<!ENTITY historyButton.tooltip          "Wyświetl ostatnio oglądane strony">
+ <!ENTITY historySidebarCmd.commandKey   "h">
+@@ -212,4 +195,3 @@ These should match what Safari and other
+ <!ENTITY keywordfield.accesskey		"U">
+-<!ENTITY search.label          		"Znajdź w Internecie">
+-<!ENTITY search.accesskey		"Z">
++
+ <!ENTITY downloads.label "Pobieranie plików" >
+@@ -226,2 +208,5 @@ These should match what Safari and other
+ 
++<!ENTITY devToolsCmd.keycode          "VK_F12">
++<!ENTITY devToolsCmd.keytext          "F12">
++
+ <!ENTITY devtoolsConnect.label "Połącz…">
+@@ -271,2 +256,4 @@ These should match what Safari and other
+ <!ENTITY devToolboxMenuItem.accesskey      "n">
++<!ENTITY devToolboxMenuItem.keycode        "n">
++<!ENTITY devToolboxMenuItem.keytext        "n">
+ 
+@@ -328,4 +315,2 @@ These should match what Safari and other
+ <!ENTITY viewCustomizeToolbar.accesskey "t" >
+-<!ENTITY viewTabsOnTop.label            "Karty na górze">
+-<!ENTITY viewTabsOnTop.accesskey        "K">
+ 
+@@ -338,3 +323,2 @@ These should match what Safari and other
+ 
+-<!ENTITY historyHomeCmd.label "Strona startowa">
+ <!ENTITY showAllHistoryCmd2.label "Wyświetl całą historię">
+@@ -342,12 +326,3 @@ These should match what Safari and other
+ 
+-<!ENTITY appMenuEdit.label "Edycja">
+ <!ENTITY appMenuCustomize.label "Dostosuj">
+-<!ENTITY appMenuToolbarLayout.label "Układ paska narzędzi…">
+-<!ENTITY appMenuSidebars.label "Panele boczne">
+-<!ENTITY appMenuFind.label "Znajdź…">
+-<!ENTITY appMenuUnsorted.label "Zakładki nieprzypisane">
+-<!ENTITY appMenuWebDeveloper.label "Dla twórców witryn">
+-<!ENTITY appMenuGettingStarted.label "Pierwsze kroki">
+-<!ENTITY appMenuSafeMode.label       "Uruchom ponownie z wyłączonymi dodatkami…">
+-<!ENTITY appMenuSafeMode.accesskey   "U">
+ 
+@@ -359,22 +334,21 @@ These should match what Safari and other
+ <!-- 
+-   Comment duplicated from browser-sets.inc:
+- 
+-   Search Command Key Logic works like this:
+-   
+-   Unix: Ctrl+J (0.8, 0.9 support)
+-         Ctrl+K (cross platform binding)
+-   Mac:  Ctrl+K (cross platform binding)
+-   Win:  Ctrl+K (cross platform binding)
+-         Ctrl+E (IE compat) 
+- 
+-   We support Ctrl+K on all platforms now and advertise it in the menu since it is
+-   our standard - it is a "safe" choice since it is near no harmful keys like "W" as
+-   "E" is. People mourning the loss of Ctrl+K for emacs compat can switch their GTK
+-   system setting to use emacs emulation, and we should respect it. Focus-Search-Box
+-   is a fundamental keybinding and we are maintaining a XP binding so that it is easy
+-   for people to switch to Linux.
++  Comment duplicated from browser-sets.inc:
+ 
+-  Do *not* tamper with these values without talking to ben@mozilla.org
+-   
+--->
++  Search Command Key Logic works like this:
++
++  Unix: Ctrl+J (0.8, 0.9 support)
++        Ctrl+K (cross platform binding)
++  Mac:  Cmd+K (cross platform binding)
++        Cmd+Opt+F (platform convention)
++  Win:  Ctrl+K (cross platform binding)
++        Ctrl+E (IE compat)
++
++  We support Ctrl+K on all platforms now and advertise it in the menu since it is
++  our standard - it is a "safe" choice since it is near no harmful keys like "W" as
++  "E" is. People mourning the loss of Ctrl+K for emacs compat can switch their GTK
++  system setting to use emacs emulation, and we should respect it. Focus-Search-Box
++  is a fundamental keybinding and we are maintaining a XP binding so that it is easy
++  for people to switch to Linux.
++
++ -->
+ <!ENTITY searchFocus.commandkey       "k">
+@@ -382,2 +356,3 @@ These should match what Safari and other
+ <!ENTITY searchFocusUnix.commandkey   "j">
++
+ <!ENTITY tabView.commandkey           "e">
+@@ -403,2 +378,4 @@ These should match what Safari and other
+ <!ENTITY viewPartialSourceForMathMLCmd.label "Pokaż źródło MathML" >
++<!-- LOCALIZATION NOTE (viewPartialSourceCmd.accesskey): This accesskey is used for both 
++         viewPartialSourceForSelectionCmd.label and viewPartialSourceForMathMLCmd.label -->
+ <!ENTITY viewPartialSourceCmd.accesskey "d" >
+@@ -418,2 +395,4 @@ These should match what Safari and other
+ <!ENTITY viewImageInfoCmd.accesskey   "f">
++<!ENTITY viewImageDescCmd.label       "Pokaż opis">
++<!ENTITY viewImageDescCmd.accesskey   "s">
+ <!ENTITY viewVideoCmd.label           "Pokaż wideo">
+@@ -434,2 +413,3 @@ These should match what Safari and other
+ <!ENTITY savePageCmd.accesskey "p" >
++<!-- alternate for content area context menu -->
+ <!ENTITY savePageCmd.accesskey2 "s" >
+@@ -474,2 +454,5 @@ These should match what Safari and other
+ <!-- Media (video/audio) controls -->
++<!-- LOCALIZATION NOTE: The access keys for "Play" and
++"Pause" are the same because the two context-menu
++items are mutually exclusive. -->
+ <!ENTITY mediaPlay.label             "Odtwórz">
+@@ -478,2 +461,5 @@ These should match what Safari and other
+ <!ENTITY mediaPause.accesskey        "W">
++<!-- LOCALIZATION NOTE: The access keys for "Mute" and
++"Unmute" are the same because the two context-menu
++items are mutually exclusive. -->
+ <!ENTITY mediaMute.label             "Wycisz">
+@@ -495,3 +481,5 @@ fast. -->
+ <!ENTITY mediaPlaybackRate200x.accesskey "a">
+-
++<!-- LOCALIZATION NOTE: The access keys for "Show Controls" and
++"Hide Controls" are the same because the two context-menu
++items are mutually exclusive. -->
+ <!ENTITY mediaShowControls.label     "Wyświetl elementy sterujące">
+@@ -504,2 +492,5 @@ fast. -->
+ <!ENTITY videoSaveImage.accesskey    "k">
++<!-- LOCALIZATION NOTE: The access keys for "Show Statistics" and
++"Hide Statistics" are the same because the two context-menu
++items are mutually exclusive. -->
+ <!ENTITY videoShowStats.label        "Wyświetl statystyki">
+@@ -513,4 +504,3 @@ fullZoomResetCmd.commandkey2 are alterna
+ If shift key is needed with your locale popular keyboard for them,
+-you can use these alternative items. Otherwise, their values should be empty.
+--->
++you can use these alternative items. Otherwise, their values should be empty. -->
+ 
+@@ -541,11 +531,4 @@ you can use these alternative items. Oth
+ 
+-<!ENTITY cutButton.tooltip "Wytnij" >
+-<!ENTITY copyButton.tooltip "Kopiuj" >
+-<!ENTITY pasteButton.tooltip "Wklej" >
+ <!ENTITY fullScreenButton.tooltip       "Wyświetl okno na pełnym ekranie">
+ 
+-<!ENTITY zoomOutButton.tooltip          "Pomniejsz">
+-<!ENTITY zoomInButton.tooltip           "Powiększ">
+-<!ENTITY zoomControls.label             "Zmiana powiększenia">
+-
+ <!ENTITY quitApplicationCmdWin.label     "Zakończ" >
+@@ -574,4 +557,5 @@ you can use these alternative items. Oth
+ <!ENTITY allowPopups.accesskey "w">
+-
+-<!-- Windows: Opcje, Linux/Mac: Preferencje -->
++<!-- On Windows we use the term "Opcje" to describe settings, but
++     on Linux and Mac OS X we use "Preferencje" - carry that distinction
++     over into this string, which is used in the "popup blocked" info bar . -->
+ <!ENTITY editPopupSettingsUnix.label "Edytuj preferencje wyskakujących okien…">
+@@ -587,2 +571,10 @@ you can use these alternative items. Oth
+ 
++<!ENTITY findOnCmd.label "Znajdź na tej stronie…" >
++<!ENTITY findOnCmd.accesskey "Z" >
++<!ENTITY findOnCmd.commandkey "f" >
++<!ENTITY findAgainCmd.label "Znajdź następne" >
++<!ENTITY findAgainCmd.accesskey "n" >
++<!ENTITY findAgainCmd.commandkey "g" >
++<!ENTITY findAgainCmd.commandkey2 "VK_F3" >
++
+ <!ENTITY spellAddDictionaries.label "Dodaj słowniki…">
+@@ -611,2 +603,4 @@ just addresses the organization to follo
+ 
++<!ENTITY identity.permissions "Uprawnienia">
++
+ <!-- Name for the tabs toolbar as spoken by screen readers.
+@@ -626,5 +620,2 @@ just addresses the organization to follo
+ 
+-<!ENTITY addonBarCloseButton.tooltip  "Zamknij pasek dodatków">
+-<!ENTITY toggleAddonBarCmd.key        "/">
+-
+ <!ENTITY socialToolbar.title "Przycisk paska społecznościowego">
+@@ -678,1 +669,38 @@ just addresses the organization to follo
+ <!ENTITY pluginBlockNow.label "Zablokuj wtyczkę">
++
++<!-- LOCALIZATION NOTE: the following strings are unused in Australis, they're
++     kept here to avoid warnings from l10n tools like compare-locales on
++     l10n-central. They will be definitely removed when Australis is ready
++     for mozilla-aurora. -->
++
++<!ENTITY navbarCmd.accesskey           "n">
++<!ENTITY addonBarCmd.label             "Pasek dodatków">
++<!ENTITY addonBarCmd.accesskey         "a">
++<!ENTITY throbberItem.title            "Wskaźnik aktywności" >
++<!ENTITY appMenuButton.label           "Menu">
++<!ENTITY appMenuButton.tooltip         "Otwórz menu programu &brandShortName;">
++<!ENTITY feedButton.label              "Subskrybuj">
++<!ENTITY feedButton.tooltip            "Subskrybuj tę stronę…">
++<!ENTITY bookmarksButton.tooltip       "Wyświetl zakładki">
++<!ENTITY historyButton.tooltip         "Wyświetl ostatnio oglądane strony">
++<!ENTITY viewTabsOnTop.label           "Karty na górze">
++<!ENTITY viewTabsOnTop.accesskey       "K">
++<!ENTITY appMenuEdit.label             "Edycja">
++<!ENTITY appMenuToolbarLayout.label    "Układ paska narzędzi…">
++<!ENTITY appMenuSidebars.label         "Panele boczne">
++<!ENTITY appMenuFind.label             "Znajdź…">
++<!ENTITY appMenuUnsorted.label         "Zakładki nieprzypisane">
++<!ENTITY appMenuWebDeveloper.label     "Dla twórców witryn">
++<!ENTITY appMenuGettingStarted.label   "Pierwsze kroki">
++<!ENTITY appMenuSafeMode.label         "Uruchom ponownie z wyłączonymi dodatkami…">
++<!ENTITY appMenuSafeMode.accesskey     "U">
++<!ENTITY cutButton.tooltip             "Wytnij">
++<!ENTITY copyButton.tooltip            "Kopiuj">
++<!ENTITY pasteButton.tooltip           "Wklej">
++<!ENTITY zoomOutButton.tooltip         "Pomniejsz">
++<!ENTITY zoomInButton.tooltip          "Powiększ">
++<!ENTITY zoomControls.label            "Zmiana powiększenia">
++<!ENTITY addonBarCloseButton.tooltip   "Zamknij pasek dodatków">
++<!ENTITY toggleAddonBarCmd.key         "/">
++<!-- end of strings to be removed post-Australis -->
++

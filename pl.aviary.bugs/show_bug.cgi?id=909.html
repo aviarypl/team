@@ -1,0 +1,1589 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>909 &ndash; Zmienić &quot;w ... karcie&quot; na &quot;na ... karcie&quot;</title>
+
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<link href="data/assets/7aa6ea67750936a0368541421bdcd5ee.css" rel="stylesheet" type="text/css">
+
+
+
+    
+<script type="text/javascript" src="data/assets/a7c2f3a028f17a9aa60f56dc9d6e732d.js"></script>
+
+    <script type="text/javascript">
+    <!--
+        YAHOO.namespace('bugzilla');
+        YAHOO.util.Event.addListener = function (el, sType, fn, obj, overrideContext) {
+               if ( ("onpagehide" in window || YAHOO.env.ua.gecko) && sType === "unload") { sType = "pagehide"; };
+               var capture = ((sType == "focusin" || sType == "focusout") && !YAHOO.env.ua.ie) ? true : false;
+               return this._addListener(el, this._getType(sType), fn, obj, overrideContext, capture);
+         };
+        if ( "onpagehide" in window || YAHOO.env.ua.gecko) {
+            YAHOO.util.Event._simpleRemove(window, "unload", 
+                                           YAHOO.util.Event._unload);
+        }
+        
+        function unhide_language_selector() { 
+            YAHOO.util.Dom.removeClass(
+                'lang_links_container', 'bz_default_hidden'
+            ); 
+        } 
+        YAHOO.util.Event.onDOMReady(unhide_language_selector);
+
+        
+        var BUGZILLA = {
+            param: {
+                cookiepath: '\/',
+                maxusermatches: 1000
+            },
+            constant: {
+                COMMENT_COLS: 80
+            },
+            string: {
+                
+
+                attach_desc_required:
+                    "You must enter a Description for this attachment.",
+                component_required:
+                    "You must select a Component for this bug.",
+                description_required:
+                    "You must enter a Description for this bug.",
+                short_desc_required:
+                    "You must enter a Summary for this bug.",
+                version_required:
+                    "You must select a Version for this bug."
+            }
+              , api_token: ''
+        };
+
+    if (history && history.replaceState) {
+      if(!document.location.href.match(/show_bug\.cgi/)) {
+        history.replaceState( null,
+                             "909 – Zmienić \"w ... karcie\" na \"na ... karcie\"",
+                             "show_bug.cgi?id=909" );
+        document.title = "909 – Zmienić \"w ... karcie\" na \"na ... karcie\"";
+      }
+      if (document.location.href.match(/show_bug\.cgi\?.*list_id=/)) {
+        var href = document.location.href;
+        href = href.replace(/[\?&]+list_id=(\d+|cookie)/, '');
+        history.replaceState(null, "909 – Zmienić \"w ... karcie\" na \"na ... karcie\"", href);
+      }
+    }
+    YAHOO.util.Event.onDOMReady(function() {
+      initDirtyFieldTracking();
+
+    });
+    // -->
+    </script>
+<script type="text/javascript" src="data/assets/daf5e0fb6826e6a35280e622913f0c4a.js"></script>
+
+    
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+                       title="Bugzilla" href="search_plugin.cgi">
+    <link rel="shortcut icon" href="images/favicon.ico">
+  </head>
+
+  <body 
+        class="bugs-aviary-pl
+                 bz_bug
+                 bz_status_VERIFIED
+                 bz_product_Firefox
+                 bz_component_Og&#XF3;lne
+                 bz_bug_909 yui-skin-sam">
+
+  <div id="header"><div id="banner">
+  </div>
+
+    <div id="titles">
+      <span id="title">Bugzilla &ndash; Bug&nbsp;909</span>
+
+        <span id="subtitle" class="subheader">Zmienić &quot;w ... karcie&quot; na &quot;na ... karcie&quot;</span>
+
+        <span id="information" class="header_addl_info">Last modified: 2009-01-01 14:13:09 CET</span>
+    </div>
+
+
+    <div id="common_links"><ul class="links">
+  <li><a href="index.html">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi.html">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi.html">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi.html">Search</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="http://bugs.aviary.pl/buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input type="hidden" id="no_redirect_top" name="no_redirect" value="0">
+    <script type="text/javascript">
+      if (history && history.replaceState) {
+        var no_redirect = document.getElementById("no_redirect_top");
+        no_redirect.value = 1;
+      }
+    </script>
+    <input class="txt" type="text" id="quicksearch_top" name="quicksearch" 
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search" 
+           id="find_top"></form>
+  <a href="page.cgi%3Fid=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="report.cgi.html">Reports</a></li>
+
+  <li>
+      <span class="separator">| </span>
+        <a href="request.cgi.html">Requests</a></li>
+
+
+  <li>
+        <span class="separator">| </span>
+        <a href="https://bugzilla.readthedocs.org/en/5.0/using/understanding.html" target="_blank">Help</a>
+      </li>
+    
+      <li id="new_account_container_top">
+        <span class="separator">| </span>
+        <a href="createaccount.cgi.html">New&nbsp;Account</a>
+      </li>
+
+    <li id="mini_login_container_top">
+  <span class="separator">| </span>
+  <a id="login_link_top" href="show_bug.cgi%3Fid=909&amp;GoAheadAndLogIn=1.html"
+     onclick="return show_mini_login_form('_top')">Log In</a>
+
+  <form action="show_bug.cgi%3Fid=909.html" method="POST"
+        class="mini_login bz_default_hidden"
+        id="mini_login_top">
+    <input id="Bugzilla_login_top" required
+           name="Bugzilla_login" class="bz_login"
+        type="email" placeholder="Email Address">
+    <input class="bz_password" name="Bugzilla_password" type="password"
+           id="Bugzilla_password_top" required
+           placeholder="Password">
+    <input type="hidden" name="Bugzilla_login_token"
+           value="1469820432-BD0dTa3uiRaoVa2MezViHE8j_a05-TESy96X84cwbbQ">
+    <input type="submit" name="GoAheadAndLogIn" value="Log in"
+            id="log_in_top">
+    <a href="show_bug.cgi%3Fid=909.html#" onclick="return hide_mini_login_form('_top')">[x]</a>
+  </form>
+</li>
+
+
+  <li id="forgot_container_top">
+    <span class="separator">| </span>
+    <a id="forgot_link_top" href="show_bug.cgi%3Fid=909&amp;GoAheadAndLogIn=1.html#forgot"
+       onclick="return show_forgot_form('_top')">Forgot Password</a>
+    <form action="http://bugs.aviary.pl/token.cgi" method="post" id="forgot_form_top"
+          class="mini_forgot bz_default_hidden">
+      <label for="login_top">Login:</label>
+      <input name="loginname" size="20" id="login_top" required
+          type="email" placeholder="Your Email Address">
+      <input id="forgot_button_top" value="Reset Password" type="submit">
+      <input type="hidden" name="a" value="reqpw">
+      <input type="hidden" id="token_top" name="token"
+             value="1469820432-BrgnjscIVbX2rbyK73fpRG2wYR1IIQGR947WVBb3LdY">
+      <a href="show_bug.cgi%3Fid=909.html#" onclick="return hide_forgot_form('_top')">[x]</a>
+    </form>
+  </li>
+</ul>
+    </div>
+  </div>
+
+  <div id="bugzilla-body">
+
+
+<script type="text/javascript">
+<!--
+
+//-->
+</script>
+
+<form name="changeform" id="changeform" method="post" action="http://bugs.aviary.pl/process_bug.cgi">
+
+  <input type="hidden" name="delta_ts" value="2009-01-01 14:13:09">
+  <input type="hidden" name="id" value="909">
+  <input type="hidden" name="token" value="1469820432-XM2mDo5Pm6fvKfTaChCqbrwiENCYR46GBfCBawbltmM">
+<div class="bz_short_desc_container edit_form">
+     <a href="show_bug.cgi%3Fid=909.html"><b>Bug&nbsp;909</b></a> <span id="summary_container" class="bz_default_hidden">
+      - <span id="short_desc_nonedit_display">Zmienić &quot;w ... karcie&quot; na &quot;na ... karcie&quot;</span>
+     </span>
+
+    <div id="summary_input"><span class="field_label "
+    id="field_label_short_desc">
+
+
+  <a 
+      title="The bug summary is a short sentence which succinctly describes what the bug is about."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#short_desc"
+  >Summary:</a>
+
+</span>Zmienić &quot;w ... karcie&quot; na &quot;na ... karcie&quot;
+    </div>
+  </div>
+  <script type="text/javascript">
+    hideEditableField('summary_container',
+                      'summary_input',
+                      'summary_edit_action',
+                      'short_desc',
+                      'Zmienić \"w ... karcie\" na \"na ... karcie\"' );
+  </script>
+  <table class="edit_form">
+    <tr>
+      
+      <td id="bz_show_bug_column_1" class="bz_show_bug_column">     
+        <table>
+          <tr>
+    <th class="field_label">
+      <a href="page.cgi%3Fid=fields.html#bug_status">Status</a>:
+    </th>
+    <td id="bz_field_status">
+      <span id="static_bug_status">VERIFIED
+          WONTFIX
+      </span>
+    </td>
+  </tr>
+<tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+<tr><th class="field_label "
+    id="field_label_alias">
+
+
+  <a 
+      title="A short, unique name assigned to a bug in order to assist with looking it up and referring to it in other places in Bugzilla."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#alias"
+  >Alias:</a>
+
+</th>
+    <td>
+        None
+    </td>
+  </tr>
+<tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+<tr><th class="field_label "
+    id="field_label_product">
+
+
+  <a 
+      title="Bugs are categorised into Products and Components. Select a Classification to narrow down this list."
+      class="field_help_link"
+      href="describecomponents.cgi.html"
+  >Product:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_product" >Firefox
+
+</td>
+    </tr>
+
+    
+    <tr class="bz_default_hidden"><th class="field_label "
+    id="field_label_classification">
+
+
+  <a 
+      title="Bugs are categorised into Classifications, Products and Components. classifications is the top-level categorisation."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#classification"
+  >Classification:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_classification" >Tłumaczenia oprogramowania
+
+</td>
+    </tr>
+        
+    
+    
+    <tr><th class="field_label "
+    id="field_label_component">
+
+
+  <a 
+      title="Components are second-level categories; each belongs to a particular Product. Select a Product to narrow down this list."
+      class="field_help_link"
+      href="describecomponents.cgi%3Fproduct=Firefox.html"
+  >Component:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_component" >Ogólne
+
+  (<a href="buglist.cgi%3Fcomponent=Ogólne&amp;product=Firefox&amp;bug_status=__open__.html"
+      target="_blank">show other bugs</a>)
+</td>
+    </tr>
+    <tr><th class="field_label "
+    id="field_label_version">
+
+
+  <a 
+      title="The version field defines the version of the software the bug was found in."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#version"
+  >Version:</a>
+
+</th>
+<td>2.0
+  </td>
+    </tr>
+        
+    
+        
+    <tr><th class="field_label "
+    id="field_label_rep_platform">
+
+
+  <a 
+      title="The hardware platform the bug was observed on. Note: When searching, selecting the option &quot;All&quot; only finds bugs whose value for this field is literally the word &quot;All&quot;."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#rep_platform"
+  >Hardware:</a>
+
+</th>
+      <td class="field_value">Wszystkie
+        Wszystkie
+      </td>
+    </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          
+          <tr>
+      <th class="field_label">
+        <label  accesskey="i">
+          <a href="page.cgi%3Fid=fields.html#importance"><u>I</u>mportance</a></label>:
+      </th>
+      <td>P2
+       normalny
+      </td>
+    </tr>
+          
+          <tr><th class="field_label "
+    id="field_label_assigned_to">
+
+
+  <a 
+      title="The person in charge of resolving the bug."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#assigned_to"
+  >Assignee:</a>
+
+</th>
+      <td><span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+      </td>
+    </tr>
+
+    <tr><th class="field_label "
+    id="field_label_qa_contact">
+
+
+  <a 
+      title="The person responsible for confirming this bug if it is unconfirmed, and for verifying the fix once the bug has been resolved."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#qa_contact"
+  >QA Contact:</a>
+
+</th>
+      <td><span class="vcard"><span class="fn">Staś Małolepszy :stas</span>
+</span>
+      </td>
+    </tr>
+    <script type="text/javascript">
+      assignToDefaultOnChange(['product', 'component'],
+        'splewako\x40aviary.pl',
+        'firefox\x40l10n.bledy');
+    </script>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          <tr><th class="field_label "
+    id="field_label_bug_file_loc">
+
+
+  <a 
+      title="Bugs can have a URL associated with them - for example, a pointer to a web site where the problem is seen."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#bug_file_loc"
+  >URL:</a>
+
+</th>
+    <td>
+      <span id="bz_url_input_area">
+      </span>
+    </td>
+  </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+
+          
+<tr><th class="field_label "
+    id="field_label_dependson">
+
+
+  <a 
+      title="The bugs listed here must be resolved before this bug can be resolved."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#dependson"
+  >Depends on:</a>
+
+</th>
+
+  <td>
+    <span id="dependson_input_area">
+    </span>
+
+  </td>
+  </tr>
+  
+  <tr><th class="field_label "
+    id="field_label_blocked">
+
+
+  <a 
+      title="This bug must be resolved before the bugs listed in this field can be resolved."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#blocked"
+  >Blocks:</a>
+
+</th>
+
+  <td>
+    <span id="blocked_input_area">
+    </span>
+
+  </td>
+  </tr>
+          
+        </table>
+      </td>
+      <td>
+        <div class="bz_column_spacer">&nbsp;</div>
+      </td>
+      
+      <td id="bz_show_bug_column_2" class="bz_show_bug_column">
+        <table>
+        <tr>
+    <th class="field_label">
+      Reported:
+    </th>
+    <td>2006-06-20 00:00 CEST by <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+    </td>
+  </tr>
+  
+  <tr>
+    <th class="field_label">
+      Modified:
+    </th>
+    <td>2009-01-01 14:13 CET
+      (<a href="show_activity.cgi%3Fid=909.html">History</a>)
+    </td>
+  
+  </tr>
+<tr>
+      <th class="field_label">
+        <label  accesskey="a">
+          CC List:
+        </label>
+      </th>
+      <td>6 
+          users
+          <span id="cc_edit_area_showhide_container" class="bz_default_hidden">
+            (<a href="show_bug.cgi%3Fid=909.html#" id="cc_edit_area_showhide">show</a>)
+          </span>
+        <div id="cc_edit_area">
+          <br>
+            <select id="cc" multiple="multiple" size="5" >
+                <option value="gandalf">gandalf</option>
+                <option value="hubert+bap">hubert+bap</option>
+                <option value="jklawiter">jklawiter</option>
+                <option value="pitreck">pitreck</option>
+                <option value="smalolepszy">smalolepszy</option>
+                <option value="w.kapusta">w.kapusta</option>
+            </select>
+        </div>
+          <script type="text/javascript">
+            hideEditableField( 'cc_edit_area_showhide_container', 
+                               'cc_edit_area', 
+                               'cc_edit_area_showhide', 
+                               '', 
+                               '');  
+          </script>
+      </td>
+    </tr>
+
+<tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+<tr><th class="field_label "
+    id="field_label_see_also">
+
+
+  <a 
+      title="This allows you to refer to bugs in other installations. You can enter a URL to a bug in the 'Add Bug URLs' field to note that that bug is related to this one. You can enter multiple URLs at once by separating them with whitespace. You should normally use this field to refer to bugs in other installations. For bugs in this installation, it is better to use the Depends on and Blocks fields."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#see_also"
+  >See Also:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_see_also" >
+
+</td>
+    </tr> 
+
+<tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+
+
+
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+          <hr id="bz_top_half_spacer">
+      </td>
+    </tr>
+  </table>
+
+  <table id="bz_big_form_parts">
+  <tr>
+  <td>
+
+    
+<script type="text/javascript">
+<!--
+function toggle_display(link) {
+    var table = document.getElementById("attachment_table");
+    var view_all = document.getElementById("view_all");
+    var hide_obsolete_url_parameter = "&hide_obsolete=1";
+    // Store current height for scrolling later
+    var originalHeight = table.offsetHeight;
+    var rows = YAHOO.util.Dom.getElementsByClassName(
+        'bz_tr_obsolete', 'tr', table);
+
+    for (var i = 0; i < rows.length; i++) {
+        bz_toggleClass(rows[i], 'bz_default_hidden');
+    }
+
+    if (YAHOO.util.Dom.hasClass(rows[0], 'bz_default_hidden')) {
+        link.innerHTML = "Show Obsolete";
+        view_all.href = view_all.href + hide_obsolete_url_parameter 
+    }
+    else {
+        link.innerHTML = "Hide Obsolete";
+        view_all.href = view_all.href.replace(hide_obsolete_url_parameter,"");
+    }
+
+    var newHeight = table.offsetHeight;
+    // This scrolling makes the window appear to not move at all.
+    window.scrollBy(0, newHeight - originalHeight);
+
+    return false;
+}
+//-->
+</script>
+
+<br>
+<table id="attachment_table">
+  <tr id="a0">
+    <th colspan="3" class="left">
+      Attachments
+    </th>
+  </tr>
+
+
+
+  <tr class="bz_attach_footer">
+    <td colspan="3">
+        <a href="attachment.cgi%3Fbugid=909&amp;action=enter.html">Add an attachment</a>
+        (proposed patch, testcase, etc.)
+    </td>
+  </tr>
+</table>
+<br>
+
+  </td>
+  <td>
+  </td>
+  </tr></table>
+
+  
+  <div id="comments"><script src="js/comments.js" type="text/javascript">
+</script>
+
+<script type="text/javascript">
+<!--
+  /* Adds the reply text to the 'comment' textarea */
+  function replyToComment(id, real_id, name) {
+      var prefix = "(In reply to " + name + " from comment #" + id + ")\n";
+      var replytext = "";
+        /* pre id="comment_name_N" */
+        var text_elem = document.getElementById('comment_text_'+id);
+        var text = getText(text_elem);
+        replytext = prefix + wrapReplyText(text);
+
+
+      /* <textarea id="comment"> */
+      var textarea = document.getElementById('comment');
+      if (textarea.value != replytext) {
+          textarea.value += replytext;
+      }
+
+      textarea.focus();
+  } 
+//-->
+</script>
+
+
+<!-- This auto-sizes the comments and positions the collapse/expand links 
+     to the right. -->
+<table class="bz_comment_table">
+<tr>
+<td>
+<div id="c0" class="bz_comment bz_first_comment">
+
+      <div class="bz_first_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=909.html#c0">Description</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2006-06-20 00:00:37 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Przeglądarka:         Mozilla/5.0 (Windows; U; Windows NT 5.2; pl; rv:1.8.1a3) Gecko/20060602 Firefox/2.0a3
+Identyfikator wersji: Mozilla/5.0 (Windows; U; Windows NT 5.2; pl; rv:1.8.1a3) Gecko/20060602 Firefox/2.0a3
+
+&quot;Otwórz w nowej karcie&quot; itp. powinny zostać zmienione na &quot;Otwórz na nowej karcie&quot;.
+
+Uzasadnienie:
+1) &quot;w karcie&quot; jest niepoprawne frazeologicznie
+2) &quot;na karcie&quot; ma Opera
+3) &quot;na karcie&quot; będzie miał IE 7
+
+Argumenty przeciw:
+1) Kolejna zmiana w tym samym miejscu w kolejnej wersji ;-)
+2) ...?
+
+Zmiana obejmuje mniej niż 30 stringów.
+
+Proszę o opinie, brak opinii będzie traktowany jako bezwarunkowa zgoda. ;-)
+
+Powtarzalność: Zawsze
+Postępowanie aby powtórzyć:</pre>
+    </div>
+
+    <div id="c1" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=909.html#c1">Comment 1</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Piotr Komoda</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2006-06-20 02:03:19 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Za</pre>
+    </div>
+
+    <div id="c2" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=909.html#c2">Comment 2</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2006-06-20 02:18:31 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Aha, chcę to zrobić w tym tygodniu, żeby zdążyło wejść do beta 1.</pre>
+    </div>
+
+    <div id="c3" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=909.html#c3">Comment 3</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2006-06-20 02:22:01 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Ja jestem przeciw. Nie traktujcie mojego zdania jako glosu z jezykowego punktu
+widzenia.
+Moje doswiadczenie jest, ze ludzie zawsze uzywaja okreslenia &quot;w zakladkach&quot; albo
+&quot;w tabach&quot;. Prawie nigdy nie uzywaja innego, a jak juz (co zdarzylo sie moze 2,3
+razy) to lecieli tym samym stylem co z tabami - &quot;w kartach&quot;.
+
+Sproboje wiec pograc adwokata diabla:
+
+1) Ludzie uzywaja &quot;w ...&quot; (karty, taby, zakladki)
+2) W moim odczuciu, ludzie latwiej akceptuja inne slowo niz inny zwrot. Czyli,
+jesli (a tak pewnie jeszcze bedzie przez dluzszy czas), ludzie beda uzywac &quot;w
+zakladkach&quot;, &quot;w tabach&quot;, a my bedziemy im prezentowac &quot;w kartach&quot;, to w domysle
+zaloza, ze mamy jakies dziwne slowo i ok, kazdy wie o co chodzi. Natomiast jak
+zmienimy na &quot;przegladanie na ...&quot;, to juz mocniej odstajemy ze slownictwem od
+tego ktore jest ogolnie uzwane.
+3) Z mojego, stricte programistycznego punktu widzenia, strona znajduje sie
+wewnatrz widgeta o nazwie &quot;karta&quot;. (dygresja: heh, ta zabawa Opery z widgetami
+przewroci pewnie znaczenie slowa widget w modelowaniu UI ;)), a nie &quot;na nim&quot;.
+4) Elementy znajduja sie &quot;w menu&quot;, &quot;w pasku adresu&quot;, &quot;w pasku narzedzi&quot;, &quot;w
+panelu bocznym&quot;, &quot;w pasku statusu&quot;, &quot;w naglowku&quot;, &quot;w stopce&quot;. Jedyna sytuacja
+kiedy mowimy &quot;na&quot; jest pulpit. Rzeczy znajduja sie &quot;na pulpicie&quot;, i to dlatego,
+ze de facto jest sobie pulpit, a my &quot;na nim&quot; umieszczamy skrot. Natomiast reszta
+jest &quot;w&quot; pewnych elementach interfejsu, i uwazam, ze karta jest takim wlasnie
+elementem interfejsu.
+5) Termin &quot;karta&quot; uzywamy w zupelnym oderwaniu od oryginalnego znaczenia. Jesli
+wyobrazamy sobie papierowy kalendarz, to mamy w nim zakladki (ktore sa oznaczone
+wystajacymi uchwytami, zeby latwiej otworzyc) i to jest geneza powstania &quot;kart&quot;
+jako widgetow w GUI. Natomiast nie mowimy ani o karcie dan, ani o karcie do gry,
+ani o karcie graficznej. Dlatego mi pasuje &quot;w karcie&quot;.
+6) Nie widze wielkiego problemu, nie sadze aby &quot;na&quot; vs. &quot;w&quot; sprawilo komukolwiek
+problem przy zmianie przegladarki z jednej na druga.
+
+za zmiana:
+1) Jesli terminologia Microsoftu sie przyjmie (co nie jest absolutnie pewne.
+Ludzie nadal mowia nie mowia folder), to moja argumentacja przeciw zmianie
+znacznie oslabnie
+2) moj punkt widzenia, to punkt widzenia osoby od dawna uzywajacej Fx/Flocka.
+Jestem przyzwyczajony i takze dlatego ta zmiana wydaje mi sie &quot;brzmiec&quot; dziwnie.
+
+Nie chce walczyc o swoje stanowisko, po prostu akcentuje, ze nie jestem
+przekonany czy to ma sens, i nie widze zadnego problemu w wykorzystaniu &quot;IE&quot; w
+tej grze. Nikt nie bedzie mial problemu jesli IE bedzie mialo &quot;na&quot; a my &quot;w&quot;,
+natomiast jesli zaatakujemy z nowym dla userow &quot;na kartach&quot;, to moze to dla nich
+wygladac dziwnie (jak dla mnie). Jesli poczekamy, az nowy termin zostanie
+przetarty przez IE, bedzie latwiej zmienic.</pre>
+    </div>
+
+    <div id="c4" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=909.html#c4">Comment 4</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2006-06-20 02:32:20 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(W odpowiedzi na komentarz #3)
+
+<span class="quote">&gt; Elementy znajduja sie &quot;w menu&quot;, &quot;w pasku adresu&quot;, &quot;w pasku narzedzi&quot;, &quot;w
+&gt; panelu bocznym&quot;, &quot;w pasku statusu&quot;, &quot;w naglowku&quot;, &quot;w stopce&quot;.</span >
+
+
+&quot;W menu&quot;, &quot;w pasku adresu (użytkownik coś wpisuje)&quot;, &quot;na pasku narzędzi (się coś
+znajduje)&quot;, &quot;w panelu bocznym&quot;, &quot;na pasku stanu (wyświetlany jest tekst)&quot;...
+Takiej terminologii używamy w Fx...
+
+<span class="quote">&gt; 3) Z mojego, stricte programistycznego punktu widzenia, strona znajduje sie
+&gt; wewnatrz widgeta o nazwie &quot;karta&quot;. (...), a nie &quot;na nim&quot;.</span >
+
+Z programistycznego punktu widzenia plik nie znajduje się w jakimś tam katalogu
+(folderze), katalog zawiera tylko informacje o tym pliku. A jednak jakoś mówimy
+o &quot;pliku xxx w katalogu yyy&quot;, a nie o &quot;pliku xxx, który opisuje plik katalogowy
+yyy&quot;. ;-)
+
+Co do pulpitu - skoro pulpit to katalog ~/Desktop czy C:\Documents and
+Settings\Coś\tam\dalej\Desktop, to programistycznie to jest &quot;w&quot; pulpicie. ;-)
+</pre>
+    </div>
+
+    <div id="c5" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=909.html#c5">Comment 5</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Staś Małolepszy :stas</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2006-06-20 02:50:58 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Na razie jestem przeciw. Szczególnie przeciw, jesli ta zmiana doprowadzi do
+zmiany &quot;Przeglądania w kartach&quot; na &quot;Przeglądania na kartach&quot;.
+
+Jestem zdania, że wolno nam uznać kartę-tab jako nowe znaczenie słowa &quot;karta&quot; i
+że wolno nam ustalać od początku reguły jej używania. Uważam, że najsilniej
+powiązane leksykalnie z przeglądaniem w kartach jest przeglądanie w oknach, i
+tym argumentem uzasadniam pprawność związku &quot;w karcie&quot;.
+(Podobnie &quot;klient&quot; odmieniamy inaczej, jeśli mówimy o oprogramowaniu.)
+
+Daję sobie dzień, żeby przeprowadzić sondę wśró znanych mi uzytkowników. Choć
+zastanawiam się, czy oni w ogóle zwracają na takie reczy uwagę. Zmieniamy to dla
+nich, czy dla siebie (tak szczerze)?</pre>
+    </div>
+
+    <div id="c6" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=909.html#c6">Comment 6</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2006-06-20 03:11:43 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(W odpowiedzi na komentarz #4)
+<span class="quote">&gt; (W odpowiedzi na komentarz #3)
+&gt; 
+&gt; &quot;W menu&quot;, &quot;w pasku adresu (użytkownik coś wpisuje)&quot;, &quot;na pasku narzędzi (się coś
+&gt; znajduje)&quot;, &quot;w panelu bocznym&quot;, &quot;na pasku stanu (wyświetlany jest tekst)&quot;...
+&gt; Takiej terminologii używamy w Fx...</span >
+
+Znow sie nie zgodze. Dodajesz cos DO paska narzedzi, a nie kladziesz cos NA
+pasku narzedzi. Podobnie, napisalbys &quot;dodaj przycisk do paska stanu&quot;, a nie
+&quot;poloz przycisk NA pasku stanu&quot;.
+
+Oczywiscie wykazujemy sie tu niekonsekwencja. Ikony znajduja sie zawsze NA
+paskach, ale dodajemy DO paskow.
+
+<span class="quote">&gt; Z programistycznego punktu widzenia plik nie znajduje się w jakimś tam katalogu
+&gt; (folderze), katalog zawiera tylko informacje o tym pliku. A jednak jakoś mówimy
+&gt; o &quot;pliku xxx w katalogu yyy&quot;, a nie o &quot;pliku xxx, który opisuje plik katalogowy
+&gt; yyy&quot;. ;-)</span >
+
+Well, to juz czepianie sie. Wyobraznia usera dziala inaczej. On widzi warstwe
+pulpitu (stolu) i kladzie cos na niej - ikone.
+Natomiast jak ma zeszyt, to dane w nim nie sa polozone na kartkach, tylko sa
+wewnatrz tych kartek.
+Wiecej, zwrot &quot;na kartach&quot; ma swoje znaczenie &quot;Na tych kartach zapisano historie
+ludzkosci&quot;, &quot;Na kartach powiesci&quot; itp. Umieszczanie dokumentu HTML albo, co
+gorsza aplikacji Web &quot;na kartach&quot;, koliduje w mojej glowie z tym.
+ 
+<span class="quote">&gt; Co do pulpitu - skoro pulpit to katalog ~/Desktop czy C:\Documents and
+&gt; Settings\Coś\tam\dalej\Desktop, to programistycznie to jest &quot;w&quot; pulpicie. ;-)</span >
+
+To znow czepianie sie. Dobrze wiesz o czym mowie ;) </pre>
+    </div>
+
+    <div id="c7" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=909.html#c7">Comment 7</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Piotr Komoda</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2006-06-20 08:47:39 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(W odpowiedzi na komentarz #6)
+<span class="quote">&gt; Znow sie nie zgodze. Dodajesz cos DO paska narzedzi, a nie kladziesz cos
+&gt; NA pasku narzedzi. Podobnie, napisalbys &quot;dodaj przycisk do paska stanu&quot;, 
+&gt; a nie &quot;poloz przycisk NA pasku stanu&quot;.
+&gt; 
+&gt; Oczywiscie wykazujemy sie tu niekonsekwencja. Ikony znajduja sie zawsze 
+&gt; NA paskach, ale dodajemy DO paskow.</span >
+
+Elementy (tekst, ikona, dymek informacyjny) znajduja sie lub pojawiaja sie NA
+pasku zadan lub pasku stanu, natomiast dodajemy cos DO. Takiej terminologii
+uzywamy my i  MS, chociaz ten drugi akurat niekonsekwentnie.</pre>
+    </div>
+
+    <div id="c8" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=909.html#c8">Comment 8</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2006-06-20 09:33:19 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(W odpowiedzi na komentarz #6)
+<span class="quote">&gt; Natomiast jak ma zeszyt, to dane w nim nie sa polozone na kartkach, tylko sa
+&gt; wewnatrz tych kartek.</span >
+
+No, nie wiem... ;-)
+
+<span class="quote">&gt; To znow czepianie sie. Dobrze wiesz o czym mowie ;) </span >
+
+Kontrprzykład z pulpitem miał Ci ukazać bezsens podejścia &quot;programistycznego&quot;.  ;-)
+</pre>
+    </div>
+
+    <div id="c9" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=909.html#c9">Comment 9</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Andrzej Olaczek</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2006-06-20 09:41:20 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(W odpowiedzi na komentarz #3)
+<span class="quote">&gt; 1) Ludzie uzywaja &quot;w ...&quot; (karty, taby, zakladki)</span >
+
+&quot;W...&quot; używa *część* ludzi, a nie wszyscy ludzie. Są to użytkownicy 
+Firefoksa, ktorzy stosują terminologię *zastaną* w tymże Firefoksie. Nie 
+znają innej formy i nie mają innych doświadczeń, gdyż Firefox był dla 
+znakomitej większości z nich pierwszą aplikacją, w której spotkali sie z tym 
+wyrażeniem. Tam, gdzie ja się obracam, ludzie mówią &quot;na kartach&quot;. To nie 
+jest żaden argument.
+
+<span class="quote">&gt; 5) Termin &quot;karta&quot; uzywamy w zupelnym oderwaniu od oryginalnego </span >
+znaczenia. 
+
+Wyobraź sobie następujące analogie:
+okno aplikacji - zeszyt
+karta - kartka
+
+Piszemy i rysujemy oczywiście w zeszycie, ale nasz rysunek powstaje na 
+jednej z kartek tego zeszytu, a nie w kartce.
+
+Podobnie strony renderowane są na kartach, a karty znajdują się w oknie 
+aplikacji.
+
+W oknie znajdują się szyby, ale jeśli przyjdzie mróz, to esy-floresy 
+powstają na szybach, nie w szybach.
+
+Mamy powiedzenie &quot;na kartach historii&quot;, mówimy, że wyczytaliśmy coś &quot;na 
+kartach tej książki&quot;.
+
+Bazgrzemy na kartce, nie w kartce.
+
+</pre>
+    </div>
+
+    <div id="c10" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=909.html#c10">Comment 10</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Wojciech Kapusta</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2006-06-20 09:46:50 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Ja jestem przeciw - tzn. jestem za pozostawieniem obecnego brzmienia. Dlaczego?
+Jest kilka powodów, m.in.:
+* Karta w tym znaczeniu jest elementem interfejsu - czymś w rodzaju
+zagnieżdżonego okna. Możemy otworzyć nową kartę, a w niej np. stronę
+internetową. Czy powiemy &quot;Otwórz na nowym oknie&quot;?
+* Nowomowa microsoftu nie jest dla mnie wzorem do naśladowania.
+* Otwieranie w kartach jest też w KDE (przynajmniej w używanej przeze mnie wersji).
+* Ogólnie jestem za utrzymywaniem jednolitego słownictwa w projektach, dużych i
+małych. Oczywiście pod warunkiem ogólnej zgodności z zasadami języka, logiką i
+zdrowym rozsądkiem. Częste zmiany nie są miłe dla użytkowników. Są też
+sformułowania po prostu &quot;sympatyczne&quot; i ogólnie zaakceptowane. Nie ma potrzeby
+ich zmieniać, tylko dlatego, że robią to inni.</pre>
+    </div>
+
+    <div id="c11" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=909.html#c11">Comment 11</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2006-06-20 15:57:13 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(W odpowiedzi na komentarz #9)
+<span class="quote">&gt; (W odpowiedzi na komentarz #3)
+&gt; &gt; 1) Ludzie uzywaja &quot;w ...&quot; (karty, taby, zakladki)
+&gt; 
+&gt; &quot;W...&quot; używa *część* ludzi, a nie wszyscy ludzie. Są to użytkownicy 
+&gt; Firefoksa, ktorzy stosują terminologię *zastaną* w tymże Firefoksie. Nie 
+&gt; znają innej formy i nie mają innych doświadczeń, gdyż Firefox był dla 
+&gt; znakomitej większości z nich pierwszą aplikacją, w której spotkali sie z tym 
+&gt; wyrażeniem. Tam, gdzie ja się obracam, ludzie mówią &quot;na kartach&quot;. To nie 
+&gt; jest żaden argument.</span >
+
+Po pierwsze. Aktualny rozklad procentowy wskazuje, ze w kazdym srodowisku
+uzytkownikow Internetu, srednio co piaty uzywa Firefoksa. Zatem co piaty ma
+doczynienia z kartami. I on okresla jak w tej grupie uzywa sie terminu. To jest
+argument.
+
+Ale ok, zalozmy, ze to co opisales nie jest argumentem. Spojrz na to co
+napisalem nad punktami w komentarzu 3. Ludzie uzywaja terminu &quot;w tabach&quot; i &quot;w
+zakladkach&quot;. I to naprawde zatrwazajaca wiekszosc. To nie jest tak, ze &quot;gdzies
+ktos uzywa jednego a gdzies drugiego&quot;. Kiedy mowisz &quot;wokol mnie&quot; masz na mysli
+srodowisko uzytkownikow Opery, zatem pewnie zakladasz, ze ja z kolei opisuje
+srodowisko uzytkownikow Firefoksa.
+Nie, ja opisuje srodowiska biznesowe, konferencje technologiczne, panele
+dyskusyjne na ktorych ludzie uzywaja takich terminow.
+Z ostatniego tygodnia tylko mialem spotkanie w Microsofcie, potem panel
+dyskusyjny z Markiem Shuttleworthem, w srode konferencje Web 2.0. We wszystkich
+trzech, polacy mowili &quot;w tabach&quot; i &quot;w zakladkach&quot;. Moze raz uslyszalem &quot;w kartach&quot;.
+Nie pozwolmy sobie ignorowac tego stanu rzeczy, mozemy dyskutowac czy go nie
+zmieniac, ale nie piszmy &quot;to nie jest argument, moi kumple mowia na kartach&quot; -
+bo dla mnie brzmi to jak proba zignorowania rzeczywistosci, na rzecz
+ideologicznej slusznosci.
+
+<span class="quote">&gt; Wyobraź sobie następujące analogie:
+&gt; okno aplikacji - zeszyt
+&gt; karta - kartka
+&gt; 
+&gt; Piszemy i rysujemy oczywiście w zeszycie, ale nasz rysunek powstaje na 
+&gt; jednej z kartek tego zeszytu, a nie w kartce.
+&gt; 
+&gt; Podobnie strony renderowane są na kartach, a karty znajdują się w oknie 
+&gt; aplikacji.</span >
+
+Nie zgadzam sie! Nasz rysunek powstaje na kartce, prawda, ale user nie rysuje,
+nie renderuje strony! On ja oglada. On oglada kartke papieru. I o ile zwrot &quot;cos
+jest napisane na tej kartce&quot; ma swoja etymologie w tym, ze de facto tusz
+kladziony jest na papierze, o tyle to juz nie odnosi sie tak doslownie do swiata
+komputerow. User nie widzi jakiejs pustej karty, a potem na niej nie pojawia sie
+zawartosc. 
+Mysle, ze roznica miedzy naszymi spojrzeniami to jak roznica miedzy &quot;cos jest
+opisane na stronie&quot;, &quot;cos jest opisane w portalu&quot;. 
+
+<span class="quote">&gt; W oknie znajdują się szyby, ale jeśli przyjdzie mróz, to esy-floresy 
+&gt; powstają na szybach, nie w szybach.</span >
+
+Ale szyba jest w oknie, a nie na oknie ;)
+ 
+Jednak, dales mnie wciagnac w probe zalozenia, ze ta karta w UI to ta sama co w
+zeszycie, wiec odnosza sie do niej te same reguly. Jak napisal staszek. Slowa
+klient tez inaczej uzywamy w UI a inaczej w odniesieniu do klienta w sklepie.
+
+W naszym przypadku karta to cos nowego. Nowy termin. Proba spolszczenia
+niewygodnego slowa &quot;tab&quot;. Zalozenie, ze uzyjemy slowa, ktore bezposrednio
+przypisane jest terminowi &quot;card&quot; i bedziemy liczyc, ze nigdy nie napotkamy
+konfliktu bezposredniego. Odleglosc miedzy kartka papieru i jej funkcjami, a
+kartami w przegladarce jest na tyle ogromna, ze nie widze sensu trzymania sie
+tych samych zwrotow, jesli uznamy, ze nie maja one podstaw.
+
+Podam kolejne przyklady. Skoro, idac za rozumowaniem Andrzeja, karta to kartka
+papieru to dlaczego przelaczam karty a nie przerzucam/przkladam karty? Co
+oznacza &quot;zamknac karte&quot;? 
+Dla mnie karta to nie jest kartka papieru. To jest ten uchwyt kartki w
+skoroszycie, ktory ulatwia przenoszenie sie miedzy sekcjami. Takie cos co
+wystaje z pierwszej kartki sekcji z boku, dzieki czemu moge latwo przeniesc sie
+miedzy jedna a druga. I graficznie tak to wlasnie wyglada w UI. To nie dziala
+jak kartki zeszytu, bo jest inaczej ulozone, i inna jest interakcja z userem.
+Dlatego uznawanie, ze &quot;tak jest poprawnie, bo tak jest z kartkami&quot;, jest dla
+mnie niewystarczajaca, a widze wystarczajaco przeciw, aby grac swoja role
+adwokata diabla (przypominam jednak, ze decyzje podejmie Marcoos, ew we
+wspolpracy ze Staszyna i Wojciechem, wiec to nie mnie trzeba przekonywac!)</pre>
+    </div>
+
+    <div id="c12" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=909.html#c12">Comment 12</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Andrzej Olaczek</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2006-06-20 17:54:27 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Toteż nikogo przekonywać nie zamierzam. </pre>
+    </div>
+
+    <div id="c13" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=909.html#c13">Comment 13</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Jakub Klawiter</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2006-06-30 14:19:51 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Zmiana IMO bez sensu. Karta (pomijajac ze ja ciagle ogladam w zakładkach i ni
+jak nie moge sie przestawic) to inna odmiana okna czy tego chcemy czy nie.
+Strone mozna otworzyc w nowym oknie przegladarki, lub bardziej nowoczesnie w
+nowej karcie tejze. Ta karta to takie &quot;okno inaczej&quot;. 
+
+Faaktem jest ze przecietny uzytkownik nie zauwazy tej zmiany w tlumaczeniu, bo
+wiekszosc tak czy siak nie oglada tego napisu i klika srodkowym guzikiem, lub
+jesli nie posiadaja owego (tak jak ja w notebooku teraz) otwiera strone w
+&quot;drugim od gory&quot;. 
+Ale IMO kazdy jesli sie zacznie nad tym zastanawiac stwierdzi ze otwiera sie
+strone w a nie na. Bo na karcie to jest co najwyzej fragment &lt;title/&gt; a nie
+zawartosc strony jako takiej. </pre>
+    </div>
+
+    <div id="c14" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=909.html#c14">Comment 14</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2006-08-03 14:32:33 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Skoro cały Komitet Centralny oprócz mnie jest przeciw - wontfix.
+
+Niech żyje demokracja. :)</pre>
+    </div>
+
+    <div id="c15" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=909.html#c15">Comment 15</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Noname</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2006-08-04 16:54:31 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Z całym szacunkiem jako zwykły user powiem ze :
+1)zmiana z &quot;w&quot; na &quot;na&quot; u mnie spowoduje niepewność i odruch szukania czegoś
+dodatkowego - przycisku albo Bóg wie co. Generalnie konfuzje i zagubienie -
+zatem zdecydowanie prosze NIE!
+2) proponowana zmiana jest niczym innym jakzwyczajnym rusycyzmem i jako taka nie
+powinna byc wprowadzana - cóz każdemu zdarzają sie błedy. nikt nie sprawdza co
+jest &quot;na menu&quot; tylko &quot;w menu&quot; nie szukamy &quot;na opcjach&quot; tylko &quot;w opcjach&quot;
+I sadze ze mam racje. Pozdr
+</pre>
+    </div>
+
+    <div id="c16" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=909.html#c16">Comment 16</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-01-01 14:13:09 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Bugspam. Przeniesienie produktów z archiwum.</pre>
+    </div>
+
+
+  
+
+</td>
+<td>
+</td>
+</tr></table>
+  </div>
+
+    <hr><div id="add_comment" class="bz_section_additional_comments">
+      <table>
+        <tr>
+          <td>
+            <fieldset>
+              <legend>Note</legend>
+              You need to
+              <a href="show_bug.cgi%3Fid=909&amp;GoAheadAndLogIn=1.html">log in</a>
+              before you can comment on or make changes to this bug.
+            </fieldset>
+          </td>
+        </tr> 
+      </table>
+  </div>        
+
+</form>
+
+<hr>
+<ul class="related_actions">
+    <li><a href="show_bug.cgi%3Fformat=multiple&amp;id=909.html">Format For Printing</a></li>
+    <li>&nbsp;-&nbsp;<a href="show_bug.cgi%3Fctype=xml&amp;id=909">XML</a></li>
+    <li>&nbsp;-&nbsp;<a href="enter_bug.cgi%3Fcloned_bug_id=909.html">Clone This Bug</a></li>
+    
+    <li>&nbsp;-&nbsp;<a href="show_bug.cgi%3Fid=909.html#">Top of page </a></li>
+    </ul>
+
+<br>
+</div>
+
+    <div id="footer">
+      <div class="intro"></div>
+<ul id="useful-links">
+  <li id="links-actions"><ul class="links">
+  <li><a href="index.html">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi.html">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi.html">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi.html">Search</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="http://bugs.aviary.pl/buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input type="hidden" id="no_redirect_bottom" name="no_redirect" value="0">
+    <script type="text/javascript">
+      if (history && history.replaceState) {
+        var no_redirect = document.getElementById("no_redirect_bottom");
+        no_redirect.value = 1;
+      }
+    </script>
+    <input class="txt" type="text" id="quicksearch_bottom" name="quicksearch" 
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search" 
+           id="find_bottom"></form>
+  <a href="page.cgi%3Fid=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="report.cgi.html">Reports</a></li>
+
+  <li>
+      <span class="separator">| </span>
+        <a href="request.cgi.html">Requests</a></li>
+
+
+  <li>
+        <span class="separator">| </span>
+        <a href="https://bugzilla.readthedocs.org/en/5.0/using/understanding.html" target="_blank">Help</a>
+      </li>
+    
+      <li id="new_account_container_bottom">
+        <span class="separator">| </span>
+        <a href="createaccount.cgi.html">New&nbsp;Account</a>
+      </li>
+
+    <li id="mini_login_container_bottom">
+  <span class="separator">| </span>
+  <a id="login_link_bottom" href="show_bug.cgi%3Fid=909&amp;GoAheadAndLogIn=1.html"
+     onclick="return show_mini_login_form('_bottom')">Log In</a>
+
+  <form action="show_bug.cgi%3Fid=909.html" method="POST"
+        class="mini_login bz_default_hidden"
+        id="mini_login_bottom">
+    <input id="Bugzilla_login_bottom" required
+           name="Bugzilla_login" class="bz_login"
+        type="email" placeholder="Email Address">
+    <input class="bz_password" name="Bugzilla_password" type="password"
+           id="Bugzilla_password_bottom" required
+           placeholder="Password">
+    <input type="hidden" name="Bugzilla_login_token"
+           value="1469820432-BD0dTa3uiRaoVa2MezViHE8j_a05-TESy96X84cwbbQ">
+    <input type="submit" name="GoAheadAndLogIn" value="Log in"
+            id="log_in_bottom">
+    <a href="show_bug.cgi%3Fid=909.html#" onclick="return hide_mini_login_form('_bottom')">[x]</a>
+  </form>
+</li>
+
+
+  <li id="forgot_container_bottom">
+    <span class="separator">| </span>
+    <a id="forgot_link_bottom" href="show_bug.cgi%3Fid=909&amp;GoAheadAndLogIn=1.html#forgot"
+       onclick="return show_forgot_form('_bottom')">Forgot Password</a>
+    <form action="http://bugs.aviary.pl/token.cgi" method="post" id="forgot_form_bottom"
+          class="mini_forgot bz_default_hidden">
+      <label for="login_bottom">Login:</label>
+      <input name="loginname" size="20" id="login_bottom" required
+          type="email" placeholder="Your Email Address">
+      <input id="forgot_button_bottom" value="Reset Password" type="submit">
+      <input type="hidden" name="a" value="reqpw">
+      <input type="hidden" id="token_bottom" name="token"
+             value="1469820432-BrgnjscIVbX2rbyK73fpRG2wYR1IIQGR947WVBb3LdY">
+      <a href="show_bug.cgi%3Fid=909.html#" onclick="return hide_forgot_form('_bottom')">[x]</a>
+    </form>
+  </li>
+</ul>
+  </li>
+
+  
+
+
+
+
+  
+</ul>
+
+      <div class="outro"></div>
+    </div>
+
+  </body>
+</html>

@@ -1,0 +1,394 @@
+diff -u -r 20050501-pl/pl/locale/pl/global/findbar.dtd 20050515-pl/pl/locale/pl/global/findbar.dtd
+--- 20050501-pl/pl/locale/pl/global/findbar.dtd	2005-04-16 10:33:10.000000000 +0200
++++ 20050515-pl/pl/locale/pl/global/findbar.dtd	2005-05-15 07:33:48.000000000 +0200
+@@ -1,15 +1,17 @@
+-<!-- LOCALIZATION NOTE : FILE This file contains the entities needed to -->
+-<!-- LOCALIZATION NOTE : FILE use the Find Bar. --> 
+-
+-<!-- entities split out from browser.dtd -->
+-<!ENTITY find.label "Znajdź:">
+-<!ENTITY findNext.label "Znajdź następne">
+-<!ENTITY findNext.tooltip "Znajdź następne wystąpienie ostatnio szukanej frazy">
+-<!ENTITY findPrevious.label "Znajdź poprzednie">
+-<!ENTITY findPrevious.tooltip "Znajdź poprzednie wystąpienie ostatnio szukanej frazy">
+-<!ENTITY findCloseButton.tooltip "Zamknij pasek wyszukiwania">
+-<!ENTITY highlight.label "Podświetl">
+-<!ENTITY highlight.tooltip "Podświetl wszystkie wystąpienia szukanej frazy">
+-<!ENTITY caseSensitiveCheckbox.label "Uwzględniaj wielkość liter">
+-<!ENTITY caseSensitiveCheckbox.accesskey "l">
+-
++<!-- LOCALIZATION NOTE : FILE This file contains the entities needed to -->
++<!-- LOCALIZATION NOTE : FILE use the Find Bar. --> 
++
++<!-- entities split out from browser.dtd -->
++<!ENTITY find.label "Znajdź:">
++<!ENTITY findNext.label "Znajdź następne">
++<!ENTITY findNext.accesskey "n">
++<!ENTITY findNext.tooltip "Znajdź następne wystąpienie ostatnio szukanej frazy">
++<!ENTITY findPrevious.label "Znajdź poprzednie">
++<!ENTITY findPrevious.accesskey "p">
++<!ENTITY findPrevious.tooltip "Znajdź poprzednie wystąpienie ostatnio szukanej frazy">
++<!ENTITY findCloseButton.tooltip "Zamknij pasek wyszukiwania">
++<!ENTITY highlight.label "Podświetl wszystkie">
++<!ENTITY highlight.accesskey "w">
++<!ENTITY highlight.tooltip "Podświetl wszystkie wystąpienia szukanej frazy">
++<!ENTITY caseSensitiveCheckbox.label "Uwzględniaj wielkość liter">
++<!ENTITY caseSensitiveCheckbox.accesskey "l">
+\ No newline at end of file
+diff -u -r 20050501-pl/pl/locale/pl/global/intl.properties 20050515-pl/pl/locale/pl/global/intl.properties
+--- 20050501-pl/pl/locale/pl/global/intl.properties	2005-04-30 18:41:00.000000000 +0200
++++ 20050515-pl/pl/locale/pl/global/intl.properties	2005-05-14 23:51:40.000000000 +0200
+@@ -1,5 +1,19 @@
++# all.js
++#
++# Localization Note: Cases of charset names must be preserved. If you're 
++# adding charsets to your localized version, please refer to 
++# intl/uconv/src/charsetalias.properties file for the list of canonical 
++# charset names and use canonical names exactly as listed there.
++# Also note that "UTF-8" should always be included in intl.charsetmenu.browser.static
+ general.useragent.locale=pl
+-font.language.group=x-western
++# Localization Note: font.language.group controls the initial setting of the
++# language drop-down in the fonts pref panel. Set it to the value of one of the
++# menuitems in the "selectLangs" menulist in
++# browser/components/preferences/fonts.xul
++font.language.group=x-central-euro
++# Localization Note: Add the code for your language at the front of this entry,
++# leaving "en-us, en" for fallback. It's recommended to use the same form, e.g.
++# "ja-jp, ja, en-us, en"
+ intl.accept_languages=pl, en-us, en
+ intl.charsetmenu.browser.static=ISO-8859-2, UTF-8
+ intl.charsetmenu.browser.more1=ISO-8859-1, ISO-8859-15, IBM850, x-mac-roman, windows-1252, ISO-8859-14, ISO-8859-7, x-mac-greek, windows-1253, x-mac-icelandic, ISO-8859-10, ISO-8859-3
+diff -u -r 20050501-pl/pl/locale/pl/messenger/AccountWizard.dtd 20050515-pl/pl/locale/pl/messenger/AccountWizard.dtd
+--- 20050501-pl/pl/locale/pl/messenger/AccountWizard.dtd	2005-05-02 22:50:24.000000000 +0200
++++ 20050515-pl/pl/locale/pl/messenger/AccountWizard.dtd	2005-05-16 00:39:44.000000000 +0200
+@@ -9,7 +9,7 @@
+ <!ENTITY accountTypeNews.label "Konto grup dyskusyjnych">
+ <!ENTITY accountTypeNews.accesskey "g">
+ <!ENTITY identityTitle.label "Tożsamość">
+-<!ENTITY identityDesc.label "Poniższe dane określają tożsamość konta i umożliwiają odbiorcom wysyłanych wiadomości identyfikację nadawcy.">
++<!ENTITY identityDesc.label "Poniższe dane określają tożsamość posiadacza konta i umożliwiają odbiorcom wiadomości identyfikację nadawcy.">
+ <!ENTITY fullnameDesc.label 'Wprowadź imię, nazwisko lub pseudonim, który będzie używany w polu "Od:" wysyłanych wiadomości'>
+ <!ENTITY fullnameExample.label '(na przykład: "Michał Wołodyjowski").'>
+ <!ENTITY fullnameLabel.label "Twoje imię, nazwisko lub pseudonim:">
+diff -u -r 20050501-pl/pl/locale/pl/messenger/am-main.dtd 20050515-pl/pl/locale/pl/messenger/am-main.dtd
+--- 20050501-pl/pl/locale/pl/messenger/am-main.dtd	2005-04-30 07:09:36.000000000 +0200
++++ 20050515-pl/pl/locale/pl/messenger/am-main.dtd	2005-05-16 00:40:14.000000000 +0200
+@@ -3,7 +3,7 @@
+ <!ENTITY accountName.accesskey "N">
+ <!ENTITY accountNameDesc.label "Każde konto ma swoją unikatową nazwę">
+ <!ENTITY identityTitle.label "Domyślna tożsamość">
+-<!ENTITY identityDesc.label "Poniższe dane określają tożsamość konta i umożliwiają odbiorcom wysyłanych wiadomości identyfikację nadawcy.">
++<!ENTITY identityDesc.label "Poniższe dane określają tożsamość posiadacza konta i umożliwiają odbiorcom wiadomości identyfikację nadawcy.">
+ <!ENTITY name.label "Imię i nazwisko:">
+ <!ENTITY name.accesskey "I">
+ <!ENTITY email.label "Adres e-mail:">
+diff -u -r 20050501-pl/pl/locale/pl/messenger/am-server-top.dtd 20050515-pl/pl/locale/pl/messenger/am-server-top.dtd
+--- 20050501-pl/pl/locale/pl/messenger/am-server-top.dtd	2005-04-30 10:49:36.000000000 +0200
++++ 20050515-pl/pl/locale/pl/messenger/am-server-top.dtd	2005-05-16 00:22:32.000000000 +0200
+@@ -37,7 +37,7 @@
+ <!ENTITY alwaysSecure.accesskey "T">
+ <!ENTITY alwaysSSL.label "SSL">
+ <!ENTITY alwaysSSL.accesskey "L">
+-<!ENTITY useSecAuth.label "Użyj bezpiecznego uwierzytelniania">
++<!ENTITY useSecAuth.label "Używaj bezpiecznego uwierzytelniania">
+ <!ENTITY useSecAuth.accesskey "i">
+ <!ENTITY leaveOnServer.label "Pozostaw kopię wiadomości na serwerze">
+ <!ENTITY leaveOnServer.accesskey "d">
+diff -u -r 20050501-pl/pl/locale/pl/messenger/junkMail.dtd 20050515-pl/pl/locale/pl/messenger/junkMail.dtd
+--- 20050501-pl/pl/locale/pl/messenger/junkMail.dtd	2004-12-06 16:25:12.000000000 +0100
++++ 20050515-pl/pl/locale/pl/messenger/junkMail.dtd	2005-05-17 02:02:18.000000000 +0200
+@@ -3,9 +3,7 @@
+ 
+ <!-- Tab titles -->
+ <!ENTITY settingsTab.label "Ustawienia">
+-<!ENTITY whiteListTab.label "Wyjątki">
+ <!ENTITY adaptiveTab.label "Inteligentny filtr">
+-<!ENTITY blackListsTab.label "Czarna lista">
+ 
+ <!-- Settings tab -->
+ <!ENTITY move.label "Przenieś otrzymane wiadomości, które zostały oznaczone jako niechciane, do:">
+@@ -17,7 +15,7 @@
+ <!ENTITY manualMark.label "W przypadku ręcznego oznaczenia wiadomości jako niechcianej:">
+ <!ENTITY manualMarkModeMove.label "Przenieś wiadomości do folderu Niechciane">
+ <!ENTITY manualMarkModeDelete.label "Usuń wiadomości">
+-<!ENTITY renderWithSafeHtml.label "Wyświetlając wiadomości rozpoznane jako niechciane, ignoruj znaczniki HTML, które mogą naruszyć prywatność użytkownika">
++<!ENTITY renderWithSafeHtml.label "Wyświetlając niechciane wiadomości ignoruj znaczniki HTML, które mogą naruszyć prywatność użytkownika">
+ <!ENTITY log.label "Dziennik niechcianej poczty">
+ <!ENTITY handling.label "Czynności wykonywane automatycznie">
+ 
+@@ -30,9 +28,8 @@
+ 
+ <!-- Adaptive Filter tab -->
+ 
+-<!ENTITY adaptiveInfo.label "Filtr niechcianych wiadomości umożliwia analizę przychodzącej poczty pod kątem prawdopodobieństwa zawierania treści niepożądanych przez użytkownika. Decyzje podejmowane w stosunku do poszczególnych wiadomości są zapamiętywane, dzięki czemu filtr w krótkim czasie dostosowuje się do indywidualnych zachowań użytkownika.">
+ <!ENTITY adaptiveCaption.label "Inteligentny filtr">
+-<!ENTITY trainingWarning.label 'Po uruchomieniu filtru niechcianej poczty należy rozpocząć sesję treningową, wskazując niepożądane wiadomości za pomocą przycisku Niechciana, znajdującego się na pasku narzędzi. Wszystkie wiadomości nieprawidłowo rozpoznane jako niechciane należy oznaczać jako pożądane. W trakcie korzystania z filtru stale rosnąca baza przeanalizowanych decyzji powoduje, że filtr "uczy się" i zaczyna działać zgodnie z preferencjami użytkownika. Gdy skuteczność działania filtru będzie satysfakcjonująca, można uruchomić dodatkowe automatyczne działania w stosunku do rozpoznanych niechcianych wiadomości, jak na przykład przenoszenie ich do specjalnego folderu czy usuwanie. '>
++<!ENTITY trainingWarning.label 'Po uruchomieniu filtru niechcianej poczty należy rozpocząć sesję treningową, wskazując niepożądane wiadomości za pomocą przycisku Niechciana, znajdującego się na pasku narzędzi. Wszystkie wiadomości nieprawidłowo rozpoznane jako niechciane należy oznaczać jako pożądane. Filtr analizując działania użytkownika "uczy się" i dostosowywuje się do jego preferencji. Gdy skuteczność filtru będzie sadysfakcjonująca, użytkownik może zdecydować, aby wiadomości rozpoznane jako niechciane były automatycznie przenoszone do specjalnego folderu bądź też od razu usuwane.'>
+ <!ENTITY level.label "Włącz filtr niechcianej poczty dla bieżącego konta">
+ <!ENTITY level.accesskey "E">
+ 
+@@ -40,9 +37,8 @@
+ <!ENTITY resetTrainingData.label "Zresetuj dane treningowe">
+ <!ENTITY resetTrainingData.accesskey "r">
+ 
+-<!-- White List tab -->
+-<!ENTITY whiteListCaption.label "Wyjątki">
+-<!ENTITY whitelist.label "Nie oznaczaj wiadomości jako niechciana poczta, jeżeli adres nadawcy znajduje się w książce adresowej:">
++<!ENTITY whitelist.label "Nie oznaczaj wiadomości jako niechcianej, jeżeli adres nadawcy znajduje się w: ">
+ <!ENTITY whitelist.accesskey "c">
+ 
+-<!-- Black List tab -->
+\ No newline at end of file
++<!ENTITY ispHeaders.label "Ufaj nagłówkom niechcianej poczty umieszczonym przez: ">
++<!ENTITY ispHeaders.accesskey "U">
+\ No newline at end of file
+Only in 20050501-pl/pl/locale/pl/messenger: mailPrefsOverlay.dtd
+diff -u -r 20050501-pl/pl/locale/pl/messenger/messengercompose/composeMsgs.properties 20050515-pl/pl/locale/pl/messenger/messengercompose/composeMsgs.properties
+--- 20050501-pl/pl/locale/pl/messenger/messengercompose/composeMsgs.properties	2005-04-30 11:37:26.000000000 +0200
++++ 20050515-pl/pl/locale/pl/messenger/messengercompose/composeMsgs.properties	2005-05-15 01:31:34.000000000 +0200
+@@ -122,8 +122,12 @@
+ defaultSubject=(bez tematu)
+ chooseFileToAttach=Za\u0142\u0105cz plik do tej wiadomo\u015Bci
+ windowTitlePrefix=Tworzenie:
+-subjectDlogTitle=Wy\u015Blij wiadomo\u015B\u0107
++sendMsgTitle=Wy\u015Blij wiadomo\u015B\u0107
+ subjectDlogMessage=Nie podano tematu wysy\u0142anej wiadomo\u015Bci. Wprowad\u017A temat w pole poni\u017Cej lub wy\u015Blij bez tematu.
++
++#String used by the alert that tells the user an e-mail address is invalid
++addressInvalid=%1$S nie jest poprawnym adresem email. Adres email powinie\u0144 mie\u0107 budow\u0119 u\u017Cytkownik@domena. Prosz\u0119 poprawi\u0107 adres przed wys\u0142aniem wiadomo\u015Bci. 
++## String used by the dialog that ask the user to attach a web page
+ attachPageDlogTitle=Nale\u017Cy poda\u0107 po\u0142o\u017Cenie pliku do za\u0142\u0105czenia
+ attachPageDlogMessage=Adres strony (URL):
+ messageAttachmentSafeName=Za\u0142\u0105czona wiadomo\u015B\u0107
+diff -u -r 20050501-pl/pl/locale/pl/messenger/msgHdrViewOverlay.dtd 20050515-pl/pl/locale/pl/messenger/msgHdrViewOverlay.dtd
+--- 20050501-pl/pl/locale/pl/messenger/msgHdrViewOverlay.dtd	2005-04-30 07:28:38.000000000 +0200
++++ 20050515-pl/pl/locale/pl/messenger/msgHdrViewOverlay.dtd	2005-05-15 00:16:58.000000000 +0200
+@@ -40,6 +40,7 @@
+ 
+ <!ENTITY toField.label "Do: ">
+ <!ENTITY fromField.label "Od: ">
++<!ENTITY senderField.label "Nadawca: ">
+ <!ENTITY organizationField.label "Firma/Organizacja: ">
+ <!ENTITY replyToField.label "Odpowiedź do: ">
+ 
+diff -u -r 20050501-pl/pl/locale/pl/messenger/preferences/advanced.dtd 20050515-pl/pl/locale/pl/messenger/preferences/advanced.dtd
+--- 20050501-pl/pl/locale/pl/messenger/preferences/advanced.dtd	2005-05-02 08:58:32.000000000 +0200
++++ 20050515-pl/pl/locale/pl/messenger/preferences/advanced.dtd	2005-05-16 01:31:16.000000000 +0200
+@@ -4,7 +4,7 @@
+ 
+ <!-- General Settings -->
+ 
+-<!ENTITY showCondensedAddresses.label  "Pokazuj jedynie wyświetlaną nazwę dla osób z mojej książki adresowej">
++<!ENTITY showCondensedAddresses.label  "Pokazuj tylko nazwę kontaktu dla nadawcy z mojej książki adresowej">
+ <!ENTITY showCondensedAddresses.accesskey "P">
+ 
+ <!-- LOCALIZATION NOTE (markAsRead.label): This will concatenate with
+diff -u -r 20050501-pl/pl/locale/pl/messenger/preferences/fonts.dtd 20050515-pl/pl/locale/pl/messenger/preferences/fonts.dtd
+--- 20050501-pl/pl/locale/pl/messenger/preferences/fonts.dtd	2005-05-02 21:12:48.000000000 +0200
++++ 20050515-pl/pl/locale/pl/messenger/preferences/fonts.dtd	2005-05-16 01:08:56.000000000 +0200
+@@ -4,7 +4,7 @@
+ <!ENTITY language.accesskey "C">
+ 
+ <!ENTITY typefaces.label "Krój czcionki">
+-<!ENTITY sizes.label "Rozmiar (piksele)">
++<!ENTITY sizes.label "Rozmiar (px)">
+ 
+ <!ENTITY proportional.label "Proporcjonalna:">
+ <!ENTITY proportional.accesskey "p">
+@@ -41,13 +41,13 @@
+ <!ENTITY  font.langGroup.canadian "Ujednolicony zapis języków Kanadyjskich">
+ <!ENTITY  font.langGroup.ethiopic "Etiopskie">
+ <!ENTITY  font.langGroup.georgian "Gruzińskie">
+-<!ENTITY  font.langGroup.gujarati "Gujarati">
++<!ENTITY  font.langGroup.gujarati "Gudżarati">
+ <!ENTITY  font.langGroup.gurmukhi "Gurmukhi">
+-<!ENTITY  font.langGroup.khmer "Khmerskie">
+-<!ENTITY  font.langGroup.malayalam "Malayalam">
++<!ENTITY  font.langGroup.khmer "Kambodżańskie">
++<!ENTITY  font.langGroup.malayalam "Malajalam">
+ 
+ <!-- Minimum font size -->
+-<!ENTITY minSize.label "Minimalny rozmiar czcionki:">
++<!ENTITY minSize.label "Minimalny rozmiar:">
+ <!ENTITY minSize.accesskey "z">
+ <!ENTITY minSize.none "Brak">
+ 
+@@ -57,7 +57,7 @@
+ 
+ <!ENTITY newLanguages.label 'Nowe języki mogą być skonfigurowane przy użyciu panelu "Języki".'>
+ 
+-<!ENTITY useDocumentFonts.label "Zezwalaj na użycie czcionek zadeklarowanych w wyświetlanych wiadomościach">
++<!ENTITY useDocumentFonts.label "Zezwalaj na używanie czcionek zadeklarowanych w wiadomościach">
+ <!ENTITY useDocumentFonts.accesskey "o">
+ 
+ <!-- font scaling -->
+diff -u -r 20050501-pl/pl/locale/pl/messenger/preferences/privacy.dtd 20050515-pl/pl/locale/pl/messenger/preferences/privacy.dtd
+--- 20050501-pl/pl/locale/pl/messenger/preferences/privacy.dtd	2005-05-02 12:36:06.000000000 +0200
++++ 20050515-pl/pl/locale/pl/messenger/preferences/privacy.dtd	2005-05-16 01:10:54.000000000 +0200
+@@ -17,7 +17,7 @@
+ <!ENTITY enablePhishingDetector.accesskey  "S">
+ 
+ <!-- Passwords -->
+-<!ENTITY savedPasswords.intro         "&brandShortName; może zapamiętać hasła dla wszystkich kont użytkownika, dzięki czemu nie będzie on musiał ich wprowadzać przy każdym logowaniu.">
++<!ENTITY savedPasswords.intro         "&brandShortName; może zapamiętać hasła dla wszystkich kont użytkownika, dzięki czemu nie będzie konieczności wprowadzania ich przy każdym logowaniu.">
+ <!ENTITY  encryptEnabled.label        "Użyj głównego hasła do zaszyfrowania przechowywanych haseł">
+ <!ENTITY  encryptEnabled.accesskey    "s">
+ <!ENTITY  masterPassword.intro        "Główne hasło, jeśli jest ustalone, chroni wszystkie hasła użytkownika - ale musi być ono wprowadzone jednorazowo dla każdej sesji.">
+@@ -41,6 +41,6 @@
+ <!ENTITY viewSecurityDevices.accesskey  "U">
+ 
+ <!-- Anti Virus -->
+-<!ENTITY antiVirus.intro      "&brandShortName; może ułatwić prace programom antywirusowym poprzez umożliwienie im przeanalizowania przychodzących wiadomości pocztowych, zanim zostaną one zapisane w programie.">
+-<!ENTITY antiVirus.label      "Zezwól programom antywirusowym na przenoszenie poszczególnych wiadomości do kwarantanny.">
++<!ENTITY antiVirus.intro      "&brandShortName; może ułatwić pracę programowi antywirusowemu poprzez umożliwienie mu przeanalizowania przychodzących wiadomości pocztowych, zanim zostaną one zapisane w programie.">
++<!ENTITY antiVirus.label      "Zezwól programowi antywirusowemu na przenoszenie poszczególnych wiadomości do kwarantanny.">
+ <!ENTITY antiVirus.accesskey  "l">
+\ No newline at end of file
+diff -u -r 20050501-pl/pl/locale/pl/messenger/search.properties 20050515-pl/pl/locale/pl/messenger/search.properties
+--- 20050501-pl/pl/locale/pl/messenger/search.properties	2004-04-30 20:47:42.000000000 +0200
++++ 20050515-pl/pl/locale/pl/messenger/search.properties	2005-05-15 07:37:46.000000000 +0200
+@@ -7,6 +7,6 @@
+ labelForSearchButton=Znajd\u017A
+ accesskeyForStopButton=Z
+ accesskeyForSearchButton=Z
+-orSearchText=lub
+-andSearchText=i
+-initialSearchText=
++
++moreButtonTooltipText=Dodaj now\u0105 regu\u0142\u0119
++lessButtonTooltipText=Usu\u0144 t\u0119 regu\u0142\u0119
+\ No newline at end of file
+diff -u -r 20050501-pl/pl/locale/pl/messenger/searchTermOverlay.dtd 20050515-pl/pl/locale/pl/messenger/searchTermOverlay.dtd
+--- 20050501-pl/pl/locale/pl/messenger/searchTermOverlay.dtd	2003-12-20 19:38:52.000000000 +0100
++++ 20050515-pl/pl/locale/pl/messenger/searchTermOverlay.dtd	2005-05-15 07:44:22.000000000 +0200
+@@ -1,15 +1,14 @@
+-<!ENTITY more.label "Więcej">
+-<!ENTITY more.accesskey "W">
+-<!ENTITY less.label "Mniej">
+-<!ENTITY less.accesskey "M">
+ <!ENTITY matchAll.label "spełniają wszystkie poniższe kryteria:">
+ <!ENTITY matchAll.accesskey "a">
+ <!ENTITY matchAny.label "spełniają dowolne poniższe kryteria:">
+ <!ENTITY matchAny.accesskey "o">
+-<!ENTITY searchTermListSpace1FlexValue "1">
+-<!ENTITY searchTermListAttributesFlexValue "4">
+-<!ENTITY searchTermListSpace2FlexValue "0">
+-<!ENTITY searchTermListOperatorsFlexValue "4">
+-<!ENTITY searchTermListSpace3FlexValue "0">
+-<!ENTITY searchTermListValueFlexValue "4">
+-<!ENTITY searchTermListSpace4FlexValue "1">
++
++<!-- LOCALIZATION NOTE
++  The values below are used to control the widths of the search widgets.
++  Change the values only when the localized strings in the popup menus
++  are truncated in the widgets.
++ -->
++<!ENTITY searchTermListAttributesFlexValue "5">
++<!ENTITY searchTermListOperatorsFlexValue "5">
++<!ENTITY searchTermListValueFlexValue "5">
++<!ENTITY searchTermListButtonsFlexValue "2">
+\ No newline at end of file
+diff -u -r 20050501-pl/pl/locale/pl/messenger/start.html 20050515-pl/pl/locale/pl/messenger/start.html
+--- 20050501-pl/pl/locale/pl/messenger/start.html	2005-05-02 07:38:58.000000000 +0200
++++ 20050515-pl/pl/locale/pl/messenger/start.html	2005-05-15 07:53:18.000000000 +0200
+@@ -107,7 +107,7 @@
+ </head>
+ 
+ <body>
+-<h1>Witamy w Mozilli Thunderbird!</h1>
++<h1>Witamy w Mozilli Thunderbird</h1>
+ <div id="indent">
+ <p>Mozilla Thunderbird jest doskonałym programem pocztowym obsługującym wszystkie popularne protokoły: SMTP, POP3, IMAP, NNTP; cechuje go trójpanelowy interfejs użytkownika z możliwością dodatkowej konfiguracji, pozwala w łatwy sposób wyszukiwać i filtrować wiadomości, zawiera inteligentny filtr niechcianej poczty, książkę adresową i może obsługiwać wiele tożsamości internetowych w obrębie tego samego profilu.</p>
+ <h2>Zintegrowane funkcje</h2>
+diff -u -r 20050501-pl/pl/locale/pl/messenger-offline/offline.properties 20050515-pl/pl/locale/pl/messenger-offline/offline.properties
+--- 20050501-pl/pl/locale/pl/messenger-offline/offline.properties	2005-04-30 04:54:44.000000000 +0200
++++ 20050515-pl/pl/locale/pl/messenger-offline/offline.properties	2005-05-15 03:38:58.000000000 +0200
+@@ -12,9 +12,6 @@
+ # License.
+ #
+ # The Original Code is mozilla.org code.
+-#    Marek Wawoczny <gmbh@mozillapl.org> (Polish translation)
+-#    Piotr Bartecki <pbartecki@mozillapl.org> (Polish translation)
+-#    Piotr Komoda <gorky@civ.pl> (Polish translation)
+ #
+ # The Initial Developer of the Original Code is
+ # Netscape Communications Corporation.
+@@ -22,6 +19,9 @@
+ # the Initial Developer. All Rights Reserved.
+ #
+ # Contributor(s):
++#    Marek Wawoczny <gmbh@mozillapl.org> (Polish translation)
++#    Piotr Bartecki <pbartecki@mozillapl.org> (Polish translation)
++#    Piotr Komoda <gorky@civ.pl> (Polish translation)
+ #
+ # Alternatively, the contents of this file may be used under the terms of
+ # either the GNU General Public License Version 2 or later (the "GPL"), or
+diff -u -r 20050501-pl/pl/locale/pl/mozapps/extensions/extensions.properties 20050515-pl/pl/locale/pl/mozapps/extensions/extensions.properties
+--- 20050501-pl/pl/locale/pl/mozapps/extensions/extensions.properties	2005-04-30 15:08:16.000000000 +0200
++++ 20050515-pl/pl/locale/pl/mozapps/extensions/extensions.properties	2005-05-15 00:36:04.000000000 +0200
+@@ -17,6 +17,7 @@
+ installWaiting=Czekam...
+ installInstalling=Instalowanie...
+ droppedInWarning=Nast\u0119puj\u0105ce elementy zosta\u0142y odnalezione w folderze rozszerze\u0144. Zainstalowa\u0107 je?
++disabledBySafeMode=Element %S zosta\u0142 wy\u0142\u0105czony przez tryb awaryjny.
+ 
+ extensions.update.url=https://addons.mozilla.org/update/VersionCheck.php?reqVersion=%REQ_VERSION%&id=%ITEM_ID%&version=%ITEM_VERSION%&maxAppVersion=%ITEM_MAXAPPVERSION%&appID=%APP_ID%&appVersion=%APP_VERSION%
+ extensions.getMoreExtensionsURL=https://addons.mozilla.org/extensions/?application=%APPID%
+diff -u -r 20050501-pl/pl/locale/pl/mozapps/preferences/ocsp.dtd 20050515-pl/pl/locale/pl/mozapps/preferences/ocsp.dtd
+--- 20050501-pl/pl/locale/pl/mozapps/preferences/ocsp.dtd	2005-04-30 22:00:34.000000000 +0200
++++ 20050515-pl/pl/locale/pl/mozapps/preferences/ocsp.dtd	2005-05-16 22:10:12.000000000 +0200
+@@ -1,5 +1,7 @@
++<!ENTITY window.width                 "50em">
++
+ <!ENTITY ocspDialog.title             "Weryfikacja">
+-<!ENTITY validation.ocsp.description  "&brandShortName; może używać protokołu statusu certyfikatu (OCSP) do sprawdzania certyfikatów. &brandShortName; może korzystać z jednego z poniższych ustawień OCSP:">
++<!ENTITY validation.ocsp.description  "&brandShortName; może używać protokołu weryfikacji statusu certyfikatu (OCSP) do sprawdzania certyfikatów. &brandShortName; może korzystać z jednego z poniższych ustawień OCSP:">
+ <!ENTITY disableOCSP.label            "Nie używaj OCSP do weryfikacji certyfikatów">
+ <!ENTITY certOCSP.label               "Użyj OCSP do weryfikacji wyłącznie tych certyfikatów, które zawierają adres URL usługi OCSP">
+ <!ENTITY proxyOCSP.label              "Użyj OCSP do weryfikacji wszystkich certyfikatów, używając tego adresu URL i urzędu weryfikującego:">
+diff -u -r 20050501-pl/pl/locale/pl/navigator/navigator.properties 20050515-pl/pl/locale/pl/navigator/navigator.properties
+--- 20050501-pl/pl/locale/pl/navigator/navigator.properties	2005-04-30 18:46:14.000000000 +0200
++++ 20050515-pl/pl/locale/pl/navigator/navigator.properties	2005-05-15 00:23:04.000000000 +0200
+@@ -8,8 +8,27 @@
+ droponhomemsg=Czy wybrany dokument ma zosta\u0107 now\u0105 stron\u0105 domow\u0105?
+ droponhomeokbutton=Ustaw jako stron\u0119 domow\u0105
+ jserror=Wyst\u0105pi\u0142 b\u0142\u0105d na stronie. Kliknij tutaj dwukrotnie, aby zobaczy\u0107 szczeg\u00F3\u0142y.
++
++#
++# localizable preference value
++#
++
++# all.js
++#
++# Localization Note: Cases of charset names must be preserved. If you're 
++# adding charsets to your localized version, please refer to 
++# intl/uconv/src/charsetalias.properties file for the list of canonical 
++# charset names and use canonical names exactly as listed there.
++# Also, note that UTF-8 MUST be listed in intl.charsetmenu.browser.static.
+ general.useragent.locale=pl
++# Localization Note: font.language.group controls the initial setting of the
++# language drop-down in the fonts pref panel. Set it to the value of one of the
++# menuitems in the "selectLangs" menulist in
++# /mail/components/preferences/fonts.xul
+ font.language.group=x-central-euro
++# Localization Note: Add the code for your language at the front of this entry,
++# leaving "en-us, en" for fallback. It's recommended to use the same form, e.g.
++# "ja-jp, ja, en-us, en"
+ intl.accept_languages=pl, en-us, en
+ intl.charsetmenu.browser.static=ISO-8859-2, UTF-8
+ intl.charsetmenu.browser.more1=ISO-8859-1, ISO-8859-15, IBM850, x-mac-roman, windows-1252, ISO-8859-14, ISO-8859-7, x-mac-greek, windows-1253, x-mac-icelandic, ISO-8859-10, ISO-8859-3
+diff -u -r 20050501-pl/pl/locale/pl/pippki/pippki.properties 20050515-pl/pl/locale/pl/pippki/pippki.properties
+--- 20050501-pl/pl/locale/pl/pippki/pippki.properties	2005-04-30 06:33:24.000000000 +0200
++++ 20050515-pl/pl/locale/pl/pippki/pippki.properties	2005-05-15 00:29:00.000000000 +0200
+@@ -155,6 +155,9 @@
+ crlAutoupdateNotEnabled=Wy\u0142\u0105czona
+ crlAutoupdateOk=OK
+ crlAutoupdateFailed=Nieudana
++crlImportNewCRLTitle=Importuj list\u0119 uniewa\u017Cnionych certyfikat\u00F3w
++crlImportNewCRLLabel=Importuj list\u0119 CRL z:
++
+ importEmailCertPrompt=Wybierz pliki zawieraj\u0105ce certyfikat(y) e-mail innych os\u00F3b, kt\u00F3re maj\u0105 zosta\u0107 zaimportowane
+ importCACertsPrompt=Wybierz pliki zawieraj\u0105ce certyfikat(y) CA, kt\u00F3re maj\u0105 zosta\u0107 zaimportowane
+ importWebSiteCertPrompt=Wybierz pliki zawieraj\u0105ce certyfikat(y) stron internetowych, kt\u00F3re maj\u0105 zosta\u0107 zaimportowane
+

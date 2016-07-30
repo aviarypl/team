@@ -1,0 +1,32 @@
+diff -r 900e89f6dfc2 template/pl/default/global/code-error.html.tmpl
+--- a/template/pl/default/global/code-error.html.tmpl	Tue May 10 10:07:05 2011 +0200
++++ b/template/pl/default/global/code-error.html.tmpl	Wed May 11 20:32:17 2011 +0200
+@@ -62,5 +62,5 @@
+     [% END %]
+     Nie może też zawierać żadnego z poniższych znaków specjalnych:
+-    <tt>\ ( ) &amp; &lt; &gt; , ; : &quot; [ ]</tt>, ani białych znaków.
++    <tt>\ ( ) &amp; &lt; &gt; , ; : &quot; [ ]</tt> ani białych znaków.
+ 
+   [% ELSIF error == "authres_unhandled" %]
+@@ -283,5 +283,5 @@
+ 
+   [% ELSIF error == "flag_type_target_type_invalid" %]
+-    Docelowy element nie był ani <em>[% terms.bledem %]</em>, ani <em>załącznikiem</em>
++    Docelowy element nie był ani <em>[% terms.bledem %]</em>, ani <em>załącznikiem</em>,
+     lecz <em>[% target_type FILTER html %]</em>.
+   
+@@ -461,5 +461,5 @@
+ 
+   [% ELSIF error == "not_in_transaction" %]
+-    Podjęto próbę zakończenia nie rozpoczętej wcześniej transakcji.
++    Podjęto próbę zakończenia nierozpoczętej wcześniej transakcji.
+ 
+   [% ELSIF error == "comma_operator_deprecated" %]
+@@ -479,5 +479,5 @@
+       co oznacza kod błędu: <code>[% error FILTER html %]</code>.
+ 
+-      Jeśli jesteś zwykłym użytkownikiem [% terms.Bugzilli %] zapisz tę stronę
++      Jeśli jesteś zwykłym użytkownikiem [% terms.Bugzilli %], zapisz tę stronę
+       i wyślij ją do [% Param('maintainer') %].
+     [% ELSE %]
+

@@ -1,0 +1,168 @@
+=== default/admin/flag-type/confirm-delete.html.tmpl
+==================================================================
+--- default/admin/flag-type/confirm-delete.html.tmpl  (revision 59)
++++ default/admin/flag-type/confirm-delete.html.tmpl  (local)
+@@ -29,7 +29,9 @@
+ %]
+ 
+ <p>
+-   Występuje [% flag_count %] flag typu [% name FILTER html %].
++   Występuje [% flag_count %] 
++   [% PROCESS ODMIEN c=flag_count o1="flaga" o2="flagi" o3="flag" %] typu 
++   [% name FILTER html %].
+    Jeśli usuniesz ten typ, również odpowiadające mu flagi zostaną usunięte. 
+    Pamiętaj, że zamiast usuwać flagę, możesz ją również 
+    <a href="editflagtypes.cgi?action=deactivate&amp;id=[% flag_type.id %]">deaktywować</a>,
+@@ -51,7 +53,7 @@
+       </td>
+       <td align="right">
+          <a href="editflagtypes.cgi">
+-            Nie usuwaj
++            Nie, nie usuwaj
+          </a>
+       </td>
+    </tr>
+=== default/admin/flag-type/edit.html.tmpl
+==================================================================
+--- default/admin/flag-type/edit.html.tmpl  (revision 59)
++++ default/admin/flag-type/edit.html.tmpl  (local)
+@@ -34,19 +34,19 @@
+ [% END %]
+ 
+ [% IF type.target_type == "bug" %]
+-  [% title = BLOCK %]Create Flag Type for [% terms.Bugs %][% END %]
+-  [% typeLabelLowerPlural = BLOCK %][% terms.bugs %][% END %]
+-  [% typeLabelLowerSingular = BLOCK %][% terms.bug %][% END %]
++  [% title = BLOCK %]Tworzenie typu flagi dla [terms.bledow %][% END %]
++  [% typeLabelLowerPlural = BLOCK %][% terms.bledy %][% END %]
++  [% typeLabelLowerSingular = BLOCK %][% terms.blad %][% END %]
+ [% ELSE %]
+-  [% title = "Tworzenie typu flagi dla załączników" %]
+-  [% typeLabelLowerPlural = BLOCK %]attachments[% END %]
+-  [% typeLabelLowerSingular = BLOCK %]attachment[% END %]
++  [% title = "Tworzenie typu flagi dla załączników" %]
++  [% typeLabelLowerPlural = BLOCK %]załączniki[% END %]
++  [% typeLabelLowerSingular = BLOCK %]załącznik[% END %]
+ [% END %]
+ 
+ [% IF last_action == "copy" %]
+-  [% title = "Tworzenie typu flagi bazującej na typie $type.name" %]
++  [% title = "Tworzenie typu flagi bazującej na typie $type.name" %]
+ [% ELSIF last_action == "edit" %]
+-  [% title = "Edycja typu flagi $type.name" %]
++  [% title = "Edycja typu flagi $type.name" %]
+ [% END %]
+ 
+ [% PROCESS global/header.html.tmpl
+@@ -81,26 +81,26 @@
+     </tr>
+ 
+     <tr>
+-      <th>Opis:</th>
++      <th>Opis:</th>
+       <td>
+-        zwięzły opis tego typu <br>
++        zwięzły opis tego typu <br>
+         <textarea name="description" rows="4" cols="80">[% type.description FILTER html %]</textarea>
+       </td>
+     </tr>
+ 
+     <tr>
+-      <th>Kategoria:</th>
++      <th>Kategoria:</th>
+ 
+       <td>
+-        produkt/składnik, do którego [% typeLabelLowerPlural %] musi
+-        (dołączenie) lub nie musi (wykluczenie) należeć aby użytkownicy
++        produkt/składnik, do którego [% typeLabelLowerPlural %] muszą
++        (dołączenie) lub nie muszą (wykluczenie) należeć, aby użytkownicy
+         mogli dla nich ustawiać flagę tego typu
+         <table>
+           <tr>
+             <td style="vertical-align: top;">
+-              <b>Produkty/Składniki:</b><br>
++              <b>Produkty/Składniki:</b><br>
+               <select name="product" onchange="selectProduct(this.form, 'product', 'component', '__Any__');">
+-                <option value="">__Any__</option>
++                <option value="">__DOWOLNY__</option>
+                 [% FOREACH item = products %]
+                   <option value="[% item FILTER html %]" 
+                           [% "selected" IF type.product.name == item %]>
+@@ -108,7 +108,7 @@
+                 [% END %]
+               </select><br>
+               <select name="component">
+-                <option value="">__Any__</option>
++                <option value="">__DOWOLNY__</option>
+                 [% FOREACH item = components %]
+                   <option value="[% item FILTER html %]" 
+                           [% "selected" IF type.component.name == item %]>
+@@ -119,7 +119,7 @@
+               <input type="submit" name="categoryAction-exclude" value="Wyklucz">
+             </td>
+             <td style="vertical-align: top;">
+-              <b>Dołączenia:</b><br>
++              <b>Dołączenia:</b><br>
+               [% PROCESS "global/select-menu.html.tmpl" name="inclusion_to_remove" multiple="1" size="4" options=type.inclusions %]<br>
+               <input type="submit" name="categoryAction-removeInclusion" value="Usuń dołączenia">
+             </td>
+@@ -138,7 +138,7 @@
+       <td>
+         liczba pomiędzy 1 a 32767, według której ten typ będzie sortowany
+         w czasie wyświetlania na liście; zignoruj to, jeśli nie zależy Ci
+-        na kolejności, w jakiej typu zostaną wyświetlone lub jeśli chcesz, aby 
++        na kolejności w jakiej elementy zostaną wyświetlone lub jeśli chcesz, aby 
+         były wyświetlane w porządku alfabetycznym<br>
+         <input type="text" name="sortkey" value="[% type.sortkey || 1 %]" size="5" maxlength="5">
+       </td>
+@@ -179,7 +179,7 @@
+       <th>&nbsp;</th>
+       <td>
+         <input type="checkbox" name="is_requesteeble" [% "checked" IF type.is_requesteeble || !type.is_requesteeble.defined %]>
+-        żądana określona (użytkownicy mogą poprosić określone osoby o ustawienie tej flagi, zamiast wiatru)
++        żądana określona (użytkownicy mogą poprosić określone osoby o ustawienie tej flagi, zamiast domyślnej osoby)
+       </td>
+     </tr>
+ 
+=== default/admin/keywords/confirm-delete.html.tmpl
+==================================================================
+--- default/admin/keywords/confirm-delete.html.tmpl  (revision 59)
++++ default/admin/keywords/confirm-delete.html.tmpl  (local)
+@@ -34,8 +34,8 @@
+   [% IF bug_count == 1 %]
+     Istnieje jeden [% terms.blad %] z tym słowem kluczowym.
+   [% ELSE %]
+-    Istnieje [% bug_count %] [%+terms.bledow %] z tym
+-    słowem kluczowym.
++    Istnieje [% bug_count %] [% PROCESS ODMIEN c=bug_count o1="" o2=terms.bledy o3=terms.bledow %] 
++    z tym słowem kluczowym.
+   [% END %]
+   
+   Czy jesteś <b>pewien</b>, że chcesz usunąć
+=== default/admin/keywords/edit.html.tmpl
+==================================================================
+--- default/admin/keywords/edit.html.tmpl  (revision 59)
++++ default/admin/keywords/edit.html.tmpl  (local)
+@@ -52,7 +52,7 @@
+         [% IF bug_count %]
+           [% bug_count %]
+         [% ELSE %]
+-          none
++          brak
+         [% END %]
+       </td>
+     </tr>
+=== default/admin/keywords/list.html.tmpl
+==================================================================
+--- default/admin/keywords/list.html.tmpl  (revision 59)
++++ default/admin/keywords/list.html.tmpl  (local)
+@@ -74,7 +74,7 @@
+       [% IF keyword.bug_count %]
+         [% keyword.bug_count %]
+       [% ELSE %]
+-        none
++        brak
+       [% END %]
+     </td>
+     <th valign="top">
+

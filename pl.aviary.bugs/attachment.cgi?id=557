@@ -1,0 +1,176 @@
+Index: browser/chrome/browser/browser.dtd
+===================================================================
+RCS file: /l10n/l10n/pl/browser/chrome/browser/browser.dtd,v
+retrieving revision 1.7
+diff -u -r1.7 browser.dtd
+--- browser/chrome/browser/browser.dtd	20 Jul 2005 21:58:58 -0000	1.7
++++ browser/chrome/browser/browser.dtd	22 Jul 2005 08:37:50 -0000
+@@ -174,7 +174,7 @@
+ <!ENTITY preferencesCmdUnix.label       "Preferencje">
+ <!ENTITY preferencesCmdUnix.accesskey   "r"> 
+ 
+-<!ENTITY sanitizeCmd.label            "Sanitize &brandShortName;">
++<!ENTITY sanitizeCmd.label            "Oczyszczanie">
+ <!ENTITY sanitizeCmd.accesskey        "z">
+ 
+ <!ENTITY viewMenu.label "Widok" >
+Index: browser/chrome/browser/browser.properties
+===================================================================
+RCS file: /l10n/l10n/pl/browser/chrome/browser/browser.properties,v
+retrieving revision 1.9
+diff -u -r1.9 browser.properties
+--- browser/chrome/browser/browser.properties	20 Jul 2005 21:58:58 -0000	1.9
++++ browser/chrome/browser/browser.properties	22 Jul 2005 08:37:50 -0000
+@@ -85,9 +85,8 @@
+ missingpluginsMessage.button.accesskey=i
+ 
+ # Sanitize
+-# FIXME - potrzeba DOBREGO polskiego tlumaczenia (GOOD Polish word for this is needed)
+-sanitizeWithPromptLabel=Sanitize %S...
+-sanitizeButton=Sanitize Now
++sanitizeWithPromptLabel=Oczy\u015b\u0107 %S...
++sanitizeButton=Oczy\u015b\u0107 teraz
+ 
+ # Check for Updates
+ updates_checkForUpdates=Sprawd\u017a dost\u0119pno\u015b\u0107 aktualizacji...
+Index: browser/chrome/browser/sanitize.dtd
+===================================================================
+RCS file: /l10n/l10n/pl/browser/chrome/browser/sanitize.dtd,v
+retrieving revision 1.1
+diff -u -r1.1 sanitize.dtd
+--- browser/chrome/browser/sanitize.dtd	16 Apr 2005 17:11:36 -0000	1.1
++++ browser/chrome/browser/sanitize.dtd	22 Jul 2005 08:37:50 -0000
+@@ -1,5 +1,5 @@
+ <!-- FIXME: polish word for "Sanitize" needed  -->
+-<!ENTITY sanitizeDialog.title         "Sanitize &brandShortName;">
++<!ENTITY sanitizeDialog.title         "Oczyszczanie">
+ 
+ <!ENTITY sanitizeItems.label          "Wyczyść następujące elementy:">
+ <!ENTITY itemHistory.label            "Historię przeglądanych stron">
+@@ -10,4 +10,4 @@
+ <!ENTITY itemDownloads.label          "Historię pobieranych plików">
+ 
+ <!-- FIXME: polish word for "Sanitize" needed  -->
+-<!ENTITY promptOnSanitize.label       "Zapytaj mnie zanim Sanitizing &brandShortName;">
++<!ENTITY promptOnSanitize.label       "Zapytaj mnie przed oczyszczaniem">
+Index: browser/chrome/browser/preferences/privacy.dtd
+===================================================================
+RCS file: /l10n/l10n/pl/browser/chrome/browser/preferences/privacy.dtd,v
+retrieving revision 1.7
+diff -u -r1.7 privacy.dtd
+--- browser/chrome/browser/preferences/privacy.dtd	7 Jul 2005 20:37:18 -0000	1.7
++++ browser/chrome/browser/preferences/privacy.dtd	22 Jul 2005 08:37:50 -0000
+@@ -80,6 +80,6 @@
+ <!ENTITY  clearCache.label            "Wyczyść teraz pamięć podręczną">
+ <!ENTITY  clearCache.accesskey        "e">
+ 
+-<!ENTITY  sanitizeSettings.label      "Sanitize Settings..."><!-- FIXME -->
++<!ENTITY  sanitizeSettings.label      "Ustawienia oczyszczania...">
+ <!ENTITY  sanitizeSettings.accesskey  "z">
+-<!ENTITY  sanitize.intro              "Sanitize automatycznie usuwa prywatne informacje, kiedy naciśniesz skrót klawiaturowy lub zamkniesz program &brandShortName;.">
++<!ENTITY  sanitize.intro              "Oczyszczanie automatycznie usuwa prywatne informacje, kiedy naciśniesz skrót klawiaturowy lub zamkniesz program &brandShortName;.">
+Index: browser/chrome/browser/preferences/sanitize.dtd
+===================================================================
+RCS file: /l10n/l10n/pl/browser/chrome/browser/preferences/sanitize.dtd,v
+retrieving revision 1.2
+diff -u -r1.2 sanitize.dtd
+--- browser/chrome/browser/preferences/sanitize.dtd	22 Apr 2005 19:27:49 -0000	1.2
++++ browser/chrome/browser/preferences/sanitize.dtd	22 Jul 2005 08:37:50 -0000
+@@ -1,9 +1,9 @@
+ <!-- FIXME (no good Polish word for "Sanitize" yet) -->
+ 
+-<!ENTITY sanitizeDialog.title         "Sanitize">
++<!ENTITY sanitizeDialog.title         "Oczyszczanie">
+ <!ENTITY window.width                 "30em">
+ 
+-<!ENTITY items.label                  "Sanitize Items">
++<!ENTITY items.label                  "Czyszczone elementy">
+ <!ENTITY sanitizeItems.label          "Wyczyść poniższe elementy podczas Sanitizing &brandShortName;:">
+ <!ENTITY itemHistory.label            "Historia przeglądania">
+ <!ENTITY itemFormData.label           "Zapamiętane dane formularzy">
+@@ -12,7 +12,7 @@
+ <!ENTITY itemCache.label              "Pamięć podręczna">
+ <!ENTITY itemDownloads.label          "Historia pobieranych plików">
+ 
+-<!ENTITY settings.label               "Ustawienia Sanitize">
+-<!ENTITY sanitizeOnShutDown.label     "Sanitize &brandShortName; przy wyłączaniu">
+-<!ENTITY promptOnSanitize.label       "Zapytaj mnie zanim zaczniesz Sanitizing &brandShortName;">
++<!ENTITY settings.label               "Ustawienia oczyszczania">
++<!ENTITY sanitizeOnShutDown.label     "Oczyść przy wyłączaniu programu &brandShortName;">
++<!ENTITY promptOnSanitize.label       "Zapytaj mnie zanim zaczniesz oczyszczanie">
+ 
+Index: browser/chrome/help/firebird-toc.rdf
+===================================================================
+RCS file: /l10n/l10n/pl/browser/chrome/help/firebird-toc.rdf,v
+retrieving revision 1.8
+diff -u -r1.8 firebird-toc.rdf
+--- browser/chrome/help/firebird-toc.rdf	19 Jul 2005 22:23:42 -0000	1.8
++++ browser/chrome/help/firebird-toc.rdf	22 Jul 2005 08:37:51 -0000
+@@ -204,7 +204,7 @@
+         <rdf:li> <rdf:Description ID="prefs-download-history" nc:name="Historia pobrań" nc:link="prefs.xhtml#privacy_download_history"/> </rdf:li>
+         <rdf:li> <rdf:Description ID="prefs-cookies" nc:name="Ciasteczka" nc:link="prefs.xhtml#privacy_cookies"/> </rdf:li>
+         <rdf:li> <rdf:Description ID="prefs-cache" nc:name="Pamięć podręczna" nc:link="prefs.xhtml#privacy_cache"/> </rdf:li>
+-        <rdf:li> <rdf:Description ID="prefs-sanitize" nc:name="Ustawienia Sanitize" nc:link="prefs.xhtml#sanitize"/> </rdf:li>
++        <rdf:li> <rdf:Description ID="prefs-sanitize" nc:name="Ustawienia oczyszczania" nc:link="prefs.xhtml#sanitize"/> </rdf:li>
+       </rdf:Seq>
+     </nc:subheadings>
+   </rdf:Description>
+Index: browser/chrome/help/menu_reference.xhtml
+===================================================================
+RCS file: /l10n/l10n/pl/browser/chrome/help/menu_reference.xhtml,v
+retrieving revision 1.7
+diff -u -r1.7 menu_reference.xhtml
+--- browser/chrome/help/menu_reference.xhtml	19 Jul 2005 17:34:42 -0000	1.7
++++ browser/chrome/help/menu_reference.xhtml	22 Jul 2005 08:37:52 -0000
+@@ -264,8 +264,8 @@
+   <p>Wyświetla okno zawierające szczegółowe dane na temat bieżącej strony,
+   takie jak typ dokumentu, użyte kodowanie, wielkość strony, dane o formularzach i mediach na stronie, dane o odnośnikach na stronie, informacje dotyczące zabezpieczeń i inne.</p>
+ 
+-  <h3 id="sanitize">Sanitize &brandShortName;...</h3>
+-  <p>Czyści elementy zaznaczone w ustawieniach Sanitize w panelu Prywatność okna &pref.menuPath;.
++  <h3 id="sanitize">Oczyszczanie...</h3>
++  <p>Czyści elementy zaznaczone w ustawieniach oczyszczania w panelu Prywatność okna &pref.menuPath;.
+ Domyślnie prosi o potwierdzenie.</p>
+ 
+   <h3 class="win" id="options">&pref.pluralCaps;</h3>
+Index: browser/chrome/help/prefs.xhtml
+===================================================================
+RCS file: /l10n/l10n/pl/browser/chrome/help/prefs.xhtml,v
+retrieving revision 1.6
+diff -u -r1.6 prefs.xhtml
+--- browser/chrome/help/prefs.xhtml	19 Jul 2005 17:34:42 -0000	1.6
++++ browser/chrome/help/prefs.xhtml	22 Jul 2005 08:37:53 -0000
+@@ -108,13 +108,13 @@
+ z wyjątkiem karty <q>Hasła</q>. Aby usunąć wszystkie hasła, należy kliknąć przycisk
+ <em>Przeglądaj hasła</em> a następnie <em>Usuń wszystkie</em> w oknie Menedżera haseł.</p>
+ 
+-  <h3 id="sanitize">Ustawienia Sanitize</h3>
++  <h3 id="sanitize">Ustawienia oczyszczania</h3>
+   <p>&brandShortName; pozwala na szybkie wyczyszczenie konkretnych lub wszystkich
+ 	 elementów prywatności &ndash; wystarczy nacisnąć
+     &accelKey;+&shiftKey;+<kbd>Del</kbd> lub wybrać z menu pozycję <span class="menuPath">
+-    Narzędzia &gt; Sanitize &brandShortName;...</span>. Można także nakazać programowi
++    Narzędzia &gt; Oczyszczanie...</span>. Można także nakazać programowi
+ 	&brandShortName; czyszczenie danych przy wyłączaniu programu. &pref.pluralCaps;
+-	z tym związane znajdują się w oknie <em>Sanitize &brandShortName;...</em>.</p>
++	z tym związane znajdują się w oknie <em>Oczyszczanie</em>.</p>
+ 
+   <p>Aby wyświetlić ustawienia dotyczące konkretnych elementów związanych z prywatnością, należy kliknąć na danej karcie.</p>
+ 
+Index: browser/chrome/help/shortcuts.xhtml
+===================================================================
+RCS file: /l10n/l10n/pl/browser/chrome/help/shortcuts.xhtml,v
+retrieving revision 1.8
+diff -u -r1.8 shortcuts.xhtml
+--- browser/chrome/help/shortcuts.xhtml	19 Jul 2005 17:34:42 -0000	1.8
++++ browser/chrome/help/shortcuts.xhtml	22 Jul 2005 08:37:53 -0000
+@@ -501,7 +501,7 @@
+         &accelKey;+<kbd>4</kbd></td>
+     </tr>
+     <tr>
+-      <td>Sanitize &brandShortName;</td>
++      <td>Oczyszczanie</td>
+       <td>&accelKey;+&shiftKey;+<kbd>Del</kbd></td>
+ 
+       <td>&nbsp;</td>
+

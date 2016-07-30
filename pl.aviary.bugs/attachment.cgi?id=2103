@@ -1,0 +1,55 @@
+diff --git a/browser/chrome/browser/browser.dtd b/browser/chrome/browser/browser.dtd
+--- a/browser/chrome/browser/browser.dtd
++++ b/browser/chrome/browser/browser.dtd
+@@ -636,16 +636,25 @@
+ 
+ <!-- LOCALIZATION NOTE (markupButton.accesskey): The key bound to the Markup panel's
+ toolbar button -->
+ <!ENTITY markupButton.accesskey          "Z">
+ 
+ <!ENTITY socialToolbar.title "Przycisk paska społecznościowego">
+ <!ENTITY social.notLoggedIn.label "Nie zalogowano">
+ 
++<!-- LOCALIZATION NOTE (social.ok.label, social.ok.accesskey): this string is
++     used for the "OK" button for two different social panels. One appears when
++     the feature is activated (social.activated.* below), and the other when
++     the user clicks the "Share" button a second time (social.sharePopup.*
++     below). -->
++<!ENTITY social.ok.label       "OK">
++<!ENTITY social.ok.accesskey   "O">
++
+ <!ENTITY social.sharePopup.undo.label "Przestań udostępniać">
+ <!ENTITY social.sharePopup.undo.accesskey "P">
+-<!ENTITY social.sharePopup.ok.label "OK">
+-<!ENTITY social.sharePopup.ok.accesskey "O">
+ <!ENTITY social.sharePopup.shared.label "Udostępniasz już tę stronę.">
+ <!ENTITY social.sharePopup.portrait.arialabel "Obrazek profilu użytkownika">
+ <!ENTITY social.toggleSidebar.label "Pokaż panel boczny">
+ <!ENTITY social.toggleSidebar.accesskey "b">
++
++<!ENTITY social.activated.button.label "Oops, cofnij">
++<!ENTITY social.activated.button.accesskey "c">
+diff --git a/browser/chrome/browser/browser.properties b/browser/chrome/browser/browser.properties
+--- a/browser/chrome/browser/browser.properties
++++ b/browser/chrome/browser/browser.properties
+@@ -348,16 +348,19 @@
+ fullscreen.entered=%S działa teraz w trybie pełnoekranowym.
+ # LOCALIZATION NOTE (fullscreen.rememberDecision): displayed when we enter HTML5 fullscreen mode, %S is the domain name of the focused website (e.g. mozilla.com).
+ fullscreen.rememberDecision=Zapamiętaj ten wybór dla %S
+ 
+ social.shareButton.tooltip=Udostępnij
+ social.shareButton.sharedtooltip=Udostępniono
+ social.pageShared.label=Strona została udostępniona
+ 
++# LOCALIZATION NOTE (social.enabled.message): %1$S is the name of the social provider, %2$S is brandShortName (e.g. Firefox)
++social.activated.message=Integracja programu %2$S z serwisem %1$S została aktywowana.
++
+ # Webapps notification popup
+ webapps.install = Zainstaluj
+ webapps.install.accesskey = Z
+ #LOCALIZATION NOTE (webapps.requestInstall) %1$S is the web app name, %2$S is the site from which the web app is installed
+ webapps.requestInstall = Czy zainstalować aplikację "%1$S" z tej strony (%2$S)?
+ webapps.install.success=Zainstalowano aplikację
+ # LOCALIZATION NOTE (webapps.uninstall.notification): %S will be replaced with the name of the uninstalled web app
+ webapps.uninstall.notification=Aplikacja „%S” została odinstalowana z komputera.
+

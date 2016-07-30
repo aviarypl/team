@@ -1,0 +1,1289 @@
+diff -u -r 08_en-US/autoconfig/autoconfig.properties 09_en-US/autoconfig/autoconfig.properties
+--- 08_en-US/autoconfig/autoconfig.properties	2002-06-12 20:51:00.000000000 +0200
++++ 09_en-US/autoconfig/autoconfig.properties	2004-01-14 01:55:00.000000000 +0100
+@@ -3,3 +3,6 @@
+ 
+ autoConfigTitle = AutoConfig Alert
+ autoConfigMsg = Netscape.cfg/AutoConfig failed. Please contact your system administrator. \n Error: %S failed:
++
++emailPromptTitle = Email Address
++emailPromptMsg = Enter your email address
+diff -u -r 08_en-US/autoconfig/contents.rdf 09_en-US/autoconfig/contents.rdf
+--- 08_en-US/autoconfig/contents.rdf	2004-02-07 12:16:00.000000000 +0100
++++ 09_en-US/autoconfig/contents.rdf	2004-02-04 15:24:00.000000000 +0100
+@@ -19,5 +19,5 @@
+   <!-- Version Information.  State that we work only with major version of this
+        package. -->
+   <RDF:Description about="urn:mozilla:locale:en-US:autoconfig"
+-	chrome:localeVersion="1.6"/>
++	chrome:localeVersion="1.7"/>
+ </RDF:RDF>
+diff -u -r 08_en-US/browser/aboutDialog.dtd 09_en-US/browser/aboutDialog.dtd
+--- 08_en-US/browser/aboutDialog.dtd	2004-02-07 09:00:00.000000000 +0100
++++ 09_en-US/browser/aboutDialog.dtd	2004-05-31 18:00:00.000000000 +0200
+@@ -1,8 +1,8 @@
+-<!ENTITY aboutDialog.title      "About &brandShortName;">
++<!ENTITY aboutDialog.title      "About &brandFullName;">
+ <!ENTITY copyright              "Credits">
+-<!ENTITY aboutLink              "&lt; About &brandShortName;">
++<!ENTITY aboutLink              "&lt; About &brandFullName;">
+ <!ENTITY aboutVersion           "version &version;">
+ <!ENTITY copyrightText          "&#169;1998-2004 Contributors. All Rights Reserved. Firefox and the 
+-                                 Firefox logos are trademarks of The Mozilla Foundation.  All rights 
++                                 Firefox logos are trademarks of the Mozilla Foundation.  All rights 
+                                  reserved. Some trademark rights used under license from The 
+-                                 Charlton Group. ">
+\ Brak znaku nowej linii na koñcu pliku
++                                 Charlton Company.">
+diff -u -r 08_en-US/browser/bookmarks/addBookmark.dtd 09_en-US/browser/bookmarks/addBookmark.dtd
+--- 08_en-US/browser/bookmarks/addBookmark.dtd	2003-12-20 09:49:00.000000000 +0100
++++ 09_en-US/browser/bookmarks/addBookmark.dtd	2004-05-02 18:23:00.000000000 +0200
+@@ -1,11 +1,13 @@
+ <!ENTITY newBookmark.title          "Add Bookmark">
+ <!ENTITY newbookmark.label          "&brandShortName; will add a bookmark to this page.">
+ <!ENTITY name.label                 "Name:">
+-<!ENTITY name.accesskey             "n">
++<!ENTITY name.accesskey             "N">
++<!ENTITY keyword.label              "Keyword:">
++<!ENTITY keyword.accesskey          "K">
+ <!ENTITY url.label                  "Location:">
+-<!ENTITY url.accesskey              "l">
++<!ENTITY url.accesskey              "L">
+ <!ENTITY button.createin.label      "Create In &gt;&gt;">
+-<!ENTITY button.createin.accesskey  "c">
++<!ENTITY button.createin.accesskey  "C">
+ <!ENTITY button.createin2.label     "Create In &lt;&lt;">
+ <!ENTITY createin.label             "Create in:">
+ <!ENTITY createin.accesskey         "C">
+@@ -22,6 +24,6 @@
+ <!ENTITY expanderUp.tooltip      "Hide">
+ <!ENTITY addGroup.label          "Bookmark all tabs in a folder">
+ <!ENTITY addGroup.accesskey      "B">
+-<!ENTITY newFolder.label         "New Folder">
++<!ENTITY newFolder.label         "New Folder...">
+ <!ENTITY newFolder.accesskey     "N">
+ <!ENTITY acceptButton.label      "Add">
+diff -u -r 08_en-US/browser/browser.dtd 09_en-US/browser/browser.dtd
+--- 08_en-US/browser/browser.dtd	2003-12-11 18:33:00.000000000 +0100
++++ 09_en-US/browser/browser.dtd	2004-06-07 18:00:00.000000000 +0200
+@@ -25,6 +25,8 @@
+ <!ENTITY printCmd.label "Print...">
+ <!ENTITY printCmd.accesskey "P">
+ <!ENTITY printCmd.commandkey "p">
++<!ENTITY import.label "Import...">
++<!ENTITY import.accesskey "I">
+ 
+ <!ENTITY goOfflineCmd.label "Work Offline">
+ <!ENTITY goOfflineCmd.accesskey "w">
+@@ -60,8 +62,8 @@
+ 
+ <!ENTITY bookmarksMenu.label "Bookmarks">
+ <!ENTITY bookmarksMenu.accesskey "B">
+-<!ENTITY addCurPageAsCmd.label "Add to Bookmarks...">
+-<!ENTITY addCurPageAsCmd.accesskey "A">
++<!ENTITY addCurPageAsCmd.label "Bookmark This Page...">
++<!ENTITY addCurPageAsCmd.accesskey "B">
+ <!ENTITY addCurPageAsCmd.commandkey "d">
+ <!ENTITY manBookmarksCmd.label "Manage Bookmarks...">
+ <!ENTITY manBookmarksCmd.accesskey "M">
+@@ -105,16 +107,25 @@
+ <!ENTITY toolsMenu.label              "Tools">
+ <!ENTITY toolsMenu.accesskey          "T"> 
+ 
++<!ENTITY keywordfield.label           "Add a Keyword for this Search...">
++<!ENTITY keywordfield.accesskey       "K">
++<!ENTITY search.label                 "Web Search">
++<!ENTITY search.accesskey             "S">
+ <!ENTITY downloads.label              "Downloads">
+-<!ENTITY downloads.tooltip            "Displays the progress of ongoing downloads">
++<!ENTITY downloads.tooltip            "Display the progress of ongoing downloads">
+ <!ENTITY downloads.accesskey          "D">
+-<!ENTITY downloads.commandkey         "e">
++<!ENTITY downloads.commandkey         "y">
++<!ENTITY extensions.label             "Extensions">
++<!ENTITY extensions.tooltip           "Show and Manage installed Extensions">
++<!ENTITY extensions.accesskey         "E">
++<!ENTITY themes.label                 "Themes">
++<!ENTITY themes.tooltip               "Change the Theme">
++<!ENTITY themes.accesskey             "T">
+ 
+ <!ENTITY javaConsoleCmd.label         "Java Console">
+ <!ENTITY javaConsoleCmd.accesskey     "J">
+-
+ <!ENTITY javaScriptConsoleCmd.label   "JavaScript Console">
+-<!ENTITY javaScriptConsoleCmd.accesskey "S">
++<!ENTITY javaScriptConsoleCmd.accesskey "C">
+ 
+ <!ENTITY fileMenu.label         "File"> 
+ <!ENTITY fileMenu.accesskey       "F">
+@@ -149,6 +160,8 @@
+ <!ENTITY selectAllCmd.accesskey       "A"> 
+ <!ENTITY preferencesCmd.label       "Options...">
+ <!ENTITY preferencesCmd.accesskey     "O"> 
++<!ENTITY preferencesCmdUnix.label       "Preferences">
++<!ENTITY preferencesCmdUnix.accesskey     "n"> 
+ 
+ <!ENTITY viewMenu.label         "View"> 
+ <!ENTITY viewMenu.accesskey       "V"> 
+@@ -212,7 +225,7 @@
+ <!ENTITY viewImageCmd.accesskey       "I">
+ <!ENTITY viewBGImageCmd.label         "View Background Image">
+ <!ENTITY viewBGImageCmd.accesskey     "w">
+-<!ENTITY setWallpaperCmd.label        "Set As Wallpaper">
++<!ENTITY setWallpaperCmd.label        "Set As Wallpaper...">
+ <!ENTITY setWallpaperCmd.accesskey    "S">
+ <!ENTITY bookmarkPageCmd.label        "Bookmark This Page...">
+ <!ENTITY bookmarkPageCmd.accesskey    "m">
+@@ -227,7 +240,7 @@
+ <!ENTITY savePageCmd.commandkey       "s">
+ <!ENTITY saveFrameCmd.label           "Save Frame As...">
+ <!ENTITY saveFrameCmd.accesskey       "F">
+-<!ENTITY saveLinkCmd.label            "Save Link to Disk...">
++<!ENTITY saveLinkCmd.label            "Save Link As...">
+ <!ENTITY saveLinkCmd.accesskey        "k">
+ <!ENTITY sendLinkCmd.label            "Send Link..."> 
+ <!ENTITY sendLinkCmd.accesskey        "d">
+@@ -239,13 +252,16 @@
+ <!ENTITY copyLinkCmd.accesskey        "C">
+ <!ENTITY copyImageCmd.label           "Copy Image Location">
+ <!ENTITY copyImageCmd.accesskey       "o">
++<!ENTITY copyImageContentsCmd.label   "Copy Image">
++<!ENTITY copyImageContentsCmd.accesskey  "y"> 
++<!ENTITY blockImageCmd.accesskey       "g">
+ <!ENTITY metadataCmd.label            "Properties">
+ <!ENTITY metadataCmd.accesskey        "P">
+ <!ENTITY copyEmailCmd.label           "Copy Email Address">
+ <!ENTITY copyEmailCmd.accesskey       "E">
+ <!ENTITY thisFrameMenu.label              "This Frame">
+ <!ENTITY thisFrameMenu.accesskey          "h">
+-<!ENTITY search.accesskey             "W">
++<!ENTITY search.accesskey             "S">
+ 
+ <!ENTITY textZoomEnlargeCmd.label       "Increase Text Size">
+ <!ENTITY textZoomEnlargeCmd.accesskey   "I">
+@@ -258,19 +274,32 @@
+ <!ENTITY textZoomResetCmd.commandkey    "0">
+ 
+ <!ENTITY bookmarksButton.label          "Bookmarks">
+-<!ENTITY bookmarksButton.tooltip        "Displays your bookmarks">
++<!ENTITY bookmarksButton.tooltip        "Display your bookmarks">
+ 
+ <!ENTITY historyButton.label            "History">
+-<!ENTITY historyButton.tooltip          "Displays pages you've viewed recently">
++<!ENTITY historyButton.tooltip          "Display pages you've viewed recently">
+ 
+-<!ENTITY newTabButton.tooltip           "Opens a new tab">
+-<!ENTITY newWindowButton.tooltip        "Opens a new window">
++<!ENTITY mailButton.label                 "Mail">
++<!ENTITY mailButton.tooltip               "Read and Send Mail">
++<!ENTITY mailButton.readMail.label        "Read Mail">
++<!ENTITY mailButton.readMail.accesskey    "M">
++<!ENTITY mailButton.newMessage.label      "New Message...">
++<!ENTITY mailButton.newMessage.accesskey  "w">
++<!ENTITY mailButton.sendLink.label        "Send Link...">
++<!ENTITY mailButton.sendLink.accesskey    "L">
++<!ENTITY mailButton.readNews.label        "Read News">
++<!ENTITY mailButton.readNews.accesskey    "N">
++<!ENTITY sendMessage.commandkey           "m">
++
++<!ENTITY newTabButton.tooltip           "Open a new tab">
++<!ENTITY newWindowButton.tooltip        "Open a new window">
++<!ENTITY sidebarCloseButton.tooltip     "Close sidebar">
+ 
+ <!ENTITY cutButton.tooltip              "Cut">
+ <!ENTITY copyButton.tooltip             "Copy">
+ <!ENTITY pasteButton.tooltip            "Paste">
+ 
+-<!ENTITY findOnSearchBarCmd.label       "Find in this Page">
++<!ENTITY findOnSearchBarCmd.label       "Find in This Page">
+ 
+ <!ENTITY quitApplicationCmdWin.label       "Exit"> 
+ <!ENTITY quitApplicationCmdWin.accesskey   "x">
+@@ -284,9 +313,9 @@
+ <!ENTITY closeCmd.accesskey             "C">
+ 
+ <!ENTITY minimizeWindow.key "m">
+-<!ENTITY minimizeWindow.label "Minimize Window">
++<!ENTITY minimizeWindow.label "Minimize">
+ <!ENTITY bringAllToFront.label "Bring All to Front">
+-<!ENTITY zoomWindow.label "Zoom Window">
++<!ENTITY zoomWindow.label "Zoom">
+ <!ENTITY windowMenu.label "Window">
+ 
+ <!ENTITY pageThemeButton.label "Page Themes">
+diff -u -r 08_en-US/browser/browser.properties 09_en-US/browser/browser.properties
+--- 08_en-US/browser/browser.properties	2003-11-15 09:26:00.000000000 +0100
++++ 09_en-US/browser/browser.properties	2004-03-08 10:56:00.000000000 +0100
+@@ -24,7 +24,7 @@
+ 
+ # context menu strings
+ 
+-searchText=Web Search for "%S"
++searchText=Search Web for "%S"
+ 
+ blockImages=Block Images from %S
+ 
+@@ -47,3 +47,16 @@
+ 
+ # Default name for the Web Panels sidebar
+ webPanels=Web Panels
++
++# setWallpaper confirmation dialog
++wallpaperConfirmTitle = Set Wallpaper
++wallpaperConfirmMsg   = Do you want to set this image as your desktop wallpaper?
++
++tabs.closeWarningTitle=Confirm close
++tabs.closeWarning=This Browser window has %S tabs open. Do you want to close it and all its tabs?
++tabs.closeButton=Close all tabs
++tabs.closeWarningPromptMe=Warn me when closing multiple tabs
++
++mailUnreadTooltip=Read Mail and News (%S new messages)
++mailUnreadMenuitem=Read Mail (%S new)
++
+diff -u -r 08_en-US/browser/contentAreaCommands.properties 09_en-US/browser/contentAreaCommands.properties
+--- 08_en-US/browser/contentAreaCommands.properties	2003-11-03 08:21:00.000000000 +0100
++++ 09_en-US/browser/contentAreaCommands.properties	2004-05-23 18:00:00.000000000 +0200
+@@ -19,3 +19,7 @@
+ 
+ saveLinkErrorMsg=The link could not be saved.  The web page might have been removed or had its name changed.
+ saveLinkErrorTitle=Save Link
++
++unknownDescriptionFilesFilter=%S File
++unknownDescriptionFilesPluralFilter=%S Files
++
+diff -u -r 08_en-US/browser/cookieviewer/CookieViewer.dtd 09_en-US/browser/cookieviewer/CookieViewer.dtd
+--- 08_en-US/browser/cookieviewer/CookieViewer.dtd	2003-08-23 11:23:00.000000000 +0200
++++ 09_en-US/browser/cookieviewer/CookieViewer.dtd	2004-04-25 22:11:00.000000000 +0200
+@@ -1,10 +1,7 @@
+ 
+-<!ENTITY     tab.cookiesonsystem.label      "Stored Cookies">
+-<!ENTITY     tab.bannedservers.label        "Cookie Sites">
+ <!ENTITY     div.cookiesonsystem.label      "View and remove cookies that are stored on your computer.">
+ <!ENTITY     treehead.cookiename.label      "Cookie Name">
+ <!ENTITY     treehead.cookiedomain.label    "Site"> 
+-<!ENTITY     treehead.cookiestatus.label    "Status"> 
+ <!ENTITY     treehead.infoselected.label    "Information about the selected Cookie">
+ <!ENTITY     button.removecookie.label      "Remove Cookie">
+ <!ENTITY     button.removeallcookies.label  "Remove All Cookies">
+@@ -13,10 +10,9 @@
+ <!ENTITY     props.value.label              "Content:">
+ <!ENTITY     props.domain.label             "Host:">
+ <!ENTITY     props.path.label               "Path:">
+-<!ENTITY     props.secure.label             "Server Secure:">
++<!ENTITY     props.secure.label             "Send For:">
+ <!ENTITY     props.expires.label            "Expires:">
+-<!ENTITY     props.policy.label             "Policy:"> 
+ 
+-<!ENTITY     window.title                   "Cookie Manager">
++<!ENTITY     window.title                   "Stored Cookies">
+ 
+ <!ENTITY     checkbox.label                 "Don't allow sites that set removed cookies to set future cookies">
+diff -u -r 08_en-US/browser/cookieviewer/CookieViewer.properties 09_en-US/browser/cookieviewer/CookieViewer.properties
+--- 08_en-US/browser/cookieviewer/CookieViewer.properties	2003-08-23 11:23:00.000000000 +0200
++++ 09_en-US/browser/cookieviewer/CookieViewer.properties	2004-04-25 22:11:00.000000000 +0200
+@@ -1,17 +1,7 @@
+ 
+-domain=Domain for which this cookie applies:
+-host=Server which set the cookie:
+ hostColon=Host:
+ domainColon=Domain:
+-yes=yes
+-no=no
++forSecureOnly=Encrypted connections only
++forAnyConnection=Any type of connection
+ AtEndOfSession = at end of session
+-accepted=accepted
+-downgraded=session
+-flagged=flagged
+-policyUnstated = no policy about storing identifiable information
+-policyNoConsent = stores identifiable information without any user consent
+-policyImplicitConsent = stores identifiable information unless user opts out
+-policyExplicitConsent = stores identifiable information if user opts in
+-policyNoIICollected = does not store identifiable information
+-close=Close
++
+diff -u -r 08_en-US/browser/credits.html 09_en-US/browser/credits.html
+--- 08_en-US/browser/credits.html	2004-02-07 09:00:00.000000000 +0100
++++ 09_en-US/browser/credits.html	2004-06-08 18:00:00.000000000 +0200
+@@ -34,7 +34,7 @@
+         top: 0px;
+         overflow: hidden;
+         z-index: 1;
+-        height: 350px;
++        height: 285px;
+         width: 280px;
+         margin-left: 10px;
+         margin-right: 10px;
+@@ -75,11 +75,6 @@
+         color: blue;
+         text-decoration: underline;
+       }
+-      
+-      body {
+-        background-color: #FFFFFF;
+-        overflow: hidden;
+-      }
+     --> 
+     </style>
+     
+@@ -137,12 +132,10 @@
+         <br>  
+         <br>  
+         <br>  
+-        <br>  
+-        <br>  
+         <br>
+         <div align="center">
+           <h2 class="title">Mozilla Firefox&trade;</h2>
+-          <span class="motto">&nbsp;&nbsp;&nbsp;&nbsp;Insert Motto Here!</span>
++          <span class="motto">&nbsp;&nbsp;&nbsp;&nbsp;The Browser, Reloaded</span>
+         </div>
+         <br>  
+         <br>  
+@@ -153,8 +146,6 @@
+         <br>  
+         <br>  
+         <br>  
+-        <br>  
+-        <br>  
+ 
+         <div class="creditsGroup">
+           <h3>Engineering Lead</h3>
+@@ -163,28 +154,30 @@
+           <h3>Core Development Posse</h3>
+           <div class="credit">
+             Pierre Chanial<br>
++            Mike Connor<br>
++            Darin Fisher<br>
+             David Hyatt<br>
+             Blake Ross<br>
+             Brian Ryner<br>
++            Benjamin Smedberg<br>
+           </div>
+           
+           <h3>Special Thanks To</h3>
+           <div class="credit">          
+             David Baron<br>
+-            Mike Connor<br>
+             Brendan Eich<br>
+-            Darin Fisher<br>
+             Joe Hewitt<br>
+             Ian Hickson<br>
++            Glen Johnson<br>
+             Michael Kaply<br>
+             R.J. Keller<br>
+             Will Levine<br>
+             Scott MacGregor<br>
+             Daniel Matejka<br>
+             Noririty<br>
++            Igor Pavlov, 7-Zip<br>
+             Mike Pinkerton<br>
+             Jesse Ruderman<br>
+-            Benjamin Smedberg<br>
+             Seth Spitzer<br>
+             Johnny Stenback<br>
+             Dean Tessman<br>
+@@ -195,6 +188,15 @@
+           </div>
+         </div>
+         
++<!-- LOCALIZERS: Add your translation credits here!
++        <div class="creditsGroup">
++          <h3>Translators</h3>
++          <div class="credit">
++            Translator Name<br>
++          </div>
++        </div>
++--> 
++
+         <div class="creditsGroup">
+           <h3>Visual Design Coordinator</h3>
+           <div class="credit">Steven Garrity</div>
+@@ -217,6 +219,12 @@
+           <h3>Web Design</h3>
+           <div class="credit">Dave Shea</div>
+           
++          <h3>Mozilla Update</h3>
++          <div class="credit">
++            Chris Crews<br>
++            Alan Starr
++          </div>
++
+           <h3>Special Thanks To</h3>
+           <div class="credit">silverorange</div>
+         </div>
+@@ -228,6 +236,7 @@
+           <h3>Quality Assurance</h3>
+           <div class="credit">
+             Mike Connor<br>
++            Ali Ebrahim<br>
+             Erik Fornoff<br>
+             Ian Hickson<br>
+             David P. James<br>
+@@ -239,7 +248,6 @@
+             André Dahlqvist<br>
+             Sébastian Delahaye<br>
+             Jeremy Dolan<br>
+-            Ali Ebrahim<br>
+             Ed Hume<br>
+             Jesse Ruderman<br>
+             Alan Starr<br>
+@@ -321,11 +329,10 @@
+           SupportSoft, Inc. All Rights Reserved.</p>
+ 
+         <p class="footnote">
+-          Firefox and the Firefox logos are trademarks of The Mozilla 
+-          Foundation.  All rights reserved. Some trademark rights used under 
+-          license from The Charlton Group. You are not granted any rights or 
+-          licenses to the trademarks of the Mozilla Foundation or any party, 
+-          including without limitation the Firefox name or logo.</p>
++          Mozilla Firefox&trade; and the Firefox logo are trademarks of the Mozilla 
++          Foundation. You are not granted rights or licenses to the trademarks 
++          of the Mozilla Foundation or any party, including without limitation the
++          Firefox name or logo.</p>
+         
+         <p class="footnote">
+           <small>U.S. GOVERNMENT END USERS. The Software is a "commercial item," 
+Tylko w 09_en-US/browser: migration
+diff -u -r 08_en-US/browser/openLocation.dtd 09_en-US/browser/openLocation.dtd
+--- 08_en-US/browser/openLocation.dtd	2002-09-20 05:52:00.000000000 +0200
++++ 09_en-US/browser/openLocation.dtd	2004-02-20 03:22:00.000000000 +0100
+@@ -2,11 +2,10 @@
+ 
+ <!ENTITY enter.label "Enter the web location (URL), or specify the local file you would like to open:">  
+ <!ENTITY chooseFile.label "Choose File...">
+-<!ENTITY newWindow.label "New Navigator window">
+-<!ENTITY newTab.label "New Navigator tab">
+-<!ENTITY topWindow.label "Current Navigator window">
+-<!ENTITY editNewWindow.label "New Composer window">
+-<!ENTITY cancel.label "Cancel">
++<!ENTITY newWindow.label "New Window">
++<!ENTITY newTab.label "New Tab">
++<!ENTITY topWindow.label "Current Window">
+ <!ENTITY caption.label "Open Web Location">
+ <!ENTITY openWhere.label "Open in:">
+ <!ENTITY example.label "Example: &vendorURL;">
++<!ENTITY openBtn.label "Open">
+\ Brak znaku nowej linii na koñcu pliku
+diff -u -r 08_en-US/browser/openLocation.properties 09_en-US/browser/openLocation.properties
+--- 08_en-US/browser/openLocation.properties	2003-10-15 00:36:00.000000000 +0200
++++ 09_en-US/browser/openLocation.properties	2004-02-20 03:22:00.000000000 +0100
+@@ -1,2 +1 @@
+-openButtonLabel=Open
+ chooseFileDialogTitle=Choose File
+diff -u -r 08_en-US/browser/pageInfo.dtd 09_en-US/browser/pageInfo.dtd
+--- 08_en-US/browser/pageInfo.dtd	2003-07-31 09:50:00.000000000 +0200
++++ 09_en-US/browser/pageInfo.dtd	2003-12-25 02:08:00.000000000 +0100
+@@ -1,10 +1,16 @@
+ 
++<!ENTITY  preface               "Info for: "> 
++
++<!ENTITY  title                 "Page Info"> 
++<!ENTITY  description           "Information about the current page"> 
++<!ENTITY  helpButton            "Help">
+ <!ENTITY  pageInfoWindow.width  "425">
+ <!ENTITY  pageInfoWindow.height "470">
++
++<!ENTITY  unknown               "Unknown">
+ <!ENTITY  closeWindow           "w">
+ 
+ <!ENTITY  generalTab            "General">
+-<!ENTITY  generalAccesskey      "g">
+ <!ENTITY  generalTitle          "Title:">
+ <!ENTITY  generalURL            "URL:">
+ <!ENTITY  generalMode           "Render Mode:">
+@@ -21,7 +27,6 @@
+ <!ENTITY  generalMetaContent    "Content">
+ 
+ <!ENTITY  formsTab              "Forms">
+-<!ENTITY  formsAccesskey        "f">
+ <!ENTITY  formAction            "Form Action">
+ <!ENTITY  formMethod            "Method">
+ <!ENTITY  formName              "Name">
+@@ -35,15 +40,14 @@
+ <!ENTITY  formCValue            "Current Value">
+ 
+ <!ENTITY  linksTab              "Links">
+-<!ENTITY  linksAccesskey        "l">
+ <!ENTITY  linkNo                "No.">
+ <!ENTITY  linkName              "Name">
+ <!ENTITY  linkAddress           "Address">
+ <!ENTITY  linkType              "Type">
+ <!ENTITY  linkTarget            "Target">
++<!ENTITY  linkAccessKey         "Access Key">
+ 
+ <!ENTITY  mediaTab              "Media">
+-<!ENTITY  mediaAccesskey        "i">
+ <!ENTITY  mediaHeader           "Images on this page">
+ <!ENTITY  mediaURL              "URL:">
+ <!ENTITY  mediaBase             "Base URL:">
+@@ -63,7 +67,6 @@
+ <!ENTITY  mediaSaveAsAccesskey  "S">
+ 
+ <!ENTITY  framesTab             "Frames">
+-<!ENTITY  framesAccesskey       "r">
+ <!ENTITY  frameName             "Name">
+ <!ENTITY  frameAddress          "Address">
+ <!ENTITY  frameType             "Type">
+diff -u -r 08_en-US/browser/pref/pref-advanced.dtd 09_en-US/browser/pref/pref-advanced.dtd
+--- 08_en-US/browser/pref/pref-advanced.dtd	2003-09-23 21:34:00.000000000 +0200
++++ 09_en-US/browser/pref/pref-advanced.dtd	2004-05-16 20:16:00.000000000 +0200
+@@ -84,3 +84,19 @@
+ <!ENTITY serviceURL.accesskey "S">
+ <!ENTITY signingCA.label "Response Signer:">
+ <!ENTITY signingCA.accesskey "R">
++
++<!-- Software Update -->
++<!ENTITY browsing.label                   "Browsing">
++<!ENTITY softwareupdate.label             "Software Update">
++<!ENTITY enableSoftwareUpdate.label       "Allow web sites to install software">
++<!ENTITY enableSoftwareUpdate.accesskey   "i">
++<!ENTITY softwareupdateinfo.label         "Periodically check for updates to:">
++<!ENTITY enableSmartUpdate.label          "&brandShortName;">
++<!ENTITY enableSmartUpdate.accesskey      "F">
++<!ENTITY enableExtensionUpdate.label      "My Extensions">
++<!ENTITY enableExtensionUpdate.accesskey  "y">
++<!ENTITY enableAutoInstall.label          "Automatically download and install updates to Extensions.">
++<!ENTITY enableAutoInstall.accesskey      "d">
++<!ENTITY checkNow.label                   "Check Now">
++<!ENTITY checkNow.accesskey               "N">
++
+diff -u -r 08_en-US/browser/pref/pref-advancedscripts.dtd 09_en-US/browser/pref/pref-advancedscripts.dtd
+--- 08_en-US/browser/pref/pref-advancedscripts.dtd	2003-02-01 10:15:00.000000000 +0100
++++ 09_en-US/browser/pref/pref-advancedscripts.dtd	2004-05-29 18:00:00.000000000 +0200
+@@ -6,4 +6,5 @@
+ <!ENTITY allowWindowFlip.label           "Raise or lower windows">
+ <!ENTITY allowWindowStatusChange.label   "Change status bar text">
+ <!ENTITY allowWindowImageSrcChange.label "Change images">
++<!ENTITY allowControlContextMenu.label   "Disable or replace context menus">
+ <!ENTITY allowHideStatusBar.label        "Hide the status bar">
+diff -u -r 08_en-US/browser/pref/pref.dtd 09_en-US/browser/pref/pref.dtd
+--- 08_en-US/browser/pref/pref.dtd	2003-08-07 02:38:00.000000000 +0200
++++ 09_en-US/browser/pref/pref.dtd	2004-06-07 18:00:00.000000000 +0200
+@@ -2,6 +2,7 @@
+ 
+ <!-- LOCALIZATION NOTE : FILE UI for the outer parts of the Prefs dialog -->
+ <!ENTITY  prefWindow.title            "Options">
++<!ENTITY  prefWindowUnix.title        "Preferences">
+ 
+ <!-- LOCALIZATION NOTE : this is part of an inline-style attribute on the
+      preference dialog's <window> node, which specifies the width and height
+Tylko w 09_en-US/browser/pref: pref-languages.dtd
+Tylko w 09_en-US/browser/pref: pref-languages.properties
+diff -u -r 08_en-US/browser/pref/pref-navigator.dtd 09_en-US/browser/pref/pref-navigator.dtd
+--- 08_en-US/browser/pref/pref-navigator.dtd	2003-10-31 16:49:00.000000000 +0100
++++ 09_en-US/browser/pref/pref-navigator.dtd	2004-06-09 07:21:00.000000000 +0200
+@@ -18,14 +18,21 @@
+ <!-- XXXben oh please, can we do better than this text-wise? -->
+ <!ENTITY showConnections.label      "Connection Settings...">
+ <!ENTITY showConnections.accesskey  "o">
+-
+ <!ENTITY proxiesInfo.label          "Set up Proxies for accessing the internet.">
+ <!ENTITY connectionsInfo.caption    "Connection">
+ 
+-<!-- XXXben can we do better than this text-wise? -->
+-<!ENTITY fonts.label                        "Fonts &amp; Colors">
+-<!ENTITY fontsInfo.caption                  "Fonts &amp; Colors Settings">
+-<!ENTITY fontsInfo.label                    "Select default Fonts and Colors used when displaying pages.">
+-
++<!ENTITY fonts.caption                      "Fonts &amp; Colors">
++<!ENTITY fontsInfo.label                    "Select default Fonts and Colors for web pages.">
+ <!ENTITY showFontsAndColors.label           "Fonts &amp; Colors...">
+-<!ENTITY showFontsAndColors.accesskey       "f">
++<!ENTITY showFontsAndColors.accesskey       "F">
++
++<!ENTITY languages.caption                  "Languages">
++<!ENTITY languagesInfo.label                "Select default Languages and Character Encoding for web pages.">
++<!ENTITY showLanguages.label                "Languages...">
++<!ENTITY showLanguages.accesskey            "L">
++
++<!ENTITY checkForDefault.label              "&brandShortName; should check to see if it is the default browser when starting.">
++<!ENTITY checkForDefault.accesskey          "d">
++<!ENTITY checkNow.label                     "Check Now">
++<!ENTITY checkNow.accesskey                 "N">
++
+diff -u -r 08_en-US/browser/pref/pref-privacy.dtd 09_en-US/browser/pref/pref-privacy.dtd
+--- 08_en-US/browser/pref/pref-privacy.dtd	2003-12-10 02:36:00.000000000 +0100
++++ 09_en-US/browser/pref/pref-privacy.dtd	2004-03-10 09:16:00.000000000 +0100
+@@ -53,3 +53,7 @@
+ <!ENTITY clearAll.label                    "Clear All">
+ <!ENTITY clearAllDescription.label         "Clear all information stored while browsing:">
+ 
++<!ENTITY acceptNormally.label              "Accept cookies normally">
++<!ENTITY acceptForSession.label            "Accept for current session only">
++<!ENTITY askAboutCookies.label             "Ask for each cookie">
++
+diff -u -r 08_en-US/browser/pref/prefutilities.properties 09_en-US/browser/pref/prefutilities.properties
+--- 08_en-US/browser/pref/prefutilities.properties	2003-10-15 00:54:00.000000000 +0200
++++ 09_en-US/browser/pref/prefutilities.properties	2004-02-25 04:28:00.000000000 +0100
+@@ -32,11 +32,5 @@
+ prefRemovePasswdsTitle=Remove All Passwords
+ prefRemovePasswdsRemoveButton=Remove All Passwords
+ 
+-invalidDirPopupTitle=Error Creating %s
+-invalidDirPopup=The directory %S does not exist.  Do you wish to create it?
+-downloadDirTitle=Select Download Directory
+-invalidDir=Unable to create directory %S.  This is not a valid directory name.
+-blankDir=You did not specify a download directory.
+-
+ # pref-fonts
+ labelDefaultFont=Default (%S)
+Tylko w 09_en-US/browser: setWallpaper.dtd
+Tylko w 09_en-US/browser: shellservice.properties
+Tylko w 08_en-US/communicator: aboutPopups.dtd
+Tylko w 08_en-US/communicator: askViewZoom.dtd
+Tylko w 08_en-US/communicator: contentAreaCommands.dtd
+Tylko w 08_en-US/communicator: contentAreaCommands.properties
+diff -u -r 08_en-US/communicator/contents.rdf 09_en-US/communicator/contents.rdf
+--- 08_en-US/communicator/contents.rdf	2004-02-07 12:16:00.000000000 +0100
++++ 09_en-US/communicator/contents.rdf	2004-02-04 15:24:00.000000000 +0100
+@@ -19,5 +19,5 @@
+   <!-- Version Information.  State that we work only with major version of this
+        package. -->
+   <RDF:Description about="urn:mozilla:locale:en-US:communicator"
+-	chrome:localeVersion="1.6"/>
++       chrome:localeVersion="1.7"/>
+ </RDF:RDF>
+Tylko w 08_en-US/communicator: directory
+diff -u -r 08_en-US/communicator/dom/dom.properties 09_en-US/communicator/dom/dom.properties
+--- 08_en-US/communicator/dom/dom.properties	2002-12-04 02:55:00.000000000 +0100
++++ 09_en-US/communicator/dom/dom.properties	2004-02-11 07:09:00.000000000 +0100
+@@ -1,2 +1,4 @@
+ JSURLLoadBlockedWarning=Attempt to load a javascript: URL from one host\nin a window displaying content from another host\nwas blocked by the security manager.
+-WindowCloseBlockedWarning=Scripts may not close windows that were not opened by script.
++WindowCloseBlockedWarning=Scripts may not close windows that were not opened by script.
++OnBeforeUnloadPreMessage=Are you sure you want to navigate away from this page?
++OnBeforeUnloadPostMessage=Press OK to continue, or Cancel to stay on the current page.
+Tylko w 08_en-US/communicator: history
+Tylko w 08_en-US/communicator: openLocation.dtd
+Tylko w 08_en-US/communicator: openLocation.properties
+Tylko w 08_en-US/communicator: plugins.properties
+Tylko w 08_en-US/communicator: popupManager.dtd
+Tylko w 08_en-US/communicator: popupManager.properties
+Tylko w 08_en-US/communicator: pref
+Tylko w 08_en-US/communicator: printPreview.dtd
+Tylko w 08_en-US/communicator: profile
+Tylko w 08_en-US/communicator: search
+Tylko w 08_en-US/communicator: sidebar
+Tylko w 08_en-US/communicator: tasksOverlay.dtd
+Tylko w 08_en-US/communicator: update-notifications.properties
+Tylko w 08_en-US/communicator: utilityOverlay.dtd
+Tylko w 08_en-US/communicator: utilityOverlay.properties
+Tylko w 08_en-US/communicator: viewZoomOverlay.dtd
+Tylko w 08_en-US/communicator: viewZoomOverlay.properties
+Tylko w 08_en-US/communicator/xpinstall: institems.dtd
+Tylko w 08_en-US/communicator/xpinstall: xpistatus.dtd
+diff -u -r 08_en-US/cookie/contents.rdf 09_en-US/cookie/contents.rdf
+--- 08_en-US/cookie/contents.rdf	2004-02-07 12:16:00.000000000 +0100
++++ 09_en-US/cookie/contents.rdf	2004-02-04 15:24:00.000000000 +0100
+@@ -22,5 +22,5 @@
+   <!-- Version Information.  State that we work only with major version of this
+        package. -->
+   <RDF:Description about="urn:mozilla:locale:en-US:cookie"
+-	chrome:localeVersion="1.6"/>
++	chrome:localeVersion="1.7"/>
+ </RDF:RDF>
+diff -u -r 08_en-US/cookie/cookieAcceptDialog.dtd 09_en-US/cookie/cookieAcceptDialog.dtd
+--- 08_en-US/cookie/cookieAcceptDialog.dtd	2003-10-30 18:26:00.000000000 +0100
++++ 09_en-US/cookie/cookieAcceptDialog.dtd	2004-03-07 09:25:00.000000000 +0100
+@@ -3,15 +3,18 @@
+ <!ENTITY     props.value.label              "Content:">
+ <!ENTITY     props.domain.label             "Host:">
+ <!ENTITY     props.path.label               "Path:">
+-<!ENTITY     props.secure.label             "Server Secure:">
++<!ENTITY     props.secure.label             "Send For:">
+ <!ENTITY     props.expires.label            "Expires:">
+ <!ENTITY     props.policy.label             "Policy:"> 
+ 
+ <!ENTITY     button.allow.label             "Allow">
+ <!ENTITY     button.allow.accesskey         "A">
++<!ENTITY     button.session.label           "Allow for Session">
++<!ENTITY     button.session.accesskey       "S">
+ <!ENTITY     button.deny.label              "Deny">
+ <!ENTITY     button.deny.accesskey          "D">
+ 
+-<!ENTITY     dialog.title                   "Confirm">
++<!ENTITY     dialog.title                   "Confirm setting cookie">
+ <!ENTITY     dialog.remember.label          "Use my choice for all cookies from this site">
+ <!ENTITY     dialog.remember.accesskey      "U">
++
+diff -u -r 08_en-US/cookie/cookieAcceptDialog.properties 09_en-US/cookie/cookieAcceptDialog.properties
+--- 08_en-US/cookie/cookieAcceptDialog.properties	2003-10-30 18:26:00.000000000 +0100
++++ 09_en-US/cookie/cookieAcceptDialog.properties	2004-03-07 09:25:00.000000000 +0100
+@@ -1,7 +1,7 @@
+ hostColon=Host:
+ domainColon=Domain:
+-yes=yes
+-no=no
++forSecureOnly=Encrypted connections only
++forAnyConnection=Any type of connection
+ atEndOfSession=at end of session
+ 
+ showDetails=Show Details
+diff -u -r 08_en-US/cookie/cookieNavigatorOverlay.dtd 09_en-US/cookie/cookieNavigatorOverlay.dtd
+--- 08_en-US/cookie/cookieNavigatorOverlay.dtd	2003-10-31 00:27:00.000000000 +0100
++++ 09_en-US/cookie/cookieNavigatorOverlay.dtd	2003-12-20 04:08:00.000000000 +0100
+@@ -5,26 +5,29 @@
+ <!ENTITY cookieDisplayCookiesCmd.accesskey "M">
+ <!ENTITY cookieAllowCookiesCmd.label "Allow Cookies from this Site">
+ <!ENTITY cookieAllowCookiesCmd.accesskey "A">
+-<!ENTITY cookieAllowCookiesMsg.label "Cookies from this site will not be blocked">
++<!ENTITY cookieAllowCookiesMsg.label "Cookies from this site will always be allowed.">
++<!ENTITY cookieAllowSessionCookiesCmd.label "Allow Session Cookies from this Site">
++<!ENTITY cookieAllowSessionCookiesCmd.accesskey "S">
++<!ENTITY cookieAllowSessionCookiesMsg.label "This site will be able to set cookies for the current session only.">
+ <!ENTITY cookieCookiesDefaultCmd.label "Use Default Cookie Permissions">
+ <!ENTITY cookieCookiesDefaultCmd.accesskey "U">
+-<!ENTITY cookieCookiesDefaultMsg.label "Cookies from this site will be accepted or rejected based on default settings">
++<!ENTITY cookieCookiesDefaultMsg.label "Cookies from this site will be accepted or rejected based on default settings.">
+ <!ENTITY cookieBlockCookiesCmd.label "Block Cookies from this Site">
+ <!ENTITY cookieBlockCookiesCmd.accesskey "B">
+-<!ENTITY cookieBlockCookiesMsg.label "Cookies from this site will always be rejected">
++<!ENTITY cookieBlockCookiesMsg.label "Cookies from this site will always be rejected.">
+ 
+ <!ENTITY cookieImageMessageTitle.label "Image Permissions Changed">
+ <!ENTITY cookieDisplayImagesCmd.label "Manage Image Permissions">
+ <!ENTITY cookieDisplayImagesCmd.accesskey "M">
+ <!ENTITY cookieAllowImagesCmd.label "Allow Images from this Site">
+ <!ENTITY cookieAllowImagesCmd.accesskey "A">
+-<!ENTITY cookieAllowImagesMsg.label "Images from this site will always be downloaded">
++<!ENTITY cookieAllowImagesMsg.label "Images from this site will always be downloaded.">
+ <!ENTITY cookieImagesDefaultCmd.label "Use Default Image Permissions">
+ <!ENTITY cookieImagesDefaultCmd.accesskey "U">
+-<!ENTITY cookieImagesDefaultMsg.label "Images from this site will be downloaded based on default settings">
++<!ENTITY cookieImagesDefaultMsg.label "Images from this site will be downloaded based on default settings.">
+ <!ENTITY cookieBlockImagesCmd.label "Block Images from this Site">
+ <!ENTITY cookieBlockImagesCmd.accesskey "B">
+-<!ENTITY cookieBlockImagesMsg.label "Images from this site will never be downloaded">
++<!ENTITY cookieBlockImagesMsg.label "Images from this site will never be downloaded.">
+ 
+ <!ENTITY cookieAllowPopupsCmd.label                  "Allow Popups From This Site">
+ <!ENTITY cookieAllowPopupsCmd.accesskey              "A">
+diff -u -r 08_en-US/cookie/pref-cookies.dtd 09_en-US/cookie/pref-cookies.dtd
+--- 08_en-US/cookie/pref-cookies.dtd	2002-06-19 21:56:00.000000000 +0200
++++ 09_en-US/cookie/pref-cookies.dtd	2004-03-10 07:47:00.000000000 +0100
+@@ -4,31 +4,40 @@
+ 
+ <!ENTITY cookiePolicy.label             "Cookie Acceptance Policy">
+ 
+-<!ENTITY accAllCookiesRadio.label       "Enable all cookies">
++<!ENTITY accAllCookiesRadio.label       "Allow all cookies">
+ <!ENTITY accAllCookiesRadio.accesskey   "c">
+ 
+-<!ENTITY accOrgCookiesRadio.label       "Enable cookies for the originating web site only">
++<!ENTITY accOrgCookiesRadio.label       "Allow cookies for the originating web site only">
+ <!ENTITY accOrgCookiesRadio.accesskey   "o">
+ 
+-<!ENTITY accP3PCookiesRadio.label       "Enable cookies based on privacy settings">
++<!ENTITY accP3PCookiesRadio.label       "Allow cookies based on privacy settings">
+ <!ENTITY accP3PCookiesRadio.accesskey   "p">
+ 
+-<!ENTITY disableCookies.label           "Disable cookies">
+-<!ENTITY disableCookies.accesskey       "D">
++<!ENTITY disableCookies.label           "Block cookies">
++<!ENTITY disableCookies.accesskey       "B">
+ 
+-<!ENTITY warnAboutCookies.label         "Ask me before storing a cookie">
++<!ENTITY cookieLifetimePolicy.label     "Cookie Lifetime Policy">
++
++<!ENTITY acceptNormally.label           "Accept cookies normally">
++<!ENTITY acceptNormally.accesskey       "n">
++
++<!ENTITY acceptForSession.label         "Accept for current session only">
++<!ENTITY acceptForSession.accesskey     "s">
++
++<!ENTITY acceptforNDays.label           "Accept cookies for">
++<!ENTITY acceptforNDays.accesskey       "f">
++<!ENTITY days.label                     "days">
++
++<!ENTITY warnAboutCookies.label         "Ask for each cookie">
+ <!ENTITY warnAboutCookies.accesskey     "A">
++<!ENTITY forCurrentSession.label        "except for session cookies">
++<!ENTITY forCurrentSession.accesskey    "e">
+ 
+-<!ENTITY cookieDetails                  "Cookies are small pieces of information that some web sites ask to store on (and later retrieve from) your computer.">
++<!ENTITY manageCookies.label            "Manage Cookies and Sites">
++<!ENTITY manageCookiesDescription.label "Allows you to view and manage stored cookies and per-site settings for accepting and rejecting cookies. Per-site settings will override the settings above.">
+ 
+-<!ENTITY viewCookies.label              "Manage Stored Cookies">
++<!ENTITY viewCookies.label              "Cookie Manager">
+ <!ENTITY viewCookies.accesskey          "M">
+ <!ENTITY viewP3P.label                  "View">
+ <!ENTITY viewP3P.accesskey              "V">
+ 
+-<!ENTITY limitLifetime.label            "Limit maximum lifetime of cookies to:">
+-<!ENTITY limitLifetime.accesskey        "L">
+-<!ENTITY current.label                  "current session">
+-<!ENTITY current.accesskey              "r">
+-<!ENTITY days.label                     "days">
+-<!ENTITY days.accesskey                 "y">
+diff -u -r 08_en-US/global/about.xhtml 09_en-US/global/about.xhtml
+--- 08_en-US/global/about.xhtml	2003-08-27 12:09:00.000000000 +0200
++++ 09_en-US/global/about.xhtml	2004-01-22 23:17:00.000000000 +0100
+@@ -79,7 +79,7 @@
+ <hr />
+ 
+ <ul>
+-<li>Copyright &copy; 1998-2002 by <a href="about:credits">Contributors</a> to 
++<li>Copyright &copy; 1998-2004 by <a href="about:credits">Contributors</a> to 
+ the Mozilla codebase under the <a href="chrome://global/content/MPL-1.1.html">
+ Mozilla Public License</a> and <a href="chrome://global/content/NPL-1.1.html">
+ Netscape Public License</a>.  All Rights Reserved.</li>
+diff -u -r 08_en-US/global/brand.dtd 09_en-US/global/brand.dtd
+--- 08_en-US/global/brand.dtd	2004-02-07 09:00:00.000000000 +0100
++++ 09_en-US/global/brand.dtd	2004-06-09 09:28:00.000000000 +0200
+@@ -1,7 +1,7 @@
+-<!ENTITY  lang.version          "1.6">
++<!ENTITY  lang.version          "1.7a">
+ <!ENTITY  brandShortName        "Firefox">
+-<!ENTITY  brandFullName         "Mozilla Firefox">
+-<!ENTITY  version               "0.8">
++<!ENTITY  brandFullName         "Mozilla Firefox">            
++<!ENTITY  version               "0.8.0+">
+ <!ENTITY  vendorShortName       "Mozilla">
+ 
+ <!ENTITY  releaseURL            "http://www.mozilla.org/products/firefox/releases/0.8.html">
+diff -u -r 08_en-US/global/build.dtd 09_en-US/global/build.dtd
+--- 08_en-US/global/build.dtd	2004-02-08 02:19:00.000000000 +0100
++++ 09_en-US/global/build.dtd	2004-06-09 09:21:00.000000000 +0200
+@@ -1 +1 @@
+-<!ENTITY  buildId.label               "Build ID: 2004020717">
++<!ENTITY  buildId.label               "Build ID: 2004060823">
+diff -u -r 08_en-US/global/charset.dtd 09_en-US/global/charset.dtd
+--- 08_en-US/global/charset.dtd	2003-10-26 05:25:00.000000000 +0100
++++ 09_en-US/global/charset.dtd	2004-03-06 07:11:00.000000000 +0100
+@@ -1,4 +1,4 @@
+-<!ENTITY charsetMenu.label        "Character Coding">
++<!ENTITY charsetMenu.label        "Character Encoding">
+ <!ENTITY charsetMenu.accesskey        "C">
+ <!ENTITY charsetMenuAutodet.label     "Auto-Detect">
+ <!ENTITY charsetMenuAutodet.accesskey     "a">
+@@ -13,6 +13,8 @@
+ <!ENTITY charsetMenuMore4.label       "SE &amp; SW Asian">
+ <!ENTITY charsetMenuMore4.accesskey       "S">
+ <!ENTITY charsetMenuMore5.label       "Middle Eastern">
+-<!ENTITY charsetMenuMore5.accesskey       "m">
++<!ENTITY charsetMenuMore5.accesskey       "M">
++<!ENTITY charsetMenuUnicode.label       "Unicode">
++<!ENTITY charsetMenuUnicode.accesskey       "U">
+ <!ENTITY charsetCustomize.label       "Customize...">
+ <!ENTITY charsetCustomize.accesskey       "c">
+diff -u -r 08_en-US/global/charsetOverlay.dtd 09_en-US/global/charsetOverlay.dtd
+--- 08_en-US/global/charsetOverlay.dtd	2003-10-26 05:03:00.000000000 +0100
++++ 09_en-US/global/charsetOverlay.dtd	2004-03-06 07:11:00.000000000 +0100
+@@ -1,5 +1,5 @@
+ <!-- extracted from charsetOverlay.xul -->
+-<!ENTITY charsetMenu.label				"Character Coding">
++<!ENTITY charsetMenu.label				"Character Encoding">
+ <!ENTITY charsetMenu.accesskey				"C">
+ <!ENTITY charsetMenuAutodet.label			"Auto-Detect">
+ <!ENTITY charsetMenuAutodet.accesskey			"a">
+@@ -14,6 +14,8 @@
+ <!ENTITY charsetMenuMore4.label				"SE &amp; SW Asian">
+ <!ENTITY charsetMenuMore4.accesskey				"S">
+ <!ENTITY charsetMenuMore5.label				"Middle Eastern">
+-<!ENTITY charsetMenuMore5.accesskey				"m">
++<!ENTITY charsetMenuMore5.accesskey				"M">
++<!ENTITY charsetMenuUnicode.label				"Unicode">
++<!ENTITY charsetMenuUnicode.accesskey				"U">
+ <!ENTITY charsetCustomize.label				"Customize...">
+ <!ENTITY charsetCustomize.accesskey				"c">
+diff -u -r 08_en-US/global/charsetTitles.properties 09_en-US/global/charsetTitles.properties
+--- 08_en-US/global/charsetTitles.properties	2003-06-25 07:11:00.000000000 +0200
++++ 09_en-US/global/charsetTitles.properties	2004-04-24 19:12:00.000000000 +0200
+@@ -63,6 +63,11 @@
+ iso-2022-kr.title = Korean (ISO-2022-KR)
+ utf-7.title = Unicode (UTF-7)
+ utf-8.title = Unicode (UTF-8)
++utf-16.title = Unicode (UTF-16)
++utf-16le.title = Unicode (UTF-16 Little Endian)
++utf-16be.title = Unicode (UTF-16 Big Endian)
++utf-32le.title = Unicode (UTF-32 Little Endian)
++utf-32be.title = Unicode (UTF-32 Big Endian)
+ iso-8859-5.title = Cyrillic (ISO-8859-5)
+ iso-ir-111.title = Cyrillic (ISO-IR-111)
+ windows-1251.title = Cyrillic (Windows-1251)
+diff -u -r 08_en-US/global/contents.rdf 09_en-US/global/contents.rdf
+--- 08_en-US/global/contents.rdf	2004-02-07 12:16:00.000000000 +0100
++++ 09_en-US/global/contents.rdf	2004-06-09 07:24:00.000000000 +0200
+@@ -12,7 +12,7 @@
+         chrome:displayName="English(US)"
+         chrome:author="mozilla.org"
+         chrome:name="en-US"
+-        chrome:localeVersion="1.6"
++        chrome:localeVersion="1.7"
+         chrome:previewURL="http://www.mozilla.org/locales/en-US.gif">
+     <chrome:packages>
+       <RDF:Seq about="urn:mozilla:locale:en-US:packages">
+@@ -24,5 +24,5 @@
+   <!-- Version Information.  State that we work only with major version of this
+        package. -->
+   <RDF:Description about="urn:mozilla:locale:en-US:global"
+-	chrome:localeVersion="1.6"/>
++	chrome:localeVersion="1.7"/>
+ </RDF:RDF>
+diff -u -r 08_en-US/global/customizeCharset.dtd 09_en-US/global/customizeCharset.dtd
+--- 08_en-US/global/customizeCharset.dtd	2003-10-26 05:03:00.000000000 +0100
++++ 09_en-US/global/customizeCharset.dtd	2004-02-08 16:48:00.000000000 +0100
+@@ -1,7 +1,7 @@
+ 
+-<!ENTITY title.label      "Customize Character Coding">
+-<!ENTITY left.header      "Character Coding">
+-<!ENTITY current.label    "Active Character Codings:">
++<!ENTITY title.label      "Customize Character Encoding">
++<!ENTITY left.header      "Character Encoding">
++<!ENTITY current.label    "Active Character Encodings:">
+ <!ENTITY remove.label     "Remove">
+-<!ENTITY additional.label "Available Character Codings:">
++<!ENTITY additional.label "Available Character Encodings:">
+ <!ENTITY add.label        "Add">
+Tylko w 08_en-US/global: downloadProgress.properties
+diff -u -r 08_en-US/global/history/history.properties 09_en-US/global/history/history.properties
+--- 08_en-US/global/history/history.properties	2003-12-31 04:27:00.000000000 +0100
++++ 09_en-US/global/history/history.properties	2003-11-03 09:14:00.000000000 +0100
+@@ -10,4 +10,4 @@
+ 
+ finduri-Hostname-is-=(no host)
+ 
+-load-js-data-url-error=For security reasons, javascript or data urls cannot be loaded from the history window or sidebar.
+\ Brak znaku nowej linii na koñcu pliku
++load-js-data-url-error=For security reasons, javascript or data urls cannot be loaded from the history window or sidebar.
+diff -u -r 08_en-US/global/intl.properties 09_en-US/global/intl.properties
+--- 08_en-US/global/intl.properties	2003-11-15 09:26:00.000000000 +0100
++++ 09_en-US/global/intl.properties	2004-03-06 07:11:00.000000000 +0100
+@@ -1,14 +1,21 @@
+ # all.js
+ #
++# Localization Note: Cases of charset names must be preserved. If you're 
++# adding charsets to your localized version, please refer to 
++# intl/uconv/src/charsetalias.properties file for the list of canonical 
++# charset names and use canonical names exactly as listed there.
++# Also note that "UTF-8" should always be included in intl.charsetmenu.browser.static
+ general.useragent.locale=en-US
+ font.language.group=x-western
+ intl.accept_languages=en-us, en
+-intl.charsetmenu.browser.static=iso-8859-1
+-intl.charsetmenu.browser.more1=iso-8859-1, iso-8859-15, ibm850, x-mac-roman, windows-1252, iso-8859-14, iso-8859-7, x-mac-greek, windows-1253, x-mac-icelandic, iso-8859-10, iso-8859-3
+-intl.charsetmenu.browser.more2=iso-8859-4, iso-8859-13, windows-1257, ibm852, iso-8859-2, x-mac-ce, windows-1250, x-mac-croatian, ibm855, iso-8859-5, iso-ir-111, koi8-r, x-mac-cyrillic, windows-1251, ibm866, koi8-u, x-mac-ukrainian, iso-8859-16, x-mac-romanian
+-intl.charsetmenu.browser.more3=gb2312, x-gbk, gb18030, hz-gb-2312, iso-2022-cn, big5, big5-hkscs, x-euc-tw, euc-jp, iso-2022-jp, shift_jis, euc-kr, x-windows-949, x-johab, iso-2022-kr
+-intl.charsetmenu.browser.more4=armscii-8, geostd8, tis-620, iso-8859-11, windows-874, ibm857, iso-8859-9, x-mac-turkish, windows-1254, x-viet-tcvn5712, viscii, x-viet-vps, windows-1258, x-mac-devanagari, x-mac-gujarati, x-mac-gurmukhi
+-intl.charsetmenu.browser.more5=iso-8859-6, windows-1256, ibm864, x-mac-arabic, x-mac-farsi, iso-8859-8-i, windows-1255, iso-8859-8, ibm862, x-mac-hebrew
++intl.charsetmenu.browser.static=ISO-8859-1, UTF-8
++intl.charsetmenu.browser.more1=ISO-8859-1, ISO-8859-15, IBM850, x-mac-roman, windows-1252, ISO-8859-14, ISO-8859-7, x-mac-greek, windows-1253, x-mac-icelandic, ISO-8859-10, ISO-8859-3
++intl.charsetmenu.browser.more2=ISO-8859-4, ISO-8859-13, windows-1257, IBM852, ISO-8859-2, x-mac-ce, windows-1250, x-mac-croatian, IBM855, ISO-8859-5, ISO-IR-111, KOI8-R, x-mac-cyrillic, windows-1251, IBM866, KOI8-U, x-mac-ukrainian, ISO-8859-16, x-mac-romanian
++intl.charsetmenu.browser.more3=GB2312, x-gbk, gb18030, HZ-GB-2312, ISO-2022-CN, Big5, Big5-HKSCS, x-euc-tw, EUC-JP, ISO-2022-JP, Shift_JIS, EUC-KR, x-windows-949, x-johab, ISO-2022-KR
++intl.charsetmenu.browser.more4=armscii-8, GEOSTD8, TIS-620, ISO-8859-11, windows-874, IBM857, ISO-8859-9, x-mac-turkish, windows-1254, x-viet-tcvn5712, VISCII, x-viet-vps, windows-1258, x-mac-devanagari, x-mac-gujarati, x-mac-gurmukhi
++intl.charsetmenu.browser.more5=ISO-8859-6, windows-1256, IBM864, x-mac-arabic, x-mac-farsi, ISO-8859-8-I, windows-1255, ISO-8859-8, IBM862, x-mac-hebrew
++# Localization Note: Never change the following entry.
++intl.charsetmenu.browser.unicode=UTF-8, UTF-16LE, UTF-16BE, UTF-32LE, UTF-32BE, UTF-7
+ intl.charset.default=ISO-8859-1
+ intl.charset.detector=
+ intl.charsetmenu.mailedit=ISO-8859-1, ISO-8859-15, ISO-8859-6, armscii-8, geostd8, ISO-8859-13, ISO-8859-14, ISO-8859-2, GB2312, GB18030, Big5, KOI8-R, windows-1251, KOI8-U, ISO-8859-7, ISO-8859-8-I, ISO-2022-JP, EUC-KR, ISO-8859-10, ISO-8859-3, TIS-620, ISO-8859-9, UTF-8, VISCII
+diff -u -r 08_en-US/global/languageNames.properties 09_en-US/global/languageNames.properties
+--- 08_en-US/global/languageNames.properties	2003-08-17 18:59:00.000000000 +0200
++++ 09_en-US/global/languageNames.properties	2004-01-28 07:15:00.000000000 +0100
+@@ -59,6 +59,7 @@
+ hi = Hindi
+ ho = Hiri Motu
+ hr = Croatian
++hsb = Upper Sorbian
+ ht = Haitian
+ hu = Hungarian
+ hy = Armenian
+Tylko w 08_en-US/global: ldapAutoCompErrs.properties
+Tylko w 09_en-US/global: plugins.properties
+diff -u -r 08_en-US/global/printing.properties 09_en-US/global/printing.properties
+--- 08_en-US/global/printing.properties	2003-08-01 03:56:00.000000000 +0200
++++ 09_en-US/global/printing.properties	2004-02-19 22:58:00.000000000 +0100
+@@ -85,8 +85,12 @@
+ NS_ERROR_GFX_PRINTER_DOC_WAS_DESTORYED=The page was replaced while you were trying to print.\nPlease try again.
+ NS_ERROR_GFX_NO_PRINTDIALOG_IN_TOOLKIT=Either pluggable dialogs were not properly installed\nOr this GFX Toolkit no longer supports native Print Dialogs
+ NS_ERROR_GFX_NO_PRINTROMPTSERVICE=The Printing Prompt Service is missing.
+-NS_ERROR_GFX_PRINTER_XPRINT_NO_XPRINT_SERVERS_FOUND=There was a problem printing. No Xprint server(s) could be found.\nCheck whether the XPSERVERLIST environment variable contains any valid Xprint servers.
++NS_ERROR_GFX_PRINTER_XPRINT_NO_XPRINT_SERVERS_FOUND=There was a problem printing. No Xprint server(s) could be found.\nCheck whether the XPSERVERLIST environment variable contains any valid Xprint servers.\nFor further information see http://xprint.mozdev.org/ or http://www.mozilla.org/projects/xprint/
+ NS_ERROR_GFX_PRINTER_PLEX_NOT_SUPPORTED=There was a problem printing because the plex mode you specified is not supported by your printer.
++NS_ERROR_GFX_PRINTER_DOC_IS_BUSY=The browser cannot print the document while it is being loaded.
++NS_ERROR_GFX_PRINTING_NOT_IMPLEMENTED=Printing is not implemented.
++NS_ERROR_GFX_COULD_NOT_LOAD_PRINT_MODULE=The requested print module cannot be loaded.
++
+ # No printers available
+ noprinter=No printers available.
+ PrintToFile=Print To File
+Tylko w 09_en-US/global: typeaheadfind.properties
+diff -u -r 08_en-US/global/viewSource.dtd 09_en-US/global/viewSource.dtd
+--- 08_en-US/global/viewSource.dtd	2003-10-30 07:02:00.000000000 +0100
++++ 09_en-US/global/viewSource.dtd	2004-05-19 22:44:00.000000000 +0200
+@@ -1,9 +1,9 @@
+ <!-- extracted from content/viewSource.xul -->
+ 
+ <!-- LOCALIZATION NOTE (mainWindow.title) : DONT_TRANSLATE --> 
+-<!ENTITY mainWindow.title "&brandShortName;"> 
++<!ENTITY mainWindow.title "&brandFullName;">
+ <!-- LOCALIZATION NOTE (mainWindow.titlemodifier) : DONT_TRANSLATE --> 
+-<!ENTITY mainWindow.titlemodifier "&brandShortName;"> 
++<!ENTITY mainWindow.titlemodifier "&brandFullName;">
+ <!-- LOCALIZATION NOTE (mainWindow.titlemodifierseparator) : DONT_TRANSLATE -->
+ <!ENTITY mainWindow.titlemodifierseparator " - ">
+ <!ENTITY mainWindow.preface "Source of: ">
+@@ -24,6 +24,10 @@
+ <!ENTITY closeCmd.accesskey "C">
+ <!ENTITY closeCmd.commandkey "W">
+ 
++<!ENTITY textEnlarge.commandkey "+">
++<!ENTITY textReduce.commandkey "-">
++<!ENTITY textReset.commandkey "0">
++
+ <!ENTITY goToLineCmd.label "Go to Line...">
+ <!ENTITY goToLineCmd.accesskey "G">
+ <!ENTITY goToLineCmd.commandkey "l">
+@@ -34,3 +38,7 @@
+ <!ENTITY menu_wrapLongLines.accesskey "W">
+ <!ENTITY menu_highlightSyntax.label "Syntax Highlighting">
+ <!ENTITY menu_highlightSyntax.accesskey "H">
++<!ENTITY menu_textEnlarge.label "Increase Text Size">
++<!ENTITY menu_textEnlarge.accesskey "I">
++<!ENTITY menu_textReduce.label "Decrease Text Size">
++<!ENTITY menu_textReduce.accesskey "D">
+Tylko w 09_en-US/global: xbl.properties
+diff -u -r 08_en-US/mozapps/contents.rdf 09_en-US/mozapps/contents.rdf
+--- 08_en-US/mozapps/contents.rdf	2004-02-07 12:16:00.000000000 +0100
++++ 09_en-US/mozapps/contents.rdf	2004-06-09 07:24:00.000000000 +0200
+@@ -18,6 +18,6 @@
+ 
+   <!-- version information -->
+   <RDF:Description about="urn:mozilla:locale:en-US:mozapps"
+-     chrome:localeVersion="1.6"/>
++     chrome:localeVersion="1.7"/>
+ 
+ </RDF:RDF>
+diff -u -r 08_en-US/mozapps/downloads/downloads.dtd 09_en-US/mozapps/downloads/downloads.dtd
+--- 08_en-US/mozapps/downloads/downloads.dtd	2003-12-10 22:59:00.000000000 +0100
++++ 09_en-US/mozapps/downloads/downloads.dtd	2004-06-07 18:00:00.000000000 +0200
+@@ -1,25 +1,5 @@
+-<!ENTITY name.label                       "Name">
+-<!ENTITY progress.label                   "Progress">
+-<!ENTITY status.label                     "Status">
+-<!ENTITY timeremaining.label              "Time Remaining">
+-<!ENTITY transferred.label                "Transferred">
+-<!ENTITY transferrate.label               "Speed">
+-<!ENTITY timeelapsed.label                "Time Elapsed">
+-<!ENTITY status.label                     "Status">
+-<!--<!ENTITY progresstext.label           "&#37;">-->
+-<!ENTITY source.label                     "Source">
+-
+ <!ENTITY done.label                       "Done">
+-<!ENTITY cancel.label                     "Cancel">
+ <!ENTITY canceled.label                   "Canceled">
+-<!ENTITY launch.label                     "Launch">
+-<!ENTITY divider.label                    "-">
+-<!ENTITY show.label                       "Show">
+-<!ENTITY open.label                       "Open">
+-<!ENTITY retry.label                      "Retry">
+-<!ENTITY remove.label                     "Remove">
+-<!ENTITY pause.label                      "Pause">
+-<!ENTITY resume.label                     "Resume">
+ <!ENTITY installing.label                 "Installing...">
+ 
+ <!ENTITY starting.label                   "Starting...">
+@@ -33,11 +13,8 @@
+ <!ENTITY cmd.resume.accesskey             "R">
+ <!ENTITY cmd.cancel.label                 "Cancel">
+ <!ENTITY cmd.cancel.accesskey             "C">
+-<!ENTITY cmd.show.label                   "Show">
+-<!ENTITY cmd.show.accesskey               "S">
+-<!ENTITY cmd.show.tooltipWin              "Show this file in Explorer">
+-<!ENTITY cmd.show.tooltipMac              "Show this file in Finder">
+-<!ENTITY cmd.show.tooltipUnix             "Show this file in a browser window">
++<!ENTITY cmd.show.label                   "Open Containing Folder">
++<!ENTITY cmd.show.accesskey               "F">
+ <!ENTITY cmd.open.label                   "Open">
+ <!ENTITY cmd.open.accesskey               "O">
+ <!ENTITY cmd.openWith.label               "Open With...">
+@@ -57,6 +34,8 @@
+ 
+ <!ENTITY cmd.options.label                "Options">
+ <!ENTITY cmd.options.accesskey            "O">
++<!ENTITY cmd.optionsUnix.label            "Preferences">
++<!ENTITY cmd.optionsUnix.accesskey        "n">
+ 
+ <!ENTITY closeWhenDone.label              "Close when downloads complete">
+ <!ENTITY closeWhenDone.tooltip            "Closes the Downloads window when all files are done downloading">
+diff -u -r 08_en-US/mozapps/downloads/unknownContentType.dtd 09_en-US/mozapps/downloads/unknownContentType.dtd
+--- 08_en-US/mozapps/downloads/unknownContentType.dtd	2003-08-25 23:46:00.000000000 +0200
++++ 09_en-US/mozapps/downloads/unknownContentType.dtd	2004-06-07 18:00:00.000000000 +0200
+@@ -14,6 +14,8 @@
+ <!ENTITY  rememberChoice.accesskey    "a">
+ 
+ <!ENTITY  settingsChange.label        "Settings can be changed in the Downloads section of Tools, Options.">
++<!ENTITY  settingsChangeMac.label     "Settings can be changed in the Downloads section of &brandShortName;, Preferences.">
++<!ENTITY  settingsChangeUnix.label    "Settings can be changed in the Downloads section of Edit, Preferences.">
+ 
+ <!ENTITY  whichIsA.label              "which is a:">
+ 
+Tylko w 09_en-US/mozapps: extensions
+Tylko w 09_en-US/mozapps: profile
+Tylko w 09_en-US/mozapps: update
+diff -u -r 08_en-US/mozapps/xpinstall/xpinstallConfirm.properties 09_en-US/mozapps/xpinstall/xpinstallConfirm.properties
+--- 08_en-US/mozapps/xpinstall/xpinstallConfirm.properties	2003-12-08 09:04:00.000000000 +0100
++++ 09_en-US/mozapps/xpinstall/xpinstallConfirm.properties	2004-03-01 02:36:00.000000000 +0100
+@@ -2,6 +2,7 @@
+ 
+ itemWarningIntroMultiple=A web site is requesting permission to install the following %S items:
+ itemWarningIntroSingle=A web site is requesting permission to install the following item:
++installButtonDisabledLabel=Install (%S)
+ installButtonLabel=Install Now
+ 
+ installComplete=Software Installation is complete. You will have to restart %S for changes to take effect.
+Tylko w 08_en-US/: navigator
+diff -u -r 08_en-US/necko/contents.rdf 09_en-US/necko/contents.rdf
+--- 08_en-US/necko/contents.rdf	2004-02-07 12:16:00.000000000 +0100
++++ 09_en-US/necko/contents.rdf	2004-02-04 15:24:00.000000000 +0100
+@@ -19,5 +19,5 @@
+   <!-- Version Information.  State that we work only with major version of this
+        package. -->
+   <RDF:Description about="urn:mozilla:locale:en-US:necko"
+-	chrome:localeVersion="1.6"/>
++	chrome:localeVersion="1.7"/>
+ </RDF:RDF>
+diff -u -r 08_en-US/necko/necko.properties 09_en-US/necko/necko.properties
+--- 08_en-US/necko/necko.properties	2003-03-25 02:19:00.000000000 +0100
++++ 09_en-US/necko/necko.properties	2004-03-10 08:47:00.000000000 +0100
+@@ -57,3 +57,8 @@
+ #Gopher Search Prompt
+ GopherPromptTitle=Search
+ GopherPromptText=Enter a search term:
++
++PhishingAuth=You are about to visit \"%1$S.\" This site may be attempting to trick you into thinking you are visiting a different site. Use extreme caution.
++PhishingAuthAccept=I understand and will be very careful
++SuperfluousAuth=You are about to log into the site \"%1$S\" with the username \"%2$S,\" but the website does not require authentication. This may be an attempt to trick you.\n\nIs \"%1$S\" the site you want to visit?
++AutomaticAuth=You are about to log into the site \"%1$S\" with the username \"%2$S.\"
+Tylko w 08_en-US/: p3p
+diff -u -r 08_en-US/passwordmgr/contents.rdf 09_en-US/passwordmgr/contents.rdf
+--- 08_en-US/passwordmgr/contents.rdf	2004-02-07 12:16:00.000000000 +0100
++++ 09_en-US/passwordmgr/contents.rdf	2004-06-09 07:24:00.000000000 +0200
+@@ -22,5 +22,5 @@
+   <!-- Version Information.  State that we work only with major version of this
+        package. -->
+   <RDF:Description about="urn:mozilla:locale:en-US:passwordmgr"
+-	chrome:localeVersion="1.6"/>
++	chrome:localeVersion="1.7"/>
+ </RDF:RDF>
+diff -u -r 08_en-US/pipnss/contents.rdf 09_en-US/pipnss/contents.rdf
+--- 08_en-US/pipnss/contents.rdf	2004-02-07 12:16:00.000000000 +0100
++++ 09_en-US/pipnss/contents.rdf	2004-02-04 15:24:00.000000000 +0100
+@@ -22,5 +22,5 @@
+   <!-- Version Information.  State that we work only with major version of this
+        package. -->
+   <RDF:Description about="urn:mozilla:locale:en-US:pipnss"
+-	chrome:localeVersion="1.6"/>
++	chrome:localeVersion="1.7"/>
+ </RDF:RDF>
+diff -u -r 08_en-US/pipnss/pipnss.properties 09_en-US/pipnss/pipnss.properties
+--- 08_en-US/pipnss/pipnss.properties	2003-09-29 08:03:00.000000000 +0200
++++ 09_en-US/pipnss/pipnss.properties	2004-03-09 03:21:00.000000000 +0100
+@@ -20,6 +20,7 @@
+ #    Javier Delgadillo <javi@netscape.com>
+ #    Brian Ryner <bryner@brianryner.com>
+ #    Terry Hayes <thayes@netscape.com> 
++#    John Gardiner Myers <jgmyers@speakeasy.net>
+ # 
+ 
+ SignedBy=Signed by %S
+@@ -72,7 +73,6 @@
+ VerifyAnyCA=Any Certificate Authority
+ HighGrade=2048 (High Grade)
+ MediumGrade=1024 (Medium Grade)
+-LowGrade= 512 (Low Grade)
+ nick_template=%1$s's %2$s ID
+ nick_template_with_num=%1$s's %2$s ID #%3$d
+ #These are the strings set for the ASN1 objects in a certificate.
+@@ -86,6 +86,9 @@
+ CertDumpMD2WithRSA=PKCS #1 MD2 With RSA Encryption
+ CertDumpMD5WithRSA=PKCS #1 MD5 With RSA Encryption
+ CertDumpSHA1WithRSA=PKCS #1 SHA-1 With RSA Encryption
++CertDumpSHA256WithRSA=PKCS #1 SHA-256 With RSA Encryption
++CertDumpSHA384WithRSA=PKCS #1 SHA-384 With RSA Encryption
++CertDumpSHA512WithRSA=PKCS #1 SHA-512 With RSA Encryption
+ CertDumpDefOID=Object Identifier (%S)
+ CertDumpNULL=NULL
+ CertDumpIssuer=Issuer
+@@ -115,8 +118,33 @@
+ CertDumpSubjectUniqueID=Subject Unique ID
+ CertDumpExtensions=Extensions
+ CertDumpCertType=Netscape Certificate Type
++CertDumpNSCertExtBaseUrl=Netscape Certificate Extension Base URL
++CertDumpNSCertExtRevocationUrl=Netscape Certificate Revocation URL
++CertDumpNSCertExtCARevocationUrl=Netscape Certificate Authority Revocation URL
++CertDumpNSCertExtCertRenewalUrl=Netscape Certificate Renewal URL
++CertDumpNSCertExtCAPolicyUrl=Netscape Certificate Authority Policy URL
++CertDumpNSCertExtSslServerName=Netscape Certificate SSL Server Name
++CertDumpNSCertExtComment=Netscape Certificate Comment
++CertDumpNSCertExtLostPasswordUrl=Netscape Lost Password URL
++CertDumpNSCertExtCertRenewalTime=NetscapeCertificate Renewal Time
++CertDumpNetscapeAolScreenname=AOL Screenname
++CertDumpSubjectDirectoryAttr=Certificate Subject Directory Attributes
++CertDumpSubjectKeyID=Certificate Subject Key ID
+ CertDumpKeyUsage=Certificate Key Usage
++CertDumpSubjectAltName=Certificate Subject Alt Name
++CertDumpIssuerAltName=Certificate Issuer Alt Name
++CertDumpBasicConstraints=Certificate Basic Constraints
++CertDumpNameConstraints=Certificate Name Constraints
++CertDumpCrlDistPoints=CRL Distribution Points
++CertDumpCertPolicies=Certificate Policies
++CertDumpPolicyMappings=Certificate Policy Mappings
++CertDumpPolicyConstraints=Certificate Policy Constraints
+ CertDumpAuthKeyID=Certificate Authority Key Identifier
++CertDumpExtKeyUsage=Extended Key Usage
++CertDumpAuthInfoAccess=Authority Information Access
++CertDumpAnsiX9DsaSignature=ANSI X9.57 DSA Signature
++CertDumpAnsiX9DsaSignatureWithSha1=ANSI X9.57 DSA Signature with SHA1 Digest
++CertDumpAnsiX962ECDsaSignatureWithSha1=ANSI X9.62 ECDSA Signature with SHA1
+ CertDumpCertTypeEmail=Email
+ CertDumpEmailCA=Email Certificate Authority
+ CertDumpKUSign=Signing
+@@ -185,7 +213,7 @@
+ BadDatabase=There is a problem with your certificate database [Error Code: %S].
+ BadServer=%S has sent an incorrect or unexpected message. Error Code: %S
+ BadClient=%S has received an incorrect or unexpected message. Error Code: %S
+-HostReusedIssuerSerial=You have received an invalid certificate.  It contains the same issuer name and serial number as another certificate that you are already using. Please contact the server administrator or email correspondent from which this invalid certificate came, and urge them to get a valid certificate.
++HostReusedIssuerSerial=You have received an invalid certificate.  Please contact the server administrator or email correspondent and give them the following information:\n\nYour certificate contains the same serial number as another certificate issued by the certificate authority.  Please get a new certificate containing a unique serial number.
+ SSLGenericError=Error establishing an encrypted connection to %S. Error Code: %S.
+ TimeOut=Connection request timed out.
+ PeersCertUntrusted=Could not establish an encrypted connection because certificate presented by %S is not trusted.
+@@ -216,6 +244,7 @@
+ CertInfoFrom=from
+ CertInfoTo=to
+ CertInfoPurposes=Purposes
++CertInfoStoredIn=Stored in:
+ P12DefaultNickname=Imported Certificate
+ CrlImportSuccess=The browser successfully imported the certificate revocation list (CRL).
+ CrlImportFailure1=The browser cannot import the Certificate Revocation List (CRL).
+@@ -237,3 +266,5 @@
+ VerifyIssuerUnknown=<Issuer Unknown>
+ VerifyInvalidCA=<Invalid CA>
+ VerifyUnknown=<Unknown>
++CertNoNickname=(no nickname)
++CertNoEmailAddress=(no email address)
+diff -u -r 08_en-US/pippki/pippki.dtd 09_en-US/pippki/pippki.dtd
+--- 08_en-US/pippki/pippki.dtd	2002-08-23 12:13:00.000000000 +0200
++++ 09_en-US/pippki/pippki.dtd	2004-03-06 16:52:00.000000000 +0100
+@@ -115,3 +115,8 @@
+ 
+ <!-- Access Keys -->
+ <!ENTITY createCertInfo.okButtonAccessKey "o">
++
++<!-- Form Signing confirmation prompt -->
++<!ENTITY formSigning.title "Text Signing Request">
++<!ENTITY formSigning.cert "Signing Certificate">
++<!ENTITY formSigning.confirmPassword "To confirm you agree to sign this text message using your selected certificate, please confirm by entering the master password:">
+diff -u -r 08_en-US/pippki/pippki.properties 09_en-US/pippki/pippki.properties
+--- 08_en-US/pippki/pippki.properties	2003-07-08 16:46:00.000000000 +0200
++++ 09_en-US/pippki/pippki.properties	2004-03-06 16:52:00.000000000 +0100
+@@ -175,3 +175,6 @@
+ importCACertsPrompt=Select File containing CA certificate(s) to import
+ importWebSiteCertPrompt=Select File containing Web Site certificate to import
+ file_browse_Certificate_spec=Certificate Files
++
++# Form Signing confirmation prompt
++formSigningIntro=The site '%S' has requested that you sign the following text message:
+

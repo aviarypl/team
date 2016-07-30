@@ -1,0 +1,70 @@
+diff -r 900e89f6dfc2 template/pl/default/global/messages.html.tmpl
+--- a/template/pl/default/global/messages.html.tmpl	Tue May 10 10:07:05 2011 +0200
++++ b/template/pl/default/global/messages.html.tmpl	Wed May 11 21:03:08 2011 +0200
+@@ -281,5 +281,5 @@
+   [% ELSIF message_tag == "extension_created" %]
+     Rozszerzenie o nazwie [% name FILTER html %] zostało utworzone
+-    w [% path FILTER html %]. Sprawdź czy w kodzie zostały zmienione 
++    w [% path FILTER html %]. Sprawdź, czy w kodzie zostały zmienione 
+     „TWOJA NAZWA” i „TWÓJ ADRES E-MAIL” na twoją nazwę i adres e-mail.
+ 
+@@ -477,5 +477,5 @@
+     [% link = "Zaloguj ponownie" %]
+     <b>Brak danych o twoim loginie</b>.
+-    Ciasteczko, w którym były przechowywane informacje o danych logowania zostało usunięte.
++    Ciasteczko, w którym były przechowywane informacje o danych logowania, zostało usunięte.
+     Przy następnej próbie logowania trzeba będzie podać wymagane informacje.
+ 
+@@ -676,5 +676,5 @@
+     Teraz po instalacji [% terms.Bugzilli %], nalezy przejsc na strone
+     "Parametry" (odnosnik znajduje sie w stopce konta administratora),
+-    by sprawdzic czy ustawienia sa zgodne z zalozeniami, wlacznie ze
++    by sprawdzic, czy ustawienia sa zgodne z zalozeniami, wlacznie ze
+     sprawdzeniem poprawnosci adresu bazowego.
+ 
+@@ -690,7 +690,7 @@
+     localconfig. Oznacza to, ze pewne pliki i katalogi, ktore musza byc
+     dostepne dla zapisu przez uzytkownika i serwer www oraz inne pliki (w tym
+-    plik localconfig, ktory zawiera haslo bazy danych) musza byc dostepne do
+-    zapisu dla wszystkich. Oznacza to, ze _ktokolwiek_ kto ma dostep do
+-    tego komputera moze dowolnie manipulowac przy tej instalacji [%+ terms.Bugzilli %]
++    plik localconfig, ktory zawiera haslo bazy danych), musza byc dostepne do
++    zapisu dla wszystkich. Oznacza to, ze _ktokolwiek_, kto ma dostep do
++    tego komputera, moze dowolnie manipulowac przy tej instalacji [%+ terms.Bugzilli %]
+     i uruchomic dowolny kod Perl jako uzytkownik serwera www.
+ 
+@@ -702,5 +702,5 @@
+     localconfig, lecz skrypt ten nie jest uruchomiony przez a) uzytkownika [% constants.ROOT_USER FILTER html %]; 
+     lub b) czlonka tej grupy. Moze to spowodowac problemy z uprawnieniami i zmniejszenie 
+-    poziomu bezpieczenstwa. W przypadku problemow z praca skryptow [% terms.Bugzilli %],
++    poziomu bezpieczenstwa. W przypadku problemow z praca skryptow [% terms.Bugzilli %]
+     nalezy zalogowac sie jako [% constants.ROOT_USER FILTER html %] i uruchomic ten skrypt ponownie, 
+     zostac czlonkiem tej grupy lub usunac parametr "webservergroup".
+@@ -720,5 +720,5 @@
+     Produkt <em>[% product.name FILTER html %]</em> został utworzony. Należy
+     <a href="editcomponents.cgi?action=add&product=[% product.name FILTER url_quote %]">
+-    dodać co najmniej jeden komponent</a> zanim ktokolwiek będzie mógł zgłaszać [% terms.bledy %] w tym produkcie.
++    dodać co najmniej jeden komponent</a>, zanim ktokolwiek będzie mógł zgłaszać [% terms.bledy %] w tym produkcie.
+ 
+   [% ELSIF message_tag == "product_deleted" %]
+@@ -759,10 +759,10 @@
+     [% title = "Rozpoczęto sesję sudo" %]
+       Rozpoczęto sesję sudo. Przez następne 6 godzin lub do czasu zakończenia
+-      sesji, wszystko, co zrobisz – robisz na konto użytkownika,
++      sesji wszystko, co zrobisz – robisz na konto użytkownika,
+       którego tożsamość została przejęta ([% target FILTER html %]).
+   
+   [% ELSIF message_tag == "sudo_ended" %]
+     [% title = "Zakończono sesję sudo" %]
+-      Zakończono sesję sudo. Od tego momentu wszystko co robisz – robisz
++      Zakończono sesję sudo. Od tego momentu wszystko, co robisz – robisz
+       na własne konto.
+ 
+@@ -839,5 +839,5 @@
+   [% message = BLOCK %]
+     Nieprawidłowo korzystasz z funkcji przekazywania wiadomości. Został
+-    podany ciąg znaków „[% message_tag %]”. Prawidłowo, należy podać
++    podany ciąg znaków „[% message_tag %]”. Prawidłowo należy podać
+     go jako znacznik i zdefiniować wewnątrz pliku messages.html.tmpl.<br>
+     <br>
+

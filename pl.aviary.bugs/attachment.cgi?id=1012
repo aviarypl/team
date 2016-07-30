@@ -1,0 +1,225 @@
+Index: browser/chrome/browser/browser.dtd
+===================================================================
+RCS file: /l10n/l10n/pl/browser/chrome/browser/browser.dtd,v
+retrieving revision 1.93
+diff -u -r1.93 browser.dtd
+--- browser/chrome/browser/browser.dtd	4 Apr 2008 19:18:06 -0000	1.93
++++ browser/chrome/browser/browser.dtd	6 Apr 2008 21:35:46 -0000
+@@ -67,13 +67,13 @@
+ 
+ <!ENTITY bookmarksMenu.label "Zakładki" >
+ <!ENTITY bookmarksMenu.accesskey "Z" >
+-<!ENTITY bookmarkThisPageCmd.label "Dodaj do zakładek…" >
++<!ENTITY bookmarkThisPageCmd.label "Dodaj zakładkę…" >
+ <!ENTITY bookmarkThisPageCmd.commandkey "d" >
+ <!ENTITY subscribeToPageMenupopup.label "Subskrybuj tę stronę">
+ <!ENTITY subscribeToPageMenuitem.label "Subskrybuj tę stronę…">
+-<!ENTITY addCurPagesCmd.label "Dodaj wszystkie karty do zakładek…">
++<!ENTITY addCurPagesCmd.label "Dodaj zakładki do wszystkich kart…">
+ <!ENTITY organizeBookmarks.label "Zarządzaj zakładkami…">
+-<!ENTITY bookmarkAllCmd.label "Dodaj wszystkie karty do zakładek…">
++<!ENTITY bookmarkAllCmd.label "Dodaj zakładki do wszystkich kart…">
+ 
+ <!ENTITY backCmd.label "Wstecz" >
+ <!ENTITY backCmd.accesskey "W" >
+@@ -248,11 +248,11 @@
+ <!ENTITY viewBGImageCmd.accesskey "t" >
+ <!ENTITY setDesktopBackgroundCmd.label "Ustaw jako tapetę…" >
+ <!ENTITY setDesktopBackgroundCmd.accesskey "t" >
+-<!ENTITY bookmarkPageCmd2.label "Dodaj tę stronę do zakładek">
++<!ENTITY bookmarkPageCmd2.label "Dodaj zakładkę do tej strony">
+ <!ENTITY bookmarkPageCmd2.accesskey "D">
+-<!ENTITY bookmarkThisLinkCmd.label "Dodaj odnośnik do zakładek">
++<!ENTITY bookmarkThisLinkCmd.label "Dodaj zakładkę do odnośnika">
+ <!ENTITY bookmarkThisLinkCmd.accesskey "e">
+-<!ENTITY bookmarkThisFrameCmd.label "Dodaj ramkę do zakładek">
++<!ENTITY bookmarkThisFrameCmd.label "Dodaj zakładkę do ramki">
+ <!ENTITY bookmarkThisFrameCmd.accesskey "D">
+ <!ENTITY sendPageCmd.label "Wyślij odnośnik…" >
+ <!ENTITY sendPageCmd.accesskey "W" >
+Index: browser/chrome/browser/browser.properties
+===================================================================
+RCS file: /l10n/l10n/pl/browser/chrome/browser/browser.properties,v
+retrieving revision 1.63
+diff -u -r1.63 browser.properties
+--- browser/chrome/browser/browser.properties	5 Apr 2008 22:30:20 -0000	1.63
++++ browser/chrome/browser/browser.properties	6 Apr 2008 21:35:47 -0000
+@@ -3,7 +3,7 @@
+ nv_stopped=Zatrzymano
+ openFile=Otwórz plik
+ 
+-droponbookmarksbutton=Upuść odnośnik, aby go dodać do Zakładek
++droponbookmarksbutton=Upuść odnośnik, aby dodać zakładkę do niego
+ dropondownloadsbutton=Upuść odnośnik lub plik, aby go pobrać
+ droponnewtabbutton=Upuść odnośnik lub plik, aby otworzyć go w nowej karcie
+ droponnewwindowbutton=Upuść odnośnik lub plik, aby otworzyć go w nowym oknie
+@@ -95,7 +95,7 @@
+ 
+ # Star button
+ starButtonOn.tooltip=Edytuj tę zakładkę
+-starButtonOff.tooltip=Dodaj tę stronę do zakładek
++starButtonOff.tooltip=Dodaj zakładkę do tej strony
+ 
+ # Offline web applications
+ offlineApps.available=Ta witryna (%S) prosi o możliwość przechowywania na komputerze danych do wykorzystania w trybie offline.
+@@ -130,7 +130,7 @@
+ pausedDownloads=Wstrzymane pobieranie jednego pliku;Wstrzymane pobieranie #1 plików;Wstrzymane pobieranie #1 plików
+ 
+ # Edit Bookmark UI
+-editBookmarkPanel.pageBookmarkedTitle=Strona dodana do zakładek
++editBookmarkPanel.pageBookmarkedTitle=Dodano zakładkę do strony
+ editBookmarkPanel.pageBookmarkedDescription=%S zapamięta tę stronę.
+ editBookmarkPanel.bookmarkedRemovedTitle=Zakładka usunięta
+ editBookmarkPanel.editBookmarkTitle=Edytuj tę zakładkę
+Index: browser/chrome/browser/tabbrowser.dtd
+===================================================================
+RCS file: /l10n/l10n/pl/browser/chrome/browser/tabbrowser.dtd,v
+retrieving revision 1.4
+diff -u -r1.4 tabbrowser.dtd
+--- browser/chrome/browser/tabbrowser.dtd	26 Mar 2008 18:13:11 -0000	1.4
++++ browser/chrome/browser/tabbrowser.dtd	6 Apr 2008 21:35:47 -0000
+@@ -10,9 +10,9 @@
+ <!ENTITY reloadTab.label "Odśwież kartę" >
+ <!ENTITY reloadTab.accesskey "O" >
+ <!ENTITY  listAllTabs.label      "Pokaż wszystkie karty">
+-<!ENTITY  bookmarkAllTabs.label       "Dodaj wszystkie karty do zakładek…">
++<!ENTITY  bookmarkAllTabs.label       "Dodaj zakładki do wszystkich kart…">
+ <!ENTITY  bookmarkAllTabs.accesskey   "k">
+-<!ENTITY  bookmarkThisTab.label        "Dodaj tę kartę do zakładek">
++<!ENTITY  bookmarkThisTab.label        "Dodaj zakładkę do tej karty">
+ <!ENTITY  bookmarkThisTab.accesskey    "z">
+ <!ENTITY  undoCloseTab.label          "Przywróć zamkniętą kartę">
+ <!ENTITY  undoCloseTab.accesskey      "P">
+Index: browser/chrome/browser/history/history.dtd
+===================================================================
+RCS file: /l10n/l10n/pl/browser/chrome/browser/history/history.dtd,v
+retrieving revision 1.2
+diff -u -r1.2 history.dtd
+--- browser/chrome/browser/history/history.dtd	19 Jul 2005 17:34:42 -0000	1.2
++++ browser/chrome/browser/history/history.dtd	6 Apr 2008 21:35:47 -0000
+@@ -22,7 +22,7 @@
+ <!ENTITY openInNewTab.accesskey "T" >
+ <!ENTITY openInNewWindow.label "Otwórz w nowym oknie" >
+ <!ENTITY openInNewWindow.accesskey "W" >
+-<!ENTITY bookmarkLink.label "Dodaj odnośnik do zakładek" >
++<!ENTITY bookmarkLink.label "Dodaj zakładkę do odnośnika">
+ <!ENTITY bookmarkLink.accesskey "e" >
+ <!ENTITY copyLink.label "Kopiuj adres odnośnika" >
+ <!ENTITY copyLink.accesskey "K" >
+Index: browser/chrome/browser/places/bookmarkProperties.properties
+===================================================================
+RCS file: /l10n/l10n/pl/browser/chrome/browser/places/bookmarkProperties.properties,v
+retrieving revision 1.13
+diff -u -r1.13 bookmarkProperties.properties
+--- browser/chrome/browser/places/bookmarkProperties.properties	30 Mar 2007 17:41:39 -0000	1.13
++++ browser/chrome/browser/places/bookmarkProperties.properties	6 Apr 2008 21:35:48 -0000
+@@ -1,11 +1,11 @@
+ dialogAcceptLabelAddItem=Dodaj
+ dialogAcceptLabelAddMulti=Dodaj zakładki
+ dialogAcceptLabelEdit=Zapisz zmiany
+-dialogTitleAddBookmark=Dodaj do zakładek
++dialogTitleAddBookmark=Dodaj zakładkę
+ 
+ dialogTitleAddLivemark=Dodaj dynamiczną zakładkę
+ dialogTitleAddFolder=Dodaj folder
+-dialogTitleAddMulti=Dodaj wszystkie karty do zakładek
++dialogTitleAddMulti=Dodaj zakładki do wszystkich kart
+ dialogTitleEdit=Właściwości "%S"
+ 
+ bookmarkAllTabsDefault=[Nazwa folderu]
+Index: browser/chrome/help/firebird-toc.rdf
+===================================================================
+RCS file: /l10n/l10n/pl/browser/chrome/help/firebird-toc.rdf,v
+retrieving revision 1.55
+diff -u -r1.55 firebird-toc.rdf
+--- browser/chrome/help/firebird-toc.rdf	1 Apr 2008 19:06:06 -0000	1.55
++++ browser/chrome/help/firebird-toc.rdf	6 Apr 2008 21:35:51 -0000
+@@ -361,9 +361,9 @@
+   <rdf:Description about="#menu-bookmarks">
+     <nc:subheadings>
+       <rdf:Seq>
+-        <rdf:li> <rdf:Description ID="menu-bookmarks-add-to-bookmarks" nc:name="Dodaj do zakładek" nc:link="menu_reference.xhtml#add_to_bookmarks"/> </rdf:li>
++        <rdf:li> <rdf:Description ID="menu-bookmarks-add-to-bookmarks" nc:name="Dodaj zakładkę" nc:link="menu_reference.xhtml#add_to_bookmarks"/> </rdf:li>
+         <rdf:li> <rdf:Description ID="menu-bookmarks-subscribe" nc:name="Subskrybuj tę stronę..." nc:link="menu_reference.xhtml#subscribe"/> </rdf:li>
+-	<rdf:li> <rdf:Description ID="menu-bookmarks-bookmark-all-tabs" nc:name="Dodaj wszystkie karty do zakładek..." nc:link="menu_reference.xhtml#bookmark_all_tabs"/> </rdf:li>
++	<rdf:li> <rdf:Description ID="menu-bookmarks-bookmark-all-tabs" nc:name="Dodaj zakładki do wszystkich kart..." nc:link="menu_reference.xhtml#bookmark_all_tabs"/> </rdf:li>
+         <rdf:li> <rdf:Description ID="menu-bookmarks-organize-bookmarks" nc:name="Zarządzaj zakładkami..." nc:link="menu_reference.xhtml#organize_bookmarks"/> </rdf:li>
+       </rdf:Seq>
+     </nc:subheadings>
+Index: browser/chrome/help/menu_reference.xhtml
+===================================================================
+RCS file: /l10n/l10n/pl/browser/chrome/help/menu_reference.xhtml,v
+retrieving revision 1.49
+diff -u -r1.49 menu_reference.xhtml
+--- browser/chrome/help/menu_reference.xhtml	2 Apr 2008 20:20:53 -0000	1.49
++++ browser/chrome/help/menu_reference.xhtml	6 Apr 2008 21:35:53 -0000
+@@ -229,8 +229,8 @@
+ <h2 id="bookmarks">Menu Zakładki</h2>
+ <p>Menu pozwala na dostęp do wszystkich zakładek użytkownika.</p>
+ 
+-  <h3 id="add_to_bookmarks">Dodaj do zakładek</h3>
+-  <p>Pozwala dodać bieżącą stronę do zakładek. W&nbsp;oknie dialogowym można podać nazwę zakładki i&nbsp;folder, w&nbsp;którym ma zostać zapisana - w&nbsp;razie potrzeby można utworzyć nowy folder.
++  <h3 id="add_to_bookmarks">Dodaj zakładkę</h3>
++  <p>Pozwala dodać zakładkę do bieżącej strony. W&nbsp;oknie dialogowym można podać nazwę zakładki i&nbsp;folder, w&nbsp;którym ma zostać zapisana - w&nbsp;razie potrzeby można utworzyć nowy folder.
+   Jako zakładkę zapisać można również grupę aktualnie otwartych kart.</p>
+ 
+   <h3 id="subscribe">Subskrybuj tę stronę...</h3>
+@@ -239,8 +239,8 @@
+   zakładki</a>, czytnika kanałów zainstalowanego na komputerze lub czytnika działającego jako usługa WWW.   
+   Jeśli użytkownik zdecyduje w&nbsp;panelu <a href="prefs.xhtml#applications_options">Aplikacje</a> w&nbsp;&pref.menuPath;, by subskrypcji zawsze dokonywać za pomocą dynamicznej zakładki lub czytnika kanałów, strona podglądu zostanie pominięta.</p>
+ 
+-  <h3 id="bookmark_all_tabs">Dodaj wszystkie karty do zakładek...</h3>
+-  <p>Dodaje wszystkie karty otwarte w&nbsp;bieżącym oknie do nowego folderu zakładek. Zostanie 
++  <h3 id="bookmark_all_tabs">Dodaj zakładki do wszystkich kart...</h3>
++  <p>Tworzy nowy folder z&nbsp;zakładami do wszystkich kart otwartych w&nbsp;bieżącym oknie. Zostanie 
+      wyświetlone okno dialogowe, w&nbsp;którym będzie można podać nazwę tego folderu oraz
+      ustalić jego położenie.</p>
+ 
+Index: browser/chrome/help/shortcuts.xhtml
+===================================================================
+RCS file: /l10n/l10n/pl/browser/chrome/help/shortcuts.xhtml,v
+retrieving revision 1.30
+diff -u -r1.30 shortcuts.xhtml
+--- browser/chrome/help/shortcuts.xhtml	1 Apr 2008 18:02:53 -0000	1.30
++++ browser/chrome/help/shortcuts.xhtml	6 Apr 2008 21:35:54 -0000
+@@ -322,11 +322,11 @@
+     </tr>
+ 
+     <tr>
+-      <td>Dodaj do zakładek</td>
++      <td>Dodaj zakładkę</td>
+       <td>&accelKey;+<kbd>D</kbd></td>
+      </tr>
+     <tr class="noUnix">
+-      <td>Dodaj wszystkie karty do zakładek</td>
++      <td>Dodaj zakładki do wszystkich kart</td>
+       <td>&accelKey;+&shiftKey;+<kbd>D</kbd></td>
+     </tr>
+     <tr>
+Index: browser/chrome/help/tabbed_browsing.xhtml
+===================================================================
+RCS file: /l10n/l10n/pl/browser/chrome/help/tabbed_browsing.xhtml,v
+retrieving revision 1.16
+diff -u -r1.16 tabbed_browsing.xhtml
+--- browser/chrome/help/tabbed_browsing.xhtml	2 Jan 2007 15:58:43 -0000	1.16
++++ browser/chrome/help/tabbed_browsing.xhtml	6 Apr 2008 21:35:54 -0000
+@@ -92,14 +92,14 @@
+ 
+ <dl>
+   <dt id="bookmarking_tabbed_browsing">Przeglądanie w&nbsp;kartach a&nbsp;zakładki</dt>
+-  <dd>Możliwe jest dodanie do zakładek całej grupy kart. 
+-  Aby dodać do zakładek grupę kart, należy:</dd>
++  <dd>Możliwe jest dodanie zakładek do całej grupy kart. 
++  Aby dodać zakładki do grupy kart, należy:</dd>
+   <dd>
+   <ol>
+     <li><span class="noUnix">Nacisnąć klawisze &accelKey;+&shiftKey;+<kbd>D</kbd> lub z&nbsp;menu programu wybrać</span>
+ 	<span class="unix">Wybrać z&nbsp;menu programu</span>
+-        pozycję <span class="menuPath">Zakładki &gt; Dodaj wszystkie karty do zakładek</span>,
+-        aby dodać wszystkie otwarte karty aktualnego okna do nowego foldera w&nbsp;zakładkach.</li>
++        pozycję <span class="menuPath">Zakładki &gt; Dodaj zakładki do wszystkich kart</span>,
++        aby utworzyć nowy folder z&nbsp;zakładkami do wszystkich otwartych kart aktualnego okna.</li>
+     <li>Aby otworzyć zakładki w&nbsp;kartach, należy otworzyć folder zakładek i&nbsp;wybrać opcję 
+ 	<span class="menuPath">Otwórz w&nbsp;kartach</span>.  Można także kliknąć środkowym klawiszem myszy
+ 	na folderze zakładek. <strong>Uwaga</strong>: zakładki zostaną otwarte w&nbsp;istniejących kartach (nie w&nbsp;nowych).</li>
+

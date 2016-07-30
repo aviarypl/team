@@ -1,0 +1,603 @@
+=== default/admin/flag-type/edit.html.tmpl
+==================================================================
+--- default/admin/flag-type/edit.html.tmpl   (/2.18/pl-patch/template/pl)   (revision 48)
++++ default/admin/flag-type/edit.html.tmpl   (/2.18/pl-trunk/template/pl)   (revision 48)
+@@ -163,7 +163,14 @@
+     <tr>
+       <th>CC List:</th>
+       <td>
+-        if requestable, who should get carbon copied on email notification of requests<br>
++        if requestable, who should get carbon copied on email notification of requests.
++        This is a comma-separated list of full e-mail addresses which do not
++        need to be [% terms.Bugzilla %] logins.
++        [% IF Param('emailsuffix') %]
++          Note that the configured emailsuffix
++          <kbd>[% Param('emailsuffix') %]</kbd> will <em>not</em> be appended
++          to these addresses, so you should add it explicitly if so desired.
++        [% END %]<br>
+         <input type="text" name="cc_list" value="[% type.cc_list FILTER html %]" size="80" maxlength="200">
+       </td>
+     </tr>
+=== default/pages/bug-writing.html.tmpl
+==================================================================
+--- default/pages/bug-writing.html.tmpl   (/2.18/pl-patch/template/pl)   (revision 48)
++++ default/pages/bug-writing.html.tmpl   (/2.18/pl-trunk/template/pl)   (revision 48)
+@@ -200,79 +200,78 @@
+ 
+       <blockquote>
+ <pre>
+-Drag-selecting any page crashes Mac builds in NSGetFactory
++Zaznaczenie myszką na dowolnej stronie powoduje że na Macu program wyłącza się w NSGetFactory.
+ </pre>
+       </blockquote>
+ 
+-      <p><b>Steps to Reproduce:</b> Minimized, easy-to-follow steps that
+-      will trigger the [% terms.bug %]. Include any special setup steps.</p>
++      <p><b>Postępowanie aby powtórzyć:</b> Możliwie nieskomplikowany opis czynności,
++      których powtórzenie pozwala na zauważenie [% terms.bledu %]. Powinien zawierać
++      początkowe ustawienia wymagane do wystąpienia [% terms.bledu %].</p>
+ 
+       <blockquote>
+ <pre>
+-1) View any web page. (I used the default sample page,
+-resource:/res/samples/test0.html)
++1) Włącz dowolną stronę (ja użyłem jednej z przykładowych stron dołączanych do programu,
++  resource:/res/samples/test0.html).
+ 
+-2) Drag-select the page. (Specifically, while holding down 
+-the mouse button, drag the mouse pointer downwards from any 
+-point in the browser's content region to the bottom of the 
+-browser's content region.)                   
++2) Zaznacz stronę używając myszki (Przyciskając przycisk myszki nad dowolnym elementem
++  na stronie, przeciągnij ją na sam dół strony). 
+ </pre>
+       </blockquote>
+ 
+-      <p><b>Actual Results:</b> What the application did after performing
+-      the above steps.</p>
++      <p><b>Otrzymany wynik:</b> Co stało się po wykonaniu tych czynności.</p>
+ 
+       <blockquote>
+ <pre>
+-The application crashed. Stack crawl appended below from MacsBug.
++Program wyłączył się z błędem. Poniżej zamieszczam zawartość stosu z MacsBug.
+ </pre>
+       </blockquote>
+ 
+-      <p><b>Expected Results:</b> What the application should have done,
+-      were the [% terms.bug %] not present.</p>
++      <p><b>Oczekiwany wynik:</b> Co powinieneś otrzymać, gdyby ten [% terms.blad %]
++      nie występował.</p>
+ 
+       <blockquote>
+ <pre>
+-The window should scroll downwards. Scrolled content should be selected. 
+-(Or, at least, the application should not crash.)
++Okienko powinno zostać przewinięte w dół. Przewinięta zawartość powinna zostać zaznaczona
++(przynajmniej program powinien działać dalej).
+ </pre>
+       </blockquote>
+ 
+-      <p><b>Build Date &amp; Platform:</b> Date and platform of the build
+-      that you first encountered the [% terms.bug %] in.</p>
++      <p><b>Wersja i platforma:</b> Wersja oraz platforma na której zaobserwowano
++      [% terms.blad %] in.</p>
+ 
+       <blockquote>
+ <pre>
+-Build 2002-03-15 on Mac OS 9.0
++Wersja z dnia 2002-03-15 na Mac OS 9.0
+ </pre>
+       </blockquote>
+ 
+-      <p><b>Additional Builds and Platforms:</b> Whether or not 
+-      the [% terms.bug %] takes place on other platforms (or browsers, 
+-      if applicable).</p>
++      <p><b>Dodatkowe wersje i platformy:</b> Inne wersje i platformy które testowano
++      na występowanie tego błędu, oraz ich wyniki (jeśli taki test ma sens to również
++      wyniki z innych programów).</p>
+ 
+       <blockquote>
+ <pre>
+-- Also Occurs On        
+-Mozilla (2002-03-15 build on Windows NT 4.0) 
++- Występuje również na
++Mozilla z dnia 2002-03-15 na Windows NT 4.0.
+ 
+-- Doesn't Occur On        
+-Mozilla (2002-03-15 build on Red Hat Linux; feature not supported)        
+-Internet Explorer 5.0 (shipping build on Windows NT 4.0)        
+-Netscape Communicator 4.5 (shipping build on Mac OS 9.0)
++- Nie występuje na
++Mozilla z dnia 2002-03-15 na Red Hat Linux (funkcja nie została zaimplementowana).
++Internet Explorer 5.0 na Windows NT 4.0.
++Netscape Communicator 4.5 na Mac OS 9.0.
+ </pre>
+       </blockquote>
+ 
+-      <p><b>Additional Information:</b> Any other debugging information.
+-      For crashing [% terms.bugs %]:</p>
++      <p><b>Dodatkowe informacje:</b> Dodatkowe informacje które mogą pomóc w
++      poprawieniu błedu.
++      Przykładowo dla [% terms.bledow %] które powodują awarię programu :</p>
+ 
+       <ul>
+-        <li><b>Win32:</b> if you receive a Dr. Watson error, please note
+-        the type of the crash, and the module that the application crashed
+-        in. (e.g. access violation in apprunner.exe)</li>
++        <li><b>Win32:</b> jeśli uzyskasz błąd w Dr. Watson, proszę zanotować
++        typ błędu oraz moduł który spowodował awarię (np. nieprawidłowy dostęp
++        w apprunner.exe)</li>
+ 
+-        <li><b>Mac OS:</b> if you're running MacsBug, please provide the
+-        results of a <b>how</b> and an <b>sc</b>:</li>
++        <li><b>Mac OS:</b> jeśli używasz MacsBug, proszę podać wartości <b>how</b>
++        oraz <b>sc</b>:</li>
+       </ul>
+ 
+       <blockquote>
+@@ -289,96 +288,95 @@
+     </blockquote>
+   </blockquote>
+ 
+-  <p>You're done!<br>
++  <p>Zakończone!<br>
+   <br>
+-   After double-checking your entries for any possible errors, press the
+-  "Commit" button, and your [% terms.bug %] report will now be in 
+-  the [% terms.Bugzilla %] database.<br>
++   Po sprawdzeniu czy Twój wpis nie zawiera żadnych błędów przyciśnij
++  guzik "Wyślij", a Twój raport o [% terms.bledzie %] zostanie dodany do
++  bazy danych [% terms.Bugzilli %].<br>
+   </p>
+ </blockquote>
+ <hr>
+ 
+-<h3>More Information on Writing Good [% terms.Bugs %]</h3>
++<h3>Więcej informacji na temat pisania dobrych raportów o [% terms.bledach %]</h3>
+ 
+ <blockquote>
+-  <p><b><a name="tips"></a> 1. General Tips for a Useful [% terms.Bug %] 
+-     Report</b></p>
++  <p><b><a name="tips"></a> 1. Ogólne porady</b></p>
+ 
+   <blockquote>
+-    <p><b>Use an explicit structure, so your [% terms.bug %] reports are easy
+-    to skim.</b> [% terms.Bug %] report users often need immediate access to 
+-    specific sections of your [% terms.bug %]. If your [% terms.Bugzilla %] 
+-    installation supports the [% terms.Bugzilla %] Helper, use it.</p>
++    <p><b>Uzywaj formalnej struktury, dzięki temu twoje raporty będą łatwe do
++    przejrzenia.</b> Osoby czytające raporty o [% terms.bledach %] często potrzebują
++    dotrzeć do określonej części opisu [% terms.bledu %]. Jeśli instalacja
++    [% terms.Bugzilli %] którą używasz zawiera narzędzie ułatwiające zgłaszanie
++    [% terms.bledow %], użyj go.</p>
+ 
+-    <p><b>Avoid cuteness if it costs clarity.</b> Nobody will be laughing
+-    at your funny [% terms.bug %] title at 3:00 AM when they can't remember how 
+-    to find your [% terms.bug %].</p>
++    <p><b>Przedkładaj wyrazistość nad elokwencje.</b> Nikt nie będzie śmiał się
++    z zabawnego tytułu Twojego reportu, gdy o 3 nad ranem będzie starał przypomnieć
++    sobie jak odnaleźć Twój [% terms.blad %].</p>
+ 
+-    <p><b>One [% terms.bug %] per report.</b> Completely different people 
+-    typically fix, verify, and prioritize different [% terms.bugs %]. If you 
+-    mix a handful of [% terms.bugs %] into a single report, the right people 
+-    probably won't discover your [% terms.bugs %] in a timely fashion, or at 
+-    all. Certain [% terms.bugs %] are also more important than others. It's 
+-    impossible to prioritize [% terms.abug %] report when
+-    it contains four different issues, all of differing importance.</p>
++    <p><b>Jeden [% terms.blad %] na jeden raport.</b> Zwykle zupełnie inne osoby
++    naprawiają, weryfikują i ustalają priorytety dla [% terms.bledow %]. Jeśli w
++    jednym raporcie zawrzesz kilka [% terms.bledow %], prawdopodobnie odpowiednie
++    osoby nie dowiedzą sie odpowiednio szybko o Twoim raporcie. Dodatkowo niektóre
++    [% terms.bledy %] mogą być bardziej ważnie niż reszta i tym samym prawidłowe
++    ustalenie priorytetu dla raportu może być niemożliwe.</p>
+ 
+-    <p><b>No [% terms.bug %] is too trivial to report.</b> Unless you're 
+-    reading the source code, you can't see actual software [% terms.bugs %], 
+-    like a dangling pointer -- you'll see their visible manifestations, such 
+-    as the segfault when the application finally crashes. Severe software 
+-    problems can manifest themselves in superficially trivial ways. File them
+-    anyway.<br>
++    <p><b>Zaden [% terms.blad %] nie jest na tyle trywialny, aby go nie zgłosić.</b>
++    Rzeczywiste występowanie niektórych [% terms.bledow %], np. używanie zwolnionej
++    pamięci, można zauważyć tylko przeglądając kod źródłowy -- objawy tego typu
++    [% terms.bledu %] są widoczne jako awaria programu przez zwykłego użytkownika.
++    Niektóre klasy błędów ujawniają się w niezwykle trywialny sposób, więc zgłoszenia
++    nawet dla tak trywialnych przypadków, może pomóc w wyeliminowaniu rzeczywistych,
++    nie tak całkiem prostych błędów.<br>
+     </p>
+   </blockquote>
+ 
+-  <p><b><a name="summary"></a>2. How and Why to Write Good [% terms.Bug %]
+-  Summaries</b></p>
++  <p><b><a name="summary"></a>2. Jak i dlaczego pisać dobre podsumowania [% terms.bledow %]</b></p>
+ 
+   <blockquote>
+-    <p><b>You want to make a good first impression on the [% terms.bug %]
+-    recipient.</b> Just like a New York Times headline guides readers
+-    towards a relevant article from dozens of choices, will 
+-    your [% terms.bug %] summary suggest that your [% terms.bug %] report is 
+-    worth reading from dozens or hundreds of choices?</p>
++    <p><b>Powinieneś zrobić dobre wrażenie na odbiorcach raportu o [% terms.bledzie %]</b>
++    Podobnie jak gazetowy nagłówek pozwala czytelnikowi wybrać interesujące go artykuły
++    spośród wielu innych, podsumowanie [% terms.bledu %] pozwala stwierdzić osobie
++    przeglądającej raporty, czy Twój raport wart jest tego by go wybrać spośród tuzinów
++    lub setek innych</p>
+ 
+-    <p>Conversely, a vague [% terms.bug %] summary like <tt>install 
+-    problem</tt> forces anyone reviewing installation [% terms.bugs %] to waste 
+-    time opening up your [% terms.bug %] to determine whether it matters.</p>
++    <p>Ogólne podsumowanie jak <tt>problem z instalacją</tt> wymusza na każdej osobie
++    zainteresowanej błędami w instalatorze stratę czasu na przejrzenie całego raportu,
++    żeby zobaczyć czy [% terms.blad %] ten, w rzeczywistości mieści się w obrębie
++    zainteresowań danej osoby.</p>
+ 
+-    <p><b>Your [% terms.bug %] will often be searched by its summary.</b> Just 
+-    as you'd find web pages with Google by searching by keywords through 
+-    intuition, so will other people locate your [% terms.bugs %]. 
+-    Descriptive [% terms.bug %] summaries are
+-    naturally keyword-rich, and easier to find.</p>
++    <p><b>[% terms.Bledy %] są zwykle wyszukiwane po ich podsumowaniu.</b> Podobnie
++    jak wyszukujesz strony w Google przy użyciu intuicyjnych słów kluczowych, inni
++    próbują znaleźć Twój [% terms.blad %]. Opisowe podsumowanie [% terms.bledu %] są
++    łatwiejsze do znalezienia przy użyciu, intuicyjnych dla danego problemu, słów
++    kluczowych.</p>
+ 
+-    <p>For example, you'll find a [% terms.bug %] titled "<tt>Dragging icons 
+-    from List View to gnome-terminal doesn't paste path</tt>" if you search on
+-    "List", "terminal", or "path". Those search keywords wouldn't have
+-    found a [% terms.bug %] titled "<tt>Dragging icons doesn't paste</tt>".</p>
++    <p>Przykładowo dla [% terms.bledu %] zatytułowanego "<tt>Przeciągnięcie
++    ikony z widoku listy do okna gnome-terminala nie powoduje wstawienie ścieżki</tt>"
++    wpisanie "lista", "terminal", lub "ścieżka" powinno być wystarczające. Dla
++    "<tt>Przeciągnięcie ikony nie wkleja tekstu</tt>" nie.</p>
+ 
+-    <p>Ask yourself, "Would someone understand my [% terms.bug %] from just 
+-    this summary?" If so, you've written a fine summary.</p>
++    <p>Zapytaj siebie, "Czy ktoś zrozumie [% terms.blad %] po przeczytaniu samego
++    podsumowania?". Jeśli tak Twoje podsumowanie jest dobre.</p>
+ 
+-    <p><b>Don't write titles like these:</b></p>
++    <p><b>Przykłady złych wpisów:</b></p>
+ 
+     <ol>
+-      <li>"Can't install" - Why can't you install? What happens when you
+-      try to install?</li>
++      <li>"Nie mogę zainstalować" - Dlaczego nie możesz zainstalować? Co się dzieje gdy
++      próbujesz zainstalować?</li>
+ 
+-      <li>"Severe Performance Problems" - ...and they occur when you do
+-      what?</li>
++      <li>"Poważne problemy z wydajnością" - ...które występują gdy robisz?</li>
+ 
+-      <li>"back button does not work" - Ever? At all?</li>
++      <li>"Przycisk Wróć nie działa" - Zawsze?</li>
+     </ol>
+ 
+-    <p><b>Good [% terms.bug %] titles:</b></p>
++    <p><b>I dobrych:</b></p>
+ 
+     <ol>
+-      <li>"1.0 upgrade installation fails if Mozilla M18 package present" -
+-      Explains problem and the context.</li>
++      <li>"Nieudane uaktualnienie do 1.0 przy zainstalowanej Mozilli M18 package" -
++      Opisuje problem i kontekst.</li>
+ 
+-      <li>"RPM 4 installer crashes if launched on Red Hat 6.2 (RPM 3)
+-      system" - Explains what happens, and the context.</li>
++      <li>"Instalacja przy użyciu RPM 4 wywala się na Red Hat 6.2 (RPM 3)" - 
++      Wyjaśnia co się dzieje i w jakim przypadku.</li>
+     </ol>
+   </blockquote>
+ </blockquote>
+=== default/global/code-error.html.tmpl
+==================================================================
+--- default/global/code-error.html.tmpl   (/2.18/pl-patch/template/pl)   (revision 48)
++++ default/global/code-error.html.tmpl   (/2.18/pl-trunk/template/pl)   (revision 48)
+@@ -251,7 +251,10 @@
+     doprowadziły do wystąpienia tego błędu.
+   </p>
+   <script type="text/javascript"> <!--
+-    document.write("<p>URL: " + document.location + "</p>");
++    document.write("<p>URL: " + 
++                    document.location.href.replace(/&/g,"&amp;")
++                                          .replace(/</g,"&lt;")
++                                          .replace(/>/g,"&gt;") + "</p>");
+   // -->
+   </script>
+ </tt>
+=== default/global/user-error.html.tmpl
+==================================================================
+--- default/global/user-error.html.tmpl   (/2.18/pl-patch/template/pl)   (revision 48)
++++ default/global/user-error.html.tmpl   (/2.18/pl-trunk/template/pl)   (revision 48)
+@@ -599,12 +599,8 @@
+     Łatki nie mogą być większe niż [% Param('maxpatchsize') %] KB.
+     Spróbuj podzielić łatkę na kilka części.
+ 
+-  [% ELSIF error == "product_access_denied" %]
+-    [% title = "Brak dostępu" %]
+-    Nie posiadasz uprawnień pozwalających na dostęp do tego produktu.
+-
+   [% ELSIF error == "product_edit_denied" %]
+-    [% title = "Brak dostępu" %]
++    [% title = "Brak dostępu do edycji produktu" %]
+     Nie posiadasz uprawnień pozwalających na edycję [% terms.bledu %] dla produktu
+     [% product FILTER html %].
+ 
+@@ -778,7 +774,7 @@
+   
+ [% USE Bugzilla %]
+ [% namedcmd = Bugzilla.cgi.param("namedcmd") %]
+-[% IF namedcmd %]
++[% IF namedcmd AND error != "missing_query" %]
+   <p>  
+     Ewentualnie możesz    
+     <a href="buglist.cgi?cmdtype=dorem&amp;remaction=forget&amp;namedcmd=
+=== default/global/messages.html.tmpl
+==================================================================
+--- default/global/messages.html.tmpl   (/2.18/pl-patch/template/pl)   (revision 48)
++++ default/global/messages.html.tmpl   (/2.18/pl-trunk/template/pl)   (revision 48)
+@@ -135,6 +135,12 @@
+       <a href="editflagtypes.cgi">Wróć do panelu flag.</a>
+     </p>
+     
++  [% ELSIF message_tag == "product_invalid" %]
++    [% title = "Opis komponentu $terms.Bugzilli" %]
++    Produkt <em>[% product FILTER html %]</em> nie istnieje lub nie
++    masz do niego dostępu. Poniższe lista zawiera wszystkie dostępne
++    dla Ciebie produkty.
++
+   [% ELSIF message_tag == "series_created" %]
+     [% title = "Tworzenie serii" %]
+       Seria <em>[% series.category FILTER html %] /
+=== default/flag/list.html.tmpl
+==================================================================
+--- default/flag/list.html.tmpl   (/2.18/pl-patch/template/pl)   (revision 48)
++++ default/flag/list.html.tmpl   (/2.18/pl-trunk/template/pl)   (revision 48)
+@@ -21,6 +21,7 @@
+ 
+ <script type="text/javascript">
+ <!-- 
++  var stored_onload = window.onload;
+   // Enables or disables a requestee field depending on whether or not
+   // the user is requesting the corresponding flag.
+   function toggleRequesteeField(flagField)
+@@ -56,6 +57,9 @@
+             inputElement.disabled = true;
+       }
+     }
++    if (stored_onload) {
++        stored_onload();
++    }
+   }
+   window.onload = disableRequesteeFields;
+ // -->
+=== default/list/table.html.tmpl
+==================================================================
+--- default/list/table.html.tmpl   (/2.18/pl-patch/template/pl)   (revision 48)
++++ default/list/table.html.tmpl   (/2.18/pl-trunk/template/pl)   (revision 48)
+@@ -74,6 +74,9 @@
+ [% tableheader = BLOCK %]
+   <table class="bz_buglist" cellspacing="0" cellpadding="4" width="100%">
+     <colgroup>
++      [% IF dotweak %]
++        <col class="bz_checkbox_column">
++      [% END %]
+       <col class="bz_id_column">
+       [% FOREACH id = displaycolumns %]
+       <col class="bz_[% id FILTER css_class_quote %]_column">
+@@ -84,7 +87,7 @@
+       [% IF dotweak %]
+       <th>&nbsp;</th>
+       [% END %]
+-      <th colspan="[% splitheader ? 2 : 1 %]">
++      <th colspan="[% splitheader ? 2 : 1 %]" class="first-child">
+         [% IF sorted_by_relevance %]
+           ID
+         [% ELSE %]
+=== default/list/edit-multiple.html.tmpl
+==================================================================
+--- default/list/edit-multiple.html.tmpl   (/2.18/pl-patch/template/pl)   (revision 48)
++++ default/list/edit-multiple.html.tmpl   (/2.18/pl-trunk/template/pl)   (revision 48)
+@@ -107,16 +107,17 @@
+     </td>
+ 
+   </tr>
+-  <tr>
+ 
+-    <th><label for="target_milestone">Docelowa wersja:</label></th>
+-    <td colspan="3">
+-      [% PROCESS selectmenu menuname = "target_milestone"
+-                            menuitems = targetmilestones %]
+-    </td>
++   [% IF Param("usetargetmilestone") %]
++    <tr>
++      <th><label for="target_milestone">Docelowa wersja:</label></th>
++      <td colspan="3">
++        [% PROCESS selectmenu menuname = "target_milestone"
++                              menuitems = targetmilestones %]
++      </td>
++    </tr>
++  [% END %]
+ 
+-  </tr>
+-
+   [% IF UserInGroup(Param("timetrackinggroup")) %]
+     <tr>
+       <th><label for="estimated_time">Szacunkowa liczba godzin:</label></th>
+=== default/bug/votes/list-for-user.html.tmpl
+==================================================================
+--- default/bug/votes/list-for-user.html.tmpl   (/2.18/pl-patch/template/pl)   (revision 48)
++++ default/bug/votes/list-for-user.html.tmpl   (/2.18/pl-trunk/template/pl)   (revision 48)
+@@ -21,10 +21,12 @@
+ 
+ [% PROCESS global/variables.none.tmpl %]
+ 
+-[% h2 = voting_user.login FILTER html %]
+-[% PROCESS global/header.html.tmpl
+-           title = "Głosy"
+- %]
++[% IF !header_done %]
++  [% h2 = voting_user.login FILTER html %]
++  [% PROCESS global/header.html.tmpl title = "Głosy" %]
++[% ELSE %]
++  <hr>
++[% END %]
+ 
+ [% canedit = 1 IF voting_user.login == user.login %]
+ 
+=== default/bug/create/create.html.tmpl
+==================================================================
+--- default/bug/create/create.html.tmpl   (/2.18/pl-patch/template/pl)   (revision 48)
++++ default/bug/create/create.html.tmpl   (/2.18/pl-trunk/template/pl)   (revision 48)
+@@ -18,6 +18,7 @@
+   #
+   # Contributor(s): Gervase Markham <gerv@gerv.net>
+   #                 Ville Skyttä <ville.skytta@iki.fi>
++  #                 Shane H. W. Travis <travis@sedsystems.ca>
+   #%]
+ 
+ [% PROCESS global/variables.none.tmpl %]
+@@ -237,6 +238,22 @@
+     </td>
+   </tr>
+ 
++  [% IF Param("insidergroup") && UserInGroup(Param("insidergroup")) %]
++    <tr>
++      <td></td>
++      <td colspan="3">
++        &nbsp;&nbsp;
++        <input type="checkbox" id="commentprivacy" name="commentprivacy"
++          [% " checked=\"checked\"" IF commentprivacy %]>
++        <label for="commentprivacy">
++          Początkowo opis jest prywatny.
++        </label>
++      </td>
++    </tr>
++  [% ELSE %]
++    <input type="hidden" name="commentprivacy" value="0">
++  [% END %]
++
+   [% IF UserInGroup('editbugs') %]
+     [% IF use_keywords %]
+       <tr>
+=== default/bug/edit.html.tmpl
+==================================================================
+--- default/bug/edit.html.tmpl   (/2.18/pl-patch/template/pl)   (revision 48)
++++ default/bug/edit.html.tmpl   (/2.18/pl-trunk/template/pl)   (revision 48)
+@@ -185,9 +185,9 @@
+       [% PROCESS select selname => "component" accesskey => "k" %]
+ 
+       <td align="right">
+-        <b><u>W</u>ersja:</b>
++        <b>Wersja:</b>
+       </td>
+-      [% PROCESS select selname => "version" accesskey => "w" %]
++      [% PROCESS select selname => "version" %]
+ 
+       <td rowspan="4" align="right" valign="top">
+         <b>Obserwatorzy:</b>
+@@ -211,7 +211,7 @@
+     <tr>
+       <td align="right">
+         <b>
+-          <a href="bug_status.html">Status</a>:
++          <a href="page.cgi?id=fields.html#status">Status</a>:
+         </b>
+       </td>
+       <td>[% bug.bug_status FILTER html %]</td>
+@@ -226,7 +226,7 @@
+     <tr>
+       <td align="right">
+         <b>
+-          <a href="page.cgi?id=fields.html">Rozwiązanie</a>:
++          <a href="page.cgi?id=fields.html#resolution">Rozwiązanie</a>:
+         </b>
+       </td>
+       <td>
+@@ -238,9 +238,9 @@
+       <td>&nbsp;</td>
+ 
+       <td align="right">
+-        <b><a href="page.cgi?id=fields.html#bug_severity">W<u>a</u>ga błedu</a>:</b>
++        <b><a href="page.cgi?id=fields.html#bug_severity">Waga błedu</a>:</b>
+       </td>
+-      [% PROCESS select selname = "bug_severity" accesskey => "a" %]
++      [% PROCESS select selname = "bug_severity" %]
+ 
+     </tr>
+ 
+@@ -259,10 +259,10 @@
+             [% IF bug.milestoneurl %]
+               <a href="[% bug.milestoneurl FILTER html %]">
+             [% END %]
+-            W<u>e</u>rsja docelowa[% "</a>" IF bug.milestoneurl %]
++            Wersja docelowa[% "</a>" IF bug.milestoneurl %]
+           </b>
+         </td>
+-        [% PROCESS select selname = "target_milestone" accesskey => "e" %]
++        [% PROCESS select selname = "target_milestone" %]
+       [% ELSE %]
+         <td colspan="3">&nbsp;</td>
+       [% END %]
+@@ -285,7 +285,8 @@
+   <tr>
+     <td align="right">
+       <b>
+-        [% IF bug.bug_file_loc %]
++        [% IF bug.bug_file_loc 
++           AND NOT bug.bug_file_loc.match("^(javascript|data)") %]
+           <a href="[% bug.bug_file_loc FILTER html %]"><u>U</u>RL</a>:
+         [% ELSE %]
+           <u>U</u>RL:
+@@ -410,8 +411,8 @@
+ 
+   <table>
+     <tr>
+-    [% PROCESS dependencies accesskey = "z"
+-       dep = { title => "<u>z</u>ależy od", fieldname => "dependson" } %]
++    [% PROCESS dependencies 
++       dep = { title => "zależy od", fieldname => "dependson" } %]
+       <td rowspan="2">
+         <a href="showdependencytree.cgi?id=[% bug.bug_id %]">Wyświetl
+         drzewo zależności</a>
+@@ -452,7 +453,8 @@
+   <br>
+   <b>Dodatkowe Kom<u>e</u>ntarze:</b>
+   [% IF Param("insidergroup") && UserInGroup(Param("insidergroup")) %]
+-    <input type="checkbox" name="commentprivacy" value="1"> Prywatne
++    <input type="checkbox" name="commentprivacy" value="1"
++           id="newcommentprivacy"> Prywatne
+   [% END %]
+   <br>
+   <a name="add_comment"></a>
+=== default/bug/show-multiple.html.tmpl
+==================================================================
+--- default/bug/show-multiple.html.tmpl   (/2.18/pl-patch/template/pl)   (revision 48)
++++ default/bug/show-multiple.html.tmpl   (/2.18/pl-trunk/template/pl)   (revision 48)
+@@ -111,8 +111,13 @@
+     <tr>
+       <td colspan="4">
+         <b>URL:</b>&nbsp;
+-        <a href="[% bug.bug_file_loc FILTER html %]">
+-                 [% bug.bug_file_loc FILTER html %]</a>
++        [% IF bug.bug_file_loc 
++           AND NOT bug.bug_file_loc.match("^(javascript|data)") %]
++          <a href="[% bug.bug_file_loc FILTER html %]">
++                   [% bug.bug_file_loc FILTER html %]</a>
++        [% ELSE %]
++          [% bug.bug_file_loc FILTER html %]
++        [% END %]
+     </tr>
+ 
+     <tr>
+
+Property changes on: default
+___________________________________________________________________
+Name: svk:merge
+  b4e29093-00e6-0310-94f3-b32f86d51dda:/2.17.7-pl/template/pl/default:6
+ -b4e29093-00e6-0310-94f3-b32f86d51dda:/2.18/trunk/template/en/default:33
+ +b4e29093-00e6-0310-94f3-b32f86d51dda:/2.18/trunk/template/en/default:45
+
+

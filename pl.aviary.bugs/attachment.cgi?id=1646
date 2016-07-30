@@ -1,0 +1,38 @@
+diff --git a/extensions/Voting/template/pl/default/hook/admin/users/confirm-delete-warn_safe.html.tmpl b/extensions/Voting/template/pl/default/hook/admin/users/confirm-delete-warn_safe.html.tmpl
+--- a/extensions/Voting/template/pl/default/hook/admin/users/confirm-delete-warn_safe.html.tmpl
++++ b/extensions/Voting/template/pl/default/hook/admin/users/confirm-delete-warn_safe.html.tmpl
+@@ -23,10 +23,10 @@
+ 
+ [% IF votes %]
+   <li>
+-    Użytkownik [% otheruser.login FILTER html %] głosował na
++    Użytkownik [% otheruser.login FILTER html %] oddał głos na
+     [% IF votes == 1 %]
+       [%+ terms.blad %]
+     [% ELSE %]
+       [%+ votes %] [%+ terms.bledy %]
+     [% END %].
+ 
+@@ -27,8 +27,8 @@
+     [% IF votes == 1 %]
+       [%+ terms.blad %]
+     [% ELSE %]
+       [%+ votes %] [%+ terms.bledy %]
+     [% END %].
+ 
+-    Usunięcie konta użytkownika spowoduje, że 
++    Usunięcie konta użytkownika spowoduje 
+     [% IF votes == 1 %]
+@@ -34,3 +34,3 @@
+     [% IF votes == 1 %]
+-      głos ten zostanie usunięty
++      usunięcie tego głosu
+     [% ELSE %]
+@@ -36,5 +36,5 @@
+     [% ELSE %]
+-      te głosy zostaną usunięte
++      usunięcie tych głosów
+     [% END %]
+     razem z kontem użytkownika.
+   </li>
+

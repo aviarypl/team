@@ -1,0 +1,56 @@
+--- planet.py	2006-01-04 01:29:43.000000000 +0100
++++ planet.py.new	2006-03-07 01:00:06.000000000 +0100
+@@ -45,6 +45,25 @@
+ ITEMS_PER_PAGE  = 60
+ DAYS_PER_PAGE   = 0
+ 
++# New interpreted sequence for strftime()
++# Author: Hubert Gajewski - http://hubertgajewski.com
++# %q - better month name in Polish (a genitive)
++def l10n_date_pl(date, date_format):
++ 	# Month format for %q
++	changed_month_name = {
++	"stycze\xf1":		"stycznia",
++	"luty":			"lutego",
++	"marzec":		"marca",
++	"kwiecie\xf1":		"kwietnia",
++	"maj":			"maja",
++	"czerwiec":		"czerwca",
++	"lipiec":		"lipca",
++	"sierpie\xf1":		"sierpnia",
++	"wrzesie\xf1":		"wrze&#347;nia",
++	"pa\xbcdziernik":	"pa&#378;dziernika",
++	"listopad":		"listopada",
++	"grudzie\xf1":		"grudnia",}[time.strftime("%B", date)]	
++	return date_format.replace("%q", changed_month_name)
+ 
+ def config_get(config, section, option, default=None, raw=0, vars=None):
+     """Get a value from the configuration, with a default."""
+@@ -68,7 +87,7 @@
+     for key in item.keys():
+         if item.key_type(key) == item.DATE:
+             date = item.get_as_date(key)
+-            info[key] = time.strftime(date_format, date)
++            info[key] = time.strftime(l10n_date_pl(date, date_format), date)
+             info[key + "_iso"] = time.strftime(planet.TIMEFMT_ISO, date)
+             info[key + "_822"] = time.strftime(planet.TIMEFMT_822, date)
+         else:
+@@ -200,7 +219,7 @@
+             # Check for the start of a new day
+             if prev_date[:3] != newsitem.date[:3]:
+                 prev_date = newsitem.date
+-                item_info["new_date"] = time.strftime(new_date_format,
++                item_info["new_date"] = time.strftime(l10n_date_pl(newsitem.date, new_date_format),
+                                                       newsitem.date)
+ 
+             # Check for the start of a new channel
+@@ -226,7 +245,7 @@
+ 
+         # Update time
+         date = time.gmtime()
+-        tp.set("date",        time.strftime(date_format, date))
++        tp.set("date",        time.strftime(l10n_date_pl(date, date_format), date))
+         tp.set("date_iso",    time.strftime(planet.TIMEFMT_ISO, date))
+         tp.set("date_822",    time.strftime(planet.TIMEFMT_822, date))
+ 
+

@@ -1,0 +1,137 @@
+diff --git a/calendar/chrome/calendar/calendar-event-dialog-attendees.properties b/calendar/chrome/calendar/calendar-event-dialog-attendees.properties
+--- a/calendar/chrome/calendar/calendar-event-dialog-attendees.properties
++++ b/calendar/chrome/calendar/calendar-event-dialog-attendees.properties
+@@ -34,10 +34,9 @@
+ # the terms of any one of the MPL, the GPL or the LGPL.
+ #
+ # ***** END LICENSE BLOCK *****
+ 
+ event.attendee.role.required = Uczestnik wymagany
+ event.attendee.role.optional = Uczestnik opcjonalny
+ event.attendee.role.nonparticipant = Do wiadomości
+ event.attendee.role.chair = Przewodniczący
+-# FIXME "event.attendee.role.unknown = Unknown Attendee (%1$S)" (hubert)
+-event.attendee.role.unknown = Uczestnik o nieznanej roli (%1$S)
++event.attendee.role.unknown = Nieznana rola (%1$S)
+diff --git a/calendar/chrome/calendar/calendar-event-dialog.dtd b/calendar/chrome/calendar/calendar-event-dialog.dtd
+--- a/calendar/chrome/calendar/calendar-event-dialog.dtd
++++ b/calendar/chrome/calendar/calendar-event-dialog.dtd
+@@ -372,17 +372,16 @@
+ <!ENTITY event.attendee.role.chair              "Przewodniczący">
+ <!ENTITY event.attendee.role.nonparticipant     "Do wiadomości">
+ 
+ <!-- Timezone dialog -->
+ 
+ <!ENTITY timezone.title.label            "Wybór strefy czasowej">
+ 
+ <!-- Read-Only dialog -->
+-<!-- FIXME -->
+ <!ENTITY read.only.general.label         "Główne">
+ <!ENTITY read.only.title.label           "Nazwa:">
+ <!ENTITY read.only.repeat.label          "Powtarzaj:">
+ <!ENTITY read.only.location.label        "Miejsce:">
+ <!ENTITY read.only.category.label        "Kategoria:">
+ <!ENTITY read.only.organizer.label       "Organizator:">
+ <!ENTITY read.only.reply.label           "Odpowiedź:">
+ <!ENTITY read.only.accept.label          "Będę uczestniczyć">
+diff --git a/calendar/chrome/lightning/lightning.dtd b/calendar/chrome/lightning/lightning.dtd
+--- a/calendar/chrome/lightning/lightning.dtd
++++ b/calendar/chrome/lightning/lightning.dtd
+@@ -90,33 +90,32 @@
+ <!ENTITY lightning.toolbar.week.accesskey            "T">
+ <!ENTITY lightning.toolbar.multiweek.label           "Wiele tygodni">
+ <!ENTITY lightning.toolbar.multiweek.accesskey       "n">
+ <!ENTITY lightning.toolbar.month.label               "Miesiąc">
+ <!ENTITY lightning.toolbar.month.accesskey           "M">
+ 
+ <!-- properties dialog, calendar creation wizard -->
+ <!ENTITY lightning.calendarproperties.showevents.inagenda.label "Wyświetlaj wydarzenia w panelu bieżących spraw">
+-<!-- FIXME Task Mode - tryb widoku zadań (hubert) -->
+ <!ENTITY lightning.calendarproperties.showtasks.label           "Wyświetlaj zadania w panelu bieżących spraw i w trybie widoku zadań">
+ <!ENTITY lightning.calendarproperties.email.label               "E-mail:">
+ 
+ <!-- iMIP Bar (meeting support) -->
+ <!ENTITY lightning.imipbar.description "Ta wiadomość zawiera zaproszenie na wydarzenie">
+ 
+ <!-- Lightning specific keybindings -->
+ <!ENTITY lightning.keys.event.showCalendar.key "C">
+ <!ENTITY lightning.keys.event.showTasks.key "D">
+ <!ENTITY lightning.keys.event.new  "I">
+ <!ENTITY lightning.keys.todo.new   "D">
+ 
+ <!-- Account Central page -->
+ <!ENTITY lightning.acctCentral.newCalendar.label "Utwórz nowy kalendarz">
+ 
+-<!-- today-pane-specific --><!-- FIXME - mini-day, mini-month  (hubert) -->
++<!-- today-pane-specific -->
+ <!ENTITY todaypane.showMinimonth.label      "Pokaż kalendarz podręczny">
+ <!ENTITY todaypane.showMinimonth.accesskey  "k">
+ <!ENTITY todaypane.showMiniday.label        "Pokaż podgląd dnia">
+ <!ENTITY todaypane.showMiniday.accesskey    "P">
+ <!ENTITY todaypane.showNone.label           "Nie pokazuj niczego">
+ <!ENTITY todaypane.showNone.accesskey       "N">
+ <!ENTITY todaypane.showTodayPane.label      "Pokaż panel bieżących spraw">
+ <!ENTITY todaypane.showTodayPane.accesskey  "o">
+diff --git a/calendar/chrome/lightning/lightning.properties b/calendar/chrome/lightning/lightning.properties
+--- a/calendar/chrome/lightning/lightning.properties
++++ b/calendar/chrome/lightning/lightning.properties
+@@ -34,17 +34,16 @@
+ # use your version of this file under the terms of the MPL, indicate your
+ # decision by deleting the provisions above and replace them with the notice
+ # and other provisions required by the GPL or the LGPL. If you do not delete
+ # the provisions above, a recipient may use your version of this file under
+ # the terms of any one of the MPL, the GPL or the LGPL.
+ #
+ # ***** END LICENSE BLOCK *****
+ 
+-#FIXME - improve sentences in this file (hubert)
+ # addon description:
+ extensions.{e2fda1a4-762b-4020-b5ad-a41df1933103}.name=Lightning
+ extensions.{e2fda1a4-762b-4020-b5ad-a41df1933103}.description=Kalendarz zintegrowany z Thunderbirdem
+ extensions.{e2fda1a4-762b-4020-b5ad-a41df1933103}.creator=Mozilla Calendar Project
+ 
+ # Lightning branding
+ brandShortName=Lightning
+ 
+@@ -68,17 +67,16 @@ imipAddToCalendar.label=Dodaj do kalenda
+ imipAddedItemToCal=Wydarzenie dodane do kalendarza
+ imipCanceledItem=Wydarzenie zostało usunięte
+ imipUpdatedItem=Wydarzenie zostało zaktualizowane
+ imipBarCancelText=Ta wiadomość zawiera anulowanie istniejącego wydarzenia.
+ imipBarRefreshText=Ta wiadomość zawiera prośbę o aktualizację wydarzenia.
+ imipBarPublishText=Ta wiadomość zawiera wydarzenie.
+ imipBarRequestText=Ta wiadomość zawiera zaproszenie na wydarzenie.
+ imipBarUpdateText=Ta wiadomość zawiera aktualizację istniejącego wydarzenia.
+-#FIXME - imipBarAlreadyProcessedText- en-US: processed
+ imipBarAlreadyProcessedText=Ta wiadomość zawiera wydarzenie, które zostało już przetworzone.
+ imipBarReplyText=Ta wiadomość zawiera odpowiedź na zaproszenie.
+ imipBarUnsupportedText=Ta wiadomość zawiera wydarzenie, którego ta wersja Lightninga nie potrafi przetworzyć.
+ imipBarProcessingFailed=Przetwarzanie wiadomości nie powiodło się. Status: %1$S.
+ imipAcceptInvitation.label=Zaakceptuj
+ imipCancelInvitation.label=Usuń
+ imipDeclineInvitation.label=Odrzuć
+ imipUpdate.label=Aktualizuj
+diff --git a/calendar/installer/override.properties b/calendar/installer/override.properties
+--- a/calendar/installer/override.properties
++++ b/calendar/installer/override.properties
+@@ -79,18 +79,17 @@ ComponentsText=Zaznacz komponenty, któr
+ ComponentsSubText2_NoInstTypes=Zaznacz komponenty, które chcesz zainstalować:
+ DirText=Program $BrandFullNameDA zostanie zainstalowany w poniższym folderze. Aby zainstalować go w innym, kliknij Przeglądaj i wskaż odpowiedni folder. $_CLICK
+ DirSubText=Folder docelowy
+ # I wanted DirBrowseText to be short (marcoos)
+ DirBrowseText=Wybierz folder dla instalacji programu $BrandFullNameDA:
+ SpaceAvailable="Dostępne miejsce: "
+ SpaceRequired="Wymagane miejsce: "
+ UninstallingText=Program $BrandFullNameDA zostanie odinstalowany z poniższego folderu. $_CLICK
+-UninstallingSubText=Dezinstalacja z:
+-# FIXME: Check if the Abort/Retry (Przerwij/Spróbuj ponownie) button names are consistent! (marcoos)
++UninstallingSubText=Dezinstalacja z:
+ FileError=Błąd podczas otwierania pliku do zapisu: \r\n\r\n$0\r\n\r\nKliknij Przerwij, by zakończyć instalację,\r\nSpróbuj ponownie, by ponowić próbę\r\nlub Zignoruj, by pominąć ten plik.
+ FileError_NoIgnore=Błąd podczas otwierania pliku do zapisu: \r\n\r\n$0\r\n\r\Kliknij Spróbuj ponownie, by ponowić próbę\r\nlub Anuluj, by zakończyć instalację.
+ CantWrite="Nie można zapisać: "
+ CopyFailed=Kopiowanie nie powiodło się
+ CopyTo="Kopiuj do "
+ Registering="Rejestrowanie: "
+ Unregistering="Wyrejestrowywanie: "
+ SymbolNotFound="Nie można odnaleźć symbolu: "
+

@@ -1,0 +1,109 @@
+diff --git a/calendar/chrome/calendar/calendar.properties b/calendar/chrome/calendar/calendar.properties
+--- a/calendar/chrome/calendar/calendar.properties
++++ b/calendar/chrome/calendar/calendar.properties
+@@ -75,26 +75,26 @@
+ #    %1$S will be replaced with number of duplicate items
+ #    %2$S will be replaced with a file path pointing to a calendar
+ duplicateError=Niektóre elementy zostały zignorowane, ponieważ istnieją zarówno w docelowym kalendarzu, jak i w %2$S. Liczba zignorowanych elementów: %1$S.
+ unableToCreateProvider=Wystąpił błąd podczas przygotowywania do użycia kalendarza umieszczonego pod adresem %1$S. Kalendarz będzie niedostępny.
+ unknownTimezonesError=Wystąpił błąd podczas przygotowywania do użycia kalendarza umieszczonego pod adresem %1$S. Kalendarz może odwoływać się do nieznanej strefy czasowej. Proszę zainstalować najnowszy calendar-timezones.xpi.
+ missingCalendarTimezonesError=Nie znaleziono stref czasowych. Proszę zainstalować calendar-timezones.xpi.
+ 
+ # Sample: Unknown timezone "USPacific" in "Dentist Appt".  Using the 'floating' local timezone instead: 2008/02/28 14:00:00
+-unknownTimezoneInItem=Nieznana strefa czasowa "%1$S" w "%2$S".  Potraktowano ją jako "pływającą" lokalną strefę czasową, zamiast: %3$S
++unknownTimezoneInItem=Nieznana strefa czasowa „%1$S” w „%2$S”. Potraktowano ją jako „pływającą” lokalną strefę czasową, zamiast: %3$S
+ TimezoneErrorsAlertTitle=Błędy związane ze strefą czasową
+-TimezoneErrorsSeeConsole=Patrz Konsola błędów: Nieznane strefy czasowe są traktowane jako "pływające" lokalne strefy czasowe.
++TimezoneErrorsSeeConsole=Patrz Konsola błędów: Nieznane strefy czasowe są traktowane jako „pływające” lokalne strefy czasowe.
+ 
+ unsubscribeCalendarTitle=Zrezygnuj z subskrypcji kalendarza
+ 
+ # LOCALIZATION NOTE (unsubscribeCalendarMessage):
+ # used for an message like 'Are you sure you want to unsubscribe from calendar "Home"?'
+ #    %1$S will be replaced with the name of a calendar
+-unsubscribeCalendarMessage=Czy na pewno zrezygnować z subskrypcji kalendarza "%1$S"?
++unsubscribeCalendarMessage=Czy na pewno zrezygnować z subskrypcji kalendarza „%1$S”?
+ 
+ WeekTitle=Tydzień %1$S
+ # Used to format the Multiweek's labels, ie Weeks 2 - 7
+ WeeksTitle=Tygodnie %1$S-%2$S
+ None=Brak
+ 
+ # Error strings
+ ## @name UID_NOT_FOUND
+@@ -161,17 +161,17 @@
+ # Remote calendar errors
+ genericErrorTitle=Wystąpił błąd
+ httpPutError=Publikacja pliku kalendarza nie powiodła się.\nKod stanu: %1$S: %2$S
+ otherPutError=Publikacja pliku kalendarza nie powiodła się.\nKod stanu: 0x%1$S
+ 
+ # LOCALIZATION NOTE (readOnlyMode):
+ # used for an message like 'There has been an error reading data for calendar: Home. It has been...'
+ #    %1$S will be replaced with the name of a calendar
+-readOnlyMode=Wystąpił błąd podczas odczytywania danych dla kalendarza %1$S. Został on otwarty w trybie tylko do odczytu, ponieważ zmiany w tym kalendarzu prawdopodobnie spowodowałyby utratę danych. Można zmienić to ustawienie wybierając 'Edytuj kalendarz'.
++readOnlyMode=Wystąpił błąd podczas odczytywania danych dla kalendarza %1$S. Został on otwarty w trybie tylko do odczytu, ponieważ zmiany w tym kalendarzu prawdopodobnie spowodowałyby utratę danych. Można zmienić to ustawienie wybierając „Edytuj kalendarz”.
+ 
+ # LOCALIZATION NOTE (disabledMode):
+ # used for an message like 'There has been an error reading data for calendar: Home. It has been...'
+ #    %1$S will be replaced with the name of a calendar
+ disabledMode=Wystąpił błąd podczas odczytywania danych dla kalendarza %1$S. Został on wyłączony aż do momentu, kiedy będzie go można bezpiecznie używać.
+ 
+ # LOCALIZATION NOTE (minorError):
+ # used for an message like 'There has been an error reading data for calendar: Home. It has been...'
+@@ -251,50 +251,50 @@
+ #  no longer matches ZoneInfo timezone "America/Sao_Paulo".'
+ # Testing notes:
+ # - Brasil DST change dates are set every year by decree, so likely out of sync.
+ # - Only appears on OSes from which timezone can be obtained
+ #   (windows; or TZ env var, /etc/localtime target path, or line in
+ #    /etc/timezone or /etc/sysconfig/clock contains ZoneInfo timezone id).
+ # - Windows: turning off "Automatically adjust clock for daylight saving time"
+ #   can also trigger this warning.
+-WarningOSTZNoMatch=Uwaga: Strefa czasowa systemu operacyjnego "%1$S"\nnie pokrywa się już ze strefą czasową "%2$S" z wewnętrznej bazy danych ZoneInfo.
++WarningOSTZNoMatch=Uwaga: Strefa czasowa systemu operacyjnego „%1$S”\nnie pokrywa się już ze strefą czasową „%2$S” z wewnętrznej bazy danych ZoneInfo.
+ 
+ # "Skipping Operating System timezone 'Pacific/New_Country'."
+ # Testing note: not easily testable.  May occur someday if (non-windows)
+ # OS uses different version of ZoneInfo database which has a timezone name
+ # that is not included in our current ZoneInfo database (or if the mapping
+ # mapping from windows to ZoneInfo timezone ids does).
+-SkippingOSTimezone=Pomijanie strefy czasowej systemu operacyjnego '%1$S'.
++SkippingOSTimezone=Pomijanie strefy czasowej systemu operacyjnego „%1$S”.
+ 
+ # "Skipping locale timezone 'America/New_Yawk'."
+ # Testing note: Skipping occurs if a likelyTimezone id is unknown or misspelled.
+-SkippingLocaleTimezone=Pomijanie lokalnej strefy czasowej '%1$S'.
++SkippingLocaleTimezone=Pomijanie lokalnej strefy czasowej „%1$S”.
+ 
+ # Testing note: "No match" timezones include Bucharest on W2k.
+ # Brazil timezones may be "No match" (change every year, so often out of date,
+ # and changes are often more than a week different).
+-warningUsingFloatingTZNoMatch=Uwaga: Używana jest "pływająca" strefa czasowa.\nW bazie danych ZoneInfo nie ma strefy czasowej pokrywającej się ze strefą czasową systemu operacyjnego.
++warningUsingFloatingTZNoMatch=Uwaga: Używana jest „pływająca” strefa czasowa.\nW bazie danych ZoneInfo nie ma strefy czasowej pokrywającej się ze strefą czasową systemu operacyjnego.
+ 
+ # "Warning:  Using guessed timezone
+ #    America/New York (UTC-0500/-0400).
+ #    [rfc2445 summer daylight saving shift rules for timezone]
+ #  This ZoneInfo timezone almost matches/seems to match..."
+ #  This ZoneInfo timezone was chosen based on ... "
+ WarningUsingGuessedTZ=Uwaga: Używana jest odgadnięta strefa czasowa\n  %1$S (UTC%2$S).\n%3$S\n%4$S
+ 
+ # Testing note: "Almost match" timezones include Cairo on W2k.
+ TZAlmostMatchesOSDifferAtMostAWeek=Ta strefa czasowa ZoneInfo prawie pokrywa się ze strefą czasową systemu operacyjnego.\nOznacza to, że różnica w czasie następnych przejść pomiędzy czasem letnim a czasem standardowym\nwyniesie nie więcej niż tydzień w stosunku do czasu przejść strefy czasowej systemu operacyjnego.\nMogą pojawić się rozbieżności w danych, takie jak różnice w dacie rozpoczęcia,\nróżnice w regułach lub przybliżenie w przypadku reguł w niegregoriańskich kalendarzach.
+ 
+ TZSeemsToMatchOS=W tym roku ta strefa czasowa ZoneInfo wydaje się pokrywać ze strefą czasową systemu operacyjnego.
+ 
+ # LOCALIZATION NOTE (TZFromOS):
+ # used for a display of a chosen timezone
+ #    %1$S will be replaced with the name of a timezone
+-TZFromOS=Ta strefa czasowa ZoneInfo została wybrana na podstawie identyfikatora strefy czasowej\nsystemu operacyjnego\n"%1$S".
++TZFromOS=Ta strefa czasowa ZoneInfo została wybrana na podstawie identyfikatora strefy czasowej\nsystemu operacyjnego\n„%1$S”.
+ 
+ # Localization note (TZFromLocale): Substitute name of your locale language.
+ TZFromLocale=Ta strefa czasowa ZoneInfo została wybrana na podstawie pokrywającej się z nią\nstrefy czasowej systemu operacyjnego z uwzględnieniem tych stref,\nktóre są odpowiednie dla polskojęzycznych użytkowników.
+ 
+ TZFromKnownTimezones=Ta strefa czasowa ZoneInfo została wybrana na podstawie pokrywającej się z nią\nstrefy czasowej systemu operacyjnego z uwzględnieniem znanych stref w porządku alfabetycznym\nwg identyfikatora strefy.
+ 
+ # Print Layout
+ formatListName = Lista
+

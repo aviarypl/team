@@ -1,0 +1,68 @@
+Index: pl/browser/chrome/help/firefox_welcome.xhtml
+===================================================================
+RCS file: /l10n/l10n/pl/browser/chrome/help/firefox_welcome.xhtml,v
+retrieving revision 1.2
+diff -u -r1.2 firefox_welcome.xhtml
+--- pl/browser/chrome/help/firefox_welcome.xhtml	14 May 2005 10:16:07 -0000	1.2
++++ pl/browser/chrome/help/firefox_welcome.xhtml	15 Jun 2005 20:56:39 -0000
+@@ -25,7 +25,7 @@
+ 
+ <p>Dzięki opcji <strong>Znajdź</strong> można odnaleźć w pomocy informacje na konkretny temat.
+ Więcej informacji o używaniu pomocy programu &brandShortName; można przeczytać w rozdziale 
+-<a href="welcome.xhtml">Używanie okna pomocy</a>.</p>
++<a href="chrome://help/locale/welcome.xhtml">Używanie okna pomocy</a>.</p>
+ 
+ <p>Jeśli jakichś informacji nie można znaleźć w tym oknie pomocy, warto skorzystać
+ z witryny internetowej &bdquo;<a href="http://www.mozilla.org/support/firefox/" target="_blank">&brandShortName; Help</a>&rdquo;.</p>
+Index: pl/toolkit/chrome/mozapps/help/help-toc.rdf
+===================================================================
+RCS file: /l10n/l10n/pl/toolkit/chrome/mozapps/help/help-toc.rdf,v
+retrieving revision 1.2
+diff -u -r1.2 help-toc.rdf
+--- pl/toolkit/chrome/mozapps/help/help-toc.rdf	25 May 2005 20:45:34 -0000	1.2
++++ pl/toolkit/chrome/mozapps/help/help-toc.rdf	15 Jun 2005 20:56:42 -0000
+@@ -6,7 +6,7 @@
+     <nc:subheadings>
+       <rdf:Seq>
+         <rdf:li> <rdf:Description ID="use-help" nc:name="Korzystanie z okna Pomocy"
+-                  nc:link="welcome.xhtml"/> </rdf:li>
++                  nc:link="chrome://help/locale/welcome.xhtml"/> </rdf:li>
+       </rdf:Seq>
+     </nc:subheadings>
+   </rdf:Description>
+@@ -14,8 +14,8 @@
+   <rdf:Description about="#use-help">
+     <nc:subheadings>
+       <rdf:Seq>
+-        <rdf:li> <rdf:Description ID="use-help-finding-the-topic-you-want" nc:name="Szukanie wybranego tematu" nc:link="welcome.xhtml#finding_the_topic_you_want"/> </rdf:li>
+-        <rdf:li> <rdf:Description ID="use-help-search" nc:name="Wskazówki dotyczące szukania" nc:link="welcome.xhtml#search_tips"/> </rdf:li>
++        <rdf:li> <rdf:Description ID="use-help-finding-the-topic-you-want" nc:name="Szukanie wybranego tematu" nc:link="chrome://help/locale/welcome.xhtml#finding_the_topic_you_want"/> </rdf:li>
++        <rdf:li> <rdf:Description ID="use-help-search" nc:name="Wskazówki dotyczące szukania" nc:link="chrome://help/locale/welcome.xhtml#search_tips"/> </rdf:li>
+       </rdf:Seq>
+     </nc:subheadings>
+   </rdf:Description>
+Index: pl/toolkit/chrome/mozapps/help/welcome.xhtml
+===================================================================
+RCS file: /l10n/l10n/pl/toolkit/chrome/mozapps/help/welcome.xhtml,v
+retrieving revision 1.2
+diff -u -r1.2 welcome.xhtml
+--- pl/toolkit/chrome/mozapps/help/welcome.xhtml	25 May 2005 20:45:34 -0000	1.2
++++ pl/toolkit/chrome/mozapps/help/welcome.xhtml	15 Jun 2005 20:56:42 -0000
+@@ -1,6 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd"[
+-    <!ENTITY % brandDTD SYSTEM "chrome://global/locale/brand.dtd" >
++    <!ENTITY % brandDTD SYSTEM "chrome://branding/locale/brand.dtd" >
+     %brandDTD;
+ ]
+ >
+@@ -44,7 +44,7 @@
+ 	<ul>
+ 		<li>Należy upewnić się, że poszukiwane zagadnienie dotyczy programu &brandShortName;; Pomoc nie odpowie na pytania ogólnie związane z Internetem.</li>
+         	<li>Należy starać się poszerzyć zakres poszukiwanego zagadnienia - należy unikać zbyt szczegółowych i dokładnych zapytań; dodatkowo należy pamiętać, że problem może być opisany innymi słowami niż te, których użyto przy wyszukiwaniu.</li>
+-		<li>Z drugiej strony należy unikać zbyt ogólnych zapytań: słowa takie jak &bdquo;strona&quota;  pasują prawdopodobnie do ogromnej ilości tematów w systemie Pomocy.</li>
++		<li>Z drugiej strony należy unikać zbyt ogólnych zapytań: słowa takie jak &bdquo;strona&ldquo;  pasują prawdopodobnie do ogromnej ilości tematów w systemie Pomocy.</li>
+ 	</ul>
+ 
+ <div class="contentsBox"><em>25 maja 2004</em></div>
+

@@ -1,0 +1,99 @@
+Index: browser.dtd
+===================================================================
+RCS file: /l10n/l10n/pl/browser/chrome/browser/browser.dtd,v
+retrieving revision 1.10
+diff -u -r1.10 browser.dtd
+--- browser.dtd	12 Aug 2005 11:42:04 -0000	1.10
++++ browser.dtd	19 Aug 2005 16:54:38 -0000
+@@ -174,8 +174,8 @@
+ <!ENTITY preferencesCmdUnix.label       "Preferencje">
+ <!ENTITY preferencesCmdUnix.accesskey   "r"> 
+ 
+-<!ENTITY sanitizeCmd.label            "Oczyść prywatne dane">
+-<!ENTITY sanitizeCmd.accesskey        "c">
++<!ENTITY sanitizeCmd.label            "Usuń prywatne dane">
++<!ENTITY sanitizeCmd.accesskey        "U">
+ 
+ <!ENTITY viewMenu.label "Widok" >
+ <!ENTITY viewMenu.accesskey "W" >
+Index: browser.properties
+===================================================================
+RCS file: /l10n/l10n/pl/browser/chrome/browser/browser.properties,v
+retrieving revision 1.11
+diff -u -r1.11 browser.properties
+--- browser.properties	12 Aug 2005 11:42:04 -0000	1.11
++++ browser.properties	19 Aug 2005 16:54:43 -0000
+@@ -88,8 +88,8 @@
+ missingpluginsMessage.button.accesskey=i
+ 
+ # Sanitize
+-sanitizeWithPromptLabel=Oczy\u015b\u0107 prywatne dane...
+-sanitizeButton=Oczy\u015b\u0107 teraz prywatne dane
++sanitizeWithPromptLabel=Usuń prywatne dane...
++sanitizeButton=Usuń teraz prywatne dane
+ 
+ # Check for Updates
+ updatesItem_default=Sprawd\u017a dost\u0119pno\u015b\u0107 aktualizacji...
+Index: sanitize.dtd
+===================================================================
+RCS file: /l10n/l10n/pl/browser/chrome/browser/sanitize.dtd,v
+retrieving revision 1.5
+diff -u -r1.5 sanitize.dtd
+--- sanitize.dtd	12 Aug 2005 11:42:04 -0000	1.5
++++ sanitize.dtd	19 Aug 2005 16:54:43 -0000
+@@ -1,4 +1,4 @@
+-<!ENTITY sanitizeDialog.title         "Oczyszczanie prywatnych danych">
++<!ENTITY sanitizeDialog.title         "Usuwanie prywatnych danych">
+ 
+ <!ENTITY sanitizeItems.label          "Wyczyść następujące elementy:">
+ <!ENTITY itemHistory.label            "Historię przeglądanych stron">
+@@ -16,5 +16,5 @@
+ <!ENTITY itemSessions.label           "Sesje uwierzytelnione"> 
+ <!ENTITY itemSessions.accesskey       "S">
+ 
+-<!ENTITY promptOnSanitize.label       "Zapytaj mnie przed oczyszczaniem">
++<!ENTITY promptOnSanitize.label       "Zapytaj mnie przed usuwaniem">
+ <!ENTITY promptOnSanitize.accesskey   "m">
+Index: preferences/privacy.dtd
+===================================================================
+RCS file: /l10n/l10n/pl/browser/chrome/browser/preferences/privacy.dtd,v
+retrieving revision 1.9.2.1
+diff -u -r1.9.2.1 privacy.dtd
+--- preferences/privacy.dtd	19 Aug 2005 16:42:02 -0000	1.9.2.1
++++ preferences/privacy.dtd	19 Aug 2005 16:54:49 -0000
+@@ -82,4 +82,4 @@
+ 
+ <!ENTITY  sanitizeSettings.label      "Ustawienia...">
+ <!ENTITY  sanitizeSettings.accesskey  "U">
+-<!ENTITY  sanitize.intro              "Z narzędzia &quot;Oczyszczanie prywatnych danych&quot; można skorzystać za pomocą skrótu klawiaturowego lub podczas zamykania programu &brandShortName;">
++<!ENTITY  sanitize.intro              "Z narzędzia &quot;Usuwanie prywatnych danych&quot; można skorzystać za pomocą skrótu klawiaturowego lub podczas zamykania programu &brandShortName;">
+Index: preferences/sanitize.dtd
+===================================================================
+RCS file: /l10n/l10n/pl/browser/chrome/browser/preferences/sanitize.dtd,v
+retrieving revision 1.6
+diff -u -r1.6 sanitize.dtd
+--- preferences/sanitize.dtd	12 Aug 2005 11:42:05 -0000	1.6
++++ preferences/sanitize.dtd	19 Aug 2005 16:54:49 -0000
+@@ -1,8 +1,8 @@
+-<!ENTITY sanitizeDialog.title         "Oczyszczanie prywatnych danych">
++<!ENTITY sanitizeDialog.title         "Usuwanie prywatnych danych">
+ <!ENTITY window.width                 "30em">
+ 
+ <!ENTITY items.label                  "Prywatne dane">
+-<!ENTITY sanitizeItems.label          "Podczas oczyszczania usuń następujące elementy:">
++<!ENTITY sanitizeItems.label          "Podczas usuwania oczyść następujące elementy:">
+ <!ENTITY itemHistory.label            "Historię przeglądania">
+ <!ENTITY itemHistory.accesskey        "H">  
+ <!ENTITY itemFormData.label           "Zapamiętane dane formularzy">
+@@ -19,8 +19,8 @@
+ <!ENTITY itemSessions.accesskey       "S">
+ 
+ <!ENTITY settings.label               "Ustawienia">
+-<!ENTITY sanitizeOnShutDown.label     "Oczyść prywatne dane przy wyłączaniu programu &brandShortName;">
++<!ENTITY sanitizeOnShutDown.label     "Usuń prywatne dane przy wyłączaniu programu &brandShortName;">
+ <!ENTITY sanitizeOnShutDown.accesskey "O">
+ 
+-<!ENTITY promptOnSanitize.label       "Zapytaj mnie przed oczyszczaniem">
++<!ENTITY promptOnSanitize.label       "Zapytaj mnie przed usuwaniem">
+ <!ENTITY promptOnSanitize.accesskey   "m">
+

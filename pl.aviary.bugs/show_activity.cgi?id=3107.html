@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Changes made to bug 3107</title>
+
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<link href="data/assets/2f5735cf3abd04bddc8e363a8613a9f5.css" rel="stylesheet" type="text/css">
+
+
+
+    
+<script type="text/javascript" src="data/assets/1b4e898422a669ab82b604a2c23edce5.js"></script>
+
+    <script type="text/javascript">
+    <!--
+        YAHOO.namespace('bugzilla');
+        YAHOO.util.Event.addListener = function (el, sType, fn, obj, overrideContext) {
+               if ( ("onpagehide" in window || YAHOO.env.ua.gecko) && sType === "unload") { sType = "pagehide"; };
+               var capture = ((sType == "focusin" || sType == "focusout") && !YAHOO.env.ua.ie) ? true : false;
+               return this._addListener(el, this._getType(sType), fn, obj, overrideContext, capture);
+         };
+        if ( "onpagehide" in window || YAHOO.env.ua.gecko) {
+            YAHOO.util.Event._simpleRemove(window, "unload", 
+                                           YAHOO.util.Event._unload);
+        }
+        
+        function unhide_language_selector() { 
+            YAHOO.util.Dom.removeClass(
+                'lang_links_container', 'bz_default_hidden'
+            ); 
+        } 
+        YAHOO.util.Event.onDOMReady(unhide_language_selector);
+
+        
+        var BUGZILLA = {
+            param: {
+                cookiepath: '\/',
+                maxusermatches: 1000
+            },
+            constant: {
+                COMMENT_COLS: 80
+            },
+            string: {
+                
+
+                attach_desc_required:
+                    "You must enter a Description for this attachment.",
+                component_required:
+                    "You must select a Component for this bug.",
+                description_required:
+                    "You must enter a Description for this bug.",
+                short_desc_required:
+                    "You must enter a Summary for this bug.",
+                version_required:
+                    "You must select a Version for this bug."
+            }
+        };
+
+    // -->
+    </script>
+<script type="text/javascript" src="data/assets/d41d8cd98f00b204e9800998ecf8427e.js"></script>
+
+    
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+                       title="Bugzilla" href="search_plugin.cgi">
+    <link rel="shortcut icon" href="images/favicon.ico">
+  </head>
+
+  <body 
+        class="bugs-aviary-pl yui-skin-sam">
+
+  <div id="header"><div id="banner">
+  </div>
+
+    <div id="titles">
+      <span id="title">Bugzilla &ndash; Activity log for bug 3107: Rozwiązać problemy i wdrożyć pomysły omówione na spotkaniu 2010-04-09</span>
+
+
+    </div>
+
+
+    <div id="common_links"><ul class="links">
+  <li><a href="index.html">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi.html">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi.html">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi.html">Search</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="http://bugs.aviary.pl/buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input type="hidden" id="no_redirect_top" name="no_redirect" value="0">
+    <script type="text/javascript">
+      if (history && history.replaceState) {
+        var no_redirect = document.getElementById("no_redirect_top");
+        no_redirect.value = 1;
+      }
+    </script>
+    <input class="txt" type="text" id="quicksearch_top" name="quicksearch" 
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search" 
+           id="find_top"></form>
+  <a href="page.cgi%3Fid=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="report.cgi.html">Reports</a></li>
+
+  <li>
+      <span class="separator">| </span>
+        <a href="request.cgi.html">Requests</a></li>
+
+
+  
+    
+      <li id="new_account_container_top">
+        <span class="separator">| </span>
+        <a href="createaccount.cgi.html">New&nbsp;Account</a>
+      </li>
+
+    <li id="mini_login_container_top">
+  <span class="separator">| </span>
+  <a id="login_link_top" href="http://bugs.aviary.pl/show_activity.cgi?id=3107&amp;GoAheadAndLogIn=1"
+     onclick="return show_mini_login_form('_top')">Log In</a>
+
+  <form action="show_activity.cgi%3Fid=3107.html" method="POST"
+        class="mini_login bz_default_hidden"
+        id="mini_login_top">
+    <input id="Bugzilla_login_top" required
+           name="Bugzilla_login" class="bz_login"
+        type="email" placeholder="Email Address">
+    <input class="bz_password" name="Bugzilla_password" type="password"
+           id="Bugzilla_password_top" required
+           placeholder="Password">
+    <input type="hidden" name="Bugzilla_login_token"
+           value="1469837996-Ny1zouf04qPV1SiCaASc1ce_9b1mZAy8mp0VeHXq_uA">
+    <input type="submit" name="GoAheadAndLogIn" value="Log in"
+            id="log_in_top">
+    <a href="show_activity.cgi%3Fid=3107.html#" onclick="return hide_mini_login_form('_top')">[x]</a>
+  </form>
+</li>
+
+
+  <li id="forgot_container_top">
+    <span class="separator">| </span>
+    <a id="forgot_link_top" href="http://bugs.aviary.pl/show_activity.cgi?id=3107&amp;GoAheadAndLogIn=1#forgot"
+       onclick="return show_forgot_form('_top')">Forgot Password</a>
+    <form action="http://bugs.aviary.pl/token.cgi" method="post" id="forgot_form_top"
+          class="mini_forgot bz_default_hidden">
+      <label for="login_top">Login:</label>
+      <input name="loginname" size="20" id="login_top" required
+          type="email" placeholder="Your Email Address">
+      <input id="forgot_button_top" value="Reset Password" type="submit">
+      <input type="hidden" name="a" value="reqpw">
+      <input type="hidden" id="token_top" name="token"
+             value="1469837996-ooOGAsuJTrXKNr16NfYWLhvjIf5-aEH9JPqWtNtcJbg">
+      <a href="show_activity.cgi%3Fid=3107.html#" onclick="return hide_forgot_form('_top')">[x]</a>
+    </form>
+  </li>
+</ul>
+    </div>
+  </div>
+
+  <div id="bugzilla-body">
+
+<p>
+  Back to <a class="bz_bug_link 
+          bz_status_CONFIRMED "
+   title="CONFIRMED - Rozwiązać problemy i wdrożyć pomysły omówione na spotkaniu 2010-04-09"
+   href="show_bug.cgi%3Fid=3107.html">bug 3107</a>
+</p>
+<table id="bug_activity">
+    <tr class="column_header">
+      <th>Who</th>
+      <th>When</th>
+      <th>What</th>
+      <th>Removed</th>
+      <th>Added</th>
+    </tr>
+
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2010-04-11 13:47:29 CEST
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Umieścić na stronie głównej MDC info o zaprzestaniu prac"
+   href="show_bug.cgi%3Fid=3108.html">3108</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2010-04-11 13:50:00 CEST
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - Zdjąć MDC z listy projektów zespołu"
+   href="show_bug.cgi%3Fid=3104.html">3104</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2010-04-11 13:52:09 CEST
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_IN_PROGRESS "
+   title="IN_PROGRESS - Znaleźć kierownika lokalizacji MDN"
+   href="show_bug.cgi%3Fid=2783.html">2783</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2010-04-12 04:03:25 CEST
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_CONFIRMED "
+   title="CONFIRMED - Zmienić tryb rekrutacji"
+   href="show_bug.cgi%3Fid=3109.html">3109</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2010-04-12 04:14:37 CEST
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Dodanie do grupy rekrutacja w domenie aviary.pl: Wojciech Szczęsny"
+   href="show_bug.cgi%3Fid=3110.html">3110</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2010-04-12 05:08:38 CEST
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Przepisać naszą stronę na HTML5"
+   href="show_bug.cgi%3Fid=3111.html">3111</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2010-04-12 05:14:31 CEST
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - Lokalizacja Bugzilli 3.4"
+   href="show_bug.cgi%3Fid=1727.html">1727</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2010-04-12 05:15:10 CEST
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_CONFIRMED "
+   title="CONFIRMED - Nie mamy anglojęzycznej wersji strony"
+   href="show_bug.cgi%3Fid=1135.html">1135</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2010-04-12 07:13:23 CEST
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_CONFIRMED "
+   title="CONFIRMED - Zrobić testy użyteczności naszych stron internetowych"
+   href="show_bug.cgi%3Fid=3112.html">3112</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2010-04-12 07:20:14 CEST
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_CONFIRMED "
+   title="CONFIRMED - Dodać odnośniki do stron wiki poszczególnych projektów"
+   href="show_bug.cgi%3Fid=3113.html">3113</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2010-04-12 07:50:16 CEST
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_CONFIRMED "
+   title="CONFIRMED - Poprawić strony wiki poszczególnych projektów"
+   href="show_bug.cgi%3Fid=3114.html">3114</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2010-04-12 08:12:20 CEST
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Zorganizować spotkanie 2010-10-01"
+   href="show_bug.cgi%3Fid=3115.html">3115</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2010-04-12 08:56:51 CEST
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_IN_PROGRESS "
+   title="IN_PROGRESS - Dodać na stronie wiki każdego projektu info kto zastępuje kierownika"
+   href="show_bug.cgi%3Fid=3116.html">3116</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2010-04-12 09:05:03 CEST
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Poprosić Mozillę na mozilla.dev.l10n, by porządnie informowała o podpisywaniu wydania"
+   href="show_bug.cgi%3Fid=3117.html">3117</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2010-04-12 09:16:12 CEST
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Przekierować http://gnomepl.net/ na http://www.aviary.pl/projekty/gnome/"
+   href="show_bug.cgi%3Fid=3118.html">3118</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2010-04-12 10:12:43 CEST
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Kupić domenę KompoZer.pl."
+   href="show_bug.cgi%3Fid=3119.html">3119</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2010-04-12 10:16:42 CEST
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Przygotować treść dla domeny KompoZer.pl"
+   href="show_bug.cgi%3Fid=3120.html">3120</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2010-04-12 10:18:23 CEST
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Przekierować Nvu.pl na www.aviary.pl"
+   href="show_bug.cgi%3Fid=3121.html">3121</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2010-04-12 10:31:36 CEST
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Stworzyć listę mailingową dla ochotników"
+   href="show_bug.cgi%3Fid=3122.html">3122</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">bpiec
+        </td>
+        <td rowspan="1">2010-04-21 04:07:19 CEST
+        </td>
+            <td>
+                CC
+            </td><td>
+  </td><td>bpiec
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">bpiec
+        </td>
+        <td rowspan="1">2010-04-21 12:05:39 CEST
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Rozpocząć współpracę z innymi społecznościami"
+   href="show_bug.cgi%3Fid=3141.html">3141</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2010-08-07 06:25:16 CEST
+        </td>
+            <td>
+                Depends on
+            </td><td><a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - Lokalizacja Bugzilli 3.4"
+   href="show_bug.cgi%3Fid=1727.html">1727</a>
+  </td><td>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2010-08-07 09:50:38 CEST
+        </td>
+            <td>
+                CC
+            </td><td>tbap.AD04
+  </td><td>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">splewako
+        </td>
+        <td rowspan="1">2010-08-07 09:54:42 CEST
+        </td>
+            <td>
+                CC
+            </td><td>
+  </td><td>splewako
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2010-10-09 07:13:39 CEST
+        </td>
+            <td>
+                Assignee
+            </td><td>hubert
+  </td><td>gandalf
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">splewako
+        </td>
+        <td rowspan="1">2012-04-19 07:28:14 CEST
+        </td>
+            <td>
+                CC
+            </td><td>splewako
+  </td><td>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="2">splewako
+        </td>
+        <td rowspan="2">2012-10-05 05:32:57 CEST
+        </td>
+            <td>
+                CC
+            </td><td>
+  </td><td>gandalf, jmazgaj, kstawarz, splewako
+  </td></tr><tr>
+            <td>
+                Assignee
+            </td><td>gandalf
+  </td><td>jmazgaj
+  </td>
+      </tr>
+  </table>
+
+  <p>
+    Back to <a class="bz_bug_link 
+          bz_status_CONFIRMED "
+   title="CONFIRMED - Rozwiązać problemy i wdrożyć pomysły omówione na spotkaniu 2010-04-09"
+   href="show_bug.cgi%3Fid=3107.html">bug 3107</a>
+  </p>
+</div>
+
+    <div id="footer">
+      <div class="intro"></div>
+<ul id="useful-links">
+  <li id="links-actions"><ul class="links">
+  <li><a href="index.html">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi.html">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi.html">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi.html">Search</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="http://bugs.aviary.pl/buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input type="hidden" id="no_redirect_bottom" name="no_redirect" value="0">
+    <script type="text/javascript">
+      if (history && history.replaceState) {
+        var no_redirect = document.getElementById("no_redirect_bottom");
+        no_redirect.value = 1;
+      }
+    </script>
+    <input class="txt" type="text" id="quicksearch_bottom" name="quicksearch" 
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search" 
+           id="find_bottom"></form>
+  <a href="page.cgi%3Fid=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="report.cgi.html">Reports</a></li>
+
+  <li>
+      <span class="separator">| </span>
+        <a href="request.cgi.html">Requests</a></li>
+
+
+  
+    
+      <li id="new_account_container_bottom">
+        <span class="separator">| </span>
+        <a href="createaccount.cgi.html">New&nbsp;Account</a>
+      </li>
+
+    <li id="mini_login_container_bottom">
+  <span class="separator">| </span>
+  <a id="login_link_bottom" href="http://bugs.aviary.pl/show_activity.cgi?id=3107&amp;GoAheadAndLogIn=1"
+     onclick="return show_mini_login_form('_bottom')">Log In</a>
+
+  <form action="show_activity.cgi%3Fid=3107.html" method="POST"
+        class="mini_login bz_default_hidden"
+        id="mini_login_bottom">
+    <input id="Bugzilla_login_bottom" required
+           name="Bugzilla_login" class="bz_login"
+        type="email" placeholder="Email Address">
+    <input class="bz_password" name="Bugzilla_password" type="password"
+           id="Bugzilla_password_bottom" required
+           placeholder="Password">
+    <input type="hidden" name="Bugzilla_login_token"
+           value="1469837996-Ny1zouf04qPV1SiCaASc1ce_9b1mZAy8mp0VeHXq_uA">
+    <input type="submit" name="GoAheadAndLogIn" value="Log in"
+            id="log_in_bottom">
+    <a href="show_activity.cgi%3Fid=3107.html#" onclick="return hide_mini_login_form('_bottom')">[x]</a>
+  </form>
+</li>
+
+
+  <li id="forgot_container_bottom">
+    <span class="separator">| </span>
+    <a id="forgot_link_bottom" href="http://bugs.aviary.pl/show_activity.cgi?id=3107&amp;GoAheadAndLogIn=1#forgot"
+       onclick="return show_forgot_form('_bottom')">Forgot Password</a>
+    <form action="http://bugs.aviary.pl/token.cgi" method="post" id="forgot_form_bottom"
+          class="mini_forgot bz_default_hidden">
+      <label for="login_bottom">Login:</label>
+      <input name="loginname" size="20" id="login_bottom" required
+          type="email" placeholder="Your Email Address">
+      <input id="forgot_button_bottom" value="Reset Password" type="submit">
+      <input type="hidden" name="a" value="reqpw">
+      <input type="hidden" id="token_bottom" name="token"
+             value="1469837996-ooOGAsuJTrXKNr16NfYWLhvjIf5-aEH9JPqWtNtcJbg">
+      <a href="show_activity.cgi%3Fid=3107.html#" onclick="return hide_forgot_form('_bottom')">[x]</a>
+    </form>
+  </li>
+</ul>
+  </li>
+
+  
+
+
+
+
+  
+</ul>
+
+      <div class="outro"></div>
+    </div>
+
+  </body>
+</html>

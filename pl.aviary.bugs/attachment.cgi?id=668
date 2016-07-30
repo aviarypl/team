@@ -1,0 +1,183 @@
+Index: mail/chrome/messenger/SearchDialog.dtd
+===================================================================
+RCS file: /l10n/l10n/pl/mail/chrome/messenger/SearchDialog.dtd,v
+retrieving revision 1.4
+diff -u -r1.4 SearchDialog.dtd
+--- mail/chrome/messenger/SearchDialog.dtd	1 Jul 2005 06:29:24 -0000	1.4
++++ mail/chrome/messenger/SearchDialog.dtd	29 Oct 2005 15:01:34 -0000
+@@ -1,7 +1,7 @@
+ <!-- for SearchDialog.xul -->
+ <!ENTITY searchHeading.label "Wyszukaj wiadomości, które w folderze">
+ <!ENTITY searchHeading.accesskey "S">
+-<!ENTITY searchSubfolders.label "Kontynuuj wyszukiwanie w podfolderach">
++<!ENTITY searchSubfolders.label "kontynuuj wyszukiwanie w podfolderach">
+ <!ENTITY searchSubfolders.accesskey "k">
+ <!ENTITY resetButton.label "Wyczyść">
+ <!ENTITY resetButton.accesskey "c">
+@@ -22,7 +22,7 @@
+ <!ENTITY closeCmd.key                "W"> 
+ <!ENTITY goToFolderButton.label "Otwórz folder wiadomości">
+ <!ENTITY goToFolderButton.accesskey "f">
+-<!ENTITY saveAsVFButton.label      "Zapisz jako folder ustawień wyszukiwania">
++<!ENTITY saveAsVFButton.label      "Zapisz jako folder wyszukiwania">
+ <!ENTITY saveAsVFButton.accesskey  "w">
+ 
+ <!-- for ABSearchDialog.xul -->
+Index: mail/chrome/messenger/mailviews.properties
+===================================================================
+RCS file: /l10n/l10n/pl/mail/chrome/messenger/mailviews.properties,v
+retrieving revision 1.1
+diff -u -r1.1 mailviews.properties
+--- mail/chrome/messenger/mailviews.properties	9 Aug 2005 01:22:55 -0000	1.1
++++ mail/chrome/messenger/mailviews.properties	29 Oct 2005 15:01:34 -0000
+@@ -3,7 +3,7 @@
+ #
+ 
+ mailViewPeopleIKnow=Od znajomych
+-mailViewRecentMail=Ostatnie wiadomo\u015Bci
++mailViewRecentMail=Z ostatnich 24 godzin
+ mailViewLastFiveDays=Z ostatnich 5 dni
+ mailViewNotJunk=Po\u017C\u0105dane
+ mailViewHasAttachments=Posiadaj\u0105ce za\u0142\u0105czniki
+Index: mail/chrome/messenger/messenger.dtd
+===================================================================
+RCS file: /l10n/l10n/pl/mail/chrome/messenger/messenger.dtd,v
+retrieving revision 1.9.2.6
+diff -u -r1.9.2.6 messenger.dtd
+--- mail/chrome/messenger/messenger.dtd	27 Oct 2005 21:51:10 -0000	1.9.2.6
++++ mail/chrome/messenger/messenger.dtd	29 Oct 2005 15:01:36 -0000
+@@ -5,7 +5,7 @@
+ <!-- File Menu -->
+ <!ENTITY newFolderCmd.label "Folder...">
+ <!ENTITY newFolderCmd.accesskey "F">
+-<!ENTITY newVirtualFolderCmd.label "Folder ustawień wyszukiwania...">
++<!ENTITY newVirtualFolderCmd.label "Folder wyszukiwania...">
+ <!ENTITY newVirtualFolderCmd.accesskey "S">
+ <!ENTITY newAccountCmd.label "Konto...">
+ <!ENTITY newAccountCmd.accesskey "K">
+Index: mail/chrome/messenger/messenger.properties
+===================================================================
+RCS file: /l10n/l10n/pl/mail/chrome/messenger/messenger.properties,v
+retrieving revision 1.5.2.3
+diff -u -r1.5.2.3 messenger.properties
+--- mail/chrome/messenger/messenger.properties	19 Oct 2005 08:20:38 -0000	1.5.2.3
++++ mail/chrome/messenger/messenger.properties	29 Oct 2005 15:01:37 -0000
+@@ -112,7 +112,7 @@
+ useDefaultServer=U\u017Cyj domy\u015Blnego serwera
+ 
+ # Used in the SMTP Account Settings panel when a server value has no properties
+-smtpServerList-NotSpecified=<nie posiada>
++smtpServerList-NotSpecified=<brak>
+ smtpServer-SecureConnection-Type-0=Brak
+ smtpServer-SecureConnection-Type-1=TLS (je\u015Bli dost\u0119pne)
+ smtpServer-SecureConnection-Type-2=TLS
+@@ -231,7 +231,7 @@
+ confirmViewDeleteMessage=Czy na pewno usun\u0105\u0107 ten widok wiadomo\u015Bci?
+ 
+ # for virtual folders
+-confirmSavedSearchDeleteMessage=Czy na pewno usun\u0105\u0107 ten folder ustawie\u0144 wyszukiwania?
++confirmSavedSearchDeleteMessage=Czy na pewno usun\u0105\u0107 ten folder wyszukiwania?
+ 
+ passwordPrompt=Wprowad\u017A has\u0142o dla %1$S na %2$S:
+ passwordTitle=Wymagane has\u0142o serwera poczty
+Index: mail/chrome/messenger/start.dtd
+===================================================================
+RCS file: /l10n/l10n/pl/mail/chrome/messenger/start.dtd,v
+retrieving revision 1.2.2.4
+diff -u -r1.2.2.4 start.dtd
+--- mail/chrome/messenger/start.dtd	12 Sep 2005 23:51:07 -0000	1.2.2.4
++++ mail/chrome/messenger/start.dtd	29 Oct 2005 15:01:37 -0000
+@@ -6,14 +6,14 @@
+ <!ENTITY startpage.junkControl "Inteligentny filtr niechcianej poczty">
+ <!ENTITY startpage.rssReader "Obsługa kanałów RSS i Atom">
+ <!ENTITY startpage.globalInbox "Globalna skrzynka odbiorcza">
+-<!ENTITY startpage.searchFolders "Foldery ustawień wyszukiwania">
++<!ENTITY startpage.searchFolders "Foldery wyszukiwania">
+ <!ENTITY startpage.messageGroups "Grupowanie wiadomości">
+ <!ENTITY startpage.privacyProtect "Ochrona prywatności">
+ 
+ <!ENTITY startpage.junkControlURL "http://www.thunderbird.pl/startowa/fnp.html">
+ <!ENTITY startpage.rssReaderURL "http://www.thunderbird.pl/startowa/kanaly.html">
+ <!ENTITY startpage.globalInboxURL "http://www.thunderbird.pl/startowa/gso.html">
+-<!ENTITY startpage.searchFoldersURL "http://www.thunderbird.pl/startowa/fuw.html">
++<!ENTITY startpage.searchFoldersURL "http://www.thunderbird.pl/startowa/folwysz.html">
+ <!ENTITY startpage.messageGroupsURL "http://www.thunderbird.pl/startowa/grupowanie.html">
+ <!ENTITY startpage.privacyProtectURL "http://www.thunderbird.pl/startowa/prywatnosc.html">
+ 
+Index: mail/chrome/messenger/virtualFolderProperties.dtd
+===================================================================
+RCS file: /l10n/l10n/pl/mail/chrome/messenger/virtualFolderProperties.dtd,v
+retrieving revision 1.2
+diff -u -r1.2 virtualFolderProperties.dtd
+--- mail/chrome/messenger/virtualFolderProperties.dtd	25 May 2005 13:16:02 -0000	1.2
++++ mail/chrome/messenger/virtualFolderProperties.dtd	29 Oct 2005 15:01:37 -0000
+@@ -1,4 +1,4 @@
+-<!ENTITY virtualFolderProperties.title "Nowy folder ustawień wyszukiwania">
++<!ENTITY virtualFolderProperties.title "Nowy folder wyszukiwania">
+ <!ENTITY name.label                 "Nazwa:">
+ <!ENTITY name.accesskey             "n">
+ <!ENTITY description.label          "Utwórz jako podfolder:">
+Index: mail/chrome/messenger/preferences/connection.dtd
+===================================================================
+RCS file: /l10n/l10n/pl/mail/chrome/messenger/preferences/connection.dtd,v
+retrieving revision 1.4
+diff -u -r1.4 connection.dtd
+--- mail/chrome/messenger/preferences/connection.dtd	27 Jun 2005 23:04:45 -0000	1.4
++++ mail/chrome/messenger/preferences/connection.dtd	29 Oct 2005 15:01:37 -0000
+@@ -1,7 +1,7 @@
+ <!ENTITY connectionsDialog.title       "Ustawienia połączenia">
+ <!ENTITY  window.width                 "45em">
+ 
+-<!ENTITY proxyTitle.label "Konfiguruj ustawienia dostępu do internetu poprzez serwery proxy">
++<!ENTITY proxyTitle.label "Konfiguracja ustawień dostępu do Internetu poprzez serwery proxy">
+ <!ENTITY directTypeRadio.label         "Bezpośrednie połączenie z Internetem">
+ <!ENTITY directTypeRadio.accesskey     "d">
+ <!ENTITY WPADTypeRadio.label           "Automatycznie wykryj ustawienia proxy dla tej sieci">
+Index: mail/chrome/messenger/preferences/general.dtd
+===================================================================
+RCS file: /l10n/l10n/pl/mail/chrome/messenger/preferences/general.dtd,v
+retrieving revision 1.5
+diff -u -r1.5 general.dtd
+--- mail/chrome/messenger/preferences/general.dtd	30 Jul 2005 01:39:30 -0000	1.5
++++ mail/chrome/messenger/preferences/general.dtd	29 Oct 2005 15:01:37 -0000
+@@ -36,5 +36,5 @@
+ 
+ <!ENTITY showConnections.label         "Ustawienia połączenia...">
+ <!ENTITY showConnections.accesskey     "U">
+-<!ENTITY proxiesInfo.label             "Określ, w jaki sposób &brandShortName; ma się łączyć z internetem.">
+-<!ENTITY connectionsInfo.caption       "Połączenie">
+\ No newline at end of file
++<!ENTITY proxiesInfo.label             "Określ, w jaki sposób &brandShortName; ma się łączyć z Internetem.">
++<!ENTITY connectionsInfo.caption       "Połączenie">
+Index: mail/chrome/messenger/preferences/sendoptions.dtd
+===================================================================
+RCS file: /l10n/l10n/pl/mail/chrome/messenger/preferences/sendoptions.dtd,v
+retrieving revision 1.2
+diff -u -r1.2 sendoptions.dtd
+--- mail/chrome/messenger/preferences/sendoptions.dtd	25 May 2005 13:16:02 -0000	1.2
++++ mail/chrome/messenger/preferences/sendoptions.dtd	29 Oct 2005 15:01:37 -0000
+@@ -10,7 +10,7 @@
+ <!ENTITY sendBoth.label "prześlij wiadomość w obydwu formatach: HTML oraz tekstowym">
+ <!ENTITY sendBoth.accesskey "e">
+ <!ENTITY receiveHTML.label 'Jeżeli wiadomo, że poszczególni adresaci mogą otrzymywać wiadomości w formacie HTML, należy wybrać opcję "Preferuje otrzymywać wiadomości w formacie HTML".'>
+-<!ENTITY override.label "Notka: Proszę użyć Książki adresowej, aby ustalić preferowany przez poszczególnych adresatów format wiadomości.">
++<!ENTITY override.label "Uwaga: Proszę użyć Książki adresowej, aby ustalić preferowany przez poszczególnych adresatów format wiadomości.">
+ <!ENTITY domaindesc.label "W przypadku wysyłania poczty do jednej z poniższych domen, &brandShortName; automatycznie wybierze właściwy format wiadomości.">
+ <!ENTITY HTMLTab.label "Domeny - format HTML">
+ <!ENTITY HTMLTab.accesskey "h">
+Index: mail/chrome/messenger-newsblog/feed-subscriptions.dtd
+===================================================================
+RCS file: /l10n/l10n/pl/mail/chrome/messenger-newsblog/feed-subscriptions.dtd,v
+retrieving revision 1.3
+diff -u -r1.3 feed-subscriptions.dtd
+--- mail/chrome/messenger-newsblog/feed-subscriptions.dtd	15 Jun 2005 07:33:31 -0000	1.3
++++ mail/chrome/messenger-newsblog/feed-subscriptions.dtd	29 Oct 2005 15:01:37 -0000
+@@ -1,6 +1,6 @@
+ <!-- Subscription Dialog -->
+ <!ENTITY newsBlogSubscriptions.label "Subskrypcje RSS">
+-<!ENTITY subscriptionDesc.label "Notka: Usunięcie lub zmiana folderu dla kanału nie będą miały wpływu na pobrane wcześniej artykuły.">
++<!ENTITY subscriptionDesc.label "Uwaga: Usunięcie lub zmiana folderu dla kanału nie będą miały wpływu na pobrane wcześniej artykuły.">
+ <!ENTITY feedTitle.label "Tytuł:">
+ <!ENTITY location.label  "Adres:">
+ 
+

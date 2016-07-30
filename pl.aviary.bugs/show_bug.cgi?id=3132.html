@@ -1,0 +1,2012 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>3132 &ndash; Zainstalujmy sobie kalendarz</title>
+
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<link href="data/assets/7aa6ea67750936a0368541421bdcd5ee.css" rel="stylesheet" type="text/css">
+
+
+
+    
+<script type="text/javascript" src="data/assets/a7c2f3a028f17a9aa60f56dc9d6e732d.js"></script>
+
+    <script type="text/javascript">
+    <!--
+        YAHOO.namespace('bugzilla');
+        YAHOO.util.Event.addListener = function (el, sType, fn, obj, overrideContext) {
+               if ( ("onpagehide" in window || YAHOO.env.ua.gecko) && sType === "unload") { sType = "pagehide"; };
+               var capture = ((sType == "focusin" || sType == "focusout") && !YAHOO.env.ua.ie) ? true : false;
+               return this._addListener(el, this._getType(sType), fn, obj, overrideContext, capture);
+         };
+        if ( "onpagehide" in window || YAHOO.env.ua.gecko) {
+            YAHOO.util.Event._simpleRemove(window, "unload", 
+                                           YAHOO.util.Event._unload);
+        }
+        
+        function unhide_language_selector() { 
+            YAHOO.util.Dom.removeClass(
+                'lang_links_container', 'bz_default_hidden'
+            ); 
+        } 
+        YAHOO.util.Event.onDOMReady(unhide_language_selector);
+
+        
+        var BUGZILLA = {
+            param: {
+                cookiepath: '\/',
+                maxusermatches: 1000
+            },
+            constant: {
+                COMMENT_COLS: 80
+            },
+            string: {
+                
+
+                attach_desc_required:
+                    "You must enter a Description for this attachment.",
+                component_required:
+                    "You must select a Component for this bug.",
+                description_required:
+                    "You must enter a Description for this bug.",
+                short_desc_required:
+                    "You must enter a Summary for this bug.",
+                version_required:
+                    "You must select a Version for this bug."
+            }
+              , api_token: ''
+        };
+
+    if (history && history.replaceState) {
+      if(!document.location.href.match(/show_bug\.cgi/)) {
+        history.replaceState( null,
+                             "3132 – Zainstalujmy sobie kalendarz",
+                             "show_bug.cgi?id=3132" );
+        document.title = "3132 – Zainstalujmy sobie kalendarz";
+      }
+      if (document.location.href.match(/show_bug\.cgi\?.*list_id=/)) {
+        var href = document.location.href;
+        href = href.replace(/[\?&]+list_id=(\d+|cookie)/, '');
+        history.replaceState(null, "3132 – Zainstalujmy sobie kalendarz", href);
+      }
+    }
+    YAHOO.util.Event.onDOMReady(function() {
+      initDirtyFieldTracking();
+
+    });
+    // -->
+    </script>
+<script type="text/javascript" src="data/assets/daf5e0fb6826e6a35280e622913f0c4a.js"></script>
+
+    
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+                       title="Bugzilla" href="search_plugin.cgi">
+    <link rel="shortcut icon" href="images/favicon.ico">
+  </head>
+
+  <body 
+        class="bugs-aviary-pl
+                 bz_bug
+                 bz_status_VERIFIED
+                 bz_product_Inne
+                 bz_component_Og&#XF3;lne
+                 bz_bug_3132 yui-skin-sam">
+
+  <div id="header"><div id="banner">
+  </div>
+
+    <div id="titles">
+      <span id="title">Bugzilla &ndash; Bug&nbsp;3132</span>
+
+        <span id="subtitle" class="subheader">Zainstalujmy sobie kalendarz</span>
+
+        <span id="information" class="header_addl_info">Last modified: 2012-11-09 13:20:22 CET</span>
+    </div>
+
+
+    <div id="common_links"><ul class="links">
+  <li><a href="index.html">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi.html">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi.html">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi.html">Search</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="http://bugs.aviary.pl/buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input type="hidden" id="no_redirect_top" name="no_redirect" value="0">
+    <script type="text/javascript">
+      if (history && history.replaceState) {
+        var no_redirect = document.getElementById("no_redirect_top");
+        no_redirect.value = 1;
+      }
+    </script>
+    <input class="txt" type="text" id="quicksearch_top" name="quicksearch" 
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search" 
+           id="find_top"></form>
+  <a href="page.cgi%3Fid=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="report.cgi.html">Reports</a></li>
+
+  <li>
+      <span class="separator">| </span>
+        <a href="request.cgi.html">Requests</a></li>
+
+
+  <li>
+        <span class="separator">| </span>
+        <a href="https://bugzilla.readthedocs.org/en/5.0/using/understanding.html" target="_blank">Help</a>
+      </li>
+    
+      <li id="new_account_container_top">
+        <span class="separator">| </span>
+        <a href="createaccount.cgi.html">New&nbsp;Account</a>
+      </li>
+
+    <li id="mini_login_container_top">
+  <span class="separator">| </span>
+  <a id="login_link_top" href="show_bug.cgi%3Fid=3132&amp;GoAheadAndLogIn=1.html"
+     onclick="return show_mini_login_form('_top')">Log In</a>
+
+  <form action="show_bug.cgi%3Fid=3132.html" method="POST"
+        class="mini_login bz_default_hidden"
+        id="mini_login_top">
+    <input id="Bugzilla_login_top" required
+           name="Bugzilla_login" class="bz_login"
+        type="email" placeholder="Email Address">
+    <input class="bz_password" name="Bugzilla_password" type="password"
+           id="Bugzilla_password_top" required
+           placeholder="Password">
+    <input type="hidden" name="Bugzilla_login_token"
+           value="1469821998-IUmAXsDFj4gl8NBaJoCbhFeiHRPGI8h9xT_DUP6Gsg0">
+    <input type="submit" name="GoAheadAndLogIn" value="Log in"
+            id="log_in_top">
+    <a href="show_bug.cgi%3Fid=3132.html#" onclick="return hide_mini_login_form('_top')">[x]</a>
+  </form>
+</li>
+
+
+  <li id="forgot_container_top">
+    <span class="separator">| </span>
+    <a id="forgot_link_top" href="show_bug.cgi%3Fid=3132&amp;GoAheadAndLogIn=1.html#forgot"
+       onclick="return show_forgot_form('_top')">Forgot Password</a>
+    <form action="http://bugs.aviary.pl/token.cgi" method="post" id="forgot_form_top"
+          class="mini_forgot bz_default_hidden">
+      <label for="login_top">Login:</label>
+      <input name="loginname" size="20" id="login_top" required
+          type="email" placeholder="Your Email Address">
+      <input id="forgot_button_top" value="Reset Password" type="submit">
+      <input type="hidden" name="a" value="reqpw">
+      <input type="hidden" id="token_top" name="token"
+             value="1469821998-lHM_C7tUBGQadkGhpx2llx59jFFON6rmP5kxYp_WUmQ">
+      <a href="show_bug.cgi%3Fid=3132.html#" onclick="return hide_forgot_form('_top')">[x]</a>
+    </form>
+  </li>
+</ul>
+    </div>
+  </div>
+
+  <div id="bugzilla-body">
+
+
+<script type="text/javascript">
+<!--
+
+//-->
+</script>
+
+<form name="changeform" id="changeform" method="post" action="http://bugs.aviary.pl/process_bug.cgi">
+
+  <input type="hidden" name="delta_ts" value="2012-11-09 13:20:22">
+  <input type="hidden" name="id" value="3132">
+  <input type="hidden" name="token" value="1469821998-34f-_iZeQh7AGsoYNypyfEk5uEQZDHxaUrfcw2qSkAQ">
+<div class="bz_short_desc_container edit_form">
+     <a href="show_bug.cgi%3Fid=3132.html"><b>Bug&nbsp;3132</b></a> <span id="summary_container" class="bz_default_hidden">
+      - <span id="short_desc_nonedit_display">Zainstalujmy sobie kalendarz</span>
+     </span>
+
+    <div id="summary_input"><span class="field_label "
+    id="field_label_short_desc">
+
+
+  <a 
+      title="The bug summary is a short sentence which succinctly describes what the bug is about."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#short_desc"
+  >Summary:</a>
+
+</span>Zainstalujmy sobie kalendarz
+    </div>
+  </div>
+  <script type="text/javascript">
+    hideEditableField('summary_container',
+                      'summary_input',
+                      'summary_edit_action',
+                      'short_desc',
+                      'Zainstalujmy sobie kalendarz' );
+  </script>
+  <table class="edit_form">
+    <tr>
+      
+      <td id="bz_show_bug_column_1" class="bz_show_bug_column">     
+        <table>
+          <tr>
+    <th class="field_label">
+      <a href="page.cgi%3Fid=fields.html#bug_status">Status</a>:
+    </th>
+    <td id="bz_field_status">
+      <span id="static_bug_status">VERIFIED
+          FIXED
+      </span>
+    </td>
+  </tr>
+<tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+<tr><th class="field_label "
+    id="field_label_alias">
+
+
+  <a 
+      title="A short, unique name assigned to a bug in order to assist with looking it up and referring to it in other places in Bugzilla."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#alias"
+  >Alias:</a>
+
+</th>
+    <td>
+        None
+    </td>
+  </tr>
+<tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+<tr><th class="field_label "
+    id="field_label_product">
+
+
+  <a 
+      title="Bugs are categorised into Products and Components. Select a Classification to narrow down this list."
+      class="field_help_link"
+      href="describecomponents.cgi.html"
+  >Product:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_product" >Inne
+
+</td>
+    </tr>
+
+    
+    <tr class="bz_default_hidden"><th class="field_label "
+    id="field_label_classification">
+
+
+  <a 
+      title="Bugs are categorised into Classifications, Products and Components. classifications is the top-level categorisation."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#classification"
+  >Classification:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_classification" >Zespół Aviary.pl
+
+</td>
+    </tr>
+        
+    
+    
+    <tr><th class="field_label "
+    id="field_label_component">
+
+
+  <a 
+      title="Components are second-level categories; each belongs to a particular Product. Select a Product to narrow down this list."
+      class="field_help_link"
+      href="describecomponents.cgi%3Fproduct=Inne.html"
+  >Component:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_component" >Ogólne
+
+  (<a href="buglist.cgi%3Fcomponent=Ogólne&amp;product=Inne&amp;bug_status=__open__.html"
+      target="_blank">show other bugs</a>)
+</td>
+    </tr>
+    <tr><th class="field_label "
+    id="field_label_version">
+
+
+  <a 
+      title="The version field defines the version of the software the bug was found in."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#version"
+  >Version:</a>
+
+</th>
+<td>nieokreślona
+  </td>
+    </tr>
+        
+    
+        
+    <tr><th class="field_label "
+    id="field_label_rep_platform">
+
+
+  <a 
+      title="The hardware platform the bug was observed on. Note: When searching, selecting the option &quot;All&quot; only finds bugs whose value for this field is literally the word &quot;All&quot;."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#rep_platform"
+  >Hardware:</a>
+
+</th>
+      <td class="field_value">Wszystkie
+        Wszystkie
+      </td>
+    </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          
+          <tr>
+      <th class="field_label">
+        <label  accesskey="i">
+          <a href="page.cgi%3Fid=fields.html#importance"><u>I</u>mportance</a></label>:
+      </th>
+      <td>P3
+       normalny
+      </td>
+    </tr>
+          
+          <tr><th class="field_label "
+    id="field_label_assigned_to">
+
+
+  <a 
+      title="The person in charge of resolving the bug."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#assigned_to"
+  >Assignee:</a>
+
+</th>
+      <td><span class="vcard"><span class="fn">Stefan Plewako :stef</span>
+</span>
+      </td>
+    </tr>
+
+    <tr><th class="field_label "
+    id="field_label_qa_contact">
+
+
+  <a 
+      title="The person responsible for confirming this bug if it is unconfirmed, and for verifying the fix once the bug has been resolved."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#qa_contact"
+  >QA Contact:</a>
+
+</th>
+      <td><span class="vcard">inne
+</span>
+      </td>
+    </tr>
+    <script type="text/javascript">
+      assignToDefaultOnChange(['product', 'component'],
+        'nobody\x40aviary.pl',
+        'inne\x40l10n.bledy');
+    </script>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          <tr><th class="field_label "
+    id="field_label_bug_file_loc">
+
+
+  <a 
+      title="Bugs can have a URL associated with them - for example, a pointer to a web site where the problem is seen."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#bug_file_loc"
+  >URL:</a>
+
+</th>
+    <td>
+      <span id="bz_url_input_area">
+      </span>
+    </td>
+  </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+
+          
+<tr><th class="field_label "
+    id="field_label_dependson">
+
+
+  <a 
+      title="The bugs listed here must be resolved before this bug can be resolved."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#dependson"
+  >Depends on:</a>
+
+</th>
+
+  <td>
+    <span id="dependson_input_area">
+    </span>
+<a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Wdrożyć Google Apps"
+   href="show_bug.cgi%3Fid=4342.html">4342</a> 
+  </td>
+  </tr>
+  
+  <tr><th class="field_label "
+    id="field_label_blocked">
+
+
+  <a 
+      title="This bug must be resolved before the bugs listed in this field can be resolved."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#blocked"
+  >Blocks:</a>
+
+</th>
+
+  <td>
+    <span id="blocked_input_area">
+    </span>
+
+  </td>
+  </tr>
+
+    <tr>
+      <th>&nbsp;</th>
+
+      <td id="show_dependency_tree_or_graph">
+        Show dependency <a href="showdependencytree.cgi%3Fid=3132&amp;hide_resolved=1.html">tree</a>
+
+          /&nbsp;<a href="showdependencygraph.cgi%3Fid=3132.html">graph</a>
+      </td>
+    </tr>
+          
+        </table>
+      </td>
+      <td>
+        <div class="bz_column_spacer">&nbsp;</div>
+      </td>
+      
+      <td id="bz_show_bug_column_2" class="bz_show_bug_column">
+        <table>
+        <tr>
+    <th class="field_label">
+      Reported:
+    </th>
+    <td>2010-04-20 05:54 CEST by <span class="vcard"><span class="fn">Stefan Plewako :stef</span>
+</span>
+    </td>
+  </tr>
+  
+  <tr>
+    <th class="field_label">
+      Modified:
+    </th>
+    <td>2012-11-09 13:20 CET
+      (<a href="show_activity.cgi%3Fid=3132.html">History</a>)
+    </td>
+  
+  </tr>
+<tr>
+      <th class="field_label">
+        <label  accesskey="a">
+          CC List:
+        </label>
+      </th>
+      <td>4 
+          users
+          <span id="cc_edit_area_showhide_container" class="bz_default_hidden">
+            (<a href="show_bug.cgi%3Fid=3132.html#" id="cc_edit_area_showhide">show</a>)
+          </span>
+        <div id="cc_edit_area">
+          <br>
+            <select id="cc" multiple="multiple" size="5" >
+                <option value="bpiec">bpiec</option>
+                <option value="gandalf">gandalf</option>
+                <option value="hubert+bap">hubert+bap</option>
+                <option value="jmazgaj">jmazgaj</option>
+            </select>
+        </div>
+          <script type="text/javascript">
+            hideEditableField( 'cc_edit_area_showhide_container', 
+                               'cc_edit_area', 
+                               'cc_edit_area_showhide', 
+                               '', 
+                               '');  
+          </script>
+      </td>
+    </tr>
+
+<tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+<tr><th class="field_label "
+    id="field_label_see_also">
+
+
+  <a 
+      title="This allows you to refer to bugs in other installations. You can enter a URL to a bug in the 'Add Bug URLs' field to note that that bug is related to this one. You can enter multiple URLs at once by separating them with whitespace. You should normally use this field to refer to bugs in other installations. For bugs in this installation, it is better to use the Depends on and Blocks fields."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#see_also"
+  >See Also:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_see_also" >
+
+</td>
+    </tr> 
+
+<tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+
+
+
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+          <hr id="bz_top_half_spacer">
+      </td>
+    </tr>
+  </table>
+
+  <table id="bz_big_form_parts">
+  <tr>
+  <td>
+
+    
+<script type="text/javascript">
+<!--
+function toggle_display(link) {
+    var table = document.getElementById("attachment_table");
+    var view_all = document.getElementById("view_all");
+    var hide_obsolete_url_parameter = "&hide_obsolete=1";
+    // Store current height for scrolling later
+    var originalHeight = table.offsetHeight;
+    var rows = YAHOO.util.Dom.getElementsByClassName(
+        'bz_tr_obsolete', 'tr', table);
+
+    for (var i = 0; i < rows.length; i++) {
+        bz_toggleClass(rows[i], 'bz_default_hidden');
+    }
+
+    if (YAHOO.util.Dom.hasClass(rows[0], 'bz_default_hidden')) {
+        link.innerHTML = "Show Obsolete";
+        view_all.href = view_all.href + hide_obsolete_url_parameter 
+    }
+    else {
+        link.innerHTML = "Hide Obsolete";
+        view_all.href = view_all.href.replace(hide_obsolete_url_parameter,"");
+    }
+
+    var newHeight = table.offsetHeight;
+    // This scrolling makes the window appear to not move at all.
+    window.scrollBy(0, newHeight - originalHeight);
+
+    return false;
+}
+//-->
+</script>
+
+<br>
+<table id="attachment_table">
+  <tr id="a0">
+    <th colspan="3" class="left">
+      Attachments
+    </th>
+  </tr>
+
+
+
+  <tr class="bz_attach_footer">
+    <td colspan="3">
+        <a href="attachment.cgi%3Fbugid=3132&amp;action=enter.html">Add an attachment</a>
+        (proposed patch, testcase, etc.)
+    </td>
+  </tr>
+</table>
+<br>
+
+  </td>
+  <td>
+  </td>
+  </tr></table>
+
+  
+  <div id="comments"><script src="js/comments.js" type="text/javascript">
+</script>
+
+<script type="text/javascript">
+<!--
+  /* Adds the reply text to the 'comment' textarea */
+  function replyToComment(id, real_id, name) {
+      var prefix = "(In reply to " + name + " from comment #" + id + ")\n";
+      var replytext = "";
+        /* pre id="comment_name_N" */
+        var text_elem = document.getElementById('comment_text_'+id);
+        var text = getText(text_elem);
+        replytext = prefix + wrapReplyText(text);
+
+
+      /* <textarea id="comment"> */
+      var textarea = document.getElementById('comment');
+      if (textarea.value != replytext) {
+          textarea.value += replytext;
+      }
+
+      textarea.focus();
+  } 
+//-->
+</script>
+
+
+<!-- This auto-sizes the comments and positions the collapse/expand links 
+     to the right. -->
+<table class="bz_comment_table">
+<tr>
+<td>
+<div id="c0" class="bz_comment bz_first_comment">
+
+      <div class="bz_first_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=3132.html#c0">Description</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Stefan Plewako :stef</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2010-04-20 05:54:41 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Pomysł: zainstalujmy kalendarz dla zespołu, np. WebCalendar (jest w one-click installs -&gt; łatwa aktualizacja) albo inny (byleby w pełni funkcjonalny - zapis przez wiele osób i synchronizacja).</pre>
+    </div>
+
+    <div id="c1" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=3132.html#c1">Comment 1</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2010-04-20 12:32:22 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">To chodzi na iCalendar, tak?</pre>
+    </div>
+
+    <div id="c2" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=3132.html#c2">Comment 2</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Stefan Plewako :stef</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2010-04-20 12:54:52 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Na ile rozumiem opis na stronie (<a href="http://www.k5n.us/webcalendar.php">http://www.k5n.us/webcalendar.php</a>) to pozwala na odczyt/zapis w tym formacie.</pre>
+    </div>
+
+    <div id="c3" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=3132.html#c3">Comment 3</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2010-04-20 13:04:29 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Google'owe mamy już chyba, ze trzy, ale pomysł popieram - może dzięki temu będziemy mieć jeden.</pre>
+    </div>
+
+    <div id="c4" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=3132.html#c4">Comment 4</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Stefan Plewako :stef</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2010-04-20 13:12:17 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Ja sobie przypominam dwa, jeden nawet subskrybuję (a nie było łatwo).
+
+W googlowych chyba nie ma możliwości zapisu przez iCal i wielu użytkowników… stąd to zgłoszenie.</pre>
+    </div>
+
+    <div id="c5" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=3132.html#c5">Comment 5</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2010-08-08 01:45:07 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Spróbujmy, zobaczymy jak się to sprawdzi.</pre>
+    </div>
+
+    <div id="c6" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=3132.html#c6">Comment 6</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">hakon</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2010-08-08 02:59:44 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(W odpowiedzi na komentarz #4)
+<span class="quote">&gt; W googlowych chyba nie ma możliwości zapisu przez iCal i wielu użytkowników…
+&gt; stąd to zgłoszenie.</span >
+
+Są takie możliwości:
+- ical - <a href="http://www.google.com/support/calendar/bin/answer.py?hl=pl&amp;answer=37108">http://www.google.com/support/calendar/bin/answer.py?hl=pl&amp;answer=37108</a>
+- udostępnianie - <a href="http://www.google.com/support/calendar/bin/answer.py?answer=37082">http://www.google.com/support/calendar/bin/answer.py?answer=37082</a></pre>
+    </div>
+
+    <div id="c7" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=3132.html#c7">Comment 7</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Stefan Plewako :stef</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2010-08-08 03:58:05 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(W odpowiedzi na komentarz #6)
+<span class="quote">&gt; Są takie możliwości</span >
+
+Podane przez ciebie odnośniki tyczą się odczytu nie zapisu.</pre>
+    </div>
+
+    <div id="c8" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=3132.html#c8">Comment 8</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2010-08-08 04:05:31 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">W Lightningu zapisywanie działa, tylko trzeba mieć &quot;Providera&quot;, nie ma czegoś podobnego dla iCal?</pre>
+    </div>
+
+    <div id="c9" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=3132.html#c9">Comment 9</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Stefan Plewako :stef</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2010-08-08 04:14:09 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(W odpowiedzi na komentarz #8)
+<span class="quote">&gt; W Lightningu zapisywanie działa, tylko trzeba mieć &quot;Providera&quot;</span >
+
+Nie wiem co to jest i jak działa oraz czy działa w oczekiwany przez nas sposób. Jeżeli działa to skonfiguruj tak oba kalendarze abym mógł odczytywać i dodawać do nich informacje ze swojego konta aviarowego oraz najlepiej stwórz gdzieś instrukcję…
+
+(chociaż to w moim przypadku i tak nie zadziała)</pre>
+    </div>
+
+    <div id="c10" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=3132.html#c10">Comment 10</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2010-08-08 04:29:49 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(W odpowiedzi na komentarz #9)
+<span class="quote">&gt; Nie wiem co to jest i jak działa oraz czy działa w oczekiwany przez nas sposób.</span >
+
+<a href="https://addons.mozilla.org/pl/thunderbird/addon/4631/">https://addons.mozilla.org/pl/thunderbird/addon/4631/</a></pre>
+    </div>
+
+    <div id="c11" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=3132.html#c11">Comment 11</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2010-08-08 04:34:07 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Sprawdziłem. Masz prawo zapisu w obu: Aviary.pl i Aviary.pl Intercal. Wadą na dzień dzisiejszy jest to, że nie są one w naszej domenie - co za tym idzie - trzeba logować się kontem Google.</pre>
+    </div>
+
+    <div id="c12" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=3132.html#c12">Comment 12</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Stefan Plewako :stef</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2010-08-08 04:37:48 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(W odpowiedzi na komentarz #10)
+<span class="quote">&gt; <a href="https://addons.mozilla.org/pl/thunderbird/addon/4631/">https://addons.mozilla.org/pl/thunderbird/addon/4631/</a></span >
+
+Wiem jak znaleźć, nadal nie wiem jak działa a na wiki też nic nie ma o zapisywaniu do cudzych kalendarzy…</pre>
+    </div>
+
+    <div id="c13" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=3132.html#c13">Comment 13</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Stefan Plewako :stef</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2010-08-08 04:49:52 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(W odpowiedzi na komentarz #11)
+<span class="quote">&gt; Sprawdziłem. Masz prawo zapisu w obu: Aviary.pl i Aviary.pl Intercal. Wadą na
+&gt; dzień dzisiejszy jest to, że nie są one w naszej domenie - co za tym idzie -
+&gt; trzeba logować się kontem Google.</span >
+
+No to nie mogę (zapisać z konta aviary) i odpada. Zresztą w tej chwili nawet nie pamiętam jak subskrybować (być może muszę poszukać w archiwum)… dlatego też prosiłem o stronę wiki z instrukcjami zamiast rzucanych mimochodem mniej lub bardziej związanych z tematem odnośników i przypuszczeń. Jeżeli nie jesteśmy w stanie takiej stworzyć to uważam, że słusznie byłoby usunąć oba kalendarze albo przynajmniej zmienić ich nazwy na tyle, aby nie sugerowały, że są własnością zespołu.</pre>
+    </div>
+
+    <div id="c14" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=3132.html#c14">Comment 14</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2010-08-08 05:16:19 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(W odpowiedzi na komentarz #12)
+<span class="quote">&gt; Wiem jak znaleźć, nadal nie wiem jak działa a na wiki też nic nie ma o
+&gt; zapisywaniu do cudzych kalendarzy…</span >
+
+Po zainstalowaniu i uruchomieniu poprosi Cię o logowanie i potem już będziesz
+mógł zapisywać.
+
+(W odpowiedzi na komentarz #13)
+<span class="quote">&gt; (W odpowiedzi na komentarz #11)
+&gt; &gt; Sprawdziłem. Masz prawo zapisu w obu: Aviary.pl i Aviary.pl Intercal. Wadą na
+&gt; &gt; dzień dzisiejszy jest to, że nie są one w naszej domenie - co za tym idzie -
+&gt; &gt; trzeba logować się kontem Google.
+&gt; 
+&gt; No to nie mogę (zapisać z konta aviary) i odpada.</span >
+
+Zgadzam się. Nie jest to wielka różnica, czy przeniesiemy się na zaproponowany przez Ciebie WebCalendar czy będzie kalendarz Google w naszej domenie. Oba powinny dobrze funkcjonować. Przy korzystaniu przez np. Lightninga nie powinno mieć znaczenia, który kalendarz wybraliśmy. Interfejs webowy ma moim zdaniem lepszy Google.
+
+<span class="quote">&gt; Zresztą w tej chwili nawet
+&gt; nie pamiętam jak subskrybować (być może muszę poszukać w archiwum)… dlatego też
+&gt; prosiłem o stronę wiki z instrukcjami zamiast rzucanych mimochodem mniej lub
+&gt; bardziej związanych z tematem odnośników i przypuszczeń. Jeżeli nie jesteśmy w
+&gt; stanie takiej stworzyć to uważam, że słusznie byłoby usunąć oba kalendarze albo
+&gt; przynajmniej zmienić ich nazwy na tyle, aby nie sugerowały, że są własnością
+&gt; zespołu.</span >
+
+Ja jestem za tym, by bez względu na wszystko je usunąć (po skopiowaniu ważnych informacji do nowego kalendarza).</pre>
+    </div>
+
+    <div id="c15" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=3132.html#c15">Comment 15</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Stefan Plewako :stef</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2010-08-08 05:35:30 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(W odpowiedzi na komentarz #14)
+<span class="quote">&gt; (W odpowiedzi na komentarz #12)
+&gt; &gt; Wiem jak znaleźć, nadal nie wiem jak działa a na wiki też nic nie ma o
+&gt; &gt; zapisywaniu do cudzych kalendarzy…
+&gt; 
+&gt; Po zainstalowaniu i uruchomieniu poprosi Cię o logowanie i potem już będziesz
+&gt; mógł zapisywać.</span >
+
+Chyba się nie rozumiemy. Opisujesz jak uruchomić a ja się zastanawiam na jakich zasadach działa. Pomijając kwestię co za logowanie, do czego i z czym to dajmy już temu spokój.
+
+<span class="quote">&gt; Zgadzam się. Nie jest to wielka różnica, czy przeniesiemy się na zaproponowany
+&gt; przez Ciebie WebCalendar czy będzie kalendarz Google w naszej domenie. Oba
+&gt; powinny dobrze funkcjonować. Przy korzystaniu przez np. Lightninga nie powinno
+&gt; mieć znaczenia, który kalendarz wybraliśmy. Interfejs webowy ma moim zdaniem
+&gt; lepszy Google.</span >
+
+Dla osób nie korzystających z webowego interfejsu ani lightninga (jak np ja) różnica jest wielka. (zakładam, że zapisywanie we wszystkich wariantach będzie działać)</pre>
+    </div>
+
+    <div id="c16" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=3132.html#c16">Comment 16</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2010-08-08 05:41:41 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(W odpowiedzi na komentarz #15)
+<span class="quote">&gt; Dla osób nie korzystających z webowego interfejsu ani lightninga (jak np ja)
+&gt; różnica jest wielka. (zakładam, że zapisywanie we wszystkich wariantach będzie
+&gt; działać)</span >
+
+Jak to? Przecież korzystając z Lightninga nawet nie będziesz wiedział, czy stoi za tym WebCalendar czy Google :-)</pre>
+    </div>
+
+    <div id="c17" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=3132.html#c17">Comment 17</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Stefan Plewako :stef</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2010-08-08 05:50:19 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(W odpowiedzi na komentarz #16)
+<span class="quote">&gt; Jak to? Przecież korzystając z Lightninga nawet nie będziesz wiedział, czy stoi
+&gt; za tym WebCalendar czy Google :-)</span >
+
+Normalnie - nie korzystam z lightninga (i nie mam zamiaru).</pre>
+    </div>
+
+    <div id="c18" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=3132.html#c18">Comment 18</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2010-08-08 05:56:07 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(W odpowiedzi na komentarz #17)
+<span class="quote">&gt; Normalnie - nie korzystam z lightninga (i nie mam zamiaru).</span >
+
+OK, teraz już rozumiem. Sprawdzę, czy faktycznie iCala nie da się użyć do Google Calendar (z opcją zapisu) i jeśli to się potwierdzi - zostanie już tylko WebCalendar.</pre>
+    </div>
+
+    <div id="c19" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=3132.html#c19">Comment 19</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Katarzyna Stawarz</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2010-08-08 06:08:50 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Hm, wybaczcie naiwne pytanie, ale po co nam kalendarz? Tzn. jakie informacje miałyby się tam pojawiać?</pre>
+    </div>
+
+    <div id="c20" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=3132.html#c20">Comment 20</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2010-08-08 06:26:26 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(W odpowiedzi na komentarz #19)
+<span class="quote">&gt; Hm, wybaczcie naiwne pytanie, ale po co nam kalendarz? Tzn. jakie informacje
+&gt; miałyby się tam pojawiać?</span >
+
+1. Ja bym chciał tam widzieć info o jakichś urlopach (tych krótkich i tych długich), teraz jak ktoś gdzieś znika na jakiś czas pisze maila. Kalendarz lepiej się do tego nadaje.
+
+2. Przypomnienia o deadline'ach. Nikdo kiedyś zasugerował, że taka automatyczna informacja z kalendarza jest lepsza niż manualne wysyłanie i ja się z nim zgadzam.
+
+3. Rekrutacja - bardzo potrzebny do panowania nad tym co kiedy i jak - teraz Joanna ma do tego osobny kalendarz.
+
+4. Informacja o spotkaniach
+
+Stef pewnie jeszcze inne rzeczy jest w stanie podać.</pre>
+    </div>
+
+    <div id="c21" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=3132.html#c21">Comment 21</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2010-08-08 06:43:01 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(W odpowiedzi na komentarz #18)
+<span class="quote">&gt; (W odpowiedzi na komentarz #17)
+&gt; &gt; Normalnie - nie korzystam z lightninga (i nie mam zamiaru).
+&gt; 
+&gt; OK, teraz już rozumiem. Sprawdzę, czy faktycznie iCala nie da się użyć do
+&gt; Google Calendar (z opcją zapisu).</span >
+
+Działa bez problemu, skorzystałem z <a href="http://www.google.com/support/calendar/bin/answer.py?answer=99358#ical">http://www.google.com/support/calendar/bin/answer.py?answer=99358#ical</a></pre>
+    </div>
+
+    <div id="c22" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=3132.html#c22">Comment 22</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Stefan Plewako :stef</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2010-08-08 08:16:03 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(W odpowiedzi na komentarz #21)
+<span class="quote">&gt; Działa bez problemu, skorzystałem z
+&gt; <a href="http://www.google.com/support/calendar/bin/answer.py?answer=99358#ical">http://www.google.com/support/calendar/bin/answer.py?answer=99358#ical</a></span >
+
+Ale co niby działa?
+
+Ja zapisywanie i odczytywanie *swojego* kalendarza google mam ale my tu rozmawiamy o zapisywaniu do *nieswojego* kalendarza z *adresu aviarowego*; znam jedynie jego nazwę i nie mam pojęcia jak go dodać - dlatego prosiłem o *napisanie instrukcji*.</pre>
+    </div>
+
+    <div id="c23" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=3132.html#c23">Comment 23</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2010-08-08 08:30:59 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(W odpowiedzi na komentarz #22)
+<span class="quote">&gt; dlatego prosiłem o
+&gt; *napisanie instrukcji*.</span >
+
+OK, na którym punkcie instrukcji opisanej na stronach Google utknąłeś?</pre>
+    </div>
+
+    <div id="c24" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=3132.html#c24">Comment 24</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Stefan Plewako :stef</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2010-08-08 08:44:39 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(W odpowiedzi na komentarz #23)
+<span class="quote">&gt; OK, na którym punkcie instrukcji opisanej na stronach Google utknąłeś?</span >
+
+Na żadnym - jak napisałem powyżej swój kalendarz mam dodany i działa.
+(dodawałem go chyba dokładnie tak jak jest to opisane na tamtej stronie)</pre>
+    </div>
+
+    <div id="c25" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=3132.html#c25">Comment 25</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Stefan Plewako :stef</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2012-04-19 07:01:11 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Miejmy nadzieję, że błąd 4342 przejdzie.</pre>
+    </div>
+
+    <div id="c26" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=3132.html#c26">Comment 26</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Stefan Plewako :stef</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2012-11-05 08:55:02 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Przez www:
+<a href="https://www.google.com/calendar/hosted/aviary.pl">https://www.google.com/calendar/hosted/aviary.pl</a>
+
+Ogólny kalendarz zespołu:
+<a href="https://www.google.com/calendar/embed?src=aviary.pl_16bhddvo0fvtjot3u0hl0q11ms&#64;group.calendar.google.com&amp;ctz=Europe/Warsaw&amp;gsessionid=KTtkBK-ipc3mPZ4nhS7JWg">https://www.google.com/calendar/embed?src=aviary.pl_16bhddvo0fvtjot3u0hl0q11ms&#64;group.calendar.google.com&amp;ctz=Europe/Warsaw&amp;gsessionid=KTtkBK-ipc3mPZ4nhS7JWg</a>
+
+<a href="https://www.google.com/calendar/ical/aviary.pl_16bhddvo0fvtjot3u0hl0q11ms%40group.calendar.google.com/public/basic.ics">https://www.google.com/calendar/ical/aviary.pl_16bhddvo0fvtjot3u0hl0q11ms%40group.calendar.google.com/public/basic.ics</a>
+
+Powinno działać ale proszę o zweryfikowanie czy się wyświetla w kolumnie po lewej poprzez www oraz czy da się do niego zapisywać.</pre>
+    </div>
+
+    <div id="c27" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=3132.html#c27">Comment 27</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2012-11-05 09:50:09 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(In reply to <a href="show_bug.cgi%3Fid=3132.html#c26">comment #26</a>)
+<span class="quote">&gt; Przez www:
+&gt; <a href="https://www.google.com/calendar/hosted/aviary.pl">https://www.google.com/calendar/hosted/aviary.pl</a></span >
+
+<span class="quote">&gt; Powinno działać ale proszę o zweryfikowanie czy się wyświetla w kolumnie po
+&gt; lewej poprzez www oraz czy da się do niego zapisywać.</span >
+
+Zapisanie do własnego kalendarza działa. Utworzyłem wydarzenie Stand-up w każdy poniedziałek o 21:00, jeśli je widzisz, znaczy że tworzenie wydarzeń widocznych przez wszystkich też działa.
+
+Zostanie jeszcze kwestia co z istniejącymi dotychczasowymi kalendarzami:
+
+Aviary.pl Intracal
+Aviary.pl
+Aviary - rekrutacja
+
+Do /dev/null?</pre>
+    </div>
+
+    <div id="c28" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=3132.html#c28">Comment 28</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2012-11-05 09:59:19 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(In reply to <a href="show_bug.cgi%3Fid=3132.html#c26">comment #26</a>)
+ 
+<span class="quote">&gt; <a href="https://www.google.com/calendar/ical/aviary">https://www.google.com/calendar/ical/aviary</a>.
+&gt; pl_16bhddvo0fvtjot3u0hl0q11ms%40group.calendar.google.com/public/basic.ics</span >
+
+W Lightningu działa.</pre>
+    </div>
+
+    <div id="c29" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=3132.html#c29">Comment 29</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Stefan Plewako :stef</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2012-11-05 11:55:38 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(In reply to <a href="show_bug.cgi%3Fid=3132.html#c27">comment #27</a>)
+<span class="quote">&gt; Zapisanie do własnego kalendarza działa. Utworzyłem wydarzenie Stand-up w
+&gt; każdy poniedziałek o 21:00, jeśli je widzisz, znaczy że tworzenie wydarzeń
+&gt; widocznych przez wszystkich też działa.</span >
+
+Widzę. :)
+
+<span class="quote">&gt; Zostanie jeszcze kwestia co z istniejącymi dotychczasowymi kalendarzami:
+&gt; 
+&gt; Aviary.pl Intracal
+&gt; Aviary.pl
+&gt; Aviary - rekrutacja
+&gt; 
+&gt; Do /dev/null?</span >
+
+Raczej tak.
+Przenosząc może uprzednio wydarzenia, które uznasz za tego warte?</pre>
+    </div>
+
+    <div id="c30" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=3132.html#c30">Comment 30</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Bartosz Piec</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2012-11-05 12:29:20 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(In reply to <a href="show_bug.cgi%3Fid=3132.html#c29">comment #29</a>)
+<span class="quote">&gt; &gt; Zostanie jeszcze kwestia co z istniejącymi dotychczasowymi kalendarzami:
+&gt; &gt; 
+&gt; &gt; Aviary.pl Intracal
+&gt; &gt; Aviary.pl
+&gt; &gt; Aviary - rekrutacja
+&gt; &gt; 
+&gt; &gt; Do /dev/null?
+&gt; 
+&gt; Raczej tak.
+&gt; Przenosząc może uprzednio wydarzenia, które uznasz za tego warte?</span >
+
+A nie da się jakoś zmerdżować tych kalendarzy?
+
+Z rekrutacji na pewno trzeba przenieść jakieś przyszłe wydarzenia (jeżeli takie są), reszty nie znam.</pre>
+    </div>
+
+    <div id="c31" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=3132.html#c31">Comment 31</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2012-11-05 14:20:24 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(In reply to <a href="show_bug.cgi%3Fid=3132.html#c30">comment #30</a>)
+
+<span class="quote">&gt; A nie da się jakoś zmerdżować tych kalendarzy?</span >
+
+Aviary.pl Intracal i Aviary.pl z tego co pamiętam nie mają nic wartościowego, bo nigdy nie zaczęliśmy jakoś na dobre ich używać.
+ 
+<span class="quote">&gt; Z rekrutacji na pewno trzeba przenieść jakieś przyszłe wydarzenia (jeżeli
+&gt; takie są), reszty nie znam.</span >
+
+Można chyba jakiś eksport robić.</pre>
+    </div>
+
+    <div id="c32" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=3132.html#c32">Comment 32</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Joanna Mazgaj</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2012-11-05 19:58:38 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(In reply to <a href="show_bug.cgi%3Fid=3132.html#c31">comment #31</a>)
+<span class="quote">&gt; &gt; Z rekrutacji na pewno trzeba przenieść jakieś przyszłe wydarzenia (jeżeli
+&gt; &gt; takie są), reszty nie znam.
+&gt; 
+&gt; Można chyba jakiś eksport robić.</span >
+
+Nie ma takiej potrzeby, tam też nie ma niczego, czego nie można szybciej zrobić od zera w nowym miejscu.</pre>
+    </div>
+
+    <div id="c33" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=3132.html#c33">Comment 33</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Stefan Plewako :stef</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2012-11-09 04:22:25 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Zatem zamykam.</pre>
+    </div>
+
+
+  
+
+</td>
+<td>
+</td>
+</tr></table>
+  </div>
+
+    <hr><div id="add_comment" class="bz_section_additional_comments">
+      <table>
+        <tr>
+          <td>
+            <fieldset>
+              <legend>Note</legend>
+              You need to
+              <a href="show_bug.cgi%3Fid=3132&amp;GoAheadAndLogIn=1.html">log in</a>
+              before you can comment on or make changes to this bug.
+            </fieldset>
+          </td>
+        </tr> 
+      </table>
+  </div>        
+
+</form>
+
+<hr>
+<ul class="related_actions">
+    <li><a href="show_bug.cgi%3Fformat=multiple&amp;id=3132.html">Format For Printing</a></li>
+    <li>&nbsp;-&nbsp;<a href="show_bug.cgi%3Fctype=xml&amp;id=3132">XML</a></li>
+    <li>&nbsp;-&nbsp;<a href="enter_bug.cgi%3Fcloned_bug_id=3132.html">Clone This Bug</a></li>
+    
+    <li>&nbsp;-&nbsp;<a href="show_bug.cgi%3Fid=3132.html#">Top of page </a></li>
+    </ul>
+
+<br>
+</div>
+
+    <div id="footer">
+      <div class="intro"></div>
+<ul id="useful-links">
+  <li id="links-actions"><ul class="links">
+  <li><a href="index.html">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi.html">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi.html">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi.html">Search</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="http://bugs.aviary.pl/buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input type="hidden" id="no_redirect_bottom" name="no_redirect" value="0">
+    <script type="text/javascript">
+      if (history && history.replaceState) {
+        var no_redirect = document.getElementById("no_redirect_bottom");
+        no_redirect.value = 1;
+      }
+    </script>
+    <input class="txt" type="text" id="quicksearch_bottom" name="quicksearch" 
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search" 
+           id="find_bottom"></form>
+  <a href="page.cgi%3Fid=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="report.cgi.html">Reports</a></li>
+
+  <li>
+      <span class="separator">| </span>
+        <a href="request.cgi.html">Requests</a></li>
+
+
+  <li>
+        <span class="separator">| </span>
+        <a href="https://bugzilla.readthedocs.org/en/5.0/using/understanding.html" target="_blank">Help</a>
+      </li>
+    
+      <li id="new_account_container_bottom">
+        <span class="separator">| </span>
+        <a href="createaccount.cgi.html">New&nbsp;Account</a>
+      </li>
+
+    <li id="mini_login_container_bottom">
+  <span class="separator">| </span>
+  <a id="login_link_bottom" href="show_bug.cgi%3Fid=3132&amp;GoAheadAndLogIn=1.html"
+     onclick="return show_mini_login_form('_bottom')">Log In</a>
+
+  <form action="show_bug.cgi%3Fid=3132.html" method="POST"
+        class="mini_login bz_default_hidden"
+        id="mini_login_bottom">
+    <input id="Bugzilla_login_bottom" required
+           name="Bugzilla_login" class="bz_login"
+        type="email" placeholder="Email Address">
+    <input class="bz_password" name="Bugzilla_password" type="password"
+           id="Bugzilla_password_bottom" required
+           placeholder="Password">
+    <input type="hidden" name="Bugzilla_login_token"
+           value="1469821998-IUmAXsDFj4gl8NBaJoCbhFeiHRPGI8h9xT_DUP6Gsg0">
+    <input type="submit" name="GoAheadAndLogIn" value="Log in"
+            id="log_in_bottom">
+    <a href="show_bug.cgi%3Fid=3132.html#" onclick="return hide_mini_login_form('_bottom')">[x]</a>
+  </form>
+</li>
+
+
+  <li id="forgot_container_bottom">
+    <span class="separator">| </span>
+    <a id="forgot_link_bottom" href="show_bug.cgi%3Fid=3132&amp;GoAheadAndLogIn=1.html#forgot"
+       onclick="return show_forgot_form('_bottom')">Forgot Password</a>
+    <form action="http://bugs.aviary.pl/token.cgi" method="post" id="forgot_form_bottom"
+          class="mini_forgot bz_default_hidden">
+      <label for="login_bottom">Login:</label>
+      <input name="loginname" size="20" id="login_bottom" required
+          type="email" placeholder="Your Email Address">
+      <input id="forgot_button_bottom" value="Reset Password" type="submit">
+      <input type="hidden" name="a" value="reqpw">
+      <input type="hidden" id="token_bottom" name="token"
+             value="1469821998-lHM_C7tUBGQadkGhpx2llx59jFFON6rmP5kxYp_WUmQ">
+      <a href="show_bug.cgi%3Fid=3132.html#" onclick="return hide_forgot_form('_bottom')">[x]</a>
+    </form>
+  </li>
+</ul>
+  </li>
+
+  
+
+
+
+
+  
+</ul>
+
+      <div class="outro"></div>
+    </div>
+
+  </body>
+</html>

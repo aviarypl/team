@@ -1,0 +1,1238 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Changes made to bug 393</title>
+
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<link href="data/assets/2f5735cf3abd04bddc8e363a8613a9f5.css" rel="stylesheet" type="text/css">
+
+
+
+    
+<script type="text/javascript" src="data/assets/1b4e898422a669ab82b604a2c23edce5.js"></script>
+
+    <script type="text/javascript">
+    <!--
+        YAHOO.namespace('bugzilla');
+        YAHOO.util.Event.addListener = function (el, sType, fn, obj, overrideContext) {
+               if ( ("onpagehide" in window || YAHOO.env.ua.gecko) && sType === "unload") { sType = "pagehide"; };
+               var capture = ((sType == "focusin" || sType == "focusout") && !YAHOO.env.ua.ie) ? true : false;
+               return this._addListener(el, this._getType(sType), fn, obj, overrideContext, capture);
+         };
+        if ( "onpagehide" in window || YAHOO.env.ua.gecko) {
+            YAHOO.util.Event._simpleRemove(window, "unload", 
+                                           YAHOO.util.Event._unload);
+        }
+        
+        function unhide_language_selector() { 
+            YAHOO.util.Dom.removeClass(
+                'lang_links_container', 'bz_default_hidden'
+            ); 
+        } 
+        YAHOO.util.Event.onDOMReady(unhide_language_selector);
+
+        
+        var BUGZILLA = {
+            param: {
+                cookiepath: '\/',
+                maxusermatches: 1000
+            },
+            constant: {
+                COMMENT_COLS: 80
+            },
+            string: {
+                
+
+                attach_desc_required:
+                    "You must enter a Description for this attachment.",
+                component_required:
+                    "You must select a Component for this bug.",
+                description_required:
+                    "You must enter a Description for this bug.",
+                short_desc_required:
+                    "You must enter a Summary for this bug.",
+                version_required:
+                    "You must select a Version for this bug."
+            }
+        };
+
+    // -->
+    </script>
+<script type="text/javascript" src="data/assets/d41d8cd98f00b204e9800998ecf8427e.js"></script>
+
+    
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+                       title="Bugzilla" href="search_plugin.cgi">
+    <link rel="shortcut icon" href="images/favicon.ico">
+  </head>
+
+  <body 
+        class="bugs-aviary-pl yui-skin-sam">
+
+  <div id="header"><div id="banner">
+  </div>
+
+    <div id="titles">
+      <span id="title">Bugzilla &ndash; Activity log for bug 393: Lokalizacja Nvu 1.0 Preview Release</span>
+
+
+    </div>
+
+
+    <div id="common_links"><ul class="links">
+  <li><a href="index.html">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi.html">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi.html">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi.html">Search</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="http://bugs.aviary.pl/buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input type="hidden" id="no_redirect_top" name="no_redirect" value="0">
+    <script type="text/javascript">
+      if (history && history.replaceState) {
+        var no_redirect = document.getElementById("no_redirect_top");
+        no_redirect.value = 1;
+      }
+    </script>
+    <input class="txt" type="text" id="quicksearch_top" name="quicksearch" 
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search" 
+           id="find_top"></form>
+  <a href="page.cgi%3Fid=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="report.cgi.html">Reports</a></li>
+
+  <li>
+      <span class="separator">| </span>
+        <a href="request.cgi.html">Requests</a></li>
+
+
+  
+    
+      <li id="new_account_container_top">
+        <span class="separator">| </span>
+        <a href="createaccount.cgi.html">New&nbsp;Account</a>
+      </li>
+
+    <li id="mini_login_container_top">
+  <span class="separator">| </span>
+  <a id="login_link_top" href="http://bugs.aviary.pl/show_activity.cgi?id=393&amp;GoAheadAndLogIn=1"
+     onclick="return show_mini_login_form('_top')">Log In</a>
+
+  <form action="show_activity.cgi%3Fid=393.html" method="POST"
+        class="mini_login bz_default_hidden"
+        id="mini_login_top">
+    <input id="Bugzilla_login_top" required
+           name="Bugzilla_login" class="bz_login"
+        type="email" placeholder="Email Address">
+    <input class="bz_password" name="Bugzilla_password" type="password"
+           id="Bugzilla_password_top" required
+           placeholder="Password">
+    <input type="hidden" name="Bugzilla_login_token"
+           value="1469825986-hEJPuRfiGaPJ8bS6DGk41gp7uuihS-W_oW-AvbzQQgw">
+    <input type="submit" name="GoAheadAndLogIn" value="Log in"
+            id="log_in_top">
+    <a href="show_activity.cgi%3Fid=393.html#" onclick="return hide_mini_login_form('_top')">[x]</a>
+  </form>
+</li>
+
+
+  <li id="forgot_container_top">
+    <span class="separator">| </span>
+    <a id="forgot_link_top" href="http://bugs.aviary.pl/show_activity.cgi?id=393&amp;GoAheadAndLogIn=1#forgot"
+       onclick="return show_forgot_form('_top')">Forgot Password</a>
+    <form action="http://bugs.aviary.pl/token.cgi" method="post" id="forgot_form_top"
+          class="mini_forgot bz_default_hidden">
+      <label for="login_top">Login:</label>
+      <input name="loginname" size="20" id="login_top" required
+          type="email" placeholder="Your Email Address">
+      <input id="forgot_button_top" value="Reset Password" type="submit">
+      <input type="hidden" name="a" value="reqpw">
+      <input type="hidden" id="token_top" name="token"
+             value="1469825986-7NoMGwP8cPkvVx1s6qlZVTY2fgjLxhXrJgvtcRIZmxU">
+      <a href="show_activity.cgi%3Fid=393.html#" onclick="return hide_forgot_form('_top')">[x]</a>
+    </form>
+  </li>
+</ul>
+    </div>
+  </div>
+
+  <div id="bugzilla-body">
+
+<p>
+  Back to <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Lokalizacja Nvu 1.0 Preview Release"
+   href="show_bug.cgi%3Fid=393.html">bug 393</a>
+</p>
+<table id="bug_activity">
+    <tr class="column_header">
+      <th>Who</th>
+      <th>When</th>
+      <th>What</th>
+      <th>Removed</th>
+      <th>Added</th>
+    </tr>
+
+      <tr>
+        <td rowspan="2">marcoos+bugs
+        </td>
+        <td rowspan="2">2005-03-14 14:00:31 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Menu Narzędzia"
+   href="show_bug.cgi%3Fid=383.html">383</a>, <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Literówka [ &#64; /communicator/history/history.dtd ]"
+   href="show_bug.cgi%3Fid=385.html">385</a>, <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Literówka [ &#64; /communicator/history/history.properties ]"
+   href="show_bug.cgi%3Fid=386.html">386</a>, <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Literówka &quot;odwiedzone&quot; [ &#64; /communicator/history/historyTreeOverlay.dtd ]"
+   href="show_bug.cgi%3Fid=387.html">387</a>, <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Mozilla zamiast Nvu, brak słowa, przecinka [ &#64; /communicator/pref/pref-advanced.dtd ]"
+   href="show_bug.cgi%3Fid=389.html">389</a>, <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Nieprzetłumaczone Appearance, kodowanie &quot;otwórz&quot;, literówka [ &#64; /communicator/pref/pref-appearance.dtd ]"
+   href="show_bug.cgi%3Fid=390.html">390</a>, <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Makowe znaki końca linii w plikach"
+   href="show_bug.cgi%3Fid=392.html">392</a>
+  </td></tr><tr>
+            <td>
+                Status
+            </td><td>CONFIRMED
+  </td><td>IN_PROGRESS
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2005-03-14 23:14:26 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Czcionka -&gt; Krój w Nvu."
+   href="show_bug.cgi%3Fid=396.html">396</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2005-03-15 11:24:21 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Mozilla zamiast Nvu [ &#64; /communicator/pref/pref-history.dtd ]"
+   href="show_bug.cgi%3Fid=406.html">406</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2005-03-15 11:37:30 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Zdublowanan deklaracja encji [ &#64; /communicator/pref/pref-languages.dtd ]"
+   href="show_bug.cgi%3Fid=407.html">407</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2005-03-15 11:45:41 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Mozilla zamiast Nvu [ &#64; /communicator/pref/pref-offline.dtd ]"
+   href="show_bug.cgi%3Fid=408.html">408</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2005-03-15 12:11:53 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Użycie domeny firma.com.pl w przykładzie [ &#64; /communicator/pref/pref-proxies.dtd ]"
+   href="show_bug.cgi%3Fid=409.html">409</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2005-03-15 12:31:22 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Mozilla zamiast Nvu + zbędne słowo &quot;Uwaga&quot; [ &#64; /communicator/pref/pref-smartupdate.dtd ]"
+   href="show_bug.cgi%3Fid=410.html">410</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2005-03-15 12:50:42 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Nieprzetłumaczone Debug, Events, Networking [ &#64; /communicator/pref/preftree.dtd ]"
+   href="show_bug.cgi%3Fid=411.html">411</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2005-03-15 12:57:23 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Mozilla zamiast Nvu [ &#64; /communicator/pref/pref-winhooks.dtd ]"
+   href="show_bug.cgi%3Fid=412.html">412</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2005-03-15 13:14:32 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Mozilla zamiast %brand% [ &#64; /communicator/pref/prefutilities.properties ]"
+   href="show_bug.cgi%3Fid=413.html">413</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2005-03-15 15:03:59 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Zmienić &quot;internet&quot; na &quot;Internet&quot; [ &#64; /communicator/sidebar/sidebar.properties ]"
+   href="show_bug.cgi%3Fid=414.html">414</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2005-03-15 15:18:22 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Szyk zdania [ &#64; /communicator/wallet/WalletEditor.dtd ]"
+   href="show_bug.cgi%3Fid=415.html">415</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2005-03-15 15:32:25 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Szyk &quot;Panieńskie nazwisko&quot; [ &#64; /communicator/wallet/WalletViewer.dtd ]"
+   href="show_bug.cgi%3Fid=416.html">416</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2005-03-15 15:56:34 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Mozilla zamiast &amp;brandShortName; [ &#64; /communicator/aboutPopups.dtd ]"
+   href="show_bug.cgi%3Fid=417.html">417</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="3">smalolepszy
+        </td>
+        <td rowspan="3">2005-03-15 22:43:01 CET
+        </td>
+            <td>
+                Assignee
+            </td><td>marek.stepien
+  </td><td>smalolepszy
+  </td></tr><tr>
+            <td>
+                Status
+            </td><td>IN_PROGRESS
+  </td><td>CONFIRMED
+  </td></tr><tr>
+            <td>
+                QA Contact
+            </td><td>smalolepszy
+  </td><td>gandalf
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2005-03-16 14:13:40 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Przetłumaczone stringi oznaczone flagą DONT_TRANSLATE [ &#64; /communicator/taskOverlay.dtd ]"
+   href="show_bug.cgi%3Fid=419.html">419</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2005-03-16 14:47:58 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Mozilla zamiast &amp;brandShortName; [ &#64; /communicator/utilityOverlay.dtd ]"
+   href="show_bug.cgi%3Fid=420.html">420</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2005-03-16 14:52:46 CET
+        </td>
+            <td>
+                CC
+            </td><td>
+  </td><td>zwierz
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="4">marcoos+bugs
+        </td>
+        <td rowspan="4">2005-03-18 17:07:15 CET
+        </td>
+            <td>
+                Component
+            </td><td>tłumaczenie
+  </td><td>Nvu
+  </td></tr><tr>
+            <td>
+                Product
+            </td><td>NVU pl-PL
+  </td><td>Lokalizacje
+  </td></tr><tr>
+            <td>
+                Target Milestone
+            </td><td>1.0
+  </td><td>---
+  </td></tr><tr>
+            <td>
+                Version
+            </td><td>1.0
+  </td><td>unspecified
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="3">smalolepszy
+        </td>
+        <td rowspan="3">2005-03-23 23:29:07 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Brak przecinka [&#64; /pinger/pinger.dtd ]"
+   href="show_bug.cgi%3Fid=384.html">384</a>, <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Złe kodowanie editor/pref-toolbars.dtd"
+   href="show_bug.cgi%3Fid=395.html">395</a>, <a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED WONTFIX - Błędy w wallet/pref-passwords.dtd"
+   href="show_bug.cgi%3Fid=397.html">397</a>, <a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - Drobne błędy w: \mozapps\extensions\extensions.dtd"
+   href="show_bug.cgi%3Fid=398.html">398</a>, <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Literówka w locale\editor\EdAdvancedEdit.dtd"
+   href="show_bug.cgi%3Fid=399.html">399</a>, <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Kolokwializm/nieprawidłowy skrót w locale\editor\EdColorPicker.dtd"
+   href="show_bug.cgi%3Fid=400.html">400</a>, <a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - Pozostałość Kompozytora w locale\editor\EdConvertToTable.dtd"
+   href="show_bug.cgi%3Fid=401.html">401</a>, <a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - Interpunkcja, styl w locale\editor\EdDialogOverlay.dtd"
+   href="show_bug.cgi%3Fid=402.html">402</a>, <a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - Pozostałość Kompozytora i literówki w locale\editor\EditConflict.dtd"
+   href="show_bug.cgi%3Fid=403.html">403</a>, <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Błąd ort. w locale\editor\EditorInsertChars.dtd"
+   href="show_bug.cgi%3Fid=404.html">404</a>, <a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - Pozostałość Kompozytora w locale\editor\editorNavigatorOverlay.dtd"
+   href="show_bug.cgi%3Fid=405.html">405</a>
+  </td></tr><tr>
+            <td>
+                Status
+            </td><td>CONFIRMED
+  </td><td>IN_PROGRESS
+  </td></tr><tr>
+            <td>
+                Target Milestone
+            </td><td>---
+  </td><td>Nvu-1.0
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">smalolepszy
+        </td>
+        <td rowspan="1">2005-03-24 01:34:40 CET
+        </td>
+            <td>
+                <a href="attachment.cgi%3Fid=365">
+                Attachment #365</a>
+                Flags
+            </td><td>
+  </td><td>review?(gandalf)
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">gandalf
+        </td>
+        <td rowspan="1">2005-03-24 01:59:14 CET
+        </td>
+            <td>
+                <a href="attachment.cgi%3Fid=365">
+                Attachment #365</a>
+                Flags
+            </td><td>review?(gandalf)
+  </td><td>review-
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">smalolepszy
+        </td>
+        <td rowspan="1">2005-03-24 02:10:47 CET
+        </td>
+            <td>
+                <a href="attachment.cgi%3Fid=365">
+                Attachment #365</a>
+                Attachment is obsolete
+            </td><td>0
+  </td><td>1
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">smalolepszy
+        </td>
+        <td rowspan="1">2005-03-24 02:11:22 CET
+        </td>
+            <td>
+                <a href="attachment.cgi%3Fid=366">
+                Attachment #366</a>
+                Flags
+            </td><td>
+  </td><td>review?(gandalf)
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">gandalf
+        </td>
+        <td rowspan="1">2005-03-24 02:14:38 CET
+        </td>
+            <td>
+                <a href="attachment.cgi%3Fid=366">
+                Attachment #366</a>
+                Flags
+            </td><td>review?(gandalf)
+  </td><td>review+
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">wadimd
+        </td>
+        <td rowspan="1">2005-03-24 19:20:31 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - błędny tooltip i url na throbberze"
+   href="show_bug.cgi%3Fid=443.html">443</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">wadimd
+        </td>
+        <td rowspan="1">2005-03-24 19:21:55 CET
+        </td>
+            <td>
+                CC
+            </td><td>
+  </td><td>nikdo
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">wadimd
+        </td>
+        <td rowspan="1">2005-03-24 21:24:02 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - błędy w menu Nvu - megabug ;-)"
+   href="show_bug.cgi%3Fid=444.html">444</a>, <a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - tłumaczenie w oknach dialogowych - megabug"
+   href="show_bug.cgi%3Fid=445.html">445</a>, <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - tłumaczenie tooltipów w paskach narzędzi"
+   href="show_bug.cgi%3Fid=446.html">446</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2005-03-24 22:26:36 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Zły acceskey? [ &#64; /global/config.dtd ]"
+   href="show_bug.cgi%3Fid=449.html">449</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2005-03-25 14:42:41 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - &quot;Zaleca się ponowne urochomienie Firefoksa&quot; [ &#64; /global/downloadProgress.properties ]"
+   href="show_bug.cgi%3Fid=452.html">452</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2005-03-25 14:48:29 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Szyk zdania [ &#64; /global/filepicker.properties ]"
+   href="show_bug.cgi%3Fid=453.html">453</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2005-03-25 15:29:26 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Powinno być &quot;\u0142&quot; zamiast &quot;ł&quot; [ &#64; /global/plugins.properties ]"
+   href="show_bug.cgi%3Fid=454.html">454</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2005-03-25 17:33:37 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Powinno być &quot;opcj\u0119&quot; zamiast &quot;opcje&quot; [ &#64; /global/printing.properties ]"
+   href="show_bug.cgi%3Fid=455.html">455</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2005-03-25 17:40:44 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Nazwy Państw [ &#64; /global/regionNames.properties ]"
+   href="show_bug.cgi%3Fid=456.html">456</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2005-03-25 23:01:28 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Zbędne dwukropki [ &#64; /global/history/history.properties ]"
+   href="show_bug.cgi%3Fid=458.html">458</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2005-03-25 23:20:27 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Nieprzetłumaczone &quot;Starting Plugin...&quot; [ &#64; /global/global-region/region.properties ]"
+   href="show_bug.cgi%3Fid=459.html">459</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2005-03-26 08:55:02 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Zostawione kodowanie ISO-8859-1 [ &#64; /navigator-platform/*/navigator.properties ]"
+   href="show_bug.cgi%3Fid=460.html">460</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2005-03-26 09:23:53 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Dosowe znaki końca linii w plikach"
+   href="show_bug.cgi%3Fid=461.html">461</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2005-03-26 09:30:20 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Jest &quot;Mozilla&quot; zamiast &amp;brandShortName; [ &#64; /pippki/pref-ssl.dtd ]"
+   href="show_bug.cgi%3Fid=462.html">462</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2005-03-26 12:50:52 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Jest &quot;Firefoksa&quot; zamiast &quot;programu &amp;brandShortName;&quot; [ &#64; /mozapps/profile/createProfileWizard.dtd ]"
+   href="show_bug.cgi%3Fid=463.html">463</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2005-03-26 12:55:42 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Jest &quot;Firefoksa&quot; zamiast &quot;program &amp;brandShortName;&quot; [ &#64; /mozapps/profile/profileSelection.dtd ]"
+   href="show_bug.cgi%3Fid=464.html">464</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2005-03-26 13:00:50 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Jest &quot;Mozill\u0105 Firefox&quot; zamiast &quot;programem &amp;brandShortName;&quot; [ &#64; /mozapps/profile/profileSelection.properties ]"
+   href="show_bug.cgi%3Fid=465.html">465</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2005-03-26 16:07:28 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Zmienić słowo &quot;dwukliknij&quot; [ &#64; /mozapps/update/update.properties ]"
+   href="show_bug.cgi%3Fid=467.html">467</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2005-03-26 16:17:20 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Nieprzetłumaczone installing.disclaimer.label [ &#64; /mozapps/update/update.dtd ]"
+   href="show_bug.cgi%3Fid=468.html">468</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2005-03-26 16:49:04 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Zbyt skrótowe tłumaczenie [ &#64; /mozapps/update/errors.dtd ]"
+   href="show_bug.cgi%3Fid=469.html">469</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2005-03-26 17:35:30 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Wpisane słowo &quot;Mozilla&quot; zamiast &quot;&amp;brandShortName;"
+   href="show_bug.cgi%3Fid=470.html">470</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2005-03-26 17:41:13 CET
+        </td>
+            <td>
+                CC
+            </td><td>
+  </td><td>cleriic
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">smalolepszy
+        </td>
+        <td rowspan="1">2005-03-28 20:16:33 CEST
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Tłumaczenie Edytora CSS"
+   href="show_bug.cgi%3Fid=471.html">471</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">smalolepszy
+        </td>
+        <td rowspan="1">2005-03-28 20:39:35 CEST
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Panele -&gt; Karty"
+   href="show_bug.cgi%3Fid=472.html">472</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2005-03-30 10:58:24 CEST
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Jest &quot;Mozilla&quot; zamiast %brand% [ &#64; /editor/editor.properties ]"
+   href="show_bug.cgi%3Fid=474.html">474</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2005-03-30 22:17:30 CEST
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Polskie znaki diakrytyczne powinny być zapisane szesnastkowo [&#64; /editor/sitemanager.properties ]"
+   href="show_bug.cgi%3Fid=477.html">477</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">gandalf
+        </td>
+        <td rowspan="1">2005-04-14 20:09:04 CEST
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - co w menu kontekstowym tagów na pasku statusu piszczy..."
+   href="show_bug.cgi%3Fid=487.html">487</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">gandalf
+        </td>
+        <td rowspan="1">2005-04-14 20:44:39 CEST
+        </td>
+            <td>
+                Depends on
+            </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Panele -&gt; Karty"
+   href="show_bug.cgi%3Fid=472.html">472</a>
+  </td><td>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">smalolepszy
+        </td>
+        <td rowspan="1">2005-04-15 00:05:45 CEST
+        </td>
+            <td>
+                <a href="attachment.cgi%3Fid=415">
+                Attachment #415</a>
+                Flags
+            </td><td>
+  </td><td>review?(hubert.gajewski)
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">smalolepszy
+        </td>
+        <td rowspan="1">2005-04-15 00:17:09 CEST
+        </td>
+            <td>
+                <a href="attachment.cgi%3Fid=415">
+                Attachment #415</a>
+                Flags
+            </td><td>review?(hubert.gajewski)
+  </td><td>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">smalolepszy
+        </td>
+        <td rowspan="1">2005-04-15 00:22:40 CEST
+        </td>
+            <td>
+                <a href="attachment.cgi%3Fid=415">
+                Attachment #415</a>
+                Attachment is obsolete
+            </td><td>0
+  </td><td>1
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">smalolepszy
+        </td>
+        <td rowspan="1">2005-04-15 00:24:21 CEST
+        </td>
+            <td>
+                <a href="attachment.cgi%3Fid=416">
+                Attachment #416</a>
+                Flags
+            </td><td>
+  </td><td>review?(hubert.gajewski)
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2005-04-15 00:27:37 CEST
+        </td>
+            <td>
+                <a href="attachment.cgi%3Fid=416">
+                Attachment #416</a>
+                Flags
+            </td><td>review?(hubert.gajewski)
+  </td><td>review+
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="2">smalolepszy
+        </td>
+        <td rowspan="2">2005-04-16 00:34:29 CEST
+        </td>
+            <td>
+                Resolution
+            </td><td>---
+  </td><td>FIXED
+  </td></tr><tr>
+            <td>
+                Status
+            </td><td>IN_PROGRESS
+  </td><td>RESOLVED
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">smalolepszy
+        </td>
+        <td rowspan="1">2005-04-16 00:49:11 CEST
+        </td>
+            <td>
+                Depends on
+            </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Tłumaczenie Edytora CSS"
+   href="show_bug.cgi%3Fid=471.html">471</a>
+  </td><td>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="4">hubert+bap
+        </td>
+        <td rowspan="4">2008-05-03 04:31:53 CEST
+        </td>
+            <td>
+                Component
+            </td><td>Nvu
+  </td><td>Ogólne
+  </td></tr><tr>
+            <td>
+                Version
+            </td><td>Nieokreślona
+  </td><td>nieokreślona
+  </td></tr><tr>
+            <td>
+                Product
+            </td><td>Lokalizacje Aviary.pl
+  </td><td>Nvu/KompoZer
+  </td></tr><tr>
+            <td>
+                Target Milestone
+            </td><td>Nvu-1.0
+  </td><td>---
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2009-01-01 08:27:22 CET
+        </td>
+            <td>
+                Status
+            </td><td>RESOLVED
+  </td><td>VERIFIED
+  </td>
+      </tr>
+  </table>
+
+  <p>
+    Back to <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Lokalizacja Nvu 1.0 Preview Release"
+   href="show_bug.cgi%3Fid=393.html">bug 393</a>
+  </p>
+</div>
+
+    <div id="footer">
+      <div class="intro"></div>
+<ul id="useful-links">
+  <li id="links-actions"><ul class="links">
+  <li><a href="index.html">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi.html">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi.html">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi.html">Search</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="http://bugs.aviary.pl/buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input type="hidden" id="no_redirect_bottom" name="no_redirect" value="0">
+    <script type="text/javascript">
+      if (history && history.replaceState) {
+        var no_redirect = document.getElementById("no_redirect_bottom");
+        no_redirect.value = 1;
+      }
+    </script>
+    <input class="txt" type="text" id="quicksearch_bottom" name="quicksearch" 
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search" 
+           id="find_bottom"></form>
+  <a href="page.cgi%3Fid=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="report.cgi.html">Reports</a></li>
+
+  <li>
+      <span class="separator">| </span>
+        <a href="request.cgi.html">Requests</a></li>
+
+
+  
+    
+      <li id="new_account_container_bottom">
+        <span class="separator">| </span>
+        <a href="createaccount.cgi.html">New&nbsp;Account</a>
+      </li>
+
+    <li id="mini_login_container_bottom">
+  <span class="separator">| </span>
+  <a id="login_link_bottom" href="http://bugs.aviary.pl/show_activity.cgi?id=393&amp;GoAheadAndLogIn=1"
+     onclick="return show_mini_login_form('_bottom')">Log In</a>
+
+  <form action="show_activity.cgi%3Fid=393.html" method="POST"
+        class="mini_login bz_default_hidden"
+        id="mini_login_bottom">
+    <input id="Bugzilla_login_bottom" required
+           name="Bugzilla_login" class="bz_login"
+        type="email" placeholder="Email Address">
+    <input class="bz_password" name="Bugzilla_password" type="password"
+           id="Bugzilla_password_bottom" required
+           placeholder="Password">
+    <input type="hidden" name="Bugzilla_login_token"
+           value="1469825987-C8mzjUHiPAdUQc4I_t-wSLYB--QcM08C1--iQjPrMMs">
+    <input type="submit" name="GoAheadAndLogIn" value="Log in"
+            id="log_in_bottom">
+    <a href="show_activity.cgi%3Fid=393.html#" onclick="return hide_mini_login_form('_bottom')">[x]</a>
+  </form>
+</li>
+
+
+  <li id="forgot_container_bottom">
+    <span class="separator">| </span>
+    <a id="forgot_link_bottom" href="http://bugs.aviary.pl/show_activity.cgi?id=393&amp;GoAheadAndLogIn=1#forgot"
+       onclick="return show_forgot_form('_bottom')">Forgot Password</a>
+    <form action="http://bugs.aviary.pl/token.cgi" method="post" id="forgot_form_bottom"
+          class="mini_forgot bz_default_hidden">
+      <label for="login_bottom">Login:</label>
+      <input name="loginname" size="20" id="login_bottom" required
+          type="email" placeholder="Your Email Address">
+      <input id="forgot_button_bottom" value="Reset Password" type="submit">
+      <input type="hidden" name="a" value="reqpw">
+      <input type="hidden" id="token_bottom" name="token"
+             value="1469825987-7f75rj4gzghQyvfMELLB2fVFZoF5FYk9JKG6GhuPwBY">
+      <a href="show_activity.cgi%3Fid=393.html#" onclick="return hide_forgot_form('_bottom')">[x]</a>
+    </form>
+  </li>
+</ul>
+  </li>
+
+  
+
+
+
+
+  
+</ul>
+
+      <div class="outro"></div>
+    </div>
+
+  </body>
+</html>

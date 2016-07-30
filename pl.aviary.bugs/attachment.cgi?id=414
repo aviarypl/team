@@ -1,0 +1,721 @@
+Tylko w firefox-cvs/mozilla/toolkit/locales/pl-PL/chrome/autoconfig: CVS
+Tylko w ff/l10n/pl/toolkit/chrome: cookie
+Tylko w firefox-cvs/mozilla/toolkit/locales/pl-PL/chrome: CVS
+Tylko w firefox-cvs/mozilla/toolkit/locales/pl-PL/chrome/global: accessible.properties
+Tylko w firefox-cvs/mozilla/toolkit/locales/pl-PL/chrome/global: appstrings.properties
+Tylko w firefox-cvs/mozilla/toolkit/locales/pl-PL/chrome/global: charsetTitles.properties
+diff -u -r firefox-cvs/mozilla/toolkit/locales/pl-PL/chrome/global/config.dtd ff/l10n/pl/toolkit/chrome/global/config.dtd
+--- firefox-cvs/mozilla/toolkit/locales/pl-PL/chrome/global/config.dtd	2004-10-14 17:00:20.000000000 +0200
++++ ff/l10n/pl/toolkit/chrome/global/config.dtd	2005-04-14 20:36:40.000000000 +0200
+@@ -70,3 +70,7 @@
+ <!ENTITY integer.accesskey "I" >
+ <!ENTITY boolean.label "Wartość logiczna (Boolean)" >
+ <!ENTITY boolean.accesskey "B" >
++<!ENTITY lock.label "Zablokuj">
++<!ENTITY lock.accesskey "l">
++<!ENTITY unlock.label "Odblokuj">
++<!ENTITY unlock.accesskey "u">
+diff -u -r firefox-cvs/mozilla/toolkit/locales/pl-PL/chrome/global/config.properties ff/l10n/pl/toolkit/chrome/global/config.properties
+--- firefox-cvs/mozilla/toolkit/locales/pl-PL/chrome/global/config.properties	2004-10-14 17:00:20.000000000 +0200
++++ ff/l10n/pl/toolkit/chrome/global/config.properties	2005-04-14 20:36:07.000000000 +0200
+@@ -22,7 +22,7 @@
+ #   Neil Rashbrook <neil@parkwaycc.co.uk>
+ #   Marek Wawoczny <gmbh@mozillapl.org>
+ #   Piotr Bartecki <pbartecki@mozillapl.org>
+-#   Marek Stępień  <marcoos@firefox.pl>
++#   Marek Stępień  <marcoos@aviary.pl>
+ #
+ # Alternatively, the contents of this file may be used under the terms of
+ # either the GNU General Public License Version 2 or later (the "GPL"), or
+Tylko w ff/l10n/pl/toolkit/chrome/global: contentAreaCommands.properties
+Tylko w firefox-cvs/mozilla/toolkit/locales/pl-PL/chrome/global: css.properties
+diff -u -r firefox-cvs/mozilla/toolkit/locales/pl-PL/chrome/global/customizeToolbar.properties ff/l10n/pl/toolkit/chrome/global/customizeToolbar.properties
+--- firefox-cvs/mozilla/toolkit/locales/pl-PL/chrome/global/customizeToolbar.properties	2004-10-14 17:00:20.000000000 +0200
++++ ff/l10n/pl/toolkit/chrome/global/customizeToolbar.properties	2005-04-14 19:13:35.000000000 +0200
+@@ -1,6 +1,7 @@
+ enterToolbarTitle=Nowy pasek narz\u0119dziowy
+ enterToolbarName=Wprowad\u017a nazw\u0119 dla paska narz\u0119dziowego:
+ enterToolbarDup=Pasek narz\u0119dzi o nazwie "%S" ju\u017c istnieje. Nale\u017cy wprowadzi\u0107 inn\u0105 nazw\u0119.
++enterToolbarBlank=Aby utworzy\u0107 nowy pasek narz\u0119dzi, nale\u017cy poda\u0107 jego nazw\u0119.
+ separatorTitle=Separator
+ springTitle=Swobodny odst\u0119p
+ spacerTitle=Odst\u0119p
+Tylko w firefox-cvs/mozilla/toolkit/locales/pl-PL/chrome/global: CVS
+Tylko w firefox-cvs/mozilla/toolkit/locales/pl-PL/chrome/global: dom
+diff -u -r firefox-cvs/mozilla/toolkit/locales/pl-PL/chrome/global/downloadProgress.properties ff/l10n/pl/toolkit/chrome/global/downloadProgress.properties
+--- firefox-cvs/mozilla/toolkit/locales/pl-PL/chrome/global/downloadProgress.properties	2004-09-30 16:17:32.000000000 +0200
++++ ff/l10n/pl/toolkit/chrome/global/downloadProgress.properties	2005-04-14 20:39:16.000000000 +0200
+@@ -11,7 +11,7 @@
+ #    This is the message for the BadPlugin dialog.
+ #
+ #   Localizable URLs
+-BadPluginMessage=Wtyczka pope\u0142ni\u0142a niedozwolon\u0105 operacj\u0119. Zaleca si\u0119 ponowne uruchomienie Firefoksa.
++BadPluginMessage=Wtyczka pope\u0142ni\u0142a niedozwolon\u0105 operacj\u0119. Zaleca si\u0119 ponowne uruchomienie programu %S.
+ # LOCALIZATION NOTE (BadPluginCheckboxMessage): 
+ #
+ #    This message tells the user that if they check this checkbox, they
+diff -u -r firefox-cvs/mozilla/toolkit/locales/pl-PL/chrome/global/editMenuOverlay.dtd ff/l10n/pl/toolkit/chrome/global/editMenuOverlay.dtd
+--- firefox-cvs/mozilla/toolkit/locales/pl-PL/chrome/global/editMenuOverlay.dtd	2004-10-14 17:00:20.000000000 +0200
++++ ff/l10n/pl/toolkit/chrome/global/editMenuOverlay.dtd	2005-04-14 19:30:29.000000000 +0200
+@@ -16,7 +16,6 @@
+ <!ENTITY pasteCmd.key "V" >
+ <!ENTITY pasteCmd.accesskey "e" >
+ <!ENTITY deleteCmd.label "Usuń" >
+-<!ENTITY deleteCmd.key "D" >
+ <!ENTITY deleteCmd.accesskey "U" >
+ <!ENTITY selectAllCmd.label "Zaznacz wszystko" >
+ <!ENTITY selectAllCmd.key "A" >
+Tylko w ff/l10n/pl/toolkit/chrome/global: findbar.dtd
+Tylko w ff/l10n/pl/toolkit/chrome/global: findbar.properties
+diff -u -r firefox-cvs/mozilla/toolkit/locales/pl-PL/chrome/global/finddialog.dtd ff/l10n/pl/toolkit/chrome/global/finddialog.dtd
+--- firefox-cvs/mozilla/toolkit/locales/pl-PL/chrome/global/finddialog.dtd	2004-10-14 17:00:20.000000000 +0200
++++ ff/l10n/pl/toolkit/chrome/global/finddialog.dtd	2005-04-14 19:25:01.000000000 +0200
+@@ -1,3 +1,5 @@
++<!-- extracted from finddialog.xul -->
++
+ <!ENTITY findDialog.title "Znajdź na tej stronie" >
+ <!ENTITY findDialogFrame.title "Znajdź w tej ramce" >
+ <!ENTITY findField.label "Znajdź tekst:" >
+@@ -9,10 +11,10 @@
+ <!ENTITY backwardsCheckbox.label "Szukaj wstecz" >
+ <!ENTITY backwardsCheckbox.accesskey "w" >
+ <!ENTITY findField.tooltip "Wprowadź jedno lub więcej słów, które zostaną wyszukane" >
+-<!ENTITY cancelButton.label "Anuluj" >
+ <!ENTITY findButton.label "Znajdź następny" >
+ <!ENTITY findButton.accesskey "Z" >
+ <!ENTITY cancelButton.label "Anuluj" >
++<!ENTITY closeButton.label "Zamknij">
+ <!ENTITY up.label "W górę" >
+ <!ENTITY up.accesskey "g" >
+ <!ENTITY down.label "W dół" >
+Tylko w firefox-cvs/mozilla/toolkit/locales/pl-PL/chrome/global: global-strres.properties
+Tylko w firefox-cvs/mozilla/toolkit/locales/pl-PL/chrome/global/history: CVS
+diff -u -r firefox-cvs/mozilla/toolkit/locales/pl-PL/chrome/global/languageNames.properties ff/l10n/pl/toolkit/chrome/global/languageNames.properties
+--- firefox-cvs/mozilla/toolkit/locales/pl-PL/chrome/global/languageNames.properties	2004-10-14 17:00:20.000000000 +0200
++++ ff/l10n/pl/toolkit/chrome/global/languageNames.properties	2005-04-14 19:29:42.000000000 +0200
+@@ -165,6 +165,7 @@
+ ti=Tigrinya tigrinia
+ tk=Turkme\u0144ski
+ tl=Tagalog tagalski
++tlh=Klingo\u0144ski
+ tn=Tswana tswana
+ to=Tonga\u0144ski
+ tr=Turecki
+Tylko w firefox-cvs/mozilla/toolkit/locales/pl-PL/chrome/global: layout
+Tylko w firefox-cvs/mozilla/toolkit/locales/pl-PL/chrome/global: layout_errors.properties
+Tylko w firefox-cvs/mozilla/toolkit/locales/pl-PL/chrome/global: netError.dtd
+diff -u -r firefox-cvs/mozilla/toolkit/locales/pl-PL/chrome/global/nsHelperAppDlg.dtd ff/l10n/pl/toolkit/chrome/global/nsHelperAppDlg.dtd
+--- firefox-cvs/mozilla/toolkit/locales/pl-PL/chrome/global/nsHelperAppDlg.dtd	2004-10-14 17:00:20.000000000 +0200
++++ ff/l10n/pl/toolkit/chrome/global/nsHelperAppDlg.dtd	2005-04-14 19:32:31.000000000 +0200
+@@ -1,20 +1,43 @@
+ <!ENTITY caption.label "Pobieranie pliku: #1" >
++
++<!-- Localization note: The default intro text has 3 "inserts":
++        #1 - replaced with the descriptive text that describes the mime type
++             (e.g., "MSWord Document")
++        #2 - replaced with the mime type (e.g., "application/ms-word")
++        #3 - replaced with the filename (e.g., "manual.doc")
++        #4 - will be replaced by the brand name (e.g., "Mozilla")
++     If there is no descriptive text, then the alternative text is used which
++     has only insert #2.
++-->
++
+ <!ENTITY intro.label "Rozpoczęto pobieranie pliku &quot;#3&quot; nieznanego typu MIME #2 (#1), z lokalizacji:" >
+ <!ENTITY intro.noDesc.label "Rozpoczęto pobieranie pliku &quot;#3&quot; nieznanego typu MIME #2, z lokalizacji:" >
++
+ <!ENTITY intro.attachment.label "Zgodnie z deklaracją witryny, pobierany plik &quot;#3&quot; powinien być traktowany jako załącznik. Typ MIME pliku: #2 (#1), adres:" >
+ <!ENTITY intro.attachment.noDesc.label "Zgodnie z deklaracją witryny, pobierany plik &quot;#3&quot; powinien być traktowany jako załącznik. Typ MIME pliku: #2, adres:" >
++
++<!ENTITY intro.sniffed.label "#4 has detected that the file &quot;#3&quot; is likely to be of type #2 (#1). The file is located at:">
++<!ENTITY intro.sniffed.noDesc.label "#4 has detected that the file &quot;#3&quot; is likely to be of type #2. The file is located at:">
++
+ <!ENTITY prompt.label "Po zakończeniu pobierania" >
++
+ <!ENTITY alwaysHandle.label "Zawsze wykonuj następującą akcję po pobraniu pliku tego typu" >
+ <!ENTITY alwaysHandle.accesskey "a" >
++
+ <!ENTITY saveToDisk.label "Zachowaj plik na dysku" >
+ <!ENTITY saveToDisk.accesskey "a" >
++
+ <!ENTITY useSystemDefault.label "Otwórz plik za pomocą domyślnej aplikacji (#1)" >
+ <!ENTITY useSystemDefault.noDesc.label "Otwórz plik za pomocą domyślnej aplikacji" >
+ <!ENTITY useSystemDefault.accesskey "o" >
++
+ <!ENTITY openUsing.label "Otwórz go za pomocą" >
+ <!ENTITY openUsing.accesskey "O" >
++
+ <!ENTITY chooseApp.label "Wybierz..." >
+ <!ENTITY chooseApp.accesskey "W" >
++
+ <!ENTITY chooseAppFilePickerTitle "Wybierz aplikację pomocniczą" >
++
+ <!ENTITY badApp "Wybrana aplikacja (&quot;#1&quot;) nie może zostać odnaleziona. Należy sprawdzić poprawność wprowadzonej nazwy pliku lub wybrać inną aplikację." >
+ <!ENTITY badApp.title "Nie znaleziono aplikacji" >
+diff -u -r firefox-cvs/mozilla/toolkit/locales/pl-PL/chrome/global/nsHelperAppDlg.properties ff/l10n/pl/toolkit/chrome/global/nsHelperAppDlg.properties
+--- firefox-cvs/mozilla/toolkit/locales/pl-PL/chrome/global/nsHelperAppDlg.properties	2004-10-14 17:00:20.000000000 +0200
++++ ff/l10n/pl/toolkit/chrome/global/nsHelperAppDlg.properties	2005-04-14 19:14:17.000000000 +0200
+@@ -1 +1,2 @@
+ saveDialogTitle=Wprowad\u017a nazw\u0119 pliku...
++noDefaultFile=bez nazwy
+Tylko w firefox-cvs/mozilla/toolkit/locales/pl-PL/chrome/global: nsWebBrowserPersist.properties
+Tylko w firefox-cvs/mozilla/toolkit/locales/pl-PL/chrome/global: plugins.properties
+Tylko w ff/l10n/pl/toolkit/chrome/global: preferences.dtd
+diff -u -r firefox-cvs/mozilla/toolkit/locales/pl-PL/chrome/global/printdialog.dtd ff/l10n/pl/toolkit/chrome/global/printdialog.dtd
+--- firefox-cvs/mozilla/toolkit/locales/pl-PL/chrome/global/printdialog.dtd	2004-10-14 17:00:20.000000000 +0200
++++ ff/l10n/pl/toolkit/chrome/global/printdialog.dtd	2005-04-14 19:11:29.000000000 +0200
+@@ -1,22 +1,25 @@
+ <!ENTITY printButton.label "Drukuj" >
++
+ <!ENTITY printDialog.title "Drukuj" >
++
+ <!ENTITY fpDialog.title "Zapisz plik" >
+-<!ENTITY printTo.label "Wybierz sposób drukowania:" >
+-<!ENTITY printerRadio.label "Drukarka" >
+-<!ENTITY fileRadio.label "Do pliku" >
++
++<!ENTITY fileCheck.label "Drukuj do pliku" >
+ <!ENTITY propertiesButton.label "Właściwości..." >
++<!ENTITY descText.label "Opis drukarki:">
+ <!ENTITY printer.label "Drukarka" >
+ <!ENTITY printerInput.label "Nazwa drukarki:" >
+-<!ENTITY fileInput.label "Nazwa pliku:" >
+-<!ENTITY chooseButton.label "Wybierz plik..." >
++
+ <!ENTITY printrangeGroup.label "Zakres drukowania" >
+ <!ENTITY allpagesRadio.label "Wszystkie strony" >
+ <!ENTITY rangeRadio.label "Strony" >
+ <!ENTITY frompageInput.label "od" >
+ <!ENTITY topageInput.label "do" >
+ <!ENTITY selectionRadio.label "Zaznaczenie" >
++
+ <!ENTITY copies.label "Kopie" >
+ <!ENTITY numCopies.label "Liczba kopii:" >
++
+ <!ENTITY printframeGroup.label "Drukuj ramki" >
+ <!ENTITY aslaidoutRadio.label "Tak jak na ekranie" >
+ <!ENTITY selectedframeRadio.label "Tylko zaznaczoną ramkę" >
+Tylko w firefox-cvs/mozilla/toolkit/locales/pl-PL/chrome/global: printdialog.properties
+Tylko w firefox-cvs/mozilla/toolkit/locales/pl-PL/chrome/global: printing.properties
+diff -u -r firefox-cvs/mozilla/toolkit/locales/pl-PL/chrome/global/printjoboptions.dtd ff/l10n/pl/toolkit/chrome/global/printjoboptions.dtd
+--- firefox-cvs/mozilla/toolkit/locales/pl-PL/chrome/global/printjoboptions.dtd	2004-10-14 17:00:20.000000000 +0200
++++ ff/l10n/pl/toolkit/chrome/global/printjoboptions.dtd	2005-04-14 19:22:41.000000000 +0200
+@@ -1,10 +1,26 @@
++<!-- extracted from printjoboptions.xul -->
++
+ <!ENTITY printJobOptions.title "Właściwości drukarki" >
++
+ <!ENTITY paperInput.label "Rozmiar papieru:" >
++
+ <!ENTITY plexInput.label "Tryb:" >
+-<!ENTITY cmdInput.label "Komenda drukowania:" >
++
++<!ENTITY resolutionInput.label "Rozdzielczość/Jakość:">
++
++<!ENTITY cmdInput.label "Polecenie drukowania:" >
++
++<!ENTITY jobTitleInput.label "Nazwa zadania:">
++
+ <!ENTITY colorGroup.label "Ustawienia koloru:" >
+ <!ENTITY grayRadio.label "Skala szarości" >
+ <!ENTITY colorRadio.label "W kolorze" >
++
++<!ENTITY colorspaceInput.label "Przestrzeń kolorów:">
++
++<!ENTITY fontsGroup.label "Czcionki:">
++<!ENTITY downloadFonts.label "Załaduj czcionki na drukarkę?">
++
+ <!ENTITY edgeMarginInput.label "Odstęp pomiędzy brzegiem kartki a marginesem (w calach)" >
+ <!ENTITY topInput.label "Górny:" >
+ <!ENTITY bottomInput.label "Dolny:" >
+diff -u -r firefox-cvs/mozilla/toolkit/locales/pl-PL/chrome/global/printPageSetup.dtd ff/l10n/pl/toolkit/chrome/global/printPageSetup.dtd
+--- firefox-cvs/mozilla/toolkit/locales/pl-PL/chrome/global/printPageSetup.dtd	2004-10-14 17:00:20.000000000 +0200
++++ ff/l10n/pl/toolkit/chrome/global/printPageSetup.dtd	2005-04-14 19:16:29.000000000 +0200
+@@ -1,5 +1,7 @@
+ <!ENTITY printSetup.title "Ustawienia strony" >
++
+ <!ENTITY basic.tab "Opcje formatowania" >
++
+ <!ENTITY formatGroup.label "Format" >
+ <!ENTITY orientation.label "Orientacja:" >
+ <!ENTITY portrait "Pionowa" >
+@@ -9,7 +11,9 @@
+ <!ENTITY shrinkToFit.label "Dostosuj do szerokości strony" >
+ <!ENTITY optionsGroup.label "Opcje" >
+ <!ENTITY printBG.label "Drukuj tło (kolory oraz obrazki)" >
++
+ <!ENTITY advanced.tab "Marginesy oraz nagłówek i stopka" >
++
+ <!ENTITY marginGroup.label "Marginesy (w #1)" >
+ <!ENTITY marginUnits.inches "calach" >
+ <!ENTITY marginUnits.metric "milimetrach" >
+@@ -17,10 +21,19 @@
+ <!ENTITY marginBottom.label "Dolny:" >
+ <!ENTITY marginLeft.label "Lewy:" >
+ <!ENTITY marginRight.label "Prawy:" >
++
+ <!ENTITY headerFooter.label "Nagłówki i stopki" >
++
+ <!ENTITY hfLeft.label "Lewa strona:" >
+ <!ENTITY hfCenter.label "Środek:" >
+ <!ENTITY hfRight.label "Prawa strona:" >
++<!ENTITY headerLeft.tip      "Lewy nagłówek">
++<!ENTITY headerCenter.tip    "Środkowy nagłówek">
++<!ENTITY headerRight.tip     "Prawy nagłówek">
++<!ENTITY footerLeft.tip      "Lewa stopka">
++<!ENTITY footerCenter.tip    "Środkowa stopka">
++<!ENTITY footerRight.tip     "Prawa stopka">
++
+ <!ENTITY hfTitle "Tytuł" >
+ <!ENTITY hfTitle.code "[&amp;T]" >
+ <!ENTITY hfURL "URL" >
+diff -u -r firefox-cvs/mozilla/toolkit/locales/pl-PL/chrome/global/printPreview.dtd ff/l10n/pl/toolkit/chrome/global/printPreview.dtd
+--- firefox-cvs/mozilla/toolkit/locales/pl-PL/chrome/global/printPreview.dtd	2004-10-14 17:00:20.000000000 +0200
++++ ff/l10n/pl/toolkit/chrome/global/printPreview.dtd	2005-04-14 19:28:36.000000000 +0200
+@@ -1,3 +1,43 @@
++<!-- ***** BEGIN LICENSE BLOCK *****
++   - Version: MPL 1.1/GPL 2.0/LGPL 2.1
++   -
++   - The contents of this file are subject to the Mozilla Public License Version
++   - 1.1 (the "License"); you may not use this file except in compliance with
++   - the License. You may obtain a copy of the License at
++   - http://www.mozilla.org/MPL/
++   -
++   - Software distributed under the License is distributed on an "AS IS" basis,
++   - WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
++   - for the specific language governing rights and limitations under the
++   - License.
++   -
++   - The Original Code is the print preview toolbar.
++   -
++   - The Initial Developer of the Original Code is
++   - Netscape Communications Corporation.
++   - Portions created by the Initial Developer are Copyright (C) 2002
++   - the Initial Developer. All Rights Reserved.
++   -
++   - Contributor(s):
++   -  Samir Gehani <sgehani@netscape.com> (Original Author)
++   -  Marek Stepien <marcoos@aviary.pl> (Polish l10n)
++   -  Marek Wawoczny <GmbH@mozillapl.org> (Polish l10n)
++   -  Piotr Bartecki <pbartecki@mozillapl.org> (Polish l10n)
++   -
++   - Alternatively, the contents of this file may be used under the terms of
++   - either the GNU General Public License Version 2 or later (the "GPL"), or
++   - the GNU Lesser General Public License Version 2.1 or later (the "LGPL"),
++   - in which case the provisions of the GPL or the LGPL are applicable instead
++   - of those above. If you wish to allow use of your version of this file only
++   - under the terms of either the GPL or the LGPL, and not to allow others to
++   - use your version of this file under the terms of the MPL, indicate your
++   - decision by deleting the provisions above and replace them with the notice
++   - and other provisions required by the LGPL or the GPL. If you do not delete
++   - the provisions above, a recipient may use your version of this file under
++   - the terms of any one of the MPL, the GPL or the LGPL.
++   -
++   - ***** END LICENSE BLOCK ***** -->
++
+ <!ENTITY print.label "Drukuj..." >
+ <!ENTITY print.accesskey "D" >
+ <!ENTITY pageSetup.label "Ustawienia strony..." >
+@@ -27,3 +67,8 @@
+ <!ENTITY Custom.label "Użytkownika..." >
+ <!ENTITY ShrinkToFit.label "Dostosuj do szerokości strony" >
+ <!ENTITY customPrompt.title "Skalowanie..." >
++
++<!ENTITY homearrow.tooltip    "Pierwsza strona">
++<!ENTITY endarrow.tooltip     "Ostatnia strona">
++<!ENTITY rightarrow.tooltip   "Następna strona">
++<!ENTITY leftarrow.tooltip    "Poprzednia strona">
+diff -u -r firefox-cvs/mozilla/toolkit/locales/pl-PL/chrome/global/regionNames.properties ff/l10n/pl/toolkit/chrome/global/regionNames.properties
+--- firefox-cvs/mozilla/toolkit/locales/pl-PL/chrome/global/regionNames.properties	2004-10-14 17:00:20.000000000 +0200
++++ ff/l10n/pl/toolkit/chrome/global/regionNames.properties	2005-04-14 19:37:39.000000000 +0200
+@@ -44,7 +44,7 @@
+ ni=Nikaragua
+ pa=Panama
+ pe=Peru
+-pr=Puerto Rico
++pr=Portoryko
+ py=Paragwaj
+ sv=Salwador
+ uy=Urugwaj
+@@ -61,10 +61,14 @@
+ hk=Hongkong
+ sg=Singapur
+ tw=Tajwan
+-mk=Macedonia, F.Y.R.
++mk=Macedonia
+ kp=P\u00f3\u0142nocna Korea
+ kr=Po\u0142udniowa Korea
+ my=Malezja
+ bn=Su\u0142tanat Brunei
+ pk=Pakistan
+ in=Indie
++it	=	W\u0142ochy
++pl	=	Polska
++ru	=	Rosja
++se	=	Szwecja
+Tylko w firefox-cvs/mozilla/toolkit/locales/pl-PL/chrome/global: security
+Tylko w ff/l10n/pl/toolkit/chrome/global: tree.dtd
+diff -u -r firefox-cvs/mozilla/toolkit/locales/pl-PL/chrome/global/viewSource.dtd ff/l10n/pl/toolkit/chrome/global/viewSource.dtd
+--- firefox-cvs/mozilla/toolkit/locales/pl-PL/chrome/global/viewSource.dtd	2004-10-14 17:00:20.000000000 +0200
++++ ff/l10n/pl/toolkit/chrome/global/viewSource.dtd	2005-04-14 19:35:26.000000000 +0200
+@@ -1,7 +1,13 @@
++<!-- extracted from content/viewSource.xul -->
++
++<!-- LOCALIZATION NOTE (mainWindow.title) : DONT_TRANSLATE --> 
+ <!ENTITY mainWindow.title "&brandFullName;" >
++<!-- LOCALIZATION NOTE (mainWindow.titlemodifier) : DONT_TRANSLATE --> 
+ <!ENTITY mainWindow.titlemodifier "&brandFullName;" >
++<!-- LOCALIZATION NOTE (mainWindow.titlemodifierseparator) : DONT_TRANSLATE -->
+ <!ENTITY mainWindow.titlemodifierseparator " - " >
+ <!ENTITY mainWindow.preface "Źródło: " >
++
+ <!ENTITY fileMenu.label "Plik" >
+ <!ENTITY fileMenu.accesskey "P" >
+ <!ENTITY savePageCmd.label "Zapisz stronę jako..." >
+@@ -15,7 +21,7 @@
+ <!ENTITY printCmd.accesskey "D" >
+ <!ENTITY printCmd.commandkey "p" >
+ <!ENTITY closeCmd.label "Zamknij" >
+-<!ENTITY closeCmd.accesskey "Z" >
++<!ENTITY closeCmd.accesskey "k" >
+ <!ENTITY closeCmd.commandkey "W" >
+ 
+ <!ENTITY textEnlarge.commandkey "+">
+@@ -26,6 +32,7 @@
+ <!ENTITY goToLineCmd.label "Przejdź do wiersza..." >
+ <!ENTITY goToLineCmd.accesskey "P" >
+ <!ENTITY goToLineCmd.commandkey "l" >
++
+ <!ENTITY viewMenu.label "Widok" >
+ <!ENTITY viewMenu.accesskey "W" >
+ <!ENTITY menu_wrapLongLines.title "Zawijaj długie linie" >
+@@ -36,3 +43,11 @@
+ <!ENTITY menu_textEnlarge.accesskey "P">
+ <!ENTITY menu_textReduce.label "Zmniejsz tekst">
+ <!ENTITY menu_textReduce.accesskey "Z">
++
++<!ENTITY findOnCmd.label     "Znajdź na tej stronie...">
++<!ENTITY findOnCmd.accesskey "Z">
++<!ENTITY findOnCmd.commandkey "z">
++<!ENTITY findAgainCmd.label  "Znajdź ponownie">
++<!ENTITY findAgainCmd.accesskey "o">
++<!ENTITY findAgainCmd.commandkey "o">
++<!ENTITY findAgainCmd.commandkey2 "VK_F3">
+Tylko w firefox-cvs/mozilla/toolkit/locales/pl-PL/chrome/global: webservices
+Tylko w firefox-cvs/mozilla/toolkit/locales/pl-PL/chrome/global: xbl.properties
+Tylko w firefox-cvs/mozilla/toolkit/locales/pl-PL/chrome/global: xml
+Tylko w firefox-cvs/mozilla/toolkit/locales/pl-PL/chrome/global/xpinstall: CVS
+Tylko w firefox-cvs/mozilla/toolkit/locales/pl-PL/chrome/global-platform: CVS
+Tylko w firefox-cvs/mozilla/toolkit/locales/pl-PL/chrome/global-platform/mac: CVS
+Tylko w firefox-cvs/mozilla/toolkit/locales/pl-PL/chrome/global-platform/unix: CVS
+Tylko w firefox-cvs/mozilla/toolkit/locales/pl-PL/chrome/global-platform/win: CVS
+Tylko w firefox-cvs/mozilla/toolkit/locales/pl-PL/chrome/global-region: CVS
+diff -u -r firefox-cvs/mozilla/toolkit/locales/pl-PL/chrome/global-region/region.dtd ff/l10n/pl/toolkit/chrome/global-region/region.dtd
+--- firefox-cvs/mozilla/toolkit/locales/pl-PL/chrome/global-region/region.dtd	2004-10-01 15:54:57.000000000 +0200
++++ ff/l10n/pl/toolkit/chrome/global-region/region.dtd	2005-04-14 20:37:16.000000000 +0200
+@@ -1,6 +1,6 @@
+ <!-- brand.dtd -->
+-<!ENTITY  vendorURL             "http://www.firefox.pl/">
+-<!ENTITY  releaseURL            "http://www.firefox.pl/">
++<!ENTITY  vendorURL             "http://www.aviary.pl/">
++<!ENTITY  releaseURL            "http://www.aviary.pl/">
+ <!ENTITY  getNewThemesURL       "http://mozilla.org/themes/download/">
+ <!ENTITY  content.version       "1.5a">
+ <!ENTITY locale.dir "ltr">
+Tylko w firefox-cvs/mozilla/toolkit/locales/pl-PL/chrome/mozapps: CVS
+Tylko w firefox-cvs/mozilla/toolkit/locales/pl-PL/chrome/mozapps/downloads: CVS
+diff -u -r firefox-cvs/mozilla/toolkit/locales/pl-PL/chrome/mozapps/downloads/downloads.properties ff/l10n/pl/toolkit/chrome/mozapps/downloads/downloads.properties
+--- firefox-cvs/mozilla/toolkit/locales/pl-PL/chrome/mozapps/downloads/downloads.properties	2004-10-14 17:00:21.000000000 +0200
++++ ff/l10n/pl/toolkit/chrome/mozapps/downloads/downloads.properties	2005-04-14 19:42:23.000000000 +0200
+@@ -27,17 +27,20 @@
+ statusFormatUnknownMB=#1 MB
+ remain=pozosta\u0142o
+ unknownFilesize=nieznany rozmiar pliku
+-statusFormat=#1 at #2 KB/sec; #3
+ statusFormat=Pobrano #1 z pr\u0119dko\u015Bci\u0105 #2 KB/sek, #3
+ longTimeFormat=#1:#2:#3
+ shortTimeFormat=#2:#3
++
+ fileDoesNotExistOpenTitle=Problemy z otworzeniem pliku %S
+ fileDoesNotExistShowTitle=Nie mo\u017Cna otworzy\u0107 pliku %S
+ fileDoesNotExistError=Plik %S nie istnieje. M\u00f3g\u0142 zosta\u0107 usuni\u0119ty lub przeniesiony, albo zmienono jego nazw\u0119 po pobraniu.
++
+ chooseAppFilePickerTitle=Otw\u00F3rz za pomoc\u0105...
+ downloadsTitle=Pobieranie %S%% z 1 pliku
+ downloadsTitleMultiple=Pobieranie %S%% z %S plik\u00F3w
++
+ fileExecutableSecurityWarning=Uwaga: Rozpocz\u0119to uruchamianie pliku wykonywalnego "%S". Pliki wykonywalne mog\u0105 zawiera\u0107 wirusy lub inny niebezpieczny kod, kt\u00F3ry mo\u017Ce uszkodzi\u0107 komputer. Zaleca si\u0119 zachowanie ostro\u017Cno\u015Bci przy otwieraniu plik\u00F3w tego typu. Czy na pewno uruchomi\u0107 "%S"?
+ fileExecutableSecurityWarningTitle=Uruchamianie pliku wykonywalnego!
+ fileExecutableSecurityWarningDontAsk=Nie pytaj ponownie
++
+ displayNameDesktop=Pulpit
+Tylko w firefox-cvs/mozilla/toolkit/locales/pl-PL/chrome/mozapps/downloads: pref-downloads.dtd
+diff -u -r firefox-cvs/mozilla/toolkit/locales/pl-PL/chrome/mozapps/downloads/unknownContentType.properties ff/l10n/pl/toolkit/chrome/mozapps/downloads/unknownContentType.properties
+--- firefox-cvs/mozilla/toolkit/locales/pl-PL/chrome/mozapps/downloads/unknownContentType.properties	2004-10-14 17:00:21.000000000 +0200
++++ ff/l10n/pl/toolkit/chrome/mozapps/downloads/unknownContentType.properties	2005-04-14 19:40:53.000000000 +0200
+@@ -1,3 +1,42 @@
++# -*- Mode: Java; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*-
++# ***** BEGIN LICENSE BLOCK *****
++# Version: MPL 1.1/GPL 2.0/LGPL 2.1
++#
++# The contents of this file are subject to the Mozilla Public License Version
++# 1.1 (the "License"); you may not use this file except in compliance with
++# the License. You may obtain a copy of the License at
++# http://www.mozilla.org/MPL/
++#
++# Software distributed under the License is distributed on an "AS IS" basis,
++# WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
++# for the specific language governing rights and limitations under the
++# License.
++#
++# The Original Code is Mozilla.org Code.
++#
++# The Initial Developer of the Original Code is
++# Doron Rosenberg.
++# Portions created by the Initial Developer are Copyright (C) 2001
++# the Initial Developer. All Rights Reserved.
++#
++# Contributor(s):
++#   Ben Goodger <ben@bengoodger.com>
++#   Marek Stepien <marcoos@aviary.pl> (Polish l10n)
++#
++# Alternatively, the contents of this file may be used under the terms of
++# either the GNU General Public License Version 2 or later (the "GPL"), or
++# the GNU Lesser General Public License Version 2.1 or later (the "LGPL"),
++# in which case the provisions of the GPL or the LGPL are applicable instead
++# of those above. If you wish to allow use of your version of this file only
++# under the terms of either the GPL or the LGPL, and not to allow others to
++# use your version of this file under the terms of the MPL, indicate your
++# decision by deleting the provisions above and replace them with the notice
++# and other provisions required by the GPL or the LGPL. If you do not delete
++# the provisions above, a recipient may use your version of this file under
++# the terms of any one of the MPL, the GPL or the LGPL.
++#
++# ***** END LICENSE BLOCK *****
++
+ title=Otwieranie %S
+ saveDialogTitle=Wprowad\u017a nazw\u0119 pliku...
+ defaultApp=%S (domy\u015blny)
+@@ -5,9 +44,4 @@
+ badApp=Wybrana aplikacja ("%S") nie mo\u017ce zosta\u0107 odnaleziona. Nale\u017cy sprawdzi\u0107 poprawno\u015b\u0107 wprowadzonej nazwy pliku lub wybra\u0107 inn\u0105 aplikacj\u0119.
+ badApp.title=Nie znaleziono aplikacji
+ selectDownloadDir=Wybierz katalog dla pobranych plik\u00f3w
+-fileEnding=plik %S
+-saveToDisk=Zapisz na dysku
+-openWith=Otw\u00f3rz za pomoc\u0105 %S
+ myDownloads=Pobrane pliki
+-removeActions=Usu\u0144 czynno\u015bci
+-removeActionsMsg=Wybrane czynno\u015bci nie b\u0119d\u0105 wi\u0119cej wykonywane po zako\u0144czeniu pobierania powi\u0105zanych typ\u00f3w plik\u00f3w. Czy na pewno usun\u0105\u0107 wybrane czynno\u015bci?
+Tylko w firefox-cvs/mozilla/toolkit/locales/pl-PL/chrome/mozapps/extensions: CVS
+diff -u -r firefox-cvs/mozilla/toolkit/locales/pl-PL/chrome/mozapps/extensions/extensions.dtd ff/l10n/pl/toolkit/chrome/mozapps/extensions/extensions.dtd
+--- firefox-cvs/mozilla/toolkit/locales/pl-PL/chrome/mozapps/extensions/extensions.dtd	2004-10-14 17:00:21.000000000 +0200
++++ ff/l10n/pl/toolkit/chrome/mozapps/extensions/extensions.dtd	2005-04-14 20:48:19.000000000 +0200
+@@ -47,10 +47,10 @@
+ <!ENTITY about.tooltip                    "O rozszerzeniu">
+ <!ENTITY homepage.tooltip                 "Strona domowa">
+ 
+-<!ENTITY extensionItem.toBeDisabled.label     "Ten element będzie wyłączony po ponownym uruchomieniu Firefoksa.">
+-<!ENTITY extensionItem.toBeEnabled.label      "Ten element będzie włączony po ponownym uruchomieniu Firefoksa.">
+-<!ENTITY extensionItem.toBeInstalled.label    "Ten element zostanie zainstalowany po ponownym uruchomieniu Firefoksa.">
+-<!ENTITY extensionItem.toBeUninstalled.label  "Ten element zostanie odinstalowany po ponownym uruchomieniu Firefoksa.">
++<!ENTITY extensionItem.toBeDisabled.label     "Ten element będzie wyłączony po ponownym uruchomieniu programu &brandShortName;.">
++<!ENTITY extensionItem.toBeEnabled.label      "Ten element będzie włączony po ponownym uruchomieniu programu &brandShortName;.">
++<!ENTITY extensionItem.toBeInstalled.label    "Ten element zostanie zainstalowany po ponownym uruchomieniu programu &brandShortName;.">
++<!ENTITY extensionItem.toBeUninstalled.label  "Ten element zostanie odinstalowany po ponownym uruchomieniu programu &brandShortName;.">
+ <!ENTITY extensionItem.done.label             "Instalacja powiodła się">
+ <!ENTITY extensionItem.waiting.label          "Oczekiwanie...">
+ <!ENTITY extensionItem.installing.label       "Instalowanie...">
+diff -u -r firefox-cvs/mozilla/toolkit/locales/pl-PL/chrome/mozapps/extensions/extensions.properties ff/l10n/pl/toolkit/chrome/mozapps/extensions/extensions.properties
+--- firefox-cvs/mozilla/toolkit/locales/pl-PL/chrome/mozapps/extensions/extensions.properties	2004-10-14 17:00:21.000000000 +0200
++++ ff/l10n/pl/toolkit/chrome/mozapps/extensions/extensions.properties	2005-04-14 19:44:38.000000000 +0200
+@@ -36,10 +36,8 @@
+ theme=Motyw
+ extension=Rozszerzenie
+ incompatibleTitle=Niekompatybilne %S
+-
+-incompatibleMessage=%S %S nie m\u00f3g\u0142 zosta\u0107 zainstalowany poniewa\u017c nie jest on kompatybilny z wersj\u0105 %S. (%S %S mo\u017ce pracowa\u0107 tylko z %S w wersjach od %S do %S)
+-incompatibleMessageSingleAppVersion=%S %S nie m\u00f3g\u0142 zosta\u0107 zainstalowany poniewa\u017c nie jest on kompatybilny z wersj\u0105 %S. (%S %S mo\u017ce pracowa\u0107 tylko z %S %S)
+-
++incompatibleMsg=%S %S nie m\u00f3g\u0142 zosta\u0107 zainstalowany poniewa\u017c nie jest on kompatybilny z wersj\u0105 %S. (%S %S mo\u017ce pracowa\u0107 tylko z %S w wersjach od %S do %S)
++incompatibleMsgSingleAppVersion=%S %S nie m\u00f3g\u0142 zosta\u0107 zainstalowany poniewa\u017c nie jest on kompatybilny z wersj\u0105 %S. (%S %S mo\u017ce pracowa\u0107 tylko z %S %S)
+ incompatibleMessageNoApp=%S %S nie m\u00f3g\u0142 zosta\u0107 zainstalowany poniewa\u017c nie jest on kompatybilny z %S.
+ incompatibleOlder=wersją 0.8 lub starszą.
+ incompatibleThemeName=ten motyw
+@@ -55,9 +53,7 @@
+ 
+ malformedRegistrationTitle=Rejestracja Chrome nie powiod\u0142a si\u0119.
+ malformedRegistrationMessage=%S nie m\u00f3g\u0142 zainstalowa\u0107 tej pozycji z powodu b\u0142\u0119du podczas rejestracji Chrome. Prosz\u0119 powiadomi\u0107 autora o tym problemie lub klikn\u0105\u0107 "Wy\u015bwietl szczeg\u00f3\u0142y" by uzyska\u0107 wi\u0119cej informacji.
+-
+ malformedRegistrationConsoleMessage=Nie powiod\u0142a si\u0119 rejestracja Chrome dla rozszerzenia '%S' podczas wywo\u0142ania nsIXULChromeRegistry::%S z nast\u0119puj\u0105c\u0105 \u015bcie\u017ck\u0105 chrome: %S (rozszerzenie profilu = %S). Prawdopodobnie \u015bcie\u017cka ta nie istnieje wewn\u0105trz archiwum JAR lub plik contents.rdf w tym miejscu jest uszkodzony.
+-
+ malformedRegistrationDetailsButton=Wy\u015bwietl szczeg\u00f3\u0142y
+ 
+ invalidVersionMessage=%S nie m\u00f3g\u0142 zainstalowa\u0107 "%S" poniewa\u017c informacja o jego wersji ("%S") jest niepoprawna. Prosz\u0119 skontaktowa\u0107 si\u0119 z autorem w sprawie tego problemu.
+diff -u -r firefox-cvs/mozilla/toolkit/locales/pl-PL/chrome/mozapps/extensions/mismatch.dtd ff/l10n/pl/toolkit/chrome/mozapps/extensions/mismatch.dtd
+--- firefox-cvs/mozilla/toolkit/locales/pl-PL/chrome/mozapps/extensions/mismatch.dtd	2004-09-30 16:17:33.000000000 +0200
++++ ff/l10n/pl/toolkit/chrome/mozapps/extensions/mismatch.dtd	2005-04-14 20:47:12.000000000 +0200
+@@ -1,4 +1,4 @@
+ <!ENTITY  mismatch.title         "Niekompatybilne komponenty">
+-<!ENTITY  intro1.label           "Poniższe komponenty są niezgodne z nową wersją Mozilli Firefox, która właśnie została zainstalowana:">
++<!ENTITY  intro1.label           "Poniższe komponenty są niezgodne z nową wersją programu &brandShortName;, która właśnie została zainstalowana:">
+ <!ENTITY  intro2.label           "Zostały one wyłączone do czasu zainstalowania kompatybilnych wersji.">
+ <!ENTITY  intro3.label           "&brandShortName; może sprawdzić, czy są już dostępne, i zainstalować nowe kompatybilne wersje tych komponentów.">
+Tylko w firefox-cvs/mozilla/toolkit/locales/pl-PL/chrome/mozapps/plugins: CVS
+diff -u -r firefox-cvs/mozilla/toolkit/locales/pl-PL/chrome/mozapps/plugins/plugins.dtd ff/l10n/pl/toolkit/chrome/mozapps/plugins/plugins.dtd
+--- firefox-cvs/mozilla/toolkit/locales/pl-PL/chrome/mozapps/plugins/plugins.dtd	2004-10-01 19:09:15.000000000 +0200
++++ ff/l10n/pl/toolkit/chrome/mozapps/plugins/plugins.dtd	2005-04-14 19:48:11.000000000 +0200
+@@ -1,4 +1,5 @@
+ <!ENTITY pluginWizard.title                                  "Wyszukiwarka wtyczek">
++<!ENTITY pluginWizard.firstPage.title                        "&pluginWizard.title; - witamy!">
+ 
+ <!ENTITY pluginWizard.checkingForPlugins.description.label   "&brandShortName; sprawdza teraz dostępność wtyczek...">
+ 
+@@ -17,4 +18,4 @@
+ <!ENTITY pluginWizard.finalPage.description.label            "Program &brandShortName; zakończył instalowanie brakujących wtyczek:">
+ 
+ <!ENTITY pluginWizard.finalPage.moreInfo.label               "Dowiedz się więcej o Wtyczkach, lub ręcznie wyszukaj brakujące.">
+-<!ENTITY pluginWizard.finalPage.restart.label               "Aby wtyczka została uruchomiona, niezbędny jest restart programu &brandShortName;.">
+\ Brak znaku nowej linii na końcu pliku
++<!ENTITY pluginWizard.finalPage.restart.label                "Aby wtyczka została uruchomiona, niezbędny jest restart programu &brandShortName;.">
+diff -u -r firefox-cvs/mozilla/toolkit/locales/pl-PL/chrome/mozapps/plugins/plugins.properties ff/l10n/pl/toolkit/chrome/mozapps/plugins/plugins.properties
+--- firefox-cvs/mozilla/toolkit/locales/pl-PL/chrome/mozapps/plugins/plugins.properties	2004-10-01 19:09:15.000000000 +0200
++++ ff/l10n/pl/toolkit/chrome/mozapps/plugins/plugins.properties	2005-04-14 19:47:00.000000000 +0200
+@@ -12,13 +12,15 @@
+ pluginInstallationSummary.success=Zainstalowano
+ pluginInstallationSummary.failed=B\u0142\u0105d
+ pluginInstallationSummary.licenseNotAccepted=Nie zaakceptowano licencji
+-pluginInstallationSummary.notAvailable=Nie dostępne
++pluginInstallationSummary.notAvailable=Niedostępne
+ pluginInstallationSummary.manualInstall.label=Instalacja r\u0119czna
+ pluginInstallationSummary.manualInstall.tooltip=Zainstaluj wtyczk\u0119 r\u0119cznie.
+ 
+ pluginInstallation.noPluginsFound=Nie znaleziono odpowiednich wtyczek.
++pluginInstallation.noPluginsInstalled=Nie zainstalowano \u017cadnej wtyczki.
+ pluginInstallation.unknownPlugin=Nieznana wtyczka
+  
+ missingPlugin.label=Naciśnij, aby pobrać wtyczkę
+-pfs.datasource.url=https://update.mozilla.org/plugins/PluginFinderService.php?mimetype=%PLUGIN_MIMETYPE%&appID=%APP_ID%&appVersion=%APP_VERSION%&clientOS=%CLIENT_OS%&chromeLocale=%CHROME_LOCALE%
++
++pfs.datasource.url=https://pfs.mozilla.org/plugins/PluginFinderService.php?mimetype=%PLUGIN_MIMETYPE%&appID=%APP_ID%&appVersion=%APP_VERSION%&clientOS=%CLIENT_OS%&chromeLocale=%CHROME_LOCALE%
+ 
+Tylko w ff/l10n/pl/toolkit/chrome/mozapps: preferences
+diff -u -r firefox-cvs/mozilla/toolkit/locales/pl-PL/chrome/mozapps/profile/createProfileWizard.dtd ff/l10n/pl/toolkit/chrome/mozapps/profile/createProfileWizard.dtd
+--- firefox-cvs/mozilla/toolkit/locales/pl-PL/chrome/mozapps/profile/createProfileWizard.dtd	2004-11-07 01:21:28.000000000 +0100
++++ ff/l10n/pl/toolkit/chrome/mozapps/profile/createProfileWizard.dtd	2005-04-14 20:51:13.000000000 +0200
+@@ -3,8 +3,8 @@
+ 
+ <!-- First wizard page -->
+ <!ENTITY profileCreationExplanation_1.text  "&brandShortName; przechowuje informacje o Twoich ustawieniach i preferencjach w Twoim prywatnym profilu.">
+-<!ENTITY profileCreationExplanation_2.text  "Jeżeli dzielisz tę kopię Firefoksa z innymi użytkownikami, możesz używać profili, aby odseparować dane użytkowników. Aby tego dokonać, każdy użytkownik powinien posiadać własny profil.">
+-<!ENTITY profileCreationExplanation_3.text  "Jeżeli jesteś jedyną osobą korzystającą z tej kopii Firefoksa musisz posiadać przynajmniej jeden profil. Jeśli chcesz, możesz stworzyć kilka profili dla siebie samego, aby trzymać w nich różne zestawy ustawień i preferencji. Na przykład, możesz chcieć posiadać osobne profile służbowy i prywatny.">
++<!ENTITY profileCreationExplanation_2.text  "Jeżeli dzielisz tę kopię programu &brandShortName; z innymi użytkownikami, możesz używać profili, aby odseparować dane użytkowników. Aby tego dokonać, każdy użytkownik powinien posiadać własny profil.">
++<!ENTITY profileCreationExplanation_3.text  "Jeżeli jesteś jedyną osobą korzystającą z tej kopii programu &brandShortName;, musisz posiadać przynajmniej jeden profil. Jeśli chcesz, możesz stworzyć kilka profili dla siebie samego, aby trzymać w nich różne zestawy ustawień i preferencji. Na przykład, możesz chcieć posiadać osobne profile służbowy i prywatny.">
+ <!ENTITY profileCreationExplanation_4.text  "Aby rozpocząć tworzenie swojego profilu, naciśnij przycisk Dalej.">
+ 
+ <!-- Second wizard page -->
+Tylko w firefox-cvs/mozilla/toolkit/locales/pl-PL/chrome/mozapps/profile: CVS
+diff -u -r firefox-cvs/mozilla/toolkit/locales/pl-PL/chrome/mozapps/profile/profileSelection.dtd ff/l10n/pl/toolkit/chrome/mozapps/profile/profileSelection.dtd
+--- firefox-cvs/mozilla/toolkit/locales/pl-PL/chrome/mozapps/profile/profileSelection.dtd	2004-09-30 16:17:33.000000000 +0200
++++ ff/l10n/pl/toolkit/chrome/mozapps/profile/profileSelection.dtd	2005-04-14 20:50:39.000000000 +0200
+@@ -27,7 +27,7 @@
+ 
+ <!ENTITY            profilename.label      "Nazwa profilu:">
+ 
+-<!ENTITY            start.label            "Uruchom Firefoksa">
++<!ENTITY            start.label            "Uruchom program &brandShortName;">
+ <!ENTITY            exit.label             "Wyjdź">
+ 
+ <!ENTITY            availprofiles.label    "Dostępne profile">
+diff -u -r firefox-cvs/mozilla/toolkit/locales/pl-PL/chrome/mozapps/profile/profileSelection.properties ff/l10n/pl/toolkit/chrome/mozapps/profile/profileSelection.properties
+--- firefox-cvs/mozilla/toolkit/locales/pl-PL/chrome/mozapps/profile/profileSelection.properties	2004-09-30 16:17:33.000000000 +0200
++++ ff/l10n/pl/toolkit/chrome/mozapps/profile/profileSelection.properties	2005-04-14 19:53:59.000000000 +0200
+@@ -1,12 +1,15 @@
+ # LOCALIZATION NOTE: Do not translate <html:br/> 
+ 
++restartTitle=Uruchom ponownie program %S
++restartMessage=Program %S zosta\u0142 ju\u017c uruchomiony, ale nie odpowiada. Aby otworzy\u0107 nowe okno, nale\u017cy ponownie uruchomi\u0107 program %S.
++
+ profileTooltip=Profile: '%S' - \u015Acie\u017Cka: '%S'
+ 
+ pleaseSelectTitle=Wybierz profil
+-pleaseSelect=Aby rozpocz\u0105\u0107 prac\u0119 z Mozill\u0105 Firefox nale\u017Cy wybra\u0107 istniej\u0105cy profil, lub utworzy\u0107 nowy.
++pleaseSelect=Aby rozpocz\u0105\u0107 prac\u0119 z programem %S, nale\u017Cy wybra\u0107 istniej\u0105cy profil, lub utworzy\u0107 nowy.
+ 
+ profileLockedTitle=Profil w u\u017Cyciu
+-profileLocked=%S nie mo\u017Ce u\u017Cy\u0107 profilu "%S", poniewa\u017C profil ten jest u\u017Cywany przez inn\u0105 aplikacj\u0119.\n\nNale\u017Cy wybra\u0107 inny profil lub utworzy\u0107 nowy.
++profileLocked2=%S nie mo\u017Ce u\u017Cy\u0107 profilu "%S", poniewa\u017C profil ten jest u\u017Cywany przez inn\u0105 aplikacj\u0119.\n\nAby kontynuowa\u0107, zamknij dzia\u0142aj\u0105c\u0105 instancj\u0119 %S lub wybierz inny profil.
+ 
+ renameProfileTitle=Zmie\u0144 nazw\u0119 profilu
+ renameProfilePrompt=Zmie\u0144 nazw\u0119 profilu "%S" na:
+Tylko w firefox-cvs/mozilla/toolkit/locales/pl-PL/chrome/mozapps/update: CVS
+diff -u -r firefox-cvs/mozilla/toolkit/locales/pl-PL/chrome/mozapps/update/update.dtd ff/l10n/pl/toolkit/chrome/mozapps/update/update.dtd
+--- firefox-cvs/mozilla/toolkit/locales/pl-PL/chrome/mozapps/update/update.dtd	2004-10-24 01:29:10.000000000 +0200
++++ ff/l10n/pl/toolkit/chrome/mozapps/update/update.dtd	2005-04-14 20:41:41.000000000 +0200
+@@ -2,7 +2,7 @@
+ 
+ <!ENTITY  mismatch.title                  "Niekompatybilne komponenty">
+ <!ENTITY  mismatch.intro1.label           "Poniższe komponenty są niezgodne z nową wersją 
+-                                           Mozilli Firefox, która właśnie została zainstalowana:">
++                                           programu &brandShortName;, która właśnie została zainstalowana:">
+ <!ENTITY  mismatch.intro2.label           "Zostały one wyłączone do czasu zainstalowania kompatybilnych wersji.">
+ <!ENTITY  mismatch.intro3.label           "&brandShortName; może sprawdzić, czy są już dostępne, i zainstalować nowe kompatybilne wersje tych komponentów.">
+ 
+@@ -26,7 +26,7 @@
+ <!ENTITY  found.updatetype.addons.accesskey     "r">
+ <!ENTITY  found.updatetype.languages.accesskey  "j">
+ 
+-<!ENTITY  found.criticalUpdates.label           "Dla programu Firefox dostępne są następujące krytyczne aktualizacje:">
++<!ENTITY  found.criticalUpdates.label           "Dla programu &brandShortName; dostępne są następujące krytyczne aktualizacje:">
+ 
+ <!ENTITY  found.criticalUpdates.info            "Należy je zainstalować jak najszybciej, by chronić komputer przed niebezpieczeństwem ataku.">
+ 
+@@ -57,8 +57,8 @@
+ <!ENTITY  finished.remaining.label        "Niektóre, niekompatybilne komponenty nie zostały zaktualizowane, prawdopodobnie nie są w tym momencie dostępne. &brandShortName; będzie cyklicznie sprawdzał i poinformuje kiedy pojawią się aktualizacje.">
+ <!ENTITY  finished.remaining2.label       "Niektóre, niekompatybilne komponenty nie zostały zaktualizowane, prawdopodobnie nie są w tym momencie dostępne. &brandShortName; może cyklicznie sprawdzać i informować kiedy pojawią się aktualizacje.">
+ <!ENTITY  finished.error.label            "Nie udało się pobrać i zainstalować niektórych aktualizacji.">
+-<!ENTITY  finished.enableChecking.label   "Zezwól Firefoksowi na sprawdzanie aktualizacji.">
+-<!ENTITY  finished.mismatch.label         "Naciśnij Zakończ, aby kontynuować uruchamianie Mozilli Firefox.">
++<!ENTITY  finished.enableChecking.label   "Zezwól programowi &brandShortName; na sprawdzanie aktualizacji.">
++<!ENTITY  finished.mismatch.label         "Naciśnij Zakończ, aby kontynuować uruchamianie programu &brandShortName;.">
+ 
+ <!ENTITY  optional.title                  "Komponenty opcjonalne">
+ <!ENTITY  optional.intro.label            "Wybierz dodatkowe komponenty, które chcesz zainstalować, a następnie kliknij przycisk 'Zainstaluj teraz'.">
+@@ -79,4 +79,4 @@
+ <!ENTITY  restart.updated.label           "Program &brandShortName; pobrał i zainstalował aktualizację. Musisz go jednak uruchomić ponownie, by dokończyć proces aktualizacji.">
+ 
+ <!ENTITY  resetHomepage.label             "Ustaw Stronę startową programu &brandShortName; jako stronę domową">
+-<!ENTITY  resetHomepage.accesskey         "U">
+\ Brak znaku nowej linii na końcu pliku
++<!ENTITY  resetHomepage.accesskey         "U">
+Tylko w firefox-cvs/mozilla/toolkit/locales/pl-PL/chrome/mozapps/xpinstall: CVS
+Tylko w firefox-cvs/mozilla/toolkit/locales/pl-PL/chrome: necko
+Tylko w firefox-cvs/mozilla/toolkit/locales/pl-PL/chrome/passwordmgr: CVS
+Tylko w firefox-cvs/mozilla/toolkit/locales/pl-PL/chrome: pipnss
+Tylko w firefox-cvs/mozilla/toolkit/locales/pl-PL/chrome: pippki
+Tylko w firefox-cvs/mozilla/toolkit/locales/pl-PL/: CVS
+diff -u -r firefox-cvs/mozilla/toolkit/locales/pl-PL/defines.inc ff/l10n/pl/toolkit/defines.inc
+--- firefox-cvs/mozilla/toolkit/locales/pl-PL/defines.inc	2004-09-30 16:17:32.000000000 +0200
++++ ff/l10n/pl/toolkit/defines.inc	2005-04-14 19:55:08.000000000 +0200
+@@ -1 +1 @@
+-#define MOZ_LANG_TITLE Polski (PL)
++#define MOZ_LANG_TITLE Polski
+Tylko w firefox-cvs/mozilla/toolkit/locales/pl-PL/installer: CVS
+Tylko w firefox-cvs/mozilla/toolkit/locales/pl-PL/installer/unix: CVS
+Tylko w firefox-cvs/mozilla/toolkit/locales/pl-PL/installer/windows: CVS
+diff -u -r firefox-cvs/mozilla/toolkit/locales/pl-PL/installer/windows/install.it ff/l10n/pl/toolkit/installer/windows/install.it
+--- firefox-cvs/mozilla/toolkit/locales/pl-PL/installer/windows/install.it	2004-10-16 17:21:51.000000000 +0200
++++ ff/l10n/pl/toolkit/installer/windows/install.it	2005-04-14 20:38:22.000000000 +0200
+@@ -117,7 +117,7 @@
+ STR_DOWNLOAD_SITE=Witryna pobierania
+ STR_SAVE_INSTALLER_FILES=Zachowaj pobrane pliki oraz pliki Instalatora w:
+ MSG_INIT_SETUP=Trwa inicjowanie Instalatora, prosz� czeka�...
+-STR_MESSAGEBOX_TITLE=Instalator Mozilli Firefox
++STR_MESSAGEBOX_TITLE=Instalator programu %s
+ ERROR_GETVERSION=GetVersionEx() nie powiod�o si�
+ DLG_USAGE_TITLE=Spos�b u�ycia
+ 
+@@ -134,3 +134,4 @@
+ MSG_FORCE_QUIT_PROCESS=Instalator wykry� uruchomiony program %s (%s). Naci�nij OK, aby zako�czy� dzia�anie programu %s i kontynuowa� instalacj� Mo�na r�wnie� u�y� Mened�era zada� systemu, aby zako�czy� dzia�anie programu %s i kontynuowa� instalacj�
+ MSG_FORCE_QUIT_PROCESS_FAILED=Instalator zako�czy� dzia�anie. Kontynuowanie instalacji nie jest mo�liwe, poniewa� program %s (%s) jest nadal uruchomiony. Nale�y r�cznie zako�czy� dzia�anie programu %s za pomoc� Menedera zada� systemu, a nast�pnie ponownie rozpocz�� instalacj�
+ ERROR_PATH_WITHIN_WINDIR=Proces instalacji nie mo�e by� kontynuowany, poniewa� do instalacji Mozilli wybrano katalog po�o�ony wewn�trz katalogu systemowego Windows. Nale�y wybra� inny katalog, a nast�pnie spr�bowa� ponownie.
++
+

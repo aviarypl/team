@@ -1,0 +1,18 @@
+diff -r 900e89f6dfc2 template/pl/default/list/quips.html.tmpl
+--- a/template/pl/default/list/quips.html.tmpl	Tue May 10 10:07:05 2011 +0200
++++ b/template/pl/default/list/quips.html.tmpl	Fri May 13 12:54:29 2011 +0200
+@@ -71,5 +71,5 @@
+     lub nudnego, lecz nie obscenicznego lub obraźliwego i naciśnij przycisk.
+     [% IF Param("quip_list_entry_control") == "moderated" AND !user.in_group('admin') %]
+-      Sentencja, zanim zostanie użyta musi zostać zatwierdzona.
++      Sentencja, zanim zostanie użyta, musi zostać zatwierdzona.
+     [% END %]
+   </p>
+@@ -165,5 +165,5 @@
+ [% ELSE %]
+   <p>
+-    Ci, którzy lubią mądrość w dużej ilości mogą
++    Ci, którzy lubią mądrość w dużej ilości, mogą
+     <a href="quips.cgi?action=show">obejrzeć
+     [% IF user.in_group('admin') %]
+

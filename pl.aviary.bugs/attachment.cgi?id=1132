@@ -1,0 +1,60 @@
+diff --git a/toolkit/chrome/mozapps/downloads/downloads.properties b/toolkit/chrome/mozapps/downloads/downloads.properties
+--- a/toolkit/chrome/mozapps/downloads/downloads.properties
++++ b/toolkit/chrome/mozapps/downloads/downloads.properties
+@@ -21,21 +21,31 @@ quitCancelDownloadsAlertTitle=Anulować 
+ quitCancelDownloadsAlertTitle=Anulować pobieranie wszystkich plików?
+ quitCancelDownloadsAlertMsg=Jeśli skończysz teraz pracę programu, pobieranie bieżącego pliku zostanie anulowane. Czy na pewno chcesz zakończyć pracę programu?
+ quitCancelDownloadsAlertMsgMultiple=Jeśli skończysz teraz pracę programu, pobieranie wszystkich %S plików zostanie anulowane. Czy na pewno chcesz zakończyć pracę programu?
+ quitCancelDownloadsAlertMsgMac=Jeśli skończysz teraz pracę programu, pobieranie bieżącego pliku zostanie anulowane. Czy na pewno chcesz zakończyć pracę programu?
+ quitCancelDownloadsAlertMsgMacMultiple=Jeśli skończysz teraz pracę programu, pobieranie wszystkich %S plików zostanie anulowane. Czy na pewno chcesz zakończyć pracę programu?
+ offlineCancelDownloadsAlertTitle=Anulować pobieranie wszystkich plików?
+ offlineCancelDownloadsAlertMsgMultiple=Jeśli przejdziesz teraz do trybu offline, pobieranie wszystkich %S plików zostanie anulowane. Czy na pewno chcesz przejść do trybu offline?
+ offlineCancelDownloadsAlertMsg=Jeśli przejdziesz teraz do trybu offline, pobieranie bieżącego pliku zostanie anulowane. Czy na pewno chcesz przejść do trybu offline?
++# FIXME: bap 2011, private browsing in enterPrivateBrowsingCancelDownloadsAlertMsg, enterPrivateBrowsingCancelDownloadsAlertMsgMultiple, leavePrivateBrowsingCancelDownloadsAlertMsg, leavePrivateBrowsingCancelDownloadsAlertMsgMultiple
++enterPrivateBrowsingCancelDownloadsAlertTitle=Anulować pobieranie wszystkich plików?
++enterPrivateBrowsingCancelDownloadsAlertMsg=Jeśli przejdziesz teraz do trybu prywatnego przeglądania, pobieranie bieżącego pliku zostanie anulowane. Czy na pewno chcesz przejść do trybu prywatnego?
++enterPrivateBrowsingCancelDownloadsAlertMsgMultiple=Jeśli przejdziesz teraz do trybu prywatnego przeglądania, pobieraniee wszystkich %S plików zostanie anulowane. Czy na pewno chcesz przejść do trybu prywatnego?
++leavePrivateBrowsingCancelDownloadsAlertTitle=Anulować pobieranie wszystkich plików?
++leavePrivateBrowsingCancelDownloadsAlertMsg=Jeśli opuścisz teraz do tryb prywatnego przeglądania, pobieranie bieżącego pliku zostanie anulowane. Czy na pewno chcesz opuścić tryb prywatny?
++leavePrivateBrowsingCancelDownloadsAlertMsgMultiple=Jeśli opuścisz teraz tryb prywatnego przeglądania, pobieranie wszystkich %S plików zostanie anulowane. Czy na pewno chcesz opuścić tryb prywatny?
+ cancelDownloadsOKText=Anuluj pobieranie 1 pliku
+ cancelDownloadsOKTextMultiple=Anuluj pobieranie %S plików
+ dontQuitButtonWin=Nie kończ
+ dontQuitButtonMac=Nie zamykaj
+ dontGoOfflineButton=Pozostań w trybie online
++# FIXME: bap 2011, private browsing in dontEnterPrivateBrowsingButton, dontLeavePrivateBrowsingButton
++dontEnterPrivateBrowsingButton=Nie przechodź do trybu prywatnego
++dontLeavePrivateBrowsingButton=Pozostań w trybie prywatnym
+ downloadsCompleteTitle=Zakończono pobieranie
+ downloadsCompleteMsg=Zakończono pobieranie wszystkich plików
+ 
+ # LOCALIZATION NOTE (statusFormat2): — is the "em dash" (long dash)
+ # #1 transfer progress; #2 rate number; #3 rate unit; #4 time left
+ # example: 4 minutes left — 1.1 of 11.1 GB (2.2 MB/sec)
+ statusFormat2=#4 — #1 (#2 #3/s)
+ bytes=B
+@@ -79,21 +89,21 @@ doneFileScheme=plik lokalny
+ 
+ stateFailed=Nie powiodło się
+ stateCanceled=Anulowane
+ # LOCALIZATION NOTE (stateBlocked): 'Parental Controls' should be capitalized
+ # -- I don't think so. <marcoos>
+ stateBlocked=Zablokowane przez ochronę rodzicielską
+ stateDirty=Zablokowane: plik może zawierać wirusa lub oprogramowanie szpiegujące
+ 
+-# LOCALIZATION NOTE (stateBlockedPolicy): 'Security Zone Policy' should be capitalized 
++# LOCALIZATION NOTE (stateBlockedPolicy): 'Security Zone Policy' should be capitalized
+ # -- Not really. At least not in Polish. <marcoos>
+ stateBlockedPolicy=Zablokowane przez politykę stref zabezpieczeń
+ 
+-# LOCALIZATION NOTE (yesterday): Displayed time for files finished yesterday    
++# LOCALIZATION NOTE (yesterday): Displayed time for files finished yesterday
+ yesterday=Wczoraj
+ # LOCALIZATION NOTE (monthDate): #1 month name; #2 date number; e.g., January 22
+ monthDate=#2 #1
+ 
+ fileDoesNotExistOpenTitle=Problemy z otworzeniem pliku %S
+ fileDoesNotExistShowTitle=Nie można otworzyć pliku %S
+ fileDoesNotExistError=Plik %S nie istnieje. Mógł zostać usunięty lub przeniesiony, albo zmieniono jego nazwę po pobraniu.
+ 
+

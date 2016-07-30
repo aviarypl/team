@@ -1,0 +1,61 @@
+? ~fonts-colors-prefs.patch
+Index: chrome/browser/preferences/colors.dtd
+===================================================================
+RCS file: /l10n/l10n/pl/browser/chrome/browser/preferences/colors.dtd,v
+retrieving revision 1.3
+diff -u -r1.3 colors.dtd
+--- chrome/browser/preferences/colors.dtd	30 Jul 2005 19:01:58 -0000	1.3
++++ chrome/browser/preferences/colors.dtd	17 Sep 2005 18:39:32 -0000
+@@ -1,7 +1,8 @@
+ <!ENTITY  colorsDialog.title              "Kolory">
+ <!ENTITY window.width                     "43em">
+ 
+-<!ENTITY  allowPagesToUse.label           "Pozwól stronom używać ich własnych kolorów zamiast tych ustalonych przeze mnie">
++<!ENTITY  allowPagesToUse.label           "Pozwól stronom stosować inne kolory niż ustawione tutaj">
++
+ <!ENTITY  allowPagesToUse.accesskey       "h">
+ 
+ <!ENTITY  color                           "Tekst i tło">
+Index: chrome/browser/preferences/fonts.dtd
+===================================================================
+RCS file: /l10n/l10n/pl/browser/chrome/browser/preferences/fonts.dtd,v
+retrieving revision 1.7.2.1
+diff -u -r1.7.2.1 fonts.dtd
+--- chrome/browser/preferences/fonts.dtd	7 Sep 2005 07:53:35 -0000	1.7.2.1
++++ chrome/browser/preferences/fonts.dtd	17 Sep 2005 18:39:32 -0000
+@@ -70,7 +70,8 @@
+ <!ENTITY  resolution.system.label                 "wg ustawień systemu">
+ <!ENTITY  resolution.other                        "Inna...">
+ 
+-<!ENTITY  allowPagesToUse.label                   "Zezwól stronom na używanie ich własnych czcionek, zamiast tych wybranych przeze mnie">
++<!ENTITY  allowPagesToUse.label                   "Pozwól stronom stosować inne czcionki niż ustawione tutaj">
++
+ <!ENTITY  allowPagesToUse.accesskey               "i">
+ 
+ <!ENTITY languages.customize.Charset.grouplabel         "Kodowanie znaków">
+Index: chrome/help/prefs.xhtml
+===================================================================
+RCS file: /l10n/l10n/pl/browser/chrome/help/prefs.xhtml,v
+retrieving revision 1.9.2.3
+diff -u -r1.9.2.3 prefs.xhtml
+--- chrome/help/prefs.xhtml	1 Sep 2005 06:26:05 -0000	1.9.2.3
++++ chrome/help/prefs.xhtml	17 Sep 2005 18:39:33 -0000
+@@ -285,7 +285,7 @@
+     <p>Możliwe jest także określenie minimalnego rozmiaru wyświetlanej czcionki. Może to być
+ 	przydatne w przypadku przeglądania witryn używających małych, nieczytelnych czcionek.</p>
+ 
+-<p>    <em>Zezwól stronom na stosowanie ich własnych czcionek, zamiast tych ustalonych przeze mnie</em><br/>
++<p>    <em>Pozwól stronom stosować inne czcionki niż ustawione tutaj</em><br/>
+ 	  Domyślnie przeglądarka &brandShortName; stosuje czcionki określone przez autora przeglądanej
+ 	  strony. Aby zawsze używać domyślnych czcionek, należy odznaczyć powyższą opcję.</p>
+ 
+@@ -311,7 +311,7 @@
+ 	  Aby wyłączyć podkreślanie, należy odznaczyć powyższą opcję. <strong>UWAGA:</strong> Ustawienie to nie działa w przypadku stron stosujących własne 
+ 	  arkusze stylów.</p>
+ 
+-    <p><em>Zezwól stronom na stosowanie ich własnych kolorów, zamiast tych ustalonych przeze mnie</em><br/>
++    <p><em>Pozwól stronom stosować inne kolory niż ustawione tutaj</em><br/>
+ 	  Domyślnie przeglądarka &brandShortName; stosuje kolory określone przez autora przeglądanej
+ 	  strony. Aby zawsze używać domyślnych kolorów, należy odznaczyć powyższą opcję.</p>
+ 
+

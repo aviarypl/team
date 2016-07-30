@@ -1,0 +1,101 @@
+diff --git a/template/pl/default/extensions/hook-readme.txt.tmpl b/template/pl/default/extensions/hook-readme.txt.tmpl
+--- a/template/pl/default/extensions/hook-readme.txt.tmpl
++++ b/template/pl/default/extensions/hook-readme.txt.tmpl
+@@ -23,8 +23,8 @@
+ 
+ [% PROCESS global/variables.none.tmpl %]
+ 
+-Szablon wywołań prowadzi do tego katalogu. W standardowych szablonach [%+ terms.Bugzilli %]
+-noszą nazwę [[% '%' %] Hook.process('nazwa-wywołania') %].
+-Więcej informacji na ten temat można znależć w dokumentacji B[% %]ugzilla::Extension.
+-(By zobaczyć tę dokumentację wykonaj „perldoc B[% %]ugzilla::Extension” z głównego katalogu
++Szablony wywołań są umieszczone w tym katalogu. Są one wywoływane w standardowych
++szablonach [%+ terms.Bugzilli %] następująco [[% '%' %] Hook.process('nazwa-wywołania') %].
++Więcej informacji na ten temat można znaleźć w dokumentacji B[% %]ugzilla::Extension.
++By zobaczyć tę dokumentację wykonaj „perldoc B[% %]ugzilla::Extension” z głównego katalogu
+ [%+ terms.Bugzilli %].
+\ No newline at end of file
+diff --git a/template/pl/default/extensions/license.txt.tmpl b/template/pl/default/extensions/license.txt.tmpl
+--- a/template/pl/default/extensions/license.txt.tmpl
++++ b/template/pl/default/extensions/license.txt.tmpl
+@@ -47,5 +47,5 @@
+ # Initial Developer. All Rights Reserved.
+ #
+ # Contributor(s):
+-#   TWOJA NAZWA <TWÓJ ADRES E-MAIL>
++#   Twoja nazwa <twój adres e-mail>
+ 
+diff --git a/template/pl/default/extensions/name-readme.txt.tmpl b/template/pl/default/extensions/name-readme.txt.tmpl
+--- a/template/pl/default/extensions/name-readme.txt.tmpl
++++ b/template/pl/default/extensions/name-readme.txt.tmpl
+@@ -23,9 +23,9 @@
+ 
+ [% PROCESS global/variables.none.tmpl %]
+ 
+-Standardowe szablony prowadzą do tego katalogu. Można wczytać je
++Standardowe szablony znajdują się w tym katalogu. Można wczytać je
+ używając kodu:
+ 
+ use B[% %]ugzilla::Error;
+ my $template = B[% %]ugzilla->template;
+ $template->process('[% name FILTER lower %]/nazwa-szablonu.html.tmpl')
+@@ -27,10 +27,10 @@
+ używając kodu:
+ 
+ use B[% %]ugzilla::Error;
+ my $template = B[% %]ugzilla->template;
+ $template->process('[% name FILTER lower %]/nazwa-szablonu.html.tmpl')
+-  or ThrowTemplateError($template->error());
++  lub ThrowTemplateError($template->error());
+ 
+ Ten kod pokazuje, jak wczytać plik o nazwie nazwa-szablonu.html.tmpl znajdujący się
+ w tym katalogu.
+ 
+@@ -33,6 +33,6 @@
+ 
+ Ten kod pokazuje, jak wczytać plik o nazwie nazwa-szablonu.html.tmpl znajdujący się
+ w tym katalogu.
+ 
+-Należy zwrócić baczną uwagę, by pełna ścieżka do twojego szablonu nigdy nie
++Należy zwrócić baczną uwagę, by pełna ścieżka do szablonu nigdy nie
+ kolidowała z szablonem istniejącym w [% terms.Bugzilli %], innym
+@@ -38,3 +38,3 @@
+ kolidowała z szablonem istniejącym w [% terms.Bugzilli %], innym
+-rozszerzeniu lub twój inny szablon nie zastępował tego szablonu. Katalog
++rozszerzeniu lub inny szablon nie zastępował tego szablonu. Katalog
+ „[% name FILTER lower %]” został specjalnie stworzony po to, by umieszczać
+@@ -40,2 +40,2 @@
+ „[% name FILTER lower %]” został specjalnie stworzony po to, by umieszczać
+-w nim właśnie takie szablony. Zapobiegnie to powstawaniu konfliktów.
++w nim właśnie takie szablony i dzięki temu uniknąć powstawania konfliktów.
+diff --git a/template/pl/default/extensions/web-readme.txt.tmpl b/template/pl/default/extensions/web-readme.txt.tmpl
+--- a/template/pl/default/extensions/web-readme.txt.tmpl
++++ b/template/pl/default/extensions/web-readme.txt.tmpl
+@@ -17,7 +17,9 @@
+   #
+   # Contributor(s):
+   #   Max Kanat-Alexander <mkanat@bugzilla.org>
++  #
++  # Translated by Zespół Aviary.pl <team@aviary.pl>
+   #%]
+ 
+ [% PROCESS global/variables.none.tmpl %]
+ 
+@@ -20,11 +22,11 @@
+   #%]
+ 
+ [% PROCESS global/variables.none.tmpl %]
+ 
+-Web-accessible files, like JavaScript, CSS, and images go in this
+-directory. You can reference them directly in your HTML. For example,
+-if you have a file called "style.css" and your extension is called
+-"Foo", you would put it in "extensions/Foo/web/style.css", and then
+-you could link to it in HTML like:
++Pliki używane do tworzenia strony internetowej, takie jak JavaScript, CSS i obrazki
++są umieszczane w tym katalogu. Można odwoływać się do nich bezpośrednio z kodu HTML.
++Na przykład jeśli plik ma nazwę „style.css”, a rozszerzenie nosi nazwę „Foo”, można
++umieścić go w katalogu „extensions/Foo/web/style.css” i następnie odwoływać się do niego
++w kodzie HTML następująco:
+ 
+ <link href="extensions/Foo/web/style.css" rel="stylesheet" type="text/css">
+

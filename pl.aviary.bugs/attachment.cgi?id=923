@@ -1,0 +1,110 @@
+Index: pl/calendar/chrome/prototypes/sun-calendar-event-dialog.dtd
+===================================================================
+RCS file: /l10n/l10n/pl/calendar/chrome/prototypes/sun-calendar-event-dialog.dtd,v
+retrieving revision 1.1.2.19
+diff -u -8 -r1.1.2.19 sun-calendar-event-dialog.dtd
+--- pl/calendar/chrome/prototypes/sun-calendar-event-dialog.dtd	4 Oct 2007 21:03:36 -0000	1.1.2.19
++++ pl/calendar/chrome/prototypes/sun-calendar-event-dialog.dtd	18 Oct 2007 06:21:28 -0000
+@@ -90,17 +90,17 @@
+ <!ENTITY  event.menu.options.attendees.accesskey          "Z">
+ <!ENTITY  event.menu.options.spellcheck.label             "Sprawdzanie pisowni…">
+ <!ENTITY  event.menu.options.spellcheck.accesskey         "S">
+ <!ENTITY  event.menu.options.inline.spellcheck.label      "Sprawdzaj pisownię podczas pisania">
+ <!ENTITY  event.menu.options.inline.spellcheck.accesskey  "p">
+ <!ENTITY  event.menu.options.link.label                   "Dodaj odnośnik…">
+ <!ENTITY  event.menu.options.link.accesskey               "D">
+ <!ENTITY  event.menu.options.timezone.label               "Strefa czasowa">
+-<!ENTITY  event.menu.options.timezone.accesskey           "S">
++<!ENTITY  event.menu.options.timezone.accesskey           "t">
+ <!ENTITY  event.menu.options.priority.label               "Ważność">
+ <!ENTITY  event.menu.options.priority.accesskey           "W">
+ <!ENTITY  event.menu.options.priority.none.label          "Nieokreślona">
+ <!ENTITY  event.menu.options.priority.none.accesskey      "r">
+ <!ENTITY  event.menu.options.priority.low.label           "Niska">
+ <!ENTITY  event.menu.options.priority.low.accesskey       "N">
+ <!ENTITY  event.menu.options.priority.normal.label        "Normalna">
+ <!ENTITY  event.menu.options.priority.normal.accesskey    "m">
+@@ -110,17 +110,17 @@
+ <!ENTITY  event.menu.options.privacy.accesskey            "P">
+ <!ENTITY  event.menu.options.privacy.public.label         "Wydarzenie publiczne">
+ <!ENTITY  event.menu.options.privacy.public.accesskey     "W">
+ <!ENTITY  event.menu.options.privacy.confidential.label   "Pokaż tylko datę i czas">
+ <!ENTITY  event.menu.options.privacy.confidential.accesskey "d">
+ <!ENTITY  event.menu.options.privacy.private.label        "Wydarzenie prywatne">
+ <!ENTITY  event.menu.options.privacy.private.accesskey    "n">
+ <!ENTITY  event.menu.options.show.time.label              "Pokaż czas jako">
+-<!ENTITY  event.menu.options.show.time.accesskey          "P">
++<!ENTITY  event.menu.options.show.time.accesskey          "c">
+ <!ENTITY  event.menu.options.show.time.busy.label         "Zajęty">
+ <!ENTITY  event.menu.options.show.time.busy.accesskey     "Z">
+ <!ENTITY  event.menu.options.show.time.free.label         "Wolny">
+ <!ENTITY  event.menu.options.show.time.free.accesskey     "W">
+ 
+ <!ENTITY event.help.label                                 "Pomoc">
+ <!ENTITY event.help.accesskey                             "P">
+ <!ENTITY event.help.release.notes.label                   "Informacje o wydaniu">
+@@ -163,17 +163,17 @@
+ <!ENTITY task.from.accesskey                              "P">
+ <!ENTITY event.to.label                                   "Do:" >
+ <!ENTITY event.to.accesskey                               "D">
+ <!ENTITY task.to.label                                    "Koniec:" >
+ <!ENTITY task.to.accesskey                                "c">
+ <!ENTITY task.status.label                                "Status:" >
+ <!ENTITY task.status.accesskey                            "S">
+ <!ENTITY event.repeat.label                               "Powtarzaj:" >
+-<!ENTITY event.repeat.accesskey                           "P">
++<!ENTITY event.repeat.accesskey                           "w">
+ <!ENTITY event.reminder.label                             "Przypomnij:" >
+ <!ENTITY event.reminder.accesskey                         "m">
+ <!ENTITY event.description.label                          "Opis:" >
+ <!ENTITY event.description.accesskey                      "i">
+ <!ENTITY event.link.label                                 "Odnośnik:" >
+ <!ENTITY event.link.accesskey                             "n" >
+ <!ENTITY event.link.change.label                          "Zmień…" >
+ <!ENTITY event.link.change.accesskey                      "e" >
+Index: pl/calendar/chrome/calendar/menuOverlay.dtd
+===================================================================
+RCS file: /l10n/l10n/pl/calendar/chrome/calendar/menuOverlay.dtd,v
+retrieving revision 1.2.2.12
+diff -u -8 -r1.2.2.12 menuOverlay.dtd
+--- pl/calendar/chrome/calendar/menuOverlay.dtd	4 Sep 2007 19:15:48 -0000	1.2.2.12
++++ pl/calendar/chrome/calendar/menuOverlay.dtd	18 Oct 2007 06:21:29 -0000
+@@ -114,17 +114,17 @@
+ 
+ <!ENTITY calendar.publish.label                 "Publikuj…">
+ <!ENTITY calendar.publish.accesskey             "p">
+ 
+ <!ENTITY calendar.publish.calendar.label        "Publikuj kalendarz…">
+ <!ENTITY calendar.publish.calendar.accesskey    "b">
+ 
+ <!ENTITY calendar.publish.selection.label       "Publikuj zaznaczone…">
+-<!ENTITY calendar.publish.selection.accesskey   "n">           
++<!ENTITY calendar.publish.selection.accesskey   "P">           
+ 
+ <!ENTITY calendar.quit.label                    "Zakończ">
+ <!ENTITY calendar.quit.accesskey                "k">
+ <!ENTITY calendar.quit.label.mac                "Skończ &brandShortName;">
+ <!ENTITY calendar.quit.key.mac                  "Q">
+ <!ENTITY calendar.quit.modifiers.mac            "accel">
+ 
+ <!ENTITY calendar.exit.label                    "Zakończ">
+@@ -146,17 +146,17 @@
+ <!ENTITY calendar.cut.accesskey                 "t">
+ 
+ <!ENTITY calendar.copy.label                    "Kopiuj">
+ <!ENTITY calendar.copy.key                      "C">
+ <!ENTITY calendar.copy.accesskey                "K">
+ 
+ <!ENTITY calendar.paste.label                   "Wklej">
+ <!ENTITY calendar.paste.key                     "V">
+-<!ENTITY calendar.paste.accesskey               "e">
++<!ENTITY calendar.paste.accesskey               "W">
+ 
+ <!ENTITY calendar.selectall.label               "Zaznacz wszystko">
+ <!ENTITY calendar.selectall.key                 "A">
+ <!ENTITY calendar.selectall.accesskey           "a">
+ 
+ <!ENTITY toolbarsMenu.label                     "Paski narzędzi">
+ <!ENTITY toolbarsMenu.accesskey                 "P">
+ 
+

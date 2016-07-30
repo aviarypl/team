@@ -1,0 +1,326 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+            "http://www.w3.org/TR/1999/REC-html401-19991224/loose.dtd">
+
+<html>
+  <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Podziękowania Mozilli Thunderbird</title>
+
+    <style type="text/css">
+    <!--
+      * {
+        cursor: default;
+        -moz-user-select: none;
+      }
+      
+      #titleBox {
+        position: fixed;
+        left: 0px;
+        top: 0px;
+        right: 0px;
+        bottom: auto;
+        z-index: 999;
+      }
+      
+      #footerBox {
+        position: fixed;
+        left: 0px;
+        top: auto;
+        right: 0px;
+        bottom: 0px;
+        z-index: 999;
+      }
+      
+      #creditsBox {
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        overflow: hidden;
+        z-index: 1;
+        height: 275px;
+        width: 280px;
+        margin-left: 10px;
+        margin-right: 10px;
+        font-family: Arial, sans-serif;
+        font-size: medium;
+      }
+      
+      h3 {
+        font-weight: bold;
+        font-size: small;
+        text-align: center;
+        margin: 15px 0px 5px 0px;
+      }
+      
+      .creditsGroup {
+        margin-bottom: 1px;
+      }
+      
+      .credit {
+        text-align: center;
+      } 
+      
+      .footnote {
+        font-size: x-small;
+        text-align: justify;
+      }
+      
+      h2.title {
+        margin-bottom: 2px;
+      }
+      
+      .motto {
+        font-style: italic;
+        padding-left: 10px;
+      }
+      
+      a {
+        color: blue;
+        text-decoration: underline;
+      }
+    --> 
+    </style>
+    
+    <script type="application/x-javascript" src="chrome://global/content/globalOverlay.js"></script>
+    <script type="application/x-javascript">
+    <!--
+    
+      var gCreditsInterval = -1;
+
+      function uninit()
+      {
+        if (gCreditsInterval > -1) 
+          clearInterval(gCreditsInterval);
+      }
+
+      function init()
+      {
+        var cb = document.getElementById("creditsBox");
+        cb.scrollTop = 0;
+        setTimeout("runCredits()", 3000);
+      }
+      
+      function runCredits()
+      {
+        gCreditsInterval = setInterval("creditsCallback()", 25);  
+      }
+      
+      function creditsCallback()
+      {
+        var cb = document.getElementById("creditsBox");
+        var newtop = cb.scrollTop + 1;
+        cb.scrollTop = newtop;
+        if (cb.scrollTop != newtop) {
+          // we're at the bottom
+          clearInterval(gCreditsInterval);
+          setTimeout(function() { cb.scrollTop = 0 }, 3000);
+        }
+      }
+    
+    //-->
+    </script>
+  </head>
+  <body onload="init();" onunload="uninit();">
+    <div id="titleBox">
+      <img src="chrome://messenger/content/about-credits.png" alt="">
+    </div>
+    
+    <div id="creditsBox"> 
+        <br>  
+        <br>  
+        <br>  
+        <br>  
+        <br>  
+        <br>
+        <div align="center">
+          <h2 class="title">Mozilla Thunderbird&trade;</h2>
+          <span class="motto">&nbsp;&nbsp;&nbsp;&nbsp;Thunderbirds Are Go!</span>
+        </div>
+        <br>  
+        <br>  
+        <br>  
+        <br>  
+        <br>  
+        <br>  
+        <br>  
+        <br>  
+        <br>  
+
+        <div class="creditsGroup">
+          <h3>Główni programiści</h3>
+          <div class="credit">David Bienvenu</div>
+          <div class="credit">Scott MacGregor</div>
+                  
+          <h3>Specjalne podziękowania dla</h3>
+          <div class="credit">
+            Don Crandall<br>
+            Brendan Eich<br>
+            Darin Fisher<br>
+            Ben Goodger<br>
+            Jason Kersey<br>
+            Myk Melez<br>         
+            Brian Ryner<br>
+            Jungshik Shin<br>
+            Seth Spitzer<br>
+            Stephen Walker<br>
+          </div>
+        </div>
+        
+        <div class="creditsGroup">
+          <h3>Koordynator oprawy graficznej</h3>
+          <div class="credit">Steven Garrity</div>
+          
+          <h3>Przygotowanie schematu</h3>
+          <div class="credit">
+            Arvid Axelsson<br>
+            Kevin Gerich<br>
+            Stephen Horlander<br>
+          </div>
+          
+          <h3>Opracowanie marki</h3>
+          <div class="credit">
+            Daniel Burka<br>
+            Stephen Desroches<br>
+            Jasper Hauser<br>
+            Jon Hicks<br>
+          </div>
+          
+          <h3>Strona internetowa</h3>
+          <div class="credit">Dave Shea</div>
+        </div>
+
+        <div class="creditsGroup">        
+          <h3>Grupa kontroli jakości</h3>
+          <div class="credit">
+            Społeczność MozillaZine<br>
+          </div>
+
+          <h3>Specjalne podziękowania dla</h3>
+          <div class="credit">
+		    David Baron<br>
+            André Dahlqvist<br>
+			Asa Dotzler<br>
+            Christian Eyrich<br>
+            silverorange<br>
+            Johnny Stenback<br>
+          </div>
+                    
+          <h3>Kompilacja i wydanie</h3>
+          <div class="credit">
+            Don Crandall<br>
+            Leaf Nunes<br>
+            Brian Ryner<br>
+          </div>
+          
+          <h3>Zaplecze techniczne</h3>
+          <div class="credit">Myk Melez</div>
+          
+          <h3>Wsparcie</h3>
+          <div class="credit">
+            Jason Kersey<br>
+            David Tenser<br>
+          </div>
+          
+          <h3>Specjalne podziękowania dla</h3>
+          <div class="credit">
+            Społeczność MozillaZine<br>
+            MozillaZine<br>
+            MozDev<br>
+          </div>
+        </div>
+        
+        <div class="creditsGroup">
+          <h3>Kierownictwo projektu</h3>
+          <div class="credit">
+            David Bienvenu<br>
+            Chris Hofmann<br>
+            Scott MacGregor<br>
+          </div>
+            
+          <h3>Kierowanie promocją</h3>
+          <div class="credit">Bart Decrem</div>
+        </div>
+        
+        <div class="creditsGroup">
+          <h3>Tłumaczenie</h3>
+          <div class="credit">
+            Piotr Komoda<br>
+            Piotr Bartecki<br>
+            Zbigniew Braniecki<br>
+          </div>
+            
+          <h3>Kierowanie Polskim projektem Mozilli</h3>
+          <div class="credit">
+            Marek Wawoczny<br>
+            Piotr Bartecki<br>
+          </div>
+
+          <h3>Projekt Firefox.pl</h3>
+          <div class="credit">
+            Zbigniew Braniecki<br>
+            Marek Stępień<br>
+            Piotr Komoda<br>
+          </div>
+
+          <h3>Podziękowania</h3>
+          <div class="credit">
+            Konrad Karpieszuk<br>
+            Gabriel Baines<br>
+            Paweł Chmielowski<br>
+            Wadim Dziedzic<br>
+            E2rd<br>
+            Marcin Jagodziński<br>
+            Dominik Tomaszuk<br>
+          </div>
+        </div>
+        
+        <br>  
+        <br>  
+        <br>  
+        <br>  
+        <br>  
+        <br>  
+        <p align="center">Oprogramowanie oparte o platformę Gecko&trade;
+        <br>  
+        <br>  
+        <br>  
+        <br>  
+        <br>  
+        <br>  
+        
+        <p class="footnote">
+          Wszelkie prawa do kodu źródłowego zastrzeżone (&copy; 1998-2004) przez Współtwórców na        
+          mocy Publicznej Licencji Mozilli oraz Publicznej Licencji Netscape. Aby zobaczyć pełne   
+          informacje o autorach wpisz "about:credits" w pasku adresu.</p>
+
+        <p class="footnote">
+          Prawa autorskie do niektórych części tego programu posiada: Copyright &copy; 1994 The 
+          Regents of the University of California. Wszelkie prawa zastrzeżone.</p>
+
+        <p class="footnote">
+          Program może zawierać kod, do którego prawa autorskie posiada: Copyright &copy; 1998-2004  
+          Support.com, Inc. Wszelkie prawa zastrzeżone.</p>
+
+        <p class="footnote">
+          Mozilla Thunderbird i wszelkie znaki graficzne Thunderbirda są znakami handlowymi Fundacji 
+          Mozilla. Wszelkie prawa zastrzeżone. Część praw została użyta na zasadach licencji  
+          Charlton Group. Nie masz zapewnionych żadnych praw do znaków handlowych Fundacji Mozilla i 
+          ich części, włączając w to bez wyjątku loga i nazwę Thunderbird.</p>
+
+        <p class="footnote">
+        <small>UŻYTKOWNICY KOŃCOWI W ROZUMIENIU RZĄDU STANÓW ZJEDNOCZONYCH. 
+        Niniejszy Program jest "produktem komercyjnym", tak jak zostało to zdefiniowane w artukule 
+        48 C.F.R. 2.101 (Paź. 1995), składającym się z "komercyjnego programu komputerowego" oraz 
+        "dokumentacji komercyjnego programu komputerowego", zgodnie z terminami użytymi w artykule 
+        48 C.F.R. 12.212 (Wrześ. 1995). Zgodnie z artykułami 48 C.F.R. 12.212 oraz 48 C.F.R. 
+        227.7202-1 do 227.7202-4 (Lip.&nbsp;1995), wszyscy użytkownicy końcowi w rozumieniu Rządu 
+        Stanów Zjednoczonych otrzymują ten Program z prawami określonymi wyłącznie w wymienionych 
+        dokumentach.</small></p>
+    </div>
+    
+    <div id="footerBox">
+      <img src="chrome://messenger/content/about-footer.png" alt="">
+    </div>
+
+  </body>
+</html>

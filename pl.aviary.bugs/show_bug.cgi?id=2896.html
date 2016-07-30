@@ -1,0 +1,1185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>2896 &ndash; (kompozer0.8) KompoZer 0.8 [tracking bug]</title>
+
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<link href="data/assets/7aa6ea67750936a0368541421bdcd5ee.css" rel="stylesheet" type="text/css">
+
+
+
+    
+<script type="text/javascript" src="data/assets/a7c2f3a028f17a9aa60f56dc9d6e732d.js"></script>
+
+    <script type="text/javascript">
+    <!--
+        YAHOO.namespace('bugzilla');
+        YAHOO.util.Event.addListener = function (el, sType, fn, obj, overrideContext) {
+               if ( ("onpagehide" in window || YAHOO.env.ua.gecko) && sType === "unload") { sType = "pagehide"; };
+               var capture = ((sType == "focusin" || sType == "focusout") && !YAHOO.env.ua.ie) ? true : false;
+               return this._addListener(el, this._getType(sType), fn, obj, overrideContext, capture);
+         };
+        if ( "onpagehide" in window || YAHOO.env.ua.gecko) {
+            YAHOO.util.Event._simpleRemove(window, "unload", 
+                                           YAHOO.util.Event._unload);
+        }
+        
+        function unhide_language_selector() { 
+            YAHOO.util.Dom.removeClass(
+                'lang_links_container', 'bz_default_hidden'
+            ); 
+        } 
+        YAHOO.util.Event.onDOMReady(unhide_language_selector);
+
+        
+        var BUGZILLA = {
+            param: {
+                cookiepath: '\/',
+                maxusermatches: 1000
+            },
+            constant: {
+                COMMENT_COLS: 80
+            },
+            string: {
+                
+
+                attach_desc_required:
+                    "You must enter a Description for this attachment.",
+                component_required:
+                    "You must select a Component for this bug.",
+                description_required:
+                    "You must enter a Description for this bug.",
+                short_desc_required:
+                    "You must enter a Summary for this bug.",
+                version_required:
+                    "You must select a Version for this bug."
+            }
+              , api_token: ''
+        };
+
+    if (history && history.replaceState) {
+      if(!document.location.href.match(/show_bug\.cgi/)) {
+        history.replaceState( null,
+                             "2896 – (kompozer0.8) KompoZer 0.8 [tracking bug]",
+                             "show_bug.cgi?id=2896" );
+        document.title = "2896 – (kompozer0.8) KompoZer 0.8 [tracking bug]";
+      }
+      if (document.location.href.match(/show_bug\.cgi\?.*list_id=/)) {
+        var href = document.location.href;
+        href = href.replace(/[\?&]+list_id=(\d+|cookie)/, '');
+        history.replaceState(null, "2896 – (kompozer0.8) KompoZer 0.8 [tracking bug]", href);
+      }
+    }
+    YAHOO.util.Event.onDOMReady(function() {
+      initDirtyFieldTracking();
+
+    });
+    // -->
+    </script>
+<script type="text/javascript" src="data/assets/daf5e0fb6826e6a35280e622913f0c4a.js"></script>
+
+    
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+                       title="Bugzilla" href="search_plugin.cgi">
+    <link rel="shortcut icon" href="images/favicon.ico">
+  </head>
+
+  <body 
+        class="bugs-aviary-pl
+                 bz_bug
+                 bz_status_VERIFIED
+                 bz_product_Nvu_KompoZer
+                 bz_component_Og&#XF3;lne
+                 bz_bug_2896 yui-skin-sam">
+
+  <div id="header"><div id="banner">
+  </div>
+
+    <div id="titles">
+      <span id="title">Bugzilla &ndash; Bug&nbsp;2896</span>
+
+        <span id="subtitle" class="subheader">KompoZer 0.8 [tracking bug]</span>
+
+        <span id="information" class="header_addl_info">Last modified: 2014-10-19 16:23:48 CEST</span>
+    </div>
+
+
+    <div id="common_links"><ul class="links">
+  <li><a href="index.html">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi.html">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi.html">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi.html">Search</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="http://bugs.aviary.pl/buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input type="hidden" id="no_redirect_top" name="no_redirect" value="0">
+    <script type="text/javascript">
+      if (history && history.replaceState) {
+        var no_redirect = document.getElementById("no_redirect_top");
+        no_redirect.value = 1;
+      }
+    </script>
+    <input class="txt" type="text" id="quicksearch_top" name="quicksearch" 
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search" 
+           id="find_top"></form>
+  <a href="page.cgi%3Fid=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="report.cgi.html">Reports</a></li>
+
+  <li>
+      <span class="separator">| </span>
+        <a href="request.cgi.html">Requests</a></li>
+
+
+  <li>
+        <span class="separator">| </span>
+        <a href="https://bugzilla.readthedocs.org/en/5.0/using/understanding.html" target="_blank">Help</a>
+      </li>
+    
+      <li id="new_account_container_top">
+        <span class="separator">| </span>
+        <a href="createaccount.cgi.html">New&nbsp;Account</a>
+      </li>
+
+    <li id="mini_login_container_top">
+  <span class="separator">| </span>
+  <a id="login_link_top" href="show_bug.cgi%3Fid=2896&amp;GoAheadAndLogIn=1.html"
+     onclick="return show_mini_login_form('_top')">Log In</a>
+
+  <form action="show_bug.cgi%3Fid=2896.html" method="POST"
+        class="mini_login bz_default_hidden"
+        id="mini_login_top">
+    <input id="Bugzilla_login_top" required
+           name="Bugzilla_login" class="bz_login"
+        type="email" placeholder="Email Address">
+    <input class="bz_password" name="Bugzilla_password" type="password"
+           id="Bugzilla_password_top" required
+           placeholder="Password">
+    <input type="hidden" name="Bugzilla_login_token"
+           value="1469821836-bjWeLhJd6LSjbJq2CzZFZa8zw9aGrGyM336xittJY2o">
+    <input type="submit" name="GoAheadAndLogIn" value="Log in"
+            id="log_in_top">
+    <a href="show_bug.cgi%3Fid=2896.html#" onclick="return hide_mini_login_form('_top')">[x]</a>
+  </form>
+</li>
+
+
+  <li id="forgot_container_top">
+    <span class="separator">| </span>
+    <a id="forgot_link_top" href="show_bug.cgi%3Fid=2896&amp;GoAheadAndLogIn=1.html#forgot"
+       onclick="return show_forgot_form('_top')">Forgot Password</a>
+    <form action="http://bugs.aviary.pl/token.cgi" method="post" id="forgot_form_top"
+          class="mini_forgot bz_default_hidden">
+      <label for="login_top">Login:</label>
+      <input name="loginname" size="20" id="login_top" required
+          type="email" placeholder="Your Email Address">
+      <input id="forgot_button_top" value="Reset Password" type="submit">
+      <input type="hidden" name="a" value="reqpw">
+      <input type="hidden" id="token_top" name="token"
+             value="1469821836-cqbVc-pPzHucS5vHSC7T6RemlBdeK-QXM2NkXvYOePc">
+      <a href="show_bug.cgi%3Fid=2896.html#" onclick="return hide_forgot_form('_top')">[x]</a>
+    </form>
+  </li>
+</ul>
+    </div>
+  </div>
+
+  <div id="bugzilla-body">
+
+
+<script type="text/javascript">
+<!--
+
+//-->
+</script>
+
+<form name="changeform" id="changeform" method="post" action="http://bugs.aviary.pl/process_bug.cgi">
+
+  <input type="hidden" name="delta_ts" value="2014-10-19 16:23:48">
+  <input type="hidden" name="id" value="2896">
+  <input type="hidden" name="token" value="1469821836-w2xXdegEF2fSLWt8EYhnLCN6VZKwj-UzhY5-cm5iITA">
+<div class="bz_short_desc_container edit_form">
+     <a href="show_bug.cgi%3Fid=2896.html"><b>Bug&nbsp;2896</b></a> <span id="summary_container" class="bz_default_hidden">
+        (<span id="alias_nonedit_display">kompozer0.8</span>)
+      - <span id="short_desc_nonedit_display">KompoZer 0.8 [tracking bug]</span>
+     </span>
+
+    <div id="summary_input"><span class="field_label "
+    id="field_label_short_desc">
+
+
+  <a 
+      title="The bug summary is a short sentence which succinctly describes what the bug is about."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#short_desc"
+  >Summary:</a>
+
+</span>KompoZer 0.8 [tracking bug]
+    </div>
+  </div>
+  <script type="text/javascript">
+    hideEditableField('summary_container',
+                      'summary_input',
+                      'summary_edit_action',
+                      'short_desc',
+                      'KompoZer 0.8 [tracking bug]' );
+  </script>
+  <table class="edit_form">
+    <tr>
+      
+      <td id="bz_show_bug_column_1" class="bz_show_bug_column">     
+        <table>
+          <tr>
+    <th class="field_label">
+      <a href="page.cgi%3Fid=fields.html#bug_status">Status</a>:
+    </th>
+    <td id="bz_field_status">
+      <span id="static_bug_status">VERIFIED
+          WONTFIX
+      </span>
+    </td>
+  </tr>
+<tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+<tr><th class="field_label "
+    id="field_label_alias">
+
+
+  <a 
+      title="A short, unique name assigned to a bug in order to assist with looking it up and referring to it in other places in Bugzilla."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#alias"
+  >Alias:</a>
+
+</th>
+    <td>kompozer0.8
+    </td>
+  </tr>
+<tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+<tr><th class="field_label "
+    id="field_label_product">
+
+
+  <a 
+      title="Bugs are categorised into Products and Components. Select a Classification to narrow down this list."
+      class="field_help_link"
+      href="describecomponents.cgi.html"
+  >Product:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_product" >Nvu/KompoZer
+
+</td>
+    </tr>
+
+    
+    <tr class="bz_default_hidden"><th class="field_label "
+    id="field_label_classification">
+
+
+  <a 
+      title="Bugs are categorised into Classifications, Products and Components. classifications is the top-level categorisation."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#classification"
+  >Classification:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_classification" >Archiwum
+
+</td>
+    </tr>
+        
+    
+    
+    <tr><th class="field_label "
+    id="field_label_component">
+
+
+  <a 
+      title="Components are second-level categories; each belongs to a particular Product. Select a Product to narrow down this list."
+      class="field_help_link"
+      href="describecomponents.cgi%3Fproduct=Nvu%252FKompoZer.html"
+  >Component:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_component" >Ogólne
+
+  (<a href="buglist.cgi%3Fcomponent=Ogólne&amp;product=Nvu%252FKompoZer&amp;bug_status=__open__.html"
+      target="_blank">show other bugs</a>)
+</td>
+    </tr>
+    <tr><th class="field_label "
+    id="field_label_version">
+
+
+  <a 
+      title="The version field defines the version of the software the bug was found in."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#version"
+  >Version:</a>
+
+</th>
+<td>nieokreślona
+  </td>
+    </tr>
+        
+    
+        
+    <tr><th class="field_label "
+    id="field_label_rep_platform">
+
+
+  <a 
+      title="The hardware platform the bug was observed on. Note: When searching, selecting the option &quot;All&quot; only finds bugs whose value for this field is literally the word &quot;All&quot;."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#rep_platform"
+  >Hardware:</a>
+
+</th>
+      <td class="field_value">Wszystkie
+        Wszystkie
+      </td>
+    </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          
+          <tr>
+      <th class="field_label">
+        <label  accesskey="i">
+          <a href="page.cgi%3Fid=fields.html#importance"><u>I</u>mportance</a></label>:
+      </th>
+      <td>P3
+       normalny
+      </td>
+    </tr>
+          
+          <tr><th class="field_label "
+    id="field_label_assigned_to">
+
+
+  <a 
+      title="The person in charge of resolving the bug."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#assigned_to"
+  >Assignee:</a>
+
+</th>
+      <td><span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+      </td>
+    </tr>
+
+    <tr><th class="field_label "
+    id="field_label_qa_contact">
+
+
+  <a 
+      title="The person responsible for confirming this bug if it is unconfirmed, and for verifying the fix once the bug has been resolved."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#qa_contact"
+  >QA Contact:</a>
+
+</th>
+      <td><span class="vcard">nvu-kompozer
+</span>
+      </td>
+    </tr>
+    <script type="text/javascript">
+      assignToDefaultOnChange(['product', 'component'],
+        'gandalf\x40aviary.pl',
+        'nvu-kompozer\x40l10n.bledy');
+    </script>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          <tr><th class="field_label "
+    id="field_label_bug_file_loc">
+
+
+  <a 
+      title="Bugs can have a URL associated with them - for example, a pointer to a web site where the problem is seen."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#bug_file_loc"
+  >URL:</a>
+
+</th>
+    <td>
+      <span id="bz_url_input_area">
+      </span>
+    </td>
+  </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+
+          
+<tr><th class="field_label "
+    id="field_label_dependson">
+
+
+  <a 
+      title="The bugs listed here must be resolved before this bug can be resolved."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#dependson"
+  >Depends on:</a>
+
+</th>
+
+  <td>
+    <span id="dependson_input_area">
+    </span>
+<a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED WONTFIX - Błędy w wallet/pref-passwords.dtd"
+   href="show_bug.cgi%3Fid=397.html">397</a> <a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - Drobne błędy w: \mozapps\extensions\extensions.dtd"
+   href="show_bug.cgi%3Fid=398.html">398</a> <a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - Pozostałość Kompozytora w locale\editor\EdConvertToTable.dtd"
+   href="show_bug.cgi%3Fid=401.html">401</a> <a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - Interpunkcja, styl w locale\editor\EdDialogOverlay.dtd"
+   href="show_bug.cgi%3Fid=402.html">402</a> <a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - Pozostałość Kompozytora i literówki w locale\editor\EditConflict.dtd"
+   href="show_bug.cgi%3Fid=403.html">403</a> <a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - Pozostałość Kompozytora w locale\editor\editorNavigatorOverlay.dtd"
+   href="show_bug.cgi%3Fid=405.html">405</a> <a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - tłumaczenie w oknach dialogowych - megabug"
+   href="show_bug.cgi%3Fid=445.html">445</a> <a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - Domyslne kodowanie powinno byc ISO-8859-2"
+   href="show_bug.cgi%3Fid=491.html">491</a> <a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED WONTFIX - Błędy w edytorze CSS w wersji PL"
+   href="show_bug.cgi%3Fid=574.html">574</a> <a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - Brak skalowania okna preferencji"
+   href="show_bug.cgi%3Fid=575.html">575</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Powinno być konsekwentnie: &quot;twoich&quot; lub &quot;Twoich&quot; [ &#64; /mozapps/profile/profileSelection.dtd ]"
+   href="show_bug.cgi%3Fid=582.html">582</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Zły klawisz skrótu dla &quot;Zakończ&quot;"
+   href="show_bug.cgi%3Fid=588.html">588</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Zrobić QA plików dla KompoZera 0.8"
+   href="show_bug.cgi%3Fid=2756.html">2756</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Przetłumaczyć makeCSSRule, currentstylesfor i renameButton [&#64; EdCssProps.dtd ]"
+   href="show_bug.cgi%3Fid=2895.html">2895</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Przetłumaczyć 8 stringów [&#64; cascades.properties ]"
+   href="show_bug.cgi%3Fid=2898.html">2898</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Powinno być &quot;Zakończ&quot; zamiast &quot;Wyjdź&quot; [&#64; platformCommunicatorOverlay.dtd ]"
+   href="show_bug.cgi%3Fid=2901.html">2901</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Brakuje &quot;programu&quot; w przed brandShortName [&#64; platformCommunicatorOverlay.dtd, unitilyOverlay.dtd ]"
+   href="show_bug.cgi%3Fid=2902.html">2902</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Nieprzetłumaczone urlbar.label i middleClick.label [&#64; platformPrefOverlay.dtd ]"
+   href="show_bug.cgi%3Fid=2904.html">2904</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Nieprzetłumaczone accesskeys w [&#64; platformCommunicatorOverlay.dtd ]"
+   href="show_bug.cgi%3Fid=2907.html">2907</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Zamiast ctrl powinno być Ctrl, zamiast enter - Enter [&#64; platformPrefOverlay.dtd ]"
+   href="show_bug.cgi%3Fid=2909.html">2909</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Brakuje słowa &quot;program&quot; przy program &amp;brandShortName; [&#64; win/platformPrefOverlay.dtd]"
+   href="show_bug.cgi%3Fid=2922.html">2922</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Nieprawidłowy adres pliku RDF w [&#64; region.properties ]"
+   href="show_bug.cgi%3Fid=2923.html">2923</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Notka licencyjna i autorzy pliku zostali usunięci z [&#64; askViewZoom.dtd, printPreview.dtd ]"
+   href="show_bug.cgi%3Fid=2924.html">2924</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Dodać zagubione komentarze w plikach"
+   href="show_bug.cgi%3Fid=2925.html">2925</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Zmienić &quot;Dodaj do zakładek&quot; na &quot;Dodaj zakładkę&quot; [&#64; contentAreaCommands.dtd ]"
+   href="show_bug.cgi%3Fid=2926.html">2926</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Dziwne nazwy zestawów znaków powinny być zmienione [&#64; pref-fonts.dtd ]"
+   href="show_bug.cgi%3Fid=2959.html">2959</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Zamiast &quot;Sans Serif&quot; powinno być &quot;Bezszeryfowa&quot; [&#64; pref-fonts.dtd ]"
+   href="show_bug.cgi%3Fid=2960.html">2960</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Poprawić tłumaczenie &quot;web page&quot; w [&#64; pref-fonts.dtd ]"
+   href="show_bug.cgi%3Fid=2961.html">2961</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Zmienić &quot;sidebar&quot; na &quot;panel boczny&quot; [&#64; sidebarOverlay.dtd ]"
+   href="show_bug.cgi%3Fid=2962.html">2962</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Zamiast &quot;Kompozytor Stron&quot; powinno być &quot;KompoZer&quot; [ &#64; tasksOverlay.dtd ]"
+   href="show_bug.cgi%3Fid=2963.html">2963</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Ustalić czy niektóre rzeczy w [ &#64; tasksOverlay.dtd ] na pewno nie powinny być tłumaczone"
+   href="show_bug.cgi%3Fid=2964.html">2964</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Nadużywanie dużych liter w [ &#64; utilityOverlay.dtd ]"
+   href="show_bug.cgi%3Fid=2965.html">2965</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Powinno być &quot;rozmiar oryginalny&quot; zamiast &quot;Oryginalny rozmiar&quot; [ &#64; viewZoomOverlay.properties ]"
+   href="show_bug.cgi%3Fid=2966.html">2966</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Zmienić &quot;Publikuj&quot; na &quot;Opublikuj&quot; i odwrotnie [&#64; EditorPublish.dtd ]"
+   href="show_bug.cgi%3Fid=2973.html">2973</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Zamiast &quot;Prefix&quot; powinno być &quot;Prefiks&quot;, zamiast &quot;n.p.&quot; - &quot;np.&quot; [&#64; EditorPublish.dtd ]"
+   href="show_bug.cgi%3Fid=2974.html">2974</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Nieprzetłumaczone &quot;Auth&quot; i &quot;Implicit&quot; w [&#64; EditorPublish.dtd ]"
+   href="show_bug.cgi%3Fid=2975.html">2975</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Nieprzetłumaczone localUrls.label i close.label [&#64; MarkUpCleaner.dtd ]"
+   href="show_bug.cgi%3Fid=2976.html">2976</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Poprawić UnknownColor w [&#64; editor.properties ]"
+   href="show_bug.cgi%3Fid=2977.html">2977</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Poprawić cudzysłowy, szyk i dodać przecinki w ModifiedDocumentWarning [&#64; editor.properties ]"
+   href="show_bug.cgi%3Fid=2978.html">2978</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Brakuje słowa &quot;program&quot; w [&#64; editorOverlay.dtd ]"
+   href="show_bug.cgi%3Fid=2979.html">2979</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Nieprzetłumaczone supportKompoZer.label [&#64; editorOverlay.dtd ]"
+   href="show_bug.cgi%3Fid=2980.html">2980</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Posprzątać encje w [&#64; editorOverlay.dtd ]"
+   href="show_bug.cgi%3Fid=2981.html">2981</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Nieprawidłowe skróty dla DesignMode i SplitMode [&#64; editorOverlay.dtd ]"
+   href="show_bug.cgi%3Fid=2982.html">2982</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Usunąć komentarz &lt;!-- Advanced --&gt; w [&#64; editorOverlay.dtd ]"
+   href="show_bug.cgi%3Fid=2983.html">2983</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Zmienić &quot;Nie znaleziono sugestii dla słowa&quot; na &quot;(brak sugestii)&quot; [&#64; editorOverlay.dtd ]"
+   href="show_bug.cgi%3Fid=2984.html">2984</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Brak nazw produktu i licencji w [&#64; brand.dtd ]"
+   href="show_bug.cgi%3Fid=2985.html">2985</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Zmienic &quot;Kodowanie&quot; na &quot;Zestaw&quot; [&#64; charsetOverlay.dtd ]"
+   href="show_bug.cgi%3Fid=2986.html">2986</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Zmienić &quot;Armeński&quot; na &quot;Ormiański&quot; i poprawić inne sposoby zapisu [&#64; chartsetTitles.properties]"
+   href="show_bug.cgi%3Fid=2987.html">2987</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Okno opcji jest za wąskie"
+   href="show_bug.cgi%3Fid=2988.html">2988</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Zmienić domyślne kodowanie z ISO-8859-2 na UTF-8"
+   href="show_bug.cgi%3Fid=2989.html">2989</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Zepsute kodowanie w sekcji Contributors [&#64; config.properties ]"
+   href="show_bug.cgi%3Fid=2990.html">2990</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Zmienić &quot;kodowania&quot; na &quot;zestawy&quot; [&#64; customizeCharset.dtd ]"
+   href="show_bug.cgi%3Fid=2991.html">2991</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Brak przecinka przed &quot;by zamknąć&quot; [&#64; downloadProgress.properties ]"
+   href="show_bug.cgi%3Fid=2992.html">2992</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Zmienić &quot;Czy zastąpić go?&quot; na &quot;Czy go zastąpić?&quot; [&#64; filepicker.properties ]"
+   href="show_bug.cgi%3Fid=2993.html">2993</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Zmienić &quot;Usuń host&quot; na &quot;Usuń hosta&quot; [&#64; history.properties ]"
+   href="show_bug.cgi%3Fid=2994.html">2994</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Zaktualizować rok w [&#64; license.dtd ]"
+   href="show_bug.cgi%3Fid=2997.html">2997</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Zmienić &quot;załaduj&quot; na &quot;prześlij&quot; [&#64; printjoboptions.dtd ]"
+   href="show_bug.cgi%3Fid=3010.html">3010</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Zmienić &quot;hasz&quot; na &quot;suma kontrolna&quot; [&#64; xpinstall.properties ]"
+   href="show_bug.cgi%3Fid=3011.html">3011</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Źle odmieniona data (05 grudzień) i błędna nazwa zespołów (Mozillapl.org i AviaryPL) [&#64; *.xhtml ]"
+   href="show_bug.cgi%3Fid=3012.html">3012</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Nieprawidłowo pozamieniane Nvu na &amp;brandShortName; [&#64; composer_tutorial.xhtml, css.xhtml, customize.xhtml, menu_reference.xhtml, publishing_help.xhtml, shortcuts.xhtml ]"
+   href="show_bug.cgi%3Fid=3013.html">3013</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - W pl używamy odnośników z chrome://, w en-US - nie [&#64; help-toc.rdf ]"
+   href="show_bug.cgi%3Fid=3014.html">3014</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Dodać słowo &quot;program&quot; w różnych odmianach w plikach helpa [&#64; *.xhtml ]"
+   href="show_bug.cgi%3Fid=3015.html">3015</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Zamiast &quot;zakładka&quot; powinno być &quot;karta&quot; [&#64; EdDialogOverlay.dtd, EditorPageProperties.dtd, EditorPublish.dtd, *.xhtml ]"
+   href="show_bug.cgi%3Fid=3017.html">3017</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Zamiast &quot;panel&quot; powinno być &quot;karta&quot;"
+   href="show_bug.cgi%3Fid=3020.html">3020</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Zamiast &quot;sidebar&quot; powinno być &quot;panel boczny&quot;"
+   href="show_bug.cgi%3Fid=3021.html">3021</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Zmienić &quot;ładowanie&quot; na &quot;wczytywanie&quot; [&#64; sidebarOverlay.dtd, editor.properties, images.xhtml, extensions.properties ]"
+   href="show_bug.cgi%3Fid=3022.html">3022</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Brakuje słowa &quot;program&quot; w [&#64; nvu-toc.rdf ]"
+   href="show_bug.cgi%3Fid=3034.html">3034</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Treść pliku [&#64; welcome.xhtml ] nie pokrywa się z oryginałem"
+   href="show_bug.cgi%3Fid=3035.html">3035</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - W oknie opcji nie ma panelu Treść, do którego odsyłamy [&#64; unknownContentType.dtd ]"
+   href="show_bug.cgi%3Fid=3036.html">3036</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Usunąć &quot;chcesz&quot; z unknownPromptText.label [&#64; unknownContentType.dtd ]"
+   href="show_bug.cgi%3Fid=3037.html">3037</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Opcje i Preferencje w środku zdania powinny być pisane małą literą [&#64; extentions.dtd ]"
+   href="show_bug.cgi%3Fid=3038.html">3038</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Zmienić &quot;Twoje&quot; na &quot;użytkownika&quot; [&#64; createProfileWizard.dtd, profileSelection.dtd ]"
+   href="show_bug.cgi%3Fid=3039.html">3039</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Pozbyć się męskich form (&quot;czy jesteś pewien&quot;) w [&#64; passwordmgr.properties ]"
+   href="show_bug.cgi%3Fid=3040.html">3040</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Zmienić &quot;Ważny od/do&quot; na &quot;Nieważny przed/po&quot; [&#64; pipnss.properties ]"
+   href="show_bug.cgi%3Fid=3041.html">3041</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Pozbyć się form osobowych i poprawić drobne rzeczy w [&#64; certManager.dtd, pippki.dtd ]"
+   href="show_bug.cgi%3Fid=3042.html">3042</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Nieprzetłumaczone helpCopyrightNotice [&#64; brand.dtd ]"
+   href="show_bug.cgi%3Fid=3043.html">3043</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Poprawić szyk w tytule [&#64; credits.xhtml ]"
+   href="show_bug.cgi%3Fid=3044.html">3044</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Jest &quot;długa&quot; zamiast &quot;długa&quot; [&#64; nsWebBrowserPersist.properties ]"
+   href="show_bug.cgi%3Fid=3046.html">3046</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Zmienić &quot;Poniechaj&quot; na &quot;Anuluj&quot; [&#64; wizard.dtd ]"
+   href="show_bug.cgi%3Fid=3047.html">3047</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Błędne tłumaczenie dla &quot;XPath parse failure: '!' unexpected, negation is not()&quot; [&#64; xslt.properties ]"
+   href="show_bug.cgi%3Fid=3048.html">3048</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Poprawić złe prawa dostępu plików"
+   href="show_bug.cgi%3Fid=3049.html">3049</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Pozbyć się męskich form w tekstach związanych z hasłem głównym [&#64; preferences.properties ]"
+   href="show_bug.cgi%3Fid=3050.html">3050</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Pozbyć się form osobowych w removeWarning2.label [&#64; removemp.dtd ]"
+   href="show_bug.cgi%3Fid=3051.html">3051</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Zwiększyć rozmiar okna aktualizacji [&#64; updates.dtd ]"
+   href="show_bug.cgi%3Fid=3052.html">3052</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Zmienić &quot;internetem&quot; na &quot;Internetem&quot; i dodać &quot;Czy&quot; w zdaniu pytającym [&#64; updates.properties ]"
+   href="show_bug.cgi%3Fid=3053.html">3053</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Nieaktualny nagłówek z licencją [&#64; security.properties ]"
+   href="show_bug.cgi%3Fid=3054.html">3054</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Zamiast &quot;treści&quot; powinno być &quot;treści&quot; [&#64; security.properties ]"
+   href="show_bug.cgi%3Fid=3055.html">3055</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Poprawić tłumaczenie w [&#64; sitemanager.properties ]"
+   href="show_bug.cgi%3Fid=3056.html">3056</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Przywrócić właściwą notkę licencyjną [&#64; tipoftheday.rdf ]"
+   href="show_bug.cgi%3Fid=3057.html">3057</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Poprawić URL w [&#64; tipoftheday.rdf ]"
+   href="show_bug.cgi%3Fid=3058.html">3058</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Poprawić symbol języka w [&#64; tipoftheday.rdf ]"
+   href="show_bug.cgi%3Fid=3059.html">3059</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Zmienić &quot;Ukryj&quot; na &quot;ukryj&quot; [&#64; tipoftheday.rdf ]"
+   href="show_bug.cgi%3Fid=3060.html">3060</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Zmienić słowo &quot;panel&quot; na &quot;karta&quot; [&#64; tipoftheday.rdf ]"
+   href="show_bug.cgi%3Fid=3061.html">3061</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Poprawić poradę o stylach lokalnych [&#64; tipoftheday.rdf ]"
+   href="show_bug.cgi%3Fid=3062.html">3062</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Zmienić &quot;możesz&quot; na &quot;można&quot; [&#64; tipoftheday.rdf ]"
+   href="show_bug.cgi%3Fid=3063.html">3063</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Zmienić &quot;Stron&quot; na &quot;stron&quot; [&#64; tipoftheday.rdf ]"
+   href="show_bug.cgi%3Fid=3064.html">3064</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Zmienić &quot;Sprofiluj&quot; na &quot;Dostosuj&quot; [&#64; tipoftheday.rdf ]"
+   href="show_bug.cgi%3Fid=3065.html">3065</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Zmienić KompoZer na &amp;brandShortName; [&#64; tipoftheday.rdf ]"
+   href="show_bug.cgi%3Fid=3066.html">3066</a> 
+  </td>
+  </tr>
+  
+  <tr><th class="field_label "
+    id="field_label_blocked">
+
+
+  <a 
+      title="This bug must be resolved before the bugs listed in this field can be resolved."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#blocked"
+  >Blocks:</a>
+
+</th>
+
+  <td>
+    <span id="blocked_input_area">
+    </span>
+
+  </td>
+  </tr>
+
+    <tr>
+      <th>&nbsp;</th>
+
+      <td id="show_dependency_tree_or_graph">
+        Show dependency <a href="showdependencytree.cgi%3Fid=2896&amp;hide_resolved=1.html">tree</a>
+
+          /&nbsp;<a href="showdependencygraph.cgi%3Fid=2896.html">graph</a>
+      </td>
+    </tr>
+          
+        </table>
+      </td>
+      <td>
+        <div class="bz_column_spacer">&nbsp;</div>
+      </td>
+      
+      <td id="bz_show_bug_column_2" class="bz_show_bug_column">
+        <table>
+        <tr>
+    <th class="field_label">
+      Reported:
+    </th>
+    <td>2010-02-24 13:20 CET by <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+    </td>
+  </tr>
+  
+  <tr>
+    <th class="field_label">
+      Modified:
+    </th>
+    <td>2014-10-19 16:23 CEST
+      (<a href="show_activity.cgi%3Fid=2896.html">History</a>)
+    </td>
+  
+  </tr>
+<tr>
+      <th class="field_label">
+        <label  accesskey="a">
+          CC List:
+        </label>
+      </th>
+      <td>2 
+          users
+          <span id="cc_edit_area_showhide_container" class="bz_default_hidden">
+            (<a href="show_bug.cgi%3Fid=2896.html#" id="cc_edit_area_showhide">show</a>)
+          </span>
+        <div id="cc_edit_area">
+          <br>
+            <select id="cc" multiple="multiple" size="5" >
+                <option value="akalla">akalla</option>
+                <option value="gandalf">gandalf</option>
+            </select>
+        </div>
+          <script type="text/javascript">
+            hideEditableField( 'cc_edit_area_showhide_container', 
+                               'cc_edit_area', 
+                               'cc_edit_area_showhide', 
+                               '', 
+                               '');  
+          </script>
+      </td>
+    </tr>
+
+<tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+<tr><th class="field_label "
+    id="field_label_see_also">
+
+
+  <a 
+      title="This allows you to refer to bugs in other installations. You can enter a URL to a bug in the 'Add Bug URLs' field to note that that bug is related to this one. You can enter multiple URLs at once by separating them with whitespace. You should normally use this field to refer to bugs in other installations. For bugs in this installation, it is better to use the Depends on and Blocks fields."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#see_also"
+  >See Also:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_see_also" >
+
+</td>
+    </tr> 
+
+<tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+
+
+
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+          <hr id="bz_top_half_spacer">
+      </td>
+    </tr>
+  </table>
+
+  <table id="bz_big_form_parts">
+  <tr>
+  <td>
+
+    
+<script type="text/javascript">
+<!--
+function toggle_display(link) {
+    var table = document.getElementById("attachment_table");
+    var view_all = document.getElementById("view_all");
+    var hide_obsolete_url_parameter = "&hide_obsolete=1";
+    // Store current height for scrolling later
+    var originalHeight = table.offsetHeight;
+    var rows = YAHOO.util.Dom.getElementsByClassName(
+        'bz_tr_obsolete', 'tr', table);
+
+    for (var i = 0; i < rows.length; i++) {
+        bz_toggleClass(rows[i], 'bz_default_hidden');
+    }
+
+    if (YAHOO.util.Dom.hasClass(rows[0], 'bz_default_hidden')) {
+        link.innerHTML = "Show Obsolete";
+        view_all.href = view_all.href + hide_obsolete_url_parameter 
+    }
+    else {
+        link.innerHTML = "Hide Obsolete";
+        view_all.href = view_all.href.replace(hide_obsolete_url_parameter,"");
+    }
+
+    var newHeight = table.offsetHeight;
+    // This scrolling makes the window appear to not move at all.
+    window.scrollBy(0, newHeight - originalHeight);
+
+    return false;
+}
+//-->
+</script>
+
+<br>
+<table id="attachment_table">
+  <tr id="a0">
+    <th colspan="3" class="left">
+      Attachments
+    </th>
+  </tr>
+
+
+
+  <tr class="bz_attach_footer">
+    <td colspan="3">
+        <a href="attachment.cgi%3Fbugid=2896&amp;action=enter.html">Add an attachment</a>
+        (proposed patch, testcase, etc.)
+    </td>
+  </tr>
+</table>
+<br>
+
+  </td>
+  <td>
+  </td>
+  </tr></table>
+
+  
+  <div id="comments"><script src="js/comments.js" type="text/javascript">
+</script>
+
+<script type="text/javascript">
+<!--
+  /* Adds the reply text to the 'comment' textarea */
+  function replyToComment(id, real_id, name) {
+      var prefix = "(In reply to " + name + " from comment #" + id + ")\n";
+      var replytext = "";
+        /* pre id="comment_name_N" */
+        var text_elem = document.getElementById('comment_text_'+id);
+        var text = getText(text_elem);
+        replytext = prefix + wrapReplyText(text);
+
+
+      /* <textarea id="comment"> */
+      var textarea = document.getElementById('comment');
+      if (textarea.value != replytext) {
+          textarea.value += replytext;
+      }
+
+      textarea.focus();
+  } 
+//-->
+</script>
+
+
+<!-- This auto-sizes the comments and positions the collapse/expand links 
+     to the right. -->
+<table class="bz_comment_table">
+<tr>
+<td>
+<div id="c0" class="bz_comment bz_first_comment">
+
+      <div class="bz_first_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2896.html#c0">Description</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2010-02-24 13:20:17 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">To jest tracking bug dla bugów dot. KompoZera (w tym bugi zgłoszone do Nvu)</pre>
+    </div>
+
+    <div id="c1" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2896.html#c1">Comment 1</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Adrian Kalla :Adrianer</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-10-19 12:07:51 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Ani NVU ani KompoZer nie są dalej rozwijane, więc WONTFIX.</pre>
+    </div>
+
+    <div id="c2" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2896.html#c2">Comment 2</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-10-19 16:23:48 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">-&gt; Verified (masowa weryfikacja zwontfixowanych bugów dot. KompoZera)</pre>
+    </div>
+
+
+  
+
+</td>
+<td>
+</td>
+</tr></table>
+  </div>
+
+    <hr><div id="add_comment" class="bz_section_additional_comments">
+      <table>
+        <tr>
+          <td>
+            <fieldset>
+              <legend>Note</legend>
+              You need to
+              <a href="show_bug.cgi%3Fid=2896&amp;GoAheadAndLogIn=1.html">log in</a>
+              before you can comment on or make changes to this bug.
+            </fieldset>
+          </td>
+        </tr> 
+      </table>
+  </div>        
+
+</form>
+
+<hr>
+<ul class="related_actions">
+    <li><a href="show_bug.cgi%3Fformat=multiple&amp;id=2896.html">Format For Printing</a></li>
+    <li>&nbsp;-&nbsp;<a href="show_bug.cgi%3Fctype=xml&amp;id=2896">XML</a></li>
+    <li>&nbsp;-&nbsp;<a href="enter_bug.cgi%3Fcloned_bug_id=2896.html">Clone This Bug</a></li>
+    
+    <li>&nbsp;-&nbsp;<a href="show_bug.cgi%3Fid=2896.html#">Top of page </a></li>
+    </ul>
+
+<br>
+</div>
+
+    <div id="footer">
+      <div class="intro"></div>
+<ul id="useful-links">
+  <li id="links-actions"><ul class="links">
+  <li><a href="index.html">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi.html">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi.html">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi.html">Search</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="http://bugs.aviary.pl/buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input type="hidden" id="no_redirect_bottom" name="no_redirect" value="0">
+    <script type="text/javascript">
+      if (history && history.replaceState) {
+        var no_redirect = document.getElementById("no_redirect_bottom");
+        no_redirect.value = 1;
+      }
+    </script>
+    <input class="txt" type="text" id="quicksearch_bottom" name="quicksearch" 
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search" 
+           id="find_bottom"></form>
+  <a href="page.cgi%3Fid=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="report.cgi.html">Reports</a></li>
+
+  <li>
+      <span class="separator">| </span>
+        <a href="request.cgi.html">Requests</a></li>
+
+
+  <li>
+        <span class="separator">| </span>
+        <a href="https://bugzilla.readthedocs.org/en/5.0/using/understanding.html" target="_blank">Help</a>
+      </li>
+    
+      <li id="new_account_container_bottom">
+        <span class="separator">| </span>
+        <a href="createaccount.cgi.html">New&nbsp;Account</a>
+      </li>
+
+    <li id="mini_login_container_bottom">
+  <span class="separator">| </span>
+  <a id="login_link_bottom" href="show_bug.cgi%3Fid=2896&amp;GoAheadAndLogIn=1.html"
+     onclick="return show_mini_login_form('_bottom')">Log In</a>
+
+  <form action="show_bug.cgi%3Fid=2896.html" method="POST"
+        class="mini_login bz_default_hidden"
+        id="mini_login_bottom">
+    <input id="Bugzilla_login_bottom" required
+           name="Bugzilla_login" class="bz_login"
+        type="email" placeholder="Email Address">
+    <input class="bz_password" name="Bugzilla_password" type="password"
+           id="Bugzilla_password_bottom" required
+           placeholder="Password">
+    <input type="hidden" name="Bugzilla_login_token"
+           value="1469821836-bjWeLhJd6LSjbJq2CzZFZa8zw9aGrGyM336xittJY2o">
+    <input type="submit" name="GoAheadAndLogIn" value="Log in"
+            id="log_in_bottom">
+    <a href="show_bug.cgi%3Fid=2896.html#" onclick="return hide_mini_login_form('_bottom')">[x]</a>
+  </form>
+</li>
+
+
+  <li id="forgot_container_bottom">
+    <span class="separator">| </span>
+    <a id="forgot_link_bottom" href="show_bug.cgi%3Fid=2896&amp;GoAheadAndLogIn=1.html#forgot"
+       onclick="return show_forgot_form('_bottom')">Forgot Password</a>
+    <form action="http://bugs.aviary.pl/token.cgi" method="post" id="forgot_form_bottom"
+          class="mini_forgot bz_default_hidden">
+      <label for="login_bottom">Login:</label>
+      <input name="loginname" size="20" id="login_bottom" required
+          type="email" placeholder="Your Email Address">
+      <input id="forgot_button_bottom" value="Reset Password" type="submit">
+      <input type="hidden" name="a" value="reqpw">
+      <input type="hidden" id="token_bottom" name="token"
+             value="1469821836-cqbVc-pPzHucS5vHSC7T6RemlBdeK-QXM2NkXvYOePc">
+      <a href="show_bug.cgi%3Fid=2896.html#" onclick="return hide_forgot_form('_bottom')">[x]</a>
+    </form>
+  </li>
+</ul>
+  </li>
+
+  
+
+
+
+
+  
+</ul>
+
+      <div class="outro"></div>
+    </div>
+
+  </body>
+</html>

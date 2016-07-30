@@ -1,0 +1,135 @@
+Index: 3.0/releasenotes/index.html
+===================================================================
+--- 3.0/releasenotes/index.html	(revision 15943)
++++ 3.0/releasenotes/index.html	(working copy)
+@@ -101,7 +101,7 @@
+                 <li>Pasek wyszukiwania: pasek wyszukiwania otwiera się teraz z aktualnym zaznaczeniem.</li>
+                 <li>Zarządzanie wtyczkami: użytkownicy mogą wyłączać pojedyncze wtyczki w Menedżerze dodatków.</li>
+                 <li>Integracja z systemem Windows: Firefox posiada teraz poprawione ikony pod Windows oraz korzysta z natywnego interfejsu użytkownika wewnątrz przeglądarki i w formularzach na stronach.</li>
+-                <li>Integracja z Makiem: nowy wygląd Firefoksa sprawia, że paski narzędzi, ikony oraz pozostałe elementy interfejsu użytkownika wyglądają jak natywne aplikacje na OS X. Firefox korzysta także z widgetów systemu OS X oraz powiadomień Growla przy zakończeniu pobierania lub gdy są dostępne akutalizacje. Połączony przycisk przejścia wstecz i do przodu sprawia, że poruszanie się między stronami jest jeszcze łatwiejsze.</li>
++                <li>Integracja z Makiem: nowy wygląd Firefoksa sprawia, że paski narzędzi, ikony oraz pozostałe elementy interfejsu użytkownika wyglądają jak natywne aplikacje na OS X. Firefox korzysta także z widgetów systemu OS X oraz powiadomień Growla przy zakończeniu pobierania lub gdy są dostępne aktualizacje. Połączony przycisk przejścia wstecz i do przodu sprawia, że poruszanie się między stronami jest jeszcze łatwiejsze.</li>
+                 <li>Integracja z Linuksem: domyślne ikony Firefoksa, przyciski i style menu korzystają z natywnego motywu GTK.</li>
+               </ul>
+             </dd>
+@@ -110,7 +110,7 @@
+               <ul class="spaced">
+                 <li>Przycisk gwiazdki: szybko dodawaj zakładki z poziomu paska adresu jednym kliknięciem; drugie kliknięcie pozwala je zachować i dodać etykiety.</li>
+                 <li>Etykiety: powiąż słowa kluczowe ze swoimi zakładkami, aby móc jest sortować ze względu na temat.</li>
+-                <li>Inteligentny pasek adresu: wpisz fragment lub cały tytuł, adres strony lub etykietę strony aby zobaczyć ją na liście pasujący stron z Twojej historii i zakładek; nowy sposób wyświetlania ułatwia przeglądanie pasujących wyników i wyszukiwanie strony, której potrzebujesz. Wyniki są zwracane w oparciu o kombinację częstości odwiedzin i daty ostatniej wizyt na danej stronie, co sprawia, że widzisz tylko najbardziej pasujące strony. Uczący się algorytm umożliwia dalsze dopasowywanie się systemu do Twoich potrzeb!</li>
++                <li>Inteligentny pasek adresu: wpisz fragment lub cały tytuł, adres strony lub etykietę strony, aby zobaczyć ją na liście pasujących stron z Twojej historii i zakładek; nowy sposób wyświetlania ułatwia przeglądanie pasujących wyników i wyszukiwanie strony, której potrzebujesz. Wyniki są zwracane na podstawie kombinacji częstotliwości odwiedzin i daty ostatniej wizyty na danej stronie, co sprawia, że widzisz tylko najlepiej pasujące strony. Uczący się algorytm umożliwia dalsze dopasowywanie się systemu do Twoich potrzeb!</li>
+                 <li>Biblioteka: przeglądaj, porządkuj i przeszukuj wszystkie swoje zakładki, etykiety i historię w nowym oknie Biblioteka. Twórz i wczytuj kopie zapasowe, kiedy tylko chcesz - kilkoma kliknięciami.</li>
+                 <li>Inteligentne foldery zakładek: umożliwiają szybki dostęp do najczęściej odwiedzanych stron z paska narzędzi i do ostatnio dodanych zakładek i etykiet z menu Zakładki. Możesz tworzyć własne inteligentne foldery zakładek zapamiętując wyniki wyszukiwania w Bibliotece.</li>
+                 <li>Obsługa protokołów przez aplikacje WWW: aplikacje internetowe, jak np. Twój ulubiony serwis pocztowy, mogą być teraz używane zamiast aplikacji desktopowych do obsługi linków mailto: na stronach WWW. Podobne wsparcie jest dostępne także dla innych protokołów (aplikacje internetowe muszą włączyć obsługę takiego zachowania rejestrując się jako strony wspierane przez Firefoksa).</li>
+@@ -128,7 +128,7 @@
+                   i&nbsp;uruchomić przeglądarkę ponownie) Firefox może teraz dopasowywać obrazki
+                   zgodnie z&nbsp;osadzonymi profilami kolorów.</li>
+               <li>Obsługa trybu offline: pozwala aplikacjom WWW na dostarczenie funkcjonalności
+-                  offline (twórcy WWW muszą dodać do swich witryn obsługę przeglądania offline,
++                  offline (twórcy WWW muszą dodać do swoich witryn obsługę przeglądania offline,
+                   aby użytkownicy mogli skorzystać z&nbsp;tej możliwości).</li>
+               <li>Bardziej szczegółowy opis nowości w&nbsp;Firefoksie&nbsp;3 dla programistów dostępny
+                   jest <a
+Index: features/index.html
+===================================================================
+--- features/index.html	(revision 15943)
++++ features/index.html	(working copy)
+@@ -4,7 +4,7 @@
+ 
+ <head>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+-  <title>Przeglądarka Firefox | Możliwości: szybsza, bezpieczeniejsza, lepiej dopasowana do Twoich potrzeb</title>
++  <title>Przeglądarka Firefox | Możliwości: szybsza, bezpieczniejsza, lepiej dopasowana do Twoich potrzeb</title>
+ 
+ 
+ <?php
+@@ -147,7 +147,7 @@
+ 	<div class="feature" id="bookmarking">
+ 	<h4>Dodawanie zakładek jednym kliknięciem</h4>
+ 	<?=buildPlatformImage('/img/'.UI_LANG.'/tignish/firefox/features/bookmarks.png', 'Zrzut ekranu dodawania zakładek jednym kliknięciem', null, null, null, null)?>
+-	<p>Zarządzaj swoimi zakładkami w dużym lub w małym stopniu: jedno kliknięcie w ikonę gwiazdki na końcu paska adresu dodaje witrynę do zakładek; dwa pozwalają wybrać, gdzie chcesz ją zapisać i umożliwiają dodawanie odpowiednich etykiet. Zapisuj zakładki do łatwo dostępnych folderów i porządkuj je wg tematów przewodnich (np. "oferty pracy" czy "zakupy"). Wyszukuj witryny w zakładkach w mgnieniu oka, wpisując odpowiednią etykietę, nazwę strony lub zakładki w pasku adresu. Im częściej będziesz korzystać z etykiet i nazw zakładek, tym lepiej system przystosuje się do Twoich preferencji.</p>
++	<p>Zarządzaj swoimi zakładkami bardziej lub mniej intensywnie. Jedno kliknięcie ikony gwiazdki znajdującej się na końcu paska adresu dodaje zakładkę do witryny; dwa pozwalają wybrać, gdzie chcesz ją zapisać i umożliwiają dodawanie odpowiednich etykiet. Zapisuj witryny z zakładkami w łatwo dostępnych folderach i porządkuj je wg tematów przewodnich (np. "oferty pracy" czy "zakupy"). Wyszukuj witryny z zakładkami w mgnieniu oka, wpisując odpowiednią etykietę, nazwę strony lub zakładki w pasku adresu. Im częściej będziesz korzystać z etykiet i nazw zakładek, tym lepiej system przystosuje się do Twoich preferencji.</p>
+ 	</div>
+ 
+ 	<div class="feature" id="smart-folders">
+@@ -267,7 +267,7 @@
+ 
+ 		<div class="feature" id="ways-5000">
+ 		<h4>Ponad 5000 sposobów na dopasowanie do własnych potrzeb</h4>
+-		<p>Tylko wyobraźnia ogranicza ciągle rosnącą bibliotekę dodatków &ndash; tych dodatkowych miniprogramików, które pobierasz i instalujesz w przeglądarce &ndash; których <a href="https://addons.mozilla.org/firefox/">Firefox ma już ponad 5000</a>. Zarządzaj aukcjami internetowymi, publikuj zdjęcia, sprawdzaj pogodę, słuchaj muzyki &ndash; a wszystko to wewnątrz własnej przeglądarki. Nie musisz otwierać dodatkowych okien, aby się tym wszystkim zająć. Odkryj dodatki ułatwiające programowanie i tworzenie stron internetowych, jak np. Firebug, który pozwala zajrzeć głęboko w strukturę strony.</p>
++		<p>Tylko wyobraźnia ogranicza ciągle rosnącą bibliotekę dodatków &ndash; tych dodatkowych mini programików, które pobierasz i instalujesz w przeglądarce &ndash; których <a href="https://addons.mozilla.org/firefox/">Firefox ma już ponad 5000</a>. Zarządzaj aukcjami internetowymi, publikuj zdjęcia, sprawdzaj pogodę, słuchaj muzyki &ndash; a wszystko to wewnątrz własnej przeglądarki. Nie musisz otwierać dodatkowych okien, aby się tym wszystkim zająć. Odkryj dodatki ułatwiające programowanie i tworzenie stron internetowych, jak np. Firebug, który pozwala zajrzeć głęboko w strukturę strony.</p>
+ 		</div>
+ 
+ 	</div>
+@@ -308,7 +308,7 @@
+ 
+ 		<div class="feature" id="feed-reader">
+ 		<h4>Czytnik kanałów informacyjnych</h4>
+-		<p>Możesz czytać kanały informacyjne korzystając z usługi w Sieci, programu zainstalowanego na dysku lub dynamicznych zakładek Firefoksa. Nie musisz  już przeczesywać Internetu w poszukiwaniu najnowszych wiadomości &ndash; wszystkie nagłówki możesz znaleźć na pasku narzędzi lub w menu, a stamtąd dostać się prosto do artykułów, które Cię interesują.</p>
++		<p>Możesz czytać kanały informacyjne korzystając z usługi w Sieci, programu zainstalowanego na dysku lub dynamicznych zakładek Firefoksa. Nie musisz już przeczesywać Internetu w poszukiwaniu najnowszych wiadomości &ndash; wszystkie nagłówki możesz znaleźć na pasku narzędzi lub w menu, a stamtąd dostać się prosto do artykułów, które Cię interesują.</p>
+ 		</div>
+ 
+ 	</div>
+@@ -571,7 +571,7 @@
+ 
+ 		<div class="feature" id="advanced-web-tech">
+ 		<h4>Wsparcie dla zaawansowanych technologii internetowych</h4>
+-		<p>Zupełnie nowe i ulepszone funkcjonalności umożliwiają twórcom witryn i programistom tworzyć zaawansowaną treść i aplikacje. Obecnie wspierane już są: CSS, ACID2, MathML, ECMAScript 4, Animated Portable Network Graphics (APNG) oraz mikroformaty. A to i tak nie wszystko. <a href="http://developer.mozilla.org/en/docs/Firefox_3_for_developers#New_developer_features_in_Firefox_3">Zobacz pełną listę wspieranych technologii</a>.</p>
++		<p>Zupełnie nowe i ulepszone funkcjonalności umożliwiają twórcom witryn i programistom tworzyć zaawansowaną treść i aplikacje. Obecnie wspierane już są: CSS, ACID2, MathML, ECMAScript 4, Animated Portable Network Graphics (APNG) oraz mikro formaty. A to i tak nie wszystko. <a href="http://developer.mozilla.org/en/docs/Firefox_3_for_developers#New_developer_features_in_Firefox_3">Zobacz pełną listę wspieranych technologii</a>.</p>
+ 		</div>
+ 
+ 	</div>
+@@ -626,4 +626,4 @@
+ </div><!-- end #content div -->
+ </body>
+ 
+-</html>
+\ No newline at end of file
++</html>
+Index: tips/index.html
+===================================================================
+--- tips/index.html	(revision 15943)
++++ tips/index.html	(working copy)
+@@ -104,7 +104,7 @@
+ 				</p>
+ 
+ 				<h4>Dodaj zakładki jednym kliknięciem</h4>
+-				<p>Łatwo zarządzaj witrynami, które lubisz (oszczędzając przy okazji czas), dodając je do zakładek jednym kliknięciem. Jeżeli jesteś na witrynie, którą chcesz zachować, po prostu wybierz ikonę gwiazdki w&nbsp;pasku adresu &ndash; Firefox doda tę witrynę do Twoich zakładek, gdzie będzie łatwo dostępna w&nbsp;każdej chwili.</p>
++				<p>Łatwo zarządzaj witrynami, które lubisz (oszczędzając przy okazji czas), dodając do nich zakładki jednym kliknięciem. Jeżeli jesteś na witrynie, którą chcesz zachować, po prostu kliknij ikonę gwiazdki w&nbsp;pasku adresu &ndash; Firefox doda tę witrynę do listy Twoich zakładek, gdzie będzie łatwo dostępna w&nbsp;każdej chwili.</p>
+ 			</div>
+ 
+ 			<div class="slide-common" id="beginner-slide04">
+@@ -191,7 +191,7 @@
+ 
+ 				<h4>Baw się etykietami</h4>
+ 				<p>Kiedy posiadasz długą listę zakładek, poruszanie się pośród nich może nie być łatwe. Aby je dobrze zorganizować, możesz przypisać im odpowiednie etykiety &ndash; po dwukrotnym kliknięciu ikony gwiazdki na pasku adresu pokaże się okno, w&nbsp;które możesz wpisać swoje nazwy.</p>
+-				<p>Możesz przypisać danej stronie tak dużo etykiet, jak tylko chcesz (pamiętaj, żeby oddzielić je przecinkiem), a&nbsp;później łatwo ją wyszukać, wpisując użyte etykiety w&nbsp;pasek adresu. Na przykład, gdy wpiszesz w&nbsp;pasek adresu "podróże", pokaże Ci się lista wszystkich witryn zachowanych w&nbsp;zakładkach, które mają przypisane pasujące etykiety.</p>
++				<p>Możesz przypisać danej stronie tak dużo etykiet, jak tylko chcesz (pamiętaj, żeby oddzielić je przecinkiem), a&nbsp;później łatwo ją wyszukać, wpisując użyte etykiety w&nbsp;pasek adresu. Na przykład, gdy wpiszesz w&nbsp;pasek adresu "podróże", pokaże Ci się lista wszystkich witryn z&nbsp;zakładkami, które mają przypisane pasujące etykiety.</p>
+ 			</div>
+ 
+ 			<div class="slide-common" id="intermediate-slide02">
+@@ -217,7 +217,7 @@
+ 
+ 				<h4>Znajdź to w ułamku sekundy</h4>
+ 				<p>Opcja „Znajdź szybko” jest kolejnym usprawnieniem oszczędzającym czas. Zamiast używać paska wyszukiwania w&nbsp;celu znalezienia słów na bieżącej stronie, wystarczy kliknąć gdziekolwiek na niej i&nbsp;zacząć pisać szukane słowo. Kursor przeniesie się automatycznie w&nbsp;miejsce pierwszego wystąpienia tego słowa.</p>
+-				<p>Możesz też w&nbsp;ten sposób szukać odnośników na stronach &ndash; zamiast przesuwać kursor na „dowiedz się więcej”, wystarczy, że zaczniesz pisać tę nazwę. Gdy już ją znajdziesz, wciśnięcie Entera przeniesie Cię na odpowiednią witrynę.</p>
++				<p>Możesz też w&nbsp;ten sposób szukać odnośników na stronach &ndash; zamiast przesuwać kursor na „dowiedz się więcej”, wystarczy, że zaczniesz pisać tę nazwę. Gdy już ją znajdziesz, wciśnięcie klawisza Enter przeniesie Cię na odpowiednią witrynę.</p>
+ 			</div>
+ 
+ 			<div class="slide-common" id="intermediate-slide05">
+@@ -256,7 +256,7 @@
+ 				<?=buildPlatformImage("/img/$lang/tignish/tips/advanced-02.jpg", 'Zrzut ekranu - zakładki', '378', '252', 'right', null, null)?>
+ 
+ 				<h4>Twórz inteligentne foldery</h4>
+-				<p>Jeżeli musisz regularnie śledzić całą gamę przeróżnych stron, mamy dla Ciebie kolejny oszczędzacz czasu: Biblioteka Firefoksa 3 umożliwia Ci zapisywanie wyników wyszukiwania w&nbsp;folderach, które automatycznie się aktualizują, gdy tylko dodajesz nowe witryny do zakładek lub historii.</p>
++				<p>Jeżeli potrzebujesz regularnie śledzić całą gamę przeróżnych stron, mamy dla Ciebie kolejny oszczędzacz czasu: Biblioteka Firefoksa 3 umożliwia Ci zapisywanie wyników wyszukiwania w&nbsp;folderach, których zawartość automatycznie aktualizuje się po odwiedzeniu strony lub dodaniu zakładki.</p>
+ 				<p>Aby stworzyć taki folder, otwórz Bibliotekę wybierając „Zarządzaj zakładkami…” z&nbsp;menu Zakładki. Następnie wpisz odpowiednią frazę w&nbsp;pole wyszukiwania i&nbsp;wybierz Zapisz, aby stworzyć inteligentny folder.</p>
+ 			</div>
+ 
+@@ -306,4 +306,4 @@
+ 
+ </body>
+ 
+-</html>
+\ No newline at end of file
++</html>
+

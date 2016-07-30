@@ -1,0 +1,284 @@
+Index: l10n/pl/browser/chrome/help/prefs.xhtml
+===================================================================
+RCS file: /l10n/l10n/pl/browser/chrome/help/prefs.xhtml,v
+retrieving revision 1.9.2.11
+diff -u -r1.9.2.11 prefs.xhtml
+--- l10n/pl/browser/chrome/help/prefs.xhtml	28 Oct 2005 15:32:03 -0000	1.9.2.11
++++ l10n/pl/browser/chrome/help/prefs.xhtml	29 Oct 2005 16:28:29 -0000
+@@ -14,14 +14,14 @@
+ -->
+ <html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+-	<title>Opcje przeglądarki &brandShortName;</title>
++	<title>&pref.pluralCaps; przeglądarki &brandShortName;</title>
+ 	<link rel="stylesheet" type="text/css" href="chrome://help/skin/helpFileLayout.css"/>
+ </head>
+ 
+ <body>
+ 
+-<h1>Opcje przeglądarki &brandShortName;</h1>
+-<div>Niniejszy dokument ma na celu wyjaśnienie znaczenia poszczególnych opcji przeglądarki &brandShortName;.</div>
++<h1>&pref.pluralCaps; przeglądarki &brandShortName;</h1>
++<div>Niniejszy dokument ma na celu wyjaśnienie znaczenia poszczególnych <span class="win">opcji</span><span class="noWin">preferencji</span> przeglądarki &brandShortName;.</div>
+ 
+ <div class="contentsBox">W&nbsp;tym rozdziale opisano następujące sekcje okna &pref.pluralCaps;:
+   <ul>
+@@ -35,10 +35,10 @@
+   </ul>
+ </div>
+ 
+-<p>Okno opcji dostępne jest po wybraniu z&nbsp;menu &pref.menuPath;.</p>
++<p>Okno <span class="win">opcji</span><span class="noWin">preferencji</span> dostępne jest po wybraniu z&nbsp;menu &pref.menuPath;.</p>
+ 
+ <h2 id="general_options">&pref.pluralCaps;: Ogólne</h2>
+-	<p>Panel dostępny jest po kliknięciu ikony Ogólne w&nbsp;lewej cześci okna opcji.</p>
++	<p>Panel dostępny jest po kliknięciu ikony Ogólne w&nbsp;lewej cześci okna <span class="win">opcji</span><span class="noWin">preferencji</span>.</p>
+ 	
+ 	<h3 id="home_page">Strona domowa</h3>
+ 	<p>W&nbsp;tym miejscu można określić witrynę (lub grupę witryn w&nbsp;kartach), które zostaną
+@@ -50,7 +50,7 @@
+ 	spowoduje ustawienie <strong>grupy kart jako strony domowej</strong>.</p>
+ 
+ 	<p>Aby ustawić jako stronę domową jedną z&nbsp;zakładek, należy nacisnąć przycisk 
+-	<em>Użyj zakładki...</em>. Z&nbsp;listy zakładek można wybrać także cały folder. W&nbsp;takim przypadku
++	<em>Użyj zakładki...</em> Z&nbsp;listy zakładek można wybrać także cały folder. W&nbsp;takim przypadku
+ 	każda zakładka z&nbsp;folderu zostanie otwarta w&nbsp;osobnej karcie.</p>
+ 
+ 	<p>Aby nie otwierać żadnej strony po uruchomieniu przeglądarki, należy skorzystać z&nbsp;przycisku
+@@ -65,7 +65,7 @@
+ 	<p>Aby program &brandShortName; sprawdzał przy uruchamianiu, czy jest domyślną przeglądarką, należy zaznaczyć opcję <em>Program &brandShortName; podczas uruchamiania powinien
+ sprawdzać, czy jest domyślną przeglądarką</em>.</p>
+ 
+-    <h3 id="connection_settings">Połączenie</h3>
++    <h3 id="connection_settings">Ustawienia połączenia</h3>
+     <p>Gdy komputer użytkownika wymaga połączenia do Internetu za pośrednictwem
+ 	serwera proxy, konieczne może być odpowiednie skonfigurowanie przeglądarki.
+ 	Serwer proxy jest pośrednikiem pomiędzy komputerem użytkownika, a&nbsp;siecią Internet.
+@@ -88,14 +88,14 @@
+ 
+       <dt>Ręczna konfiguracja serwerów proxy</dt>
+       <dd>W&nbsp;przypadku wyboru tej opcji należy wypełnić pola adresu serwera i&nbsp;numeru portu
+-	  dla żądanych protokołów. (Informacje te można uzyskać od administratora sieci.)<br/>
++	  dla żądanych protokołów. (Informacje te można uzyskać od administratora sieci).<br/>
+ 	  W&nbsp;polu <em>Nie używaj proxy dla</em> można wpisać adresy serwerów, z&nbsp;którymi połączenia
+ 	  odbywać się będą z&nbsp;pominięciem ustawionych wyżej proxy.</dd>
+ 
+       <dt>Adres URL dla automatycznej konfiguracji</dt>
+       <dd>Opcję tą należy wybrać w&nbsp;przypadku możliwości automatycznej konfiguracji serwerów 
+ 	  proxy (należy podać adres URL pliku .PAC). Aby pobrać ustawienia, należy nacisnąć przycisk
+-	  <em>Odśwież</em>
++	  <em>Odśwież</em>.
+ </dd>
+     </dl>
+ 
+@@ -112,17 +112,17 @@
+   <p>&brandShortName; pozwala na szybkie wyczyszczenie konkretnych lub wszystkich
+ 	 elementów prywatności &ndash; wystarczy nacisnąć
+     &accelKey;+&shiftKey;+<kbd>Del</kbd> lub wybrać z&nbsp;menu pozycję <span class="menuPath">
+-    Narzędzia &gt; Wyczyść prywatne dane...</span>. Można także nakazać programowi
++    Narzędzia &gt; Wyczyść prywatne dane...</span> Można także nakazać programowi
+ 	&brandShortName; czyszczenie danych przy wyłączaniu programu. &pref.pluralCaps;
+ 	z tym związane znajdują się w&nbsp;oknie <em>Usuwanie prywatnych danych</em>.</p>
+ 
+   <p>Aby wyświetlić ustawienia dotyczące konkretnych elementów związanych z&nbsp;prywatnością, należy kliknąć na danej karcie.</p>
+ 
+-  <h3 id="history">Historia</h3>
++  <h3 id="privacy_history">Historia</h3>
+   <p>W&nbsp;tym miejscu można określić jak długo przeglądarka &brandShortName; będzie przechowywać adresy
+   odwiedzonych przez użytkownika witryn internetowych. Domyślna wartość to 9 dni.</p>
+ 
+-  <h3 id="saved_form_information">Dane formularzy</h3>
++  <h3 id="privacy_saved_forms">Dane formularzy</h3>
+   <p>Przeglądarka &brandShortName; umożliwia zachowywanie informacji wpisywanych do formularzy w&nbsp;witrynach
+   internetowych i&nbsp;paska wyszukiwania. Pozwala to na szybsze wypełnienie tychże formularzy podczas ponownej 
+   wizyty w&nbsp;witrynie.<br/> Opcja <em>Pamiętaj dane wprowadzane w&nbsp;formularzach oraz w&nbsp;pasku
+@@ -156,7 +156,7 @@
+   przechowuje informacje o&nbsp;pobranych z&nbsp;Internetu plikach. Opcje Menedżera są dostępne w&nbsp;<a href="#downloads_options"><strong>panelu Pobieranie</strong></a>.
+   </p>
+ 
+-    <p><em>Usuń pliki z&nbsp;Menedżera pobieranych plików:</em><br/>
++    <p><em>Usuń pliki z&nbsp;Menedżera pobieranych plików</em><br/>
+ 	W&nbsp;tym miejscu można zdecydować, czy lista ostatnio pobieranych plików
+ 	jest opróżniana <em>ręcznie</em> (przez użytkownika), <em>po pomyślnym
+ 	zakończeniu pobierania</em> czy <em>przy wyjściu z&nbsp;programu &brandShortName;</em></p>
+@@ -164,12 +164,12 @@
+     <p>Aby ręcznie opróżnić listę, należy kliknąć przycisk <em>Wyczyść teraz
+ historię pobierania</em> albo przycisk <em>Wyczyść</em> w&nbsp;Menedżerze pobieranych plików.</p>
+ 
+-  <h3 id="cookies">Ciasteczka</h3>
++  <h3 id="privacy_cookies">Ciasteczka</h3>
+   <p>Ciasteczko (ang. cookie) to plik w&nbsp;komputerze użytkownika utworzony przez witrynę 
+ 	internetową. Plik ten zawiera informacje, które wykorzystywane są podczas przeglądania
+ 	danej witryny (np. ustawienia użytkownika).</p>
+   
+-  <p><em>Zezwól stronom na ustawianie ciasteczek</em>:<br/>
++  <p><em>Zezwól stronom na ustawianie ciasteczek</em><br/>
+   Obsługa ciasteczek jest domyślnie włączona. By ją wyłączyć, należy odznaczyć tę opcję. Należy jednak pamiętać, że niektóre witryny mogą nie działać poprawnie, gdy obsługa ciasteczek jest wyłączona.</p>
+ 
+   <p>By otworzyć Menedżer ciasteczek, należy nacisnąć przycisk <em>Pokaż ciasteczka</em>.</p>
+@@ -177,7 +177,7 @@
+   <p>Opcje związane z&nbsp;obsługą ciasteczek opisano szerzej w&nbsp;rozdziale <a href="cookies.xhtml">
+ 	  Zarządzanie ciasteczkami</a>.</p>
+ 
+-  <h3 id="cache">Pamięć podręczna</h3>
++  <h3 id="privacy_cache">Pamięć podręczna</h3>
+   <p>W&nbsp;celu przyspieszenia ładowania odwiedzonych stron przeglądarka &brandShortName; przechowuje 
+   ich fragmenty w&nbsp;specjalnym katalogu na dysku twardym. W&nbsp;polu tekstowym można określić ilość miejsca
+   na dysku przeznaczonego na pamięć podręczną.
+@@ -189,14 +189,14 @@
+   apletów języka Java, skryptów JavaScript i&nbsp;pobieraniem obrazków na stronach.</p>
+   
+   <p><em>Zablokuj wyskakujące okna</em><br/>Przeglądarka &brandShortName; domyślne blokuje 
+-  wyświetlanie wyskakujących okienek podczas otwierania stron. Przełącznie opcji powoduje
+-  włączanie i&nbsp;wyłączanie blokady wyskakujących okienek.</p>
++  wyświetlanie wyskakujących okienek podczas otwierania stron. Zmiana tej opcji spowoduje
++wyłączenie blokady wyskakujących okienek.</p>
+ 
+   <p>Przeglądarka &brandShortName; posiada specjalną listę witryn uprawnionych
+   do otwierania wyskakujących okienek. Aby odblokować wyświetlanie wyskakujących okienek dla danej witryny, należy kliknąć przycisk <em>Uprawnione witryny</em>, a&nbsp;w&nbsp;nowym oknie nacisnąć przycisk <em>Dodaj witrynę...</em> i&nbsp;następnie wprowadzić jej adres.</p>
+ 
+   <p>Aby usunąć witrynę z&nbsp;listy uprawnionych do wyświetlania wyskakującyh okienek, należy 
+-  zaznaczyć jej adres w&nbsp;liście, a&nbsp;następnie nacisnąć przycisk <em>Usuń witrynę</em>.<br/>
++  zaznaczyć jej adres na&nbsp;liście, a&nbsp;następnie nacisnąć przycisk <em>Usuń witrynę</em>.<br/>
+   Do usunięcia wszystkich witryn z&nbsp;listy służy przycisk <em>Usuń wszystkie witryny</em>.</p>
+ 
+   <p><em>Ostrzegaj, kiedy witryny próbują instalować rozszerzenia lub motywy</em><br/>
+@@ -209,21 +209,21 @@
+     witryny i&nbsp;kliknąć przycisk <em>Zezwól</em>.
+     Odznaczenie tego pola spowoduje wyłączenie ostrzeżenia na wszystkich witrynach.</p>
+ 
+-  <p><em>Pobieraj obrazki</em><br/>włącza/wyłącza pobieranie i&nbsp;wyświetlanie grafiki na witrynach internetowych. Naciskając przycisk <em>Wyjątki...</em>, można wyświetlić okno, które pozwala wyłączyć pobieranie obrazków z&nbsp;konkretnych serwerów.</p>
++  <p><em>Pobieraj obrazki</em><br/>Włącza/wyłącza pobieranie i&nbsp;wyświetlanie grafiki na witrynach internetowych. Naciskając przycisk <em>Wyjątki...</em>, można wyświetlić okno, które pozwala wyłączyć pobieranie obrazków z&nbsp;konkretnych serwerów.</p>
+ 
+   <ul>
+     <li><em>wyłącznie z&nbsp;pierwotnego serwera</em><br/>
+-	włączenie opcji powoduje, że pobierane będą tylko obrazki znajdujace się na tym samym serwerze co przeglądana witryna.</li>
++	włączenie tej opcji powoduje, że pobierane będą tylko obrazki znajdujace się na tym samym serwerze co przeglądana witryna.</li>
+   </ul>
+   
+   <p>Okno Zarządzaj obrazkami zawiera listę serwerów, z&nbsp;których obrazki nie są pobierane.
+-  Aby zablokować pobieranie obrazków z&nbsp;serwera (np. reklam), należy podczas przeglądania strony kliknąć prawym klawiszemy myszy na danym obrazku o&nbsp;z&nbsp;menu kontekstowego wybrać pozycję <em>Blokuj obrazki z&nbsp;&lt;nazwa serwera&gt;</em>. Aby odblokować dany serwer, należy zaznaczyć go w&nbsp;liście w&nbsp;oknie Zarządzaj obrazkami i&nbsp;wybrać przycisk <em>Usuń witrynę</em>. Aby odblokować wszystkie serwery, należy nacisnąć przycisk <em>Usuń wszystkie witryny</em>.</p>
++  Aby zablokować pobieranie obrazków z&nbsp;serwera (np. reklam), należy podczas przeglądania strony kliknąć prawym klawiszem myszy na danym obrazku i&nbsp;z&nbsp;menu kontekstowego wybrać pozycję <em>Blokuj obrazki z&nbsp;&lt;nazwa serwera&gt;</em>. Aby odblokować dany serwer, należy zaznaczyć go w&nbsp;liście w&nbsp;oknie Zarządzaj obrazkami i&nbsp;wybrać przycisk <em>Usuń witrynę</em>. Aby odblokować wszystkie serwery, należy nacisnąć przycisk <em>Usuń wszystkie witryny</em>.</p>
+     
+   
+   <p><em>Włącz obsługę języka Java</em><br/>Java to popularny język programowanie stworzony w&nbsp;firmie
+     Sun Microsystems. Ten sam program (aplet) napisany w&nbsp;Javie może zostać uruchomiony na różnych
+ 	typach komputerów. Aplety Javy wykorzystywane są do wzbogacenia witryn internetowych. Aby wyłączyć
+-	Javę należy odznaczyć niniejszą opcję. UWAGA: aby programy w&nbsp;Javie działały należy pobrać zainstalować
++	Javę należy odznaczyć niniejszą opcję. Uwaga: aby programy w&nbsp;Javie działały, należy pobrać i&nbsp;zainstalować
+ 	wirtualną maszynę Javy.</p>
+ 
+   <p><em>Włącz obsługę języka JavaScript</em><br/>JavaScript to język skryptowy wykonywany
+@@ -243,7 +243,7 @@
+     </dd>
+ 
+     <dt>blokowanie lub zamianę menu kontekstowego</dt>
+-    <dd>Odznaczenie tego pola uniemożliwia stronom www blokowanie lub zamienianie menu kontekstowego
++    <dd>Odznaczenie tego pola uniemożliwia stronom WWW blokowanie lub zamienianie menu kontekstowego
+      programu &brandShortName;.</dd>
+ 
+     <dt>ukrywanie paska stanu</dt>
+@@ -264,7 +264,7 @@
+ 	poniżej.</p>
+ 
+     <p>Aby wyświetlić okno zaawansowanych ustawień czcionek, należy kliknąć przycisk
+- <em>Zaawansowane...</em>.</p>
++ <em>Zaawansowane...</em></p>
+ 
+ 	<h4>Okno zaawansowanych ustawień czcionek</h4>
+ 
+@@ -306,7 +306,7 @@
+ 
+     <p><em>Podkreślaj odnośniki</em><br/>
+ 	  Domyślnie przeglądarka &brandShortName; podkreśla wszystkie odnośniki.
+-	  Aby wyłączyć podkreślanie, należy odznaczyć powyższą opcję. <strong>UWAGA:</strong> Ustawienie to nie działa w&nbsp;przypadku stron stosujących własne 
++	  Aby wyłączyć podkreślanie, należy odznaczyć powyższą opcję. <strong>Uwaga:</strong> ustawienie to nie działa w&nbsp;przypadku stron stosujących własne 
+ 	  arkusze stylów.</p>
+ 
+     <p><em>Pozwól stronom stosować inne kolory niż ustawione tutaj</em><br/>
+@@ -316,12 +316,12 @@
+ 
+ 
+ <h2 id="tabs_options">&pref.pluralCaps;: Karty</h2>
+-  <p><em>Otwieraj odnośniki z&nbsp;innych aplikacji w:</em><br/>
++  <p><em>Otwieraj odnośniki z&nbsp;innych aplikacji w</em><br/>
+ 	Kiedy inne aplikacje próbują otworzyć stronę internetową, &brandShortName;
+ 	otwiera ją w&nbsp;ostatnio wyświetlanej karcie lub oknie. Można zmienić to zachowanie
+ 	korzystając z&nbsp;tego ustawienia.</p>
+ 
+-  <p><em>Wymuś, by odnośniki otwierające nowe okna otwierały je:</em><br/>
++  <p><em>Wymuś, by odnośniki otwierające nowe okna otwierały je</em><br/>
+     &brandShortName; otwiera odnośniki w&nbsp;nowych oknach, jeśli tego żąda dana strona.
+ 	Jeśli użytkownik korzysta z&nbsp;kart, takie zachowanie może być niewygodne.
+ 	Można sprawić, żeby program &brandShortName; otwierał takie odnośniki
+@@ -357,7 +357,7 @@
+   <p><em>Pytaj gdzie zapisać każdy plik</em><br/>Ustawienie domyślnie włączone. Przeglądarka &brandShortName;
+     wyświetli okno dialogowe pozwalające określić miejsce zapisu pobieranego pliku.</p>
+ 
+-  <p><em>Zapisz wszystkie pliki do tego folderu:</em><br/>Z&nbsp;listy rozwijalnej można wybrać folder, w&nbsp;którym zapisywane będą wszystkie pobierane pliki. Pytanie o&nbsp;miejsce zapisu nie będzie wyświetlane. Wybierając pozycję <em>Przeglądaj...</em> można wybrać dowolny katalog.</p>
++  <p><em>Zapisz wszystkie pliki do tego folderu</em><br/>Z&nbsp;listy rozwijalnej można wybrać folder, w&nbsp;którym zapisywane będą wszystkie pobierane pliki. Pytanie o&nbsp;miejsce zapisu nie będzie wyświetlane. Wybierając pozycję <em>Przeglądaj...</em> można wybrać dowolny katalog.</p>
+ 
+   <h3 id="download_manager">Menedżer pobierania plików</h3>
+     <p><em>Wyświetl menedżera wraz z&nbsp;rozpoczęciem pobierania</em><br/>
+@@ -372,15 +372,15 @@
+ 
+     <p>Okno <q>Czynności pobierania</q>, które można otworzyć klikając przycisk
+ 	<em>Wyświetl i&nbsp;edytuj czynności</em> zawiera listę typów plików pobranych
+-	przez użytkownika. Aby zmienić domyślną czynność wykonywaną po pobraniu pliku, należy zaznaczyć żądany typ pliku na liście, a&nbsp;następnie nacisnąć przycisk <em>Zmień czynność...</em>.</p>
++	przez użytkownika. Aby zmienić domyślną czynność wykonywaną po pobraniu pliku, należy zaznaczyć żądany typ pliku na liście, a&nbsp;następnie nacisnąć przycisk <em>Zmień czynność...</em></p>
+ 
+   <p>W&nbsp;wyświetlonym oknie można określić czy plik ma być otwarty przez domyślną aplikację, otwarty przez aplikację wskazaną przez użytkownika, zapisany na dysku czy też wyświetlony przy użyciu zainstalowanej wtyczki. Przykładowo, dla plików muzycznych można wybrać odtwarzanie zamiast wyświetlania pytań dotyczących zapisywania na dysku.</p>
+ 
+     <ul>
+     <li><em>Otwórz plik za pomocą domyślej aplikacji:</em><br/>
+-		Zaznaczenie opcji powoduje automatyczne otwarcie pliku w&nbsp;domyślnej dla niego aplikacji (określonej przez system operacyjny).</li>
+-    <li><em>Otwórz plik za pomocą:</em><br/>Zaznaczenie opcji pozwala wybrać dowolną aplikację, która
+-	będzie automatycznie wywoływana po pobraniu danego typu pliku. Po wybraniu opcji zostanie wyświetlone okno wyboru pliku aplikacji.</li>
++		Zaznaczenie tej opcji powoduje automatyczne otwarcie pliku w&nbsp;domyślnej dla niego aplikacji (określonej przez system operacyjny).</li>
++    <li><em>Otwórz plik za pomocą:</em><br/>Zaznaczenie tej opcji pozwala wybrać dowolną aplikację, która
++	będzie automatycznie wywoływana po pobraniu danego typu pliku. Po wybraniu tej opcji zostanie wyświetlone okno wyboru pliku aplikacji.</li>
+     <li><em>Zapisz na dysk</em><br/>
+ 	Wybranie tej opcji spowoduje automatyczne zapisywanie pobieranych plików na dysku. Gdy opcja <em>Zapisuj wszystkie pliki w&nbsp;katalogu:</em> jest włączona, pytanie o&nbsp;miejsce zapisu nie będzie wyświetlane.</li>
+ 
+@@ -427,7 +427,7 @@
+       <p><strong>Okno dialogowe <q>Języki</q>:</strong><br/>
+ 
+ 	Aby dodać język, należy nacisnąć <em>Wybierz język do dodania...</em>, wybrać
+-	dany język i&nbsp;kliknąć przycisk <em>Dodaj</em> button. Aby usunąć język z&nbsp;listy,
++	dany język i&nbsp;kliknąć przycisk <em>Dodaj</em>. Aby usunąć język z&nbsp;listy,
+ 	należy zaznaczyć go i&nbsp;kliknąć przycisk <em>Usuń</em>.</p>
+ 
+       <p>Jeśli strona jest udostępniana w&nbsp;kilku z&nbsp;ustawionych w&nbsp;tym miejscu języków,
+@@ -440,7 +440,7 @@
+     <p>&brandShortName; może sprawdzać, czy pojawiły się nowe wersje zainstalowanych
+ rozszerzeń, motywów lub samego programu &brandShortName;.</p>
+ 
+-    <p><em>Automatycznie sprawdzaj, czy są dostępne aktualizacje dla:</em><br/>
++    <p><em>Automatycznie sprawdzaj, czy są dostępne aktualizacje dla</em><br/>
+         Domyślnie &brandShortName; automatycznie sprawdza, czy są dostępne aktualizacje
+         dla samej przeglądarki jak również dla zainstalowanych rozszerzeń, motywów i&nbsp;wyszukiwarek, dzięki
+         czemu użytkownik zawsze wie, czy ma najnowsze wersje. Sprawdzanie to można wyłączyć
+@@ -471,7 +471,7 @@
+ 	&brandShortName; przechowuje informacje o&nbsp;dokonanych aktualizacjach. Aby przejrzeć
+ 	te informacje, należy kliknąć ten przycisk.</p>
+ 
+-    <p><strong>Uwaga:</strong> Aby zainstalować aktualizacje dla programu &brandShortName;
++    <p><strong>Uwaga:</strong> aby zainstalować aktualizacje dla programu &brandShortName;,
+ 	należy być zalogowanym jako <span class="win">administrator</span><span class="noWin">użytkownik root</span>
+ 	lub jako użytkownik, który pierwotnie zainstalował przeglądarkę.</p>
+ 
+@@ -486,10 +486,10 @@
+ 
+     <h4 id="certificates">Certyfikaty</h4>
+ 
+-  <p>Certyfikaty służą do szyfrowania połączeń z&nbsp;
+-    <a href="glossary.xhtml#secure_site">bezpiecznymi witrynami</a>.</p>
++  <p>Certyfikaty służą do szyfrowania połączeń
++z&nbsp;<a href="glossary.xhtml#secure_site">bezpiecznymi witrynami</a>.</p>
+ 
+-  <p><em>Kiedy witryna wymaga certyfikatu:</em><br/>
++  <p><em>Kiedy witryna wymaga certyfikatu</em><br/>
+ 	Gdy witryna żąda bezpieczniego połączenia, przeglądarka &brandShortName; 
+ 	automatycznie użyje odpowiedniego certyfikatu. Aby ręcznie wybrać certyfikat
+ 	dla każdego bezpiecznego połączenia, należy zaznaczyć opcję "Pytaj za każdym razem".</p>
+

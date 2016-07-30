@@ -1,0 +1,107 @@
+? brandname.patch
+Index: chrome/global/downloadProgress.properties
+===================================================================
+RCS file: /l10n/mozilla/toolkit/locales/pl-PL/chrome/global/Attic/downloadProgress.properties,v
+retrieving revision 1.1.2.1
+diff -r1.1.2.1 downloadProgress.properties
+14c14
+< BadPluginMessage=Wtyczka pope\u0142ni\u0142a niedozwolon\u0105 operacj\u0119. Zaleca si\u0119 ponowne uruchomienie Firefoksa.
+---
+> BadPluginMessage=Wtyczka pope\u0142ni\u0142a niedozwolon\u0105 operacj\u0119. Zaleca si\u0119 ponowne uruchomienie programu.
+Index: chrome/mozapps/extensions/extensions.dtd
+===================================================================
+RCS file: /l10n/mozilla/toolkit/locales/pl-PL/chrome/mozapps/extensions/Attic/extensions.dtd,v
+retrieving revision 1.1.2.2
+diff -r1.1.2.2 extensions.dtd
+50,53c50,53
+< <!ENTITY extensionItem.toBeDisabled.label     "Ten element będzie wyłączony po ponownym uruchomieniu Firefoksa.">
+< <!ENTITY extensionItem.toBeEnabled.label      "Ten element będzie włączony po ponownym uruchomieniu Firefoksa.">
+< <!ENTITY extensionItem.toBeInstalled.label    "Ten element zostanie zainstalowany po ponownym uruchomieniu Firefoksa.">
+< <!ENTITY extensionItem.toBeUninstalled.label  "Ten element zostanie odinstalowany po ponownym uruchomieniu Firefoksa.">
+---
+> <!ENTITY extensionItem.toBeDisabled.label     "Ten element będzie wyłączony po ponownym uruchomieniuprogramu &brandShortName;.">
+> <!ENTITY extensionItem.toBeEnabled.label      "Ten element będzie włączony po ponownym uruchomieniu programu &brandShortName;.">
+> <!ENTITY extensionItem.toBeInstalled.label    "Ten element zostanie zainstalowany po ponownym uruchomieniu programu &brandShortName;.">
+> <!ENTITY extensionItem.toBeUninstalled.label  "Ten element zostanie odinstalowany po ponownym uruchomieniu programu &brandShortName;.">
+Index: chrome/mozapps/extensions/mismatch.dtd
+===================================================================
+RCS file: /l10n/mozilla/toolkit/locales/pl-PL/chrome/mozapps/extensions/Attic/mismatch.dtd,v
+retrieving revision 1.1.2.1
+diff -r1.1.2.1 mismatch.dtd
+2c2
+< <!ENTITY  intro1.label           "Poniższe komponenty są niezgodne z nową wersją Mozilli Firefox, która właśnie została zainstalowana:">
+---
+> <!ENTITY  intro1.label           "Poniższe komponenty są niezgodne z nową wersją programu &brandFullName;, która właśnie została zainstalowana:">
+Index: chrome/mozapps/profile/createProfileWizard.dtd
+===================================================================
+RCS file: /l10n/mozilla/toolkit/locales/pl-PL/chrome/mozapps/profile/Attic/createProfileWizard.dtd,v
+retrieving revision 1.1.2.1
+diff -r1.1.2.1 createProfileWizard.dtd
+1c1
+< <!ENTITY newprofile.title             "Menedżer Tworzenia Profilu">
+---
+> <!ENTITY newprofile.title             "Kreator profilu">
+6,7c6,7
+< <!ENTITY profileCreationExplanation_2.text  "Jeżeli dzielisz tę kopię Firefoksa z innymi użytkownikami, możesz używać profili, aby odseparować dane użytkowników. Aby tego dokonać, każdy użytkownik powinien posiadać własny profil.">
+< <!ENTITY profileCreationExplanation_3.text  "Jeżeli jesteś jedyną osobą korzystającą z tej kopii Firefoksa musisz posiadać przynajmniej jeden profil. Jeśli chcesz, możesz stworzyć kilka profili dla siebie samego, aby trzymać w nich różne zestawy ustawień i preferencji. Na przykład, możesz chceć posiadać osobne profile służbowy i prywatny.">
+---
+> <!ENTITY profileCreationExplanation_2.text  "Jeżeli dzielisz tę kopię programu &brandShortName; z innymi użytkownikami, możesz używać profili, aby odseparować dane użytkowników. Aby tego dokonać, każdy użytkownik powinien posiadać własny profil.">
+> <!ENTITY profileCreationExplanation_3.text  "Jeżeli jesteś jedyną osobą korzystającą z tej kopii programu &brandShortName; musisz posiadać przynajmniej jeden profil. Jeśli chcesz, możesz stworzyć kilka profili dla siebie samego, aby trzymać w nich różne zestawy ustawień i preferencji. Na przykład, możesz chceć posiadać osobne profile służbowy i prywatny.">
+Index: chrome/mozapps/profile/profileSelection.dtd
+===================================================================
+RCS file: /l10n/mozilla/toolkit/locales/pl-PL/chrome/mozapps/profile/Attic/profileSelection.dtd,v
+retrieving revision 1.1.2.1
+diff -r1.1.2.1 profileSelection.dtd
+30c30
+< <!ENTITY            start.label            "Uruchom Firefoksa">
+---
+> <!ENTITY            start.label            "Uruchom program &brandShortName;">
+Index: chrome/mozapps/profile/profileSelection.properties
+===================================================================
+RCS file: /l10n/mozilla/toolkit/locales/pl-PL/chrome/mozapps/profile/Attic/profileSelection.properties,v
+retrieving revision 1.1.2.1
+diff -r1.1.2.1 profileSelection.properties
+6c6
+< pleaseSelect=Aby rozpocz\u0105\u0107 prac\u0119 z Mozill\u0105 Firefox nale\u017Cy wybra\u0107 istniej\u0105cy profil, lub utworzy\u0107 nowy.
+---
+> pleaseSelect=Aby rozpocz\u0105\u0107 prac\u0119 z programem %S nale\u017Cy wybra\u0107 istniej\u0105cy profil, lub utworzy\u0107 nowy.
+Index: chrome/mozapps/update/update.dtd
+===================================================================
+RCS file: /l10n/mozilla/toolkit/locales/pl-PL/chrome/mozapps/update/Attic/update.dtd,v
+retrieving revision 1.1.2.2
+diff -r1.1.2.2 update.dtd
+4,5c4,5
+< <!ENTITY  mismatch.intro1.label           "Poniższe komponenty są niezgodne z nową wersją 
+<                                            Mozilli Firefox, która właśnie została zainstalowana:">
+---
+> <!ENTITY  mismatch.intro1.label           "Poniższe komponenty są niezgodne z nową wersją programu 
+>                                            &brandShortName; która właśnie została zainstalowana:">
+29c29
+< <!ENTITY  found.criticalUpdates.label           "Dla programu Firefox dostępne są następujące krytyczne aktualizacje:">
+---
+> <!ENTITY  found.criticalUpdates.label           "Dla programu &brandShortName; dostępne są następujące krytyczne aktualizacje:">
+53c53
+< <!ENTITY  noupdates.enableChecking.label  "Zezwól Firefoksowi na sprawdzanie aktualizacji.">
+---
+> <!ENTITY  noupdates.enableChecking.label  "Zezwól programowi &brandShortName; na sprawdzanie aktualizacji.">
+60,61c60,61
+< <!ENTITY  finished.enableChecking.label   "Zezwól Firefoksowi na sprawdzanie aktualizacji.">
+< <!ENTITY  finished.mismatch.label         "Naciśnij Zakończ, aby kontynuować uruchamianie Mozilli Firefox.">
+---
+> <!ENTITY  finished.enableChecking.label   "Zezwól &brandShortName; na sprawdzanie aktualizacji.">
+> <!ENTITY  finished.mismatch.label         "Naciśnij Zakończ, aby kontynuować uruchamianie programu &brandShortName;.">
+82c82
+< <!ENTITY  resetHomepage.accesskey         "U">
+\ No newline at end of file
+---
+> <!ENTITY  resetHomepage.accesskey         "U">
+Index: installer/windows/install.it
+===================================================================
+RCS file: /l10n/mozilla/toolkit/locales/pl-PL/installer/windows/Attic/install.it,v
+retrieving revision 1.1.2.5
+diff -r1.1.2.5 install.it
+120c120
+< STR_MESSAGEBOX_TITLE=Instalator Mozilli Firefox
+---
+> STR_MESSAGEBOX_TITLE=Instalator programu %s
+

@@ -1,0 +1,557 @@
+Index: l10n/pl/browser/chrome/browser/browser.dtd
+===================================================================
+RCS file: /l10n/l10n/pl/browser/chrome/browser/browser.dtd,v
+retrieving revision 1.78
+diff -u -8 -r1.78 browser.dtd
+--- l10n/pl/browser/chrome/browser/browser.dtd	30 Jan 2008 22:08:43 -0000	1.78
++++ l10n/pl/browser/chrome/browser/browser.dtd	13 Feb 2008 22:21:14 -0000
+@@ -327,23 +327,23 @@
+ 
+ <!ENTITY pageStyleMenu.label "Styl strony">
+ <!ENTITY pageStyleMenu.accesskey "S">
+ <!ENTITY pageStyleNoStyle.label "Ignoruj style">
+ <!ENTITY pageStyleNoStyle.accesskey "n">
+ <!ENTITY pageStylePersistentOnly.label "Styl podstawowy">
+ <!ENTITY pageStylePersistentOnly.accesskey "S">
+ 
+-<!ENTITY pageReportIcon.tooltip            "Zmień ustawienia blokady wyskakujących okienek dla tej strony">
++<!ENTITY pageReportIcon.tooltip            "Zmień ustawienia blokady wyskakujących okien dla tej strony">
+ 
+ <!ENTITY allowPopups.accesskey "w">
+ 
+ <!-- Windows: Opcje, Linux/Mac: Preferencje -->
+-<!ENTITY editPopupSettingsUnix.label "Edytuj preferencje wyskakujących okienek…">       
+-<!ENTITY editPopupSettings.label "Edytuj opcje blokady wyskakujących okienek…">
++<!ENTITY editPopupSettingsUnix.label "Edytuj preferencje wyskakujących okien…">       
++<!ENTITY editPopupSettings.label "Edytuj opcje blokady wyskakujących okien…">
+ <!ENTITY editPopupSettings.accesskey "E">
+ <!ENTITY dontShowMessage.accesskey "N">
+ 
+ <!ENTITY bidiSwitchPageDirectionItem.label        "Przełącz kierunek strony">
+ <!ENTITY bidiSwitchPageDirectionItem.accesskey    "s">
+ <!ENTITY bidiSwitchTextDirectionItem.label        "Przełącz kierunek tekstu">
+ <!ENTITY bidiSwitchTextDirectionItem.accesskey    "t">
+ <!ENTITY bidiSwitchTextDirectionItem.commandkey   "X">
+Index: l10n/pl/browser/chrome/browser/browser.properties
+===================================================================
+RCS file: /l10n/l10n/pl/browser/chrome/browser/browser.properties,v
+retrieving revision 1.52
+diff -u -8 -r1.52 browser.properties
+--- l10n/pl/browser/chrome/browser/browser.properties	30 Jan 2008 22:08:43 -0000	1.52
++++ l10n/pl/browser/chrome/browser/browser.properties	13 Feb 2008 22:21:14 -0000
+@@ -24,28 +24,28 @@
+ # Be sure you do not choose an accesskey that is used elsewhere in the active context (e.g. main menu bar, submenu of the warning popup button)
+ # See http://www.mozilla.org/access/keyboard/accesskey for details              
+ xpinstallPromptAllowButton.accesskey=Z
+ xpinstallDisabledMessageLocked=Instalacja oprogramowania została zablokowana przez administratora systemu.
+ xpinstallDisabledMessage=Instalacja oprogramowania jest obecnie zablokowana. Kliknij Odblokuj i spróbuj ponownie.
+ xpinstallDisabledButton=Odblokuj
+ xpinstallDisabledButton.accesskey=b
+ 
+-popupWarning=Program %S nie pozwolił tej witrynie na otwieranie wyskakujących okienek.
+-popupWarningMultiple=Program %S nie pozwolił tej witrynie na otwarcie %S wyskakujących okienek.
++popupWarning=Program %S nie pozwolił tej witrynie na otwieranie wyskakujących okien.
++popupWarningMultiple=Program %S nie pozwolił tej witrynie na otwarcie %S wyskakujących okien.
+ popupWarningButton=Opcje
+ popupWarningButton.accesskey=O
+ popupWarningButtonUnix=Preferencje
+ popupWarningButtonUnix.accesskey=P
+ 
+-popupAllow=Pozwól %S otwierać okienka
+-popupBlock=Blokuj wyskakujące okienka z %S
++popupAllow=Pozwól %S otwierać wyskakujące okna
++popupBlock=Blokuj wyskakujące okna z %S
+ 
+-popupWarningDontShowFromMessage=Nie pokazuj tej wiadomości, kiedy wyskakujące okienka są blokowane
+-popupWarningDontShowFromStatusbar=Nie pokazuj informacji o wyskakujących okienkach, kiedy są blokowane
++popupWarningDontShowFromMessage=Nie pokazuj tej wiadomości, kiedy wyskakujące okna są blokowane
++popupWarningDontShowFromStatusbar=Nie pokazuj informacji o wyskakujących oknach, kiedy są blokowane
+ popupShowPopupPrefix=Wyświetl "%S"
+ 
+ imageBlockedWarning=%S będzie od tej pory blokować wszystkie obrazki z %S
+ imageAllowedWarning=%S będzie od tej pory wyświetlać obrazki z %S
+ undo=Cofnij
+ undo.accessKey=C
+  
+ # missing plugin installer
+Index: l10n/pl/browser/chrome/browser/pageReport.dtd
+===================================================================
+RCS file: /l10n/l10n/pl/browser/chrome/browser/pageReport.dtd,v
+retrieving revision 1.1
+diff -u -8 -r1.1 pageReport.dtd
+--- l10n/pl/browser/chrome/browser/pageReport.dtd	16 Apr 2005 17:11:36 -0000	1.1
++++ l10n/pl/browser/chrome/browser/pageReport.dtd	13 Feb 2008 22:21:14 -0000
+@@ -1,6 +1,6 @@
+-<!ENTITY caption.label "Zablokowane wyskakujące okienka" >
++<!ENTITY caption.label "Zablokowane wyskakujące okna" >
+ <!ENTITY intro.label "Witryny, którym zablokowano możliwość otwierania wyskakujących okien:" >
+ <!ENTITY done.label "Zamknij" >
+ <!ENTITY done.accesskey "Z" >
+ <!ENTITY unblock.label "Odblokuj witrynę" >
+ <!ENTITY unblock.accesskey "U" >
+Index: l10n/pl/browser/chrome/browser/preferences/preferences.properties
+===================================================================
+RCS file: /l10n/l10n/pl/browser/chrome/browser/preferences/preferences.properties,v
+retrieving revision 1.35
+diff -u -8 -r1.35 preferences.properties
+--- l10n/pl/browser/chrome/browser/preferences/preferences.properties	30 Jan 2008 22:03:03 -0000	1.35
++++ l10n/pl/browser/chrome/browser/preferences/preferences.properties	13 Feb 2008 22:21:14 -0000
+@@ -10,18 +10,18 @@
+ 
+ labelDefaultFont=Domyślna (%S)
+ 
+ #### Permissions Manager
+ cookiepermissionstext=Możesz określić zasady akceptacji ciasteczek. Podaj dokładny adres witryny, której uprawnienia chcesz zmodyfikować, a następnie naciśnij Zezwól, Zablokuj lub Zezwól na czas sesji.
+ cookiepermissionstitle=Wyjątki - Ciasteczka
+ addonspermissionstext=Możesz zdecydować, które witryny mogą instalować dodatki. Podaj dokładny adres witryny, której chcesz na to zezwolić, i naciśnij Zezwól.
+ addons_permissions_title=Uprawnione witryny - Instalacja dodatków
+-popuppermissionstext=Możesz zdecydować, które witryny mogą otwierać wyskakujące okienka. Podaj dokładny adres witryny, której chcesz na to zezwolić, i naciśnij Zezwól.
+-popuppermissionstitle=Uprawnione witryny - Wyskakujące okienka
++popuppermissionstext=Możesz zdecydować, które witryny mogą otwierać wyskakujące okna. Podaj dokładny adres witryny, której chcesz na to zezwolić, i naciśnij Zezwól.
++popuppermissionstitle=Uprawnione witryny - Wyskakujące okna
+ imagepermissionstext=Możesz zdecydować, którym witrynom zezwolić na wyświetlanie obrazków. Podaj dokładny adres witryny i naciśnij Zablokuj lub Zezwól.
+ imagepermissionstitle=Wyjątki - Wyświetlanie obrazków
+ 
+ invalidURI=Podaj poprawną nazwę hosta
+ invalidURITitle=Wprowadzono niepoprawną nazwę hosta
+ 
+ moveresizepermissionstext=Można określić, którym witrynom wolno zmieniać położenie i rozmiar okien. Wprowadź poniżej adres witryny, której chcesz na to zezwolić, i kliknij Zezwól.
+ moveresizepermissionstitle=Wyjątki - zmiana rozmiaru i położenia okien
+Index: l10n/pl/browser/chrome/help/accessibility.xhtml
+===================================================================
+RCS file: /l10n/l10n/pl/browser/chrome/help/accessibility.xhtml,v
+retrieving revision 1.9
+diff -u -8 -r1.9 accessibility.xhtml
+--- l10n/pl/browser/chrome/help/accessibility.xhtml	2 Jan 2007 15:58:43 -0000	1.9
++++ l10n/pl/browser/chrome/help/accessibility.xhtml	13 Feb 2008 22:21:15 -0000
+@@ -208,19 +208,19 @@
+       <span class="menuPath">Menu Start &gt; Panel sterowania &gt;
+       Opcje ułatwień dostępu &gt; Ekran</span> i&nbsp;zaznacz pole
+       <em>Użyj funkcji "Duży kontrast"</em><!-- cholera, kto im to tłumaczył?! ;-)) -->.</p>
+ 
+   </div>
+ 
+   <h2 id="controlling_web_content">Kontrolowanie treści stron</h2>
+ 
+-  <h3 id="blocking_popup_windows">Blokowanie wyskakujących okienek</h3>
++  <h3 id="blocking_popup_windows">Blokowanie wyskakujących okien</h3>
+ 
+-  <p>Informacje na temat blokowania wyskakujących okienek znajdują się w&nbsp;rozdziale <a href="popup.xhtml">Kontrola wyskakujących okien</a>.</p>
++  <p>Informacje na temat blokowania wyskakujących okien znajdują się w&nbsp;rozdziale <a href="popup.xhtml">Kontrola wyskakujących okien</a>.</p>
+ 
+   <h3 id="turning_off_java_applets">Wyłączanie apletów Javy</h3>
+ 
+   <p>Niektóre strony WWW zawierają bogate, interaktywne aplety stworzone
+     w&nbsp;technologii Java&trade;. Niektórzy użytkownicy mogą jednakże doświadczyć
+     pewnych problemów z&nbsp;używaniem klawiatury przy apletach Javy przechwytujących
+     klawiaturę i&nbsp;nie pozwalając na wyjście poza aplet, uniemożliwiając nawigację
+     po stronie. Jeśli stanowi to problem, można wyłączyć Javę wybierając z&nbsp;menu	
+Index: l10n/pl/browser/chrome/help/download_manager.xhtml
+===================================================================
+RCS file: /l10n/l10n/pl/browser/chrome/help/download_manager.xhtml,v
+retrieving revision 1.15
+diff -u -8 -r1.15 download_manager.xhtml
+--- l10n/pl/browser/chrome/help/download_manager.xhtml	2 Jan 2007 15:58:43 -0000	1.15
++++ l10n/pl/browser/chrome/help/download_manager.xhtml	13 Feb 2008 22:21:15 -0000
+@@ -23,17 +23,17 @@
+   <ul>
+     <li><a href="#what_is_download_manager">Czym jest Menedżer pobierania plików?</a></li>
+     <li><a href="#do_with_download_manager">Do czego służy Menedżer pobierania plików?</a></li>
+     <li><a href="#download_manager_options">&pref.pluralCaps; Menedżera pobierania plików</a></li>
+   </ul>
+ </div>
+ <h2 id="what_is_download_manager">Czym jest Menedżer pobierania plików?</h2>
+ 
+-<p>Menedżer pobierania plików to moduł programu &brandShortName; umożliwiający śledzenie i&nbsp;zarządzanie aktualnie pobieranymi i&nbsp;już pobranymi plikami. Pozwala w&nbsp;wygodny sposób  uniknąć bałaganu wielu otwartych okienek pobierania plików, dając jednocześnie dostęp do statystyk pobierania.</p>
++<p>Menedżer pobierania plików to moduł programu &brandShortName; umożliwiający śledzenie i&nbsp;zarządzanie aktualnie pobieranymi i&nbsp;już pobranymi plikami. Pozwala w&nbsp;wygodny sposób uniknąć bałaganu wielu otwartych okien pobierania plików, dając jednocześnie dostęp do statystyk pobierania.</p>
+ 
+ <p>Okno menedżera pobierania plików pojawi się, gdy rozpoczęte zostanie pobieranie plików, gdy
+ z menu wybrane zostanie <span class="menuPath">Narzędzia &gt; Pobieranie plików</span>, i&nbsp;gdy wciśnięta zostanie kombinacja klawiszy <span class="noUnix">&accelKey;+<kbd>J</kbd></span><span class="unix">&accelKey;+<kbd>Y</kbd></span>.</p>
+ 
+ <h2 id="do_with_download_manager">Do czego służy Menedżer pobierania plików?</h2>
+ 
+ <p>Menedżer pobierania plików nie tylko gromadzi w&nbsp;jednym miejscu informacje o&nbsp;wszystkich pobranych i&nbsp;pobieranych plikach, ale także pozwala na łatwy dostęp do opcji pobierania każdego pliku.</p>
+ 
+Index: l10n/pl/browser/chrome/help/firebird-toc.rdf
+===================================================================
+RCS file: /l10n/l10n/pl/browser/chrome/help/firebird-toc.rdf,v
+retrieving revision 1.52
+diff -u -8 -r1.52 firebird-toc.rdf
+--- l10n/pl/browser/chrome/help/firebird-toc.rdf	16 Jan 2008 21:02:24 -0000	1.52
++++ l10n/pl/browser/chrome/help/firebird-toc.rdf	13 Feb 2008 22:21:16 -0000
+@@ -212,17 +212,17 @@
+         <rdf:li> <rdf:Description ID="a11y-high-contrast" nc:name="Stosowanie motywu o wysokim kontraście" nc:link="accessibility.xhtml#using_a_high_contrast_theme" nc:platform="win unix" /> </rdf:li>
+       </rdf:Seq>
+     </nc:subheadings>
+   </rdf:Description>
+ 
+   <rdf:Description about="#a11y-web-content">
+     <nc:subheadings>
+       <rdf:Seq>
+-        <rdf:li> <rdf:Description ID="a11y-popup-windows" nc:name="Blokada wyskakujących okienek" nc:link="accessibility.xhtml#blocking_popup_windows"/> </rdf:li>
++        <rdf:li> <rdf:Description ID="a11y-popup-windows" nc:name="Blokada wyskakujących okien" nc:link="accessibility.xhtml#blocking_popup_windows"/> </rdf:li>
+         <rdf:li> <rdf:Description ID="a11y-java" nc:name="Wyłączanie apletów Javy" nc:link="accessibility.xhtml#turning_off_java_applets"/> </rdf:li>
+         <rdf:li> <rdf:Description ID="a11y-javascript" nc:name="Ograniczanie możliwości JavaScriptu" nc:link="accessibility.xhtml#restricting_javascript_behavior"/> </rdf:li>
+       </rdf:Seq>
+     </nc:subheadings>
+   </rdf:Description> 
+ 
+   <rdf:Description about="#menu">
+     <nc:subheadings>
+Index: l10n/pl/browser/chrome/help/popup.xhtml
+===================================================================
+RCS file: /l10n/l10n/pl/browser/chrome/help/popup.xhtml,v
+retrieving revision 1.16
+diff -u -8 -r1.16 popup.xhtml
+--- l10n/pl/browser/chrome/help/popup.xhtml	2 Jan 2007 15:58:43 -0000	1.16
++++ l10n/pl/browser/chrome/help/popup.xhtml	13 Feb 2008 22:21:16 -0000
+@@ -36,34 +36,34 @@
+ <a href="prefs.xhtml#web_features_options">panel Treść</a>, znajdujący się w&nbsp;oknie &bdquo;&pref.pluralCaps;&rdquo; programu. Blokowanie wyskakujących okien jest domyślnie włączone.</p>
+ 
+ <p>Gdy wyskakujące okno zostanie zablokowane, pojawia się pasek informacyjny oraz ikona <img src="chrome://browser/skin/Info.png" width="16" height="16" alt=""/>.
+  Kliknięcie zarówno przycisku <em>&pref.pluralCaps;</em> na pasku informacyjnym jak i&nbsp;ikony na pasku
+ stanu spowoduje wyświetlenie listy dostępnych akcji:</p>
+ 
+ 
+ <ul>
+-  <li>Pozwól witrynie otwierać okienka,</li>
+-  <li>Edytuj <a href="#popup_blocker_preferences">&pref.plural; blokady wyskakujących okienek...</a>,</li>
+-  <li>Nie pokazuj tej wiadomości, kiedy wyskakujące okienka są blokowane,</li>
++  <li>Pozwól witrynie otwierać wyskakujące okna,</li>
++  <li>Edytuj <a href="#popup_blocker_preferences">&pref.plural; blokady wyskakujących okien…</a>,</li>
++  <li>Nie pokazuj tej wiadomości, kiedy wyskakujące okna są blokowane,</li>
+   <li>(pokaż zablokowane okno).</li>
+ </ul>
+ 
+ <p><strong>Blokowanie wyskakujących okien może przeszkadzać w&nbsp;korzystaniu z&nbsp;niektórych witryn</strong>: niektóre witryny wykorzystują wyskakujące okna do wyświetlania ważnych informacji (na przykład witryny banków internetowych). Blokowanie wszystkich wyskakujących okien ogranicza funkcjonalność tych witryn. Aby umożliwić wybranej witrynie wyświetlanie wyskakujących okien (podczas gdy wszystkie inne będą blokowane), należy dodać ją do listy wyjątków (listy witryn uprzywilejowanych).</p>
+ 
+ <p><strong>Blokowanie wyskakujących okien nie zawsze działa</strong>: mimo że przeglądarka &brandShortName; blokuje większość wyskakujących okien, niektóre witryny internetowe mogą wyświetlać wyskakujące okna używając nieznanych przeglądarce metod.</p>
+ 
+ <h2 id="popup_blocker_preferences">&pref.pluralCaps; mechanizmu blokowania wyskakujących okien</h2>
+ 
+ <p>&pref.pluralCaps; mechanizmu blokowania wyskakujących okien znajdują się w&nbsp;<a href="prefs.xhtml#content_options">panelu Treść</a> okna &pref.menuPath;.</p>
+ 
+ <p>W panelu tym można zmienić następujące opcje:</p>
+ 
+ <ul>
+-  <li><strong>Zablokuj wyskakujące okna</strong>: odznaczenie tego pola spowoduje wyłączenie blokady wyskakujących okienek.</li>
++  <li><strong>Zablokuj wyskakujące okna</strong>: odznaczenie tego pola spowoduje wyłączenie blokady wyskakujących okien.</li>
+   <li><strong>Wyjątki</strong>: to okno zawiera listę witryn, którym zezwala się na wyświetlanie wyskakujących okien (dalej zwaną listą witryn uprawnionych).
+   <ul>
+     <li><strong>Zezwól</strong>: przycisk pozwala dodać witrynę do listy uprawnionych. Adres dodawanej witryny należy wprowadzić w&nbsp;polu <em>Adres witryny</em>.</li>
+     <li><strong>Usuń witrynę</strong>: przycisk pozwala usunąć zaznaczoną witrynę z&nbsp;listy uprawnionych.</li>
+     <li><strong>Usuń wszystkie witryny</strong>: przycisk pozwala usunąć wszystkie witryny z&nbsp;listy uprawnionych.</li>
+   </ul>
+   </li>
+ </ul>
+Index: l10n/pl/browser/chrome/help/prefs.xhtml
+===================================================================
+RCS file: /l10n/l10n/pl/browser/chrome/help/prefs.xhtml,v
+retrieving revision 1.46
+diff -u -8 -r1.46 prefs.xhtml
+--- l10n/pl/browser/chrome/help/prefs.xhtml	2 Nov 2007 12:30:40 -0000	1.46
++++ l10n/pl/browser/chrome/help/prefs.xhtml	13 Feb 2008 22:21:17 -0000
+@@ -164,31 +164,31 @@
+ <p><em>Po otwarciu odnośnika w&nbsp;nowej karcie przechodź do niej automatycznie</em><br/>
+   Po kliknięciu odnośnika środkowym przyciskiem myszy (albo kliknięciu
+   lewym przyciskiem przy wciśniętym klawiszu &accelKey;), strona zostanie
+   otwarta w&nbsp;nowej karcie. Zaznaczenie tego pola spowoduje, że przeglądarka
+   automatycznie uaktywni nowo otwartą kartę.</p>
+ 
+   <h2 id="content_options">&pref.pluralCaps;: Treść</h2>
+   <p><em>Zablokuj wyskakujące okna</em><br/>Przeglądarka &brandShortName; domyślne blokuje 
+-  wyświetlanie wyskakujących okienek przez oglądane strony. Zmiana tej opcji spowoduje
+-  wyłączenie blokady wyskakujących okienek.</p>
++  wyświetlanie wyskakujących okien przez oglądane strony. Zmiana tej opcji spowoduje
++  wyłączenie blokady wyskakujących okien.</p>
+ 
+-  <p>Niektóre witryny korzystają z&nbsp;wyskakujących okienek w&nbsp;sposób 
+-  nieuciążliwy. Można więc zezwolić im na otwieranie takich okienek
+-  mimo blokady. Aby to zrobić, należy nacisnąć przycisk <em>Wyjątki...</em>,
++  <p>Niektóre witryny korzystają z&nbsp;wyskakujących okien w&nbsp;sposób 
++  nieuciążliwy. Można więc zezwolić im na otwieranie takich okien,
++  mimo blokady. Aby to zrobić, należy nacisnąć przycisk <em>Wyjątki…</em>,
+   wprowadzić adres strony i&nbsp;wybrać <em>Zezwól</em>. Aby usunąć witrynę
+   z&nbsp;listy, należy ją zaznaczyć i&nbsp;nacisnąć <em>Usuń witrynę</em>. Aby całkowicie
+   wyczyścić listę, należy nacisnąć <em>Usuń wszystkie witryny</em>.</p>
+  
+   <p><em>Pobieraj obrazki automatycznie</em><br/>
+   &brandShortName; domyślnie wyświetla obrazki na stronach. Odznaczenie tej opcji
+   spowoduje, że obrazki nie będą wczytywane.</p>
+ 
+-  <p>Przycisk <em>Wyjątki...</em> pozwala ustalić, które strony mają wyświetlać
++  <p>Przycisk <em>Wyjątki…</em> pozwala ustalić, które strony mają wyświetlać
+   obrazki lub ich nie wyświetlać &ndash; niezależnie od ustawienia powyżej
+   omówionego pola. Po naciśnięciu tego przycisku pojawi się okno z&nbsp;listą
+   wyjątków. Można wprowadzić adres strony i&nbsp;wybrać <em>Zezwól</em>, by pozwolić
+   na wyświetlanie obrazków, albo <em>Zablokuj</em>, by zablokować obrazki.</p>
+ 
+   <p><em>Włącz obsługę języka JavaScript</em><br/>
+   JavaScript to język skryptowy szeroko stosowany w&nbsp;celu zwiększenia
+   interaktywności stron internetowych. Pozwala jednak także na pewne
+@@ -210,17 +210,17 @@
+     <dd>Odznaczenie tego pola uniemożliwia skryptom przenoszenia okien na wierzch ("na pierwszy plan") i&nbsp;na spód.
+     </dd>
+ 
+     <dt>blokowanie lub zamianę menu kontekstowego</dt>
+     <dd>Odznaczenie tego pola uniemożliwia stronom WWW blokowanie lub zamienianie menu kontekstowego
+      programu &brandShortName;.</dd>
+ 
+     <dt>ukrywanie paska stanu</dt>
+-    <dd>Odznaczenie tego pola wymusi, by pasek stanu był wyświetlany także w&nbsp;okienkach wyskakujących.</dd>
++    <dd>Odznaczenie tego pola wymusi, by pasek stanu był wyświetlany także w&nbsp;wyskakujących oknach.</dd>
+ 
+     <dt>zmianę tekstu wyświetlanego na pasku stanu</dt>
+     <dd>Odznaczenie tego pola uniemożliwi skryptom manipulowanie tekstem wyświetlanym na pasku stanu
+     (w&nbsp;tym denerwujących technik, jak przesuwanie i&nbsp;migotanie tego tekstu, czy ukrywanie 
+     adresów odnośników).</dd>
+   </dl>
+ 
+   <p><em>Włącz obsługę języka Java</em><br/>
+@@ -235,17 +235,17 @@
+ 
+     <p><em>Domyślna czcionka</em> i&nbsp;<em>Rozmiar</em><br/>
+ 
+ 	Zazwyczaj strony wyświetlane są przy użyciu czcionki o&nbsp;kroju i&nbsp;rozmiarze podanym w&nbsp;
+ 	tym miejscu. Niektóre strony mogą jednak stosować własne czcionki, o&nbsp;ile
+ 	nie zostanie im to zabronione w&nbsp;oknie <em>Czcionki</em>, opisanym
+ 	poniżej. Aby wyświetlić okno <em>Czcionki</em>, pozwalające na modyfikację
+         czcionki domyślnej i&nbsp;innych czcionek stosowanych w&nbsp;programie &brandShortName;,
+-        należy kliknąć przycisk <em>Zaawansowane...</em></p>
++        należy kliknąć przycisk <em>Zaawansowane…</em></p>
+ 
+ 	<h4 id="fonts_dialog">Okno &bdquo;Czcionki&rdquo;</h4>
+ 
+     <p>Aby zmienić ustawienia czcionek należy:</p>
+ 
+     <ol>
+       <li>Wybrać region czcionek z&nbsp;listy rozwijalnej <em>Czcionki</em> (dla 
+       języka polskiego i&nbsp;innych języków środkowoeuropejskich: <em>Środkowoeuropejskie</em>,
+@@ -293,20 +293,20 @@
+ 
+     <p><em>Pozwól stronom stosować inne kolory niż ustawione tutaj</em><br/>
+ 	  Domyślnie przeglądarka &brandShortName; stosuje kolory określone przez autora przeglądanej
+ 	  strony. Aby zawsze używać domyślnych kolorów, należy odznaczyć powyższą opcję.</p>
+ 
+     <h4 id="languages">Języki</h4>
+ 
+     <p>Niektóre strony udostępniane są w&nbsp;więcej niż jednej wersji językowej.
+-      Aby ustalić preferowane języki, należy kliknąć przycisk <em>Wybierz...</em>.</p>
++      Aby ustalić preferowane języki, należy kliknąć przycisk <em>Wybierz…</em>.</p>
+ 
+     <p><strong>Okno dialogowe &bdquo;Języki&rdquo;:</strong><br/>
+-      Aby dodać język, należy nacisnąć <em>Wybierz język do dodania...</em>, wybrać
++      Aby dodać język, należy nacisnąć <em>Wybierz język do dodania…</em>, wybrać
+       dany język i&nbsp;kliknąć przycisk <em>Dodaj</em>. Aby usunąć język z&nbsp;listy,
+       należy zaznaczyć go i&nbsp;kliknąć przycisk <em>Usuń</em>.</p>
+ 
+     <p>Jeśli strona jest udostępniana w&nbsp;kilku z&nbsp;ustawionych w&nbsp;tym miejscu języków,
+       zostanie wyświetlona wersja w&nbsp;języku znajdującym się na wyższym miejscu na liście.
+       Kolejność języków można ustalić zaznaczając dany język i&nbsp;klikając jeden z&nbsp;przycisków
+       <em>W&nbsp;górę</em> lub <em>W&nbsp;dół</em>.</p>
+ 
+Index: l10n/pl/browser/chrome/help/using_firebird.xhtml
+===================================================================
+RCS file: /l10n/l10n/pl/browser/chrome/help/using_firebird.xhtml,v
+retrieving revision 1.35
+diff -u -8 -r1.35 using_firebird.xhtml
+--- l10n/pl/browser/chrome/help/using_firebird.xhtml	27 Jun 2007 18:19:05 -0000	1.35
++++ l10n/pl/browser/chrome/help/using_firebird.xhtml	13 Feb 2008 22:21:18 -0000
+@@ -60,17 +60,17 @@
+ </ol>
+ 
+ <p><strong>Podpowiedź:</strong> aby szybko przejść do pasku adresu, można użyć skrótu klawiaturowego
+   &accelKey;>+<kbd>L</kbd>.</p>
+ 
+ <p><img src="&images.baseURL;/urlbar.png" alt=""/></p>
+ 
+ <p><strong>Nieznany lub zapomniany adres</strong>? Wystarczy wpisać konkretne
+-wyrażenie (na przykład &quot;prezenty&quot; lub &quot;kwiaty wysyłkowo&quot;) w&nbsp;okienko na pasku wyszukiwania i&nbsp;nacisnąć &enterKey;. Zostanie otwarta pierwsza strona, jaką zwróci wyszukiwarka Google dla podanego wyrażenia.</p>
++wyrażenie (na przykład &quot;prezenty&quot; lub &quot;kwiaty wysyłkowo&quot;) w&nbsp;pasku adresu i&nbsp;nacisnąć &enterKey;. Zostanie otwarta pierwsza strona, jaką zwróci wyszukiwarka Google dla podanego wyrażenia.</p>
+ 
+ <h3 id="clicking_a_link">Odnośniki</h3>
+ <p>Większość witryn zawiera odnośniki, które służą do poruszania się pomiędzy stronami.
+ Aby otworzyć odnośnik, należy:</p>
+ <ol>
+   <li>Przesunąć kursor myszy nad odnośnik (kursor zmieni się na dłoń ze wskazującym palcem).
+   Zwykle odnośniki wyświetlane są tekstem podkreślonym. Odnośniki mogą także występować w&nbsp;postaci
+   przycisków lub obrazków.</li>
+@@ -142,17 +142,17 @@
+ 
+ <p>Aby zmienić wyszukiwarkę, należy kliknąć ikonę aktualnej wyszukiwarki
+   i&nbsp;wybrać nową. Niektóre wyszukiwarki, jak Google, przeszukują cały
+   Internet, inne, jak Merlin, tylko konkretne witryny.</p>
+   
+ <h4 id="manage_search_engines">Zarządzanie wyszukiwarkami</h4>
+ <p>Aby dodać, usunąć lub zmienić kolejność wyszukiwarek, albo przywrócić
+   ich domyślny zestaw, należy kliknąć ikonę aktualnej wyszukiwarki i&nbsp;wybrać 
+-  z&nbsp;<em>Zarządzaj wyszukiwarkami...</em>. Po zaznaczeniu danej wyszukiwarki można
++  z&nbsp;<em>Zarządzaj wyszukiwarkami…</em>. Po zaznaczeniu danej wyszukiwarki można
+   za pomocą odpowiednich przycisków usunąć ją całkowicie albo zmienić jej pozycję na liście.
+   Nowe wyszukiwarki można zainstalować po wybraniu odnośnika <em>Pobierz więcej
+   wyszukiwarek</em>.</p>
+ 
+ <h3 id="searching_on_selected_words_in_a_web_page">Wyszukiwanie zaznaczonych słów w&nbsp;Internecie</h3>
+ 
+ <p>&brandShortName; pozwala wyszukiwać w&nbsp;Internecie słowa, które użytkownik
+   zaznaczył na aktualnie oglądanej stronie. Aby z&nbsp;tego skorzystać, należy:</p>
+@@ -212,17 +212,17 @@
+ 
+ <p>Skopiowany adres można wykorzystać w&nbsp;innych programach lub wkleić do paska adresu przeglądarki &brandShortName;.</p>
+ 
+ <h3 id="saving_all_or_part_of_a_page">Zapisywanie stron</h3>
+ 
+ <p>Aby zapisać całą stronę, należy:</p>
+ 
+ <ol>
+-  <li>Z&nbsp;menu przeglądarki wybrać <span class="menuPath">Plik &gt; Zapisz stronę jako...</span>
++  <li>Z&nbsp;menu przeglądarki wybrać <span class="menuPath">Plik &gt; Zapisz stronę jako…</span>
+   Wyświetlone zostanie systemowe okno zapisu pliku.</li>
+   <li>Wybrać miejsce zapisu strony.</li>
+   <li>Wybrać format, w&nbsp;którym strona zostanie zapisana:
+   <ul>
+     <li><strong>Strona WWW, kompletna</strong>: zapisuje całą stronę wraz z&nbsp;obrazkami.
+ 	  Należy pamiętać, że niektóre odnośniki na zapisanej stronie mogą nie działać.
+ 	  Przeglądarka &brandShortName; utworzy nowy folder, gdzie przechowywane będą obrazki
+ 	  i&nbsp;inne pliki potrzebne do wyświetlenia strony w&nbsp;całości (do tego katalogu będą wskazywały odnośniki na zapisanej stronie).</li>
+@@ -237,71 +237,71 @@
+ </ol>
+ 
+ <p>Aby zapisać pojedynczą ramkę strony:</p>
+ 
+ <ol>
+   <li>Ustawić kursor myszy w&nbsp;danej ramce.</li>
+   <li>Nacisnąć prawy klawisz myszy (w&nbsp;systemie Mac OS, nacisnąć klawisz <kbd>Ctrl</kbd> i&nbsp;klawisz myszy), 
+    aby wyświetlić menu kontekstowe.</li>
+-  <li>Wybrać <span class="menuPath">Ramka &gt; Zapisz ramkę jako...</span> z&nbsp;menu kontekstowego. 
++  <li>Wybrać <span class="menuPath">Ramka &gt; Zapisz ramkę jako…</span> z&nbsp;menu kontekstowego. 
+   Wyświetlone zostanie systemowe okno zapisu pliku.</li>
+    <li>Wybrać miejsce zapisu strony.</li>
+   <li>Wybrać format, w&nbsp;którym strona zostanie zapisana.</li>
+   <li>Wpisać nazwę pliku i&nbsp;nacisnąć przycisk <em>Zapisz</em>.</li>
+ </ol>
+ 
+ <p>Zapisane na dysku strony można przeglądać nie będąc podłączonym do Internetu.</p>
+ 
+ <p>Aby zapisać obrazek, należy:</p>
+ <ol>
+     <li>Ustawić kursor myszy nad obrazkiem.</li>
+   <li><span class="noMac">Kliknąć prawym przyciskiem myszy</span><span class="mac">Trzymając klawisz &accelKey; kliknąć przyciskiem myszy</span>, 
+    aby wyświetlić menu kontekstowe.</li>
+-  <li>Wybrać <span class="menuPath">Zapisz obrazek jako...</span>. 
++  <li>Wybrać <span class="menuPath">Zapisz obrazek jako…</span>. 
+   Wyświetlone zostanie systemowe okno zapisu pliku.</li>
+   <li>Wybrać miejsce zapisu pliku.</li>
+   <li>Wpisać nazwę pliku i&nbsp;nacisnąć przycisk <em>Zapisz</em>.</li>
+ </ol>
+ 
+ <p>Aby zapisać stronę bez jej wyświetlania (na przykład niesformatowaną stronę 
+ nieprzeznaczoną do przeglądania), należy:</p>
+ 
+ <ol>
+   <li>Ustawić kursor myszy nad odnośnikiem do strony.</li>
+ 
+   <li><span class="noMac">Kliknąć prawym przyciskiem myszy</span><span class="mac">Trzymając klawisz &accelKey; kliknąć przyciskiem myszy</span>, 
+     aby wyświetlić menu kontekstowe.</li>
+-  <li>Wybrać <span class="menuPath">Zapisz element docelowy jako...</span>
++  <li>Wybrać <span class="menuPath">Zapisz element docelowy jako…</span>
+   Wyświetlone zostanie systemowe okno zapisu pliku.</li>
+   <li>Wybrać miejsce zapisu pliku.</li>
+   <li>Wpisać nazwę pliku i&nbsp;nacisnąć przycisk <em>Zapisz</em>.</li>
+ </ol>
+ 
+ <p><strong>Ważne</strong>: niektóre odnośniki automatycznie pobierają i&nbsp;zapisują
+   pliki po kliknięciu na nich. Adresy tych odnośników często rozpoczynają się
+   od &quot;ftp&quot; lub kończą rozszerzeniami plików jak: &quot;au&quot; czy &quot;mpeg.&quot; 
+   Odnośniki te wskazują na programy, pliki dźwiękowe lub filmy, które zostaną otwarte w&nbsp;aplikacjach
+   pomocniczych.</p>
+ 
+ <p><strong>Wskazówka</strong>: aby ustawić dany obrazek jako tapetę,
+-należy nacisnąć na obrazku <span class="noMac">prawy przycisk myszy</span><span class="mac">przycisk myszy trzymając wciśnięty klawisz &ctrlKey;</span> i&nbsp;wybrać z&nbsp;menu kontekstowego pozycję <em>Ustaw jako tapetę...</em>. Pojawi się okno dialogowe, w&nbsp;którym można ustawić dodatkowe opcje.</p>
++należy nacisnąć na obrazku <span class="noMac">prawy przycisk myszy</span><span class="mac">przycisk myszy trzymając wciśnięty klawisz &ctrlKey;</span> i&nbsp;wybrać z&nbsp;menu kontekstowego pozycję <em>Ustaw jako tapetę…</em>. Pojawi się okno dialogowe, w&nbsp;którym można ustawić dodatkowe opcje.</p>
+ 
+ <h3 id="printing_a_page">Drukowanie strony</h3>
+ 
+ <p>Aby wydrukować bieżącą stronę, należy:</p>
+ 
+ <ul>
+-  <li>Z&nbsp;menu wybrać <span class="menuPath">Plik &gt; Drukuj...</span></li>
++  <li>Z&nbsp;menu wybrać <span class="menuPath">Plik &gt; Drukuj…</span></li>
+ </ul>
+ 
+ <p>Aby wydrukować tylko zaznaczony tekst, należy:</p>
+ <ul>
+   <li>Zaznaczyć (podświetlić) żądany tekst.</li>
+-  <li>Z&nbsp;menu wybrać <span class="menuPath">Plik &gt; Drukuj...</span></li>
++  <li>Z&nbsp;menu wybrać <span class="menuPath">Plik &gt; Drukuj…</span></li>
+   <li>W&nbsp;oknie dialogowym, we fragmencie <em>Zakres wydruku</em>, wybrać <em>Zaznaczenie</em>.</li>
+ </ul>
+ 
+ <p>Położenie tekstu na wydruku zależy od rozmiaru papieru. Tekst strony jest zawijany,
+ a obrazki przesuwane, tak aby dopasować stronę do papieru.</p>
+ 
+ <h3 id="using_print_preview">Korzystanie z&nbsp;podglądu wydruku</h3>
+ 
+@@ -319,39 +319,39 @@
+     <img alt=""
+     src="chrome://global/skin/arrow/arrow-lft-sharp.gif"/>,
+     Pierwsza <img alt=""
+     src="chrome://global/skin/arrow/arrow-lft-sharp-end.gif"/>
+     lub Ostatnia <img alt=""
+     src="chrome://global/skin/arrow/arrow-rit-sharp-end.gif"/>.</li>
+   <li><strong>Zmiana skali (rozmiaru) wyświetlanych stron</strong>: w&nbsp;menu rozwijalnym 
+   <em>Skala</em> można wybrać jedną ze zdefiniowanych skal lub wpisać własną w&nbsp;pozycji
+-  &quot;Użytkownika...&quot;</li>
++  &quot;Użytkownika…&quot;</li>
+   <li><strong>Zmiana orientacji strony</strong>:
+     <em>Pionowa</em> <img alt=""
+     src="chrome://global/skin/icons/Portrait.png"/>
+     lub
+     <em>Pozioma</em><img alt=""
+     src="chrome://global/skin/icons/Landscape.png"/>.</li>
+   <li><strong>Ustawienia strony</strong>: przycisk otwiera okno, w&nbsp;którym można
+   dokonać dalszych ustawień dla wydruku.</li>
+-  <li><strong>Drukuj...</strong>: przycisk otwiera okno wydruku.</li>
++  <li><strong>Drukuj…</strong>: przycisk otwiera okno wydruku.</li>
+ </ul>
+ 
+ <p class="noWin"><strong>Uwaga</strong>: niektóre z&nbsp;opcji podglądu wydruku w&nbsp;systemach Mac OS i&nbsp;Linux są niedostępne
+ lub działają w&nbsp;inny sposób.</p>
+ 
+ <h3 id="using_page_setup">Korzystanie z&nbsp;okna Ustawienia strony</h3>
+ <p class="noWin"><strong>Uwaga</strong>: niektóre z&nbsp;opcji ustawień strony w&nbsp;systemach Mac OS i&nbsp;Linux są niedostępne
+ lub działają w&nbsp;inny sposób.</p>
+ 
+ <p>Aby dostosować wygląd stron drukowanych z&nbsp;przeglądarki &brandShortName;, należy:</p>
+ 
+ <ul>
+-  <li>z&nbsp;menu wybrać <span class="menuPath">Plik &gt; Ustawienia strony...</span></li>
++  <li>z&nbsp;menu wybrać <span class="menuPath">Plik &gt; Ustawienia strony…</span></li>
+ </ul>
+ 
+ <p>Okno Ustawienia strony zawiera następujące opcje:</p>
+ 
+ <ul>
+   <li>Karta <strong>Opcje formatowania</strong>:
+   <ul>
+     <li><strong>Orientacja</strong>:
+@@ -442,17 +442,17 @@
+ na ten temat można znaleźć w&nbsp;rozdziale <a href="prefs.xhtml#file_types">&pref.pluralCaps;:
+  Typy plików</a>.</p>
+ 
+ <p>Kiedy użytkownik kliknie na odnośnik do pliku, którego &brandShortName; nie potrafi obsłużyć,
+ zostanie wyświetlone okno <em>Otwieranie</em>, w&nbsp;którym użytkownik może wybrać spośród trzech możliwości:</p>
+ 
+ <ul>
+   <li><strong>Otwórz za pomocą</strong>: otwiera plik za pomocą programu skojarzonego
+-  w&nbsp;ustawieniach sytemu operacyjnego. Pozycja <em>Inna...</em> w&nbsp;menu rozwijalnym
++  w&nbsp;ustawieniach sytemu operacyjnego. Pozycja <em>Inna…</em> w&nbsp;menu rozwijalnym
+ pozwala wybrać inną aplikację.</li>
+   <li><strong>Zachowaj plik na dysku</strong>: zapisuje plik na dysku użytkownika.
+   Gdy opcja <em>Pobierane pliki zapisuj do (katalogu)</em> w&nbsp;panelu <em>Główne</em> okna Opcji
+   jest włączona, plik zostanie zachowany w&nbsp;domyślnym katalogu. W&nbsp;przeciwnym wypadku wyświetlone 
+   zostanie okno zapisu pliku, w&nbsp;którym można określić lokalizację docelową.</li>
+   <li><strong>Zapamiętaj tę decyzję dla wszystkich plików tego typu</strong>:
+     dla wszystkich kolejnych plików tego typu będzie wykonywana wybrana akcja.</li>
+ </ul>
+

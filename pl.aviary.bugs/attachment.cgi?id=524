@@ -1,0 +1,2791 @@
+Index: cookies.xhtml
+===================================================================
+RCS file: /l10n/l10n/pl/browser/chrome/help/cookies.xhtml,v
+retrieving revision 1.2
+diff -u -r1.2 cookies.xhtml
+--- cookies.xhtml	21 May 2005 11:56:03 -0000	1.2
++++ cookies.xhtml	4 Jul 2005 09:39:20 -0000
+@@ -27,8 +27,7 @@
+     <li><a href="#what_is_a_cookie">Czym są ciasteczka?</a></li>
+     <li><a href="#setting_up_cookie_rules">Zasady akceptowania ciasteczek</a></li>
+     <li><a href="#accepting_and_blocking_cookies">Akceptowanie i blokowanie ciasteczek</a></li>
+-    <li><a href="#the_cookie_manager">Menedżer ciasteczek</a></li>
+-    <li><a href="#the_site_list">Okno Wyjątki</a></li>
++    <li><a href="#the_cookie_manager">Zarządzanie ciasteczkami</a></li>
+   </ul>
+ </div>
+ 
+@@ -36,7 +35,7 @@
+ 
+ <p>Ciasteczka (ang. cookies) to niewielkie zestawy informacji, które są tworzone przez odwiedzane witryny internetowe i przechowywane w specjalnym pliku ciasteczek na komputerze użytkownika.</p>
+ 
+-<p>Spośród wielu różnych danych, które mogą być w ten sposób zapisane i przechowywane, najczęściej spotykane to na przykład ustawienia użytkownika dotyczące wybranej wersji językowej, schematu, czy układu elementów witryny. Ciasteczka mogą być również używane do przechowywania osobistych informacji użytkownika, takich jak imię i nazwisko, adres e-mail, adres zamieszkania lub numer telefonu.</p>
++<p>Spośród wielu różnych danych, które mogą być w ten sposób zapisane i przechowywane, najczęściej spotykane to na przykład ustawienia użytkownika dotyczące wybranej wersji językowej, motywu, czy układu elementów witryny. Ciasteczka mogą być również używane do przechowywania osobistych informacji użytkownika, takich jak imię i nazwisko, adres e-mail, adres zamieszkania lub numer telefonu.</p>
+ 
+ <p>Ciasteczka tworzone są podczas przeglądania stron internetowych. Na żądanie witryny przeglądarka może utworzyć i zapisać na komputerze użytkownika jedno lub więcej ciasteczek z danymi, przekazanymi przez witrynę. Gdy użytkownik ponownie odwiedza dane strony, na żądanie witryny przeglądarka odsyła ciasteczka, które zostały przez nią utworzone. Pozwala to na zaprezentowanie użytkownikowi informacji dostosowanych do jego potrzeb lub zgodnie z uprzednio wybranymi przez niego ustawieniami.</p>
+ 
+@@ -148,7 +147,7 @@
+ 	<a href="#the_site_list">Wyjątki</a>.</dd>
+ </dl>
+ 
+-<h2 id="the_cookie_manager">Menedżer ciasteczek</h2>
++<h2 id="the_cookie_manager">Zarządzanie ciasteczkami</h2>
+ 
+ <p>Menedżer ciasteczek umożliwia przeglądanie i usuwanie przechowywanych na dysku
+ ciasteczek.<br/>
+@@ -159,7 +158,7 @@
+   <li>Nacisnąć przycisk <em>Pokaż ciasteczka</em> w sekcji Ciasteczka.</li>
+ </ol>
+ 
+-<h3 id="the_cookie_list">Lista ciasteczek</h3>
++<h3 id="the_cookie_list">Menedżer ciasteczek</h3>
+ 
+ <p><img src="images/cookie_list.png"
+ 
+@@ -206,7 +205,7 @@
+ wybranych witryn i wyświetlenie okna z pytaniem przy każdej próbie zapisanie ciasteczka na dysku
+ (w zależności od ustalonych zasad akceptowania ciasteczek).</p>
+ 
+-<div class="contentsBox"><em>18 lipca 2004</em></div>
++<div class="contentsBox"><em>1 lipca 2005</em></div>
+ 
+ <p>Copyright &copy; 2003-2004 Contributors to the Mozilla Help Viewer Project.</p>
+ </body>
+Index: customization.xhtml
+===================================================================
+RCS file: /l10n/l10n/pl/browser/chrome/help/customization.xhtml,v
+retrieving revision 1.2
+diff -u -r1.2 customization.xhtml
+--- customization.xhtml	21 May 2005 11:56:03 -0000	1.2
++++ customization.xhtml	4 Jul 2005 09:39:23 -0000
+@@ -22,17 +22,30 @@
+ przeglądarki &brandShortName; do własnych potrzeb.</p>
+ <div class="contentsBox">W tym rozdziale:
+  <ul>
+-   <li><a href="#how_do_i_customize_the_toolbars">Dostosowywanie pasków narzędzi</a></li>
++   <li><a href="#can_i_customize_my_toolbars">Czy można dostosować paski narzędzi?</a></li>
++   <li><a href="#how_do_i_customize_the_toolbars">Jak dostosować paski narzędzi?</a></li>
+    <li><a href="#themes">Motywy</a></li>
+    <li><a href="#extensions">Rozszerzenia</a></li>
+  </ul>
+ </div>
+ 
+-<h2 id="how_do_i_customize_the_toolbars">Dostosowywanie pasków narzędzi</h2>
+-<p>
+-Paski narzędzi pozwalają na szybki dostęp do najczęściej używanych funkcji przeglądarki.
+-Domyślnie paski narzędzi przeglądarki &brandShortName; zawierają podstawowe przyciski nawigacyjne, 
+-okienko adresu, wyszukiwania oraz wybrane zakładki.</p>
++<h2 id="can_i_customize_my_toolbars">Czy można dostosować paski narzędzi?</h2>
++
++<p>Tak, paski narzędzi w programie &brandShortName; można dostosować do własnych potrzeb.</p>
++
++<p>Paski narzędzi znajdują się w górnej części okna programu. Domyślnie &brandShortName; posiada
++trzy paski narzędzi:</p>
++
++<ul>
++<li><strong>pasek menu</strong> zawierający menu programu (Plik, Edycja, Widok itd.),</li>
++<li><strong>pasek narzędzi nawigacyjnych</strong> zawierający pasek adresu oraz przyciski służące do przeglądania witryn,</li>
++<li><strong>pasek zakładek</strong> zawierający zakładki z folderu paska zakładek</li>
++</ul>
++
++<p>Poniżej opisano sposoby dostosowania pasków narzędzi.</p>
++
++
++<h2 id="how_do_i_customize_the_toolbars">Jak dostosować paski narzędzi?</h2>
+ 
+ <p>Wygląd i działanie pasków narzędzi przeglądarki &brandShortName; można dopasować poprzez:</p>
+ <ul>
+@@ -42,6 +55,16 @@
+ 
+ <h3 id="adding_removing_toolbars">Dodawanie i ukrywanie pasków narzędzi</h3>
+ 
++<p>Można wyłączyć pewne paski narzędzi, jeśli ich obecność nie jest pożądana. W tej wersji
++programu &brandShortName; można usunąć następujące paski narzędzi:</p>
++
++<ul>
++<li>pasek narzędzi nawigacyjnych</li>
++<li>pasek zakładek</li>
++</ul>
++
++<p>Nie można usunąć paska menu, ponieważ elementy menu nie mogą zostać przeniesione do innego paska narzędzi, a jednocześnie muszą być cały czas obecne.</p>
++
+ <p>Aby ukryć pasek narzędzi, należy wybrać z głównego menu pozycje <span class="menuPath">Widok &gt; 
+ Paski narzędzi</span>, a następnie kliknąć nazwę ukrywanego paska narzędziowego.<br />
+ Aby przywrócić dany pasek, należy powtórzyć powyższe działania.</p>
+@@ -50,15 +73,14 @@
+ 
+ 
+ <p>Aby dodać nowy pasek narzędzi, należy wybrać z głównego menu pozycje <span class="menuPath">Widok &gt; 
+-Paski narzędzi</span>, a następnie opcję <em>Dostosuj</em>. W wyświetlonym oknie
+-dopasowywania pasków narzędzi należy kliknąć przycisk <em>Dodaj nowy pasek narzędziowy</em>
++Paski narzędzi &gt; Dostosuj...</span>. W wyświetlonym oknie
++dopasowywania pasków narzędzi należy kliknąć przycisk <em>Dodaj nowy pasek narzędzi</em>
+ i wpisać jego nazwę w kolejnym okienku dialogowym.<br/>
+ Dodany w ten sposób pasek narzędzi można ukrywać i przywracać za pomocą opisanych wyżej opcji.</p>
+ 
+ <p>Aby usunąć dodany przez użytkownika pasek narzędziowy, należy usunąć z niego wszystkie przyciski 
+ (co opisano poniżej), a następnie ukryć go za pomocą opisanych opcji.<br/>
+-<strong>UWAGA:</strong> Usunięcie domyślnych pasków narzędziowych (to jest paska narzędzi nawigacyjnych
+-i paska zakładek) jest niemożliwe.</p>
++</p>
+ 
+ <h3 id="rearranging_toolbar_items">Zmiana zawartości pasków narzędzi</h3>
+ <p>Elementy paska narzędziowego i ich kolejność można zmienić w oknie dopasowywania
+@@ -70,19 +92,20 @@
+ narzędziowego poprzez przeciąganie ich w żądane miejsce za pomocą myszy. Aby dodać element, 
+ należy przeciągnąć go z zasobnika w oknie dopasowywania na dany pasek narzędziowy. W celu usunięcia
+ elementu należy przeciągnąć go z paska narzędziowego do okna dopasowywania pasków.<br/>
+-Aby zamknąć okno i zatwierdzić zmiany, należy kliknąć przycisk <em>Zakończ</em>.<br/>
+-Przycisk <em>Domyślny układ</em> powoduje przywrócenie domyślnej zawartości i ułożenia pasków narzędziowych.</p>
++Aby zamknąć okno i zatwierdzić zmiany, należy kliknąć przycisk <em>Zakończ</em>.</p>
++
++<p>Przycisk <em>Domyślny układ</em> powoduje przywrócenie domyślnej zawartości i ułożenia pasków narzędziowych.</p>
+ 
+ <h3 id="special_toolbar_items">Specjalne elementy pasków narzędziowych</h3>
+ 
+ <p>Paski narzędziowe, oprócz zwykłych przycisków, mogą zawierać także inne elementy:</p>
+ 
+ <ul>
+-  <li><strong>Separatory</strong> pozwalają oddzielić dwa elementy za pomocą cienkiej pionowej linii.</li>
+-  <li><strong>Odstępy</strong> oddzielają dwa elementy pustą przestrzenią o stałej szerokości 
++  <li><strong>separatory</strong> pozwalają oddzielić dwa elementy za pomocą cienkiej pionowej linii.</li>
++  <li><strong>odstępy</strong> oddzielają dwa elementy pustą przestrzenią o stałej szerokości 
+ 
+   (zwykle ok. 20 pikseli).</li>
+-  <li><strong>Swobodne odstępy</strong>, w odróżnieniu od zwykłych odstępów, wypełniają całą dostępną
++  <li><strong>swobodne odstępy</strong>, w odróżnieniu od zwykłych odstępów, wypełniają całą dostępną
+   na pasku narzędzi przestrzeń. Pozwalają one w prosty sposób umieścić inne elementy po prawej stronie 
+   paska narzędzi przeglądarki.</li>
+ </ul>
+@@ -91,13 +114,12 @@
+ <h2 id="themes">Motywy</h2>
+ 
+ <p>Motywy pozwalają na zmianę wyglądu przeglądarki &brandShortName;.
+-Nie powodują one jednak zmiany działania ani utraty ustawień programu.</p>
++Nie powodują one jednak zmiany działania ani ustawień programu.</p>
+ 
+ 
+ <h3 id="getting_installing_themes">Pobieranie i instalacja motywów</h3>
+ 
+-<p>Najwięcej motywów można znaleźć na witrynach internetowych 
+-  <a href="http://www.texturizer.net/firebird/themes/">&brandShortName; Help</a> oraz 
++<p>Najwięcej motywów można znaleźć na witrynie internetowej
+   <a href="http://update.mozilla.org/themes/">Mozilla Update</a>. Motywy
+   można znaleźć także za pomocą wyszukiwarek internetowych (przy wyszukiwaniu pomocne może być angielskie słowo <em>themes</em>, oznaczające "motywy").</p>
+ 
+@@ -164,8 +186,9 @@
+ <em>Otwórz plik</em> z menu głównego lub przeciągnąć jego ikonę na obszar okna przeglądarki za pomocą myszy.
+ W wyświetlonym oknie należy potwierdzić instalację. Po zakończonej instalacji, w celu
+ poprawnego uruchomienia nowego rozszerzenia, może być koniecznie ponowne uruchomienie 
+-przeglądarki &brandShortName;<br/>
+-Rozszerzenia dla przeglądarki &brandShortName; można znaleźć w witrynie 
++przeglądarki &brandShortName;</p>
++
++<p>Rozszerzenia dla przeglądarki &brandShortName; można znaleźć w witrynie 
+ <a target="blank" href="http://update.mozilla.org/extensions/">Mozilla Update</a>.</p>
+ 
+ <p><img alt="Menedżer rozszerzeń"
+@@ -179,14 +202,12 @@
+ 
+ <h3 id="updating_extensions">Uaktualnianie rozszerzeń</h3>
+ 
+-<p>Aby sprawdzić czy pojawiła się nowsza wersja danego rozszerzenia, należy z menu 
++<p>Aby sprawdzić, czy pojawiła się nowsza wersja danego rozszerzenia, należy z menu 
+ <span class="menuPath">Narzędzia</span> wybrać pozycję <span class="menuPath">Rozszerzenia</span>,
+ a następnie nacisnąć przycisk <em>Aktualizuj</em></p>
+ 
+-
+-
+-<div class="contentsBox"><em>18 lipca 2004</em></div>
+-<p>Copyright &copy; 2003-2004 Contributors to the Mozilla Help Viewer Project.</p>
++<div class="contentsBox"><em>1 lipca 2005</em></div>
++<p>Copyright &copy; 2003-2005 Contributors to the Mozilla Help Viewer Project.</p>
+ </body>
+ 
+-</html>
+\ No newline at end of file
++</html>
+Index: download_manager.xhtml
+===================================================================
+RCS file: /l10n/l10n/pl/browser/chrome/help/download_manager.xhtml,v
+retrieving revision 1.2
+diff -u -r1.2 download_manager.xhtml
+--- download_manager.xhtml	21 May 2005 11:56:03 -0000	1.2
++++ download_manager.xhtml	4 Jul 2005 09:39:24 -0000
+@@ -23,7 +23,7 @@
+   <ul>
+     <li><a href="#what_is_download_manager">Czym jest Menedżer pobierania plików?</a></li>
+     <li><a href="#do_with_download_manager">Korzystanie z Menedżera pobierania plików</a></li>
+-    <li><a href="#download_manager_options">Opcje Menedżera pobierania plików</a></li>
++    <li><a href="#download_manager_options">&pref.pluralCaps; Menedżera pobierania plików</a></li>
+   </ul>
+ </div>
+ <h2 id="what_is_download_manager">Czym jest Menedżer pobierania plików?</h2>
+@@ -63,14 +63,14 @@
+ </dl>
+ 
+ 
+-<h2 id="download_manager_options">Opcje Menedżera pobierania plików</h2>
++<h2 id="download_manager_options">&pref.pluralCaps; Menedżera pobierania plików</h2>
+ 
+ <p><img src="images/opt_downloads.png" alt="Okno opcji Menedżera pobierania plików"/></p>
+ 
+-<p>Aby przejrzeć opcje Menedżera pobierania plików, należy otworzyć panel <strong>Pobieranie</strong> w ogólnym oknie opcji (&pref.menuPath;). Więcej informacji na temat różnych opcji można znaleźć w <a href="prefs.xhtml#downloads_options">rozdziale o Opcjach</a>.</p>
++<p>Aby przejrzeć opcje Menedżera pobierania plików, należy otworzyć panel <strong>Pobieranie</strong> w ogólnym oknie opcji (&pref.menuPath;). Więcej informacji na temat różnych opcji można znaleźć w rozdziale <q><a href="prefs.xhtml#downloads_options">&pref.pluralCaps;</a></q>.</p>
+ 
+-<div class="contentsBox"><em>2 października 2004</em></div>
+-<p>Copyright &copy; 2004 Contributors to the Firebird Help Project.</p>
++<div class="contentsBox"><em>1 lipca 2005</em></div>
++<p>Copyright &copy; 2003-2005 Contributors to the Mozilla Help Viewer Project.</p>
+ 
+ </body>
+ 
+Index: firebird-index1.rdf
+===================================================================
+RCS file: /l10n/l10n/pl/browser/chrome/help/firebird-index1.rdf,v
+retrieving revision 1.1
+diff -u -r1.1 firebird-index1.rdf
+--- firebird-index1.rdf	16 Apr 2005 17:47:43 -0000	1.1
++++ firebird-index1.rdf	4 Jul 2005 09:39:33 -0000
+@@ -448,9 +448,15 @@
+   <rdf:Description about="#tabbed-browsing">
+       <nc:subheadings>
+           <rdf:Seq>
+-              <rdf:li><rdf:Description ID="tabbed-browsing-using-tabbed-browsing" nc:name="korzystanie z" nc:link="tabbed_browsing.xhtml#using_tabbed_browsing"/></rdf:li>
+-              <rdf:li><rdf:Description ID="tabbed-browsing-creating-loading-tabs" nc:name="otwieranie paneli" nc:link="tabbed_browsing.xhtml#creating_loading_tabs"/></rdf:li>
+-              <rdf:li><rdf:Description ID="tabbed-browsing-customizing" nc:name="dostosowywanie" nc:link="tabbed_browsing.xhtml#customizing"/></rdf:li>
++              <rdf:li><rdf:Description ID="tabbed-browsing-creating-loading-tabs" nc:name="otwieranie paneli" nc:link="tabbed_browsing.xhtml#creating_loading_tabs"/></rdf:li>
++	      <rdf:li><rdf:Description ID="tabbed-browsing-moving-tabs" 
++nc:name="przenoszenie paneli wewnątrz okna" nc:link="tabbed_browsing.xhtml#moving_tabs"/></rdf:li>
++              <rdf:li><rdf:Description ID="tabbed-browsing-closing-tabs"
++nc:name="zamykanie paneli" nc:link="tabbed_browsing.xhtml#closing_tabs"/></rdf:li>
++              <rdf:li><rdf:Description ID="tabbed-browsing-customizing" nc:name="dostosowywanie" nc:link="tabbed_browsing.xhtml#customizing"/></rdf:li>
++		<rdf:li><rdf:Description ID="tabbed-browsing-prefs" nc:name="ustawienia
++paneli" nc:link="prefs.xhtml#tabs_options"/></rdf:li>
++
+             </rdf:Seq>
+       </nc:subheadings>
+   </rdf:Description>
+Index: firebird-toc.rdf
+===================================================================
+RCS file: /l10n/l10n/pl/browser/chrome/help/firebird-toc.rdf,v
+retrieving revision 1.3
+diff -u -r1.3 firebird-toc.rdf
+--- firebird-toc.rdf	21 Jun 2005 09:01:56 -0000	1.3
++++ firebird-toc.rdf	4 Jul 2005 09:39:49 -0000
+@@ -32,7 +32,7 @@
+       <rdf:Seq>
+         <rdf:li> <rdf:Description ID="using-firebird-navigating-web-pages" nc:name="Przeglądanie stron WWW" nc:link="using_firebird.xhtml#navigating_web_pages"/> </rdf:li>
+         <rdf:li> <rdf:Description ID="using-firebird-searching" nc:name="Wyszukiwanie informacji" nc:link="using_firebird.xhtml#searching"/> </rdf:li>
+-        <rdf:li> <rdf:Description ID="using-firebird-improving-speed-and-efficiency" nc:name="Optymalizacja szybkości i wydajności przeglądania" nc:link="using_firebird.xhtml#improving_speed_and_efficiency"/> </rdf:li>
++        <rdf:li> <rdf:Description ID="using-firebird-improving-speed-and-efficiency" nc:name="Zwiększenie szybkości i wydajności przeglądania" nc:link="using_firebird.xhtml#improving_speed_and_efficiency"/> </rdf:li>
+       </rdf:Seq>
+     </nc:subheadings>
+   </rdf:Description>
+@@ -98,8 +98,8 @@
+   <rdf:Description about="#customize-firebird">
+       <nc:subheadings>
+         <rdf:Seq>
+-<!--          <rdf:li> <rdf:Description ID="customize-toolbar" nc:name="Dostosowywanie pasków narzędzi" nc:link="customization.xhtml"/> </rdf:li>
+-          <rdf:li> <rdf:Description ID="customize-toolbar-can-i-customize" nc:name="Czy mogę dostosować swoje paski narzędzi?" nc:link="customization.xhtml#can_i_customize_my_toolbars"/> </rdf:li> -->
++          <rdf:li> <rdf:Description ID="customize-toolbar" nc:name="Dostosowywanie pasków narzędzi" nc:link="customization.xhtml"/> </rdf:li>
++          <rdf:li> <rdf:Description ID="customize-toolbar-can-i-customize" nc:name="Czy można dostosować paski narzędzi?" nc:link="customization.xhtml#can_i_customize_my_toolbars"/> </rdf:li> 
+           <rdf:li> <rdf:Description ID="customize-toolbar-how-do-i-customize" nc:name="Dostosowywanie pasków narzędzi" nc:link="customization.xhtml#how_do_i_customize_the_toolbars"/> </rdf:li>
+           <rdf:li> <rdf:Description ID="themes" nc:name="Motywy" nc:link="customization.xhtml#themes"/> </rdf:li>
+           <rdf:li> <rdf:Description ID="extensions" nc:name="Rozszerzenia" nc:link="customization.xhtml#extensions"/> </rdf:li>
+@@ -167,98 +167,110 @@
+       </rdf:Seq>
+     </nc:subheadings>
+   </rdf:Description>
+-
+-  <rdf:Description about="#tabbed-browsing">
+-    <nc:subheadings>
+-      <rdf:Seq>
+-        <rdf:li> <rdf:Description ID="tabbed-browsing-using" nc:name="Korzystanie z paneli" nc:link="tabbed_browsing.xhtml#"/> </rdf:li>
+-        <rdf:li> <rdf:Description ID="tabbed-browsing-creating-loading-tabs" nc:name="Otwieranie nowych paneli" nc:link="tabbed_browsing.xhtml#creating_loading_tabs"/> </rdf:li>
+-        <rdf:li> <rdf:Description ID="tabbed-browsing-customizing" nc:name="Ustawienia dotyczące paneli" nc:link="tabbed_browsing.xhtml#customizing"/> </rdf:li>
+-       </rdf:Seq>
+-    </nc:subheadings>
+-  </rdf:Description>
+-
+-  <rdf:Description about="#prefs">
+-    <nc:subheadings>
+-      <rdf:Seq>
+-        <rdf:li> <rdf:Description ID="prefs-general" nc:name="Panel Ogólne" nc:link="prefs.xhtml#general_options"/> </rdf:li>
+-        <rdf:li> <rdf:Description ID="prefs-privacy" nc:name="Panel Prywatność" nc:link="prefs.xhtml#privacy_options"/> </rdf:li>
+-        <rdf:li> <rdf:Description ID="prefs-web-features" nc:name="Panel Przeglądanie" nc:link="prefs.xhtml#web_features_options"/> </rdf:li>
+-        <rdf:li> <rdf:Description ID="prefs-download" nc:name="Panel Pobieranie" nc:link="prefs.xhtml#downloads_options"/> </rdf:li>
+-        <rdf:li> <rdf:Description ID="prefs-advanced" nc:name="Panel Zaawansowane" nc:link="prefs.xhtml#advanced_options"/> </rdf:li>
+-      </rdf:Seq>
+-    </nc:subheadings>
+-  </rdf:Description>
+-
+-  <rdf:Description about="#prefs-general">
+-    <nc:subheadings>
+-      <rdf:Seq>
+-        <rdf:li> <rdf:Description ID="prefs-home-page" nc:name="Strona domowa" nc:link="prefs.xhtml#home_page"/> </rdf:li>
+-        <rdf:li> <rdf:Description ID="prefs-fonts-and-colors" nc:name="Czcionki i kolory" nc:link="prefs.xhtml#fonts_and_colors"/> </rdf:li>
+-        <rdf:li> <rdf:Description ID="prefs-languages" nc:name="Języki" nc:link="prefs.xhtml#languages"/> </rdf:li>
+-        <rdf:li> <rdf:Description ID="prefs-default-browser" nc:name="Domyślna przeglądarka" nc:link="prefs.xhtml#default_browser"/> </rdf:li>
+-        <rdf:li> <rdf:Description ID="prefs-connection-settings" nc:name="Ustawienia połączenia" nc:link="prefs.xhtml#connection_settings"/> </rdf:li>
+-      </rdf:Seq>
+-    </nc:subheadings>
+-  </rdf:Description>
+-
+-  <rdf:Description about="#prefs-privacy">
+-    <nc:subheadings>
+-      <rdf:Seq>
+-        <rdf:li> <rdf:Description ID="prefs-history" nc:name="Historia" nc:link="prefs.xhtml#history"/> </rdf:li>
+-        <rdf:li> <rdf:Description ID="prefs-saved-form-information" nc:name="Formularze" nc:link="prefs.xhtml#saved_form_information"/> </rdf:li>
+-        <rdf:li> <rdf:Description ID="prefs-saved-passwords" nc:name="Hasła" nc:link="prefs.xhtml#saved_passwords"/> </rdf:li>
+-        <rdf:li> <rdf:Description ID="prefs-download-manager-history" nc:name="Historia menedżera pobierania plików" nc:link="prefs.xhtml#download_manager_history"/> </rdf:li>
+-        <rdf:li> <rdf:Description ID="prefs-cookies" nc:name="Ciasteczka" nc:link="prefs.xhtml#cookies"/> </rdf:li>
+-        <rdf:li> <rdf:Description ID="prefs-cache" nc:name="Pamięć podręczna" nc:link="prefs.xhtml#cache"/> </rdf:li>
+-      </rdf:Seq>
+-    </nc:subheadings>
+-  </rdf:Description>
+-
+-  <rdf:Description about="#prefs-web-features">
+-    <nc:subheadings>
+-      <rdf:Seq>
+-        <rdf:li> <rdf:Description ID="prefs-allow-scripts-to" nc:name="Pozwól skryptom na wykonanie następujących czynności:" nc:link="prefs.xhtml#allow_scripts_to"/> </rdf:li>
+-      </rdf:Seq>
+-    </nc:subheadings>
+-  </rdf:Description>
+-
+-  <rdf:Description about="#prefs-download">
+-    <nc:subheadings>
+-      <rdf:Seq>
+-        <rdf:li> <rdf:Description ID="prefs-download-folder" nc:name="Katalog pobierania" nc:link="prefs.xhtml#download_folder"/> </rdf:li>
+-        <rdf:li> <rdf:Description ID="prefs-file-types" nc:name="Typy plików" nc:link="prefs.xhtml#file_types"/> </rdf:li>
+-      </rdf:Seq>
+-    </nc:subheadings>
+-  </rdf:Description>
+-
+-  <rdf:Description about="#prefs-advanced">
+-    <nc:subheadings>
+-      <rdf:Seq>
+-        <rdf:li> <rdf:Description ID="prefs-accessibility" nc:name="Dostępność" nc:link="prefs.xhtml#accessibility"/> </rdf:li>
+-        <rdf:li> <rdf:Description ID="prefs-browsing" nc:name="Przeglądanie" nc:link="prefs.xhtml#browsing"/> </rdf:li>
+-        <rdf:li> <rdf:Description ID="prefs-tabbed-browsing" nc:name="Przeglądanie w panelach" nc:link="prefs.xhtml#tabbed_browsing"/> </rdf:li>
+-        <rdf:li> <rdf:Description ID="prefs-updates" nc:name="Aktualizacja oprogramowania" nc:link="prefs.xhtml#software_update"/> </rdf:li>
+-        <rdf:li> <rdf:Description ID="prefs-security" nc:name="Bezpieczeństwo" nc:link="prefs.xhtml#security"/> </rdf:li>
+-        <rdf:li> <rdf:Description ID="prefs-certificates" nc:name="Certyfikaty" nc:link="prefs.xhtml#certificates"/> </rdf:li>
+-        <rdf:li> <rdf:Description ID="prefs-validation" nc:name="Walidacja" nc:link="prefs.xhtml#validation"/> </rdf:li>
+-      </rdf:Seq>
+-    </nc:subheadings>
++
++  <rdf:Description about="#tabbed-browsing">
++    <nc:subheadings>
++      <rdf:Seq>
++        <rdf:li> <rdf:Description ID="tabbed-browsing-creating-loading-tabs" nc:name="Tworzenie nowych paneli" nc:link="tabbed_browsing.xhtml#creating_loading_tabs"/> </rdf:li>
++        <rdf:li> <rdf:Description ID="tabbed-browsing-moving-tabs" nc:name="Przenoszenie paneli wewnątrz okna" nc:link="tabbed_browsing.xhtml#moving_tabs"/> </rdf:li>
++        <rdf:li> <rdf:Description ID="tabbed-browsing-closing-tabs" nc:name="Zamykanie paneli" nc:link="tabbed_browsing.xhtml#closing_tabs"/> </rdf:li>
++        <rdf:li> <rdf:Description ID="tabbed-browsing-customizing" nc:name="Ustawienia dotyczące przeglądania w panelach" nc:link="tabbed_browsing.xhtml#customizing"/> </rdf:li>
++        <rdf:li> <rdf:Description ID="tabbed-browsing-tips-tricks" nc:name="Porady" nc:link="tabbed_browsing.xhtml#tips_tricks"/> </rdf:li>
++       </rdf:Seq>
++    </nc:subheadings>
++  </rdf:Description>
++
++  <rdf:Description about="#prefs">
++    <nc:subheadings>
++      <rdf:Seq>
++        <rdf:li> <rdf:Description ID="prefs-general" nc:name="Ogólne" nc:link="prefs.xhtml#general_options"/> </rdf:li>
++        <rdf:li> <rdf:Description ID="prefs-privacy" nc:name="Prywatność" nc:link="prefs.xhtml#privacy_options"/> </rdf:li>
++        <rdf:li> <rdf:Description ID="prefs-content" nc:name="Treść" nc:link="prefs.xhtml#content_options"/> </rdf:li>
++        <rdf:li> <rdf:Description ID="prefs-tabs"    nc:name="Panele"    nc:link="prefs.xhtml#tabs_options"/> </rdf:li>
++        <rdf:li> <rdf:Description ID="prefs-downloads" nc:name="Pobieranie plików" nc:link="prefs.xhtml#downloads_options"/> </rdf:li>
++        <rdf:li> <rdf:Description ID="prefs-advanced" nc:name="Zaawansowane" nc:link="prefs.xhtml#advanced_options"/> </rdf:li>
++      </rdf:Seq>
++    </nc:subheadings>
++  </rdf:Description>
++
++  <rdf:Description about="#prefs-general">
++    <nc:subheadings>
++      <rdf:Seq>
++        <rdf:li> <rdf:Description ID="prefs-home-page" nc:name="Strona domowa" nc:link="prefs.xhtml#home_page"/> </rdf:li>
++        <rdf:li> <rdf:Description ID="prefs-default-browser" nc:name="Domyślna przeglądarka" nc:link="prefs.xhtml#default_browser"/> </rdf:li>
++        <rdf:li> <rdf:Description ID="prefs-connection-settings" nc:name="Ustaweiania połączenia" nc:link="prefs.xhtml#connection_settings"/> </rdf:li>
++      </rdf:Seq>
++    </nc:subheadings>
++  </rdf:Description>
++
++  <rdf:Description about="#prefs-privacy">
++    <nc:subheadings>
++      <rdf:Seq>
++        <rdf:li> <rdf:Description ID="prefs-history" nc:name="Historia" nc:link="prefs.xhtml#privacy_history"/> </rdf:li>
++        <rdf:li> <rdf:Description ID="prefs-saved-forms" nc:name="Dane formularzy" nc:link="prefs.xhtml#privacy_saved_forms"/> </rdf:li>
++        <rdf:li> <rdf:Description ID="prefs-passwords" nc:name="Hasła" nc:link="prefs.xhtml#privacy_passwords"/> </rdf:li>
++        <rdf:li> <rdf:Description ID="prefs-download-history" nc:name="Historia pobrań" nc:link="prefs.xhtml#privacy_download_history"/> </rdf:li>
++        <rdf:li> <rdf:Description ID="prefs-cookies" nc:name="Ciasteczka" nc:link="prefs.xhtml#privacy_cookies"/> </rdf:li>
++        <rdf:li> <rdf:Description ID="prefs-cache" nc:name="Pamięć podręczna" nc:link="prefs.xhtml#privacy_cache"/> </rdf:li>
++        <rdf:li> <rdf:Description ID="prefs-sanitize" nc:name="Ustawienia Sanitize" nc:link="prefs.xhtml#sanitize"/> </rdf:li>
++      </rdf:Seq>
++    </nc:subheadings>
++  </rdf:Description>
++
++  <rdf:Description about="#prefs-content">
++    <nc:subheadings>
++      <rdf:Seq>
++        <rdf:li> <rdf:Description ID="prefs-fonts-and-colors" nc:name="Czcionki i kolory" nc:link="prefs.xhtml#fonts_and_colors"/> </rdf:li>
++      </rdf:Seq>
++    </nc:subheadings>
++  </rdf:Description>
++
++  <rdf:Description about="#prefs-downloads">
++    <nc:subheadings>
++      <rdf:Seq>
++        <rdf:li> <rdf:Description ID="prefs-download-folder" nc:name="Folder pobieranych plików" nc:link="prefs.xhtml#download_folder"/> </rdf:li>
++        <rdf:li> <rdf:Description ID="prefs-download-manager" nc:name="Menedżer pobierania plików" nc:link="prefs.xhtml#download_manager"/> </rdf:li>
++        <rdf:li> <rdf:Description ID="prefs-download-actions" nc:name="Czynności pobierania" nc:link="prefs.xhtml#download_actions"/> </rdf:li>
++      </rdf:Seq>
++    </nc:subheadings>
++  </rdf:Description>
++
++  <rdf:Description about="#prefs-advanced">
++    <nc:subheadings>
++      <rdf:Seq>
++        <rdf:li> <rdf:Description ID="prefs-advanced-general" nc:name="Ogólne" nc:link="prefs.xhtml#advanced_general"/> </rdf:li>
++        <rdf:li> <rdf:Description ID="prefs-advanced-update" nc:name="Aktualizacja" nc:link="prefs.xhtml#advanced_update"/> </rdf:li>
++        <rdf:li> <rdf:Description ID="prefs-advanced-security" nc:name="Bezpieczeństwo" nc:link="prefs.xhtml#advanced_security"/> </rdf:li>
++      </rdf:Seq>
++    </nc:subheadings>
+   </rdf:Description>
+ 
+   <rdf:Description about="#menu">
+     <nc:subheadings>
+-      <rdf:Seq>
++      <rdf:Seq>
++        <rdf:li> <rdf:Description ID="menu-firefox" nc:name="&brandShortName; (tylko Mac)" nc:link="menu_reference.xhtml#firefox"/> </rdf:li>
+         <rdf:li> <rdf:Description ID="menu-file" nc:name="Plik" nc:link="menu_reference.xhtml#file"/> </rdf:li>
+         <rdf:li> <rdf:Description ID="menu-edit" nc:name="Edycja" nc:link="menu_reference.xhtml#edit"/> </rdf:li>
+         <rdf:li> <rdf:Description ID="menu-view" nc:name="Widok" nc:link="menu_reference.xhtml#view"/> </rdf:li>
+         <rdf:li> <rdf:Description ID="menu-go" nc:name="Przejdź" nc:link="menu_reference.xhtml#go"/> </rdf:li>
+         <rdf:li> <rdf:Description ID="menu-bookmarks" nc:name="Zakładki" nc:link="menu_reference.xhtml#bookmarks"/> </rdf:li>
+-        <rdf:li> <rdf:Description ID="menu-tools" nc:name="Narzędzia" nc:link="menu_reference.xhtml#tools"/> </rdf:li>
++        <rdf:li> <rdf:Description ID="menu-tools" nc:name="Narzędzia" nc:link="menu_reference.xhtml#tools"/> </rdf:li>
++        <rdf:li> <rdf:Description ID="menu-window" nc:name="Okno (tylko Mac)" nc:link="menu_reference.xhtml#window"/> </rdf:li>
+         <rdf:li> <rdf:Description ID="menu-help" nc:name="Pomoc" nc:link="menu_reference.xhtml#help"/> </rdf:li>
+       </rdf:Seq>
+     </nc:subheadings>
+-  </rdf:Description>
++  </rdf:Description>
++
++  <rdf:Description about="#menu-firefox">
++    <nc:subheadings>
++      <rdf:Seq>
++        <rdf:li> <rdf:Description ID="menu-firefox-about" nc:name="O programie &brandFullName;" nc:link="menu_reference.xhtml#about_mac"/> </rdf:li>
++        <rdf:li> <rdf:Description ID="menu-firefox-preferences" nc:name="Preferencje..." nc:link="menu_reference.xhtml#prefs_mac"/> </rdf:li>
++        <rdf:li> <rdf:Description ID="menu-firefox-quit" nc:name="Skończ &brandShortName;" nc:link="menu_reference.xhtml#quit_mac"/> </rdf:li>
++      </rdf:Seq>
++    </nc:subheadings>
++  </rdf:Description>
++
+ 
+   <rdf:Description about="#menu-file">
+     <nc:subheadings>
+@@ -293,7 +305,7 @@
+         <rdf:li> <rdf:Description ID="menu-view-select-all" nc:name="Zaznacz wszystko" nc:link="menu_reference.xhtml#select_all"/> </rdf:li>
+         <rdf:li> <rdf:Description ID="menu-view-find-in-this-page" nc:name="Znajdź na tej stronie..." nc:link="menu_reference.xhtml#find_in_this_page"/> </rdf:li>
+         <rdf:li> <rdf:Description ID="menu-view-find-again" nc:name="Znajdź następne" nc:link="menu_reference.xhtml#find_again"/> </rdf:li>
+-        <rdf:li> <rdf:Description ID="menu-view-preferences" nc:name="Opcje" nc:link="menu_reference.xhtml#prefs"/> </rdf:li>
++        <rdf:li> <rdf:Description ID="menu-view-preferences" nc:name="Preferencje" nc:link="menu_reference.xhtml#prefs"/> </rdf:li>
+       </rdf:Seq>
+     </nc:subheadings>
+   </rdf:Description>
+@@ -386,6 +398,16 @@
+         <rdf:li> <rdf:Description ID="menu-tools-options" nc:name="Opcje" nc:link="menu_reference.xhtml#options"/> </rdf:li>
+       </rdf:Seq>
+     </nc:subheadings>
++  </rdf:Description>
++
++  <rdf:Description about="#menu-window">
++    <nc:subheadings>
++      <rdf:Seq>
++        <rdf:li> <rdf:Description ID="menu-window-minimize" nc:name="Minimalizuj" nc:link="menu_reference.xhtml#minimize"/> </rdf:li>
++        <rdf:li> <rdf:Description ID="menu-window-zoom" nc:name="Powiększ" nc:link="menu_reference.xhtml#zoom"/> </rdf:li>
++        <rdf:li> <rdf:Description ID="menu-window-open-windows" nc:name="(Otwarte okna)" nc:link="menu_reference.xhtml#open-windows"/> </rdf:li>
++      </rdf:Seq>
++    </nc:subheadings>
+   </rdf:Description>
+ 
+   <rdf:Description about="#menu-help">
+@@ -397,7 +419,7 @@
+ 	<rdf:li> <rdf:Description ID="menu-help-report-broken-web-site" nc:name=
+ 	"Zgłoś niedziałającą witrynę" nc:link="menu_reference.xhtml#reporter"/> </rdf:li>
+         <rdf:li> <rdf:Description ID="menu-help-check-for-updates" nc:name="Sprawdź dostępność aktualizacji..." nc:link="menu_reference.xhtml#check_for_updates"/> </rdf:li>
+-        <rdf:li> <rdf:Description ID="menu-help-about-mozilla-firebird" nc:name="O programie  Firefox" nc:link="menu_reference.xhtml#about_mozilla_firebird"/> </rdf:li>
++        <rdf:li> <rdf:Description ID="menu-help-about-mozilla-firebird" nc:name="O programie  &brandShortName;" nc:link="menu_reference.xhtml#about_mozilla_firebird"/> </rdf:li>
+       </rdf:Seq>
+     </nc:subheadings>
+   </rdf:Description>
+Index: firebirdhelp.rdf
+===================================================================
+RCS file: /l10n/l10n/pl/browser/chrome/help/firebirdhelp.rdf,v
+retrieving revision 1.2
+diff -u -r1.2 firebirdhelp.rdf
+--- firebirdhelp.rdf	21 May 2005 11:56:03 -0000	1.2
++++ firebirdhelp.rdf	4 Jul 2005 09:39:49 -0000
+@@ -1,39 +1,39 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-
+-<!DOCTYPE window [
+-    <!ENTITY % brandDTD SYSTEM "chrome://global/locale/brand.dtd">
+-    %brandDTD;
+-]>
+-
+-<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+-        xmlns:nc="http://home.netscape.com/NC-rdf#">
+-
+-    <!-- MOZILLA MASTER HELP DOCUMENT -->
+-    <rdf:Description about="urn:root"
+-            nc:title="&brandFullName; Pomoc"
+-            nc:defaulttopic="firefox-help"
+-            nc:base="chrome://browser/locale/help/">
+-        <nc:panellist>
+-            <rdf:Seq>
+-                <rdf:li>
+-                    <rdf:Description nc:panelid="glossary"
+-                        nc:datasources="firebird-glossary.rdf"/>
+-                </rdf:li>
+-                <rdf:li>
+-                    <rdf:Description nc:panelid="index"
+-                        nc:datasources="firebird-index1.rdf"/>
+-                </rdf:li>
+-                <rdf:li>
+-                    <rdf:Description nc:panelid="search"
+-                        nc:datasources=""
+-                        nc:emptysearchtext="[Nie znaleziono pasujących wyników.]"
+-                        nc:emptysearchlink="chrome://help/locale/welcome.xhtml#search_tips"/>
+-                </rdf:li>
+-                <rdf:li>
+-                    <rdf:Description nc:panelid="toc"
+-                        nc:datasources="help-toc.rdf firebird-toc.rdf"/>
+-                </rdf:li>
+-            </rdf:Seq>
+-        </nc:panellist>
+-    </rdf:Description>
+-</rdf:RDF>
+\ No newline at end of file
++<?xml version="1.0" encoding="UTF-8"?>
++
++<!DOCTYPE window [
++    <!ENTITY % brandDTD SYSTEM "chrome://global/locale/brand.dtd">
++    %brandDTD;
++]>
++
++<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
++        xmlns:nc="http://home.netscape.com/NC-rdf#">
++
++    <!-- MOZILLA MASTER HELP DOCUMENT -->
++    <rdf:Description about="urn:root"
++            nc:title="&brandFullName; - Pomoc"
++            nc:defaulttopic="firefox-help"
++            nc:base="chrome://browser/locale/help/">
++        <nc:panellist>
++            <rdf:Seq>
++                <rdf:li>
++                    <rdf:Description nc:panelid="glossary"
++                        nc:datasources="firebird-glossary.rdf"/>
++                </rdf:li>
++                <rdf:li>
++                    <rdf:Description nc:panelid="index"
++                        nc:datasources="firebird-index1.rdf"/>
++                </rdf:li>
++                <rdf:li>
++                    <rdf:Description nc:panelid="search"
++                        nc:datasources=""
++                        nc:emptysearchtext="[Nie znaleziono szukanego tekstu.]"
++                        nc:emptysearchlink="chrome://help/locale/welcome.xhtml#search_tips"/>
++                </rdf:li>
++                <rdf:li>
++                    <rdf:Description nc:panelid="toc"
++                        nc:datasources="help-toc.rdf firebird-toc.rdf"/>
++                </rdf:li>
++            </rdf:Seq>
++        </nc:panellist>
++    </rdf:Description>
++</rdf:RDF>
+Index: forieusers.xhtml
+===================================================================
+RCS file: /l10n/l10n/pl/browser/chrome/help/forieusers.xhtml,v
+retrieving revision 1.2
+diff -u -r1.2 forieusers.xhtml
+--- forieusers.xhtml	21 May 2005 11:56:03 -0000	1.2
++++ forieusers.xhtml	4 Jul 2005 09:39:49 -0000
+@@ -19,18 +19,18 @@
+ swoje ulubione funkcje w przeglądarce &brandFullName; - niniejszy dokument zawiera informacje o najważniejszych różnicach 
+ pomiędzy tymi dwoma programami.</div>
+ <div><strong>Uwaga:</strong> Poniższe informacje dotyczą wersji przeglądarki &brandFullName; dla systemu Windows oraz 
+-  Mac OS.</div>
++  Mac OS X.</div>
+ 
+ <div class="contentsBox">W tym rozdziale:
+   <ul>
+-    <li><a href="#firebird_and_internet_explorer_terminology_differences">Różnice w nazwach używanych w przeglądarce &brandFullName; oraz Internet Explorerze</a></li>
+-    <li><a href="#about_your_ie_settings">Ustawienia z Internet Explorera</a></li>
++    <li><a href="#firebird_and_internet_explorer_terminology_differences">Różnice w terminologii</a></li>
++    <li><a href="#about_your_ie_settings">Ulubione i ustawienia z Internet Explorera</a></li>
+     <li><a href="#firebirds_features">Dodatkowe możliwości przeglądarki &brandFullName;</a></li>
+     <li><a href="#keyboard_shortcuts">Skróty klawiaturowe</a></li>
+   </ul>
+ </div>
+ 
+-<h2 id="firebird_and_internet_explorer_terminology_differences">Różnice w nazwach używanych w przeglądarce &brandFullName; oraz Internet Explorerze </h2>
++<h2 id="firebird_and_internet_explorer_terminology_differences">Różnice w terminologii </h2>
+ 
+ <table width="95%" border="1">
+   <tr>
+@@ -68,7 +68,7 @@
+   </tr>
+ </table>
+ 
+-<h2 id="about_your_ie_settings">Ustawienia z Internet Explorera</h2>
++<h2 id="about_your_ie_settings">Ulubione i ustawienia z Internet Explorera</h2>
+ 
+ 
+ <p>Przeglądarka &brandShortName; jest w stanie zaimportować ustawienia
+@@ -119,9 +119,9 @@
+   <a href="shortcuts.xhtml">pełną listą skrótów klawiaturowych</a>.</p>
+ <hr />
+ 
+-<div class="contentsBox"><em>17 sierpnia 2003</em></div>
++<div class="contentsBox"><em>1 lipca 2005</em></div>
+ 
+-<p>Copyright &copy; 2003-2004 Contributors to the Mozilla Help Viewer Project.</p>
++<p>Copyright &copy; 2003-2005 Contributors to the Mozilla Help Viewer Project.</p>
+ 
+ </body>
+ </html>
+Index: menu_reference.xhtml
+===================================================================
+RCS file: /l10n/l10n/pl/browser/chrome/help/menu_reference.xhtml,v
+retrieving revision 1.4
+diff -u -r1.4 menu_reference.xhtml
+--- menu_reference.xhtml	21 Jun 2005 09:01:56 -0000	1.4
++++ menu_reference.xhtml	4 Jul 2005 09:39:53 -0000
+@@ -34,6 +34,21 @@
+     </ul>
+   </div>
+ 
++<div class="mac">
++  <h2 id="firefox">&brandShortName;</h2>
++    <h3 id="about_mac">O programie &brandFullName;</h3>
++  <p>Wyświetla okno dialogowe z informacjami o przeglądarce &brandShortName;, wraz z numerem wersji i skrócona listą twórców.</p>
++
++    <h3 id="prefs_mac">Preferencje...</h3>
++<p>Wyświetla okno <a href="prefs.xhtml">&pref.pluralCaps;</a>, w którym użytkownik może zmienić ustawienia przeglądarki &brandShortName;.</p>
++
++    <h3 id="quit_mac">Skończ &brandShortName;</h3>
++<p>Zamyka wszystkie okna przeglądarki &brandShortName;, włącznie z menedżerem pobierania plików.</p>
++
++<p><strong>UWAGA:</strong> Polecenie nie tylko zamyka okno menedżera pobierania, ale przerywa również aktywne pobierania.Aby zapobiec przypadkowemu zamknięciu, gdy otwartych jest kilka paneli, okien lub menedźer pobiera plik, wyświetlona zostanie prośba o potwierdzenie.</p>
++
++</div>
++
+ <h2 id="file">Menu Plik</h2>
+ 
+   <h3 id="new_window">Nowe okno</h3>
+@@ -63,7 +78,7 @@
+   <h3 id="page_setup">Ustawienia strony...</h3>
+   <p>Pozwala na określenie ustawień wydruku strony: wielkości marginesów, treści nagłówka i stopki, orientacji papieru i innych</p>
+ 
+-  <h3 id="print_preview">Podgląd wydruku</h3>
++  <h3 id="print_preview">Podgląd wydruku (tylko Windows i Linux)</h3>
+   <p>Wyświetla podgląd wydruku strony zgodnie z ustawieniami wydruku określonymi w oknie Ustawienia strony.</p>
+ 
+   <h3 id="print">Drukuj...</h3>
+@@ -74,12 +89,13 @@
+   
+   <h3 id="work_offline">Pracuj w trybie offline</h3>
+   <p>Przełącza pomiędzy trybem online i offline. Tryb offline umożliwia przeglądanie bez aktywnego połączenia internetowego wcześniej odwiedzonych stron internetowych.</p>
+-    
++
++<div class="noMac">    
+ <h3 id="exit">Zakończ</h3>
+ <p>Zamyka wszystkie okna przeglądarki &brandShortName;, włącznie z menedżerem pobierania plików.</p>
+ <p><strong>UWAGA:</strong> Polecenie nie tylko zamyka okno menedżera pobierania, ale przerywa również aktywne pobierania.
+ Aby zapobiec przypadkowemu zamknięciu, gdy otwartych jest kilka paneli, okien lub menedźer pobiera plik, wyświetlona zostanie prośba o potwierdzenie.</p>
+-
++</div>
+ 
+ 
+ <h2 id="edit">Menu Edycja</h2>
+@@ -116,7 +132,7 @@
+   <p>Odszukuje kolejne wystąpienie na bieżącej stronie tekstu uprzednio znalezionego poleceniem <em>Znajdź na tej stronie...</em></p>
+ 
+   <h3 class="unix" id="prefs">&pref.pluralCaps;</h3>
+-  <p class="unix"><p>Wyświetla okno <a href="prefs.xhtml">&pref.pluralCaps;</a>, w którym użytkownik może zmienić ustawienia przeglądarki &brandShortName;.</p></p>
++  <p class="unix">Wyświetla okno <a href="prefs.xhtml">&pref.pluralCaps;</a>, w którym użytkownik może zmienić ustawienia przeglądarki &brandShortName;.</p>
+ 
+ <h2 id="view">Menu Widok</h2>
+ 
+@@ -154,10 +170,10 @@
+   <h3 id="text_size">Rozmiar tekstu</h3>
+   <p>Gdy tekst na stronie jest zbyt mały lub zbyt duży, możesz go zmienić według własnych upodobań.</p>
+ 
+-  <h4 id="increase_text_size">Powiększ rozmiar tekstu</h4>
++  <h4 id="increase_text_size">Zwiększ</h4>
+   <p>Zwiększa wielkość wyświetlanego tekstu strony o jednostkę. Polecenie można wywołać także naciskając klawisze <kbd>Ctrl +</kbd> lub skorzystać z <a href="mouse_shortcuts.xhtml">skrótów myszy</a></p>
+ 
+-  <h4 id="decrease_text_size">Pomniejsz rozmiar tekstu</h4>
++  <h4 id="decrease_text_size">Zmniejsz</h4>
+   <p>Zmniejsza wielkość wyświetlanego tekstu strony o jednostkę. Polecenie można wywołać także naciskając klawisze <kbd>Ctrl -</kbd> lub skorzystać z <a href="mouse_shortcuts.xhtml">skrótów myszy</a></p>
+ 
+ 
+@@ -212,14 +228,14 @@
+   Jako zakładkę zapisać można również grupę aktualnie otwartych paneli.</p>
+ 
+ 
+-  <h3 id="manage_bookmarks">Menedżer zakładek...</h3>
++  <h3 id="manage_bookmarks">Zarządzaj zakładkami...</h3>
+   <p>Otwiera Menedżera zakładek. Narzędzie to pozwala użytkownikowi na edycję zakładek i ich właściwości. 
+   Można również zapisać zakładki w pliku zewnętrznym (wyeksportować je) lub wczytać (zaimportować) zakładki z innej przeglądarki.</p>
+ 
+ 
+ <h2 id="tools">Narzędzia</h2>
+ 
+-  <h3 id="web_search">Szukaj w Internecie</h3>
++  <h3 id="web_search">Znajdź w Internecie</h3>
+   <p>Prowadzi kursor do pola wyszukiwania. Należy wpisać do niego tekst, aby szybko wyszukać informacje w internecie. </p>
+ 
+   <h3 id="read_mail">Czytaj pocztę</h3>
+@@ -230,7 +246,7 @@
+   <p>Uruchamia domyślny program pocztowy i wyświetla okno tworzenia nowej wiadomości. 
+   (Polecenie dostępne tylko w systemie MS Windows)</p>
+ 
+-  <h3 id="downloads">Menedżer pobierania plików</h3>
++  <h3 id="downloads">Pobieranie plików</h3>
+   <p>Wyświetla okno menedżera pobierania plików. Jeżeli przeglądarka akurat pobiera pliki, użytkownik może kontrolować przebieg pobierania - wstrzymać je lub anulować. Wstrzymane pobieranie można podjąć na nowo bez utraty już pobranej części pliku; pobieranie anulowane podejmowane jest od nowa. Zamknięcie okna menedżera nie przerywa pobierania.</p>	
+ 
+   <h3 id="extensions">Rozszerzenia</h3>
+@@ -252,12 +268,29 @@
+   <p>Wyświetla okno zawierające szczegółowe dane na temat bieżącej strony,
+   takie jak typ dokumentu, użyte kodowanie, wielkość strony, dane o formularzach i mediach na stronie, dane o odnośnikach na stronie, informacje dotyczące zabezpieczeń i inne.</p>
+ 
+-  <h3 class="noUnix" id="options">&pref.pluralCaps;</h3>
+-  <p class="noUnix"> <p>Wyświetla okno <a href="prefs.xhtml">&pref.pluralCaps;</a>, w którym użytkownik może zmienić ustawienia przeglądarki &brandShortName;.</p></p>
++  <h3 id="sanitize">Sanitize &brandShortName;...</h3>
++  <p>Czyści elementy zaznaczone w ustawieniach Sanitize w panelu Prywatność okna &pref.menuPath;.
++Domyślnie prosi o potwierdzenie.</p>
++
++  <h3 class="win" id="options">&pref.pluralCaps;</h3>
++  <p class="win"> <p>Wyświetla okno <a href="prefs.xhtml">&pref.pluralCaps;</a>, w którym użytkownik może zmienić ustawienia przeglądarki &brandShortName;.</p></p>
++
++<div class="mac">
++  <h2 id="window">Okno</h2>
++
++    <h3 id="minimize">Minimalizuj</h3>
++    <p>Minimalizuje aktualne okno.</p>
++
++    <h3 id="zoom">Powiększ</h3>
++    <p>Powiększa lub przywraca aktualne okno.</p>
++
++    <h3 id="open-windows">(Otwarte okna)</h3>
++    <p>Lista tytułów otwartych okien programu &brandShortName;.</p>
++</div>
+ 
+ <h2 id="help">Pomoc</h2>
+ 
+-  <h3 id="help_contents">Tematy pomocy</h3>
++  <h3 id="help_contents">Spis tematów</h3>
+   <p>Otwiera okno pomocy, zawierające użyteczne informacje pomocne w użytkowaniu programu &brandShortName;.</p>
+ 
+   <h3 id="for_ie_users">Dla użytkowników Internet Explorer</h3>
+@@ -277,11 +310,11 @@
+   rozszerzeń. Zostanie wyświetlona lista dostępnych aktualizacji, z których będzie
+   można wybrać te, które użytkownik chce zainstalować.</p>
+                  
+-  <h3 id="about_mozilla_firebird">O Mozilli Firefox</h3>
++  <h3 id="about_mozilla_firebird">O programie &brandFullName;</h3>
+   <p>Wyświetla okno dialogowe z informacjami o przeglądarce &brandShortName;, wraz z numerem wersji i
+   skrócona listą twórców.</p>
+ 
+-<div class="contentsBox"><em>14 października 2004</em></div>
+-<p>Copyright &copy; 2003-2004 Contributors to the Mozilla Help Viewer Project.</p>
++<div class="contentsBox"><em>4 lipca 2005</em></div>
++<p>Copyright &copy; 2003-2005 Contributors to the Mozilla Help Viewer Project.</p>
+ </body>
+ </html>
+Index: mouse_shortcuts.xhtml
+===================================================================
+RCS file: /l10n/l10n/pl/browser/chrome/help/mouse_shortcuts.xhtml,v
+retrieving revision 1.2
+diff -u -r1.2 mouse_shortcuts.xhtml
+--- mouse_shortcuts.xhtml	21 May 2005 11:56:03 -0000	1.2
++++ mouse_shortcuts.xhtml	4 Jul 2005 09:39:53 -0000
+@@ -82,7 +82,7 @@
+ 
+     <tr>
+       <td>Przewijaj linia po linii</td>
+-      <td>>&altKey;+Przewijanie rolką</td>
++      <td>&altKey;+Przewijanie rolką</td>
+       <td>&nbsp;</td>
+       <td>&nbsp;</td>
+     </tr>
+@@ -94,7 +94,7 @@
+     </tr>
+     <tr>
+       <td>Zapisz stronę jako</td>
+-      <td>>&altKey;+Lewy przycisk myszy</td>
++      <td>&altKey;+Lewy przycisk myszy</td>
+       <td>&nbsp;</td>
+       <td>&nbsp;</td>
+     </tr>
+@@ -114,7 +114,7 @@
+ </table>
+ 
+ <div class="contentsBox"><em>6 października 2004</em></div>
+-<p>Copyright &copy; 2003-2004 Contributors to the Mozilla Help Viewer Project.</p>
++<p>Copyright &copy; 2003-2005 Contributors to the Mozilla Help Viewer Project.</p>
+ 
+ </body>
+ </html>
+Index: popup.xhtml
+===================================================================
+RCS file: /l10n/l10n/pl/browser/chrome/help/popup.xhtml,v
+retrieving revision 1.4
+diff -u -r1.4 popup.xhtml
+--- popup.xhtml	12 Jun 2005 18:07:39 -0000	1.4
++++ popup.xhtml	4 Jul 2005 09:39:54 -0000
+@@ -30,11 +30,10 @@
+ </div>
+ 
+ <h2 id="what_are_popups">Czym są wyskakujące okna?</h2>
+-<p>Wyskakujące okna (potocznie zwane POPupami lub POPupsami) są oknami, które pojawiają się automatycznie, bez zgody użytkownika. Różnią się one rozmiarami, ale zazwyczaj nie zakrywają całego ekranu. Niektóre okna pojawiają się ponad oknem przeglądarki &brandShortName;, inne pod spodem.</p>
++<p>Wyskakujące okna (<abbr title="po angielsku">ang.</abbr> <span lang="en"><em>pop-ups</em>, <em>pop-up windows</em></span>) są oknami, które pojawiają się automatycznie, bez zgody użytkownika. Różnią się one rozmiarami, ale zazwyczaj nie zakrywają całego ekranu. Niektóre okna pojawiają się ponad oknem przeglądarki &brandShortName;, inne pod spodem.</p>
+ 
+ <p>Przeglądarka &brandShortName; pozwala kontrolować oba rodzaje wyskakujących okien poprzez 
+-<a href="prefs.xhtml#web_features_options">panel Przeglądanie</a>, znajdujący się w oknie opcji programu.
+-Blokowanie wyskakujących okien jest domyślnie włączone.</p>
++<a href="prefs.xhtml#web_features_options">panel Treść</a>, znajdujący się w oknie <q>&pref.pluralCaps;</q> programu. Blokowanie wyskakujących okien jest domyślnie włączone.</p>
+ 
+ <p>Gdy wyskakujące okno zostanie zablokowane, pojawia się pasek informacyjny oraz ikona <img src="chrome://browser/skin/Info.png" width="16" height="16" alt=""/>.
+  Kliknięcie zarówno przycisku <em>&pref.pluralCaps;</em> na pasku informacyjnym jak i ikony na pasku
+@@ -54,11 +53,11 @@
+ 
+ <h2 id="popup_blocker_preferences">Ustawienia mechanizmu blokowania wyskakujących okien</h2>
+ 
+-<div>Niniejszy fragment opisuje korzystanie z mechanizmu blokowania wyskakujących okien w przeglądarce &brandShortName;. Aby wyświetlić ustawienia mechanizmu blokowania wyskakujących okien z należy:
++<div>Niniejszy podrozdział opisuje korzystanie z mechanizmu blokowania wyskakujących okien w przeglądarce &brandShortName;. Aby wyświetlić ustawienia mechanizmu blokowania wyskakujących okien z należy:
+ <ol>
+   <li>Wybrać z menu &pref.menuPath;.</li>
+-  <li>Wybrać kategorię <em>Przeglądanie</em>.</li>
+-  <li>Nacisnąć przycisk <em>Witryny posiadające pozwolenie</em>.</li>
++  <li>Wybrać kategorię <em>Treść</em>.</li>
++  <li>Nacisnąć przycisk <em>Uprawnione witryny</em>.</li>
+ </ol>
+ Za pomocą wyświetlonego okna dialogowego użytkownik może:
+ <ul>
+Index: prefs.xhtml
+===================================================================
+RCS file: /l10n/l10n/pl/browser/chrome/help/prefs.xhtml,v
+retrieving revision 1.2
+diff -u -r1.2 prefs.xhtml
+--- prefs.xhtml	21 May 2005 11:56:03 -0000	1.2
++++ prefs.xhtml	4 Jul 2005 09:40:05 -0000
+@@ -9,6 +9,8 @@
+ Contributors:
+   David Tenser <tenser@comhem.se> (original author)
+   Steffen Wilberg <steffen.wilberg@web.de>
++  Stanisław Małolepszy <staszyna@aviary.pl> (Polish translation for Firefox 1.0)
++  Marek Stępień <marcoos@aviary.pl> (updates to Polish translation for Firefox 1.1)
+ -->
+ <html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+@@ -21,32 +23,25 @@
+ <h1>Opcje przeglądarki &brandShortName;</h1>
+ <div>Niniejszy dokument ma na celu wyjaśnienie znaczenia poszczególnych opcji przeglądarki &brandShortName;.</div>
+ 
+-<div class="contentsBox">W tym rozdziale:
++<div class="contentsBox">W tym rozdziale opisano następujące sekcje okna &pref.pluralCaps;:
+   <ul>
+-    <li><a href="#general_options">Panel Ogólne</a>
+-	  <ul>
+-      <li><a href="#fonts_and_colors">Czcionki i kolory</a></li>
+-      <li><a href="#languages">Języki</a></li>
+-      <li><a href="#connection_settings">Połączenie</a></li>
+-    </ul>
+-	</li>
+-    <li><a href="#privacy_options">Panel Prywatność</a></li>
+-    <li><a href="#web_features_options">Panel Przeglądanie</a></li>
+-    <li><a href="#downloads_options">Panel Pobieranie</a></li>
+-	<li><a href="#advanced_options">Panel Zaawansowane</a></li>
++    <li><a href="#general_options">Ogólne</a></li>
++    <li><a href="#privacy_options">Prywatność</a></li>
++    <li><a href="#content_options">Treść</a></li>
++    <li><a href="#tabs_options">Panele</a></li>
++    <li><a href="#downloads_options">Pobieranie</a></li>
++    <li><a href="#advanced_options">Zaawansowane</a></li>
+     
+   </ul>
+ </div>
+ 
+ <p>Okno opcji dostępne jest po wybraniu z menu &pref.menuPath;.</p>
+ 
+-<h2 id="general_options">Panel Ogólne</h2>
++<h2 id="general_options">&pref.pluralCaps;: Ogólne</h2>
+ 	<p>Panel dostępny jest po kliknięciu ikony Ogólne w lewej cześci okna opcji.</p>
+-  <p><img alt="Okno opcji ogólnych"
+-    src="images/opt_general.png"/></p>
+ 	
+ 	<h3 id="home_page">Strona domowa</h3>
+-	<p>Fragment ten pozwala określić witrynę (lub grupę witryn w panelach), które zostaną
++	<p>W tym miejscu można określić witrynę (lub grupę witryn w panelach), które zostaną
+ 	otwarte natychmiast po uruchomieniu przeglądarki &brandShortName;. Adres wybranej witryny
+ 	można wpisać pole <em>Adres</em>.</p>
+ 	
+@@ -60,88 +55,26 @@
+ 
+ 	<p>Aby nie otwierać żadnej strony po uruchomieniu przeglądarki, należy skorzystać z przycisku
+ 	<em>Użyj pustej strony</em>.</p>
+-
+-    <h3 id="fonts_and_colors">Czcionki i kolory</h3>
+-  <p><img alt="Okno opcji czcionek i kolorów"
+-    src="images/opt_fontsandcolors.png"/></p>
+-    <p>Aby zmienić domyślne ustawienia czcionek i kolorów na wyświetlanych stronach,
+-	należy nacisnąć przycisk <em>Czcionki i kolory...</em>.</p>
+-
+-    <p>W górnej części okna można ustawić czcionki dla stron w poszczególnych stronach kodowych.
+-		Strony, których autorzy nie zdefiniowali czcionek, wyświetlane będą za pomocą wybranej  
+-		domyślnej czcionki. Aby zmienić domyślną czcionkę należy:</p>
+-    <ol>
+-      <li>Wybrać region czcionek z listy rozwijalnej <em>Czcionki</em></li>
+-      <li>Wybrać typ czcionki proporcjonalnej. Może to być czcionka szeryfowa (np. &quot;Times New Roman&quot;)
+-		  lub bezszeryfowa (np. &quot;Arial&quot;). Następnie należy wybrać rozmiar tekstu wyświetlanego
+-		  czcionką proporcjonalną.</li>
+-      <li>Wybrać czcionki: szeryfową, bezszeryfową i o stałej szerokości.</li>
+-    </ol>
+-    <p>Poniżej, w liście rozwijalnej, można także wybrać rozdzielczość wyświetlania (domyślnie 96 dpi).</p>
+-
+-    <p>Możliwe jest także określenie minimalnego rozmiaru wyświetlanej czcionki. Może to być
+-	przydatne w przypadku przeglądania witryn używających małych, nieczytelnych czcionek.</p>
+-
+-    <p><strong>Kolor tekstu i tła</strong><br/>
+-	W tej sekcji można określić domyślny kolor tekstu i tła dla stron internetowych. Ustawione
+-	wartości będą użyte, gdy przeglądana strona nie posiada ustawień kolorów tekstu i tła.
+-    Aby zmienić kolor, należy nacisnąć próbkę koloru.
+-      Aby użyć domyślnych ustawień kolorów systemu operacyjnego, należy zaznaczyć opcję
+-	  <em>Użyj ustawień systemowych</em>.</p>
+-
+-    <p><strong>Kolor odnośników</strong><br/>
+-	W tej sekcji można określić domyślne kolory dla odnośników. Aby zmienić kolor, należy nacisnąć 
+-	próbkę koloru.</p>
+-
+-    <p><em>Podkreślaj odnośniki</em><br/>
+-	  Domyślnie przeglądarka &brandShortName; podkreśla wszystkie odnośniki.
+-	  Aby wyłączyć podkreślanie, należy odznaczyć powyższą opcję.<br/>
+-	  <strong>UWAGA:</strong> Ustawienie to nie działa w przypadku stron stosujących własne 
+-	  arkusze stylów.</p>
+-
+-    <p><strong>Zawsze używaj ustawień użytkownika dla:</strong><br/>
+-    <em>Czcionek</em><br/>
+-	  Domyślnie przeglądarka &brandShortName; stosuje czcionki określone przez autora przeglądanej
+-	  strony. Aby zawsze używać domyślnych czcionek, należy zaznaczyć powyższą opcję.</p>
+-
+-    <p><em>Kolorów</em><br/>
+-	  Domyślnie przeglądarka &brandShortName; stosuje kolory określone przez autora przeglądanej
+-	  strony. Aby zawsze używać domyślnych kolorów, należy zaznaczyć powyższą opcję.</p>
+-    <h3 id="languages">Języki</h3>
+-	
+-    <p><img alt="Okno opcji językowych"
+-      src="images/opt_languages.png"/></p>
+-    <p>Niektóre witryny oferują treść w kilku językach. Aby określić preferowane
+-	  języki, należy nacisnąć przycisk <em>Języki</em>.</p>
+-
+-    <p><strong>Języki</strong><br/>
+-	  Aby dodać język do listy preferowanych, należy wybrać język z listy rozwijalnej
+-	  <em>Wybierz język do dodania...</em>, a następnie nacisnąć przycisk <em>Dodaj</em>.
+-	  <br />Aby usunąć język, należy wybrać go w liście i nacisnąć przycisk <em>Usuń</em>.</p>
+-
+-    <p>Aby zmienić priorytet języków, należy skorzystać z przycisków 
+-      <em>Przenieś w górę</em> oraz <em>Przenieś w dół</em>.</p>
+-
+-    <p><strong>Kodowanie znaków</strong><br/>
+-	  Wybrane z listy rozwijalnej kodowanie zostanie użyte do wyświetlania witryn, które
+-	  nie określają domyślnego kodowania.</p>
+-	  
+-	  
++ 
+     <h3 id="default_browser">Domyślna przeglądarka</h3>
+     <p class="noMac">Aby ustawić przeglądarkę &brandShortName; jako domyślną
+ 	przeglądarkę systemu, należy nacisnąć przycisk <em>Ustaw jako domyślną przeglądarkę</em>.
+ 	Domyślna przeglądarka używana jest automatycznie do otwierania adresów internetowych, plików HTML
+ 	i innych popularnych formatów plików.</p>
+ 
++	<p>Aby program &brandShortName; sprawdzał przy uruchamianiu, czy jest domyślną przeglądarką, należy zaznaczyć opcję <em>Program &brandShortName; podczas uruchamiania powinien
++sprawdzać, czy jest domyślną przeglądarką</em>.</p>
++
+     <h3 id="connection_settings">Połączenie</h3>
+-	<p><img alt="Okno opcji połączenia"
+-      src="images/opt_connection.png"/></p>
+-    <p>Wiele organizacji, chcąc ochronić poufne informacje, blokuje dostęp do swoich sieci
+-	za pomocą tzw. zapór ogniowych (ang. firewall).<br/>
+-	Gdy komputer użytkownika znajduje się za zaporą ogniową,
+-	konieczne może być ustawienie opcji serwera proxy, przez który przeglądarka
+-	&brandShortName; będzie łączyła się z siecią Internet.<br/>
+-	Aby skonfigurować serwer proxy, należy nacisnąć przycisk <em>Ustawienia połączenia</em>.</p>
++    <p>Gdy komputer użytkownika wymaga połączenia do Internetu za pośrednictwem
++	serwera proxy, konieczne może być odpowiednie skonfigurowanie przeglądarki.
++	Serwer proxy jest pośrednikiem pomiędzy komputerem użytkownika a siecią Internet.
++	Przechwytuje wszystkie żądania i sprawdza, czy może dane żądanie spełnić,
++	korzystając z własnej pamięci podręcznej. Serwery proxy stosowane są do
++	zwiększenia wydajności działania sieci, filtrowania żądań i zwiększenia
++	bezpieczeństwa. Często są też częścią firmowej zapory ogniowej (<abbr title="po angielsku">ang.</abbr> <q lang="en">firewall</q>).</p>
++
++	<p>Aby skonfigurować serwer proxy, należy nacisnąć przycisk <em>Ustawienia połączenia</em>.</p>
+ 
+     <strong>Okno Ustawienia połączenia</strong>
+ 	
+@@ -149,67 +82,95 @@
+       <dt>Bezpośrednie połączenie z Internetem</dt>
+       <dd>Opcja domyślna. Należy wybrać ją w przypadku niekorzystania z serwera proxy.</dd>
+ 
+-      <dt>Własna konfiguracja proxy</dt>
++      <dt>Automatycznie wykryj ustawienia serwerów proxy dla tej sieci</dt>
++      <dd>Tę opcję należy zaznaczyć, jeśli &brandShortName; ma automatycznie wykryć
++	ustawienia serwerów proxy dla sieci użytkownika.</dd>
++
++      <dt>Ręczna konfiguracja serwerów proxy</dt>
+       <dd>W przypadku wyboru tej opcji należy wypełnić pola adresu serwera i numeru portu
+ 	  dla żądanych protokołów. (Informacje te można uzyskać od administratora sieci.)<br/>
+ 	  W polu <em>Nie używaj proxy dla</em> można wpisać adresy serwerów, z którymi połączenia
+ 	  odbywać się będą z pominięciem ustawionych wyżej proxy.</dd>
+ 
+-      <dt>Automatyczna konfiguracja proxy</dt>
++      <dt>Adres URL dla automatycznej konfiguracji</dt>
+       <dd>Opcję tą należy wybrać w przypadku możliwości automatycznej konfiguracji serwerów 
+ 	  proxy (należy podać adres URL pliku .PAC). Aby pobrać ustawienia, należy nacisnąć przycisk
+ 	  <em>Odśwież</em>
+ </dd>
+     </dl>
+ 
+-  <h2 id="privacy_options">Panel Prywatność</h2>
+-
+-  <p><img alt="Privacy Options Dialog"
+-        src="images/opt_privacy.png"/></p>
++  <h2 id="privacy_options">&pref.pluralCaps;: Prywatność</h2>
+ 
+   <p>Panel zawiera opcje związane z prywatnymi informacjami dotyczącymi użytkownika. Podczas 
+   przeglądania Internetu przeglądarka &brandShortName; zbiera różne informacje, takie jak np. lista
+   odwiedzonych witryn.</p>
+-  <p>W każdej chwili, naciskając przycisk <em>Wyczyść wszystko</em>, można usunąć wszystkie zebrane informacje.<br/>
+-  Za pomocą przycisków <em>Wyczyść</em> można usunąć informacje z wybranych sekcji.</p>
++  <p>Za pomocą przycisków <em>Wyczyść</em> można usunąć informacje z wybranych sekcji.</p>
++
++  <h3 id="sanitize">Ustawienia Sanitize</h3>
++  <p>&brandShortName; pozwala na szybkie wyczyszczenie konkretnych lub wszystkich
++	 elementów prywatności &ndash; wystarczy nacisnąć
++    &accelKey;+&shiftKey;+<kbd>Del</kbd> lub wybrać z menu pozycję <span class="menuPath">
++    Narzędzia &gt; Sanitize &brandShortName;...</span>. Można także nakazać programowi
++	&brandShortName; czyszczenie danych przy wyłączaniu programu. &pref.pluralCaps;
++	z tym związane znajdują się w oknie <em>Sanitize &brandShortName;...</em>.</p>
+ 
+-  <p>Aby wyświetlić szczegółowe opcje, należy nacisnąć przycisk <em>+</em> przy nazwie danej sekcji.</p>
++  <p>Aby wyświetlić ustawienia dotyczące konkretnych elementów związanych z prywatnością, należy kliknąć na danym panelu.</p>
+ 
+   <h3 id="history">Historia</h3>
+-  <p>W tej sekcji można określić jak długo przeglądarka &brandShortName; będzie przechowywać adresy
++  <p>W tym miejscu można określić jak długo przeglądarka &brandShortName; będzie przechowywać adresy
+   odwiedzonych przez użytkownika witryn internetowych. Domyślna wartość to 9 dni.</p>
+ 
+-  <h3 id="saved_form_information">Formularze</h3>
++  <h3 id="saved_form_information">Dane formularzy</h3>
+   <p>Przeglądarka &brandShortName; umożliwia zachowywanie informacji wpisywanych do formularzy w witrynach
+   internetowych i paska wyszukiwania. Pozwala to na szybsze wypełnienie tychże formularzy podczas ponownej 
+-  wizyty w witrynie.<br/> Opcja <em>Zapisz informacje wprowadzane do formularzy na stronach WWW oraz do paska
+-  narzędzi wyszukiwania</em> pozwala włączyć lub wyłączyć zapamiętywanie wprowadzonych informacji.</p>
++  wizyty w witrynie.<br/> Opcja <em>Pamiętaj dane wprowadzane w formularzach oraz w pasku
++  wyszukiwania</em> pozwala włączyć lub wyłączyć zapamiętywanie wprowadzonych informacji.</p>
+ 
+-  <h3 id="saved_passwords">Hasła</h3>
+-  <p>Przeglądarka &brandShortName; oferuje możliwość bezpiecznego przechowywania haseł wprowadzonych
+-  w witrynach WWW. Dzięki temu użytkownik nie musi pamiętać i wprowadzać ich przy kolejnych wizytach 
+-  w witrynach. Zapamiętywanie można przełączać za pomocą pola wyboru <em>Menedżer haseł</em>.<br/>
+-  Zapamiętane dla poszczególnych witryn hasła można usuwać za pomocą Menedżera haseł, który dostępny 
+-  jest po naciśnięciu przycisku <em>Menedżer haseł</em>.</p>
++  <h3 id="privacy_passwords">Hasła</h3>
++    <p><em>Pamiętaj hasła</em><br/>
+ 
+-  <p id="set_change_master_password"><em>Ustaw główne hasło</em><br/>
+-    Przeglądarka &brandShortName; potrafi chronić tak istotne informacje jak hasła i certyfikaty. Jeśli główne hasło zostanie utworzone, przeglądarka poprosi o wprowadzenie go przy pierwszej witrynie wymagającej chronionych informacji i zapamięta je do momentu zakończenia programu. Przycisk <em>Ustaw główne hasło</em> służy do ustawiania, zmiany lub usuwania głównego hasła.</p>
++      &brandShortName; może bezpiecznie przechowywać hasła wprowadzone w formularzach,
++	dzięki czemu logowanie do witryn staje się prostsze. Należy odznaczyć to pole,
++	jeśli &brandShortName; ma nie zapamiętywać haseł.</p>
++
++    <p id="set_change_master_password"><em>Ustaw/Zmień hasło główne...</em><br/>
++      &brandShortName; może chronić prywatne dane, takie jak zapisane hasła
++	i certyfikaty. Jeśli utworzone zostanie hasło główne, &brandShortName;
++	poprosi o wprowadzenie go przy pierwszej witrynie wymagającej chronionych
++	informacji i zapamięta je do momentu zakończenia programu. Hasło główne można ustawić
++	lub zmienić, klikając ten przycisk.</p>
++
++    <p id="remove_master_password"><em>Usuń hasło główne...</em><br/>
++	Aby usunąć główne hasło, należy kliknąć ten przycisk. &brandShortName;
++	zażąda wprowadzenia głównego hasła przed jego usunięciem.</p>
++
++    <p><em>Przeglądaj hasła</em><br/>
++	Aby zarządzać zachowanymi hasłami (a także aby je usuwać), należy kliknąć
++	przycisk <em>Przeglądaj hasła</em>.</p>
+   
+-  <h3 id="download_manager_history">Historia menedżera pobierania plików</h3>
+-  <p>Menedżer pobierania plików (dostępny z menu <span class="menuPath">Narzędzia > Menedżer pobierania plików</span> lub
++  <h3 id="download_manager_history">Historia pobrań</h3>
++  <p>Menedżer pobierania plików (dostępny z menu <span class="menuPath">Narzędzia > Pobieranie plików</span> lub
+   skrót klawiaturowy <span class="noUnix">&accelKey;+<kbd>J</kbd></span><span class="unix">&accelKey;+<kbd>Y</kbd></span>)
+   przechowuje informacje o pobranych z Internetu plikach. Opcje Menedżera są dostępne w <a href="#downloads_options"><strong>panelu Pobieranie</strong></a>.
+   </p>
+ 
++    <p><em>Usuń pliki z Menedżera pobieranych plików:</em><br/>
++	W tym miejscu można zdecydować, czy lista ostatnio pobieranych plików
++	jest opróżniana <em>ręcznie</em> (przez użytkownika), <em>po pomyślnym
++	zakończeniu pobierania</em> czy <em>przy wyjściu z programu &brandShortName;</em></p>
++
++    <p>Aby ręcznie opróżnić listę, należy kliknąć przycisk <em>Wyczyść teraz
++historię pobrań</em> albo przycisk <em>Wyczyść</em> w Menedżerze pobieranych plików.</p>
++
+   <h3 id="cookies">Ciasteczka</h3>
+   <p>Ciasteczko (ang. cookie) to plik w komputerze użytkownika utworzony przez witrynę 
+ 	internetową. Plik ten zawiera informacje, które wykorzystywane są podczas przeglądania
+ 	danej witryny (np. ustawienia użytkownika).</p>
+-  <p>By otworzyć Menedżer ciasteczek, należy nacisnąć przycisk <em>Pokaż ciasteczka</em>.
+   
+-  <p><em>Akceptuj ciasteczka</em>:<br/>
++  <p><em>Zezwól stronom na ustawianie ciasteczek</em>:<br/>
+   Obsługa ciasteczek jest domyślnie włączona. By ją wyłączyć, należy odznaczyć tę opcję. Należy jednak pamiętać, że niektóre witryny mogą nie działać poprawnie, gdy obsługa ciasteczek jest wyłączona.</p>
+ 
++  <p>By otworzyć Menedżer ciasteczek, należy nacisnąć przycisk <em>Pokaż ciasteczka</em>.</p>
+ 
+   <p>Opcje związane z obsługą ciasteczek opisano szerzej w rozdziale <a href="cookies.xhtml">
+ 	  Zarządzanie ciasteczkami</a>.</p>
+@@ -220,11 +181,8 @@
+   na dysku przeznaczonego na pamięć podręczną.
+   </p>
+ 
+-  <h2 id="web_features_options">Panel Przeglądanie</h2>
++  <h2 id="content_options">&pref.pluralCaps;: Treść</h2>
+ 
+-  <p><img alt="Web Features Options Dialog"
+-    src="images/opt_webfeatures.png"/></p>
+-  
+   <p>Panel Przeglądanie zawiera ustawienie związane z blokadą wyskakujących okienek, obsługą
+   apletów języka Java, skryptów JavaScript i pobieraniem obrazków na stronach.</p>
+   
+@@ -233,13 +191,13 @@
+   włączanie i wyłączanie blokady wyskakujących okienek.</p>
+ 
+   <p>Przeglądarka &brandShortName; posiada specjalną listę witryn uprawnionych
+-  do otwierania wyskakujących okienek. Aby odblokować wyświetlanie wyskakujących okienek dla danej witryny, należy  nacisnąć przycisk <em>Dodaj witrynę...</em> i następnie wprowadzić jej adres.</p>
++  do otwierania wyskakujących okienek. Aby odblokować wyświetlanie wyskakujących okienek dla danej witryny, należy kliknąć przycisk <em>Uprawnione witryny</em>, a w nowym oknie nacisnąć przycisk <em>Dodaj witrynę...</em> i następnie wprowadzić jej adres.</p>
+ 
+   <p>Aby usunąć witrynę z listy uprawnionych do wyświetlania wyskakującyh okienek, należy 
+   zaznaczyć jej adres w liście, a następnie nacisnąć przycisk <em>Usuń witrynę</em>.<br/>
+   Do usunięcia wszystkich witryn z listy służy przycisk <em>Usuń wszystkie witryny</em>.</p>
+ 
+-  <p><em>Zezwól witrynom na instalację oprogramowania</em><br/>
++  <p><em>Zezwól witrynom na instalowanie oprogramowania</em><br/>
+   Domyślnie, po żądaniu instalacji oprogramowania (takiego jak rozszerzenia lub motywy)
+   przeglądarka &brandShortName; wyświetla okno dialogowe z pytaniem o
+   potwierdzenie instalacji. Aby całkowicie wyłączyć możliwość instalacji
+@@ -251,15 +209,12 @@
+   <em>Uprawnione witryny</em>, wpisać adres witryny i nacisnąć przycisk 
+   <em>Zezwól</em>.</p>
+   
+-  <p><em>Pobieraj obrazki</em><br/>włącza/wyłącza pobieranie i wyświetlanie grafiki na witrynach internetowych. Naciskając przycisk <em>Uprawnienia...</em>, można wyświetlić okno Zarządzaj obrazkami, które pozwala wyłączyć pobieranie obrazków z konkretnych serwerów.</p>
++  <p><em>Pobieraj obrazki</em><br/>włącza/wyłącza pobieranie i wyświetlanie grafiki na witrynach internetowych. Naciskając przycisk <em>Wyjątki...</em>, można wyświetlić okno, które pozwala wyłączyć pobieranie obrazków z konkretnych serwerów.</p>
+ 
+   <ul>
+-    <li><em>pochodzące wyłącznie z serwera, z którym nawiązano pierwotnie połączenia</em><br/>
++    <li><em>pochodzące wyłącznie z serwera, z którym nawiązano pierwotnie połączenie</em><br/>
+ 	włączenie opcji powoduje, że pobierane będą tylko obrazki znajdujace się na tym samym serwerze co przeglądana witryna.</li>
+   </ul>
+-
+-  <p><img alt="Images Exceptions Dialog"
+-    src="images/opt_imagemanager.png"/></p>
+   
+   <p>Okno Zarządzaj obrazkami zawiera listę serwerów, z których obrazki nie są pobierane.
+   Aby zablokować pobieranie obrazków z serwera (np. reklam), należy podczas przeglądania strony kliknąć prawym klawiszemy myszy na danym obrazku o z menu kontekstowego wybrać pozycję <em>Blokuj obrazki z &lt;nazwa serwera&gt;</em>. Aby odblokować dany serwer, należy zaznaczyć go w liście w oknie Zarządzaj obrazkami i wybrać przycisk <em>Usuń witrynę</em>. Aby odblokować wszystkie serwery, należy nacisnąć przycisk <em>Usuń wszystkie witryny</em>.</p>
+@@ -271,92 +226,166 @@
+ 	Javę należy odznaczyć niniejszą opcję. UWAGA: aby programy w Javie działały należy pobrać zainstalować
+ 	wirtualną maszynę Javy.</p>
+ 
+-  <p><em>Włącz interpretację kodu JavaScript</em><br/>JavaScript to język skryptowy wykonywany
++  <p><em>Włącz obsługę języka JavaScript</em><br/>JavaScript to język skryptowy wykonywany
+   przez przeglądarkę internetową. Jest on powszechnie używany  w witrynach internetowych. 
+   Wyłączenie JavaScriptu może spowodować problemy z działaniem niektórych witryn.</p>
+ 
+-  <p>Możliwe jest także wyłączenie niektórych funkcji dla programów JavaScript. Aby to uczynić,
+-  należy nacisnąć przycisk <em>Zaawansowane...</em> i otworzyć okno dialogowe:</p>
++  <p>JavaScript może być jednak nadużywany w sposób irytujący dla użytkownika. Aby to uniemożliwić, należy zaznaczyć pole <em>ale wyłącz obsługę irytujących technik</em>. Wówczas
++witryny nie będą mogły przenosić okien w inne miejsce, zmieniać ich rozmiaru, wyłączać lub podmieniać menu kontekstowe, chować pasek stanu ani zmieniać zawartości paska stanu.</p>
++
++  <h3 id="fonts_and_colors">Czcionki i kolory</h3>
++
++    <p><em>Domyślna czcionka</em> i <em>Rozmiar</em><br/>
++
++	Zazwyczaj strony wyświetlane są przy użyciu czcionki o kroju i rozmiarze podanym w 
++	tym miejscu. Niektóre strony mogą jednak stosować własne czcionki, o ile
++	nie zostanie im to zabronione w oknie zaawansowanych ustawień czcionek, opisanym
++	poniżej.</p>
++
++    <p>Aby wyświetlić okno zaawansowanych ustawień czcionek, należy kliknąć przycisk
++ <em>Zaawansowane...</em>.</p>
++
++	<h4>Okno zaawansowanych ustawień czcionek</h4>
++
++    <p>W górnej części okna można ustawić czcionki dla stron w poszczególnych stronach kodowych.
++		Strony, których autorzy nie zdefiniowali czcionek, wyświetlane będą za pomocą wybranej  
++		domyślnej czcionki. Aby zmienić domyślną czcionkę należy:</p>
++    <ol>
++      <li>Wybrać region czcionek z listy rozwijalnej <em>Czcionki</em></li>
++      <li>Wybrać typ czcionki proporcjonalnej. Może to być czcionka szeryfowa (np. &quot;Times New Roman&quot;)
++		  lub bezszeryfowa (np. &quot;Arial&quot;). Następnie należy wybrać rozmiar tekstu wyświetlanego
++		  czcionką proporcjonalną.</li>
++      <li>Wybrać czcionki: szeryfową, bezszeryfową i o stałej szerokości.</li>
++    </ol>
++    <p>Poniżej, w liście rozwijalnej, można także wybrać rozdzielczość wyświetlania (domyślnie 96 dpi).</p>
++
++    <p>Możliwe jest także określenie minimalnego rozmiaru wyświetlanej czcionki. Może to być
++	przydatne w przypadku przeglądania witryn używających małych, nieczytelnych czcionek.</p>
++
++<p>    <em>Zezwól stronom na stosowanie ich własnych czcionek, zamiast tych ustalonych przeze mnie</em><br/>
++	  Domyślnie przeglądarka &brandShortName; stosuje czcionki określone przez autora przeglądanej
++	  strony. Aby zawsze używać domyślnych czcionek, należy odznaczyć powyższą opcję.</p>
++
++	<p><em>Kodowanie znaków</em><br />
++	Kodowanie znaków ustawione w tym miejscu będzie stosowane na każdej stronie, która
++	nie poda, którego kodowania używa.</p>
++
++	<h4>Okno <q>Kolory</q></h4>
+ 
+-  <p><img alt="JavaScript Options Dialog"
+-    src="images/opt_javascript.png"/></p>
++    <p><strong>Tekst i tło</strong><br/>
++	W tym miejscu można określić domyślny kolor tekstu i tła dla stron internetowych. Ustawione
++	wartości zostaną użyte, gdy przeglądana strona nie posiada własnych ustawień kolorów tekstu i tła.
++    Aby zmienić kolor, należy nacisnąć próbkę koloru.
++      Aby użyć domyślnych ustawień kolorów systemu operacyjnego, należy zaznaczyć opcję
++	  <em>Użyj ustawień systemowych</em>.</p>
++
++    <p><strong>Kolory odnośników</strong><br/>
++	W tej sekcji można określić domyślne kolory dla odnośników. Aby zmienić kolor, należy nacisnąć 
++	próbkę koloru.</p>
+ 
+-  <h3 id="allow_scripts_to">Pozwól skryptom na wykonanie następujących czynności:</h3>
+-  <dl>
+-    <dt>Zmieniać rozmiar lub położenie istniejących okien</dt>
+-    <dd>Pozwala skryptom na zmianę rozmiaru lub położenia otwartych okien przeglądarki.</dd>
++    <p><em>Podkreślaj odnośniki</em><br/>
++	  Domyślnie przeglądarka &brandShortName; podkreśla wszystkie odnośniki.
++	  Aby wyłączyć podkreślanie, należy odznaczyć powyższą opcję. <strong>UWAGA:</strong> Ustawienie to nie działa w przypadku stron stosujących własne 
++	  arkusze stylów.</p>
+ 
+-    <dt>Zmieniać aktywne okno, przenosząc nieaktywne okno na górę</dt>
+-    <dd>Pozwala skryptom na przemieszczanie okien względem innych okien przeglądarki.</dd>
++    <p><em>Zezwól stronom na stosowanie ich własnych kolorów, zamiast tych ustalonych przeze mnie</em><br/>
++	  Domyślnie przeglądarka &brandShortName; stosuje kolory określone przez autora przeglądanej
++	  strony. Aby zawsze używać domyślnych kolorów, należy odznaczyć powyższą opcję.</p>
+ 
+-    <dt>Ukrywać pasek stanu</dt>
+-    <dd>Pozwala skryptom na ukrywanie paska stanu okien przeglądarki.</dd>
+ 
+-    <dt>Zmieniać domyślny tekst wyświetlany w pasku stanu</dt>
+-    <dd>Pozwala skryptom na zmianę tekstu w pasku stanu (np. przewijający się w pasku stanu tekst).</dd>
+ 
+-    <dt>Zamieniać obrazki (po wskazaniu na nie myszą)</dt>
+-    <dd>Pozwala skryptom na zmianę lub animację obrazków (np. obrazki, które zmieniają się po najechaniu na nie kursorem myszy).</dd>
+-  </dl>
++<h2 id="tabs_options">&pref.pluralCaps;: Panele</h2>
++  <p><em>Otwieraj odnośniki z innych aplikacji w:</em><br/>
++	Kiedy inne aplikacje próbują otworzyć stronę internetową, &brandShortName;
++	otwiera ją w ostatnio wyświetlanym panelu lub oknie. Można zmienić to zachowanie
++	korzystając z tego ustawienia.</p>
++
++  <p><em>Wymuś, by odnośniki otwierające nowe okna otwierały je:</em><br/>
++    &brandShortName; otwiera odnośniki w nowych oknach, jeśli tego żąda dana strona.
++	Jeśli użytkownik korzysta z paneli, takie zachowanie może być niewygodne.
++	Można sprawić, żeby program &brandShortName; otwierał takie odnośniki
++	w inny sposób &ndash; w nowym panelu lub w panelu/oknie, w którym znajduje się
++	dany odnośnik. W tym miejscu można ustalić, co &brandShortName; ma robić
++	w takiej sytuacji.</p>
+ 
+-  <h2 id="downloads_options">Panel Pobieranie</h2>
++  <p><em>Ukryj pasek paneli, jeżeli otwarty jest tylko jeden panel</em><br/>
++	Jeśli w oknie programu &brandShortName; wyświetlana jest tylko jedna strona,
++	pasek paneli domyślnie nie jest wyświetlany. Odznacz to pole, jeśli chcesz, by pasek
++	paneli był zawsze wyświetlany.</p>
++
++  <p><em>Przenoś nowo otwarte panele na pierwszy plan</em><br/>
++	Kiedy odnośnik zostanie kliknięty środkowym przyciskiem myszy (lub lewym,
++	kiedy użytkownik przytrzyma przycisk &accelKey;), odnośniki zostaną otwarte
++	w nowym panelu. Domyślnie taki panel zostanie załadowany w tle. Zaznacz to pole,
++	jeśli chcesz, by nowo otwarty panel był natychmiast przenoszony na pierwszy plan.</p>
++
++  <p><em>Ostrzegaj przed zamknięciem wielu paneli</em><br/>
++	Podczas zamykania okna zawierającego wiele paneli &brandShortName; poprosi
++	o potwierdzenie. Dzięki temu unika się sytuacji, w której przez przypadek
++	zamknięte zostało całe okno, kiedy użytkownik chciał zamknąć tylko dany panel.
++	Odznacz to pole by to ostrzeżenie się nie pojawiało i program &brandShortName;
++	zamykał okno automatycznie, nawet jeśli otwarte jest wiele paneli.</p>
+ 
+-  <p><img
+-    src="images/opt_downloads.png"
+-     alt="Downloads Options Dialog"/></p>
++  <h2 id="downloads_options">&pref.pluralCaps;: Pobieranie</h2>
+ 
+   <p>Panel zawiera opcje związane z pobieraniem i obsługą różnych typów plików (np. aplikacje,
+   pliki skompresowanie, czy też pliki multimedialne)</p>
+ 
+-  <h3 id="download_folder">Katalog pobierania</h3>
++  <h3 id="download_folder">Folder pobranych plików</h3>
+ 
+   <p><em>Pytaj gdzie zapisać każdy plik</em><br/>Ustawienie domyślnie włączone. Przeglądarka &brandShortName;
+     wyświetli okno dialogowe pozwalające określić miejsce zapisu pobieranego pliku.</p>
+ 
+-  <p><em>Zapisuj wszystkie pliki w katalogu:</em><br/>Z listy rozwijalnej można wybrać katalog, w którym zapisywane będą wszystkie pobierane pliki. Pytanie o miejsce zapisu nie będzie wyświetlane. Wybierając pozycję <em>Inny...</em> można wybrać dowolny katalog. Aby wyświetlić zawartość wybranego katalogu, należy nacisnąć przycisk <em>Pokaż katalog</em>.</p>
++  <p><em>Zapisz wszystkie pliki do tego folderu:</em><br/>Z listy rozwijalnej można wybrać folder, w którym zapisywane będą wszystkie pobierane pliki. Pytanie o miejsce zapisu nie będzie wyświetlane. Wybierając pozycję <em>Przeglądaj...</em> można wybrać dowolny katalog.</p>
+ 
+-  <h3 id="file_types">Typy plików</h3>
++  <h3 id="download_manager">Menedżer pobierania plików</h3>
++    <p><em>wyświetl menedżera wraz z rozpoczęciem pobierania</em><br/>
++      W tym miejscu można zdecydować, czy menedżer ma być otwierany automatycznie,
++	kiedy tylko rozpocznie się proces pobierania pliku.</p>
+ 
+-  <p>Lista zawiera typy plików dotychczas pobierane przez użytkownika.<br/>
+-  Aby zmienić domyślną czynność wykonywaną po pobraniu pliku, należy zaznaczyć żądany typ pliku w liście,
+-  a następnie nacisnąć przycisk <em>Zmień czynność...</em>.</p>
++    <p><em>zamknij menedżera, kiedy wszystkie plikki zostaną pobrane</em><br/>
++	W tym miejscu można zdecydować, czy menedżera ma być automatycznie zamykany,
++	kiedy wszystkie pliki zostaną pobrane.</p>
+ 
+-  <p>W wyświetlonym oknie można określić czy plik ma być otwarty przez odpowiednią aplikację, czy też ma zostać zapisany na dysku. Przykładowo dla plików muzycznych można wybrać odtwarzanie zamiast wyświetlania pytań dot. zapisywania na dysku.</p>
++  <h3 id="download_actions">Czynności pobierania</h3>
+ 
+-  <p><img alt="Change Action Dialog"
+-    src="images/opt_downloadaction.png"/></p>
+-  
+-  <ul>
++    <p>Okno <q>Czynności pobierania</q>, które można otworzyć klikając przycisk
++	<em>Wyświetl i edytuj czynności</em> zawiera listę typów plików pobranych
++	przez użytkownika. Aby zmienić domyślną czynność wykonywaną po pobraniu pliku, należy zaznaczyć żądany typ pliku na liście, a następnie nacisnąć przycisk <em>Zmień czynność...</em>.</p>
++
++  <p>W wyświetlonym oknie można określić czy plik ma być otwarty przez domyślną aplikację, otwarty przez aplikację wskazaną przez użytkownika, zapisany na dysku czy też wyświetlony przy użyciu zainstalowanej wtyczki. Przykładowo, dla plików muzycznych można wybrać odtwarzanie zamiast wyświetlania pytań dotyczących zapisywania na dysku.</p>
++
++    <ul>
+     <li><em>Otwórz plik za pomocą domyślej aplikacji:</em><br/>
+ 		Zaznaczenie opcji powoduje automatyczne otwarcie pliku w domyślnej dla niego aplikacji (określonej przez system operacyjny).</li>
+     <li><em>Otwórz plik za pomocą:</em><br/>Zaznaczenie opcji pozwala wybrać dowolną aplikację, która
+ 	będzie automatycznie wywoływana po pobraniu danego typu pliku. Po wybraniu opcji zostanie wyświetlone okno wyboru pliku aplikacji.</li>
+     <li><em>Zapisz na dysk</em><br/>
+ 	Wybranie tej opcji spowoduje automatyczne zapisywanie pobieranych plików na dysku. Gdy opcja <em>Zapisuj wszystkie pliki w katalogu:</em> jest włączona, pytanie o miejsce zapisu nie będzie wyświetlane.</li>
+-  </ul>
+ 
+-  <p>Aby usunąć domyślną akcję dla danego typu pliku, należy zaznaczyć plik w liście i przycisnąć przycisk
+-  <em>Usuń</em>.</p>
+-  <p>Panel Pobieranie pozwala również skonfigurować wtyczki przeglądarki &brandShortName;. Aby wyświetlić okno Wtyczki, należy nacisnąć przycisk <em>Wtyczki...</em>:</p>
++      <li><em>Użyj tej wtyczki:</em><br/>
++        Select this &pref.singular; to let a plugin handle this file type.</li>
++    </ul>
+ 
+-  <p><img alt="Plug-Ins Dialog"
+-    src="images/opt_plugins.png"/></p>
++  <p>Aby usunąć domyślną akcję dla danego typu pliku, należy zaznaczyć plik w liście i przycisnąć przycisk <em>Usuń czynność</em>.</p>
+ 
+-  <p>Okno to pozwala określić, które wtyczki są aktywne. Na przykład wyłączając wtyczkę Flash przeglądarka  &brandShortName; nie będzie wyświetlać animacji Flash. W razie potrzeby wyłączoną wtyczkę można ponownie uaktywnić.</p>
++  <h2 id="advanced_options">&pref.pluralCaps;: Zaawansowane</h2>
++  <p>Panel ten zawiera rzadziej używane opcje, które mogą być jednak przydatne w szczególnych przypadkach.</p>
+ 
+-  <h2 id="advanced_options">Panel Zaawansowane</h2>
+-  <p>Panel zawiera rzadziej używane opcje, które mogą być jednak przydatne w szczególnych przypadkach.</p>
++  <h3 id="advanced_general">Karta <q>Ogólne</q></h3>
++  <h4 id="accessibility">Dostępność</h4>
+ 
+-  <p><img src="images/opt_advanced.png"
+-     alt="Advanced Options Dialog"/></p>
++  <p><em>Pozwól na zaznaczanie tekstu przy użyciu klawiatury</em><br/>
++	Opcja ta decyduje, czy wewnątrz dokumentu wyświetlany jest ruchomy kursor,
++	dzięki któremu można zaznaczać tekst przy użyciu klawiatury.
+ 
+-  <h3 id="accessibility">Dostępność</h3>
+-  <p><em>Przenoś kursor wraz ze zmianą fokusu/zaznaczenia</em><br/> Niektóre urządzenia wspomagające dla osób niepełnosprawnych, takie jak czytniki i lupy ekranowe używają kursora, aby określić, którą część ekranu przeczytać lub powiększyć. Włączenie tej opcji pozwala lepiej skorzystać ze wspomnianych urządzeń.</p>
++ Niektóre urządzenia wspomagające dla osób niepełnosprawnych, takie jak czytniki i lupy ekranowe używają kursora, aby określić, którą część ekranu przeczytać lub powiększyć. Włączenie tej opcji pozwala lepiej skorzystać ze wspomnianych urządzeń. Tryb ten można włączać/wyłączać klawiszem <kbd>F7</kbd>.</p>
+ 
+-  <p><em>Włącz obsługę wyszukiwania Znajdź wprowadzając</em><br/>Znajdź wprowadzając pozwala za pomocą wpisywania wyrazów znaleźć odnośniki i teksty na przeglądanej stronie. Podczas wpisywania szukanego wyrażenia, u dołu okna przeglądarki automatycznie pojawi się Pasek Szukania, który wyświetli informacje o wynikach szukania. Więcej na ten temat można znaleźć
+-  na stronach <a href="http://www.mozilla.org/projects/ui/accessibility/typeaheadfind.html">mozilla.org</a> (witryna w języku angielskim).</p>
++  <p><em>Rozpocznij wyszukiwanie podczas wprowadzania tekstu</em><br/>
++Jeśli ta opcja jest zaznaczona, &brandShortName; będzie można wyszukiwać tekstu na danej stronie
++po prostu wpisując go z klawiatury. Podczas wpisywania szukanego wyrażenia u dołu okna przeglądarki automatycznie pojawi się Pasek wyszukiwania, który będzie wyświetlał informacje o wynikach szukania. </p>
+ 
+-  <h3 id="browsing">Przeglądanie</h3>
++  <h4 id="browsing">Przeglądanie</h4>
+ 
+   <p><em>Dostosuj rozmiar dużych obrazków do okna przeglądarki</em><br/>
+ 	Zaznaczenie tej opcji powoduje automatyczne zmiejszenie obrazków, które nie mieszczą się
+@@ -367,101 +396,82 @@
+   stronę, poprzez przytrzymanie środkowego przycisku myszki oraz przesuwaniu jej w górę i w dół.
+   </p>
+ 
+-  <p><em>Włącz płynne przewijanie</em><br/>Płynne przewijanie jest na razie w eksperymentalną funkcją w przeglądarce &brandShortName;, choć może być ono bardzo pomocne dla osób, które czytają bardzo długie strony. Zwykle po naciśnięciu klawisza Page Down strona przesuwa się o cały ekran, gdy włączone jest płynne przewijanie, strona przesunie się płynnie, dzięki czemu użytkownik może zobaczyć o ile się przesunęła. Funkcja ta znacznie ułatwia wznawianie czytania od miejsca, w którym je przerwano.</p>
++  <p><em>Włącz płynne przewijanie</em><br/>Płynne przewijanie jest na razie w eksperymentalną funkcją w przeglądarce &brandShortName;, choć może być ono bardzo pomocne dla osób, które czytają bardzo długie strony. Zwykle po naciśnięciu klawisza <kbd>Page Down</kbd> strona przesuwa się o cały ekran, gdy włączone jest płynne przewijanie, strona przesunie się płynnie, dzięki czemu użytkownik może zobaczyć o ile się przesunęła. Funkcja ta znacznie ułatwia wznawianie czytania od miejsca, w którym je przerwano.</p>
+ 
+-  <h3 id="tabbed_browsing">Przeglądanie w panelach</h3>
++    <h4 id="languages">Języki</h4>
+ 
+-  <p><em>Otwieraj odnośniki z innych aplikacji w:</em><br/>
+-    Opcja ta określa zachowanie przeglądarki &brandShortName; podczas żadania otwarcia strony
+-	otrzymanego z innej aplikacji. Domyślnie nowa strona otwierana jest w
+-	ostatnio otwartym panelu lub oknie. Można wybrać dowolną inną możliwość.</p>
+-
+-  <p><em>Wymuś, by odnośniki otwierające nowe okna otwierały się: w panelu/oknie, w którym znajduje się dany odnośnik, lub w nowym panelu</em><br/> 
+-  Gdy użytkownik stosuje przeglądanie w panelach, strony otwierane w nowych oknach mogą być irytujące. Opcja ta pozwala ustalić zachowanie przeglądarki 
+-    &brandShortName;, gdy strona zażąda otwarcia nowego okna.</p>
+-
+-  <p><em>Ukryj pasek paneli, jeżeli otwarty jest tylko jeden panel</em><br/>
+-  Podczas przeglądania jednej witryny pasek paneli jest ukryty. Aby zawsze wyświetlać pasek paneli,
+-  należy włączyć tę opcję.</p>
++      <p>Niektóre strony udostępniane są w więcej niż jednej wersji językowej.
++Aby ustalić preferowane języki, należy kliknąć przycisk <em>Edytuj języki...</em>.</p>
+ 
+-  <p><em>Przenoś nowootwarte panele na pierwszy plan</em><br/> 
+-  Gdy użytkownik kliknie odnośnik 
+-  za pomocą środkowego klawisza myszy (lub kliknie trzymając wciśnięty
+-	klawisz <em>&accelKey;</em>, odnośnik zostanie otwarty w nowym panelu w tle. Aby wyświetlić nowy 
+-	panel na pierwszym planie, należy zaznaczyć tę opcję.</p></p>
++      <p><strong>Okno dialogowe <q>Języki</q>:</strong><br/>
+ 
+-  <p><em>Przenoś na pierwszy plan panele otwarte z Zakładek lub Historii</em><br/>
+-  Podczas otwierania w panelach stron z Zakładek lub Historii przeglądarka &brandShortName; 
+-  domyślnie otworzy nowy panel na pierwszym planie. Aby panele otwarte z Zakładek lub Historii
+-  otwierały się w tle, należy odznaczyć tę opcję.</p>
++	Aby dodać język, należy nacisnąć <em>Wybierz język do dodania...</em>, wybrać
++	dany język i kliknąć przycisk <em>Dodaj</em> button. Aby usunąć język z listy,
++	należy zaznaczyć go i kliknąć przycisk <em>Usuń</em>.</p>
+ 
+-  <p><em>Ostrzegaj przed zamknięciem wielu paneli</em><br/> 
+-  Podczas zamykania okna przeglądarki &brandShortName;, w którym otwarto więcej niż jeden panel,
+-  wyświetlane jest pytanie o potwierdzenie zamknięcia okna (ma to na celu zapobieżenie
+-  przypadkowemu zamknięciu całego okna zamiast aktywnego panelu). Aby wyłączyć wyświetlanie pytania o potwierdzenie
+-  zamknięcia paneli, należy odznaczyć opisywaną opcję.</p>
++      <p>Jeśli strona jest udostępniana w kilku z ustawionych w tym miejscu języków,
++	zostanie wyświetlona wersja w języku znajdującym się na wyższym miejscu na liście.
++Kolejność języków można ustalić zaznaczając dany język i klikając jeden z przycisków
++        <em>W górę</em> lub <em>W dół</em>.</p>
+ 
+- <h3 id="software_update">Aktualizacja oprogramowania</h3>
++  <h3 id="advanced_update">Karta <q>Aktualizacja</q></h3>
+ 
+-  <p>Możliwe jest automatyczne sprawdzanie, czy dostępna
+-  jest nowsza wersja przeglądarki &brandShortName;, zainstalowanych rozszerzeń i motywów.</p>
+-  <p><em>Okresowo sprawdzaj, czy dostępne są aktualizacje dla:</em></p>
++    <p>&brandShortName; może sprawdzać, czy pojawiły się nowe wersje zainstalowanych
++rozszerzeń, motywów lub samego programu &brandShortName;.</p>
+ 
+-  <p><em>Mozilli &brandShortName;</em><br/>
+-    Opcja domyślnie włączona. Gdy dostępna będzie nowsza wersja przeglądarki, użytkownik
+-	zostanie o tym powiadomiony. Aby wyłączyć automatyczne sprawdzanie dostępności nowszej
+-	wersji, należy odznaczyć opcję.</p>
++	<h4>Okresowo sprawdzaj, czy są dostępne aktualizacje dla:</h4>
+ 
+-  <p><em>Moich rozszerzeń i motywów</em><br/>
+-    Opcja domyślnie włączona. Gdy dostępna będzie nowsza wersja któregoś z zainstalowanych
+-	rozszerzeń lub motywów, użytkownik
+-	zostanie o tym powiadomiony. Aby wyłączyć automatyczne sprawdzanie nowszych
+-	wersji, należy odznaczyć opcję.</p>
++    <p><strong>programu &brandShortName;</strong><br/>
++	Domyślnie &brandShortName; co jakiś czas sprawdza dostępność nowej wersji
++	i powiadamia o tym użytkownika. Odznacz to pole, by program &brandShortName;
++	nie dokonywał tego sprawdzenia.</p>
+ 
++    <p><strong>moich rozszerzeń i motywów</strong><br/>
++	Domyślnie &brandShortName; co jakiś czas sprawdza dostępność nowych wersji
++	zainstalowanych rozszerzeń i motywów i powiadamia o tym użytkownika. 
++	Odznacz to pole, by program &brandShortName;
++	nie dokonywał tego sprawdzenia.</p>
+ 
+-  <p>Aby natychmiast sprawdzić dostępność aktualizacji dla zaznaczonych komponentów,
+-  należy nacisnąć przycisk <em>Sprawdź teraz</em>.</p>
++    <p>Aby natychmiast sprawdzić dostępność aktualizacji dla danego elementu,
++	należy kliknąć odpowiedni przycisk <em>Sprawdź teraz...</em>.</p>
+ 
++  <h3 id="advanced_security">Karta <q>Bezpieczeństwo</q></h3>
+ 
+-  <h3 id="security">Bezpieczeństwo</h3>
++    <h4 id="protocols">Protokoły</h4>
+ 
+   <p><em>Włącz obsługę SSL 2.0</em><br/>
+   Określa, czy informacje poufne maja być wysyłane i odbierane poprzez protokół SSL2 (Secured Sockets Layer Level 2). To standardowy protokół dla transmisji bezpiecznych. Wszystkie bezpieczne witryny sieci Web obsługują ten protokół.</p>
+   <p><em>Włącz obsługę SSL 3.0</em><br/>Określa, czy informacje poufne maja być wysyłane i odbierane poprzez protokół SSL3 (Secured Sockets Layer Level 3). To standardowy protokół dla transmisji bezpiecznych. Niektóre witryny mogą nie obsługiwać tego protokołu.</p>
+   <p><em>Włącz obsługę TLS 1.0</em><br/>Określa, czy informacje poufne maja być wysyłane i odbierane poprzez protokół TLS (Transport Layer Security, otwarty protokół dla transmisji bezpiecznych, podobny do SSL 3.0. Niektóre witryny mogą nie obsługiwać tego protokołu.</p>
+-  <h3 id="certificates">Certyfikaty</h3>
++
++    <h4 id="certificates">Certyfikaty</h4>
+ 
+   <p>Certyfikaty służą do szyfrowania połączeń z 
+     <a href="glossary.xhtml#secure_site">bezpiecznymi witrynami</a>.</p>
+ 
+-  <p><em>Sposób wyboru certyfikatu</em><br/>
++  <p><em>Kiedy witryna wymaga certyfikatu:</em><br/>
+ 	Gdy witryna żąda bezpieczniego połączenia, przeglądarka &brandShortName; 
+ 	automatycznie użyje odpowiedniego certyfikatu. Aby ręcznie wybrać certyfikat
+ 	dla każdego bezpiecznego połączenia, należy zaznaczyć opcję "Pytaj za każdym razem".</p>
+ 
+-  <p><em>Menedżer certyfikatów</em><br/>
++  <p><em>Wyświetl certyfikaty</em><br/>
+ 	Aby przejrzeć, zaimportować lub usunąć certyfikat, należy nacisnąć
+-	przycisk <em>Menedżer certyfikatów</em>.</p>
++	przycisk <em>Wyświetl certyfikaty</em>.</p>
++
++  <p><em>Lista certyfikatów unieważnionych (CRL)</em><br/>
++  Przeglądarka &brandShortName; może używać list certyfikatów unieważnionych (CRL - Certificate Revocation Lists) do zapewnienia aktualności certyfikatów. Aby dodać nowe lub wyświetlić informacje o dostepnych listach unieważnionych certyfikatów, należy nacisnąć przycisk <em>Lista certyfikatów unieważnionych (CRL)</em>.</p>
++
++  <p><em>Weryfikacja</em><br/>
++  Protokół OCSP (Online Certificate Status Protocol) służy do weryfikacji certyfikatu podczas każdego jego użycia. Przeglądarka &brandShortName; nie używa domyślnie protokołu OCSP, lecz użytkownik może ją włączyć.</p>
+ 
+-  <p><em>Menedżer urządzeń zabezpieczającyh</em><br/>
++  <p><em>Urządzenia zabezpieczające</em><br/>
+ 	Urządzenia zabezpieczające służą do szyfrowania połączeń oraz przechowywania
+ 	certyfikatów i haseł. Aby skorzystać z innego niż wbudowane w przeglądarkę
+ 	&brandShortName; urządzenia zabezpieczającego lub zmienić hasło główne dla
+ 	urządzenia, należy nacisnąć przycisk <em>Menedżer urządzeń zabezpieczających</em>.</p>
+ 
+-  <h3 id="validation">Weryfikacja</h3>
+-
+-  <p>Weryfikacja pozwala sprawdzić, czy certyfikaty używane przez przeglądarkę &brandShortName; nie
+-  są przedawnione.</p>
+-
+-  <p><em>Lista unieważnionych certyfikatów</em><br/>
+-  Przeglądarka &brandShortName; może używać list unieważnionych certyfikatów (CRL - Certificate Revocation Lists) do zapewnienia aktualności certyfikatów. Aby dodać nowe lub wyświetlić informacje o dostepnych listach unieważnionych certyfikatów, należy nacisnąć przycisk <em>Menedżer CRL</em>.</p>
+-
+-  <p><em>Weryfikacja certyfikatów</em><br/>
+-  Protokół OCSP (Online Certificate Status Protocol) służy do weryfikacji certyfikatu podczas każdego jego użycia. Przeglądarka &brandShortName; nie używa domyślnie protokołu OCSP, lecz użytkownik może ją włączyć.</p>
+-
+-<div class="contentsBox"><em>14 października 2004</em></div>
+-<p>Copyright &copy; 2003 Contributors to the Firebird Help Project.</p>
++<div class="contentsBox"><em>3 lipca 2005</em></div>
++<p>Copyright &copy; 2003-2005 Contributors to the Firebird Help Project.</p>
+ </body>
+ </html>
+ 
+Index: shortcuts.xhtml
+===================================================================
+RCS file: /l10n/l10n/pl/browser/chrome/help/shortcuts.xhtml,v
+retrieving revision 1.5
+diff -u -r1.5 shortcuts.xhtml
+--- shortcuts.xhtml	29 Jun 2005 11:11:43 -0000	1.5
++++ shortcuts.xhtml	4 Jul 2005 09:40:10 -0000
+@@ -25,437 +25,561 @@
+ <p>Oto lista najczęściej używanych skrótów klawiaturowych w przeglądarce &brandFullName; porównanych ze skrótami tych samych poleceń w Internet Explorerze i Operze.</p>
+ <p class="unix"><strong>Uwaga:</strong> Jeśli w środowisku GNOME zostaną włączone skróty edytowania tekstu w stylu Emacsa, to będą one działały także w przeglądarce &brandShortName;. W przypadku, gdy pojawi się konflikt między skrótami Emacsowymi i domyślnymi skrótami przeglądarki &brandShortName; (tak, jak ma to miejsce w przypadku &accelKey;+<kbd>K</kbd>), skrót z Emacsa zadziała wtedy, gdy kursor będzie znajdował się w polu tekstowym, takim jak pasek adresów lub wyszukiwania. W takim przypadku, aby wykonać w przeglądarce czynność domyślnie związaną z problematyczną kombinacją klawiszy (w przykładzie z &accelKey;+<kbd>K</kbd> ─ by przenieść kursor do paska wyszukiwania), należy użyć alternatywnego skrótu, o ile taki istnieje (dla &accelKey;+<kbd>K</kbd> ─ <span class="win">&accelKey;+<kbd>E</kbd></span><span class="unix">&accelKey;+<kbd>J</kbd></span>).</p>
+ 
+-<table border="1" width="100%">
+-  <thead>
+-    <tr>
+-	    <th>Polecenie</th>
+-	    <th>&brandShortName;</th>
+-	    <th>Internet Explorer</th>
+-	    <th>Opera</th>
+-    </tr>
+-  </thead>
+-  <tbody>
+-    <tr>
+-	    <td>Cofnij</td>
+-	    <td>&accelKey;+<kbd>Z</kbd></td>
+-	    <td>&accelKey;+<kbd>Z</kbd></td>
+-	    <td>&accelKey;+<kbd>Z</kbd></td>
+-    </tr>
+-    <tr>
+-		<td>Dodaj do zakładek</td>
+-    		<td>&accelKey;+<kbd>D</kbd></td>
+-    		<td>&accelKey;+<kbd>D</kbd></td>
+-	    <td>&accelKey;+<kbd>T</kbd></td>
+-    </tr>
+-    <tr>
+-	    <td>Drukuj</td>
+-	    <td>&accelKey;+<kbd>P</kbd></td>
+-	    <td>&accelKey;+<kbd>P</kbd></td>
+-	    <td>&accelKey;+<kbd>P</kbd></td>
+-    </tr>
+-    <tr>
+-	    <td>Historia</td>
+-	    <td><span class="noMac">&accelKey;+<kbd>H</kbd></span>
+-      	      <span class="mac">&accelKey;+&shiftKey;+<kbd>H</kbd></span></td>
+-   	    <td>&accelKey;+<kbd>H</kbd></td>
+-  	    <td>&accelKey;+&altKey;+<kbd>H</kbd><br/>
+-  	      &accelKey;+<kbd>4</kbd></td>
+-    </tr>
+-    <tr>
+-	    <td>Kopiuj</td>
+-	    <td>&accelKey;+<kbd>C</kbd></td>
+-	    <td>&accelKey;+<kbd>C</kbd></td>
+-	    <td>&accelKey;+<kbd>C</kbd></td>
+-    </tr>
+-    <tr>
+-	    <td>Odśwież bieżącą stronę</td>
+-	    <td><kbd>F5</kbd><br />
+-	      &accelKey;+<kbd>R</kbd></td>
+-	    <td><kbd>F5</kbd><br />
+-	      &accelKey;+<kbd>R</kbd></td>
+-	    <td><kbd>F5</kbd><br />
+-	      &accelKey;+<kbd>R</kbd></td>
+-    </tr>
+-    <tr>
+-	    <td>Odśwież bieżącą stronę (pomijając pamięć podręczną)</td>
+-	    <td>&ctrlKey;+<kbd>F5</kbd><br/>
+-              &accelKey;+&shiftKey;+<kbd>R</kbd></td>
+-            <td>&accelKey;+<kbd>F5</kbd></td>
+-            <td>&nbsp;</td>
+-    </tr>
+-    <tr>
+-	    <td>Otwórz adres w nowym panelu</td>
+-	    <td>&altKey;+&enterKey;</td>
+-            <td>&nbsp;</td>
+-            <td>&shiftKey;+&enterKey;</td>
+-    </tr>
+-    <tr>
+-	    <td>Otwórz nowe okno</td>
+-	    <td>&accelKey;+<kbd>N</kbd></td>
+-	    <td>&accelKey;+<kbd>N</kbd></td>
+-	    <td>&accelKey;+&altKey;+<kbd>N</kbd></td>
+-    </tr>
+-    <tr>
+-	    <td>Otwórz nowy panel</td>
+-	    <td>&accelKey;+<kbd>T</kbd></td>
+-	    <td>&nbsp;</td>
+-	    <td>&accelKey;+&altKey;+<kbd>N</kbd></td>
+-    </tr>
+-    <tr>
+-	    <td>Otwórz plik</td>
+-	    <td>&accelKey;+<kbd>O</kbd></td>
+-	    <td>&accelKey;+<kbd>O</kbd></td>
+-	    <td>&accelKey;+<kbd>O</kbd></td>
+-    </tr>
+-    <tr class="noWin">
+-            <td>Pokaż informacje o stronie</td>
+-            <td>&accelKey;+<kbd>I</kbd></td>
+-            <td>&nbsp;</td>
+-            <td>&accelKey;+<kbd>8</kbd></td>
+-    </tr>
+-    <tr>
+-	    <td>Pokaż źródło strony</td>
+-	    <td>&accelKey;+<kbd>U</kbd></td>
+-	    <td>&nbsp;</td>
+-	    <td>&accelKey;+<kbd>F3</kbd></td>
+-    </tr>
+-    <tr>
+-    	    <td>Przeglądanie klawiaturowe (za pomocą kursora tekstowego)</td>
+-	    <td><kbd>F7</kbd></td>
+-	    <td>&nbsp;</td>
+-	    <td>&nbsp;</td>
+-    </tr>
+-    <tr>
+-	    <td>Przejdź na koniec strony</td>
+-	    <td><kbd>End</kbd></td>
+-	    <td><kbd>End</kbd></td>
+-	    <td><kbd>End</kbd></td>
+-    </tr>
+-    <tr>
+-	    <td>Przejdź na początek strony</td>
+-	    <td><kbd>Home</kbd></td>
+-	    <td><kbd>Home</kbd></td>
+-	    <td><kbd>Home</kbd></td>
+-    </tr>
+-    <tr>
+-	    <td>Przejdź do następnego panelu</td>
+-	    <td>&ctrlKey;+<kbd>Tab</kbd><br />
+-	      &ctrlKey;+<kbd>PageDown</kbd></td>
+-	    <td>&nbsp;</td>
+-	    <td><span class="noMac">&accelKey;+<kbd>Tab</kbd></span>
+-               <span class="mac">&altKey;+<kbd>Tab</kbd></span><br/>
+-               &altKey;+<kbd>Page Down</kbd><br/>
+-               &accelKey;+<kbd>F6</kbd><br/>
+-               <kbd>2</kbd></td>
+-    </tr>
+-    <tr>
+-	    <td>Przejdź do poprzedniego panelu</td>
+-	    <td>&ctrlKey;+&shiftKey;+<kbd>Tab</kbd><br />
+-              &ctrlKey;+<kbd>PageUp</kbd></td>
+-            <td>&nbsp;</td>
+-            <td><span class="noMac">&accelKey;+&shiftKey;+<kbd>Tab</kbd></span>
+-              <span class="mac">&altKey;+&shiftKey;+<kbd>Tab</kbd></span><br/>
+-              &altKey;+<kbd>Page Up</kbd><br/>
+-              &accelKey;+&shiftKey;+<kbd>F6</kbd><br/>
+-              <kbd>I</kbd></td>
+-    </tr>
+-    <tr>
+-	    <td>Przejdź do następnej strony</td>
+-
+-       <td>
+-         <span class="win">
+-           &altKey;+<kbd>Strzałka w prawo</kbd><br/>
+-           &shiftKey;+<kbd>Backspace</kbd>
+-         </span>
+-         <span class="unix">
+-           &altKey;+<kbd>Strzałka w prawo</kbd><br/>
+-           &shiftKey;+<kbd>Backspace</kbd>
+-           &accelKey;+<kbd>]</kbd>
+-         </span>
+-         <span class="mac">
+-           &accelKey;+<kbd>]</kbd><br/>
+-           &accelKey;+<kbd>Strzałka w prawo</kbd>
+-         </span>
+-       </td>
+-       <td>&shiftKey;+<kbd>Backspace</kbd><br />
+-         &altKey;+<kbd>Strzałka w prawo</kbd></td>
+-       <td>&shiftKey;+<kbd>Backspace</kbd><br />
+-         &altKey;+<kbd>Strzałka w prawo</kbd><br />
+-         &accelKey;+<kbd>Strzałka w prawo</kbd><br />
+-         <kbd>X</kbd></td>
+-    </tr>
+-    <tr>
+-	    <td>Przejdź do poprzedniej strony</td>
+-	    <td><span class="win">
+-           &altKey;+<kbd>Strzałka w lewo</kbd><br/>
+-           <kbd>Backspace</kbd>
+-         </span>
+-         <span class="unix">
+-           &altKey;+<kbd>Strzałka w lewo</kbd><br/>
+-           <kbd>Backspace</kbd><br/>
+-           &accelKey;+<kbd>[</kbd>
+-         </span>
+-         <span class="mac">
+-           &accelKey;+<kbd>[</kbd><br/>
+-           &accelKey;+<kbd>Strzałka w lewo</kbd>
+-         </span>
+-       </td>
+-       <td><kbd>Backspace</kbd><br/>
+-         &altKey;+<kbd>Strzałka w lewo</kbd></td>
+-       <td><kbd>Backspace</kbd><br/>
+-         &altKey;+<kbd>Strzałka w lewo</kbd><br/>
+-         &accelKey;+<kbd>Strzałka w lewo</kbd><br/>
+-         <kbd>Z</kbd></td>
+-    </tr>
+-    <tr>
+-	    <td>Przejdź do następnej ramki</td>
+-	    <td><kbd>F6</kbd></td>
+-	    <td>&nbsp;</td>
+-	    <td>&nbsp;</td>
+-    </tr>
+-    <tr>
+-	    <td>Przejdź do poprzedniej ramki</td>
+-	    <td>&shiftKey;+<kbd>F6</kbd></td>
+-	    <td>&nbsp;</td>
+-	    <td>&nbsp;</td>
+-    </tr>
+-    <tr>
+-	    <td>Przejdź do strony domowej</td>
+-	    <td>&altKey;+<kbd>Home</kbd></td>
+-	    <td>&altKey;+<kbd>Home</kbd></td>
+-	    <td>&accelKey;+<kbd>Spacja</kbd></td>
+-    </tr>
+-    <tr>
+-	    <td>Przenieś kursor do paska adresu</td>
+-	    <td><span class="noMac">&altKey;+<kbd>D</kbd><br/></span>
+-  	      <kbd>F6</kbd><br />
+-  	      &accelKey;+<kbd>L</kbd></td>
+-  	    <td>&altKey;+<kbd>D</kbd><br />
+-  	      <kbd>F6</kbd><br />
+-  	      <kbd>F4</kbd><br />
+-  	      &accelKey;+<kbd>Tab</kbd></td>
+-  	    <td>&accelKey;+<kbd>H</kbd><br />
+-  	      <kbd>F8</kbd></td>
+-    </tr>
+-    <tr>
+-	    <td>Przenieś kursor do paska wyszukiwania</td>
+-	    <td>&accelKey;+<kbd>K</kbd>
+-  	      <span class="win"><br/>&accelKey;+<kbd>E</kbd></span>
+-  	      <span class="unix"><br/>&accelKey;+<kbd>J</kbd></span></td>
+-  	    <td>&accelKey;+<kbd>E</kbd></td>
+-  	    <td>&shiftKey;+<kbd>F8</kbd></td>
+-    </tr>
+-    <tr>
+-       <td>Przesuń panel w lewo (kiedy jest aktywny)</td>
+-       <td>&accelKey;+<kbd>Strzałka w lewo</kbd><br/>
+-           &accelKey;+<kbd>Strzałka w górę</kbd></td>
+-       <td>&nbsp;</td>
+-       <td>&nbsp;</td>
+-     </tr>
+-     <tr>
+-       <td>Przesuń panel w prawo (kiedy jest aktywny)</td>
+-       <td>&accelKey;+<kbd>Strzałka w prawo</kbd><br/>
+-           &accelKey;+<kbd>Strzałka w dół</kbd></td>
+-       <td>&nbsp;</td>
+-       <td>&nbsp;</td>
+-     </tr>
+-     <tr>
+-       <td>Przesuń panel na początek (kiedy jest aktywny)</td>
+-       <td>&accelKey;+<kbd>Home</kbd></td>
+-       <td>&nbsp;</td>
+-       <td>&nbsp;</td>
+-     </tr>
+-     <tr>
+-       <td>Przesuń panel na koniec (kiedy jest aktywny)</td>
+-       <td>&accelKey;+<kbd>End</kbd></td>
+-       <td>&nbsp;</td>
+-       <td>&nbsp;</td>
+-     </tr>
+-    <tr>
+-	    <td>Przywróć (po cofnięciu)</td>
+-	    <td><span class="win">&accelKey;+<kbd>Y</kbd></span>
+-  	      <span class="noWin">&accelKey;+&shiftKey;+<kbd>Z</kbd></span></td>
+-  	    <td>&accelKey;+<kbd>Y</kbd></td>
+-  	    <td>&accelKey;+<kbd>Y</kbd><br/>
+-  	      &accelKey;+&shiftKey;+<kbd>Z</kbd></td>
+-    </tr>
+-    <tr>
+-	    <td>Przywróć pierwotny rozmiar tekstu</td>
+-	    <td>&accelKey;+<kbd>0</kbd></td>
+-	    <td>&nbsp;</td>
+-	    <td><kbd>6</kbd></td>
+-    </tr>
+-    <tr>
+-	    <td>Tryb pełnoekranowy</td>
+-	    <td><kbd>F11</kbd></td>
+-	    <td><kbd>F11</kbd></td>
+-	    <td><kbd>F11</kbd></td>
+-    </tr>
+-    <tr>
+-	    <td>Usuń</td>
+-	    <td><kbd>Delete</kbd></td>
+-	    <td><kbd>Delete</kbd></td>
+-	    <td><kbd>Delete</kbd></td>
+-    </tr>
+-    <!--Usuń znak końca linii-->
+-    <tr>
+-	    <td>Usuń z pamięci przeglądarki podświetloną pozycję autouzupełniania pól formularzy</td>
+-	    <td>&shiftKey;+<kbd>Delete</kbd></td>
+-	    <td><kbd>Delete</kbd></td>
+-	    <td>&nbsp;</td>
+-    </tr>
+-    <tr class="win">
+-            <td>Utwórz nową wiadomość</td>
+-            <td>&accelKey;+<kbd>M</kbd></td>
+-            <td>&nbsp;</td>
+-            <td>&accelKey;+<kbd>E</kbd></td>
+-    </tr>
+-    <tr>
+-	    <td>Uzupełnij adres (.com)</td>
+-	    <td>&accelKey;+&enterKey;</td>
+-            <td>&accelKey;+&enterKey;</td>
+-      	    <td>&enterKey;</td>
+-    </tr>
+-    <tr>
+-	    <td>Uzupełnij adres (.net)</td>
+-	    <td>&shiftKey;+&enterKey;</td>
+-	    <td>&nbsp;</td>
+-	    <td>&nbsp;</td>
+-    </tr>
+-    <tr>
+-	    <td>Uzupełnij adres (.org)</td>
+-	    <td>&accelKey;+&shiftKey;+&enterKey;</td>
+-	    <td>&nbsp;</td>
+-	    <td>&nbsp;</td>
+-    </tr>
+-    <tr>
+-	    <td>Wklej</td>
+-	    <td>&accelKey;+<kbd>V</kbd></td>
+-	    <td>&accelKey;+<kbd>V</kbd></td>
+-	    <td>&accelKey;+<kbd>V</kbd></td>
+-    </tr>
+-    <tr>
+-	    <td>Wybierz panel (od 1. do 9.)</td>
+-	    <td><span class="noUnix">&accelKey;</span><span
+-               class="unix">&altKey;</span>+(<kbd>1</kbd>-<kbd>9</kbd>)</td>
+-            <td>&nbsp;</td>
+-            <td>&nbsp;</td>
+-    </tr>
+-    <tr>
+-	    <td>Wybierz następną wyszukiwarkę w pasku wyszukiwania</td>
+-	    <td>&accelKey;+<kbd>Strzałka w dół</kbd></td>
+-	    <td>&nbsp;</td>
+-	    <td>&nbsp;</td>
+-    </tr>
+-    <tr>
+-	    <td>Wytnij</td>
+-	    <td>&accelKey;+<kbd>X</kbd></td>
+-	    <td>&accelKey;+<kbd>X</kbd></td>
+-	    <td>&accelKey;+<kbd>X</kbd></td>
+-    </tr>
+-    <tr>
+-	    <td>Zakładki</td>
+-	    <td>&accelKey;+<kbd>B</kbd>
+-              <span class="win"><br/>&accelKey;+<kbd>I</kbd></span></td>
+-            <td>&accelKey;+<kbd>I</kbd></td>
+-            <td><kbd>F4</kbd><br/>
+-              &accelKey;+&altKey;+<kbd>B</kbd><br/>
+-              &accelKey;+<kbd>1</kbd></td>
+-    </tr>
+-    <tr>
+-	    <td>Zamknij okno</td>
+-	    <td>&accelKey;+&shiftKey;+<kbd>W</kbd>   
+-  	      <span class="noMac"><br/>&altKey;+<kbd>F4</kbd></span></td>
+-	    <td>&accelKey;+<kbd>W</kbd> 
+-    	      <span class="noMac"><br/>&altKey;+<kbd>F4</kbd></span></td>
+-	    <td>&accelKey;+<kbd>W</kbd><br/>
+-               &altKey;+<kbd>F4</kbd></td>
+-    </tr>
+-    <tr>
+-	    <td>Zamknij panel</td>
+-	    <td>&accelKey;+<kbd>W</kbd>
+-              <span class="noMac"><br/>&ctrlKey;+<kbd>F4</kbd></span></td>
+-            <td>&nbsp;</td>
+-            <td>&accelKey;+<kbd>W</kbd><br/>
+-              &accelKey;+<kbd>F4</kbd></td>
+-    </tr>
+-    <tr>
+-	    <td>Zapisz stronę jako</td>
+-	    <td>&accelKey;+<kbd>S</kbd></td>
+-	    <td>&nbsp;</td>
+-	    <td>&accelKey;+<kbd>S</kbd></td>
+-    </tr>
+-    <tr>
+-            <td>Zarządzaj pobieraniem plików</td>
+-            <td><span class="noUnix">&accelKey;+<kbd>J</kbd></span>
+-              <span class="unix">&accelKey;+<kbd>Y</kbd></span></td>
+-            <td>&nbsp;</td>
+-            <td>&accelKey;+&altKey;+<kbd>T</kbd><br/>
+-              &accelKey;+<kbd>5</kbd></td>
+-    </tr>
+-    <tr>
+-	    <td>Zatrzymaj</td>
+-	    <td><kbd>Esc</kbd></td>
+-	    <td><kbd>Esc</kbd></td>
+-	    <td><kbd>Esc</kbd></td>
+-    </tr>
+-    <tr>
+-	    <td>Zaznacz wszystko</td>
+-	    <td>&accelKey;+<kbd>A</kbd></td>
+-	    <td>&accelKey;+<kbd>A</kbd></td>
+-	    <td>&accelKey;+<kbd>A</kbd></td>
+-    </tr>
+-    <tr>
+-	    <td>Zmniejsz rozmiar tekstu</td>
+-	    <td>&accelKey;+<kbd>-</kbd></td>
+-	    <td>&nbsp;</td>
+-	    <td><kbd>9</kbd></td>
+-    </tr>
+-    <tr>
+-	    <td>Znajdź następne</td>
+-	    <td><kbd>F3</kbd><br/>
+-	      &accelKey;+<kbd>G</kbd></td>
+-	    <td>&nbsp;</td>
+-	    <td><kbd>F3</kbd></td>
+-    </tr>
+-    <tr>
+-	    <td>Znajdź na tej stronie</td>
+-	    <td>&accelKey;+<kbd>F</kbd></td>
+-	    <td>&accelKey;+<kbd>F</kbd></td>
+-	    <td>&accelKey;+<kbd>F</kbd></td>
+-    </tr>
+-    <tr>
+-	    <td>Znajdź poprzednie</td>
+-	    <td>&shiftKey;+<kbd>F3</kbd></td>
+-	    <td>&nbsp;</td>
+-	    <td>&shiftKey;+<kbd>F3</kbd></td>
+-    </tr>
+-    <tr>
+-	    <td>Znajdź wprowadzając<br />
+-	      (odnośniki)</td>
+-	    <td><kbd>'</kbd></td>
+-	    <td>&nbsp;</td>
+-	    <td>&shiftKey;+<kbd>/</kbd></td>
+-    </tr>
+-    <tr>
+-	    <td>Znajdź wprowadzając<br />
+-	      (tekst)</td>
+-	    <td><kbd>/</kbd></td>
+-	    <td>&nbsp;</td>
+-	    <td>&nbsp;</td>
+-    </tr>
+-    <tr>
+-	    <td>Zwiększ rozmiar tekstu</td>
+-	    <td>&accelKey;+<kbd>+</kbd></td>
+-	    <td>&nbsp;</td>
+-	    <td><kbd>0</kbd></td>
+-    </tr>
+-    
+-  </tbody>
++<table border="1" width="100%">
++  <thead>
++    <tr>
++      <th>Polecenie</th>
++      <th>&brandShortName;</th>
++      <th>Internet Explorer</th>
++      <th>Opera</th>
++
++    </tr>
++  </thead>
++  <tbody>
++    <tr>
++      <th colspan="4">Nawigacja</th>
++    </tr>
++    <tr>
++      <td>Przejdź do poprzedniej strony</td>
++
++      <td>
++        <span class="win">
++          &altKey;+<kbd>Strzałka w lewo</kbd><br/>
++          <kbd>Backspace</kbd>
++        </span>
++        <span class="unix">
++          &altKey;+<kbd>Strzałka w lewo</kbd><br/>
++
++          <kbd>Backspace</kbd><br/>
++          &accelKey;+<kbd>[</kbd>
++        </span>
++        <span class="mac">
++          &accelKey;+<kbd>[</kbd><br/>
++          &accelKey;+<kbd>Strzałka w lewo</kbd>
++
++        </span>
++      </td>
++      <td><kbd>Backspace</kbd><br/>
++        &altKey;+<kbd>Strzałka w lewo</kbd></td>
++      <td><kbd>Backspace</kbd><br/>
++        &altKey;+<kbd>Strzałka w lewo</kbd><br/>
++
++        &accelKey;+<kbd>Strzałka w lewo</kbd><br/>
++        <kbd>Z</kbd></td>
++    </tr>
++    <tr>
++      <td>Przejdź do następnej strony</td>
++      <td>
++        <span class="win">
++
++          &altKey;+<kbd>Strzałka w prawo</kbd><br/>
++          &shiftKey;+<kbd>Backspace</kbd>
++        </span>
++        <span class="unix">
++          &altKey;+<kbd>Strzałka w prawo</kbd><br/>
++          &shiftKey;+<kbd>Backspace</kbd>
++
++          &accelKey;+<kbd>]</kbd>
++        </span>
++        <span class="mac">
++          &accelKey;+<kbd>]</kbd><br/>
++          &accelKey;+<kbd>Strzałka w prawo</kbd>
++        </span>
++
++      </td>
++      <td>&shiftKey;+<kbd>Backspace</kbd><br />
++        &altKey;+<kbd>Strzałka w prawo</kbd></td>
++      <td>&shiftKey;+<kbd>Backspace</kbd><br />
++        &altKey;+<kbd>Strzałka w prawo</kbd><br />
++
++        &accelKey;+<kbd>Strzałka w prawo</kbd><br />
++        <kbd>X</kbd></td>
++    </tr>
++    <tr>
++      <td>Strona domowa</td>
++      <td>&altKey;+<kbd>Home</kbd></td>
++
++      <td>&altKey;+<kbd>Home</kbd></td>
++      <td>&accelKey;+<kbd>Spacja</kbd></td>
++    </tr>
++    <tr>
++      <td>Otwórz plik</td>
++      <td>&accelKey;+<kbd>O</kbd></td>
++
++      <td>&accelKey;+<kbd>O</kbd></td>
++      <td>&accelKey;+<kbd>O</kbd></td>
++    </tr>
++    <tr>
++      <td>Odśwież</td>
++      <td><kbd>F5<br/></kbd>
++
++        &accelKey;+<kbd>R</kbd></td>
++      <td><kbd>F5</kbd><br />
++        &accelKey;+<kbd>R</kbd></td>
++      <td><kbd>F5</kbd><br />
++        &accelKey;+<kbd>R</kbd></td>
++
++    </tr>
++    <tr>
++      <td>Odśwież (pomijając pamięć podręczną)</td>
++      <td>&ctrlKey;+<kbd>F5</kbd><br/>
++        &accelKey;+&shiftKey;+<kbd>R</kbd></td>
++      <td>&accelKey;+<kbd>F5</kbd></td>
++
++      <td>&nbsp;</td>
++    </tr>
++    <tr>
++      <td>Zatrzymaj wczytywanie</td>
++      <td><span class="mac">&accelKey;+<kbd>.</kbd><br/></span>
++        <kbd>Esc</kbd></td>
++      <td><kbd>Esc</kbd></td>
++
++      <td><kbd>Esc</kbd></td>
++    </tr>
++  </tbody>
++  <tbody>
++    <tr>
++      <th colspan="4">Aktualna strona</th>
++    </tr>
++    <tr>
++
++      <td>Przejdź na koniec strony</td>
++      <td><kbd>End</kbd></td>
++      <td><kbd>End</kbd></td>
++      <td><kbd>End</kbd></td>
++    </tr>
++    <tr>
++      <td>Przejdź na początek strony</td>
++
++      <td><kbd>Home</kbd></td>
++      <td><kbd>Home</kbd></td>
++      <td><kbd>Home</kbd></td>
++    </tr>
++    <tr>
++      <td>Przejdź do następnej ramki</td>
++      <td><kbd>F6</kbd></td>
++
++      <td>&nbsp;</td>
++      <td>&nbsp;</td>
++    </tr>
++    <tr>
++      <td>Przejdź do poprzedniej ramki</td>
++      <td>&shiftKey;+<kbd>F6</kbd></td>
++      <td>&nbsp;</td>
++
++      <td>&nbsp;</td>
++    </tr>
++    <tr class="noWin">
++      <td>Informacje o stronie</td>
++      <td>&accelKey;+<kbd>I</kbd></td>
++      <td>&nbsp;</td>
++      <td>&accelKey;+<kbd>8</kbd></td>
++
++    </tr>
++    <tr>
++      <td>Pokaż źródło strony</td>
++      <td>&accelKey;+<kbd>U</kbd></td>
++      <td>&nbsp;</td>
++      <td>&accelKey;+<kbd>F3</kbd></td>
++
++    </tr>
++    <tr>
++      <td>Wydrukuj</td>
++      <td>&accelKey;+<kbd>P</kbd></td>
++      <td>&accelKey;+<kbd>P</kbd></td>
++      <td>&accelKey;+<kbd>P</kbd></td>
++
++    </tr>
++    <tr>
++      <td>Zapisz stronę jako...</td>
++      <td>&accelKey;+<kbd>S</kbd></td>
++      <td>&nbsp;</td>
++      <td>&accelKey;+<kbd>S</kbd></td>
++
++    </tr>
++    <tr>
++      <td>Rozmiar tekstu: Zmniejsz</td>
++      <td>&accelKey;+<kbd>-</kbd></td>
++      <td>&nbsp;</td>
++      <td><kbd>9</kbd></td>
++    </tr>
++
++    <tr>
++      <td>Rozmiar tekstu: Zwiększ</td>
++      <td>&accelKey;+<kbd>+</kbd></td>
++      <td>&nbsp;</td>
++      <td><kbd>0</kbd></td>
++    </tr>
++    <tr>
++
++      <td>Rozmiar tekstu: Normalny</td>
++      <td>&accelKey;+<kbd>0</kbd></td>
++      <td>&nbsp;</td>
++      <td><kbd>6</kbd></td>
++    </tr>
++  </tbody>
++  <tbody>
++
++    <tr>
++      <th colspan="4">Edycja</th>
++    </tr>
++
++    <tr>
++      <td>Cofnij</td>
++      <td>&accelKey;+<kbd>Z</kbd></td>
++      <td>&accelKey;+<kbd>Z</kbd></td>
++      <td>&accelKey;+<kbd>Z</kbd></td>
++
++    </tr>
++
++    <tr>
++      <td>Przywróć</td>
++      <td><span class="win">&accelKey;+<kbd>Y</kbd></span>
++        <span class="noWin">&accelKey;+&shiftKey;+<kbd>Z</kbd></span></td>
++
++      <td>&accelKey;+<kbd>Y</kbd></td>
++      <td>&accelKey;+<kbd>Y</kbd><br/>
++        &accelKey;+&shiftKey;+<kbd>Z</kbd></td>
++    </tr>
++
++    <tr>
++      <td>Wytnij</td>
++      <td>&accelKey;+<kbd>X</kbd></td>
++      <td>&accelKey;+<kbd>X</kbd></td>
++
++      <td>&accelKey;+<kbd>X</kbd></td>
++    </tr>
++
++    <tr>
++      <td>Kopiuj</td>
++      <td>&accelKey;+<kbd>C</kbd></td>
++      <td>&accelKey;+<kbd>C</kbd></td>
++
++      <td>&accelKey;+<kbd>C</kbd></td>
++    </tr>
++
++    <tr>
++      <td>Wklej</td>
++      <td>&accelKey;+<kbd>V</kbd></td>
++      <td>&accelKey;+<kbd>V</kbd></td>
++
++      <td>&accelKey;+<kbd>V</kbd></td>
++    </tr>
++
++    <tr>
++      <td>Usuń</td>
++      <td><kbd>Delete</kbd></td>
++      <td><kbd>Delete</kbd></td>
++
++      <td><kbd>Delete</kbd></td>
++    </tr>
++
++    <tr>
++      <td>Zaznacz wszystko</td>
++      <td>&accelKey;+<kbd>A</kbd></td>
++      <td>&accelKey;+<kbd>A</kbd></td>
++      <td>&accelKey;+<kbd>A</kbd></td>
++    </tr>
++
++
++  </tbody>
++  <tbody>
++    <tr>
++      <th colspan="4">Wyszukiwanie</th>
++    </tr>
++    <tr>
++      <td>Znajdź na tej stronie...</td>
++
++      <td>&accelKey;+<kbd>F</kbd></td>
++      <td>&accelKey;+<kbd>F</kbd></td>
++      <td>&accelKey;+<kbd>F</kbd></td>
++    </tr>
++    <tr>
++      <td>Znajdź ponownie</td>
++
++      <td><kbd>F3</kbd><br/>
++        &accelKey;+<kbd>G</kbd></td>
++      <td>&nbsp;</td>
++      <td><kbd>F3</kbd></td>
++    </tr>
++    <tr>
++      <td>Znajdź wprowadzając... (odnośnik)</td>
++
++      <td><kbd>'</kbd></td>
++      <td>&nbsp;</td>
++      <td><kbd>,</kbd><br/>
++        &shiftKey;+<kbd>/</kbd></td>
++    </tr>
++    <tr>
++      <td>Znajdź wprowadzając... (tekst)</td>
++
++      <td><kbd>/</kbd></td>
++      <td>&nbsp;</td>
++      <td>&nbsp;</td>
++    </tr>
++    <tr>
++      <td>Znajdź poprzednie</td>
++      <td>&shiftKey;+<kbd>F3</kbd></td>
++
++      <td>&nbsp;</td>
++      <td>&shiftKey;+<kbd>F3</kbd></td>
++    </tr>
++    <tr>
++      <td>Znajdź w Internecie</td>
++      <td>&accelKey;+<kbd>K</kbd>
++
++        <span class="win"><br/>&accelKey;+<kbd>E</kbd></span>
++        <span class="unix"><br/>&accelKey;+<kbd>J</kbd></span></td>
++      <td>&accelKey;+<kbd>E</kbd></td>
++      <td>&shiftKey;+<kbd>F8</kbd></td>
++    </tr>
++
++  </tbody>
++  <tbody id="windows_tabs">
++    <tr>
++      <th colspan="4">Okna i panele</th>
++    </tr>
++    <tr>
++      <td>Zamknij panel</td>
++
++      <td>&accelKey;+<kbd>W</kbd>
++        <span class="noMac"><br/>&ctrlKey;+<kbd>F4</kbd></span></td>
++      <td>&nbsp;</td>
++      <td>&accelKey;+<kbd>W</kbd><br/>
++        &accelKey;+<kbd>F4</kbd></td>
++
++    </tr>
++    <tr>
++      <td>Zamknij okno</td>
++      <td>&accelKey;+&shiftKey;+<kbd>W</kbd>
++        <span class="noMac"><br/>&altKey;+<kbd>F4</kbd></span></td>
++      <td>&accelKey;+<kbd>W</kbd>
++
++        <span class="noMac"><br/>&altKey;+<kbd>F4</kbd></span></td>
++      <td>&accelKey;+<kbd>W</kbd><br/>
++        &altKey;+<kbd>F4</kbd></td>
++    </tr>
++    <!-- LOCALIZATION NOTE:
++         "Left"/"Up" and "Right"/"Down" might need special treatment
++         for bidi locales, as used in the following two entries.
++    -->
++    <tr>
++
++      <td>Przenieś panel w lewo (kiedy panel jest zaznaczony)</td>
++      <td>&accelKey;+<kbd>Strzałka w lewo</kbd><br/>
++          &accelKey;+<kbd>Up Arrow</kbd></td>
++      <td>&nbsp;</td>
++      <td>&nbsp;</td>
++    </tr>
++
++    <tr>
++      <td>Przenieś panel w prawo (kiedy panel jest zaznaczony)</td>
++      <td>&accelKey;+<kbd>Strzałka w prawo</kbd><br/>
++          &accelKey;+<kbd>Down Arrow</kbd></td>
++      <td>&nbsp;</td>
++      <td>&nbsp;</td>
++
++    </tr>
++    <tr>
++      <td>Przenieś panel na początek (kiedy panel jest zaznaczony)</td>
++      <td>&accelKey;+<kbd>Home</kbd></td>
++      <td>&nbsp;</td>
++      <td>&nbsp;</td>
++    </tr>
++
++    <tr>
++      <td>Przenieś panel na koniec (kiedy panel jest zaznaczony)</td>
++      <td>&accelKey;+<kbd>End</kbd></td>
++      <td>&nbsp;</td>
++      <td>&nbsp;</td>
++    </tr>
++    <tr>
++
++      <td>Nowy panel</td>
++      <td>&accelKey;+<kbd>T</kbd></td>
++      <td>&nbsp;</td>
++      <td>&accelKey;+&altKey;+<kbd>N</kbd></td>
++    </tr>
++    <tr>
++
++      <td>Nowe okno</td>
++      <td>&accelKey;+<kbd>N</kbd></td>
++      <td>&accelKey;+<kbd>N</kbd></td>
++      <td>&accelKey;+&altKey;+<kbd>N</kbd></td>
++    </tr>
++
++    <tr>
++      <td>Następny panel</td>
++      <td><span class="noMac">&ctrlKey;+<kbd>Tab</kbd></span>
++        <span class="mac">&accelKey;+&altKey;+Strzałka w prawo</span><br/>
++        &ctrlKey;+<kbd>Page Down</kbd></td>
++
++      <td>&nbsp;</td>
++      <td><span class="noMac">&accelKey;+<kbd>Tab</kbd></span>
++        <span class="mac">&altKey;+<kbd>Tab</kbd></span><br/>
++        &altKey;+<kbd>Page Down</kbd><br/>
++        &accelKey;+<kbd>F6</kbd><br/>
++
++        <kbd>2</kbd></td>
++    </tr>
++    <tr>
++      <td>Otwórz adres w nowym panelu</td>
++      <td>&altKey;+&enterKey;</td>
++      <td>&nbsp;</td>
++      <td>&shiftKey;+&enterKey;</td>
++
++    </tr>
++    <tr>
++      <td>Poprzedni panel</td>
++      <td><span class="noMac">&ctrlKey;+&shiftKey;+<kbd>Tab</kbd></span>
++        <span class="mac">&accelKey;+&altKey;+Strzałka w lewo</span><br/>
++        &ctrlKey;+<kbd>Page Up</kbd></td>
++
++      <td>&nbsp;</td>
++      <td><span class="noMac">&accelKey;+&shiftKey;+<kbd>Tab</kbd></span>
++        <span class="mac">&altKey;+&shiftKey;+<kbd>Tab</kbd></span><br/>
++        &altKey;+<kbd>Page Up</kbd><br/>
++        &accelKey;+&shiftKey;+<kbd>F6</kbd><br/>
++
++        <kbd>I</kbd></td>
++    </tr>
++    <tr>
++      <td>Wybierz panel (1 do 9)</td>
++      <td><span class="noUnix">&accelKey;</span><span
++        class="unix">&altKey;</span>+(<kbd>1</kbd> to <kbd>9</kbd>)</td>
++
++      <td>&nbsp;</td>
++      <td>&nbsp;</td>
++    </tr>
++  </tbody>
++  <tbody>
++    <tr>
++      <th colspan="4">Narzędzia</th>
++    </tr>
++
++    <tr>
++      <td>Dodaj do zakładek</td>
++      <td>&accelKey;+<kbd>D</kbd></td>
++      <td>&accelKey;+<kbd>D</kbd></td>
++      <td>&accelKey;+<kbd>T</kbd></td>
++
++    </tr>
++    <tr>
++      <td>Zakładki</td>
++      <td>&accelKey;+<kbd>B</kbd>
++        <span class="win"><br/>&accelKey;+<kbd>I</kbd></span></td>
++      <td>&accelKey;+<kbd>I</kbd></td>
++
++      <td><kbd>F4</kbd><br/>
++        &accelKey;+&altKey;+<kbd>B</kbd><br/>
++        &accelKey;+<kbd>1</kbd></td>
++    </tr>
++    <tr>
++      <td>Przeglądanie z użyciem kursora</td>
++
++      <td><kbd>F7</kbd></td>
++      <td>&nbsp;</td>
++      <td>&nbsp;</td>
++    </tr>
++    <tr>
++      <td>Pobieranie plików</td>
++      <td><span class="noUnix">&accelKey;+<kbd>J</kbd></span>
++
++        <span class="unix">&accelKey;+<kbd>Y</kbd></span></td>
++      <td>&nbsp;</td>
++      <td>&accelKey;+&altKey;+<kbd>T</kbd><br/>
++        &accelKey;+<kbd>5</kbd></td>
++    </tr>
++
++    <tr>
++      <td>Historia</td>
++      <td><span class="noMac">&accelKey;+<kbd>H</kbd></span>
++        <span class="mac">&accelKey;+&shiftKey;+<kbd>H</kbd></span></td>
++      <td>&accelKey;+<kbd>H</kbd></td>
++
++      <td>&accelKey;+&altKey;+<kbd>H</kbd><br/>
++        &accelKey;+<kbd>4</kbd></td>
++    </tr>
++    <tr>
++      <td>Sanitize &brandShortName;</td>
++      <td>&accelKey;+&shiftKey;+<kbd>Del</kbd></td>
++
++      <td>&nbsp;</td>
++      <td>&nbsp;</td>
++    </tr>
++  </tbody>
++  <tbody>
++    <tr>
++      <th colspan="4">Różne</th>
++    </tr>
++
++    <tr>
++      <td>Dokończ adres .com</td>
++      <td>&accelKey;+&enterKey;</td>
++      <td>&accelKey;+&enterKey;</td>
++      <td>&enterKey;</td>
++    </tr>
++    <tr>
++
++      <td>Dokończ adres .net</td>
++      <td>&shiftKey;+&enterKey;</td>
++      <td>&nbsp;</td>
++      <td>&nbsp;</td>
++    </tr>
++    <tr>
++      <td>Dokończ adres .org</td>
++
++      <td>&accelKey;+&shiftKey;+&enterKey;</td>
++      <td>&nbsp;</td>
++      <td>&nbsp;</td>
++    </tr>
++    <tr>
++      <td>Usuń zaznaczoną wartość autouzupełniania <!-- autocomplete entry FIXME --></td>
++      <td>&shiftKey;+<kbd>Del</kbd></td>
++
++      <td><kbd>Del</kbd></td>
++      <td>&nbsp;</td>
++    </tr>
++    <tr>
++      <td>Tryb pełnoekranowy</td>
++      <td><kbd>F11</kbd></td>
++      <td><kbd>F11</kbd></td>
++
++      <td><kbd>F11</kbd></td>
++    </tr>
++    <tr class="win">
++      <td>Nowa wiadomość</td>
++      <td>&accelKey;+<kbd>M</kbd></td>
++      <td>&nbsp;</td>
++      <td>&accelKey;+<kbd>E</kbd></td>
++
++    </tr>
++    <tr>
++      <td>Zaznacz pasek adresu</td>
++      <td><span class="noMac">&altKey;+<kbd>D</kbd><br/></span>
++        <kbd>F6</kbd><br />
++        &accelKey;+<kbd>L</kbd></td>
++
++      <td>&altKey;+<kbd>D</kbd><br />
++        <kbd>F6</kbd><br />
++        <kbd>F4</kbd><br />
++        &accelKey;+<kbd>Tab</kbd></td>
++      <td>&accelKey;+<kbd>H</kbd><br />
++
++        <kbd>F8</kbd></td>
++    </tr>
++    <tr>
++      <td>Zaznacz następną wyszukiwarkę w pasku wyszukiwania</td>
++      <td>&accelKey;+<kbd>Down</kbd></td>
++      <td>&nbsp;</td>
++      <td>&nbsp;</td>
++
++    </tr>
++  </tbody>
+ </table>
+ 
+-<div class="contentsBox"><em>28 czerwca 2005</em></div>
+-<p>Copyright &copy; 2003-2004 Contributors to the Mozilla Help Viewer Project.</p>
++<div class="contentsBox"><em>3 lipca 2005</em></div>
++<p>Copyright &copy; 2003-2005 Contributors to the Mozilla Help Viewer Project.</p>
+ 
+ </body>
+ </html>
+Index: tabbed_browsing.xhtml
+===================================================================
+RCS file: /l10n/l10n/pl/browser/chrome/help/tabbed_browsing.xhtml,v
+retrieving revision 1.3
+diff -u -r1.3 tabbed_browsing.xhtml
+--- tabbed_browsing.xhtml	16 Jun 2005 08:15:28 -0000	1.3
++++ tabbed_browsing.xhtml	4 Jul 2005 09:40:12 -0000
+@@ -19,28 +19,22 @@
+ 
+ <body>
+ <h1>Przeglądanie stron w panelach</h1>
+-
+-<p>Przeglądanie stron w panelach ułatwia przeglądnie sieci Internet.
+-W tym rozdziale opisano jak używać paneli i jak dostosować przeglądarkę, aby 
+-jeszcze wygodniej korzystać z Internetu.</p>
+-
+-<div class="contentsBox">W tym rozdziale:
+-  <ul>
+-    <li><a href="#using_tabbed_browsing">Korzystanie z paneli</a></li>
+-    <li><a href="#creating_loading_tabs">Otwieranie nowych paneli</a></li>
+-    <li><a href="#customizing">Ustawienia dotyczące paneli</a></li>
+-  </ul>
+-</div>
+-
+-<h2 id="using_tabbed_browsing">Korzystanie z paneli</h2>
+-
+-<p>Przeglądarka &brandShortName; pozwala na otwarcie wielu paneli (z których każdy wyświetla osobną stronę internetową)
+-w jednym oknie. Pozwala to zaoszczędzić wiele miejsca na pasku zadań systemu operacyjnego komputera użytkownika.</p>
+-
+-<p>Każdy odnośnik na stronie można otworzyć w nowym panelu. W czasie, gdy nowa strona ładuje się, użytkownik
+-może przejrzeć bieżącą stronę.</p>
+-
+-  <h3 id="creating_loading_tabs">Otwieranie nowych paneli</h3>
++
++<p>Przeglądanie w panelach pozwala otwierać wiele stron internetowych w jednym oknie.
++Odnośniki otwierane w nowych panelach ładują się w tle, podczas przeglądania innych stron.
++Korzystanie z przeglądania w panelach jest opcjonalne, ale znacznie ułatwia przeglądanie stron WWW.</p>
++
++<div class="contentsBox">W tym rozdziale:
++  <ul>
++    <li><a href="#creating_loading_tabs">Tworzenie nowych paneli</a></li>
++    <li><a href="#moving_tabs">Przenoszenie paneli wewnątrz okna</a></li>
++    <li><a href="#closing_tabs">Zamykanie paneli</a></li>
++    <li><a href="#customizing">Ustawienia dotyczące przeglądania w panelach</a></li>
++    <li><a href="#tips_tricks">Porady</a></li>
++  </ul>
++</div>
++
++  <h2 id="creating_loading_tabs">Otwieranie nowych paneli</h2>
+ 
+   <p>Aby otworzyć nowy panel, należy: 
+   <ul>
+@@ -55,7 +49,7 @@
+   <ul>
+     <li>kliknąć odnośnik środkowym klawiszem myszy (w większości myszy z rolkami rolka działa
+ 	także jako przycisk) lub</li>
+-    <li>przeciągnąć odnośnik w obręb paska paneli (gdy otwarta jest tylko jedna strona, pasek paneli
++    <li>przeciągnąć odnośnik na puste miesjce w obrębie paska paneli (gdy otwarta jest tylko jedna strona, pasek paneli
+ 	może być niewidoczny; opcje opowiadające za widoczność paska paneli opisano w części <a
+       href="#customizing">Ustawienia dotyczące paneli</a>), lub</li>
+     <li>przeciągnąć odnośnik na nazwę otwartego już panelu, lub</li>
+@@ -64,10 +58,13 @@
+ 	  <span class="menuPath">Otwórz odnośnik w nowym panelu</span>.</li>
+   </ul>
+ 
+-  <h3 id="moving_tabs">Przenoszenie paneli</h3>
+-  <p>Panele wyświetlane są w kolejności, w jakiej zostały otwarte, co nie zawsze musi być pożądane. Aby przenieść panel w inne miejsce w oknie programu &brandShortName;, po prostu wystarczy przeciągnąć je używając myszy. Podczas przeciągania panelu &brandShortName; wyświetla mały wskaźnik pokazujący miejsce, do którego panel zostanie przeciągnięty. Można także użyć M<a href="#keyboard_shortcuts">skrótów klawiaturowych</a> do przenoszenia panelu wewnątrz okna.</p>
++<p>Aby otworzyć w nowym panelu adres URL wpisany w pasku adresu, po wprowadzeniu go
++do tego paska należy nacisnąć klawisze &altKey;+&enterKey;.</p>
++
++  <h2 id="moving_tabs">Przenoszenie paneli wewnątrz okna</h2>
++  <p>Panele wyświetlane są w kolejności, w jakiej zostały otwarte, co nie zawsze musi być pożądane. Aby przenieść panel w inne miejsce w oknie programu &brandShortName;, po prostu wystarczy przeciągnąć je używając myszy. Podczas przeciągania panelu &brandShortName; wyświetla mały wskaźnik pokazujący miejsce, do którego panel zostanie przeciągnięty. Można także użyć <a href="#keyboard_shortcuts">skrótów klawiaturowych</a> do przenoszenia panelu wewnątrz okna.</p>
+ 
+-  <h3 id="closing_tabs">Zamykanie paneli</h3>
++  <h2 id="closing_tabs">Zamykanie paneli</h2>
+ 
+   <p>Aby zamknąć bieżący panel, należy:
+   <ul>
+@@ -82,20 +79,18 @@
+   <span class="noMac">kliknąć prawym klawiszem myszy</span><span class="mac">nacisnąć klawisz &accelKey;
+   i jednocześnie kliknąć myszą</span> na nazwie wybranego panelu i z menu kontekstowego wybrać 
+   <span class="menuPath">Zamknij inne panele</span>.</p>
++
++<h2 id="customizing">Ustawienia dotyczące paneli</h2>
+ 
+-  <h3 id="keyboard_shortcuts">Skróty klawiaturowe</h3>
+-
+-  <p>Pomiędzy panelami można także przełączać się za pomocą klawiatury. Skróty &ctrlKey;+<kbd>PageUp</kbd> (lub
+-    &ctrlKey;+<kbd>Tab</kbd>) oraz &ctrlKey;+<kbd>PageDown</kbd> (lub
+-    &ctrlKey;+&shiftKey;+<kbd>Tab</kbd>) przełączają do następnego lub poprzedniego panelu. Za pomocą skrótów 
+-	<span class="noUnix">&accelKey;</span><span class="unix">&altKey;</span>+<kbd>1 do 9</kbd> można 
+-	przywołać na pierwszy plan dowolny z pierwszych dziewięciu paneli (licząc od lewej strony). Aby przesunąć panel wewnątrz okna należy nacisnąć klawisz &accelKey; oraz jeden z klawiszy: <kbd>Strzałka w lewo</kbd>, <kbd>Strzałka w prawo</kbd>, <kbd>Strzałka w górę</kbd>, <kbd>Strzałka w dół</kbd>.</p>
+-
+-  <h3 id="bookmarking_tabbed_browsing">Przeglądanie w panelach a zakładki</h3>
+-
+-  <p>Możliwe jest dodanie do zakładek całej grupy paneli. 
+-  Aby dodać do zakładek grupę paneli, należy:</p>
+-
++  <p>Aby zmienić ustawienia przeglądania w panelach, należy wybrać z menu pozycję &pref.menuPath; i otworzyć kartę <a href="prefs.xhtml#tabs_options"><em>Panele</em></a>.</p>
++
++  <h2 id="tips_tricks">Porady</h2>
++
++<dl>
++  <dt>Przeglądanie w panelach a zakładki</dt>
++  <dd>Możliwe jest dodanie do zakładek całej grupy paneli. 
++  Aby dodać do zakładek grupę paneli, należy:</dd>
++  <dd>
+   <ol>
+     <li>Nacisnącz klawisze &accelKey;+<kbd>D</kbd> lub z menu programu wybrać <span class="menuPath">Zakładki
+       &gt; Dodaj do zakładek</span>.</li>
+@@ -104,35 +99,28 @@
+     <li>Aby otworzyć zakładki w panelach, należy otworzyć folder zakładek i wybrać opcję 
+ 	<span class="menuPath">Otwórz w panelach</span>.  Można także kliknąć środkowym klawiszem myszy
+ 	na folderze zakładek. <strong>Uwaga</strong>: Zakładki zostaną otwarte w istniejących panelach (nie w nowych).</li>
+-  </ol>
++  </ol></dd>
+ 
+-  <h3 id="home_page_as_tabs">Grupa paneli jako strona domowa</h3>
++  <dt>Grupa paneli jako strona domowa</dt>
+ 
+-  <p>Możliwe jest ustawienie kilku paneli jako strony domowej (startowej).
++  <dd>Możliwe jest ustawienie kilku paneli jako strony domowej (startowej).
+   W tym celu należy otworzyć wszystkie żądane witryny w panelach, z menu wybrać &pref.menuPath;,
+   następnie otworzyć dział <em>Ogólne</em> i w częsci <em>Strona domowa</em> nacisnąć przycisk 
+-  <em>Użyj bieżącej strony</em>. Od tej chwili po naciśnięciu przycisku "Strona domowa" na pasku narzędzi
+-  otwarta zostanie grupa paneli z ulubionymi witrynami użytkownika.</p>
+-
+-<h2 id="customizing">Ustawienia dotyczące paneli</h2>
+-
+-<p>Przeglądarka &brandShortName; zawiera szereg opcji pozwalających na dalsze
+-dostosowanie przeglądania w panelach. Aby je zmienić, należy z menu aplikacji wybrać &pref.menuPath; i 
+-otworzyć dział <em>Zaawansowane</em>.  &pref.pluralCaps; dla przeglądania w panelach znajdują się
+-w sekcji <a href="prefs.xhtml#tabbed_browsing">Przeglądanie w panelach</a>.</p>
+-
+-  <h3 id="tips">Podpowiedzi</h3>
+-
+-  <ul>
+-    <li>Do paska narzędzi przeglądarki można dodać przycisk otwierający nowy panel.
++  <em>Użyj bieżących stron</em>. Od tej chwili po naciśnięciu przycisku "Strona domowa" na pasku narzędzi
++  otwarta zostanie grupa paneli z ulubionymi witrynami użytkownika.</dd>
++
++  <dt>Przycisk <q>Nowy panel</q> na pasku narzędzi</dt>
++  <dd>Do paska narzędzi przeglądarki można dodać przycisk otwierający nowy panel.
+ 	Więcej informacji na ten temat znajduje się w rozdziale 
+-      <a href="customization.xhtml#rearranging_toolbar_items">o dostosowywaniu pasków narzędzi</a>.</li>
+-    <li>Przeglądarka &brandShortName; pozwala zmieniać najcześciej używane &pref.plural;
+-	  dotyczące przeglądania w panelach. Możliwe jest dalsze dostosowywanie poprzez <a 
+-      href="customization.xhtml#extensions">rozszerzenia</a>.</li>
+-  </ul>
++      <a href="customization.xhtml#rearranging_toolbar_items">o dostosowywaniu pasków narzędzi</a>.</dd>
++  
++  <dt>Skróty klawiaturowe</dt>
++  <dd>W programie &brandShortName; przeglądanie w panelach można obsługiwać także korzystając z szeregu skrótów klawiaturowych, opisanych w rozdziale
++<a href="shortcuts.xhtml#windows_tabs">Skróty klawiaturowe</a>.</dd>
++
++  </dl>
+ 
+-<div class="contentsBox"><em>12 października 2004</em></div>
+-<p>Copyright &copy; 2003-2004 Contributors to the Mozilla Help Viewer Project.</p>
++<div class="contentsBox"><em>4 lipca 2005</em></div>
++<p>Copyright &copy; 2003-2005 Contributors to the Mozilla Help Viewer Project.</p>
+ </body>
+ </html>
+Index: using_firebird.xhtml
+===================================================================
+RCS file: /l10n/l10n/pl/browser/chrome/help/using_firebird.xhtml,v
+retrieving revision 1.3
+diff -u -r1.3 using_firebird.xhtml
+--- using_firebird.xhtml	29 Jun 2005 11:11:43 -0000	1.3
++++ using_firebird.xhtml	4 Jul 2005 09:40:20 -0000
+@@ -49,13 +49,13 @@
+   &altKey;+<kbd>Home</kbd></li>
+ </ul>
+ 
+-<h3><strong id="moving_to_another_page">Otwieranie witryn WWW</strong></h3>
++<h3><strong id="moving_to_another_page">Otwieranie stron WWW</strong></h3>
+ <p>Adresy zaczynają się zwykle od znaków &quot;http://&quot;, po których 
+   następują dalsze wyrazy. Na przykład &quot;http://www.mozilla.org/&quot;.
+-  Aby przejść do nowej witryny, należy:</p>
++  Aby przejść do nowej strony, należy:</p>
+ <ol>
+   <li>Kliknąć myszą w pasku adresu, aby zaznaczyć bieżący adres.</li>
+-  <li>Wpisać adres witryny do otwarcia. Wpisywany adres zastępuje tekst w pasku adresu.</li>
++  <li>Wpisać adres strony do otwarcia. Wpisywany adres zastępuje tekst w pasku adresu.</li>
+   <li>Nacisnąć klawisz &enterKey;.</li>
+ </ol>
+ 
+@@ -105,7 +105,7 @@
+   otworzyć folder, należy kliknąć wybraną nazwę.</li>
+ </ul>
+ 
+-<h3 id="stopping_and_reloading">Zatrzymywanie ładowania i odświeżanie witryn.</h3>
++<h3 id="stopping_and_reloading">Zatrzymywanie ładowania i odświeżanie stron.</h3>
+ <p>Do przerywania ładowania strony, jeśli trwa ono zbyt długo lub jeśli użytkownik zrezygnuje z zamiaru jej otwarcia, służy przycisk <em>Stop</em> na pasku narzędzi.</p>
+ 
+ <p>Aby odświeżyć wyświetlaną stronę lub pobrać jej najbardziej aktualną wersję, należy
+@@ -434,7 +434,7 @@
+   wtyczki.</p>
+ 
+ <p>Pełna lista dostępnych wtyczek znajduje się w witrynie 
+-  <a href="http://home.netscape.com/plugins/index.html" target="_blank">Browser
++  <a href="https://pfs.mozilla.org/plugins/" target="_blank">Browser
+   Plug-ins</a> na serwerze Netscape.com (witryna w języku angielskim).</p>
+ 
+ <p><strong>Aplikacje pomocnicze</strong><br/>
+@@ -493,14 +493,11 @@
+ <p>Przeglądarka &brandShortName; dokonuje porządkowania pamięci podręcznej podczas kończenia pracy.
+ W przypadku gdy zamykanie przeglądarki trwa zbyt długo, należy zmniejszyć rozmiar pamięci podręcznej.</p>
+ 
+-<p>Aby pobrać aktualną wersję strony, należy:</p>
+-<ul>
+-  <li>Nacisnąć przycisk <em>Odśwież</em> na pasku narzędzi. 
+-  Przeglądarka sprawdzi, czy wyświetlana wersja strony jest aktualna.</li>
+-</ul>
++<p>Aby pobrać aktualną wersję strony, należy nacisnąć przycisk <em>Odśwież</em> na pasku narzędzi. Przeglądarka pobierze oglądaną witrynę ponownie:</p>
++
+ 
+-<div class="contentsBox"><em>1 listopada 2004</em></div>
+-<p>Copyright &copy; 2003-2004 Contributors to the Mozilla Help Viewer Project.</p>
++<div class="contentsBox"><em>4 lipca 2005</em></div>
++<p>Copyright &copy; 2003-2005 Contributors to the Mozilla Help Viewer Project.</p>
+ </body>
+ </html>
+ 
+

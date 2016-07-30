@@ -1,0 +1,3467 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>427 &ndash; Nieprzetłumaczone &quot;Sanitize&quot; [ &#64; /browser/chrome/browser/browser.properties ]</title>
+
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<link href="data/assets/7aa6ea67750936a0368541421bdcd5ee.css" rel="stylesheet" type="text/css">
+
+
+
+    
+<script type="text/javascript" src="data/assets/a7c2f3a028f17a9aa60f56dc9d6e732d.js"></script>
+
+    <script type="text/javascript">
+    <!--
+        YAHOO.namespace('bugzilla');
+        YAHOO.util.Event.addListener = function (el, sType, fn, obj, overrideContext) {
+               if ( ("onpagehide" in window || YAHOO.env.ua.gecko) && sType === "unload") { sType = "pagehide"; };
+               var capture = ((sType == "focusin" || sType == "focusout") && !YAHOO.env.ua.ie) ? true : false;
+               return this._addListener(el, this._getType(sType), fn, obj, overrideContext, capture);
+         };
+        if ( "onpagehide" in window || YAHOO.env.ua.gecko) {
+            YAHOO.util.Event._simpleRemove(window, "unload", 
+                                           YAHOO.util.Event._unload);
+        }
+        
+        function unhide_language_selector() { 
+            YAHOO.util.Dom.removeClass(
+                'lang_links_container', 'bz_default_hidden'
+            ); 
+        } 
+        YAHOO.util.Event.onDOMReady(unhide_language_selector);
+
+        
+        var BUGZILLA = {
+            param: {
+                cookiepath: '\/',
+                maxusermatches: 1000
+            },
+            constant: {
+                COMMENT_COLS: 80
+            },
+            string: {
+                
+
+                attach_desc_required:
+                    "You must enter a Description for this attachment.",
+                component_required:
+                    "You must select a Component for this bug.",
+                description_required:
+                    "You must enter a Description for this bug.",
+                short_desc_required:
+                    "You must enter a Summary for this bug.",
+                version_required:
+                    "You must select a Version for this bug."
+            }
+              , api_token: ''
+        };
+
+    if (history && history.replaceState) {
+      if(!document.location.href.match(/show_bug\.cgi/)) {
+        history.replaceState( null,
+                             "427 – Nieprzetłumaczone \"Sanitize\" [ \x40 \/browser\/chrome\/browser\/browser.properties ]",
+                             "show_bug.cgi?id=427" );
+        document.title = "427 – Nieprzetłumaczone \"Sanitize\" [ \x40 \/browser\/chrome\/browser\/browser.properties ]";
+      }
+      if (document.location.href.match(/show_bug\.cgi\?.*list_id=/)) {
+        var href = document.location.href;
+        href = href.replace(/[\?&]+list_id=(\d+|cookie)/, '');
+        history.replaceState(null, "427 – Nieprzetłumaczone \"Sanitize\" [ \x40 \/browser\/chrome\/browser\/browser.properties ]", href);
+      }
+    }
+    YAHOO.util.Event.onDOMReady(function() {
+      initDirtyFieldTracking();
+
+    });
+    // -->
+    </script>
+<script type="text/javascript" src="data/assets/daf5e0fb6826e6a35280e622913f0c4a.js"></script>
+
+    
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+                       title="Bugzilla" href="search_plugin.cgi">
+    <link rel="shortcut icon" href="images/favicon.ico">
+  </head>
+
+  <body 
+        class="bugs-aviary-pl
+                 bz_bug
+                 bz_status_VERIFIED
+                 bz_product_Firefox
+                 bz_component_Og&#XF3;lne
+                 bz_bug_427 yui-skin-sam">
+
+  <div id="header"><div id="banner">
+  </div>
+
+    <div id="titles">
+      <span id="title">Bugzilla &ndash; Bug&nbsp;427</span>
+
+        <span id="subtitle" class="subheader">Nieprzetłumaczone &quot;Sanitize&quot; [ &#64; /browser/chrome/browser/browser.properties ]</span>
+
+        <span id="information" class="header_addl_info">Last modified: 2009-01-02 03:24:32 CET</span>
+    </div>
+
+
+    <div id="common_links"><ul class="links">
+  <li><a href="index.html">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi.html">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi.html">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi.html">Search</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="http://bugs.aviary.pl/buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input type="hidden" id="no_redirect_top" name="no_redirect" value="0">
+    <script type="text/javascript">
+      if (history && history.replaceState) {
+        var no_redirect = document.getElementById("no_redirect_top");
+        no_redirect.value = 1;
+      }
+    </script>
+    <input class="txt" type="text" id="quicksearch_top" name="quicksearch" 
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search" 
+           id="find_top"></form>
+  <a href="page.cgi%3Fid=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="report.cgi.html">Reports</a></li>
+
+  <li>
+      <span class="separator">| </span>
+        <a href="request.cgi.html">Requests</a></li>
+
+
+  <li>
+        <span class="separator">| </span>
+        <a href="https://bugzilla.readthedocs.org/en/5.0/using/understanding.html" target="_blank">Help</a>
+      </li>
+    
+      <li id="new_account_container_top">
+        <span class="separator">| </span>
+        <a href="createaccount.cgi.html">New&nbsp;Account</a>
+      </li>
+
+    <li id="mini_login_container_top">
+  <span class="separator">| </span>
+  <a id="login_link_top" href="show_bug.cgi%3Fid=427&amp;GoAheadAndLogIn=1.html"
+     onclick="return show_mini_login_form('_top')">Log In</a>
+
+  <form action="show_bug.cgi%3Fid=427.html" method="POST"
+        class="mini_login bz_default_hidden"
+        id="mini_login_top">
+    <input id="Bugzilla_login_top" required
+           name="Bugzilla_login" class="bz_login"
+        type="email" placeholder="Email Address">
+    <input class="bz_password" name="Bugzilla_password" type="password"
+           id="Bugzilla_password_top" required
+           placeholder="Password">
+    <input type="hidden" name="Bugzilla_login_token"
+           value="1469820091-UB1qcwy9AeMhWHiupH-9sNk-BdxzjqAyonxQItRFmAg">
+    <input type="submit" name="GoAheadAndLogIn" value="Log in"
+            id="log_in_top">
+    <a href="show_bug.cgi%3Fid=427.html#" onclick="return hide_mini_login_form('_top')">[x]</a>
+  </form>
+</li>
+
+
+  <li id="forgot_container_top">
+    <span class="separator">| </span>
+    <a id="forgot_link_top" href="show_bug.cgi%3Fid=427&amp;GoAheadAndLogIn=1.html#forgot"
+       onclick="return show_forgot_form('_top')">Forgot Password</a>
+    <form action="http://bugs.aviary.pl/token.cgi" method="post" id="forgot_form_top"
+          class="mini_forgot bz_default_hidden">
+      <label for="login_top">Login:</label>
+      <input name="loginname" size="20" id="login_top" required
+          type="email" placeholder="Your Email Address">
+      <input id="forgot_button_top" value="Reset Password" type="submit">
+      <input type="hidden" name="a" value="reqpw">
+      <input type="hidden" id="token_top" name="token"
+             value="1469820091-USig6FIiS4lEr1sivUmwhKg7O63BO_AwJkV1CBLD32c">
+      <a href="show_bug.cgi%3Fid=427.html#" onclick="return hide_forgot_form('_top')">[x]</a>
+    </form>
+  </li>
+</ul>
+    </div>
+  </div>
+
+  <div id="bugzilla-body">
+
+
+<script type="text/javascript">
+<!--
+
+//-->
+</script>
+
+<form name="changeform" id="changeform" method="post" action="http://bugs.aviary.pl/process_bug.cgi">
+
+  <input type="hidden" name="delta_ts" value="2009-01-02 03:24:32">
+  <input type="hidden" name="id" value="427">
+  <input type="hidden" name="token" value="1469820091-WGutfiRLvnd-owClw1qVEdpJZib-Ix6N46zx5_qHvN4">
+<div class="bz_short_desc_container edit_form">
+     <a href="show_bug.cgi%3Fid=427.html"><b>Bug&nbsp;427</b></a> <span id="summary_container" class="bz_default_hidden">
+      - <span id="short_desc_nonedit_display">Nieprzetłumaczone &quot;Sanitize&quot; [ &#64; /browser/chrome/browser/browser.properties ]</span>
+     </span>
+
+    <div id="summary_input"><span class="field_label "
+    id="field_label_short_desc">
+
+
+  <a 
+      title="The bug summary is a short sentence which succinctly describes what the bug is about."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#short_desc"
+  >Summary:</a>
+
+</span>Nieprzetłumaczone &quot;Sanitize&quot; [ &#64; /browser/chrome/browser/browser.properties ]
+    </div>
+  </div>
+  <script type="text/javascript">
+    hideEditableField('summary_container',
+                      'summary_input',
+                      'summary_edit_action',
+                      'short_desc',
+                      'Nieprzetłumaczone \"Sanitize\" [ \x40 \/browser\/chrome\/browser\/browser.properties ]' );
+  </script>
+  <table class="edit_form">
+    <tr>
+      
+      <td id="bz_show_bug_column_1" class="bz_show_bug_column">     
+        <table>
+          <tr>
+    <th class="field_label">
+      <a href="page.cgi%3Fid=fields.html#bug_status">Status</a>:
+    </th>
+    <td id="bz_field_status">
+      <span id="static_bug_status">VERIFIED
+          FIXED
+      </span>
+    </td>
+  </tr>
+<tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+<tr><th class="field_label "
+    id="field_label_alias">
+
+
+  <a 
+      title="A short, unique name assigned to a bug in order to assist with looking it up and referring to it in other places in Bugzilla."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#alias"
+  >Alias:</a>
+
+</th>
+    <td>
+        None
+    </td>
+  </tr>
+<tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+<tr><th class="field_label "
+    id="field_label_product">
+
+
+  <a 
+      title="Bugs are categorised into Products and Components. Select a Classification to narrow down this list."
+      class="field_help_link"
+      href="describecomponents.cgi.html"
+  >Product:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_product" >Firefox
+
+</td>
+    </tr>
+
+    
+    <tr class="bz_default_hidden"><th class="field_label "
+    id="field_label_classification">
+
+
+  <a 
+      title="Bugs are categorised into Classifications, Products and Components. classifications is the top-level categorisation."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#classification"
+  >Classification:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_classification" >Tłumaczenia oprogramowania
+
+</td>
+    </tr>
+        
+    
+    
+    <tr><th class="field_label "
+    id="field_label_component">
+
+
+  <a 
+      title="Components are second-level categories; each belongs to a particular Product. Select a Product to narrow down this list."
+      class="field_help_link"
+      href="describecomponents.cgi%3Fproduct=Firefox.html"
+  >Component:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_component" >Ogólne
+
+  (<a href="buglist.cgi%3Fcomponent=Ogólne&amp;product=Firefox&amp;bug_status=__open__.html"
+      target="_blank">show other bugs</a>)
+</td>
+    </tr>
+    <tr><th class="field_label "
+    id="field_label_version">
+
+
+  <a 
+      title="The version field defines the version of the software the bug was found in."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#version"
+  >Version:</a>
+
+</th>
+<td>nieokreślona
+  </td>
+    </tr>
+        
+    
+        
+    <tr><th class="field_label "
+    id="field_label_rep_platform">
+
+
+  <a 
+      title="The hardware platform the bug was observed on. Note: When searching, selecting the option &quot;All&quot; only finds bugs whose value for this field is literally the word &quot;All&quot;."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#rep_platform"
+  >Hardware:</a>
+
+</th>
+      <td class="field_value">Wszystkie
+        Wszystkie
+      </td>
+    </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          
+          <tr>
+      <th class="field_label">
+        <label  accesskey="i">
+          <a href="page.cgi%3Fid=fields.html#importance"><u>I</u>mportance</a></label>:
+      </th>
+      <td>P2
+       trywialny
+      </td>
+    </tr>
+          
+          <tr><th class="field_label "
+    id="field_label_assigned_to">
+
+
+  <a 
+      title="The person in charge of resolving the bug."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#assigned_to"
+  >Assignee:</a>
+
+</th>
+      <td><span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+      </td>
+    </tr>
+
+    <tr><th class="field_label "
+    id="field_label_qa_contact">
+
+
+  <a 
+      title="The person responsible for confirming this bug if it is unconfirmed, and for verifying the fix once the bug has been resolved."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#qa_contact"
+  >QA Contact:</a>
+
+</th>
+      <td><span class="vcard"><span class="fn">Staś Małolepszy :stas</span>
+</span>
+      </td>
+    </tr>
+    <script type="text/javascript">
+      assignToDefaultOnChange(['product', 'component'],
+        'splewako\x40aviary.pl',
+        'firefox\x40l10n.bledy');
+    </script>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          <tr><th class="field_label "
+    id="field_label_bug_file_loc">
+
+
+  <a 
+      title="Bugs can have a URL associated with them - for example, a pointer to a web site where the problem is seen."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#bug_file_loc"
+  >URL:</a>
+
+</th>
+    <td>
+      <span id="bz_url_input_area">
+          <a href="http://lxr.mozilla.org/l10n/source/pl/browser/chrome/browser/browser.properties"
+             rel="noreferrer"><span title="http://lxr.mozilla.org/l10n/source/pl/browser/chrome/browser/browser.properties">http://lxr.mozilla.org/l10n/source/pl...
+        </span></a>
+      </span>
+    </td>
+  </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+
+          
+<tr><th class="field_label "
+    id="field_label_dependson">
+
+
+  <a 
+      title="The bugs listed here must be resolved before this bug can be resolved."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#dependson"
+  >Depends on:</a>
+
+</th>
+
+  <td>
+    <span id="dependson_input_area">
+    </span>
+
+  </td>
+  </tr>
+  
+  <tr><th class="field_label "
+    id="field_label_blocked">
+
+
+  <a 
+      title="This bug must be resolved before the bugs listed in this field can be resolved."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#blocked"
+  >Blocks:</a>
+
+</th>
+
+  <td>
+    <span id="blocked_input_area">
+    </span>
+<a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Lokalizacja Firefoksa 1.1a1 (Deer Park Alpha 1)"
+   href="show_bug.cgi%3Fid=391.html">391</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - [tracking] Lokalizacja Firefoksa 1.5 | UWAGA: LOKALIZACJA ZAMROŻONA"
+   href="show_bug.cgi%3Fid=577.html">577</a> 
+  </td>
+  </tr>
+
+    <tr>
+      <th>&nbsp;</th>
+
+      <td id="show_dependency_tree_or_graph">
+        Show dependency <a href="showdependencytree.cgi%3Fid=427&amp;hide_resolved=1.html">tree</a>
+
+          /&nbsp;<a href="showdependencygraph.cgi%3Fid=427.html">graph</a>
+      </td>
+    </tr>
+          
+        </table>
+      </td>
+      <td>
+        <div class="bz_column_spacer">&nbsp;</div>
+      </td>
+      
+      <td id="bz_show_bug_column_2" class="bz_show_bug_column">
+        <table>
+        <tr>
+    <th class="field_label">
+      Reported:
+    </th>
+    <td>2005-03-22 21:38 CET by <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+    </td>
+  </tr>
+  
+  <tr>
+    <th class="field_label">
+      Modified:
+    </th>
+    <td>2009-01-02 03:24 CET
+      (<a href="show_activity.cgi%3Fid=427.html">History</a>)
+    </td>
+  
+  </tr>
+<tr>
+      <th class="field_label">
+        <label  accesskey="a">
+          CC List:
+        </label>
+      </th>
+      <td>4 
+          users
+          <span id="cc_edit_area_showhide_container" class="bz_default_hidden">
+            (<a href="show_bug.cgi%3Fid=427.html#" id="cc_edit_area_showhide">show</a>)
+          </span>
+        <div id="cc_edit_area">
+          <br>
+            <select id="cc" multiple="multiple" size="5" >
+                <option value="cleriic">cleriic</option>
+                <option value="gandalf">gandalf</option>
+                <option value="pitreck">pitreck</option>
+                <option value="smalolepszy">smalolepszy</option>
+            </select>
+        </div>
+          <script type="text/javascript">
+            hideEditableField( 'cc_edit_area_showhide_container', 
+                               'cc_edit_area', 
+                               'cc_edit_area_showhide', 
+                               '', 
+                               '');  
+          </script>
+      </td>
+    </tr>
+
+<tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+<tr><th class="field_label "
+    id="field_label_see_also">
+
+
+  <a 
+      title="This allows you to refer to bugs in other installations. You can enter a URL to a bug in the 'Add Bug URLs' field to note that that bug is related to this one. You can enter multiple URLs at once by separating them with whitespace. You should normally use this field to refer to bugs in other installations. For bugs in this installation, it is better to use the Depends on and Blocks fields."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#see_also"
+  >See Also:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_see_also" >
+
+</td>
+    </tr> 
+
+<tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+
+
+
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+          <hr id="bz_top_half_spacer">
+      </td>
+    </tr>
+  </table>
+
+  <table id="bz_big_form_parts">
+  <tr>
+  <td>
+
+    
+<script type="text/javascript">
+<!--
+function toggle_display(link) {
+    var table = document.getElementById("attachment_table");
+    var view_all = document.getElementById("view_all");
+    var hide_obsolete_url_parameter = "&hide_obsolete=1";
+    // Store current height for scrolling later
+    var originalHeight = table.offsetHeight;
+    var rows = YAHOO.util.Dom.getElementsByClassName(
+        'bz_tr_obsolete', 'tr', table);
+
+    for (var i = 0; i < rows.length; i++) {
+        bz_toggleClass(rows[i], 'bz_default_hidden');
+    }
+
+    if (YAHOO.util.Dom.hasClass(rows[0], 'bz_default_hidden')) {
+        link.innerHTML = "Show Obsolete";
+        view_all.href = view_all.href + hide_obsolete_url_parameter 
+    }
+    else {
+        link.innerHTML = "Hide Obsolete";
+        view_all.href = view_all.href.replace(hide_obsolete_url_parameter,"");
+    }
+
+    var newHeight = table.offsetHeight;
+    // This scrolling makes the window appear to not move at all.
+    window.scrollBy(0, newHeight - originalHeight);
+
+    return false;
+}
+//-->
+</script>
+
+<br>
+<table id="attachment_table">
+  <tr id="a0">
+    <th colspan="3" class="left">
+      Attachments
+    </th>
+  </tr>
+
+
+      <tr id="a1" class="bz_contenttype_text_plain bz_patch bz_tr_obsolete bz_default_hidden">
+        <td>
+            <a href="attachment.cgi%3Fid=557"
+               title="View the content of the attachment">
+          <b><span class="bz_obsolete">Sanitize -&gt; Oczyszczanie</span></b></a>
+
+          <span class="bz_attach_extra_info">
+              (9.25 KB,
+                patch)
+
+            <br>
+            <a href="show_bug.cgi%3Fid=427.html#attach_557"
+               title="Go to the comment associated with the attachment">2005-07-22 10:40 CEST</a>,
+
+            <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+          </span>
+        </td>
+
+          <td class="bz_attach_flags">
+                  <span title="Hubert Gajewski">hubert+bap</span>:
+                review-
+                <br>
+          </td>
+
+        <td>
+          <a href="attachment.cgi%3Fid=557&amp;action=edit.html">Details</a>
+        </td>
+      </tr>
+      <tr id="a2" class="bz_contenttype_text_plain bz_patch">
+        <td>
+            <a href="attachment.cgi%3Fid=569"
+               title="View the content of the attachment">
+          <b>Zmiana na &quot;Usuń prywatne dane&quot; (wrzucona, branch&amp;trunk)</b></a>
+
+          <span class="bz_attach_extra_info">
+              (4.62 KB,
+                patch)
+
+            <br>
+            <a href="show_bug.cgi%3Fid=427.html#attach_569"
+               title="Go to the comment associated with the attachment">2005-08-19 19:05 CEST</a>,
+
+            <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+          </span>
+        </td>
+
+          <td class="bz_attach_flags">
+              <i>no flags</i>
+          </td>
+
+        <td>
+          <a href="attachment.cgi%3Fid=569&amp;action=edit.html">Details</a>
+        </td>
+      </tr>
+      <tr id="a3" class="bz_contenttype_image_png">
+        <td>
+            <a href="attachment.cgi%3Fid=594"
+               title="View the content of the attachment">
+          <b>Okno chrome://browser/content/preferences/sanitize.xul (propozycja)</b></a>
+
+          <span class="bz_attach_extra_info">
+              (30.00 KB,
+                image/png)
+
+            <br>
+            <a href="show_bug.cgi%3Fid=427.html#attach_594"
+               title="Go to the comment associated with the attachment">2005-10-01 17:36 CEST</a>,
+
+            <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+          </span>
+        </td>
+
+          <td class="bz_attach_flags">
+              <i>no flags</i>
+          </td>
+
+        <td>
+          <a href="attachment.cgi%3Fid=594&amp;action=edit.html">Details</a>
+        </td>
+      </tr>
+      <tr id="a4" class="bz_contenttype_text_plain bz_patch bz_tr_obsolete bz_default_hidden">
+        <td>
+            <a href="attachment.cgi%3Fid=595"
+               title="View the content of the attachment">
+          <b><span class="bz_obsolete">&quot;Wybierz elementy, które mają zostać wyczyszczone&quot;</span></b></a>
+
+          <span class="bz_attach_extra_info">
+              (2.69 KB,
+                patch)
+
+            <br>
+            <a href="show_bug.cgi%3Fid=427.html#attach_595"
+               title="Go to the comment associated with the attachment">2005-10-01 18:45 CEST</a>,
+
+            <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+          </span>
+        </td>
+
+          <td class="bz_attach_flags">
+                  <span title="Hubert Gajewski">hubert+bap</span>:
+                review-
+                <br>
+          </td>
+
+        <td>
+          <a href="attachment.cgi%3Fid=595&amp;action=edit.html">Details</a>
+        </td>
+      </tr>
+      <tr id="a5" class="bz_contenttype_text_plain bz_patch bz_tr_obsolete bz_default_hidden">
+        <td>
+            <a href="attachment.cgi%3Fid=596"
+               title="View the content of the attachment">
+          <b><span class="bz_obsolete">&quot;Wybierz elementy, które mają zostać wyczyszczone&quot; + w=35em</span></b></a>
+
+          <span class="bz_attach_extra_info">
+              (2.80 KB,
+                patch)
+
+            <br>
+            <a href="show_bug.cgi%3Fid=427.html#attach_596"
+               title="Go to the comment associated with the attachment">2005-10-01 20:45 CEST</a>,
+
+            <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+          </span>
+        </td>
+
+          <td class="bz_attach_flags">
+                  <span title="Marek Stępień">marcoos+bugs</span>:
+                review+
+                <br>
+                  <span title="Zbigniew Braniecki">gandalf</span>:
+                review-
+                <br>
+          </td>
+
+        <td>
+          <a href="attachment.cgi%3Fid=596&amp;action=edit.html">Details</a>
+        </td>
+      </tr>
+      <tr id="a6" class="bz_contenttype_text_plain bz_patch">
+        <td>
+            <a href="attachment.cgi%3Fid=599"
+               title="View the content of the attachment">
+          <b>Patch (checked-in, b&amp;t)</b></a>
+
+          <span class="bz_attach_extra_info">
+              (2.19 KB,
+                patch)
+
+            <br>
+            <a href="show_bug.cgi%3Fid=427.html#attach_599"
+               title="Go to the comment associated with the attachment">2005-10-03 11:07 CEST</a>,
+
+            <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+          </span>
+        </td>
+
+          <td class="bz_attach_flags">
+              <i>no flags</i>
+          </td>
+
+        <td>
+          <a href="attachment.cgi%3Fid=599&amp;action=edit.html">Details</a>
+        </td>
+      </tr>
+      <tr id="a7" class="bz_contenttype_text_plain bz_patch">
+        <td>
+            <a href="attachment.cgi%3Fid=601"
+               title="View the content of the attachment">
+          <b>Patch... Niech to już do cholery będzie ostatni...</b></a>
+
+          <span class="bz_attach_extra_info">
+              (1.51 KB,
+                patch)
+
+            <br>
+            <a href="show_bug.cgi%3Fid=427.html#attach_601"
+               title="Go to the comment associated with the attachment">2005-10-03 14:36 CEST</a>,
+
+            <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+          </span>
+        </td>
+
+          <td class="bz_attach_flags">
+                  <span title="Zbigniew Braniecki">gandalf</span>:
+                review+
+                <br>
+          </td>
+
+        <td>
+          <a href="attachment.cgi%3Fid=601&amp;action=edit.html">Details</a>
+        </td>
+      </tr>
+
+  <tr class="bz_attach_footer">
+    <td colspan="3">
+        <span class="bz_attach_view_hide">
+            <a href="show_bug.cgi%3Fid=427.html#a0" onclick="return toggle_display(this);">Show
+              Obsolete</a> (3)
+            <a id="view_all" href="attachment.cgi%3Fbugid=427&amp;action=viewall&amp;hide_obsolete=1.html">View All</a>
+        </span>
+        <a href="attachment.cgi%3Fbugid=427&amp;action=enter.html">Add an attachment</a>
+        (proposed patch, testcase, etc.)
+    </td>
+  </tr>
+</table>
+<br>
+
+  </td>
+  <td>
+  </td>
+  </tr></table>
+
+  
+  <div id="comments"><script src="js/comments.js" type="text/javascript">
+</script>
+
+<script type="text/javascript">
+<!--
+  /* Adds the reply text to the 'comment' textarea */
+  function replyToComment(id, real_id, name) {
+      var prefix = "(In reply to " + name + " from comment #" + id + ")\n";
+      var replytext = "";
+        /* pre id="comment_name_N" */
+        var text_elem = document.getElementById('comment_text_'+id);
+        var text = getText(text_elem);
+        replytext = prefix + wrapReplyText(text);
+
+
+      /* <textarea id="comment"> */
+      var textarea = document.getElementById('comment');
+      if (textarea.value != replytext) {
+          textarea.value += replytext;
+      }
+
+      textarea.focus();
+  } 
+//-->
+</script>
+
+
+<!-- This auto-sizes the comments and positions the collapse/expand links 
+     to the right. -->
+<table class="bz_comment_table">
+<tr>
+<td>
+<div id="c0" class="bz_comment bz_first_comment">
+
+      <div class="bz_first_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=427.html#c0">Description</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-03-22 21:38:04 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text"><a href="http://lxr.mozilla.org/l10n/source/pl-PL/browser/chrome/browser/browser.properties#35">http://lxr.mozilla.org/l10n/source/pl-PL/browser/chrome/browser/browser.properties#35</a>
+<a href="http://lxr.mozilla.org/l10n/source/pl-PL/browser/chrome/browser/browser.properties#85">http://lxr.mozilla.org/l10n/source/pl-PL/browser/chrome/browser/browser.properties#85</a>
+<a href="http://lxr.mozilla.org/l10n/source/pl-PL/browser/chrome/browser/browser.properties#86">http://lxr.mozilla.org/l10n/source/pl-PL/browser/chrome/browser/browser.properties#86</a>
+
+Nieprzetłumaczone stringi:
+wallpaperConfirmMsg   = Do you want to set this image as your desktop wallpaper?
+sanitizeWithPromptLabel=Sanitize %S...
+sanitizeButton=Sanitize Now</pre>
+    </div>
+
+    <div id="c1" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=427.html#c1">Comment 1</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-05-21 12:28:38 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Co robimy z tym cholernym Sanitize? (wallpaper został dawno poprawiony w &quot;pl&quot;) 
+Deer Park alfa 1 wyjdzie lada dzień... </pre>
+    </div>
+
+    <div id="c2" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=427.html#c2">Comment 2</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-05-21 13:33:58 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">1. Jeszcze coś zauważyłem (słowo &quot;kanał&quot;):
+JEST:
+livemarkHasLivemarksTooltip=Dodaj kanał‚ RSS tej strony do Zak\u0142adek
+livemarkNoLivemarksTooltip=Strona nie posiada kanał\u00f3w RSS
+
+POWINNO BYĆ:
+livemarkHasLivemarksTooltip=Dodaj kana\u0142‚ RSS tej strony do Zak\u0142adek
+livemarkNoLivemarksTooltip=Strona nie posiada kana\u0142\u00f3w RSS
+
+<a href="http://lxr.mozilla.org/l10n/source/pl/browser/chrome/browser/browser.properties#65">http://lxr.mozilla.org/l10n/source/pl/browser/chrome/browser/browser.properties#65</a>
+<a href="http://lxr.mozilla.org/l10n/source/pl/browser/chrome/browser/browser.properties#66">http://lxr.mozilla.org/l10n/source/pl/browser/chrome/browser/browser.properties#66</a>
+
+
+2. Lista plików zawierająca &quot;Sanitize&quot;:
+/browser/chrome/browser/browser.dtd
+/browser/chrome/browser/browser.properties
+/browser/chrome/browser/preferences/privacy.dtd
+/browser/chrome/browser/preferences/sanitize.dtd
+/browser/chrome/browser/sanitize.dtd
+
+
+3. Zmieniam w URL &quot;pl-PL&quot; na &quot;pl&quot;.</pre>
+    </div>
+
+    <div id="c3" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=427.html#c3">Comment 3</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-05-21 13:39:55 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(W odpowiedzi na komentarz #1)
+<span class="quote">&gt; wallpaper został dawno poprawiony w &quot;pl&quot;</span >
+
+No, nie do końca :)
+<a href="http://lxr.mozilla.org/l10n/source/pl/browser/chrome/browser/browser.properties#35">http://lxr.mozilla.org/l10n/source/pl/browser/chrome/browser/browser.properties#35</a>
+</pre>
+    </div>
+
+    <div id="c4" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=427.html#c4">Comment 4</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-05-21 20:36:16 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Target -&gt; DP alpha 1
+
+(przepraszam za bugspam, maile można odfiltrować po haśle: &quot;jeleniowypark1&quot;)</pre>
+    </div>
+
+    <div id="c5" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=427.html#c5">Comment 5</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-05-23 10:35:58 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Czy lepszym slowem bylby &quot;Shredder&quot;?
+
+Co do Sanitize - moje propozycje - &quot;Wymaż&quot;, &quot;Wyczyść&quot;, &quot;Przeczyść&quot;,
+&quot;Posprzątaj&quot;, &quot;Odśmieć&quot;, lub tak jak Opera</pre>
+    </div>
+
+    <div id="c6" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=427.html#c6">Comment 6</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-05-23 10:54:20 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(W odpowiedzi na komentarz #5)
+
+<span class="quote">&gt; Co do Sanitize - moje propozycje - &quot;Wymaż&quot;, &quot;Wyczyść&quot;, &quot;Przeczyść&quot;,
+&gt; &quot;Posprzątaj&quot;, &quot;Odśmieć&quot;, lub tak jak Opera</span >
+
+Wszystko tylko nie &quot;Przeczyść&quot; ;-) Osobiście podoba mi się &quot;Wyczyść&quot; i &quot;Posprzątaj&quot;.
+
+</pre>
+    </div>
+
+    <div id="c7" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=427.html#c7">Comment 7</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-05-23 16:27:58 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Przeczyść. LOL :D
+
+Żadna z propozycji mi się nie podoba. (&quot;Wyczyść&quot; i &quot;Wymaż&quot; są niejednoznaczne,
+&quot;Posprzątaj&quot; mi jakoś nie pasuje)
+
+&quot;Jak Opera&quot;  = ?
+
+Czy Shredder byłby lepszy? Tzn. w en-US?  Chyba jeszcze gorszy. :)
+
+&quot;Gerhard Shredder&quot; :-D
+</pre>
+    </div>
+
+    <div id="c8" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=427.html#c8">Comment 8</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Piotr Pielach</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-05-24 12:25:34 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">A może: &quot;Zatrzyj ślady&quot; - przecież to właśnie robi &quot;Sanitize&quot;.</pre>
+    </div>
+
+    <div id="c9" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=427.html#c9">Comment 9</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-05-24 16:51:28 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">hmm... chyba brzmi niezle, na ile &quot;niezle&quot; moze brzmiec ;)
+
+Marcoos? Staszyna?</pre>
+    </div>
+
+    <div id="c10" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=427.html#c10">Comment 10</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Piotr Komoda</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-05-25 12:48:51 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(W odpowiedzi na komentarz #8)
+<span class="quote">&gt; A może: &quot;Zatrzyj ślady&quot; - przecież to właśnie robi &quot;Sanitize&quot;.</span >
+
+Hmm, pomysl dobry. Podoba mi sie :-)</pre>
+    </div>
+
+    <div id="c11" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=427.html#c11">Comment 11</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-05-29 23:54:16 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(W odpowiedzi na komentarz #7)
+<span class="quote">&gt; &quot;Jak Opera&quot;  = ?</span >
+
+Delete private data - usun/wyczysc prywatne dane (mam angielska wersje, wiec z
+pamieci)
+ 
+<span class="quote">&gt; Czy Shredder byłby lepszy? Tzn. w en-US?  Chyba jeszcze gorszy. :)
+&gt; 
+&gt; &quot;Gerhard Shredder&quot; :-D</span >
+
+Heh... bo zastanawiaja sie czy nie zmienic tego na Shredder...
+
+Zatrzyj slady jest niezle, ale wymaga sporo gimnastyki...
+
+&quot;Sanitize Deer Park&quot;, &quot;Sanitize Settings&quot;, &quot;Ask me before sanitizing Deer Park&quot; itp.</pre>
+    </div>
+
+    <div id="c12" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=427.html#c12">Comment 12</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Bartosz Piec</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-05-30 00:01:29 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(W odpowiedzi na komentarz #11)
+<span class="quote">&gt; &gt; &quot;Jak Opera&quot;  = ?
+&gt; 
+&gt; Delete private data - usun/wyczysc prywatne dane (mam angielska wersje, wiec z
+&gt; pamieci)</span >
+
+No właśnie nie. Jest to: &quot;Wyczyść historię przeglądania&quot; ;) (przynajmniej tak
+jest przetłumaczone &quot;Delete private data&quot;)</pre>
+    </div>
+
+    <div id="c13" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=427.html#c13">Comment 13</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-05-30 00:05:53 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(W odpowiedzi na komentarz #11)
+<span class="quote">&gt; Zatrzyj slady jest niezle, ale wymaga sporo gimnastyki...
+&gt; &quot;Sanitize Deer Park&quot;, &quot;Sanitize Settings&quot;, &quot;Ask me before sanitizing Deer</span >
+Park&quot; itp.
+
+&quot;Zatrzyj ślady&quot;, &quot;Ustawienia zacierania śladów&quot;(?) &quot;Zapytaj mnie przed
+zacieraniem śladów&quot; (a brand*Name po prostu olać)
+
+Jak widać tylko jedno jest problematyczne. :)
+
+
+</pre>
+    </div>
+
+    <div id="c14" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=427.html#c14">Comment 14</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-06-03 04:08:24 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Jak zobacze patch to uwierze.</pre>
+    </div>
+
+    <div id="c15" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=427.html#c15">Comment 15</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-07-05 16:15:30 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Potrzebuję ostatecznej decyzji. Na wczoraj.</pre>
+    </div>
+
+    <div id="c16" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=427.html#c16">Comment 16</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-07-05 16:34:12 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">No albo jak Opera: &quot;Usun historie przegladania&quot; albo &quot;Zatrzyj slady&quot; - oba podobaja mi 
+sie tak samo (i tak samo nie podobaja ;)). </pre>
+    </div>
+
+    <div id="c17" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=427.html#c17">Comment 17</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-07-05 20:37:41 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Jestem za zacieraniem śladów, jeśli:
+a) ktoś mnie przekona, że &quot;ustawienia zacierania śladów&quot; nie brzmią debilnie, lub
+b) ktoś znajdzie inne określenie na &quot;ustawienia zacierania śladów&quot;
+
+;-)</pre>
+    </div>
+
+    <div id="c18" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=427.html#c18">Comment 18</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-07-05 20:43:04 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Aha, &quot;usuń historię przeglądania&quot; nie ma szans. Czemu? Edycja &gt; Preferencje &gt;
+Prywatność &gt; Sanitize Settings... wyglądałoby wtedy tak:
+
+============
+Wyczyść poniższe elementy podczas usuwania historii przeglądania
+[v] historia przeglądania
+[ ] zapamiętane dane formularzy
+[ ] zapamiętane hasła
+....
+============
+
+;-)</pre>
+    </div>
+
+    <div id="c19" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=427.html#c19">Comment 19</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-07-18 00:26:00 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Ok, podsumowując dyskusję na #aviarypl: tłumaczymy na &quot;Sanityzacja&quot;.
+
+Czy poniższe tłumaczenia Wam odpowiadają?
+
+Sanitize Settings -- Ustawienia [s|S?]anityzacji
+
+Tools &gt; Sanitize &amp;brandShortName; -- Narzędzia &gt; Sanityzacja 
+(bez &amp;bSN;, nie chcemy przecież mieć &quot;Sanityzacja programu Firefox&quot;, prawda?)
+
+Ask me before sanitizing &amp;brandShortName; -- Zapytaj przed [s|S?]anityzacją 
+
+Sanitize Now -- Sanityzacja -- albo: Przeprowadź [s|S?]anityzację 
+
+Patcha przygotuję po tym, jak patch z błedu 472 będzie wrzucony.</pre>
+    </div>
+
+    <div id="c20" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=427.html#c20">Comment 20</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-07-19 19:41:51 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Albo i nie.
+
+#aviarypl:
+
+&lt;marcoos&gt; mamy male czyszczenia: 'wyczysc $foo' i duze czyszczenie 'oczyszczanie'
+&lt;gandalf&gt; pasuje Ci to?
+&lt;marcoos&gt; sanitize jest po angielsku ok, bo kojarzy sie z sane i sanity
+&lt;marcoos&gt; po polsku &quot;sanityzacja&quot; 99% ludzi ni cholery nie mowi
+&lt;gandalf&gt; tak
+&lt;gandalf&gt; wiem o tym
+&lt;gandalf&gt; liczylem sie z tym, ze zmiana bedzie chocby tymczasowa
+&lt;gandalf&gt; dlatego oczysc moze byc - bedziemy szukac dalej
+&lt;marcoos&gt; ok
+&lt;marcoos&gt; chyba ze wpadne na cos lepszego zanim zrobie patcha ;)</pre>
+    </div>
+
+    <div id="c21" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=427.html#c21">Comment 21</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-07-22 10:40:02 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Created <span class="bz_obsolete"><a href="attachment.cgi%3Fid=557" name="attach_557" title="Sanitize -&gt; Oczyszczanie">attachment 557</a> <a href="attachment.cgi%3Fid=557&amp;action=edit.html" title="Sanitize -&gt; Oczyszczanie">[details]</a></span>
+Sanitize -&gt; Oczyszczanie
+
+en-US używa sformułowania &quot;Sanitize &amp;brandShortName;&quot;, ja tłumaczę bez bSN,
+bo to nie ma sensu...</pre>
+    </div>
+
+    <div id="c22" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=427.html#c22">Comment 22</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-07-22 10:40:48 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Comment on <span class="bz_obsolete"><a href="attachment.cgi%3Fid=557" name="attach_557" title="Sanitize -&gt; Oczyszczanie">attachment 557</a> <a href="attachment.cgi%3Fid=557&amp;action=edit.html" title="Sanitize -&gt; Oczyszczanie">[details]</a></span>
+Sanitize -&gt; Oczyszczanie
+
+r=hg?
+sr=gandalf?</pre>
+    </div>
+
+    <div id="c23" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=427.html#c23">Comment 23</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-07-22 10:49:50 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Comment on <span class="bz_obsolete"><a href="attachment.cgi%3Fid=557" name="attach_557" title="Sanitize -&gt; Oczyszczanie">attachment 557</a> <a href="attachment.cgi%3Fid=557&amp;action=edit.html" title="Sanitize -&gt; Oczyszczanie">[details]</a></span>
+Sanitize -&gt; Oczyszczanie
+
+jej, mam nadzieje, ze sie przyzwyczaje, lub znajdziemy cos innego. Strasznie
+dziwnie to brzmi, a na dodatek troche nie po Polsku.
+
+Oczysc -&gt; Czyszczenie raczej niz Oczyszczanie. :/
+
+Ale ogolnie oczywiscie sr+ - najlepsza z dotychczasowych opcji</pre>
+    </div>
+
+    <div id="c24" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=427.html#c24">Comment 24</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-07-22 16:25:47 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Zerknę na to późnym wieczorem. Przeglądałem wstępnie i będę miał jakieś uwagi.</pre>
+    </div>
+
+    <div id="c25" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=427.html#c25">Comment 25</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-07-23 13:18:10 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Comment on <span class="bz_obsolete"><a href="attachment.cgi%3Fid=557" name="attach_557" title="Sanitize -&gt; Oczyszczanie">attachment 557</a> <a href="attachment.cgi%3Fid=557&amp;action=edit.html" title="Sanitize -&gt; Oczyszczanie">[details]</a></span>
+Sanitize -&gt; Oczyszczanie
+
+Widzę, że patch już wszedł :)
+
+r-
+JEST:
++sanitizeWithPromptLabel=Oczy\u015b\u0107 %S...
+
+PB:
++sanitizeWithPromptLabel=Oczy\u015b\u0107  program %S...
+
+BTW. sanitizeItems.label  w browser/prererences/sanitize.dtd  zrobiłbym tak:
+&lt;!ENTITY sanitizeItems.label	      &quot;Wyczyść poniższe elementy podczas
+oczyszczania:&quot;&gt;
+
+Może nie brzmi zbyt dobrze, ale nic lepszego mi do głowy nie przychodzi.</pre>
+    </div>
+
+    <div id="c26" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=427.html#c26">Comment 26</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-07-25 12:47:37 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text"><span class="quote">&gt; Może nie brzmi zbyt dobrze, ale nic lepszego mi do głowy nie przychodzi.</span >
+
+Dałem: &quot;Usuń ... podczas oczyszczania&quot;, bo &quot;wyczysć podczas oczyszczania&quot; brzmi
+głupio. :)</pre>
+    </div>
+
+    <div id="c27" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=427.html#c27">Comment 27</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-08-19 15:09:17 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(W odpowiedzi na komentarz #26)
+&quot;Oczyść prywatne dane&quot; (menu Narzędzia, Fx 20050818 1.8 branch) wydaje mi się
+niedobre. Prywatne dane tu się _usuwa_, a _oczyszcza się_ Firefoksa (z tychże
+danych). </pre>
+    </div>
+
+    <div id="c28" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=427.html#c28">Comment 28</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-08-19 15:10:48 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(W odpowiedzi na komentarz #27)
+Ech... Tak dla wyjaśnienia: to co napisałem wyżej nie miało nic wspólnego z
+komentarzem 26</pre>
+    </div>
+
+    <div id="c29" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=427.html#c29">Comment 29</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-08-19 19:05:26 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Created <span class=""><a href="attachment.cgi%3Fid=569" name="attach_569" title="Zmiana na &quot;Usuń prywatne dane&quot; (wrzucona, branch&amp;trunk)">attachment 569</a> <a href="attachment.cgi%3Fid=569&amp;action=edit.html" title="Zmiana na &quot;Usuń prywatne dane&quot; (wrzucona, branch&amp;trunk)">[details]</a></span>
+Zmiana na &quot;Usuń prywatne dane&quot; (wrzucona, branch&amp;trunk)
+
+Takie coś wrzuciłem przed chwilą...</pre>
+    </div>
+
+    <div id="c30" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=427.html#c30">Comment 30</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-08-19 19:09:03 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Problematyczne:
+
+ &lt;!ENTITY sanitizeItems.label          &quot;Wyczyść następujące elementy:&quot;&gt;
+(tu też zmienić na &quot;Usuń&quot;? Nie pasuje mi to do niektórych 'elementów'...)
+
+&lt;!ENTITY promptOnSanitize.label       &quot;Zapytaj mnie przed usuwaniem&quot;&gt;
+(Uwaga: nie mogę tu dać dłuższego tekstu)
+
+&lt;!ENTITY sanitizeItems.label          &quot;Podczas usuwania oczyść następujące
+elementy:&quot;&gt;
+(To trzeba jakoś inaczej zrobić, jestem otwarty na propozycje)
+
+&lt;!ENTITY promptOnSanitize.label       &quot;Zapytaj mnie przed usuwaniem&quot;&gt;
+(Wygląda na sztucznie urwane, ale również nie zmieści się tutaj &quot;...przed
+usuwaniem prywatnych danych&quot;)</pre>
+    </div>
+
+    <div id="c31" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=427.html#c31">Comment 31</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-08-30 19:47:40 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(W odpowiedzi na komentarz #30)
+
+Ktoś ma jakąś propozycję, opinię, patch, cokolwiek? ;-)</pre>
+    </div>
+
+    <div id="c32" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=427.html#c32">Comment 32</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-08-30 20:31:05 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Żebym nie zapomniał:
+window.width powinno być 35em albo powinniśmy skrócić checkboksa &quot;usuń prywatne
+dane przy wyłączaniu programu Deer Park&quot;.
+</pre>
+    </div>
+
+    <div id="c33" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=427.html#c33">Comment 33</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-09-13 12:23:28 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Marek, czy idac za en-US nie chcemy zmienic na &quot;Wyczysc prywatne dane&quot;? (brzmi
+imho mniej groznie). Jesli nie to czy mozemy juz zamknac ten bug?</pre>
+    </div>
+
+    <div id="c34" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=427.html#c34">Comment 34</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-09-13 12:38:48 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(W odpowiedzi na komentarz #33)
+<span class="quote">&gt; Marek, czy idac za en-US nie chcemy zmienic na &quot;Wyczysc prywatne dane&quot;? (brzmi
+&gt; imho mniej groznie). </span >
+
+Patrz <a href="show_bug.cgi%3Fid=427.html#c27">comment #27</a>.
+
+<span class="quote">&gt; Jesli nie to czy mozemy juz zamknac ten bug?</span >
+
+Nadal czekam na opinie co do <a href="show_bug.cgi%3Fid=427.html#c30">comment #30</a>.</pre>
+    </div>
+
+    <div id="c35" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=427.html#c35">Comment 35</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-10-01 17:36:42 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Created <span class=""><a href="attachment.cgi%3Fid=594" name="attach_594" title="Okno chrome://browser/content/preferences/sanitize.xul (propozycja)">attachment 594</a> <a href="attachment.cgi%3Fid=594&amp;action=edit.html" title="Okno chrome://browser/content/preferences/sanitize.xul (propozycja)">[details]</a></span>
+Okno chrome://browser/content/preferences/sanitize.xul (propozycja)
+
+MP do /locale/browser/preferences/sanitize.dtd:
+&lt;!ENTITY sanitizeItems.label	      &quot;Wybierz elementy, które mają zostać
+wyczyszczone:&quot;&gt;
+&lt;!ENTITY promptOnSanitize.label       &quot;Zapytaj mnie przed usuwaniem prywatnych
+danych&quot;&gt;</pre>
+    </div>
+
+    <div id="c36" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=427.html#c36">Comment 36</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-10-01 17:42:28 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">MP do /locale/browser/sanitize.dtd:
+
+&lt;!ENTITY promptOnSanitize.label       &quot;Zapytaj mnie przed usuwaniem prywatnych
+danych&quot;&gt;
+
+Poza tym proponuję zostawić wszystko tak, jak jest teraz w CVS.
+
+</pre>
+    </div>
+
+    <div id="c37" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=427.html#c37">Comment 37</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-10-01 18:45:56 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Created <span class="bz_obsolete"><a href="attachment.cgi%3Fid=595" name="attach_595" title="&quot;Wybierz elementy, które mają zostać wyczyszczone&quot;">attachment 595</a> <a href="attachment.cgi%3Fid=595&amp;action=edit.html" title="&quot;Wybierz elementy, które mają zostać wyczyszczone&quot;">[details]</a></span>
+&quot;Wybierz elementy, które mają zostać wyczyszczone&quot;</pre>
+    </div>
+
+    <div id="c38" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=427.html#c38">Comment 38</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-10-01 20:45:21 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Created <span class="bz_obsolete"><a href="attachment.cgi%3Fid=596" name="attach_596" title="&quot;Wybierz elementy, które mają zostać wyczyszczone&quot; + w=35em">attachment 596</a> <a href="attachment.cgi%3Fid=596&amp;action=edit.html" title="&quot;Wybierz elementy, które mają zostać wyczyszczone&quot; + w=35em">[details]</a></span>
+&quot;Wybierz elementy, które mają zostać wyczyszczone&quot; + w=35em
+
+Zapomniałem o komentarzu 32.</pre>
+    </div>
+
+    <div id="c39" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=427.html#c39">Comment 39</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-10-01 22:51:22 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Problem tylko w tym, że &quot;Wybierz elementy, które mają zostać wyczyszczone&quot; nie
+sugeruje, kiedy one mają być wyczyszczone (a raczej sugeruje - przynajmniej mi -
+że będą wyczyszczone natychmiast).</pre>
+    </div>
+
+    <div id="c40" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=427.html#c40">Comment 40</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-10-01 23:13:14 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(W odpowiedzi na komentarz #39)
+<span class="quote">&gt; Problem tylko w tym, że &quot;Wybierz elementy, które mają zostać wyczyszczone&quot; nie
+&gt; sugeruje, kiedy one mają być wyczyszczone (a raczej sugeruje - przynajmniej mi -
+&gt; że będą wyczyszczone natychmiast).</span >
+
+To okno pojawia się po kliknięciu w przycisk &quot;Ustawienia&quot;. To sugeruje, że tylko
+ustawiamy pewien schemat działania tej funkcji. W oryginale jest tak: &quot;Select
+the items to be cleared:&quot; - to też nie mówi kiedy to ma nastąpić.
+
+Myślałem jeszcze, żeby &quot;zostać&quot; zmienić na &quot;być&quot; albo zamiast &quot;mają zostać&quot; -
+&quot;będą&quot;, ale to mi bardziej sugerowało, że to ma nastąpić już za chwilę.</pre>
+    </div>
+
+    <div id="c41" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=427.html#c41">Comment 41</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-10-01 23:17:03 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Comment on <span class="bz_obsolete"><a href="attachment.cgi%3Fid=596" name="attach_596" title="&quot;Wybierz elementy, które mają zostać wyczyszczone&quot; + w=35em">attachment 596</a> <a href="attachment.cgi%3Fid=596&amp;action=edit.html" title="&quot;Wybierz elementy, które mają zostać wyczyszczone&quot; + w=35em">[details]</a></span>
+&quot;Wybierz elementy, które mają zostać wyczyszczone&quot; + w=35em
+
+W sumie... Ok, ode mnie r+
+
+gandalf: dodatkowe r? Co o tym myślisz?</pre>
+    </div>
+
+    <div id="c42" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=427.html#c42">Comment 42</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-10-01 23:29:12 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Comment on <span class="bz_obsolete"><a href="attachment.cgi%3Fid=596" name="attach_596" title="&quot;Wybierz elementy, które mają zostać wyczyszczone&quot; + w=35em">attachment 596</a> <a href="attachment.cgi%3Fid=596&amp;action=edit.html" title="&quot;Wybierz elementy, które mają zostać wyczyszczone&quot; + w=35em">[details]</a></span>
+&quot;Wybierz elementy, które mają zostać wyczyszczone&quot; + w=35em
+
+Hmm...
+No nie wiem...
+
+1) Chyba wolalbym &quot;Zapytaj mnie przez wyczyszczeniem prywatnych danych&quot;.
+
+Nie podoba mi sie zwrot &quot;usuwac dane&quot;.
+
+Nie zgadzam sie z Komentarzem 27. Ja czyszcze prywatne dane, zostawiajac tylko
+wybrane (tak - reszte usuwajac).
+Oczyszczam Firefoksa, ale czyszcze dane. Tak jak czyszczac dysk sprzatam na nim
+zostawiajac tylko niektore rzeczy, natomiast usuwajac dysk...
+
+2) Czemu &quot;Zapytaj mnie&quot; zamiast &quot;Spytaj mnie&quot; ? 
+
+(sha) - &quot;Zapytaj&quot; lepiej brzmi z &quot;Zapytaj o cos&quot;. Tutaj lepiej &quot;Spytaj&quot;.</pre>
+    </div>
+
+    <div id="c43" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=427.html#c43">Comment 43</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-10-01 23:33:06 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text"><span class="quote">&gt; 2) Czemu &quot;Zapytaj mnie&quot; zamiast &quot;Spytaj mnie&quot; ? 
+&gt; (sha) - &quot;Zapytaj&quot; lepiej brzmi z &quot;Zapytaj o cos&quot;. Tutaj lepiej &quot;Spytaj&quot;.</span >
+
+Ani lepiej, ani gorzej. Ponadto w całej lokalizacji używamy &quot;Zapytaj&quot;, nigdy
+&quot;Spytaj&quot;, w obu kontekstach.  
+
+</pre>
+    </div>
+
+    <div id="c44" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=427.html#c44">Comment 44</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-10-02 13:47:35 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Comment on <span class="bz_obsolete"><a href="attachment.cgi%3Fid=596" name="attach_596" title="&quot;Wybierz elementy, które mają zostać wyczyszczone&quot; + w=35em">attachment 596</a> <a href="attachment.cgi%3Fid=596&amp;action=edit.html" title="&quot;Wybierz elementy, które mają zostać wyczyszczone&quot; + w=35em">[details]</a></span>
+&quot;Wybierz elementy, które mają zostać wyczyszczone&quot; + w=35em
+
+po dyskusji na #aviarypl.</pre>
+    </div>
+
+    <div id="c45" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=427.html#c45">Comment 45</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-10-03 11:07:17 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Created <span class=""><a href="attachment.cgi%3Fid=599" name="attach_599" title="Patch (checked-in, b&amp;t)">attachment 599</a> <a href="attachment.cgi%3Fid=599&amp;action=edit.html" title="Patch (checked-in, b&amp;t)">[details]</a></span>
+Patch (checked-in, b&amp;t)
+
+Ostateczna (mam nadzieję) wersja, wrzucona b&amp;t.</pre>
+    </div>
+
+    <div id="c46" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=427.html#c46">Comment 46</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-10-03 11:07:37 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">fixed</pre>
+    </div>
+
+    <div id="c47" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=427.html#c47">Comment 47</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-10-03 11:41:31 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">&lt;!ENTITY sanitizeItems.label          &quot;Podczas czyszczenia usuń następujące
+elementy:&quot;&gt; ?!
+
+Wydaje mi się, że Gandalfowi i Staszynie nie o to chodziło...</pre>
+    </div>
+
+    <div id="c48" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=427.html#c48">Comment 48</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-10-03 11:45:41 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">A o co?</pre>
+    </div>
+
+    <div id="c49" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=427.html#c49">Comment 49</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-10-03 11:48:35 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text"><span class="quote">&gt; Nie podoba mi sie zwrot &quot;usuwac dane&quot;.</span >
+
+Wydawało mi się, że chciał się pozbyć słowa &quot;usuwać&quot;.</pre>
+    </div>
+
+    <div id="c50" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=427.html#c50">Comment 50</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-10-03 11:53:24 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Przy okazji: zapomniałeś o window.width.</pre>
+    </div>
+
+    <div id="c51" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=427.html#c51">Comment 51</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-10-03 11:56:18 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(W odpowiedzi na komentarz #49)
+<span class="quote">&gt; &gt; Nie podoba mi sie zwrot &quot;usuwac dane&quot;.
+&gt; 
+&gt; Wydawało mi się, że chciał się pozbyć słowa &quot;usuwać&quot;.</span >
+
+Nie, nie. jest ok. Mi pasuje.
+Chcialem pozbyc sie &quot;usuwania&quot; danych jako nazwy. Natomiasy podczas czyszczenia,
+usuwa sie pewne elementy i to jest logiczne (podczas czyszczenia danych usunalem
+niepotrzebne ikonki)</pre>
+    </div>
+
+    <div id="c52" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=427.html#c52">Comment 52</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-10-03 11:58:07 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Zdaje sie ze opusciles wpis w glownym menu Narzedzia-&gt;Usun prywatne dane.</pre>
+    </div>
+
+    <div id="c53" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=427.html#c53">Comment 53</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-10-03 11:59:17 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">oraz Opcje-&gt;Prywatnosc i ten opis na dole...</pre>
+    </div>
+
+    <div id="c54" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=427.html#c54">Comment 54</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-10-03 12:12:46 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text"><span class="quote">&gt; Przy okazji: zapomniałeś o window.width.</span >
+
+Nie jest potrzebne, bez tego się mieści. :)
+
+<span class="quote">&gt; oraz Opcje-&gt;Prywatnosc i ten opis na dole...</span >
+
+Good catch. :)</pre>
+    </div>
+
+    <div id="c55" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=427.html#c55">Comment 55</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-10-03 12:17:00 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(W odpowiedzi na komentarz #51)
+
+<span class="quote">&gt; Nie, nie. jest ok. Mi pasuje.
+&gt; Chcialem pozbyc sie &quot;usuwania&quot; danych jako nazwy. Natomiasy podczas czyszczenia,
+&gt; usuwa sie pewne elementy i to jest logiczne (podczas czyszczenia danych usunalem
+&gt; niepotrzebne ikonki)</span >
+
+Fakt, przeoczyłem na IRC-u Twoją propozycję ;)
+Ja chciałem, żeby było &quot;Wybierz elementy, które mają zostać wyczyszczone:&quot;, ale
+(choć obecny zwrot mi się nie podoba) już nie będę mieszał.</pre>
+    </div>
+
+    <div id="c56" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=427.html#c56">Comment 56</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-10-03 12:39:21 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">mieszaj,mieszaj.
+Mi sie Twoja propozycja bardziej podoba.</pre>
+    </div>
+
+    <div id="c57" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=427.html#c57">Comment 57</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-10-03 13:00:43 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(W odpowiedzi na komentarz #56)
+<span class="quote">&gt; mieszaj,mieszaj.
+&gt; Mi sie Twoja propozycja bardziej podoba.</span >
+
+Marcoos dawał wcześniej r+ na patcha, w którym proponowałem taką encję. To jak?
+
+-&lt;!ENTITY sanitizeItems.label          &quot;Podczas usuwania oczyść następujące
+elementy:&quot;&gt;
+-&lt;!ENTITY itemHistory.label            &quot;Historię przeglądania&quot;&gt;
++&lt;!ENTITY sanitizeItems.label          &quot;Wybierz elementy, które mają zostać
+wyczyszczone:&quot;&gt;
++&lt;!ENTITY itemHistory.label            &quot;Historia przeglądania&quot;&gt;
+
+-&lt;!ENTITY itemCache.label              &quot;Pamięć podręczną&quot;&gt;
++&lt;!ENTITY itemCache.label              &quot;Pamięć podręczna&quot;&gt;
+
+Przejdzie to co wyżej?</pre>
+    </div>
+
+    <div id="c58" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=427.html#c58">Comment 58</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-10-03 13:03:50 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">poczekajmy na marcoosa moze ;) Mi sie podoba</pre>
+    </div>
+
+    <div id="c59" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=427.html#c59">Comment 59</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-10-03 13:51:11 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">reop.</pre>
+    </div>
+
+    <div id="c60" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=427.html#c60">Comment 60</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-10-03 13:52:14 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text"><span class="quote">&gt; Marcoos dawał wcześniej r+ na patcha, w którym proponowałem taką encję. To jak?
+&gt; 
+&gt; -&lt;!ENTITY sanitizeItems.label          &quot;Podczas usuwania oczyść następujące
+&gt; elementy:&quot;&gt;
+&gt; -&lt;!ENTITY itemHistory.label            &quot;Historię przeglądania&quot;&gt;
+&gt; +&lt;!ENTITY sanitizeItems.label          &quot;Wybierz elementy, które mają zostać
+&gt; wyczyszczone:&quot;&gt;</span >
+
+Za długie.</pre>
+    </div>
+
+    <div id="c61" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=427.html#c61">Comment 61</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-10-03 14:01:20 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Menu Narzędzia poprawione b&amp;t.</pre>
+    </div>
+
+    <div id="c62" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=427.html#c62">Comment 62</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-10-03 14:06:43 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(W odpowiedzi na komentarz #61)
+
+<span class="quote">&gt; Za długie.</span >
+
+To może  &quot;Wybierz elementy, które mają być wyczyszczone:&quot;?
+Albo window.width = 35em ;)
+</pre>
+    </div>
+
+    <div id="c63" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=427.html#c63">Comment 63</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-10-03 14:36:34 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Created <span class=""><a href="attachment.cgi%3Fid=601" name="attach_601" title="Patch... Niech to już do cholery będzie ostatni...">attachment 601</a> <a href="attachment.cgi%3Fid=601&amp;action=edit.html" title="Patch... Niech to już do cholery będzie ostatni...">[details]</a></span>
+Patch... Niech to już do cholery będzie ostatni...
+
+wyczyszczone -&gt; czyszczone.
+
+Poza tym niech już będzie.</pre>
+    </div>
+
+    <div id="c64" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=427.html#c64">Comment 64</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-10-03 14:50:40 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">fxd</pre>
+    </div>
+
+    <div id="c65" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=427.html#c65">Comment 65</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-10-04 13:20:16 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(W odpowiedzi na komentarz #64)
+<span class="quote">&gt; fxd</span >
+
+To jeszcze nie koniec ;)
+
+Narzędzia &gt; Wyczyść... 
+
+Zostało &quot;Zapytaj mnie przed usuwaniem&quot;. Powinno być tak jak w preferencjach:
+&quot;Poproś o potwierdzenie przed czyszczeniem&quot;.
+
+<a href="http://lxr.mozilla.org/l10n/source/pl/browser/chrome/browser/sanitize.dtd#19">http://lxr.mozilla.org/l10n/source/pl/browser/chrome/browser/sanitize.dtd#19</a></pre>
+    </div>
+
+    <div id="c66" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=427.html#c66">Comment 66</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-10-04 14:39:37 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Lokalizacja jest zamrożona do wydania bety 2. Poprawimy to gdzieś w piątek. :)</pre>
+    </div>
+
+    <div id="c67" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=427.html#c67">Comment 67</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-10-04 14:42:11 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">...</pre>
+    </div>
+
+    <div id="c68" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=427.html#c68">Comment 68</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-10-14 19:44:11 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text"><span class="quote">&gt; Zostało &quot;Zapytaj mnie przed usuwaniem&quot;. Powinno być tak jak w preferencjach:
+&gt; &quot;Poproś o potwierdzenie przed czyszczeniem&quot;.</span >
+
+Fixed branch &amp; trunk.
+
+Jeśli jeszcze są jakieś problemy z Sanityzacją[TM], proszę zgłosić osobny błąd. :)
+</pre>
+    </div>
+
+    <div id="c69" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=427.html#c69">Comment 69</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-11-19 15:00:21 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">verified</pre>
+    </div>
+
+
+  
+
+</td>
+<td>
+</td>
+</tr></table>
+  </div>
+
+    <hr><div id="add_comment" class="bz_section_additional_comments">
+      <table>
+        <tr>
+          <td>
+            <fieldset>
+              <legend>Note</legend>
+              You need to
+              <a href="show_bug.cgi%3Fid=427&amp;GoAheadAndLogIn=1.html">log in</a>
+              before you can comment on or make changes to this bug.
+            </fieldset>
+          </td>
+        </tr> 
+      </table>
+  </div>        
+
+</form>
+
+<hr>
+<ul class="related_actions">
+    <li><a href="show_bug.cgi%3Fformat=multiple&amp;id=427.html">Format For Printing</a></li>
+    <li>&nbsp;-&nbsp;<a href="show_bug.cgi%3Fctype=xml&amp;id=427">XML</a></li>
+    <li>&nbsp;-&nbsp;<a href="enter_bug.cgi%3Fcloned_bug_id=427.html">Clone This Bug</a></li>
+    
+    <li>&nbsp;-&nbsp;<a href="show_bug.cgi%3Fid=427.html#">Top of page </a></li>
+    </ul>
+
+<br>
+</div>
+
+    <div id="footer">
+      <div class="intro"></div>
+<ul id="useful-links">
+  <li id="links-actions"><ul class="links">
+  <li><a href="index.html">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi.html">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi.html">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi.html">Search</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="http://bugs.aviary.pl/buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input type="hidden" id="no_redirect_bottom" name="no_redirect" value="0">
+    <script type="text/javascript">
+      if (history && history.replaceState) {
+        var no_redirect = document.getElementById("no_redirect_bottom");
+        no_redirect.value = 1;
+      }
+    </script>
+    <input class="txt" type="text" id="quicksearch_bottom" name="quicksearch" 
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search" 
+           id="find_bottom"></form>
+  <a href="page.cgi%3Fid=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="report.cgi.html">Reports</a></li>
+
+  <li>
+      <span class="separator">| </span>
+        <a href="request.cgi.html">Requests</a></li>
+
+
+  <li>
+        <span class="separator">| </span>
+        <a href="https://bugzilla.readthedocs.org/en/5.0/using/understanding.html" target="_blank">Help</a>
+      </li>
+    
+      <li id="new_account_container_bottom">
+        <span class="separator">| </span>
+        <a href="createaccount.cgi.html">New&nbsp;Account</a>
+      </li>
+
+    <li id="mini_login_container_bottom">
+  <span class="separator">| </span>
+  <a id="login_link_bottom" href="show_bug.cgi%3Fid=427&amp;GoAheadAndLogIn=1.html"
+     onclick="return show_mini_login_form('_bottom')">Log In</a>
+
+  <form action="show_bug.cgi%3Fid=427.html" method="POST"
+        class="mini_login bz_default_hidden"
+        id="mini_login_bottom">
+    <input id="Bugzilla_login_bottom" required
+           name="Bugzilla_login" class="bz_login"
+        type="email" placeholder="Email Address">
+    <input class="bz_password" name="Bugzilla_password" type="password"
+           id="Bugzilla_password_bottom" required
+           placeholder="Password">
+    <input type="hidden" name="Bugzilla_login_token"
+           value="1469820091-UB1qcwy9AeMhWHiupH-9sNk-BdxzjqAyonxQItRFmAg">
+    <input type="submit" name="GoAheadAndLogIn" value="Log in"
+            id="log_in_bottom">
+    <a href="show_bug.cgi%3Fid=427.html#" onclick="return hide_mini_login_form('_bottom')">[x]</a>
+  </form>
+</li>
+
+
+  <li id="forgot_container_bottom">
+    <span class="separator">| </span>
+    <a id="forgot_link_bottom" href="show_bug.cgi%3Fid=427&amp;GoAheadAndLogIn=1.html#forgot"
+       onclick="return show_forgot_form('_bottom')">Forgot Password</a>
+    <form action="http://bugs.aviary.pl/token.cgi" method="post" id="forgot_form_bottom"
+          class="mini_forgot bz_default_hidden">
+      <label for="login_bottom">Login:</label>
+      <input name="loginname" size="20" id="login_bottom" required
+          type="email" placeholder="Your Email Address">
+      <input id="forgot_button_bottom" value="Reset Password" type="submit">
+      <input type="hidden" name="a" value="reqpw">
+      <input type="hidden" id="token_bottom" name="token"
+             value="1469820091-USig6FIiS4lEr1sivUmwhKg7O63BO_AwJkV1CBLD32c">
+      <a href="show_bug.cgi%3Fid=427.html#" onclick="return hide_forgot_form('_bottom')">[x]</a>
+    </form>
+  </li>
+</ul>
+  </li>
+
+  
+
+
+
+
+  
+</ul>
+
+      <div class="outro"></div>
+    </div>
+
+  </body>
+</html>

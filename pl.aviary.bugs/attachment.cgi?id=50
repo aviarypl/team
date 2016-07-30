@@ -1,0 +1,194 @@
+diff -ur 2/pl/default/account/auth/ldap-error.html.tmpl 3/pl/default/account/auth/ldap-error.html.tmpl
+--- 2/pl/default/account/auth/ldap-error.html.tmpl	2004-05-20 19:42:23.000000000 +0200
++++ 3/pl/default/account/auth/ldap-error.html.tmpl	2004-05-22 12:30:52.000000000 +0200
+@@ -39,7 +39,7 @@
+ 
+   [% CASE "no_userid" %]
+     Twoje konto [% terms.Bugzilli %] zostało utworzone, jednakże nie jest możliwe
+-    znalezienie nowoutworzonego identyfiaktora użytkownika.
++    znalezienie nowoutworzonego identyfikatora użytkownika.
+ 
+   [% CASE "server_not_defined" %]
+     Serwer LDAP z danymi uwierzytelnianiającymi nie został zdefiniowny.
+diff -ur 2/pl/default/account/auth/login.html.tmpl 3/pl/default/account/auth/login.html.tmpl
+--- 2/pl/default/account/auth/login.html.tmpl	2004-05-20 19:51:24.000000000 +0200
++++ 3/pl/default/account/auth/login.html.tmpl	2004-05-22 12:31:24.000000000 +0200
+@@ -34,7 +34,7 @@
+ %]
+ 
+ <p>
+-  Potrzebne są prawidłowy identyfikator użytkownika i hasła do poprawnego działania.
++  Potrzebne są prawidłowy identyfikator użytkownika i hasło do poprawnego działania.
+ </p>
+ 
+ <form action="[% target FILTER html %]" method="POST">
+diff -ur 2/pl/default/account/cancel-token.txt.tmpl 3/pl/default/account/cancel-token.txt.tmpl
+--- 2/pl/default/account/cancel-token.txt.tmpl	2004-05-20 19:54:48.000000000 +0200
++++ 3/pl/default/account/cancel-token.txt.tmpl	2004-05-21 00:29:46.000000000 +0200
+@@ -29,7 +29,7 @@
+ Zgłoszenie z [% remoteaddress %] zostało anulowane.
+ 
+ Jeśli zgłoszenie nie zostało złożone przez Ciebie, ktoś próbuje
+-włamać się na twoje konto [% terms.Bugzilli %], lub potwierdzenie
++włamać się na Twoje konto [% terms.Bugzilli %], lub potwierdzenie
+ zostało wysłane pomyłkowo.
+ 
+ Przyjrzyj się informacjom zawartym w tym e-mailu i w wypadku podejrzeń prześlij tą
+diff -ur 2/pl/default/account/email/change-new.txt.tmpl 3/pl/default/account/email/change-new.txt.tmpl
+--- 2/pl/default/account/email/change-new.txt.tmpl	2004-05-20 20:38:21.000000000 +0200
++++ 3/pl/default/account/email/change-new.txt.tmpl	2004-05-22 12:32:58.000000000 +0200
+@@ -33,7 +33,7 @@
+ 
+ [%+ Param('urlbase') %]token.cgi?a=cfmem&t=[% token FILTER url_quote %]
+ 
+-Jeśli to nie ty złożyłeś prośbę o zmianę adresu, lub chcesz anulować
++Jeśli to nie Ty złożyłeś prośbę o zmianę adresu, lub chcesz anulować
+ tą zmianę, odwiedz ten odnośnik:
+ 
+ [%+ Param('urlbase') %]token.cgi?a=cxlem&t=[% token FILTER url_quote %]
+diff -ur 2/pl/default/account/email/change-old.txt.tmpl 3/pl/default/account/email/change-old.txt.tmpl
+--- 2/pl/default/account/email/change-old.txt.tmpl	2004-05-20 20:38:50.000000000 +0200
++++ 3/pl/default/account/email/change-old.txt.tmpl	2004-05-22 12:33:06.000000000 +0200
+@@ -35,9 +35,9 @@
+ X-Priority: 1
+ 
+ [%+ terms.Bugzilla %] otrzymała prośbę o zmianę adresu e-mail
+-dla twojego konta na adres [%+ newemailaddress %].
++dla Twojego konta na adres [%+ newemailaddress %].
+ 
+-Jeśli to nie ty złożyłeś prośbę o zmianę adresu, lub chcesz anulować
++Jeśli to nie Ty złożyłeś prośbę o zmianę adresu, lub chcesz anulować
+ tą zmianę, odwiedz ten odnośnik:
+ 
+ [%+ Param('urlbase') %]token.cgi?a=cxlem&t=[% token FILTER url_quote %]
+diff -ur 2/pl/default/account/prefs/email.html.tmpl 3/pl/default/account/prefs/email.html.tmpl
+--- 2/pl/default/account/prefs/email.html.tmpl	2004-05-20 20:14:46.000000000 +0200
++++ 3/pl/default/account/prefs/email.html.tmpl	2004-05-22 12:32:12.000000000 +0200
+@@ -48,7 +48,7 @@
+       <td colspan="4">
+         Jeśli chcesz pomóc komuś kto jest obecnie na wakacjach, lub potrzebujesz
+         przeprowadzić czynności związane ze wszystkimi [% terms.bledami %] danej osoby,
+-        możesz poprosić [% terms.Bugzille %] o przysyłanie, również tobie, listów
++        możesz poprosić [% terms.Bugzille %] o przysyłanie, również Tobie, listów
+         związanych z [% terms.bledami %] danej osoby. Aby to uczynić, podaj, oddzieloną
+         przecinkami, listę adresów e-mail osób, których błędy chcesz obserwować.
+       </td>
+diff -ur 2/pl/default/attachment/create.html.tmpl 3/pl/default/attachment/create.html.tmpl
+--- 2/pl/default/attachment/create.html.tmpl	2004-05-20 20:24:10.000000000 +0200
++++ 3/pl/default/attachment/create.html.tmpl	2004-05-21 00:29:32.000000000 +0200
+@@ -112,7 +112,7 @@
+       <th>Przestarzałe załączniki:</th>
+       <td>
+         <em>(opcjonalne) Wybierz z listy załączniki, który stają się przestarzałe
+-        po dołączeniu twojego załącznika.</em><br>
++        po dołączeniu Twojego załącznika.</em><br>
+         [% IF attachments.size %]
+           [% FOREACH attachment = attachments %]
+             [% IF ((attachment.isprivate == 0) || (Param("insidergroup")
+@@ -142,7 +142,7 @@
+     <tr>
+       <th>Komentarz:</th>
+       <td>
+-        <em>(opcjonalne) Dodaj komentarz do tego załącznika listy komentarzy [% terms.bledu %].</em><br>
++        <em>(opcjonalne) Dodaj komentarz do tego załącznika do listy komentarzy [% terms.bledu %].</em><br>
+         <textarea wrap="soft" name="comment" rows="6" cols="80"></textarea>
+       </td>
+     </tr>
+diff -ur 2/pl/default/attachment/show-multiple.html.tmpl 3/pl/default/attachment/show-multiple.html.tmpl
+--- 2/pl/default/attachment/show-multiple.html.tmpl	2004-05-20 20:43:12.000000000 +0200
++++ 3/pl/default/attachment/show-multiple.html.tmpl	2004-05-21 00:29:38.000000000 +0200
+@@ -83,7 +83,7 @@
+   [% IF a.isviewable %]
+     <iframe src="attachment.cgi?id=[% a.attachid %]&amp;action=view" width="75%" height="350">
+       <b>Załącznik nie może być wyświetlony na tej stronie,
+-         ponieważ twoja przeglądarka nie obsługuje IFRAME.
++         ponieważ Twoja przeglądarka nie obsługuje IFRAME.
+       <a href="attachment.cgi?id=[% a.attachid %]&amp;action=view">Wyświetl załącznik na osobnej stronie</a>.</b>
+     </iframe>
+   [% ELSE %]
+diff -ur 2/pl/default/attachment/updated.html.tmpl 3/pl/default/attachment/updated.html.tmpl
+--- 2/pl/default/attachment/updated.html.tmpl	2004-05-20 20:44:59.000000000 +0200
++++ 3/pl/default/attachment/updated.html.tmpl	2004-05-21 00:35:19.000000000 +0200
+@@ -38,14 +38,14 @@
+   <tr>
+     <td>
+       <h2>Zmiany w
+-        <a href="attachment.cgi?id=[% attachid %]&amp;action=edit">załączniku [%+ attachid %]</a>
+-        dla [%+ terms.bledu %] [%+ bugid %] zostały wysłane
++        <a href="attachment.cgi?id=[% attachid %]&amp;action=edit">załączniku #[% attachid %]</a>
++        dla [%+ terms.bledu +%] #[% bugid %] zostały wysłane
+       </h2>
+       [% PROCESS "bug/process/bugmail.html.tmpl" mailing_bugid = bugid %]
+     </td>
+ 
+     <td>
+-      <a href="show_bug.cgi?id=[% bugid %]">Wróć do [%+ terms.bledu %] #[% bugid %]</a>
++      <a href="show_bug.cgi?id=[% bugid %]">Wróć do [%+ terms.bledu +%] #[% bugid %]</a>
+     </td>
+   </tr>
+ </table>
+diff -ur 2/pl/default/bug/create/create.html.tmpl 3/pl/default/bug/create/create.html.tmpl
+--- 2/pl/default/bug/create/create.html.tmpl	2004-05-20 21:41:41.000000000 +0200
++++ 3/pl/default/bug/create/create.html.tmpl	2004-05-21 00:29:27.000000000 +0200
+@@ -311,8 +311,8 @@
+     <td></td>
+     <td colspan="3">
+       <br>
+-      Pola dotyczące twojego systemu operacyjnego i platformy sprzętowej zostały wypełnione
+-      na podstawie informacji z twojej przeglądarki. Proszę sprawdzić poprawność tych
++      Pola dotyczące Twojego systemu operacyjnego i platformy sprzętowej zostały wypełnione
++      na podstawie informacji z Twojej przeglądarki. Proszę sprawdzić poprawność tych
+       danych i w przypadku znalezienia błędnych wartości, wysłać zawiadomienie o tym 
+       fakcie do [%+ Param('maintainer') %].
+     </td>
+diff -ur 2/pl/default/bug/edit.html.tmpl 3/pl/default/bug/edit.html.tmpl
+--- 2/pl/default/bug/edit.html.tmpl	2004-05-20 21:54:10.000000000 +0200
++++ 3/pl/default/bug/edit.html.tmpl	2004-05-29 01:26:48.000000000 +0200
+@@ -126,8 +126,8 @@
+           [% bug.bug_id %]</a>
+           [% IF Param("usebugaliases") %]
+             <label title="Nazwa [% terms.bledu %] która może być użyta w miejscu numeru błędu, np. na  liście zależności">
+-              <b>Alias:</b>
+-              <input name="alias" value="[% bug.alias FILTER html %]" size="20" maxlength="20">
++              <b>alias:</b>
++	      <input name="alias" value="[% bug.alias FILTER html %]" size="18" maxlength="20">
+             </label>
+           [% END %]
+       </td>
+diff -ur 2/pl/default/bug/knob.html.tmpl 3/pl/default/bug/knob.html.tmpl
+--- 2/pl/default/bug/knob.html.tmpl	2004-05-20 21:54:22.000000000 +0200
++++ 3/pl/default/bug/knob.html.tmpl	2004-05-30 01:22:08.000000000 +0200
+@@ -77,7 +77,7 @@
+       [% knum = knum + 1 %]
+ 
+       <input type="radio" name="knob" value="reassign">
+-      <a href="bug_status.html#assigned_to">Przypisz</a> [% terms.blad %] dla
++      <a href="bug_status.html#assigned_to">Przypisz</a> [% terms.blad %] do
+       <input name="assigned_to" size="32"
+              onchange="if ((this.value != '[% bug.assigned_to.email FILTER js %]') &&
+                             (this.value != '')) {
+diff -ur 2/pl/default/bug/process/next.html.tmpl 3/pl/default/bug/process/next.html.tmpl
+--- 2/pl/default/bug/process/next.html.tmpl	2004-05-20 16:12:49.000000000 +0200
++++ 3/pl/default/bug/process/next.html.tmpl	2004-05-21 00:29:12.000000000 +0200
+@@ -28,7 +28,7 @@
+ <hr>
+ 
+ <p>
+-  Następny [% terms.blad %] na twojej liście to [% terms.blad %]
++  Następny [% terms.blad %] na Twojej liście to [% terms.blad %]
+   <a href="show_bug.cgi?id=[% bug.bug_id %]">[% bug.bug_id %]</a>:
+ </p>
+ 
+diff -ur 2/pl/default/global/variables.none.tmpl 3/pl/default/global/variables.none.tmpl
+--- 2/pl/default/global/variables.none.tmpl	2004-05-20 19:13:19.000000000 +0200
++++ 3/pl/default/global/variables.none.tmpl	2004-05-30 01:53:51.000000000 +0200
+@@ -44,6 +44,8 @@
+   "Bledy" => "Błędy",
+   "bledow" => "błędów",
+   "Bledow" => "Błędów",
++  "bledach" => "błędach",
++  "Bledach" => "Błędach",
+   "bledami" => "błędami",
+   "Bledami" => "Błędami",
+   "bledzie" => "błędzie",
+

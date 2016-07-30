@@ -1,0 +1,43 @@
+diff --git a/browser/chrome/browser/devtools/gcli.properties b/browser/chrome/browser/devtools/gcli.properties
+--- a/browser/chrome/browser/devtools/gcli.properties
++++ b/browser/chrome/browser/devtools/gcli.properties
+@@ -132,16 +132,38 @@
+ # LOCALIZATION NOTE (helpManParameters): A heading shown above the parameters
+ # in a help page for a command in the console.
+ helpManParameters=Parametry
+ 
+ # LOCALIZATION NOTE (helpManNone): Some text shown under the parameters
+ # heading in a help page for a command which has no parameters.
+ helpManNone=Brak
+ 
++# LOCALIZATION NOTE (helpListAll): The heading shown in response to the 'help'
++# command when used without a filter, just above the list of known commands.
++helpListAll=Dostępne polecenia:
++
++# LOCALIZATION NOTE (helpListPrefix): The heading shown in response to the
++# 'help <search>' command (i.e. with a search string), just above the list of
++# matching commands.
++helpListPrefix=Nazwy poleceń zaczynające się od „%1$S”:
++
++# LOCALIZATION NOTE (helpListNone): The heading shown in response to the 'help
++# <search>' command (i.e. with a search string), when there are no matching
++# commands.
++helpListNone=Brak poleceń których nazwy zaczynałyby się od „%1$S”
++
++# LOCALIZATION NOTE (helpManRequired): When the 'help x' command wants to show
++# the manual for the 'x' command it needs to be able to describe the
++# parameters as either required or optional. See also 'helpManOptional'.
++helpManRequired=wymagany
++
++# LOCALIZATION NOTE (helpManOptional): See description of 'helpManRequired'
++helpManOptional=opcjonalny
++
+ # LOCALIZATION NOTE (subCommands): Text shown as part of the output of the
+ # 'help' command when the command in question has sub-commands, before a list
+ # of the matching sub-commands
+ subCommands=Polecenia podrzędne
+ 
+ # LOCALIZATION NOTE (subCommandsNone): Text shown as part of the output of the
+ # 'help' command when the command in question should have sub-commands but in
+ # fact has none
+

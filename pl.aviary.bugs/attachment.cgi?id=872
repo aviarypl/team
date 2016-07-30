@@ -1,0 +1,686 @@
+Index: messages.po
+===================================================================
+--- messages.po	(revision 3889)
++++ messages.po	(working copy)
+@@ -51,7 +51,7 @@
+ msgstr "Wersja %s"
+ 
+ msgid "addon_invalid_url"
+-msgstr "Błędny format adresu URL"
++msgstr "Nieprawidłowy format adresu URL"
+ 
+ #: views/elements/addon_list_options.thtml:69
+ msgid "addon_list_sortby"
+@@ -86,7 +86,7 @@
+ 
+ #: views/reviews/add.thtml:70
+ msgid "addon_review_add_submit"
+-msgstr "Wyślij swoją recenzję"
++msgstr "Wyślij"
+ 
+ #: views/reviews/add.thtml:40
+ #, php-format
+@@ -115,7 +115,7 @@
+ 
+ #: controllers/reviews_controller.php:237
+ msgid "addon_review_deleted_successfully"
+-msgstr "Recenzja usunięta pomyślnie."
++msgstr "Recenzja została usunięta."
+ 
+ #: views/reviews/add.thtml:40
+ #, php-format
+@@ -124,7 +124,7 @@
+ 
+ #: views/reviews/review_added.thtml:43
+ msgid "addon_review_in_moderation"
+-msgstr "Uwaga: przed publikacją recenzja zostanie sprawdzona przez moderatora."
++msgstr "Uwaga: Przed publikacją recenzja zostanie sprawdzona przez moderatora."
+ 
+ # %1 is the addon name
+ #: controllers/reviews_controller.php:101
+@@ -557,14 +557,14 @@
+ #: views/addons/searchengines.thtml:65
+ msgid "addons_searchengines_error_mozilla_browser_required"
+ msgstr ""
+-"Przepraszamy, aby zainstalować wtyczkę wyszukiwarki potrzebna jest "
++"Przepraszamy. Aby zainstalować wtyczkę wyszukiwarki potrzebna jest "
+ "przeglądarka oparta o Mozillę (tak jak np. Firefox)."
+ 
+ #: views/addons/searchengines.thtml:51
+ msgid "addons_searchengines_error_nojavascript"
+ msgstr ""
+ "Do instalacji wtyczek wymagany jest JavaScript, a wygląda na to, że jego "
+-"obsługa jest wyłaczona. Przed próba instalacji jednej z poniższych wtyczek, "
++"obsługa jest wyłączona. Przed próbą instalacji jednej z poniższych wtyczek, "
+ "należy włączyć obsługę języka JavaScript."
+ 
+ # %1 is app name
+@@ -582,7 +582,7 @@
+ #: views/addons/searchengines.thtml:103
+ #, php-format
+ msgid "addons_searchengines_learn_howto"
+-msgstr "Naucz się, jak %1$s na stronie %2$s."
++msgstr "Dowiedz się, jak %1$s odwiedzając stronę %2$s."
+ 
+ # link path to search plugins instructions, relative to devmo
+ #: views/addons/searchengines.thtml:104
+@@ -592,7 +592,7 @@
+ # link text for "make your own" (opensearch engine)
+ #: views/addons/searchengines.thtml:104
+ msgid "addons_searchengines_makeyourown_link"
+-msgstr "stworzyć własne wtyczki wyszukiwarek"
++msgstr "stworzyć wtyczki wyszukiwarek"
+ 
+ # %1 is the link to mycroft.mozdev.org
+ #: views/addons/searchengines.thtml:102
+@@ -735,7 +735,7 @@
+ 
+ #: controllers/developers_controller.php:1033
+ msgid "devcp_addon_disabled_successfully"
+-msgstr "Dodatek wyłączony pomyślnie"
++msgstr "Dodatek został wyłączony"
+ 
+ #: controllers/developers_controller.php:1011
+ #: controllers/developers_controller.php:1012
+@@ -744,7 +744,7 @@
+ 
+ #: controllers/developers_controller.php:1040
+ msgid "devcp_addon_enabled_successfully"
+-msgstr "Dodatek włączony pomyślnie"
++msgstr "Dodatek został włączony"
+ 
+ #: controllers/developers_controller.php:924
+ #: controllers/developers_controller.php:1189
+@@ -769,7 +769,7 @@
+ #: controllers/previews_controller.php:178
+ #: controllers/previews_controller.php:287
+ msgid "devcp_addon_field_preview_caption_displaytitle"
+-msgstr "Podpis podglądu"
++msgstr "Opis podglądu"
+ 
+ #: controllers/developers_controller.php:944
+ #: controllers/developers_controller.php:1209
+@@ -784,7 +784,7 @@
+ #: controllers/developers_controller.php:954
+ #: controllers/developers_controller.php:1316
+ msgid "devcp_addon_field_versionnotes_displaytitle"
+-msgstr "Notatki o wersji"
++msgstr "Informacje o wersji"
+ 
+ #: controllers/developers_controller.php:1348
+ #: controllers/developers_controller.php:1349
+@@ -800,12 +800,12 @@
+ #: views/developers/add_step5.thtml:77
+ msgid "devcp_addon_submission_makechanges"
+ msgstr ""
+-"Odwiedź stronę %1$s, aby dokonać zmian w twoim zgłoszeniu, lub powróć do "
+-"panelu kontrolnego programisty."
++"Aby dokonać zmian w zgłoszeniu odwiedź stronę %1$s lub %2$s "
++"do panelu kontrolnego programisty."
+ 
+ #: views/developers/add_step5.thtml:77
+ msgid "devcp_addon_submission_makechanges_devcp_link"
+-msgstr "naciśnij tutaj"
++msgstr "powróć"
+ 
+ #: views/developers/add_step5.thtml:77
+ msgid "devcp_addon_submission_makechanges_link"
+@@ -815,8 +815,8 @@
+ msgid "devcp_addon_submission_pending"
+ msgstr ""
+ "Ta wersja została umieszczona w piaskownicy, gdzie oczekuje na recenzje od "
+-"testerów piaskownicy i edytorów dodatków Mozilli. O podjętej decyzji "
+-"zostaniesz o niej poinformowany(-a) e-mailem."
++"testerów i edytorów dodatków Mozilli. O podjętej decyzji "
++"zostaniesz poinformowany(-a) e-mailem."
+ 
+ # %1 is the link to the sandbox information page
+ #: views/developers/add_step5.thtml:64
+@@ -841,7 +841,7 @@
+ 
+ #: views/developers/add_step5.thtml:52
+ msgid "devcp_addon_submission_success"
+-msgstr "Twoje zgłoszenie dodatku zostało zakończone pomyślnie."
++msgstr "Dodatek został zgłoszony."
+ 
+ #: views/developers/add_step5.thtml:55
+ msgid "devcp_addon_submission_trusted_public"
+@@ -856,7 +856,7 @@
+ 
+ #: controllers/developers_controller.php:1100
+ msgid "devcp_addon_updated_successfully"
+-msgstr "Dodatek wysłany pomyślnie"
++msgstr "Dodatek został wysłany"
+ 
+ # %1 is the link to the preview upload page
+ #: views/developers/add_step5.thtml:72
+@@ -898,7 +898,7 @@
+ 
+ #: controllers/developers_controller.php:171
+ msgid "devcp_comments_updated"
+-msgstr "Komentarze autora zaktualizowane."
++msgstr "Komentarze autora zostały zaktualizowane."
+ 
+ #: views/developers/details.thtml:106
+ msgid "devcp_details_addpreview_link"
+@@ -1019,7 +1019,7 @@
+ 
+ #: views/developers/edit.thtml:116
+ msgid "devcp_edit_label_allow_viewsource"
+-msgstr "Pozwól użytkownikom przeglądać pliki źródłowe z sieci"
++msgstr "Pozwól przeglądać pliki źródłowe"
+ 
+ #: views/developers/edit.thtml:71
+ msgid "devcp_edit_label_categories"
+@@ -1031,11 +1031,11 @@
+ 
+ #: views/developers/edit.thtml:128
+ msgid "devcp_edit_label_externalsoftware"
+-msgstr "Ten dodatek zawiera zewnętrzne oprogramowanie"
++msgstr "Dodatek zawiera zewnętrzne oprogramowanie"
+ 
+ #: views/developers/edit.thtml:107
+ msgid "devcp_edit_label_icon_delete"
+-msgstr "Wyczyśc jedynie istniejącą ikonę"
++msgstr "Wyczyść jedynie istniejącą ikonę"
+ 
+ #: views/developers/edit.thtml:101
+ msgid "devcp_edit_label_icon_new"
+@@ -1051,7 +1051,7 @@
+ 
+ #: views/developers/edit.thtml:124
+ msgid "devcp_edit_label_sitespecific"
+-msgstr "To jest dodatek specyficzny dla konkretnej strony"
++msgstr "To jest dodatek dedykowany dla konkretnej strony"
+ 
+ #: views/developers/edit.thtml:145
+ msgid "devcp_edit_submit_addon_disable"
+@@ -1131,7 +1131,7 @@
+ 
+ #: views/developers/editversion.thtml:114
+ msgid "devcp_editversion_reviewernotes"
+-msgstr "Notki dla recenzenta"
++msgstr "Informacje dla recenzenta"
+ 
+ #: views/developers/editversion.thtml:119
+ msgid "devcp_editversion_submit_update"
+@@ -1158,11 +1158,11 @@
+ #: controllers/developers_controller.php:653
+ msgid "devcp_error_addonname_not_unique"
+ msgstr ""
+-"Nazwa Twojego dodatku już występuje w bazie danych. Prosimy upewnić się, że:"
+-"<br /> <li>Wprowadzone kody GUID się zgadzają. Najczęstszym powodem tego "
+-"błędu są niepasujące kody GUID.</li> <li>Nie masz zduplikowanych wpisów w "
+-"bazie danych. Jeśli masz, należy zaktualizować tamten wpis lub skasować go i "
+-"spróbować ponownie.</li>"
++"Taka nazwa dodatku już występuje w bazie danych. Prosimy upewnić się, czy:"
++"<br /> <li>Wprowadzone kody GUID są takie same. Najczęstszym powodem "
++"tego błędu są niepasujące kody GUID.</li> <li>Nie ma zduplikowanych "
++"wpisów w bazie danych. Jeśli są, należy zaktualizować poprzedni wpis "
++"lub usunąć go i spróbować ponownie.</li>"
+ 
+ #: controllers/components/developers.php
+ msgid "devcp_error_appversion_reference_link"
+@@ -1174,7 +1174,7 @@
+ 
+ #: controllers/developers_controller.php:755
+ msgid "devcp_error_describe_changes"
+-msgstr "Opisz zmiany wprowadzono w tej aktualizacji dodatku."
++msgstr "Opisz zmiany wprowadzone w tej aktualizacji dodatku."
+ 
+ #: controllers/components/developers.php
+ msgid "devcp_error_file_extension"
+@@ -1216,7 +1216,7 @@
+ #, php-format
+ msgid "devcp_error_identical_version_exists"
+ msgstr ""
+-"Identyczna wersja (%s) dla tego dodatku i platformy została już dodana."
++"Już istnieje identyczna wersja (%s) tego dodatku i platformy."
+ 
+ #: controllers/developers_controller.php:420
+ msgid "devcp_error_index_rdf_notfound"
+@@ -1339,7 +1339,7 @@
+ #: views/developers/add_step2.thtml:108
+ msgid "devcp_form_categories_nextstep"
+ msgstr ""
+-"Kategorie dla twojego nowego typu dodatku zostaną wyświetlone w następnym "
++"Kategorie dla nowego typu dodatku zostaną wyświetlone w następnym "
+ "kroku."
+ 
+ #: views/developers/add_step2.thtml:106
+@@ -1380,7 +1380,7 @@
+ 
+ #: views/developers/add_step2.thtml:136
+ msgid "devcp_form_label_allow_viewsource"
+-msgstr "Pozwól innym oglądać kod źródłowy plików w trybie online."
++msgstr "Pozwól innym przeglądać kod źródłowy plików w trybie online."
+ 
+ #: views/developers/add_step2.thtml:98
+ msgid "devcp_form_label_author_email"
+@@ -1429,7 +1429,7 @@
+ #: views/developers/add_step1.thtml:76 views/developers/add_step1.thtml:84
+ #: views/developers/add_step1.thtml:93
+ msgid "devcp_form_label_platforms"
+-msgstr "Wspierane platformy"
++msgstr "Obsługiwane platformy"
+ 
+ #: views/developers/add_step2.thtml:140
+ msgid "devcp_form_label_prerelease"
+@@ -1441,7 +1441,7 @@
+ 
+ #: views/developers/add_step2.thtml:144
+ msgid "devcp_form_label_sitespecific"
+-msgstr "To jest dodatek specyficzny dla konkretnej strony"
++msgstr "To jest dodatek dedykowany dla konkretnej witryny"
+ 
+ #: views/developers/add_step2.thtml:116
+ msgid "devcp_form_label_summary"
+@@ -1524,7 +1524,7 @@
+ 
+ #: views/developers/add_step5.thtml:44
+ msgid "devcp_header_step5_success"
+-msgstr "Zakończone powodzeniem"
++msgstr "Zakończone"
+ 
+ #: views/developers/index.thtml:43
+ msgid "devcp_index_header_myaddons"
+@@ -1688,11 +1688,11 @@
+ #: views/developers/add_step0.thtml:52
+ msgid "devcp_review_agreement_please"
+ msgstr ""
+-"Najpierw należy sprawdzić i zaakceptować następującą Umowę programisty."
++"Najpierw należy przeczytać i zaakceptować Umowę autorską."
+ 
+ #: views/developers/add_step1.thtml:124
+ msgid "devcp_skip_reviewing_addon_info"
+-msgstr "Pomiń aktualizację informacji o moim dodatku"
++msgstr "Pomiń aktualizację informacji o dodatku"
+ 
+ #: controllers/developers_controller.php:249
+ msgid "devcp_submissions_disabled"
+@@ -1700,11 +1700,11 @@
+ 
+ #: views/developers/add_step0.thtml:59
+ msgid "devcp_submit_accept_dev_agreement"
+-msgstr "Zgadzam się"
++msgstr "Akceptuję"
+ 
+ #: views/developers/add_step0.thtml:58
+ msgid "devcp_submit_decline_dev_agreement"
+-msgstr "Nie zgadzam się"
++msgstr "Odrzucam"
+ 
+ #: views/developers/summary.thtml:65
+ msgid "devcp_summary_admin_disabled"
+@@ -1726,7 +1726,7 @@
+ #: views/developers/summary.thtml:73
+ #, php-format
+ msgid "devcp_summary_noaddons_submit_one"
+-msgstr "Nie masz żadnych dodatków. Kliknij %s, by jedno wysłać."
++msgstr "Nie masz żadnych dodatków. Kliknij %s, aby wysłać dodatek."
+ 
+ #: views/developers/summary.thtml:74
+ msgid "devcp_summary_noaddons_submit_one_link"
+@@ -1775,11 +1775,11 @@
+ # %1 is the link to the preview upload page
+ #: views/developers/add_step5.thtml:69
+ msgid "devcp_theme_upload_preview"
+-msgstr "Należy upewnić się, czy %s swojego motywu."
++msgstr "Proszę upewnić się, czy %s swojego motywu."
+ 
+ #: views/developers/add_step5.thtml:69
+ msgid "devcp_theme_upload_preview_link"
+-msgstr "wysyła się podgląd"
++msgstr "wysyłasz podgląd"
+ 
+ #: controllers/developers_controller.php:419
+ #, php-format
+@@ -1793,7 +1793,7 @@
+ #: controllers/developers_controller.php:1232
+ #: controllers/developers_controller.php:1233
+ msgid "devcp_version_edit_pagetitle"
+-msgstr "Edycja wersi"
++msgstr "Edycja wersji"
+ 
+ #: controllers/developers_controller.php:1277
+ msgid "devcp_version_updated_successfully"
+@@ -1869,7 +1869,7 @@
+ 
+ #: views/editors/reviewlog.thtml
+ msgid "editorcp_reviewlog_entries_between"
+-msgstr "Pokaż wpisy między %s i %s"
++msgstr "Wyświetl wpisy między %s i %s"
+ 
+ #: views/editors/reviewlog.thtml
+ msgid "editorcp_reviewlog_none_found"
+@@ -1972,7 +1972,7 @@
+ 
+ #: controllers/editors_controller.php:243
+ msgid "editors_pre-release"
+-msgstr "Wydanie przedpremierowe"
++msgstr "Wydanie wstępne"
+ 
+ # %1 is the app name
+ #: views/editors/queue.thtml:75
+@@ -2039,9 +2039,9 @@
+ msgid "editors_review_details_superreview"
+ msgstr ""
+ "Jeśli masz jakieś zastrzeżenia do bezpieczeństwa tego dodatku, kwestii "
+-"licencyjnych lub innych, na które powinien spojrzeć administrator, wpisz "
+-"swoje uwagi do pola poniżej. Zostaną one przekazane administratorowi, a nie "
+-"autorowi.."
++"licencyjnych lub innych, na które powinien zwrócić uwagę administrator, "
++"wpisz swoje uwagi do pola poniżej. Zostaną one przekazane administratorowi, "
++"a nie autorowi."
+ 
+ #: views/editors/review.thtml:117
+ msgid "editors_review_file_viewcontents_link"
+@@ -2187,7 +2187,7 @@
+ 
+ #: controllers/editors_controller.php:351
+ msgid "editors_reviewed_successfully"
+-msgstr "Recenzja wysłana pomyślnie."
++msgstr "Recenzja została wysłana."
+ 
+ #: views/editors/reviews_queue.thtml:59
+ msgid "editors_reviews_action_approve"
+@@ -2207,7 +2207,7 @@
+ 
+ #: controllers/editors_controller.php:495
+ msgid "editors_reviews_processed"
+-msgstr "Recenzje wysłane pomyślnie!"
++msgstr "Recenzje zostały wysłane!"
+ 
+ #: views/editors/reviews_queue.thtml:72
+ msgid "editors_reviews_queue_empty"
+@@ -2219,7 +2219,7 @@
+ 
+ #: controllers/editors_controller.php:239
+ msgid "editors_site_specific"
+-msgstr "Specyficzne dla danej strony"
++msgstr "Stworzone dla danej witryny"
+ 
+ #: controllers/editors_controller.php:170
+ msgid "editors_submissiontype_new"
+@@ -2289,11 +2289,11 @@
+ #: controllers/components/simple_acl.php:83 controllers/components/amo.php:452
+ #: controllers/components/amo.php:453 controllers/components/amo.php:454
+ msgid "error_access_denied"
+-msgstr "Brak dostępu"
++msgstr "Dostęp zabroniony"
+ 
+ #: views/errors/error401.thtml:53
+ msgid "error_access_denied_message"
+-msgstr "Brak uprawnienień do przeglądania tej strony."
++msgstr "Nie posiadasz uprawnienień do przeglądania tej strony."
+ 
+ #: controllers/previews_controller.php:118
+ msgid "error_addon_access_denied"
+@@ -2325,7 +2325,7 @@
+ 
+ #: views/users/register.thtml:52
+ msgid "error_email_invalid"
+-msgstr "Podany e-mail jest niepoprawny."
++msgstr "Podany adres e-mail jest niepoprawny."
+ 
+ #: views/reviews/add.thtml:53 views/reviews/add.thtml:67
+ #: views/users/register.thtml:57 views/users/register.thtml:67
+@@ -2352,7 +2352,7 @@
+ #: controllers/developers_controller.php:1046
+ #: controllers/groups_controller.php:80 controllers/groups_controller.php:102
+ msgid "error_formerrors"
+-msgstr "Znaleziono błędy w formularzu. Popraw je i wyślij ponownie."
++msgstr "W formularzu są błędy. Proszę je poprawić i wysłać ponownie."
+ 
+ #: views/developers/add_step2.thtml:113 views/users/edit.thtml:74
+ msgid "error_invalid_url"
+@@ -2417,7 +2417,7 @@
+ 
+ #: views/users/login.thtml:60
+ msgid "error_username_or_pw_wrong"
+-msgstr "Zła nazwa użytkownika lub hasło."
++msgstr "Nieprawidłowa nazwa użytkownika lub hasło."
+ 
+ #: controllers/developers_controller.php:1244
+ #: controllers/editors_controller.php:321
+@@ -2439,10 +2439,10 @@
+ #: views/elements/footer.thtml:81
+ msgid "footer_disclaimer"
+ msgstr ""
+-"Mozilla umieszcza odnośniki do tych programówi przez uprzejmość, proszę nie "
+-"składać nam skarg, ani nie wysyłać informacji związanych z tymi programami. "
+-"Wszelkie pytania, reklamacje i roszczenia, dotyczące tych aplikacji, należy "
+-"kierować do właściwych sprzedawców oprogramowania."
++"Mozilla umieszcza odnośniki do tych aplikacji grzecznościowo, "
++"zatem prosimy nie kierować do nas uwag i zażaleń dotyczących "
++"ich działania. Wszelkie pytania, reklamacje i roszczenia "
++"należy kierować do ich twórców."
+ 
+ #: views/elements/footer.thtml:67
+ msgid "footer_lang_form_lang_submit_go"
+@@ -2537,7 +2537,7 @@
+ 
+ #: webroot/discussions/themes/addons/settings_category_list.php:7
+ msgid "forum_category_removed"
+-msgstr "Kategoria usunięta"
++msgstr "Kategoria została usunięta"
+ 
+ #: webroot/discussions/themes/addons/settings_category_list.php:18
+ msgid "forum_category_reorder_notes"
+@@ -2545,7 +2545,7 @@
+ 
+ #: webroot/discussions/themes/addons/settings_category_list.php:9
+ msgid "forum_category_saved"
+-msgstr "Kategoria zapisana"
++msgstr "Kategoria została zapisana"
+ 
+ #: webroot/discussions/themes/addons/settings_category_edit.php:43
+ #: webroot/discussions/themes/addons/settings_role_edit.php:51
+@@ -2565,15 +2565,15 @@
+ 
+ #: webroot/discussions/themes/addons/comments.php:87
+ msgid "forum_confirm_show_comment"
+-msgstr "Czy na pewno pokazać ten komentarz?"
++msgstr "Czy na pewno wyświetlić ten komentarz?"
+ 
+ #: webroot/discussions/themes/addons/settings_role_list.php:56
+ msgid "forum_create_a_new_role"
+-msgstr "Stwórz nową rolę"
++msgstr "Utwórz nową rolę"
+ 
+ #: webroot/discussions/themes/addons/settings_category_list.php:49
+ msgid "forum_create_new_category"
+-msgstr "Stwórz nową kategorię"
++msgstr "Utwórz nową kategorię"
+ 
+ #: webroot/discussions/themes/addons/comments.php:28
+ msgid "forum_current_category"
+@@ -2581,7 +2581,7 @@
+ 
+ #: webroot/discussions/themes/addons/settings_category_edit.php:22
+ msgid "forum_define_new_category"
+-msgstr "Stwórz nową kategorię"
++msgstr "Utwórz nową kategorię"
+ 
+ #: webroot/discussions/themes/addons/settings_role_edit.php:24
+ msgid "forum_define_new_role"
+@@ -2641,7 +2641,7 @@
+ 
+ #: webroot/discussions/themes/addons/settings_category_edit.php:20
+ msgid "forum_modify_category_definition"
+-msgstr "Zmień opis kategorii"
++msgstr "Zmień definicję kategorii"
+ 
+ #: webroot/discussions/themes/addons/settings_role_edit.php:19
+ msgid "forum_modify_role_definition"
+@@ -2653,7 +2653,7 @@
+ 
+ #: webroot/discussions/themes/addons/settings_role_list.php:11
+ msgid "forum_new_role_saved"
+-msgstr "Stworzono nową rolę"
++msgstr "Utworzono nową rolę"
+ 
+ #: webroot/discussions/themes/addons/discussions.php:8
+ msgid "forum_no_discussions_found"
+@@ -2663,7 +2663,7 @@
+ #: webroot/discussions/themes/addons/settings_role_edit.php:51
+ #: webroot/discussions/themes/addons/settings_role_edit.php:67
+ msgid "forum_none"
+-msgstr "Nie"
++msgstr "Brak"
+ 
+ #: webroot/discussions/library/Vanilla/Vanilla.Control.DiscussionForm.php:53
+ msgid "forum_not_signed_in"
+@@ -2707,7 +2707,7 @@
+ #: webroot/discussions/library/Vanilla/Vanilla.Control.DiscussionForm.php:98
+ #: webroot/discussions/library/Vanilla/Vanilla.Control.DiscussionForm.php:137
+ msgid "forum_permission_error"
+-msgstr "Brak uprawnień"
++msgstr "Brak praw dostępu"
+ 
+ #: webroot/discussions/themes/addons/settings_role_remove.php:32
+ #: webroot/discussions/themes/addons/settings_category_remove.php:31
+@@ -2753,7 +2753,7 @@
+ #: webroot/discussions/library/Framework/Framework.Class.Validator.php:91
+ #, php-format
+ msgid "forum_required_input"
+-msgstr "%1$s wymaga wprowadzenia"
++msgstr "%1$s - pole wymagane"
+ 
+ #: webroot/discussions/themes/addons/settings_role_edit.php:46
+ msgid "forum_role_abilities"
+@@ -2796,7 +2796,7 @@
+ 
+ #: webroot/discussions/themes/addons/settings_role_list.php:19
+ msgid "forum_role_reorder_notes"
+-msgstr "Sortuj uwagi ról"
++msgstr "Zmiana kolejności ról - uwagi"
+ 
+ #: webroot/discussions/themes/addons/settings_role_list.php:9
+ msgid "forum_role_saved"
+@@ -2864,7 +2864,7 @@
+ 
+ #: webroot/discussions/themes/addons/discussion_form.php:43
+ msgid "forum_start_your_discussion"
+-msgstr "Rozpocznij swoją dyskusję"
++msgstr "Rozpocznij dyskusję"
+ 
+ # %1 is username
+ #: webroot/discussions/themes/addons/discussion.php:21
+@@ -2958,7 +2958,7 @@
+ 
+ #: views/elements/install.thtml:62
+ msgid "install_error_addon_not_found"
+-msgstr "Ten dodatek nie jest dostępny."
++msgstr "Ten dodatek jest niedostępny."
+ 
+ #: views/elements/addon_list_options.thtml:45
+ msgid "list_sortby_name"
+@@ -2991,7 +2991,7 @@
+ #: views/elements/addon_list_options.thtml:50
+ msgid "list_sortby_updated_explanation"
+ msgstr ""
+-"Data ostatniej publicznej aktualizacji dodatku, od najnowszego do "
++"Data ostatniej publikacji aktualizacji dodatku, od najnowszego do "
+ "najstarszego"
+ 
+ # In a user list: user 1, user 2, "others"
+@@ -3017,8 +3017,8 @@
+ #: views/pages/appversions.thtml:82
+ msgid "pages_appversions_required_files"
+ msgstr ""
+-"Jeśli aplikacja, w której ma pracować Twój dodatek, nie wymaga install.rdf, "
+-"musisz utworzyć go wg opisu na %s i dołączyć do dodatku."
++"Nawet jeśli aplikacja, w której ma pracować Twój dodatek nie wymaga pliku install.rdf, "
++"to i tak musisz dołączyć jeden z wymaganych elementów, opisanych %s."
+ 
+ #: views/pages/appversions.thtml:82
+ msgid "pages_appversions_required_files_link"
+@@ -3259,7 +3259,7 @@
+ 
+ #: views/users/register.thtml:80 views/users/edit.thtml:64
+ msgid "user_form_hideemail"
+-msgstr "Ukryj e-mail"
++msgstr "Ukryj adres e-mail"
+ 
+ #: views/users/register.thtml:84 views/users/edit.thtml:72
+ msgid "user_form_homepage"
+@@ -3295,7 +3295,7 @@
+ 
+ #: views/users/edit.thtml:68
+ msgid "user_form_showsandbox"
+-msgstr "Pokazać \"Piaskownicę\"?"
++msgstr "Wyświetlić \"Piaskownicę\"?"
+ 
+ #: views/users/edit.thtml:95
+ msgid "user_form_submit_edit"
+@@ -3338,11 +3338,11 @@
+ 
+ #: views/users/login.thtml:84
+ msgid "user_pwreset_link"
+-msgstr "Zapomniane hasło?"
++msgstr "Nie pamiętasz hasła?"
+ 
+ #: controllers/users_controller.php:232
+ msgid "user_pwreset_link_sent"
+-msgstr "Dane potrzebne do zresetowania hasła zostały wysłany e-mailem."
++msgstr "Dane potrzebne do zresetowania hasła zostały wysłane e-mailem."
+ 
+ #: controllers/users_controller.php:278
+ msgid "user_pwreset_okay"
+@@ -3366,8 +3366,8 @@
+ #, php-format
+ msgid "user_register_click_confirm_link"
+ msgstr ""
+-"Odnośnik aktywujący konto został wysłany e-mailem na adres %1$s. Należy w "
+-"niego kliknąć przed pierwszym logowaniem do %2$s Add-ons."
++"Dane do aktywowania konta użytkownika zostały wysłane e-mailem na adres %1$s. Aby móc zalogować "
++"się do %2$s Add-ons należy dokonać aktywacji konta klikając na odnośniku znajdującym się w wiadomości."
+ 
+ # %1 is the user's email address
+ #: views/users/register_complete.thtml:49
+@@ -3375,8 +3375,8 @@
+ msgid "user_register_confirm_email_sent"
+ msgstr ""
+ "Na Twój adres e-mail %1$s została wysłana wiadomość zawierająca dane "
+-"doaktywacji konta. Aby móc się zalogować, należy dokonać jego "
+-"aktywacjiklikając na odnośnik znajdujący się w wiadomości."
++"do aktywacji konta. Aby móc się zalogować, należy dokonać jego "
++"aktywacji klikając na odnośnik znajdujący się w wiadomości."
+ 
+ #: views/users/activatefirst.thtml:50
+ msgid "user_register_confirmation_link_text"
+@@ -3392,9 +3392,9 @@
+ msgid "user_register_resend_confirmation_link"
+ msgstr ""
+ "Jeśli w Twojej skrzynce odbiorczej nie ma wiadomości z danymi "
+-"dopotwierdzenia konta, upewnij się, czy nie została ona oznaczona "
+-"jakoniechciana (\"spam\"). W razie potrzeby, możesz poprosić o %1$s na "
+-"podanywyżej adres."
++"do potwierdzenia konta, upewnij się, czy nie została ona oznaczona "
++"jako niechciana (\"spam\"). W razie potrzeby, możesz poprosić o %1$s na "
++"podany wyżej adres."
+ 
+ # %1 is the link to the Mozilla Add-ons front page
+ #: views/users/register_complete.thtml:51
+@@ -3450,8 +3450,8 @@
+ #, php-format
+ msgid "users_login_sandbox_display_warning"
+ msgstr ""
+-"Dodatek którego szukasz, jest aktualnie w piaskownicy. Jeśli posiadasz już "
+-"konto w Mozilla Add-ons, zaloguj się, lub <a href=\"%1$s\">dowiedz się "
++"Dodatek którego szukasz znajduje się w piaskownicy. Jeśli posiadasz już "
++"konto w Mozilla Add-ons, zaloguj się lub <a href=\"%1$s\">dowiedz się "
+ "więcej o piaskownicy.</a>"
+ 
+ # %1 is the link to the sandbox/policy explanation page
+@@ -3461,7 +3461,7 @@
+ msgid "users_login_sandbox_page_warning"
+ msgstr ""
+ "Strona której szukasz jest częścią piaskownicy. Jeśli posiadasz już konto w "
+-"Mozilla Add-ons, zaloguj się, lub <a href=\"%1$s\">dowiedz się więcej o "
++"Mozilla Add-ons, zaloguj się lub <a href=\"%1$s\">dowiedz się więcej o "
+ "piaskownicy.</a>"
+ 
+ #: controllers/users_controller.php:208 controllers/users_controller.php:210
+

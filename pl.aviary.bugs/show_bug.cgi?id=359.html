@@ -1,0 +1,1945 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>359 &ndash; Reorganizacja Bugzilli</title>
+
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<link href="data/assets/7aa6ea67750936a0368541421bdcd5ee.css" rel="stylesheet" type="text/css">
+
+
+
+    
+<script type="text/javascript" src="data/assets/a7c2f3a028f17a9aa60f56dc9d6e732d.js"></script>
+
+    <script type="text/javascript">
+    <!--
+        YAHOO.namespace('bugzilla');
+        YAHOO.util.Event.addListener = function (el, sType, fn, obj, overrideContext) {
+               if ( ("onpagehide" in window || YAHOO.env.ua.gecko) && sType === "unload") { sType = "pagehide"; };
+               var capture = ((sType == "focusin" || sType == "focusout") && !YAHOO.env.ua.ie) ? true : false;
+               return this._addListener(el, this._getType(sType), fn, obj, overrideContext, capture);
+         };
+        if ( "onpagehide" in window || YAHOO.env.ua.gecko) {
+            YAHOO.util.Event._simpleRemove(window, "unload", 
+                                           YAHOO.util.Event._unload);
+        }
+        
+        function unhide_language_selector() { 
+            YAHOO.util.Dom.removeClass(
+                'lang_links_container', 'bz_default_hidden'
+            ); 
+        } 
+        YAHOO.util.Event.onDOMReady(unhide_language_selector);
+
+        
+        var BUGZILLA = {
+            param: {
+                cookiepath: '\/',
+                maxusermatches: 1000
+            },
+            constant: {
+                COMMENT_COLS: 80
+            },
+            string: {
+                
+
+                attach_desc_required:
+                    "You must enter a Description for this attachment.",
+                component_required:
+                    "You must select a Component for this bug.",
+                description_required:
+                    "You must enter a Description for this bug.",
+                short_desc_required:
+                    "You must enter a Summary for this bug.",
+                version_required:
+                    "You must select a Version for this bug."
+            }
+              , api_token: ''
+        };
+
+    if (history && history.replaceState) {
+      if(!document.location.href.match(/show_bug\.cgi/)) {
+        history.replaceState( null,
+                             "359 – Reorganizacja Bugzilli",
+                             "show_bug.cgi?id=359" );
+        document.title = "359 – Reorganizacja Bugzilli";
+      }
+      if (document.location.href.match(/show_bug\.cgi\?.*list_id=/)) {
+        var href = document.location.href;
+        href = href.replace(/[\?&]+list_id=(\d+|cookie)/, '');
+        history.replaceState(null, "359 – Reorganizacja Bugzilli", href);
+      }
+    }
+    YAHOO.util.Event.onDOMReady(function() {
+      initDirtyFieldTracking();
+
+    });
+    // -->
+    </script>
+<script type="text/javascript" src="data/assets/daf5e0fb6826e6a35280e622913f0c4a.js"></script>
+
+    
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+                       title="Bugzilla" href="search_plugin.cgi">
+    <link rel="shortcut icon" href="images/favicon.ico">
+  </head>
+
+  <body 
+        class="bugs-aviary-pl
+                 bz_bug
+                 bz_status_RESOLVED
+                 bz_product_&#X2A;.aviary.pl
+                 bz_component_bugs.aviary.pl
+                 bz_bug_359 yui-skin-sam">
+
+  <div id="header"><div id="banner">
+  </div>
+
+    <div id="titles">
+      <span id="title">Bugzilla &ndash; Bug&nbsp;359</span>
+
+        <span id="subtitle" class="subheader">Reorganizacja Bugzilli</span>
+
+        <span id="information" class="header_addl_info">Last modified: 2009-01-01 12:34:19 CET</span>
+    </div>
+
+
+    <div id="common_links"><ul class="links">
+  <li><a href="index.html">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi.html">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi.html">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi.html">Search</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="http://bugs.aviary.pl/buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input type="hidden" id="no_redirect_top" name="no_redirect" value="0">
+    <script type="text/javascript">
+      if (history && history.replaceState) {
+        var no_redirect = document.getElementById("no_redirect_top");
+        no_redirect.value = 1;
+      }
+    </script>
+    <input class="txt" type="text" id="quicksearch_top" name="quicksearch" 
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search" 
+           id="find_top"></form>
+  <a href="page.cgi%3Fid=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="report.cgi.html">Reports</a></li>
+
+  <li>
+      <span class="separator">| </span>
+        <a href="request.cgi.html">Requests</a></li>
+
+
+  <li>
+        <span class="separator">| </span>
+        <a href="https://bugzilla.readthedocs.org/en/5.0/using/understanding.html" target="_blank">Help</a>
+      </li>
+    
+      <li id="new_account_container_top">
+        <span class="separator">| </span>
+        <a href="createaccount.cgi.html">New&nbsp;Account</a>
+      </li>
+
+    <li id="mini_login_container_top">
+  <span class="separator">| </span>
+  <a id="login_link_top" href="show_bug.cgi%3Fid=359&amp;GoAheadAndLogIn=1.html"
+     onclick="return show_mini_login_form('_top')">Log In</a>
+
+  <form action="show_bug.cgi%3Fid=359.html" method="POST"
+        class="mini_login bz_default_hidden"
+        id="mini_login_top">
+    <input id="Bugzilla_login_top" required
+           name="Bugzilla_login" class="bz_login"
+        type="email" placeholder="Email Address">
+    <input class="bz_password" name="Bugzilla_password" type="password"
+           id="Bugzilla_password_top" required
+           placeholder="Password">
+    <input type="hidden" name="Bugzilla_login_token"
+           value="1469820042-TvlO2ZkVY5e-eo5_Bh-WnWxkj4mcbWDyBR6CEh4_zJ0">
+    <input type="submit" name="GoAheadAndLogIn" value="Log in"
+            id="log_in_top">
+    <a href="show_bug.cgi%3Fid=359.html#" onclick="return hide_mini_login_form('_top')">[x]</a>
+  </form>
+</li>
+
+
+  <li id="forgot_container_top">
+    <span class="separator">| </span>
+    <a id="forgot_link_top" href="show_bug.cgi%3Fid=359&amp;GoAheadAndLogIn=1.html#forgot"
+       onclick="return show_forgot_form('_top')">Forgot Password</a>
+    <form action="http://bugs.aviary.pl/token.cgi" method="post" id="forgot_form_top"
+          class="mini_forgot bz_default_hidden">
+      <label for="login_top">Login:</label>
+      <input name="loginname" size="20" id="login_top" required
+          type="email" placeholder="Your Email Address">
+      <input id="forgot_button_top" value="Reset Password" type="submit">
+      <input type="hidden" name="a" value="reqpw">
+      <input type="hidden" id="token_top" name="token"
+             value="1469820042-6ml3Aaphncx4w2eDd7-BWpythDHTJHObrnOfHhpNHv0">
+      <a href="show_bug.cgi%3Fid=359.html#" onclick="return hide_forgot_form('_top')">[x]</a>
+    </form>
+  </li>
+</ul>
+    </div>
+  </div>
+
+  <div id="bugzilla-body">
+
+
+<script type="text/javascript">
+<!--
+
+//-->
+</script>
+
+<form name="changeform" id="changeform" method="post" action="http://bugs.aviary.pl/process_bug.cgi">
+
+  <input type="hidden" name="delta_ts" value="2009-01-01 12:34:19">
+  <input type="hidden" name="id" value="359">
+  <input type="hidden" name="token" value="1469820042-rzYaADQ3pemCHlNa16Y-XEwLrtDKmTuxwksAEhLUbYs">
+<div class="bz_short_desc_container edit_form">
+     <a href="show_bug.cgi%3Fid=359.html"><b>Bug&nbsp;359</b></a> <span id="summary_container" class="bz_default_hidden">
+      - <span id="short_desc_nonedit_display">Reorganizacja Bugzilli</span>
+     </span>
+
+    <div id="summary_input"><span class="field_label "
+    id="field_label_short_desc">
+
+
+  <a 
+      title="The bug summary is a short sentence which succinctly describes what the bug is about."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#short_desc"
+  >Summary:</a>
+
+</span>Reorganizacja Bugzilli
+    </div>
+  </div>
+  <script type="text/javascript">
+    hideEditableField('summary_container',
+                      'summary_input',
+                      'summary_edit_action',
+                      'short_desc',
+                      'Reorganizacja Bugzilli' );
+  </script>
+  <table class="edit_form">
+    <tr>
+      
+      <td id="bz_show_bug_column_1" class="bz_show_bug_column">     
+        <table>
+          <tr>
+    <th class="field_label">
+      <a href="page.cgi%3Fid=fields.html#bug_status">Status</a>:
+    </th>
+    <td id="bz_field_status">
+      <span id="static_bug_status">RESOLVED
+          FIXED
+      </span>
+    </td>
+  </tr>
+<tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+<tr><th class="field_label "
+    id="field_label_alias">
+
+
+  <a 
+      title="A short, unique name assigned to a bug in order to assist with looking it up and referring to it in other places in Bugzilla."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#alias"
+  >Alias:</a>
+
+</th>
+    <td>
+        None
+    </td>
+  </tr>
+<tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+<tr><th class="field_label "
+    id="field_label_product">
+
+
+  <a 
+      title="Bugs are categorised into Products and Components. Select a Classification to narrow down this list."
+      class="field_help_link"
+      href="describecomponents.cgi.html"
+  >Product:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_product" >*.aviary.pl
+
+</td>
+    </tr>
+
+    
+    <tr class="bz_default_hidden"><th class="field_label "
+    id="field_label_classification">
+
+
+  <a 
+      title="Bugs are categorised into Classifications, Products and Components. classifications is the top-level categorisation."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#classification"
+  >Classification:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_classification" >Strony WWW
+
+</td>
+    </tr>
+        
+    
+    
+    <tr><th class="field_label "
+    id="field_label_component">
+
+
+  <a 
+      title="Components are second-level categories; each belongs to a particular Product. Select a Product to narrow down this list."
+      class="field_help_link"
+      href="describecomponents.cgi%3Fproduct=*.aviary.pl.html"
+  >Component:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_component" >bugs.aviary.pl
+
+  (<a href="buglist.cgi%3Fcomponent=bugs.aviary.pl&amp;product=*.aviary.pl&amp;bug_status=__open__.html"
+      target="_blank">show other bugs</a>)
+</td>
+    </tr>
+    <tr><th class="field_label "
+    id="field_label_version">
+
+
+  <a 
+      title="The version field defines the version of the software the bug was found in."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#version"
+  >Version:</a>
+
+</th>
+<td>nieokreślona
+  </td>
+    </tr>
+        
+    
+        
+    <tr><th class="field_label "
+    id="field_label_rep_platform">
+
+
+  <a 
+      title="The hardware platform the bug was observed on. Note: When searching, selecting the option &quot;All&quot; only finds bugs whose value for this field is literally the word &quot;All&quot;."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#rep_platform"
+  >Hardware:</a>
+
+</th>
+      <td class="field_value">Wszystkie
+        Wszystkie
+      </td>
+    </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          
+          <tr>
+      <th class="field_label">
+        <label  accesskey="i">
+          <a href="page.cgi%3Fid=fields.html#importance"><u>I</u>mportance</a></label>:
+      </th>
+      <td>P2
+       krytyczny
+      </td>
+    </tr>
+          
+          <tr><th class="field_label "
+    id="field_label_assigned_to">
+
+
+  <a 
+      title="The person in charge of resolving the bug."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#assigned_to"
+  >Assignee:</a>
+
+</th>
+      <td><span class="vcard"><span class="fn">Piotr Komoda</span>
+</span>
+      </td>
+    </tr>
+
+    <tr><th class="field_label "
+    id="field_label_qa_contact">
+
+
+  <a 
+      title="The person responsible for confirming this bug if it is unconfirmed, and for verifying the fix once the bug has been resolved."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#qa_contact"
+  >QA Contact:</a>
+
+</th>
+      <td><span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+      </td>
+    </tr>
+    <script type="text/javascript">
+      assignToDefaultOnChange(['product', 'component'],
+        'splewako\x40aviary.pl',
+        'bugs-aviary-pl\x40l10n.bledy');
+    </script>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          <tr><th class="field_label "
+    id="field_label_bug_file_loc">
+
+
+  <a 
+      title="Bugs can have a URL associated with them - for example, a pointer to a web site where the problem is seen."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#bug_file_loc"
+  >URL:</a>
+
+</th>
+    <td>
+      <span id="bz_url_input_area">
+          <a href="http://bugs.mozillapl.org/"
+             rel="noreferrer">http://bugs.mozillapl.org/</a>
+      </span>
+    </td>
+  </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+
+          
+<tr><th class="field_label "
+    id="field_label_dependson">
+
+
+  <a 
+      title="The bugs listed here must be resolved before this bug can be resolved."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#dependson"
+  >Depends on:</a>
+
+</th>
+
+  <td>
+    <span id="dependson_input_area">
+    </span>
+
+  </td>
+  </tr>
+  
+  <tr><th class="field_label "
+    id="field_label_blocked">
+
+
+  <a 
+      title="This bug must be resolved before the bugs listed in this field can be resolved."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#blocked"
+  >Blocks:</a>
+
+</th>
+
+  <td>
+    <span id="blocked_input_area">
+    </span>
+
+  </td>
+  </tr>
+          
+        </table>
+      </td>
+      <td>
+        <div class="bz_column_spacer">&nbsp;</div>
+      </td>
+      
+      <td id="bz_show_bug_column_2" class="bz_show_bug_column">
+        <table>
+        <tr>
+    <th class="field_label">
+      Reported:
+    </th>
+    <td>2005-02-09 20:44 CET by <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+    </td>
+  </tr>
+  
+  <tr>
+    <th class="field_label">
+      Modified:
+    </th>
+    <td>2009-01-01 12:34 CET
+      (<a href="show_activity.cgi%3Fid=359.html">History</a>)
+    </td>
+  
+  </tr>
+<tr>
+      <th class="field_label">
+        <label  accesskey="a">
+          CC List:
+        </label>
+      </th>
+      <td>9 
+          users
+          <span id="cc_edit_area_showhide_container" class="bz_default_hidden">
+            (<a href="show_bug.cgi%3Fid=359.html#" id="cc_edit_area_showhide">show</a>)
+          </span>
+        <div id="cc_edit_area">
+          <br>
+            <select id="cc" multiple="multiple" size="5" >
+                <option value="akalla">akalla</option>
+                <option value="cleriic">cleriic</option>
+                <option value="gandalf">gandalf</option>
+                <option value="hubert+bap">hubert+bap</option>
+                <option value="mwawoczny">mwawoczny</option>
+                <option value="pitreck">pitreck</option>
+                <option value="smalolepszy">smalolepszy</option>
+                <option value="wadimd">wadimd</option>
+                <option value="yano78">yano78</option>
+            </select>
+        </div>
+          <script type="text/javascript">
+            hideEditableField( 'cc_edit_area_showhide_container', 
+                               'cc_edit_area', 
+                               'cc_edit_area_showhide', 
+                               '', 
+                               '');  
+          </script>
+      </td>
+    </tr>
+
+<tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+<tr><th class="field_label "
+    id="field_label_see_also">
+
+
+  <a 
+      title="This allows you to refer to bugs in other installations. You can enter a URL to a bug in the 'Add Bug URLs' field to note that that bug is related to this one. You can enter multiple URLs at once by separating them with whitespace. You should normally use this field to refer to bugs in other installations. For bugs in this installation, it is better to use the Depends on and Blocks fields."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#see_also"
+  >See Also:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_see_also" >
+
+</td>
+    </tr> 
+
+<tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+
+
+
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+          <hr id="bz_top_half_spacer">
+      </td>
+    </tr>
+  </table>
+
+  <table id="bz_big_form_parts">
+  <tr>
+  <td>
+
+    
+<script type="text/javascript">
+<!--
+function toggle_display(link) {
+    var table = document.getElementById("attachment_table");
+    var view_all = document.getElementById("view_all");
+    var hide_obsolete_url_parameter = "&hide_obsolete=1";
+    // Store current height for scrolling later
+    var originalHeight = table.offsetHeight;
+    var rows = YAHOO.util.Dom.getElementsByClassName(
+        'bz_tr_obsolete', 'tr', table);
+
+    for (var i = 0; i < rows.length; i++) {
+        bz_toggleClass(rows[i], 'bz_default_hidden');
+    }
+
+    if (YAHOO.util.Dom.hasClass(rows[0], 'bz_default_hidden')) {
+        link.innerHTML = "Show Obsolete";
+        view_all.href = view_all.href + hide_obsolete_url_parameter 
+    }
+    else {
+        link.innerHTML = "Hide Obsolete";
+        view_all.href = view_all.href.replace(hide_obsolete_url_parameter,"");
+    }
+
+    var newHeight = table.offsetHeight;
+    // This scrolling makes the window appear to not move at all.
+    window.scrollBy(0, newHeight - originalHeight);
+
+    return false;
+}
+//-->
+</script>
+
+<br>
+<table id="attachment_table">
+  <tr id="a0">
+    <th colspan="3" class="left">
+      Attachments
+    </th>
+  </tr>
+
+
+      <tr id="a1" class="bz_contenttype_text_plain">
+        <td>
+            <a href="attachment.cgi%3Fid=338"
+               title="View the content of the attachment">
+          <b>Diff alpha - beta</b></a>
+
+          <span class="bz_attach_extra_info">
+              (8.35 KB,
+                text/plain)
+
+            <br>
+            <a href="show_bug.cgi%3Fid=359.html#attach_338"
+               title="Go to the comment associated with the attachment">2005-03-04 22:53 CET</a>,
+
+            <span class="vcard"><span class="fn">Piotr Komoda</span>
+</span>
+          </span>
+        </td>
+
+          <td class="bz_attach_flags">
+              <i>no flags</i>
+          </td>
+
+        <td>
+          <a href="attachment.cgi%3Fid=338&amp;action=edit.html">Details</a>
+        </td>
+      </tr>
+      <tr id="a2" class="bz_contenttype_text_plain">
+        <td>
+            <a href="attachment.cgi%3Fid=342"
+               title="View the content of the attachment">
+          <b>Reorganizacja beta 2</b></a>
+
+          <span class="bz_attach_extra_info">
+              (5.25 KB,
+                text/plain)
+
+            <br>
+            <a href="show_bug.cgi%3Fid=359.html#attach_342"
+               title="Go to the comment associated with the attachment">2005-03-10 03:50 CET</a>,
+
+            <span class="vcard"><span class="fn">Piotr Komoda</span>
+</span>
+          </span>
+        </td>
+
+          <td class="bz_attach_flags">
+              <i>no flags</i>
+          </td>
+
+        <td>
+          <a href="attachment.cgi%3Fid=342&amp;action=edit.html">Details</a>
+        </td>
+      </tr>
+      <tr id="a3" class="bz_contenttype_text_plain">
+        <td>
+            <a href="attachment.cgi%3Fid=343"
+               title="View the content of the attachment">
+          <b>Diff Beta1 - Beta2</b></a>
+
+          <span class="bz_attach_extra_info">
+              (5.03 KB,
+                text/plain)
+
+            <br>
+            <a href="show_bug.cgi%3Fid=359.html#attach_343"
+               title="Go to the comment associated with the attachment">2005-03-10 04:00 CET</a>,
+
+            <span class="vcard"><span class="fn">Piotr Komoda</span>
+</span>
+          </span>
+        </td>
+
+          <td class="bz_attach_flags">
+              <i>no flags</i>
+          </td>
+
+        <td>
+          <a href="attachment.cgi%3Fid=343&amp;action=edit.html">Details</a>
+        </td>
+      </tr>
+
+  <tr class="bz_attach_footer">
+    <td colspan="3">
+        <span class="bz_attach_view_hide">
+            <a id="view_all" href="attachment.cgi%3Fbugid=359&amp;action=viewall.html">View All</a>
+        </span>
+        <a href="attachment.cgi%3Fbugid=359&amp;action=enter.html">Add an attachment</a>
+        (proposed patch, testcase, etc.)
+    </td>
+  </tr>
+</table>
+<br>
+
+  </td>
+  <td>
+  </td>
+  </tr></table>
+
+  
+  <div id="comments"><script src="js/comments.js" type="text/javascript">
+</script>
+
+<script type="text/javascript">
+<!--
+  /* Adds the reply text to the 'comment' textarea */
+  function replyToComment(id, real_id, name) {
+      var prefix = "(In reply to " + name + " from comment #" + id + ")\n";
+      var replytext = "";
+        /* pre id="comment_name_N" */
+        var text_elem = document.getElementById('comment_text_'+id);
+        var text = getText(text_elem);
+        replytext = prefix + wrapReplyText(text);
+
+
+      /* <textarea id="comment"> */
+      var textarea = document.getElementById('comment');
+      if (textarea.value != replytext) {
+          textarea.value += replytext;
+      }
+
+      textarea.focus();
+  } 
+//-->
+</script>
+
+
+<!-- This auto-sizes the comments and positions the collapse/expand links 
+     to the right. -->
+<table class="bz_comment_table">
+<tr>
+<td>
+<div id="c0" class="bz_comment bz_first_comment">
+
+      <div class="bz_first_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=359.html#c0">Description</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-02-09 20:44:21 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">W związku z planowaną reorganizacją bugs.firefox.pl trzeba przygotować nowe
+rozłożenie komponentów i produktów, uwzględniając fakt, że nowa Bugzilla ma
+obsługiwać zarówno programy &quot;aviary&quot; (Firefox, Thunderbird, Sunbird) oraz
+Bugzillę i Nvu (czyli obszar działalności AviaryPL), a także polską lokalizację
+pakietu Mozilla (czyli obszar działalności MozillaPL.org).
+
+Ponieważ programy &quot;aviary&quot; dzielą wspólne części tzw. nowego toolkitu część
+tłumaczenia będzie dla nich wspólna, stąd propozycja utworzenia produktu Toolkit.
+
+Więcej szczegółów wkrótce.</pre>
+    </div>
+
+    <div id="c1" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=359.html#c1">Comment 1</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-02-09 20:54:29 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Dalej: trzeba zorganizowac grupy. Security, Moderators i tym podobne. &quot;Avairy
+team&quot;, &quot;MozillaPL team&quot; itp. zeby moc latwo ustalac dostepnosc bledu dla danych
+grup.
+
+jeden z pierwszych pomyslow to produkt: strony i komponenty: firefox.pl,
+aviary.pl, thunderbird.pl, mozillapl.org.</pre>
+    </div>
+
+    <div id="c2" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=359.html#c2">Comment 2</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Jacek Rymski (Yano)</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-02-15 02:09:21 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(OK, dopiszę się tutaj, żeby juz formalnie było)
+
+Coś jest z prawami dostępu po tej reorganizacji, bo jak już pisałem na forum nie
+mam dostępu do błędów Firefox pl-PL. Nie wiem czy tylko ja, czy inni userzy
+spoza grup też, ale myślę, że warto to jednak poprawić, bo inaczej nie będzie
+możliwości zgłoszenia błędów w Ff pl-PL.</pre>
+    </div>
+
+    <div id="c3" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=359.html#c3">Comment 3</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-02-15 20:49:47 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Maile z Bugzilli przychodzą z adresu
+<a href="mailto:bugzilla-daemon&#64;biofizyka.agro.ar.szczecin.pl">bugzilla-daemon&#64;biofizyka.agro.ar.szczecin.pl</a>. To nie wygląda zbyt
+profesjonalnie. Jeśli to możliwe dobrze by było dodać do nagłówków wysyłanych
+maili linijkę:
+From: <a href="mailto:bugzilla-daemon&#64;aviary.pl">bugzilla-daemon&#64;aviary.pl</a></pre>
+    </div>
+
+    <div id="c4" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=359.html#c4">Comment 4</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Piotr Komoda</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-03-03 16:52:02 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Wstepna wersja, nie oceniajcie na razie ortografii i interpunkcji. Ocencie forme
+i tresc. Czy/co trzeba jeszcze dodac lub usunac. Ta wersja nie zawiera jeszcze
+opisow komponentow, ale postaram sie je dokonczyc i podeslac jeszcze dzis.
+Glowna strona Bugzilli oraz strona wyboru produktu beda wymagaly pewnych zmian,
+nie wiem na ile jest wykonalne wstawienie napisow pomiedzy nazwy produktow,
+jesli jest to nie wykonalne to sprobuje jakos inaczej obejsc problem
+umieszczenia tam dodatkowych napisow. Wszelki uwagi, opinie, rady, sugestie mile
+widziane, byle byly konstruktywne :)
+
+
+Produkty i komponenty:
+
+*Lokalizacje
+- Firefox 
+- Thunderbird 
+- Sunbird 
+- NVU
+- Mozilla
+- Bugzilla 
+- Toolkit
+- RADM
+
+*Strona Mozilla-Europe
+- Wygląd
+- Treść
+
+*Strona aviary.pl
+- Wygląd
+- Treść
+
+*Strona MozillaPL.org 
+- Wygląd
+- Treść
+
+*Strona bugs.aviary.pl
+- Wygląd
+- Treść 
+ 
+*Marketing
+- Promocja programów
+- Kontakty z prasą
+- Inne
+
+*Współpraca
+- Wdrożenia 
+- Wsparcie
+
+
+Opisy:
+--Strona glowna--
+Znajdujesz sie obecnie w systemie zglaszania i sledzenia bledow Bugzilla,
+bedacym czescia internetowej infrastruktury Mozilli w Polsce. Znajdujac sie
+tutaj, mozesz wykonac nastepujace czynnosci:
+
+&lt;jakies kolorowe, wyrozniajace sie tlo&gt;
+*Zglosic błąd korzystając z systemu pomocy
+Jesli chcesz zglosic blad, ale jest to twoja pierwsza wizyta tutaj i masz pewne
+problemy z poruszaniem sie po Bugzilli, to udaj sie na strone do ktorej prowadzi
+odnosnik powyzej. Opisy czynnosci, ktore musi wykonac osoba zglaszajaca blad nie
+pozwola Ci sie tam zgubic. 
+&lt;/jakies kolorowe, wyrozniajace sie tlo&gt;   
+
+* Wyszukiwanie istniejących raportów o błędach
+Kliknij powyzszy odnosnik, jesli chcesz przeszukac baze zgloszonych nam bledow.
+Przed wyslaniem nowego raportu o bledzie warto sie upewnic, czy problem nie
+zostal juz zgloszony wczesniej.
+
+&lt;strong&gt;Zaawansowane opcje:&lt;/strong&gt;
+* Lista błędów, w których nastąpiły zmiany dziś.
+* Lista błędów, w których nastąpiły zmiany w tym tygodniu.
+* Dodawanie nowego raportu o błędzie (dla zaawansowanych uzytkownikow Bugzilli)
+* Wykresy i raporty
+* Zmiana hasła lub ustawień
+* Wylogowanie
+
+Dodaj Sidebar (Wymaga Mozilli lub Netscape 6+)
+
+&lt;strong&gt;Szybkie wyszukiwanie&lt;/strong&gt;.
+Podaj numer błędu lub tekst do wyszukania: [_____] [Wyswietl] [Pomoc]
+
+--Zgłaszanie błędu--
+Jednym z naszych podstawowych zadan jest lokalizacja produktow Mozilla.org oraz
+tlumaczenie ich stron internetowych. Prowadzimy takze wlasne strony im
+poswiecone. Ale oczywiscie to nie wszystko. Prowadzimy akcje reklamowe na
+terenie polski, jak rowniez pomagamy firmom i instytucjom we wdrazaniu produktow
+Mozilla.org do ich srodowisk pracy.
+Gwoli przypomnienia: lokalizacja to nie tylko tlumaczenie, to takze
+przystosowanie programu do warunkow kraju/regionu, w ktorym bedzie uzywany. Za
+przyklad niech posluza zakladki czy tez domyslny zestaw silnikow wyszukiwania,
+ktory inny jest w polskiej, a inny w angielskiej wersji Firefoksa. 
+
+&lt;odnosnik do produktu lokalizacje&gt;
+Istnieje duze prawdopodobienstwo, ze blad, ktory masz zamiar zglosic dotyczyc
+bedzie np. polskiej wersji przegladarki Firefox lub klienta poczty Thunderbird.
+Od razu chcielibysmy zaznaczyc, ze jest to przedewszystkim miejsce do zglaszania
+bledow w tlumaczeniu lub tez propozycji zmian np. w domyslnym zestawie zakladek.
+Problemy pokroju &quot;Program x nie chce mi zapisać profilu&quot; lub &quot;Thunderbird nie
+chce mi przeniesc wiadomosci&quot; prosimy zglaszac na forum MozilliPL &lt;odnosnik&gt;,
+lub (jesli wystarczajaco dobrze znasz angielski) na bugzilla.mozilla.org
+&lt;odnosnik&gt;. 
+
+
+&lt;strong&gt;Prowadzone przez nas strony:&lt;/strong&gt;
+Jesli zauwazysz blad na ktorejs z naszych stron, daj nam o tym znac klikajac na
+jeden z ponizszych odnosnikow, w zaleznosci od tego, ktorej strony blad dotyczy.
+
+*Strona Mozilla-Europe  Bledy znalezione na polskich stronach Mozilla-Europe
+*Strona aviary.pl       Bledy znalezione na stonach serwisu AviaryPL 
+*Strona MozillaPL.org   Bledy znalezione na stonach serwisu MozillaPL 
+*Strona bugs.aviary.pl  Bledy znalezione na stronach systemu Bugzilla
+
+&lt;strong&gt;Pozostale:&lt;/strong&gt;
+Odnosniki ponizej przeznaczone sa dla firm lub osob prywatnych, zainteresowanych
+promocja produktow Mozilla.org lub wspolpraca z nami. Oferujemy miedzy innymi
+pomoc, przy wdrazaniu produktow Mozilla.org w firmach. Na zyczenie mozemy tez
+stworzyc zmodyfikowana wersje dowolnego z produktow Mozilla.org, przystosowana
+do potrzeb i wymagan klienta.
+
+*Marketing   Dzial dla osob zainteresowanych promocja produktow Mozilla.org, a
+takze dla dziennikarzy chcacych pisac o nas lub o produktach, ktore lokalizujemy.
+*Współpraca  Dzial dla osob lub firm zainteresowanych wdrozeniem produktow
+Mozilla.org, a takze dla zainteresowanych modyfikacjami produktow &quot;na zyczenie&quot;.  
+</pre>
+    </div>
+
+    <div id="c5" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=359.html#c5">Comment 5</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Staś Małolepszy :stas</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-03-04 21:13:37 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Moje pierwsze uwagi:
+
+&#64;&#64; -42,2 +42 &#64;&#64;
+-bedacym czescia internetowej infrastruktury Mozilli w Polsce. Znajdujac sie
+-tutaj, mozesz wykonac nastepujace czynnosci:
++bedacym czescia internetowej infrastruktury Mozilli w Polsce. Mozesz wykonac
+nastepujace czynnosci:
+&#64;&#64; -77 +76 &#64;&#64;
+-Gwoli przypomnienia: lokalizacja to nie tylko tlumaczenie, to takze
++Pamiętaj: lokalizacja to nie tylko tlumaczenie, to takze
+&#64;&#64; -85,2 +84,2 &#64;&#64;
+-Od razu chcielibysmy zaznaczyc, ze jest to przedewszystkim miejsce do zglaszania
+-bledow w tlumaczeniu lub tez propozycji zmian np. w domyslnym zestawie zakladek.
++Przypominamy, ze nasza Bugzilla jest przede wszystkim miejscem do zglaszania
++bledow w &lt;strong&gt;tlumaczeniu&lt;/strong&gt; lub tez propozycji zmian np. w domyslnym
+zestawie zakladek.</pre>
+    </div>
+
+    <div id="c6" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=359.html#c6">Comment 6</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Piotr Komoda</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-03-04 22:38:13 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Te wersje mozna juz nazwac beta. Zmienilem pare rzeczy, jako ze jednak nie ma
+mozliwosci wstawienia dodatkowych textow pomiedzy nazwy produktow na stronie
+wyboru produktu. Dodalem &quot;ogonki&quot;, uwzglednilem tez poprawki Staszyny. Procz
+uwag odnosnie formy i tresci czekam takze korekte ew. bledow ortograficznych i
+stylistycznych.
+
+--Strona glowna--
+Znajdujesz się obecnie w systemie zgłaszania i śledzenia błędów Bugzilla,
+będącym częścią internetowej infrastruktury Mozilli w Polsce. Możesz wykonać
+następujące czynności:
+
+&lt;jakies kolorowe, wyrozniajace sie tlo&gt;
+*Zglosic błąd korzystając z systemu pomocy
+Jeśli chcesz zgłosić błąd, ale jest to twoja pierwsza wizyta tutaj i masz pewne
+problemy z poruszaniem się po Bugzilli, to udaj się na stronę do której prowadzi
+odnośnik powyżej. Opisy czynności, które musi wykonać osoba zgłaszająca błąd nie
+pozwolą Ci się tam zgubić. 
+&lt;/jakies kolorowe, wyrozniajace sie tlo&gt;   
+
+* Wyszukiwanie istniejących raportów o błędach
+Kliknij powyższy odnośnik, jeśli chcesz przeszukać bazę zgłoszonych nam błędów.
+Przed wysłaniem nowego raportu o błędzie warto się upewnić, czy problem nie
+został już zgłoszony wcześniej.
+
+&lt;strong&gt;Zaawansowane opcje:&lt;/strong&gt;
+* Lista błędów, w których nastąpiły zmiany dziś.
+* Lista błędów, w których nastąpiły zmiany w tym tygodniu.
+* Dodawanie nowego raportu o błędzie (dla zaawansowanych uzytkownikow Bugzilli)
+* Wykresy i raporty
+* Zmiana hasła lub ustawień
+* Wylogowanie
+
+Dodaj Sidebar (Wymaga Mozilli lub Netscape 6+)
+
+&lt;strong&gt;Szybkie wyszukiwanie&lt;/strong&gt;.
+Podaj numer błędu lub tekst do wyszukania: [_____] [Wyświetl] [Pomoc]
+
+--Zgłaszanie błędu--
+Jednym z naszych podstawowych zadań jest lokalizacja produktów Mozilla.org oraz
+tłumaczenie ich stron internetowych. Prowadzimy także własne strony im
+poświecone. Ale oczywiscie to nie wszystko. Prowadzimy akcje reklamowe na
+terenie polski, jak rownież pomagamy firmom i instytucjom we wdrażaniu produktów
+Mozilla.org do ich środowisk pracy.
+Na życzenie możemy też stworzyć zmodyfikowaną wersję dowolnego z produktów
+Mozilla.org, przystosowaną do potrzeb i wymagań klienta.
+
+&lt;jakies kolorowe, wyrozniajace sie tlo&gt;
+&lt;strong&gt;Uwaga:&lt;/strong&gt; Istnieje duże prawdopodobieństwo, że błąd, który masz
+zamiar zgłosić dotyczyć będzie np. polskiej wersji przeglądarki Firefox lub
+klienta poczty Thunderbird. Przypominamy, ze nasza Bugzilla jest przede
+wszystkim miejscem do zgłaszania błędów w &lt;strong&gt;tłumaczeniu&lt;/strong&gt; lub też
+propozycji zmian np. w domyślnym zestawie zakładek. Problemy pokroju &quot;Program x
+nie chce mi zapisać profilu&quot; lub &quot;Thunderbird nie chce mi przenieść wiadomości&quot;
+prosimy zgłaszać na forum MozilliPL &lt;odnosnik&gt;, lub (jeśli wystarczająco dobrze
+znasz angielski) na bugzilla.mozilla.org &lt;odnosnik&gt;. 
+Błędy związane z lokalizacją elementów wspólnych dla aplikacji Mozilla.org (nie
+dotyczy pakietu Mozilla Suite), czyli np. menedżerów motywów, rozszerzeń i
+aktualizacji, prosimy zgłaszać do produktu &lt;strong&gt;Lokalizacje&lt;/strong&gt;,
+komponent &lt;strong&gt;Toolkit&lt;/strong&gt;. 
+&lt;/jakies kolorowe, wyrozniajace sie tlo&gt;
+
+*Lokalizacje            Błędy znalezione w lokalizacjach produktów Mozilla.org.
+*Strona Mozilla-Europe  Błędy znalezione na polskich stronach Mozilla-Europe.
+*Strona aviary.pl       Błędy znalezione na stonach serwisu AviaryPL. 
+*Strona MozillaPL.org   Błędy znalezione na stonach serwisu MozillaPL. 
+*Strona bugs.aviary.pl  Błędy znalezione na stronach systemu Bugzilla.
+*Marketing              Dział dla osób zainteresowanych promocją produktów
+Mozilla.org, a także dla dziennikarzy chcących pisać o nas lub o produktach,
+które lokalizujemy.
+*Współpraca             Dział dla osób lub firm zainteresowanych wdrożeniem
+produktów Mozilla.org, a także dla zainteresowanych modyfikacjami produktów &quot;na
+życzenie&quot;.  
+
+&lt;strong&gt;Pamiętaj&lt;/strong&gt;: lokalizacja to nie tylko tłumaczenie, to także
+przystosowanie programu do warunków kraju/regionu, w którym będzie używany. Za
+przykład niech posłuża zakładki czy też domyślny zestaw silników wyszukiwania,
+który inny jest w polskiej, a inny w angielskiej wersji Firefoksa. 
+
+Komponenty:
+- Firefox      Błędy związane z lokalizacją przeglądarki Firefox.  
+- Thunderbird  Błędy związane z lokalizacją klienta poczty i grup dyskusyjnych
+Thunderbird.
+- Sunbird      Błędy związane z lokalizacją kalendarza Sunbird.
+- NVU          Błędy związane z lokalizacją graficznego edytora stron
+internetowych NVU.
+- Mozilla      Błędy związane z lokalizacją pakietu narzędzi internetowych
+Mozilla Suite.
+- Bugzilla     Błędy związane z lokalizacją systemu zgłaszania i śledzenia
+błędów Bugzilla.
+- Toolkit      Błędy związane z lokalizacją elementów wspólnych Firefoksa i
+Thunderbirda. 
+- RADM         Błędy związane z tłumaczeniem książki Rapid Application
+Development with Mozilla.
+- Wygląd       Błędy dotyczące części wizualnej strony, a także sugestie zmian.
+- Treść        Błędy strony związane z merytoryką, ortografią, interpunkcją oraz
+błędy w tłumaczeniu. 
+- Promocja programów  Raporty związane z planowaniem i prowadzeniem akcji
+promocyjnych produktów Mozilla.org .
+- Kontakty z prasą   Raporty dotyczące komunikacji na linii prasa - zespół AviaryPL.
+- Inne         Wszystko, co nie pasuje do pozostałych kategorii produktu Marketing.
+- Wdrożenia    Raporty związane z wdrażaniem produktów Mozilla.org w firmach i
+instytucjach, a także raporty związane z tworzeniem zmodyfikowanych produktów na
+życzenie.      
+- Wsparcie     Raporty związane z pomocą udzielaną naszym partnerom w zakresie
+instalacji, użytkowania, modyfikacji i obsługi produktów Mozilla.org.</pre>
+    </div>
+
+    <div id="c7" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=359.html#c7">Comment 7</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Piotr Komoda</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-03-04 22:53:56 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Created <span class=""><a href="attachment.cgi%3Fid=338" name="attach_338" title="Diff alpha - beta">attachment 338</a> <a href="attachment.cgi%3Fid=338&amp;action=edit.html" title="Diff alpha - beta">[details]</a></span>
+Diff alpha - beta
+
+Na prosbe Gandalfa umieszczam plik .diff.</pre>
+    </div>
+
+    <div id="c8" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=359.html#c8">Comment 8</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Wawoczny</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-03-06 18:41:20 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Myśle że podział jest w sam raz... Więc &quot;Tak&quot; ;)</pre>
+    </div>
+
+    <div id="c9" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=359.html#c9">Comment 9</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Piotr Komoda</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-03-10 03:50:48 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Created <span class=""><a href="attachment.cgi%3Fid=342" name="attach_342" title="Reorganizacja beta 2">attachment 342</a> <a href="attachment.cgi%3Fid=342&amp;action=edit.html" title="Reorganizacja beta 2">[details]</a></span>
+Reorganizacja beta 2
+
+Aktualizacja po naszej konferencji, tym razem wstawiam material jako zalacznik.
+Pozniej wrzuce Diffa. Wylecial komponent &quot;Kontakty z prasą&quot;, to bedzie szlo do
+promocji. Wylecial tez produkt &quot;Wspolpraca&quot; wraz z komponentami &quot;Wdrozenia&quot;
+(-&gt;Promocja lub dotproject) oraz &quot;Wsparcie&quot; (-&gt;dotprojekt). W zwiazku z
+powyzszym zmianie ulegla tresc wstepu na stronie wyboru produktu. Dodalem tez
+do spisu Ownerow oraz QA (niekompletne).</pre>
+    </div>
+
+    <div id="c10" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=359.html#c10">Comment 10</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Piotr Komoda</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-03-10 04:00:27 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Created <span class=""><a href="attachment.cgi%3Fid=343" name="attach_343" title="Diff Beta1 - Beta2">attachment 343</a> <a href="attachment.cgi%3Fid=343&amp;action=edit.html" title="Diff Beta1 - Beta2">[details]</a></span>
+Diff Beta1 - Beta2</pre>
+    </div>
+
+    <div id="c11" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=359.html#c11">Comment 11</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-03-14 08:56:32 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Marek: kiedy moglbys wdrozyc nowy system?</pre>
+    </div>
+
+    <div id="c12" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=359.html#c12">Comment 12</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-03-14 09:48:18 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Jeżeli to: <a href="attachment.cgi%3Fid=342">http://bugs.aviary.pl/attachment.cgi?id=342</a> jest ostateczna wersja,
+to dzisiaj wieczorem lub jutro wieczorem.</pre>
+    </div>
+
+    <div id="c13" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=359.html#c13">Comment 13</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-03-14 20:48:49 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Tak. to jest.
+Moje prosby:
+1) Zeby w title okna bylo na poczatku widac opis bledu a nie &quot;MozillaPl -
+Obsluga bledow&quot; - bo ja czesto z autouzupelniania paska adresu korzystam przy
+otwieraniu czesto uzywanych bledow, a tak to to mi nic nie daje :(
+
+2) Mala zmiana - Staszyna zgodzil sie wziasc NVU, ja na razie porobie mu za QA.
+
+3) dodaj flage super-review. Na razie bedziemy jej uzywac na czuja (jesli
+wlaczam do kodu Firefoksa cos co zmienia tez cos w toolkicie, albo dokladnie w
+Tb to biore r od pitrecka albo marcoosa i sr od nikdo albo gandalfa), ale potem
+mozna sztywniej to opisac.</pre>
+    </div>
+
+    <div id="c14" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=359.html#c14">Comment 14</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Piotr Pielach</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-03-15 00:49:05 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Mam taką drobną uwagę.
+
+Podczas zgłaszania nowego błędu, już po wybraniu produktu pojawia się strona z
+formularzami do uzupełnienia. 
+
+Fajnie by było gdyby na tej właśnie stronie gdzieś ponad wyborem wersji
+pojawiała się nazwa produktu, gdyż w natłoku otwartych stron bugzilli i
+zgłaszaniu różnych błędów można sobie zapomnieć, który jest który ;)</pre>
+    </div>
+
+    <div id="c15" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=359.html#c15">Comment 15</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-03-18 15:49:59 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Masówka. Zmiana produktu z serwis firefox.pl na bugs.aviary.pl.</pre>
+    </div>
+
+    <div id="c16" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=359.html#c16">Comment 16</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-03-18 20:03:09 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Ok, nowe produkty i komponenty zostały wprowadzone. O tym pewnie już wiecie, bo
+dostaliście zapewne kilkadziesiąt (-set?) bugmaili. :-)
+
+Co zrobiłem inaczej, niż w w/w dokumencie:
+
+Sunbird  | Owner: IrekC, QA: IrekC
+(nie było QA, więc tymczasowo owner=qa)
+
+Nvu: owner: staszyna, qa: gandalf
+(zgodnie z <a href="show_bug.cgi%3Fid=359.html#c13">comment 13</a>)
+
+Niech to ktoś przejrzy i sprawdzi, czy o czymś nie zapomniałem.
+
+Zostały: poprawki na samej stronie (te długaśne opisy), flagi, tytułu bugów...
+</pre>
+    </div>
+
+    <div id="c17" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=359.html#c17">Comment 17</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Staś Małolepszy :stas</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-03-28 21:56:04 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Wiem, że teraz to już trochę za późno, ale dopiero po wdrożeniu i kilkudniowym
+używaniu nowej struktury dostrzegam jej wady.
+Pierwszy problem pojawił się już na samym początku, kiedy okazało się, że
+komponenty nie mogą mieć numeru wersji (która odnosi się do całego produktu).
+Marcoos obszedł to, tworząc wersje o nazwach &quot;Firefox-1.0&quot;, &quot;Firefox-1.1&quot;,
+&quot;Nvu-0.9&quot;, &quot;Nvu-1.0&quot;.  W ten sposób produkt Lokalizacje może mieć np. wersję
+Thunderbird-1.0.2. W ten sposób komponenty tracą na znaczeniu, nawet zgłaszając
+nowy błąd użytkownik widzi najpierw z lewej strony &quot;Wersja&quot;, a dopiero gdzieś z
+prawej &quot;Komponent&quot;.
+
+Zastanawiam się, czy nie lepiej byłoby mieć jednak wiele produktów, każdy dla
+innego programu. A zatem produkty:
+Lokalizacja Firefoksa 
+Lokalizacja Thunderbird a
+Lokalizacja Sunbird a
+Lokalizacja NVU
+Lokalizacja Mozilli
+Lokalizacja Bugzilli 
+Lokalizacja Toolkitu
+Tłumaczenie RADM
+
+Każdy z nich miałby chyba tylko jeden komponent - tłumaczenie/lokalizacja. W ten
+sposób dodatkowo podkreślilibysmy, że jesteśmy od l10n, a nie całego supportu.
+
+To tylko takie moja przemyślenia na przyszłość.
+
+BTW:
+(W odpowiedzi na komentarz #16) 
+<span class="quote">&gt; Zostały: poprawki na samej stronie (te długaśne opisy), flagi, tytułu bugów...</span >
+Tak tylko przypominam, szczególnie te tytuły stron są wyjątkowo upierdliwe. :-)
+
+</pre>
+    </div>
+
+    <div id="c18" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=359.html#c18">Comment 18</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Piotr Komoda</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-06-03 07:46:43 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Marcoos, blagam, dodaj w koncu te opisy! Mam juz dosc przenoszenia, 95% nowych
+bledow dotyczacych Tb jest zgladzanych w strona thunderbird.pl :[</pre>
+    </div>
+
+    <div id="c19" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=359.html#c19">Comment 19</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-06-03 13:02:33 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Przecież są opisy...
+<a href="enter_bug.cgi%3Fformat=guided.html">http://bugs.aviary.pl/enter_bug.cgi?format=guided</a></pre>
+    </div>
+
+    <div id="c20" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=359.html#c20">Comment 20</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Piotr Komoda</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-06-04 18:39:07 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(W odpowiedzi na komentarz #19)
+<span class="quote">&gt; Przecież są opisy...
+&gt; <a href="enter_bug.cgi%3Fformat=guided.html">http://bugs.aviary.pl/enter_bug.cgi?format=guided</a></span >
+
+Moj blad, oznak zmian szukalem najpierw na glownej. Zmiany faktycznie sa, ale
+ledno zauwazalne i z czyms takim nawalu niepoprawnie zgloszonych bledow sie nie
+pozbedziemy.
+Jesli jest to mozliwe, w opisie produktu lokalizacja elementy
+bugzilla.mozilla.org oraz forum MozillaPL.org powinny byc odnosnikami. A jeszcze
+lepiej by bylo, gdyby tamten nawias stamtad wogole wywalic i dac cos bardziej
+rzucajacego sie w oczy przed ten caly spis, tak jak ja to zaproponowalem, tzn.:
+
+&lt;jakies kolorowe, wyrozniajace sie tlo&gt;
+&lt;strong&gt;Uwaga:&lt;/strong&gt; Istnieje duże prawdopodobieństwo, że błąd, który masz
+zamiar zgłosić dotyczyć będzie np. polskiej wersji przeglądarki Firefox lub
+klienta poczty Thunderbird. Przypominamy, ze nasza Bugzilla jest przede
+wszystkim miejscem do zgłaszania błędów w &lt;strong&gt;tłumaczeniu&lt;/strong&gt; lub też
+propozycji zmian np. w domyślnym zestawie zakładek. Problemy pokroju &quot;Program x
+nie chce mi zapisać profilu&quot; lub &quot;Thunderbird nie chce mi przenieść wiadomości&quot;
+prosimy zgłaszać na forum MozilliPL &lt;odnosnik&gt;, lub (jeśli wystarczająco dobrze
+znasz angielski) na bugzilla.mozilla.org &lt;odnosnik&gt;. 
+Błędy związane z lokalizacją elementów wspólnych dla aplikacji Mozilla.org (nie
+dotyczy pakietu Mozilla Suite), czyli np. menedżerów motywów, rozszerzeń i
+aktualizacji, prosimy zgłaszać do produktu &lt;strong&gt;Lokalizacje&lt;/strong&gt;,
+komponent &lt;strong&gt;Toolkit&lt;/strong&gt;. 
+&lt;/jakies kolorowe, wyrozniajace sie tlo&gt;
+
+Oczywiscie tresc moze sie roznic, byle ten napis rzucal sie w oczy i zawieral
+notke o toolkicie. I jeszcze jedno, Marcoos, blagam, wprowadz zmiany na glownej.
+To jest najprostrze do zrobienia, a ogromnie ulatwi nam zycie!</pre>
+    </div>
+
+    <div id="c21" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=359.html#c21">Comment 21</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-09-13 12:21:49 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">dawno fixed</pre>
+    </div>
+
+    <div id="c22" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=359.html#c22">Comment 22</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-01-01 12:34:19 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Bugspam. Przeniesienie produktów z archiwum.</pre>
+    </div>
+
+
+  
+
+</td>
+<td>
+</td>
+</tr></table>
+  </div>
+
+    <hr><div id="add_comment" class="bz_section_additional_comments">
+      <table>
+        <tr>
+          <td>
+            <fieldset>
+              <legend>Note</legend>
+              You need to
+              <a href="show_bug.cgi%3Fid=359&amp;GoAheadAndLogIn=1.html">log in</a>
+              before you can comment on or make changes to this bug.
+            </fieldset>
+          </td>
+        </tr> 
+      </table>
+  </div>        
+
+</form>
+
+<hr>
+<ul class="related_actions">
+    <li><a href="show_bug.cgi%3Fformat=multiple&amp;id=359.html">Format For Printing</a></li>
+    <li>&nbsp;-&nbsp;<a href="show_bug.cgi%3Fctype=xml&amp;id=359">XML</a></li>
+    <li>&nbsp;-&nbsp;<a href="enter_bug.cgi%3Fcloned_bug_id=359.html">Clone This Bug</a></li>
+    
+    <li>&nbsp;-&nbsp;<a href="show_bug.cgi%3Fid=359.html#">Top of page </a></li>
+    </ul>
+
+<br>
+</div>
+
+    <div id="footer">
+      <div class="intro"></div>
+<ul id="useful-links">
+  <li id="links-actions"><ul class="links">
+  <li><a href="index.html">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi.html">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi.html">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi.html">Search</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="http://bugs.aviary.pl/buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input type="hidden" id="no_redirect_bottom" name="no_redirect" value="0">
+    <script type="text/javascript">
+      if (history && history.replaceState) {
+        var no_redirect = document.getElementById("no_redirect_bottom");
+        no_redirect.value = 1;
+      }
+    </script>
+    <input class="txt" type="text" id="quicksearch_bottom" name="quicksearch" 
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search" 
+           id="find_bottom"></form>
+  <a href="page.cgi%3Fid=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="report.cgi.html">Reports</a></li>
+
+  <li>
+      <span class="separator">| </span>
+        <a href="request.cgi.html">Requests</a></li>
+
+
+  <li>
+        <span class="separator">| </span>
+        <a href="https://bugzilla.readthedocs.org/en/5.0/using/understanding.html" target="_blank">Help</a>
+      </li>
+    
+      <li id="new_account_container_bottom">
+        <span class="separator">| </span>
+        <a href="createaccount.cgi.html">New&nbsp;Account</a>
+      </li>
+
+    <li id="mini_login_container_bottom">
+  <span class="separator">| </span>
+  <a id="login_link_bottom" href="show_bug.cgi%3Fid=359&amp;GoAheadAndLogIn=1.html"
+     onclick="return show_mini_login_form('_bottom')">Log In</a>
+
+  <form action="show_bug.cgi%3Fid=359.html" method="POST"
+        class="mini_login bz_default_hidden"
+        id="mini_login_bottom">
+    <input id="Bugzilla_login_bottom" required
+           name="Bugzilla_login" class="bz_login"
+        type="email" placeholder="Email Address">
+    <input class="bz_password" name="Bugzilla_password" type="password"
+           id="Bugzilla_password_bottom" required
+           placeholder="Password">
+    <input type="hidden" name="Bugzilla_login_token"
+           value="1469820042-TvlO2ZkVY5e-eo5_Bh-WnWxkj4mcbWDyBR6CEh4_zJ0">
+    <input type="submit" name="GoAheadAndLogIn" value="Log in"
+            id="log_in_bottom">
+    <a href="show_bug.cgi%3Fid=359.html#" onclick="return hide_mini_login_form('_bottom')">[x]</a>
+  </form>
+</li>
+
+
+  <li id="forgot_container_bottom">
+    <span class="separator">| </span>
+    <a id="forgot_link_bottom" href="show_bug.cgi%3Fid=359&amp;GoAheadAndLogIn=1.html#forgot"
+       onclick="return show_forgot_form('_bottom')">Forgot Password</a>
+    <form action="http://bugs.aviary.pl/token.cgi" method="post" id="forgot_form_bottom"
+          class="mini_forgot bz_default_hidden">
+      <label for="login_bottom">Login:</label>
+      <input name="loginname" size="20" id="login_bottom" required
+          type="email" placeholder="Your Email Address">
+      <input id="forgot_button_bottom" value="Reset Password" type="submit">
+      <input type="hidden" name="a" value="reqpw">
+      <input type="hidden" id="token_bottom" name="token"
+             value="1469820042-6ml3Aaphncx4w2eDd7-BWpythDHTJHObrnOfHhpNHv0">
+      <a href="show_bug.cgi%3Fid=359.html#" onclick="return hide_forgot_form('_bottom')">[x]</a>
+    </form>
+  </li>
+</ul>
+  </li>
+
+  
+
+
+
+
+  
+</ul>
+
+      <div class="outro"></div>
+    </div>
+
+  </body>
+</html>

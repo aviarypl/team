@@ -1,0 +1,208 @@
+diff -uN -r ./en-US/0.9/locale/communicator/openLocation.dtd ./en-US/1.0PR/locale/communicator/openLocation.dtd
+--- ./en-US/0.9/locale/communicator/openLocation.dtd	2005-01-25 08:44:00.000000000 +0000
++++ ./en-US/1.0PR/locale/communicator/openLocation.dtd	2005-03-14 09:50:00.000000000 +0000
+@@ -54,3 +54,4 @@
+ <!ENTITY blankTemplate.label     "A blank template">
+ 
+ <!ENTITY xhtmlDocument.label     "create a XHTML document">
++<!ENTITY strictDtd.label         "Strict DTD">
+diff -uN -r ./en-US/0.9/locale/editor/EdDialogOverlay.dtd ./en-US/1.0PR/locale/editor/EdDialogOverlay.dtd
+--- ./en-US/0.9/locale/editor/EdDialogOverlay.dtd	2005-02-21 15:34:00.000000000 +0000
++++ ./en-US/1.0PR/locale/editor/EdDialogOverlay.dtd	2005-03-16 16:08:00.000000000 +0000
+@@ -34,3 +34,4 @@
+ <!ENTITY LinkURLEditField.label "Enter a web page location, a local file, an email address, or select a Named Anchor or Heading from the popup list:">
+ <!ENTITY LinkURLEditField.accessKey "L">
+ 
++<!ENTITY isMailAddress.label "The above is an email address">
+diff -uN -r ./en-US/0.9/locale/editor/Nvu-totd-en.rdf ./en-US/1.0PR/locale/editor/Nvu-totd-en.rdf
+--- ./en-US/0.9/locale/editor/Nvu-totd-en.rdf	2005-03-01 10:12:00.000000000 +0000
++++ ./en-US/1.0PR/locale/editor/Nvu-totd-en.rdf	2005-03-23 16:53:00.000000000 +0000
+@@ -109,14 +109,13 @@
+     </item>
+ 
+     <item>
+-      <title>you have direct access to the community of Nvu users?</title>
++      <title>...you have direct access to the Nvu community?</title>
+       <description>Just select the Help > Forums menu entry.</description>
+     </item>
+ 
+     <item>
+       <title>...Nvu can automatically open a document at launch?</title>
+-      <description>Use the -edit command-line option:      nvu -edit
+-your_url</description>
++      <description>Use the command-line:      nvu _your_url_</description>
+     </item>
+ 
+     <item>
+@@ -136,6 +135,11 @@
+       <description>Control+t (Command+t on Mac OS X) will create a new blank tab</description>
+     </item>
+ 
++    <item>
++      <title>...you can create a new window with a key combination?</title>
++      <description>Control+shift+n (Command+shift+t on Mac OS X) will create a new blank window</description>
++    </item>
++
+   </channel>
+ </rss>
+ 
+diff -uN -r ./en-US/0.9/locale/editor/aboutDialog.dtd ./en-US/1.0PR/locale/editor/aboutDialog.dtd
+--- ./en-US/0.9/locale/editor/aboutDialog.dtd	2004-12-21 14:19:00.000000000 +0000
++++ ./en-US/1.0PR/locale/editor/aboutDialog.dtd	2005-03-16 15:10:00.000000000 +0000
+@@ -41,5 +41,5 @@
+ <!ENTITY copyrightLink          "http://nvu.com/about.html">
+ <!ENTITY credits                "Credits">
+ <!ENTITY aboutVersion           "version">
+-<!ENTITY copyrightText          "&#169;1998-2004 Contributors. All Rights Reserved.">
++<!ENTITY copyrightText          "&#169;1998-2005 Contributors. All Rights Reserved.">
+ <!ENTITY aboutLink              "&lt; About &brandShortName;">
+diff -uN -r ./en-US/0.9/locale/editor/confirmInlineSpellChecking.dtd ./en-US/1.0PR/locale/editor/confirmInlineSpellChecking.dtd
+--- ./en-US/0.9/locale/editor/confirmInlineSpellChecking.dtd	1970-01-01 00:00:00.000000000 +0000
++++ ./en-US/1.0PR/locale/editor/confirmInlineSpellChecking.dtd	2005-03-30 08:40:00.000000000 +0000
+@@ -0,0 +1,40 @@
++<!-- ***** BEGIN LICENSE BLOCK *****
++   - Version: MPL 1.1/GPL 2.0/LGPL 2.1
++   -
++   - The contents of this file are subject to the Mozilla Public License Version
++   - 1.1 (the "License"); you may not use this file except in compliance with
++   - the License. You may obtain a copy of the License at
++   - http://www.mozilla.org/MPL/
++   -
++   - Software distributed under the License is distributed on an "AS IS" basis,
++   - WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
++   - for the specific language governing rights and limitations under the
++   - License.
++   -
++   - The Original Code is Nvu.
++   -
++   - The Initial Developer of the Original Code is
++   - Linspire Inc..
++   - Portions created by the Initial Developer are Copyright (C) 2005
++   - the Initial Developer. All Rights Reserved.
++   -
++   - Contributor(s):
++   -   Daniel Glazman <glazman@disruptive-innovations.com>, on behalf of Linspire Inc.
++   -
++   - Alternatively, the contents of this file may be used under the terms of
++   - either the GNU General Public License Version 2 or later (the "GPL"), or
++   - the GNU Lesser General Public License Version 2.1 or later (the "LGPL"),
++   - in which case the provisions of the GPL or the LGPL are applicable instead
++   - of those above. If you wish to allow use of your version of this file only
++   - under the terms of either the GPL or the LGPL, and not to allow others to
++   - use your version of this file under the terms of the MPL, indicate your
++   - decision by deleting the provisions above and replace them with the notice
++   - and other provisions required by the LGPL or the GPL. If you do not delete
++   - the provisions above, a recipient may use your version of this file under
++   - the terms of any one of the MPL, the GPL or the LGPL.
++   -
++   - ***** END LICENSE BLOCK ***** -->
++
++<!ENTITY window.title                     "Please confirm">
++<!ENTITY confirmInlineSpellChecking.label "Inline Spell Checking is enabled, and your document will now be entirely spell-checked before leaving Source view. This can impact performance, depending on the length and complexity of your document. Do you want to proceed and spellcheck, or disable the Spell Checker?">
++<!ENTITY exitWarningCheckbox.label        "Don't show this dialog again">
+diff -uN -r ./en-US/0.9/locale/editor/confirmInlineSpellChecking.properties ./en-US/1.0PR/locale/editor/confirmInlineSpellChecking.properties
+--- ./en-US/0.9/locale/editor/confirmInlineSpellChecking.properties	1970-01-01 00:00:00.000000000 +0000
++++ ./en-US/1.0PR/locale/editor/confirmInlineSpellChecking.properties	2005-03-30 08:42:00.000000000 +0000
+@@ -0,0 +1,4 @@
++Proceed=Proceed
++ProceedAccessKey=p
++Disable=Disable Spell Checker
++DisableAccessKey=d
+diff -uN -r ./en-US/0.9/locale/editor/credits.html ./en-US/1.0PR/locale/editor/credits.html
+--- ./en-US/0.9/locale/editor/credits.html	2005-01-31 12:09:00.000000000 +0000
++++ ./en-US/1.0PR/locale/editor/credits.html	2005-03-21 19:29:00.000000000 +0000
+@@ -122,7 +122,7 @@
+   </head>
+   <body onload="init();" onunload="uninit();">
+     <div id="titleBox">
+-      <img src="chrome://editor/content/about-credits.png"><br>
++      <img src="chrome://editor/content/about-credits.png" style="margin-top: 12px"><br>
+       <img src="chrome://editor/content/about-header.png">
+     </div>
+     
+@@ -178,7 +178,7 @@
+             Neil Deakin and the Mozdev Group<br>
+             Benjamin Smedberg<br>
+             R.J. Keller<br>
+-            Kamal Deep Singh<br>
++            Kamal Deep Singh Sahambi<br>
+             Michael Pyne<br>
+             <em>Idefix</em> in Nvu forums
+           </div>
+diff -uN -r ./en-US/0.9/locale/editor/editorOverlay.dtd ./en-US/1.0PR/locale/editor/editorOverlay.dtd
+--- ./en-US/0.9/locale/editor/editorOverlay.dtd	2005-02-10 12:28:00.000000000 +0000
++++ ./en-US/1.0PR/locale/editor/editorOverlay.dtd	2005-03-29 11:49:00.000000000 +0000
+@@ -197,6 +197,9 @@
+ <!ENTITY insertBreakAllCmd.label "Break Below Image(s)">
+ <!ENTITY insertbreakall.accesskey "k">
+ 
++<!ENTITY insertNbspCmd.label "Non breakable whitespace...">
++<!ENTITY insertNbsp.accesskey "n">
++
+ <!ENTITY insertPHPCode.label "PHP Code">
+ <!ENTITY insertphpcode.accesskey "p">
+ <!ENTITY insertComment.label "Comment">
+@@ -716,6 +719,8 @@
+ <!ENTITY aboutmenu.accesskey      "A">
+ <!ENTITY localizingnvu.accesskey  "L">
+ <!ENTITY localizingNvu.label      "Localizing Nvu">
++<!ENTITY userGuideMenu.label      "Contributed User Guide">
++<!ENTITY userguidemenu.accesskey  "U">
+ 
+ <!ENTITY leftGlued.tooltip        "Glue to the left border">
+ <!ENTITY rightGlued.tooltip       "Glue to the right border">
+diff -uN -r ./en-US/0.9/locale/editor/pref-editing.dtd ./en-US/1.0PR/locale/editor/pref-editing.dtd
+--- ./en-US/0.9/locale/editor/pref-editing.dtd	2004-12-21 14:19:00.000000000 +0000
++++ ./en-US/1.0PR/locale/editor/pref-editing.dtd	2005-03-16 12:54:00.000000000 +0000
+@@ -1,9 +1,17 @@
+-<!ENTITY  lHeader                   "New Page Settings">
+-<!ENTITY  rHeader                   "Defaults for new pages">
++<!ENTITY lHeader                   "New Page Settings">
++<!ENTITY rHeader                   "Defaults for new pages">
+ 
+-<!ENTITY  authorName.label          "Author:">
+-<!ENTITY  authorName.accesskey      "u">
+-<!ENTITY  pageColorHeader           "Default Page Appearance">
++<!ENTITY authorName.label          "Author:">
++<!ENTITY authorName.accesskey      "u">
++<!ENTITY pageColorHeader           "Default Page Appearance">
++
++<!ENTITY dialect.label              "Markup">
++<!ENTITY markupLanguage.label       "Language:">
++<!ENTITY dtd.label                  "DTD:">
++<!ENTITY htmlMarkupLanguage.label   "HTML 4">
++<!ENTITY xhtmlMarkupLanguage.label  "XHTML 1">
++<!ENTITY looseDTD.label             "Transitional">
++<!ENTITY strictDTD.label            "Strict">
+ 
+ <!ENTITY defaultColorsRadio.label   "Reader's default colors (Don't set colors in page)">
+ <!ENTITY defaultColors.accesskey    "d">
+diff -uN -r ./en-US/0.9/locale/editor-region/region.properties ./en-US/1.0PR/locale/editor-region/region.properties
+--- ./en-US/0.9/locale/editor-region/region.properties	2005-02-09 16:35:00.000000000 +0000
++++ ./en-US/1.0PR/locale/editor-region/region.properties	2005-03-30 12:33:00.000000000 +0000
+@@ -4,3 +4,4 @@
+ editor.forums.url=http://forum.nvudev.org/
+ editor.bugReports.url=http://www.nvu.com/bugreport2.php
+ editor.L10N.url=http://glazman.org/nvu/NVU-L10N.html
++editor.CCuserGuide.url=http://www.nvudev.org/guide/1.0PR
+diff -uN -r ./en-US/0.9/locale/en-US/cascades/cascades.properties ./en-US/1.0PR/locale/en-US/cascades/cascades.properties
+--- ./en-US/0.9/locale/en-US/cascades/cascades.properties	2005-01-31 12:51:00.000000000 +0000
++++ ./en-US/1.0PR/locale/en-US/cascades/cascades.properties	2005-03-16 16:35:00.000000000 +0000
+@@ -30,3 +30,7 @@
+ SaveBeforeLocalSheetWarning1=(Warning : save document *before* attaching local stylesheet)
+ SaveBeforeLocalSheetWarning2=(use Refresh button if stylesheet is not immediately downloaded)
+ SelectCSSFile=Select a CSS File
++AlternateKeyword= (alternate) 
++StyleSheet=StyleSheet
++StyleSheetIsEmbedded=none (embedded into the document)
++Transparent=transparent
+diff -uN -r ./en-US/0.9/locale/tipoftheday/tipoftheday.dtd ./en-US/1.0PR/locale/tipoftheday/tipoftheday.dtd
+--- ./en-US/0.9/locale/tipoftheday/tipoftheday.dtd	2004-12-13 10:25:00.000000000 +0000
++++ ./en-US/1.0PR/locale/tipoftheday/tipoftheday.dtd	2005-03-23 16:00:00.000000000 +0000
+@@ -40,4 +40,5 @@
+ <!ENTITY questionBeginning.label    "Did you know that...">
+ <!ENTITY startupCheckbox.label      "Show tips at startup">
+ <!ENTITY nextTipButton.label        "Next Tip">
++<!ENTITY previousTipButton.label    "Previous Tip">
+ <!ENTITY closeTipButton.label       "Close">
+

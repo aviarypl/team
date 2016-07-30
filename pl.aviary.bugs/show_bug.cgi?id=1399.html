@@ -1,0 +1,2798 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>1399 &ndash; about:mozilla, 11:9</title>
+
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<link href="data/assets/7aa6ea67750936a0368541421bdcd5ee.css" rel="stylesheet" type="text/css">
+
+
+
+    
+<script type="text/javascript" src="data/assets/a7c2f3a028f17a9aa60f56dc9d6e732d.js"></script>
+
+    <script type="text/javascript">
+    <!--
+        YAHOO.namespace('bugzilla');
+        YAHOO.util.Event.addListener = function (el, sType, fn, obj, overrideContext) {
+               if ( ("onpagehide" in window || YAHOO.env.ua.gecko) && sType === "unload") { sType = "pagehide"; };
+               var capture = ((sType == "focusin" || sType == "focusout") && !YAHOO.env.ua.ie) ? true : false;
+               return this._addListener(el, this._getType(sType), fn, obj, overrideContext, capture);
+         };
+        if ( "onpagehide" in window || YAHOO.env.ua.gecko) {
+            YAHOO.util.Event._simpleRemove(window, "unload", 
+                                           YAHOO.util.Event._unload);
+        }
+        
+        function unhide_language_selector() { 
+            YAHOO.util.Dom.removeClass(
+                'lang_links_container', 'bz_default_hidden'
+            ); 
+        } 
+        YAHOO.util.Event.onDOMReady(unhide_language_selector);
+
+        
+        var BUGZILLA = {
+            param: {
+                cookiepath: '\/',
+                maxusermatches: 1000
+            },
+            constant: {
+                COMMENT_COLS: 80
+            },
+            string: {
+                
+
+                attach_desc_required:
+                    "You must enter a Description for this attachment.",
+                component_required:
+                    "You must select a Component for this bug.",
+                description_required:
+                    "You must enter a Description for this bug.",
+                short_desc_required:
+                    "You must enter a Summary for this bug.",
+                version_required:
+                    "You must select a Version for this bug."
+            }
+              , api_token: ''
+        };
+
+    if (history && history.replaceState) {
+      if(!document.location.href.match(/show_bug\.cgi/)) {
+        history.replaceState( null,
+                             "1399 – about:mozilla, 11:9",
+                             "show_bug.cgi?id=1399" );
+        document.title = "1399 – about:mozilla, 11:9";
+      }
+      if (document.location.href.match(/show_bug\.cgi\?.*list_id=/)) {
+        var href = document.location.href;
+        href = href.replace(/[\?&]+list_id=(\d+|cookie)/, '');
+        history.replaceState(null, "1399 – about:mozilla, 11:9", href);
+      }
+    }
+    YAHOO.util.Event.onDOMReady(function() {
+      initDirtyFieldTracking();
+
+    });
+    // -->
+    </script>
+<script type="text/javascript" src="data/assets/daf5e0fb6826e6a35280e622913f0c4a.js"></script>
+
+    
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+                       title="Bugzilla" href="search_plugin.cgi">
+    <link rel="shortcut icon" href="images/favicon.ico">
+  </head>
+
+  <body 
+        class="bugs-aviary-pl
+                 bz_bug
+                 bz_status_VERIFIED
+                 bz_product_Toolkit
+                 bz_component_inne
+                 bz_bug_1399 yui-skin-sam">
+
+  <div id="header"><div id="banner">
+  </div>
+
+    <div id="titles">
+      <span id="title">Bugzilla &ndash; Bug&nbsp;1399</span>
+
+        <span id="subtitle" class="subheader">about:mozilla, 11:9</span>
+
+        <span id="information" class="header_addl_info">Last modified: 2009-01-02 03:40:01 CET</span>
+    </div>
+
+
+    <div id="common_links"><ul class="links">
+  <li><a href="index.html">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi.html">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi.html">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi.html">Search</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="http://bugs.aviary.pl/buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input type="hidden" id="no_redirect_top" name="no_redirect" value="0">
+    <script type="text/javascript">
+      if (history && history.replaceState) {
+        var no_redirect = document.getElementById("no_redirect_top");
+        no_redirect.value = 1;
+      }
+    </script>
+    <input class="txt" type="text" id="quicksearch_top" name="quicksearch" 
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search" 
+           id="find_top"></form>
+  <a href="page.cgi%3Fid=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="report.cgi.html">Reports</a></li>
+
+  <li>
+      <span class="separator">| </span>
+        <a href="request.cgi.html">Requests</a></li>
+
+
+  <li>
+        <span class="separator">| </span>
+        <a href="https://bugzilla.readthedocs.org/en/5.0/using/understanding.html" target="_blank">Help</a>
+      </li>
+    
+      <li id="new_account_container_top">
+        <span class="separator">| </span>
+        <a href="createaccount.cgi.html">New&nbsp;Account</a>
+      </li>
+
+    <li id="mini_login_container_top">
+  <span class="separator">| </span>
+  <a id="login_link_top" href="show_bug.cgi%3Fid=1399&amp;GoAheadAndLogIn=1.html"
+     onclick="return show_mini_login_form('_top')">Log In</a>
+
+  <form action="show_bug.cgi%3Fid=1399.html" method="POST"
+        class="mini_login bz_default_hidden"
+        id="mini_login_top">
+    <input id="Bugzilla_login_top" required
+           name="Bugzilla_login" class="bz_login"
+        type="email" placeholder="Email Address">
+    <input class="bz_password" name="Bugzilla_password" type="password"
+           id="Bugzilla_password_top" required
+           placeholder="Password">
+    <input type="hidden" name="Bugzilla_login_token"
+           value="1469820780-dNPD-kfeC6-3jIu8TqB8IjYaIx5DkeN8VfT8FNKi-rw">
+    <input type="submit" name="GoAheadAndLogIn" value="Log in"
+            id="log_in_top">
+    <a href="show_bug.cgi%3Fid=1399.html#" onclick="return hide_mini_login_form('_top')">[x]</a>
+  </form>
+</li>
+
+
+  <li id="forgot_container_top">
+    <span class="separator">| </span>
+    <a id="forgot_link_top" href="show_bug.cgi%3Fid=1399&amp;GoAheadAndLogIn=1.html#forgot"
+       onclick="return show_forgot_form('_top')">Forgot Password</a>
+    <form action="http://bugs.aviary.pl/token.cgi" method="post" id="forgot_form_top"
+          class="mini_forgot bz_default_hidden">
+      <label for="login_top">Login:</label>
+      <input name="loginname" size="20" id="login_top" required
+          type="email" placeholder="Your Email Address">
+      <input id="forgot_button_top" value="Reset Password" type="submit">
+      <input type="hidden" name="a" value="reqpw">
+      <input type="hidden" id="token_top" name="token"
+             value="1469820780-W0Hhd4VMJwtUIhMyNASUttDQDpDEg7dpJeKPsEuKFZg">
+      <a href="show_bug.cgi%3Fid=1399.html#" onclick="return hide_forgot_form('_top')">[x]</a>
+    </form>
+  </li>
+</ul>
+    </div>
+  </div>
+
+  <div id="bugzilla-body">
+
+
+<script type="text/javascript">
+<!--
+
+//-->
+</script>
+
+<form name="changeform" id="changeform" method="post" action="http://bugs.aviary.pl/process_bug.cgi">
+
+  <input type="hidden" name="delta_ts" value="2009-01-02 03:40:01">
+  <input type="hidden" name="id" value="1399">
+  <input type="hidden" name="token" value="1469820780-SaGFIZHJPbFjXt_Vd2lGn4ZilCDTdhHE1FAfPsMJnQw">
+<div class="bz_short_desc_container edit_form">
+     <a href="show_bug.cgi%3Fid=1399.html"><b>Bug&nbsp;1399</b></a> <span id="summary_container" class="bz_default_hidden">
+      - <span id="short_desc_nonedit_display">about:mozilla, 11:9</span>
+     </span>
+
+    <div id="summary_input"><span class="field_label "
+    id="field_label_short_desc">
+
+
+  <a 
+      title="The bug summary is a short sentence which succinctly describes what the bug is about."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#short_desc"
+  >Summary:</a>
+
+</span>about:mozilla, 11:9
+    </div>
+  </div>
+  <script type="text/javascript">
+    hideEditableField('summary_container',
+                      'summary_input',
+                      'summary_edit_action',
+                      'short_desc',
+                      'about:mozilla, 11:9' );
+  </script>
+  <table class="edit_form">
+    <tr>
+      
+      <td id="bz_show_bug_column_1" class="bz_show_bug_column">     
+        <table>
+          <tr>
+    <th class="field_label">
+      <a href="page.cgi%3Fid=fields.html#bug_status">Status</a>:
+    </th>
+    <td id="bz_field_status">
+      <span id="static_bug_status">VERIFIED
+          FIXED
+      </span>
+    </td>
+  </tr>
+<tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+<tr><th class="field_label "
+    id="field_label_alias">
+
+
+  <a 
+      title="A short, unique name assigned to a bug in order to assist with looking it up and referring to it in other places in Bugzilla."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#alias"
+  >Alias:</a>
+
+</th>
+    <td>
+        None
+    </td>
+  </tr>
+<tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+<tr><th class="field_label "
+    id="field_label_product">
+
+
+  <a 
+      title="Bugs are categorised into Products and Components. Select a Classification to narrow down this list."
+      class="field_help_link"
+      href="describecomponents.cgi.html"
+  >Product:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_product" >Toolkit
+
+</td>
+    </tr>
+
+    
+    <tr class="bz_default_hidden"><th class="field_label "
+    id="field_label_classification">
+
+
+  <a 
+      title="Bugs are categorised into Classifications, Products and Components. classifications is the top-level categorisation."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#classification"
+  >Classification:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_classification" >Tłumaczenia oprogramowania
+
+</td>
+    </tr>
+        
+    
+    
+    <tr><th class="field_label "
+    id="field_label_component">
+
+
+  <a 
+      title="Components are second-level categories; each belongs to a particular Product. Select a Product to narrow down this list."
+      class="field_help_link"
+      href="describecomponents.cgi%3Fproduct=Toolkit.html"
+  >Component:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_component" >inne
+
+  (<a href="buglist.cgi%3Fcomponent=inne&amp;product=Toolkit&amp;bug_status=__open__.html"
+      target="_blank">show other bugs</a>)
+</td>
+    </tr>
+    <tr><th class="field_label "
+    id="field_label_version">
+
+
+  <a 
+      title="The version field defines the version of the software the bug was found in."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#version"
+  >Version:</a>
+
+</th>
+<td>nieokreślona
+  </td>
+    </tr>
+        
+    
+        
+    <tr><th class="field_label "
+    id="field_label_rep_platform">
+
+
+  <a 
+      title="The hardware platform the bug was observed on. Note: When searching, selecting the option &quot;All&quot; only finds bugs whose value for this field is literally the word &quot;All&quot;."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#rep_platform"
+  >Hardware:</a>
+
+</th>
+      <td class="field_value">Wszystkie
+        Wszystkie
+      </td>
+    </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          
+          <tr>
+      <th class="field_label">
+        <label  accesskey="i">
+          <a href="page.cgi%3Fid=fields.html#importance"><u>I</u>mportance</a></label>:
+      </th>
+      <td>P5
+       normalny
+      </td>
+    </tr>
+          
+          <tr><th class="field_label "
+    id="field_label_assigned_to">
+
+
+  <a 
+      title="The person in charge of resolving the bug."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#assigned_to"
+  >Assignee:</a>
+
+</th>
+      <td><span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+      </td>
+    </tr>
+
+    <tr><th class="field_label "
+    id="field_label_qa_contact">
+
+
+  <a 
+      title="The person responsible for confirming this bug if it is unconfirmed, and for verifying the fix once the bug has been resolved."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#qa_contact"
+  >QA Contact:</a>
+
+</th>
+      <td><span class="vcard">toolkit
+</span>
+      </td>
+    </tr>
+    <script type="text/javascript">
+      assignToDefaultOnChange(['product', 'component'],
+        'splewako\x40aviary.pl',
+        'toolkit\x40l10n.bledy');
+    </script>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          <tr><th class="field_label "
+    id="field_label_bug_file_loc">
+
+
+  <a 
+      title="Bugs can have a URL associated with them - for example, a pointer to a web site where the problem is seen."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#bug_file_loc"
+  >URL:</a>
+
+</th>
+    <td>
+      <span id="bz_url_input_area">
+          <a href="http://mxr.mozilla.org/l10n/source/pl/toolkit/chrome/global/mozilla.dtd"
+             rel="noreferrer"><span title="http://mxr.mozilla.org/l10n/source/pl/toolkit/chrome/global/mozilla.dtd">http://mxr.mozilla.org/l10n/source/pl...
+        </span></a>
+      </span>
+    </td>
+  </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+
+          
+<tr><th class="field_label "
+    id="field_label_dependson">
+
+
+  <a 
+      title="The bugs listed here must be resolved before this bug can be resolved."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#dependson"
+  >Depends on:</a>
+
+</th>
+
+  <td>
+    <span id="dependson_input_area">
+    </span>
+
+  </td>
+  </tr>
+  
+  <tr><th class="field_label "
+    id="field_label_blocked">
+
+
+  <a 
+      title="This bug must be resolved before the bugs listed in this field can be resolved."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#blocked"
+  >Blocks:</a>
+
+</th>
+
+  <td>
+    <span id="blocked_input_area">
+    </span>
+<a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - [tracking] Lokalizacja Firefoksa 3.0"
+   href="show_bug.cgi%3Fid=1040.html">1040</a> 
+  </td>
+  </tr>
+
+    <tr>
+      <th>&nbsp;</th>
+
+      <td id="show_dependency_tree_or_graph">
+        Show dependency <a href="showdependencytree.cgi%3Fid=1399&amp;hide_resolved=1.html">tree</a>
+
+          /&nbsp;<a href="showdependencygraph.cgi%3Fid=1399.html">graph</a>
+      </td>
+    </tr>
+          
+        </table>
+      </td>
+      <td>
+        <div class="bz_column_spacer">&nbsp;</div>
+      </td>
+      
+      <td id="bz_show_bug_column_2" class="bz_show_bug_column">
+        <table>
+        <tr>
+    <th class="field_label">
+      Reported:
+    </th>
+    <td>2008-01-10 09:56 CET by <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+    </td>
+  </tr>
+  
+  <tr>
+    <th class="field_label">
+      Modified:
+    </th>
+    <td>2009-01-02 03:40 CET
+      (<a href="show_activity.cgi%3Fid=1399.html">History</a>)
+    </td>
+  
+  </tr>
+<tr>
+      <th class="field_label">
+        <label  accesskey="a">
+          CC List:
+        </label>
+      </th>
+      <td>6 
+          users
+          <span id="cc_edit_area_showhide_container" class="bz_default_hidden">
+            (<a href="show_bug.cgi%3Fid=1399.html#" id="cc_edit_area_showhide">show</a>)
+          </span>
+        <div id="cc_edit_area">
+          <br>
+            <select id="cc" multiple="multiple" size="5" >
+                <option value="gandalf">gandalf</option>
+                <option value="hubert+bap">hubert+bap</option>
+                <option value="mmalinowski">mmalinowski</option>
+                <option value="smalolepszy">smalolepszy</option>
+                <option value="w.kapusta">w.kapusta</option>
+                <option value="wszczesny">wszczesny</option>
+            </select>
+        </div>
+          <script type="text/javascript">
+            hideEditableField( 'cc_edit_area_showhide_container', 
+                               'cc_edit_area', 
+                               'cc_edit_area_showhide', 
+                               '', 
+                               '');  
+          </script>
+      </td>
+    </tr>
+
+<tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+<tr><th class="field_label "
+    id="field_label_see_also">
+
+
+  <a 
+      title="This allows you to refer to bugs in other installations. You can enter a URL to a bug in the 'Add Bug URLs' field to note that that bug is related to this one. You can enter multiple URLs at once by separating them with whitespace. You should normally use this field to refer to bugs in other installations. For bugs in this installation, it is better to use the Depends on and Blocks fields."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#see_also"
+  >See Also:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_see_also" >
+
+</td>
+    </tr> 
+
+<tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+
+
+
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+          <hr id="bz_top_half_spacer">
+      </td>
+    </tr>
+  </table>
+
+  <table id="bz_big_form_parts">
+  <tr>
+  <td>
+
+    
+<script type="text/javascript">
+<!--
+function toggle_display(link) {
+    var table = document.getElementById("attachment_table");
+    var view_all = document.getElementById("view_all");
+    var hide_obsolete_url_parameter = "&hide_obsolete=1";
+    // Store current height for scrolling later
+    var originalHeight = table.offsetHeight;
+    var rows = YAHOO.util.Dom.getElementsByClassName(
+        'bz_tr_obsolete', 'tr', table);
+
+    for (var i = 0; i < rows.length; i++) {
+        bz_toggleClass(rows[i], 'bz_default_hidden');
+    }
+
+    if (YAHOO.util.Dom.hasClass(rows[0], 'bz_default_hidden')) {
+        link.innerHTML = "Show Obsolete";
+        view_all.href = view_all.href + hide_obsolete_url_parameter 
+    }
+    else {
+        link.innerHTML = "Hide Obsolete";
+        view_all.href = view_all.href.replace(hide_obsolete_url_parameter,"");
+    }
+
+    var newHeight = table.offsetHeight;
+    // This scrolling makes the window appear to not move at all.
+    window.scrollBy(0, newHeight - originalHeight);
+
+    return false;
+}
+//-->
+</script>
+
+<br>
+<table id="attachment_table">
+  <tr id="a0">
+    <th colspan="3" class="left">
+      Attachments
+    </th>
+  </tr>
+
+
+
+  <tr class="bz_attach_footer">
+    <td colspan="3">
+        <a href="attachment.cgi%3Fbugid=1399&amp;action=enter.html">Add an attachment</a>
+        (proposed patch, testcase, etc.)
+    </td>
+  </tr>
+</table>
+<br>
+
+  </td>
+  <td>
+  </td>
+  </tr></table>
+
+  
+  <div id="comments"><script src="js/comments.js" type="text/javascript">
+</script>
+
+<script type="text/javascript">
+<!--
+  /* Adds the reply text to the 'comment' textarea */
+  function replyToComment(id, real_id, name) {
+      var prefix = "(In reply to " + name + " from comment #" + id + ")\n";
+      var replytext = "";
+        /* pre id="comment_name_N" */
+        var text_elem = document.getElementById('comment_text_'+id);
+        var text = getText(text_elem);
+        replytext = prefix + wrapReplyText(text);
+
+
+      /* <textarea id="comment"> */
+      var textarea = document.getElementById('comment');
+      if (textarea.value != replytext) {
+          textarea.value += replytext;
+      }
+
+      textarea.focus();
+  } 
+//-->
+</script>
+
+
+<!-- This auto-sizes the comments and positions the collapse/expand links 
+     to the right. -->
+<table class="bz_comment_table">
+<tr>
+<td>
+<div id="c0" class="bz_comment bz_first_comment">
+
+      <div class="bz_first_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1399.html#c0">Description</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-01-10 09:56:45 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Mammon slept. And the &lt;em&gt;beast reborn&lt;/em&gt; spread over the earth and its numbers
+grew legion. And they spoke forth the Times and &lt;em&gt;sacrificed&lt;/em&gt; crops unto the
+fire, with the &lt;em&gt;cunning of foxes&lt;/em&gt;. And they built a new world in their own
+image as promised by the &lt;em&gt;&lt;a href=&quot;<a href="http://www.mozilla.org/about/mozilla-manifesto.html">http://www.mozilla.org/about/mozilla-manifesto.html</a>&quot;&gt;sacred words&lt;/a&gt;&lt;/em&gt;, and &lt;em&gt;&lt;a href=&quot;<a href="http://wiki.mozilla.org/About:mozilla">http://wiki.mozilla.org/About:mozilla</a>&quot;&gt;spoke&lt;/a&gt;&lt;/em&gt; of the beast with their children. When Mammon awoke, lo! it was &lt;em&gt;naught&lt;/em&gt; but a follower.'&gt;
+
+Oto nowy cytat z Księgi Mozilli dla Fx/Tb 3 i SMk 2. Potrzebujemy go po polsku. :)</pre>
+    </div>
+
+    <div id="c1" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1399.html#c1">Comment 1</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-01-10 09:58:07 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Wyjasnienia nawiazan w bugu na BMO: <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=411352#c0">https://bugzilla.mozilla.org/show_bug.cgi?id=411352#c0</a></pre>
+    </div>
+
+    <div id="c2" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1399.html#c2">Comment 2</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-01-10 11:39:00 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">ehh, kompletnie mi sie nie podoba :/
+
+Poczekalbym do Mozilli 2 - to bedzie prawdziwy przelom na miare zmiany cytatu.
+Po drugie nie podobaja mi sie odnosniki - jakos obnizaja oderwanie tego od swiata.
+
+No ale coz, pierwszy strzal:
+
+Mammon spał. A na Ziemi &lt;em&gt;bestia odrodzona&lt;/em&gt; budowała swą potęgę, a liczba jego rosła w legion. I przemówili poprzez Czasy i plony &lt;em&gt;poświęcone&lt;/em&gt; w gorejącym ogniu, i z przebiegłością lisów. Tak oto zbudowali nowy świat na swój własny obraz jako w &lt;em&gt;&lt;a
+href=&quot;<a href="http://www.mozilla.org/about/mozilla-manifesto.html">http://www.mozilla.org/about/mozilla-manifesto.html</a>&quot;&gt;świętnych słowach&lt;/a&gt;&lt;/em&gt; obiecane było, a onej bestii &lt;em&gt;&lt;a
+href=&quot;<a href="http://wiki.mozilla.org/About:mozilla">http://wiki.mozilla.org/About:mozilla</a>&quot;&gt;powiadali&lt;/a&gt;&lt;/em&gt; swym dzieciom.
+I gdy Mammon zbudził się, oh! &lt;em&gt;nikim nie był&lt;/em&gt; jeno uczniem.'&gt;
+
+lepiej by brzmialo &quot;jeno Bestii uczniem&quot; dla melodyki tekstu, ale nie chce przesadzac ze zmianami.
+
+To pierwsza wersja, czekam na uwagi :)
+
+</pre>
+    </div>
+
+    <div id="c3" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1399.html#c3">Comment 3</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-01-10 11:58:59 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Troche kombinowalem z koncowka i wymyslilem tak:
+
+Kiedy Mammon obudził się, &lt;em&gt;marnym&lt;/em&gt; jeno był naśladowcą.
+
+&quot;na obraz swój i podobieństwo&quot; - w końcu to jest zrzynka z Biblii. :)</pre>
+    </div>
+
+    <div id="c4" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1399.html#c4">Comment 4</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Staś Małolepszy :stas</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-01-10 14:52:28 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Moja propozycja, heavily based na Zbyszkowej.
+
+Mammon spał. A odrodzona bestia budowała swą potęgę na Ziemi, a
+liczby jej wyznawców rosły w tysiące. I przemówili poprzez Czas i plony
+poświęcone w gorejącym ogniu, a z przemyślnością lisów to czynili. Tak oto
+zbudowali nowy świat na swój własny obraz jako w świętych
+słowach obiecane było, i o tym świecie powiadali swym dzieciom.
+I kiedy Mammon obudził się, marnym jeno był naśladowcą.
+
+UWAGI:
+
+glowna zmiana to zastapienie przebieglosci &quot;przemyslnoscia&quot;. Cunning ma wiele znaczen i jest dosc pozytywnym slowem. Przebieglosc kojerzy mi sie nieco inaczej i chce byc nieco ostrozny, skoro zaraz potem budujemy swiat na swoj wlasny obraz i podobienstwo.
+
+mam problem tez z Timesem. Srednio to lokalizowalne. Proponowalbym &quot;Czas&quot; a nie &quot;Czasy&quot;, bo Czasy to po rosyjsku jest ;) Z tymze jest chyba taka gazeta polska &quot;Czas&quot;, wiec tez nie jestem do konca pewien, czy to dobra zmiana.
+
+Mowiac &quot;nasladowca&quot; tracimy angielska dwuznacznosc: follower to zarowno nasladowca, jak i wyznawca. Na razie nie wiem jednak, jak sobie z tym poradzic.</pre>
+    </div>
+
+    <div id="c5" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1399.html#c5">Comment 5</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-02-24 02:52:00 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Poszła wersja Staszka z drobnymi poprawkami (nie wiem, skąd wziąłeś &quot;świat&quot;, kiedy tam jest &quot;bestia&quot;). 
+
+&lt;!ENTITY mozilla.quote
+'Mammon spał. A &lt;em&gt;odrodzona Bestia&lt;/em&gt; budowała swą potęgę na Ziemi, a liczby jej wyznawców rosły w tysiące. I przemówili poprzez Czas i plony &lt;em&gt;poświęcone&lt;/em&gt; w gorejącym ogniu, a z &lt;em&gt;lisią przemyślnością&lt;/em&gt; to uczynili. Tak oto zbudowali nowy świat na obraz swój i podobieństwo, jako w &lt;em&gt;&lt;a href=&quot;<a href="http://www.mozilla.org/about/mozilla-manifesto.html">http://www.mozilla.org/about/mozilla-manifesto.html</a>&quot;&gt;świętych słowach&lt;/a&gt;&lt;/em&gt; przyrzeczone było, a o Bestii owej &lt;em&gt;&lt;a href=&quot;<a href="http://wiki.mozilla.org/About:mozilla">http://wiki.mozilla.org/About:mozilla</a>&quot;&gt;powiadali&lt;/a&gt;&lt;/em&gt; dzieciom swym. A kiedy Mammon obudził się, marnym jeno był naśladowcą.'&gt;</pre>
+    </div>
+
+    <div id="c6" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1399.html#c6">Comment 6</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Staś Małolepszy :stas</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-02-24 03:14:44 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Właśnie zdałem sobie sprawę z tego, że &quot;gorejący ogień&quot; to okropnie nieładne powtórzenie. Może po prostu &quot;poświęcone w ogniu&quot;?</pre>
+    </div>
+
+    <div id="c7" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1399.html#c7">Comment 7</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Wojciech Kapusta</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-02-25 04:00:43 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">&quot;...plony poświęcone w gorejącym ogniu&quot; - ładnie i biblijnie to brzmi. Ja bym to zostawił.</pre>
+    </div>
+
+    <div id="c8" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1399.html#c8">Comment 8</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Staś Małolepszy :stas</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-02-25 05:28:09 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Biblijny to był gorejący krzak. Gorejący ogień to o wiele mniej biblijne masło maślane ;)</pre>
+    </div>
+
+    <div id="c9" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1399.html#c9">Comment 9</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-02-26 16:15:09 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">niekoniecznie.
+
+gorzeć to znaczy palić się.
+
+Czy masz problem z formą &quot;płonący ogień&quot;? Jasne, że to tautologia, ale deszcz pada, słońce świeci, wiatr wieje a ogień płonie, ogień gorzeje...
+
+Ja nie mam problemu z gorejącym ogniem, jako &quot;wzmocnieniem&quot;.</pre>
+    </div>
+
+    <div id="c10" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1399.html#c10">Comment 10</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-02-28 13:53:58 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Kilka uwag.
+en-US:
+'Mammon slept. And the &lt;em&gt;beast reborn&lt;/em&gt; spread over the earth and its numbers
+grew legion. And they proclaimed the times and &lt;em&gt;sacrificed&lt;/em&gt; crops unto the
+fire, with the &lt;em&gt;cunning of foxes&lt;/em&gt;. And they built a new world in their own
+image as promised by the &lt;em&gt;&lt;a href=&quot;<a href="http://www.mozilla.org/about/mozilla-manifesto.html">http://www.mozilla.org/about/mozilla-manifesto.html</a>&quot;&gt;
+sacred words&lt;/a&gt;&lt;/em&gt;, and &lt;em&gt;&lt;a href=&quot;<a href="http://wiki.mozilla.org/About:mozilla">http://wiki.mozilla.org/About:mozilla</a>&quot;&gt;spoke
+&lt;/a&gt;&lt;/em&gt; of the beast with their children. Mammon awoke, and lo! it was
+&lt;em&gt;naught&lt;/em&gt; but a follower.'
+
+Moja propozycja (w oparciu o obecną)
+&lt;!ENTITY mozilla.quote
+'Mammon spał. A &lt;em&gt;odrodzona Bestia&lt;/em&gt; potęgę swą na Ziemi budowała, a liczby jej wyznawców
+rosły w legiony. I przemówili poprzez Czas i plony &lt;em&gt;poświęcone&lt;/em&gt; w gorejącym
+ogniu, a z &lt;em&gt;przebiegłością lisią&lt;/em&gt; to uczynili. I tak oto zbudowali nowy świat na obraz swój
+i podobieństwo, jako w &lt;em&gt;&lt;a href=&quot;<a href="http://www.mozilla.org/about/mozilla-manifesto.html">http://www.mozilla.org/about/mozilla-manifesto.html</a>&quot;&gt;
+świętych słowach&lt;/a&gt;&lt;/em&gt; przyrzeczone było, a o Bestii owej dzieciom swym
+&lt;em&gt;&lt;a href=&quot;<a href="http://wiki.mozilla.org/About:mozilla">http://wiki.mozilla.org/About:mozilla</a>&quot;&gt;powiadali&lt;/a&gt;&lt;/em&gt;.
+A gdy Mammon zbudził się, marnym był jeno &lt;em&gt;naśladowcą&lt;/em&gt;.'&gt;
+
+Pozmieniałem w niektórych zdaniach szyk, zmieniłem &quot;tysiące&quot; na &quot;legiony&quot; (tak się mówi, poza tym &quot;legion&quot; ma drugie znaczenie). Zmieniłem niektóre słowa np. obudził -&gt; zbudził i przemyślnością -&gt; przebiegłością.
+
+Nie widzę nic złego w &quot;przebiegłości&quot;. Może i &quot;cunning&quot; ma wiele znaczeń, ale mówi się &quot;przebiegły jak lis&quot;, bardzo rzadko &quot;sprytny jak lis&quot;, ale nie &quot;przemyślny jak lis&quot;...
+
+Słownik języka polskiego PWN:
+przebiegły «umiejący wykorzystać sytuację dla swojej korzyści, niedający się oszukać ani wykorzystać; też: świadczący o takiej umiejętności»
+
+To nic złego :-)</pre>
+    </div>
+
+    <div id="c11" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1399.html#c11">Comment 11</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-02-29 08:55:05 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Podoba mi sie &quot;legiony&quot;,podoba mi sie nastepne, ale mam problem z przebiegly...
+
+Bo tak, z jednej strony, mówi się przebiegly jak lis. 1:0 dla Ciebie. Dwa, przebiegły faktycznie ma znaczenie pozytywne. 2:0.
+Ale na 100 osob na ulicy zapytanych, 90 powie, ze przebiegly jest negatywne. Jesli pan X jest przebiegly, to nie chcesz go spotkac, obawiasz sie go, nie ufasz mu...
+Czy chcemy odsylac do slownika?</pre>
+    </div>
+
+    <div id="c12" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1399.html#c12">Comment 12</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-02-29 10:23:47 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(w odpowiedzi na komentarz #11)
+<span class="quote">&gt; Podoba mi sie &quot;legiony&quot;,podoba mi sie nastepne, ale mam problem z przebiegly...
+&gt; 
+&gt; Bo tak, z jednej strony, mówi się przebiegly jak lis. 1:0 dla Ciebie. Dwa,
+&gt; przebiegły faktycznie ma znaczenie pozytywne. 2:0.
+&gt; Ale na 100 osob na ulicy zapytanych, 90 powie, ze przebiegly jest negatywne.
+&gt; Jesli pan X jest przebiegly, to nie chcesz go spotkac, obawiasz sie go, nie
+&gt; ufasz mu...
+&gt; Czy chcemy odsylac do slownika?</span >
+
+Myślałem, jeszcze o czymś takim:
+
+&quot;a ze &lt;em&gt;sprytem lisim&lt;/em&gt; to uczynili.&quot;
+
+</pre>
+    </div>
+
+    <div id="c13" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1399.html#c13">Comment 13</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-02-29 10:25:14 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(w odpowiedzi na komentarz #12)
+
+<span class="quote">&gt; Myślałem, jeszcze o czymś takim:</span >
+
+Te przecinki mnie prześladują, nie wiem skąd się biorą ;-)
+</pre>
+    </div>
+
+    <div id="c14" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1399.html#c14">Comment 14</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-03-22 04:58:15 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Otwieram to, żebyśmy tego nie zgubili. Marek?</pre>
+    </div>
+
+    <div id="c15" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1399.html#c15">Comment 15</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-03-26 12:35:24 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">&quot;Przemyślność&quot; brzmi archaicznie, do tego pojawia się w Biblii. Tak więc wolę &quot;przemyślność&quot; niż &quot;spryt&quot;.
+
+O to chodziło, Hubercie? Jeśli tak, to raczej jestem za zamknięciem tego buga.</pre>
+    </div>
+
+    <div id="c16" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1399.html#c16">Comment 16</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-03-26 16:14:36 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(w odpowiedzi na komentarz #15)
+<span class="quote">&gt; &quot;Przemyślność&quot; brzmi archaicznie, do tego pojawia się w Biblii. Tak więc
+&gt; wolę &quot;przemyślność&quot; niż &quot;spryt&quot;.
+&gt; 
+&gt; O to chodziło, Hubercie? Jeśli tak, to raczej jestem za zamknięciem tego
+&gt; buga.</span >
+
+Nie, niech zostanie &quot;przemyślność&quot;, co z resztą?
+
+</pre>
+    </div>
+
+    <div id="c17" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1399.html#c17">Comment 17</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-03-27 00:21:49 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">przemyslnosc bardzo mi odpowiada :D</pre>
+    </div>
+
+    <div id="c18" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1399.html#c18">Comment 18</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-03-27 02:16:13 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(w odpowiedzi na komentarz #17)
+<span class="quote">&gt; przemyslnosc bardzo mi odpowiada :D</span >
+
+Chwila, dlaczego zamknąłeś buga? To jest sprzeczne z tym co napisałeś w komentarzu 11...
+
+</pre>
+    </div>
+
+    <div id="c19" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1399.html#c19">Comment 19</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-03-27 02:32:39 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Otwieram, zakładam błąd został zamknięty przez pomyłkę.
+
+</pre>
+    </div>
+
+    <div id="c20" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1399.html#c20">Comment 20</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-03-27 06:58:22 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">jak to sprzeczne? Jesli zmieniamy &quot;przebiegly&quot; na &quot;przemyslny&quot; to ja jestem happy</pre>
+    </div>
+
+    <div id="c21" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1399.html#c21">Comment 21</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-03-27 07:53:10 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(w odpowiedzi na komentarz #20)
+<span class="quote">&gt; jak to sprzeczne? Jesli zmieniamy &quot;przebiegly&quot; na &quot;przemyslny&quot; to ja jestem
+&gt; happy</span >
+
+To była tylko jedna ze zmian...
+
+</pre>
+    </div>
+
+    <div id="c22" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1399.html#c22">Comment 22</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-03-27 08:02:17 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">w moim komentarzu 11, chodzilo tylko o slowo &quot;przebiegly&quot;, ktore mi nie pasowalo. Po jego zmianie na &quot;przemyslny&quot; nie mam wiecej uwag do tego bledu.
+
+Zatem jesli mamy inne, ok, ale nie powoluj sie na moj komentarz, bo ten zostal juz poprawiony :)</pre>
+    </div>
+
+    <div id="c23" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1399.html#c23">Comment 23</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-03-27 08:27:25 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(w odpowiedzi na komentarz #22)
+<span class="quote">&gt; w moim komentarzu 11, chodzilo tylko o slowo &quot;przebiegly&quot;, ktore mi nie
+&gt; pasowalo. Po jego zmianie na &quot;przemyslny&quot; nie mam wiecej uwag do tego bledu.
+&gt; 
+&gt; Zatem jesli mamy inne, ok, ale nie powoluj sie na moj komentarz, bo ten zostal
+&gt; juz poprawiony :)</span >
+
+Nic nie było zmieniane. A w komentarzu 11 powiedziałeś m.in.:
+
+Podoba mi sie &quot;legiony&quot;,podoba mi sie nastepne
+
+To jak w końcu, podoba się czy nie? :-D
+</pre>
+    </div>
+
+    <div id="c24" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1399.html#c24">Comment 24</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-03-27 12:12:47 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(w odpowiedzi na komentarz #23)
+<span class="quote">&gt; Nic nie było zmieniane.</span >
+
+Zasugerowalem sie tym, ze i Ty i Marek zgodziliscie sie na &quot;przemyslny&quot;, a Marek uzyl zwrotu &quot;niech zostanie&quot;, uznalem, ze to juz dokonane.
+
+<span class="quote">&gt; A w komentarzu 11 powiedziałeś m.in.:
+&gt; 
+&gt; Podoba mi sie &quot;legiony&quot;,podoba mi sie nastepne
+&gt; 
+&gt; To jak w końcu, podoba się czy nie? :-D</span >
+
+Tak jak napisalem, podoba mi sie.
+
+</pre>
+    </div>
+
+    <div id="c25" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1399.html#c25">Comment 25</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-03-27 12:24:26 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Marek? Twoja opinia? Zmieniamy?</pre>
+    </div>
+
+    <div id="c26" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1399.html#c26">Comment 26</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-03-30 06:33:43 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Sugerowana przeze mnie wersja po wyrzuceniu &quot;przebiegłością&quot;:
+
+&lt;!ENTITY mozilla.quote
+'Mammon spał. A &lt;em&gt;odrodzona Bestia&lt;/em&gt; potęgę swą na Ziemi budowała, a
+liczby jej wyznawców
+rosły w legiony. I przemówili poprzez Czas i plony &lt;em&gt;poświęcone&lt;/em&gt; w
+gorejącym
+ogniu, a z &lt;em&gt;przemyślnością lisią&lt;/em&gt; to uczynili. I tak oto zbudowali
+nowy świat na obraz swój
+i podobieństwo, jako w &lt;em&gt;&lt;a
+href=&quot;<a href="http://www.mozilla.org/about/mozilla-manifesto.html">http://www.mozilla.org/about/mozilla-manifesto.html</a>&quot;&gt;
+świętych słowach&lt;/a&gt;&lt;/em&gt; przyrzeczone było, a o Bestii owej dzieciom swym
+&lt;em&gt;&lt;a href=&quot;<a href="http://wiki.mozilla.org/About:mozilla">http://wiki.mozilla.org/About:mozilla</a>&quot;&gt;powiadali&lt;/a&gt;&lt;/em&gt;.
+A gdy Mammon zbudził się, marnym był jeno &lt;em&gt;naśladowcą&lt;/em&gt;.'&gt;
+
+Dla przypomnienia: pozmieniałem w niektórych zdaniach szyk, zmieniłem &quot;tysiące&quot; na &quot;legiony&quot; (tak się mówi, poza tym &quot;legion&quot; ma drugie znaczenie). Zmieniłem niektóre słowa np. obudził -&gt; zbudził.
+</pre>
+    </div>
+
+    <div id="c27" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1399.html#c27">Comment 27</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-03-30 06:38:56 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">OK, zrób patcha.
+
+Zastanawiam się tylko, czy nie zmienić &quot;gorejącego ognia&quot; na &quot;ogień gorejący&quot; w celu dalszej archaizacji. :)</pre>
+    </div>
+
+    <div id="c28" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1399.html#c28">Comment 28</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-03-30 06:52:15 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(w odpowiedzi na komentarz #27)
+<span class="quote">&gt; OK, zrób patcha.
+&gt; 
+&gt; Zastanawiam się tylko, czy nie zmienić &quot;gorejącego ognia&quot; na &quot;ogień
+&gt; gorejący&quot; w celu dalszej archaizacji. :)</span >
+
+Nawet o tym myślałem, ale przejrzałem Biblię Tysiąclecia i tam w różnych odmianach słowa &quot;gorejący&quot;, było to raczej przed rzeczownikiem, dlatego zostawiłem. Przykład: <a href="http://online.biblia.pl/rozdzial.php?id=1109&amp;slowa=gorej%B1cym">http://online.biblia.pl/rozdzial.php?id=1109&amp;slowa=gorej%B1cym</a>
+
+</pre>
+    </div>
+
+    <div id="c29" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1399.html#c29">Comment 29</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-03-30 06:56:28 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Ok.</pre>
+    </div>
+
+    <div id="c30" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1399.html#c30">Comment 30</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Wojciech Szczęsny</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-03-30 07:42:39 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Ja byłbym za szykiem &quot;ogień gorejący&quot; jako bardziej odbiegającym od potocznego języka. Kojarzy mi się z fragmentem Hymnu o miłości: &quot;stałbym się jak miedź brzęcząca albo cymbał brzmiący&quot;. W Dziejach Apostolskich jest też &quot;krzak gorejący&quot;.
+
+</pre>
+    </div>
+
+    <div id="c31" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1399.html#c31">Comment 31</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Wojciech Szczęsny</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-03-30 08:25:18 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text"><span class="quote">&gt; 'Mammon spał. A &lt;em&gt;odrodzona Bestia&lt;/em&gt; potęgę swą na Ziemi budowała, a
+&gt; liczby jej wyznawców rosły w legiony.</span >
+
+Można się ewentualnie zastanowić, czy nie przetłumaczyć mniej dosłownie czyli &quot;milijony&quot;. Byłoby nawiązanie do Wielkiej Improwizacji z &quot;Dziadów&quot;:
+&quot;Nazywam się Milijon - bo za milijony
+Kocham i cierpię katusze.&quot;
+
+
+</pre>
+    </div>
+
+    <div id="c32" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1399.html#c32">Comment 32</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-03-30 08:42:41 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Czy mozemy jeszcze przez chwile rozwazyc &quot;odrodzona Bestia&quot; na &quot;Bestia odrodzona&quot;?
+Wydaje mi sie, ze brzmi ladniej</pre>
+    </div>
+
+    <div id="c33" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1399.html#c33">Comment 33</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-03-30 10:28:34 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(w odpowiedzi na komentarz #30)
+<span class="quote">&gt; Ja byłbym za szykiem &quot;ogień gorejący&quot; jako bardziej odbiegającym od
+&gt; potocznego języka. Kojarzy mi się z fragmentem Hymnu o miłości: &quot;stałbym
+&gt; się jak miedź brzęcząca albo cymbał brzmiący&quot;. W Dziejach Apostolskich
+&gt; jest też &quot;krzak gorejący&quot;.</span >
+
+Zdałem sobie sprawę, że przykład który przytoczyłem został przeze mnie źle zinterpretowany. Tam jest &quot;jeziorze gorejącym ogniem i siarką&quot;. Ważny tutaj jest podmiot, prawda? A tym wydaje się &quot;jezioro&quot;. Więc cofam, co mówiłem i zgadzam się z sugestią Marka i Twoją, ale pod warunkiem, że zmienimy szyk w całym zdaniu, żeby to jakiś rytm miało (patrz niżej).
+
+(w odpowiedzi na komentarz #31)
+<span class="quote">&gt; Można się ewentualnie zastanowić, czy nie przetłumaczyć mniej dosłownie
+&gt; czyli &quot;milijony&quot;. Byłoby nawiązanie do Wielkiej Improwizacji z &quot;Dziadów&quot;:
+&gt; &quot;Nazywam się Milijon - bo za milijony
+&gt; Kocham i cierpię katusze.&quot;</span >
+
+Tutaj jestem przeciwny. Nie widziałem we współczesnych polskich przekładach Biblii takich określeń.
+
+(w odpowiedzi na komentarz #32)
+<span class="quote">&gt; Czy mozemy jeszcze przez chwile rozwazyc &quot;odrodzona Bestia&quot; na &quot;Bestia
+&gt; odrodzona&quot;?
+&gt; Wydaje mi sie, ze brzmi ladniej</span >
+
+Jestem za. Może jeszcze &quot;nowy świat zbudowali&quot;? Co myślicie (dodałem przecinek)?
+
+&lt;!ENTITY mozilla.quote
+'Mammon spał. A &lt;em&gt;Bestia odrodzona&lt;/em&gt; potęgę swą na Ziemi budowała, a
+liczby jej wyznawców
+rosły w legiony. I przemówili poprzez Czas i plony w gorejącym ogniu
+&lt;em&gt;poświęcone&lt;/em&gt;, a z &lt;em&gt;przemyślnością lisią&lt;/em&gt; to uczynili. I tak oto 
+nowy świat zbudowali, na obraz swój
+i podobieństwo, jako w &lt;em&gt;&lt;a
+href=&quot;<a href="http://www.mozilla.org/about/mozilla-manifesto.html">http://www.mozilla.org/about/mozilla-manifesto.html</a>&quot;&gt;
+świętych słowach&lt;/a&gt;&lt;/em&gt; przyrzeczone było, a o Bestii owej dzieciom swym
+&lt;em&gt;&lt;a href=&quot;<a href="http://wiki.mozilla.org/About:mozilla">http://wiki.mozilla.org/About:mozilla</a>&quot;&gt;powiadali&lt;/a&gt;&lt;/em&gt;.
+A gdy Mammon zbudził się, marnym był jeno &lt;em&gt;naśladowcą&lt;/em&gt;.'&gt;
+
+A to wersja do sprawdzenia, jak się to czyta (zaznaczyłem pauzy przy czytaniu):
+
+Mammon spał. • A Bestia odrodzona • potęgę swą na Ziemi budowała, • a liczby jej wyznawców rosły w legiony. • I przemówili poprzez Czas • i plony w gorejącym ogniu poświęcone, • a z przemyślnością lisią to uczynili. • I tak oto nowy świat zbudowali,• na obraz swój i podobieństwo, • jako w świętych słowach przyrzeczone było, • a o Bestii owej dzieciom swym powiadali. • A gdy Mammon zbudził się, • marnym był jeno naśladowcą.</pre>
+    </div>
+
+    <div id="c34" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1399.html#c34">Comment 34</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-03-30 10:47:45 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text"><span class="quote">&gt; Bestii owej dzieciom swym powiadali. • A gdy Mammon zbudził się, • marnym
+&gt; był jeno naśladowcą.
+&gt; </span >
+
+&quot;jeno był&quot; ma dla mnie lepszy rytm. Poza tym - ok.</pre>
+    </div>
+
+    <div id="c35" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1399.html#c35">Comment 35</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Wojciech Szczęsny</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-03-31 10:38:22 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text"><span class="quote">&gt; (w odpowiedzi na komentarz #31)
+&gt; &gt; Można się ewentualnie zastanowić, czy nie przetłumaczyć mniej dosłownie
+&gt; &gt; czyli &quot;milijony&quot;. Byłoby nawiązanie do Wielkiej Improwizacji z &quot;Dziadów&quot;:
+&gt; &gt; &quot;Nazywam się Milijon - bo za milijony
+&gt; &gt; Kocham i cierpię katusze.&quot;
+&gt; 
+&gt; Tutaj jestem przeciwny. Nie widziałem we współczesnych polskich przekładach
+&gt; Biblii takich określeń.</span >
+
+Nie miałem na myśli odwołania bezpośrednio do Biblii, ale do Mickiewicza z jego podniosłym stylizowanym biblijnie językiem, zakorzenionym już dobrze w polskiej tradycji. Sugestia jest oczywiście bardzo luźna i upierać się nie będę :)</pre>
+    </div>
+
+    <div id="c36" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1399.html#c36">Comment 36</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Staś Małolepszy :stas</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-03-31 15:38:19 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Jestem za:
+
+- odrodzoną Bestią (a nie bestią odrodzona)
+- ktora &quot;budowała swą potęgę na Ziemi&quot; (a nie &quot;potege swa na ziemi budowala)&quot;
+- milijonami miast legionow
+- marnym był jeno nasladowca (a nie &quot;jeno byl&quot;)
+- gorejącym ogniem (a nie odwrotnie).
+
+Podsumowujac:
+
+Mammon spał. • A odrodzona Bestia • budowała swą potęgę na Ziemi, •
+a liczby jej wyznawców rosły w milijony. • I przemówili poprzez Czas • i
+plony w gorejącym ogniu poświęcone, • a z przemyślnością lisią to
+uczynili. • I tak oto nowy świat zbudowali,• na obraz swój i
+podobieństwo, • jako w świętych słowach przyrzeczone było, • a o
+Bestii owej dzieciom swym powiadali. • A gdy Mammon zbudził się, • marnym
+był jeno naśladowcą.
+
+
+BTW. bardzo podoba mi sie zmiana na &quot;I tak oto nowy świat zbudowali&quot;.
+</pre>
+    </div>
+
+    <div id="c37" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1399.html#c37">Comment 37</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-03-31 23:06:17 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(w odpowiedzi na komentarz #36)
+
+<span class="quote">&gt; Mammon spał. • A odrodzona Bestia • budowała swą potęgę na Ziemi, •
+&gt; a liczby jej wyznawców rosły w milijony. • I przemówili poprzez Czas • i
+&gt; plony w gorejącym ogniu poświęcone, • a z przemyślnością lisią to
+&gt; uczynili. • I tak oto nowy świat zbudowali,• na obraz swój i
+&gt; podobieństwo, • jako w świętych słowach przyrzeczone było, • a o
+&gt; Bestii owej dzieciom swym powiadali. • A gdy Mammon zbudził się, • marnym
+&gt; był jeno naśladowcą.</span >
+
+Mam zastrzeżenia tylko do tego &quot;miljony&quot;.</pre>
+    </div>
+
+    <div id="c38" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1399.html#c38">Comment 38</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-03-31 23:52:16 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(w odpowiedzi na komentarz #36)
+<span class="quote">&gt; Podsumowujac:
+&gt; 
+&gt; Mammon spał. • A odrodzona Bestia • budowała swą potęgę na Ziemi,</span >
+
+Nie moge sie do takiej wersji przekonac. Brzmi jak ze wspolczesnej gazety i nie pasuje mi do reszty. :(
+
+Albo &quot;A bestia odrodzona budowala swa potege na ziemi&quot; albo &quot;A Bestia odrodzona potege swa na ziemi budowala&quot; - obie wersje czytane na glos brzmia mi znacznie lepiej, takze dlatego, ze &quot;bestia odrodzona&quot; daje naturalny akcent na &quot;bestia&quot;,a  w drugiej czesci naturalnie akcentujemy, ze &quot;potege budowala&quot; tylko po drodze okreslajac gdzie.
+W wersji staszka mam poczucie, ze akcent jest na &quot;odrodzona&quot;, a w drugiej czesci skupiamy sie na tym, ze budowala na Ziemi, a tylko wtracamy co - potege.</pre>
+    </div>
+
+    <div id="c39" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1399.html#c39">Comment 39</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Staś Małolepszy :stas</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-04-01 01:51:38 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(w odpowiedzi na komentarz #37)
+
+<span class="quote">&gt; Mam zastrzeżenia tylko do tego &quot;miljony&quot;.</span >
+
+Podoba mi się pomysł użycia tego słowa, bo jest to nasz taki polski wkład w ten tekst. Tak jak Amerykanie mają swoje, których polscy użytkownicy nie zrozumieją, i myślę, że fajnie będzie mieć nasze, których z kolei Amerykanie nie zrozumieją.
+
+Zwróć też uwagę, że to są &quot;milijony&quot;, a nie &quot;miljony&quot;.
+
+</pre>
+    </div>
+
+    <div id="c40" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1399.html#c40">Comment 40</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-04-01 01:59:50 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(w odpowiedzi na komentarz #39)
+<span class="quote">&gt; (w odpowiedzi na komentarz #37)
+&gt; 
+&gt; &gt; Mam zastrzeżenia tylko do tego &quot;miljony&quot;.
+&gt; 
+&gt; Podoba mi się pomysł użycia tego słowa, bo jest to nasz taki polski wkład
+&gt; w ten tekst. Tak jak Amerykanie mają swoje, których polscy użytkownicy nie
+&gt; zrozumieją, i myślę, że fajnie będzie mieć nasze, których z kolei
+&gt; Amerykanie nie zrozumieją.</span >
+
+Tak, ale Biblia nie mówi takim językiem. To nie są &quot;Dziady&quot;.
+
+<span class="quote">&gt; Zwróć też uwagę, że to są &quot;milijony&quot;, a nie &quot;miljony&quot;.</span >
+
+Fakt, mała pomyłka.
+
+</pre>
+    </div>
+
+    <div id="c41" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1399.html#c41">Comment 41</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Staś Małolepszy :stas</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-04-01 02:10:44 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(w odpowiedzi na komentarz #38)
+
+<span class="quote">&gt; Nie moge sie do takiej wersji przekonac. Brzmi jak ze wspolczesnej gazety i nie
+&gt; pasuje mi do reszty. :(</span >
+
+Brzmi po prostu jak zdanie po polsku :-) Wydaje mi się, że nie warto na siłę odwracać szyku w każdym zdaniu. Jest stylizacja już przesadzona IMO.
+
+
+<span class="quote">&gt; Albo &quot;A bestia odrodzona budowala swa potege na ziemi&quot; albo &quot;A Bestia odrodzona
+&gt; potege swa na ziemi budowala&quot; </span >
+
+Kiedy mamy &quot;bestia odrodzona&quot;, to nie możemy zaakcentować pierwszej zgłoski w tym zdaniu, czyli &quot;A&quot;. Nie znam się na tym dokładnie, ale wydaje mi się, że bardziej rytmicznie jest, gdy akcentujemy pierwszą sylabę.
+
+Poza tym w drugiej wersji, którą proponujesz, uzyskujesz rytm właściwy dla języka rosyjskiego (ten czasownik na koncu zdania). Po polsku lepiej użyć &quot;budowała&quot; wcześniej.
+
+<span class="quote">&gt; W wersji staszka mam poczucie, ze akcent jest na &quot;odrodzona&quot;, a w drugiej
+&gt; czesci skupiamy sie na tym, ze budowala na Ziemi, a tylko wtracamy co - potege.
+&gt; </span >
+
+Przeczytałem wszystkie możliwe permutacje i mam wrażenie, że jakby tu nie kombinować, i tak można uznać, ze akcent polozony jest na &quot;na Ziemi&quot;.</pre>
+    </div>
+
+    <div id="c42" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1399.html#c42">Comment 42</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-04-01 03:40:54 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(w odpowiedzi na komentarz #41)
+
+Kombinowalem troche, czytalem wybrane fragmenty:
+
+<a href="http://pl.wikisource.org/wiki/Biblia_Gda%C5%84ska/Ksi%C4%99ga_Rodzaju_1">http://pl.wikisource.org/wiki/Biblia_Gda%C5%84ska/Ksi%C4%99ga_Rodzaju_1</a>
+<a href="http://pl.wikisource.org/wiki/Biblia_Gda%C5%84ska/Ksi%C4%99ga_Wyj%C5%9Bcia_7">http://pl.wikisource.org/wiki/Biblia_Gda%C5%84ska/Ksi%C4%99ga_Wyj%C5%9Bcia_7</a>
+<a href="http://pl.wikisource.org/wiki/Biblia_Gda%C5%84ska/Apokalipsa_%C5%9Bw._Jana_5">http://pl.wikisource.org/wiki/Biblia_Gda%C5%84ska/Apokalipsa_%C5%9Bw._Jana_5</a>
+<a href="http://pl.wikisource.org/wiki/Biblia_Gda%C5%84ska/Apokalipsa_%C5%9Bw._Jana_12">http://pl.wikisource.org/wiki/Biblia_Gda%C5%84ska/Apokalipsa_%C5%9Bw._Jana_12</a>
+<a href="http://pl.wikisource.org/wiki/Biblia_Gda%C5%84ska/Apokalipsa_%C5%9Bw._Jana_19">http://pl.wikisource.org/wiki/Biblia_Gda%C5%84ska/Apokalipsa_%C5%9Bw._Jana_19</a>
+
+i caly czas początek zupelnie nie wspolbrzmi z Biblia Gdanska.
+Czy mozemy sprobowac jeszcze raz przebudowac melodie początku?
+Popatrzcie jak sie czyta Biblie, zwlaszcza Apokalipse..
+
+Czasownik na koncu zdawnia wystepuje przez wiekszosc naszego tekstu :/
+poświecone
+uczynili
+przyzeczone bylo
+powiadali
+
+Mammon spał. Na Ziemi zaś Bestia odrodzona szerzyła swoją potęgę...
+
+hmm?</pre>
+    </div>
+
+    <div id="c43" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1399.html#c43">Comment 43</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-04-02 13:30:54 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Szczerze mówiąc, znudziło mi się to już. I trochę przykro, że w błędzie dot. nieistotnej tak naprawdę rzeczy mamy 42 wypowiedzi, nawet rozprawiamy o drobnych różnicach w akcentowaniu różnych wersji tej bajeczki, podczas gdy do naprawdę ważnych bugów wielu z dyskutantów nie zgłasza żadnych propozycji.
+
+Czy osiągneliśmy jakieś ostateczne stanowisko? Chciałbym już zamknąć sprawę a:m...
+</pre>
+    </div>
+
+    <div id="c44" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1399.html#c44">Comment 44</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-04-03 02:02:19 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(w odpowiedzi na komentarz #43)
+<span class="quote">&gt; Szczerze mówiąc, znudziło mi się to już. I trochę przykro, że w
+&gt; błędzie dot. nieistotnej tak naprawdę rzeczy mamy 42 wypowiedzi,</span >
+
+Będzie na pewno na Wikipedii, więc nie wiem czy takie nieistotne ;-)
+
+<span class="quote">&gt; nawet
+&gt; rozprawiamy o drobnych różnicach w akcentowaniu różnych wersji tej
+&gt; bajeczki, podczas gdy do naprawdę ważnych bugów wielu z dyskutantów nie
+&gt; zgłasza żadnych propozycji.
+&gt; 
+&gt; Czy osiągneliśmy jakieś ostateczne stanowisko? Chciałbym już zamknąć
+&gt; sprawę a:m...</span >
+
+Ja akceptuję te wersje (kolejność przypadkowa, nie upieram się przy żadnej z nich):
+
+Wersja Staszka ze zmienionym: &quot;milijony&quot; na &quot;legiony&quot;:
+
+Mammon spał. • A odrodzona Bestia • budowała swą potęgę na Ziemi, •
+a liczby jej wyznawców rosły w legiony. • I przemówili poprzez Czas • i
+plony w gorejącym ogniu poświęcone, • a z przemyślnością lisią to
+uczynili. • I tak oto nowy świat zbudowali,• na obraz swój i
+podobieństwo, • jako w świętych słowach przyrzeczone było, • a o
+Bestii owej dzieciom swym powiadali. • A gdy Mammon zbudził się, • marnym
+był jeno naśladowcą.
+
+Moja wersja:
+
+Mammon spał. • A Bestia odrodzona • potęgę swą na Ziemi budowała, •
+a liczby jej wyznawców rosły w legiony. • I przemówili poprzez Czas • i
+plony w gorejącym ogniu poświęcone, • a z przemyślnością lisią to
+uczynili. • I tak oto nowy świat zbudowali,• na obraz swój i
+podobieństwo, • jako w świętych słowach przyrzeczone było, • a o
+Bestii owej dzieciom swym powiadali. • A gdy Mammon zbudził się, • marnym
+był jeno naśladowcą.</pre>
+    </div>
+
+    <div id="c45" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1399.html#c45">Comment 45</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Wojciech Kapusta</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-04-03 08:54:17 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text"><span class="quote">&gt; &gt; rozprawiamy o drobnych różnicach w akcentowaniu różnych wersji tej
+&gt; &gt; bajeczki, podczas gdy do naprawdę ważnych bugów wielu z dyskutantów nie
+&gt; &gt; zgłasza żadnych propozycji.</span >
+
+Biorę sobie to do serca, ale jeśli mogę się wtrącić, to jednak proponuję wersję 
+
+&quot;(...) A odrodzona Bestia • budowała swą potęgę na Ziemi (...)&quot;
+
+Uzasadnienie:
+
+Czasowniki na końcu zdania, typowe dla staropolskiego brzmienia, nie są tam, bo się tak podoba, lecz w wyniku przeniesienia łacińskiej konstrukcji zdań podrzędnych - i tylko takich. Wszystko inne jest sztucznością, nijak się mającą nawet do przekładów Ks. Wujka.
+
+Owszem, w piosenkach czy wierszach się to zdarza, ale nie w dostojnym tekście przepowiedni czy podobnym.
+
+
+Co powiedziawszy zamilknę, gdyż czasu na czczą gadaninę u mnie nie masz.</pre>
+    </div>
+
+    <div id="c46" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1399.html#c46">Comment 46</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-04-05 17:00:03 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">OK, czy uzgodniliście już wersję ostateczną? Bo jeśli nie, to sobie coś stąd wybiorę i wrzucę jutro... :P
+
+BTW, &quot;milijon&quot; nie jest biblijny.</pre>
+    </div>
+
+    <div id="c47" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1399.html#c47">Comment 47</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-04-05 17:04:39 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(w odpowiedzi na komentarz #45)
+<span class="quote">&gt; Czasowniki na końcu zdania, typowe dla staropolskiego brzmienia, nie są tam,
+&gt; bo się tak podoba, lecz w wyniku przeniesienia łacińskiej konstrukcji zdań
+&gt; podrzędnych - i tylko takich. Wszystko inne jest sztucznością, nijak się
+&gt; mającą nawet do przekładów Ks. Wujka.</span >
+
+OK, dlaczego nie mielibyśmy tego właśnie tak zrobić? Ta przepowiednia jest parodią przepowiedni biblijnych! Amerykanie stylizują a:m na King James' Bible &lt;<a href="http://weblogs.mozillazine.org/gerv/archives/2005/01/some_clarificat_1.html">http://weblogs.mozillazine.org/gerv/archives/2005/01/some_clarificat_1.html</a>&gt;, my na Biblię Wujka. I właśnie dlatego czasowniki na końcu zdania być muszą!
+
+</pre>
+    </div>
+
+    <div id="c48" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1399.html#c48">Comment 48</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Staś Małolepszy :stas</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-04-06 05:26:40 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Wersja kompromisowa:
+
+Mammon spał. A odrodzona Bestia budowała swą potęgę na Ziemi, a liczby jej wyznawców rosły w legiony. I przemówili poprzez Czas i plony w gorejącym ogniu poświęcone, a z przemyślnością lisią to uczynili. I tak oto nowy świat zbudowali, na obraz swój i podobieństwo, jako w świętych słowach przyrzeczone było, a o Bestii owej dzieciom swym powiadali. A gdy Mammon zbudził się, marnym jeno był naśladowcą.
+
+(zmieniłem &quot;był jeno&quot; na &quot;jeno był&quot;)
+
+Marek, Hubert?</pre>
+    </div>
+
+    <div id="c49" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1399.html#c49">Comment 49</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-04-06 05:31:22 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(w odpowiedzi na komentarz #48)
+<span class="quote">&gt; Wersja kompromisowa:
+&gt; 
+&gt; Mammon spał. A odrodzona Bestia budowała swą potęgę na Ziemi, a liczby jej
+&gt; wyznawców rosły w legiony. I przemówili poprzez Czas i plony w gorejącym
+&gt; ogniu poświęcone, a z przemyślnością lisią to uczynili. I tak oto nowy
+&gt; świat zbudowali, na obraz swój i podobieństwo, jako w świętych słowach
+&gt; przyrzeczone było, a o Bestii owej dzieciom swym powiadali. A gdy Mammon
+&gt; zbudził się, marnym jeno był naśladowcą.
+&gt; 
+&gt; (zmieniłem &quot;był jeno&quot; na &quot;jeno był&quot;)
+&gt; 
+&gt; Marek, Hubert?</span >
+
+Ta wersja (oprócz dwóch wymienionych przeze mnie wyżej) też jest dla mnie do zaakceptowania.
+
+</pre>
+    </div>
+
+    <div id="c50" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1399.html#c50">Comment 50</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-04-07 08:34:55 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Włączone do CVS wraz z nbsp zamiast spacji przy wyrazach jednoliterowych.
+
+Lo and behold, fixed it is!
+</pre>
+    </div>
+
+    <div id="c51" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1399.html#c51">Comment 51</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-04-07 16:53:58 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">v.</pre>
+    </div>
+
+
+  
+
+</td>
+<td>
+</td>
+</tr></table>
+  </div>
+
+    <hr><div id="add_comment" class="bz_section_additional_comments">
+      <table>
+        <tr>
+          <td>
+            <fieldset>
+              <legend>Note</legend>
+              You need to
+              <a href="show_bug.cgi%3Fid=1399&amp;GoAheadAndLogIn=1.html">log in</a>
+              before you can comment on or make changes to this bug.
+            </fieldset>
+          </td>
+        </tr> 
+      </table>
+  </div>        
+
+</form>
+
+<hr>
+<ul class="related_actions">
+    <li><a href="show_bug.cgi%3Fformat=multiple&amp;id=1399.html">Format For Printing</a></li>
+    <li>&nbsp;-&nbsp;<a href="show_bug.cgi%3Fctype=xml&amp;id=1399">XML</a></li>
+    <li>&nbsp;-&nbsp;<a href="enter_bug.cgi%3Fcloned_bug_id=1399.html">Clone This Bug</a></li>
+    
+    <li>&nbsp;-&nbsp;<a href="show_bug.cgi%3Fid=1399.html#">Top of page </a></li>
+    </ul>
+
+<br>
+</div>
+
+    <div id="footer">
+      <div class="intro"></div>
+<ul id="useful-links">
+  <li id="links-actions"><ul class="links">
+  <li><a href="index.html">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi.html">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi.html">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi.html">Search</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="http://bugs.aviary.pl/buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input type="hidden" id="no_redirect_bottom" name="no_redirect" value="0">
+    <script type="text/javascript">
+      if (history && history.replaceState) {
+        var no_redirect = document.getElementById("no_redirect_bottom");
+        no_redirect.value = 1;
+      }
+    </script>
+    <input class="txt" type="text" id="quicksearch_bottom" name="quicksearch" 
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search" 
+           id="find_bottom"></form>
+  <a href="page.cgi%3Fid=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="report.cgi.html">Reports</a></li>
+
+  <li>
+      <span class="separator">| </span>
+        <a href="request.cgi.html">Requests</a></li>
+
+
+  <li>
+        <span class="separator">| </span>
+        <a href="https://bugzilla.readthedocs.org/en/5.0/using/understanding.html" target="_blank">Help</a>
+      </li>
+    
+      <li id="new_account_container_bottom">
+        <span class="separator">| </span>
+        <a href="createaccount.cgi.html">New&nbsp;Account</a>
+      </li>
+
+    <li id="mini_login_container_bottom">
+  <span class="separator">| </span>
+  <a id="login_link_bottom" href="show_bug.cgi%3Fid=1399&amp;GoAheadAndLogIn=1.html"
+     onclick="return show_mini_login_form('_bottom')">Log In</a>
+
+  <form action="show_bug.cgi%3Fid=1399.html" method="POST"
+        class="mini_login bz_default_hidden"
+        id="mini_login_bottom">
+    <input id="Bugzilla_login_bottom" required
+           name="Bugzilla_login" class="bz_login"
+        type="email" placeholder="Email Address">
+    <input class="bz_password" name="Bugzilla_password" type="password"
+           id="Bugzilla_password_bottom" required
+           placeholder="Password">
+    <input type="hidden" name="Bugzilla_login_token"
+           value="1469820780-dNPD-kfeC6-3jIu8TqB8IjYaIx5DkeN8VfT8FNKi-rw">
+    <input type="submit" name="GoAheadAndLogIn" value="Log in"
+            id="log_in_bottom">
+    <a href="show_bug.cgi%3Fid=1399.html#" onclick="return hide_mini_login_form('_bottom')">[x]</a>
+  </form>
+</li>
+
+
+  <li id="forgot_container_bottom">
+    <span class="separator">| </span>
+    <a id="forgot_link_bottom" href="show_bug.cgi%3Fid=1399&amp;GoAheadAndLogIn=1.html#forgot"
+       onclick="return show_forgot_form('_bottom')">Forgot Password</a>
+    <form action="http://bugs.aviary.pl/token.cgi" method="post" id="forgot_form_bottom"
+          class="mini_forgot bz_default_hidden">
+      <label for="login_bottom">Login:</label>
+      <input name="loginname" size="20" id="login_bottom" required
+          type="email" placeholder="Your Email Address">
+      <input id="forgot_button_bottom" value="Reset Password" type="submit">
+      <input type="hidden" name="a" value="reqpw">
+      <input type="hidden" id="token_bottom" name="token"
+             value="1469820780-W0Hhd4VMJwtUIhMyNASUttDQDpDEg7dpJeKPsEuKFZg">
+      <a href="show_bug.cgi%3Fid=1399.html#" onclick="return hide_forgot_form('_bottom')">[x]</a>
+    </form>
+  </li>
+</ul>
+  </li>
+
+  
+
+
+
+
+  
+</ul>
+
+      <div class="outro"></div>
+    </div>
+
+  </body>
+</html>

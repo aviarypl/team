@@ -1,0 +1,92 @@
+diff -r -u en-US-0.80/locale/editor/EdDialogOverlay.dtd en-US-0.90/locale/editor/EdDialogOverlay.dtd
+--- en-US-0.80/locale/editor/EdDialogOverlay.dtd	2005-03-12 19:43:42.009687336 +0100
++++ en-US-0.90/locale/editor/EdDialogOverlay.dtd	2005-03-12 19:44:08.281693384 +0100
+@@ -31,5 +31,6 @@
+ <!ENTITY makeUrlRelative.tooltip "Change between relative and absolute URL. You must first save the page to change this.">
+ 
+ <!-- Shared by Link and Image dialogs -->
+-<!ENTITY LinkURLEditField.label "Enter a web page location, a local file, or select a Named Anchor or Heading from the popup list:">
++<!ENTITY LinkURLEditField.label "Enter a web page location, a local file, an email address, or select a Named Anchor or Heading from the popup list:">
+ <!ENTITY LinkURLEditField.accessKey "L">
++
+diff -r -u en-US-0.80/locale/editor/EditorLinkProperties.dtd en-US-0.90/locale/editor/EditorLinkProperties.dtd
+--- en-US-0.80/locale/editor/EditorLinkProperties.dtd	2005-03-12 19:43:42.048681408 +0100
++++ en-US-0.90/locale/editor/EditorLinkProperties.dtd	2005-03-12 19:44:08.328686240 +0100
+@@ -70,3 +70,11 @@
+ <!ENTITY crush.label "crush">
+ <!ENTITY date.label "date">
+ <!ENTITY sweetheart.label "sweetheart">
++
++<!ENTITY targetBox.label "Target">
++<!ENTITY userDefinedTarget.label "Link is to be opened">
++<!ENTITY topRadio.label "in same window, getting rid of all framesets">
++<!ENTITY blankRadio.label "in a new window">
++<!ENTITY parentRadio.label "in the parent frameset">
++<!ENTITY selfRadio.label "in the current frame">
++<!ENTITY userDefinedRadio.label "in this frame:">
+diff -r -u en-US-0.80/locale/editor/editorOverlay.dtd en-US-0.90/locale/editor/editorOverlay.dtd
+--- en-US-0.80/locale/editor/editorOverlay.dtd	2005-03-12 19:43:42.077677000 +0100
++++ en-US-0.90/locale/editor/editorOverlay.dtd	2005-03-12 19:44:08.331685784 +0100
+@@ -362,6 +362,8 @@
+ <!ENTITY paragraphpreformat.accesskey "f">
+ <!ENTITY paragraphBlockquoteCmd.label "Blockquote">
+ <!ENTITY paragraphblockquote.accesskey "b">
++<!ENTITY genericContainerCmd.label "Generic container (div)">
++<!ENTITY genericcontainer.accesskey "d">
+ 
+ 
+ <!ENTITY applyClassToSelectionCmd.tooltip "Apply a class to the selection">
+@@ -712,6 +714,8 @@
+ <!ENTITY tipofthedaymenu.accesskey "T">
+ <!ENTITY aboutMenu.label          "About Nvu">
+ <!ENTITY aboutmenu.accesskey      "A">
++<!ENTITY localizingnvu.accesskey  "L">
++<!ENTITY localizingNvu.label      "Localizing Nvu">
+ 
+ <!ENTITY leftGlued.tooltip        "Glue to the left border">
+ <!ENTITY rightGlued.tooltip       "Glue to the right border">
+@@ -723,3 +727,4 @@
+ <!ENTITY spellSuggestions.label   "Spelling Suggestions">
+ <!ENTITY spellSuggestions.accesskey "S">
+ <!ENTITY spellAddToDictionary.label "Add to Dictionary">
++
+diff -r -u en-US-0.80/locale/editor/Nvu-totd-en.rdf en-US-0.90/locale/editor/Nvu-totd-en.rdf
+--- en-US-0.80/locale/editor/Nvu-totd-en.rdf	2005-03-12 19:43:42.121670312 +0100
++++ en-US-0.90/locale/editor/Nvu-totd-en.rdf	2005-03-12 19:44:08.379678488 +0100
+@@ -131,6 +131,11 @@
+                    Windows, Mac OS X, many flavors of Linux, OS/2, ...</description>
+     </item>
+ 
++    <item>
++      <title>...you can create a new tab with a key combination?</title>
++      <description>Control+t (Command+t on Mac OS X) will create a new blank tab</description>
++    </item>
++
+   </channel>
+ </rss>
+ 
+diff -r -u en-US-0.80/locale/editor-region/region.properties en-US-0.90/locale/editor-region/region.properties
+--- en-US-0.80/locale/editor-region/region.properties	2005-03-12 19:43:42.174662256 +0100
++++ en-US-0.90/locale/editor-region/region.properties	2005-03-12 19:44:08.413673320 +0100
+@@ -3,3 +3,4 @@
+ editor.devorg.url=http://www.nvudev.org/
+ editor.forums.url=http://forum.nvudev.org/
+ editor.bugReports.url=http://www.nvu.com/bugreport2.php
++editor.L10N.url=http://glazman.org/nvu/NVU-L10N.html
+Tylko w en-US-0.90/locale/global: brand.properties
+diff -r -u en-US-0.80/locale/pinger/pinger.dtd en-US-0.90/locale/pinger/pinger.dtd
+--- en-US-0.80/locale/pinger/pinger.dtd	2005-03-12 19:43:42.227654200 +0100
++++ en-US-0.90/locale/pinger/pinger.dtd	2005-03-12 19:44:08.455666936 +0100
+@@ -37,6 +37,10 @@
+ 
+ <!ENTITY pingerWindow.title         "Please let us know...">
+ <!ENTITY pingerMainText1.desc        "Just one click can help Nvu: please let us know that you have downloaded Nvu clicking on the OK button below. In such a case, and of course if you are connected to the Internet, Nvu will send a very simple 'ping' to our server to increment a counter. No other information will be sent, the request will not be stored on our server's side, and your privacy will be entirely respected.">
+-<!ENTITY pingerMainText2.desc        "You'll never see this dialog again (unless you upgrade Nvu).">
++<!ENTITY pingerMainText2.desc        "WARNING: if you are connecting to the Internet through a proxy, please set up your connection first.">
++<!ENTITY pingerMainText3.desc        "You'll never see this dialog again (unless you upgrade Nvu).">
+ <!ENTITY nvuAuthors.label            "Nvu authors">
+ <!ENTITY statsButton.label           "View stats">
++
++<!ENTITY connectionButton.label      "Connection settings">
++<!ENTITY connectionbutton.accesskey  "s">
+

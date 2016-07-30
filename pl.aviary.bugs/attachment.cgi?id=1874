@@ -1,0 +1,85 @@
+diff -r d3c2025938bb mobile/chrome/browser.properties
+--- a/mobile/chrome/browser.properties	Mon May 23 20:38:51 2011 +0200
++++ b/mobile/chrome/browser.properties	Tue May 24 11:30:54 2011 +0200
+@@ -22,5 +22,5 @@ addonsSearchMore.label=Wyświetl wynik;W
+ # See: http://developer.mozilla.org/en/docs/Localization_and_Plurals
+ # #1 number of search results currently visible
+-addonsSearchMore.description=Jeśli ten wynik nie jest tym czego szukasz, spróbuj tego;Jeśli te #1 wyniki nie są tym czego szukasz, spróbuj tego;Jeśli te #1 wyników nie są tym czego szukasz, spróbuj tego
++addonsSearchMore.description=Jeśli ten wynik nie jest tym, czego szukasz, spróbuj tego;Jeśli te #1 wyniki nie są tym, czego szukasz, spróbuj tego;Jeśli te #1 wyników nie są tym, czego szukasz, spróbuj tego
+ 
+ addonsWhatAre.label=Czym są dodatki?
+@@ -137,5 +137,5 @@ identity.identified.state_and_country=%S
+ identity.identified.title_with_country=%S (%S)
+ identity.encrypted2=Szyfrowane
+-identity.unencrypted2=Nie szyfrowane
++identity.unencrypted2=Nieszyfrowane
+ identity.unknown.tooltip=Ta witryna nie dostarcza informacji o swej tożsamości.
+ identity.ownerUnknown2=(nieznany)
+diff -r d3c2025938bb mobile/chrome/overrides/netError.dtd
+--- a/mobile/chrome/overrides/netError.dtd	Mon May 23 20:38:51 2011 +0200
++++ b/mobile/chrome/overrides/netError.dtd	Tue May 24 11:30:54 2011 +0200
+@@ -16,10 +16,10 @@
+ <!ENTITY dnsNotFound.longDesc "
+ <ul>
+-  <li>Upewnij się, że wprowadzony adres nie zawiera takich literówek jak 
++  <li>Upewnij się, że wprowadzony adres nie zawiera takich literówek, jak 
+     <strong>ww</strong>.mozilla.org zamiast
+     <strong>www</strong>.mozilla.org</li>
+   <li>Jeśli nie możesz otworzyć żadnej strony, sprawdź połączenie sieciowe
+     komputera.</li>
+-  <li>Jeśli komputer lub sieć jest chroniona przez zaporę sieciową lub serwer proxy, upewnij się,
++  <li>Jeśli komputer lub sieć są chronione przez zaporę sieciową lub serwer proxy, upewnij się,
+     że &brandShortName; ma uprawnienia do łączenia się z Internetem.</li>
+ </ul>
+@@ -30,5 +30,5 @@
+ <ul>
+   <li>Sprawdź, czy nazwa pliku nie zawiera dużych liter lub nie ma innych literówek.</li>
+-  <li>Sprawdź czy plik nie został przeniesiony, usunięty lub jego nazwa nie została zmieniona.</li>
++  <li>Sprawdź, czy plik nie został przeniesiony, usunięty lub jego nazwa nie została zmieniona.</li>
+ </ul>
+ ">
+@@ -45,5 +45,5 @@
+   <li>Adresy stron zazwyczaj wyglądają mniej więcej tak  
+     <strong>http://www.mozilla.org/</strong></li>
+-  <li>Upewnij się, że używasz poprawnych slashy (np. 
++  <li>Upewnij się, że używasz poprawnych ukośników (np. 
+     <strong>/</strong>).</li>
+ </ul>
+@@ -101,5 +101,5 @@
+   <li>Upewnij się, że ustawienia serwera proxy są poprawne.</li>
+   <li>Upewnij się, że połączenie sieciowe komputera działa.</li>
+-  <li>Jeśli komputer lub sieć jest chroniona przez zaporę sieciową lub serwer proxy, upewnij się,
++  <li>Jeśli komputer lub sieć są chronione przez zaporę sieciową lub serwer proxy, upewnij się,
+     że &brandShortName; ma uprawnienia do łączenia się z Internetem.</li>
+ </ul>
+@@ -109,5 +109,5 @@
+ <!ENTITY redirectLoop.longDesc "
+ <ul>
+-  <li>Ten problem może być czasem powodowany przez wyłączenie lub odmowe przyjęcia
++  <li>Ten problem może być czasem powodowany przez wyłączenie lub odmowę przyjęcia
+     ciasteczek.</li>
+ </ul>
+@@ -125,6 +125,6 @@
+ <!ENTITY nssFailure2.longDesc "
+ <ul>
+-  <li>Strona którą próbujesz otworzyć nie może zostać wyświetlona ponieważ nie udało się zweryfikować autentyczności danych.</li>
+-  <li>Skontaktuj się z administratorem strony, aby poinformować go o tym problemie lub skorzystaj z opcji w menu pomocy, aby zgłosić niedziałającą stronę.</li>
++  <li>Strona, którą próbujesz otworzyć, nie może zostać wyświetlona, ponieważ nie udało się zweryfikować autentyczności danych.</li>
++  <li>Skontaktuj się z administratorem strony, aby poinformować go o tym problemie, lub skorzystaj z opcji w menu pomocy, aby zgłosić niedziałającą stronę.</li>
+ </ul>
+ ">
+@@ -142,5 +142,5 @@
+   <li>Strona może być tymczasowo niedostępna lub przeciążona. Spróbuj ponownie za pewien czas.</li>
+   <li>Jeśli nie udaje się otworzyć żadnej strony, sprawdź połączenie komputera z siecią.</li>
+-  <li>Jeśli komputer lub sieć jest chroniona przez zaporę ogniową lub serwer proxy, upewnij się
++  <li>Jeśli komputer lub sieć są chronione przez zaporę sieciową lub serwer proxy, upewnij się
+     że &brandShortName; ma uprawnienia do łączenia się z Internetem.</li>
+ </ul>
+@@ -173,5 +173,5 @@ netError.xhtml) because it exposes funct
+ 
+ <!ENTITY securityOverride.warningContent "
+-<p>Nie powinno się dodawać wyjątku jeśli używasz połączenia internetowego, któremu nie możesz w pełni zaufać lub jeśli zazwyczaj nie pokazuje się to ostrzeżenie na tym serwerze.</p>
++<p>Nie powinno się dodawać wyjątku, jeśli używasz połączenia internetowego, któremu nie możesz w pełni zaufać, lub jeśli zazwyczaj nie pokazuje się to ostrzeżenie na tym serwerze.</p>
+ 
+ <button id='getMeOutOfHereButton'>&securityOverride.getMeOutOfHereButton;</button>
+

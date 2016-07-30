@@ -1,0 +1,125 @@
+diff --git a/security/manager/chrome/pippki/pippki.dtd b/security/manager/chrome/pippki/pippki.dtd
+--- a/security/manager/chrome/pippki/pippki.dtd
++++ b/security/manager/chrome/pippki/pippki.dtd
+@@ -19,27 +19,27 @@
+    - Contributor(s):
+    -   Terry Hayes <thayes@netscape.com>
+    -   Marek Wawoczny <gmbh@mozillapl.org> (Polish translation)
+    -   Piotr Bartecki <pbartecki@mozillapl.org> (Polish translation) 
+    -   Piotr Komoda <gorky@civ.pl> (Polish translation)
+    -   Marek Stepien <marcoos@aviary.pl> (Polish translation)
+   -->
+   
+-<!ENTITY setPassword.title "Zmień główne hasło" >
++<!ENTITY setPassword.title "Zmień hasło główne" >
+ <!ENTITY setPassword.tokenName.label "Urządzenie zabezpieczające" >
+ <!ENTITY setPassword.oldPassword.label "Bieżące hasło:" >
+ <!ENTITY setPassword.newPassword.label "Nowe hasło:" >
+ <!ENTITY setPassword.reenterPassword.label "Nowe hasło (ponownie):" >
+ <!ENTITY setPassword.meter.label "Miernik jakości hasła" >
+ <!ENTITY setPassword.meter.loading "Wczytywanie" >
+ <!ENTITY resetPasswordButtonLabel "Zresetuj">
+-<!ENTITY resetPassword.title "Zresetuj główne hasło" >
+-<!ENTITY resetPassword.text "Po zresetowaniu głównego hasła wszystkie przechowywane dane formularzy, hasła internetowe oraz hasła serwerów pocztowych, certyfikaty osobiste oraz prywatne klucze zostaną usunięte. Czy na pewno zresetować główne hasło?" >
+-<!ENTITY getPassword.title "Wprowadź główne hasło" >
++<!ENTITY resetPassword.title "Zresetuj hasło główne" >
++<!ENTITY resetPassword.text "Po zresetowaniu hasła głównego wszystkie przechowywane dane formularzy, hasła internetowe oraz hasła serwerów pocztowych, certyfikaty osobiste oraz prywatne klucze zostaną usunięte. Czy na pewno zresetować hasło główne?" >
++<!ENTITY getPassword.title "Wprowadź hasło główne" >
+ <!ENTITY getPassword.tokenName2.label "Urządzenie zabezpieczające:" >
+ <!ENTITY getPassword.password.label "Hasło:" >
+ <!ENTITY piperror.title "Błąd" >
+ <!ENTITY pipalert.title "Błąd - nie można odzyskać" >
+ <!ENTITY pref.security.general.lHeader "Zabezpieczenia" >
+ <!ENTITY pref.security.general.rHeader "Ustawienia zabezpieczeń" >
+ <!ENTITY pref.security.general.header "Ustawienia zabezpieczeń" >
+ <!ENTITY pref.security.general.level.title "Poziom zabezpieczenia" >
+@@ -83,17 +83,17 @@
+ <!ENTITY examineCert.accesskey "W">
+ <!ENTITY createCertInfo.title "Generowanie prywatnego klucza" >
+ <!ENTITY createCertInfo.msg1 "Trwa generowanie klucza… Może to potrwać kilka minut…" >
+ <!ENTITY createCertInfo.msg2 "Proszę czekać…" >
+ 
+ <!-- Form Signing confirmation prompt -->
+ <!ENTITY formSigning.title "Żądanie podpisu">
+ <!ENTITY formSigning.cert "Podpisywanie certyfikatu">
+-<!ENTITY formSigning.confirmPassword "Aby potwierdzić swą zgodę na podpisanie wiadomości za pomocą wybranego certyfikatu, należy podać główne hasło:">
++<!ENTITY formSigning.confirmPassword "Aby potwierdzić swą zgodę na podpisanie wiadomości za pomocą wybranego certyfikatu, należy podać hasło główne:">
+ 
+ <!-- Strings for protectedAuth dialog -->
+ <!ENTITY protectedAuth.title "Uwierzytelnienie do chronionego tokenu">
+ <!ENTITY protectedAuth.msg "Należy uwierzytelnić się do tokenu. Metoda uwierzytelnienia zależy od rodzaju tokenu.">
+ <!ENTITY protectedAuth.tokenName.label "Token:">
+ 
+ <!ENTITY certErrorDlg.title "Nie udało się nawiązać bezpiecznego połączenia">
+ <!ENTITY certErrorDlg.info1 "Powodem tego może być nieprawidłowa konfiguracja serwera albo próba podania się za ten serwer przez podmiot nieuprawniony.">
+diff --git a/security/manager/chrome/pippki/pippki.properties b/security/manager/chrome/pippki/pippki.properties
+--- a/security/manager/chrome/pippki/pippki.properties
++++ b/security/manager/chrome/pippki/pippki.properties
+@@ -121,21 +121,21 @@ pageInfo_Privacy_Mixed1=Niektóre częś
+ certDetails=Podgląd certyfikatu: 
+ notPresent=<Nie jest częścią certyfikatu>
+ unknownIssuer=<Nieznany wystawca>
+ 
+ escrowFinalMessage=Należy nacisnąć OK wyłącznie, jeśli "%S" należy do zaufanych organów przechowujących prywatne klucze szyfrujące.
+ 
+ #Token Manager
+ password_not_set=(nie ustawione)
+-failed_pw_change=Nie można zmienić głównego hasła.
+-incorrect_pw=Wprowadzone główne hasło jest nieprawidłowe. Spróbuj ponownie.
+-pw_change_ok=Główne hasło zostało pomyślnie zmienione.
+-pw_erased_ok=Ostrzeżenie! Główne hasło zostało usunięte.
+-pw_not_wanted=Ostrzeżenie! Główne hasło nie będzie używane.
++failed_pw_change=Nie można zmienić hasła głównego.
++incorrect_pw=Wprowadzone hasło główne jest nieprawidłowe. Spróbuj ponownie.
++pw_change_ok=Hasło główne zostało pomyślnie zmienione.
++pw_erased_ok=Ostrzeżenie! Hasło główne zostało usunięte.
++pw_not_wanted=Ostrzeżenie! Hasło główne nie będzie używane.
+ pw_empty_warning=Przechowywane hasła internetowe oraz hasła serwerów pocztowych, dane formularzy i prywatne klucze nie będą dłużej chronione.
+ pw_change2empty_in_fips_mode=Program pracuje obecnie w trybie FIPS. Tryb FIPS wymaga niepustego hasła głównego.
+ login_failed=Nie można się zalogować
+ loadPK11TokenDialog=Wybierz urządzenie PKCS#11 do załadowania
+ devinfo_modname=Moduł
+ devinfo_modpath=Ścieżka
+ devinfo_label=Etykieta
+ devinfo_manID=Producent
+@@ -147,17 +147,17 @@ devinfo_desc=Opis
+ devinfo_stat_disabled=Wyłączony
+ devinfo_stat_notpresent=Nieobecny
+ devinfo_stat_uninitialized=Niezainicjowany
+ devinfo_stat_notloggedin=Niezalogowany
+ devinfo_stat_loggedin=Zalogowany
+ devinfo_stat_ready=Gotowy
+ enable_fips=Włącz FIPS
+ disable_fips=Wyłącz FIPS
+-fips_nonempty_password_required=Tryb FIPS wymaga głównego hasła ustawionego dla każdego urządzenia zabezpieczającego. Ustaw hasło przed włączeniem trybu FIPS.
++fips_nonempty_password_required=Tryb FIPS wymaga hasła głównego ustawionego dla każdego urządzenia zabezpieczającego. Ustaw hasło przed włączeniem trybu FIPS.
+ 
+ # CRL next update.
+ crlNextUpdateMsg1=%S nie może ustanowić szyfrowanego połączenia z "%S".
+ crlNextUpdateMsg2=Lista odwołania certyfikatów (CRL) z "%S" powinna zostać zaktualizowana.
+ NoUpdateFailure=Brak
+ lastFetchUrlLabel=URL pierwotnie pobrany z
+ advertisedUrlLabel=URL ogłoszony przez CA
+ crlAutoUpdateDayCntError=Liczba dni przed następną aktualizacją musi być liczbą większą od zera.
+@@ -165,18 +165,18 @@ crlAutoUpdtaeFreqCntError=Częstość ak
+ disabledStatement=Automatyczna aktualizacja nie jest włączona dla tej listy CRL.
+ enabledStatement=Automatyczna aktualizacja jest włączona dla tej listy CRL.
+ crlAutoupdateQuestion1=Czy włączyć automatyczną aktualizację?
+ crlAutoupdateQuestion2=Czy wyświetlić ustawienia automatycznej aktualizacji?
+ undefinedValStr=<Niezdefiniowany>
+ undefinedURL=Automatyczna aktualizacja listy CRL nie jest zdefiniowana.
+ yesButton=Tak
+ noButton=Nie
+-resetPasswordConfirmationTitle=Zresetuj główne hasło
+-resetPasswordConfirmationMessage=Główne hasło zostało zresetowane.
++resetPasswordConfirmationTitle=Zresetuj hasło główne
++resetPasswordConfirmationMessage=Hasło główne zostało zresetowane.
+ crlAutoupdateEnabled=Włączona
+ crlAutoupdateNotEnabled=Wyłączona
+ crlAutoupdateOk=OK
+ crlAutoupdateFailed=Nieudana
+ crlImportNewCRLTitle=Import listy odwołania certyfikatów
+ crlImportNewCRLLabel=Importuj listę CRL z:
+ 
+ #Import certificate(s) file dialog
+

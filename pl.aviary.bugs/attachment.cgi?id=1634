@@ -1,0 +1,58 @@
+diff --git a/template/pl/default/email/newchangedmail.txt.tmpl b/template/pl/default/email/newchangedmail.txt.tmpl
+--- a/template/pl/default/email/newchangedmail.txt.tmpl
++++ b/template/pl/default/email/newchangedmail.txt.tmpl
+@@ -66,9 +66,9 @@
+ [% diffspl = diffspl | replace('FIXED', 'NAPRAWIONY') %]
+ [% diffspl = diffspl | replace('INVALID', 'NIEPRAWIDŁOWY') %]
+ [% diffspl = diffspl | replace('WONTFIX', 'NIE DO NAPRAWY') %]
+-[% diffspl = diffspl | replace('DUPLICATE', 'DUPLIKAT ') %]
++[% diffspl = diffspl | replace('DUPLICATE', 'DUPLIKAT') %]
+ [% diffspl = diffspl | replace('WORKSFORME', 'U MNIE DZIAŁA') %]
+ [% diffspl = diffspl | replace('MOVED', 'PRZENIESIONY') %]
+ [% diffspl = diffspl | replace('blocker', 'Blokujący') %]
+ [% diffspl = diffspl | replace('critical', 'Krytyczny') %]
+ [% diffspl = diffspl | replace('major', 'Poważny') %]
+@@ -70,7 +70,7 @@
+ [% diffspl = diffspl | replace('WORKSFORME', 'U MNIE DZIAŁA') %]
+ [% diffspl = diffspl | replace('MOVED', 'PRZENIESIONY') %]
+ [% diffspl = diffspl | replace('blocker', 'Blokujący') %]
+ [% diffspl = diffspl | replace('critical', 'Krytyczny') %]
+ [% diffspl = diffspl | replace('major', 'Poważny') %]
+-[% diffspl = diffspl | replace('rmal', 'rmalny') %]
++[% diffspl = diffspl | replace('normal', 'Normalny') %]
+ [% diffspl = diffspl | replace('minor', 'Drobny') %]
+@@ -76,8 +76,8 @@
+ [% diffspl = diffspl | replace('minor', 'Drobny') %]
+-[% diffspl = diffspl | replace('trivial', 'Błahy  ') %]
++[% diffspl = diffspl | replace('trivial', 'Błahy') %]
+ [% diffspl = diffspl | replace('enhancement', 'Propozycja ') %]
+ [% diffspl = diffspl | replace('Highest', 'Najwyższy') %]
+ [% diffspl = diffspl | replace('High', 'Wysoki') %]
+ [% diffspl = diffspl | replace('Low', 'Niski') %]
+ [% diffspl = diffspl | replace('Lowest', 'Najniższy') %]
+ [% diffspl = diffspl | replace('Flags', 'Flagi') %]
+@@ -78,10 +78,10 @@
+ [% diffspl = diffspl | replace('enhancement', 'Propozycja ') %]
+ [% diffspl = diffspl | replace('Highest', 'Najwyższy') %]
+ [% diffspl = diffspl | replace('High', 'Wysoki') %]
+ [% diffspl = diffspl | replace('Low', 'Niski') %]
+ [% diffspl = diffspl | replace('Lowest', 'Najniższy') %]
+ [% diffspl = diffspl | replace('Flags', 'Flagi') %]
+-[% diffspl = diffspl | replace(' is', ' jest') %]
++[% diffspl = diffspl | replace(' is', 'jest') %]
+ [% diffspl = diffspl | replace('         obsolete', 'zdezaktualizowany') %]
+ [% diffspl = diffspl | replace('patch', 'łatką') %]
+ [% diffspl = diffspl | replace('mime type', ' typ mime') %]
+diff --git a/template/pl/default/email/whine.txt.tmpl b/template/pl/default/email/whine.txt.tmpl
+--- a/template/pl/default/email/whine.txt.tmpl
++++ b/template/pl/default/email/whine.txt.tmpl
+@@ -40,7 +40,7 @@
+ 
+ (1) Ten [% terms.blad %] jest prosty do rozwiązania (np. jest [% display_value("resolution", "INVALID") %]), więc można go wyeliminować natychmiast.
+ (2) Ten [% terms.blad %] nie należy do Ciebie, więc trzeba go do kogoś przypisać.
+-    (Podpowiedź: Jeśli nie wiesz komu przypisać ten [% terms.blad %], wybierz odpowiedni Komponent i użyj funkcji „Przywróć domyślną osobę odpowiedzialną”.)
++    (Podpowiedź: Jeśli nie wiesz komu przypisać ten [% terms.blad %], wybierz odpowiedni komponent i użyj funkcji „Przywróć domyślną osobę odpowiedzialną”.)
+ (3) Jeśli [% terms.blad %] jest przypisany do Ciebie, lecz nie możesz rozwiązać go w tej chwili, zaakceptuj [% terms.blad %] ustawiając status na [% display_value("bug_status", "IN_PROGRESS") %].
+ 
+ Pełną listę [% terms.bledow %] ze statusem [% display_value("bug_status", "CONFIRMED") %] można uzyskać pod adresem:
+

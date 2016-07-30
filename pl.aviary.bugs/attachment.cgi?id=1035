@@ -1,0 +1,486 @@
+diff -b -uNr -x.svn -xCVS ./3.0/template/pl/default/account/auth/login.html.tmpl ./3.2/pl/default/account/auth/login.html.tmpl
+--- ./3.0/template/pl/default/account/auth/login.html.tmpl	2008-04-20 13:11:32.000000000 +0200
++++ ./3.2/pl/default/account/auth/login.html.tmpl	2008-04-20 13:11:41.000000000 +0200
+@@ -1,4 +1,3 @@
+-[%# 1.0@bugzilla.org %]
+ [%# The contents of this file are subject to the Mozilla Public
+   # License Version 1.1 (the "License"); you may not use this file
+   # except in compliance with the License. You may obtain a copy of
+@@ -64,7 +63,7 @@
+         <th>&nbsp;</th>
+         <td>
+           <input type="checkbox" id="Bugzilla_remember" name="Bugzilla_remember" value="on"
+-                 [% "checked" IF Param('rememberlogin') == "defaulton" %]>
++                 [%+ "checked" IF Param('rememberlogin') == "defaulton" %]>
+           <label for="Bugzilla_remember">Zapamiętaj login</label>
+         </td>
+       </tr>
+diff -b -uNr -x.svn -xCVS ./3.0/template/pl/default/account/auth/login-small.html.tmpl ./3.2/pl/default/account/auth/login-small.html.tmpl
+--- ./3.0/template/pl/default/account/auth/login-small.html.tmpl	2008-04-20 13:11:32.000000000 +0200
++++ ./3.2/pl/default/account/auth/login-small.html.tmpl	2008-04-20 13:11:41.000000000 +0200
+@@ -1,4 +1,3 @@
+-[%# 1.0@bugzilla.org %]
+ [%# The contents of this file are subject to the Mozilla Public
+   # License Version 1.1 (the "License"); you may not use this file
+   # except in compliance with the License. You may obtain a copy of
+@@ -56,7 +55,7 @@
+         <th>&nbsp;</th>
+         <td>
+           <input type="checkbox" id="Bugzilla_remember" name="Bugzilla_remember" value="on"
+-                 [% "checked" IF Param('rememberlogin') == "defaulton" %]>
++                 [%+ "checked" IF Param('rememberlogin') == "defaulton" %]>
+           <label for="Bugzilla_remember">Zapamiętaj login</label>
+         </td>
+       </tr>
+diff -b -uNr -x.svn -xCVS ./3.0/template/pl/default/account/cancel-token.txt.tmpl ./3.2/pl/default/account/cancel-token.txt.tmpl
+--- ./3.0/template/pl/default/account/cancel-token.txt.tmpl	2008-04-20 13:11:32.000000000 +0200
++++ ./3.2/pl/default/account/cancel-token.txt.tmpl	2008-04-20 13:11:41.000000000 +0200
+@@ -1,4 +1,3 @@
+-[%# 1.0@bugzilla.org %]
+ [%# The contents of this file are subject to the Mozilla Public
+   # License Version 1.1 (the "License"); you may not use this file
+   # except in compliance with the License. You may obtain a copy of
+@@ -33,7 +32,7 @@
+ to być pomyłka lub próba włamania na konto [% terms.Bugzilli %].
+ 
+ W razie podejrzeń proszę przesłać tę wiadomość na adres
+-[% maintainer %].
++[% Param('maintainer') %].
+ 
+             Żeton: [% token %]
+        Typ żetonu: [% tokentype %]
+diff -b -uNr -x.svn -xCVS ./3.0/template/pl/default/account/created.html.tmpl ./3.2/pl/default/account/created.html.tmpl
+--- ./3.0/template/pl/default/account/created.html.tmpl	2008-04-20 13:11:32.000000000 +0200
++++ ./3.2/pl/default/account/created.html.tmpl	2008-04-20 13:37:16.000000000 +0200
+@@ -1,4 +1,3 @@
+-[%# 1.0@bugzilla.org %]
+ [%# The contents of this file are subject to the Mozilla Public
+   # License Version 1.1 (the "License"); you may not use this file
+   # except in compliance with the License. You may obtain a copy of
+@@ -33,10 +32,9 @@
+ [% PROCESS global/header.html.tmpl title = title %]
+ 
+ <p>
+-  Aby potwierdzić utworzenie konta <tt>[% login FILTER html %]</tt>,
+-  należy skorzystać z adresu URL podanego w wysłanej wiadomości. 
+-  W razie braku reakcji w ciągu [% constants.MAX_TOKEN_AGE FILTER html %] dni, 
+-  żądanie to zostanie automatycznie anulowane.
++  Na podany adres został wysłany email zawierający odnośnik potrzebny
++  do kontynuacji procesu tworzenia nowego konta. Odnośnik wygaśnie jeśli
++  nie zostanie otworzony w ciągu [% constants.MAX_TOKEN_AGE FILTER html %] dni.
+ </p>
+ 
+ [% PROCESS global/footer.html.tmpl %] 
+diff -b -uNr -x.svn -xCVS ./3.0/template/pl/default/account/create.html.tmpl ./3.2/pl/default/account/create.html.tmpl
+--- ./3.0/template/pl/default/account/create.html.tmpl	2008-04-20 13:11:32.000000000 +0200
++++ ./3.2/pl/default/account/create.html.tmpl	2008-04-20 13:11:41.000000000 +0200
+@@ -1,4 +1,3 @@
+-[%# 1.0@bugzilla.org %]
+ [%# The contents of this file are subject to the Mozilla Public
+   # License Version 1.1 (the "License"); you may not use this file
+   # except in compliance with the License. You may obtain a copy of
+@@ -38,19 +37,35 @@
+ 
+ <p>
+   Do utworzenia konta w [% terms.Bugzilli %] wymagane jest tylko podanie 
+-  poprawnego adresu e-mail. Następnie na adres ten wysłana zostanie
+-  wiadomość z prośbą o potwierdzenie. <b>Do czasu otrzymania wiadomości
+-  zalogowanie się do systemu nie będzie możliwe.</b> W przypadku, gdy wiadomość nie dojdzie
+-  w rozsądnym czasie, należy skontaktować się z opiekunem tej 
+-  instalacji [% terms.Bugzilli %] pod adresem
++[% IF Param('emailsuffix') == '' %]
++  poprawnego adresu e-mail.
++[% ELSE %]
++  nazwy konta, która powiązana z [% Param('emailsuffix') %]
++  odpowiada adresowi pod którym będzie odbierana poczta.
++[% END %]
++  Następnie na adres ten wysłana zostanie wiadomość z prośbą o potwierdzenie.
++  <b>Do czasu otrzymania wiadomości zalogowanie się do systemu nie będzie możliwe.</b>
++  W przypadku, gdy wiadomość nie dojdzie w rozsądnym czasie, należy skontaktować się
++  z opiekunem tej instalacji [% terms.Bugzilli %] pod adresem
+   <a href="mailto:[% Param("maintainer") %]">[% Param("maintainer") %]</a>.
+ </p>
+ 
++[% IF Param('createemailregexp') == '.*' && Param('emailsuffix') == '' %]
++<p>
++  <b>OSTRZEŻENIE:</b> [% terms.Bugzilla %] jest otwartym systemem śledzenia
++  [% terms.bledow %]. Aktywność w większości [% terms.bledow %], włączając
++  w to adresy email, będzie widoczna publicznie. <b>Zalecamy</b> korzystanie
++  z alternatywnego konta lub darmowej usługi email (jak Gmail,
++  Yahoo, Hotmail, lub inne) aby uniknąć otrzymywania spamu
++  na adresie podstawowym.
++</p>
++[% END %]
++
+ <form id="account_creation_form" method="get" action="createaccount.cgi">
+   <table>
+     <tr>
+       <td align="right">
+-        <b>Adres e-mail:</b>
++        <b>Adres email:</b>
+       </td>
+       <td>
+         <input size="35" id="login" name="login">
+diff -b -uNr -x.svn -xCVS ./3.0/template/pl/default/account/email/change-new.txt.tmpl ./3.2/pl/default/account/email/change-new.txt.tmpl
+--- ./3.0/template/pl/default/account/email/change-new.txt.tmpl	2008-04-20 13:11:32.000000000 +0200
++++ ./3.2/pl/default/account/email/change-new.txt.tmpl	2008-04-20 13:11:41.000000000 +0200
+@@ -1,4 +1,3 @@
+-[%# 1.0@bugzilla.org %]
+ [%# The contents of this file are subject to the Mozilla Public
+   # License Version 1.1 (the "License"); you may not use this file
+   # except in compliance with the License. You may obtain a copy of
+@@ -32,12 +31,12 @@
+ 
+ Aby potwierdzić zmianę, należy otworzyć poniższy odnośnik:
+ 
+-[%+ Param('urlbase') %]token.cgi?t=[% token FILTER url_quote %]&a=cfmem
++[%+ urlbase %]token.cgi?t=[% token FILTER url_quote %]&a=cfmem
+ 
+ Jeśli odbiorca tej wiadomości nie wysłał tego żądania lub aby anulować żądanie, 
+ proszę otworzyć poniższy odnośnik:
+ 
+-[%+ Param('urlbase') %]token.cgi?t=[% token FILTER url_quote %]&a=cxlem
++[%+ urlbase %]token.cgi?t=[% token FILTER url_quote %]&a=cxlem
+ 
+ W przypadku braku reakcji żądanie wygaśnie po [%+ max_token_age %] dniach
+ ([%+ time2str("%o %B %Y %H:%M %Z", expiration_ts) %]).
+diff -b -uNr -x.svn -xCVS ./3.0/template/pl/default/account/email/change-old.txt.tmpl ./3.2/pl/default/account/email/change-old.txt.tmpl
+--- ./3.0/template/pl/default/account/email/change-old.txt.tmpl	2008-04-20 13:11:32.000000000 +0200
++++ ./3.2/pl/default/account/email/change-old.txt.tmpl	2008-04-20 13:11:41.000000000 +0200
+@@ -1,4 +1,3 @@
+-[%# 1.0@bugzilla.org %]
+ [%# The contents of this file are subject to the Mozilla Public
+   # License Version 1.1 (the "License"); you may not use this file
+   # except in compliance with the License. You may obtain a copy of
+@@ -36,11 +35,11 @@
+ X-Bugzilla-Type: admin
+ 
+ [%+ terms.Bugzilla %] otrzymała żądanie zmiany adresu e-mail konta                                                                                               
+-na adres [%+ newemailaddress %]. .                                                                                                                      
++na adres [%+ newemailaddress %].
+ 
+ Aby potwierdzić zmianę, należy otworzyć poniższy odnośnik:                                                                                                       
+ 
+-[%+ Param('urlbase') %]token.cgi?t=[% token FILTER url_quote %]&a=cfmem                                                                                          
++[%+ urlbase %]token.cgi?t=[% token FILTER url_quote %]&a=cfmem
+ 
+ Jeśli odbiorca tej wiadomości nie wysłał tego żądania lub aby anulować żądanie, 
+ proszę otworzyć poniższy odnośnik:
+@@ -49,5 +48,3 @@
+ 
+ W przypadku braku reakcji żądanie wygaśnie po [%+ max_token_age %] dniach                                                                                        
+ ([%+ time2str("%o %B %Y %H:%M %Z", expiration_ts) %]).       
+-
+-
+diff -b -uNr -x.svn -xCVS ./3.0/template/pl/default/account/email/confirm.html.tmpl ./3.2/pl/default/account/email/confirm.html.tmpl
+--- ./3.0/template/pl/default/account/email/confirm.html.tmpl	2008-04-20 13:11:32.000000000 +0200
++++ ./3.2/pl/default/account/email/confirm.html.tmpl	2008-04-20 13:11:41.000000000 +0200
+@@ -1,4 +1,3 @@
+-[%# 1.0@bugzilla.org %]
+ [%# The contents of this file are subject to the Mozilla Public
+   # License Version 1.1 (the "License"); you may not use this file
+   # except in compliance with the License. You may obtain a copy of
+diff -b -uNr -x.svn -xCVS ./3.0/template/pl/default/account/email/confirm-new.html.tmpl ./3.2/pl/default/account/email/confirm-new.html.tmpl
+--- ./3.0/template/pl/default/account/email/confirm-new.html.tmpl	2008-04-20 13:11:32.000000000 +0200
++++ ./3.2/pl/default/account/email/confirm-new.html.tmpl	2008-04-20 13:11:41.000000000 +0200
+@@ -1,4 +1,3 @@
+-[%# 1.0@bugzilla.org %]
+ [%# The contents of this file are subject to the Mozilla Public
+   # License Version 1.1 (the "License"); you may not use this file
+   # except in compliance with the License. You may obtain a copy of
+@@ -27,11 +26,9 @@
+ 
+ [% expiration_ts = date + (constants.MAX_TOKEN_AGE * 86400) %]
+ <div>
+-  Aby zakończyć tworzenie konta, należy wybrać hasło i wpisać je w pole poniżej.
+-  Można także podać imię i nazwisko.
+-  Jeśli formularz nie zostanie wypełniony przed datą 
+-  <u>[%+ time2str("%o %B %Y %H:%M %Z", expiration_ts) %]</u>,
+-  proces tworzenia konta zostania automatycznie anulowany.
++  Aby utworzyć konto, należy wprowadzić hasło do formularza poniżej.
++  Podany adres email oraz imię i nazwisko (jeśli zostaną podane) będą
++  wyświetlane z podanymi zmianami.
+ </div>
+ 
+ <form id="confirm_account_form" method="post" action="token.cgi">
+@@ -43,7 +40,7 @@
+       <td>[% email FILTER html %]</td>
+     </tr>
+     <tr>
+-      <th align="right"><label for="realname">Imię i nazwisko</label>:</th>
++      <th align="right"><small><i>(OPCJONALNE)</i></small><label for="realname">Imię i nazwisko</label>:</th>
+       <td><input type="text" id="realname" name="realname" value=""></td>
+     </tr>
+     <tr>
+@@ -51,7 +48,7 @@
+       <td><input type="password" id="passwd1" name="passwd1" value=""></td>
+     </tr>
+     <tr>
+-      <th align="right"><label for="passwd1">Potwierdzenie hasła</label>:</th>
++      <th align="right"><label for="passwd2">Potwierdzenie hasła</label>:</th>
+       <td><input type="password" id="passwd2" name="passwd2" value=""></td>
+     </tr>
+     <tr>
+@@ -61,4 +58,20 @@
+   </table>
+ </form>
+ 
++<p>
++  Konto nie zostanie utworzone, jeśli ten formularz nie zostanie wypełniony
++  przed <u>[%+ time2str("%B %o, %Y at %H:%M %Z", expiration_ts) %]</u>.
++</p>
++
++<p>
++  Jeśli nie chcesz utworzyć konta z podanym adresem email, naciśnij
++  klawisz anuluj a powyższe dane zostaną usunięte z pamięci.
++</p>
++
++<form id="cancel_account_form" method="post" action="token.cgi">
++  <input type="hidden" name="t" value="[% token FILTER html %]">
++  <input type="hidden" name="a" value="cancel_new_account">
++  <input type="submit" id="confirm" value="Anuluj konto">
++</form>
++
+ [% PROCESS global/footer.html.tmpl %]
+diff -b -uNr -x.svn -xCVS ./3.0/template/pl/default/account/email/request-new.txt.tmpl ./3.2/pl/default/account/email/request-new.txt.tmpl
+--- ./3.0/template/pl/default/account/email/request-new.txt.tmpl	2008-04-20 13:11:32.000000000 +0200
++++ ./3.2/pl/default/account/email/request-new.txt.tmpl	2008-04-20 13:11:41.000000000 +0200
+@@ -1,4 +1,3 @@
+-[%# 1.0@bugzilla.org %]
+ [%# The contents of this file are subject to the Mozilla Public
+   # License Version 1.1 (the "License"); you may not use this file
+   # except in compliance with the License. You may obtain a copy of
+@@ -31,18 +30,29 @@
+ [%+ terms.Bugzilla %] otrzymała żądanie utworzenie konta z użyciem tego
+ adresu e-mail ([% email %]).
+ 
+-Aby potwierdzić chęć utworzenia konta z tym adresem e-mail, należy otworzyć
+-poniższy odnośnik:
++Aby kontynuować tworzrenie konta z tym adresem email, należy otworzyć
++poniższy odnośnik przed [%+ time2str("%B %o, %Y at %H:%M %Z", expiration_ts) %]:
+ 
+-[%+ Param('urlbase') %]token.cgi?t=[% token FILTER url_quote %]&a=request_new_account
++[%+ urlbase %]token.cgi?t=[% token FILTER url_quote %]&a=request_new_account
+ 
++Jeśli odbiorca tej wiadomości nie otrzymał tego emaila przed [%+ time2str("%B %o, %Y at %H:%M %Z", expiration_ts) %] lub użytkownik woli stworzyć konto z innym adresem email, można zacząć od początku odwiedzając:
+ 
+-Jeśli odbiorca tej wiadomości nie wysłał tego żądania lub aby anulować żądanie, 
+-proszę otworzyć poniższy odnośnik:                                                                                                                               
++[%+ urlbase %]createaccount.cgi
+ 
+-[%+ Param('urlbase') %]token.cgi?t=[% token FILTER url_quote %]&a=cancel_new_account                                                                             
++[% IF Param('createemailregexp') == '.*' && Param('emailsuffix') == '' %]
++OSTRZEŻENIE: [% terms.Bugzilla %] jest otwartym systemem śledzenia
++[% terms.bledow %]. Aktywność w większości [% terms.bledow %], włączając
++w to adresy email, będzie widoczna publicznie. <b>Zalecamy</b> korzystanie
++z alternatywnego konta lub darmowej usługi email (jak Gmail,
++Yahoo, Hotmail, lub inne) aby uniknąć otrzymywania spamu
++na adresie podstawowym.
++[% END %]
+ 
+-W przypadku braku reakcji żądanie wygaśnie po [%+ max_token_age %] dniach                                                                                        
+-([%+ time2str("%o %B %Y %H:%M %Z", expiration_ts) %]).    
++Jeżeli użytkownik nie chce utworzyć konta, lub to zgłoszenie jest wynikiem
++błędu można nie robić nic lub odwiedzić poniższy adres:
+ 
++[%+ urlbase %]token.cgi?t=[% token FILTER url_quote %]&a=cancel_new_account
+ 
++Jeżeli powyższy odnośnik nie działa, lub pojawią się jakiekolwiek inne
++problemy z tym kontem, proszę skontaktować się z administratorem:
++ [% Param('maintainer') %].
+diff -b -uNr -x.svn -xCVS ./3.0/template/pl/default/account/password/forgotten-password.txt.tmpl ./3.2/pl/default/account/password/forgotten-password.txt.tmpl
+--- ./3.0/template/pl/default/account/password/forgotten-password.txt.tmpl	2008-04-20 13:11:32.000000000 +0200
++++ ./3.2/pl/default/account/password/forgotten-password.txt.tmpl	2008-04-20 13:11:41.000000000 +0200
+@@ -1,4 +1,3 @@
+-[%# 1.0@bugzilla.org %]
+ [%# The contents of this file are subject to the Mozilla Public
+   # License Version 1.1 (the "License"); you may not use this file
+   # except in compliance with the License. You may obtain a copy of
+@@ -30,12 +29,12 @@
+ Otrzymano żądanie zmiany hasła [%+ terms.Bugzilli %].
+ Aby dokonać zmiany, należy otworzyć poniższy odnośnik:
+ 
+-[%+ Param('urlbase') %]token.cgi?t=[% token FILTER url_quote %]&a=cfmpw
++[%+ urlbase %]token.cgi?t=[% token FILTER url_quote %]&a=cfmpw
+ 
+ Jeśli odbiorca tej wiadomości nie wysłał tego żądania lub aby anulować żądanie, 
+ proszę otworzyć poniższy odnośnik:
+ 
+-[%+ Param('urlbase') %]token.cgi?t=[% token FILTER url_quote %]&a=cxlpw                                                                                          
++[%+ urlbase %]token.cgi?t=[% token FILTER url_quote %]&a=cxlpw
+ 
+ W przypadku braku reakcji żądanie wygaśnie po [%+ max_token_age %] dniach                                                                                        
+ ([%+ time2str("%o %B %Y %H:%M %Z", expiration_ts) %]) lub po poprawnym
+diff -b -uNr -x.svn -xCVS ./3.0/template/pl/default/account/password/set-forgotten-password.html.tmpl ./3.2/pl/default/account/password/set-forgotten-password.html.tmpl
+--- ./3.0/template/pl/default/account/password/set-forgotten-password.html.tmpl	2008-04-20 13:11:32.000000000 +0200
++++ ./3.2/pl/default/account/password/set-forgotten-password.html.tmpl	2008-04-20 13:11:41.000000000 +0200
+@@ -1,4 +1,3 @@
+-[%# 1.0@bugzilla.org %]
+  [%# The contents of this file are subject to the Mozilla Public
+   # License Version 1.1 (the "License"); you may not use this file
+   # except in compliance with the License. You may obtain a copy of
+diff -b -uNr -x.svn -xCVS ./3.0/template/pl/default/account/prefs/account.html.tmpl ./3.2/pl/default/account/prefs/account.html.tmpl
+--- ./3.0/template/pl/default/account/prefs/account.html.tmpl	2008-04-20 13:11:32.000000000 +0200
++++ ./3.2/pl/default/account/prefs/account.html.tmpl	2008-04-20 13:11:41.000000000 +0200
+@@ -1,4 +1,3 @@
+-[%# 1.0@bugzilla.org %]
+ [%# The contents of this file are subject to the Mozilla Public
+   # License Version 1.1 (the "License"); you may not use this file
+   # except in compliance with the License. You may obtain a copy of
+diff -b -uNr -x.svn -xCVS ./3.0/template/pl/default/account/prefs/email.html.tmpl ./3.2/pl/default/account/prefs/email.html.tmpl
+--- ./3.0/template/pl/default/account/prefs/email.html.tmpl	2008-04-20 13:11:32.000000000 +0200
++++ ./3.2/pl/default/account/prefs/email.html.tmpl	2008-04-20 13:11:41.000000000 +0200
+@@ -1,4 +1,3 @@
+-[%# 1.0@bugzilla.org %]
+ [%# The contents of this file are subject to the Mozilla Public
+   # License Version 1.1 (the "License"); you may not use this file
+   # except in compliance with the License. You may obtain a copy of
+diff -b -uNr -x.svn -xCVS ./3.0/template/pl/default/account/prefs/permissions.html.tmpl ./3.2/pl/default/account/prefs/permissions.html.tmpl
+--- ./3.0/template/pl/default/account/prefs/permissions.html.tmpl	2008-04-20 13:11:32.000000000 +0200
++++ ./3.2/pl/default/account/prefs/permissions.html.tmpl	2008-04-20 13:11:41.000000000 +0200
+@@ -1,4 +1,3 @@
+-[%# 1.0@bugzilla.org %]
+ [%# The contents of this file are subject to the Mozilla Public
+   # License Version 1.1 (the "License"); you may not use this file
+   # except in compliance with the License. You may obtain a copy of
+@@ -36,7 +35,7 @@
+   <tr>
+     <td>
+       [% IF has_bits.size %]
+-        Ustawione [% terms.bits %] uprawnień:
++        Ustawione bity uprawnień:
+         <table align="center">
+           [% FOREACH bit_description = has_bits %]
+             <tr>
+@@ -72,7 +71,7 @@
+         innych użytkowników.
+       [% ELSIF set_bits.size %]
+         <br>
+-        Użytkownik może zmieniać następujące [% terms.bits %] dla
++        Użytkownik może zmieniać następujące bity dla
+         <a href="editusers.cgi">innych użytkowników</a>:
+           <table align="center">
+           [% FOREACH bit_description = set_bits %]
+diff -b -uNr -x.svn -xCVS ./3.0/template/pl/default/account/prefs/prefs.html.tmpl ./3.2/pl/default/account/prefs/prefs.html.tmpl
+--- ./3.0/template/pl/default/account/prefs/prefs.html.tmpl	2008-04-20 13:11:32.000000000 +0200
++++ ./3.2/pl/default/account/prefs/prefs.html.tmpl	2008-04-20 13:11:41.000000000 +0200
+@@ -1,4 +1,3 @@
+-[%# 1.0@bugzilla.org %]
+ [%# The contents of this file are subject to the Mozilla Public
+   # License Version 1.1 (the "License"); you may not use this file
+   # except in compliance with the License. You may obtain a copy of
+@@ -41,6 +40,8 @@
+    title = "Ustawienia użytkownika"
+    subheader = filtered_login
+    style_urls = ['skins/standard/admin.css']
++   javascript_urls = ['js/util.js']
++   doc_section = "userpreferences.html"
+  %]
+ 
+ [% tabs = [{ name => "settings", label => "Ustawienia ogólne",
+diff -b -uNr -x.svn -xCVS ./3.0/template/pl/default/account/prefs/saved-searches.html.tmpl ./3.2/pl/default/account/prefs/saved-searches.html.tmpl
+--- ./3.0/template/pl/default/account/prefs/saved-searches.html.tmpl	2008-04-20 13:11:32.000000000 +0200
++++ ./3.2/pl/default/account/prefs/saved-searches.html.tmpl	2008-04-20 13:11:41.000000000 +0200
+@@ -1,4 +1,3 @@
+-[%# 1.0@bugzilla.org %]
+ [%# The contents of this file are subject to the Mozilla Public
+   # License Version 1.1 (the "License"); you may not use this file
+   # except in compliance with the License. You may obtain a copy of
+@@ -30,17 +29,7 @@
+       var bless_groups = [[% bless_group_ids.join(",") FILTER js %]];
+       var checkbox = document.getElementById(group.name.replace(/share_(\d+)/, "force_$1"));
+ 
+-      // Check if the selected group is in the bless group array
+-      var found = false;
+-      for (var i = 0; i < bless_groups.length; i++) {
+-        if (bless_groups[i] == group.value) {
+-          found = true;
+-          break;
+-        }
+-      }
+-
+-      // Enable or disable checkbox
+-      if (found) {
++      if (bz_isValueInArray(bless_groups, group.value)) {
+         checkbox.disabled = false;
+       } else {
+         checkbox.disabled = true;
+@@ -146,6 +135,10 @@
+                      %]>
+               <label for="force_[% q.id FILTER html %]">Wyświetlane w stopce</label>
+             [% END %]
++            [% IF q.shared_with_users %]
++              (współdzielone z [% q.shared_with_users FILTER html %]
++              [%+ q.shared_with_users > 1 ? "użytkownikami" : "użytkownikiem" %])
++            [% END %]
+           </td>
+         [% END %]
+         </td>
+@@ -171,9 +164,15 @@
+ 	Autor
+       </th>
+       <th>
++        Współdzielone z
++      </th>
++      <th>
+         Uruchomienie
+       </th>
+       <th>
++        Edit
++      </th>
++      <th>
+         Wyświetlane w stopce
+       </th>
+     </tr>
+@@ -183,11 +182,16 @@
+       <tr>
+         <td>[% q.name FILTER html %]</td>
+         <td>[% q.user.identity FILTER html %]</td>
++        <td>[% q.shared_with_group.name FILTER html %]</td>
+         <td>
+           <a href="buglist.cgi?cmdtype=dorem&amp;remaction=run&amp;namedcmd=
+                    [% q.name FILTER url_quote %]&amp;sharer_id=
+                    [% q.user.id FILTER url_quote %]">Uruchom</a>
+         </td>
++        <td>
++          <a href="query.cgi?[% q.edit_link FILTER html %]&amp;known_name=
++                   [% q.name FILTER url_quote %]">Edycja</a>
++        </td>
+         <td align="center">
+           <input type="checkbox" 
+                  name="link_in_footer_[% q.id FILTER html %]"
+@@ -199,7 +203,7 @@
+     [% END %]
+     [% IF !found_shared_query %]
+       <tr>
+-        <td colspan="4" style="text-align: center">
++        <td colspan="6" style="text-align: center">
+           &lt;Brak&gt;
+         </td>
+       </tr>
+diff -b -uNr -x.svn -xCVS ./3.0/template/pl/default/account/prefs/settings.html.tmpl ./3.2/pl/default/account/prefs/settings.html.tmpl
+--- ./3.0/template/pl/default/account/prefs/settings.html.tmpl	2008-04-20 13:11:32.000000000 +0200
++++ ./3.2/pl/default/account/prefs/settings.html.tmpl	2008-04-20 13:11:41.000000000 +0200
+@@ -1,4 +1,3 @@
+-[%# 1.0@bugzilla.org %]
+ [%# The contents of this file are subject to the Mozilla Public
+   # License Version 1.1 (the "License"); you may not use this file
+   # except in compliance with the License. You may obtain a copy of
+diff -b -uNr -x.svn -xCVS ./3.0/template/pl/default/account/profile-activity.html.tmpl ./3.2/pl/default/account/profile-activity.html.tmpl
+--- ./3.0/template/pl/default/account/profile-activity.html.tmpl	2008-04-20 13:11:32.000000000 +0200
++++ ./3.2/pl/default/account/profile-activity.html.tmpl	2008-04-20 13:11:41.000000000 +0200
+@@ -1,4 +1,3 @@
+-[%# 1.0@bugzilla.org %]
+ [%# The contents of this file are subject to the Mozilla Public
+   # License Version 1.1 (the "License"); you may not use this file
+   # except in compliance with the License. You may obtain a copy of
+@@ -36,7 +35,7 @@
+   #%]
+ 
+ [% title = BLOCK %]
+-  Dziennik konta dla '[% otheruser.login FILTER html %]'
++  Historia konta dla '[% otheruser.login FILTER html %]'
+ [% END %]
+ 
+ 
+

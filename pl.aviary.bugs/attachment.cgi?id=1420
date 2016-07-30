@@ -1,0 +1,23 @@
+diff --git a/default/index.html.tmpl b/default/index.html.tmpl
+--- a/default/index.html.tmpl
++++ b/default/index.html.tmpl
+@@ -47,17 +47,17 @@ function onLoadActions() {
+   document.getElementById('quicksearch_top').focus();
+ }
+ function addSidebar() {
+   var sidebarname=window.location.host;
+   if (!/bug/i.test(sidebarname))
+     sidebarname="[% terms.Bugzilla %] "+sidebarname;
+   window.sidebar.addPanel (sidebarname, "[% urlbase FILTER html %]sidebar.cgi", "");
+ }
+-var quicksearch_message = "Wpisz # [% terms.bledu %], lub wyrażenie którego szukasz.";
++var quicksearch_message = "Numer [% terms.bledu %] lub szukane wyrażenie";
+ 
+ function checkQuicksearch( form ) {
+   if (form.quicksearch.value == '' || form.quicksearch.value == quicksearch_message ) { 
+     alert('Wpisz jedno lub więcej wyrażeń, których szukasz.');
+     return false; 
+   }
+   return true;         
+ }
+

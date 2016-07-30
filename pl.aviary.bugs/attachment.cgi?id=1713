@@ -1,0 +1,127 @@
+diff --git a/browser/chrome/browser/pageInfo.dtd b/browser/chrome/browser/pageInfo.dtd
+--- a/browser/chrome/browser/pageInfo.dtd
++++ b/browser/chrome/browser/pageInfo.dtd
+@@ -85,18 +85,18 @@
+ <!ENTITY  feedTab.accesskey     "K">
+ <!ENTITY  feedSubscribe         "Subskrybuj">
+ <!ENTITY  feedSubscribe.accesskey "u">
+ 
+ <!ENTITY  permTab               "Uprawnienia">
+ <!ENTITY  permTab.accesskey     "U">
+ <!ENTITY  permUseDefault        "Użyj domyślnych">
+ <!ENTITY  permAskAlways         "Zawsze pytaj">
+-<!ENTITY  permAllow             "Zezwól">
+-<!ENTITY  permAllowSession      "Zezwól na czas sesji">
++<!ENTITY  permAllow             "Zezwalaj">
++<!ENTITY  permAllowSession      "Zezwalaj na czas sesji">
+ <!ENTITY  permBlock             "Blokuj">
+ <!ENTITY  permissionsFor        "Uprawnienia dla:">
+ <!ENTITY  permImage             "Wczytywanie obrazków">
+ <!ENTITY  permPopup             "Otwieranie wyskakujących okien">
+ <!ENTITY  permCookie            "Zapisywanie ciasteczek">
+ <!ENTITY  permInstall           "Instalacja rozszerzeń i motywów">
+ <!ENTITY  permGeo               "Udostępnij położenie">
+ 
+diff --git a/browser/chrome/browser/preferences/permissions.dtd b/browser/chrome/browser/preferences/permissions.dtd
+--- a/browser/chrome/browser/preferences/permissions.dtd
++++ b/browser/chrome/browser/preferences/permissions.dtd
+@@ -4,19 +4,19 @@
+ <!ENTITY treehead.sitename.label      "Witryna">
+ <!ENTITY treehead.status.label        "Status">
+ <!ENTITY removepermission.label       "Usuń witrynę">
+ <!ENTITY removepermission.accesskey   "U">
+ <!ENTITY removeallpermissions.label   "Usuń wszystkie witryny">
+ <!ENTITY removeallpermissions.accesskey "w">
+ <!ENTITY address.label                "Adres witryny:">
+ <!ENTITY address.accesskey            "A">
+-<!ENTITY block.label                  "Zablokuj">
+-<!ENTITY block.accesskey              "b">
+-<!ENTITY session.label                "Zezwól na czas sesji">
++<!ENTITY block.label                  "Blokuj">
++<!ENTITY block.accesskey              "B">
++<!ENTITY session.label                "Zezwalaj na czas sesji">
+ <!ENTITY session.accesskey            "s">
+-<!ENTITY allow.label                  "Zezwól">
+-<!ENTITY allow.accesskey              "z">  
++<!ENTITY allow.label                  "Zezwalaj">
++<!ENTITY allow.accesskey              "Z">  
+ <!ENTITY windowClose.key              "w">
+ 
+ <!ENTITY button.close.label           "Zamknij">
+ <!ENTITY button.close.accesskey       "k">
+ 
+diff --git a/browser/chrome/browser/preferences/preferences.properties b/browser/chrome/browser/preferences/preferences.properties
+--- a/browser/chrome/browser/preferences/preferences.properties
++++ b/browser/chrome/browser/preferences/preferences.properties
+@@ -6,23 +6,23 @@
+ #                    protection).
+ phishBeforeText=Wybranie tej opcji spowoduje, że adresy odwiedzanych witryn będą wysyłane do serwisu %S. Aby kontynuować, należy przeczytać i zaakceptować poniższe warunki korzystania z usługi:
+ 
+ #### Fonts
+ 
+ labelDefaultFont=Domyślna (%S)
+ 
+ #### Permissions Manager
+-cookiepermissionstext=Możesz określić zasady akceptacji ciasteczek. Podaj dokładny adres witryny, której uprawnienia chcesz zmodyfikować, a następnie naciśnij Zezwól, Zablokuj lub Zezwól na czas sesji.
++cookiepermissionstext=Możesz określić zasady akceptacji ciasteczek. Podaj dokładny adres witryny, której uprawnienia chcesz zmodyfikować, a następnie naciśnij Zezwalaj, Blokuj lub Zezwalaj na czas sesji.
+ cookiepermissionstitle=Wyjątki - Ciasteczka
+-addonspermissionstext=Możesz zdecydować, które witryny mogą instalować dodatki. Podaj dokładny adres witryny, której chcesz na to zezwolić, i naciśnij Zezwól.
++addonspermissionstext=Możesz zdecydować, które witryny mogą instalować dodatki. Podaj dokładny adres witryny, której chcesz na to zezwolić, i naciśnij Zezwalaj.
+ addons_permissions_title=Uprawnione witryny - Instalacja dodatków
+-popuppermissionstext=Możesz zdecydować, które witryny mogą otwierać wyskakujące okna. Podaj dokładny adres witryny, której chcesz na to zezwolić, i naciśnij Zezwól.
++popuppermissionstext=Możesz zdecydować, które witryny mogą otwierać wyskakujące okna. Podaj dokładny adres witryny, której chcesz na to zezwolić, i naciśnij Zezwalaj.
+ popuppermissionstitle=Uprawnione witryny - Wyskakujące okna
+-imagepermissionstext=Możesz zdecydować, którym witrynom zezwolić na wyświetlanie obrazków. Podaj dokładny adres witryny i naciśnij Zablokuj lub Zezwól.
++imagepermissionstext=Możesz zdecydować, którym witrynom zezwolić na wyświetlanie obrazków. Podaj dokładny adres witryny i naciśnij Blokuj lub Zezwalaj.
+ imagepermissionstitle=Wyjątki - Wyświetlanie obrazków
+ 
+ invalidURI=Podaj poprawną nazwę hosta
+ invalidURITitle=Wprowadzono niepoprawną nazwę hosta
+ 
+ #### Master Password
+ 
+ pw_change2empty_in_fips_mode=Program pracuje obecnie w trybie FIPS. Tryb FIPS wymaga niepustego hasła głównego.
+@@ -81,19 +81,19 @@ typeDescriptionWithType=%S (%S)
+ #### Cookie Viewer
+ 
+ hostColon=Host:
+ domainColon=Domena:
+ forSecureOnly=Tylko szyfrowane połączenia
+ forAnyConnection=Dowolny rodzaj połączenia
+ expireAtEndOfSession=Pod koniec sesji
+ 
+-can=Zezwól
+-canSession=Zezwól na czas sesji
+-cannot=Zablokuj
++can=Zezwalaj
++canSession=Zezwalaj na czas sesji
++cannot=Blokuj
+ 
+ noCookieSelected=<nie zaznaczono ciasteczka>
+ cookiesAll=Następujące ciasteczka są przechowywane na tym komputerze:
+ cookiesFiltered=Następujące ciasteczka odpowiadają zapytaniu:
+ 
+ #### Offline apps
+ offlineAppRemoveTitle=Usuń dane witryn trybu offline
+ offlineAppRemovePrompt=Po usunięciu tych danych witryna %S nie będzie dostępna w trybie offline. Czy na pewno usunąć tę witrynę trybu offline?
+diff --git a/toolkit/chrome/cookie/cookieAcceptDialog.dtd b/toolkit/chrome/cookie/cookieAcceptDialog.dtd
+--- a/toolkit/chrome/cookie/cookieAcceptDialog.dtd
++++ b/toolkit/chrome/cookie/cookieAcceptDialog.dtd
+@@ -2,15 +2,15 @@
+ <!ENTITY props.value.label "Zawartość:" >
+ <!ENTITY props.domain.label "Host:" >
+ <!ENTITY props.path.label "Ścieżka:" >
+ <!ENTITY props.secure.label "Wysyłaj:" >
+ <!ENTITY props.expires.label "Wygasa:" >
+ <!ENTITY props.policy.label "Zasady:" >
+ <!ENTITY button.allow.label "Zezwól" >
+ <!ENTITY button.allow.accesskey "Z" >
+-<!ENTITY button.session.label "Akceptuj na czas trwania sesji">
++<!ENTITY button.session.label "Zezwól na czas trwania sesji">
+ <!ENTITY button.session.accesskey "a">
+ <!ENTITY button.deny.label "Odrzuć" >
+ <!ENTITY button.deny.accesskey "O" >
+ <!ENTITY dialog.title "Potwierdzenie ustawienia ciasteczka" >
+ <!ENTITY dialog.remember.label "Zastosuj wobec wszystkich ciasteczek z tej witryny" >
+ <!ENTITY dialog.remember.accesskey "U" >
+

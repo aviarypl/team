@@ -1,0 +1,2350 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>240 &ndash; Na sztywno wpisane słowa &quot;Firefox&quot; i &quot;Mozilla Firefox&quot; w mozilla/toolkit</title>
+
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<link href="data/assets/7aa6ea67750936a0368541421bdcd5ee.css" rel="stylesheet" type="text/css">
+
+
+
+    
+<script type="text/javascript" src="data/assets/a7c2f3a028f17a9aa60f56dc9d6e732d.js"></script>
+
+    <script type="text/javascript">
+    <!--
+        YAHOO.namespace('bugzilla');
+        YAHOO.util.Event.addListener = function (el, sType, fn, obj, overrideContext) {
+               if ( ("onpagehide" in window || YAHOO.env.ua.gecko) && sType === "unload") { sType = "pagehide"; };
+               var capture = ((sType == "focusin" || sType == "focusout") && !YAHOO.env.ua.ie) ? true : false;
+               return this._addListener(el, this._getType(sType), fn, obj, overrideContext, capture);
+         };
+        if ( "onpagehide" in window || YAHOO.env.ua.gecko) {
+            YAHOO.util.Event._simpleRemove(window, "unload", 
+                                           YAHOO.util.Event._unload);
+        }
+        
+        function unhide_language_selector() { 
+            YAHOO.util.Dom.removeClass(
+                'lang_links_container', 'bz_default_hidden'
+            ); 
+        } 
+        YAHOO.util.Event.onDOMReady(unhide_language_selector);
+
+        
+        var BUGZILLA = {
+            param: {
+                cookiepath: '\/',
+                maxusermatches: 1000
+            },
+            constant: {
+                COMMENT_COLS: 80
+            },
+            string: {
+                
+
+                attach_desc_required:
+                    "You must enter a Description for this attachment.",
+                component_required:
+                    "You must select a Component for this bug.",
+                description_required:
+                    "You must enter a Description for this bug.",
+                short_desc_required:
+                    "You must enter a Summary for this bug.",
+                version_required:
+                    "You must select a Version for this bug."
+            }
+              , api_token: ''
+        };
+
+    if (history && history.replaceState) {
+      if(!document.location.href.match(/show_bug\.cgi/)) {
+        history.replaceState( null,
+                             "240 – Na sztywno wpisane słowa \"Firefox\" i \"Mozilla Firefox\" w mozilla\/toolkit",
+                             "show_bug.cgi?id=240" );
+        document.title = "240 – Na sztywno wpisane słowa \"Firefox\" i \"Mozilla Firefox\" w mozilla\/toolkit";
+      }
+      if (document.location.href.match(/show_bug\.cgi\?.*list_id=/)) {
+        var href = document.location.href;
+        href = href.replace(/[\?&]+list_id=(\d+|cookie)/, '');
+        history.replaceState(null, "240 – Na sztywno wpisane słowa \"Firefox\" i \"Mozilla Firefox\" w mozilla\/toolkit", href);
+      }
+    }
+    YAHOO.util.Event.onDOMReady(function() {
+      initDirtyFieldTracking();
+
+    });
+    // -->
+    </script>
+<script type="text/javascript" src="data/assets/daf5e0fb6826e6a35280e622913f0c4a.js"></script>
+
+    
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+                       title="Bugzilla" href="search_plugin.cgi">
+    <link rel="shortcut icon" href="images/favicon.ico">
+  </head>
+
+  <body 
+        class="bugs-aviary-pl
+                 bz_bug
+                 bz_status_VERIFIED
+                 bz_product_Toolkit
+                 bz_component_inne
+                 bz_bug_240 yui-skin-sam">
+
+  <div id="header"><div id="banner">
+  </div>
+
+    <div id="titles">
+      <span id="title">Bugzilla &ndash; Bug&nbsp;240</span>
+
+        <span id="subtitle" class="subheader">Na sztywno wpisane słowa &quot;Firefox&quot; i &quot;Mozilla Firefox&quot; w mozilla/toolkit</span>
+
+        <span id="information" class="header_addl_info">Last modified: 2008-05-04 02:41:45 CEST</span>
+    </div>
+
+
+    <div id="common_links"><ul class="links">
+  <li><a href="index.html">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi.html">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi.html">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi.html">Search</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="http://bugs.aviary.pl/buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input type="hidden" id="no_redirect_top" name="no_redirect" value="0">
+    <script type="text/javascript">
+      if (history && history.replaceState) {
+        var no_redirect = document.getElementById("no_redirect_top");
+        no_redirect.value = 1;
+      }
+    </script>
+    <input class="txt" type="text" id="quicksearch_top" name="quicksearch" 
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search" 
+           id="find_top"></form>
+  <a href="page.cgi%3Fid=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="report.cgi.html">Reports</a></li>
+
+  <li>
+      <span class="separator">| </span>
+        <a href="request.cgi.html">Requests</a></li>
+
+
+  <li>
+        <span class="separator">| </span>
+        <a href="https://bugzilla.readthedocs.org/en/5.0/using/understanding.html" target="_blank">Help</a>
+      </li>
+    
+      <li id="new_account_container_top">
+        <span class="separator">| </span>
+        <a href="createaccount.cgi.html">New&nbsp;Account</a>
+      </li>
+
+    <li id="mini_login_container_top">
+  <span class="separator">| </span>
+  <a id="login_link_top" href="show_bug.cgi%3Fid=240&amp;GoAheadAndLogIn=1.html"
+     onclick="return show_mini_login_form('_top')">Log In</a>
+
+  <form action="show_bug.cgi%3Fid=240.html" method="POST"
+        class="mini_login bz_default_hidden"
+        id="mini_login_top">
+    <input id="Bugzilla_login_top" required
+           name="Bugzilla_login" class="bz_login"
+        type="email" placeholder="Email Address">
+    <input class="bz_password" name="Bugzilla_password" type="password"
+           id="Bugzilla_password_top" required
+           placeholder="Password">
+    <input type="hidden" name="Bugzilla_login_token"
+           value="1469819957-oabiaAkSkr2WwQ-97zCYuvSesYBdFgQjYP6Mpekto8E">
+    <input type="submit" name="GoAheadAndLogIn" value="Log in"
+            id="log_in_top">
+    <a href="show_bug.cgi%3Fid=240.html#" onclick="return hide_mini_login_form('_top')">[x]</a>
+  </form>
+</li>
+
+
+  <li id="forgot_container_top">
+    <span class="separator">| </span>
+    <a id="forgot_link_top" href="show_bug.cgi%3Fid=240&amp;GoAheadAndLogIn=1.html#forgot"
+       onclick="return show_forgot_form('_top')">Forgot Password</a>
+    <form action="http://bugs.aviary.pl/token.cgi" method="post" id="forgot_form_top"
+          class="mini_forgot bz_default_hidden">
+      <label for="login_top">Login:</label>
+      <input name="loginname" size="20" id="login_top" required
+          type="email" placeholder="Your Email Address">
+      <input id="forgot_button_top" value="Reset Password" type="submit">
+      <input type="hidden" name="a" value="reqpw">
+      <input type="hidden" id="token_top" name="token"
+             value="1469819957-IlmFtpXetfqABSYTDfLULe6gGQm5sGN675gwf49AdaQ">
+      <a href="show_bug.cgi%3Fid=240.html#" onclick="return hide_forgot_form('_top')">[x]</a>
+    </form>
+  </li>
+</ul>
+    </div>
+  </div>
+
+  <div id="bugzilla-body">
+
+
+<script type="text/javascript">
+<!--
+
+//-->
+</script>
+
+<form name="changeform" id="changeform" method="post" action="http://bugs.aviary.pl/process_bug.cgi">
+
+  <input type="hidden" name="delta_ts" value="2008-05-04 02:41:45">
+  <input type="hidden" name="id" value="240">
+  <input type="hidden" name="token" value="1469819957-8NPiy8SnJE9wAzxqboodpZfyR-J-OvzjkK46haUNSkc">
+<div class="bz_short_desc_container edit_form">
+     <a href="show_bug.cgi%3Fid=240.html"><b>Bug&nbsp;240</b></a> <span id="summary_container" class="bz_default_hidden">
+      - <span id="short_desc_nonedit_display">Na sztywno wpisane słowa &quot;Firefox&quot; i &quot;Mozilla Firefox&quot; w mozilla/toolkit</span>
+     </span>
+
+    <div id="summary_input"><span class="field_label "
+    id="field_label_short_desc">
+
+
+  <a 
+      title="The bug summary is a short sentence which succinctly describes what the bug is about."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#short_desc"
+  >Summary:</a>
+
+</span>Na sztywno wpisane słowa &quot;Firefox&quot; i &quot;Mozilla Firefox&quot; w mozilla/toolkit
+    </div>
+  </div>
+  <script type="text/javascript">
+    hideEditableField('summary_container',
+                      'summary_input',
+                      'summary_edit_action',
+                      'short_desc',
+                      'Na sztywno wpisane słowa \"Firefox\" i \"Mozilla Firefox\" w mozilla\/toolkit' );
+  </script>
+  <table class="edit_form">
+    <tr>
+      
+      <td id="bz_show_bug_column_1" class="bz_show_bug_column">     
+        <table>
+          <tr>
+    <th class="field_label">
+      <a href="page.cgi%3Fid=fields.html#bug_status">Status</a>:
+    </th>
+    <td id="bz_field_status">
+      <span id="static_bug_status">VERIFIED
+          WORKSFORME
+      </span>
+    </td>
+  </tr>
+<tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+<tr><th class="field_label "
+    id="field_label_alias">
+
+
+  <a 
+      title="A short, unique name assigned to a bug in order to assist with looking it up and referring to it in other places in Bugzilla."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#alias"
+  >Alias:</a>
+
+</th>
+    <td>
+        None
+    </td>
+  </tr>
+<tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+<tr><th class="field_label "
+    id="field_label_product">
+
+
+  <a 
+      title="Bugs are categorised into Products and Components. Select a Classification to narrow down this list."
+      class="field_help_link"
+      href="describecomponents.cgi.html"
+  >Product:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_product" >Toolkit
+
+</td>
+    </tr>
+
+    
+    <tr class="bz_default_hidden"><th class="field_label "
+    id="field_label_classification">
+
+
+  <a 
+      title="Bugs are categorised into Classifications, Products and Components. classifications is the top-level categorisation."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#classification"
+  >Classification:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_classification" >Tłumaczenia oprogramowania
+
+</td>
+    </tr>
+        
+    
+    
+    <tr><th class="field_label "
+    id="field_label_component">
+
+
+  <a 
+      title="Components are second-level categories; each belongs to a particular Product. Select a Product to narrow down this list."
+      class="field_help_link"
+      href="describecomponents.cgi%3Fproduct=Toolkit.html"
+  >Component:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_component" >inne
+
+  (<a href="buglist.cgi%3Fcomponent=inne&amp;product=Toolkit&amp;bug_status=__open__.html"
+      target="_blank">show other bugs</a>)
+</td>
+    </tr>
+    <tr><th class="field_label "
+    id="field_label_version">
+
+
+  <a 
+      title="The version field defines the version of the software the bug was found in."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#version"
+  >Version:</a>
+
+</th>
+<td>nieokreślona
+  </td>
+    </tr>
+        
+    
+        
+    <tr><th class="field_label "
+    id="field_label_rep_platform">
+
+
+  <a 
+      title="The hardware platform the bug was observed on. Note: When searching, selecting the option &quot;All&quot; only finds bugs whose value for this field is literally the word &quot;All&quot;."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#rep_platform"
+  >Hardware:</a>
+
+</th>
+      <td class="field_value">Wszystkie
+        Wszystkie
+      </td>
+    </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          
+          <tr>
+      <th class="field_label">
+        <label  accesskey="i">
+          <a href="page.cgi%3Fid=fields.html#importance"><u>I</u>mportance</a></label>:
+      </th>
+      <td>P2
+       trywialny
+      </td>
+    </tr>
+          
+          <tr><th class="field_label "
+    id="field_label_assigned_to">
+
+
+  <a 
+      title="The person in charge of resolving the bug."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#assigned_to"
+  >Assignee:</a>
+
+</th>
+      <td><span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+      </td>
+    </tr>
+
+    <tr><th class="field_label "
+    id="field_label_qa_contact">
+
+
+  <a 
+      title="The person responsible for confirming this bug if it is unconfirmed, and for verifying the fix once the bug has been resolved."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#qa_contact"
+  >QA Contact:</a>
+
+</th>
+      <td><span class="vcard">toolkit
+</span>
+      </td>
+    </tr>
+    <script type="text/javascript">
+      assignToDefaultOnChange(['product', 'component'],
+        'splewako\x40aviary.pl',
+        'toolkit\x40l10n.bledy');
+    </script>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          <tr><th class="field_label "
+    id="field_label_bug_file_loc">
+
+
+  <a 
+      title="Bugs can have a URL associated with them - for example, a pointer to a web site where the problem is seen."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#bug_file_loc"
+  >URL:</a>
+
+</th>
+    <td>
+      <span id="bz_url_input_area">
+      </span>
+    </td>
+  </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+
+          
+<tr><th class="field_label "
+    id="field_label_dependson">
+
+
+  <a 
+      title="The bugs listed here must be resolved before this bug can be resolved."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#dependson"
+  >Depends on:</a>
+
+</th>
+
+  <td>
+    <span id="dependson_input_area">
+    </span>
+
+  </td>
+  </tr>
+  
+  <tr><th class="field_label "
+    id="field_label_blocked">
+
+
+  <a 
+      title="This bug must be resolved before the bugs listed in this field can be resolved."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#blocked"
+  >Blocks:</a>
+
+</th>
+
+  <td>
+    <span id="blocked_input_area">
+    </span>
+
+  </td>
+  </tr>
+          
+        </table>
+      </td>
+      <td>
+        <div class="bz_column_spacer">&nbsp;</div>
+      </td>
+      
+      <td id="bz_show_bug_column_2" class="bz_show_bug_column">
+        <table>
+        <tr>
+    <th class="field_label">
+      Reported:
+    </th>
+    <td>2004-10-22 00:20 CEST by <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+    </td>
+  </tr>
+  
+  <tr>
+    <th class="field_label">
+      Modified:
+    </th>
+    <td>2008-05-04 02:41 CEST
+      (<a href="show_activity.cgi%3Fid=240.html">History</a>)
+    </td>
+  
+  </tr>
+<tr>
+      <th class="field_label">
+        <label  accesskey="a">
+          CC List:
+        </label>
+      </th>
+      <td>4 
+          users
+          <span id="cc_edit_area_showhide_container" class="bz_default_hidden">
+            (<a href="show_bug.cgi%3Fid=240.html#" id="cc_edit_area_showhide">show</a>)
+          </span>
+        <div id="cc_edit_area">
+          <br>
+            <select id="cc" multiple="multiple" size="5" >
+                <option value="cleriic">cleriic</option>
+                <option value="gandalf">gandalf</option>
+                <option value="hubert+bap">hubert+bap</option>
+                <option value="pitreck">pitreck</option>
+            </select>
+        </div>
+          <script type="text/javascript">
+            hideEditableField( 'cc_edit_area_showhide_container', 
+                               'cc_edit_area', 
+                               'cc_edit_area_showhide', 
+                               '', 
+                               '');  
+          </script>
+      </td>
+    </tr>
+
+<tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+<tr><th class="field_label "
+    id="field_label_see_also">
+
+
+  <a 
+      title="This allows you to refer to bugs in other installations. You can enter a URL to a bug in the 'Add Bug URLs' field to note that that bug is related to this one. You can enter multiple URLs at once by separating them with whitespace. You should normally use this field to refer to bugs in other installations. For bugs in this installation, it is better to use the Depends on and Blocks fields."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#see_also"
+  >See Also:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_see_also" >
+
+</td>
+    </tr> 
+
+<tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+
+
+
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+          <hr id="bz_top_half_spacer">
+      </td>
+    </tr>
+  </table>
+
+  <table id="bz_big_form_parts">
+  <tr>
+  <td>
+
+    
+<script type="text/javascript">
+<!--
+function toggle_display(link) {
+    var table = document.getElementById("attachment_table");
+    var view_all = document.getElementById("view_all");
+    var hide_obsolete_url_parameter = "&hide_obsolete=1";
+    // Store current height for scrolling later
+    var originalHeight = table.offsetHeight;
+    var rows = YAHOO.util.Dom.getElementsByClassName(
+        'bz_tr_obsolete', 'tr', table);
+
+    for (var i = 0; i < rows.length; i++) {
+        bz_toggleClass(rows[i], 'bz_default_hidden');
+    }
+
+    if (YAHOO.util.Dom.hasClass(rows[0], 'bz_default_hidden')) {
+        link.innerHTML = "Show Obsolete";
+        view_all.href = view_all.href + hide_obsolete_url_parameter 
+    }
+    else {
+        link.innerHTML = "Hide Obsolete";
+        view_all.href = view_all.href.replace(hide_obsolete_url_parameter,"");
+    }
+
+    var newHeight = table.offsetHeight;
+    // This scrolling makes the window appear to not move at all.
+    window.scrollBy(0, newHeight - originalHeight);
+
+    return false;
+}
+//-->
+</script>
+
+<br>
+<table id="attachment_table">
+  <tr id="a0">
+    <th colspan="3" class="left">
+      Attachments
+    </th>
+  </tr>
+
+
+      <tr id="a1" class="bz_contenttype_text_plain bz_patch bz_tr_obsolete bz_default_hidden">
+        <td>
+            <a href="attachment.cgi%3Fid=166"
+               title="View the content of the attachment">
+          <b><span class="bz_obsolete">Poprawki w toolkicie (Firefox-&gt;brandShortName; Mozilla Firefox -&gt;brandFullName)</span></b></a>
+
+          <span class="bz_attach_extra_info">
+              (7.11 KB,
+                patch)
+
+            <br>
+            <a href="show_bug.cgi%3Fid=240.html#attach_166"
+               title="Go to the comment associated with the attachment">2004-10-23 12:23 CEST</a>,
+
+            <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+          </span>
+        </td>
+
+          <td class="bz_attach_flags">
+              <i>no flags</i>
+          </td>
+
+        <td>
+          <a href="attachment.cgi%3Fid=166&amp;action=edit.html">Details</a>
+        </td>
+      </tr>
+      <tr id="a2" class="bz_contenttype_text_plain bz_patch bz_tr_obsolete bz_default_hidden">
+        <td>
+            <a href="attachment.cgi%3Fid=167"
+               title="View the content of the attachment">
+          <b><span class="bz_obsolete">Poprawki w toolkicie (Firefox-&gt;brandShortName; Mozilla Firefox -&gt;brandFullName)</span></b></a>
+
+          <span class="bz_attach_extra_info">
+              (7.11 KB,
+                patch)
+
+            <br>
+            <a href="show_bug.cgi%3Fid=240.html#attach_167"
+               title="Go to the comment associated with the attachment">2004-10-23 12:26 CEST</a>,
+
+            <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+          </span>
+        </td>
+
+          <td class="bz_attach_flags">
+              <i>no flags</i>
+          </td>
+
+        <td>
+          <a href="attachment.cgi%3Fid=167&amp;action=edit.html">Details</a>
+        </td>
+      </tr>
+      <tr id="a3" class="bz_contenttype_text_plain bz_patch bz_tr_obsolete bz_default_hidden">
+        <td>
+            <a href="attachment.cgi%3Fid=168"
+               title="View the content of the attachment">
+          <b><span class="bz_obsolete">Poprawki w toolkicie (Firefox-&gt;brandShortName; Mozilla Firefox -&gt;brandFullName)</span></b></a>
+
+          <span class="bz_attach_extra_info">
+              (7.12 KB,
+                patch)
+
+            <br>
+            <a href="show_bug.cgi%3Fid=240.html#attach_168"
+               title="Go to the comment associated with the attachment">2004-10-23 12:29 CEST</a>,
+
+            <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+          </span>
+        </td>
+
+          <td class="bz_attach_flags">
+              <i>no flags</i>
+          </td>
+
+        <td>
+          <a href="attachment.cgi%3Fid=168&amp;action=edit.html">Details</a>
+        </td>
+      </tr>
+
+  <tr class="bz_attach_footer">
+    <td colspan="3">
+        <span class="bz_attach_view_hide">
+            <a href="show_bug.cgi%3Fid=240.html#a0" onclick="return toggle_display(this);">Show
+              Obsolete</a> (3)
+            <a id="view_all" href="attachment.cgi%3Fbugid=240&amp;action=viewall&amp;hide_obsolete=1.html">View All</a>
+        </span>
+        <a href="attachment.cgi%3Fbugid=240&amp;action=enter.html">Add an attachment</a>
+        (proposed patch, testcase, etc.)
+    </td>
+  </tr>
+</table>
+<br>
+
+  </td>
+  <td>
+  </td>
+  </tr></table>
+
+  
+  <div id="comments"><script src="js/comments.js" type="text/javascript">
+</script>
+
+<script type="text/javascript">
+<!--
+  /* Adds the reply text to the 'comment' textarea */
+  function replyToComment(id, real_id, name) {
+      var prefix = "(In reply to " + name + " from comment #" + id + ")\n";
+      var replytext = "";
+        /* pre id="comment_name_N" */
+        var text_elem = document.getElementById('comment_text_'+id);
+        var text = getText(text_elem);
+        replytext = prefix + wrapReplyText(text);
+
+
+      /* <textarea id="comment"> */
+      var textarea = document.getElementById('comment');
+      if (textarea.value != replytext) {
+          textarea.value += replytext;
+      }
+
+      textarea.focus();
+  } 
+//-->
+</script>
+
+
+<!-- This auto-sizes the comments and positions the collapse/expand links 
+     to the right. -->
+<table class="bz_comment_table">
+<tr>
+<td>
+<div id="c0" class="bz_comment bz_first_comment">
+
+      <div class="bz_first_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=240.html#c0">Description</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-10-22 00:20:32 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Przy Firefoksie nie stanowi to problemu, problem będzie stanowić dla lokalizacji
+Thunderbirda (i ew. innych aplikacji korzystających z mozilla/toolkit, jak
+Sunbird i Nvu).
+
+Trzeba koniecznie pozmieniać:
+
+Firefox - &amp;brandShortName;
+Firefoksa - programu &amp;brandShortName;
+Firefoksowi - programowi &amp;brandShortName;
+
+itd.
+
+lub rozważyć moją propozycję porobienia własnych encji
+brandShortName.dopelniacz, brandShortName.celownik, itd, żeby uniknąć tego
+&quot;programu&quot;, &quot;programem&quot;, &quot;programowi&quot;...</pre>
+    </div>
+
+    <div id="c1" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=240.html#c1">Comment 1</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Staś Małolepszy :stas</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-10-22 19:49:14 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Całym sobą jestem za drugą opcją. Błagam.</pre>
+    </div>
+
+    <div id="c2" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=240.html#c2">Comment 2</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-10-22 20:06:28 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Ja też jestem za drugą opcją. Za pierwszą przemawia tylko prostota techniczna.
+
+Pytanie: czy wiemy, jak to zrobić, żeby było dobrze? Czy możemy po prostu
+dołożyć odpowiednie encje do tego samego DTD
+(mozilla/browser/locales/pl-PL/chrome/global/brand.dtd) i properties
+(brand.properties) w którym siedzi brandShortName, czy musimy zrobić swoje
+osobne DTD?
+
+W sumie chodzi o pięć encji dla brandShortName i pięc encji dla pełnej nazwy
+(mianownik już jest, a wołacz nie ma sensu):
+
+Dla Fx:
+
+&lt;!ENTITY brandShortName.dopelniacz &quot;Firefoksa&quot;&gt;
+&lt;!ENTITY brandShortName.celownik &quot;Firefoksowi&quot;&gt;
+&lt;!ENTITY brandShortName.biernik &quot;Firefoksa&quot;&gt;
+&lt;!ENTITY brandShortName.narzednik &quot;Firefoksem&quot;&gt;
+&lt;!ENTITY brandShortName.miejscownik &quot;Firefoksie&quot;&gt;
+ 
+&lt;!ENTITY brandFullName.dopelniacz &quot;Mozilli Firefox&quot;&gt;
+&lt;!ENTITY brandFullName.celownik &quot;Mozilli Firefox&quot;&gt;
+&lt;!ENTITY brandFullName.biernik &quot;Mozillę Firefox&quot;&gt;
+&lt;!ENTITY brandFullName.narzednik &quot;Mozillą Firefox&quot;&gt;
+&lt;!ENTITY brandFullName.miejscownik &quot;Mozilli Firefox&quot;&gt;
+
+Dla TB:
+
+
+&lt;!ENTITY brandShortName.dopelniacz &quot;Thunderbirda&quot;&gt;
+&lt;!ENTITY brandShortName.celownik &quot;Thunderbirdowi&quot;&gt;
+&lt;!ENTITY brandShortName.biernik &quot;Thunderbirda&quot;&gt;
+&lt;!ENTITY brandShortName.narzednik &quot;Thunderbirdem&quot;&gt;
+&lt;!ENTITY brandShortName.miejscownik &quot;Thunderbirdzie&quot;&gt;
+ 
+&lt;!ENTITY brandFullName.dopelniacz &quot;Mozilli Thunderbird&quot;&gt;
+&lt;!ENTITY brandFullName.celownik &quot;Mozilli Thunderbird&quot;&gt;
+&lt;!ENTITY brandFullName.biernik &quot;Mozillę Thunderbird&quot;&gt;
+&lt;!ENTITY brandFullName.narzednik &quot;Mozillą Thunderbird&quot;&gt;
+&lt;!ENTITY brandFullName.miejscownik &quot;Mozilli Thunderbird&quot;&gt;
+
+plus analogiczne wpisy w brand.properties</pre>
+    </div>
+
+    <div id="c3" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=240.html#c3">Comment 3</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-10-22 20:36:55 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Zapytałem o to na netscape.public.mozilla.l10n.
+
+Message-ID: &lt;clbjs3$<a href="mailto:gmu1&#64;ripley.netscape.com">gmu1&#64;ripley.netscape.com</a>&gt;
+
+</pre>
+    </div>
+
+    <div id="c4" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=240.html#c4">Comment 4</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-10-22 20:39:22 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Co do brand.properties - wycofuję się, to nic nie da bez koszmarnie
+skomplikowanych zmian w kodzie Mozilli.
+
+Teksty wykorzystujące brand.properties muszą używać &quot;program Firefox&quot; itp.
+
+Kwestia *.dtd pozostaje.</pre>
+    </div>
+
+    <div id="c5" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=240.html#c5">Comment 5</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Piotr Komoda</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-10-22 21:12:28 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">To ja tak dla przypomnienia, oto co odnosnie opcji numer 2 pisalem na forum:
+
+&lt;cytat&gt;Mozemy dodac odpowiednie wpisy do brand.dtd i brand.properties, pod
+warunkiem ze beda one pozbawione kropki, np. brandShortNameGenitive. Takie
+rozwiazanie ma niestety swoje wady; po pierwsze musimy tworzyc wpis dla kazdej
+odmiany (dotyczy to zarowno odmian nazwy jednoczlonowej, np. Thunderbird, jak i
+dwuczlonowej, np. Mozilla Thunderbird), po drugie taki patent dziala tylko w
+przypadku plikow .dtd. W przypadku plikow .properties jako zamiennikow nazwy
+produktu uzywa sie &quot;%S&quot;, co przeklada sie na Mozilla *fox/bird, aczkolwiek nic
+nie stoi na przeszkodzie, abysmy na bugzilli wywalczyli zmiane tego brzydkiego
+zwyczaju*(...)
+
+* przypomne tylko, ze w plikach .properties &quot;%S&quot; nie jest jednoznaczane.
+Zaleznie od stringu moze oznaczac nazwe produktu, schematu, rozszerzenia, lub
+jeszcze cos innego, np. jakas liczbe. Najgorsze sa takie stringi, gdzie %S uzyte
+zostalo kilkakrotnie, np. do okreslenia nazwy i wersji produktu oraz nazwy i
+wersji schematu/rozszerzenia, ktory nie jest z nim kompatybilny. Mamy wtedy cos
+w rodzaju &quot;%S %S is not compatible with %S%S&quot; &lt;/cytat&gt;
+-&gt; <a href="http://mozillapl.org/forum/ftopic8526-0-asc-56.html">http://mozillapl.org/forum/ftopic8526-0-asc-56.html</a>
+
+PS. Tak, testowalem to rozwiazanie, dodalem testowy wpis do brand.dtd (nie
+dzielony kropka) - dziala!</pre>
+    </div>
+
+    <div id="c6" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=240.html#c6">Comment 6</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-10-22 21:21:49 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(W odpowiedzi na komentarz #5)
+<span class="quote">&gt; Takie
+&gt; rozwiazanie ma niestety swoje wady; po pierwsze musimy tworzyc wpis dla kazdej
+&gt; odmiany (dotyczy to zarowno odmian nazwy jednoczlonowej, np. Thunderbird, jak
+&gt; dwuczlonowej, np. Mozilla Thunderbird)</span >
+
+To jakbyś chciał to zrobić nie robiąc wpisów dla każdej odmiany?! Te 10 linijek
+to nie jest aż tak dużo...
+
+Co do properties - tu zostawiamy &quot;program %S&quot;, nie będziemy cudować. Properties
+są rzadko stosowane.
+
+<span class="quote">&gt; PS. Tak, testowalem to rozwiazanie, dodalem testowy wpis do brand.dtd (nie
+&gt; dzielony kropka) - dziala!</span >
+
+No to zróbmy to. :)</pre>
+    </div>
+
+    <div id="c7" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=240.html#c7">Comment 7</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Piotr Komoda</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-10-22 21:47:51 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(W odpowiedzi na komentarz #6)
+<span class="quote">&gt; No to zróbmy to. :)</span >
+
+Nadal nie uwazam tego za najlepsze rozwiazanie, ale jako ze lepszego jak na
+razie nie widze...
+Dobra, ale niech nazwy odmian bede po angielsku, proponuje dodac do brand.dtd
+Firefoksa cos takiego:
+&lt;!ENTITY brandShortNameGenitive &quot;Firefoksa&quot;&gt;
+&lt;!ENTITY brandShortNameDative &quot;Firefoksowi&quot;&gt;
+&lt;!ENTITY brandShortNameAblative &quot;Firefoksem&quot;&gt;
+&lt;!ENTITY brandShortNameLocative &quot;Firefoksie&quot;&gt;
+&lt;!ENTITY brandFullName2ndcase &quot;Mozilli Firefox&quot;&gt;
+&lt;!ENTITY vendorShortName2ndcase &quot;Mozilli Firefox&quot;&gt;
+
+Do Tb analogicznie.</pre>
+    </div>
+
+    <div id="c8" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=240.html#c8">Comment 8</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-10-22 21:56:35 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Bez sensu.
+
+Nazwy przypadkow powinny byc po polsku (wtedy są _jednoznaczne_) i powinno ich
+być 5 (bez mianownika i wołacza) w obu wersjach.
+
+&lt;!ENTITY brandShortNameDopelniacz &quot;Firefoksa&quot;&gt;
+&lt;!ENTITY brandShortNameCelownik &quot;Firefoksowi&quot;&gt;
+&lt;!ENTITY brandShortNameBiernik &quot;Firefoksa&quot;&gt;
+&lt;!ENTITY brandShortNameNarzednik &quot;Firefoksem&quot;&gt;
+&lt;!ENTITY brandShortNameMiejscownik &quot;Firefoksie&quot;&gt;
+ 
+&lt;!ENTITY brandFullNameDopelniacz &quot;Mozilli Firefox&quot;&gt;
+&lt;!ENTITY brandFullNameCelownik &quot;Mozilli Firefox&quot;&gt;
+&lt;!ENTITY brandFullNameBiernik &quot;Mozillę Firefox&quot;&gt;
+&lt;!ENTITY brandFullNameNarzednik &quot;Mozillą Firefox&quot;&gt;
+&lt;!ENTITY brandFullNameMiejscownik &quot;Mozilli Firefox&quot;&gt;
+
+Po pierwsze - tylko my (pl-PL) tego będziemy używać, a łatwiej wytłumaczyć
+lokalizującym ewentualne przyszłe aplikacje, czym jest miejscownik niż jakiś
+locative. Po drugie nazwy angielskie wybrane przez ciebie są wzięte z kosmosu -
+nie wiem skąd wytrzasnąłeś &quot;ablative&quot; (tego przypadku nie ma w językach
+indoeuropejskich), powinno być &quot;accusative&quot;, jeśli w ogóle stosować
+łacińsko-angielskie nazwy.
+</pre>
+    </div>
+
+    <div id="c9" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=240.html#c9">Comment 9</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-10-22 22:01:45 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text"><span class="quote">&gt; nie wiem skąd wytrzasnąłeś &quot;ablative&quot; (tego przypadku nie ma w językach</span >
+
+Ups. Ablative to narzędnik. Ale zgubiłeś biernik - accusative. :)
+</pre>
+    </div>
+
+    <div id="c10" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=240.html#c10">Comment 10</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-10-22 22:03:29 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Aha, jeszcze jedno wyjaśnienie.
+
+Czemu pięć przypadków? Po to, żeby być gotowym na przyszłość, na ewentualne inne
+aplikacje mozillowe lub oparte na mozilla/toolkit. To, że czasami biernik jest
+taki sam jak dopełniacz nie oznacza, że mają być jedną encją.
+</pre>
+    </div>
+
+    <div id="c11" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=240.html#c11">Comment 11</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Piotr Komoda</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-10-22 22:15:51 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(W odpowiedzi na komentarz #8)
+<span class="quote">&gt; Po pierwsze - tylko my (pl-PL) tego będziemy używać, a łatwiej wytłumaczyć
+&gt; lokalizującym ewentualne przyszłe aplikacje, czym jest miejscownik niż jakiś
+&gt; locative. Po drugie nazwy angielskie wybrane przez ciebie są wzięte z kosmosu
+&gt; nie wiem skąd wytrzasnąłeś &quot;ablative&quot; (tego przypadku nie ma w językach
+&gt; indoeuropejskich), powinno być &quot;accusative&quot;, jeśli w ogóle stosować
+&gt; łacińsko-angielskie nazwy. </span >
+
+Ehh, marcoos, zachowujesz sie, jakbys bez przerwy mial o cos pretensje.
+Podejzewam, ze nie tylko my bedziemy tego uzywac, bo co sam zreszta
+potwierdziles na grupie,  problem dotyczy praktycznie wszystkich jezykow
+slowianskich, a moze i jeszcze kilku innych, wiec chyba lepiej uzywac nazw
+angielskich dla zachowania spojnosci. Tlumaczenia wzialem ze slownika onetu,
+jesli sa niepoprawne to prosze popraw je, w koncu znasz angielski lepiej odemnie...
+
+A co do biernika, jesli na razie nie potrzebujemy dla niego osobnego wpisu
+(przynajmniej dla brandShortName), to czy koniecznie musimy go teraz dodawac?
+Wrzuci sie go do danej aplikacji, gdy pojawi sie takowa, ktora bedzie
+potrzebowala osobnego wpisu - takie jest przynajmniej moje skromne zdanie...</pre>
+    </div>
+
+    <div id="c12" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=240.html#c12">Comment 12</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Piotr Komoda</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-10-22 22:22:13 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">A z brandFullName2ndcase i vendorShortName2ndcase sie wycofuje, jakims sposobem
+pominalem biernik i narzednik przez co wyszlo mi, ze potrzebne sa nam tylko 2
+formy... :/</pre>
+    </div>
+
+    <div id="c13" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=240.html#c13">Comment 13</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-10-22 22:28:50 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Ale naszych przypadków inne języki nie będą używać. Ani my ich. :)
+
+Ale OK, od biedy się mogę zgodzić na &quot;Nominative&quot; zamiast &quot;Mianownik&quot;. Tylko że
+to spowoduje utrudnienia, bo oprócz pamiętania, który przypadek odpowiada na
+jakie pytanie (kogo? co? komu? czemu? etc.), trzeba będzie jeszcze pamiętać
+nazwy angielskie tych przypadków. :)
+
+Jeśli łatwiej jest Wam używać &quot;ablative&quot; zamiast &quot;narzędnika&quot; - niech Wam
+będzie... :P
+
+&quot;Wrzuci sie go do danej aplikacji, gdy pojawi sie takowa, ktora bedzie
+potrzebowala osobnego wpisu - takie jest przynajmniej moje skromne zdanie...&quot;
+
+Tak, a potem przeglądaj pińcet plików i zastanawiaj się, gdzie jest biernik, a
+gdzie dopełniacz (bo żaden automat nie zrobi tego za Ciebie) :P
+
+Naprawdę, proszę - zróbmy to raz, a porządnie: czyli mianownik + 5 pozostałych
+przypadków dla brandFullName i brandShortName. To jest zabezpieczenie na
+przyszłość. </pre>
+    </div>
+
+    <div id="c14" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=240.html#c14">Comment 14</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-10-22 22:33:49 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Gandalf, Staszyna? Wasze zdanie?</pre>
+    </div>
+
+    <div id="c15" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=240.html#c15">Comment 15</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Staś Małolepszy :stas</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-10-22 22:55:28 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">IMVHO:
+
+1. powinniśmy od razu zrobić cały zestaw przypadków, by uniknąć za wszelką cenę
+rozszerzania go w przyszłości (
+2. nazwy przypadków powinny być po angielsku:
+<a href="http://www.britannica.com/eb/article?tocId=74911">http://www.britannica.com/eb/article?tocId=74911</a> Zróbmy dobrze innym językom
+słowiańskim.
+
+Ad.2. A może MF dałaby się przekonać, że nie wszystkie języki mają strukturę
+angielskiego, a także że nasze rozwiązanie (które nas zadowala) nie będzie
+pasowało jeszcze innym językom. Może dałoby się wyprosić możliwości dodania
+jakiegoś pliku language-specific, w który ludzie lokalizujacy wszelkie Mozille
+wrzucaliby właśnie takie kwiatki, typowe tylko dla ich jezyka?</pre>
+    </div>
+
+    <div id="c16" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=240.html#c16">Comment 16</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Piotr Komoda</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-10-22 22:58:30 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(W odpowiedzi na komentarz #13)
+<span class="quote">&gt; Ale naszych przypadków inne języki nie będą używać. Ani my ich. :)</span >
+
+Nie jestem jezykoznawca i nie wiem ile przypadkow jest w czeskim czy slowackim i
+jak sie one nazywaja, ale podejzewam ze jest nich podobnie jak u nas. Jesli
+natomiast roznice sa faktycznie spore, to wtedy mozemy zostac przy polskich
+nazwach.  
+
+<span class="quote">&gt; Tylko że
+&gt; to spowoduje utrudnienia, bo oprócz pamiętania, który przypadek odpowiada na
+&gt; jakie pytanie (kogo? co? komu? czemu? etc.), trzeba będzie jeszcze pamiętać
+&gt; nazwy angielskie tych przypadków. :)</span >
+
+Dla mnie zadne utrudnienie, i tak przy tlumaczeniu zawsze mam otwarty brand.dtd
+oraz slownik w tray'u...
+
+<span class="quote">&gt; Naprawdę, proszę - zróbmy to raz, a porządnie: czyli mianownik + 5 pozostałych
+&gt; przypadków dla brandFullName i brandShortName. To jest zabezpieczenie na
+&gt; przyszłość. </span >
+
+IMHO dodajac niepotrzebne w chwli obecnej wspisy przysparzamy sobie tylko
+niepotrzebnej teraz roboty... 
+Pozatym zapomniales o vendorShortName, a wraz z nim to jest lacznie 15 nowych
+wpisow do dodania i zaimplementowania w plikach jezykowych programów...</pre>
+    </div>
+
+    <div id="c17" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=240.html#c17">Comment 17</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-10-22 23:40:30 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Pavel Franc zwrócił nam uwagę na npm.l10n, że same przypadki nie załatwiają
+sprawy do końca:
+
+*.dtd:
+ &lt;!ENTITY anErrorMsg &quot;%brandShortName; wykonał nieprawidłową operację.&quot; &gt;
+
+na ekranie w Fx:
+ Firefox wykonał nieprawidłową operację.
+
+na ekranie w 'Projekcie Gazella' (czy czymkolwiek rodzaju innego niż męski):
+ Gazella wykonał nieprawidłową operację.
+
+Rozwiązanie ze słowem pomocniczym &quot;program&quot; rozwiązuje ten problem:
+
+*.dtd:
+ &lt;!ENTITY anErrorMsg &quot;Program %brandShortName; wykonał nieprawidłową operację.&quot; &gt;
+
+&quot;Program Gazella wykonał nieprawidłową operację.&quot;
+
+To może jednak &quot;program &amp;brandShortName;&quot;?</pre>
+    </div>
+
+    <div id="c18" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=240.html#c18">Comment 18</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Staś Małolepszy :stas</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-10-22 23:57:57 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Przy projekcie Gazella faktycznie lepiej pisać &quot;program Gazella&quot;.
+Ale: Firefox, Thuderbird, Sunbird są rodzaju męskiego. Wielkim dla nas
+ułatwieniem, a także przyjemnością dla uszu uzytkowników będzie odmienianie tego
+jako samodzielnych przypadków.
+
+A że Mozilla sama jest rodzaju żeńskiego? Nie widzę problemu - w tekście jest
+brandShortName? piszę więc &quot;... wykonał&quot;. w tekście jest brandFullName? piszę
+więc &quot;... wykonała&quot;.
+
+Wracając do Gazelli. Nie blokujmy takiego dobrodziejstwa jej przykładem. Można
+uniknąć patologii odpowiednio modyfikując brand.dtd:
+&lt;!ENTITY brandShortName &quot;program Gazella&quot;&gt;
+&lt;!ENTITY brandShortName.genitive &quot;programu Gazella&quot;&gt;
+itd.</pre>
+    </div>
+
+    <div id="c19" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=240.html#c19">Comment 19</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-10-23 00:00:07 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text"><span class="quote">&gt; Wracając do Gazelli. Nie blokujmy takiego dobrodziejstwa jej przykładem. Można
+&gt; uniknąć patologii odpowiednio modyfikując brand.dtd:
+&gt; &lt;!ENTITY brandShortName &quot;program Gazella&quot;&gt;
+&gt; &lt;!ENTITY brandShortName.genitive &quot;programu Gazella&quot;&gt;</span >
+
+I potem masz zdanie z małej litery:
+
+program Gazella&quot; wykonał nieprawidłową operację.
+
+:-)
+
+(Gazella to tylko przykład!)
+
+</pre>
+    </div>
+
+    <div id="c20" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=240.html#c20">Comment 20</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-10-23 00:30:46 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Pytanie do Pitrcka: wiesz może, kiedy wychodzi Thunderbird 0.9? Czy razem z Fx
+1.0 RC? Czy później?
+
+Od tego zależy, czy zajmujemy się tym dzisiaj, czy później. Zamiana &quot;Firefo*&quot; na
+encje (głównie dzięki poprzedzeniu magicznym słowem &quot;program*&quot;) może spowodować
+rozjechanie się niektórych elementów GUI i wymaga przynajmniej dłuższej chwili
+testowania...
+
+Ogólnie - zmiany w mozilla/toolkit sztywno wpisanych Firefo* to 17 wystąpień. 
+
+Razem z mozilla/browser - ponad 100 (wyszło mi 108 z grepa ;)). Więc byłoby co
+testować. Zmianę w mozilla/browser też można by wprowadzić, mając na uwadze
+różnych embedderów.</pre>
+    </div>
+
+    <div id="c21" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=240.html#c21">Comment 21</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Piotr Komoda</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-10-23 00:50:20 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(W odpowiedzi na komentarz #20)
+<span class="quote">&gt; Pytanie do Pitrcka: wiesz może, kiedy wychodzi Thunderbird 0.9? Czy razem z Fx
+&gt; 1.0 RC? Czy później?</span >
+
+Scott mowil tydzien temu, ze planuje wydac Tb 0.9 do konca miesiaca, ale obecnie
+ten termin wydaje sie malo realny. Pozatym jesli chodzi o zmiany, to chyba nie
+musimy sie spieszyc, bo pliki jezykowe Thunderbirda nie zostaly do konca
+uporzadkowane (czyt. lokalizacja na poziomie zrodel nie jest jeszcze mozliwa) i
+raczej watpliwym jest, aby proces ten dobiegl konca przed premiera Tb 0.9...</pre>
+    </div>
+
+    <div id="c22" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=240.html#c22">Comment 22</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-10-23 01:20:37 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">No coz. Musze przyznac, ze jestem przeciwny takiemu rozwiazaniu. 
+Mimo, ze zgadzam sie w calej rozciaglosci, ze uzywanie wszedzie &quot;program
+Firefox&quot; wyglada i brzmi sztucznie, to ogrom problemow jakie sciagniemy na
+siebie wykracza bardzo daleko i balbym sie podejmowac tak powaznej decyzji
+ZWLASZCZA w przeddzien wydania Firefoksa 1.0.
+
+Co moze byc takim problemem? Musimy pamietac, ze oczywiscie caly temat dotyczy
+WYLACZNIE czesci &quot;browser&quot;, bowiem toolkit z natury rzeczy MUSI byc niezalezny i
+nie ma mowy o ryzykowaniu, ze ktos uzyje Toolkitu w przypadku produktu o nazwie
+zenskiej. 
+
+Dodatkowe encje i pliki musza zostac zatwierdzone przez Benjamina, Bena i
+innych, a nastepnie musi zostac zmieniony kod skryptow budujacych wydania. 
+
+Dla innych krajow moze to oczywiscie spowodowac setki problemow (polacy maja a
+my nie mozemy miec? spytaja chinczycy z dialektu XYZ w ktorym jest 500 odmian, i
+zaleznie od odmiany zmienia sie forma wszystkich slow w zdaniu ;p) i ryzykujemy
+straszny balagan.
+
+Proponuje odlozyc to na DALEKA przyszlosc.</pre>
+    </div>
+
+    <div id="c23" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=240.html#c23">Comment 23</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-10-23 01:40:03 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Gandalf:
+
+Dlatego też zdecydowaliśmy się jednak na &quot;program &amp;brandShortName;&quot;.
+
+Ten bug nie jest o tym, żeby dorobić własne encje, ale o tym, żeby usunąć słowo
+&quot;Firefox&quot; przynajmniej z toolkitu. Dodatkowe encje były tylko jedną z propozycji.
+</pre>
+    </div>
+
+    <div id="c24" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=240.html#c24">Comment 24</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-10-23 01:41:21 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Agh, Shame on me :(
+
+To ja sie wylaczam i grzecznie czekam *^^*</pre>
+    </div>
+
+    <div id="c25" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=240.html#c25">Comment 25</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Staś Małolepszy :stas</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-10-23 10:53:51 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Pytanie: może lepiej byłoby pisać (choć nie wszędzie):
+
+Firefox - program &amp;brandShortName;
+Firefoksa - programu &amp;brandShortName;
+Firefoksowi - programowi &amp;brandShortName;
+itd.
+
+Chodzi mi o dodanie rzeczownika &quot;program&quot; w mianowniku. Ale np w tekstach, w
+których pajawiają się też inne przypadki.
+
+Co myślicie?</pre>
+    </div>
+
+    <div id="c26" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=240.html#c26">Comment 26</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-10-23 11:48:13 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Ale przecież o to właśnie chodzi, nie? :)</pre>
+    </div>
+
+    <div id="c27" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=240.html#c27">Comment 27</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Staś Małolepszy :stas</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-10-23 11:59:55 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Sorry, wyraziłem sie nieprecyzyjnie. Chodzi mi o to, żeby zamiast mianownika
+Firefox, pisać w niektórych miejscach &quot;program Firefox&quot;. Żeby to się lepiej
+komponowało z innymi wystąpieniami w pozostałych przypadkach.
+
+Czyli:
+
+1. gdy w tekscie jest tylko Firefox w mianowniku, to po prostu byłoby tylko
+&amp;brandShortName;
+2. gdy mamy np taki tekst: Firefox loves you. You will have to restart Firefox,
+to change it.
+wtedy imo zamiast pisać:
+  Firefox kocha Cię. Aby to zmienić, konieczne może być ponowne uruchomienie
+programu Firefox.
+lepiej byłoby napisać:
+  _Program_ Firefox kocha Cię. Aby to zmienić, konieczne może być ponowne
+uruchomienie programu Firefox.
+
+hmm, trochę namieszałem, prawda?</pre>
+    </div>
+
+    <div id="c28" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=240.html#c28">Comment 28</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-10-23 12:13:23 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Trzeba jednak wziąć pod uwagę, że nie zawsze nam starczy miejsca na &quot;program&quot;. :)</pre>
+    </div>
+
+    <div id="c29" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=240.html#c29">Comment 29</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-10-23 12:23:19 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Created <span class="bz_obsolete"><a href="attachment.cgi%3Fid=166" name="attach_166" title="Poprawki w toolkicie (Firefox-&gt;brandShortName; Mozilla Firefox -&gt;brandFullName)">attachment 166</a> <a href="attachment.cgi%3Fid=166&amp;action=edit.html" title="Poprawki w toolkicie (Firefox-&gt;brandShortName; Mozilla Firefox -&gt;brandFullName)">[details]</a></span>
+Poprawki w toolkicie (Firefox-&gt;brandShortName; Mozilla Firefox -&gt;brandFullName)
+
+Patch wprowadza zmiany słów Firefox/Firefoksa/Firefoksem/whatever na
+program+końcówka &amp;brandXXXXName;
+
+&quot;Firefox&quot; został na sztywno w extensions.properties, bo na sztywno jest też w
+en-US.
+
+Należy rozważyć, czy tego patcha aplikujemy przed 1.0 RC 1 Firefoksa, czy
+już po wyjściu tej wersji.</pre>
+    </div>
+
+    <div id="c30" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=240.html#c30">Comment 30</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-10-23 12:26:34 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Created <span class="bz_obsolete"><a href="attachment.cgi%3Fid=167" name="attach_167" title="Poprawki w toolkicie (Firefox-&gt;brandShortName; Mozilla Firefox -&gt;brandFullName)">attachment 167</a> <a href="attachment.cgi%3Fid=167&amp;action=edit.html" title="Poprawki w toolkicie (Firefox-&gt;brandShortName; Mozilla Firefox -&gt;brandFullName)">[details]</a></span>
+Poprawki w toolkicie (Firefox-&gt;brandShortName; Mozilla Firefox -&gt;brandFullName)
+
+Poprzedni patch miał jedną literówkę.</pre>
+    </div>
+
+    <div id="c31" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=240.html#c31">Comment 31</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-10-23 12:29:12 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Created <span class="bz_obsolete"><a href="attachment.cgi%3Fid=168" name="attach_168" title="Poprawki w toolkicie (Firefox-&gt;brandShortName; Mozilla Firefox -&gt;brandFullName)">attachment 168</a> <a href="attachment.cgi%3Fid=168&amp;action=edit.html" title="Poprawki w toolkicie (Firefox-&gt;brandShortName; Mozilla Firefox -&gt;brandFullName)">[details]</a></span>
+Poprawki w toolkicie (Firefox-&gt;brandShortName; Mozilla Firefox -&gt;brandFullName)
+
+Hmm... Ostateczna wersja. :-)</pre>
+    </div>
+
+    <div id="c32" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=240.html#c32">Comment 32</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-11-22 22:17:39 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">To raczej problem dla Thunderbirda (i moge flage ustawic! ;))</pre>
+    </div>
+
+    <div id="c33" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=240.html#c33">Comment 33</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-11-22 22:18:28 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Comment on <span class="bz_obsolete"><a href="attachment.cgi%3Fid=168" name="attach_168" title="Poprawki w toolkicie (Firefox-&gt;brandShortName; Mozilla Firefox -&gt;brandFullName)">attachment 168</a> <a href="attachment.cgi%3Fid=168&amp;action=edit.html" title="Poprawki w toolkicie (Firefox-&gt;brandShortName; Mozilla Firefox -&gt;brandFullName)">[details]</a></span>
+Poprawki w toolkicie (Firefox-&gt;brandShortName; Mozilla Firefox -&gt;brandFullName)
+
+Uwaga: patch jest w złym formacie (nie jest -u), ale to nieważne, bo i tak
+trzeba zrobić nowy.
+
+Ten patch dotyczył stanu lokalizacji sprzed miesiąca, więc lepiej
+przygotować nowy robiący to samo.</pre>
+    </div>
+
+    <div id="c34" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=240.html#c34">Comment 34</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-03-18 17:22:44 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Masówka. Z &quot;Thunderbird pl-PL&quot; do Lokalizacje/Thunderbird. Sorry for bugspam ;)</pre>
+    </div>
+
+    <div id="c35" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=240.html#c35">Comment 35</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Piotr Komoda</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-04-04 20:39:17 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Ten blad dotyczy Toolkitu.</pre>
+    </div>
+
+    <div id="c36" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=240.html#c36">Comment 36</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-04-26 14:51:41 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Poprawione w ramach błędu 486.
+
+WFM.</pre>
+    </div>
+
+
+  
+
+</td>
+<td>
+</td>
+</tr></table>
+  </div>
+
+    <hr><div id="add_comment" class="bz_section_additional_comments">
+      <table>
+        <tr>
+          <td>
+            <fieldset>
+              <legend>Note</legend>
+              You need to
+              <a href="show_bug.cgi%3Fid=240&amp;GoAheadAndLogIn=1.html">log in</a>
+              before you can comment on or make changes to this bug.
+            </fieldset>
+          </td>
+        </tr> 
+      </table>
+  </div>        
+
+</form>
+
+<hr>
+<ul class="related_actions">
+    <li><a href="show_bug.cgi%3Fformat=multiple&amp;id=240.html">Format For Printing</a></li>
+    <li>&nbsp;-&nbsp;<a href="show_bug.cgi%3Fctype=xml&amp;id=240">XML</a></li>
+    <li>&nbsp;-&nbsp;<a href="enter_bug.cgi%3Fcloned_bug_id=240.html">Clone This Bug</a></li>
+    
+    <li>&nbsp;-&nbsp;<a href="show_bug.cgi%3Fid=240.html#">Top of page </a></li>
+    </ul>
+
+<br>
+</div>
+
+    <div id="footer">
+      <div class="intro"></div>
+<ul id="useful-links">
+  <li id="links-actions"><ul class="links">
+  <li><a href="index.html">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi.html">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi.html">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi.html">Search</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="http://bugs.aviary.pl/buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input type="hidden" id="no_redirect_bottom" name="no_redirect" value="0">
+    <script type="text/javascript">
+      if (history && history.replaceState) {
+        var no_redirect = document.getElementById("no_redirect_bottom");
+        no_redirect.value = 1;
+      }
+    </script>
+    <input class="txt" type="text" id="quicksearch_bottom" name="quicksearch" 
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search" 
+           id="find_bottom"></form>
+  <a href="page.cgi%3Fid=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="report.cgi.html">Reports</a></li>
+
+  <li>
+      <span class="separator">| </span>
+        <a href="request.cgi.html">Requests</a></li>
+
+
+  <li>
+        <span class="separator">| </span>
+        <a href="https://bugzilla.readthedocs.org/en/5.0/using/understanding.html" target="_blank">Help</a>
+      </li>
+    
+      <li id="new_account_container_bottom">
+        <span class="separator">| </span>
+        <a href="createaccount.cgi.html">New&nbsp;Account</a>
+      </li>
+
+    <li id="mini_login_container_bottom">
+  <span class="separator">| </span>
+  <a id="login_link_bottom" href="show_bug.cgi%3Fid=240&amp;GoAheadAndLogIn=1.html"
+     onclick="return show_mini_login_form('_bottom')">Log In</a>
+
+  <form action="show_bug.cgi%3Fid=240.html" method="POST"
+        class="mini_login bz_default_hidden"
+        id="mini_login_bottom">
+    <input id="Bugzilla_login_bottom" required
+           name="Bugzilla_login" class="bz_login"
+        type="email" placeholder="Email Address">
+    <input class="bz_password" name="Bugzilla_password" type="password"
+           id="Bugzilla_password_bottom" required
+           placeholder="Password">
+    <input type="hidden" name="Bugzilla_login_token"
+           value="1469819957-oabiaAkSkr2WwQ-97zCYuvSesYBdFgQjYP6Mpekto8E">
+    <input type="submit" name="GoAheadAndLogIn" value="Log in"
+            id="log_in_bottom">
+    <a href="show_bug.cgi%3Fid=240.html#" onclick="return hide_mini_login_form('_bottom')">[x]</a>
+  </form>
+</li>
+
+
+  <li id="forgot_container_bottom">
+    <span class="separator">| </span>
+    <a id="forgot_link_bottom" href="show_bug.cgi%3Fid=240&amp;GoAheadAndLogIn=1.html#forgot"
+       onclick="return show_forgot_form('_bottom')">Forgot Password</a>
+    <form action="http://bugs.aviary.pl/token.cgi" method="post" id="forgot_form_bottom"
+          class="mini_forgot bz_default_hidden">
+      <label for="login_bottom">Login:</label>
+      <input name="loginname" size="20" id="login_bottom" required
+          type="email" placeholder="Your Email Address">
+      <input id="forgot_button_bottom" value="Reset Password" type="submit">
+      <input type="hidden" name="a" value="reqpw">
+      <input type="hidden" id="token_bottom" name="token"
+             value="1469819957-IlmFtpXetfqABSYTDfLULe6gGQm5sGN675gwf49AdaQ">
+      <a href="show_bug.cgi%3Fid=240.html#" onclick="return hide_forgot_form('_bottom')">[x]</a>
+    </form>
+  </li>
+</ul>
+  </li>
+
+  
+
+
+
+
+  
+</ul>
+
+      <div class="outro"></div>
+    </div>
+
+  </body>
+</html>

@@ -1,0 +1,2875 @@
+Index: groups/delete.html.tmpl
+===================================================================
+--- groups/delete.html.tmpl	(revision 90)
++++ groups/delete.html.tmpl	(working copy)
+@@ -35,14 +35,14 @@
+ 
+ 
+ [% PROCESS global/header.html.tmpl
+-  title = "Delete group"
++  title = "Usuwanie grupy"
+ %]
+ 
+ <table border="1">
+   <tr>
+     <th>Id</th>
+-    <th>Name</th>
+-    <th>Description</th>
++    <th>Nazwa</th>
++    <th>Opis</th>
+   </tr>
+   <tr>
+     <td>[% gid FILTER html %]</td>
+@@ -53,58 +53,57 @@
+ 
+ <form method="post" action="editgroups.cgi">
+   [% IF hasusers %]
+-    <p><b>One or more users belong to this group. You cannot delete
+-    this group while there are users in it.</b>
++    <p><b>Grupa zawiera użytkowników. Nie można usunąć grupy
++	z przypisanymi użytkownikami.</b>
+ 
+-    <br><a href="editusers.cgi?action=list&groupid=[% gid FILTER html %]&grouprestrict=1">Show
+-    me which users</a> - <input type="checkbox" name="removeusers">Remove
+-    all users from this group for me.</p>
++    <br><a href="editusers.cgi?action=list&groupid=[% gid FILTER html %]&grouprestrict=1">Pokaż
++    użytkowników</a> - <input type="checkbox" name="removeusers">Usuń
++    wszystkich użytkowników z tej grupy.</p>
+   [% END %]
+ 
+   [% IF hasbugs %]
+-    <p><b>One or more [% terms.bug %] reports are visible only to this group.
+-    You cannot delete this group while any [% terms.bugs %] are using it.</b>
++    <p><b>Conajmniej jeden [% terms.blad %] jest widoczny tylko dla tej grupy.
++    Nie można usunąć grupy gdy istnieją [% terms.bledy %] widoczne tylko dla tej grupy.</b>
+ 
+-    <br><a href="buglist.cgi?bug_id=[% buglist FILTER html %]">Show me
+-    which [% terms.bugs %]</a> - <input type="checkbox" name="removebugs">Remove
+-    all [% terms.bugs %] from this group restriction for me.</p>
++    <br><a href="buglist.cgi?bug_id=[% buglist FILTER html %]">Pokaż 
++    [% terms.bledy %]</a> - <input type="checkbox" name="removebugs">Usun
++    wszystkie [% terms.bledy %] z tej grupy.</p>
+ 
+-    <p><b>NOTE:</b> It's quite possible to make confidential [% terms.bugs %]
+-    public by checking this box.  It is <B>strongly</B> suggested
+-    that you review the [% terms.bugs %] in this group before checking
+-    the box.</p>
++    <p><b>UWAGA:</b> Przez zaznaczenie tej opcji można upublicznić
++	poufne [% terms.bledy %]. <b>Zaleca się</b> przejrzenie [% terms.bledow %] 
++	w grupie przed zaznaczeniem opcji.</p>
+   [% END %]
+ 
+   [% IF hasproduct %]
+-    <p><b>This group is tied to the <U>[% name FILTER html %]</U> product.
+-    You cannot delete this group while it is tied to a product.</b>
++    <p><b>Grupa ta jest powiązana z produktem <U>[% name FILTER html %]</U>.
++    Nie można usunąć grupy powiązanej z produktem.</b>
+ 
+-    <br><input type="checkbox" name="unbind">Delete this group anyway,
+-    and make the <U>[% name FILTER html %]</U> publicly visible.</p>
++    <br><input type="checkbox" name="unbind">Usuń grupę i upublicznij
++    <U>[% name FILTER html %]</U>.</p>
+   [% END %]
+   
+   [% IF hasflags %]
+-    <p><b>This group restricts who can make changes to flags of certain types.
+-    You cannot delete this group while there are flag types using it.</b>
++    <p><b>Tylko użytkownicy z tej grupy mogą zmieniać flagi pewnego typu.
++    Nie można usunąć grupy, która jest używana przez typy flag.</b>
+ 
+-    <br><a href="editflagtypes.cgi?action=list&group=[% gid FILTER html %]">Show
+-    me which types</a> - <input type="checkbox" name="removeflags">Remove all
+-    flag types from this group for me.</p>
++    <br><a href="editflagtypes.cgi?action=list&group=[% gid FILTER html %]">Pokaż
++    typy flag</a> - <input type="checkbox" name="removeflags">Usuń wszystkie
++    typy flag powiązane z tą grupą.</p>
+   [% END %]
+ 
+-  <h2>Confirmation</h2>
++  <h2>Potwierdzenie</h2>
+ 
+-  <p>Do you really want to delete this group?</p>
++  <p>Czy na pewno usunąć tę grupę?</p>
+   [% IF (hasusers || hasbugs || hasproduct || hasflags) %]
+-    <p><b>You must check all of the above boxes or correct the
+-          indicated problems first before you can proceed.</b></p>
++    <p><b>Aby kontynuować, należy rozwiązać wszystkie problemy
++	lub zaznaczyć wszystkie opcje powyżej.</b></p>
+   [% END %]
+ 
+-  <p><input type="submit" value="Yes, delete">
++  <p><input type="submit" value="Tak, usuń">
+   <input type="hidden" name="action" value="delete">
+   <input type="hidden" name="group" value="[% gid FILTER html %]">
+ </form>
+ 
+-Go back to the <a href="editgroups.cgi">group list</a>.
++Wróć do <a href="editgroups.cgi">listy grup</a>.
+ 
+ [% PROCESS global/footer.html.tmpl %] 
+Index: groups/create.html.tmpl
+===================================================================
+--- groups/create.html.tmpl	(revision 90)
++++ groups/create.html.tmpl	(working copy)
+@@ -1,4 +1,4 @@
+-﻿[%# 1.0@bugzilla.org %]
++[%# 1.0@bugzilla.org %]
+ [%# The contents of this file are subject to the Mozilla Public
+   # License Version 1.1 (the "License"); you may not use this file
+   # except in compliance with the License. You may obtain a copy of
+@@ -35,7 +35,7 @@
+   <table border="1" cellpadding="4" cellspacing="0"><tr>
+     <th>Nazwa</th>
+     <th>Opis</th>
+-    <th>Wyrażenie regularne dla użytkowników</th>
++    <th>Wyrażenie regularne nazwy użytkowników</th>
+     <th>Używaj dla [% terms.bledow %]</th>
+   </tr><tr>
+     <td><input size="20" name="name"></td>
+Index: groups/change.html.tmpl
+===================================================================
+--- groups/change.html.tmpl	(revision 90)
++++ groups/change.html.tmpl	(working copy)
+@@ -35,37 +35,37 @@
+   #%]
+ 
+ [% IF (action == 1) %]
+-  [% title = "Confirm: Remove All Explicit Members?" %]
++  [% title = "Potwierdzenie: Usunąć wszystkich jawnych członków?" %]
+ [% ELSIF (action == 2) %]
+-  [% title = "Confirm: Remove Explicit Members in the Regular Expression?" %]
++  [% title = "Potwierdzenie: Usunąć wszystkich jawnych członków wg wyrażenia regularnego?" %]
+ [% ELSE %]
+-  [% title = "Updating group hierarchy" %]
++  [% title = "Uaktualnienie hierarchii grupy" %]
+ [% END %]
+ 
+ [% PROCESS global/header.html.tmpl %]
+ 
+ <p>
+-  Checking....
++  Trwa sprawdzanie....
+ 
+   [% IF changes %]
+-    changed.
++    zmieniono.
+   [% END %]
+ </p>
+     
+ [% IF (action == 1) || (action == 2) %]
+   [% IF changes %]
+-    <p>Group updated, please confirm removal:</p>
++    <p>Grupa uaktualniona, proszę potwierdzić usunięcie:</p>
+   [% END %]
+ 
+   [% IF (action == 1) %]
+-    <p>This option will remove all explicitly defined users
++    <p>Opcja ta usuwa z grupy wszystkich jawnych użytkowników
+   [% ELSIF regexp %]
+-    <p>This option will remove all users included in the regular expression:
++    <p>Opcja ta usuwa z grupy wszystkich jawnych użytkowników określonych za pomocą wyrażenia regularnego:
+     [% regexp FILTER html %]
+   [% ELSE %]
+     <p>
+-      <b>There is no regular expression defined.</b>
+-      No users will be removed.
++      <b>Brak wyrażenia regularnego.</b>
++      Żadni użytkownicy nie zostaną usunięci.
+     </p>
+   [% END %]
+   
+@@ -73,10 +73,10 @@
+     from group [% name FILTER html %].</p>
+     
+     <p>
+-      Generally, you will only need to do this when upgrading groups
+-      created with [% terms.Bugzilla %] versions 2.16 and prior. Use
+-      this option with <b>extreme care</b> and consult the documentation
+-      for further information.
++	  Opcja ta przydatna jest tylko w razie uaktualniania grup
++	  utworzonych za pomocą [% terms.Bugzilli %] w wersji 2.16 i wcześniejszych. 
++	  Podczas użycia należy zachować <b>szczególną ostrożność</b> i skorzystać 
++	  z dokumentacji.
+     </p>
+     
+     <form method="post" action="editgroups.cgi">
+@@ -89,7 +89,7 @@
+       [% END %]
+     
+       <input name="confirm" type="submit" value="Confirm">
+-      <p>Or <a href="editgroups.cgi">return to the Edit Groups page</a>.</p>
++      <p><a href="editgroups.cgi">Wroć do strony edycji grup</a>.</p>
+     </form>
+   [% END %]
+ [% ELSE %]
+@@ -97,15 +97,15 @@
+     # their changes %]
+ 
+   [% IF changes %]
+-    <p>Done.</p>
++    <p>Zakończono.</p>
+   [% ELSE %]
+     <p>
+-      You didn't change anything! If you really meant it, hit the <b>Back</b>
+-      button and try again.
++	  Nie wprowadzono żadnych zmian. Aby dokonać zmian, należy użyć przycisku
++      <b>Wstecz</b> i spróbowac ponownie.
+     </p>
+   [% END %]
+     
+-  <p>Back to the <a href="editgroups.cgi">group list</a>.</p>
++  <p>Wróć do <a href="editgroups.cgi">listy grup</a>.</p>
+ [% END %]
+ 
+ [% PROCESS global/footer.html.tmpl %] 
+Index: groups/edit.html.tmpl
+===================================================================
+--- groups/edit.html.tmpl	(revision 90)
++++ groups/edit.html.tmpl	(working copy)
+@@ -43,7 +43,7 @@
+ 
+ 
+ [% PROCESS global/header.html.tmpl
+-  title = "Change Group: $name"
++  title = "Zmiana grupy $name"
+   style = "tr.odd_row {
+                background: #e9e9e9; 
+            }
+@@ -57,7 +57,7 @@
+ <form method="post" action="editgroups.cgi">
+   <table border="1" cellpadding="4">
+     <tr>
+-      <th>Group:</th>
++      <th>Grupa:</th>
+       <td>
+         [% IF isbuggroup %]
+           <input type="hidden" name="oldname" value="[% name FILTER html %]">
+@@ -69,7 +69,7 @@
+     </tr>
+ 
+     <tr>
+-      <th>Description:</th>
++      <th>Opis:</th>
+       <td>
+         [% IF isbuggroup %]
+           <input type="hidden" name="olddesc" value="[% description FILTER html %]">
+@@ -81,7 +81,7 @@
+     </tr>
+ 
+     <tr>
+-      <th>User Regexp:</th>
++      <th>Wyrażenie regularne nazwy użytkowników:</th>
+       <td>
+         <input type="hidden" name="oldregexp" value="[% regexp FILTER html %]">
+         <input type="text" name="regexp" size="40" value="[% regexp FILTER html %]">
+@@ -90,7 +90,7 @@
+ 
+     [% IF isbuggroup %]
+       <tr>
+-        <th>Use For [% terms.Bugs %]:</th>
++        <th>Użyj dla [% terms.bledow %]:</th>
+         <td>
+           <input type="checkbox" name="isactive" value="1" [% (isactive == 1) ? "checked" : "" %]>
+           <input type="hidden" name="oldisactive" value="[% isactive FILTER html %]">
+@@ -100,35 +100,34 @@
+   </table>
+ 
+   <p>
+-    Users become members of this group in one of three ways:
++    Użytkownicy mogą zostać członkami grupy gdy:
+     <ul>
+-      <li> by being explicity included when the user is edited.
+-      <li> by matching the user regexp above.
+-      <li> by being a member of one of the groups included in this group
+-           by checking the boxes below.
++      <li> zostaną do niej przypisani w opcjach użytkownika,
++      <li> nazwa użytkownika pasuje do w/w wyrażenia regularnego,
++      <li> są członkami jednej z grup zawierających zaznaczonych poniżej.
+     </ul>
+ 
+   [% usevisibility = Param('usevisibilitygroups') %]
+ 
+-    <h4>Group Permissions</h4>
++    <h4>Uprawnienia grupy</h4>
+   <table class="permissions" cellspacing="0" cellpadding="2">
+     <tr>     
+       [% IF usevisibility %]
+         <th>
+-          Visible
++          Widzialność
+         </th>
+       [% END %]
+       <th>
+-        Grant
++        Nadawanie
+       </th>
+       <th>
+-        Inherit
++        Dziedziczenie
+       </th>
+       <th>
+-        Group
++        Grupa
+       </th>
+       <th>
+-        Description
++        Opis
+       </th>
+     </tr>
+     [% row = 0 %]
+@@ -170,40 +169,35 @@
+     [% END %]
+   </table>
+   
+-  <input type="submit" value="Save Changes">
++  <input type="submit" value="Zapisz zmiany">
+   <br>
+   <dl>
+     [% IF usevisibility %]
+-      <dt>Visibility:</dt>
+-      <dd>
+-        Members of the selected groups can be aware of the 
+-        "[% name FILTER html %]" group
++      <dt>Widoczność:</dt>
++      <dd>
++	    Członkowie zaznaczonych grup będą wiedzieli o grupie "[% name FILTER html %]".
+       </dd>
+     [% END %]
+-    <dt>Grant:</dt>
+-    <dd>
+-    Members of the selected groups can grant membership to the
+-    "[% name FILTER html %]" group
++    <dt>Nadawanie:</dt>
++    <dd>
++		Członkowie zaznaczonych grup mogą nadawać członkowstwo w grupie "[% name FILTER html %]".
+     </dd>
+-    <dt>Inherit:</dt>
+-    <dd>
+-      Members of the selected groups are automatically members of the
+-      "[% name FILTER html %]" group
++    <dt>Dziedziczenie:</dt>
++    <dd>
++	  Członkowie zaznaczonych grup będą automatycznie członkami grupy "[% name FILTER html %]".
+     </dd>
+   </dl>
+   <table width="76%" border="0">
+     <tr>
+       <td>
+-        <h4>Conversion of groups created with [% terms.Bugzilla %]
+-        versions 2.16 and prior:</h4>
++        <h4>Konwersja grup utworzonych za pomocą [% terms.bugzilli %] 2.16 i wcześniejszych:</h4>
+         
+         <ul>
+-          <li>Remove all explicit memberships from this group: 
++          <li>Usuń wszystkich jawnych członków tej grupy: 
+             <input name="remove_explicit_members" type="submit" id="remove_explicit_members" value="Remove Memberships">
+           </li>
+ 
+-          <li>Remove all explicit memberships that are included in the above
+-            regular expression: 
++          <li>Usuń wszystkich jawnych członków tej grupy, których nazwa spełnia w/w wyrażenie regularne: 
+             <input name="remove_explicit_members_regexp" type="submit" id="remove_explicit_members_regexp" value="Remove memberships included in regular expression"> 
+           </li>
+         </ul>
+@@ -215,6 +209,6 @@
+   <input type="hidden" name="group" value="[% group_id FILTER html %]">
+ </form>
+ 
+-Back to the <a href="editgroups.cgi">group list</a>.
++Wróć do <a href="editgroups.cgi">listy grup</a>.
+ 
+ [% PROCESS global/footer.html.tmpl %] 
+Index: groups/deleted.html.tmpl
+===================================================================
+--- groups/deleted.html.tmpl	(revision 90)
++++ groups/deleted.html.tmpl	(working copy)
+@@ -30,25 +30,24 @@
+ 
+ 
+ [% PROCESS global/header.html.tmpl
+-  title = "Deleting group"
++  title = "Usuwanie grupy"
+ %]
+ 
+ [% IF cantdelete %]
+   <p>
+-    This group cannot be deleted because there are records
+-    in the database which refer to it.  All such records
+-    must be removed or altered to remove the reference to this
+-    group before the group can be deleted.
++    Grupa nie może być usunięta, ponieważ w bazie danych znajdują
++	się odniesienia do niej. Przed usunięciem grupy, należy
++	usunąć lub poprawić odnośne rekordy.
+   </p>
+ 
+   <p>
+-    <a href="editgroups.cgi?action=del&amp;group=[% gid FILTER html %]">View</a>
+-    the list of which records are affected.
++    <a href="editgroups.cgi?action=del&amp;group=[% gid FILTER html %]">Pokaż</a>
++    listę rekordów odnoszących się do grupy.
+   </p>
+ [% ELSE %]
+-  <p><b>The group [% name FILTER html %] has been deleted.</b></p>
++  <p><b>Grupa [% name FILTER html %] została usunięta.</b></p>
+ [% END %]
+ 
+-<p>Go back to the <a href="editgroups.cgi">group list</a>.
++<p>Wróć do <a href="editgroups.cgi">listy grup</a>.
+ 
+ [% PROCESS global/footer.html.tmpl %] 
+Index: groups/created.html.tmpl
+===================================================================
+--- groups/created.html.tmpl	(revision 90)
++++ groups/created.html.tmpl	(working copy)
+@@ -27,12 +27,12 @@
+   #%]
+ 
+ [% PROCESS global/header.html.tmpl
+-  title = "Adding new group"
++  title = "Dodawanie grupy"
+ %]
+ 
+-<p>OK, done.</p>
++<p>OK. Zakończono.</p>
+ 
+-<p><a href="editgroups.cgi?action=add">Add</a> another group or
+-go back to the <a href="editgroups.cgi">group list</a>.</p>
++<p><a href="editgroups.cgi?action=add">Dodaj</a> inną grupę 
++lub wróć do <a href="editgroups.cgi">listy grup</a>.</p>
+ 
+ [% PROCESS global/footer.html.tmpl %] 
+Index: groups/list.html.tmpl
+===================================================================
+--- groups/list.html.tmpl	(revision 90)
++++ groups/list.html.tmpl	(working copy)
+@@ -33,19 +33,19 @@
+   #%]
+ 
+ [% PROCESS global/header.html.tmpl
+-  title = "Edit Groups"
+-  h2 = "This lets you edit the groups available to put users in."
++  title = "Edycja grup"
++  h2 = "Pozwala na edycję grup użytkowników."
+ %]
+ 
+ 
+ <table border="1">
+   <tr>
+-    <th>Name</th>
+-    <th>Description</th>
+-    <th>User RegExp</th>
+-    <th>Use For [% terms.Bugs %]</th>
+-    <th>Type</th>
+-    <th>Action</th>
++    <th>Nazwa</th>
++    <th>Opis</th>
++    <th>RegExp Użytkowników</th>
++    <th>Używana dla [% terms.bledow%]</th>
++    <th>Typ</th>
++    <th>Akcja</th>
+   </tr>
+ 
+   [% FOREACH group = groups %]
+@@ -67,9 +67,9 @@
+       </td>
+ 
+       <td align="center" valign="middle">
+-        <a href="editgroups.cgi?action=changeform&amp;group=[% group.id FILTER html %]">Edit</a>
++        <a href="editgroups.cgi?action=changeform&amp;group=[% group.id FILTER html %]">Edytuj</a>
+         [% IF (group.isbuggroup) %]
+-          | <a href="editgroups.cgi?action=del&amp;group=[% group.id FILTER html %]">Delete</a>
++          | <a href="editgroups.cgi?action=del&amp;group=[% group.id FILTER html %]">Usuń</a>
+         [% END %]
+       </td>
+     </tr>
+@@ -77,43 +77,36 @@
+ 
+   <tr>
+     <td colspan="5"></td>
+-    <td><a href="editgroups.cgi?action=add">Add Group</a></td>
++    <td><a href="editgroups.cgi?action=add">Dodaj grupę</a></td>
+   </tr>
+ </table>
+ 
+-<p>
+-  <b>Name</b> is what is used with the UserInGroup() function in any
+-customized cgi files you write that use a given group.  It can also be used
+-by people submitting [% terms.bugs %] by email to limit [% terms.abug %]
+-to a certain set of groups.
+-</p>
++<p><b>Nazwa</b> jest używana w funkcji UserInGroup() w stworzonych przez Ciebie
++plikach cgi. Może być również używana przez osoby wysyłające [% terms.bledy %] 
++przez e-mail aby ograniczyć widoczność [% terms.bledu %] do osób należących do
++określonych grup. Nie może zawierać spacji.</p>
+ 
+-<p>
+-  <b>Description</b> is what will be shown in the [% terms.bug %] reports
+-to members of the group where they can choose whether the [% terms.bug %]
+-will be restricted to others in the same group.
+-</p>
++<p><b>Opis</b> jest tym co pojawi się w raportach [% terms.bledow %]
++dla członków grupy, gdzie mogą oni wybrać czy [% terms.blad %] będzie
++wyświetlany jedynie dla pozostałych osób z tej samej grupy.</p>
+ 
+-<p>
+-  <b>User RegExp</b> is optional, and if filled in, will automatically
+-grant membership to this group to anyone with an email address
+-that matches this perl regular expression. Do not forget
+-the trailing '$'.  Example '@mycompany\.com$'
+-</p>
++<p><b>Wyrażenie regularne dla użytkowników</b> (opcjonalne) 
++w przypadku wypełnienia automatycznie udzieli członkostwa
++w tej grupie każdemu, kogo adres e-mail
++pasuje do tego wyrażenia regularnego. Przykład: '@mycompany\.com$'</p>
+ 
+-<p>
+-  The <b>Use For [% terms.Bugs %]</b> flag determines whether or not
+-the group is eligible to be used for [% terms.bugs %]. If you remove
+-this flag, it will no longer be possible for users to add [% terms.bugs %]
+-to this group, although [% terms.bugs %] already in the group will remain
+-in the group. Doing so is a much less drastic way to stop a group
+-from growing than deleting the group as well as a way to maintain
+-lists of users without cluttering the lists of groups used
+-for [% terms.bug %] restrictions.
+-</p>
++<p>Flaga <b>Używana dla [% terms.bledow %]</b> określa czy grupa
++może być używana dla [% terms.bledow %]. Jeśli zostanie ona odznaczona,
++nie będzie możliwe dodawanie nowych [% terms.bledow %] do tej grupy,
++jednakże [% terms.bledy %] będące już w grupie, pozostaną w niej.
++Jest to mniej drastyczny sposób na powstrzymanie wzrostu grupy
++niż jej usunięcie. <b>Uwaga: Jeśli tworzysz nową grupę,
++prawdopodobnie chcesz, aby możliwe było dodawanie 
++[% terms.bledow %] do grupy, pozostaw więc to pole zaznaczone.</b></p>
+ 
++
+ <p>
+-  The <b>Type</b> field identifies system groups.
++  Pole <b>Typ</b> określa grupy systemu.
+ </p>
+ 
+ [% PROCESS global/footer.html.tmpl %]
+Index: groups/remove.html.tmpl
+===================================================================
+--- groups/remove.html.tmpl	(revision 90)
++++ groups/remove.html.tmpl	(working copy)
+@@ -33,28 +33,28 @@
+ 
+ 
+ [% IF remove_all %]
+-  [% title = "Removing All Explicit Group Memberships from '"
++  [% title = "Usuwanie wszystkich jawnych członków z '"
+       _ name _ "'" %]
+ [% ELSE %]
+-  [% title = "Removing All Explicit Group Memberships Matching "
+-      _ "Group RegExp from '" _ name _ "'" %]
++  [% title = "Usuwanie wszystkich jawnych członków spełniających wyrażenie regularne "
++      _ name _ "'" %]
+ [% END %]
+ 
+ [% PROCESS global/header.html.tmpl %]
+ 
+ [% IF remove_all %]
+-  <p><b>Removing explicit membership</b></p>
++  <p><b>Usuwanie wszystkich jawnych członków</b></p>
+ [% ELSE %]
+-  <p><b>Removing explicit memberships of users matching
++  <p><b>Usuwanie wszystkich jawnych członków spełniających wyrażenie regularne
+   '[% regexp FILTER html %]'...</b></p>
+ [% END %]
+     
+ [% FOREACH user = users %]
+-  [% user.login FILTER html %] removed<br>
++  [% user.login FILTER html %] usunięty<br>
+ [% END %]
+ 
+-<p><b>Done</b>.</p>
++<p><b>Zakończono</b>.</p>
+ 
+-<p>Back to the <a href="editgroups.cgi">group list</a>.</p>
++<p>Wróć do <a href="editgroups.cgi">listy grup</a>.</p>
+ 
+ [% PROCESS global/footer.html.tmpl %] 
+Index: settings/updated.html.tmpl
+===================================================================
+--- settings/updated.html.tmpl	(revision 90)
++++ settings/updated.html.tmpl	(working copy)
+@@ -21,7 +21,7 @@
+ 
+ Twoje zmiany domyślnych wartości ustawień zostały zapamiętane.<br>
+ <br>
+-Wróć do strony <a
++Powrót do strony <a
+ href="editsettings.cgi?action=load">Domyślnych wartości ustawień</a>.
+ 
+ [% PROCESS global/footer.html.tmpl %]
+Index: users/search.html.tmpl
+===================================================================
+--- users/search.html.tmpl	(revision 90)
++++ users/search.html.tmpl	(working copy)
+@@ -39,8 +39,8 @@
+ <input size="32" name="matchstr" id="matchstr" />
+ <select name="matchtype">
+   <option value="substr" selected="selected">zawierających ten podciąg</option>
+-  <option value="regexp">pasujących do tego regexpa</option>
+-  <option value="notregexp">niepasujących do tego regexpa</option>
++  <option value="regexp">pasujących do tego wyrażenia regularnego</option>
++  <option value="notregexp">niepasujących do tego wyrażenia regularnego</option>
+   <option value="exact">jest równy (znajdź użytkownika)</option>
+ </select>
+ <input type="submit" value="Znajdź" /></p>
+Index: users/userdata.html.tmpl
+===================================================================
+--- users/userdata.html.tmpl	(revision 90)
++++ users/userdata.html.tmpl	(working copy)
+@@ -33,7 +33,7 @@
+         [% IF !otheruser.groups.bz_sudo_protect %]
+           <br />
+           <a href="relogin.cgi?action=prepare-sudo&amp;target_login=
+-          [%- otheruser.login FILTER html %]">Wciel się w tego użytkownika</a>
++          [%- otheruser.login FILTER html %]">Zmień tożsamość na tego użytkownika</a>
+         [% END %]
+       [% END %]
+     [% ELSE %]
+Index: milestones/confirm-delete.html.tmpl
+===================================================================
+--- milestones/confirm-delete.html.tmpl	(revision 90)
++++ milestones/confirm-delete.html.tmpl	(working copy)
+@@ -84,7 +84,7 @@
+ 
+ [% END %]
+ 
+-<p>Czy jesteś pewien że chcesz usunąć tą wersję docelową?<p>
++<p>Czy na pewno usunąć tą wersję docelową?<p>
+ 
+ <form method="post" action="editmilestones.cgi">
+   <input type="submit" value="Tak, usuń">
+Index: fieldvalues/create.html.tmpl
+===================================================================
+--- fieldvalues/create.html.tmpl	(revision 90)
++++ fieldvalues/create.html.tmpl	(working copy)
+@@ -19,7 +19,7 @@
+   #%]
+   
+ [% title = BLOCK %]Dodawanie wartości do pola '[% field FILTER html %]'[% END %]
+-[% h2 = BLOCK %]Ta strona pozwoli Ci dodać nową wartość do pola
++[% h2 = BLOCK %]Ta strona pozwala dodać nową wartość do pola
+                 '[% field FILTER html %]'.[% END %]
+ [% PROCESS global/header.html.tmpl
+   title = title
+Index: fieldvalues/confirm-delete.html.tmpl
+===================================================================
+--- fieldvalues/confirm-delete.html.tmpl	(revision 90)
++++ fieldvalues/confirm-delete.html.tmpl	(working copy)
+@@ -24,8 +24,8 @@
+   #             with the field.
+   #%]
+ 
+-[% title = BLOCK %]Delete Value '[% value FILTER html %]' from the 
+-  '[% field FILTER html %]' field[% END %]
++[% title = BLOCK %]Usuwanie wartości '[% value FILTER html %]' z pola
++  '[% field FILTER html %]' [% END %]
+ 
+ [% PROCESS global/header.html.tmpl
+   title = title
+@@ -71,9 +71,9 @@
+       <li>'[% value FILTER html %]' jest domyślną wartością dla
+           pola '[% field FILTER html %]'.
+           [% IF user.groups.tweakparams %]
+-            Musisz najpierw <a href="editparams.cgi?section=bugfields#
++            Proszę najpierw <a href="editparams.cgi?section=bugfields#
+             [%- param_name FILTER url_quote %]">zmienić domyślną wartość</a> dla
+-            tego pola, zanim będziesz mógł skasować tą.
++            tego pola.
+           [% END %]
+     [% END %]
+ 
+@@ -81,10 +81,10 @@
+       <li>
+           [% PROCESS ODMIEN c=bug_count o1="Jest 1 $terms.blad"
+             o2="Są $bug_count błędy" o3="Jest $bug_count błędów" %]
+-          z tą wartością pola. Musisz zmienić wartości pól w 
++          z tą wartością pola. Proszę zmienić wartości pól w 
+           <a title="liście [% terms.bledow %] gdzie '[% field FILTER html %]' ma wartość '[% value FILTER html %]'"
+              href="buglist.cgi?[% field FILTER url_quote %]=[% value FILTER url_quote %]">
+-            zanim będziesz mógł skasować te wartości.
++            przed usunięciem wartości.
+     [% END %]
+ 
+     [% IF value_count == 1 %]
+@@ -95,7 +95,7 @@
+ 
+ [% ELSE %]
+ 
+-  <p>Czy jesteś pewien że chcesz usunąć tą wartość/p>
++  <p>Czy na pewno usunąć tą wartość/p>
+ 
+   <form method="post" action="editvalues.cgi">
+     <input type="submit" value="Tak, usuń">
+Index: fieldvalues/select-field.html.tmpl
+===================================================================
+--- fieldvalues/select-field.html.tmpl	(revision 90)
++++ fieldvalues/select-field.html.tmpl	(working copy)
+@@ -27,7 +27,7 @@
+ [% PROCESS global/variables.none.tmpl %]
+ 
+ [% PROCESS global/header.html.tmpl
+-  title = "Edycja wartości dla którego pola?"
++  title = "Wybór pola"
+ %]
+ 
+ [% columns = [
+Index: params/auth.html.tmpl
+===================================================================
+--- params/auth.html.tmpl	(revision 90)
++++ params/auth.html.tmpl	(working copy)
+@@ -20,105 +20,102 @@
+   #                 Frédéric Buclin <LpSolit@gmail.com>
+   #%]
+ [%
+-   title = "User Authentication"
+-   desc = "Set up your authentication policies"
++   title = "Autoryzacja użytkowników"
++   desc = "Ustawienia zasad autoryzacji"
+ %]
+ 
+ [% param_descs = {
+-  auth_env_id => "Environment variable used by external authentication system " _
+-                 "to store a unique identifier for each user. Leave it blank " _
+-                 "if there isn't one or if this method of authentication " _
+-                 "is not being used.",
++  auth_env_id => "Zmienna środowiska używana przez zewnętrzny system autoryzacji " _
++                 "do przechowywania unikalnego identyfikatora użytkownika. Pole należy zostawić " _
++                 "puste jeśli nie ma takiej zmiennej lub ta metoda autoryzacji " _
++                 "nie jest używana.",
+ 
+-  auth_env_email => "Environment variable used by external authentication system " _
+-                    "to store each user's email address. This is a required " _
+-                    "field for environmental authentication. Leave it blank " _
+-                    "if you are not going to use this feature.",
++  auth_env_email => "Zmienna środowiska używana przez zewnętrzny system autoryzacji " _
++                    "do przechowywania adresu email użytkownika. Pole to jest wymagane " _
++                    "dla autoryzacji poprzez zmienne środowiska. Pole należy zostawić " _
++                    "puste w przypadku niekorzystania z tej funkcji.",
+ 
+-  auth_env_realname => "Environment variable used by external authentication system " _
+-                       "to store the user's real name. Leave it blank if there " _
+-                       "isn't one or if this method of authentication is not being " _
+-                       "used.",
++  auth_env_realname => "Zmienna systemowa używana przez zewnętrzny system autoryzacji " _
++					   "do przechowywania imienia i nazwiska użytkownika. Pole należy zostawić " _
++					   "puste jeśli nie ma takiej zmiennej lub ta metoda autoryzacji " _
++					   "nie jest używana.",
+ 
+-  user_info_class => "Mechanism(s) to be used for gathering a user's login information.
+-                      More than one may be selected. If the first one returns nothing,
+-                      the second is tried, and so on.<br>
+-                      The types are:
++  user_info_class => "Mechanizmy używane do pobierania danych logowania.
++                      Można wybrać więcej niż jeden. W przypadku niepowodzenia,
++                      użyty będzie kolejny wybrany sposób.<br>
++                      Dostępne typy:
+                       <dl>
+                         <dt>CGI</dt>
+                         <dd>
+-                          Asks for username and password via CGI form interface.
++                          Zapytanie o nazwę użytkownika i hasło poprzez formularz CGI.
+                         </dd>
+                         <dt>Env</dt>
+                         <dd>
+-                          Info for a pre-authenticated user is passed in system
+-                          environment variables.
++                          Informacje o zalogowanym użytkowniku przekazywane są poprzez
++                          zmienne środowiska.
+                         </dd>
+                       </dl>",
+ 
+-  user_verify_class => "Mechanism(s) to be used for verifying (authenticating) information
+-                        gathered by user_info_class.
+-                        More than one may be selected. If the first one cannot find the
+-                        user, the second is tried, and so on.<br>
+-                        The types are:
++  user_verify_class => "Mechanizmy używane do weryfikacji danych użytkownika pobranych
++                        za pomovą user_info_class.
++                        Można wybrać więcej niż jeden. W przypadku niepowodzenia,
++                        użyty będzie kolejny wybrany sposób.<br>
++                        Dostępne typy:
+                         <dl>
+                           <dt>DB</dt>
+                           <dd>
+-                            ${terms.Bugzilla}'s built-in authentication. This is the most common
+-                            choice.
++                            Wbudowana autoryzacja ${terms.bugzilli}. Jest to najczęściej używana metoda.
+                           </dd>
+                           <dt>LDAP</dt>
+-                          <dd>
+-                            LDAP authentication using an LDAP server. This method is
+-                            experimental; please see the $terms.Bugzilla documentation for more
+-                            information. Using this method requires additional parameters
+-                            to be set above.
++                          <dd>
++							Autoryzacja LDAP poprzez serwer LDAP. Implementacja tej metody
++							jest eksperymentalna. Więcej szczegółów na ten temat można znaleźć
++							w dokumentacji $terms.bugzilli. Użycie tej metody wymaga ustawienia
++							dodatkowych parametrów powyżej.
+                           </dd>
+                         </dl>",
+ 
+-  rememberlogin => "Controls management of session cookies
++  rememberlogin => "Kontrola ciasteczek sesji
+                     <ul>
+                       <li>
+-                        on - Session cookies never expire (the user has to login only
+-                        once per browser).
++                        on - ciasteczka sesji nigdy nie wygasają. Użytwkonik musi zalogować się raz
++						w każdej używanej przeglądarce.
+                       </li>
+                       <li>
+-                        off - Session cookies last until the users session ends (the user
+-                        will have to login in each new browser session).
++                        off - ważność ciasteczek wygasa wraz zamknięciem sesji. Użytkownik
++						musi się zalogować w każdej sesji przeglądarki.
+                       </li>
+                       <li>
+-                        defaulton/defaultoff - Default behavior as described
+-                        above, but user can choose whether $terms.Bugzilla will remember his
+-                        login or not.
++                        defaulton/defaultoff - zachowanie jw., lecz użytkownik może zdecydować
++						czy dane logowania zostaną zapamiętane pomiędzy sesjami przeglądarki.
+                       </li>
+                     </ul>",
+ 
+-  loginnetmask => "The number of bits for the netmask used if a user chooses to " _
+-                  "allow a login to be valid for more than a single IP. Setting " _
+-                  "this to 32 disables this feature.<br> " _
+-                  "Note that enabling this may decrease the security of your system.",
++  loginnetmask => "Liczba bitów maski sieciowej używanej gdy użytkownik zezwoli na " _
++                  "logowanie z więcej niż jednego adresu IP. Wartość 32 wyłącza tę " _
++				  "opcję. <br> Uwaga: włączenie opcji może spowodować " _
++				  "obniżenie poziomu bezpieczeństwa systemu.",
+ 
+-  requirelogin => "If this option is set, all access to the system beyond the " _
+-                  "front page will require a login. No anonymous users will " _
+-                  "be permitted.",
++  requirelogin => "Włączenie opcji spowoduje wymaganie logowania dla dostępu do wszystkich " _
++                  "stron poza stroną główną. System będzie niedostępny dla anonimowych " _
++                  "użytkowników.",
+ 
+-  emailregexp => "This defines the regexp to use for legal email addresses. The " _
+-                 "default tries to match fully qualified email addresses. Another " _
+-                 "popular value to put here is <tt>^[^@]+$</tt>, which means " _
+-                 "'local usernames, no @ allowed.'",
++  emailregexp => "Określa wyrażenie regularne używane do weryfikacji poprawnego adresu email. " _
++                 "Wartość domyślna określa typowy adres email. Inna często używana wartość " _
++                 "to <tt>^[^@]+$</tt>, która określa lokalnych użytkowników systemu. " _
++                 "Znak @ w adresie jest zabroniony.",
+ 
+-  emailregexpdesc => "This describes in English words what kinds of legal addresses " _
+-                     "are allowed by the <tt>emailregexp</tt> param.",
++  emailregexpdesc => "Opis tekstowy działania wyrażenia regularnego w parametrze " _
++                     "<tt>emailregexp</tt>.",
+ 
+-  emailsuffix => "This is a string to append to any email addresses when actually " _
+-                 "sending mail to that address. It is useful if you have changed " _
+-                 "the <tt>emailregexp</tt> param to only allow local usernames, " _
+-                 "but you want the mail to be delivered to username@my.local.hostname.",
++  emailsuffix => "Ciąg znaków dołączany do adresu email podczas wysyłania poczty. " _
++                 "Opcja przydatna w przypadku użycia w opcji <tt>emailregexp</tt> wyrażenia " _
++                 "zezwalającego tylko na nazwy lokalnych użytkowników " _
++                 "i konieczności wysłania poczty na adresy w postaci username@my.local.hostname.",
+ 
+-  createemailregexp => "This defines the regexp to use for email addresses that are " _
+-                       "permitted to self-register using a 'New Account' feature. The " _
+-                       "default (.*) permits any account matching the emailregexp " _
+-                       "to be created. If this parameter is left blank, no users " _
+-                       "will be permitted to create their own accounts and all accounts " _
+-                       "will have to be created by an administrator." }
++  createemailregexp => "Określa wyrażenie regularne weryfikujące adresy email przy rejestracji." _
++                       "Domyślna wartość (.*) pozwala zrejestrować się każdemu użytkownikówi, " _
++                       "którego adres spełnia warunki <tt>emailregexp</tt>. " _
++                       "Pozostawienie pustej wartości wyłączy możliwość rejestracji użytkowników, " _
++                       "a wszystkie konta będą tworzeone przez administratora." }
+ %]
+\ No newline at end of file
+Index: params/bugmove.html.tmpl
+===================================================================
+--- params/bugmove.html.tmpl	(revision 90)
++++ params/bugmove.html.tmpl	(working copy)
+@@ -20,31 +20,31 @@
+   #                 Frédéric Buclin <LpSolit@gmail.com>
+   #%]
+ [%
+-   title = "Bug Moving"
+-   desc = "Set up parameters to move bugs to/from another installation"
++   title = "Przenoszenie błędów"
++   desc = "Parametry związane z przenoszeniem błędów do innej instalacji $terms.bugzilli"
+ %]
+ 
+ [% param_descs = {
+-  "move-enabled" => "If this is on, $terms.Bugzilla will allow certain people " _
+-                    "to move $terms.bugs to the defined database.",
++  "move-enabled" => "Ogólne zezwolenie na przenoszenie $terms.bledow do określonej " _
++                    "bazy danych.",
+ 
+-  "move-button-text" => "The text written on the Move button. Explain where the $terms.bug is " _
+-                        "being moved to.",
++  "move-button-text" => "Napis na przycisku przenoszenia. Określenie miejsca przeniesienia " _
++                        "$terms.bledu.",
+ 
+-  "move-to-url" => "The URL of the database we allow some of our $terms.bugs to be moved to.",
++  "move-to-url" => "Adres URL bazy danych, do której można przenosić $terms.bledy.",
+ 
+-  "move-to-address" => "To move ${terms.bugs}, an email is sent to the target database. This is " _
+-                       "the email address that database uses to listen for incoming ${terms.bugs}.",
++  "move-to-address" => "Przenoszenie ${terms.bledu} polega na wysłaniu wiadomości email do docelowej bazy. " _
++                       "Pole to określa adres email docelowej bazy.",
+ 
+-  "moved-from-address" => "To move ${terms.bugs}, an email is sent to the target database. This is " _
+-                          "the email address from which this mail, and error messages are sent.",
++  "moved-from-address" => "Przenoszenie ${terms.bledu} polega na wysłaniu wiadomości email do docelowej bazy. " _
++                          "Pole to określa adres email źródłowej bazy skąd wysyłane są wiadomości o błędach.",
+ 
+-  movers => "A list of people with permission to move $terms.bugs and reopen moved " _
+-            "${terms.bugs} (in case the move operation fails).",
++  movers => "Lista osób uprawnionych do przenoszenia i ponownego otwierania " _
++            "${terms.bledow  (w przypadku niepowodzenia operacji).",
+ 
+-  "moved-default-product" => "$terms.Bugs moved from other databases to here are assigned " _
+-                             "to this product.",
++  "moved-default-product" => "Produkt, do którego przypisane zostaną $terms.bledy przeniesione  " _
++                             "z innych baz.",
+ 
+-  "moved-default-component" => "$terms.Bugs moved from other databases to here are assigned " _
+-                               "to this component." }
++  "moved-default-component" => "Komponent, do którego przypisane zostaną $terms.bledy przeniesione  " _
++                             "z innych baz.", }
+ %]
+Index: params/bugfields.html.tmpl
+===================================================================
+--- params/bugfields.html.tmpl	(revision 90)
++++ params/bugfields.html.tmpl	(working copy)
+@@ -20,45 +20,42 @@
+   #                 Frédéric Buclin <LpSolit@gmail.com>
+   #%]
+ [%
+-   title = "Bug Fields"
+-   desc = "Choose fields you want to display"
++   title = "Pola błędów"
++   desc = "Wybór wyświetlanych pól"
+ %]
+ 
+ [% param_descs = {
+-  useclassification => "If this is on, $terms.Bugzilla will associate each product with a " _
+-                       "specific classification. But you must have 'editclassification' " _
+-                       "permissions enabled in order to edit classifications.",
++  useclassification => "Włączenie spowoduje powiązanie każdego produktu z określoną klasyfikacją. " _
++                       "Do edycji klasyfikacji wymagane są uprawnienia 'editclassification'.",
+ 
+-  showallproducts => "If this is on and useclassification is set, $terms.Bugzilla will add a " _
+-                     "'All' link in the 'New $terms.Bug' page to list all available products.",
++  showallproducts => "Wyświetlanie odnośnika wyswietlajacego produkty na stronie 'Nowy $terms.blad'. " _
++                     "(Działa gdy opcja 'useclassification' jest włączona.",
+ 
+-  usetargetmilestone => "Do you wish to use the Target Milestone field?",
++  usetargetmilestone => "Użycie pola 'wersja docelowa'.",
+ 
+-  useqacontact => "Do you wish to use the QA Contact field?",
++  useqacontact => "Użycie pola 'kontakt QA'",
+ 
+-  usestatuswhiteboard => "Do you wish to use the Status Whiteboard field?",
++  usestatuswhiteboard => "Użycie pola 'Status Whiteboard'",
+ 
+-  usevotes => "Do you wish to allow users to vote for ${terms.bugs}? Note that in order " _
+-              "for this to be effective, you will have to change the maximum " _
+-              "votes allowed in a product to be non-zero in " _
+-              "<a href=\"editproducts.cgi\">the product edit page</a>.",
++  usevotes => "Zezwolenie na głosowanie na ${terms.bledy}. Należy także ustawić " _
++              "niezerową maksymalną ilość głosów na stronie " _
++              "<a href=\"editproducts.cgi\">edycji produktu</a>.",
+ 
+-  usebugaliases => "Do you wish to use $terms.bug aliases, which allow you to assign " _
+-                   "$terms.bugs an easy-to-remember name by which you can refer to them?",
++  usebugaliases => "Użycie aliasów $terms.bledow. Aliasy pozwalają przypisać łatwą do " _
++                   "zapamiętania nazwę do $terms.bledu.",
+ 
+-  defaultpriority => "This is the priority that newly entered $terms.bugs are set to.",
++  defaultpriority => "Domyślny priorytet nowozgłaszanych $terms.bledow.",
+ 
+-  defaultseverity => "This is the severity that newly entered $terms.bugs are set to.",
++  defaultseverity => "Domyślna waga nowozgłaszanych $terms.bledow.",
+ 
+-  defaultplatform => "This is the platform that is preselected on the $terms.bug " _
+-                     "entry form.<br> " _
+-                     "You can leave this empty: " _
+-                     "$terms.Bugzilla will then use the platform that the browser " _
+-                     "reports to be running on as the default.",
++  defaultplatform => "Domyślna platforma dla nowozgłaszanych $terms.bledow. " _
++                     "<br> " _
++                     "Pole można pozostawić puste: " _
++                     "użyta zostanie platforma ,na której działa przeglądarka użytkownika.",
+ 
+-  defaultopsys => "This is the operating system that is preselected on the $terms.bug " _
+-                  "entry form.<br> " _
+-                  "You can leave this empty: " _
+-                  "$terms.Bugzilla will then use the operating system that the browser " _
+-                  "reports to be running on as the default." }
++  defaultopsys => "Domyślny system operacyjny dla nowozgłaszanych $terms.bledow. " _
++                  "<br> " _
++                  "Pole można pozostawić puste: " _
++                  "użyty zostanie system operacyjnym, na którym działa przeglądarkaa użytkownika.",
++ }
+ %]
+\ No newline at end of file
+Index: params/query.html.tmpl
+===================================================================
+--- params/query.html.tmpl	(revision 90)
++++ params/query.html.tmpl	(working copy)
+@@ -20,39 +20,37 @@
+   #                 Frédéric Buclin <LpSolit@gmail.com>
+   #%]
+ [%
+-   title = "Query Defaults"
+-   desc = "Default options for query and buglists"
++   title = "Wartości domyślne zapytań"
++   desc = "Domyślne opcje zapytań i list błędów"
+ %]
+ 
+ [% param_descs = {
+-  quip_list_entry_control => "Controls how easily users can add entries to the quip list.
++  quip_list_entry_control => "Określa politykę dodawania nowych wpisów do listy sentencji.
+                               <ul>
+                                 <li>
+-                                  open - Users may freely add to the quip list, and
+-                                  their entries will immediately be available for viewing.
++                                  otwarta - użytkownicy mogą swobodnie dodawać sentencje, które będą
++                                  natychmiast używane przez Bugzillę.
+                                 </li>
+                                 <li>
+-                                  moderated - quips can be entered, but need to be approved
+-                                  by an admin before they will be shown.
++                                  moderowana - wpisane sentencje muszą być zaakceptowane przez 
++                                  administratora przed użyciem.
+                                 </li>
+                                 <li>
+-                                  closed - no new additions to the quips list are allowed.
++                                  zamknięta - brak możliwości dodawania nowych sentencji.
+                                 </li>
+                               </ul>",
+ 
+-  mostfreqthreshold => "The minimum number of duplicates $terms.abug needs to show up on the " _
+-                       "<a href=\"duplicates.cgi\">most frequently reported $terms.bugs page</a>. " _
+-                       "If you have a large database and this page takes a long time to " _
+-                       "load, try increasing this number.",
++  mostfreqthreshold => "Liczba duplikatów $terms.bledu wymagana do umieszczenia $terms.bledu na " _
++                       "<a href=\"duplicates.cgi\">liście najczęściej zgłaszanych $terms.bledow</a>. " _
++                       "W przypadku dużej bazy danych i długiego czasu ładowania w/w strony, należy " _
++                       "zwiększyć tę liczbę.",
+ 
+-  mybugstemplate => "This is the URL to use to bring up a simple 'all of my $terms.bugs' " _
+-                    "list for a user. %userid% will get replaced with the login name of a user.",
++  mybugstemplate => "Adres URL listy 'wszystkie moje $terms.bledy' dla użytkownika. " _
++                    "%userid% zostanie zamieniony na nazwę użytkownika.",
+ 
+-  defaultquery => "This is the default query that initially comes up when you " _
+-                  "access the advanced query page. It's in URL parameter " _
+-                  "format, which makes it hard to read. Sorry!",
++  defaultquery => "Domyślne zapytanie wyświetlane po otwarciu strony zaawansowanego wyszukiwania " _
++                  "Wartość podana jest w trudnym do odczytanie formacie parametrów URL parameter. Przepraszamy.",
+ 
+-  quicksearch_comment_cutoff => "The maximum number of search terms for a QuickSearch " _
+-                                "to search comments. If the QuickSearch query contains " _
+-                                "more terms than this value, QuickSearch will not search comments." }
++  quicksearch_comment_cutoff => "Maksymalna liczba słów do szybkiego wyszukiwania w komentarzach/ " _
++                                "Gdy zapytanie zawiera więcej słów niż podano, komentarze nie będą przeszukiwane." }
+ %]
+Index: params/index.html.tmpl
+===================================================================
+--- params/index.html.tmpl	(revision 90)
++++ params/index.html.tmpl	(working copy)
+@@ -19,16 +19,16 @@
+   # Contributor(s): Frédéric Buclin <LpSolit@gmail.com>
+   #%]
+ 
+-<p>
+-  All parameters are displayed below, per section.
+-  If you cannot find one from here, then the parameter does not exist.
++<p>
++  Poniżej wyświetlono wszystkie parametry.
++  Parametr nie istnieje, gdy nie jest wyświetlony poniżej.
+ </p>
+ 
+ <div align="center">
+   <table>
+     <tr>
+-      <th>Parameter</th>
+-      <th>Section</th>
++      <th>Parametr</th>
++      <th>Sekcja</th>
+     </tr>
+     [% FOREACH panel = panels %]
+       [% FOREACH param = panel.param_list.sort('name') %]
+Index: params/l10n.html.tmpl
+===================================================================
+--- params/l10n.html.tmpl	(revision 90)
++++ params/l10n.html.tmpl	(working copy)
+@@ -20,8 +20,8 @@
+   #                 Frédéric Buclin <LpSolit@gmail.com>
+   #%]
+ [%
+-   title = "Localization"
+-   desc = "Define what languages you want made available to your users"
++   title = "Lokalizacja"
++   desc = "Określenie języków dostępnych dla użytkowników"
+ %]
+ 
+ [%# Get the list of available languages %]
+@@ -33,14 +33,12 @@
+ [% END %]
+ 
+ [% param_descs = {
+-  languages => "A comma-separated list of RFC 1766 language tags. These " _
+-               "identify the languages in which you wish $terms.Bugzilla output " _
+-               "to be displayed. Note that you must install the appropriate " _
+-               "language pack before adding a language to this Param. The " _
+-               "language used is the one in this list with the highest " _
+-               "q-value in the user's Accept-Language header.<br> " _
+-               "Available languages: $available_languages" ,
++  languages => "Lista oznaczeń języków (wg RFC 1766), które będą dostępne dla " _
++               "użytwkoników $terms.bugzilli. Uwaga: przed dodaniem języka do " _
++               "listy, należy zainstalować odpowiedni pakiet językowy. " _
++               "Użyty język zależy od ustawień przeglądarki użytkownika.<br> " _
++               "Dostępne języki: $available_languages" ,
+ 
+-  defaultlanguage => "The UI language $terms.Bugzilla falls back on if no suitable " _
+-                     "language is found in the user's Accept-Language header." }
++  defaultlanguage => "Domyślny język używany gdy w informacjach wysyłanych przez " _
++                     "przeglądarkę użytkownika brakuje nagłówka Accept-Language." }
+ %]
+Index: params/ldap.html.tmpl
+===================================================================
+--- params/ldap.html.tmpl	(revision 90)
++++ params/ldap.html.tmpl	(working copy)
+@@ -21,26 +21,25 @@
+   #%]
+ [%
+    title = "LDAP"
+-   desc = "Configure this first before choosing LDAP as an authentication method"
++   desc = "Opcje związane z autoryzacją za pomocą LDAP"
+ %]
+ 
+ [% param_descs = {
+-  LDAPserver => "The name (and optionally port) of your LDAP server " _
+-                "(e.g. ldap.company.com, or ldap.company.com:portnum).",
++  LDAPserver => "Nazwa (i opcjonlanie port) serwera LDAP " _
++                "(np. ldap.company.com lub ldap.company.com:port).",
+ 
+-  LDAPbinddn => "If your LDAP server requires that you use a binddn and password " _
+-                "instead of binding anonymously, enter it here " _
+-                "(e.g. cn=default,cn=user:password). " _
+-                "Leave this empty for the normal case of an anonymous bind.",
++  LDAPbinddn => "W przypadku gdy serwer LDAP wymaga użycia binddn oraz hasła, " _
++                "należy wprowadzić je w tym miejscu " _
++                "(np. cn=default,cn=user:password). " _
++                "Pozostawienie pustego pola oznacza anonimwy dostęp do serwera.",
+ 
+-  LDAPBaseDN => "The BaseDN for authenticating users against " _
+-                "(e.g. ou=People,o=Company).",
++  LDAPBaseDN => "Bazowy DN dla autoryzacji użytkowników " _
++                "(np. ou=People,o=Company).",
+ 
+-  LDAPuidattribute => "The name of the attribute containing the user's login name.",
++  LDAPuidattribute => "Nazwa atrybutu w katalogu LDAP zawierającego nazwę użytkownika.",
+ 
+-  LDAPmailattribute => "The name of the attribute of a user in your directory that " _
+-                       "contains the email address.",
++  LDAPmailattribute => "Nazwa atrybutu w katalogu LDAP zwierającego adres email użytkownika.",
+ 
+-  LDAPfilter => "LDAP filter to AND with the <tt>LDAPuidattribute</tt> for " _
+-                "filtering the list of valid users." }
++  LDAPfilter => "Filtr LDAP używany z <tt>LDAPuidattribute</tt> (operacja AND) do " _
++                "filtrowania listy poprawnych użytkowników." }
+ %]
+Index: params/patchviewer.html.tmpl
+===================================================================
+--- params/patchviewer.html.tmpl	(revision 90)
++++ params/patchviewer.html.tmpl	(working copy)
+@@ -20,46 +20,42 @@
+   #                 Frédéric Buclin <LpSolit@gmail.com>
+   #%]
+ [%
+-   title = "Patch Viewer"
+-   desc = "Set up third-party applications to run with PatchViewer"
++   title = "Podgląd łatek"
++   desc = "Ustawienie zewnętrznych aplikacji uruchamianych z PatchViewer"
+ %]
+ 
+ [% param_descs = {
+-  cvsroot => "The <a href=\"http://www.cvshome.org\">CVS</a> root that most " _
+-             "users of your system will be using for 'cvs diff'. Used in " _
+-             "Patch Viewer ('Diff' option on patches) to figure out where " _
+-             "patches are rooted even if users did the 'cvs diff' from " _
+-             "different places in the directory structure (NOTE: if your " _
+-             "CVS repository is remote and requires a password, you must " _
+-             "either ensure the $terms.Bugzilla user has done a 'cvs login' or " _
+-             "specify the password " _
+-             "<a href=\"http://www.cvshome.org/docs/manual/cvs_2.html#SEC26\">as " _
+-             "part of the CVS root.</a>). Leave this blank if you have no " _
+-             "CVS repository.",
++  cvsroot => "Adres <a href=\"http://www.cvshome.org\">CVS</a>, którego większość " _
++             "użytkowników będzie używać do polecenia 'cvs diff'. Używany w " _
++             "Patch Viewer (opcja 'Diff' dla łatek) do określenia plików, " _
++             "względem których utworzono łatkę nawet wtedy gdy 'cvs diff' zostało " _
++             "uruchomione w innym miejscu struktury katalogów (Uwaga: dla zdalnych " _
++             "repozytoriów CVS wymagających hasła, należy zalogować użytkownika " _
++             "$terms.bugzilli lub określić hasło w " _
++             "<a href=\"http://www.cvshome.org/docs/manual/cvs_2.html#SEC26\"> " _
++             "CVS root.</a>). Puste pole oznacza brak repozytorium CVS.",
+ 
+-  cvsroot_get => "The CVS root $terms.Bugzilla will be using to get patches from. " _
+-                 "Some installations may want to mirror their CVS repository on " _
+-                 "the $terms.Bugzilla server or even have it on that same server, and " _
+-                 "thus the repository can be the local file system (and much " _
+-                 "faster). Make this the same as cvsroot if you don't " _
+-                 "understand what this is (if cvsroot is blank, make this blank too).",
++  cvsroot_get => "CVS root używany przez $terms.bugzille do pobierania łatek. " _
++                 "W niektórych przypadkach repozytorium CVS jest duplikowane na " _
++                 "na serwerze $terms.bugzilli w celu umożliwienia szybszego dostępu " _
++                 "poprzez lokalny system plików. W przypadku wątpliwości " _
++                 "należy pozostawić ten parametr taki sam jak cvsroot.",
+ 
+-  bonsai_url => "The URL to a <a href=\"http://www.mozilla.org/bonsai.html\">Bonsai</a> " _
+-                "server containing information about your CVS repository. " _
+-                "Patch Viewer will use this information to create links to " _
+-                "bonsai's blame for each section of a patch (it will append " _
+-                "'/cvsblame.cgi?...' to this url). Leave this blank if you " _
+-                "don't understand what this is.",
++  bonsai_url => "Adres URL serwera <a href=\"http://www.mozilla.org/bonsai.html\">Bonsai</a> " _
++                "zawierającego informacje o repozytorium CVS. " _
++                "Program Patch Viewer wygeneruje odnośniki do stron " _
++                "bonsai's blame dla każdego fragmentu łatki (do adresu dołączone " _
++                "zostanie '/cvsblame.cgi?...'). W razie wątpliwości należy pozostawić " _
++                "puste pole.",
+ 
+-  lxr_url => "The URL to an <a href=\"http://sourceforge.net/projects/lxr\">LXR</a> server " _
+-             "that indexes your CVS repository. Patch Viewer will use this " _
+-             "information to create links to LXR for each file in a patch. " _
+-             "Leave this blank if you don't understand what this is.",
++  lxr_url => "Adres URL serwera <a href=\"http://sourceforge.net/projects/lxr\">LXR</a>" _
++             "indeksującego repozytorium CVS. Program Patch Viewer wygeneruje osnośniki " _
++             "do LXR dla każdego pliku w łatce. W razie wątpliwości należy pozostawić " _
++             "puste pole.",
+ 
+-  lxr_root => "Some LXR installations do not index the CVS repository from the root -- " _
+-              "<a href=\"http://lxr.mozilla.org/mozilla\">Mozilla's</a>, for " _
+-              "example, starts indexing under <code>mozilla/</code>. This " _
+-              "means URLs are relative to that extra path under the root. " _
+-              "Enter this if you have a similar situation. Leave it blank " _
+-              "if you don't know what this is." }
++  lxr_root => "Niektóre instalacje LXR nie indeksują repozytoriów CVS od głównej gałęzi -- np " _
++              "LXR <a href=\"http://lxr.mozilla.org/mozilla\">Mozilli</a> " _
++              "indeksuje gałąź <code>mozilla/</code>. Oznacza to, że adresy " _
++              "URL są względne od dodatkowej ścieżki od głównej gałęzi. " _
++              "Należy podać dodatkową ścieżkę lub, w razie wątpliwości, pozostawić puste pole.", }
+ %]
+Index: params/mta.html.tmpl
+===================================================================
+--- params/mta.html.tmpl	(revision 90)
++++ params/mta.html.tmpl	(working copy)
+@@ -21,89 +21,79 @@
+   #%]
+ [%
+    title = "Email"
+-   desc = "How will outgoing mail be delivered?"
++   desc = "Opcje dostarczania poczty wychodzącej"
+ %]
+ 
+ [% param_descs = {
+-  mail_delivery_method => "Defines how email is sent, or if it is sent at all.<br>
++  mail_delivery_method => "Określa sposób wysyłania poczty.<br>
+                            <ul>
+                              <li>
+-                               'sendmail', 'smtp' and 'qmail' are all MTAs.
+-                               You need to install a third-party sendmail replacement if
+-                               you want to use sendmail on Windows.
++                               'sendmail', 'smtp' i 'qmail' to nazwy programów MTA.
++                               Aby korzystać z tej opcji w systemie Windows, należy 
++							   zainstalować dodatkowe oprogramowanie.
+                              </li>
+                              <li>
+-                               'testfile' is useful for debugging: all email is stored
+-                               in 'data/mailer.testfile' instead of being sent. For more
+-                               information, see the Mail::Mailer manual.
++                               opcja 'testfile' jest przydatna podczas uruchamiania systemu: 
++                               cała poczta przechowywana jest w pliku 'data/mailer.testfile',
++							   gdzie może być w łatwy sposób przeglądana. Więcej informacji 
++							   można znaleźć w podręczniku systemowym Mail::Mailer.
+                              </li>
+                              <li>
+-                               'none' will completely disable email. $terms.Bugzilla continues
+-                               to act as though it is sending mail, but nothing is sent or
+-                               stored.
++                               opcja 'none' całkowicie wyłącza wysyłanie poczty. $terms.Bugzilla 
++							   zachowuje się jak gdyby poczta była wysyłana, lecz w rzeczywistości
++							   żadne informacje nie są wysyłane i przechowywane.
+                              </li>
+                            </ul>",
+ 
+-  sendmailnow => "Sites using anything older than version 8.12 of 'sendmail' " _
+-                 "can achieve a significant performance increase in the " _
+-                 "UI -- at the cost of delaying the sending of mail -- by " _
+-                 "disabling this parameter. Sites using 'sendmail' 8.12 or " _
+-                 "higher should leave this on, as they will see no benefit from " _
+-                 "turning it off. Sites using an MTA other than 'sendmail' " _
+-                 "<b>must</b> leave it on, or no $terms.bug mail will be sent.",
++  sendmailnow => "Działanie instalacji używających programu 'sendmail' w wersji " _ 
++				  "wcześniejszej niż 8.12 można znacznie przyspieszyć poprzez " _
++				  "wyłączenie tego parametru. Kosztem jest pewne opóźnienie " _
++				  "wysłania poczty. Korzystający z wersji późniejszych niż 8.12 " _
++				  "powinni pozostawić tą opcję włączoną. Dla instalacji używających  " _
++				  "innych serwerów pocztowych <b>należy</b> pozostawić włączoną opcję. _
++				  "W przeciwnym wypadku nie będzie wysyłana żadna poczta.",
+ 
+-  smtpserver => "The SMTP server address (if using SMTP for mail delivery).",
++  smtpserver => "Adres serwera SMTP (w przypadku korzystanie z SMTP).",
+ 
+-  passwordmail => "The email that gets sent to people to tell them their password. " _
+-                  "Within this text, %mailaddress% gets replaced by the person's " _
+-                  "email address, %login% gets replaced by the person's login " _
+-                  "(usually the same thing), and %password% gets replaced by their " _
+-                  "password. %<i>anythingelse</i>% gets replaced by the " _
+-                  "definition of that parameter (as defined on this page).",
++  passwordmail => "Treść wiadomości do użytkowników zawierającej hasło. " _
++                  "Wewnątrz tekstu można używać następujących zmiennych: %mailaddress% - adres email, " _
++                  "%login% - nazwa użytkownika, " _
++                  "%password% - hasło użytkownika. " _
++                  "<i>anythingelse</i>% - tekst parametru określony na tej stronie.",
+ 
+-  newchangedmail => "The email that gets sent to people when a $terms.bug changes. Within " _
+-                    "this text, %to% gets replaced with the e-mail address of the " _
+-                    "person receiving the mail. %bugid% gets replaced by the $terms.bug " _
+-                    "number. %diffs% gets replaced with what has changed. " _
+-                    "%neworchanged% is 'New:' if this mail is reporting a new $terms.bug or " _
+-                    "empty if changes were made to an existing one. %summary% gets " _
+-                    "replaced by the summary of this ${terms.bug}. %reasonsheader% is " _
+-                    "replaced by an abbreviated list of reasons why the user is " _
+-                    "getting the email, suitable for use in an email header (such " _
+-                    "as X-Bugzilla-Reason). %reasonsbody% is replaced by text that " _
+-                    "explains why the user is getting the email in more user " _
+-                    "friendly text than %reasonsheader%. " _
+-                    "%threadingmarker% will become either a Message-ID line (for " _
+-                    "new-${terms.bug} messages) or a In-Reply-To line (for ${terms.bug}-change " _
+-                    "messages). " _
+-                    "%<i>anythingelse</i>% gets " _
+-                    "replaced by the definition of that parameter (as defined on " _
+-                    "this page).",
++  newchangedmail => "Treść wiadomości wysyłanej do użytkowników po zmianie $terms.bledu. " _
++                    "Wewnątrz tekstu można używać następujących zmiennych: %to% - adres email odbiorcy, " _
++                    "%bugid% - numer $terms.bledu, %diffs% - dokonane zmiany, " _
++                    "%neworchanged% - 'Nowy:' dla nowych $terms.bledow lub pusty dla  " _
++                    "$terms.bledow zmienionych, %summary% - podsumowanie $terms.bledu," _
++                    "%reasonsheader% - skrócona lista powodów, dla których wysłany został email " _
++                    "- opcja użyteczna w nagłówku wiadomości (np. X-Bugzilla-Reason)," _
++                    "%reasonsbody% - bardziej rozwinięty niż %reasonsheader% tekst opisujący " _
++                    "powody wysłania wiadomości, "%threadingmarker% - nagłówek Message-ID (dla " _
++                    "nowych ${terms.bledow}) lub In-Reply-To (dla wiadomości o ${terms.bledach} " _
++                    "zmienionych). " _
++                    "<i>anythingelse</i>% - tekst parametru określony na tej stronie.",
+ 
+-  whinedays => "The number of days that we'll let a $terms.bug sit untouched in a NEW " _
+-               "state before our cronjob will whine at the owner.<br> " _
+-               "Set to 0 to disable whining.",
++  whinedays => "Liczba dni, po których zostanie wysłana do właściciela wiadomość ponaglająca o  " _
++               "niezmienionym $terms.bledzie w stanie NEW.<br> " _
++               "Wartość 0 wyłącza wysyłanie ponagleń.",
+ 
+-  whinemail => "The email that gets sent to anyone who has a NEW or REOPENED " _
+-               "$terms.bug that hasn't been touched for more than <b>whinedays</b>. " _
+-               "Within this text, %email% gets replaced by the offender's " _
+-               "email address. %userid% gets replaced by the offender's " _
+-               "$terms.Bugzilla login (which, in most installations, is the same as " _
+-               "the email address.) %<i>anythingelse</i>% gets replaced by the " _
+-               "definition of that parameter (as defined on this page).<p> " _
+-               "It is a good idea to make sure this message has a valid From: " _
+-               "address, so that if the mail bounces, a real person can know " _
+-               "that there are $terms.bugs assigned to an invalid address.",
++  whinemail => "Treść wiadomości do właściciela $terms.bledu o statusie NEW lub REOPENED, " _
++               "który nie został zmieniony przez co najmniej <b>whinedays</b> dni. " _
++               "Wewnątrz tekstu można używać zmiennych: %email% - adres email właściciela; " _
++               "%userid% - login właściciela $terms.bledu (zwykle taki sam jak adres email);  " _
++               "<i>anythingelse</i>% - tekst parametru określony na tej stronie.<p> " _
++               "Dobrą praktyką jest ustawienie pola From: na rzeczywisty adres " _
++               "tak, żeby zwroty poczty z informacjami o nierozwiązanych $terms.bledach docierały " _
++               "do któregoś z użytkowników.",
+ 
+-  voteremovedmail => "This is a mail message to send to anyone who gets a vote removed " _
+-                     "from $terms.abug for any reason. %to% gets replaced by the person who " _
+-                     "used to be voting for this ${terms.bug}. %bugid% gets replaced by the " _
+-                     "$terms.bug number. %reason% gets replaced by a short reason describing " _
+-                     "why the vote(s) were removed. %votesremoved%, %votesold% and " _
+-                     "%votesnew% is the number of votes removed, before and after " _
+-                     "respectively. %votesremovedtext%, %votesoldtext% and " _
+-                     "%votesnewtext% are these as sentences, e.g. 'You had 2 votes on " _
+-                     "this ${terms.bug}.' %count% is also supported for backwards " _
+-                     "compatibility. %<i>anythingelse</i>% gets replaced by the " _
+-                     "definition of that parameter (as defined on this page)." }
++  voteremovedmail => "Treść wiadomości do użytkownika, którego głos został z jakiegoś powodu " _
++                     "usunięty z $terms.bledu. Wewnątrz tekstu można używać zmiennych: " _
++                     "%to% - adres głosującego użytkownika; %bugid% - numer $terms.bledu; " _
++                     "%reason% - krótko opisany powód usunięcia głosu; " _
++                     "%votesremoved%, %votesold% oraz "%votesnew% - liczba usuniętych głosów, " _
++                     "ilość głosów przed i po usunięciu; %votesremovedtext%, %votesoldtext% i " _
++                     "%votesnewtext% - w/w liczby jako zdania, np. 'Usunięto 2 głosy " _
++                     " z tego ${terms.bledu}.' %count% - liczba głosów. " _
++                     "<i>anythingelse</i>% - tekst parametru określony na tej stronie.", }
+ %]
+Index: params/bugchange.html.tmpl
+===================================================================
+--- params/bugchange.html.tmpl	(revision 90)
++++ params/bugchange.html.tmpl	(working copy)
+@@ -20,57 +20,46 @@
+   #                 Frédéric Buclin <LpSolit@gmail.com>
+   #%]
+ [%
+-   title = "Bug Change Policies"
+-   desc = "Set up bug change policies"
++   title = "Zasady zmiany błędów"
++   desc = "Określenie zasad edycji błędów"
+ %]
+ 
+ [% param_descs = {
+-  letsubmitterchoosepriority => "If this is on, then people submitting $terms.bugs can " _
+-                                "choose an initial priority for that ${terms.bug}. " _
+-                                "If off, then all $terms.bugs initially have the default " _
+-                                "priority selected below.",
++  letsubmitterchoosepriority => "Włączenie opcji pozwoli osobom zglaszajacym $terms.bledy " _
++                                "określać priorytet ${terms.bledu}. " _
++                                "W przypadku wyłączenia wszystkie $terms.bledy będą miały " _
++                                "domyślny priorytet.",
+ 
+-  letsubmitterchoosemilestone => "If this is on, then people submitting $terms.bugs can " _
+-                                 "choose the Target Milestone for that ${terms.bug}. " _
+-                                 "If off, then all $terms.bugs initially have the default " _
+-                                 "milestone for the product being filed in.",
++  letsubmitterchoosemilestone => "Włączenie opcji pozwoli osobom zglaszajacym $terms.bledy " _
++                                 "określać wersję docelową dla ${terms.bledu}. " _
++                                 "W przypadku wyłączenia wszystkie $terms.bledy będą miały " _
++                                 "domyślną wersję docelową.",
+ 
+-  musthavemilestoneonaccept => "If you are using Target Milestone, do you want to require that " _
+-                               "the milestone be set in order for a user to ACCEPT a ${terms.bug}?",
++  musthavemilestoneonaccept => "Wymagana ustawiona wersja docelowa dla zaakceptowania ${terms.bledu}. " _
++                               "(W przypadku korzystania z wersji docelowych.)",
+ 
+-  commentoncreate => "If this option is on, the user needs to enter a description " _
+-                     "when entering a new ${terms.bug}.",
++  commentoncreate => "Wymagany opis podczas zgłaszania nowego ${terms.bledu}.",
+ 
+-  commentonaccept => "If this option is on, the user needs to enter a short comment if " _
+-                     "he accepts the ${terms.bug}.",
++  commentonaccept => "Wymagany komentarz podczas akceptowania ${terms.bledu}.",
+ 
+-  commentonclearresolution => "If this option is on, the user needs to enter a short comment if " _
+-                              "the ${terms.bug}'s resolution is cleared.",
++  commentonclearresolution => "Wymagany komentarz podczas usuwania rozwiazania ${terms.bledu}.",
+ 
+-  commentonconfirm => "If this option is on, the user needs to enter a short comment " _
+-                      "when confirming a ${terms.bug}.",
++  commentonconfirm => "Wymagany komentarz podczas potwierdzania ${terms.bledu}.",
+ 
+-  commentonresolve => "If this option is on, the user needs to enter a short comment if " _
+-                      "the $terms.bug is resolved.",
++  commentonresolve => Wymagany komentarz podczas rozwiazywania ${terms.bledu}.",
+ 
+-  commentonreassign => "If this option is on, the user needs to enter a short comment if " _
+-                       "the $terms.bug is reassigned.",
++  commentonreassign => Wymagany komentarz podczas zmiany przypisania ${terms.bledu}.",
+ 
+-  commentonreassignbycomponent => "If this option is on, the user needs to enter a short comment if " _
+-                                  "the $terms.bug is reassigned by component.",
++  commentonreassignbycomponent => Wymagany komentarz podczas zmiany przypisania ${terms.bledu} poprzez komponent.",
+ 
+-  commentonreopen => "If this option is on, the user needs to enter a short comment if " _
+-                     "the $terms.bug is reopened.",
++  commentonreopen => Wymagany komentarz podczas zmiany ponownego otwarcia (reopen) ${terms.bledu}.",
+ 
+-  commentonverify => "If this option is on, the user needs to enter a short comment if " _
+-                     "the $terms.bug is verified.",
++  commentonverify => Wymagany komentarz podczas weryfikacji ${terms.bledu}.",
+ 
+-  commentonclose => "If this option is on, the user needs to enter a short comment if " _
+-                    "the $terms.bug is closed.",
++  commentonclose => Wymagany komentarz podczas zmiany zamykania ${terms.bledu}.",
+ 
+-  commentonduplicate => "If this option is on, the user needs to enter a short comment " _
+-                        "if the $terms.bug is marked as duplicate.",
++  commentonduplicate => Wymagany komentarz podczas zmiany oznaczania ${terms.bledu} jako duplikat.",
+ 
+-  noresolveonopenblockers => "Don\'t allow $terms.bugs to be resolved as fixed " _
+-                             "if they have unresolved dependencies." }
++  noresolveonopenblockers => "Nie zezwalaj na rozwiązanie błedów jako FIXED w przypadku nierozwiązanych " _
++                             "zależności." }
+ %]
+Index: params/groupsecurity.html.tmpl
+===================================================================
+--- params/groupsecurity.html.tmpl	(revision 90)
++++ params/groupsecurity.html.tmpl	(working copy)
+@@ -20,34 +20,32 @@
+   #                 Frédéric Buclin <LpSolit@gmail.com>
+   #%]
+ [%
+-   title = "Group Security"
+-   desc = "Decide how you will use Security Groups"
++   title = "Zabezpieczenia grup"
++   desc = "Ustawienie użycia grup zabezpieczeń"
+ %]
+ 
+ [% param_descs = {
+-  makeproductgroups => "If this is on, $terms.Bugzilla will associate a $terms.bug group " _
+-                       "with each product in the database, and use it for querying ${terms.bugs}.",
++  makeproductgroups => "Włączenie opcji spowoduje, że z każdym produktem zostanie skojarzona grupa $terms.bledow, " _
++                       " która będzie potem używana podczas wyszukiwania ${terms.bledow}.",
+ 
+-  useentrygroupdefault => "If this is on, $terms.Bugzilla will use product $terms.bug groups " _
+-                          "by default to restrict who can enter ${terms.bugs}. If this is on, " _
+-                          "users can see any product to which they have entry access in search menus. " _
+-                          "If this is off, users can see any product to which they have not " _
+-                          "been excluded by a mandatory restriction.",
++  useentrygroupdefault => "Włączenie opcji spowoduje, że grupy $terms.bledow produktów zostaną użyte " _
++                          "do ograniczenia użytkowników, którzy mogą zgłaszać nowe ${terms.bledy}, a " _
++                          "użytkownicy będą mieli dostęp tylko do produktów, które będą widoczne w menu wyszukiwania. " _
++                          "Przy wyłączonej opcji użytkownicy będą mieli dostęp do wszystkich produktów, które " _
++                          "nie zostały przed nimi ukryte.",
+ 
+-  chartgroup => "The name of the group of users who can use the 'New Charts' " _
+-                "feature. Administrators should ensure that the public categories " _
+-                "and series definitions do not divulge confidential information " _
+-                "before enabling this for an untrusted population. If left blank, " _
+-                "no users will be able to use New Charts.",
++  chartgroup => "Nazwa grupy użytkowinków, którzy mogą używać opcji 'Nowe wykresy'. " _
++                "Administratorzy powinni zapewnić, że definicje publicznych kategorii i serii " _
++                "nie powodują ujawnienia poufnych informacji nieuprawnionym osobom. " _
++                "Wartość pusta oznacza, że nikt nie będzie mógł korzystać z opcji 'Nowe wykresy'.",
+ 
+-  insidergroup => "The name of the group of users who can see/change private " _
+-                  "comments and attachments.",
++  insidergroup => "Nazwa grupy użytkowników, którzy mogą czytać/zmieniać prywatne " _
++                  "komentarze/załączniki.",
+ 
+-  timetrackinggroup => "The name of the group of users who can see/change time tracking " _
+-                       "information.",
++  timetrackinggroup => "Nazwa grupy użytkowników, którzy mogą odczytać/zmieniać informacje " _
++                       "o postępach czasowych.",
+ 
+-  usevisibilitygroups => "Do you wish to restrict visibility of users to members of " _
+-                         "specific groups?",
++  usevisibilitygroups => "Czy ograniczyć dostęp do listy użytkowników do określnonych grup?",
+   
+   strict_isolation => "Don't allow users to be assigned to, " _
+                       "be qa-contacts on, " _
+Index: params/core.html.tmpl
+===================================================================
+--- params/core.html.tmpl	(revision 90)
++++ params/core.html.tmpl	(working copy)
+@@ -21,48 +21,42 @@
+   #%]
+ 
+ [% 
+-   title = "Required Settings"
+-   desc = "Settings that are required for proper operation of $terms.Bugzilla" 
++   title = "Ustawienie wymagane"
++   desc = "Ustawienia wymagane do poprawnego działania $terms.bugzilli" 
+ %]
+ 
+ [% param_descs = {
+-  maintainer => "The email address of the person who maintains this installation " _
+-                "of ${terms.Bugzilla}.",
++  maintainer => "Adres email administratora tej instalacji" _
++                "${terms.bugzilli}.",
+ 
+-  urlbase => "The URL that is the common initial leading part of all $terms.Bugzilla " _
+-             "URLs.",
++  urlbase => "Bazowy adres URL (początkowa część) wszystkich adresów $terms.bugzilli.",
+ 
+-  sslbase => "The URL that is the common initial leading part of all HTTPS " _
+-             "(SSL) $terms.Bugzilla URLs.",
++  sslbase => "Bazowy adres URL (początkowa część) wszystkich adresów HTTPS (SSL) $terms.bugzilli.",
+ 
+-  ssl => "Controls when $terms.Bugzilla should enforce sessions to use HTTPS by " _
+-         "using <tt>sslbase</tt>.",
++  ssl => "Określa kiedy należy wymuszać użycie sesji HTTPS za " _
++         "pomocą <tt>sslbase</tt>.",
+ 
+-  cookiedomain => "The domain for $terms.Bugzilla cookies. Normally blank. " _
+-                  "If your website is at 'www.foo.com', setting this to " _
+-                  "'.foo.com' will also allow 'bar.foo.com' to access " _
+-                  "$terms.Bugzilla cookies. This is useful if you have more than " _
+-                  "one hostname pointing at the same web server, and you " _
+-                  "want them to share the $terms.Bugzilla cookie.",
++  cookiedomain => "Domena dla ciasteczek ustawianych przez $terms.bugzille. Pole zwykle puste. " _
++                  "Gdy jednak strona znajduje się pod adresem 'www.foo.com' ustawienie pola " _
++                  "na '.foo.com' pozwoli stronom z adresu 'bar.foo.com' odczytać " _
++                  "ciasteczka $terms.bugzilli. Może to być przydatne w przypadku " _
++                  "wielu nazw hostów określających ten sam serwer www.",
+ 
+-  cookiepath => "Path, relative to your web document root, to which to restrict " _
+-                "$terms.Bugzilla cookies. Normally this is the URI portion of your URL " _
+-                "base. Begin with a / (single slash mark). For instance, if " _
+-                "$terms.Bugzilla serves from 'http://www.somedomain.com/bugzilla/', set " _
+-                "this parameter to /bugzilla/. Setting it to / will allow " _
+-                "all sites served by this web server or virtual host to read " _
+-                "$terms.Bugzilla cookies.",
++  cookiepath => "Ścieżka względem katalogu głównego serwera, do której będą ograniczone " _
++                "ciasteczka $terms.bugzilli. Zwykle jest to część URI adresu URL " _
++                "rozpoczynająca się od znaku  / . Na przykład, gdy $terms.Bugzilla " _
++                "działa pod adresem 'http://www.somedomain.com/bugzilla/', parametr ten " _
++                "powinien mieć wartość /bugzilla/. Ustawienie / zezwoli wszystkim " _
++                "stronom na serwerze na dostęp do ciasteczek ustawionych przez " _
++                "$terms.bugzille.",
+ 
+-  timezone => "The timezone that your database server lives in. If set to '', " _
+-              "then the timezone will not be displayed with the timestamps.",
++  timezone => "Strefa czasowa serwera. Wartość pusta (''), " _
++              "wyłącza wyświetlanie strefy czasowej w datach.",
+ 
+-  utf8 => "Use UTF-8 (Unicode) encoding for all text in ${terms.Bugzilla}. New " _
+-          "installations should set this to true to avoid character encoding " _
+-          "problems. Existing databases should set this to true only after " _
+-          "the data has been converted from existing legacy character " _
+-          "encodings to UTF-8.",
++  utf8 => "Użycie kodowania UTF-8 (Unicode) dla wszystkich tekstów w ${terms.bugzilli}. " _
++          "W nowych instalacjiach należy włączyć tę opcję aby uniknąć problemów z kodowaniem znaków. " _
++          "W istniejących bazach opcję tę można włączyć tylko gdy dane zostały przekonwertowane do UTF-8.",
+ 
+-  shutdownhtml => "If this field is non-empty, then $terms.Bugzilla will be completely " _
+-                  "disabled and this text will be displayed instead of all the " _
+-                  "$terms.Bugzilla pages." }
++  shutdownhtml => "Wpisany tekst będzie wyświetlany zamiast wszystkich stron $terms.bugzilli. " _
++                  "System będzie wyłączony." }
+ %]
+\ No newline at end of file
+Index: params/common.html.tmpl
+===================================================================
+--- params/common.html.tmpl	(revision 90)
++++ params/common.html.tmpl	(working copy)
+@@ -64,14 +64,14 @@
+         </select>
+       [% ELSE %]
+         <font color="red">
+-          <blink>Unknown param type [% param.type FILTER html %]!!!</blink>
++          <blink>Nieznany typ parametru [% param.type FILTER html %].</blink>
+         </font>
+       [% END %]  
+       </p>
+       <p>
+         <input type="checkbox" name="reset-[% param.name FILTER html %]"
+                id="reset-[% param.name FILTER html %]">
+-        <label for="reset-[% param.name FILTER html %]">Reset</label>
++        <label for="reset-[% param.name FILTER html %]">Przywróć domyślne</label>
+       </p>
+       <hr>
+     </dd>
+Index: params/attachment.html.tmpl
+===================================================================
+--- params/attachment.html.tmpl	(revision 90)
++++ params/attachment.html.tmpl	(working copy)
+@@ -25,26 +25,26 @@
+ %]
+ 
+ [% param_descs = {
+-  allow_attach_url => "If this option is on, it will be possible to " _
+-                      "specify a URL when creating an attachment and " _
+-                      "treat the URL itself as if it were an attachment.",
+-  maxpatchsize => "The maximum size (in kilobytes) of patches. $terms.Bugzilla will not " _
+-                  "accept patches greater than this number of kilobytes in size. " _
+-                  "To accept patches of any size (subject to the limitations of " _
+-                  "your server software), set this value to zero.",
++  allow_attach_url => "Włączenie tej opcji umożliwia podawanie adresu URL " _
++                      "podczas tworzenia załącznika oraz traktowanie " _
++                      "adresu URL jako załącznika.",
++					  
++  maxpatchsize => "Maksymalny rozmiar (w kilobajtach) łatki. Łatki większe " _
++                  "nie będą akceptowane. " _
++                  "Aby zezwolić na wysyłanie łatek dowolnego rozmiaru (ograniczonego przez " _
++                  "oprogramowanie serwera), należy ustawić wartość zerową.",
+ 
+-  maxattachmentsize => "The maximum size (in kilobytes) of non-patch attachments. " _
+-                       "$terms.Bugzilla will not accept attachments greater than this number " _
+-                       "of kilobytes in size. To accept attachments of any size " _
+-                       "(subject to the limitations of your server software), set this " _
+-                       "value to zero.",
++  maxattachmentsize => "Maksymalny rozmiar (w kilobajtach) załączników nie będączych łatkami. " _
++                       "Załączniki większe nie będą akcpetowane " _
++					   "Aby zezwolić na wysyłanie załączników dowolnego rozmiaru (ograniczonego przez " _
++					   "oprogramowanie serwera), należy ustawić wartość zerową.",
+ 
+-  maxlocalattachment => "The maximum size (in megabytes) of attachments identified by " _
+-                        "the user as 'Big Files' to be stored locally on the webserver. " _
+-                        "If set to zero, attachments will never be kept on the local " _
+-                        "filesystem.",
++  maxlocalattachment => "Maksymalny rozmiar (w megabajtach) załącznika określonego " _
++                        "jako 'Duże pliki' przechowywanego na serwerze. " _
++                        "Ustawienie wartości zerowej oznacza zablokowanie możliwości " _
++                        "przechowywania załączników w lokalnym systemie plików.",
+ 
+-  convert_uncompressed_images => "If this option is on, attachments with content type image/bmp " _
+-                                 "will be converted to image/png and compressed before uploading to " _
+-                                 "the database to conserve disk space." }
++  convert_uncompressed_images => "Właczenie opcji spowoduje konwersję załączników graficznych typu image/bmp " _
++                                 "na image/png przed wysłaniem do bazy danych. " _
++                                 "Pozwala to ograniczyć zużycie przestrzeni dyskowej." }
+ %]
+Index: params/admin.html.tmpl
+===================================================================
+--- params/admin.html.tmpl	(revision 90)
++++ params/admin.html.tmpl	(working copy)
+@@ -20,27 +20,25 @@
+   #                 Frédéric Buclin <LpSolit@gmail.com>
+   #%]
+ [%
+-   title = "Administrative Policies"
+-   desc = "Set up account policies"
++   title = "Polityk administracyjna"
++   desc = "Ustawienia zasad dla kont"
+ %]
+ 
+ [% param_descs = {
+-  allowbugdeletion => "The pages to edit products and components and versions can delete " _
+-                      "all associated $terms.bugs when you delete a product (or component or " _
+-                      "version). Since that is a pretty scary idea, you have to turn on " _
+-                      "this option before any such deletions will ever happen.",
++  allowbugdeletion => "Strony edycji produktów, komponentów i wersji pozwalają na usunięcie " _
++                      "wszystkich powiązanych $terms.bledow podczas usuwania produktu (komponentu " _
++                      "lub wersji). Funkcja ta jest niebezpieczna, więc musi być ręcznie włączona " _
++                      "przed użyciem.",
+ 
+-  allowemailchange => "Users can change their own email address through the preferences. " _
+-                      "Note that the change is validated by emailing both addresses, so " _
+-                      "switching this option on will not let users use an invalid address.",
++  allowemailchange => "Użytkownicy mogą zmieniać własny adres email na stronie ustawień. " _
++                      "Zmiana adresu wymaga potwierdzenia poprzez oba adresy (nowy i stary), " _
++                      "więc włączenie tej opcji uniemożliwi użycie nieprawidłowego adresu email.",
+ 
+-  allowuserdeletion => "The user editing pages are capable of letting you delete user accounts. " _
+-                       "$terms.Bugzilla will issue a warning in case you'd run into inconsistencies " _
+-                       "when you're about to do so, but such deletions remain kinda scary. " _
+-                       "So, you have to turn on this option before any such deletions " _
+-                       "will ever happen.",
++  allowuserdeletion => "Strony edycji użytkownika pozwalają na usuwanie kont. " _
++                       "W przypadku napotkania niejednoznaczności wyświetlone zostanie ostrzeżenie." _
++                       "Aby umożliwić wymuszenie usunięcie konta, należy włączyć tę opcję.",
+ 
+-  supportwatchers => "Support one user watching (ie getting copies of all related " _
+-                     "email about) another's ${terms.bugs}. Useful for people going on " _
+-                     "vacation, and QA folks watching particular developers' ${terms.bugs}." }
++  supportwatchers => "Obsługa śledzenia błędów innego użytkownika (tj. otrzymywanie całej poczty " _
++                     "dotyczącej ${terms.bledow} tego użytkownika. Opcja przydatna w przypadkach " _
++                     "wakacji lub śledzenia ${terms.bledow} poszczególnych programistów." }
+ %]
+\ No newline at end of file
+Index: params/editparams.html.tmpl
+===================================================================
+--- params/editparams.html.tmpl	(revision 90)
++++ params/editparams.html.tmpl	(working copy)
+@@ -66,7 +66,7 @@
+       <table id="menu">
+         <tr>
+           <td class="index">
+-            <a href="editparams.cgi?section=index" title="Show all parameters">Index</a>
++            <a href="editparams.cgi?section=index" title="Pokaż wszystkie parametry">Indeks</a>
+           </td>
+         </tr>
+         [% FOREACH panel = panels %]
+@@ -89,18 +89,18 @@
+       [% IF curpanel == -1 %]
+         [% PROCESS admin/params/index.html.tmpl panels = panels %]
+       [% ELSE %]
+-        <p>
+-          This lets you edit the basic operating parameters of [% terms.Bugzilla %].
+-          Be careful!<br>
+-          Any item you check "Reset" on will get reset to its default value.
++        <p>
++		  Uwaga: poniższe opcje służą do zmiany podstawowych parametrów [% terms.bugzilli %]
++          Proszę zachować ostrożność.<br>
++          Przycisk "Reset" spowoduje przywrócenie domyślnej wartości dla opcji.
+         </p>
+         [%# CONTENT PANEL %]
+         <form method="post" action="editparams.cgi">
+           [% PROCESS admin/params/common.html.tmpl panel = current_panel %]
+           <input type="hidden" name="section" value="[% current_panel.name FILTER html %]">
+           <input type="hidden" name="action" value="save">
+-          <input type="reset" value="Reset form">
+-          <input type="submit" name="action" value="Save Changes">
++          <input type="reset" value="Reset">
++          <input type="submit" name="action" value="Zapisz zmiany">
+         </form>
+       [% END %]
+     </td>
+Index: params/shadowdb.html.tmpl
+===================================================================
+--- params/shadowdb.html.tmpl	(revision 90)
++++ params/shadowdb.html.tmpl	(working copy)
+@@ -20,31 +20,28 @@
+   #                 Frédéric Buclin <LpSolit@gmail.com>
+   #%]
+ [%
+-   title = "Shadow Database"
+-   desc = "An optional hack to increase database performance"
++   title = "Dodatkowa baza danych"
++   desc = "Opcjonalny sposób na zwiększenie wydajności oparacji na bazie danych"
+ %]
+ 
+ [% param_descs = {
+-  shadowdbhost => "The host the shadow database is on.",
++  shadowdbhost => "Host dodatkowej bazy danych.",
+ 
+-  shadowdbport => "The port the shadow database is on. Ignored if " _
+-                  "<tt>shadowdbhost</tt> is blank. Note: if the host is the local " _
+-                  "machine, then MySQL will ignore this setting, and you must " _
+-                  "specify a socket below.",
++  shadowdbport => "Port dodatkowej bazy danych. Pole ignorowane gdy " _
++                  "<tt>shadowdbhost</tt> jest puste. Uwaga: jeśli pole host wskazuje " _
++                  "na loklany komputer, MySQL zignoruje to ustawienie i koneczne będzie " _
++                  "określenie gniazda sieciowego (socket) poniżej.",
+ 
+-  shadowdbsock => "The socket used to connect to the shadow database, if the host " _
+-                  "is the local machine. This setting is required because MySQL " _
+-                  "ignores the port specified by the client and connects using " _
+-                  "its compiled-in socket path (on unix machines) when connecting " _
+-                  "from a client to a local server. If you leave this blank, and " _
+-                  "have the database on localhost, then the <tt>shadowdbport</tt> " _
+-                  "will be ignored.",
++  shadowdbsock => "Gniazdo sieciowe używane do połączenia z dodatkową bazą danych, gdy " _
++                  "pole host wskazuje na lokalny komputer. Opcja ta jest wymagana ponieważ " _
++                  "MySQL ignoruje w takiej sytuacji podany port i poprzez gniazdo. " _
++                  "Pozostawienie pustego pola w przypadku posiadania bazy danych na lokalnym " _
++                  "komputerze spowoduje zignorowanie parametru <tt>shadowdbport</tt>.",
+ 
+-  shadowdb => "If non-empty, then this is the name of another database in " _
+-              "which $terms.Bugzilla will use as a read-only copy of everything. " _
+-              "This is done so that long slow read-only operations can be used " _
+-              "against this db, and not lock up things for everyone else. This " _
+-              "database is on the <tt>shadowdbhost</tt>, and must exist. " _
+-              "$terms.Bugzilla does not update it, if you use this parameter, then " _
+-              "you need to set up replication for your database." }
++  shadowdb => "Nazwa dodatkowej bazy danych używanej jako kopia (tylko do odczytu) " _
++              "podstawowoej bazy danych. " _
++              "Czasochłonne operacje odczytu będą wykonywane na dodatkowej bazie danych " _
++              "aby nie blokować dostępu dla innych zapytań. Baza ta powinna znajdować się " _
++              "na <tt>shadowdbhost</tt> i musi istnieć. " _
++              "Replikację bazy podstawowej do dodatkowej należy zapewnić we własnym zakresie." }
+ %]
+Index: params/usermatch.html.tmpl
+===================================================================
+--- params/usermatch.html.tmpl	(revision 90)
++++ params/usermatch.html.tmpl	(working copy)
+@@ -20,27 +20,27 @@
+   #                 Frédéric Buclin <LpSolit@gmail.com>
+   #%]
+ [%
+-   title = "User Matching"
+-   desc = "Set up your user matching policies"
++   title = "Wyszukiwanie użytkowników"
++   desc = "Ustawienia wyszukiwanie użytkowników"
+ %]
+ 
+ [% param_descs = {
+-  usemenuforusers => "If this option is set, $terms.Bugzilla will offer you a list " _
+-                     "to select from (instead of a text entry field) where a user " _
+-                     "needs to be selected. This option should not be enabled on " _
+-                     "sites where there are a large number of users.",
++  usemenuforusers => "Włączenie opcji spowoduje wyświetlenie rozwijalnej listy użytkowników " _
++                     "zamiast pola tekstowego w razie konieczności wyboru użytkownika." _
++                     "Opcji tej nie należy włączać na serwerach z dużą liczbą zarejestrowanych  " _
++                     "użytkowników.",
+ 
+-  usermatchmode => "Allow match strings to be entered for user names when entering " _
+-                   "and editing ${terms.bugs}.<p> " _
+-                   "'off' disables matching,<br> " _
+-                   "'wildcard' allows only wildcards,<br> " _
+-                   "and 'search' allows both wildcards and substring (freetext) matches.",
++  usermatchmode => "Zezwolenie na użycie częściowych nazw przy wpisywaniu nazwy użytkownika " _
++                   "podczas edycji ${terms.bledu}.<p> " _
++                   "'off' wyłącza dopasowywanie,<br> " _
++                   "'wildcard' dozwolone tylko znaki zastępujące,<br> " _
++                   "'search' dozwolone znaki zastępujące i ciągi znaków.",
+ 
+-  maxusermatches => "Search for no more than this many matches.<br> " _
+-                    "If set to '1', no users will be displayed on ambiguous matches. " _
+-                    "This is useful for user privacy purposes.<br> " _
+-                    "A value of zero means no limit.",
++  maxusermatches => "Maksymalna liczba znajdowanych użytkowników.<br> " _
++                    "Ustawienie '1' spowoduje, że nie zostanie wyświetlona żadna nazwa użytkownika w przypadku niedokładnych dopasowań. " _
++                    "Opcja przydatna jest do ochrony prywatności użytkowników.<br> " _
++                    "Wartość zerowa ozbacza brak ograniczeń.",
+ 
+-  confirmuniqueusermatch => "Whether a confirmation screen should be displayed when only " _
+-                            "one user matches a search entry." }
++  confirmuniqueusermatch => "Określa czy ma być wyświetlane potwierdzenie, gdy wyszukiwanie " _
++                            "zwróci tylko jedną nazwę użytkownika." }
+ %]
+Index: params/dependencygraph.html.tmpl
+===================================================================
+--- params/dependencygraph.html.tmpl	(revision 90)
++++ params/dependencygraph.html.tmpl	(working copy)
+@@ -20,31 +20,31 @@
+   #                 Frédéric Buclin <LpSolit@gmail.com>
+   #%]
+ [%
+-   title = "Dependency Graphs"
+-   desc = "Optional setup for dependency graphing"
++   title = "Wykresy żależności"
++   desc = "Dodatkowe ustawienia dla tworzenia wykresów zależności"
+ %]
+ 
+ [% param_descs = {
+-  webdotbase => "It is possible to show graphs of dependent ${terms.bugs}. You may set
+-                 this parameter to any of the following:
++  webdotbase => "Istnieje możliwość wyświetlania wykresów zależności dla ${terms.bledow}. 
++                 Dostępne są następujące opcje:
+                  <ul>
+                    <li>
+-                     A complete file path to 'dot' (part of
+-                     <a href=\"http://www.graphviz.org\">GraphViz</a>) will
+-                     generate the graphs locally.
++                     Pełna ścieżka do programu 'dot' (część pakietu
++                     <a href=\"http://www.graphviz.org\">GraphViz</a>), który będzie
++                     użyty do generacji wykresów lokalnie.
+                    </li>
+                    <li>
+-                     A URL prefix pointing to an installation of the
++                     Adres URL sieciowej instalacji programu
+                      <a href=\"http://www.research.att.com/~north/cgi-bin/webdot.cgi\">webdot
+-                     package</a> will generate the graphs remotely.
++                     </a>, który będzie użyty do zdalnej generacji wykresów.
+                    </li>
+                    <li>
+-                     A blank value will disable dependency graphing.
++                     Wartość pusta oznacza wyłączenie generacji wykresów.
+                    </li>
+-                 </ul>
+-                 The default value is a publicly-accessible webdot server. If you change
+-                 this value, make certain that the webdot server can read files from your
+-                 webdot directory. On Apache you do this by editing the .htaccess file,
+-                 for other systems the needed measures may vary. You can run checksetup.pl
+-                 to recreate the .htaccess file if it has been lost."}
++                 </ul>
++				 Domyślnym ustawieniem jest publicznie dostępny serwer webdot. W przypadku
++				 zmiany opcji należy upewnić się, że serwer webdot może czytać pliki z lokalnego
++				 katalogu ebdot. Użytkownicy serwera Apache mogą to zapewnić edytując plik .htaccess.
++				 Skrypt checksetup.pl może być użyty do przywrócena domyślnej zawartości pliku .htaccess
++				 w przypadku jego utraty."}
+ %]
+\ No newline at end of file
+Index: products/create.html.tmpl
+===================================================================
+--- products/create.html.tmpl	(revision 90)
++++ products/create.html.tmpl	(working copy)
+@@ -21,7 +21,7 @@
+   #
+   #%]
+ 
+-[% title = BLOCK %]Add Product[% END %]
++[% title = BLOCK %]Dodaj produkt[% END %]
+ 
+ [% PROCESS global/header.html.tmpl
+   title = title
+@@ -42,18 +42,18 @@
+     [% PROCESS "admin/products/edit-common.html.tmpl" %]
+ 
+     <tr>
+-      <th align="right">Version:</th>
++      <th align="right">Wersja:</th>
+       <td><input size="64" maxlength="255" name="version" 
+                 value="[% version FILTER html %]">
+       </td>
+     </tr>
+     <tr>
+-      <th align="right">Create chart datasets for this product:</th>
++      <th align="right">Utwórz zestaw danych wykresów dla tego produktu:</th>
+       <td><input type="checkbox" name="createseries" value="1"></td>
+     </tr>
+   </table>
+ 
+-  <input type="submit" value="Add">
++  <input type="submit" value="Dodaj">
+   <input type="hidden" name="subcategory" value="-All-">
+   <input type="hidden" name="open_name"   value="All Open">
+   <input type="hidden" name="action" value="new">
+Index: products/edit.html.tmpl
+===================================================================
+--- products/edit.html.tmpl	(revision 90)
++++ products/edit.html.tmpl	(working copy)
+@@ -27,7 +27,7 @@
+   # groups_controls: a hash of group controls related to the product.
+   #%]
+ 
+-[% title = BLOCK %]Edit Product[% END %]
++[% title = BLOCK %]Edycja produktu[% END %]
+ 
+ [% PROCESS global/header.html.tmpl
+   title = title
+@@ -42,7 +42,7 @@
+     <tr>
+       <th align="right" valign="top">
+         <a href="editcomponents.cgi?product=[% product.name FILTER url_quote %]">
+-        Edit components:
++        Edytuj komponenty:
+         </a>
+       </th>
+       <td>
+@@ -52,19 +52,19 @@
+             [% IF component.description %]
+               [% component.description FILTER none %]
+             [% ELSE %]
+-              <font color="red">description missing</font>
++              <font color="red">brak opisu</font>
+             [% END %]
+             <br>
+           [% END %]
+         [% ELSE %]
+-          <font color="red">missing</font>
++          <font color="red">brak</font>
+         [% END %]
+       </td>
+     </tr>
+     <tr>
+       <th align="right" valign="top">
+-        <a href="editversions.cgi?product=[% product.name FILTER url_quote %]">Edit
+-versions:</a>
++        <a href="editversions.cgi?product=[% product.name FILTER url_quote %]">Edytuj 
++wersje:</a>
+       </th>
+       <td>
+         [%- IF product.versions.size -%]
+@@ -73,7 +73,7 @@
+             <br>
+           [% END %]
+         [% ELSE %]
+-          <font color="red">missing</font>
++          <font color="red">brak</font>
+         [% END %]
+       </td>
+     </tr>
+@@ -81,7 +81,7 @@
+       <tr>
+         <th align="right" valign="top">
+           <a href="editmilestones.cgi?product=[% product.name FILTER url_quote %]">
+-          Edit milestones:</a>
++          Edytuj wersje docelowe:</a>
+         </th>
+         <td>
+           [%- IF product.milestones.size -%]
+@@ -90,7 +90,7 @@
+             <br>
+             [% END %]
+           [% ELSE %]
+-            <font color="red">missing</font>
++            <font color="red">brak</font>
+           [% END %]
+         </td>
+       </tr>
+@@ -100,7 +100,7 @@
+         <a href="editproducts.cgi?action=editgroupcontrols&product=
+           [%- product.name FILTER url_quote %]&classification=
+           [%- classification.name FILTER url_quote %]">
+-          Edit Group Access Controls:
++          Edytuj grupy dostępu:
+         </a>
+       </th>
+       <td>
+@@ -118,12 +118,12 @@
+             <br>
+           [% END %]
+         [% ELSE %]
+-          no groups
++          brak grup
+         [% END %]
+       </td>
+     </tr>
+     <tr>
+-      <th align="right">[% terms.Bugs %]:</th>
++      <th align="right">[% terms.bledow %]:</th>
+       <td><a href="buglist.cgi?product=[% product.name FILTER url_quote %]">
+             [% product.bug_count FILTER html %]</a></td>
+     </tr>
+@@ -134,7 +134,7 @@
+   <input type="hidden" name="action" value="update">
+   <input type="hidden" name="classification"
+          value="[% classification.name FILTER html %]">
+-  <input type="submit" name="submit" value="Update">
++  <input type="submit" name="submit" value="Aktualizuj">
+ </form>
+   
+ [% PROCESS "admin/products/footer.html.tmpl"
+Index: products/deleted.html.tmpl
+===================================================================
+--- products/deleted.html.tmpl	(revision 90)
++++ products/deleted.html.tmpl	(working copy)
+@@ -21,26 +21,26 @@
+   #%]
+ 
+ [% PROCESS global/header.html.tmpl
+-  title = 'Deleting product'
++  title = 'Usuwanie produtu'
+ %]
+ 
+ [% IF product.bug_count %]
+-  All references to deleted [% terms.bugs %] removed.
++  Wszystkie odniesienia do usuni�tych [% terms.bledow %] zosta�y usuni�te.
+ [% END %]
+ 
+ <p>
+-  Components deleted.<br>
+-  Versions deleted.<br>
+-  Milestones deleted.
++  Usuni�to komponenty.<br>
++  Usuni�to wersje.<br>
++  Usuni�to wersje docelowe.
+ </p>
+ 
+ <p>
+-  Group controls deleted.<br>
+-  Flag inclusions and exclusions deleted.
++  Usuni�to grupy kontoli.<br>
++  Usuni�to do��czenia i wykluczenia flag.
+ </p>
+ 
+ <p>
+-  Product [% product.name FILTER html %] deleted.
++  Usuni�to produkt [% product.name FILTER html %].
+ </p>
+ 
+ [% PROCESS admin/products/footer.html.tmpl
+Index: products/updated.html.tmpl
+===================================================================
+--- products/updated.html.tmpl	(revision 90)
++++ products/updated.html.tmpl	(working copy)
+@@ -53,7 +53,7 @@
+   [% END %]
+ [% END %]
+ 
+-[% title = BLOCK %]Updating Product '[% product.name FILTER html %]' 
++[% title = BLOCK %]Aktualizacja produktu'[% product.name FILTER html %]' 
+                    [% classification_text FILTER none %][% END %]
+ [% PROCESS global/header.html.tmpl
+   title = title
+@@ -63,7 +63,7 @@
+ 
+ [% IF product.name != old_product.name %]
+   <p>
+-  Updated product name from '[% old_product.name FILTER html %]' to 
++  Zmieniono nazwę produktu z '[% old_product.name FILTER html %]' na 
+   <a href="editproducts.cgi?action=edit&amp;product=
+   [%- product.name FILTER url_quote %]
+   [%- classification_url_part FILTER none %]">[% product.name FILTER html %]</a>.
+@@ -73,7 +73,7 @@
+ 
+ [% IF product.description != old_product.description %]
+   <p>
+-    Updated description to:</p>
++    Zmieniono opis na:</p>
+   </p>
+   <p style="margin: 1em 3em 1em 3em">[% product.description FILTER html %]</p>
+   [% updated = 1 %]
+@@ -81,29 +81,29 @@
+ 
+ [% IF product.disallow_new != old_product.disallow_new %]
+   <p>
+-  Product is now
++  Produkt jest
+   [% IF product.disallow_new %]
+-    closed to
++    zamknięty
+   [% ELSE %]
+-    open for 
++    otwarty
+   [% END %]
+-  new [% terms.bugs %].
++  dla zgłaszania nowych [% terms.bledow %].
+   [% updated = 1 %]
+ [% END %]
+ 
+ [% IF product.milestone_url != old_product.milestone_url %]
+   <p>
+-  Updated milestone URL 
++  Zmianiono adres URL wersji docelowej
+   [% IF old_product.milestone_url != '' %]
+-    from<br> <a href="[%- old_product.milestone_url FILTER html %]">'
++    z <br> <a href="[%- old_product.milestone_url FILTER html %]">'
+     [%- old_product.milestone_url FILTER html %]'</a>
+   [% END %]
+-  to
++  na
+   [% IF product.milestone_url != '' %]
+      <br><a href="[%- product.milestone_url FILTER html %]">'
+      [%- product.milestone_url FILTER html %]'</a>.
+   [% ELSE %]
+-    be empty.
++    pusty.
+   [% END %]
+   </p>
+   [% updated = 1 %]
+@@ -111,7 +111,7 @@
+ 
+ [% IF product.default_milestone != old_product.default_milestone %]
+   <p>
+-  Updated default milestone from '[% old_product.default_milestone FILTER html %]' to
++  Zmianono domyślną wersję docelową z '[% old_product.default_milestone FILTER html %]' na
+   '[% product.default_milestone FILTER html %]'.
+   </p>
+   [% updated = 1 %]
+@@ -119,30 +119,30 @@
+   
+ [% IF product.votes_per_user != old_product.votes_per_user %]
+   <p>
+-  Updated votes per user from
+-  [%+ old_product.votes_per_user FILTER html %] to 
++  Zmieniono liczbę głosów na użytkownika z 
++  [%+ old_product.votes_per_user FILTER html %] na 
+   [%+ product.votes_per_user FILTER html %].
+   [% updated = 1 %]
+ [% END %]
+ 
+ [% IF product.max_votes_per_bug != old_product.max_votes_per_bug %]
+   <p>
+-  Updated maximum votes per [% terms.bug %] from 
+-  [%+ old_product.max_votes_per_bug FILTER html %] to 
++  Zmieniono maksymalną liczbę głosów na [% terms.blad %] z
++  [%+ old_product.max_votes_per_bug FILTER html %] na  
+   [%+ product.max_votes_per_bug FILTER html %].
+   [% updated = 1 %]
+ [% END %]
+ 
+ [% IF product.votes_to_confirm != old_product.votes_to_confirm %]
+   <p>
+-  Updated number of votes needed to confirm a [% terms.bug %] from
+-  [%+ old_product.votes_to_confirm FILTER html %] to 
++  Zmieniono liczbę głosów wymaganych do potwierzenia [% terms.bledu %] z
++  [%+ old_product.votes_to_confirm FILTER html %] na 
+   [%+ product.votes_to_confirm FILTER html %].
+   [% updated = 1 %]
+ [% END %]
+ 
+ [% UNLESS updated %]
+-  <p>Nothing changed for product '[% product.name FILTER html %]'.
++  <p>Brak zmian dla produktu '[% product.name FILTER html %]'.
+ [% END %]
+ 
+ [%# Note that this display of changed votes and/or confirmed bugs is
+@@ -153,32 +153,31 @@
+ [% IF checkvotes %]
+   <hr>
+ 
+-  <p>Checking existing votes in this product for anybody who now
+-  has too many votes for [% terms.abug %]...<br>
++  <p>Wyszukiwanie użytkowników ze zbyt dużą liczbą głosów na 
++  [% terms.blad %]...<br>
+   [% IF toomanyvotes.size > 0 %]
+     [% FOREACH detail = toomanyvotes %]
+-      &rarr;removed votes for [% terms.bug %] <a href="show_bug.cgi?id=
++      &rarr;usunięto głosy na [% terms.blad %] <a href="show_bug.cgi?id=
+      [%- detail.id FILTER url_quote %]">
+      [%- detail.id FILTER html %]</a> from [% detail.name FILTER html %]<br>
+     [% END %]
+   [% ELSE %]
+-    &rarr;there were none.
++    &rarr;nie znaleziono.
+   [% END %]
+ 
+-  <p>Checking existing votes in this product for anybody
+-  who now has too many total votes...<br>
++  <p>Wyszukiwanie osób ze zbyt dużą liczbą głosów...<br>
+   [% IF toomanytotalvotes.size > 0 %]
+     [% FOREACH detail = toomanytotalvotes %]
+-      &rarr;removed votes for [% terms.bug %] <a href="show_bug.cgi?id=
++      &rarr;usunięto głosy na [% terms.blad %] <a href="show_bug.cgi?id=
+      [%- detail.id FILTER url_quote %]">
+      [%- detail.id FILTER html %]</a> from [% detail.name FILTER html %]<br>
+     [% END %]
+   [% ELSE %]
+-    &rarr;there were none.
++    &rarr;nie znaleziono.
+   [% END %]
+ 
+-  <p>Checking unconfirmed [% terms.bugs %] in this product for any which now have
+-  sufficient votes...<br>
++  <p>Wyszukiwanie niepotwierdzonych [% terms.bledow %], które mogą mieć teraz wystarczającą
++  ilość głosów...<br>
+   [% IF confirmedbugs.size > 0 %]
+     [% FOREACH id = confirmedbugs %]
+ 
+@@ -192,7 +191,7 @@
+       %]
+     [% END %]
+   [% ELSE %]
+-    &rarr;there were none.
++    &rarr;nie znaleziono.
+   [% END %]
+ 
+ [% END %]
+Index: products/created.html.tmpl
+===================================================================
+--- products/created.html.tmpl	(revision 90)
++++ products/created.html.tmpl	(working copy)
+@@ -20,14 +20,14 @@
+   #%]
+ 
+ [% PROCESS global/header.html.tmpl 
+-  title = 'New Product Created'
++  title = 'Utworzono nowy produkt'
+ %]
+ <br>
+ <div style='border: 1px red solid; padding: 1ex;'>
+-  <b>You will need to   
++  <b>Przed dodaniem nowych [% terms.bledow %] dla tego produktu, należy 
+    <a href="editcomponents.cgi?action=add&product=[% product.name FILTER url_quote %]">
+-     add at least one component
+-   </a> before you can enter [% terms.bugs %] against this product
++     dodać przynajmniej jeden komponent
++   </a>.
+   </b>
+ </div>
+ 
+Index: products/edit-common.html.tmpl
+===================================================================
+--- products/edit-common.html.tmpl	(revision 90)
++++ products/edit-common.html.tmpl	(working copy)
+@@ -26,19 +26,19 @@
+ 
+ [% IF Param('useclassification') %]
+   <tr>
+-    <th align="right"><b>Classification:</b></th>
++    <th align="right"><b>Klasyfikacja:</b></th>
+     <td><b>[% classification.name FILTER html %]</b></td>
+   </tr>
+ [% END %]
+     
+ <tr>
+-  <th align="right">Product:</th>
++  <th align="right">Produkt:</th>
+   <td><input size="64" maxlength="64" name="product" 
+              value="[% product.name FILTER html %]">
+   </td>
+ </tr>
+ <tr>
+-  <th align="right">Description:</th>
++  <th align="right">Opis:</th>
+   <td><textarea rows="4" cols="64" wrap="virtual" name="description">
+         [% product.description FILTER none %]</textarea>
+   </td>
+@@ -46,13 +46,13 @@
+ 
+ [% IF Param('usetargetmilestone') -%]
+   <tr>
+-    <th align="right">URL describing milestones for this product:</th>
++    <th align="right">Adres URL opisujący wersje docelowe dla tego produktu:</th>
+     <td><input type="text" size="64" maxlength="255" name="milestoneurl"
+                value="[% product.milestoneurl FILTER html %]">
+     </td>
+   </tr>
+   <tr>
+-    <th align="right">Default milestone:</th>
++    <th align="right">Domyślna wersja docelowa:</th>
+     <td><input type="text" size="20" maxlength="20" name="defaultmilestone"
+               value="[% product.defaultmilestone FILTER html %]">
+     </td>
+@@ -60,7 +60,7 @@
+ [% END %]
+     
+ <tr>
+-  <th align="right">Closed for [% terms.bug %] entry:</th>
++  <th align="right">Zablokowane dodawanie [% terms.bledow %]:</th>
+   <td><input type="checkbox" name="disallownew" value="1"
+        [% IF product.disallownew == "1" %]
+              checked="checked"[% END %]>
+@@ -71,19 +71,19 @@
+ <tr class="param_disabled">
+   <td colspan="2"
+       style="font-family: arial; font-style: italic; font-size: 0.7em; text-align: center;">
+-    The 'usevotes' parameter is currently 'off'. These voting
+-    settings will take effect when the parameter is next enabled.</td>
++    Parametr 'usevotes' jest w stanie 'off'. Ustawienia głosowania
++    zostaną zastosowane po włączeniu parametru.</td>
+ </tr>
+ [% END %]
+ <tr [% IF !Param('usevotes') %]class="param_disabled" [% END %]>
+-  <th align="right">Maximum votes per person:</th>
++  <th align="right">Maksymalna liczba głosów na osobę:</th>
+   <td><input size="5" maxlength="5" name="votesperuser" 
+              value="[% product.votesperuser FILTER html %]">
+   </td>
+ </tr>
+ <tr [% IF !Param('usevotes') %]class="param_disabled" [% END %]>
+   <th align="right">
+-    Maximum votes a person can put on a single [% terms.bug %]:
++    Maksymalna liczba głosów, którą można oddać na pojedynczy [% terms.blad %]:
+   </th>
+   <td><input size="5" maxlength="5" name="maxvotesperbug" 
+              value="[% product.maxvotesperbug FILTER html %]">
+@@ -91,10 +91,8 @@
+ </tr>
+ <tr [% IF !Param('usevotes') %]class="param_disabled" [% END %]>
+   <th align="right">
+-    Number of votes [% terms.abug %] in this product needs to
+-    automatically get out of the
+-    <a href="page.cgi?id=fields.html#status">[% status_descs.UNCONFIRMED FILTER html %]</a>
+-    state:
++    Liczba głosów na [% terms.blad %] potrzebna do automatycznego usunięcia stanu 
++    <a href="page.cgi?id=fields.html#status">[% status_descs.UNCONFIRMED FILTER html %]</a>:
+   </th>
+   <td><input size="5" maxlength="5" name="votestoconfirm" 
+              value="[% product.votestoconfirm FILTER html %]">
+Index: products/confirm-delete.html.tmpl
+===================================================================
+--- products/confirm-delete.html.tmpl	(revision 90)
++++ products/confirm-delete.html.tmpl	(working copy)
+@@ -218,7 +218,7 @@
+     [% PROCESS ODMIEN c=product.bug_count o1="przypisany $terms.blad"
+         o2="przypisane $terms.bledy" o3="przypisanych $terms.bledow" %]
+ 
+-    Zanim możliwe będzie skasowanie tego produktu musisz przepisać 
++    Zanim możliwe będzie usunięcie tego produktu, należy przepisać 
+ 
+     [% IF bug_count > 1 %]
+        te [% terms.bledy %]
+@@ -238,7 +238,7 @@
+           [% PROCESS ODMIEN c=product.bug_count o1="przypisany $terms.blad!"
+                 o2="przypisane $terms.bledy!" o3="przypisanych $terms.bledow!" %]
+         
+-          Jeśli skasujesz ten produkt, <b><blink>WSZYSTKIE</blink></b> 
++          Usunięcie produkt spowoduje, że <b><blink>WSZYSTKIE</blink></b> 
+           [% terms.bledy %] oraz cała ich historia również zostanie usunięta.
+         </td>
+       </tr>
+@@ -250,7 +250,7 @@
+ 
+ [% IF bug_count == 0 || Param('allowbugdeletion') %]
+ 
+-  <p>Czy jesteś pewien że chcesz usunąć ten produkt?<p>
++  <p>Czy na pewno usunąć ten produkt?<p>
+ 
+   <form method="post" action="editproducts.cgi">
+     <input type="submit" value="Tak, usuń">
+Index: products/groupcontrol/updated.html.tmpl
+===================================================================
+--- products/groupcontrol/updated.html.tmpl	(revision 90)
++++ products/groupcontrol/updated.html.tmpl	(working copy)
+@@ -23,7 +23,7 @@
+   #%]
+ 
+ [% title = BLOCK %]
+-    Update group access controls for [% product.name FILTER html %]
++    Aktualizacja grup dostępu dla [% product.name FILTER html %]
+ [% END %]
+ 
+ [% PROCESS global/header.html.tmpl
+@@ -32,21 +32,21 @@
+ <p>
+ [% IF removed_na.size > 0 %]
+   [% FOREACH g = removed_na %]
+-    Removing [% terms.bugs %] from group '[% g.name FILTER html %]' which
+-    no longer applies to this product<p>
+-    [% g.bug_count FILTER html %] [%+ terms.bugs %] removed<p>
++    Usuwanie [% terms.bledow %] z grupy '[% g.name FILTER html %]', która nie
++    dotyczy tego produktu<p>
++    Usunięto [% g.bug_count FILTER html %] [%+ terms.bledow %]<p>
+   [% END %]
+ [% END %]
+ 
+ [% IF added_mandatory.size > 0 %]
+   [% FOREACH g = added_mandatory %]
+-    Adding [% terms.bugs %] to group '[% g.name FILTER html %]' which is 
+-    mandatory for this product<p>
+-    [% g.bug_count FILTER html %] [%+ terms.bugs %] added<p>
++    Dodawanie [% terms.bledow %] go grupy '[% g.name FILTER html %]', która
++    jest obowiązkowa dla tego produktu<p>
++    Dodano [% g.bug_count FILTER html %] [%+ terms.bledow %]<p>
+   [% END %]
+ [% END %]
+ 
+-Group control updates done<p>
++Uaktualniono grupy dostępu<p>
+ 
+ [% PROCESS admin/products/footer.html.tmpl %]
+ 
+Index: components/create.html.tmpl
+===================================================================
+--- components/create.html.tmpl	(revision 90)
++++ components/create.html.tmpl	(working copy)
+@@ -24,7 +24,7 @@
+   #%]
+   
+ [% title = BLOCK %]Dodawanie komponentu do produktu '[% product FILTER html %]'[% END %]
+-[% h2 = BLOCK %]Ta strona pozwal na dodanie nowych komponentów do produktu
++[% h2 = BLOCK %]Ta strona pozwala na dodanie nowych komponentów do produktu
+                 '[% product FILTER html %]'.[% END %]
+ [% PROCESS global/header.html.tmpl
+   title = title
+Index: components/edit.html.tmpl
+===================================================================
+--- components/edit.html.tmpl	(revision 90)
++++ components/edit.html.tmpl	(working copy)
+@@ -98,7 +98,7 @@
+    <input type="submit" value="Zatwierdź"> lub <a 
+         href="editcomponents.cgi?action=del&amp;product=
+         [%- prod.name FILTER url_quote %]&amp;component=
+-        [%- comp.name FILTER url_quote %]">Usuń</a> this component.
++        [%- comp.name FILTER url_quote %]">Usuń</a> komponent.
+ 
+ </form>
+ 
+Index: components/deleted.html.tmpl
+===================================================================
+--- components/deleted.html.tmpl	(revision 90)
++++ components/deleted.html.tmpl	(working copy)
+@@ -41,13 +41,13 @@
+   [% PROCESS ODMIEN c=deleted_bug_count o1="$terms.blad."
+      o2="$terms.bledy." o3="$terms.bledow." %]
+   </p><p>
+-  Wszystkie odwołania do usuniętych [% terms.bledow %] zostały skasowane.
++  Wszystkie odwołania do usuniętych [% terms.bledow %] zostały również usunięte.
+ [% ELSE %]
+-  Nie było [% terms.bledow %] w tym produkcie.
++  Nie znaleziono [% terms.bledow %] w tym produkcie.
+ [% END %]
+ </p>
+ 
+-<p>Ustawienia flag zostały skasowane.</p>
++<p>Ustawienia flag zostały usunięte.</p>
+ 
+ <p>Komponent '[% name FILTER html %]' został usunięty.</p>
+ 
+Index: components/confirm-delete.html.tmpl
+===================================================================
+--- components/confirm-delete.html.tmpl	(revision 90)
++++ components/confirm-delete.html.tmpl	(working copy)
+@@ -110,7 +110,7 @@
+     [% PROCESS ODMIEN c=bug_count o1="przypisany $terms.blad"
+         o2="przypisane $terms.bledy" o3="przypisanych $terms.bledow" %]
+ 
+-    do tego komponentu. Musisz najpierw przepisać 
++    Zanim możliwe będzie usunięcie go, należy najpierw przepisać 
+ 
+     [% IF comp.bug_count > 1 %]
+        te [% terms.bledy %] 
+@@ -118,7 +118,7 @@
+        ten [% terms.blad %]
+     [% END %]
+ 
+-    do innego komponentu, zanim możliwe będzie skasowanie go.
++    do innego komponentu.
+ 
+   [% ELSE %]
+ 
+@@ -129,8 +129,8 @@
+       [% PROCESS ODMIEN c=comp.bug_count o1="przypisany $terms.blad!"
+           o2="przypisane $terms.bledy!" o3="przypisanych $terms.bledow!" %]
+         
+-      Jeśli skasujesz ten komponent, <b><blink>WSZYSTKIE</blink></b> 
+-      [% terms.bledy %] oraz cała ich historia również zostanie  usunięta.
++      Usunięcie komponentu spowoduje utratę, <b><blink>WSZYSTKICH</blink></b> 
++      [% terms.bledow %] oraz całej ich historii.
+       </td></tr></table>
+ 
+   [% END %]
+@@ -139,7 +139,7 @@
+ 
+ [% IF comp.bug_count == 0 || Param('allowbugdeletion') %]
+ 
+-  <p>Czy jesteś pewien że chcesz usunąć ten komponent?<p>
++  <p>Czy na pewno usunąć ten komponent?<p>
+   
+   <form method="post" action="editcomponents.cgi">
+   <input type="submit" value="Tak, usuń">
+Index: components/select-product.html.tmpl
+===================================================================
+--- components/select-product.html.tmpl	(revision 90)
++++ components/select-product.html.tmpl	(working copy)
+@@ -29,7 +29,7 @@
+ [% PROCESS global/variables.none.tmpl %]
+ 
+ [% PROCESS global/header.html.tmpl
+-  title = "Edycja komponentów których produktów?"
++  title = "Wybór produktu"
+ %]
+ 
+ [% columns = [
+Index: components/footer.html.tmpl
+===================================================================
+--- components/footer.html.tmpl	(revision 90)
++++ components/footer.html.tmpl	(working copy)
+@@ -37,7 +37,7 @@
+   href="editcomponents.cgi?action=edit&amp;product=
+   [%- product FILTER url_quote %]&amp;component=[% name FILTER url_quote %]">
+    '[% name FILTER html %]'</a> 
+-  lub edycja 
++  | edycja 
+ [% END %]
+ 
+ [% IF !no_edit_other_components_link %]
+@@ -45,7 +45,7 @@
+   title="Wybór komponentu produktu '[% product FILTER html %]' do edycji"
+   href="editcomponents.cgi?product=
+   [%- product FILTER url_quote %]">'[% product FILTER html %]'</a>, 
+-  lub edycja 
++  | edycja 
+ [% END %]
+ 
+ produktu <a 
+Index: table.html.tmpl
+===================================================================
+--- table.html.tmpl	(revision 90)
++++ table.html.tmpl	(working copy)
+@@ -170,7 +170,7 @@
+ [% END %]
+ 
+ [% IF data.size == 0 %]
+-  <tr><td colspan="[% columns.size %]" align="center"><i>&lt;none&gt;</i></td></tr>
++  <tr><td colspan="[% columns.size %]" align="center"><i>&lt;brak&gt;</i></td></tr>
+ [% END %]
+ 
+ 
+Index: keywords/list.html.tmpl
+===================================================================
+--- keywords/list.html.tmpl	(revision 90)
++++ keywords/list.html.tmpl	(working copy)
+@@ -1,4 +1,4 @@
+-﻿[%# 1.0@bugzilla.org %]
++[%# 1.0@bugzilla.org %]
+ [%# The contents of this file are subject to the Mozilla Public
+   # License Version 1.1 (the "License"); you may not use this file
+   # except in compliance with the License. You may obtain a copy of
+@@ -32,7 +32,7 @@
+ [% PROCESS global/variables.none.tmpl %]
+ 
+ [% PROCESS global/header.html.tmpl
+-  title = "Wybieranie słowa kluczowego"
++  title = "Wybór słowa kluczowego"
+ %]
+ 
+ [% columns = [
+Index: keywords/confirm-delete.html.tmpl
+===================================================================
+--- keywords/confirm-delete.html.tmpl	(revision 90)
++++ keywords/confirm-delete.html.tmpl	(working copy)
+@@ -38,7 +38,7 @@
+     z tym słowem kluczowym.
+   [% END %]
+   
+-  Czy jesteś <b>pewien</b>, że chcesz usunąć
++  Czy <b>na pewno</b> usunąć
+   słowo kluczowe <code>[% name FILTER html %]</code>?
+ </p>
+ 
+Index: flag-type/edit.html.tmpl
+===================================================================
+--- flag-type/edit.html.tmpl	(revision 90)
++++ flag-type/edit.html.tmpl	(working copy)
+@@ -192,20 +192,20 @@
+     </tr>
+ 
+     <tr>
+-      <th>Grant Group:</th>
+-      <td>
+-        the group allowed to grant/deny flags of this type
+-        (to allow all users to grant/deny these flags, leave this empty)<br>
++      <th>Grupa mogąca ustawiać flagi:</th>
++      <td>
++	    grupa, która może ustawiać flagi tego typu (puste pole oznacza zezwolenie 
++		dla wszystkich użytkowników)<br>
+         <input type="text" name="grant_gid" value="[% type.grant_gid FILTER html %]" size="50" maxlength="255">
+       </td>
+     </tr>
+ 
+     <tr>
+-      <th>Request Group:</th>
+-      <td>
+-        if flags of this type are requestable, the group allowed to request them
+-        (to allow all users to request these flags, leave this empty)<br>
+-        Note that the request group alone has no effect if the grant group is not defined!<br>
++      <th>Grupa mogąca żądać flag:</th>
++      <td>
++	    jeśli można żądać flag tego typu, pole określa grupę która jest do tego uprawniona
++		(puste pole oznacza zezwolenie dla wszystkich użytkowników).<br>
++        Uwaga: przed ustawieniem tego pola należy określić grupę mogącą ustawiać flagi<br>
+         <input type="text" name="request_gid" value="[% type.request_gid FILTER html %]" size="50" maxlength="255">
+       </td>
+     </tr>
+Index: flag-type/confirm-delete.html.tmpl
+===================================================================
+--- flag-type/confirm-delete.html.tmpl	(revision 90)
++++ flag-type/confirm-delete.html.tmpl	(working copy)
+@@ -29,7 +29,7 @@
+ %]
+ 
+ <p>
+-   Występuje [% flag_count %] 
++   Znaleziono [% flag_count %] 
+    [% PROCESS ODMIEN c=flag_count o1="flaga" o2="flagi" o3="flag" %] typu 
+    [% name FILTER html %].
+    Jeśli usuniesz ten typ, również odpowiadające mu flagi zostaną usunięte. 
+@@ -42,7 +42,7 @@
+ <table>
+    <tr>
+       <td colspan="2">
+-         Czy na pewno chcesz usunąć ten typ?
++         Czy na pewno usunąć ten typ?
+       </td>
+    </tr>
+    <tr>
+Index: versions/select-product.html.tmpl
+===================================================================
+--- versions/select-product.html.tmpl	(revision 90)
++++ versions/select-product.html.tmpl	(working copy)
+@@ -29,7 +29,7 @@
+ [% PROCESS global/variables.none.tmpl %]
+ 
+ [% PROCESS global/header.html.tmpl
+-  title = "Edytuj wersje którego produktu?"
++  title = "Edycja wersji produktu"
+ %]
+ 
+ [% columns = [
+Index: sudo.html.tmpl
+===================================================================
+--- sudo.html.tmpl	(revision 90)
++++ sudo.html.tmpl	(working copy)
+@@ -22,33 +22,34 @@
+ [% PROCESS global/variables.none.tmpl %]
+ 
+ [% PROCESS global/header.html.tmpl
+-   title = "Begin sudo session"
++   title = "Sesja sudo"
+    style_urls = ['skins/standard/admin.css']
+  %]
+  
+ [% DEFAULT target_login = "" %]
+ 
+-<p>
+-  The <b>sudo</b> feature of [% terms.Bugzilla %] allows you to impersonate a 
+-  user for a short time  While an sudo session is in progress, every action you 
+-  perform will be taking place as if you had logged in as the user whom will be 
+-  impersonating.
++<p>
++  Funkcja <b>sudo</b> pozwala pracować chwilowo jako inny użytkownik systemu
++  [% terms.Bugzilla %]. Wszystkie wykonane podczas sesji sudo czynności będą
++  wykonane z uprawnieniami i ograniczeniami użytkownika, którego tożsamość
++  będzie użyta.
+ </p>
+ 
+-<p class="areyoureallyreallysure">
+-  This is a very powerful feature; you should be very careful while using it.  
+-  Your actions may be logged more carefully than normal.
++<p class="areyoureallyreallysure">
++  Opcja ta jest przeznaczona dla zaawansowanych użytkowników. Proszę zachować
++  szczególną ostrożność podczas pracy w trybie sudo. Wykonane czynności
++  mogą być rejestrowane przez system dokładniej niż zwykle.
+ </p>
+ 
+ <form action="relogin.cgi" method="POST">
+   <p>
+-    To begin, 
++    Aby rozpocząć, należy 
+     [% IF Param('usemenuforusers') %]
+-      select 
++      wybrać
+     [% ELSE %]
+-      enter the login of 
++      podać nazwę
+     [% END %]
+-    the <u>u</u>ser to impersonate:
++    <u>u</u>żytkownika docelowego:
+     [% INCLUDE global/userselect.html.tmpl
+        name => "target_login"
+        value => "$target_login_default"
+@@ -59,39 +60,39 @@
+   </p>
+   
+   [% IF !Param('usemenuforusers') %]
+-    <p>
+-      The username must be entered exactly.  No matching will be performed.
++    <p>
++	  Proszę podać dokładną nazwę użytkownika. Podana nazwa nie będzie
++	  dopasowywana do istniejących nazw.
+     </p>
+   [% END %]
+   
+-  <p>
+-    Next, please take a moment to explain why you are doing this:<br>
++  <p>
++    Powód użycia opcji sudo:<br>
+     <input type="text" name="reason" size="80" maxlength="200" value="
+     [%- reason_default FILTER html %]">
+   </p>
+   
+-  <p>
+-    The message you enter here will be sent to the impersonated user by email.
+-    You may leave this empty if you wish, but they will still know that you 
+-    are impersonating them.
++  <p>
++    Wprowadzony tekst zostanie wysłany pocztą elektroniczną do użytkownika,
++	którego konto zostanie użyte. Powiadomienie zostanie wysłane także w 
++	przypadku niepodania powodu.
+   </p>
+   
+   [% IF user.get_flag("can_logout") %]
+     <p>
+-      Finally, enter your [% terms.Bugzilla %] password: 
++      Hasło bieżącego użytkownika: 
+       <input type="hidden" name="Bugzilla_login" value="
+       [%- user.login FILTER html %]">
+       <input type="password" name="Bugzilla_password" maxlength="20" size="20">
+-      <br>
+-      This is done for two reasons.  First of all, it is done to reduce 
+-      the chances of someone doing large amounts of damage using your 
+-      already-logged-in account.  Second, it is there to force you to take the 
+-      time to consider if you really need to use this feature.
++      <br>
++	  Weryfikacja hasła ma na celu ograniczenie szkód spowodowanych przez
++	  użycie sesji zalogowanego użytkownika. Proszę także ponownie rozważyć
++	  konieczność użycia tej funkcji.
+     </p>
+   [% END %]
+   
+-  <p>
+-    Click the button to begin the session:
++  <p>
++    Proszę nacisnąć przycisk, aby rozpocząć sesję:
+     <input type="submit" value="Begin Session">
+     <input type="hidden" name="action" value="begin-sudo">
+     <input type="hidden" name="token" value="[% token FILTER html %]">
+Index: classifications/delete.html.tmpl
+===================================================================
+--- classifications/delete.html.tmpl	(revision 90)
++++ classifications/delete.html.tmpl	(working copy)
+@@ -20,7 +20,7 @@
+   #%]
+ 
+ [% PROCESS global/header.html.tmpl
+-  title = "Classification deleted"
++  title = "Usunięto klasyfikację"
+ %]
+ 
+ Klasyfikacja [% classification.name FILTER html %] usunięta.<br>
+Index: classifications/select.html.tmpl
+===================================================================
+--- classifications/select.html.tmpl	(revision 90)
++++ classifications/select.html.tmpl	(working copy)
+@@ -25,7 +25,7 @@
+ 
+ <table border=1 cellpadding=4 cellspacing=0>
+   <tr bgcolor="#6666ff">
+-    <th align="left">Edytuj klasyfikacje ...</th>
++    <th align="left">Edytuj klasyfikacje...</th>
+     <th align="left">Opis</th>
+     <th align="left">Produkty</th>
+     <th align="left">Akcje</th>
+@@ -44,7 +44,7 @@
+       [% IF (cl.id == 1) %]
+         <td valign="top">[% cl.product_count FILTER html %]</td>
+       [% ELSE %]
+-        <td valign="top"><a href="editclassifications.cgi?action=reclassify&amp;classification=[% cl.name FILTER url_quote %]">reclassify ([% cl.product_count FILTER html %])</a></td>
++        <td valign="top"><a href="editclassifications.cgi?action=reclassify&amp;classification=[% cl.name FILTER url_quote %]">zmień klasyfikację ([% cl.product_count FILTER html %])</a></td>
+       [% END %]
+ 
+       [%# don't allow user to delete the default id. %]
+

@@ -1,0 +1,107 @@
+diff --git a/dom/chrome/security/caps.properties b/dom/chrome/security/caps.properties
+--- a/dom/chrome/security/caps.properties
++++ b/dom/chrome/security/caps.properties
+@@ -44,13 +44,13 @@ CreateWrapperDenied=Nie udzielono uprawn
+ CreateWrapperDeniedForOrigin = Witrynie <%2$S> nie udzielono uprawnien do stworzenia klasy opakowujacej dla obiektu klasy %1$S
+ ExtensionCapability = Nieznany: %S
+ ProtocolFlagError = Ostrzeżenie: Program obsługi protokołu '%S' nie rozgłasza polityki bezpieczeństwa. Pomimo że obecnie dozwolone jest wczytywanie z takich protokołów, jest to przestarzałe. Należy zapoznać się z dokumentacją w nsIProtocolHandler.idl.
+ #
+ # The following descriptions are shown in the EnableCapabilityQuery dialog
+ #
+ capdesc.UniversalBrowserRead = Odczyt prywatnych danych z dowolnej witryny lub okna
+ capdesc.UniversalBrowserWrite = Modyfikacja dowolnego otwartego okna
+-capdesc.UniversalXPConnect = Uruchomienie lub instalacja oprogramowania na Twoim komputerze
++capdesc.UniversalXPConnect = Uruchomienie lub instalacja oprogramowania na komputerze użytkownika
+ capdesc.UniversalFileRead = Odczyt i pobieranie plików lokalnych
+ capdesc.CapabilityPreferencesAccess = Ominięcie głównych ustawień bezpieczeństwa
+ capdesc.UniversalPreferencesRead = Odczyt ustawień programu
+ capdesc.UniversalPreferencesWrite = Zmiana ustawień programu
+diff --git a/security/manager/chrome/pipnss/pipnss.properties b/security/manager/chrome/pipnss/pipnss.properties
+--- a/security/manager/chrome/pipnss/pipnss.properties
++++ b/security/manager/chrome/pipnss/pipnss.properties
+@@ -283,17 +283,17 @@ VerifyProtectObjSign_p=Osoba podpisując
+ VerifyObjSign_p=Osoba podpisująca obiekt
+ VerifyUserImport_p=Importowane przez użytkownika
+ VerifyCAVerifier_p=Osoba weryfikująca CA
+ VerifyStatusResponder_p=Serwer potwierdzający
+ VerifyAnyCA_p=CA
+ VerifiedTrue=prawda
+ VerifiedFalse=fałsz
+ PK11BadPassword=Wprowadzone hasło tokenu jest nieprawidłowe.
+-SuccessfulP12Backup=Kopia zapasowa Twoich certyfikatów bezpieczeństwa oraz prywatnych kluczy została pomyślnie wykonana.
++SuccessfulP12Backup=Kopia zapasowa certyfikatów bezpieczeństwa oraz prywatnych kluczy użytkownika została pomyślnie wykonana.
+ SuccessfulP12Restore=Osobiste certyfikaty bezpieczeństwa oraz prywatne klucze zostały pomyślnie odtworzone z kopii zapasowej.
+ PKCS12PasswordInvalid=Dekodowanie pliku w formacie PKCS #12 nie powiodło się. Prawdopodobnie wprowadzone hasło jest nieprawidłowe.
+ PKCS12DecodeErr=Dekodowanie pliku nie powiodło się. Plik nie jest w formacie PKCS #12, jest uszkodzony lub wprowadzone hasło jest nieprawidłowe.
+ PKCS12UnknownErrRestore=Nie udało się odtworzyć kopii bezpieczeństwa PKCS #12 z nieznanych powodów.
+ PKCS12UnknownErrBackup=Nie udało się utworzyć kopii bezpieczeństwa PKCS #12 z nieznanych powodów.
+ PKCS12UnknownErr=Operacja PKCS #12 nie powiodła się z nieznanych powodów.
+ PKCS12InfoNoSmartcardBackup=Zachowanie kopii certyfikatu zapisanego w urządzeniu zabezpieczającym, jak np. inteligentna karta jest niemożliwe.
+ PKCS12DupData=To urządzenie zabezpieczające posiada już certyfikat oraz klucz prywatny.
+@@ -343,17 +343,17 @@ CrlImportFailure1x=Nie można zaimportow
+ CrlImportFailureExpired=Dostępna jest nowsza wersja tej listy unieważnionych certyfikatów (CRL).
+ CrlImportFailureBadSignature=Lista CRL ma nieprawidłową sygnaturę.
+ CrlImportFailureInvalid=Nowa lista CRL ma nieprawidłowy format.
+ CrlImportFailureOld=Nowa lista CRL jest starsza niż bieżąca.
+ CrlImportFailureNotYetValid=Lista CRL nie jest jeszcze ważna. Należy sprawdzić, czy zegar systemowy jest ustawiony poprawnie.
+ CrlImportFailureNetworkProblem=Pobranie listy CRL nie powiodło się z powodu problemów z siecią.
+ CrlImportFailureReasonUnknown=Wystąpił błąd podczas importowania listy CRL do lokalnej bazy. Kod błędu: 
+ CrlImportFailure2=W celu uzyskania dalszych informacji należy skontaktować się z administratorem sieci.
+-NSSInitProblemX=Nie można zainicjować komponentu zabezpieczeń. Najbardziej prawdopodobną przyczyną błędu jest problem z plikami w katalogu z Twoim profilem programu. Należy sprawdzić, czy ten katalog nie jest chroniony przed zapisem/odczytem oraz czy dysk, na którym znajduje się ten katalog, nie jest zapełniony lub jest bliski zapełnienia. Zaleca się zamknięcie programu oraz naprawienie błędu. Konsekwencją kontynuowania bieżącej sesji programu może być nieprawidłowe zachowanie podczas korzystania z funkcji związanych z zabezpieczeniami.
++NSSInitProblemX=Nie można zainicjować komponentu zabezpieczeń. Najbardziej prawdopodobną przyczyną błędu jest problem z plikami w katalogu z profilem użytkownika programu. Należy sprawdzić, czy ten katalog nie jest chroniony przed zapisem/odczytem oraz czy dysk, na którym znajduje się ten katalog, nie jest zapełniony lub jest bliski zapełnienia. Zaleca się zamknięcie programu oraz naprawienie błędu. Konsekwencją kontynuowania bieżącej sesji programu może być nieprawidłowe zachowanie podczas korzystania z funkcji związanych z zabezpieczeniami.
+ ProfileSwitchSocketsStillActive=Zmiana profilu nie może zostać zakończona z powodu wewnętrznego błędu. Dane nawiązanego szyfrowanego połączenia nie zostały poprawnie usunięte.
+ ProfileSwitchCryptoUIActive=Zmiana profilu jest chwili obecnej niemożliwa. Należy zakończyć operację, która wymaga udziału użytkownika w jednym lub kilku otwartych oknach.
+ VerifyExpired=<Stracił ważność>
+ VerifyRevoked=<Odwołany>
+ VerifyNotTrusted=<Nie jest zaufany>
+ VerifyIssuerNotTrusted=<Wystawcy certyfikatu nie ma na liście zaufanych wystawców>
+ VerifyIssuerUnknown=<Nieznany wydawca>
+ VerifyInvalidCA=<Nieważny CA>
+diff --git a/toolkit/chrome/mozapps/profile/createProfileWizard.dtd b/toolkit/chrome/mozapps/profile/createProfileWizard.dtd
+--- a/toolkit/chrome/mozapps/profile/createProfileWizard.dtd
++++ b/toolkit/chrome/mozapps/profile/createProfileWizard.dtd
+@@ -1,21 +1,21 @@
+ <!ENTITY newprofile.title             "Kreator nowego profilu">
+ <!ENTITY window.size                  "width: 54em; height: 38em;">
+ 
+ <!-- First wizard page -->
+-<!ENTITY profileCreationExplanation_1.text  "&brandShortName; przechowuje informacje o Twoich ustawieniach i preferencjach w Twoim prywatnym profilu.">
++<!ENTITY profileCreationExplanation_1.text  "&brandShortName; przechowuje informacje o ustawieniach i preferencjach użytkownika w prywatnym profilu.">
+ <!ENTITY profileCreationExplanation_2.text  "Jeżeli dzielisz tę kopię programu &brandShortName; z innymi użytkownikami, możesz używać profili, aby rozdzielić dane użytkowników. Aby tego dokonać, każdy użytkownik powinien posiadać własny profil.">
+ <!ENTITY profileCreationExplanation_3.text  "Jeżeli jesteś jedyną osobą korzystającą z tej kopii programu &brandShortName;, musisz posiadać przynajmniej jeden profil. Jeśli chcesz, możesz stworzyć kilka profili na własny użytek, z różnymi ustawieniami i preferencjami. Na przykład, możesz mieć osobne profile: służbowy i prywatny">
+ <!ENTITY profileCreationExplanation_4.text  "Aby rozpocząć tworzenie profilu, naciśnij przycisk Dalej.">
+ <!ENTITY profileCreationExplanation_4Mac.text    "Aby rozpocząć tworzenie profilu, naciśnij przycisk Kontynuuj.">
+ <!ENTITY profileCreationExplanation_4Gnome.text  "Aby rozpocząć tworzenie profilu, naciśnij przycisk Naprzód.">
+ 
+ <!-- Second wizard page -->
+ <!ENTITY profileCreationIntro.text      "Tworzony profil musi mieć nazwę różną od już istniejących profili. Użyj nazwy podanej poniżej lub wprowadź własną.">
+ <!ENTITY profilePrompt.label            "Wprowadź nazwę nowego profilu:">
+ <!ENTITY profilePrompt.accesskey        "N">
+-<!ENTITY profileDirectoryExplanation.text     "Twoje ustawienia, preferencje oraz pozostałe dane osobiste będą przechowywane w:">
++<!ENTITY profileDirectoryExplanation.text     "Ustawienia, preferencje oraz pozostałe dane osobiste użytkownika będą przechowywane w:">
+ <!ENTITY profileDefaultName             "Domyślny użytkownik">
+ <!ENTITY button.choosefolder.label      "Wybierz folder…">
+ <!ENTITY button.choosefolder.accesskey  "W">
+ <!ENTITY button.usedefault.label        "Użyj domyślnego folderu">
+ <!ENTITY button.usedefault.accesskey    "U">
+diff --git a/toolkit/chrome/mozapps/profile/profileSelection.dtd b/toolkit/chrome/mozapps/profile/profileSelection.dtd
+--- a/toolkit/chrome/mozapps/profile/profileSelection.dtd
++++ b/toolkit/chrome/mozapps/profile/profileSelection.dtd
+@@ -35,15 +35,15 @@
+ <!ENTITY            newButton.label        "Utwórz nowy profil…">
+ <!ENTITY            newButton.accesskey    "N">
+ <!ENTITY            renameButton.label     "Zmień nazwę profilu…">
+ <!ENTITY            renameButton.accesskey "Z">
+ <!ENTITY            deleteButton.label     "Usuń profil…">
+ <!ENTITY            deleteButton.accesskey "U">
+ 
+ <!-- manager entities -->
+-<!ENTITY            pmDescription.label    "&brandShortName; przechowuje informacje o Twoich ustawieniach i preferencjach w profilu.">
++<!ENTITY            pmDescription.label    "&brandShortName; przechowuje informacje o ustawieniach i preferencjach użytkownika w profilu.">
+ 
+ <!ENTITY            offlineState.label    "Pracuj w trybie offline">
+ <!ENTITY            offlineState.accesskey "P">
+ 
+ <!ENTITY            autoSelect.label       "Nie wyświetlaj tego okna przy uruchamianiu">
+ <!ENTITY            autoSelect.accesskey   "w">
+

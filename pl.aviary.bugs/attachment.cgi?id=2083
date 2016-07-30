@@ -1,0 +1,58 @@
+diff --git a/browser/chrome/browser/browser.dtd b/browser/chrome/browser/browser.dtd
+--- a/browser/chrome/browser/browser.dtd
++++ b/browser/chrome/browser/browser.dtd
+@@ -116,16 +116,17 @@
+ <!ENTITY findAgainCmd.accesskey "n" >
+ <!ENTITY findAgainCmd.commandkey "g" >
+ <!ENTITY findAgainCmd.commandkey2 "VK_F3" >
+ 
+ <!ENTITY bookmarksMenu.label "Zakładki" >
+ <!ENTITY bookmarksMenu.accesskey "Z" >
+ <!ENTITY bookmarkThisPageCmd.label "Dodaj zakładkę…" >
+ <!ENTITY bookmarkThisPageCmd.commandkey "d" >
++<!ENTITY sharePageCmd.commandkey "l">
+ <!ENTITY subscribeToPageMenupopup.label "Subskrybuj tę stronę">
+ <!ENTITY subscribeToPageMenuitem.label "Subskrybuj tę stronę…">
+ <!ENTITY addCurPagesCmd.label "Dodaj zakładki do wszystkich kart…">
+ <!ENTITY showAllBookmarks2.label "Wyświetl wszystkie zakładki">
+ <!ENTITY unsortedBookmarksCmd.label "Zakładki nieposortowane">
+ <!ENTITY bookmarksToolbarChevron.tooltip "Wyświetl więcej zakładek">
+ 
+ <!ENTITY backCmd.label "Wstecz" >
+@@ -630,8 +631,13 @@
+ located in front of the breadcrumbs display in the inspector toolbar. The button
+ doesn't display any label, but exposes a label to screen-readers with "aria-label".
+ -->
+ <!ENTITY markupButton.arialabel          "Znakowanie">
+ 
+ <!-- LOCALIZATION NOTE (markupButton.accesskey): The key bound to the Markup panel's
+ toolbar button -->
+ <!ENTITY markupButton.accesskey          "Z">
++
++<!ENTITY social.sharePopup.undo.label "Przestań udostępniać">
++<!ENTITY social.sharePopup.undo.accesskey "P">
++<!ENTITY social.sharePopup.ok.label "OK">
++<!ENTITY social.sharePopup.ok.accesskey "O">
+diff --git a/browser/chrome/browser/browser.properties b/browser/chrome/browser/browser.properties
+--- a/browser/chrome/browser/browser.properties
++++ b/browser/chrome/browser/browser.properties
+@@ -344,15 +344,18 @@
+ # brandFullName, and %2$S by the value of the toolkit.telemetry.server_owner preference.
+ telemetryOptOutPrompt = %1$S przesyła informacje o wydajności, sprzęcie, wykorzystaniu funkcji i modyfikacjach przeglądarki do organizacji %2$S w celu ulepszenia programu %3$S.
+ 
+ # LOCALIZATION NOTE (fullscreen.entered): displayed when we enter HTML5 fullscreen mode, %S is the domain name of the focused website (e.g. mozilla.com).
+ fullscreen.entered=%S działa teraz w trybie pełnoekranowym.
+ # LOCALIZATION NOTE (fullscreen.rememberDecision): displayed when we enter HTML5 fullscreen mode, %S is the domain name of the focused website (e.g. mozilla.com).
+ fullscreen.rememberDecision=Zapamiętaj ten wybór dla %S
+ 
++social.shareButton.tooltip=Udostępnij
++social.shareButton.sharedtooltip=Udostępniono
++social.pageShared.label=Strona została udostępniona
+ 
+ # Webapps notification popup
+ webapps.install = Zainstaluj
+ webapps.install.accesskey = Z
+ #LOCALIZATION NOTE (webapps.requestInstall) %1$S is the web app name, %2$S is the site from which the web app is installed
+ webapps.requestInstall = Czy zainstalować aplikację "%1$S" z tej strony (%2$S)?
+ webapps.install.success=Zainstalowano aplikację
+

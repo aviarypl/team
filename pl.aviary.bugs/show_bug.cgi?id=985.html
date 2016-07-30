@@ -1,0 +1,3589 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>985 &ndash; Klikanie w produktach Mozilli</title>
+
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<link href="data/assets/7aa6ea67750936a0368541421bdcd5ee.css" rel="stylesheet" type="text/css">
+
+
+
+    
+<script type="text/javascript" src="data/assets/a7c2f3a028f17a9aa60f56dc9d6e732d.js"></script>
+
+    <script type="text/javascript">
+    <!--
+        YAHOO.namespace('bugzilla');
+        YAHOO.util.Event.addListener = function (el, sType, fn, obj, overrideContext) {
+               if ( ("onpagehide" in window || YAHOO.env.ua.gecko) && sType === "unload") { sType = "pagehide"; };
+               var capture = ((sType == "focusin" || sType == "focusout") && !YAHOO.env.ua.ie) ? true : false;
+               return this._addListener(el, this._getType(sType), fn, obj, overrideContext, capture);
+         };
+        if ( "onpagehide" in window || YAHOO.env.ua.gecko) {
+            YAHOO.util.Event._simpleRemove(window, "unload", 
+                                           YAHOO.util.Event._unload);
+        }
+        
+        function unhide_language_selector() { 
+            YAHOO.util.Dom.removeClass(
+                'lang_links_container', 'bz_default_hidden'
+            ); 
+        } 
+        YAHOO.util.Event.onDOMReady(unhide_language_selector);
+
+        
+        var BUGZILLA = {
+            param: {
+                cookiepath: '\/',
+                maxusermatches: 1000
+            },
+            constant: {
+                COMMENT_COLS: 80
+            },
+            string: {
+                
+
+                attach_desc_required:
+                    "You must enter a Description for this attachment.",
+                component_required:
+                    "You must select a Component for this bug.",
+                description_required:
+                    "You must enter a Description for this bug.",
+                short_desc_required:
+                    "You must enter a Summary for this bug.",
+                version_required:
+                    "You must select a Version for this bug."
+            }
+              , api_token: ''
+        };
+
+    if (history && history.replaceState) {
+      if(!document.location.href.match(/show_bug\.cgi/)) {
+        history.replaceState( null,
+                             "985 – Klikanie w produktach Mozilli",
+                             "show_bug.cgi?id=985" );
+        document.title = "985 – Klikanie w produktach Mozilli";
+      }
+      if (document.location.href.match(/show_bug\.cgi\?.*list_id=/)) {
+        var href = document.location.href;
+        href = href.replace(/[\?&]+list_id=(\d+|cookie)/, '');
+        history.replaceState(null, "985 – Klikanie w produktach Mozilli", href);
+      }
+    }
+    YAHOO.util.Event.onDOMReady(function() {
+      initDirtyFieldTracking();
+
+    });
+    // -->
+    </script>
+<script type="text/javascript" src="data/assets/daf5e0fb6826e6a35280e622913f0c4a.js"></script>
+
+    
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+                       title="Bugzilla" href="search_plugin.cgi">
+    <link rel="shortcut icon" href="images/favicon.ico">
+  </head>
+
+  <body 
+        class="bugs-aviary-pl
+                 bz_bug
+                 bz_status_VERIFIED
+                 bz_product_Wytyczne
+                 bz_component_Og&#XF3;lne
+                 bz_bug_985 yui-skin-sam">
+
+  <div id="header"><div id="banner">
+  </div>
+
+    <div id="titles">
+      <span id="title">Bugzilla &ndash; Bug&nbsp;985</span>
+
+        <span id="subtitle" class="subheader">Klikanie w produktach Mozilli</span>
+
+        <span id="information" class="header_addl_info">Last modified: 2010-04-03 10:02:16 CEST</span>
+    </div>
+
+
+    <div id="common_links"><ul class="links">
+  <li><a href="index.html">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi.html">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi.html">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi.html">Search</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="http://bugs.aviary.pl/buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input type="hidden" id="no_redirect_top" name="no_redirect" value="0">
+    <script type="text/javascript">
+      if (history && history.replaceState) {
+        var no_redirect = document.getElementById("no_redirect_top");
+        no_redirect.value = 1;
+      }
+    </script>
+    <input class="txt" type="text" id="quicksearch_top" name="quicksearch" 
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search" 
+           id="find_top"></form>
+  <a href="page.cgi%3Fid=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="report.cgi.html">Reports</a></li>
+
+  <li>
+      <span class="separator">| </span>
+        <a href="request.cgi.html">Requests</a></li>
+
+
+  <li>
+        <span class="separator">| </span>
+        <a href="https://bugzilla.readthedocs.org/en/5.0/using/understanding.html" target="_blank">Help</a>
+      </li>
+    
+      <li id="new_account_container_top">
+        <span class="separator">| </span>
+        <a href="createaccount.cgi.html">New&nbsp;Account</a>
+      </li>
+
+    <li id="mini_login_container_top">
+  <span class="separator">| </span>
+  <a id="login_link_top" href="show_bug.cgi%3Fid=985&amp;GoAheadAndLogIn=1.html"
+     onclick="return show_mini_login_form('_top')">Log In</a>
+
+  <form action="show_bug.cgi%3Fid=985.html" method="POST"
+        class="mini_login bz_default_hidden"
+        id="mini_login_top">
+    <input id="Bugzilla_login_top" required
+           name="Bugzilla_login" class="bz_login"
+        type="email" placeholder="Email Address">
+    <input class="bz_password" name="Bugzilla_password" type="password"
+           id="Bugzilla_password_top" required
+           placeholder="Password">
+    <input type="hidden" name="Bugzilla_login_token"
+           value="1469820485-9sw2wiQXVi1yVeIkQsyk_BgxSQHAA15_ZVRrYAHx7P0">
+    <input type="submit" name="GoAheadAndLogIn" value="Log in"
+            id="log_in_top">
+    <a href="show_bug.cgi%3Fid=985.html#" onclick="return hide_mini_login_form('_top')">[x]</a>
+  </form>
+</li>
+
+
+  <li id="forgot_container_top">
+    <span class="separator">| </span>
+    <a id="forgot_link_top" href="show_bug.cgi%3Fid=985&amp;GoAheadAndLogIn=1.html#forgot"
+       onclick="return show_forgot_form('_top')">Forgot Password</a>
+    <form action="http://bugs.aviary.pl/token.cgi" method="post" id="forgot_form_top"
+          class="mini_forgot bz_default_hidden">
+      <label for="login_top">Login:</label>
+      <input name="loginname" size="20" id="login_top" required
+          type="email" placeholder="Your Email Address">
+      <input id="forgot_button_top" value="Reset Password" type="submit">
+      <input type="hidden" name="a" value="reqpw">
+      <input type="hidden" id="token_top" name="token"
+             value="1469820485-i8dhqEAdRF2uBkqlwVsD4cNOd38yjKsKHmrvFUghwCw">
+      <a href="show_bug.cgi%3Fid=985.html#" onclick="return hide_forgot_form('_top')">[x]</a>
+    </form>
+  </li>
+</ul>
+    </div>
+  </div>
+
+  <div id="bugzilla-body">
+
+
+<script type="text/javascript">
+<!--
+
+//-->
+</script>
+
+<form name="changeform" id="changeform" method="post" action="http://bugs.aviary.pl/process_bug.cgi">
+
+  <input type="hidden" name="delta_ts" value="2010-04-03 10:02:16">
+  <input type="hidden" name="id" value="985">
+  <input type="hidden" name="token" value="1469820485-j5xDWXsTGcB51i6w6IzWYF6qejPCztqaCvt9AgnfHcQ">
+<div class="bz_short_desc_container edit_form">
+     <a href="show_bug.cgi%3Fid=985.html"><b>Bug&nbsp;985</b></a> <span id="summary_container" class="bz_default_hidden">
+      - <span id="short_desc_nonedit_display">Klikanie w produktach Mozilli</span>
+     </span>
+
+    <div id="summary_input"><span class="field_label "
+    id="field_label_short_desc">
+
+
+  <a 
+      title="The bug summary is a short sentence which succinctly describes what the bug is about."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#short_desc"
+  >Summary:</a>
+
+</span>Klikanie w produktach Mozilli
+    </div>
+  </div>
+  <script type="text/javascript">
+    hideEditableField('summary_container',
+                      'summary_input',
+                      'summary_edit_action',
+                      'short_desc',
+                      'Klikanie w produktach Mozilli' );
+  </script>
+  <table class="edit_form">
+    <tr>
+      
+      <td id="bz_show_bug_column_1" class="bz_show_bug_column">     
+        <table>
+          <tr>
+    <th class="field_label">
+      <a href="page.cgi%3Fid=fields.html#bug_status">Status</a>:
+    </th>
+    <td id="bz_field_status">
+      <span id="static_bug_status">VERIFIED
+          FIXED
+      </span>
+    </td>
+  </tr>
+<tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+<tr><th class="field_label "
+    id="field_label_alias">
+
+
+  <a 
+      title="A short, unique name assigned to a bug in order to assist with looking it up and referring to it in other places in Bugzilla."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#alias"
+  >Alias:</a>
+
+</th>
+    <td>
+        None
+    </td>
+  </tr>
+<tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+<tr><th class="field_label "
+    id="field_label_product">
+
+
+  <a 
+      title="Bugs are categorised into Products and Components. Select a Classification to narrow down this list."
+      class="field_help_link"
+      href="describecomponents.cgi.html"
+  >Product:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_product" >Wytyczne
+
+</td>
+    </tr>
+
+    
+    <tr class="bz_default_hidden"><th class="field_label "
+    id="field_label_classification">
+
+
+  <a 
+      title="Bugs are categorised into Classifications, Products and Components. classifications is the top-level categorisation."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#classification"
+  >Classification:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_classification" >Archiwum
+
+</td>
+    </tr>
+        
+    
+    
+    <tr><th class="field_label "
+    id="field_label_component">
+
+
+  <a 
+      title="Components are second-level categories; each belongs to a particular Product. Select a Product to narrow down this list."
+      class="field_help_link"
+      href="describecomponents.cgi%3Fproduct=Wytyczne.html"
+  >Component:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_component" >Ogólne
+
+  (<a href="buglist.cgi%3Fcomponent=Ogólne&amp;product=Wytyczne&amp;bug_status=__open__.html"
+      target="_blank">show other bugs</a>)
+</td>
+    </tr>
+    <tr><th class="field_label "
+    id="field_label_version">
+
+
+  <a 
+      title="The version field defines the version of the software the bug was found in."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#version"
+  >Version:</a>
+
+</th>
+<td>unspecified
+  </td>
+    </tr>
+        
+    
+        
+    <tr><th class="field_label "
+    id="field_label_rep_platform">
+
+
+  <a 
+      title="The hardware platform the bug was observed on. Note: When searching, selecting the option &quot;All&quot; only finds bugs whose value for this field is literally the word &quot;All&quot;."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#rep_platform"
+  >Hardware:</a>
+
+</th>
+      <td class="field_value">Wszystkie
+        Wszystkie
+      </td>
+    </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          
+          <tr>
+      <th class="field_label">
+        <label  accesskey="i">
+          <a href="page.cgi%3Fid=fields.html#importance"><u>I</u>mportance</a></label>:
+      </th>
+      <td>P2
+       propozycja
+      </td>
+    </tr>
+          
+          <tr><th class="field_label "
+    id="field_label_assigned_to">
+
+
+  <a 
+      title="The person in charge of resolving the bug."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#assigned_to"
+  >Assignee:</a>
+
+</th>
+      <td><span class="vcard"><span class="fn">Wojciech Kapusta</span>
+</span>
+      </td>
+    </tr>
+
+    <tr><th class="field_label "
+    id="field_label_qa_contact">
+
+
+  <a 
+      title="The person responsible for confirming this bug if it is unconfirmed, and for verifying the fix once the bug has been resolved."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#qa_contact"
+  >QA Contact:</a>
+
+</th>
+      <td><span class="vcard">wytyczne
+</span>
+      </td>
+    </tr>
+    <script type="text/javascript">
+      assignToDefaultOnChange(['product', 'component'],
+        'w.kapusta\x40gmail.com',
+        'wytyczne\x40l10n.bledy');
+    </script>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          <tr><th class="field_label "
+    id="field_label_bug_file_loc">
+
+
+  <a 
+      title="Bugs can have a URL associated with them - for example, a pointer to a web site where the problem is seen."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#bug_file_loc"
+  >URL:</a>
+
+</th>
+    <td>
+      <span id="bz_url_input_area">
+      </span>
+    </td>
+  </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+
+          <tr>
+    <th class="field_label">
+      <label>Duplicates (1)</label>:
+    </th>
+    <td class="field_value">
+      <span id="duplicates"><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED DUPLICATE - Kliknąć - nacisnąć"
+   href="show_bug.cgi%3Fid=1034.html">1034</a> 
+      </span>
+      (<a href="buglist.cgi%3Fbug_id=1034.html">view as bug list</a>)
+    </td>
+  </tr>
+<tr><th class="field_label "
+    id="field_label_dependson">
+
+
+  <a 
+      title="The bugs listed here must be resolved before this bug can be resolved."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#dependson"
+  >Depends on:</a>
+
+</th>
+
+  <td>
+    <span id="dependson_input_area">
+    </span>
+
+  </td>
+  </tr>
+  
+  <tr><th class="field_label "
+    id="field_label_blocked">
+
+
+  <a 
+      title="This bug must be resolved before the bugs listed in this field can be resolved."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#blocked"
+  >Blocks:</a>
+
+</th>
+
+  <td>
+    <span id="blocked_input_area">
+    </span>
+
+  </td>
+  </tr>
+          
+        </table>
+      </td>
+      <td>
+        <div class="bz_column_spacer">&nbsp;</div>
+      </td>
+      
+      <td id="bz_show_bug_column_2" class="bz_show_bug_column">
+        <table>
+        <tr>
+    <th class="field_label">
+      Reported:
+    </th>
+    <td>2006-09-07 10:43 CEST by <span class="vcard"><span class="fn">Wojciech Kapusta</span>
+</span>
+    </td>
+  </tr>
+  
+  <tr>
+    <th class="field_label">
+      Modified:
+    </th>
+    <td>2010-04-03 10:02 CEST
+      (<a href="show_activity.cgi%3Fid=985.html">History</a>)
+    </td>
+  
+  </tr>
+<tr>
+      <th class="field_label">
+        <label  accesskey="a">
+          CC List:
+        </label>
+      </th>
+      <td>13 
+          users
+          <span id="cc_edit_area_showhide_container" class="bz_default_hidden">
+            (<a href="show_bug.cgi%3Fid=985.html#" id="cc_edit_area_showhide">show</a>)
+          </span>
+        <div id="cc_edit_area">
+          <br>
+            <select id="cc" multiple="multiple" size="5" >
+                <option value="akalla">akalla</option>
+                <option value="gandalf">gandalf</option>
+                <option value="hubert+bap">hubert+bap</option>
+                <option value="kstawarz">kstawarz</option>
+                <option value="lemiel">lemiel</option>
+                <option value="leszekz">leszekz</option>
+                <option value="marcoos+bugs">marcoos+bugs</option>
+                <option value="mchojnacki">mchojnacki</option>
+                <option value="smalolepszy">smalolepszy</option>
+                <option value="splewako">splewako</option>
+                <option value="tbap.AD04">tbap.AD04</option>
+                <option value="tdominikowski">tdominikowski</option>
+                <option value="wszczesny">wszczesny</option>
+            </select>
+        </div>
+          <script type="text/javascript">
+            hideEditableField( 'cc_edit_area_showhide_container', 
+                               'cc_edit_area', 
+                               'cc_edit_area_showhide', 
+                               '', 
+                               '');  
+          </script>
+      </td>
+    </tr>
+
+<tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+<tr><th class="field_label "
+    id="field_label_see_also">
+
+
+  <a 
+      title="This allows you to refer to bugs in other installations. You can enter a URL to a bug in the 'Add Bug URLs' field to note that that bug is related to this one. You can enter multiple URLs at once by separating them with whitespace. You should normally use this field to refer to bugs in other installations. For bugs in this installation, it is better to use the Depends on and Blocks fields."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#see_also"
+  >See Also:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_see_also" >
+
+</td>
+    </tr> 
+
+<tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+
+
+
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+          <hr id="bz_top_half_spacer">
+      </td>
+    </tr>
+  </table>
+
+  <table id="bz_big_form_parts">
+  <tr>
+  <td>
+
+    
+<script type="text/javascript">
+<!--
+function toggle_display(link) {
+    var table = document.getElementById("attachment_table");
+    var view_all = document.getElementById("view_all");
+    var hide_obsolete_url_parameter = "&hide_obsolete=1";
+    // Store current height for scrolling later
+    var originalHeight = table.offsetHeight;
+    var rows = YAHOO.util.Dom.getElementsByClassName(
+        'bz_tr_obsolete', 'tr', table);
+
+    for (var i = 0; i < rows.length; i++) {
+        bz_toggleClass(rows[i], 'bz_default_hidden');
+    }
+
+    if (YAHOO.util.Dom.hasClass(rows[0], 'bz_default_hidden')) {
+        link.innerHTML = "Show Obsolete";
+        view_all.href = view_all.href + hide_obsolete_url_parameter 
+    }
+    else {
+        link.innerHTML = "Hide Obsolete";
+        view_all.href = view_all.href.replace(hide_obsolete_url_parameter,"");
+    }
+
+    var newHeight = table.offsetHeight;
+    // This scrolling makes the window appear to not move at all.
+    window.scrollBy(0, newHeight - originalHeight);
+
+    return false;
+}
+//-->
+</script>
+
+<br>
+<table id="attachment_table">
+  <tr id="a0">
+    <th colspan="3" class="left">
+      Attachments
+    </th>
+  </tr>
+
+
+      <tr id="a1" class="bz_contenttype_image_png">
+        <td>
+            <a href="attachment.cgi%3Fid=1050"
+               title="View the content of the attachment">
+          <b>&quot;Clik on link&quot; - jak tlumaczyc taki obrazek?</b></a>
+
+          <span class="bz_attach_extra_info">
+              (1.17 KB,
+                image/png)
+
+            <br>
+            <a href="show_bug.cgi%3Fid=985.html#attach_1050"
+               title="Go to the comment associated with the attachment">2008-06-01 15:46 CEST</a>,
+
+            <span class="vcard"><span class="fn">Staś Małolepszy :stas</span>
+</span>
+          </span>
+        </td>
+
+          <td class="bz_attach_flags">
+              <i>no flags</i>
+          </td>
+
+        <td>
+          <a href="attachment.cgi%3Fid=1050&amp;action=edit.html">Details</a>
+        </td>
+      </tr>
+
+  <tr class="bz_attach_footer">
+    <td colspan="3">
+        <span class="bz_attach_view_hide">
+            <a id="view_all" href="attachment.cgi%3Fbugid=985&amp;action=viewall.html">View All</a>
+        </span>
+        <a href="attachment.cgi%3Fbugid=985&amp;action=enter.html">Add an attachment</a>
+        (proposed patch, testcase, etc.)
+    </td>
+  </tr>
+</table>
+<br>
+
+  </td>
+  <td>
+  </td>
+  </tr></table>
+
+  
+  <div id="comments"><script src="js/comments.js" type="text/javascript">
+</script>
+
+<script type="text/javascript">
+<!--
+  /* Adds the reply text to the 'comment' textarea */
+  function replyToComment(id, real_id, name) {
+      var prefix = "(In reply to " + name + " from comment #" + id + ")\n";
+      var replytext = "";
+        /* pre id="comment_name_N" */
+        var text_elem = document.getElementById('comment_text_'+id);
+        var text = getText(text_elem);
+        replytext = prefix + wrapReplyText(text);
+
+
+      /* <textarea id="comment"> */
+      var textarea = document.getElementById('comment');
+      if (textarea.value != replytext) {
+          textarea.value += replytext;
+      }
+
+      textarea.focus();
+  } 
+//-->
+</script>
+
+
+<!-- This auto-sizes the comments and positions the collapse/expand links 
+     to the right. -->
+<table class="bz_comment_table">
+<tr>
+<td>
+<div id="c0" class="bz_comment bz_first_comment">
+
+      <div class="bz_first_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=985.html#c0">Description</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Wojciech Kapusta</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2006-09-07 10:43:17 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Jakiś czas temu doszliśmy wspólnie do wniosku, że &quot;klikanie&quot; nie jest ładnym
+określeniem, i należy je wyrugować z tłumaczeń poważnych programów. Jako że
+Firefox - podobnie też pozostałe programy Mozilli - są programami zalecanymi
+(przez nas) do poważnych, produkcyjno-biznesowych zastosowań, należy też
+zastanowić się nad tą kwestią a następnie ewentualnie ujednolicić słownictwo. 
+
+Na razie sygnalizuję w poszczególnych bugach występowanie klikania, do
+ewentualnej późniejszej zmiany.
+
+Jako że rzecz raz odłożona na później odkłada się dalej sama, proponuję
+przemyśleć i przedyskutować tę sprawę.</pre>
+    </div>
+
+    <div id="c1" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=985.html#c1">Comment 1</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2006-09-10 00:28:06 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">-&gt; toolkit</pre>
+    </div>
+
+    <div id="c2" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=985.html#c2">Comment 2</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2006-09-10 12:05:45 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Proponuję zacząć od b.m.o.</pre>
+    </div>
+
+    <div id="c3" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=985.html#c3">Comment 3</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Wojciech Kapusta</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2006-09-11 16:19:24 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">A co ma b.m.o. do naszego klikania, naciskania czy innych określeń na używanie
+myszy?
+
+</pre>
+    </div>
+
+    <div id="c4" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=985.html#c4">Comment 4</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2006-09-12 01:54:30 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">docelowa: 3.0
+
+W 2.0 tylko jakieś kompletnie skandaliczne przypadki. Mamy tylko jeden dzień na
+poprawki przed RC 1.</pre>
+    </div>
+
+    <div id="c5" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=985.html#c5">Comment 5</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2006-09-16 13:53:44 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(W odpowiedzi na komentarz #3)
+<span class="quote">&gt; A co ma b.m.o. do naszego klikania, naciskania czy innych określeń na używanie
+&gt; myszy?</span >
+
+W en-US też to klikanie występuje.
+</pre>
+    </div>
+
+    <div id="c6" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=985.html#c6">Comment 6</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2006-09-17 13:52:38 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">*** <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED DUPLICATE - Kliknąć - nacisnąć"
+   href="show_bug.cgi%3Fid=1034.html">Bug 1034</a> has been marked as a duplicate of this bug. ***</pre>
+    </div>
+
+    <div id="c7" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=985.html#c7">Comment 7</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Leszek Życzkowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2006-12-06 00:21:19 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">No cóż, Firefox 2.0 już dawno opublikowany, więc pora wrócić do tego tematu tak,
+aby w 3.0 było już jasne kiedy używamy klikania, a kiedy naciskania. Przypomnę
+moje sugestie dotyczące tego zagadnienia. Proponuję wszędzie tam gdzie mamy
+wykonać akcję &quot;click&quot; dotyczącą przycisków używać określenia &quot;nacisnąć&quot; bo po
+polsku przycisk, jak sama nazwa sugeruje, należy &quot;przycisnąć&quot; lub zgrabniej
+brzmiące &quot;nacisnąć&quot;. W pozostałych przypadkach pozostawiłbym &quot;Kliknąć&quot; np.
+odnośnik, kliknij tutaj...
+
+</pre>
+    </div>
+
+    <div id="c8" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=985.html#c8">Comment 8</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Stefan Plewako :stef</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-01-10 13:57:00 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(w odpowiedzi na komentarz #7)
+<span class="quote">&gt; No cóż, Firefox 2.0 już dawno opublikowany, więc pora wrócić do tego
+&gt; tematu tak,
+&gt; aby w 3.0 było już jasne</span >
+
+skoro 3.0 jest zaraz.. to raczej się nie wyrobimy, jednak odświeżę trochę temat.
+
+<span class="quote">&gt; moje sugestie dotyczące tego zagadnienia. Proponuję wszędzie tam gdzie mamy
+&gt; wykonać akcję &quot;click&quot; dotyczącą przycisków używać określenia
+&gt; &quot;nacisnąć&quot; bo po
+&gt; polsku przycisk, jak sama nazwa sugeruje, należy &quot;przycisnąć&quot; lub zgrabniej
+&gt; brzmiące &quot;nacisnąć&quot;. W pozostałych przypadkach pozostawiłbym &quot;Kliknąć&quot;
+&gt; np.
+&gt; odnośnik, kliknij tutaj...</span >
+
+Naciskanie, przyciskanie czy inne wersje naduszania mają dokładnie te same wady co klikanie - jestem zdecydowanie przeciwny takiej zmianie.
+
+Sama idea klikania wydaje mi się bezsensowna, ponieważ (pomijając wcześniej wymienione argumenty, z którymi się zgadzam) nic nam do tego przy pomocy jakiego urządzenia (lub urządzeń) sterującego obsługiwany jest komputer.
+
+Zamiast tego proponowałbym używać, słów oddających logikę operacji a nie mechanikę (jak w przypadku klikania), na podobnej zasadzie dla której nie klikamy w przyciski 0800 a wybieramy jakiś numer dzwoniąc gdzieś; np:
+- wybierz (np. przycisk/&amp;button.label;/odnośnik/, aby
+- zaznacz (np. pole)
+- wskaż, przejdź, otwórz, itd..
+
+Dodatkową zaletą takiego rozwiązania jest komfort użytkowników - nie męczmy ich nowymi, niekoniecznie łatwymi do zrozumienia formami, zamiast tego używamy czegoś co już funkcjonuje.
+</pre>
+    </div>
+
+    <div id="c9" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=985.html#c9">Comment 9</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Staś Małolepszy :stas</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-01-10 14:55:44 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Zgadzam się ze Stefem. CZasami jest z tym nieco więcej roboty, ale ogólnie jest to moim zdaniem sluszne podejście. Tak zreszta staramy sie tłumaczyć w produktach novellowych.</pre>
+    </div>
+
+    <div id="c10" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=985.html#c10">Comment 10</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Stefan Plewako :stef</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-01-10 15:41:57 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(w odpowiedzi na komentarz #9)
+<span class="quote">&gt; Zgadzam się ze Stefem. CZasami jest z tym nieco więcej roboty, ale ogólnie
+&gt; jest to moim zdaniem sluszne podejście. Tak zreszta staramy sie tłumaczyć w
+&gt; produktach novellowych.
+&gt; </span >
+
+Flock też jest przetłumaczony w ten sposób. IMHO różnica w ilości pracy jest niezauważalna, lub nawet na korzyść.</pre>
+    </div>
+
+    <div id="c11" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=985.html#c11">Comment 11</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-01-13 14:03:45 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">To nie jest dla mnie błąd blokujący wydanie. Ale mogę na to zerknąć.
+Klikanie w calendar/locales/en-US/, które występuje również w l10n/pl/calendar:
+&lt;!ENTITY calendar.task.edit.instructions.label &quot;Click Here to Add a New Task&quot;&gt;
+WARN_APP_RUNNING_INSTALL=$(^Name) must be closed to proceed with the installation.\n\nClick &quot;OK&quot; to exit $(^Name) automatically and continue.
+WARN_APP_RUNNING_UNINSTALL=$(^Name) must be closed to proceed with the uninstall.\n\nClick &quot;OK&quot; to exit $(^Name) automatically and continue.
+WARN_WRITE_ACCESS=You don't have access to write to the installation directory.\n\nClick OK to select a different directory.
+WARN_DISK_SPACE=You don't have sufficient disk space to install to this location.\n\nClick OK to select a different location.
+OPTIONS_SUMMARY=Choose the type of setup you prefer, then click Next.
+MUI_TEXT_FINISH_INFO_TEXT=$(^NameDA) has been installed on your computer.\n\nClick Finish to close this wizard.
+MUI_UNTEXT_FINISH_INFO_TEXT=$(^NameDA) has been uninstalled from your computer.\n\nClick Finish to close this wizard.
+ClickNext=Click Next to continue.
+ClickInstall=Click Install to start the installation.
+ClickUninstall=Click Uninstall to start the uninstallation.
+DirText=Setup will install $(^NameDA) in the following folder. To install in a different folder, click Browse and select another folder. $_CLICK
+FileError=Error opening file for writing: \r\n\r\n$0\r\n\r\nClick Abort to stop the installation,\r\nRetry to try again, or\r\nIgnore to skip this file.
+FileError_NoIgnore=Error opening file for writing: \r\n\r\n$0\r\n\r\nClick Retry to try again, or\r\nCancel to stop the installation.</pre>
+    </div>
+
+    <div id="c12" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=985.html#c12">Comment 12</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-01-13 14:07:40 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Zgadzam sie z Hubertem.</pre>
+    </div>
+
+    <div id="c13" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=985.html#c13">Comment 13</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-01-13 14:14:00 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Maciek, jakiś komentarz?</pre>
+    </div>
+
+    <div id="c14" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=985.html#c14">Comment 14</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Stefan Plewako :stef</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-01-14 03:38:18 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(w odpowiedzi na komentarz #11)
+<span class="quote">&gt; To nie jest dla mnie błąd blokujący wydanie.</span >
+
+Jasne, uważam jednak, że lepiej zdecydować co z tym robimy wcześniej, niż odkładać to w nieskończoność; okazja wydaje się bardzo dobra, później będzie raczej tylko trudniej.</pre>
+    </div>
+
+    <div id="c15" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=985.html#c15">Comment 15</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Maciej Chojnacki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-02-07 02:08:46 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">O, jaka ciekawa dyskusja.
+
+Mój stosunek do klikania jest ambiwalentny. Z jednej strony dla kogoś &quot;z zewnątrz&quot; brzmi to dziwnie, z drugiej jednak - wśród osób używajacych komputerów (a już specjalistów w szczególności) zwrot ten jest co najmniej obłaskawiony, jeżeli nie głęboko wryty w podświadomość. Szczerze mówiąc komunikat &quot;Wybierz przycisk OK aby kontynuować&quot; każe mi szukać jakiegoś elektrycznego wihajstra wystającego z nieokreślonej powierzchni poziomej i jako żywo przywodzi na myśl widok anglojęzycznej Pani Krysi z Księgowości postawionej przed trudnym zadaniem odnalezienia na klawiaturze komputera klawisza &quot;any&quot;.
+
+Nie bez znaczenia jest też fakt, że taki na przykład profesor Bańko z poradni językowej PWN również używa czasownika &quot;klikać&quot; (<a href="http://poradnia.pwn.pl/lista.php?id=7274">http://poradnia.pwn.pl/lista.php?id=7274</a>).
+
+IMO powinniśmy pozostać przy kliknięciu. Jednak.</pre>
+    </div>
+
+    <div id="c16" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=985.html#c16">Comment 16</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-03-22 17:32:16 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(w odpowiedzi na komentarz #14)
+<span class="quote">&gt; (w odpowiedzi na komentarz #11)
+&gt; &gt; To nie jest dla mnie błąd blokujący wydanie.
+&gt; 
+&gt; Jasne, uważam jednak, że lepiej zdecydować co z tym robimy wcześniej, niż
+&gt; odkładać to w nieskończoność; okazja wydaje się bardzo dobra, później
+&gt; będzie raczej tylko trudniej.</span >
+
+OK, sprawdziłem wszystkie miejsca, gdzie się &quot;klika&quot; w Sunbirdzie. Wszystkie wystąpienia są tłumaczeniami oryginalnego &quot;Click&quot;, dlatego nie będę tego zmieniał w polskiej wersji. 
+
+</pre>
+    </div>
+
+    <div id="c17" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=985.html#c17">Comment 17</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Rafał Likus</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-04-06 14:13:10 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Ja już nie wiem, gdzie mogłem, to w helpie do SeaMonkey nie stosowałem klikania, ale nie wszędzie się da. Tu np. nie wyobrażam sobie wskazania, bo co to oznacza, najechanie kursorem myszki na ikonę i już?
+Click the Online/Offline indicator &lt;img src=&quot;images/online.png&quot; alt=&quot;&quot;/&gt; in the lower right corner of the Mail window to go offline.
+
+Z drugiej strony, to co Stef napisał o przyciskach też mi nie pasuje
+&quot;wybierz (np. przycisk/&amp;button.label;/odnośnik/, aby&quot;
+dla mnie przyciski się naciska i już.
+Ale jak mnie przegadacie, to nie będę bardzo uparty.
+</pre>
+    </div>
+
+    <div id="c18" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=985.html#c18">Comment 18</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Stefan Plewako :stef</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-04-06 15:10:39 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text"><span class="quote">&gt; (w odpowiedzi na komentarz #14)
+&gt; &gt; (w odpowiedzi na komentarz #11)
+&gt; &gt; &gt; To nie jest dla mnie błąd blokujący wydanie.
+&gt; &gt; 
+&gt; &gt; Jasne, uważam jednak, że lepiej zdecydować co z tym robimy wcześniej, niż
+&gt; &gt; odkładać to w nieskończoność; okazja wydaje się bardzo dobra, później
+&gt; &gt; będzie raczej tylko trudniej.
+&gt; 
+&gt; OK, sprawdziłem wszystkie miejsca, gdzie się &quot;klika&quot; w Sunbirdzie. Wszystkie
+&gt; wystąpienia są tłumaczeniami oryginalnego &quot;Click&quot;, dlatego nie będę tego
+&gt; zmieniał w polskiej wersji. </span >
+
+Hubert, z całym szacunkiem - przecież nie rozważamy czy w oryginale jest &quot;click&quot;  czy coś innego.. w dodatku stawiasz np mnie pod ścianą - albo zrobię tak jak Ty sobie zadecydowałeś albo tb będzie niespójny..
+
+Ostro ostatnio pogrywacie. :-(
+
+(w odpowiedzi na komentarz #17)
+<span class="quote">&gt; Z drugiej strony, to co Stef napisał o przyciskach też mi nie pasuje
+&gt; &quot;wybierz (np. przycisk/&amp;button.label;/odnośnik/, aby&quot;
+&gt; dla mnie przyciski się naciska i już.
+&gt; Ale jak mnie przegadacie, to nie będę bardzo uparty.</span >
+
+Ja, jawohl, dobrze być jak jest - po co my się narażać?
+
+Dla większości naturalnym jest że masło jest maślane, nawet dla mnie gdy korzystam głównie z klawiatury - wszyscy już do bełkotu przywykli, wytłumacz mi tylko proszę gdzie na klawiaturze mojego laptopa jest przycisk 'Anuluj' który mógłbym przycisnąć? (czy może klawiatura to już aż taki staroć że nikt go nie używa)
+
+Nie wydaje mi się, żeby taka zmiana była niezrozumiała dla zwykłego użytkownika - co jest kwestią podstawową, to czy będziemy forsować zmiany w en-US jest dla mnie drugorzędne.
+</pre>
+    </div>
+
+    <div id="c19" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=985.html#c19">Comment 19</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Rafał Likus</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-04-08 06:03:16 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(w odpowiedzi na komentarz #18)
+<span class="quote">&gt; (w odpowiedzi na komentarz #17)
+&gt; &gt; Z drugiej strony, to co Stef napisał o przyciskach też mi nie pasuje
+&gt; &gt; &quot;wybierz (np. przycisk/&amp;button.label;/odnośnik/, aby&quot;
+&gt; &gt; dla mnie przyciski się naciska i już.
+&gt; &gt; Ale jak mnie przegadacie, to nie będę bardzo uparty.
+&gt; 
+&gt; Ja, jawohl, dobrze być jak jest - po co my się narażać?</span >
+
+To nie o to przecież chodzi, że Kali jeść krowa widelec.
+ 
+<span class="quote">&gt; Dla większości naturalnym jest że masło jest maślane, nawet dla mnie gdy
+&gt; korzystam głównie z klawiatury - wszyscy już do bełkotu przywykli,
+&gt; wytłumacz mi tylko proszę gdzie na klawiaturze mojego laptopa jest przycisk
+&gt; 'Anuluj' który mógłbym przycisnąć? (czy może klawiatura to już aż taki
+&gt; staroć że nikt go nie używa)</span >
+
+To przyciski mogą być tylko tworami fizycznymi? W komputerze na formatce już nie?
+Ale po polsku, wskażę przycisk i on się sam naciśnie?
+Wybranie już prędzej. Dyskusję możemy prowadzić dalej, bo, czy wybranie nie oznacza np. tylko pojawienia się tej przerywanej ramki zaznaczenie na obrazku przycisku?
+
+<span class="quote">&gt; Nie wydaje mi się, żeby taka zmiana była niezrozumiała dla zwykłego
+&gt; użytkownika - co jest kwestią podstawową, to czy będziemy forsować zmiany
+&gt; w en-US jest dla mnie drugorzędne.</span >
+
+No pewnie, że nie będziemy poprawiać en_US, nawet żart wydaje mi się być głupi.
+A myślisz, że przy bogactwie bodźców i bogactwie języka polskiego ludzie zwracają uwagę tak bardzo jak tak czy inaczej jest to zrozumiałe i kojarzy się z jednoznaczną czynnością. Oczywiście, staramy się, żeby to było poprawnie językowo, itp.
+</pre>
+    </div>
+
+    <div id="c20" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=985.html#c20">Comment 20</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Stefan Plewako :stef</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-04-08 10:43:57 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(w odpowiedzi na komentarz #19)
+<span class="quote">&gt; (w odpowiedzi na komentarz #18)
+&gt; &gt; Dla większości naturalnym jest że masło jest maślane, nawet dla mnie gdy
+&gt; &gt; korzystam głównie z klawiatury - wszyscy już do bełkotu przywykli,
+&gt; &gt; wytłumacz mi tylko proszę gdzie na klawiaturze mojego laptopa jest przycisk
+&gt; &gt; 'Anuluj' który mógłbym przycisnąć? (czy może klawiatura to już aż taki
+&gt; &gt; staroć że nikt go nie używa)
+&gt; 
+&gt; To przyciski mogą być tylko tworami fizycznymi? W komputerze na formatce już
+&gt; nie?</span >
+
+Nie, tego nie napisałem - sęk w tym jeżeli np. obsługuję kompa bezkursorowo (np.  przy pomocy klawiatury, albo głosu) to nie ma żadnego w nie klikania..
+
+<span class="quote">&gt; Ale po polsku, wskażę przycisk i on się sam naciśnie?
+&gt; Wybranie już prędzej. Dyskusję możemy prowadzić dalej, bo, czy wybranie
+&gt; nie oznacza np. tylko pojawienia się tej przerywanej ramki zaznaczenie na
+&gt; obrazku przycisku?</span >
+
+Moim zdaniem sam sobie odpowiedziałeś, wybieranie to nie to samo co zaznaczanie czy wskazywanie.
+
+<span class="quote">&gt; No pewnie, że nie będziemy poprawiać en_US, nawet żart wydaje mi się być
+&gt; głupi.</span >
+
+Tutaj akurat nie żartowałem.
+
+<span class="quote">&gt; A myślisz, że przy bogactwie bodźców i bogactwie języka polskiego ludzie
+&gt; zwracają uwagę tak bardzo jak tak czy inaczej jest to zrozumiałe i kojarzy
+&gt; się z jednoznaczną czynnością. Oczywiście, staramy się, żeby to było
+&gt; poprawnie językowo, itp.</span >
+
+Myślę że nie wszyscy ale część z pewnością - inna sprawa, że większość może nie zwrócić uwagi na orta w jakimś zapomnianym stringu, co nie znaczy, że mamy je robić.
+</pre>
+    </div>
+
+    <div id="c21" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=985.html#c21">Comment 21</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Wojciech Kapusta</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-04-09 07:14:07 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Proponuję więc pewien kompromis: usuwać to klikanie wszędzie, gdzie się da, a pozostawiać tylko dam, gdzie naprawdę nie da się tego jakoś obejść (takie &quot;deprecated&quot;).
+
+Geneza klikania jest bardzo prosta: polityka marketingowa Micro$oftu wmawiająca użytkownikowi, że wszystko można po prostu łatwo &quot;kliknąć&quot; - właśnie KLIKNĄĆ a nie wybrać, bo to oznacza zastanowienie - i nie zaprzątać sobie głowy jakąś klawiaturą czy innymi hackerskimi przyrządami.
+
+Wynikałoby z tego, że użytkownicy laptopów nie mogą korzystać z oprogramowania, bo nie mają czym klikać??? A co z ekranami dotykowymi, powszechnymi w medycynie kulkami itp.? </pre>
+    </div>
+
+    <div id="c22" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=985.html#c22">Comment 22</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Leszek Życzkowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-04-09 11:45:00 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(w odpowiedzi na komentarz #21)
+<span class="quote">&gt; Wynikałoby z tego, że użytkownicy laptopów nie mogą korzystać z
+&gt; oprogramowania, bo nie mają czym klikać??? A co z ekranami dotykowymi,
+&gt; powszechnymi w medycynie kulkami itp.? 
+&gt; </span >
+Mogą używać myszy :) To dla rozluźnienia, bo dyskusja zbacza od zasadniczego tematu i zaczynamy dzielić włos na czworo.
+Z tego co mi wiadomo, to określenie &quot;click&quot; wzięło się od naśladowania dźwięku jaki wydaje przełącznik umieszczony w myszy. Użyto krótkiego określenia &quot;click&quot; zamiast &quot;naciśnij przycisk myszy po wskazaniu kursorem myszy&quot;. Słowo &quot;click&quot; o znaczeniu &quot;naciśnij przycisk myszy komputerowej&quot; (to operate by pressing a button on the mouse of a computer) zostało wprowadzone do języka angielskiego jako czasownik. Oznacza zatem naciśnięcie przycisku myszy, a nie jakiegoś elementu interfejsu. W naszym języku zostało to opacznie zinterpretowane, że klikamy, naciskamy, tupiemy, pukamy &quot;w&quot; (tak jest stosowane w M$), &quot;na&quot; (bądź bez przyimków) jakimś elemencie interfejsu.
+Dość wyjaśnień, zastanówmy się zatem co z tym zrobić.
+
+Moje zdanie jest następujące:
+Mając powyższe na uwadze i to, że &quot;kliknąć&quot; jest w SJP PWN
+&quot;    *
+      kliknąć — klikać «nacisnąć klawisz myszy komputerowej, aby uruchomić program komputerowy lub wydać określone polecenie»
+    *
+      kliknięcie «jednorazowe naciśnięcie i puszczenie przycisku myszy»&quot;
+
+uważam, że nie należy pozbywać się &quot;kliknięcia&quot;, trzeba tylko ustalić, czy klikamy &quot;w&quot; (fatalne określenie stosowane przez polskich tłumaczy M$), czy też &quot;na&quot;. Dla mnie oczywistym jest, że klikamy &quot;na&quot;, bo jak napisałem wcześniej najpierw musi nastąpić wskazanie kursorem myszy danego elementu poprzez umieszczenie kursora nad/na elemencie, co w interfejsie przejawia się graficzną zmianą stanu tego elementu lub kursora i w tym momencie wykonanie kliknięcia.
+
+Reasumując temat, moje stanowisko jest następujące - Przyjąć jako zasadę &quot;kliknąć na elemencie&quot;.
+
+
+
+</pre>
+    </div>
+
+    <div id="c23" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=985.html#c23">Comment 23</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Stefan Plewako :stef</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-04-09 14:24:23 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(w odpowiedzi na komentarz #21)
+<span class="quote">&gt; Proponuję więc pewien kompromis: usuwać to klikanie wszędzie, gdzie się
+&gt; da, a pozostawiać tylko dam, gdzie naprawdę nie da się tego jakoś obejść
+&gt; (takie &quot;deprecated&quot;).</span >
+
+Jestem za, powolne odchodzenie w miarę możliwości i zdrowego rozsądku.
+
+</pre>
+    </div>
+
+    <div id="c24" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=985.html#c24">Comment 24</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Staś Małolepszy :stas</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-06-01 15:46:20 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Created <span class=""><a href="attachment.cgi%3Fid=1050" name="attach_1050" title="&quot;Clik on link&quot; - jak tlumaczyc taki obrazek?">attachment 1050</a> <a href="attachment.cgi%3Fid=1050&amp;action=edit.html" title="&quot;Clik on link&quot; - jak tlumaczyc taki obrazek?">[details]</a></span>
+&quot;Clik on link&quot; - jak tlumaczyc taki obrazek?
+
+Czy udało nam się coś wypracować w sprawie klikania czegoś/w coś/na czymś/na coś?
+
+Pytam z okazji pojawiania się na mozilla.com/mozilla-europe.org takiego obrazka. (a wlasciwie to pojawienia sie i znikniecia, ale problem pozostal). Przetlumaczylem to jako &quot;kliknij odnośnik&quot;.
+
+(chowa się i czeka, aż przejdą gromy)
+
+Zapraszam do dyskusji.</pre>
+    </div>
+
+    <div id="c25" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=985.html#c25">Comment 25</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-06-02 00:10:53 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(In reply to <a href="show_bug.cgi%3Fid=985.html#c24">comment #24</a>)
+<span class="quote">&gt; Created an attachment (id=1050) [details]
+&gt; &quot;Clik on link&quot; - jak tlumaczyc taki obrazek?
+&gt; 
+&gt; Czy udało nam się coś wypracować w sprawie klikania czegoś/w coś/na czymś/na
+&gt; coś?
+&gt; 
+&gt; Pytam z okazji pojawiania się na mozilla.com/mozilla-europe.org takiego
+&gt; obrazka. (a wlasciwie to pojawienia sie i znikniecia, ale problem pozostal).
+&gt; Przetlumaczylem to jako &quot;kliknij odnośnik&quot;.</span >
+
+Mi się podoba. I omija problem &quot;w&quot; czy &quot;na&quot;.</pre>
+    </div>
+
+    <div id="c26" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=985.html#c26">Comment 26</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Wojciech Kapusta</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-06-02 00:17:54 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Jeśli już trzeba używać kliknięcia, proponowałbym jednak kliknięcie czegoś →
+&quot;kliknąć przycisk, obrazek, odnośnik&quot;. Przejrzyste, proste i zrozumiałe.
+ponadto chyba dość zadomowione. Wszędzie słyszę &quot;kliknij to czy tamto&quot;,
+natomiast &quot;kliknij na czymś' - tylko w wyjątkowych sytuacjach.
+
+
+Proponowałbym ponadto przemyśleć następujące punkty, mogące ewentualnie
+posłużyć do stworzenia zaleceń ogólnych:
+1. Jeśli w interfejsie mamy wyraźny przycisk (button) warto rozważyć
+&quot;naciśnięcie przycisku xyz&quot;. Np. naciśnięcie przycisku &quot;Commit&quot; pod polem
+tekstowym w Bugzilli. Często przyciski te są tak zrobione, że nawet widać, jak
+są naciskane.
+2. Naciśnięcie obrazka zdecydowanie odpada. Można go ewentualnie wybrać, ale to
+zależy od kontekstu.
+3. Odnośnik jest trochę bardziej skomplikowany. W tekstach dłuższych, np. w
+pomocy, możemy pozwolić sobie na &quot;wybranie odnośnika&quot; albo &quot;skorzystanie z
+niego&quot;. W interfejsie tego typu gimnastyka raczej nie będzie możliwa.
+4. Pozycje menu można wybierać, wzgl. przechodzić do nich.
+5. &quot;Kliknięcie w&quot; jest całkowicie nie do przyjęcia.
+6. Zawsze warto zastanowić się nad kontekstem i skorzystać z propozycji
+Stefana:
+<span class="quote">&gt; Zamiast tego proponowałbym używać słów oddających logikę operacji
+&gt; a nie mechanikę (...) np.:
+&gt; - wybierz (np. przycisk/&amp;button.label;/odnośnik), aby
+&gt; - zaznacz (np. pole),
+&gt; - wskaż, przejdź, otwórz, itd.,</span >
+to jednak jest silnie związane z kontekstem i nie zawsze będzie możliwe. W
+Opisach, pomocy itd. - jak najbardziej, w interfejsie mogą być problemy, np.
+niejednoznaczność.
+
+Przy okazji przeprowadziłem krótkie rewju, z którego wynikło, że w języku
+angielskim używa się najczęściej &quot;Click ...&quot; bez przyimka (np. w tekstach
+novellowych) oraz &quot;Click on ...&quot;, takoż i w języku niemieckim (&quot;Klicken Sie
+....&quot; albo &quot;Klicken Sie auf ...&quot;).</pre>
+    </div>
+
+    <div id="c27" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=985.html#c27">Comment 27</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Leszek Życzkowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-06-02 00:42:16 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(In reply to <a href="show_bug.cgi%3Fid=985.html#c26">comment #26</a>)
+<span class="quote">&gt; Przy okazji przeprowadziłem krótkie rewju, z którego wynikło, że w języku
+&gt; angielskim używa się najczęściej &quot;Click ...&quot; bez przyimka (np. w tekstach
+&gt; novellowych) oraz &quot;Click on ...&quot;, takoż i w języku niemieckim (&quot;Klicken Sie
+&gt; ....&quot; albo &quot;Klicken Sie auf ...&quot;).</span >
+
+To jest to, o czym pisałem poprzednio
+:
+&quot;Z tego co mi wiadomo, to określenie &quot;click&quot; wzięło się od naśladowania dźwięku
+jaki wydaje przełącznik umieszczony w myszy. Użyto krótkiego określenia &quot;click&quot;
+zamiast &quot;naciśnij przycisk myszy po wskazaniu kursorem myszy&quot;. Słowo &quot;click&quot; o
+znaczeniu &quot;naciśnij przycisk myszy komputerowej&quot; (to operate by pressing a
+button on the mouse of a computer - Cambridge Dictionaries) zostało wprowadzone do języka angielskiego jako czasownik. Oznacza zatem naciśnięcie przycisku myszy, a nie jakiegoś elementu interfejsu. W naszym języku zostało to opacznie zinterpretowane, że klikamy, naciskamy, tupiemy, pukamy &quot;w&quot; (tak jest stosowane w M$), &quot;na&quot; (bądź bez przyimków) jakimś elemencie interfejsu.
+Dość wyjaśnień, zastanówmy się zatem co z tym zrobić.
+
+Moje zdanie jest następujące:
+Mając powyższe na uwadze i to, że &quot;kliknąć&quot; jest w SJP PWN
+&quot;    *
+      kliknąć — klikać «nacisnąć klawisz myszy komputerowej, aby uruchomić
+program komputerowy lub wydać określone polecenie»
+    *
+      kliknięcie «jednorazowe naciśnięcie i puszczenie przycisku myszy»&quot;
+
+Przytaczając te dane chciałbym zapytać: Czy mamy w du..e to, co podają te uznane wydawnictwa, czy bierzemy je pod rozwagę?</pre>
+    </div>
+
+    <div id="c28" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=985.html#c28">Comment 28</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-06-02 00:49:25 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(In reply to <a href="show_bug.cgi%3Fid=985.html#c26">comment #26</a>)
+<span class="quote">&gt; Jeśli już trzeba używać kliknięcia, proponowałbym jednak kliknięcie czegoś →
+&gt; &quot;kliknąć przycisk, obrazek, odnośnik&quot;. Przejrzyste, proste i zrozumiałe.
+&gt; ponadto chyba dość zadomowione. Wszędzie słyszę &quot;kliknij to czy tamto&quot;,
+&gt; natomiast &quot;kliknij na czymś' - tylko w wyjątkowych sytuacjach.</span >
+
+Dla mnie OK.
+
+<span class="quote">&gt; Proponowałbym ponadto przemyśleć następujące punkty, mogące ewentualnie
+&gt; posłużyć do stworzenia zaleceń ogólnych:
+&gt; 1. Jeśli w interfejsie mamy wyraźny przycisk (button) warto rozważyć
+&gt; &quot;naciśnięcie przycisku xyz&quot;. Np. naciśnięcie przycisku &quot;Commit&quot; pod polem
+&gt; tekstowym w Bugzilli. Często przyciski te są tak zrobione, że nawet widać, jak
+&gt; są naciskane.</span >
+
+To nie jest tak, że Amerykanie klikają, a Polacy naciskają. Jeśli w interfejsie jest przycisk, a w oryginale &quot;click&quot;, zawsze można zgłosić błąd w wydaniu oryginalnym.
+
+Nie wiem jak sytuacja wygląda we Flocku, ale w Mozilli mamy:
+&quot;The aim here is to provide consistency of user experience by making the localized build as much like the official build as possible.&quot;
+
+<a href="http://www.mozilla.org/foundation/trademarks/l10n-policy.html">http://www.mozilla.org/foundation/trademarks/l10n-policy.html</a>
+
+(In reply to <a href="show_bug.cgi%3Fid=985.html#c27">comment #27</a>)
+<span class="quote">&gt; Moje zdanie jest następujące:
+&gt; Mając powyższe na uwadze i to, że &quot;kliknąć&quot; jest w SJP PWN
+&gt; &quot;    *
+&gt;       kliknąć — klikać «nacisnąć klawisz myszy komputerowej, aby uruchomić
+&gt; program komputerowy lub wydać określone polecenie»
+&gt;     *
+&gt;       kliknięcie «jednorazowe naciśnięcie i puszczenie przycisku myszy»&quot;
+&gt; 
+&gt; Przytaczając te dane chciałbym zapytać: Czy mamy w du..e to, co podają te
+&gt; uznane wydawnictwa, czy bierzemy je pod rozwagę?</span >
+
+Punkt widzenia zależy od punktu siedzenia ;-) - <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED INVALID - Tłumaczenie &quot;integer&quot;"
+   href="show_bug.cgi%3Fid=1751.html#c6">http://bugs.aviary.pl/show_bug.cgi?id=1751#c6</a> :-D</pre>
+    </div>
+
+    <div id="c29" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=985.html#c29">Comment 29</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Leszek Życzkowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-06-02 00:57:46 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(In reply to <a href="show_bug.cgi%3Fid=985.html#c28">comment #28</a>)
+<span class="quote">&gt; Punkt widzenia zależy od punktu siedzenia ;-) -
+&gt; <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED INVALID - Tłumaczenie &quot;integer&quot;"
+   href="show_bug.cgi%3Fid=1751.html#c6">http://bugs.aviary.pl/show_bug.cgi?id=1751#c6</a> :-D</span >
+
+Hubert, Nie tędy wiedzie droga do ustalenia co robimy z &quot;click&quot;, zresztą tam miałem rację, bo tłumaczenia nie odnosiły się do typu danych, tylko do samego słowa &quot;integer&quot;.
+Zatem nie zbaczajmy na boki, tylko skoncentrujmy się na tym, co w tym bugu jest istotne. Słowniki tym razem podają precyzyjnie, o co chodzi.</pre>
+    </div>
+
+    <div id="c30" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=985.html#c30">Comment 30</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Staś Małolepszy :stas</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-06-02 01:34:37 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(In reply to <a href="show_bug.cgi%3Fid=985.html#c27">comment #27</a>)
+
+<span class="quote">&gt; Moje zdanie jest następujące:
+&gt; Mając powyższe na uwadze i to, że &quot;kliknąć&quot; jest w SJP PWN
+&gt; &quot;    *
+&gt;       kliknąć — klikać «nacisnąć klawisz myszy komputerowej, aby uruchomić
+&gt; program komputerowy lub wydać określone polecenie»
+&gt;     *
+&gt;       kliknięcie «jednorazowe naciśnięcie i puszczenie przycisku myszy»&quot;
+&gt; 
+&gt; Przytaczając te dane chciałbym zapytać: Czy mamy w du..e to, co podają te
+&gt; uznane wydawnictwa, czy bierzemy je pod rozwagę?</span >
+
+Przepraszam, chyba nie do końca zrozumiałem: jakie jest Twoje zdanie?
+
+(I nie, nie mamy w dupie).</pre>
+    </div>
+
+    <div id="c31" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=985.html#c31">Comment 31</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Tomasz Dominikowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-06-02 02:10:12 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">W zasadzie nigdy się nad tym nie zastanawiałem i nie wydaje mi się, aby klikanie było nieprofesjonalnym tłumaczeniem. 
+
+W GNOME klikamy za pomocą myszy, a naciskamy wyłącznie klawisze na klawiaturze.
+
+Zawsze &quot;kliknięcie przycisku&quot; i zawsze &quot;naciśnięcie klawisza&quot;. 
+
+Dzięki temu ZU jest już uwarunkowany na tyle, że wie czy ma skorzystać z klawiatury i coś wstukać, czy może użyć myszy i kliknąć (...&quot;nacisnąć&quot;) jakiś przycisk w UI. 
+
+Klawisz/przycisk to słabe rozgraniczenie, niestety stosowane zamiennie przez ZU. 
+
+Klikanie i naciskanie już nie.</pre>
+    </div>
+
+    <div id="c32" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=985.html#c32">Comment 32</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Leszek Życzkowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-06-02 02:39:48 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(In reply to <a href="show_bug.cgi%3Fid=985.html#c30">comment #30</a>)
+<span class="quote">&gt; Przepraszam, chyba nie do końca zrozumiałem: jakie jest Twoje zdanie?
+&gt; </span >
+O rany!!! Rozumiem, że dzisiaj jest poniedziałek i należy podejść do różnych spraw na luzie, ale proszę, czytaj ze zrozumieniem. Wcześniej jest napisane:
+
+<span class="quote">&gt;To jest to, o czym pisałem poprzednio:</span >
+czyli cytat.
+Pełna treść jest w komentarzu #22. Ponieważ było to już dawno pozwoliłem sobie przytoczyć ten fragment.
+Pragnę przypomnieć, że Wojciech zgłosił ten bug we wrześniu 2006, zatem niedługo będzie miał 2 lata i w końcu coś należałoby zdecydować - przyjąć konkretne zalecenia dotyczące stosowania &quot;kliknąć&quot;.</pre>
+    </div>
+
+    <div id="c33" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=985.html#c33">Comment 33</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-06-02 02:47:33 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Odniosłem wrażenie, że wszyscy zgadzają się z tym, że &quot;klikamy coś&quot;. Czy tak?</pre>
+    </div>
+
+    <div id="c34" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=985.html#c34">Comment 34</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Staś Małolepszy :stas</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-06-02 03:30:18 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(In reply to <a href="show_bug.cgi%3Fid=985.html#c32">comment #32</a>)
+<span class="quote">&gt; (In reply to <a href="show_bug.cgi%3Fid=985.html#c30">comment #30</a>)
+&gt; &gt; Przepraszam, chyba nie do końca zrozumiałem: jakie jest Twoje zdanie?
+&gt; &gt; 
+&gt; O rany!!! Rozumiem, że dzisiaj jest poniedziałek i należy podejść do różnych
+&gt; spraw na luzie, ale proszę, czytaj ze zrozumieniem. Wcześniej jest napisane:
+&gt; 
+&gt; &gt;To jest to, o czym pisałem poprzednio:
+&gt; czyli cytat.
+&gt; Pełna treść jest w komentarzu #22. Ponieważ było to już dawno pozwoliłem sobie
+&gt; przytoczyć ten fragment.</span >
+
+Hej, Leszku, spokojnie :) To nie dziennik ustaw - cytuj proszę tak, żeby nie urywać wypowiedzi w polowie.
+
+I bez obaw, czytam ze zrozumieniem, i w tym wypadku nie zrozumiałem, w jaki sposób Twój komentarz odnosił się do sprawy, która poruszyłem, tj. czy klikamy cos, w cos, na czyms czy moze na cos. Dlatego też zapytałem. A więc?</pre>
+    </div>
+
+    <div id="c35" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=985.html#c35">Comment 35</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Staś Małolepszy :stas</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-06-02 03:32:34 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(In reply to <a href="show_bug.cgi%3Fid=985.html#c33">comment #33</a>)
+<span class="quote">&gt; Odniosłem wrażenie, że wszyscy zgadzają się z tym, że &quot;klikamy coś&quot;. Czy tak?</span >
+
+Ja rowniez odnosze takie wrazenie z dotychczasowych wypowiedzi, choc nie wypowiedzieli sie jeszcze wszyscy.
+
+Podobaja mi sie wytyczne naszkicowane przez Wojciecha - moze na wiki z nimi?</pre>
+    </div>
+
+    <div id="c36" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=985.html#c36">Comment 36</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Staś Małolepszy :stas</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-06-02 03:43:51 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(In reply to <a href="show_bug.cgi%3Fid=985.html#c34">comment #34</a>)
+ 
+<span class="quote">&gt; I bez obaw, czytam ze zrozumieniem, i w tym wypadku nie zrozumiałem, w jaki
+&gt; sposób Twój komentarz odnosił się do sprawy, która poruszyłem, tj. czy klikamy
+&gt; cos, w cos, na czyms czy moze na cos. Dlatego też zapytałem. A więc?</span >
+
+To ja jeszcze uściślę, bo tym razem to naprawdę wygląda, jakbym nie doczytał ;) 
+
+Chodzi mo o to, jak odnosisz sie konkretnie do opcji &quot;klikniecie czegos&quot; (zamiast proponowanego przez Ciebie &quot;klikniecie na czyms&quot;).</pre>
+    </div>
+
+    <div id="c37" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=985.html#c37">Comment 37</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Leszek Życzkowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-06-02 03:46:27 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(In reply to <a href="show_bug.cgi%3Fid=985.html#c33">comment #33</a>)
+<span class="quote">&gt; Odniosłem wrażenie, że wszyscy zgadzają się z tym, że &quot;klikamy coś&quot;. Czy tak?</span >
+
+Ja nie zgadzam się z taką wersją. Uważam, że klikamy na czymś, bo:
+Umieszczam wskaźnik na (nad) elementem i wykonuję kliknięcie zgodnie z formułą podaną przez Cambridge Dictionary i Słownik Języka Polskiego PWN.
+
+Mogę pomijać w opisach, instrukcjach kliknięcie jak koledzy sugerowali, ale klikać na czymś, bo to jest logiczne.
+Nawet biorąc pod uwagę opis z SJP PWN:
+      kliknąć — klikać «nacisnąć klawisz myszy komputerowej, aby uruchomić
+program komputerowy lub wydać określone polecenie»
+muszę wskazać dany element i dopiero wykonać klikniecie. Samo kliknięcie nic nie daje jeśli nie wykonam operacji wskazania elementu, chyba że czynność wskazania elementu potraktujemy jako czynność domyślną zawartą w wyrażeniu &quot;kliknąć&quot;, czyli &quot;kiknąć&quot; będzie wówczas oznaczało: &quot;umieść wskaźnik na (nad) elementem i naciśnij przycisk myszy komputerowej, aby uruchomić program komputerowy lub wydać określone polecenie &quot;.
+
+IMHO &quot;kliknąć coś&quot; kojarzy mi się z użyciem narzędzia do wykonania czegoś np. &quot;ukłuć coś&quot;, kopnąć coś&quot;... Ponieważ kliknięcie odnosi się do naciśnięcia przycisku myszy, a nie np. odnośnika, przyjęcie określenia &quot;kliknąć coś&quot; wydaje mi się nielogiczne.
+Gdybyśmy chcieli przyjąć &quot;kliknąć coś&quot;, logicznym byłoby poprzedzenie tej operacji odpowiednią instrukcją np.&quot;wskaż odnośnik i kliknij go&quot;, a to jest nie do przyjęcia w interfejsie, ponieważ zajmuje za dużo miejsca. Jedyne rozwiązanie jakie zachowa logikę czynności i będzie w miarę krótkie jest &quot;kliknij na&quot;.</pre>
+    </div>
+
+    <div id="c38" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=985.html#c38">Comment 38</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-06-02 03:54:36 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(In reply to <a href="show_bug.cgi%3Fid=985.html#c37">comment #37</a>)
+
+<span class="quote">&gt; Jedyne
+&gt; rozwiązanie jakie zachowa logikę czynności i będzie w miarę krótkie jest
+&gt; &quot;kliknij na&quot;.</span >
+
+Hmm... Jeśli &quot;kliknij na odnośnik&quot;, to dlaczego nie &quot;naciśnij na przycisku&quot;? Argument z tym, że odnośnik trzeba najpierw wskazać uważam za nietrafiony, w przypadku przycisku też musimy do niego dojść - musi on &quot;mieć fokus&quot; :-) A nie mówimy przecież &quot;naciśnij na przycisku&quot;...</pre>
+    </div>
+
+    <div id="c39" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=985.html#c39">Comment 39</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-06-02 04:10:30 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(In reply to <a href="show_bug.cgi%3Fid=985.html#c38">comment #38</a>)
+<span class="quote">&gt; Hmm... Jeśli &quot;kliknij na odnośnik&quot;, to dlaczego nie &quot;naciśnij na przycisku&quot;?
+&gt; Argument z tym, że odnośnik trzeba najpierw wskazać uważam za nietrafiony, w
+&gt; przypadku przycisku też musimy do niego dojść - musi on &quot;mieć fokus&quot; :-) A nie
+&gt; mówimy przecież &quot;naciśnij na przycisku&quot;...</span >
+
+Do przykładu lepiej jednak pasuje: &quot;naciśnij na przycisk&quot;.</pre>
+    </div>
+
+    <div id="c40" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=985.html#c40">Comment 40</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Leszek Życzkowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-06-02 04:43:37 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(In reply to <a href="show_bug.cgi%3Fid=985.html#c38">comment #38</a>)
+<span class="quote">&gt; (In reply to <a href="show_bug.cgi%3Fid=985.html#c37">comment #37</a>)
+&gt; 
+&gt; &gt; Jedyne
+&gt; &gt; rozwiązanie jakie zachowa logikę czynności i będzie w miarę krótkie jest
+&gt; &gt; &quot;kliknij na&quot;.
+&gt; 
+&gt; Hmm... Jeśli &quot;kliknij na odnośnik&quot;, to dlaczego nie &quot;naciśnij na przycisku&quot;?
+&gt; Argument z tym, że odnośnik trzeba najpierw wskazać uważam za nietrafiony, w
+&gt; przypadku przycisku też musimy do niego dojść - musi on &quot;mieć fokus&quot; :-) A nie
+&gt; mówimy przecież &quot;naciśnij na przycisku&quot;...</span >
+
+Nie przerysowujmy aż tak bardzo. Jeśli przyjmiemy sztywno &quot;klikać na&quot;, to będzie &quot;kliknąć na przycisku&quot;, czyli tak samo, jak &quot;kliknąć na odnośniku&quot;. Proste i jednolite. Możemy odpuścić sobie SJP i przyjąć opis czynności &quot;kliknąć&quot;, jak podałem wcześniej, (swoją drogą używany, jak to przytoczył Maciek Chojnacki i sam to czytałem w poradni, przez profesora Bańko) i zastosujemy &quot;kliknąć coś&quot;. Wówczas będzie większa dowolność i bez problemowo możemy używać &quot;naciśnij przycisk&quot; przyjmując, że &quot;naciśnij&quot; zawiera w sobie instrukcję &quot;umieszczenia wskaźnika na (nad) przyciskiem.  
+Żeby nie było, że się przy czymś upieram, odrzucam tylko jedną formę jako NIE DO PRZYJĘCIA - &quot;kliknąć w coś&quot;, argumentuję tylko logikę postępowania mając na uwadze cel nadrzędny - lokalizacje Aviary jako przykład poprawności tłumaczeń zgodnych z gramatyką języka polskiego i logiką - wzór dla innych tłumaczeń open source.</pre>
+    </div>
+
+    <div id="c41" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=985.html#c41">Comment 41</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Staś Małolepszy :stas</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-06-02 05:01:58 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(In reply to <a href="show_bug.cgi%3Fid=985.html#c37">comment #37</a>)
+
+<span class="quote">&gt; Gdybyśmy chcieli przyjąć &quot;kliknąć coś&quot;, logicznym byłoby poprzedzenie tej
+&gt; operacji odpowiednią instrukcją np.&quot;wskaż odnośnik i kliknij go&quot;</span >
+
+No właśnie nie, bo jak sam piszesz, że żeby &quot;klikanie czegoś&quot; miało sens, to:
+
+<span class="quote">&gt; Samo kliknięcie nic
+&gt; nie daje jeśli nie wykonam operacji wskazania elementu, chyba że czynność
+&gt; wskazania elementu potraktujemy jako czynność domyślną zawartą w wyrażeniu
+&gt; &quot;kliknąć&quot;, czyli &quot;kiknąć&quot; będzie wówczas oznaczało: &quot;umieść wskaźnik na (nad)
+&gt; elementem i naciśnij przycisk myszy komputerowej, aby uruchomić program
+&gt; komputerowy lub wydać określone polecenie &quot;.</span >
+
+I mnie wydaje się, że taka właśnie interpretacja jest dopuszczalna i wygodna.
+
+
+(In reply to <a href="show_bug.cgi%3Fid=985.html#c39">comment #39</a>)
+<span class="quote">&gt; &gt; Hmm... Jeśli &quot;kliknij na odnośnik&quot;, to dlaczego nie &quot;naciśnij na przycisku&quot;?</span >
+
+A tutaj pojawia się inny problem, ktorego się boję: jesli zdecydujemy sie uzyc &quot;na&quot;, to pozostaje jeszcze wybor przypadka, jakiego to &quot;na&quot; sobie zażąda.
+Kliknąć na przycisk/na odnośnik czy kliknąć na przycisku/na odnośniku?
+
+Nawet jeśli my będziemy wiedzieć dobrze, ktora opcja jest lepsza i gdzies to sobie zapiszemy, to i tak obawiam się, że będzie to powodowało wiele błędów w tłumaczeniach.</pre>
+    </div>
+
+    <div id="c42" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=985.html#c42">Comment 42</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Leszek Życzkowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-06-02 05:43:40 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(In reply to <a href="show_bug.cgi%3Fid=985.html#c41">comment #41</a>)
+<span class="quote">&gt; (In reply to <a href="show_bug.cgi%3Fid=985.html#c37">comment #37</a>)
+&gt; 
+&gt; &gt; Gdybyśmy chcieli przyjąć &quot;kliknąć coś&quot;, logicznym byłoby poprzedzenie tej
+&gt; &gt; operacji odpowiednią instrukcją np.&quot;wskaż odnośnik i kliknij go&quot;
+&gt; 
+&gt; No właśnie nie, bo jak sam piszesz, że żeby &quot;klikanie czegoś&quot; miało sens, to:
+&gt; 
+&gt; &gt; Samo kliknięcie nic
+&gt; &gt; nie daje jeśli nie wykonam operacji wskazania elementu, chyba że czynność
+&gt; &gt; wskazania elementu potraktujemy jako czynność domyślną zawartą w wyrażeniu
+&gt; &gt; &quot;kliknąć&quot;, czyli &quot;kiknąć&quot; będzie wówczas oznaczało: &quot;umieść wskaźnik na (nad)
+&gt; &gt; elementem i naciśnij przycisk myszy komputerowej, aby uruchomić program
+&gt; &gt; komputerowy lub wydać określone polecenie &quot;.
+&gt; 
+&gt; I mnie wydaje się, że taka właśnie interpretacja jest dopuszczalna i wygodna.</span >
+&gt;
+Ale to dopiero jak przyjmiemy taką interpretację. Jeśli jej nie przyjmiemy, to wówczas wszystko sie zgadza.:) 
+<span class="quote">&gt; 
+&gt; (In reply to <a href="show_bug.cgi%3Fid=985.html#c39">comment #39</a>)
+&gt; &gt; &gt; Hmm... Jeśli &quot;kliknij na odnośnik&quot;, to dlaczego nie &quot;naciśnij na przycisku&quot;?
+&gt; 
+&gt; A tutaj pojawia się inny problem, ktorego się boję: jesli zdecydujemy sie uzyc
+&gt; &quot;na&quot;, to pozostaje jeszcze wybor przypadka, jakiego to &quot;na&quot; sobie zażąda.
+&gt; Kliknąć na przycisk/na odnośnik czy kliknąć na przycisku/na odnośniku?
+&gt; 
+&gt; Nawet jeśli my będziemy wiedzieć dobrze, ktora opcja jest lepsza i gdzies to
+&gt; sobie zapiszemy, to i tak obawiam się, że będzie to powodowało wiele błędów w
+&gt; tłumaczeniach.</span >
+Dla ludzi znających gramatykę języka polskiego przynajmniej w stopniu dostatecznym, (3) nie będzie to zbyt trudne, dla innych...???
+
+Mam taką propozycję dotyczącą interfejsu:
+- przyjmijmy zatem &quot;kliknąć coś&quot;, &quot;nacisnąć coś&quot; jako określenia równorzędne, stosowane odpowiednio: 
+pierwsze - do odnośników, obrazków i innych elementów interfejsu zmieniających kolor czcionki, podświetlenia po wskazaniu kursorem
+  - pozycje menu można wybierać, wzgl. przechodzić do nich (propozycja Wojciecha)
+
+drugie - do przycisków (buttonów, toolbarbuttonów - elementów zmieniających swój wygląd (nie kolor czcionki, podświetlenia) po wskazaniu kursorem)
+przy założeniu, że czasowniki &quot;kliknąć&quot;, &quot;nacisnąć&quot; zawierają w sobie instrukcję umieszczenia na (nad) elemencie kursora
+
+Dotyczącą opisów, instrukcji - zastanowić się nad kontekstem i oprócz &quot;klknąć&quot;, &quot;nacisnąć&quot; 
+- używać słów oddających logikę operacji, a nie mechanikę (...) np.:
+   wybierz (np. przycisk/&amp;button.label;/odnośnik), aby
+   zaznacz (np. pole),
+   wskaż, przejdź, otwórz, itd. (propozycja Stefana)
+
+ZABRONIĆ używania &quot;kliknąć w&quot;
+
+Zwolennikiem używania &quot;kliknąć coś&quot; jest też Marcin Miłkowski - znana postać w środowisku tłumaczy open source.</pre>
+    </div>
+
+    <div id="c43" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=985.html#c43">Comment 43</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-06-02 06:15:44 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(In reply to <a href="show_bug.cgi%3Fid=985.html#c42">comment #42</a>)
+
+<span class="quote">&gt; Mam taką propozycję dotyczącą interfejsu:
+&gt; - przyjmijmy zatem &quot;kliknąć coś&quot;, &quot;nacisnąć coś&quot; jako określenia równorzędne,
+&gt; stosowane odpowiednio: 
+&gt; pierwsze - do odnośników, obrazków i innych elementów interfejsu zmieniających
+&gt; kolor czcionki, podświetlenia po wskazaniu kursorem</span >
+
+To twórca aplikacji powinien decydować czy coś ma być klikane czy naciskane. My możemy co najwyżej przyjąć wersję tłumaczenia na poszczególne określenia i interweniować jeśli spotkamy się z konstrukcją &quot;click the button&quot;, która nam się nie podoba. Mówię teraz o Mozilli, ekipa GNOME ma chyba większą swobodę.</pre>
+    </div>
+
+    <div id="c44" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=985.html#c44">Comment 44</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Tomasz Dominikowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-06-02 06:17:29 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Jestem za zabronieniem używania &quot;kliknięcie w&quot;.
+
+&quot;Kliknięcie na&quot; nienaturalnie wydłuża ciąg tłumaczenia, gdyż trzeba określić element interfejsu do kliknięcia.
+
+&quot;Kliknięcie na przycisk rozwinie menu&quot;
+
+&quot;Kliknięcie rozwinie menu&quot;
+
+Jestem za jak najkrótszą i praktyczną formą. 
+
+&quot;Kliknięcie&quot; oraz &quot;Naciśnięcie&quot; nie mogą być równorzędne, spowoduje to niepotrzebną dwuznaczność. Naciśnięcie oznacza klawiaturę, kliknięcie mysz. Ten podział wydaje mi się sensowny i intuicyjny dla ZU. 
+
+Czy naprawdę musimy komplikować sobie życie dodatkową złożonością, w dodatku kosztem czytelności? Stosowanie innego określenia na kliknięcie na siłę nie jest dobrym pomysłem. Spowoduje to nieścisłości w tłumaczeniu danego programu, jeśli będzie robione przez kilka osób, z których każda będzie miała inną interpretację. W dodatku zgrać to wszystko we wszystkich tłumaczeniach np. platformy GNOME... 
+
+Klikanie może być dla purystów językowych dziełem szatana, ale tak jak przeklęte menu Edycja które z edycją nie ma nic wspólnego, przyjęło się już jako swoisty standard.
+
+Poczytałem trochę komentarzy i już właściwie nie wiem o czym jest ta dyskusja i czy ja tu wyskakuję trochę jak Filip z konopii.</pre>
+    </div>
+
+    <div id="c45" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=985.html#c45">Comment 45</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Leszek Życzkowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-06-02 06:58:17 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(In reply to <a href="show_bug.cgi%3Fid=985.html#c44">comment #44</a>)
+ &gt; &quot;Kliknięcie&quot; oraz &quot;Naciśnięcie&quot; nie mogą być równorzędne, spowoduje to
+<span class="quote">&gt; niepotrzebną dwuznaczność. Naciśnięcie oznacza klawiaturę, kliknięcie mysz. Ten
+&gt; podział wydaje mi się sensowny i intuicyjny dla ZU. 
+&gt; </span >
+Czyli musimy określić odmienne tłumaczenia dla linuksowych i mozillowych. Jak Hubert wspomniał wcześniej dla mozillowych jest mniejsze pole manewru i występuje określenie &quot;push button&quot; w stosunku do elementu interfejsu graficznego.
+<span class="quote">&gt; Czy naprawdę musimy komplikować sobie życie dodatkową złożonością, w dodatku
+&gt; kosztem czytelności? Stosowanie innego określenia na kliknięcie na siłę nie
+&gt; jest dobrym pomysłem. Spowoduje to nieścisłości w tłumaczeniu danego programu,
+&gt; jeśli będzie robione przez kilka osób, z których każda będzie miała inną
+&gt; interpretację. W dodatku zgrać to wszystko we wszystkich tłumaczeniach np.
+&gt; platformy GNOME... </span >
+Właśnie o to chodzi, aby tych nieścisłości uniknąć, poprzez dokładne określenie, co gdzie stosujemy.</pre>
+    </div>
+
+    <div id="c46" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=985.html#c46">Comment 46</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Leszek Życzkowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-06-02 07:05:23 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(In reply to <a href="show_bug.cgi%3Fid=985.html#c43">comment #43</a>)
+<span class="quote">&gt; (In reply to <a href="show_bug.cgi%3Fid=985.html#c42">comment #42</a>)
+&gt; 
+&gt; &gt; Mam taką propozycję dotyczącą interfejsu:
+&gt; &gt; - przyjmijmy zatem &quot;kliknąć coś&quot;, &quot;nacisnąć coś&quot; jako określenia równorzędne,
+&gt; &gt; stosowane odpowiednio: 
+&gt; &gt; pierwsze - do odnośników, obrazków i innych elementów interfejsu zmieniających
+&gt; &gt; kolor czcionki, podświetlenia po wskazaniu kursorem
+&gt; 
+&gt; To twórca aplikacji powinien decydować czy coś ma być klikane czy naciskane. My
+&gt; możemy co najwyżej przyjąć wersję tłumaczenia na poszczególne określenia i
+&gt; interweniować jeśli spotkamy się z konstrukcją &quot;click the button&quot;, która nam
+&gt; się nie podoba. Mówię teraz o Mozilli, ekipa GNOME ma chyba większą swobodę.</span >
+No i o to chodzi, abyśmy w końcu przyjęli takie reguły, a jeśli są odgórne zalecenia, aby pewne elementy, tak tłumaczyć, a nie inaczej, to je stosujmy i wytykajmy błędy, ale w końcu określmy coś, co będzie wyznacznikiem chociażby dla tłumaczy rozszerzeń, gdzie dowolność jest duża - zbyt duża.</pre>
+    </div>
+
+    <div id="c47" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=985.html#c47">Comment 47</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-06-02 08:11:07 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(In reply to <a href="show_bug.cgi%3Fid=985.html#c45">comment #45</a>)
+
+Leszku, ja już się zgubiłem i naprawdę nie wiem czego Ty chcesz.</pre>
+    </div>
+
+    <div id="c48" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=985.html#c48">Comment 48</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Leszek Życzkowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-06-02 08:59:45 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(In reply to <a href="show_bug.cgi%3Fid=985.html#c47">comment #47</a>)
+<span class="quote">&gt; (In reply to <a href="show_bug.cgi%3Fid=985.html#c45">comment #45</a>)
+&gt; 
+&gt; Leszku, ja już się zgubiłem i naprawdę nie wiem czego Ty chcesz.</span >
+
+Hubert, Zamknąć ten bug z ustaleniami - &quot;click&quot; tłumaczymy tak i tak, aby było jasne dla wszystkich.</pre>
+    </div>
+
+    <div id="c49" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=985.html#c49">Comment 49</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-06-02 09:04:05 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(In reply to <a href="show_bug.cgi%3Fid=985.html#c48">comment #48</a>)
+
+<span class="quote">&gt; Hubert, Zamknąć ten bug z ustaleniami - &quot;click&quot; tłumaczymy tak i tak</span >
+
+Czyli jak?</pre>
+    </div>
+
+    <div id="c50" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=985.html#c50">Comment 50</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Leszek Życzkowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-06-02 09:56:08 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(In reply to <a href="show_bug.cgi%3Fid=985.html#c49">comment #49</a>)
+<span class="quote">&gt; (In reply to <a href="show_bug.cgi%3Fid=985.html#c48">comment #48</a>)
+&gt; 
+&gt; &gt; Hubert, Zamknąć ten bug z ustaleniami - &quot;click&quot; tłumaczymy tak i tak
+&gt; 
+&gt; Czyli jak?</span >
+
+Masz rację, trzeba to podsumować, bo zapętlamy się. Powracam więc do mojej ostatniej propozycji:
+Przyjąć, przy założeniu, że czasowniki &quot;kliknąć&quot;, &quot;nacisnąć&quot; zawierają w sobie
+instrukcję umieszczenia kursora na (nad) elemencie przed wykonaniem czynności kliknięcia, naciśnięcia, że dla produktów Mozilli:
+
+&quot;kliknąć coś&quot; (ang. &quot;click&quot;) stosujemy do: odnośników, obrazków i innych elementów interfejsu zmieniających kolor czcionki, podświetlenia po wskazaniu kursorem
+  - pozycje menu można: wybierać, względnie przechodzić do nich (propozycja
+Wojciecha)
+
+&quot;nacisnąć coś&quot; - do przycisków (buttonów, toolbarbuttonów - elementów zmieniających swój wygląd (nie kolor czcionki, podświetlenia) po wskazaniu kursorem (bez względu na oryginał)
+Jeśli w oryginale występuje w stosunku do przycisku polecenie &quot;click&quot; - zgłosić buga
+
+W opisach, instrukcjach - zastanowić się nad kontekstem i oprócz &quot;kliknąć&quot;,
+&quot;nacisnąć&quot; 
+- używać słów oddających logikę operacji, a nie mechanikę (...) np.:
+   wybierz (np. przycisk/&amp;button.label;/odnośnik), aby
+   zaznacz (np. pole),
+   wskaż, przejdź, otwórz, itd. (propozycja Stefana - bardzo mi się podoba)
+
+ZABRONIĆ używania &quot;kliknąć w&quot;
+
+Dlaczego stosować &quot;naciśnij przycisk&quot; mimo wystąpienia w oryginale &quot;click&quot;? Jeśli ktoś popełnia gafę, to dlaczego my mamy ją powielać i ewentualnie czekać na poprawki Mozilli, które nie mają prawie żadnego priorytetu i czekają wieki na poprawienie - dla amerykańców nie jest to żaden błąd.
+
+Ponieważ w środowisku linuksowym są już ustalone jakieś zasady dotyczące klikania, naciskania należy rozpatrzyć odrębne zasady dla tego środowiska, chociaż argumentacja Tomasza mnie nie przekonuje, bo na klawiaturze naciskamy klawisze, a nie przyciski, a jeśli nie podaje się określenia klawisz, to używa się opis klawisza i nie można pomylić klawisza z przyciskiem.
+
+Mam nadzieję, że teraz jasno sprecyzowałem swoje zdanie w tej kwestii.</pre>
+    </div>
+
+    <div id="c51" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=985.html#c51">Comment 51</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-06-02 10:12:54 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(In reply to <a href="show_bug.cgi%3Fid=985.html#c50">comment #50</a>)
+
+<span class="quote">&gt; Dlaczego stosować &quot;naciśnij przycisk&quot; mimo wystąpienia w oryginale &quot;click&quot;?
+&gt; Jeśli ktoś popełnia gafę, to dlaczego my mamy ją powielać i ewentualnie czekać
+&gt; na poprawki Mozilli,</span >
+
+Dlatego, że takie są wymogi Mozilli. Nie zgadzam się na takie zasady.
+
+<span class="quote">&gt; które nie mają prawie żadnego priorytetu i czekają wieki
+&gt; na poprawienie - dla amerykańców nie jest to żaden błąd.</span >
+
+Przykład?</pre>
+    </div>
+
+    <div id="c52" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=985.html#c52">Comment 52</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Staś Małolepszy :stas</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-06-02 10:30:09 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(In reply to <a href="show_bug.cgi%3Fid=985.html#c50">comment #50</a>)
+<span class="quote">&gt; Masz rację, trzeba to podsumować, bo zapętlamy się. Powracam więc do mojej
+&gt; ostatniej propozycji:
+&gt; Przyjąć, przy założeniu, że czasowniki &quot;kliknąć&quot;, &quot;nacisnąć&quot; zawierają w sobie
+&gt; instrukcję umieszczenia kursora na (nad) elemencie przed wykonaniem czynności
+&gt; kliknięcia, naciśnięcia, że dla produktów Mozilli:
+&gt; 
+&gt; &quot;kliknąć coś&quot; (ang. &quot;click&quot;) stosujemy do: odnośników, obrazków i innych
+&gt; elementów interfejsu zmieniających kolor czcionki, podświetlenia po wskazaniu
+&gt; kursorem
+&gt;   - pozycje menu można: wybierać, względnie przechodzić do nich (propozycja
+&gt; Wojciecha)
+&gt; 
+&gt; &quot;nacisnąć coś&quot; - do przycisków (buttonów, toolbarbuttonów - elementów
+&gt; zmieniających swój wygląd (nie kolor czcionki, podświetlenia) po wskazaniu
+&gt; kursorem (bez względu na oryginał)
+&gt; Jeśli w oryginale występuje w stosunku do przycisku polecenie &quot;click&quot; - zgłosić
+&gt; buga
+&gt; 
+&gt; W opisach, instrukcjach - zastanowić się nad kontekstem i oprócz &quot;kliknąć&quot;,
+&gt; &quot;nacisnąć&quot; 
+&gt; - używać słów oddających logikę operacji, a nie mechanikę (...) np.:
+&gt;    wybierz (np. przycisk/&amp;button.label;/odnośnik), aby
+&gt;    zaznacz (np. pole),
+&gt;    wskaż, przejdź, otwórz, itd. (propozycja Stefana - bardzo mi się podoba)
+&gt; 
+&gt; ZABRONIĆ używania &quot;kliknąć w&quot;</span >
+
+Podoba mi się to.
+Rozszerzyłbym jeszcze o punkt trzeci z propozycji Wojciecha:
+
+(komentarz #26)
+<span class="quote">&gt; 3. Odnośnik jest trochę bardziej skomplikowany. W tekstach dłuższych, np. w
+&gt; pomocy, możemy pozwolić sobie na &quot;wybranie odnośnika&quot; albo &quot;skorzystanie z
+&gt; niego&quot;. W interfejsie tego typu gimnastyka raczej nie będzie możliwa.</span >
+
+
+(i z powrotem komentarz #50)
+<span class="quote">&gt; Ponieważ w środowisku linuksowym są już ustalone jakieś zasady dotyczące
+&gt; klikania, naciskania należy rozpatrzyć odrębne zasady dla tego środowiska,
+&gt; chociaż argumentacja Tomasza mnie nie przekonuje, bo na klawiaturze naciskamy
+&gt; klawisze, a nie przyciski, a jeśli nie podaje się określenia klawisz, to używa
+&gt; się opis klawisza i nie można pomylić klawisza z przyciskiem.</span >
+
+IMO po to od zawsze chcemy móc forkować wytyczne, żeby sobie teraz poradzić w tej sytuacji. To co mówi Tomasz w komentarzu #31 przekonuje mnie:
+<span class="quote">&gt; Zawsze &quot;kliknięcie przycisku&quot; i zawsze &quot;naciśnięcie klawisza&quot;. </span >
+(w odniesienu do wytycznych GNOME)
+
+<span class="quote">&gt; Mam nadzieję, że teraz jasno sprecyzowałem swoje zdanie w tej kwestii.</span >
+
+Zdecydowanie, dzięki :-)</pre>
+    </div>
+
+    <div id="c53" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=985.html#c53">Comment 53</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Wojciech Szczęsny</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-06-02 11:57:15 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text"><span class="quote">&gt; ZABRONIĆ używania &quot;kliknąć w&quot;</span >
+
+Prawdopodobnie będę osamotniony w swoim stwierdzeniu, ale nie jestem przeciwnikiem formy formy &quot;kliknąć w&quot;. Nie jest to forma błędna:
+<a href="http://poradnia.pwn.pl/lista.php?id=330">http://poradnia.pwn.pl/lista.php?id=330</a>
+Używa jej przy tym całkiem dużo ludzi (Google dają ok 2,9 mln wyników &quot;kliknij w&quot;), chociaż mniej niż &quot;kliknij na&quot;.
+
+Nie znaczy to oczywiście, że powinniśmy jej używać. Jeśli będziemy stosować inną konstrukcję, np. &quot;kliknąć coś&quot;, to raczej z tego powodu, by trzymać się w tłumaczeniach jednej formy, a nie dlatego, że &quot;kliknąć w&quot; jest ewidentnie błędna.</pre>
+    </div>
+
+    <div id="c54" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=985.html#c54">Comment 54</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Wojciech Kapusta</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-06-10 03:02:19 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">W takim razie proponuję przyjąć kompilację Stanisława (przytaczam ją tu jeszcze raz, po oczyszczeniu):
+ 
+1. &quot;kliknąć coś&quot; (ang. &quot;click&quot;) stosujemy do: odnośników, obrazków i innych elementów interfejsu zmieniających kolor czcionki, podświetlenia po wskazaniu  kursorem.
+2. Pozycje menu można wybierać, względnie przechodzić do nich.
+3. &quot;nacisnąć coś&quot; - do przycisków (buttonów, toolbarbuttonów - elementów zmieniających swój wygląd (nie kolor czcionki, podświetlenia) po wskazaniu kursorem (bez względu na oryginał).
+4. Jeśli w oryginale występuje w stosunku do przycisku polecenie &quot;click&quot; - zgłosić buga.
+5. W opisach, instrukcjach - zastanowić się nad kontekstem i oprócz &quot;kliknąć&quot;, &quot;nacisnąć&quot;, używać słów oddających logikę operacji, a nie mechanikę (...) np.:
+- wybierz (np. przycisk/&amp;button.label;/odnośnik), aby
+- zaznacz (np. pole),
+- wskaż, przejdź, otwórz, itd.
+6. Formy &quot;kliknąć w&quot; i &quot;kliknąć na&quot; są niezalecane.
+7. Odnośnik jest trochę bardziej skomplikowany. W tekstach dłuższych, np. w pomocy, możemy pozwolić sobie na &quot;wybranie odnośnika&quot; albo &quot;skorzystanie z niego&quot;. W interfejsie tego typu gimnastyka raczej nie będzie możliwa.
+8. Przyjmujemy rozdział: klawisz jest w klawiaturze a przycisk w myszy (albo w interfejsie!). Jeśli nie podaje się określenia &quot;klawisz&quot;, używa się opisu klawisza, tak aby nie powodować wątpliwości. To samo w przypadku przycisku: kliknąć prawym przyciskiem myszy albo kliknąć/nacisnąć przycisk &quot;Commit&quot;.
+9. Jeśli piszemy instrukcję dla użytkowników laptopów czy tabletów, pamiętajmy, żeby nie zmuszać ich do klikania czymś, czego nie ma.
+10. (w zasadzie powinno być 1) Uważamy na kontekst.</pre>
+    </div>
+
+    <div id="c55" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=985.html#c55">Comment 55</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Leszek Życzkowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-06-10 05:35:44 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(In reply to <a href="show_bug.cgi%3Fid=985.html#c54">comment #54</a>)
+<span class="quote">&gt; W takim razie proponuję przyjąć kompilację Stanisława (przytaczam ją tu jeszcze
+&gt; raz, po oczyszczeniu):</span >
+
+Chciałbym skromnie nadmienić, że to moja kompilacja, a nie Stanisława.</pre>
+    </div>
+
+    <div id="c56" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=985.html#c56">Comment 56</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-07-12 07:13:04 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(In reply to <a href="show_bug.cgi%3Fid=985.html#c54">comment #54</a>)
+<span class="quote">&gt; W takim razie proponuję przyjąć kompilację Stanisława (przytaczam ją tu jeszcze
+&gt; raz, po oczyszczeniu):
+&gt; 
+&gt; 1. &quot;kliknąć coś&quot; (ang. &quot;click&quot;) stosujemy do: odnośników, obrazków i innych
+&gt; elementów interfejsu zmieniających kolor czcionki, podświetlenia po wskazaniu 
+&gt; kursorem.</span >
+
+OK.
+
+<span class="quote">&gt; 2. Pozycje menu można wybierać, względnie przechodzić do nich.</span >
+
+OK, ale jeśli wersja anglojęzyczna sugeruje coś zupełnie innego - zgłaszamy buga.
+
+<span class="quote">&gt; 3. &quot;nacisnąć coś&quot; - do przycisków (buttonów, toolbarbuttonów - elementów
+&gt; zmieniających swój wygląd (nie kolor czcionki, podświetlenia) po wskazaniu
+&gt; kursorem (bez względu na oryginał).</span >
+
+OK, ale jeśli wersja anglojęzyczna sugeruje coś zupełnie innego - zgłaszamy buga.
+
+<span class="quote">&gt; 4. Jeśli w oryginale występuje w stosunku do przycisku polecenie &quot;click&quot; -
+&gt; zgłosić buga.</span >
+
+OK.
+
+<span class="quote">&gt; 5. W opisach, instrukcjach - zastanowić się nad kontekstem i oprócz &quot;kliknąć&quot;,
+&gt; &quot;nacisnąć&quot;, używać słów oddających logikę operacji, a nie mechanikę (...) np.:
+&gt; - wybierz (np. przycisk/&amp;button.label;/odnośnik), aby
+&gt; - zaznacz (np. pole),
+&gt; - wskaż, przejdź, otwórz, itd.</span >
+
+OK, przy założeniu, że nasze tłumaczenie oddaje ten sam sens, który chciano przekazać w oryginale. Jeśli nie podoba nam się oryginał - zgłaszamy buga.
+
+<span class="quote">&gt; 6. Formy &quot;kliknąć w&quot; i &quot;kliknąć na&quot; są niezalecane.</span >
+
+OK.
+
+<span class="quote">&gt; 7. Odnośnik jest trochę bardziej skomplikowany. W tekstach dłuższych, np. w
+&gt; pomocy, możemy pozwolić sobie na &quot;wybranie odnośnika&quot; albo &quot;skorzystanie z
+&gt; niego&quot;. W interfejsie tego typu gimnastyka raczej nie będzie możliwa.</span >
+
+Akurat tutaj klikanie jest dla mnie czymś naturalnym. Sugeruję tłumaczenie zbliżone do oryginału. Jak nam się nie podoba - bug.
+
+<span class="quote">&gt; 8. Przyjmujemy rozdział: klawisz jest w klawiaturze a przycisk w myszy (albo w
+&gt; interfejsie!). Jeśli nie podaje się określenia &quot;klawisz&quot;, używa się opisu
+&gt; klawisza, tak aby nie powodować wątpliwości. To samo w przypadku przycisku:
+&gt; kliknąć prawym przyciskiem myszy albo kliknąć/nacisnąć przycisk &quot;Commit&quot;.</span >
+
+?
+
+<span class="quote">&gt; 9. Jeśli piszemy instrukcję dla użytkowników laptopów czy tabletów, pamiętajmy,
+&gt; żeby nie zmuszać ich do klikania czymś, czego nie ma.</span >
+
+Zawsze można podłączyć mysz. Tak samo jak można ją odłączyć ze zwykłego PC :-)
+
+<span class="quote">&gt; 10. (w zasadzie powinno być 1) Uważamy na kontekst.</span >
+
+Przede wszystkim.</pre>
+    </div>
+
+    <div id="c57" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=985.html#c57">Comment 57</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-10-18 06:21:22 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Wojciech?</pre>
+    </div>
+
+    <div id="c58" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=985.html#c58">Comment 58</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Wojciech Kapusta</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-10-18 07:08:36 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text"><span class="quote">&gt; &gt; 9. Jeśli piszemy instrukcję dla użytkowników laptopów czy tabletów, pamiętajmy, żeby nie zmuszać ich do klikania czymś, czego nie ma.
+&gt; 
+&gt; Zawsze można podłączyć mysz. Tak samo jak można ją odłączyć ze zwykłego PC :-)</span >
+
+A widziałeś kiedyś system Windows CE wbudowany w urządzenie przemysłowe i obsługiwany wyłącznie ekranem dotykowym? Gdy raz tłumaczyłem pracownikom z de_DE instrukcję programu, wszędzie było &quot;klicken Sie ...&quot; i trudno było zaadaptować to na klawiszologię.
+
+Drugi zarzut: wraz z Gandalfem zabieramy się za Fenka - czy więc do telefonu czy innej zabawki trzeba będzie też sobie podłączyć mysz?
+
+Poza tym nie mam zastrzeżeń.
+
+Trochę niepokoją mnie te bugi; obawiam się, że takie podejście do sprawy może sparaliżować każdego tłumacza. Więc jeśli tłumaczę np. &quot;Grüß Gott&quot; z jakiegoś tekstu, mam pytać autora, czy wolno mi napisać &quot;Niech będzie pochwalony...&quot; wzgl. &quot;Szczęść Boże&quot; (+ liczące 8 stron uzasadnienie)?
+
+Uważam, że tłumacze muszą mieć trochę więcej swobody (zaufania).</pre>
+    </div>
+
+    <div id="c59" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=985.html#c59">Comment 59</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-10-18 09:42:41 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(In reply to <a href="show_bug.cgi%3Fid=985.html#c58">comment #58</a>)
+
+Wojciech, mógłbyś umieścić ustalenia gdzieś na wiki?</pre>
+    </div>
+
+    <div id="c60" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=985.html#c60">Comment 60</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-01-10 09:28:48 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Przypisuję do Wojciecha.</pre>
+    </div>
+
+    <div id="c61" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=985.html#c61">Comment 61</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Stefan Plewako :stef</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-08-18 07:03:57 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(In reply to <a href="show_bug.cgi%3Fid=985.html#c59">comment #59</a>)
+<span class="quote">&gt; (In reply to <a href="show_bug.cgi%3Fid=985.html#c58">comment #58</a>)
+&gt; 
+&gt; Wojciech, mógłbyś umieścić ustalenia gdzieś na wiki?</span >
+
+Wojciechu?</pre>
+    </div>
+
+    <div id="c62" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=985.html#c62">Comment 62</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Wojciech Kapusta</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-08-18 12:11:52 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Dziękuję za przypomnienie. Zrobi się.</pre>
+    </div>
+
+    <div id="c63" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=985.html#c63">Comment 63</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Wojciech Kapusta</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2010-03-22 10:17:58 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Wytyczne zostały zebrane i podane pod adresem
+<a href="http://wiki.aviary.pl/GWO:Stylistyka_i_gramatyka#Kliknij.2C_naci.C5.9Bnij.2C_a_mo.C5.BCe_tupnij.3F">http://wiki.aviary.pl/GWO:Stylistyka_i_gramatyka#Kliknij.2C_naci.C5.9Bnij.2C_a_mo.C5.BCe_tupnij.3F</a>
+oraz w Poradniku dla tłumaczy... autorstwa Leszka.</pre>
+    </div>
+
+    <div id="c64" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=985.html#c64">Comment 64</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2010-03-22 10:24:52 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Ja nie mam uwag. Jeśli nie będzie protestów, że coś zostało przekręcone w stosunku do ustaleń - po 7 dniach zmienię status tego buga na VERIFIED.</pre>
+    </div>
+
+    <div id="c65" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=985.html#c65">Comment 65</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2010-04-03 10:02:16 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">-&gt; Verified.</pre>
+    </div>
+
+
+  
+
+</td>
+<td>
+</td>
+</tr></table>
+  </div>
+
+    <hr><div id="add_comment" class="bz_section_additional_comments">
+      <table>
+        <tr>
+          <td>
+            <fieldset>
+              <legend>Note</legend>
+              You need to
+              <a href="show_bug.cgi%3Fid=985&amp;GoAheadAndLogIn=1.html">log in</a>
+              before you can comment on or make changes to this bug.
+            </fieldset>
+          </td>
+        </tr> 
+      </table>
+  </div>        
+
+</form>
+
+<hr>
+<ul class="related_actions">
+    <li><a href="show_bug.cgi%3Fformat=multiple&amp;id=985.html">Format For Printing</a></li>
+    <li>&nbsp;-&nbsp;<a href="show_bug.cgi%3Fctype=xml&amp;id=985">XML</a></li>
+    <li>&nbsp;-&nbsp;<a href="enter_bug.cgi%3Fcloned_bug_id=985.html">Clone This Bug</a></li>
+    
+    <li>&nbsp;-&nbsp;<a href="show_bug.cgi%3Fid=985.html#">Top of page </a></li>
+    </ul>
+
+<br>
+</div>
+
+    <div id="footer">
+      <div class="intro"></div>
+<ul id="useful-links">
+  <li id="links-actions"><ul class="links">
+  <li><a href="index.html">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi.html">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi.html">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi.html">Search</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="http://bugs.aviary.pl/buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input type="hidden" id="no_redirect_bottom" name="no_redirect" value="0">
+    <script type="text/javascript">
+      if (history && history.replaceState) {
+        var no_redirect = document.getElementById("no_redirect_bottom");
+        no_redirect.value = 1;
+      }
+    </script>
+    <input class="txt" type="text" id="quicksearch_bottom" name="quicksearch" 
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search" 
+           id="find_bottom"></form>
+  <a href="page.cgi%3Fid=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="report.cgi.html">Reports</a></li>
+
+  <li>
+      <span class="separator">| </span>
+        <a href="request.cgi.html">Requests</a></li>
+
+
+  <li>
+        <span class="separator">| </span>
+        <a href="https://bugzilla.readthedocs.org/en/5.0/using/understanding.html" target="_blank">Help</a>
+      </li>
+    
+      <li id="new_account_container_bottom">
+        <span class="separator">| </span>
+        <a href="createaccount.cgi.html">New&nbsp;Account</a>
+      </li>
+
+    <li id="mini_login_container_bottom">
+  <span class="separator">| </span>
+  <a id="login_link_bottom" href="show_bug.cgi%3Fid=985&amp;GoAheadAndLogIn=1.html"
+     onclick="return show_mini_login_form('_bottom')">Log In</a>
+
+  <form action="show_bug.cgi%3Fid=985.html" method="POST"
+        class="mini_login bz_default_hidden"
+        id="mini_login_bottom">
+    <input id="Bugzilla_login_bottom" required
+           name="Bugzilla_login" class="bz_login"
+        type="email" placeholder="Email Address">
+    <input class="bz_password" name="Bugzilla_password" type="password"
+           id="Bugzilla_password_bottom" required
+           placeholder="Password">
+    <input type="hidden" name="Bugzilla_login_token"
+           value="1469820486-H29JekgbHwollz8aKpWOponA-rp2etndTD3lNNV5gMQ">
+    <input type="submit" name="GoAheadAndLogIn" value="Log in"
+            id="log_in_bottom">
+    <a href="show_bug.cgi%3Fid=985.html#" onclick="return hide_mini_login_form('_bottom')">[x]</a>
+  </form>
+</li>
+
+
+  <li id="forgot_container_bottom">
+    <span class="separator">| </span>
+    <a id="forgot_link_bottom" href="show_bug.cgi%3Fid=985&amp;GoAheadAndLogIn=1.html#forgot"
+       onclick="return show_forgot_form('_bottom')">Forgot Password</a>
+    <form action="http://bugs.aviary.pl/token.cgi" method="post" id="forgot_form_bottom"
+          class="mini_forgot bz_default_hidden">
+      <label for="login_bottom">Login:</label>
+      <input name="loginname" size="20" id="login_bottom" required
+          type="email" placeholder="Your Email Address">
+      <input id="forgot_button_bottom" value="Reset Password" type="submit">
+      <input type="hidden" name="a" value="reqpw">
+      <input type="hidden" id="token_bottom" name="token"
+             value="1469820486-fQ4Yi6IBWszfgqH8RapNxnm1W2mN6a-jzx-XWesshvY">
+      <a href="show_bug.cgi%3Fid=985.html#" onclick="return hide_forgot_form('_bottom')">[x]</a>
+    </form>
+  </li>
+</ul>
+  </li>
+
+  
+
+
+
+
+  
+</ul>
+
+      <div class="outro"></div>
+    </div>
+
+  </body>
+</html>

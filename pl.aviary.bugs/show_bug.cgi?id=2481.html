@@ -1,0 +1,2140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>2481 &ndash; Internet vs internet</title>
+
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<link href="data/assets/7aa6ea67750936a0368541421bdcd5ee.css" rel="stylesheet" type="text/css">
+
+
+
+    
+<script type="text/javascript" src="data/assets/a7c2f3a028f17a9aa60f56dc9d6e732d.js"></script>
+
+    <script type="text/javascript">
+    <!--
+        YAHOO.namespace('bugzilla');
+        YAHOO.util.Event.addListener = function (el, sType, fn, obj, overrideContext) {
+               if ( ("onpagehide" in window || YAHOO.env.ua.gecko) && sType === "unload") { sType = "pagehide"; };
+               var capture = ((sType == "focusin" || sType == "focusout") && !YAHOO.env.ua.ie) ? true : false;
+               return this._addListener(el, this._getType(sType), fn, obj, overrideContext, capture);
+         };
+        if ( "onpagehide" in window || YAHOO.env.ua.gecko) {
+            YAHOO.util.Event._simpleRemove(window, "unload", 
+                                           YAHOO.util.Event._unload);
+        }
+        
+        function unhide_language_selector() { 
+            YAHOO.util.Dom.removeClass(
+                'lang_links_container', 'bz_default_hidden'
+            ); 
+        } 
+        YAHOO.util.Event.onDOMReady(unhide_language_selector);
+
+        
+        var BUGZILLA = {
+            param: {
+                cookiepath: '\/',
+                maxusermatches: 1000
+            },
+            constant: {
+                COMMENT_COLS: 80
+            },
+            string: {
+                
+
+                attach_desc_required:
+                    "You must enter a Description for this attachment.",
+                component_required:
+                    "You must select a Component for this bug.",
+                description_required:
+                    "You must enter a Description for this bug.",
+                short_desc_required:
+                    "You must enter a Summary for this bug.",
+                version_required:
+                    "You must select a Version for this bug."
+            }
+              , api_token: ''
+        };
+
+    if (history && history.replaceState) {
+      if(!document.location.href.match(/show_bug\.cgi/)) {
+        history.replaceState( null,
+                             "2481 – Internet vs internet",
+                             "show_bug.cgi?id=2481" );
+        document.title = "2481 – Internet vs internet";
+      }
+      if (document.location.href.match(/show_bug\.cgi\?.*list_id=/)) {
+        var href = document.location.href;
+        href = href.replace(/[\?&]+list_id=(\d+|cookie)/, '');
+        history.replaceState(null, "2481 – Internet vs internet", href);
+      }
+    }
+    YAHOO.util.Event.onDOMReady(function() {
+      initDirtyFieldTracking();
+
+    });
+    // -->
+    </script>
+<script type="text/javascript" src="data/assets/daf5e0fb6826e6a35280e622913f0c4a.js"></script>
+
+    
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+                       title="Bugzilla" href="search_plugin.cgi">
+    <link rel="shortcut icon" href="images/favicon.ico">
+  </head>
+
+  <body 
+        class="bugs-aviary-pl
+                 bz_bug
+                 bz_status_VERIFIED
+                 bz_product_Toolkit
+                 bz_component_inne
+                 bz_bug_2481 yui-skin-sam">
+
+  <div id="header"><div id="banner">
+  </div>
+
+    <div id="titles">
+      <span id="title">Bugzilla &ndash; Bug&nbsp;2481</span>
+
+        <span id="subtitle" class="subheader">Internet vs internet</span>
+
+        <span id="information" class="header_addl_info">Last modified: 2011-01-30 08:03:36 CET</span>
+    </div>
+
+
+    <div id="common_links"><ul class="links">
+  <li><a href="index.html">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi.html">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi.html">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi.html">Search</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="http://bugs.aviary.pl/buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input type="hidden" id="no_redirect_top" name="no_redirect" value="0">
+    <script type="text/javascript">
+      if (history && history.replaceState) {
+        var no_redirect = document.getElementById("no_redirect_top");
+        no_redirect.value = 1;
+      }
+    </script>
+    <input class="txt" type="text" id="quicksearch_top" name="quicksearch" 
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search" 
+           id="find_top"></form>
+  <a href="page.cgi%3Fid=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="report.cgi.html">Reports</a></li>
+
+  <li>
+      <span class="separator">| </span>
+        <a href="request.cgi.html">Requests</a></li>
+
+
+  <li>
+        <span class="separator">| </span>
+        <a href="https://bugzilla.readthedocs.org/en/5.0/using/understanding.html" target="_blank">Help</a>
+      </li>
+    
+      <li id="new_account_container_top">
+        <span class="separator">| </span>
+        <a href="createaccount.cgi.html">New&nbsp;Account</a>
+      </li>
+
+    <li id="mini_login_container_top">
+  <span class="separator">| </span>
+  <a id="login_link_top" href="show_bug.cgi%3Fid=2481&amp;GoAheadAndLogIn=1.html"
+     onclick="return show_mini_login_form('_top')">Log In</a>
+
+  <form action="show_bug.cgi%3Fid=2481.html" method="POST"
+        class="mini_login bz_default_hidden"
+        id="mini_login_top">
+    <input id="Bugzilla_login_top" required
+           name="Bugzilla_login" class="bz_login"
+        type="email" placeholder="Email Address">
+    <input class="bz_password" name="Bugzilla_password" type="password"
+           id="Bugzilla_password_top" required
+           placeholder="Password">
+    <input type="hidden" name="Bugzilla_login_token"
+           value="1469821547-45fcp6JXZlsyYeW7jzkBiz3_vkSmSSkS98Y3jYwPe-E">
+    <input type="submit" name="GoAheadAndLogIn" value="Log in"
+            id="log_in_top">
+    <a href="show_bug.cgi%3Fid=2481.html#" onclick="return hide_mini_login_form('_top')">[x]</a>
+  </form>
+</li>
+
+
+  <li id="forgot_container_top">
+    <span class="separator">| </span>
+    <a id="forgot_link_top" href="show_bug.cgi%3Fid=2481&amp;GoAheadAndLogIn=1.html#forgot"
+       onclick="return show_forgot_form('_top')">Forgot Password</a>
+    <form action="http://bugs.aviary.pl/token.cgi" method="post" id="forgot_form_top"
+          class="mini_forgot bz_default_hidden">
+      <label for="login_top">Login:</label>
+      <input name="loginname" size="20" id="login_top" required
+          type="email" placeholder="Your Email Address">
+      <input id="forgot_button_top" value="Reset Password" type="submit">
+      <input type="hidden" name="a" value="reqpw">
+      <input type="hidden" id="token_top" name="token"
+             value="1469821547-F49Cw3236RxdCGXgiEY-NqueuUKNqZiWBTAlID3Xtyk">
+      <a href="show_bug.cgi%3Fid=2481.html#" onclick="return hide_forgot_form('_top')">[x]</a>
+    </form>
+  </li>
+</ul>
+    </div>
+  </div>
+
+  <div id="bugzilla-body">
+
+
+<script type="text/javascript">
+<!--
+
+//-->
+</script>
+
+<form name="changeform" id="changeform" method="post" action="http://bugs.aviary.pl/process_bug.cgi">
+
+  <input type="hidden" name="delta_ts" value="2011-01-30 08:03:36">
+  <input type="hidden" name="id" value="2481">
+  <input type="hidden" name="token" value="1469821547-jAibFayx9YNh7Fzf56SdPCVm1yeZiyts9hnb2-oIGpY">
+<div class="bz_short_desc_container edit_form">
+     <a href="show_bug.cgi%3Fid=2481.html"><b>Bug&nbsp;2481</b></a> <span id="summary_container" class="bz_default_hidden">
+      - <span id="short_desc_nonedit_display">Internet vs internet</span>
+     </span>
+
+    <div id="summary_input"><span class="field_label "
+    id="field_label_short_desc">
+
+
+  <a 
+      title="The bug summary is a short sentence which succinctly describes what the bug is about."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#short_desc"
+  >Summary:</a>
+
+</span>Internet vs internet
+    </div>
+  </div>
+  <script type="text/javascript">
+    hideEditableField('summary_container',
+                      'summary_input',
+                      'summary_edit_action',
+                      'short_desc',
+                      'Internet vs internet' );
+  </script>
+  <table class="edit_form">
+    <tr>
+      
+      <td id="bz_show_bug_column_1" class="bz_show_bug_column">     
+        <table>
+          <tr>
+    <th class="field_label">
+      <a href="page.cgi%3Fid=fields.html#bug_status">Status</a>:
+    </th>
+    <td id="bz_field_status">
+      <span id="static_bug_status">VERIFIED
+          WONTFIX
+      </span>
+    </td>
+  </tr>
+<tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+<tr><th class="field_label "
+    id="field_label_alias">
+
+
+  <a 
+      title="A short, unique name assigned to a bug in order to assist with looking it up and referring to it in other places in Bugzilla."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#alias"
+  >Alias:</a>
+
+</th>
+    <td>
+        None
+    </td>
+  </tr>
+<tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+<tr><th class="field_label "
+    id="field_label_product">
+
+
+  <a 
+      title="Bugs are categorised into Products and Components. Select a Classification to narrow down this list."
+      class="field_help_link"
+      href="describecomponents.cgi.html"
+  >Product:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_product" >Toolkit
+
+</td>
+    </tr>
+
+    
+    <tr class="bz_default_hidden"><th class="field_label "
+    id="field_label_classification">
+
+
+  <a 
+      title="Bugs are categorised into Classifications, Products and Components. classifications is the top-level categorisation."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#classification"
+  >Classification:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_classification" >Tłumaczenia oprogramowania
+
+</td>
+    </tr>
+        
+    
+    
+    <tr><th class="field_label "
+    id="field_label_component">
+
+
+  <a 
+      title="Components are second-level categories; each belongs to a particular Product. Select a Product to narrow down this list."
+      class="field_help_link"
+      href="describecomponents.cgi%3Fproduct=Toolkit.html"
+  >Component:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_component" >inne
+
+  (<a href="buglist.cgi%3Fcomponent=inne&amp;product=Toolkit&amp;bug_status=__open__.html"
+      target="_blank">show other bugs</a>)
+</td>
+    </tr>
+    <tr><th class="field_label "
+    id="field_label_version">
+
+
+  <a 
+      title="The version field defines the version of the software the bug was found in."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#version"
+  >Version:</a>
+
+</th>
+<td>nieokreślona
+  </td>
+    </tr>
+        
+    
+        
+    <tr><th class="field_label "
+    id="field_label_rep_platform">
+
+
+  <a 
+      title="The hardware platform the bug was observed on. Note: When searching, selecting the option &quot;All&quot; only finds bugs whose value for this field is literally the word &quot;All&quot;."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#rep_platform"
+  >Hardware:</a>
+
+</th>
+      <td class="field_value">Wszystkie
+        Wszystkie
+      </td>
+    </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          
+          <tr>
+      <th class="field_label">
+        <label  accesskey="i">
+          <a href="page.cgi%3Fid=fields.html#importance"><u>I</u>mportance</a></label>:
+      </th>
+      <td>P3
+       normalny
+      </td>
+    </tr>
+          
+          <tr><th class="field_label "
+    id="field_label_assigned_to">
+
+
+  <a 
+      title="The person in charge of resolving the bug."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#assigned_to"
+  >Assignee:</a>
+
+</th>
+      <td><span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+      </td>
+    </tr>
+
+    <tr><th class="field_label "
+    id="field_label_qa_contact">
+
+
+  <a 
+      title="The person responsible for confirming this bug if it is unconfirmed, and for verifying the fix once the bug has been resolved."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#qa_contact"
+  >QA Contact:</a>
+
+</th>
+      <td><span class="vcard">toolkit
+</span>
+      </td>
+    </tr>
+    <script type="text/javascript">
+      assignToDefaultOnChange(['product', 'component'],
+        'splewako\x40aviary.pl',
+        'toolkit\x40l10n.bledy');
+    </script>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          <tr><th class="field_label "
+    id="field_label_bug_file_loc">
+
+
+  <a 
+      title="Bugs can have a URL associated with them - for example, a pointer to a web site where the problem is seen."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#bug_file_loc"
+  >URL:</a>
+
+</th>
+    <td>
+      <span id="bz_url_input_area">
+      </span>
+    </td>
+  </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+
+          
+<tr><th class="field_label "
+    id="field_label_dependson">
+
+
+  <a 
+      title="The bugs listed here must be resolved before this bug can be resolved."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#dependson"
+  >Depends on:</a>
+
+</th>
+
+  <td>
+    <span id="dependson_input_area">
+    </span>
+
+  </td>
+  </tr>
+  
+  <tr><th class="field_label "
+    id="field_label_blocked">
+
+
+  <a 
+      title="This bug must be resolved before the bugs listed in this field can be resolved."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#blocked"
+  >Blocks:</a>
+
+</th>
+
+  <td>
+    <span id="blocked_input_area">
+    </span>
+
+  </td>
+  </tr>
+          
+        </table>
+      </td>
+      <td>
+        <div class="bz_column_spacer">&nbsp;</div>
+      </td>
+      
+      <td id="bz_show_bug_column_2" class="bz_show_bug_column">
+        <table>
+        <tr>
+    <th class="field_label">
+      Reported:
+    </th>
+    <td>2009-05-16 05:10 CEST by <span class="vcard"><span class="fn">Leszek Życzkowski</span>
+</span>
+    </td>
+  </tr>
+  
+  <tr>
+    <th class="field_label">
+      Modified:
+    </th>
+    <td>2011-01-30 08:03 CET
+      (<a href="show_activity.cgi%3Fid=2481.html">History</a>)
+    </td>
+  
+  </tr>
+<tr>
+      <th class="field_label">
+        <label  accesskey="a">
+          CC List:
+        </label>
+      </th>
+      <td>11 
+          users
+          <span id="cc_edit_area_showhide_container" class="bz_default_hidden">
+            (<a href="show_bug.cgi%3Fid=2481.html#" id="cc_edit_area_showhide">show</a>)
+          </span>
+        <div id="cc_edit_area">
+          <br>
+            <select id="cc" multiple="multiple" size="5" >
+                <option value="akalla">akalla</option>
+                <option value="bpiec">bpiec</option>
+                <option value="gandalf">gandalf</option>
+                <option value="hubert+bap">hubert+bap</option>
+                <option value="jmazgaj">jmazgaj</option>
+                <option value="marcoos+bugs">marcoos+bugs</option>
+                <option value="niezapominajka">niezapominajka</option>
+                <option value="smalolepszy">smalolepszy</option>
+                <option value="w.kapusta">w.kapusta</option>
+                <option value="wadimd">wadimd</option>
+                <option value="wszczesny">wszczesny</option>
+            </select>
+        </div>
+          <script type="text/javascript">
+            hideEditableField( 'cc_edit_area_showhide_container', 
+                               'cc_edit_area', 
+                               'cc_edit_area_showhide', 
+                               '', 
+                               '');  
+          </script>
+      </td>
+    </tr>
+
+<tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+<tr><th class="field_label "
+    id="field_label_see_also">
+
+
+  <a 
+      title="This allows you to refer to bugs in other installations. You can enter a URL to a bug in the 'Add Bug URLs' field to note that that bug is related to this one. You can enter multiple URLs at once by separating them with whitespace. You should normally use this field to refer to bugs in other installations. For bugs in this installation, it is better to use the Depends on and Blocks fields."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#see_also"
+  >See Also:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_see_also" >
+
+</td>
+    </tr> 
+
+<tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+
+
+
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+          <hr id="bz_top_half_spacer">
+      </td>
+    </tr>
+  </table>
+
+  <table id="bz_big_form_parts">
+  <tr>
+  <td>
+
+    
+<script type="text/javascript">
+<!--
+function toggle_display(link) {
+    var table = document.getElementById("attachment_table");
+    var view_all = document.getElementById("view_all");
+    var hide_obsolete_url_parameter = "&hide_obsolete=1";
+    // Store current height for scrolling later
+    var originalHeight = table.offsetHeight;
+    var rows = YAHOO.util.Dom.getElementsByClassName(
+        'bz_tr_obsolete', 'tr', table);
+
+    for (var i = 0; i < rows.length; i++) {
+        bz_toggleClass(rows[i], 'bz_default_hidden');
+    }
+
+    if (YAHOO.util.Dom.hasClass(rows[0], 'bz_default_hidden')) {
+        link.innerHTML = "Show Obsolete";
+        view_all.href = view_all.href + hide_obsolete_url_parameter 
+    }
+    else {
+        link.innerHTML = "Hide Obsolete";
+        view_all.href = view_all.href.replace(hide_obsolete_url_parameter,"");
+    }
+
+    var newHeight = table.offsetHeight;
+    // This scrolling makes the window appear to not move at all.
+    window.scrollBy(0, newHeight - originalHeight);
+
+    return false;
+}
+//-->
+</script>
+
+<br>
+<table id="attachment_table">
+  <tr id="a0">
+    <th colspan="3" class="left">
+      Attachments
+    </th>
+  </tr>
+
+
+
+  <tr class="bz_attach_footer">
+    <td colspan="3">
+        <a href="attachment.cgi%3Fbugid=2481&amp;action=enter.html">Add an attachment</a>
+        (proposed patch, testcase, etc.)
+    </td>
+  </tr>
+</table>
+<br>
+
+  </td>
+  <td>
+  </td>
+  </tr></table>
+
+  
+  <div id="comments"><script src="js/comments.js" type="text/javascript">
+</script>
+
+<script type="text/javascript">
+<!--
+  /* Adds the reply text to the 'comment' textarea */
+  function replyToComment(id, real_id, name) {
+      var prefix = "(In reply to " + name + " from comment #" + id + ")\n";
+      var replytext = "";
+        /* pre id="comment_name_N" */
+        var text_elem = document.getElementById('comment_text_'+id);
+        var text = getText(text_elem);
+        replytext = prefix + wrapReplyText(text);
+
+
+      /* <textarea id="comment"> */
+      var textarea = document.getElementById('comment');
+      if (textarea.value != replytext) {
+          textarea.value += replytext;
+      }
+
+      textarea.focus();
+  } 
+//-->
+</script>
+
+
+<!-- This auto-sizes the comments and positions the collapse/expand links 
+     to the right. -->
+<table class="bz_comment_table">
+<tr>
+<td>
+<div id="c0" class="bz_comment bz_first_comment">
+
+      <div class="bz_first_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2481.html#c0">Description</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Leszek Życzkowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-05-16 05:10:01 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Ponieważ określenie to jest stosowane we wszystkich programach, postanowiłem problem ten postawić tutaj.
+Język ewoluuje cały czas i my powinniśmy iść z duchem czasu. Jeszcze kilka lat temu autorytety poradni językowej PWN opowiadały się za pisownią dużą literą. Nie będę się rozwodził, co i jak. Można to prześledzić w poradni, ale obecnie nawet taki autorytet jak prof. Bańko wypowiada się następująco: 
+„Stopniowo jednak zmieniam zdanie, obecnie jestem gotów akceptować obie formy”.
+Uważam, że w naszych tłumaczeniach powinniśmy używać małej litery, a w odniesieniu do nazwy własnej (sieć Internet) oczywiście dużej. Wiem, że zaraz podniesie się wielkie larum, bo w tłumaczeniach Aviary jest używana duża litera, ale mamy ambicje być najlepsi w tłumaczeniach, więc rozwijajmy się – idźmy z duchem czasu. Oczekuję konstruktywnych wypowiedzi na ten temat.</pre>
+    </div>
+
+    <div id="c1" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2481.html#c1">Comment 1</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-05-16 08:06:59 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">&quot;Wyborcza&quot; od dawna pisze &quot;internet&quot;, ale nie wiem, czy już czas na taką zmianę u nas.</pre>
+    </div>
+
+    <div id="c2" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2481.html#c2">Comment 2</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Leszek Życzkowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-05-16 08:43:48 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(In reply to <a href="show_bug.cgi%3Fid=2481.html#c1">comment #1</a>)
+<span class="quote">&gt; &quot;Wyborcza&quot; od dawna pisze &quot;internet&quot;, ale nie wiem, czy już czas na taką zmianę
+&gt; u nas.</span >
+Hubert!
+Firefox jest nowoczesną, innowacyjną przeglądarką, a tu z Twojej strony taki konserwatyzm? :)
+
+Zwolennicy pisania małą literą przytaczają koronny argument jakim jest obecne postrzeganie internetu jako wielkiego medium takiego, jak telewizja, radio , a nie sieci o nazwie Internet i trudno z nimi się nie zgodzić – ja się zgadzam. :) Drugi argument to przymiotnik „internetowy”, który zgodnie ze wszelkimi regułami języka polskiego trzeba pisać małą literą.</pre>
+    </div>
+
+    <div id="c3" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2481.html#c3">Comment 3</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Bartosz Piec</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-05-17 03:20:19 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Popieram Leszka, ja optuję za &quot;internetem&quot;.</pre>
+    </div>
+
+    <div id="c4" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2481.html#c4">Comment 4</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-05-17 04:02:28 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Jak będzie duże poparcie dla tej zmiany - nie będę miał nic przeciw.</pre>
+    </div>
+
+    <div id="c5" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2481.html#c5">Comment 5</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-05-17 15:23:00 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">To jest nazwa własna. Robienie z tego rzeczownika typu &quot;radio&quot; jest informatyczną ignorancją. Jest wiele radio(stacji) i telewizji, Internet jest jeden. 
+
+Informatyczną ignorancją (także ze strony RJP) jest też rozróżnianie między Internetem a jakimiś hipotetycznymi bliżej nieokreślonymi internetem/internetami. Nie ma innych &quot;internetów&quot; niż Internet.</pre>
+    </div>
+
+    <div id="c6" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2481.html#c6">Comment 6</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Stefan Plewako :stef</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-05-19 06:56:04 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(In reply to <a href="show_bug.cgi%3Fid=2481.html#c5">comment #5</a>)
+W pełni zgadzam się z Markiem.</pre>
+    </div>
+
+    <div id="c7" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2481.html#c7">Comment 7</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-05-19 07:13:32 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(In reply to <a href="show_bug.cgi%3Fid=2481.html#c5">comment #5</a>)
+<span class="quote">&gt; Informatyczną ignorancją (także ze strony RJP) jest też rozróżnianie między
+&gt; Internetem a jakimiś hipotetycznymi bliżej nieokreślonymi
+&gt; internetem/internetami. Nie ma innych &quot;internetów&quot; niż Internet.</span >
+
+W języku polskim nazwy własne, gdy się upowszechniają, często są potem pisane z małej litery.
+
+Podsumowując:
+1. Ownerzy najważniejszych naszych aplikacji są przeciw zmianie.
+2. Obecna pisownia nie jest błędna
+
+Dlatego w tej sytuacji proponuję WONTFIX.
+
+Chyba, że jeszcze Wadim popiera zmianę.</pre>
+    </div>
+
+    <div id="c8" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2481.html#c8">Comment 8</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Leszek Życzkowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-05-19 13:40:32 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(In reply to <a href="show_bug.cgi%3Fid=2481.html#c7">comment #7</a>)
+<span class="quote">&gt; 1. Ownerzy najważniejszych naszych aplikacji są przeciw zmianie.</span >
+I w tym miejscu chciałbym przypomnieć „ownerom najważniejszych programów”, że te programy są dla „LUDU”, nie dla informatyków!! Mają przemawiać „ludzkim językiem”, oczywiście z zachowaniem zasad języka polskiego. Ponieważ autorytety języka polskiego zmieniają zdanie i idą za żywym językiem „najważniejsze programy” powinny nadążać za tymi zmianami. Chcecie znowu z Firefoksa zrobić program dla geków?</pre>
+    </div>
+
+    <div id="c9" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2481.html#c9">Comment 9</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-05-19 14:08:40 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Tzw. &quot;LUD&quot; na zakładkę mówi &quot;ulubiona&quot;, a na kartę - &quot;zakładka&quot;, a na stronę &quot;stronka&quot;...</pre>
+    </div>
+
+    <div id="c10" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2481.html#c10">Comment 10</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Leszek Życzkowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-05-19 14:34:55 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(In reply to <a href="show_bug.cgi%3Fid=2481.html#c9">comment #9</a>)
+<span class="quote">&gt; Tzw. &quot;LUD&quot; na zakładkę mówi &quot;ulubiona&quot;, a na kartę - &quot;zakładka&quot;, a na stronę
+&gt; &quot;stronka&quot;...</span >
+
+To nie znaczy, że mamy „mu” wciskać papkę informatyczną. Ma być poprawna polszczyzna z użyciem bieżących zatwierdzonych zmian i tendencji w rozwoju języka.
+Cały czas próbuję Was uczulić na to, że należy używać języka poprawnego gramatycznie, stylistycznie, no i oczywiście ortograficznie ale przystępnego. Z jednej strony tłumaczymy „odnośnik”, a nie „link” chociaż „link” jest zatwierdzony i występuje w wielu słownikach, a z drugiej rozdzieramy szaty nad innymi słowami „To jest nazwa własna. Robienie z tego rzeczownika typu &quot;radio&quot; jest informatyczną ignorancją.” Może Marku drażni Cię pisanie małą literą, ale język musi się rozwijać, a nasze programy z nim.
+Ja mogę pisać dużą literą (kiedyś nie można było używać określenia „duża litera” tylko „wielka litera”), tylko po co, skoro rozwój języka idzie w innym kierunku i naukowcy potwierdzają prawidłowość tego kierunku.
+
+A odnośnie „ulubiona”, „zakładka”, to nie „LUD” to wymyślił, tylko tłumacze M$, przecież dobrze o tym wiesz.</pre>
+    </div>
+
+    <div id="c11" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2481.html#c11">Comment 11</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-05-19 15:42:19 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Nieprawda. Nigdy, ani w Windows, ani w Office, ani w IE, nie było &quot;zakładki&quot; w tym znaczeniu. Nie widziałem jej w żadnym poważnym programie, a jednak &quot;LUD&quot; tak mówi. 
+
+Język musi się rozwijać, ale czy powinniśmy mu ułatwiać rozwój w niewłaściwym kierunku?</pre>
+    </div>
+
+    <div id="c12" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2481.html#c12">Comment 12</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Bartosz Piec</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-05-19 15:52:14 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">IMO dopóki &quot;Internet&quot; jest poprawny, a nie ma woli zmiany, to nie ma się o co kłócić.
+Dla mnie WONTFIX.</pre>
+    </div>
+
+    <div id="c13" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2481.html#c13">Comment 13</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Leszek Życzkowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-05-19 16:39:38 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(In reply to <a href="show_bug.cgi%3Fid=2481.html#c11">comment #11</a>)
+<span class="quote">&gt; Nieprawda. Nigdy, ani w Windows, ani w Office, ani w IE, nie było &quot;zakładki&quot; w
+&gt; tym znaczeniu. Nie widziałem jej w żadnym poważnym programie, a jednak &quot;LUD&quot;
+&gt; tak mówi. </span >
+Lubisz dzielić włos na czworo, czyli rozmydlać dyskusję.
+<span class="quote">&gt; Język musi się rozwijać, ale czy powinniśmy mu ułatwiać rozwój w niewłaściwym
+&gt; kierunku?</span >
+A jaki jest prawidłowy?
+
+Wróćmy do meritum, nie chodzi o określenia wymienione przez Ciebie, ale o nadążanie naszych tłumaczeń za rozwojem, czystością języka i jego przyjazną dla zwykłego użytkownika formą.</pre>
+    </div>
+
+    <div id="c14" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2481.html#c14">Comment 14</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Leszek Życzkowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-05-19 16:45:32 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(In reply to <a href="show_bug.cgi%3Fid=2481.html#c12">comment #12</a>)
+<span class="quote">&gt; IMO dopóki &quot;Internet&quot; jest poprawny, a nie ma woli zmiany, to nie ma się o co
+&gt; kłócić.</span >
+A kto się kłóci?
+Nikt nie mówił, że „Internet” nie jest poprawny, ale skoro głosimy, że np. Firefox jest taką nowoczesną, innowacyjną przeglądarką, to dlaczego jego lokalizacja ma nie być nowoczesna, innowacyjna – idąca z duchem czasu?</pre>
+    </div>
+
+    <div id="c15" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2481.html#c15">Comment 15</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Adrian Kalla :Adrianer</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-05-20 08:56:40 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">W pelni zgadzam sie tu z Markiem: Internet to nazwa wlasna - jest jeden - nie ma &quot;internetow&quot;. Dla mnie WONTFIX</pre>
+    </div>
+
+    <div id="c16" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2481.html#c16">Comment 16</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-05-20 09:04:39 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(In reply to <a href="show_bug.cgi%3Fid=2481.html#c15">comment #15</a>)
+<span class="quote">&gt; W pelni zgadzam sie tu z Markiem: Internet to nazwa wlasna - jest jeden - nie
+&gt; ma &quot;internetow&quot;.</span >
+
+Akurat ten argument jest słaby. W języku polskim nazwy własne, które są bardzo rozpowszechnione często po jakimś czasie są traktowane jako zwykłe słowa.
+
+Zamykam. Leszek - nic nie stoi na przeszkodzie, by wrócić do dyskusji za parę lat (sytuacja może się zmienić).</pre>
+    </div>
+
+    <div id="c17" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2481.html#c17">Comment 17</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Leszek Życzkowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-05-20 09:21:54 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(In reply to <a href="show_bug.cgi%3Fid=2481.html#c16">comment #16</a>)
+<span class="quote">&gt; Zamykam. Leszek - nic nie stoi na przeszkodzie, by wrócić do dyskusji za parę
+&gt; lat (sytuacja może się zmienić).</span >
+Nie dobrze, że technokraci decydują w takich sprawach. Tutaj nie wypowiedział się żaden polonista, czy humanista.</pre>
+    </div>
+
+    <div id="c18" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2481.html#c18">Comment 18</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-05-20 09:36:25 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(In reply to <a href="show_bug.cgi%3Fid=2481.html#c17">comment #17</a>)
+<span class="quote">&gt; Nie dobrze, że technokraci decydują w takich sprawach. Tutaj nie wypowiedział
+&gt; się żaden polonista, czy humanista.</span >
+
+Może dlatego, że nie prosiłeś nikogo z polonistów o wypowiedź ;-)</pre>
+    </div>
+
+    <div id="c19" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2481.html#c19">Comment 19</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Staś Małolepszy :stas</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-05-20 09:50:57 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Zaraz, sekundę. Bug zgłoszony 16 maja i już wontfix? Dajcie się ludziom wypowiedzieć, ja się zbieram od 2 dni, tylko że nie miałem czasu.
+
+(popieram Teo)</pre>
+    </div>
+
+    <div id="c20" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2481.html#c20">Comment 20</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Leszek Życzkowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-05-20 10:17:07 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Dodałem kilka osób</pre>
+    </div>
+
+    <div id="c21" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2481.html#c21">Comment 21</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-05-20 10:24:58 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">hej! nie za szybko? :)
+
+Staszek ma racje, po co tak pedzicie? Krzywda sie nikomu nie stanie jak podyskutujemy o tym kilka dni dluzej... W 4 dni zamkneliscie blad, ktory (jak juz mozna zauwazyc) ma zwolennikow po obu stronach barykady.
+
+Otwieram ponownie chociaz na troche.</pre>
+    </div>
+
+    <div id="c22" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2481.html#c22">Comment 22</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Wojciech Kapusta</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-05-20 10:51:19 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Prof. Bańko (z całym szacunkiem) jest zbyt populistyczny. Język to istota kultury, życia narodu. Od zawsze inteligencja i elita (nie mówię tu o obecnych pseudoelitach, czy łże-elitach) mówiła trochę innym językiem i krzewiła piękno oraz kulturę językową wśród ludu. A jeśli ktoś zaczynał przesadnie mówić językiem ludu, lud przestawał go szanować. I drugi przykład: jeśli mielibyśmy słuchać &quot;ludu&quot;, powinniśmy do drugie, trzecie słowo wrzucać jakieś $%^#&#64;*&amp; .
+
+
+Marek Stepień:
+<span class="quote">&gt; To jest nazwa własna. Robienie z tego rzeczownika typu &quot;radio&quot; jest
+&gt; informatyczną ignorancją. Jest wiele radio(stacji) i telewizji, Internet 
+&gt; jest jeden. </span >
+
+<span class="quote">&gt; Informatyczną ignorancją (także ze strony RJP) jest też rozróżnianie między
+&gt; Internetem a jakimiś hipotetycznymi bliżej nieokreślonymi
+&gt; internetem/internetami. Nie ma innych &quot;internetów&quot; niż Internet.</span >
+
+Święte słowa, Marku! Popieram!</pre>
+    </div>
+
+    <div id="c23" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2481.html#c23">Comment 23</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Wojciech Szczęsny</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-05-20 11:26:37 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Jako polonista wiele nie dodam. Znamy stanowisko językoznawców, które nie rozstrzyga jednoznacznie tej kwestii.
+
+Jeśli chodzi o rozróżnienie &quot;Internet&quot; (nazwa własna) i &quot;internet&quot; (rzeczownik pospolity) to uważam, iż ma uzasadnienie, i że powstała już, obok nazwy własnej, nazwa pospolita, określająca rodzaj medium (z tej kategorii, co radio lub telewizja). Tyle że istnieje obecnie tylko jedna realizacja medium z tej kategorii. Można jednak sobie wyobrazić, że istnieje na świecie lub w dużej jego części zupełnie niezależna sieć spełniająca analogiczne funkcje. Jest zresztą coś, co się nazywa Internet2 - jeśli dobrze zrozumiałem, to korzysta on z sieci fizycznej niezależnej od naszego Internetu. Zaznaczam, że nie jest to argument za tym, że powinniśmy w Aviary zacząć pisać &quot;internet&quot; z małej litery, tylko że są konteksty, w których ma to uzasadnienie.
+
+Trudno ocenić, które użycie (nazwa własna czy pospolita) jest częstsze i czy w ogóle uzus społeczny, ma mieć decydujące znaczenie.</pre>
+    </div>
+
+    <div id="c24" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2481.html#c24">Comment 24</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-05-20 12:00:03 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Ja sie sklaniam ku utrzymaniu &quot;Internet&quot;, poniewaz, jak slusznie zauwazyl marcoos, jest *jeden* Internet. Nie ma internetow, sieci internetowych, jest jeden &quot;byt&quot; o nazwie wlasnej (!!!) Internet. To nie jest jego definicja, to nie jest rzeczownik pospolity okreslajacy typ tego bytu, to jest jego nazwa.
+
+Tak jak DVD jest nazwa pewnej technologii, Firefox jest, iPhone, Android itp.
+
+Mam jeszcze jeden problem z propozycja Leszka. Nie widze problemu ktory chce on rozwiazywac. I nie znajduje opisu tego problemu w jego wypowiedzi. Znajduje propozycje zmiany, ale bez wyjasnienia co jest nie tak w aktualnym rozwiazaniu. Co jest zle, czemu mamy zmieniac.
+
+Z drugiej strony zaczynam tez (zwlaszcza po komentarzu Wojciecha) sklaniac sie ku temu co jest na wikipedii (<a href="http://pl.wikipedia.org/wiki/Internet#Pisownia">http://pl.wikipedia.org/wiki/Internet#Pisownia</a>).
+
+Internet jako siec, jest nazwa wlasna (zatem - Polacz z Internetem), ale medium nie ma nazwy wlasnej (w efekcie &quot;znalazlem w internecie&quot;). Oczywiscie jest to bardzo niejednoznaczne i nastrecza duzych problemow dla nas w dluzszym okresie (gdyz jezyk z ktorego tlumaczymy na medium ma slowko &quot;web&quot; i moze w jednym zdaniu odwolac sie do polaczenia Internetowego i wyniku szukania w &quot;webie&quot;).
+
+Przyklad z Internetem2 jest o tyle slabo trafiony, ze Internet2 to tez nazwa wlasna INNEJ niz Internet sieci. Zatem, o ile dziennikarze nie zrobia z tym tego co z hackowaniem i hackerami, Internet2 nie bedzie jednym z internetow nigdy. Tak jak DVD nie jest jednym z CD, a OLED nie jest jednym z LCD.
+
+Natomiast nie wiemy co sie stanie z jezykowym pojeciem medium. Czy jak za 150 lat bedziemy uzywali czegos o nazwie &quot;SwiftNet&quot; ktory bedzie dzialal na protokole IPv12, ale zamiast TCP bedzie uzywal czegos innego, nie bedzie mial DNSow i tak dalej, to czy nadal bedziemy znajdywac tekst &quot;w internecie&quot;?</pre>
+    </div>
+
+    <div id="c25" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2481.html#c25">Comment 25</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Leszek Życzkowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-05-20 15:02:03 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(In reply to <a href="show_bug.cgi%3Fid=2481.html#c24">comment #24</a>)
+<span class="quote">&gt; Mam jeszcze jeden problem z propozycja Leszka. Nie widze problemu ktory chce on
+&gt; rozwiazywac. I nie znajduje opisu tego problemu w jego wypowiedzi. Znajduje
+&gt; propozycje zmiany, ale bez wyjasnienia co jest nie tak w aktualnym rozwiazaniu.
+&gt; Co jest zle, czemu mamy zmieniac.</span >
+
+Zbyszku, napisałem dokładnie w komentarzu inicjującym o co mi chodzi. Ponieważ
+w języku polskim pisownia słowa „Internet” ewoluuje, zaproponowałem abyśmy szli
+z duchem czasu i stosowali oba rodzaje pisowni, a nie tylko dogmatyczne
+„Internet” pisane dużą literą tak jak ma to miejsce obecnie. Nic nie jest źle,
+chodzi o to, aby język używany w naszych tłumaczeniach nie kostniał i nie był
+za bardzo techniczny – przyjazny  dla zwykłego użytkownika, a jednocześnie
+poprawny gramatycznie, stylistycznie i ortograficznie. Może nie zdajecie sobie
+z tego sprawy, ale język programów odciska spore piętno na ich użytkownikach.
+Dzieje się to podświadomie i właśnie dlatego powinien być bardzo czysty i
+jednocześnie żywy, iść z duchem czasu i z regułami języka polskiego. Jak wiecie
+wychowałem się w trochę innych czasach i wówczas czytanie książek było tym
+elementem kształcenia, które w sposób podświadomy zapoznawało czytelnika z
+zasadami języka polskiego. Teraz czytelnictwo niestety podupada, a większość
+młodych ludzi czyta treści zawarte na stronach internetowych. Te strony i
+interfejsy programów, które służą do przeglądania tych stron stanowią dla
+młodzieży źródło wiedzy o języku polskim, które oddziałuje na nich
+podświadomie. Dlatego tak ważną sprawą jest poprawność językowa treści w
+Internecie, jak i interfejsów przeglądarek. Aviary.pl jako grupa lokalizująca
+najpopularniejszą przeglądarkę w Polsce, musi zwracać baczną uwagę na to, jakim
+językiem ta przeglądarka przemawia do swoich użytkowników. Pisownia słowa
+„Internet” jest pierwszym zagadnieniem jakie poruszam w tej materii.
+
+<span class="quote">&gt; Z drugiej strony zaczynam tez (zwlaszcza po komentarzu Wojciecha) sklaniac sie
+&gt; ku temu co jest na wikipedii (<a href="http://pl.wikipedia.org/wiki/Internet#Pisownia">http://pl.wikipedia.org/wiki/Internet#Pisownia</a>).</span >
+
+Nie czytałem tego wcześniej, ale jest to dokładnie to samo co zaproponowałem.</pre>
+    </div>
+
+    <div id="c26" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2481.html#c26">Comment 26</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Katarzyna Niewodniczańska</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-05-21 15:54:55 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">
+
+Sądzę, że Leszek demonizuje nieco podświadomy wpływ języka przeglądarek na masy młodzieży polskiej. Takie stwierdzenie rodzi pytanie o świadomość i umiejętność korzystania z tego, co masy młodzieży widzą i czym się posługują. (Podczas ustnej matury świadomie i z premedytacją obwieszałyśmy ściany &quot;materiałami pomocniczymi&quot; i wierzcie mi, niewielki odsetek umiał z tego skorzystać.) Nie jest też prawdą, jakoby kiedyś &quot;...czytanie książek było tym
+elementem kształcenia, które w sposób podświadomy zapoznawało czytelnika z
+zasadami języka polskiego.&quot; Bywało różnie, bo wybieraliśmy różne gatunki (też należę do &quot;tych&quot; czasów), a w związku z tym obcowaliśmy ze świadomie podjętą stylizacją językową, zabawą językiem i jego regułami. Czy to wzbogacało nasze słownictwo? TAK! Czy to uczyło nas zasad składni, fleksji, a nawet ortografii? NIE! (Pisząc o pisowni leksemu &quot;Internet&quot;, piszecie: &quot;z małej litery&quot;, &quot;z dużej&quot;.)
+Przywołujecie argument nowoczesności, ewolucji języka i populizmu jednocześnie. I ja wszystko rozumiem. Wszystko zmierza ku temu, by było &quot;prościej&quot;, czyli mówiąc krótko &quot;łatwiej&quot;. Ale czy musimy się na to godzić? Czy niezgoda na &quot;internet&quot; uczyni z nas purystów językowych? Nie sądzę. Dla nas odmienna pisownia tego słowa jest podparta semantyką. Dla &quot;ludu&quot;, czy też &quot;mas młodzieży&quot; tak nie będzie. Znaczenie przestanie być ważne, bo wyparte zostanie skłonnością do uproszczeń. A to również ważny argument. Jeżeli tak kiedyś się stanie, prawdopodobnie oboczność w pisowni tego słowa spowoduje bałagan (może nawet u nas) i będzie wymagała jasnej deklaracji co do czystości zapisu. 
+Mówiąc krótko- Internet.</pre>
+    </div>
+
+    <div id="c27" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2481.html#c27">Comment 27</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Leszek Życzkowski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-05-21 16:53:41 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(In reply to <a href="show_bug.cgi%3Fid=2481.html#c26">comment #26</a>)
+Bardzo ładnie Kasiu piszesz i na dodatek bezpodstawnie nazywasz mnie demagogiem. Otóż mijasz się z prawdą. Mnie czytanie książek nauczyło bardzo dużo. Nie tylko wiedzę, którą treść mi przekazała ale i wiele elementów składni i ortografii.
+Możesz wskazać w moich tekstach, gdzie użyłem sformułowania &quot;z małej litery&quot;, &quot;z
+dużej&quot;? Nigdzie! Na takie numery, to ja się nie dam złapać. :)
+Piszesz o maturzystach i ich postrzeganiu i umiejętności korzystania z dostarczonych materiałów, a ja wczoraj w Dzienniku przeczytałem:
+„Kwaśniewski dostał pokojowego Nobla, Australia należy do UE, a pierwszym prezydentem Rosji był… Stalin – pisali tegoroczni maturzyści na egzaminie z WOS. Na maturze z polskiego opisywali z kolei Telimenę, która połączyła się na mrowisku z Tadeuszem. Egzaminatorzy ostrzegają, by nie traktować tych odpowiedzi jak humoru zeszytów. Polonista i pisarz Jarosław Klejnocki mówi ostro: – Ignorancja uczniów sięga nieprawdopodobnych rozmiarów.”
+No i co powiesz o tym? Właśnie dlatego trzeba zwracać tak baczną uwagę na język naszych programów, których w dużej mierze używają dzisiejsi maturzyści. Internet jest dla nich wielkim źródłem wiedzy, ale też i złych przykładów. W internecie nikt nie cenzuruje treści, a mało kto robi korektę językową. Książki nie dość, że były cenzurowane, to bez porządnej korekty nie były i nie są drukowane.
+
+A jeśli chodzi o tendencje do pisania „internet” małą literą, to artykuł, o którym wspominał Zbyszek jest prawie dosłownym tłumaczeniem z języka angielskiego. Nie jest to zatem nasza krajowa tendencja do zmiany pisowni „Internet”, tylko ogólnoświatowa. Możemy zostać enklawą jeśli będzie ważna semantyka. Ja jestem zdecydowanym przeciwnikiem makaronizmów, ale pod prąd nie mam zamiaru chodzić. Dlatego proponuję dostosować się do ogólnoświatowych tendencji.</pre>
+    </div>
+
+    <div id="c28" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2481.html#c28">Comment 28</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Wojciech Szczęsny</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-05-22 01:02:31 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Dodam, że nie tylko w języku polskim pisownia słowa wzbudza dyskusje. Istnieje nawet hasło w angielskiej Wikipedii temu poświęcone:
+<a href="http://en.wikipedia.org/wiki/Internet_capitalization_conventions">http://en.wikipedia.org/wiki/Internet_capitalization_conventions</a></pre>
+    </div>
+
+    <div id="c29" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2481.html#c29">Comment 29</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Joanna Mazgaj</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-05-27 14:11:08 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(In reply to <a href="show_bug.cgi%3Fid=2481.html#c22">comment #22</a>)
+<span class="quote">&gt; Marek Stepień:
+&gt; &gt; To jest nazwa własna. Robienie z tego rzeczownika typu &quot;radio&quot; jest
+&gt; &gt; informatyczną ignorancją. Jest wiele radio(stacji) i telewizji, Internet 
+&gt; &gt; jest jeden. 
+&gt; 
+&gt; &gt; Informatyczną ignorancją (także ze strony RJP) jest też rozróżnianie między
+&gt; &gt; Internetem a jakimiś hipotetycznymi bliżej nieokreślonymi
+&gt; &gt; internetem/internetami. Nie ma innych &quot;internetów&quot; niż Internet.
+&gt; 
+&gt; Święte słowa, Marku! Popieram!</span >
+
+Ja również.</pre>
+    </div>
+
+    <div id="c30" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2481.html#c30">Comment 30</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-05-27 14:27:46 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">zwracam uwage (za przykladem Marka o jednym Internecie), ze jest tez jedno niebo, jedna przyroda, jeden kosmos, ale nie piszemy ich duza litera.</pre>
+    </div>
+
+    <div id="c31" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2481.html#c31">Comment 31</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-05-27 14:59:37 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(In reply to <a href="show_bug.cgi%3Fid=2481.html#c30">comment #30</a>)
+<span class="quote">&gt; zwracam uwage (za przykladem Marka o jednym Internecie), ze jest tez jedno
+&gt; niebo, jedna przyroda, jeden kosmos, ale nie piszemy ich duza litera.</span >
+
+...jedna Ziemia ;-)</pre>
+    </div>
+
+    <div id="c32" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2481.html#c32">Comment 32</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Staś Małolepszy :stas</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-05-27 17:23:44 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(In reply to <a href="show_bug.cgi%3Fid=2481.html#c31">comment #31</a>)
+<span class="quote">&gt; (In reply to <a href="show_bug.cgi%3Fid=2481.html#c30">comment #30</a>)
+&gt; &gt; zwracam uwage (za przykladem Marka o jednym Internecie), ze jest tez jedno
+&gt; &gt; niebo, jedna przyroda, jeden kosmos, ale nie piszemy ich duza litera.
+&gt; 
+&gt; ...jedna Ziemia ;-)</span >
+
+Ziemia to nazwa wlasna planety. 
+
+Wszystko IMO zalezy od definicji internetu. Czy jest to po prostu globalna siec polaczonych sieci komputerow? Czy mowimy o jakichs konkretnych technologiach (TCP/IP)? czy jesli przestaniemy ich uzywac, to juz to nie bedzie internet, tylko ${foo}net?
+
+Internet jest jak intranet, tylko ze jest globalny, a nie lokalny. Globalnosc wymusza bycie jedynym i stad bierze sie nieporozumienie. Czy Waszym zdaniem intranet to nazwa wlasna? 
+
+Nowe technologie czesto zaczynaja jako nazwy wlasne, ale szybko staja sie synonimami ogolnego pojecia, a nie konkretnej implementacji, konkretnego rozwiazania. Wlasnie dlatego nie piszemy Telewizja. Wydaje mi sie, ze internet jest na tyle powszechny w naszym zyciu (pod najprzerozniejszymi postaciami), ze czas zaczac pisac go mala literą.
+
+Inne przyklady eponymów: kola, google, frisbee, ksero, styropian, post-it, termos, jeep, spam, lycra, walkman.</pre>
+    </div>
+
+    <div id="c33" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2481.html#c33">Comment 33</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Staś Małolepszy :stas</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2009-05-27 17:29:10 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(In reply to <a href="show_bug.cgi%3Fid=2481.html#c32">comment #32</a>)
+<span class="quote">&gt; Inne przyklady eponymów: kola, google, frisbee, ksero, styropian, post-it,
+&gt; termos, jeep, spam, lycra, walkman.</span >
+
+Coś mi podpowiada, że &quot;eponym&quot; nie jest polskim słowem. Sorry! ;)</pre>
+    </div>
+
+    <div id="c34" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2481.html#c34">Comment 34</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2010-08-09 13:31:30 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Nie wiem, co zrobić z tym bugiem, a Hubert mi marudzi o starych bugach. W takim razie, zgodzę się z każdą decyzją Zarządu.
+
+=&gt; HG
+
+;-)</pre>
+    </div>
+
+    <div id="c35" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2481.html#c35">Comment 35</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2010-08-09 14:13:41 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">internet: Leszek, Piecu, Staś
+Internet: Marek, Stef, Adrian, Wojciech, Kasia, Gandalf, Joanna, Hubert
+
+Nie odczytałem wyraźnie stanowiska Witii. Przy okazji w obecnej sytuacji dla Pieca &quot;Internet&quot; jest akceptowalne.
+
+Owner Toolkitu -&gt; WONTFIX
+QA Toolkitu -&gt; WONTFIX
+Większość -&gt; WONTFIX
+Czy obecnie używana formu jest powszechnie uznawana za poprawną - tak -&gt; WONTFIX
+
+Podsumowując -&gt; WONTFIX
+
+Leszku, widać jeszcze nie czas na takie zmiany.</pre>
+    </div>
+
+    <div id="c36" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2481.html#c36">Comment 36</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Wojciech Szczęsny</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2010-08-10 07:21:38 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(W odpowiedzi na komentarz #35)
+<span class="quote">&gt; Nie odczytałem wyraźnie stanowiska Witii.</span >
+
+W słowniku Poprawnej Polszczyzny PWN z roku 2008 hasło &quot;Internet&quot; i przykłady w nim zawarte są pisane wielką literą. Jednak na końcu hasła jest informacja &quot;Wyraz pisany także małą literą&quot;. Zatem formalnie obie wersje są dopuszczalne.
+
+W korespondencji z różnymi osobami (spoza naszego grona) widzę, że dominuje pisownia &quot;internet&quot;. Czyli słowo to jest traktowane jak telewizja, radio czy prasa. Niektórzy wręcz dziwili się, dlaczego wielką literą. Zatem po przemyśleniu skłaniam się do wersji &quot;internet&quot;.</pre>
+    </div>
+
+    <div id="c37" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=2481.html#c37">Comment 37</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2011-01-30 08:03:36 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">ZWERYFIKOWANE (weryfikacja-starych-bugow)</pre>
+    </div>
+
+
+  
+
+</td>
+<td>
+</td>
+</tr></table>
+  </div>
+
+    <hr><div id="add_comment" class="bz_section_additional_comments">
+      <table>
+        <tr>
+          <td>
+            <fieldset>
+              <legend>Note</legend>
+              You need to
+              <a href="show_bug.cgi%3Fid=2481&amp;GoAheadAndLogIn=1.html">log in</a>
+              before you can comment on or make changes to this bug.
+            </fieldset>
+          </td>
+        </tr> 
+      </table>
+  </div>        
+
+</form>
+
+<hr>
+<ul class="related_actions">
+    <li><a href="show_bug.cgi%3Fformat=multiple&amp;id=2481.html">Format For Printing</a></li>
+    <li>&nbsp;-&nbsp;<a href="show_bug.cgi%3Fctype=xml&amp;id=2481">XML</a></li>
+    <li>&nbsp;-&nbsp;<a href="enter_bug.cgi%3Fcloned_bug_id=2481.html">Clone This Bug</a></li>
+    
+    <li>&nbsp;-&nbsp;<a href="show_bug.cgi%3Fid=2481.html#">Top of page </a></li>
+    </ul>
+
+<br>
+</div>
+
+    <div id="footer">
+      <div class="intro"></div>
+<ul id="useful-links">
+  <li id="links-actions"><ul class="links">
+  <li><a href="index.html">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi.html">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi.html">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi.html">Search</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="http://bugs.aviary.pl/buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input type="hidden" id="no_redirect_bottom" name="no_redirect" value="0">
+    <script type="text/javascript">
+      if (history && history.replaceState) {
+        var no_redirect = document.getElementById("no_redirect_bottom");
+        no_redirect.value = 1;
+      }
+    </script>
+    <input class="txt" type="text" id="quicksearch_bottom" name="quicksearch" 
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search" 
+           id="find_bottom"></form>
+  <a href="page.cgi%3Fid=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="report.cgi.html">Reports</a></li>
+
+  <li>
+      <span class="separator">| </span>
+        <a href="request.cgi.html">Requests</a></li>
+
+
+  <li>
+        <span class="separator">| </span>
+        <a href="https://bugzilla.readthedocs.org/en/5.0/using/understanding.html" target="_blank">Help</a>
+      </li>
+    
+      <li id="new_account_container_bottom">
+        <span class="separator">| </span>
+        <a href="createaccount.cgi.html">New&nbsp;Account</a>
+      </li>
+
+    <li id="mini_login_container_bottom">
+  <span class="separator">| </span>
+  <a id="login_link_bottom" href="show_bug.cgi%3Fid=2481&amp;GoAheadAndLogIn=1.html"
+     onclick="return show_mini_login_form('_bottom')">Log In</a>
+
+  <form action="show_bug.cgi%3Fid=2481.html" method="POST"
+        class="mini_login bz_default_hidden"
+        id="mini_login_bottom">
+    <input id="Bugzilla_login_bottom" required
+           name="Bugzilla_login" class="bz_login"
+        type="email" placeholder="Email Address">
+    <input class="bz_password" name="Bugzilla_password" type="password"
+           id="Bugzilla_password_bottom" required
+           placeholder="Password">
+    <input type="hidden" name="Bugzilla_login_token"
+           value="1469821547-45fcp6JXZlsyYeW7jzkBiz3_vkSmSSkS98Y3jYwPe-E">
+    <input type="submit" name="GoAheadAndLogIn" value="Log in"
+            id="log_in_bottom">
+    <a href="show_bug.cgi%3Fid=2481.html#" onclick="return hide_mini_login_form('_bottom')">[x]</a>
+  </form>
+</li>
+
+
+  <li id="forgot_container_bottom">
+    <span class="separator">| </span>
+    <a id="forgot_link_bottom" href="show_bug.cgi%3Fid=2481&amp;GoAheadAndLogIn=1.html#forgot"
+       onclick="return show_forgot_form('_bottom')">Forgot Password</a>
+    <form action="http://bugs.aviary.pl/token.cgi" method="post" id="forgot_form_bottom"
+          class="mini_forgot bz_default_hidden">
+      <label for="login_bottom">Login:</label>
+      <input name="loginname" size="20" id="login_bottom" required
+          type="email" placeholder="Your Email Address">
+      <input id="forgot_button_bottom" value="Reset Password" type="submit">
+      <input type="hidden" name="a" value="reqpw">
+      <input type="hidden" id="token_bottom" name="token"
+             value="1469821547-F49Cw3236RxdCGXgiEY-NqueuUKNqZiWBTAlID3Xtyk">
+      <a href="show_bug.cgi%3Fid=2481.html#" onclick="return hide_forgot_form('_bottom')">[x]</a>
+    </form>
+  </li>
+</ul>
+  </li>
+
+  
+
+
+
+
+  
+</ul>
+
+      <div class="outro"></div>
+    </div>
+
+  </body>
+</html>

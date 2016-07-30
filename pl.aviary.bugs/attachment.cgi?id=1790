@@ -1,0 +1,78 @@
+diff --git a/editor/ui/chrome/composer/editor.dtd b/editor/ui/chrome/composer/editor.dtd
+--- a/editor/ui/chrome/composer/editor.dtd
++++ b/editor/ui/chrome/composer/editor.dtd
+@@ -65,16 +65,26 @@
+ <!ENTITY grid.label               "Siatka">
+ <!ENTITY grid.accesskey           "t">
+ <!ENTITY pageProperties.label     "Właściwości i tytuł strony…">
+ <!ENTITY pageProperties.accesskey "o">
+ 
+ <!-- Tools menu items -->
+ <!ENTITY validateCmd.label     "Weryfikuj poprawność kodu HTML">
+ <!ENTITY validateCmd.accesskey "W">
++<!ENTITY previewToolbarCmd.label   "Podgląd">
++<!ENTITY previewToolbarCmd.tooltip "Otwórz bieżącą stronę w nowym oknie przeglądarki">
++
++<!-- File menu items -->
++<!ENTITY exportToTextCmd.label     "Eksportuj do formatu tekstowego…">
++<!ENTITY exportToTextCmd.accesskey "t">
++<!ENTITY previewCmd.label          "Otwórz stronę w przeglądarce">
++<!ENTITY previewCmd.accesskey      "g">
++<!ENTITY sendPageCmd.label         "Wyślij stronę…">
++<!ENTITY sendPageCmd.accesskey     "s">
+ 
+ <!-- Display Mode toolbar and View menu items -->
+ <!ENTITY NormalModeTab.label      "Normalny">
+ <!ENTITY NormalMode.label         "Normalny tryb edycji">
+ <!ENTITY NormalMode.accesskey     "N">
+ <!ENTITY NormalMode.tooltip       "Pokaż obramowanie tabeli oraz kotwice">
+ <!ENTITY AllTagsModeTab.label     "Znaczniki">
+ <!ENTITY AllTagsMode.label        "Pokaż znaczniki">
+diff --git a/editor/ui/chrome/composer/editorOverlay.dtd b/editor/ui/chrome/composer/editorOverlay.dtd
+--- a/editor/ui/chrome/composer/editorOverlay.dtd
++++ b/editor/ui/chrome/composer/editorOverlay.dtd
+@@ -68,24 +68,18 @@
+ <!ENTITY saveAsCmd.label          "Zapisz jako…">
+ <!ENTITY saveAsCmd.accesskey      "a">
+ 
+ <!ENTITY publishCmd.label                  "Publikuj">
+ <!ENTITY publishCmd.accesskey              "b">
+ <!ENTITY publishCmd.key                    "S">
+ <!ENTITY publishAsCmd.label                "Opublikuj jako…">
+ <!ENTITY publishAsCmd.accesskey            "j">
+-<!ENTITY exportToTextCmd.label             "Eksportuj do formatu tekstowego…">
+-<!ENTITY exportToTextCmd.accesskey         "t">
+ <!ENTITY saveAsChangeEncodingCmd.label     "Zapisz i zmień kodowanie znaków">
+ <!ENTITY saveAsChangeEncodingCmd.accesskey "m">
+-<!ENTITY previewCmd.label         "Otwórz stronę w przeglądarce">
+-<!ENTITY previewCmd.accesskey     "g">
+-<!ENTITY sendPageCmd.label        "Wyślij stronę…">
+-<!ENTITY sendPageCmd.accesskey    "s">
+ <!ENTITY printSetupCmd.label      "Ustawienia strony…">
+ <!ENTITY printSetupCmd.accesskey  "U">
+ <!ENTITY printCmd.label           "Drukuj…">
+ <!ENTITY printCmd.accesskey       "D">
+ <!ENTITY printCmd.key             "P">
+ <!ENTITY closeCmd.label           "Zamknij">
+ <!ENTITY closeCmd.accesskey       "Z">
+ <!ENTITY closeCmd.key             "W">
+@@ -399,18 +393,16 @@
+ <!-- Toolbar-only items -->
+ <!ENTITY menuBar.tooltip               "Pasek menu">
+ <!ENTITY formatToolbar.tooltip         "Pasek narzędzi formatowania">
+ <!ENTITY newToolbarCmd.tooltip         "Utwórz nową stronę Kompozytora Stron">
+ <!ENTITY openToolbarCmd.label          "Otwórz">
+ <!ENTITY openToolbarCmd.tooltip        "Otwórz lokalny plik">
+ <!ENTITY saveToolbarCmd.tooltip        "Zapisz plik na lokalnym dysku">
+ <!ENTITY publishToolbarCmd.tooltip     "Prześlij plik na zdalny serwer">
+-<!ENTITY previewToolbarCmd.label       "Podgląd">
+-<!ENTITY previewToolbarCmd.tooltip     "Otwórz bieżącą stronę w nowym oknie przeglądarki">
+ <!ENTITY printToolbarCmd.label         "Drukuj">
+ <!ENTITY printToolbarCmd.tooltip       "Drukuj bieżącą stronę">
+ <!ENTITY findToolbarCmd.label          "Znajdź">
+ <!ENTITY findToolbarCmd.tooltip        "Znajdź tekst na stronie">
+ <!ENTITY spellToolbarCmd.label         "Pisownia">
+ <!ENTITY spellToolbarCmd.tooltip       "Sprawdź pisownię zaznaczenia lub całej strony">
+ <!ENTITY imageToolbarCmd.label         "Obrazek">
+ <!ENTITY imageToolbarCmd.tooltip       "Wstaw nowy obrazek lub edytuj właściwości wybranego obrazka">
+

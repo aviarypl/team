@@ -1,0 +1,26 @@
+diff --git a/extensions/Example/template/pl/default/hook/admin/sanitycheck/messages-statuses.html.tmpl b/extensions/Example/template/pl/default/hook/admin/sanitycheck/messages-statuses.html.tmpl
+--- a/extensions/Example/template/pl/default/hook/admin/sanitycheck/messages-statuses.html.tmpl
++++ b/extensions/Example/template/pl/default/hook/admin/sanitycheck/messages-statuses.html.tmpl
+@@ -23,7 +23,7 @@
+   #%]
+ 
+ [% IF    san_tag == "example_check_au_user" %]
+-  <em>PRZYKŁADOWY PLUGIN</em> - Sprawdzam użytkowników nie będących Australijczykami.
++  <em>PRZYKŁADOWE ROZSZERZENIE</em> - Wyszukiwanie użytkowników nie będących Australijczykami.
+ [% ELSIF san_tag == "example_check_au_user_alert" %]
+   Użytkownik &lt;[% login FILTER html %]&gt; nie jest Australijczykiem.
+   [% IF user.in_group('editusers') %]
+@@ -32,5 +32,6 @@
+ [% ELSIF san_tag == "example_check_au_user_prompt" %]
+   <a href="sanitycheck.cgi?example_repair_au_user=1">Zmień narodowość użytkowników</a>.
+ [% ELSIF san_tag == "example_repair_au_user_start" %]
+-  <em>PRZYKŁADOWY PLUGIN</em> - OK, zmieniam narodowość użytkowników.
++  <em>PRZYKŁADOWE ROZSZERZENIE</em> - OK, zmiana narodowości użytkowników na
++Australijczyków.
+ [% ELSIF san_tag == "example_repair_au_user_end" %]
+@@ -36,3 +37,3 @@
+ [% ELSIF san_tag == "example_repair_au_user_end" %]
+-  <em>PRZYKŁADOWY PLUGIN</em> - Użytkownicy zostali Australijczykami.
++  <em>PRZYKŁADOWE ROZSZERZENIE</em> - Użytkownicy będą teraz Australijczykami.
+ [% END %]
+

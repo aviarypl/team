@@ -1,0 +1,300 @@
+diff --git a/browser/chrome/browser/browser.dtd b/browser/chrome/browser/browser.dtd
+--- a/browser/chrome/browser/browser.dtd
++++ b/browser/chrome/browser/browser.dtd
+@@ -533,18 +533,18 @@ just addresses the organization to follo
+ 
+ <!-- Name for the tabs toolbar as spoken by screen readers.
+      The word "toolbar" is appended automatically and should not be contained below! -->
+ <!ENTITY tabsToolbar.label "Karty przeglądarki">
+ 
+ <!-- LOCALIZATION NOTE (syncTabsMenu.label): This appears in the history menu -->
+ <!ENTITY syncTabsMenu.label     "Karty z innych komputerów">
+ 
+-<!ENTITY syncBrand.shortName.label  "Sync">
++<!ENTITY syncBrand.shortName.label  "Synchronizacja">
+ 
+-<!ENTITY syncSetup.label              "Skonfiguruj usługę &syncBrand.shortName.label;…">
++<!ENTITY syncSetup.label              "Skonfiguruj konto synchronizacji…">
+ <!ENTITY syncSetup.accesskey          "S">
+ <!ENTITY syncSyncNowItem.label        "Synchronizuj teraz">
+ <!ENTITY syncSyncNowItem.accesskey    "S">
+ <!ENTITY syncToolbarButton.label      "Synchronizuj">
+ 
+ <!ENTITY addonBarCloseButton.tooltip  "Zamknij pasek dodatków">
+ <!ENTITY toggleAddonBarCmd.key        "/">
+diff --git a/browser/chrome/browser/preferences/preferences.properties b/browser/chrome/browser/preferences/preferences.properties
+--- a/browser/chrome/browser/preferences/preferences.properties
++++ b/browser/chrome/browser/preferences/preferences.properties
+@@ -112,10 +112,10 @@ offlineAppUsage=%1$S %2$S
+ ####Preferences::Advanced::Network
+ #LOCALIZATION NOTE: The next string is for the disk usage of the http cache.
+ #   e.g., "Your cache is currently using 200 MB"
+ #   %1$S = size
+ #   %2$S = unit (MB, KB, etc.)
+ actualCacheSize=Pamięć podręczna zajmuje obecnie %1$S %2$S przestrzeni dyskowej
+ 
+ stopUsingAccount.title=Czy przestać używać tego konta?
+-differentAccount.label=Spowoduje to zresetowanie wszystkich informacji i ustawień konta Sync.
++differentAccount.label=Spowoduje to zresetowanie wszystkich informacji i ustawień konta synchronizacji.
+ differentAccountConfirm.label=Resetuj wszystkie informacje
+diff --git a/browser/chrome/browser/preferences/sync.dtd b/browser/chrome/browser/preferences/sync.dtd
+--- a/browser/chrome/browser/preferences/sync.dtd
++++ b/browser/chrome/browser/preferences/sync.dtd
+@@ -1,23 +1,23 @@
+ <!-- The page shown when not logged in... -->
+-<!ENTITY setupButton.label          "Konfiguruj usługę &syncBrand.fullName.label;">
++<!ENTITY setupButton.label          "Konfiguruj konto synchronizacji">
+ <!ENTITY setupButton.accesskey      "K">
+-<!ENTITY weaveDesc.label            "&syncBrand.fullName.label; umożliwia dostęp do twojej historii przeglądania, zakładek, haseł i otwartych kart z poziomu każdego twojego urządzenia.">
++<!ENTITY weaveDesc.label            "Synchronizacja pozwala na dostęp do własnej historii przeglądania, zakładek, haseł i otwartych kart z wszystkich swoich urządzeń.">
+ 
+ <!-- Login error feedback -->
+ <!ENTITY updatePass.label             "Aktualizuj">
+ <!ENTITY resetPass.label              "Resetuj">
+ 
+ <!-- Manage Account -->
+ <!ENTITY manageAccount.label          "Zarządzaj kontem">
+ <!ENTITY manageAccount.accesskey      "r">
+ <!ENTITY viewQuota.label              "Wyświetl limity">
+ <!ENTITY changePassword.label         "Zmień hasło">
+-<!ENTITY mySyncKey.label              "Mój klucz Sync">
++<!ENTITY mySyncKey.label              "Mój klucz synchronizacji">
+ <!ENTITY resetSync.label              "Resetuj synchronizację">
+ <!ENTITY addDevice.label              "Dodaj urządzenie">
+ 
+ <!ENTITY syncMy.label                   "Synchronizuj moje:">
+ <!ENTITY engine.bookmarks.label         "zakładki">
+ <!ENTITY engine.bookmarks.accesskey     "z">
+ <!ENTITY engine.tabs.label              "karty">
+ <!ENTITY engine.tabs.accesskey          "k">
+diff --git a/browser/chrome/browser/syncBrand.dtd b/browser/chrome/browser/syncBrand.dtd
+--- a/browser/chrome/browser/syncBrand.dtd
++++ b/browser/chrome/browser/syncBrand.dtd
+@@ -1,2 +1,2 @@
+-<!ENTITY syncBrand.shortName.label  "Sync">
++<!ENTITY syncBrand.shortName.label  "Synchronizacja">
+ <!ENTITY syncBrand.fullName.label   "Firefox Sync">
+diff --git a/browser/chrome/browser/syncGenericChange.properties b/browser/chrome/browser/syncGenericChange.properties
+--- a/browser/chrome/browser/syncGenericChange.properties
++++ b/browser/chrome/browser/syncGenericChange.properties
+@@ -1,35 +1,35 @@
+ # LOCALIZATION NOTE (change.password.title): This (and associated change.password/passphrase) are used when the user elects to change their password.
+ change.password.title = Zmiana hasła
+ change.password.acceptButton = Zmień hasło
+ change.password.status.active = Trwa zmiana hasła…
+ change.password.status.success = Hasło zostało zmienione.
+ change.password.status.error = Wystąpił błąd podczas zmiany hasła.
+ 
+-change.password2.introText = Hasło musi mieć przynajmniej 8 znaków. Nie może być takie samo, jak nazwa użytkownika ani klucz Sync.
++change.password2.introText = Hasło musi mieć przynajmniej 8 znaków. Nie może być takie samo, jak nazwa użytkownika ani klucz synchronizacji.
+ change.password.warningText = Uwaga: po zmianie hasła wszystkie inne urządzenia nie będą mogły połączyć się z tym kontem.
+ 
+-change.synckey.title = Zmiana klucza Sync
++change.synckey.title = Zmiana klucza synchronizacji
+ change.synckey.acceptButton = Zmień klucz
+ change.synckey.label = Zmiana klucza i przesyłanie danych lokalnych, proszę czekać…
+ change.synckey2.error = Podczas operacji zmiany klucza wystąpił błąd!
+ change.synckey2.success = Klucz został zmieniony!
+ 
+ change.synckey.introText = Firefox dba o twoją prywatność
+ change.synckey.introText2 = Aby zapewnić całkowitą prywatność, wszystkie dane są przed przesłaniem szyfrowane. Klucz do odszyfrowania danych nie jest przesyłany.
+ # LOCALIZATION NOTE (change.synckey2.warningText) "Sync" should match &syncBrand.shortName.label; from syncBrand.dtd
+-change.synckey2.warningText = Uwaga: zmiana klucza spowoduje usunięcie wszystkich danych zapisanych na serwerze Sync i wysłanie nowych danych zabezpieczonych tym kluczem. Wszystkie twoje inne urządzenia nie będą synchronizowane, dopóki na danym urządzeniu nie zostanie wprowadzony nowy klucz.
++change.synckey2.warningText = Uwaga: zmiana klucza spowoduje usunięcie wszystkich danych zapisanych na serwerze synchronizacji i wysłanie nowych danych zabezpieczonych tym kluczem. Wszystkie twoje inne urządzenia nie będą synchronizowane, dopóki na danym urządzeniu nie zostanie wprowadzony nowy klucz.
+ 
+ new.synckey.label = Twój klucz
+ 
+ # LOCALIZATION NOTE (new.password.title): This (and associated new.password/passphrase) are used on a second computer when it detects that your password or passphrase has been changed on a different device.
+ new.password.title            = Aktualizacja hasła
+ new.password.introText        = Hasło zostało odrzucone przez serwer, należy je zmienić.
+ new.password.label            = Wprowadź nowe hasło
+ new.password.confirm          = Potwierdź nowe hasło
+ new.password.acceptButton     = Aktualizuj hasło
+ new.password.status.incorrect = Hasło jest nieprawidłowe. Ponów próbę.
+ 
+-new.synckey.title          = Aktualizacja klucza Sync
+-new.synckey2.introText       = Twój klucz został zmieniony za pomocą innego urządzenia. Podaj aktualny klucz.
++new.synckey.title          = Aktualizacja klucza synchronizacji
++new.synckey2.introText       = Klucz synchronizacji został zmieniony za pomocą innego urządzenia. Podaj aktualny klucz.
+ new.synckey.acceptButton     = Aktualizuj klucz
+ new.synckey.status.incorrect = Klucz jest nieprawidłowy. Ponów probę.
+diff --git a/browser/chrome/browser/syncKey.dtd b/browser/chrome/browser/syncKey.dtd
+--- a/browser/chrome/browser/syncKey.dtd
++++ b/browser/chrome/browser/syncKey.dtd
+@@ -1,14 +1,14 @@
+-<!ENTITY syncKey.page.title               "Twój klucz  &syncBrand.fullName.label;">
+-<!ENTITY syncKey.page.description         "Ten klucz jest używany do rozszyfrowywania danych na twoim koncie &syncBrand.fullName.label;. Za każdym razem, gdy będziesz konfigurować &syncBrand.fullName.label; na innym urządzeniu trzeba będzie go podać.">
++<!ENTITY syncKey.page.title               "Klucz synchronizacji">
++<!ENTITY syncKey.page.description         "Ten klucz jest używany do rozszyfrowywania danych na twoim koncie synchronizacji. Za każdym razem, konfigurując synchronizację na innym urządzeniu, trzeba będzie go podać.">
+ <!ENTITY syncKey.keepItSecret.heading     "Zachowaj go w tajemnicy!">
+-<!ENTITY syncKey.keepItSecret.description "Twoje konto &syncBrand.fullName.label; jest zaszyfrowane, chroniąc twoją prywatność. Bez tego klucza rozszyfrowanie danych zajęłoby lata. Jesteś jedyną osobą, która zna ten klucz. Oznacza to, że tylko ty masz dostęp do danych na swoim koncie &syncBrand.fullName.label;.">
++<!ENTITY syncKey.keepItSecret.description "Konto synchronizacji jest zaszyfrowane, chroniąc twoją prywatność. Bez tego klucza rozszyfrowanie danych zajęłoby lata. Jesteś jedyną osobą, która zna ten klucz. Oznacza to, że tylko ty masz dostęp do danych na swoim koncie synchronizacji.">
+ <!ENTITY syncKey.keepItSafe.heading       "Chroń go!">
+ <!ENTITY syncKey.keepItSafe1.description  "Nie zgub tego klucza.">
+ <!ENTITY syncKey.keepItSafe2.description  " Nie przechowujemy kopii twojego klucza (wówczas nie byłby poufny!) - ">
+ <!ENTITY syncKey.keepItSafe3.description  "nie możemy zatem pomóc ci go odzyskać,">
+-<!ENTITY syncKey.keepItSafe4.description  " jeśli go zagubisz. Będziesz go potrzebować przy każdej próbie podłączenia nowego urządzenia do usługi &syncBrand.fullName.label;.">
+-<!ENTITY syncKey.findOutMore1.label       "Więcej na temat usługi &syncBrand.fullName.label; i ochrony prywatności można znaleźć na stronie ">
++<!ENTITY syncKey.keepItSafe4.description  " jeśli go zagubisz. Będziesz on potrzebny przy każdej próbie podłączenia nowego urządzenia do konta synchronizacji.">
++<!ENTITY syncKey.findOutMore1.label       "Więcej na temat synchronizacji i ochrony prywatności można znaleźć na stronie ">
+ <!ENTITY syncKey.findOutMore2.label       ".">
+-<!ENTITY syncKey.footer1.label            "Zasady korzystania z usługi &syncBrand.fullName.label; są dostępne na stronie ">
++<!ENTITY syncKey.footer1.label            "Zasady korzystania z synchronizacji dostępne są na stronie ">
+ <!ENTITY syncKey.footer2.label            ". Zasady zachowania prywatności są dostępne na stronie ">
+ <!ENTITY syncKey.footer3.label            ".">
+diff --git a/browser/chrome/browser/syncSetup.dtd b/browser/chrome/browser/syncSetup.dtd
+--- a/browser/chrome/browser/syncSetup.dtd
++++ b/browser/chrome/browser/syncSetup.dtd
+@@ -1,30 +1,31 @@
+-<!ENTITY accountSetupTitle.label    "Konfiguracja usługi &syncBrand.fullName.label;">
++<!ENTITY accountSetupTitle.label    "Konfiguracja konta synchronizacji">
+ 
+ <!-- First page of the wizard -->
+ 
+-<!ENTITY setup.pickSetupType.description "Witamy! Jeśli nie masz jeszcze konta &syncBrand.fullName.label;, konieczne będzie utworzenie nowego.">
++<!ENTITY setup.pickSetupType.description "Witamy! Jeśli nie masz jeszcze konta do synchronizacji, konieczne będzie utworzenie nowego.">
+ <!ENTITY button.createNewAccount.label "Utwórz nowe konto">
+-<!ENTITY setup.haveAccount.label "Mam już konto &syncBrand.fullName.label;">
++<!ENTITY setup.haveAccount.label "Mam już konto synchronizacji">
+ <!ENTITY button.connect.label    "Połącz">
+ 
+-<!ENTITY setup.choicePage.title.label     "Czy korzystasz już z usługi &syncBrand.fullName.label;?">
+-<!ENTITY setup.choicePage.new.label       "Korzystam z usługi &syncBrand.shortName.label; po raz pierwszy">
+-<!ENTITY setup.choicePage.existing.label  "Korzystam już z usługi &syncBrand.shortName.label; na innym urządzeniu">
++<!ENTITY setup.choicePage.title.label     "Czy korzystasz już z synchronizacji?">
++<!ENTITY setup.choicePage.new.label       "Korzystam z synchronizacji po raz pierwszy">
++<!ENTITY setup.choicePage.existing.label  "Korzystam już z synchronizacji na innym urządzeniu">
+ 
+ <!-- New Account AND Existing Account -->
+ <!ENTITY server.label               "Serwer">
++<!-- Do not change &syncBrand.fullName.label; to "synchronizacji" in this case (hubert) -->
+ <!ENTITY serverType.main.label      "Serwer &syncBrand.fullName.label;">
+ <!ENTITY serverType.custom2.label   "Użyj innego serwera…">
+ <!ENTITY signIn.account2.label      "Konto">
+ <!ENTITY signIn.account2.accesskey  "K">
+ <!ENTITY signIn.password.label      "Hasło">
+ <!ENTITY signIn.password.accesskey  "H">
+-<!ENTITY signIn.syncKey.label       "Klucz Sync">
++<!ENTITY signIn.syncKey.label       "Klucz synchronizacji">
+ <!ENTITY signIn.syncKey.accesskey   "u">
+ 
+ <!-- New Account Page 1: Basic Account Info -->
+ <!ENTITY setup.newAccountDetailsPage.title.label "Szczegóły konta">
+ <!ENTITY setup.confirmPassword.label      "Potwierdź hasło">
+ <!ENTITY setup.confirmPassword.accesskey  "P">
+ <!ENTITY setup.emailAddress.label         "Adres e-mail">
+ <!ENTITY setup.emailAddress.accesskey     "A">
+@@ -35,47 +36,46 @@
+ <!ENTITY setup.tosLink.label        "zasady korzystania z usługi">
+ <!ENTITY setup.tosAgree2.label      "i">
+ <!ENTITY setup.ppLink.label         "zasady ochrony prywatności">
+ <!ENTITY setup.tosAgree3.label      "">
+ <!ENTITY setup.tosAgree2.accesskey  "">
+ 
+ <!-- New Account Page 2: Sync Key -->
+ <!ENTITY setup.newSyncKeyPage.title.label "&brandShortName; dba o twoją prywatność">
+-<!ENTITY setup.newSyncKeyPage.description.label "Aby zapewnić całkowitą prywatność, wszystkie dane przed przesłaniem są szyfrowane. Klucz Sync, niezbędny do odszyfrowania danych, nie jest przesyłany.">
+-<!ENTITY syncKeyEntry.label        "Twój klucz">
+-<!ENTITY syncKeyEntry.label        "Twój klucz Sync">
+-<!ENTITY syncKeyEntry.accesskey    "k">
++<!ENTITY setup.newSyncKeyPage.description.label "Aby zapewnić całkowitą prywatność, wszystkie dane przed przesłaniem są szyfrowane. Klucz synchronizacji, niezbędny do odszyfrowania danych, nie jest przesyłany.">
++<!ENTITY syncKeyEntry.label        "Klucz synchronizacji">
++<!ENTITY syncKeyEntry.accesskey    "K">
+ <!ENTITY syncKeyGenerate.label     "Wygeneruj">
+-<!ENTITY syncKeyBackup.description "Klucz jest niezbędny, by uzyskać dostęp do usługi &syncBrand.fullName.label; na innych urządzeniach. Utwórz kopię zapasową klucza. W razie jego utraty nie będziemy w stanie pomóc ci go odzyskać.">
++<!ENTITY syncKeyBackup.description "Klucz jest niezbędny, by uzyskać dostęp do konta synchronizacji na innych urządzeniach. Utwórz kopię zapasową klucza. W razie jego utraty nie będziemy w stanie pomóc ci go odzyskać.">
+ 
+-<!ENTITY button.syncKeyBackup.print.label     "Wydrukuj…">
+-<!ENTITY button.syncKeyBackup.print.accesskey "d">
++<!ENTITY button.syncKeyBackup.print.label     "Drukuj…">
++<!ENTITY button.syncKeyBackup.print.accesskey "D">
+ <!ENTITY button.syncKeyBackup.save.label      "Zapisz…">
+ <!ENTITY button.syncKeyBackup.save.accesskey  "Z">
+ 
+ <!-- New Account Page 3: Captcha -->
+ <!ENTITY setup.captchaPage2.title.label     "Potwierdź, że nie jesteś robotem">
+ <!-- Existing Account Page 1: Add Device (incl. Add a Device dialog strings) -->
+ <!ENTITY addDevice.title.label              "Dodaj urządzenie">
+ <!ENTITY addDevice.showMeHow.label          "Pokaż jak to zrobić">
+ <!ENTITY addDevice.dontHaveDevice.label     "Nie mam tego urządzenia przy sobie">
+ <!ENTITY addDevice.setup.description.label  "Aby aktywować, przejdź do opcji &syncBrand.shortName.label; na innym urządzeniu i wybierz &#x0022;Dodaj urządzenie&#x0022;.">
+ 
+ <!ENTITY addDevice.setup.enterCode.label    "Następnie wprowadź ten kod:">
+ <!ENTITY addDevice.dialog.description.label "Aby aktywować nowe urządzenie, przejdź na nim do opcji  &syncBrand.shortName.label; i wybierz &#x0022;Połącz.&#x0022;">
+ <!ENTITY addDevice.dialog.enterCode.label   "Wprowadź kod dostarczony przez to urządzenie:">
+ <!ENTITY addDevice.dialog.tryAgain.label    "Ponów próbę.">
+ <!ENTITY addDevice.dialog.successful.label  "Urządzenie zostało dodane. Początkowa synchronizacja może potrwać kilka minut i ukończy się w tle.">
+-<!ENTITY addDevice.dialog.syncKey.label     "Aby aktywować urządzenie, potrzebujesz swojego klucza Sync. Wydrukuj go lub zapisz i zabierz ze sobą.">
++<!ENTITY addDevice.dialog.syncKey.label     "Aby aktywować urządzenie, potrzebujesz swojego klucza synchronizacji. Wydrukuj go lub zapisz i zabierz ze sobą.">
+ <!ENTITY addDevice.dialog.connected.label   "Urządzenie połączone">
+ 
+ <!-- Existing Account Page 2: Manual Login -->
+ <!ENTITY setup.signInPage.title.label "Zaloguj">
+-<!ENTITY existingSyncKey.description "Aby uzyskać kopię klucza Sync, przejdź do opcji &syncBrand.shortName.label; na danym urządzeniu i wybierz &#x0022;Mój klucz Sync&#x0022; w sekcji &#x0022;Zarządzaj kontem&#x0022;.">
++<!ENTITY existingSyncKey.description "Aby uzyskać kopię klucza synchronizacji, przejdź do opcji &syncBrand.shortName.label; na danym urządzeniu i wybierz &#x0022;Mój klucz synchronizacji&#x0022; w sekcji &#x0022;Zarządzaj kontem&#x0022;.">
+ <!ENTITY verifying.label              "Weryfikowanie…">
+ <!ENTITY resetPassword.label          "Resetuj hasło">
+ <!ENTITY resetSyncKey.label           "Zagubiono urządzenie">
+ 
+ <!-- Sync Options -->
+ <!ENTITY setup.optionsPage.title      "Opcje synchronizacji">
+ <!ENTITY syncComputerName.label       "Nazwa urządzenia:">
+ <!ENTITY syncComputerName.accesskey   "k">
+@@ -87,24 +87,24 @@
+ <!ENTITY engine.tabs.accesskey          "k">
+ <!ENTITY engine.history.label           "historię">
+ <!ENTITY engine.history.accesskey       "h">
+ <!ENTITY engine.passwords.label         "hasła">
+ <!ENTITY engine.passwords.accesskey     "a">
+ <!ENTITY engine.prefs.label             "ustawienia">
+ <!ENTITY engine.prefs.accesskey         "u">
+ 
+-<!ENTITY choice2.merge.main.label      "Scal dane tego urządzenia z moimi danymi konta &syncBrand.shortName.label;">
++<!ENTITY choice2.merge.main.label      "Scal dane tego urządzenia z moimi danymi konta synchronizacji">
+ <!ENTITY choice2.merge.recommended.label "Zalecane:">
+-<!ENTITY choice2.client.main.label     "Zastąp dane tego urządzenia danymi z konta &syncBrand.shortName.label;">
++<!ENTITY choice2.client.main.label     "Zastąp dane tego urządzenia danymi z konta synchronizacji">
+ <!ENTITY choice2.server.main.label     "Zastąp dane na pozostałych urządzeniach danymi z tego urządzenia">
+ 
+ <!-- Confirm Merge Options -->
+ <!ENTITY setup.optionsConfirmPage.title "Potwierdzenie">
+-<!ENTITY confirm.merge.label    "&syncBrand.fullName.label; dołączy wszystkie dane przeglądarki z tego urządzenia do danych na twoim koncie Sync.">
++<!ENTITY confirm.merge.label    "Wszystkie dane przeglądarki z tego urządzenia zostaną dołączone do danych na twoim koncie synchronizacji.">
+ <!ENTITY confirm.client2.label          "Uwaga: z tego urządzenia zostaną usunięte następujące dane programu &brandShortName;:">
+-<!ENTITY confirm.client.moreinfo.label  "&brandShortName; skopiuje twoje dane z konta &syncBrand.fullName.label; na to urządzenie.">
++<!ENTITY confirm.client.moreinfo.label  "&brandShortName; skopiuje twoje dane z konta synchronizacji na to urządzenie.">
+ <!ENTITY confirm.server2.label          "Uwaga: dane na następujących urządzeniach zostaną zastąpione danymi lokalnymi:">
+ 
+ <!-- New & Existing Account: Setup Complete -->
+ <!ENTITY setup.successPage.title "Konfiguracja zakończona">
+ <!ENTITY changeOptions.label "Możesz zmienić to ustawienie wybierając Opcje synchronizacji poniżej.">
+ <!ENTITY continueUsing.label "Możesz teraz kontynuować korzystanie z programu &brandShortName;.">
+diff --git a/browser/chrome/browser/syncSetup.properties b/browser/chrome/browser/syncSetup.properties
+--- a/browser/chrome/browser/syncSetup.properties
++++ b/browser/chrome/browser/syncSetup.properties
+@@ -24,19 +24,19 @@ bookmarksCount.label        = #1 zakład
+ # #1 is the number of days (was %S for a short while, use #1 instead, even if both work)
+ historyDaysCount.label      = #1 dzień historii;#1 dni historii;#1 dni historii
+ # LOCALIZATION NOTE (passwordsCount.label):
+ # Semi-colon list of plural forms. See:
+ # http://developer.mozilla.org/en/docs/Localization_and_Plurals
+ # #1 is the number of passwords (was %S for a short while, use #1 instead, even if both work)
+ passwordsCount.label        = #1 hasło;#1 hasła;#1 haseł
+ 
+-save.synckey.title = Zapisz klucz Sync
++save.synckey.title = Zapisz klucz synchronizacji
+ 
+-newAccount.action.label = Firefox Sync jest teraz skonfigurowany, by automatycznie synchronizować wszystkie dane przeglądarki.
++newAccount.action.label = Konto jest teraz skonfigurowane, by automatycznie synchronizować wszystkie dane przeglądarki.
+ newAccount.change.label = Możesz dokładnie określić, co ma być synchronizowane, naciskając znajdujący się poniżej przycisk Opcje synchronizacji.
+-resetClient.change.label = Firefox Sync dołączy teraz wszystkie dane przeglądarki z tego urządzenia do twojego konta Sync.
+-wipeClient.change.label = Firefox Sync zastąpi teraz wszystkie dane przeglądarki na tym urządzeniu danymi z twojego konta Sync.
+-wipeRemote.change.label = Firefox Sync zastąpi teraz wszystkie dane przeglądarki na twoim koncie Sync danymi z tego urządzenia.
++resetClient.change.label = Wszystkie dane przeglądarki z tego urządzenia zostaną teraz dołączone do twojego konta synchronizacji.
++wipeClient.change.label = Wszystkie dane przeglądarki na tym urządzeniu zostaną teraz zastąpione danymi z twojego konta synchronizacji.
++wipeRemote.change.label = Wszystkie dane przeglądarki na twoim koncie synchronizacji zostaną teraz zastąpione danymi z tego urządzenia.
+ existingAccount.change.label = Możesz zmienić to ustawienie, naciskając znajdujący się poniżej przycisk Opcje synchronizacji.
+ 
+ # Several other strings are used (via Weave.Status.login), but they come from
+ #  /services/sync
+

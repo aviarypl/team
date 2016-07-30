@@ -1,0 +1,691 @@
+diff --git a/editor/ui/chrome/composer/editor.dtd b/editor/ui/chrome/composer/editor.dtd
+--- a/editor/ui/chrome/composer/editor.dtd
++++ b/editor/ui/chrome/composer/editor.dtd
+@@ -54,16 +54,8 @@
+ <!ENTITY formattingToolbarCmd.label      "Pasek narzędzi formatowania">
+ <!ENTITY formattingToolbarCmd.accesskey  "r">
+ <!ENTITY editmodeToolbarCmd.label        "Pasek trybu edycji">
+ <!ENTITY editmodeToolbarCmd.accesskey    "e">
+ 
+ <!-- Format menu items -->
+ <!ENTITY formatMenu.label     "Format">
+ <!ENTITY formatMenu.accesskey "F">
+-
+-<!ENTITY helpMenu.label   "Pomoc">
+-<!ENTITY aboutCmd.label   "Informacje o">
+-
+-<!-- Display Mode Toolbar -->
+-<!ENTITY editMode.label   "Tryb edycji:">
+-
+-<!ENTITY statusText.label "Zakończono wczytywanie strony">
+diff --git a/editor/ui/chrome/composer/editorNavigatorOverlay.dtd b/editor/ui/chrome/composer/editorNavigatorOverlay.dtd
+deleted file mode 100644
+--- a/editor/ui/chrome/composer/editorNavigatorOverlay.dtd
++++ /dev/null
+@@ -1,4 +0,0 @@
+-<!ENTITY editPageCmd.label "Edytuj stronę w Kompozytorze Stron" >
+-<!ENTITY editPageCmd.accesskey "e" >
+-<!ENTITY editLinkCmd.label "Edytuj odnośnik w Kompozytorze Stron" >
+-<!ENTITY editLinkCmd.accesskey "e" >
+diff --git a/editor/ui/chrome/composer/editorOverlay.dtd b/editor/ui/chrome/composer/editorOverlay.dtd
+--- a/editor/ui/chrome/composer/editorOverlay.dtd
++++ b/editor/ui/chrome/composer/editorOverlay.dtd
+@@ -38,17 +38,17 @@
+    - under the terms of either the GPL or the LGPL, and not to allow others to
+    - use your version of this file under the terms of the MPL, indicate your
+    - decision by deleting the provisions above and replace them with the notice
+    - and other provisions required by the GPL or the LGPL. If you do not delete
+    - the provisions above, a recipient may use your version of this file under
+    - the terms of any one of the MPL, the GPL or the LGPL.
+    -
+    - ***** END LICENSE BLOCK ***** -->
+-   
++
+ <!-- Attn: Localization - some of the menus in this dialog directly affect mail also. -->
+ 
+ <!-- File menu items -->
+ <!ENTITY fileMenu.label           "Plik">
+ <!ENTITY fileMenu.accesskey       "P">
+ <!ENTITY newBlankPageCmd.label    "Strona Kompozytora Stron">
+ <!ENTITY newBlankPageCmd.accesskey "S">
+ <!ENTITY newMenu.label            "Nowy">
+@@ -78,19 +78,16 @@
+ <!ENTITY saveAsChangeEncodingCmd.label     "Zapisz i zmień kodowanie znaków">
+ <!ENTITY saveAsChangeEncodingCmd.accesskey "m">
+ <!ENTITY previewCmd.label         "Otwórz stronę w przeglądarce">
+ <!ENTITY previewCmd.accesskey     "g">
+ <!ENTITY sendPageCmd.label        "Wyślij stronę…">
+ <!ENTITY sendPageCmd.accesskey    "s">
+ <!ENTITY printSetupCmd.label      "Ustawienia strony…">
+ <!ENTITY printSetupCmd.accesskey  "U">
+-<!ENTITY printPreviewCmd.label    "Podgląd wydruku">
+-<!ENTITY printPreviewCmd.accesskey "l">
+-<!ENTITY printButtonCmd.label     "Drukuj…">
+ <!ENTITY printCmd.label           "Drukuj…">
+ <!ENTITY printCmd.accesskey       "D">
+ <!ENTITY printCmd.key             "P">
+ <!ENTITY closeCmd.label           "Zamknij">
+ <!ENTITY closeCmd.accesskey       "Z">
+ <!ENTITY closeCmd.key             "W">
+ 
+ <!-- Edit menu items -->
+@@ -98,38 +95,18 @@
+ <!ENTITY editMenu.accesskey          "E">
+ <!ENTITY pasteNoFormatting.label     "Wklej bez formatowania">
+ <!ENTITY pasteNoFormatting.accesskey "f">
+ <!ENTITY pasteNoFormatting.key       "V">
+ <!ENTITY pasteAs.label               "Wklej jako">
+ <!ENTITY pasteAs.accesskey           "a">
+ <!ENTITY publishSettings.label       "Ustawienia publikowanej witryny…">
+ <!ENTITY publishSettings.accesskey   "b">
+-
+-<!-- For a "Paste" submenu when more than 1 clipboard formats are available -->
+-<!ENTITY pasteHTMLCmd.label        "HTML">
+-<!ENTITY pasteHTMLCmd.accesskey    "H">
+-<!ENTITY pasteTextCmd.label        "Tekst">
+-<!ENTITY pasteTextCmd.accesskey    "T">
+-<!ENTITY pasteImageCmd.label       "Obrazek">
+-<!ENTITY pasteImageCmd.accesskey   "O">
+-<!ENTITY pasteRowsCmd.label        "Wiersze">
+-<!ENTITY pasteRowsCmd.accesskey    "r">
+-<!ENTITY pasteColumnsCmd.label     "Kolumny">
+-<!ENTITY pasteColumnsCmd.accesskey "K">
+-<!-- LOCALIZATION NOTE: Text for menu item is in editor.properties
+-     Set to: "Table" or "Nested Table" depending on context
+-     This accesskey must be in both strings -->
+-<!ENTITY pasteTableCmd.accesskey       "a">
+-<!ENTITY pasteLinkCmd.label            "Odnośnik">
+-<!ENTITY pasteLinkCmd.accesskey        "d">
+ <!ENTITY pasteAsQuotationCmd.label     "Wklej jako cytat">
+ <!ENTITY pasteAsQuotationCmd.accesskey "y">
+-<!ENTITY editStripQuotesCmd.label "Usuń cytaty">
+-<!ENTITY editRewrapCmd.label      "Zawiń wiersze">
+ <!ENTITY findCmd.label            "Znajdź i zamień…">
+ <!ENTITY findCmd.accesskey        "m">
+ <!ENTITY findCmd.key              "F">
+ <!ENTITY findCmd.key2             "VK_F19">
+ <!ENTITY findAgainCmd.label       "Znajdź następne">
+ <!ENTITY findAgainCmd.accesskey   "n">
+ <!ENTITY findAgainCmd.key         "G">
+ <!ENTITY findAgainCmd.key2        "VK_F3">
+@@ -139,69 +116,37 @@
+ <!ENTITY findPrevCmd.key2         "VK_F3">
+ <!ENTITY enableInlineSpellChecker.label     "Sprawdź pisownię podczas wprowadzania tekstu">
+ <!ENTITY enableInlineSpellChecker.accesskey "S">
+ <!ENTITY checkSpellingCmd.label             "Sprawdź pisownię">
+ <!ENTITY checkSpellingCmd.accesskey         "r">
+ <!ENTITY checkSpellingCmd.key               "K">
+ <!ENTITY validateCmd.label                  "Weryfikuj poprawność kodu HTML">
+ <!ENTITY validateCmd.accesskey              "W">
+-<!ENTITY checkLinksCmd.label                "Sprawdź odnośnik">
+-
+-<!-- View menu items -->
+-<!ENTITY viewPageSource.label         "Źródło strony">
+-<!ENTITY viewPageSource.accesskey     "s">
+-<!ENTITY viewParagraphMarks.label     "Znaczniki akapitu">
+-<!ENTITY viewParagraphMarks.accesskey "p">
+ 
+ <!-- Insert menu items -->
+ <!ENTITY insertMenu.label         "Wstaw">
+ <!ENTITY insertMenu.accesskey     "s">
+ <!ENTITY insertLinkCmd.label      "Odnośnik…">
+ <!ENTITY insertLinkCmd.accesskey  "O">
+ <!ENTITY insertLinkCmd.key        "L">
+ <!ENTITY insertAnchorCmd.label    "Kotwicę…">
+ <!ENTITY insertAnchorCmd.accesskey "K">
+ <!ENTITY insertImageCmd.label     "Obrazek…">
+ <!ENTITY insertImageCmd.accesskey "b">
+-<!ENTITY insertImageMapCmd.label  "Mapę obrazka…">
+ <!ENTITY insertHLineCmd.label     "Linię poziomą">
+ <!ENTITY insertHLineCmd.accesskey "L">
+ <!ENTITY insertTableCmd.label     "Tabelę…">
+ <!ENTITY insertTableCmd.accesskey "T">
+-<!ENTITY insertFormMenu.label     "Formularz">
+-<!ENTITY insertFormMenu.accesskey "F">
+ <!ENTITY insertHTMLCmd.label      "HTML…">
+ <!ENTITY insertHTMLCmd.accesskey  "H">
+ <!ENTITY insertCharsCmd.label     "Znaki i symbole…">
+ <!ENTITY insertCharsCmd.accesskey "Z">
+-<!ENTITY insertBreakCmd.label     "Podział wiersza">
+-<!ENTITY insertBreakCmd.accesskey "a">
+ <!ENTITY insertBreakAllCmd.label       "Linię podziału poniżej obrazka">
+ <!ENTITY insertBreakAllCmd.accesskey   "p">
+-
+-<!-- Insert form menu items -->
+-<!ENTITY insertFormCmd.label           "Zdefiniuj formularz…">
+-<!ENTITY insertFormCmd.accesskey       "d">
+-<!ENTITY insertInputTagCmd.label       "Pole formularza…">
+-<!ENTITY insertInputTagCmd.accesskey   "e">
+-<!ENTITY insertInputImageCmd.label     "Obrazek formularza…">
+-<!ENTITY insertInputImageCmd.accesskey "O">
+-<!ENTITY insertTextAreaCmd.label       "Pole tekstowe…">
+-<!ENTITY insertTextAreaCmd.accesskey   "t">
+-<!ENTITY insertSelectCmd.label         "Lista wyboru…">
+-<!ENTITY insertSelectCmd.accesskey     "L">
+-<!ENTITY insertButtonCmd.label         "Zdefiniuj przycisk…">
+-<!ENTITY insertButtonCmd.accesskey     "p">
+-<!ENTITY insertLabelCmd.label          "Zdefiniuj etykietę">
+-<!ENTITY insertLabelCmd.accesskey      "Z">
+-<!ENTITY insertFieldSetCmd.label       "Zdefiniuj zestaw pól…">
+-<!ENTITY insertFieldSetCmd.accesskey   "n">
+-<!ENTITY insertIsIndexCmd.label        "Indeks wyszukiwania">
+-<!ENTITY insertIsIndexCmd.accesskey    "w">
+ 
+ <!-- Used just in context popup. -->
+ <!ENTITY spellCheckNoSuggestions.label       "(brak podpowiedzi)">
+ <!ENTITY spellCheckIgnoreWord.label          "Zignoruj słowo">
+ <!ENTITY spellCheckIgnoreWord.accesskey      "Z">
+ <!ENTITY spellCheckAddToDictionary.label     "Dodaj do słownika">
+ <!ENTITY spellCheckAddToDictionary.accesskey "D">
+ <!ENTITY createLinkCmd.label                 "Wstaw odnośnik…">
+@@ -236,18 +181,16 @@
+ <!ENTITY fontFixedWidth.accesskey     "S">
+ <!ENTITY fontFixedWidth.key           "T">
+ <!ENTITY fontHelvetica.label          "Helvetica, Arial">
+ <!ENTITY fontHelvetica.accesskey      "H">
+ <!ENTITY fontTimes.label              "Times">
+ <!ENTITY fontTimes.accesskey          "T">
+ <!ENTITY fontCourier.label            "Courier">
+ <!ENTITY fontCourier.accesskey        "C">
+-<!ENTITY localfontfaceMenu.label      "Lokalne czcionki">
+-<!ENTITY localfontfaceMenu.accesskey  "L">
+ 
+ <!-- Font Size SubMenu -->
+ <!ENTITY FontSizeSelect.tooltip      "Wybierz rozmiar czcionki">
+ <!ENTITY decreaseFontSize.label      "Mniejszy">
+ <!ENTITY decreaseFontSize.accesskey  "n">
+ <!ENTITY decreaseFontSize.key        "-">
+ <!ENTITY increaseFontSize.label      "Większy">
+ <!ENTITY increaseFontSize.accesskey  "W">
+@@ -359,28 +302,16 @@
+ <!ENTITY ParagraphSelect.tooltip     "Wybierz format akapitu">
+ <!-- Shared in Paragraph, and Toolbar menulist -->
+ <!ENTITY bodyTextCmd.label               "Treść">
+ <!ENTITY bodyTextCmd.accesskey           "T">
+ <!-- isn't used in menu now, but may be added in future -->
+ <!ENTITY advancedPropertiesCmd.label     "Zaawansowane właściwości">
+ <!ENTITY advancedPropertiesCmd.accesskey "Z">
+ 
+-<!ENTITY NormalAbbr.label     "Tekst">
+-<!ENTITY ParagraphAbbr.label  "P">
+-<!ENTITY Heading1Abbr.label   "H1">
+-<!ENTITY Heading2Abbr.label   "H2">
+-<!ENTITY Heading3Abbr.label   "H3">
+-<!ENTITY Heading4Abbr.label   "H4">
+-<!ENTITY Heading5Abbr.label   "H5">
+-<!ENTITY Heading6Abbr.label   "H6">
+-<!ENTITY BlockquoteAbbr.label "BQ">
+-<!ENTITY AddressAbbr.label    "Adres.">
+-<!ENTITY PreformatAbbr.label  "Pre.">
+-
+ <!-- Align menu items -->
+ <!ENTITY alignMenu.label          "Wyrównaj">
+ <!ENTITY alignMenu.accesskey      "a">
+ <!ENTITY alignLeft.label          "Do lewej">
+ <!ENTITY alignLeft.accesskey      "l">
+ <!ENTITY alignLeft.tooltip        "Wyrównaj do lewej">
+ <!ENTITY alignCenter.label        "Do środka">
+ <!ENTITY alignCenter.accesskey    "r">
+@@ -455,18 +386,16 @@
+ <!ENTITY tableAllCells.accesskey     "y">
+ <!ENTITY tableCellBefore.label       "Komórkę przed">
+ <!ENTITY tableCellBefore.accesskey   "e">
+ <!ENTITY tableCellAfter.label        "Komórkę za">
+ <!ENTITY tableCellAfter.accesskey    "a">
+ <!-- Delete SubMenu -->
+ <!ENTITY tableDeleteMenu.label     "Usuń">
+ <!ENTITY tableDeleteMenu.accesskey "U">
+-<!ENTITY tableFix.label            "Popraw układ tabeli">
+-<!ENTITY tableFix.accesskey        "f">
+ <!-- text for "Join Cells" is in editor.properties ("JoinSelectedCells" and "JoinCellToRight") the access key must exist in both of those strings
+      But value must be set here for accesskey to draw properly -->
+ <!ENTITY tableJoinCells.label      "Złącz komórki">
+ <!ENTITY tableJoinCells.accesskey  "p">
+ <!ENTITY tableSplitCell.label      "Podziel komórkę">
+ <!ENTITY tableSplitCell.accesskey  "d">
+ <!ENTITY convertToTable.label      "Utwórz tabelę z zaznaczenia">
+ <!ENTITY convertToTable.accesskey  "b">
+@@ -495,17 +424,16 @@
+ <!ENTITY hruleToolbarCmd.label         "Linia pozioma">
+ <!ENTITY hruleToolbarCmd.tooltip       "Wstaw linię poziomą lub edytuj właściwości wybranej linii">
+ <!ENTITY tableToolbarCmd.label         "Tabela">
+ <!ENTITY tableToolbarCmd.tooltip       "Wstaw nową tabelę lub edytuj właściwości wybranej tabeli">
+ <!ENTITY linkToolbarCmd.label          "Odnośnik">
+ <!ENTITY linkToolbarCmd.tooltip        "Wstaw nowy odnośnik albo edytuj właściwości wybranego odnośnika">
+ <!ENTITY anchorToolbarCmd.label        "Kotwica">
+ <!ENTITY anchorToolbarCmd.tooltip      "Wstaw nową kotwicę albo edytuj właściwości wybranej kotwicy">
+-<!ENTITY textColorCaption.label        "Kolor tekstu">
+ <!ENTITY TextColorButton.tooltip       "Wybierz kolor dla tekstu">
+ <!ENTITY BackgroundColorButton.tooltip "Wybierz kolor dla tła">
+ <!ENTITY throbber.tooltip              "Przejdź do strony programu &vendorShortName;">
+ <!ENTITY HighlightColorButton.tooltip  "Wybierz kolor podświetlenia dla tekstu">
+ 
+ <!-- Editor toolbar -->
+ <!ENTITY decreaseFontSizeToolbarCmd.tooltip "Mniejszy rozmiar czcionki">
+ <!ENTITY increaseFontSizeToolbarCmd.tooltip "Większy rozmiar czcionki">
+@@ -517,27 +445,16 @@
+ <!ENTITY outdentToolbarCmd.tooltip     "Wcięcie tekstu (przesuń w lewo)">
+ <!ENTITY indentToolbarCmd.tooltip      "Wcięcie tekstu (przesuń w prawo)">
+ <!ENTITY AlignPopupButton.tooltip      "Wybierz wyrównanie tekstu">
+ <!ENTITY InsertPopupButton.tooltip     "Wstaw odnośnik, kotwicę, obrazek, linię poziomą lub tabelę">
+ <!ENTITY alignLeftButton.tooltip       "Wyrównaj tekst do lewego marginesu">
+ <!ENTITY alignCenterButton.tooltip     "Wyrównaj tekst do środka">
+ <!ENTITY alignRightButton.tooltip      "Wyrównaj tekst do prawego marginesu">
+ <!ENTITY alignjustifyButton.tooltip    "Wyrównaj tekst pomiędzy prawym a lewym marginesem">
+-
+-<!-- Formatting toolbar not used, but may be in future -->
+-<!ENTITY formatToolbar.boldChar        "B">
+-<!ENTITY formatToolbar.italicChar      "I">
+-<!ENTITY formatToolbar.underlineChar   "U">
+-
+-<!-- Used with color pickers in Format toolbar and Format Menu -->
+-<!ENTITY colorPicker.default.label     "Domyślny kolor czytelnika">
+-<!ENTITY colorPicker.default.accesskey "K">
+-<!ENTITY colorLabel.label              "Kolor:">
+-<!ENTITY ok.label                      "OK">
+ 
+ <!-- Display Mode toolbar and View menu items -->
+ <!ENTITY NormalModeTab.label      "Normalny">
+ <!ENTITY NormalMode.label         "Normalny tryb edycji">
+ <!ENTITY NormalMode.accesskey     "N">
+ <!ENTITY NormalMode.tooltip       "Pokaż obramowanie tabeli oraz kotwice">
+ <!ENTITY AllTagsMode.label        "Pokaż znaczniki">
+ <!ENTITY AllTagsMode.accesskey    "z">
+diff --git a/editor/ui/chrome/composer/pref-composer.dtd b/editor/ui/chrome/composer/pref-composer.dtd
+--- a/editor/ui/chrome/composer/pref-composer.dtd
++++ b/editor/ui/chrome/composer/pref-composer.dtd
+@@ -1,39 +1,28 @@
+ <!-- extracted from content/pref-composer.xul -->
+ 
+ <!--LOCALIZATION NOTE : FILE 'Composer' prefs dialog. Similar to Communcator 4.x Document Properties/Colors and Background -->
+ 
+ <!--LOCALIZATION NOTE (pref.composer.title): DONT_TRANSLATE -->
+ <!ENTITY pref.composer.title "Kompozytor Stron">
+-
+-<!ENTITY saving "Zapisywanie">
+-<!ENTITY AutoSaveCheck "Automatycznie zapisz co">
+-<!ENTITY minText "minut">
+-
+-<!ENTITY exterLegend.label "Edytory zewnętrzne">
+-<!ENTITY htmlSource "Źródło dokumentu HTML:">
+-<!ENTITY imageeditor "Obrazki:">
+-<!ENTITY chooseButton.label 			"Wybierz…">
+ 
+ <!ENTITY recentFiles.title "Ostatnio edytowane strony">
+ <!ENTITY documentsInMenu.label "Ogranicz listę ostatnio edytowanych stron do:">
+ <!ENTITY documentsInMenu.accesskey "n">
+ 
+ <!ENTITY savingFiles.title "Podczas zapisywania lub publikowania stron">
+ <!ENTITY preserveExisting.label "Zachowaj oryginalne formatowanie źródła">
+ <!ENTITY preserveExisting.accesskey "o">
+ <!ENTITY preserveExisting.tooltip "Zachowuje oryginalne formatowanie strony oraz linie przerwy między wierszami">
+ <!ENTITY saveAssociatedFiles.label "Zachowaj obrazki oraz inne powiązane pliki podczas zapisywania strony">
+ <!ENTITY saveAssociatedFiles.accesskey "Z">
+ <!ENTITY showPublishDialog.label "Zawsze pokazuj dialog publikowania podczas publikowania stron" >
+ <!ENTITY showPublishDialog.accesskey   "a">
+ 
+ <!ENTITY composerEditing.label "Edytowanie">
+-<!ENTITY  spellCheckInline.label        "Sprawdź pisownię podczas wprowadzania tekstu">
+-<!ENTITY  spellCheckInline.accesskey    "S">
+ <!ENTITY maintainStructure.label "Zachowaj układ tabeli podczas wstawiania i usuwania komórek">
+ <!ENTITY maintainStructure.tooltip "Zachowuje prostokątny kształt tabeli automatycznie dostosowując układ komórek po wstawieniu lub usunięciu komórki">
+ <!ENTITY maintainStructure.accesskey "m">
+ <!ENTITY useCSS.label "Użyj arkuszy stylów CSS (Cascading Style Sheets) zamiast elementów i atrybutów HTML">
+ <!ENTITY useCSS.accesskey "U">
+ <!ENTITY crInPCreatesNewP.label "Enter w paragrafie zawsze tworzy nowy paragraf">
+ <!ENTITY crInPCreatesNewP.accesskey "r">
+diff --git a/editor/ui/chrome/dialogs/EdLinkChecker.dtd b/editor/ui/chrome/dialogs/EdLinkChecker.dtd
+--- a/editor/ui/chrome/dialogs/EdLinkChecker.dtd
++++ b/editor/ui/chrome/dialogs/EdLinkChecker.dtd
+@@ -1,7 +1,4 @@
+-<!ENTITY windowTitle.label "Proszę sprawdzić adresy obrazków i odnośników" >
+-<!ENTITY urlsNotFound.label "Następujące obrazki lub odnośniki nie zostały znalezione:" >
+-<!ENTITY notFoundKey.label "(&quot;X&quot; = nie znaleziono pliku, &quot;?&quot; = Przekroczono limit czasu podczas próby połączenia.)" >
+-<!ENTITY changeUrlButton.label "Zmień adres wybranego elementu" >
+-<!ENTITY succeeded.label "Powiodło się" >
+-<!ENTITY failed.label "Nie powiodło się" >
+-<!ENTITY closeButton.label "Zamknij" >
+\ No newline at end of file
++<!ENTITY windowTitle.label "Proszę sprawdzić adresy obrazków i odnośników">
++<!ENTITY succeeded.label   "Powiodło się">
++<!ENTITY failed.label      "Nie powiodło się">
++<!ENTITY closeButton.label "Zamknij">
+diff --git a/editor/ui/chrome/dialogs/EditorImageMap.dtd b/editor/ui/chrome/dialogs/EditorImageMap.dtd
+--- a/editor/ui/chrome/dialogs/EditorImageMap.dtd
++++ b/editor/ui/chrome/dialogs/EditorImageMap.dtd
+@@ -32,17 +32,16 @@
+ <!ENTITY apercentCmd.accesskey  "1">
+ <!ENTITY bpercentCmd.label "200" >
+ <!ENTITY bpercentCmd.accesskey  "2">
+ <!ENTITY cpercentCmd.label "400" >
+ <!ENTITY cpercentCmd.accesskey  "4">
+ 
+ <!ENTITY zoominCmd.label "Powiększ" >
+ <!ENTITY zoomoutCmd.label "Pomniejsz" >
+-<!ENTITY delSpotCmd.label "Usuń aktywny obszar" >
+ 
+ <!-- Keys -->
+ <!ENTITY clear.key     "d">
+ <!ENTITY selectall.key "a">
+ <!ENTITY close.key     "l">
+ <!ENTITY cut.key       "x">
+ <!ENTITY copy.key      "c">
+ <!ENTITY paste.key     "v">
+diff --git a/editor/ui/chrome/dialogs/EditorImageProperties.dtd b/editor/ui/chrome/dialogs/EditorImageProperties.dtd
+--- a/editor/ui/chrome/dialogs/EditorImageProperties.dtd
++++ b/editor/ui/chrome/dialogs/EditorImageProperties.dtd
+@@ -32,69 +32,80 @@
+    - under the terms of either the GPL or the LGPL, and not to allow others to
+    - use your version of this file under the terms of the MPL, indicate your
+    - decision by deleting the provisions above and replace them with the notice
+    - and other provisions required by the GPL or the LGPL. If you do not delete
+    - the provisions above, a recipient may use your version of this file under
+    - the terms of any one of the MPL, the GPL or the LGPL.
+    -
+    - ***** END LICENSE BLOCK ***** -->
+-   
++
++<!-- These strings are for use specifically in the editor's image and form image dialogs. -->
++
++<!-- Window title -->
+ <!ENTITY windowTitle.label "Właściwości obrazka">
+ <!ENTITY pixelsPopup.value "pikseli">
+-<!ENTITY percentPopup.value "procent">
+-<!ENTITY locationEditField.label "Adres obrazka:">
++
++<!-- These are in the Location tab panel -->
++<!ENTITY locationEditField.label     "Adres obrazka:">
+ <!ENTITY locationEditField.accessKey "A">
+-<!ENTITY locationEditField.tooltip "Wprowadź nazwę pliku obrazka lub lokację">
+-<!ENTITY title.label 				"Etykieta:">
+-<!ENTITY title.accessKey "k">
+-<!ENTITY title.tooltip 				'Atrybut "Title" wyświetlany jako etykieta'>
+-<!ENTITY altText.label "Tekst alternatywny:">
+-<!ENTITY altText.accessKey "T">
+-<!ENTITY altTextEditField.tooltip "Wprowadź tekst, który będzie wyświetlany w miejscu obrazka">
+-<!ENTITY noAltText.label "Nie wyświetlaj tekstu alternatywnego">
+-<!ENTITY noAltText.accessKey "N">
+-<!ENTITY previewBox.label "Podgląd obrazka">
+-<!ENTITY MoreFewerButton.tooltip "Wyświetl mniej lub więcej właściwości do edycji">
+-<!ENTITY actualSize.label "Rozmiar oryginalny:">
+-<!ENTITY actualSizeRadio.label "Rozmiar oryginalny">
+-<!ENTITY actualSizeRadio.accessKey "O">
+-<!ENTITY actualSizeRadio.tooltip "Przywróć rozmiar oryginalny">
+-<!ENTITY customSizeRadio.label "Rozmiar niestandardowy">
+-<!ENTITY customSizeRadio.accessKey "r">
+-<!ENTITY customSizeRadio.tooltip "Zmień rozmiar obrazka wyświetlanego na stronie">
+-<!ENTITY heightEditField.label "Wysokość:">
+-<!ENTITY heightEditField.accessKey "y">
+-<!ENTITY widthEditField.label "Szerokość:">
+-<!ENTITY widthEditField.accessKey "S">
+-<!ENTITY constrainCheckbox.label "Zachowaj skalę">
++<!ENTITY locationEditField.tooltip   "Wprowadź nazwę pliku obrazka lub lokację">
++<!ENTITY title.label                 "Etykieta:">
++<!ENTITY title.accessKey             "k">
++<!ENTITY title.tooltip               'Atrybut "Title" wyświetlany jako etykieta'>
++<!ENTITY altText.label               "Tekst alternatywny:">
++<!ENTITY altText.accessKey           "T">
++<!ENTITY altTextEditField.tooltip    "Wprowadź tekst, który będzie wyświetlany w miejscu obrazka">
++<!ENTITY noAltText.label             "Nie wyświetlaj tekstu alternatywnego">
++<!ENTITY noAltText.accessKey         "N">
++<!ENTITY previewBox.label            "Podgląd obrazka">
++
++<!-- These controls are in the Dimensions tab panel -->
++<!-- actualSize.label should be same as actualSizeRadio.label + ":" -->
++<!ENTITY actualSize.label            "Rozmiar oryginalny:">
++<!ENTITY actualSizeRadio.label       "Rozmiar oryginalny">
++<!ENTITY actualSizeRadio.accessKey   "o">
++<!ENTITY actualSizeRadio.tooltip     "Przywróć rozmiar oryginalny">
++<!ENTITY customSizeRadio.label       "Rozmiar niestandardowy">
++<!ENTITY customSizeRadio.accessKey   "R">
++<!ENTITY customSizeRadio.tooltip     "Zmień rozmiar obrazka wyświetlanego na stronie">
++<!ENTITY heightEditField.label       "Wysokość:">
++<!ENTITY heightEditField.accessKey   "y">
++<!ENTITY widthEditField.label        "Szerokość:">
++<!ENTITY widthEditField.accessKey    "S">
++<!ENTITY constrainCheckbox.label     "Zachowaj skalę">
+ <!ENTITY constrainCheckbox.accessKey "Z">
+-<!ENTITY constrainCheckbox.tooltip "Zachowaj współczynnik kształtu obrazka">
+-<!ENTITY imagemapBox.label "Mapa obrazka">
+-<!ENTITY removeImageMapButton.label "Usuń">
++<!ENTITY constrainCheckbox.tooltip   "Zachowaj współczynnik kształtu obrazka">
++
++<!-- These controls are in the Image Map box of the expanded area -->
++<!ENTITY imagemapBox.label              "Mapa obrazka">
++<!ENTITY removeImageMapButton.label     "Usuń">
+ <!ENTITY removeImageMapButton.accessKey "U">
+-<!ENTITY editImageMapButton.label 		"Edytuj…">
+-<!ENTITY editImageMapButton.tooltip "Utwórz aktywne obszary dla tego obrazka">
+-<!ENTITY alignment.label "Wyrównaj tekst względem obrazka">
+-<!ENTITY bottomPopup.value "Na dole">
+-<!ENTITY topPopup.value "U góry">
+-<!ENTITY centerPopup.value "Na środku">
+-<!ENTITY wrapRightPopup.value "Opływanie z prawej">
+-<!ENTITY wrapLeftPopup.value "Opływanie z lewej">
+-<!ENTITY spacingBox.label "Odstępy">
+-<!ENTITY spacingBox.tooltip "Wprowadź liczbę określającą wielkość odstępu obrazka od otaczających go elementów">
+-<!ENTITY leftRightEditField.label "Z lewej i prawej:">
+-<!ENTITY leftRightEditField.accessKey "l">
+-<!ENTITY topBottomEditField.label "Z góry i dołu:">
+-<!ENTITY topBottomEditField.accessKey "g">
+-<!ENTITY borderEditField.label "Szerokość obramowania:">
+-<!ENTITY borderEditField.accessKey "b">
+-<!ENTITY showImageLinkBorder.label "Pokaż ramkę wokół obrazka z odnośnikiem">
+-<!ENTITY showImageLinkBorder.accessKey 		"m">
+-<!ENTITY makePageBackgroundCheckbox.label "Wybierz jako obrazek tła">
+-<!ENTITY makePageBackgroundCheckbox.tooltip "Użyj obrazka jako tło dla Twojej strony">
+-<!ENTITY editImageButton.label "Edytuj obrazek">
+-<!ENTITY editImageButton.tooltip "Edytuj obrazek w innym programie">
+-<!ENTITY imageInputTab.label "Formularz">
+-<!ENTITY imageLocationTab.label "Adres">
++<!ENTITY editImageMapButton.label       "Edytuj…">
++<!ENTITY editImageMapButton.tooltip     "Utwórz aktywne obszary dla tego obrazka">
++
++<!-- These are the options for image alignment -->
++<!ENTITY alignment.label        "Wyrównaj tekst względem obrazka">
++<!ENTITY bottomPopup.value      "Na dole">
++<!ENTITY topPopup.value         "U góry">
++<!ENTITY centerPopup.value      "Na środku">
++<!ENTITY wrapRightPopup.value   "Opływanie z prawej">
++<!ENTITY wrapLeftPopup.value    "Opływanie z lewej">
++
++<!-- These controls are in the Spacing Box -->
++<!ENTITY spacingBox.label               "Odstępy">
++<!ENTITY leftRightEditField.label       "Z lewej i prawej:">
++<!ENTITY leftRightEditField.accessKey   "l">
++<!ENTITY topBottomEditField.label       "Z góry i dołu:">
++<!ENTITY topBottomEditField.accessKey   "g">
++<!ENTITY borderEditField.label          "Szerokość obramowania:">
++<!ENTITY borderEditField.accessKey      "b">
++
++<!-- These controls are in the Link Box -->
++<!ENTITY showImageLinkBorder.label     "Pokaż ramkę wokół obrazka z odnośnikiem">
++<!ENTITY showImageLinkBorder.accessKey "m">
++
++<!-- These tabs are currently used in the image input dialog -->
++<!ENTITY imageInputTab.label      "Formularz">
++<!ENTITY imageLocationTab.label   "Adres">
+ <!ENTITY imageDimensionsTab.label "Wymiary">
+ <!ENTITY imageAppearanceTab.label "Wygląd">
+-<!ENTITY imageLinkTab.label "Odnośnik">
++<!ENTITY imageLinkTab.label       "Odnośnik">
+diff --git a/editor/ui/chrome/dialogs/EditorInsertTOC.dtd b/editor/ui/chrome/dialogs/EditorInsertTOC.dtd
+--- a/editor/ui/chrome/dialogs/EditorInsertTOC.dtd
++++ b/editor/ui/chrome/dialogs/EditorInsertTOC.dtd
+@@ -1,13 +1,12 @@
+-<!ENTITY Window.title "Spis treści">
+-<!ENTITY buildToc.label "Utwórz spis treści:">
+-<!ENTITY style.label "Styl:">
+-<!ENTITY tag.label "Znacznik:">
+-<!ENTITY class.label "Klasa:">
+-<!ENTITY header1.label "Poziom 1">
+-<!ENTITY header2.label "Poziom 2">
+-<!ENTITY header3.label "Poziom 3">
+-<!ENTITY header4.label "Poziom 4">
+-<!ENTITY header5.label "Poziom 5">
+-<!ENTITY header6.label "Poziom 6">
++<!ENTITY Window.title       "Spis treści">
++<!ENTITY buildToc.label     "Utwórz spis treści:">
++<!ENTITY tag.label          "Znacznik:">
++<!ENTITY class.label        "Klasa:">
++<!ENTITY header1.label      "Poziom 1">
++<!ENTITY header2.label      "Poziom 2">
++<!ENTITY header3.label      "Poziom 3">
++<!ENTITY header4.label      "Poziom 4">
++<!ENTITY header5.label      "Poziom 5">
++<!ENTITY header6.label      "Poziom 6">
+ <!ENTITY makeReadOnly.label "Ustaw spis treści w trybie tylko do odczytu">
+-<!ENTITY orderedList.label "Numeruj wszystkie pozycje spisu treści">
++<!ENTITY orderedList.label  "Numeruj wszystkie pozycje spisu treści">
+diff --git a/editor/ui/chrome/dialogs/EditorListProperties.dtd b/editor/ui/chrome/dialogs/EditorListProperties.dtd
+--- a/editor/ui/chrome/dialogs/EditorListProperties.dtd
++++ b/editor/ui/chrome/dialogs/EditorListProperties.dtd
+@@ -33,22 +33,21 @@
+    - use your version of this file under the terms of the MPL, indicate your
+    - decision by deleting the provisions above and replace them with the notice
+    - and other provisions required by the GPL or the LGPL. If you do not delete
+    - the provisions above, a recipient may use your version of this file under
+    - the terms of any one of the MPL, the GPL or the LGPL.
+    -
+    - ***** END LICENSE BLOCK ***** -->
+ 
+-<!ENTITY windowTitle.label "Właściwości listy">
+-<!ENTITY ListType.label "Typ listy:">
+-<!ENTITY bulletStyle.label "Styl wypunktowania:">
+-<!ENTITY startingNumber.label "Rozpocznij od:">
+-<!ENTITY startingNumber.accessKey "R">
+-<!ENTITY none.value "Brak">
+-<!ENTITY bulletList.value "Lista wypunktowana (nienumerowana)">
+-<!ENTITY numberList.value "Lista numerowana">
+-<!ENTITY definitionList.value "Lista definicji">
+-<!ENTITY changeListMsg.label "Podczas zmiany typu listy:">
+-<!ENTITY changeEntireListRadio.label "Zmień całą listę">
++<!ENTITY windowTitle.label               "Właściwości listy">
++<!ENTITY ListType.label                  "Typ listy:">
++<!ENTITY bulletStyle.label               "Styl wypunktowania:">
++<!ENTITY startingNumber.label            "Rozpocznij od:">
++<!ENTITY startingNumber.accessKey        "R">
++<!ENTITY none.value                      "Brak">
++<!ENTITY bulletList.value                "Lista wypunktowana (nienumerowana)">
++<!ENTITY numberList.value                "Lista numerowana">
++<!ENTITY definitionList.value            "Lista definicji">
++<!ENTITY changeEntireListRadio.label     "Zmień całą listę">
+ <!ENTITY changeEntireListRadio.accessKey "Z">
+-<!ENTITY changeSelectedRadio.label "Zmień tylko wybrane elementy">
+-<!ENTITY changeSelectedRadio.accessKey 		"m">
++<!ENTITY changeSelectedRadio.label       "Zmień tylko wybrane elementy">
++<!ENTITY changeSelectedRadio.accessKey   "m">
+diff --git a/editor/ui/chrome/dialogs/EditorPublish.dtd b/editor/ui/chrome/dialogs/EditorPublish.dtd
+--- a/editor/ui/chrome/dialogs/EditorPublish.dtd
++++ b/editor/ui/chrome/dialogs/EditorPublish.dtd
+@@ -70,20 +70,18 @@
+ <!ENTITY pageTitle.label              "Tytuł strony:" >
+ <!ENTITY pageTitle.accesskey          "T">
+ <!ENTITY pageTitle.tooltip            "Proszę wprowadzić tytuł strony, który jest widoczny m.in. w nazwie okna i zakładkach" >
+ <!ENTITY pageTitleExample.label       'np.: "Moja strona domowa"' >
+ <!ENTITY filename.label               "Nazwa pliku:" >
+ <!ENTITY filename.accesskey           "l">
+ <!ENTITY filename.tooltip             "Proszę wprowadzić nazwę pliku, wraz z rozszerzeniem '.html', pod którą zostanie zachowana bieżąca strona" >
+ <!ENTITY filenameExample.label        'np.: "mojastrona.html"' >
+-<!ENTITY relatedDocs.label            "Inne pliki WWW do opublikowania" >
+ <!ENTITY setDefaultButton.label       "Ustaw jako domyślne" >
+-<!ENTITY setDefaultButton.accesskey   "d"> 
+-<!ENTITY setDefSiteAndDir.label       "Ustawienia domyślnej witryny oraz katalogu" >
++<!ENTITY setDefaultButton.accesskey   "d">
+ <!ENTITY removeButton.label           "Usuń witrynę" >
+ <!ENTITY removeButton.accesskey       "U">
+ 
+ <!-- Settings Tab Panel -->
+ <!ENTITY publishSites.label           "Publikowanie danych WWW" >
+ <!ENTITY serverInfo.label             "Informacje o serwerze" >
+ <!ENTITY loginInfo.label              "Dane logowania" >
+ <!ENTITY siteName.label               "Nazwa witryny:" >
+diff --git a/editor/ui/chrome/dialogs/EditorPublishProgress.dtd b/editor/ui/chrome/dialogs/EditorPublishProgress.dtd
+--- a/editor/ui/chrome/dialogs/EditorPublishProgress.dtd
++++ b/editor/ui/chrome/dialogs/EditorPublishProgress.dtd
+@@ -1,11 +1,9 @@
+-<!ENTITY siteUrl.label "URL witryny:" >
+-<!ENTITY docSubdir.label "Podkatalog ze stronami:" >
++<!ENTITY siteUrl.label     "URL witryny:" >
++<!ENTITY docSubdir.label   "Podkatalog ze stronami:" >
+ <!ENTITY otherSubdir.label "Podkatalog z obrazkami:" >
+-<!ENTITY status.label 				"Publikowanie…" >
+-<!ENTITY fileList.label "Status publikowania" >
+-<!ENTITY statusHeader.label "Status" >
+-<!ENTITY filenameHeader.label "Nazwa pliku" >
+-<!ENTITY succeeded.label "Powiodło się" >
+-<!ENTITY failed.label "Nie powiodło się" >
+-<!ENTITY keepOpen "Nie zamykaj tego okna po ukończeniu publikowania." >
++<!ENTITY status.label 	   "Publikowanie…" >
++<!ENTITY fileList.label    "Status publikowania" >
++<!ENTITY succeeded.label   "Powiodło się" >
++<!ENTITY failed.label      "Nie powiodło się" >
++<!ENTITY keepOpen          "Nie zamykaj tego okna po ukończeniu publikowania." >
+ <!ENTITY closeButton.label "Zamknij" >
+diff --git a/editor/ui/chrome/dialogs/EditorReplace.dtd b/editor/ui/chrome/dialogs/EditorReplace.dtd
+--- a/editor/ui/chrome/dialogs/EditorReplace.dtd
++++ b/editor/ui/chrome/dialogs/EditorReplace.dtd
+@@ -54,9 +54,8 @@
+ <!ENTITY findNextButton.accesskey "Z">
+ <!ENTITY replaceButton.label "Zamień">
+ <!ENTITY replaceButton.accesskey "m">
+ <!ENTITY replaceAndFindButton.label "Znajdź i zamień">
+ <!ENTITY replaceAndFindButton.accesskey "a">
+ <!ENTITY replaceAllButton.label "Zamień wszystko">
+ <!ENTITY replaceAllButton.accesskey "s">
+ <!ENTITY closeButton.label "Zamknij">
+-<!ENTITY notFoundWarning.label "Wprowadzony tekst nie został znaleziony.">
+\ No newline at end of file
+diff --git a/editor/ui/chrome/dialogs/EditorTableProperties.dtd b/editor/ui/chrome/dialogs/EditorTableProperties.dtd
+--- a/editor/ui/chrome/dialogs/EditorTableProperties.dtd
++++ b/editor/ui/chrome/dialogs/EditorTableProperties.dtd
+@@ -66,30 +66,25 @@
+ <!ENTITY tableCaption.label "Podpis:">
+ <!ENTITY tableCaption.accessKey "P">
+ <!ENTITY tableCaptionAbove.label "Powyżej tabeli">
+ <!ENTITY tableCaptionBelow.label "Poniżej tabeli">
+ <!ENTITY tableCaptionLeft.label "Po lewej stronie">
+ <!ENTITY tableCaptionRight.label "Po prawej stronie">
+ <!ENTITY tableCaptionNone.label "Brak">
+ <!ENTITY tableInheritColor.label "(pozostaw bez zaznaczenia, aby było widoczne tło strony)">
+-<!ENTITY cellPercent.label "procent tabeli">
+ <!ENTITY cellSelection.label "Zaznaczenie">
+ <!ENTITY cellSelectCell.label "Komórka">
+ <!ENTITY cellSelectRow.label "Wiersz">
+ <!ENTITY cellSelectColumn.label "Kolumna">
+ <!ENTITY cellSelectNext.label "Następne">
+ <!ENTITY cellSelectNext.accessKey "N">
+ <!ENTITY cellSelectPrevious.label "Poprzednie">
+ <!ENTITY cellSelectPrevious.accessKey "d">
+-<!ENTITY cellApplyBeforeMove.label "Zastosuj zmiany przed zmianą zaznaczenia">
+-<!ENTITY cellKeepCurrentData.label "Zachowaj bieżące ustawienia">
+ <!ENTITY applyBeforeChange.label "Uwaga: wprowadzone zmiany będą zastosowane przy przejściu do następnego elementu.">
+-<!ENTITY cellRowSpan.label "Rozpiętość wiersza:">
+-<!ENTITY cellColSpan.label "Rozpiętość kolumny:">
+ <!ENTITY cellContentAlignment.label "Wyrównanie zawartości">
+ <!ENTITY cellHorizontal.label "W poziomie:">
+ <!ENTITY cellHorizontal.accessKey "p">
+ <!ENTITY cellVertical.label "W pionie:">
+ <!ENTITY cellVertical.accessKey "i">
+ <!ENTITY cellStyle.label "Styl komórki:">
+ <!ENTITY cellStyle.accessKey "k">
+ <!ENTITY cellNormal.label "Normalny">
+@@ -97,17 +92,16 @@
+ <!ENTITY cellTextWrap.label "Opływanie tekstu:">
+ <!ENTITY cellTextWrap.accessKey "O">
+ <!ENTITY cellWrap.label "Opływaj">
+ <!ENTITY cellNoWrap.label "Nie opływaj tekstu">
+ <!ENTITY cellAlignTop.label "Do góry">
+ <!ENTITY cellAlignMiddle.label "Do środka">
+ <!ENTITY cellAlignBottom.label "Do dołu">
+ <!ENTITY cellAlignJustify.label "Wyjustowana">
+-<!ENTITY cellAlignAtChar.label "Do znaku:">
+ <!ENTITY cellInheritColor.label "(pozostaw bez zaznaczenia, aby było widoczne tło tabeli)">
+ <!ENTITY cellUseCheckboxHelp.label "Użyj pól wyboru, aby wybrać, które z powyższych właściwości zostaną zastosowane do zaznaczonych komórek">
+ <!ENTITY size.label "Rozmiar">
+ <!ENTITY pixels.label "pikseli">
+ <!ENTITY backgroundColor.label "Kolor tła:">
+ <!ENTITY backgroundColor.accessKey "t">
+ <!ENTITY AlignLeft.label "Do lewej">
+ <!ENTITY AlignCenter.label "Do środka">
+

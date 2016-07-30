@@ -1,0 +1,597 @@
+Index: l10n/pl/browser/chrome/browser/feeds/addFeedReader.dtd
+===================================================================
+RCS file: /l10n/l10n/pl/browser/chrome/browser/feeds/addFeedReader.dtd,v
+retrieving revision 1.4
+diff -u -r1.4 addFeedReader.dtd
+--- l10n/pl/browser/chrome/browser/feeds/addFeedReader.dtd	28 Jun 2006 17:20:47 -0000	1.4
++++ l10n/pl/browser/chrome/browser/feeds/addFeedReader.dtd	19 Aug 2006 16:06:04 -0000
+@@ -1,10 +1,10 @@
+ <!ENTITY addFeedReader.title
+-   "Dodaj czytnik kanałów">
++   "Dodaj czytnik kanałów">
+ <!ENTITY addAsDefault.label
+- "Ustaw ten czytnik jako domyślny">
++ "Ustaw ten czytnik jako domyślny">
+ <!ENTITY addAsDefault.accesskey
+-"d">
+-<!ENTITY forSite.label 
+-  "Witryna:">
+-<!ENTITY feedReaderRegistered.title
+-  "Czytnik kanałów już zarejestrowany">
++"d">
++<!ENTITY forSite.label 
++  "Witryna:">
++<!ENTITY feedReaderRegistered.title
++  "Czytnik kanałów jest już zarejestrowany">
+Index: l10n/pl/browser/chrome/overrides/appstrings.properties
+===================================================================
+RCS file: /l10n/l10n/pl/browser/chrome/overrides/appstrings.properties,v
+retrieving revision 1.12
+diff -u -r1.12 appstrings.properties
+--- l10n/pl/browser/chrome/overrides/appstrings.properties	28 Jun 2006 18:06:02 -0000	1.12
++++ l10n/pl/browser/chrome/overrides/appstrings.properties	19 Aug 2006 16:06:05 -0000
+@@ -52,7 +52,7 @@
+ deniedPortAccess=Ten adres zawiera numer portu sieciowego, który zazwyczaj nie jest wykorzystywany do przeglądania stron WWW. Firefox anulował żądanie dla bezpieczeństwa użytkownika.
+ proxyResolveFailure=Firefox został skonfigurowany tak, by używał serwera proxy, którego nie jest w stanie odnaleźć.
+ proxyConnectFailure=Firefox został skonfigurowany tak, by używał serwera proxy, który odmawia połączenia.
+-contentEncodingError=Otwierana strona nie może zostać wyświetlona ponieważ używa nieprawidłowych lub nieobsługiwanych metod kompresji. Prosimy poinformować właścicieli witryny o tym problemie.
++contentEncodingError=Otwierana strona nie może zostać wyświetlona, ponieważ używa nieprawidłowych lub nieobsługiwanych metod kompresji. Prosimy poinformować właścicieli witryny o tym problemie.
+ externalProtocolTitle=Żądanie zewnętrznego protokołu
+ externalProtocolPrompt=Aby obsłużyć odnośnik %1$S: musi zostać uruchomiona zewnętrzna aplikacja. Zażądany odnośnik:\n\n\n%2$S\nAplikacja: %3$S\n\n\nJeśli to żądanie pojawiło się niespodziewanie, może to być próba wykorzystania błędu w aplikacji zewnętrznej. W razie jakichkolwiek wątpliwości anuluj to żądanie.\n
+ #LOCALIZATION NOTE (externalProtocolUnknown): The following string is shown if the application name can't be determined
+Index: l10n/pl/dom/chrome/netError.dtd
+===================================================================
+RCS file: /l10n/l10n/pl/dom/chrome/netError.dtd,v
+retrieving revision 1.11
+diff -u -r1.11 netError.dtd
+--- l10n/pl/dom/chrome/netError.dtd	28 Jun 2006 18:06:02 -0000	1.11
++++ l10n/pl/dom/chrome/netError.dtd	19 Aug 2006 16:06:05 -0000
+@@ -28,7 +28,7 @@
+ <!ENTITY netOffline.longDesc "<p>Przeglądarka pracuje w trybie offline i nie może pobrać żądanego elementu. </p><ul><li>Czy komputer podłączony jest do działającej sieci?</li><li>Przestaw przeglądarkę na tryb online i spróbuj ponownie.</li></ul>">
+ 
+ <!ENTITY contentEncodingError.title "Błąd kodowania zawartości">
+-<!ENTITY contentEncodingError.longDesc "<p>Otwierana strona nie może zostać wyświetlona ponieważ używa nieprawidłowych lub nieobsługiwanych metod kompresji.</p><ul><li>Prosimy poinformować właścicieli witryny o tym problemie.</li></ul>">
++<!ENTITY contentEncodingError.longDesc "<p>Otwierana strona nie może zostać wyświetlona, ponieważ używa nieprawidłowych lub nieobsługiwanych metod kompresji.</p><ul><li>Prosimy poinformować właścicieli witryny o tym problemie.</li></ul>">
+ 
+ <!ENTITY netReset.title "Przerwane połączenie">
+ <!ENTITY netReset.longDesc "<p>Połączenie sieciowe zostało przerwane podczas negocjacji. Spróbuj ponownie.</p>">
+Index: l10n/pl/dom/chrome/layout/xmlparser.properties
+===================================================================
+RCS file: /l10n/l10n/pl/dom/chrome/layout/xmlparser.properties,v
+retrieving revision 1.7
+diff -u -r1.7 xmlparser.properties
+--- l10n/pl/dom/chrome/layout/xmlparser.properties	3 Aug 2006 14:19:30 -0000	1.7
++++ l10n/pl/dom/chrome/layout/xmlparser.properties	19 Aug 2006 16:06:06 -0000
+@@ -61,14 +61,14 @@
+ 23=nieoczekiwany stan parsera
+ 24=jednostka zadeklarowana w jednostce parametrowej
+ 27=przedrostek nie jest związany z przestrzenią nazw
+-# FIXME: 28 - potrzeba lepszego tlumaczenia; en: "28=must not undeclare prefix" (to *nie* jest "nie zadeklarowany"), to samo w 38 i 39
+-28 = przedrostek nie może być oddeklarowany
++
++28 = deklaracja przedrostka nie może być wycofana
+ 29 = niekompletne znakowanie w jednostce parametrowej
+ 30 = deklaracja XML sformowana nieprawidłowo
+ 31 = deklaracja tekstowa sformowana nieprawidłowo
+ 32 = niedozwolone znaki w publicznym id
+-38 = zastrzeżony przedrostek (xml) nie może zostać oddeklarowany lub przypisany do nazwy innej przestrzeni nazw
+-39 = zastrzeżony przedrostek (xmlns) nie może być ani zadeklarowany, ani oddeklarowany
++38 = zastrzeżony przedrostek (xml) nie może zostać przypisany do nazwy innej przestrzeni nazw, ani jego deklaracja nie może być wycofana
++39 = nie można zadeklarować ani wycofać deklaracji zastrzeżonego przedrostka (xmlns)
+ 40 = przedrostek nie może być związany z jednym z zastrzeżonych nazw przestrzeni nazw
+ 
+ # %1$S is replaced by the Expat error string, may be followed by Expected (see below)
+Index: l10n/pl/security/manager/chrome/pipnss/pipnss.properties
+===================================================================
+RCS file: /l10n/l10n/pl/security/manager/chrome/pipnss/pipnss.properties,v
+retrieving revision 1.18
+diff -u -r1.18 pipnss.properties
+--- l10n/pl/security/manager/chrome/pipnss/pipnss.properties	3 Aug 2006 12:56:35 -0000	1.18
++++ l10n/pl/security/manager/chrome/pipnss/pipnss.properties	19 Aug 2006 16:06:08 -0000
+@@ -204,66 +204,66 @@
+ CertDumpCPSPointer=Wskazanie regulaminu organu certyfikacji
+ CertDumpUserNotice=Powiadomienie użytkownika
+ CertDumpLogotype=Logotyp
+-CertDumpECPublicKey=Klucz publiczny szyfrowania na krzywych eliptycznych
+-CertDumpECDSAWithSHA1=Podpis X9.62 ECDSA z SHA1
+-CertDumpECprime192v1=ANSI X9.62 elliptic curve prime192v1 (aka secp192r1, NIST P-192)
+-CertDumpECprime192v2=ANSI X9.62 elliptic curve prime192v2
+-CertDumpECprime192v3=ANSI X9.62 elliptic curve prime192v3
+-CertDumpECprime239v1=ANSI X9.62 elliptic curve prime239v1
+-CertDumpECprime239v2=ANSI X9.62 elliptic curve prime239v2
+-CertDumpECprime239v3=ANSI X9.62 elliptic curve prime239v3
+-CertDumpECprime256v1=ANSI X9.62 elliptic curve prime256v1 (aka secp256r1, NIST P-256)
+-CertDumpECsecp112r1=SECG elliptic curve secp112r1
+-CertDumpECsecp112r2=SECG elliptic curve secp112r2
+-CertDumpECsecp128r1=SECG elliptic curve secp128r1
+-CertDumpECsecp128r2=SECG elliptic curve secp128r2
+-CertDumpECsecp160k1=SECG elliptic curve secp160k1
+-CertDumpECsecp160r1=SECG elliptic curve secp160r1
+-CertDumpECsecp160r2=SECG elliptic curve secp160r2
+-CertDumpECsecp192k1=SECG elliptic curve secp192k1
+-CertDumpECsecp224k1=SECG elliptic curve secp224k1
+-CertDumpECsecp224r1=SECG elliptic curve secp224r1 (aka NIST P-224)
+-CertDumpECsecp256k1=SECG elliptic curve secp256k1
+-CertDumpECsecp384r1=SECG elliptic curve secp384r1 (aka NIST P-384)
+-CertDumpECsecp521r1=SECG elliptic curve secp521r1 (aka NIST P-521)
+-CertDumpECc2pnb163v1=ANSI X9.62 elliptic curve c2pnb163v1
+-CertDumpECc2pnb163v2=ANSI X9.62 elliptic curve c2pnb163v2
+-CertDumpECc2pnb163v3=ANSI X9.62 elliptic curve c2pnb163v3
+-CertDumpECc2pnb176v1=ANSI X9.62 elliptic curve c2pnb176v1
+-CertDumpECc2tnb191v1=ANSI X9.62 elliptic curve c2tnb191v1
+-CertDumpECc2tnb191v2=ANSI X9.62 elliptic curve c2tnb191v2
+-CertDumpECc2tnb191v3=ANSI X9.62 elliptic curve c2tnb191v3
+-CertDumpECc2onb191v4=ANSI X9.62 elliptic curve c2onb191v4
+-CertDumpECc2onb191v5=ANSI X9.62 elliptic curve c2onb191v5
+-CertDumpECc2pnb208w1=ANSI X9.62 elliptic curve c2pnb208w1
+-CertDumpECc2tnb239v1=ANSI X9.62 elliptic curve c2tnb239v1
+-CertDumpECc2tnb239v2=ANSI X9.62 elliptic curve c2tnb239v2
+-CertDumpECc2tnb239v3=ANSI X9.62 elliptic curve c2tnb239v3
+-CertDumpECc2onb239v4=ANSI X9.62 elliptic curve c2onb239v4
+-CertDumpECc2onb239v5=ANSI X9.62 elliptic curve c2onb239v5
+-CertDumpECc2pnb272w1=ANSI X9.62 elliptic curve c2pnb272w1
+-CertDumpECc2pnb304w1=ANSI X9.62 elliptic curve c2pnb304w1
+-CertDumpECc2tnb359v1=ANSI X9.62 elliptic curve c2tnb359v1
+-CertDumpECc2pnb368w1=ANSI X9.62 elliptic curve c2pnb368w1
+-CertDumpECc2tnb431r1=ANSI X9.62 elliptic curve c2tnb431r1
+-CertDumpECsect113r1=SECG elliptic curve sect113r1
+-CertDumpECsect113r2=SECG elliptic curve sect113r2
+-CertDumpECsect131r1=SECG elliptic curve sect131r1
+-CertDumpECsect131r2=SECG elliptic curve sect131r2
+-CertDumpECsect163k1=SECG elliptic curve sect163k1 (aka NIST K-163)
+-CertDumpECsect163r1=SECG elliptic curve sect163r1
+-CertDumpECsect163r2=SECG elliptic curve sect163r2 (aka NIST B-163)
+-CertDumpECsect193r1=SECG elliptic curve sect193r1
+-CertDumpECsect193r2=SECG elliptic curve sect193r2
+-CertDumpECsect233k1=SECG elliptic curve sect233k1 (aka NIST K-233)
+-CertDumpECsect233r1=SECG elliptic curve sect233r1 (aka NIST B-233)
+-CertDumpECsect239k1=SECG elliptic curve sect239k1
+-CertDumpECsect283k1=SECG elliptic curve sect283k1 (aka NIST K-283)
+-CertDumpECsect283r1=SECG elliptic curve sect283r1 (aka NIST B-283)
+-CertDumpECsect409k1=SECG elliptic curve sect409k1 (aka NIST K-409)
+-CertDumpECsect409r1=SECG elliptic curve sect409r1 (aka NIST B-409)
+-CertDumpECsect571k1=SECG elliptic curve sect571k1 (aka NIST K-571)
+-CertDumpECsect571r1=SECG elliptic curve sect571r1 (aka NIST B-571)
++CertDumpECPublicKey=Klucz publiczny szyfrowania na krzywych eliptycznych
++CertDumpECDSAWithSHA1=Podpis X9.62 ECDSA z SHA1
++CertDumpECprime192v1=Krzywa eliptyczna ANSI X9.62 prime192v1 (aka secp192r1, NIST P-192)
++CertDumpECprime192v2=Krzywa eliptyczna ANSI X9.62 prime192v2
++CertDumpECprime192v3=Krzywa eliptyczna ANSI X9.62 prime192v3
++CertDumpECprime239v1=Krzywa eliptyczna ANSI X9.62 prime239v1
++CertDumpECprime239v2=Krzywa eliptyczna ANSI X9.62 prime239v2
++CertDumpECprime239v3=Krzywa eliptyczna ANSI X9.62 prime239v3
++CertDumpECprime256v1=Krzywa eliptyczna ANSI X9.62 prime256v1 (aka secp256r1, NIST P-256)
++CertDumpECsecp112r1=Krzywa eliptyczna SECG secp112r1
++CertDumpECsecp112r2=Krzywa eliptyczna SECG secp112r2
++CertDumpECsecp128r1=Krzywa eliptyczna SECG secp128r1
++CertDumpECsecp128r2=Krzywa eliptyczna SECG secp128r2
++CertDumpECsecp160k1=Krzywa eliptyczna SECG secp160k1
++CertDumpECsecp160r1=Krzywa eliptyczna SECG secp160r1
++CertDumpECsecp160r2=Krzywa eliptyczna SECG secp160r2
++CertDumpECsecp192k1=Krzywa eliptyczna SECG secp192k1
++CertDumpECsecp224k1=Krzywa eliptyczna SECG secp224k1
++CertDumpECsecp224r1=Krzywa eliptyczna SECG secp224r1 (aka NIST P-224)
++CertDumpECsecp256k1=Krzywa eliptyczna SECG secp256k1
++CertDumpECsecp384r1=Krzywa eliptyczna SECG secp384r1 (aka NIST P-384)
++CertDumpECsecp521r1=Krzywa eliptyczna SECG secp521r1 (aka NIST P-521)
++CertDumpECc2pnb163v1=Krzywa eliptyczna ANSI X9.62 c2pnb163v1
++CertDumpECc2pnb163v2=Krzywa eliptyczna ANSI X9.62 c2pnb163v2
++CertDumpECc2pnb163v3=Krzywa eliptyczna ANSI X9.62 c2pnb163v3
++CertDumpECc2pnb176v1=Krzywa eliptyczna ANSI X9.62 c2pnb176v1
++CertDumpECc2tnb191v1=Krzywa eliptyczna ANSI X9.62 c2tnb191v1
++CertDumpECc2tnb191v2=Krzywa eliptyczna ANSI X9.62 c2tnb191v2
++CertDumpECc2tnb191v3=Krzywa eliptyczna ANSI X9.62 c2tnb191v3
++CertDumpECc2onb191v4=Krzywa eliptyczna ANSI X9.62 c2onb191v4
++CertDumpECc2onb191v5=Krzywa eliptyczna ANSI X9.62 c2onb191v5
++CertDumpECc2pnb208w1=Krzywa eliptyczna ANSI X9.62 c2pnb208w1
++CertDumpECc2tnb239v1=Krzywa eliptyczna ANSI X9.62 c2tnb239v1
++CertDumpECc2tnb239v2=Krzywa eliptyczna ANSI X9.62 c2tnb239v2
++CertDumpECc2tnb239v3=Krzywa eliptyczna ANSI X9.62 c2tnb239v3
++CertDumpECc2onb239v4=Krzywa eliptyczna ANSI X9.62 c2onb239v4
++CertDumpECc2onb239v5=Krzywa eliptyczna ANSI X9.62 c2onb239v5
++CertDumpECc2pnb272w1=Krzywa eliptyczna ANSI X9.62 c2pnb272w1
++CertDumpECc2pnb304w1=Krzywa eliptyczna ANSI X9.62 c2pnb304w1
++CertDumpECc2tnb359v1=Krzywa eliptyczna ANSI X9.62 c2tnb359v1
++CertDumpECc2pnb368w1=Krzywa eliptyczna ANSI X9.62 c2pnb368w1
++CertDumpECc2tnb431r1=Krzywa eliptyczna ANSI X9.62 c2tnb431r1
++CertDumpECsect113r1=Krzywa eliptyczna SECG sect113r1
++CertDumpECsect113r2=Krzywa eliptyczna SECG sect113r2
++CertDumpECsect131r1=Krzywa eliptyczna SECG sect131r1
++CertDumpECsect131r2=Krzywa eliptyczna SECG sect131r2
++CertDumpECsect163k1=Krzywa eliptyczna SECG sect163k1 (aka NIST K-163)
++CertDumpECsect163r1=Krzywa eliptyczna SECG sect163r1
++CertDumpECsect163r2=Krzywa eliptyczna SECG sect163r2 (aka NIST B-163)
++CertDumpECsect193r1=Krzywa eliptyczna SECG sect193r1
++CertDumpECsect193r2=Krzywa eliptyczna SECG sect193r2
++CertDumpECsect233k1=Krzywa eliptyczna SECG sect233k1 (aka NIST K-233)
++CertDumpECsect233r1=Krzywa eliptyczna SECG sect233r1 (aka NIST B-233)
++CertDumpECsect239k1=Krzywa eliptyczna SECG sect239k1
++CertDumpECsect283k1=Krzywa eliptyczna SECG sect283k1 (aka NIST K-283)
++CertDumpECsect283r1=Krzywa eliptyczna SECG sect283r1 (aka NIST B-283)
++CertDumpECsect409k1=Krzywa eliptyczna SECG sect409k1 (aka NIST K-409)
++CertDumpECsect409r1=Krzywa eliptyczna SECG sect409r1 (aka NIST B-409)
++CertDumpECsect571k1=Krzywa eliptyczna SECG sect571k1 (aka NIST K-571)
++CertDumpECsect571r1=Krzywa eliptyczna SECG sect571r1 (aka NIST B-571)
+ CertDumpRawBytesHeader=Rozmiar: %S bajtów / %S bitów
+ VerifySSLClient_p=Klient
+ VerifySSLServer_p=Serwer
+@@ -388,6 +388,6 @@
+ NicknameNotYetValid=(jeszcze nie ważny)
+ CaCertExists=Ten certyfikat jest już zainstalowany jako certyfikat organu certyfikacji.
+ NotACACert=To nie jest certyfikat organu certyfikacji, nie może więc zostać zaimportowany do listy organów certyfikacji.
+-NotImportingUnverifiedCert=Tego certyfikatu nie można zweryfikować i nie zostanie on zainstalowany. Wydawca certyfikatu może być nieznany lub niezaufany, certyfikat mógł utracić ważność lub zostać unieważniony, albo mógł nie zostać zaakceptowany.
+-UserCertIgnoredNoPrivateKey=Nie można zainstalować tego certyfikatu osobistego, ponieważ użytkownik nie posiada odpowiedniego klucza prywatnego, który został utworzony, kiedy zażądano certyfikatu.
++NotImportingUnverifiedCert=Tego certyfikatu nie można zweryfikować i nie zostanie on zainstalowany. Wydawca certyfikatu może być nieznany lub niezaufany, certyfikat mógł utracić ważność lub zostać unieważniony, albo mógł nie zostać zaakceptowany.
++UserCertIgnoredNoPrivateKey=Nie można zainstalować tego certyfikatu osobistego, ponieważ użytkownik nie posiada odpowiedniego klucza prywatnego, który został utworzony, kiedy zażądano certyfikatu.
+ UserCertImported=Zainstalowano osobisty certyfikat użytkownika. Zaleca się zachowanie kopii zapasowej tego certyfikatu.
+Index: l10n/pl/security/manager/chrome/pippki/pippki.dtd
+===================================================================
+RCS file: /l10n/l10n/pl/security/manager/chrome/pippki/pippki.dtd,v
+retrieving revision 1.4
+diff -u -r1.4 pippki.dtd
+--- l10n/pl/security/manager/chrome/pippki/pippki.dtd	28 Jun 2006 17:12:07 -0000	1.4
++++ l10n/pl/security/manager/chrome/pippki/pippki.dtd	19 Aug 2006 16:06:09 -0000
+@@ -65,7 +65,7 @@
+ <!ENTITY serverCertExpired.accept.label "Kontynuuj">
+ <!ENTITY clientAuthAsk.title "Zażądano identyfikacji użytkownika" >
+ <!ENTITY clientAuthAsk.message1 "Pobierana strona wysłała żądanie przedstawienia certyfikatu w celu dokonania identyfikacji:" >
+-<!ENTITY clientAuthAsk.message2 "Wybierz certyfikat, który zostanie przedstawiony jako twój identyfikator:" >
++<!ENTITY clientAuthAsk.message2 "Wybierz certyfikat, który zostanie przedstawiony jako Twój identyfikator:" >
+ <!ENTITY clientAuthAsk.message3 "Szczegóły wybranego certyfikatu:" >
+ <!ENTITY certPicker.title "Wybierz certyfikat" >
+ <!ENTITY certPicker.info "Certyfikat:" >
+@@ -80,7 +80,7 @@
+ <!ENTITY chooseToken.title "Wybór tokenu" >
+ <!ENTITY chooseToken.message1 "Należy wybrać token." >
+ <!ENTITY escrowWarn.title "Kopia klucza szyfrującego" >
+-<!ENTITY escrowWarn.message1 "Ważne: Ten organ certyfikacji zaleca utworzenie kopii twojego prywatnego klucza szyfrującego." >
++<!ENTITY escrowWarn.message1 "Ważne: Ten organ certyfikacji zaleca utworzenie kopii Twojego prywatnego klucza szyfrującego." >
+ <!ENTITY escrowWarn.benefit1 "Zaletą tego rozwiązania jest to, że w przypadku utraty dostępu do prywatnego klucza szyfrującego możliwe będzie uzyskanie jego kopii z organu certyfikacji" >
+ <!ENTITY escrowWarn.message2 "Jednakże należy mieć na uwadze, że Twój prywatny klucz szyfrujący, będąc przechowywanym przez organ certyfikacji, może zostać wykorzystany do czytania zaszyfrowanej przy użyciu tego klucza poczty lub dokumentów bez Twojej zgody." >
+ <!ENTITY serverCrlNextupdate.message "W celu uzyskania dalszych informacji należy skontaktować się z administratorem sieci." >
+Index: l10n/pl/security/manager/chrome/pippki/pref-security.dtd
+===================================================================
+RCS file: /l10n/l10n/pl/security/manager/chrome/pippki/pref-security.dtd,v
+retrieving revision 1.5
+diff -u -r1.5 pref-security.dtd
+--- l10n/pl/security/manager/chrome/pippki/pref-security.dtd	28 Jun 2006 17:12:07 -0000	1.5
++++ l10n/pl/security/manager/chrome/pippki/pref-security.dtd	19 Aug 2006 16:06:09 -0000
+@@ -1,54 +1,54 @@
+-<!-- ***** BEGIN LICENSE BLOCK *****
+-   - Version: MPL 1.1/GPL 2.0/LGPL 2.1
+-   -
+-   - The contents of this file are subject to the Mozilla Public License Version
+-   - 1.1 (the "License"); you may not use this file except in compliance with
+-   - the License. You may obtain a copy of the License at
+-   - http://www.mozilla.org/MPL/
+-   -
+-   - Software distributed under the License is distributed on an "AS IS" basis,
+-   - WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+-   - for the specific language governing rights and limitations under the
+-   - License.
+-   -
+-   - The Original Code is mozilla.org code.
+-   -
+-   - The Initial Developer of the Original Code is
+-   - Netscape Communications Corp.
+-   - Portions created by the Initial Developer are Copyright (C) 2001
+-   - the Initial Developer. All Rights Reserved.
+-   -
+-   - Contributor(s):
+-   -   Bob Lord <lord@netscape.com>
++<!-- ***** BEGIN LICENSE BLOCK *****
++   - Version: MPL 1.1/GPL 2.0/LGPL 2.1
++   -
++   - The contents of this file are subject to the Mozilla Public License Version
++   - 1.1 (the "License"); you may not use this file except in compliance with
++   - the License. You may obtain a copy of the License at
++   - http://www.mozilla.org/MPL/
++   -
++   - Software distributed under the License is distributed on an "AS IS" basis,
++   - WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
++   - for the specific language governing rights and limitations under the
++   - License.
++   -
++   - The Original Code is mozilla.org code.
++   -
++   - The Initial Developer of the Original Code is
++   - Netscape Communications Corp.
++   - Portions created by the Initial Developer are Copyright (C) 2001
++   - the Initial Developer. All Rights Reserved.
++   -
++   - Contributor(s):
++   -   Bob Lord <lord@netscape.com>
+    -   Terry Hayes <thayes@netscape.com>
+-   -   Marek Stępień <marcoos@aviary.pl> (Polish translation)
+-   -
+-   - Alternatively, the contents of this file may be used under the terms of
+-   - either the GNU General Public License Version 2 or later (the "GPL"), or
+-   - the GNU Lesser General Public License Version 2.1 or later (the "LGPL"),
+-   - in which case the provisions of the GPL or the LGPL are applicable instead
+-   - of those above. If you wish to allow use of your version of this file only
+-   - under the terms of either the GPL or the LGPL, and not to allow others to
+-   - use your version of this file under the terms of the MPL, indicate your
+-   - decision by deleting the provisions above and replace them with the notice
+-   - and other provisions required by the GPL or the LGPL. If you do not delete
+-   - the provisions above, a recipient may use your version of this file under
+-   - the terms of any one of the MPL, the GPL or the LGPL.
+-   -
++   -   Marek Stępień <marcoos@aviary.pl> (Polish translation)
++   -
++   - Alternatively, the contents of this file may be used under the terms of
++   - either the GNU General Public License Version 2 or later (the "GPL"), or
++   - the GNU Lesser General Public License Version 2.1 or later (the "LGPL"),
++   - in which case the provisions of the GPL or the LGPL are applicable instead
++   - of those above. If you wish to allow use of your version of this file only
++   - under the terms of either the GPL or the LGPL, and not to allow others to
++   - use your version of this file under the terms of the MPL, indicate your
++   - decision by deleting the provisions above and replace them with the notice
++   - and other provisions required by the GPL or the LGPL. If you do not delete
++   - the provisions above, a recipient may use your version of this file under
++   - the terms of any one of the MPL, the GPL or the LGPL.
++   -
+    - ***** END LICENSE BLOCK ***** -->
+ 
+-  <!ENTITY  resetsettings.label      "Zresetuj ustawienia">
+-<!ENTITY  resetpreferences.label   "Zresetuj preferencje...">
+-<!ENTITY  managecerts.caption      "Menedżer certyfikatów">
+-<!ENTITY  managecerts.text         "Użyj menedżera certyfikatów, by zarządzać zarówno certyfikatami osobistym, jak i certyfikatami pochodzącymi od innych osób i organów certyfikacji.">
+-<!ENTITY  managecerts.button       "Zarządzaj certyfikatami...">
+-<!ENTITY  managecerts.accesskey    "Z">
+-<!ENTITY  managedevices.caption    "Menedżer urządzeń bezpieczeństwa">
+-<!ENTITY  managedevices.text       "Use this button to manage your security devices, such as smart cards.">
+-<!ENTITY  managedevices.button     "Zarządzaj urządzeniami bezpieczeństwa...">
+-<!ENTITY  managedevices.accesskey  "S">
+-
+-<!ENTITY  ssl.label                "SSL">
+-
+-<!ENTITY  pref.certs.title         "Certyfikaty">
++  <!ENTITY  resetsettings.label      "Zresetuj ustawienia">
++<!ENTITY  resetpreferences.label   "Zresetuj preferencje...">
++<!ENTITY  managecerts.caption      "Menedżer certyfikatów">
++<!ENTITY  managecerts.text         "Użyj menedżera certyfikatów, by zarządzać zarówno certyfikatami osobistym, jak i certyfikatami pochodzącymi od innych osób i organów certyfikacji.">
++<!ENTITY  managecerts.button       "Zarządzaj certyfikatami...">
++<!ENTITY  managecerts.accesskey    "Z">
++<!ENTITY  managedevices.caption    "Menedżer urządzeń bezpieczeństwa">
++<!ENTITY  managedevices.text       "Naciśnij ten przycisk, by zarządzać swoimi urządzeniami bezpieczeństwa, takimi jak karty elektroniczne.">
++<!ENTITY  managedevices.button     "Zarządzaj urządzeniami bezpieczeństwa...">
++<!ENTITY  managedevices.accesskey  "S">
++
++<!ENTITY  ssl.label                "SSL">
++
++<!ENTITY  pref.certs.title         "Certyfikaty">
+ <!ENTITY  certs.label              "Certyfikaty">
+\ No newline at end of file
+Index: l10n/pl/security/manager/chrome/pippki/pref-validation.dtd
+===================================================================
+RCS file: /l10n/l10n/pl/security/manager/chrome/pippki/pref-validation.dtd,v
+retrieving revision 1.4
+diff -u -r1.4 pref-validation.dtd
+--- l10n/pl/security/manager/chrome/pippki/pref-validation.dtd	28 Jun 2006 17:12:07 -0000	1.4
++++ l10n/pl/security/manager/chrome/pippki/pref-validation.dtd	19 Aug 2006 16:06:09 -0000
+@@ -1,89 +1,91 @@
+-<!-- ***** BEGIN LICENSE BLOCK *****
+-   - Version: MPL 1.1/GPL 2.0/LGPL 2.1
+-   -
+-   - The contents of this file are subject to the Mozilla Public License Version
+-   - 1.1 (the "License"); you may not use this file except in compliance with
+-   - the License. You may obtain a copy of the License at
+-   - http://www.mozilla.org/MPL/
+-   -
+-   - Software distributed under the License is distributed on an "AS IS" basis,
+-   - WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+-   - for the specific language governing rights and limitations under the
+-   - License.
+-   -
+-   - The Original Code is mozilla.org code.
+-   -
+-   - The Initial Developer of the Original Code is
+-   - Netscape Communications Corp.
+-   - Portions created by the Initial Developer are Copyright (C) 2001
+-   - the Initial Developer. All Rights Reserved.
+-   -
+-   - Contributor(s):
+-   -   David P. Drinan (ddrinan@netscape.com)
+-   -   Marek Wawoczny <gmbh@mozillapl.org> (Polish translation)
+-   -   Piotr Bartecki <pbartecki@mozillapl.org> (Polish translation)
++<!-- ***** BEGIN LICENSE BLOCK *****
++   - Version: MPL 1.1/GPL 2.0/LGPL 2.1
++   -
++   - The contents of this file are subject to the Mozilla Public License Version
++   - 1.1 (the "License"); you may not use this file except in compliance with
++   - the License. You may obtain a copy of the License at
++   - http://www.mozilla.org/MPL/
++   -
++   - Software distributed under the License is distributed on an "AS IS" basis,
++   - WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
++   - for the specific language governing rights and limitations under the
++   - License.
++   -
++   - The Original Code is mozilla.org code.
++   -
++   - The Initial Developer of the Original Code is
++   - Netscape Communications Corp.
++   - Portions created by the Initial Developer are Copyright (C) 2001
++   - the Initial Developer. All Rights Reserved.
++   -
++   - Contributor(s):
++   -   David P. Drinan (ddrinan@netscape.com)
++   -   Marek Wawoczny <gmbh@mozillapl.org> (Polish translation)
++   -   Piotr Bartecki <pbartecki@mozillapl.org> (Polish translation)
+    -   Piotr Komoda <pitreck@aviary.pl> (Polish translation)
+    -   Marek Stępień <marcoos@aviary.pl> (Polish translation)
+-   -
+-   - Alternatively, the contents of this file may be used under the terms of
+-   - either the GNU General Public License Version 2 or later (the "GPL"), or
+-   - the GNU Lesser General Public License Version 2.1 or later (the "LGPL"),
+-   - in which case the provisions of the GPL or the LGPL are applicable instead
+-   - of those above. If you wish to allow use of your version of this file only
+-   - under the terms of either the GPL or the LGPL, and not to allow others to
+-   - use your version of this file under the terms of the MPL, indicate your
+-   - decision by deleting the provisions above and replace them with the notice
+-   - and other provisions required by the GPL or the LGPL. If you do not delete
+-   - the provisions above, a recipient may use your version of this file under
+-   - the terms of any one of the MPL, the GPL or the LGPL.
+-   -
+-   - ***** END LICENSE BLOCK ***** -->
+-
+-<!ENTITY  pref.validation.title                   "Weryfikacja">
+-
+-<!ENTITY  validation.crl.caption                  "CRL">
+-<!ENTITY  validation.crl.description              "Użyj Menedżera list CRL by zarządzać listami unieważnionych certyfikatów (CRL) przechowywanymi w Twojej bazie certyfikatów.">
+-<!ENTITY  validation.managecrls.button            "Zarządzaj listami CRL...">
+-<!ENTITY  validation.managecrls.accesskey         "Z">
+-<!ENTITY  validation.crlmanager.label             "Menedżer list CRL">
+-<!ENTITY  validation.crlname.label                "Nazwa">
+-<!ENTITY  validation.crllastupdate.label          "Ostatnia aktualizacja">
+-<!ENTITY  validation.crlnextupdate.label          "Następna aktualizacja">
+-<!ENTITY  validation.crlautoupdateenabled.label   "Automatyczna aktualizacja">
+-<!ENTITY  validation.crlautoupdatestatus.label    "Status automatycznej aktualizacji">
+-<!ENTITY  validation.deletecrl.label              "Usuń">
+-<!ENTITY  validation.deletecrl.accesskey          "U">
+-<!ENTITY  validation.updatecrl.label              "Aktualizuj">
+-<!ENTITY  validation.updatecrl.accesskey          "A">
+-<!ENTITY  validation.advanced.label               "Ustawienia">
+-<!ENTITY  validation.advanced.accesskey           "s">
+-
+-<!ENTITY  validation.crl.autoupdate.title         "Preferencje automatycznej aktualizacji CRL">
+-<!ENTITY  validation.crl.autoupdate.enable.label  "Włącz automatyczną aktualizację dla tej listy CRL">
+-<!ENTITY  validation.crl.autoupdate.time.label1   "Aktualizuj">
+-<!ENTITY  validation.crl.autoupdate.time.label2   "dni przed następną datą aktualizacji">
+-<!ENTITY  validation.crl.autoupdate.freq.label1   "Aktualizuj co">
+-<!ENTITY  validation.crl.autoupdate.freq.label2   "dni">
+-<!ENTITY  validation.crl.autoupdate.url.label     "Lista CRL zostanie zaimportowana z:">
+-<!ENTITY  crl.import.status.title                 "Status importu listy CRL">
+-<!ENTITY  crl.import.success.message              "Lista certyfikatów unieważnionych (CRL) została pomyślnie zaimportowana.">
+-<!ENTITY  crl.issuer.label                        "CRL wystawiona przez:">
+-<!ENTITY  crl.issuer.org.label                    "Organizacja: ">
+-<!ENTITY  crl.issuer.orgunit.label                "Jednostka: ">
+-<!ENTITY  crl.import.nextupdate.label             "Następna aktualizacja: ">
+-<!ENTITY  crl.autoupdate.fail.cnt.label           "Poprzednie następujące błędy aktualizacji: ">
+-<!ENTITY  crl.autoupdate.fail.reason.label        "Szczegóły ostatniego błędu aktualizacji: ">
+-<!ENTITY  edit.button                             "Ustawienia">
+-
+-<!ENTITY validation.ocsp.caption                  "OCSP">
+-<!ENTITY validation.ocsp.description              "&brandShortName; moża używać protokołu OCSP () do weryfikacji certyfikatów. Online Certificate Status Protocol (OCSP) to verify certificates. Set &brandShortName; to use OCSP as follows:">
+-<!ENTITY disableOCSP.label                        "Nie używaj OCSP do weryfikacji certyfikatów">
+-<!ENTITY disableOCSP.accesskey                    "N">
+-<!ENTITY certOCSP.label                           "Użyj OCSP do weryfikacji wyłącznie tych certyfikatów, które zawierają adres URL usługi OCSP">
+-<!ENTITY certOCSP.accesskey                       "U">
+-<!ENTITY proxyOCSP.label                          "Użyj OCSP do weryfikacji wszystkich certyfikatów z użyciem tego URL i organu certyfikacji:">
+-<!ENTITY proxyOCSP.accesskey                      "O">
+-<!ENTITY serviceURL.label                         "Adres URL usługi:">
+-<!ENTITY serviceURL.accesskey                     "s">
+-<!ENTITY signingCA.label                          "Organ certyfikacji:">
++   -
++   - Alternatively, the contents of this file may be used under the terms of
++   - either the GNU General Public License Version 2 or later (the "GPL"), or
++   - the GNU Lesser General Public License Version 2.1 or later (the "LGPL"),
++   - in which case the provisions of the GPL or the LGPL are applicable instead
++   - of those above. If you wish to allow use of your version of this file only
++   - under the terms of either the GPL or the LGPL, and not to allow others to
++   - use your version of this file under the terms of the MPL, indicate your
++   - decision by deleting the provisions above and replace them with the notice
++   - and other provisions required by the GPL or the LGPL. If you do not delete
++   - the provisions above, a recipient may use your version of this file under
++   - the terms of any one of the MPL, the GPL or the LGPL.
++   -
++   - ***** END LICENSE BLOCK ***** -->
++
++<!ENTITY  pref.validation.title                   "Weryfikacja">
++
++<!ENTITY  validation.crl.caption                  "CRL">
++<!ENTITY  validation.crl.description              "Użyj Menedżera list CRL, by zarządzać listami unieważnionych certyfikatów (CRL), przechowywanymi w Twojej bazie certyfikatów.">
++<!ENTITY  validation.managecrls.button            "Zarządzaj listami CRL...">
++<!ENTITY  validation.managecrls.accesskey         "Z">
++<!ENTITY  validation.crlmanager.label             "Menedżer list CRL">
++<!ENTITY  validation.crlname.label                "Nazwa">
++<!ENTITY  validation.crllastupdate.label          "Ostatnia aktualizacja">
++<!ENTITY  validation.crlnextupdate.label          "Następna aktualizacja">
++<!ENTITY  validation.crlautoupdateenabled.label   "Automatyczna aktualizacja">
++<!ENTITY  validation.crlautoupdatestatus.label    "Status automatycznej aktualizacji">
++<!ENTITY  validation.deletecrl.label              "Usuń">
++<!ENTITY  validation.deletecrl.accesskey          "U">
++<!ENTITY  validation.updatecrl.label              "Aktualizuj">
++<!ENTITY  validation.updatecrl.accesskey          "A">
++<!ENTITY  validation.advanced.label               "Ustawienia">
++<!ENTITY  validation.advanced.accesskey           "s">
++
++<!ENTITY  validation.crl.autoupdate.title         "Preferencje automatycznej aktualizacji CRL">
++<!ENTITY  validation.crl.autoupdate.enable.label  "Włącz automatyczną aktualizację dla tej listy CRL">
++<!ENTITY  validation.crl.autoupdate.time.label1   "Aktualizuj">
++<!ENTITY  validation.crl.autoupdate.time.label2   "dni przed następną datą aktualizacji">
++<!ENTITY  validation.crl.autoupdate.freq.label1   "Aktualizuj co">
++<!ENTITY  validation.crl.autoupdate.freq.label2   "dni">
++<!ENTITY  validation.crl.autoupdate.url.label     "Lista CRL zostanie zaimportowana z:">
++<!ENTITY  crl.import.status.title                 "Status importu listy CRL">
++<!ENTITY  crl.import.success.message              "Lista certyfikatów unieważnionych (CRL) została pomyślnie zaimportowana.">
++<!ENTITY  crl.issuer.label                        "CRL wystawiona przez:">
++<!ENTITY  crl.issuer.org.label                    "Organizacja: ">
++<!ENTITY  crl.issuer.orgunit.label                "Jednostka: ">
++<!ENTITY  crl.import.nextupdate.label             "Następna aktualizacja: ">
++<!ENTITY  crl.autoupdate.fail.cnt.label           "Poprzednie następujące błędy aktualizacji: ">
++<!ENTITY  crl.autoupdate.fail.reason.label        "Szczegóły ostatniego błędu aktualizacji: ">
++<!ENTITY  edit.button                             "Ustawienia">
++
++<!ENTITY validation.ocsp.caption                  "OCSP">
++<!ENTITY validation.ocsp.description              "&brandShortName; może używać protokołu OCSP (Online Certificate Status
++Protocol) do weryfikacji certyfikatów. Może korzystać z jednego z poniższych
++ustawień OCSP:">
++<!ENTITY disableOCSP.label                        "Nie używaj OCSP do weryfikacji certyfikatów">
++<!ENTITY disableOCSP.accesskey                    "N">
++<!ENTITY certOCSP.label                           "Użyj OCSP do weryfikacji wyłącznie tych certyfikatów, które zawierają adres URL usługi OCSP">
++<!ENTITY certOCSP.accesskey                       "U">
++<!ENTITY proxyOCSP.label                          "Użyj OCSP do weryfikacji wszystkich certyfikatów z użyciem tego URL i organu certyfikacji:">
++<!ENTITY proxyOCSP.accesskey                      "O">
++<!ENTITY serviceURL.label                         "Adres URL usługi:">
++<!ENTITY serviceURL.accesskey                     "s">
++<!ENTITY signingCA.label                          "Organ certyfikacji:">
+ <!ENTITY signingCA.accesskey                      "c">
+\ No newline at end of file
+Index: l10n/pl/toolkit/chrome/mozapps/update/updates.properties
+===================================================================
+RCS file: /l10n/l10n/pl/toolkit/chrome/mozapps/update/updates.properties,v
+retrieving revision 1.21
+diff -u -r1.21 updates.properties
+--- l10n/pl/toolkit/chrome/mozapps/update/updates.properties	17 Aug 2006 10:08:43 -0000	1.21
++++ l10n/pl/toolkit/chrome/mozapps/update/updates.properties	19 Aug 2006 16:06:10 -0000
+@@ -1,7 +1,7 @@
+ updateName=%S %S
+ updateFullName=%S (%S)
+ updateType_major=Nowa wersja
+-updateType_minor=Akutalizacja bezpieczeństwa
++updateType_minor=Aktualizacja bezpieczeństwa
+ introType_minor=Dostępna jest ważna aktualizacja bezpieczeństwa dla elementu %S:
+ introType_major=Nowa wersja elementu %S jest dostępna:
+ introType_minor_app=Dostępna jest aktualizacja dla programu %S:
+Index: l10n/pl/toolkit/chrome/mozapps/xpinstall/xpinstallConfirm.properties
+===================================================================
+RCS file: /l10n/l10n/pl/toolkit/chrome/mozapps/xpinstall/xpinstallConfirm.properties,v
+retrieving revision 1.4
+diff -u -r1.4 xpinstallConfirm.properties
+--- l10n/pl/toolkit/chrome/mozapps/xpinstall/xpinstallConfirm.properties	28 Jun 2006 17:26:04 -0000	1.4
++++ l10n/pl/toolkit/chrome/mozapps/xpinstall/xpinstallConfirm.properties	19 Aug 2006 16:06:10 -0000
+@@ -1,11 +1,11 @@
+-Unsigned=Brak podpisu cyfrowego
+-
+-itemWarnIntroMultiple=Zażądano instalacji następujących elementów (liczba elementów: %S):
+-itemWarnIntroSingle=Zażądano instalacji następującego elementu:
+-installButtonDisabledLabel=Zainstaluj (%S)
+-installButtonLabel=Zainstaluj teraz
+-
+-installComplete=Zakończono instalację. Nowe oprogramowanie będzie w pełni funkcjonalne po ponownym uruchomieniu programu.
+-installCompleteTitle=Instalacja zakończona
+-
+-error-203=Wystąpił błąd podczas instalacji elementu
++Unsigned=Brak podpisu cyfrowego
++
++itemWarnIntroMultiple=Zażądano instalacji %S następujących elementów:
++itemWarnIntroSingle=Zażądano instalacji następującego elementu:
++installButtonDisabledLabel=Zainstaluj (%S)
++installButtonLabel=Zainstaluj teraz
++
++installComplete=Zakończono instalację. Nowe oprogramowanie będzie w pełni funkcjonalne po ponownym uruchomieniu programu.
++installCompleteTitle=Instalacja zakończona
++
++error-203=Wystąpił błąd podczas instalacji elementu
+

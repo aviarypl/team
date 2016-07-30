@@ -1,0 +1,62 @@
+Index: toolkit/chrome/mozapps/update/updates.dtd
+===================================================================
+RCS file: /l10n/l10n/pl/toolkit/chrome/mozapps/update/updates.dtd,v
+retrieving revision 1.3
+diff -u -r1.3 updates.dtd
+--- toolkit/chrome/mozapps/update/updates.dtd	17 Jun 2005 23:13:19 -0000	1.3
++++ toolkit/chrome/mozapps/update/updates.dtd	20 Jun 2005 02:10:13 -0000
+@@ -32,7 +32,11 @@
+ <!ENTITY  license.intro                   "Aby zainstalować aktualizację należy zaakceptować warunki licencji. Proszę przeczytać uważnie:">
+ <!ENTITY  license.instructions            "W przypadku akceptacji warunków licencji, należy wybrać przycisk 'Zgadzam się' poniżej, aby kontynuować instalację akutalizacji.">
+ 
+-<!ENTITY  downloading.intro               "Poniższe aktualizacje są (za)instalowane:">
++
++<!ENTITY  downloading.title               "Pobieranie aktualizacji">
++
++<!ENTITY  downloading.intro               "Trwa pobieranie aktualizacji...">
++<!ENTITY  connecting.label                "Łączenie z serwerem aktualizacji...">
+ <!ENTITY  showCompletedUpdates.label      "Pokaż stare aktualizacje na liście">
+ <!ENTITY  showCompletedUpdates.accesskey  "k">
+ 
+@@ -48,4 +52,5 @@
+ <!ENTITY  errorManual.label               "Można dokonać ręcznej aktualizacji programu &brandShortName; poprzez otwarcie
+                                            tego odnośnika i pobranie najnowszej wersji:">
+ 
+-<!ENTITY  finished.label                  "Aktualizacja zakończona">                           
++<!ENTITY  finished.title                  "Aktualizacja została pobrana">
++<!ENTITY  finished.intro                  "Proces pobierania i sprawdzenia integralności aktualizacji zakończył się powodzeniem. Aby aktualizacja mogła zostać zainstalowana, wymagane jest ponowne uruchomienie programu &brandShortName;.">
+Index: toolkit/chrome/mozapps/update/updates.properties
+===================================================================
+RCS file: /l10n/l10n/pl/toolkit/chrome/mozapps/update/updates.properties,v
+retrieving revision 1.4
+diff -u -r1.4 updates.properties
+--- toolkit/chrome/mozapps/update/updates.properties	17 Jun 2005 23:47:22 -0000	1.4
++++ toolkit/chrome/mozapps/update/updates.properties	20 Jun 2005 02:10:13 -0000
+@@ -20,17 +20,23 @@
+ app.update.url.manual=http://www.mozilla.org/update
+ # This value should be empty unless you wish to override app.update.url
+ app.update.url.override=
++closeButtonLabel=Zamknij
+ 
+ statusFormatKBKB=#1 z #2 KB
+ statusFormatKBMB=#1 KB z #2 MB
+ statusFormatMBMB=#1 z #2 MB
+ statusFormatUnknownKB=#1 KB
+ statusFormatUnknownMB=#1 MB
++pausedStatus=Pobrano %S
+ remain=pozosta\u0142o
+ unknownFilesize=nieznany rozmiar pliku
+-statusFormat=#1 z pr\u0119dko\u015Bci\u0105 #2 KB/sec; #3
++statusFormat=#1 z pr\u0119dko\u015Bci\u0105 #2 KB/sec; #3 #4
+ longTimeFormat=#1:#2:#3
+ shortTimeFormat=#2:#3
+ downloadingPrefix=Pobieranie elementu %S...
+-pausedStatus=Pobieranie wstrzymane
+-pausedName=Wstrzymano element %S
++pausedName=Wstrzymano pobieranie elementu %S
++
++restartButton=Uruchom ponownie teraz
++laterButton=P\u00f3\u017Aniej
++restartLaterTitle=Aktualizacja oprogramowania
++restartLaterMessage=Pobrana aktualizacja zostanie zainstalowana przy nast\u0119pnym uruchomieniu programu %S.
+

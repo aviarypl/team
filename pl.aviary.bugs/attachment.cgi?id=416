@@ -1,0 +1,207 @@
+Index: trunk/locale/tipoftheday/tipoftheday.dtd
+===================================================================
+--- trunk/locale/tipoftheday/tipoftheday.dtd	(revision 13)
++++ trunk/locale/tipoftheday/tipoftheday.dtd	(working copy)
+@@ -41,4 +41,5 @@
+ <!ENTITY questionBeginning.label    "Czy wiesz, że...">
+ <!ENTITY startupCheckbox.label      "Pokazuj porady przy starcie">
+ <!ENTITY nextTipButton.label        "Następna porada">
++<!ENTITY previousTipButton.label    "Poprzednia porada">
+ <!ENTITY closeTipButton.label       "Zamknij">
+Index: trunk/locale/pl-PL/cascades/cascades.properties
+===================================================================
+--- trunk/locale/pl-PL/cascades/cascades.properties	(revision 13)
++++ trunk/locale/pl-PL/cascades/cascades.properties	(working copy)
+@@ -30,3 +30,7 @@
+ SaveBeforeLocalSheetWarning1=(Uwaga: zapisz dokument *przed* do\u0142\u0105czeniem lokalnego arkusza styl\u00f3w)
+ SaveBeforeLocalSheetWarning2=(u\u017cyj przycisku Od\u015bwie\u017c, jesli arkusz styl\u00f3w nie zostanie natychmiast pobrany)
+ SelectCSSFile=Wybierz plik CSS
++AlternateKeyword= (alernatywny) 
++StyleSheet=Arkusz styl\u00f3w
++StyleSheetIsEmbedded=brak (arkusz osadzony w dokumencie)
++Transparent=przezroczysty
+Index: trunk/locale/editor/confirmInlineSpellChecking.properties
+===================================================================
+--- trunk/locale/editor/confirmInlineSpellChecking.properties	(revision 0)
++++ trunk/locale/editor/confirmInlineSpellChecking.properties	(revision 0)
+@@ -0,0 +1,4 @@
++Proceed=Kontynuuj
++ProceedAccessKey=K
++Disable=Wy\u0142\u0105cz sprawdzanie pisowni
++DisableAccessKey=W
+\ No newline at end of file
+Index: trunk/locale/editor/pref-editing.dtd
+===================================================================
+--- trunk/locale/editor/pref-editing.dtd	(revision 13)
++++ trunk/locale/editor/pref-editing.dtd	(working copy)
+@@ -5,6 +5,14 @@
+ <!ENTITY  authorName.accesskey      "A">
+ <!ENTITY  pageColorHeader           "Domyślny wygląd strony">
+ 
++<!ENTITY dialect.label              "Kod">
++<!ENTITY markupLanguage.label       "Język:">
++<!ENTITY dtd.label                  "DTD:">
++<!ENTITY htmlMarkupLanguage.label   "HTML 4">
++<!ENTITY xhtmlMarkupLanguage.label  "XHTML 1">
++<!ENTITY looseDTD.label             "Transitional">
++<!ENTITY strictDTD.label            "Strict">
++
+ <!ENTITY defaultColorsRadio.label   "Domyślne kolory przeglądarki (Nie definiuj kolorów na stronie)">
+ <!ENTITY defaultColors.accesskey    "D">
+ <!ENTITY customColorsRadio.label    "Użyj własnych kolorów:">
+Index: trunk/locale/editor/Nvu-totd-en.rdf
+===================================================================
+--- trunk/locale/editor/Nvu-totd-en.rdf	(revision 13)
++++ trunk/locale/editor/Nvu-totd-en.rdf	(working copy)
+@@ -97,13 +97,13 @@
+     </item>
+ 
+     <item>
+-      <title>masz bezpośredni dostęp do społeczności użytkowników Nvu?</title>
++      <title>...masz bezpośredni dostęp do społeczności użytkowników Nvu?</title>
+       <description>Wybierz z menu Pomoc > Fora.</description>
+     </item>
+ 
+     <item>
+       <title>...Nvu może automatycznie otworzyć dokument przy starcie?</title>
+-      <description>Skorzystaj z opcji linii komend -edit:      nvu -edit adres</description>
++      <description>Skorzystaj z opcji linii komend: nvu adres</description>
+     </item>
+ 
+     <item>
+@@ -121,6 +121,11 @@
+       <title>...możesz otworzyć nowy panel naciskając kombinację klawiszy?</title>
+       <description>Control+t (Command+t w Mac OS X) otworzy nowy, pusty panel.</description>
+     </item>
++    
++    <item>
++      <title>...możesz otworzyć nowe okno naciskając kombinację klawiszy?</title>
++      <description>Control++shift+t (Command+shift+t w Mac OS X) otworzy nowe, puste okno.</description>
++    </item>
+ 
+   </channel>
+ </rss>
+Index: trunk/locale/editor/aboutDialog.dtd
+===================================================================
+--- trunk/locale/editor/aboutDialog.dtd	(revision 13)
++++ trunk/locale/editor/aboutDialog.dtd	(working copy)
+@@ -42,5 +42,5 @@
+ <!ENTITY copyrightLink          "http://nvu.com/about.html">
+ <!ENTITY credits                "Podziękowania">
+ <!ENTITY aboutVersion           "wersja">
+-<!ENTITY copyrightText          "&#169;1998-2004 Współtwórcy. Wszelkie prawa zastrzeżone.">
++<!ENTITY copyrightText          "&#169;1998-2005 Współtwórcy. Wszelkie prawa zastrzeżone.">
+ <!ENTITY aboutLink              "&lt; O &brandShortName;">
+Index: trunk/locale/editor/confirmInlineSpellChecking.dtd
+===================================================================
+--- trunk/locale/editor/confirmInlineSpellChecking.dtd	(revision 0)
++++ trunk/locale/editor/confirmInlineSpellChecking.dtd	(revision 0)
+@@ -0,0 +1,40 @@
++<!-- ***** BEGIN LICENSE BLOCK *****
++   - Version: MPL 1.1/GPL 2.0/LGPL 2.1
++   -
++   - The contents of this file are subject to the Mozilla Public License Version
++   - 1.1 (the "License"); you may not use this file except in compliance with
++   - the License. You may obtain a copy of the License at
++   - http://www.mozilla.org/MPL/
++   -
++   - Software distributed under the License is distributed on an "AS IS" basis,
++   - WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
++   - for the specific language governing rights and limitations under the
++   - License.
++   -
++   - The Original Code is Nvu.
++   -
++   - The Initial Developer of the Original Code is
++   - Linspire Inc..
++   - Portions created by the Initial Developer are Copyright (C) 2005
++   - the Initial Developer. All Rights Reserved.
++   -
++   - Contributor(s):
++   -   Daniel Glazman <glazman@disruptive-innovations.com>, on behalf of Linspire Inc.
++   -
++   - Alternatively, the contents of this file may be used under the terms of
++   - either the GNU General Public License Version 2 or later (the "GPL"), or
++   - the GNU Lesser General Public License Version 2.1 or later (the "LGPL"),
++   - in which case the provisions of the GPL or the LGPL are applicable instead
++   - of those above. If you wish to allow use of your version of this file only
++   - under the terms of either the GPL or the LGPL, and not to allow others to
++   - use your version of this file under the terms of the MPL, indicate your
++   - decision by deleting the provisions above and replace them with the notice
++   - and other provisions required by the LGPL or the GPL. If you do not delete
++   - the provisions above, a recipient may use your version of this file under
++   - the terms of any one of the MPL, the GPL or the LGPL.
++   -
++   - ***** END LICENSE BLOCK ***** -->
++
++<!ENTITY window.title                     "Potwierdź">
++<!ENTITY confirmInlineSpellChecking.label "Moduł sprawdzania pisowni jest włączony. Przed opuszczeniem widoku edycji źródła &branShortName; sprawdzi pisownię w edytowanym dokumencie. W zależności od długości i stopnia skomplikowania dokumentu proces ten może znacznie obciążyć komputer. Możesz kontynuować i sprawdzić pisownię lub wyłączyć moduł sprawdzania pisowni.">
++<!ENTITY exitWarningCheckbox.label        "Nie pokazuj tego okna w przyszłości">
+\ No newline at end of file
+Index: trunk/locale/editor/EdDialogOverlay.dtd
+===================================================================
+--- trunk/locale/editor/EdDialogOverlay.dtd	(revision 13)
++++ trunk/locale/editor/EdDialogOverlay.dtd	(working copy)
+@@ -34,3 +34,5 @@
+ <!-- Shared by Link and Image dialogs -->
+ <!ENTITY LinkURLEditField.label "Wprowadź adres strony WWW, nazwę pliku lokalnego lub wybierz Zakładkę albo Nagłówek z poniższej listy:">
+ <!ENTITY LinkURLEditField.accessKey "o">
++
++<!ENTITY isMailAddress.label "Tekst wprowadzony powyżej jest adresem e-mail">
+Index: trunk/locale/editor/credits.html
+===================================================================
+--- trunk/locale/editor/credits.html	(revision 13)
++++ trunk/locale/editor/credits.html	(working copy)
+@@ -178,7 +178,7 @@
+             Neil Deakin oraz grupy Mozdev<br>
+             Benjamin Smedberg<br>
+             R.J. Keller<br>
+-            Kamal Deep Singh<br>
++            Kamal Deep Singh Sahambi<br>
+             Michael Pyne<br>
+             <em>Idefix</em> na forach Nvu
+           </div>
+Index: trunk/locale/editor/editorOverlay.dtd
+===================================================================
+--- trunk/locale/editor/editorOverlay.dtd	(revision 13)
++++ trunk/locale/editor/editorOverlay.dtd	(working copy)
+@@ -186,6 +186,9 @@
+ <!ENTITY insertBreakAllCmd.label "Linię podziału poniżej obrazka" >
+ <!ENTITY insertbreakall.accesskey "p" >
+ 
++<!ENTITY insertNbspCmd.label "Twarda spacja...">
++<!ENTITY insertNbsp.accesskey "w">
++
+ <!ENTITY insertPHPCode.label "Kod PHP">
+ <!ENTITY insertphpcode.accesskey "p">
+ <!ENTITY insertComment.label "Komentarz">
+@@ -639,8 +642,9 @@
+ <!ENTITY aboutmenu.accesskey      "O">
+ <!ENTITY localizingnvu.accesskey  "L">
+ <!ENTITY localizingNvu.label      "Lokalizacja Nvu">
++<!ENTITY userGuideMenu.label      "Przewodnik użytkownika (on-line)">
++<!ENTITY userguidemenu.accesskey  "u">
+ 
+-
+ <!ENTITY leftGlued.tooltip        "Przyklej do lewej krawędzi">
+ <!ENTITY rightGlued.tooltip       "Przyklej do prawej krawędzi">
+ <!ENTITY centerGlued.tooltip      "Ustaw na środku">
+Index: trunk/locale/communicator/openLocation.dtd
+===================================================================
+--- trunk/locale/communicator/openLocation.dtd	(revision 13)
++++ trunk/locale/communicator/openLocation.dtd	(working copy)
+@@ -54,3 +54,4 @@
+ <!ENTITY blankTemplate.label     "Pusty szablon">
+ 
+ <!ENTITY xhtmlDocument.label     "utwórz dokument XHTML">
++<!ENTITY strictDtd.label         "zastosuj DTD Strict">
+Index: trunk/locale/editor-region/region.properties
+===================================================================
+--- trunk/locale/editor-region/region.properties	(revision 13)
++++ trunk/locale/editor-region/region.properties	(working copy)
+@@ -4,3 +4,4 @@
+ editor.forums.url=http://forum.nvudev.org/
+ editor.bugReports.url=http://www.nvu.com/bugreport2.php
+ editor.L10N.url=http://glazman.org/nvu/NVU-L10N.html
++editor.CCuserGuide.url=http://www.nvudev.org/guide/1.0PR
+

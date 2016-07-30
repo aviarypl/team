@@ -1,0 +1,178 @@
+diff --git a/template/pl/default/global/code-error.html.tmpl b/template/pl/default/global/code-error.html.tmpl
+--- a/template/pl/default/global/code-error.html.tmpl
++++ b/template/pl/default/global/code-error.html.tmpl
+@@ -61,7 +61,7 @@
+       [%+ Param('emailregexpdesc') %]
+     [% END %]
+     Nie może też zawierać żadnego z poniższych znaków specjalnych:
+-    <tt>\ ( ) &amp; &lt; &gt; , ; : &quot; [ ]</tt>, ani białych znaków.
++    <tt>\ ( ) &amp; &lt; &gt; , ; : &quot; [ ]</tt>, ani znaków niedrukowalnych.
+ 
+   [% ELSIF error == "authres_unhandled" %]
+     Wartość zwracana przez [% value FILTER html %] nie została obsłużona 
+diff --git a/template/pl/default/global/confirm-action.html.tmpl b/template/pl/default/global/confirm-action.html.tmpl
+--- a/template/pl/default/global/confirm-action.html.tmpl
++++ b/template/pl/default/global/confirm-action.html.tmpl
+@@ -46,7 +46,7 @@
+   [% ELSIF reason == "invalid_token" %]
+     Zmiany zostały wysłane do skryptu „[% script_name FILTER html %]” z nieprawidłowym
+     tokenem, który może wskazywać, że ktoś próbował cię wykorzystać np.
+-    poprzez kliknięcie na URL, który wykonał przekierowanie tutaj <b>bez twojej
++    poprzez kliknięcie adresu URL, który wykonał przekierowanie tutaj <b>bez twojej
+     zgody</b>.
+   [% END %]
+   <p>
+diff --git a/template/pl/default/global/field-descs.none.tmpl b/template/pl/default/global/field-descs.none.tmpl
+--- a/template/pl/default/global/field-descs.none.tmpl
++++ b/template/pl/default/global/field-descs.none.tmpl
+@@ -28,9 +28,9 @@
+ 
+ [% SET search_descs = {
+   "noop"           => "---",
+-  "equals"         => "jest taki, jak",
+-  "notequals"      => "jest inny niż",
+-  "anyexact"       => "jest taki, jak którekolwiek z wyrażeń",
++  "equals"         => "jest taka, jak",
++  "notequals"      => "jest inna niż",
++  "anyexact"       => "jest taka, jak którekolwiek z wyrażeń",
+   "substring"      => "zawiera wyrażenie",
+   "casesubstring"  => "zawiera wyrażenie (identyczne)",
+   "notsubstring"   => "nie zawiera wyrażenia",
+@@ -49,7 +49,7 @@
+   "changedbefore"  => "zmieniony przed",
+   "changedafter"   => "zmieniony po",
+   "changedfrom"    => "zmieniony z",
+-  "changedto"      => "zmieniony na",
++  "changedto"      => "zostało zmienione na",
+   "changedby"      => "zmieniony przez",
+   "matches"        => "pasuje do",
+   "notmatches"     => "nie pasuje do",
+diff --git a/template/pl/default/global/hidden-fields.html.tmpl b/template/pl/default/global/hidden-fields.html.tmpl
+--- a/template/pl/default/global/hidden-fields.html.tmpl
++++ b/template/pl/default/global/hidden-fields.html.tmpl
+@@ -40,8 +40,8 @@
+     <div class="box">
+       <p>
+         Nie można zapisać wysłanego pliku, ponieważ formularz jest niekompletny.
+-        Ponieważ nie można przetrzymywać pliku pomiędzy kolejnymi wysłaniami
+-        formularza, należy uzupełnić brakujące elementy i ponownie
++        Ze względu na to, że nie można przetrzymywać pliku pomiędzy kolejnymi
++        wysłaniami formularza, należy uzupełnić brakujące elementy i ponownie
+         załączyć plik.
+       </p>
+       <p>
+diff --git a/template/pl/default/global/user-error.html.tmpl b/template/pl/default/global/user-error.html.tmpl
+--- a/template/pl/default/global/user-error.html.tmpl
++++ b/template/pl/default/global/user-error.html.tmpl
+@@ -306,7 +306,7 @@
+ 
+   [% ELSIF error == "comment_too_long" %]
+     [% title = "Zbyt długi komentarz" %]
+-    Komentarz nie może być dłuższy niż 
++    Komentarz nie może zawierać więcej niż 
+     [%+ constants.MAX_COMMENT_LENGTH FILTER html %] znaków.
+ 
+   [% ELSIF error == "auth_classification_not_enabled" %]
+@@ -356,8 +356,8 @@
+   [% ELSIF error == "component_has_bugs" %]
+     [% title = BLOCK %]Komponent ma przypisane [% terms.bledy %][% END %]
+     Jest otwartych [% nb FILTER html %] [%+ terms.bledow %] dla tego komponentu!
+-    Przed usunięciem komponentu, należy przepisać te [% terms.bledy %] do
++    Przed usunięciem komponentu, należy przypisać te [% terms.bledy %] do
+     innego komponentu.
+ 
+   [% ELSIF error == "component_name_too_long" %]
+     [% title = "Nazwa komponentu jest zbyt długa" %]
+@@ -360,8 +360,8 @@
+     innego komponentu.
+ 
+   [% ELSIF error == "component_name_too_long" %]
+     [% title = "Nazwa komponentu jest zbyt długa" %]
+-    Nazwa komponentu nie może być dłuższa niż [% constants.MAX_COMPONENT_SIZE FILTER html %]
++    Nazwa komponentu nie może zawierać więcej niż [% constants.MAX_COMPONENT_SIZE FILTER html %]
+     znaków. „[% name FILTER html %]” zawiera więcej niż ([% name.size %] znaków).
+ 
+   [% ELSIF error == "component_need_initialowner" %]
+@@ -375,7 +375,7 @@
+   [% ELSIF error == "customfield_not_obsolete" %]
+     [% title = "Pole dodatkowe nie jest zdezaktualizowane" %]
+     Pole dodatkowe „[% name FILTER html %]” nie jest zdezaktualizowane.
+-    Przed usunięciem, należy je zdezaktualizować.
++    Przed usunięciem należy je zdezaktualizować.
+ 
+   [% ELSIF error == "customfield_has_activity" %]
+     [% title = "Pole dodatkowe jest aktywne" %]
+@@ -827,7 +827,7 @@
+       [%+ Param('emailregexpdesc') %]
+     [% END %]
+     Adres nie może również zawierać żadnego z tych znaków:
+-    <tt>\ ( ) &amp; &lt; &gt; , ; : &quot; [ ]</tt> oraz białych spacji.
++    <tt>\ ( ) &amp; &lt; &gt; , ; : &quot; [ ]</tt> oraz znaków niedrukowalnych.
+     
+   [% ELSIF error == "illegal_frequency" %]
+     [% title = "Za często generowane serie" %]
+@@ -993,7 +993,7 @@
+     [% END %]
+ 
+   [% ELSIF error == "json_rpc_get_method_required" %]
+-    Korzystając z JSON-RPC używając metody GET, należy podać parametr „method”.
++    Gdy używasz JSON-RPC korzystając z metody GET, należy podać parametr „method”.
+     Więcej szczegółów znajdziesz w dokumentacji
+     [%+ docs_urlbase FILTER html %]api/Bugzilla/WebService/Server/JSONRPC.html
+ 
+@@ -1008,8 +1008,8 @@
+     znaki specjalne są dopuszczone do wykorzystania jako parametr „callback”: <code>[]._</code>
+ 
+   [% ELSIF error == "json_rpc_post_only" %]
+-    Z powodów bezpieczeństwa korzystając z JSON-RPC możesz używać tylko
+-    metody POST protokołu HTTP.
++    Z powodów bezpieczeństwa musisz użyć HTTP POST, by wywołać
++    metodę „[% method FILTER html %]”.
+ 
+   [% ELSIF error == "keyword_already_exists" %]
+     [% title = "Słowo kluczowe już istnieje" %]
+@@ -1417,8 +1417,8 @@
+ 
+   [% ELSIF error == "query_name_too_long" %]
+     [% title = "Zbyt długa nazwa wyszukiwania" %]
+-    Nazwa wyszukiwania nie może być dłuższa niż [% constants.MAX_LEN_QUERY_NAME FILTER html %]
+-    znaki.	
++    Nazwa wyszukiwania nie może zawierać więcej niż [% constants.MAX_LEN_QUERY_NAME FILTER html %]
++    znaków.	
+ 
+   [% ELSIF error == "quicksearch_unknown_field" %]
+     [% title = "Nieznane pole szybkiego wyszukiwania" %]
+@@ -1525,7 +1525,7 @@
+   [% ELSIF error == "sudo_invalid_cookie" %]
+     [% title = "Nieprawidłowe ciasteczko sesji sudo" %]
+     Twoje ciasteczko sesji sudo jest nieprawidłowe - wygasło lub sesja sudo
+-    nie została prawidłowo rozpoczęta. Aby kontynuować pracę używając własnej tożsamości, odśwież tę stronę
++    nie została prawidłowo rozpoczęta. Aby kontynuować pracę, używając własnej tożsamości, odśwież tę stronę
+     lub przejdź na inną.
+ 
+   [% ELSIF error == "sudo_illegal_action" %]
+@@ -1574,7 +1574,7 @@
+     [% ELSIF type == "account" %]
+       konta
+     [% END %]
+-    w zbyt krótkim odstępie czasu od poprzedniej próby. Proszę poczekać chwilę i spróbować ponownie.
++    w zbyt krótkim odstępie czasu od poprzedniej próby. Proszę odczekać chwilę i spróbować ponownie.
+ 
+   [% ELSIF error == "unknown_action" %]
+     [% IF action %]
+@@ -1690,10 +1690,10 @@
+     [% error_message = Hook.process("errors") %]
+ 
+     [% IF not error_message %]
+-      [% title = "Opis błędu nie został znaleziony" %]
+-      Opis błędu użytkownika <code>[% error FILTER html %]</code> nie został
+-      znaleziony. Proszę wysłać wiadomość do [% Param("maintainer") %] opisującą
+-      kroki, które doprowadziły do wyświetlenia tej wiadomości.
++      [% title = "Nie znaleziono opisu błędu" %]
++      Nie znaleziono opisu błędu użytkownika <code>[% error FILTER html %]</code>.
++      Proszę wysłać wiadomość do [% Param("maintainer") %] opisującą kroki, które
++      doprowadziły do wyświetlenia tej wiadomości.
+     [% ELSE %]
+       [% error_message FILTER none %]
+     [% END %]
+

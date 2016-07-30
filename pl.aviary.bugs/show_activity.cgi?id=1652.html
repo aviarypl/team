@@ -1,0 +1,2139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Changes made to bug 1652</title>
+
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<link href="data/assets/2f5735cf3abd04bddc8e363a8613a9f5.css" rel="stylesheet" type="text/css">
+
+
+
+    
+<script type="text/javascript" src="data/assets/1b4e898422a669ab82b604a2c23edce5.js"></script>
+
+    <script type="text/javascript">
+    <!--
+        YAHOO.namespace('bugzilla');
+        YAHOO.util.Event.addListener = function (el, sType, fn, obj, overrideContext) {
+               if ( ("onpagehide" in window || YAHOO.env.ua.gecko) && sType === "unload") { sType = "pagehide"; };
+               var capture = ((sType == "focusin" || sType == "focusout") && !YAHOO.env.ua.ie) ? true : false;
+               return this._addListener(el, this._getType(sType), fn, obj, overrideContext, capture);
+         };
+        if ( "onpagehide" in window || YAHOO.env.ua.gecko) {
+            YAHOO.util.Event._simpleRemove(window, "unload", 
+                                           YAHOO.util.Event._unload);
+        }
+        
+        function unhide_language_selector() { 
+            YAHOO.util.Dom.removeClass(
+                'lang_links_container', 'bz_default_hidden'
+            ); 
+        } 
+        YAHOO.util.Event.onDOMReady(unhide_language_selector);
+
+        
+        var BUGZILLA = {
+            param: {
+                cookiepath: '\/',
+                maxusermatches: 1000
+            },
+            constant: {
+                COMMENT_COLS: 80
+            },
+            string: {
+                
+
+                attach_desc_required:
+                    "You must enter a Description for this attachment.",
+                component_required:
+                    "You must select a Component for this bug.",
+                description_required:
+                    "You must enter a Description for this bug.",
+                short_desc_required:
+                    "You must enter a Summary for this bug.",
+                version_required:
+                    "You must select a Version for this bug."
+            }
+        };
+
+    // -->
+    </script>
+<script type="text/javascript" src="data/assets/d41d8cd98f00b204e9800998ecf8427e.js"></script>
+
+    
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+                       title="Bugzilla" href="search_plugin.cgi">
+    <link rel="shortcut icon" href="images/favicon.ico">
+  </head>
+
+  <body 
+        class="bugs-aviary-pl yui-skin-sam">
+
+  <div id="header"><div id="banner">
+  </div>
+
+    <div id="titles">
+      <span id="title">Bugzilla &ndash; Activity log for bug 1652: [tracking] Lokalizacja SeaMonkey 2.0.x</span>
+
+
+    </div>
+
+
+    <div id="common_links"><ul class="links">
+  <li><a href="index.html">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi.html">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi.html">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi.html">Search</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="http://bugs.aviary.pl/buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input type="hidden" id="no_redirect_top" name="no_redirect" value="0">
+    <script type="text/javascript">
+      if (history && history.replaceState) {
+        var no_redirect = document.getElementById("no_redirect_top");
+        no_redirect.value = 1;
+      }
+    </script>
+    <input class="txt" type="text" id="quicksearch_top" name="quicksearch" 
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search" 
+           id="find_top"></form>
+  <a href="page.cgi%3Fid=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="report.cgi.html">Reports</a></li>
+
+  <li>
+      <span class="separator">| </span>
+        <a href="request.cgi.html">Requests</a></li>
+
+
+  
+    
+      <li id="new_account_container_top">
+        <span class="separator">| </span>
+        <a href="createaccount.cgi.html">New&nbsp;Account</a>
+      </li>
+
+    <li id="mini_login_container_top">
+  <span class="separator">| </span>
+  <a id="login_link_top" href="http://bugs.aviary.pl/show_activity.cgi?id=1652&amp;GoAheadAndLogIn=1"
+     onclick="return show_mini_login_form('_top')">Log In</a>
+
+  <form action="show_activity.cgi%3Fid=1652.html" method="POST"
+        class="mini_login bz_default_hidden"
+        id="mini_login_top">
+    <input id="Bugzilla_login_top" required
+           name="Bugzilla_login" class="bz_login"
+        type="email" placeholder="Email Address">
+    <input class="bz_password" name="Bugzilla_password" type="password"
+           id="Bugzilla_password_top" required
+           placeholder="Password">
+    <input type="hidden" name="Bugzilla_login_token"
+           value="1469831737-DVypWmhaZ5soCVbNn_WnLUsUxxC7V6c8hrotz7SiB4A">
+    <input type="submit" name="GoAheadAndLogIn" value="Log in"
+            id="log_in_top">
+    <a href="show_activity.cgi%3Fid=1652.html#" onclick="return hide_mini_login_form('_top')">[x]</a>
+  </form>
+</li>
+
+
+  <li id="forgot_container_top">
+    <span class="separator">| </span>
+    <a id="forgot_link_top" href="http://bugs.aviary.pl/show_activity.cgi?id=1652&amp;GoAheadAndLogIn=1#forgot"
+       onclick="return show_forgot_form('_top')">Forgot Password</a>
+    <form action="http://bugs.aviary.pl/token.cgi" method="post" id="forgot_form_top"
+          class="mini_forgot bz_default_hidden">
+      <label for="login_top">Login:</label>
+      <input name="loginname" size="20" id="login_top" required
+          type="email" placeholder="Your Email Address">
+      <input id="forgot_button_top" value="Reset Password" type="submit">
+      <input type="hidden" name="a" value="reqpw">
+      <input type="hidden" id="token_top" name="token"
+             value="1469831737-SHQ63Ibi6kLPQIpdwrj1krgOHnhFV8AxtE2XZ3IVCCI">
+      <a href="show_activity.cgi%3Fid=1652.html#" onclick="return hide_forgot_form('_top')">[x]</a>
+    </form>
+  </li>
+</ul>
+    </div>
+  </div>
+
+  <div id="bugzilla-body">
+
+<p>
+  Back to <a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED WORKSFORME - [tracking] Lokalizacja SeaMonkey 2.0.x"
+   href="show_bug.cgi%3Fid=1652.html">bug 1652</a>
+</p>
+<table id="bug_activity">
+    <tr class="column_header">
+      <th>Who</th>
+      <th>When</th>
+      <th>What</th>
+      <th>Removed</th>
+      <th>Added</th>
+    </tr>
+
+      <tr>
+        <td rowspan="1">akalla
+        </td>
+        <td rowspan="1">2008-03-10 13:26:47 CET
+        </td>
+            <td>
+                Flags
+            </td><td>
+  </td><td>blocking-seamonkey-2.0+
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">akalla
+        </td>
+        <td rowspan="1">2008-03-10 13:28:28 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Synchronizacja terminologii w SeaMonkey w stosunku do Fx, Tb"
+   href="show_bug.cgi%3Fid=639.html">639</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">akalla
+        </td>
+        <td rowspan="1">2008-04-06 15:58:10 CEST
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - &quot;Dodaj stronę do zakładek&quot; -&gt; &quot;Dodaj zakładkę do strony&quot;"
+   href="show_bug.cgi%3Fid=1089.html">1089</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="3">akalla
+        </td>
+        <td rowspan="3">2008-04-06 16:00:35 CEST
+        </td>
+            <td>
+                Severity
+            </td><td>poważny
+  </td><td>blokujący
+  </td></tr><tr>
+            <td>
+                Summary
+            </td><td>Metabug dotyczacy bledow do poprawy przed wydaniem SeaMonkey 2.0
+  </td><td>[tracking] Lokalizacja SeaMonkey 2.0
+  </td></tr><tr>
+            <td>
+                Alias
+            </td><td>
+  </td><td>seamonkey2
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">akalla
+        </td>
+        <td rowspan="1">2008-04-06 16:01:53 CEST
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Widok/Kodowanie znaków, Opcje/Kodowanie znaków - zmiana rodzaju?"
+   href="show_bug.cgi%3Fid=146.html">146</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">akalla
+        </td>
+        <td rowspan="1">2008-04-06 16:02:26 CEST
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - [tracking] Lokalizacja Firefoksa 3.0"
+   href="show_bug.cgi%3Fid=1040.html">1040</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">akalla
+        </td>
+        <td rowspan="1">2008-04-07 14:20:41 CEST
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Pozbyć się \uXXXX z *.properties"
+   href="show_bug.cgi%3Fid=916.html">916</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">akalla
+        </td>
+        <td rowspan="1">2008-04-07 14:41:37 CEST
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Tworzenie / Format / Styl tekstu / Element nierozdzielający"
+   href="show_bug.cgi%3Fid=761.html">761</a>, <a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - Dodać komponent Editor"
+   href="show_bug.cgi%3Fid=1706.html">1706</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">akalla
+        </td>
+        <td rowspan="1">2008-04-07 15:16:34 CEST
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Zmienić &quot;Uruchom ponownie teraz&quot; na &quot;Uruchom teraz ponownie&quot;"
+   href="show_bug.cgi%3Fid=1581.html">1581</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">akalla
+        </td>
+        <td rowspan="1">2008-04-07 15:20:40 CEST
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Tekst przy wiadomości przekazywanej"
+   href="show_bug.cgi%3Fid=1561.html">1561</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">akalla
+        </td>
+        <td rowspan="1">2008-04-09 07:44:49 CEST
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Plik -&gt; Nowy"
+   href="show_bug.cgi%3Fid=1611.html">1611</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="5">akalla
+        </td>
+        <td rowspan="5">2008-04-22 05:17:17 CEST
+        </td>
+            <td>
+                Component
+            </td><td>SeaMonkey
+  </td><td>Ogólne
+  </td></tr><tr>
+            <td>
+                Version
+            </td><td>Trunk
+  </td><td>2.0
+  </td></tr><tr>
+            <td>
+                Product
+            </td><td>Lokalizacje Aviary.pl
+  </td><td>SeaMonkey
+  </td></tr><tr>
+            <td>
+                Target Milestone
+            </td><td>Nieokreślona
+  </td><td>2.0
+  </td></tr><tr>
+            <td>
+                Flags
+            </td><td>blocking-seamonkey-2.0+
+  </td><td>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">akalla
+        </td>
+        <td rowspan="1">2008-04-22 07:43:27 CEST
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Komunikaty konsoli błędów"
+   href="show_bug.cgi%3Fid=930.html">930</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">akalla
+        </td>
+        <td rowspan="1">2008-06-08 15:36:23 CEST
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Problemy lokalizacyjne związane z bugiem 338753"
+   href="show_bug.cgi%3Fid=1148.html">1148</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">akalla
+        </td>
+        <td rowspan="1">2008-11-24 13:40:15 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Przetłumaczenie helpa SeaMonkey dla 1.1.x"
+   href="show_bug.cgi%3Fid=637.html">637</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">akalla
+        </td>
+        <td rowspan="1">2008-11-24 17:58:09 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Problemy z maksymalną szerokością menu w MAC OS X"
+   href="show_bug.cgi%3Fid=2064.html">2064</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">akalla
+        </td>
+        <td rowspan="1">2008-12-08 10:49:56 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - &quot;2003-2007&quot; w Pomocy"
+   href="show_bug.cgi%3Fid=2039.html">2039</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">kstawarz
+        </td>
+        <td rowspan="1">2008-12-09 11:03:04 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - &quot;Źródło zaznaczenia&quot; -&gt; &quot;Źródło zaznaczonego fragmentu&quot;?"
+   href="show_bug.cgi%3Fid=2129.html">2129</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">kstawarz
+        </td>
+        <td rowspan="1">2008-12-09 11:21:59 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Liczba wierszy i kolumny"
+   href="show_bug.cgi%3Fid=2130.html">2130</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">kstawarz
+        </td>
+        <td rowspan="1">2008-12-09 11:47:46 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED WONTFIX - &quot;Nowy&quot; czy &quot;Nowa&quot;?"
+   href="show_bug.cgi%3Fid=2131.html">2131</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">kstawarz
+        </td>
+        <td rowspan="1">2008-12-09 11:58:40 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Zbędny dwukropek w wizytówce"
+   href="show_bug.cgi%3Fid=2132.html">2132</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">akalla
+        </td>
+        <td rowspan="1">2008-12-21 19:10:59 CET
+        </td>
+            <td>
+                Depends on
+            </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - &quot;Dodaj stronę do zakładek&quot; -&gt; &quot;Dodaj zakładkę do strony&quot;"
+   href="show_bug.cgi%3Fid=1089.html">1089</a>
+  </td><td>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">akalla
+        </td>
+        <td rowspan="1">2008-12-29 11:47:37 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - za długie teksty w pl/toolkit/chrome/mozapps/preferences/ocsp.dtd"
+   href="show_bug.cgi%3Fid=612.html">612</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">kstawarz
+        </td>
+        <td rowspan="1">2009-01-02 11:20:18 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED INVALID - &quot;Informacje o wersji programu&quot; nie pokazuje tych informacji"
+   href="show_bug.cgi%3Fid=2202.html">2202</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">kstawarz
+        </td>
+        <td rowspan="1">2009-01-02 11:28:29 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Męska forma przy zgłaszaniu niedziałającej witryny"
+   href="show_bug.cgi%3Fid=2203.html">2203</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">akalla
+        </td>
+        <td rowspan="1">2009-01-04 12:38:36 CET
+        </td>
+            <td>
+                Depends on
+            </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED INVALID - &quot;Informacje o wersji programu&quot; nie pokazuje tych informacji"
+   href="show_bug.cgi%3Fid=2202.html">2202</a>
+  </td><td>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">akalla
+        </td>
+        <td rowspan="1">2009-01-07 01:34:31 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Nietypowe formatki tytułów odpowiedzi"
+   href="show_bug.cgi%3Fid=2189.html">2189</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">akalla
+        </td>
+        <td rowspan="1">2009-03-18 14:31:00 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - Wyczyścić mozillowe pliki ze zbędnych znaków"
+   href="show_bug.cgi%3Fid=2371.html">2371</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">akalla
+        </td>
+        <td rowspan="1">2009-03-18 14:38:34 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Poprawić &quot;Kończenie instalatora&quot; w mui.properties"
+   href="show_bug.cgi%3Fid=2279.html">2279</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">akalla
+        </td>
+        <td rowspan="1">2009-03-22 12:42:14 CET
+        </td>
+            <td>
+                Depends on
+            </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Nietypowe formatki tytułów odpowiedzi"
+   href="show_bug.cgi%3Fid=2189.html">2189</a>
+  </td><td>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">kstawarz
+        </td>
+        <td rowspan="1">2009-06-21 11:11:55 CEST
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Podwójny znak zapytania na stronie z niezaufanym połączeniem"
+   href="show_bug.cgi%3Fid=2529.html">2529</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">kstawarz
+        </td>
+        <td rowspan="1">2009-10-31 17:28:12 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - [ChatZilla] Drobne błędy przy opisie domyślnej wiadomości opuszczenia kanału"
+   href="show_bug.cgi%3Fid=2681.html">2681</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">kstawarz
+        </td>
+        <td rowspan="1">2009-10-31 18:12:18 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - [ChatZilla] 'była możliwość' w tooltipie ustawień"
+   href="show_bug.cgi%3Fid=2682.html">2682</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">kstawarz
+        </td>
+        <td rowspan="1">2009-10-31 18:17:10 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - [ChatZilla] Niejasny tekst w tooltipie od typów proxy + brakujące przecinki w preferencjach"
+   href="show_bug.cgi%3Fid=2683.html">2683</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">kstawarz
+        </td>
+        <td rowspan="1">2009-10-31 18:31:00 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - [ChatZilla] Brak przecinka i niezgrabne zdanie w tooltipie od automatycznych zmian statusu"
+   href="show_bug.cgi%3Fid=2684.html">2684</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">kstawarz
+        </td>
+        <td rowspan="1">2009-10-31 18:35:21 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - [ChatZilla] &quot;działa tylko dla nowych wersjach&quot; w jednym z tooltipów opcji"
+   href="show_bug.cgi%3Fid=2685.html">2685</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">kstawarz
+        </td>
+        <td rowspan="1">2009-10-31 18:42:04 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - [ChatZilla] Bardzo niejasny opis tworzenia maski hosta w tooltipie od Nazwy użytkownika w opcjach"
+   href="show_bug.cgi%3Fid=2686.html">2686</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">kstawarz
+        </td>
+        <td rowspan="1">2009-10-31 18:49:27 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - [ChatZilla] Męska forma przy opisie Pseudonimu w opcjach"
+   href="show_bug.cgi%3Fid=2687.html">2687</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">kstawarz
+        </td>
+        <td rowspan="1">2009-10-31 18:53:47 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - [ChatZilla] Brakujący przecinek w psudonimowym tooltipie w opcjach"
+   href="show_bug.cgi%3Fid=2688.html">2688</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">kstawarz
+        </td>
+        <td rowspan="1">2009-10-31 18:55:53 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - [ChatZilla] Brakujący przecinek i niezgrabne zdanie w tooltipie od Trybu użytkownika"
+   href="show_bug.cgi%3Fid=2689.html">2689</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">kstawarz
+        </td>
+        <td rowspan="1">2009-10-31 19:01:14 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - [ChatZilla] Niejasny opis &quot;tej karty&quot; w tooltipie opcji &quot;Pokaż nagłówek&quot; w preferencjach"
+   href="show_bug.cgi%3Fid=2690.html">2690</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">kstawarz
+        </td>
+        <td rowspan="1">2009-10-31 19:04:22 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - [ChatZilla] Brakujący przecinek w tooltipie od czasu sprawdzania statusu automatycznej nieobecności"
+   href="show_bug.cgi%3Fid=2691.html">2691</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">kstawarz
+        </td>
+        <td rowspan="1">2009-10-31 19:07:09 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - [ChatZilla] &quot;Wystarczające przekraczanie limitu&quot; w tooltipie od Limitu trybu konferencji"
+   href="show_bug.cgi%3Fid=2692.html">2692</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">kstawarz
+        </td>
+        <td rowspan="1">2009-10-31 19:10:21 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - [ChatZilla] Brak kropki na końcu tooltipa w preferencjach"
+   href="show_bug.cgi%3Fid=2693.html">2693</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">kstawarz
+        </td>
+        <td rowspan="1">2009-10-31 19:12:59 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - [ChatZilla] Niezgrabne zdanie + brakujący przecinek w tooltipie od uporządkowania userów"
+   href="show_bug.cgi%3Fid=2694.html">2694</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">kstawarz
+        </td>
+        <td rowspan="1">2009-10-31 19:14:48 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - [ChatZilla] Brakujący przecinek w tooltipie od pokazywania symboli trybu userów"
+   href="show_bug.cgi%3Fid=2695.html">2695</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">kstawarz
+        </td>
+        <td rowspan="1">2009-10-31 19:23:21 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - [ChatZilla] Zbędna nazwa sekcji w nazwie jednej z opcji w preferencjach"
+   href="show_bug.cgi%3Fid=2696.html">2696</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">kstawarz
+        </td>
+        <td rowspan="1">2009-10-31 19:32:28 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED INVALID - [ChatZilla] Startowanie skryptów podczas startu w sekcji Autostart preferencji"
+   href="show_bug.cgi%3Fid=2697.html">2697</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">kstawarz
+        </td>
+        <td rowspan="1">2009-10-31 19:38:26 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED WORKSFORME - [ChatZilla] Wyświetla -&gt; Wyświetlaj"
+   href="show_bug.cgi%3Fid=2698.html">2698</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">kstawarz
+        </td>
+        <td rowspan="1">2009-10-31 19:43:00 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - [ChatZilla] Kopiuje -&gt; Kopiuj, Zwracanie uwagi -&gt; Zwracaj uwagę"
+   href="show_bug.cgi%3Fid=2699.html">2699</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">kstawarz
+        </td>
+        <td rowspan="1">2009-10-31 19:46:58 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - [ChatZilla] Brakujące przecinki i męska forma w tooltipie od ostrzegania o zamykaniu kart"
+   href="show_bug.cgi%3Fid=2700.html">2700</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">kstawarz
+        </td>
+        <td rowspan="1">2009-10-31 19:50:13 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - [ChatZilla] Brakujące przecinki w tooltipie od sprawdzania pisowni"
+   href="show_bug.cgi%3Fid=2701.html">2701</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">kstawarz
+        </td>
+        <td rowspan="1">2009-10-31 19:54:36 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - [ChatZilla] Brakujące przecinki w tooltipie od wysyłania kodów kolorów"
+   href="show_bug.cgi%3Fid=2702.html">2702</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">kstawarz
+        </td>
+        <td rowspan="1">2009-10-31 19:59:10 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - [ChatZilla] Zdanie do przeredagowania i przecinek do dodania w tooltipie od Zwracania uwagi"
+   href="show_bug.cgi%3Fid=2703.html">2703</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">kstawarz
+        </td>
+        <td rowspan="1">2009-10-31 20:01:13 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - [ChatZilla] Brakujące przecinki i koślawe zdanie wołające o redakcję w tooltipie od strasznie długiej opcji"
+   href="show_bug.cgi%3Fid=2704.html">2704</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">kstawarz
+        </td>
+        <td rowspan="1">2009-10-31 20:02:39 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - [ChatZilla] Brakujący przecinek w sekcji z odnośnikami w preferencjach"
+   href="show_bug.cgi%3Fid=2705.html">2705</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">kstawarz
+        </td>
+        <td rowspan="1">2009-10-31 20:04:06 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - [ChatZilla] Brakuje przecinka w tooltipie od automatycznego dzielenia długich słów"
+   href="show_bug.cgi%3Fid=2706.html">2706</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">kstawarz
+        </td>
+        <td rowspan="1">2009-10-31 20:05:31 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - [ChatZilla] Koniec zdania w złym miejscu"
+   href="show_bug.cgi%3Fid=2707.html">2707</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">akalla
+        </td>
+        <td rowspan="1">2010-03-07 19:50:12 CET
+        </td>
+            <td>
+                Summary
+            </td><td>[tracking] Lokalizacja SeaMonkey 2.0
+  </td><td>[tracking] Lokalizacja SeaMonkey 2.0.x
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">kstawarz
+        </td>
+        <td rowspan="1">2010-03-28 07:36:10 CEST
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Brak spacji w wyszukiwaniu fragmentów (menu kontekstowe)"
+   href="show_bug.cgi%3Fid=3082.html">3082</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">kstawarz
+        </td>
+        <td rowspan="1">2010-03-28 07:45:44 CEST
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED DUPLICATE - Niespójny rodzaj przymiotników w informacjach o stronie (ctrl+i)"
+   href="show_bug.cgi%3Fid=3083.html">3083</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">kstawarz
+        </td>
+        <td rowspan="1">2010-03-28 08:13:23 CEST
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Brakujący przecinek w ustawieniach sidebaru"
+   href="show_bug.cgi%3Fid=3084.html">3084</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">kstawarz
+        </td>
+        <td rowspan="1">2010-03-28 08:20:05 CEST
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Brakujące &quot;Czy&quot; w pytaniu"
+   href="show_bug.cgi%3Fid=3085.html">3085</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">kstawarz
+        </td>
+        <td rowspan="1">2010-04-20 15:05:17 CEST
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - [pomoc Sm] angielskojęzyczny"
+   href="show_bug.cgi%3Fid=3133.html">3133</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">kstawarz
+        </td>
+        <td rowspan="1">2010-04-20 15:45:23 CEST
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - [pomoc Sm] &quot;karty z ramki&quot;, a żadnych kart tam nie ma"
+   href="show_bug.cgi%3Fid=3135.html">3135</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">kstawarz
+        </td>
+        <td rowspan="1">2010-04-20 15:47:48 CEST
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED WORKSFORME - [pomoc Sm] kliknięcie na znaku plusatrójkącie"
+   href="show_bug.cgi%3Fid=3136.html">3136</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">kstawarz
+        </td>
+        <td rowspan="1">2010-04-20 15:53:00 CEST
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED WORKSFORME - [pomoc Sm] zbędny przecinek w sekcji Powrót do poprzednich tematów i drukowanie"
+   href="show_bug.cgi%3Fid=3138.html">3138</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">kstawarz
+        </td>
+        <td rowspan="1">2010-04-20 16:01:36 CEST
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED WORKSFORME - [pomoc Sm] &quot;Dla wygodniejszego korzystania pomocy&quot;"
+   href="show_bug.cgi%3Fid=3139.html">3139</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">kstawarz
+        </td>
+        <td rowspan="1">2010-04-25 14:26:17 CEST
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED WORKSFORME - [pomoc Sm] niezgrabne zdanie i brakujące &quot;a&quot;"
+   href="show_bug.cgi%3Fid=3147.html">3147</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">kstawarz
+        </td>
+        <td rowspan="1">2010-04-25 14:30:59 CEST
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED WORKSFORME - [pomoc Sm] Szukanie wyrażenia typu: &quot;poczta&quot; da rezultat..."
+   href="show_bug.cgi%3Fid=3149.html">3149</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">kstawarz
+        </td>
+        <td rowspan="1">2010-04-25 14:38:21 CEST
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED WORKSFORME - [pomoc Sm] Zbędny nawias"
+   href="show_bug.cgi%3Fid=3150.html">3150</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">kstawarz
+        </td>
+        <td rowspan="1">2010-04-25 16:18:55 CEST
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - [pomoc Sm] Wyszukiwanie tematu"
+   href="show_bug.cgi%3Fid=3152.html">3152</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">splewako
+        </td>
+        <td rowspan="1">2010-05-07 03:33:20 CEST
+        </td>
+            <td>
+                Status
+            </td><td>IN_PROGRESS
+  </td><td>CONFIRMED
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">gandalf
+        </td>
+        <td rowspan="1">2010-05-17 14:31:43 CEST
+        </td>
+            <td>
+                CC
+            </td><td>
+  </td><td>gandalf
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">gandalf
+        </td>
+        <td rowspan="1">2010-05-17 14:48:32 CEST
+        </td>
+            <td>
+                Severity
+            </td><td>krowujący
+  </td><td>normalny
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">gandalf
+        </td>
+        <td rowspan="1">2010-05-18 12:27:39 CEST
+        </td>
+            <td>
+                Severity
+            </td><td>normalny
+  </td><td>blokujący
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">kstawarz
+        </td>
+        <td rowspan="1">2011-01-08 15:28:40 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - [Pomoc Kuriera Poczty] Niepotrzebne powtórzenia i brak polskich znaków we Wstępie"
+   href="show_bug.cgi%3Fid=3607.html">3607</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">kstawarz
+        </td>
+        <td rowspan="1">2011-01-08 15:32:08 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - [Pomoc Kuriera Poczty] Błędy w sekcji Używanie Kreatora kont pocztowych"
+   href="show_bug.cgi%3Fid=3608.html">3608</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">kstawarz
+        </td>
+        <td rowspan="1">2011-01-08 15:34:31 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - [Pomoc Kuriera Poczty] Błędy w sekcji Konfiguracja kont pocztowych i grup dyskusyjnych"
+   href="show_bug.cgi%3Fid=3609.html">3609</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">kstawarz
+        </td>
+        <td rowspan="1">2011-01-08 15:36:40 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - [Pomoc Kuriera Poczty] Błędy w sekcji Tworzenie dodatkowych kont pocztowych i grup dyskusyjnych"
+   href="show_bug.cgi%3Fid=3610.html">3610</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">kstawarz
+        </td>
+        <td rowspan="1">2011-01-08 16:04:42 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - [Pomoc Kuriera Poczty] Błędy w sekcji Zmiana ustawień istniejącego konta"
+   href="show_bug.cgi%3Fid=3612.html">3612</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">kstawarz
+        </td>
+        <td rowspan="1">2011-01-08 16:05:38 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - [Pomoc Kuriera Poczty] Błędy w sekcji Pobieranie nowych wiadomości"
+   href="show_bug.cgi%3Fid=3613.html">3613</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">kstawarz
+        </td>
+        <td rowspan="1">2011-01-08 16:06:59 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - [Pomoc Kuriera Poczty] Błędy w sekcji Zmiana wyglądu głównego okna Kuriera Poczty"
+   href="show_bug.cgi%3Fid=3614.html">3614</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">kstawarz
+        </td>
+        <td rowspan="1">2011-01-08 16:28:52 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - [Pomoc Kuriera Poczty] Błędy w sekcji Sortowanie oraz grupowanie wiadomości w wątki"
+   href="show_bug.cgi%3Fid=3615.html">3615</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">kstawarz
+        </td>
+        <td rowspan="1">2011-01-08 16:29:44 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - [Pomoc Kuriera Poczty] Błędy w sekcji Zapisywanie oraz drukowanie wiadomości"
+   href="show_bug.cgi%3Fid=3616.html">3616</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">kstawarz
+        </td>
+        <td rowspan="1">2011-01-08 16:30:35 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - [Pomoc Kuriera Poczty] Błędy w sekcji Kontrola obrazków, skryptów i wtyczek"
+   href="show_bug.cgi%3Fid=3617.html">3617</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">kstawarz
+        </td>
+        <td rowspan="1">2011-01-08 16:31:36 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - [Pomoc Kuriera Poczty] Błędy w sekcji Tworzenie nowych wiadomości pocztowych i grup dyskusyjnych"
+   href="show_bug.cgi%3Fid=3618.html">3618</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">kstawarz
+        </td>
+        <td rowspan="1">2011-01-08 16:32:31 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - [Pomoc Kuriera Poczty] Błędy w sekcji Korzystanie z okna tworzenia wiadomości"
+   href="show_bug.cgi%3Fid=3619.html">3619</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">kstawarz
+        </td>
+        <td rowspan="1">2011-01-08 17:04:59 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - [Pomoc Kuriera Poczty] Błędy w sekcji Adresowanie wiadomości"
+   href="show_bug.cgi%3Fid=3620.html">3620</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">kstawarz
+        </td>
+        <td rowspan="1">2011-01-08 17:06:13 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - [Pomoc Kuriera Poczty] Błędy w sekcji Opcje wysyłania wiadomości"
+   href="show_bug.cgi%3Fid=3621.html">3621</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">kstawarz
+        </td>
+        <td rowspan="1">2011-01-08 17:07:31 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - [Pomoc Kuriera Poczty] Błędy w sekcji Tworzenie odpowiedzi na wiadomość"
+   href="show_bug.cgi%3Fid=3622.html">3622</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">kstawarz
+        </td>
+        <td rowspan="1">2011-01-22 06:58:54 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - [Pomoc Kuriera Poczty] Sekcja &quot;Przesyłanie wiadomości&quot;"
+   href="show_bug.cgi%3Fid=3637.html">3637</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">kstawarz
+        </td>
+        <td rowspan="1">2011-01-22 06:59:53 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - [Pomoc Kuriera Poczty] Sekcja &quot;Potwierdzenia otwarcia (dostarczenia) wiadomości&quot;"
+   href="show_bug.cgi%3Fid=3638.html">3638</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">kstawarz
+        </td>
+        <td rowspan="1">2011-01-22 07:00:47 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - [Pomoc Kuriera Poczty] Sekcja &quot;Zapisywanie i edycja szkiców wiadomości&quot;"
+   href="show_bug.cgi%3Fid=3639.html">3639</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">kstawarz
+        </td>
+        <td rowspan="1">2011-01-22 07:01:48 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - [Pomoc Kuriera Poczty] Sekcja &quot;Tworzenie i korzystanie z szablonów&quot;"
+   href="show_bug.cgi%3Fid=3640.html">3640</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">kstawarz
+        </td>
+        <td rowspan="1">2011-01-22 07:02:33 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - [Pomoc Kuriera Poczty] Sekcja &quot;Używanie HTML w wiadomościach&quot;"
+   href="show_bug.cgi%3Fid=3641.html">3641</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">kstawarz
+        </td>
+        <td rowspan="1">2011-01-22 07:03:19 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - [Pomoc Kuriera Poczty] Sekcja &quot;Edycja lub wstawianie elementów HTML&quot;"
+   href="show_bug.cgi%3Fid=3642.html">3642</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">kstawarz
+        </td>
+        <td rowspan="1">2011-01-22 07:05:14 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - [Pomoc Kuriera Poczty] Sekcja &quot;Opcje wysyłania wiadomości w formacie HTML&quot;"
+   href="show_bug.cgi%3Fid=3643.html">3643</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">kstawarz
+        </td>
+        <td rowspan="1">2011-01-22 07:06:29 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - [Pomoc Kuriera Poczty] Sekcja &quot;Załączanie pliku lub strony WWW&quot;"
+   href="show_bug.cgi%3Fid=3644.html">3644</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">kstawarz
+        </td>
+        <td rowspan="1">2011-01-22 07:07:37 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - [Pomoc Kuriera Poczty] Sekcja &quot;Przeglądanie i otwieranie załączników&quot;"
+   href="show_bug.cgi%3Fid=3645.html">3645</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">kstawarz
+        </td>
+        <td rowspan="1">2011-01-22 07:08:37 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - [Pomoc Kuriera Poczty] Sekcja &quot;Zapisywanie załączników&quot;"
+   href="show_bug.cgi%3Fid=3646.html">3646</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">kstawarz
+        </td>
+        <td rowspan="1">2011-02-06 12:45:51 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - [Pomoc Kuriera Poczty] Błędy w sekcji Usuwanie wiadomości z kont POP i IMAP"
+   href="show_bug.cgi%3Fid=3703.html">3703</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">kstawarz
+        </td>
+        <td rowspan="1">2011-02-06 12:46:42 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - [Pomoc Kuriera Poczty] Błędy w sekcji Książki adresowe — wprowadzenie"
+   href="show_bug.cgi%3Fid=3704.html">3704</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">kstawarz
+        </td>
+        <td rowspan="1">2011-02-06 12:47:49 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - [Pomoc Kuriera Poczty] Błędy w sekcji Tworzenie nowej wizytówki w książce adresowej"
+   href="show_bug.cgi%3Fid=3705.html">3705</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">kstawarz
+        </td>
+        <td rowspan="1">2011-02-06 12:50:34 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - [Pomoc Kuriera Poczty] Błędy w sekcji Podgląd i edycja wizytówek"
+   href="show_bug.cgi%3Fid=3706.html">3706</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">kstawarz
+        </td>
+        <td rowspan="1">2011-02-06 12:51:26 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - [Pomoc Kuriera Poczty] Błędy w sekcji Tworzenie listy dystrybucyjnej"
+   href="show_bug.cgi%3Fid=3707.html">3707</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">kstawarz
+        </td>
+        <td rowspan="1">2011-02-06 12:52:16 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - [Pomoc Kuriera Poczty] Błędy w sekcji Edycja listy dystrybucyjnej"
+   href="show_bug.cgi%3Fid=3708.html">3708</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">kstawarz
+        </td>
+        <td rowspan="1">2011-02-06 12:53:09 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - [Pomoc Kuriera Poczty] Błędy w sekcji Przeszukiwanie książek adresowych i katalogów"
+   href="show_bug.cgi%3Fid=3709.html">3709</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">kstawarz
+        </td>
+        <td rowspan="1">2011-02-06 12:54:22 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - [Pomoc Kuriera Poczty] Błędy w sekcji Wyszukiwanie zaawansowane (w książce adresowej)"
+   href="show_bug.cgi%3Fid=3710.html">3710</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">kstawarz
+        </td>
+        <td rowspan="1">2011-02-06 12:55:20 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - [Pomoc Kuriera Poczty] Błędy w sekcji Importowanie książek adresowych"
+   href="show_bug.cgi%3Fid=3711.html">3711</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">kstawarz
+        </td>
+        <td rowspan="1">2011-02-06 12:56:07 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - [Pomoc Kuriera Poczty] Błędy w sekcji Eksportowanie książki adresowej"
+   href="show_bug.cgi%3Fid=3712.html">3712</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">kstawarz
+        </td>
+        <td rowspan="1">2011-02-06 12:57:36 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - [Pomoc Kuriera Poczty] Błędy w sekcji Dodawanie i usuwanie katalogów LDAP"
+   href="show_bug.cgi%3Fid=3713.html">3713</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">kstawarz
+        </td>
+        <td rowspan="1">2011-02-06 12:58:33 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - [Pomoc Kuriera Poczty] Błędy w sekcji Ustawienia serwera katalogów"
+   href="show_bug.cgi%3Fid=3714.html">3714</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">kstawarz
+        </td>
+        <td rowspan="1">2011-03-20 11:32:52 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - [Pomoc Kuriera Poczty] Błędy w sekcji Organizowanie wiadomości"
+   href="show_bug.cgi%3Fid=3845.html">3845</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">kstawarz
+        </td>
+        <td rowspan="1">2011-03-20 11:33:45 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - [Pomoc Kuriera Poczty] Błędy w sekcji Współdzielenie folderów z innymi użytkownikami (tylko IMAP)"
+   href="show_bug.cgi%3Fid=3846.html">3846</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">kstawarz
+        </td>
+        <td rowspan="1">2011-03-20 11:34:59 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - [Pomoc Kuriera Poczty] Błędy w sekcji Etykietowanie wiadomości"
+   href="show_bug.cgi%3Fid=3847.html">3847</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">kstawarz
+        </td>
+        <td rowspan="1">2011-03-20 11:36:40 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - [Pomoc Kuriera Poczty] Zaznaczanie lub flagowanie wiadomości"
+   href="show_bug.cgi%3Fid=3848.html">3848</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">kstawarz
+        </td>
+        <td rowspan="1">2011-03-20 11:37:30 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - [Pomoc Kuriera Poczty] Błędy w sekcji Używanie widoków wiadomości"
+   href="show_bug.cgi%3Fid=3849.html">3849</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">kstawarz
+        </td>
+        <td rowspan="1">2011-06-19 13:59:05 CEST
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - [Pomoc Kuriera Poczty] Błędy w sekcji Wprowadzenie do grup dyskusyjnych"
+   href="show_bug.cgi%3Fid=4011.html">4011</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">kstawarz
+        </td>
+        <td rowspan="1">2011-06-19 14:00:23 CEST
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - [Pomoc Kuriera Poczty] Błędy w sekcji Przygotowywanie Kuriera Poczty do pracy w trybie offline"
+   href="show_bug.cgi%3Fid=4012.html">4012</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">kstawarz
+        </td>
+        <td rowspan="1">2011-06-19 14:01:49 CEST
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - [Pomoc Kuriera Poczty] Błędy w sekcji Pobieranie wszystkich wiadomości do pracy w trybie offline"
+   href="show_bug.cgi%3Fid=4013.html">4013</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">kstawarz
+        </td>
+        <td rowspan="1">2011-06-19 14:03:13 CEST
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - [Pomoc Kuriera Poczty] Błędy w sekcji Pobieranie wybranego folderu do pracy w trybie offline"
+   href="show_bug.cgi%3Fid=4014.html">4014</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">kstawarz
+        </td>
+        <td rowspan="1">2011-06-19 14:04:33 CEST
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - [Pomoc Kuriera Poczty] Błędy w sekcji Pobieranie wybranego folderu do pracy w trybie offline"
+   href="show_bug.cgi%3Fid=4015.html">4015</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">kstawarz
+        </td>
+        <td rowspan="1">2011-06-19 14:09:04 CEST
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - [Pomoc Kuriera Poczty] Błędy w sekcji Pobieranie wybranych lub oznaczonych wiadomości do pracy w trybie offline"
+   href="show_bug.cgi%3Fid=4016.html">4016</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">kstawarz
+        </td>
+        <td rowspan="1">2011-06-19 14:12:10 CEST
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - [Pomoc Kuriera Poczty] Błędy w sekcji Pobieranie wpisów z katalogu (LDAP) do pracy w trybie offline"
+   href="show_bug.cgi%3Fid=4017.html">4017</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">kstawarz
+        </td>
+        <td rowspan="1">2011-06-19 14:15:24 CEST
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - [Pomoc Kuriera Poczty] Błędy w sekcji Konfiguracja kont do pracy w trybie offline"
+   href="show_bug.cgi%3Fid=4018.html">4018</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">kstawarz
+        </td>
+        <td rowspan="1">2011-06-19 14:16:48 CEST
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - [Pomoc Kuriera Poczty] Błędy w sekcji Wybór elementów dostępnych w trybie offline"
+   href="show_bug.cgi%3Fid=4019.html">4019</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">kstawarz
+        </td>
+        <td rowspan="1">2011-09-26 03:21:44 CEST
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - [Pomoc Kuriera Poczty] Błędy w sekcji Pobieranie i synchronizacja wiadomości"
+   href="show_bug.cgi%3Fid=4115.html">4115</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="2">akalla
+        </td>
+        <td rowspan="2">2012-04-08 16:28:36 CEST
+        </td>
+            <td>
+                Status
+            </td><td>CONFIRMED
+  </td><td>PRZEDAWNIONY
+  </td></tr><tr>
+            <td>
+                Resolution
+            </td><td>---
+  </td><td>WORKSFORME
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="2">splewako
+        </td>
+        <td rowspan="2">2012-04-23 16:32:35 CEST
+        </td>
+            <td>
+                Status
+            </td><td>PRZEDAWNIONY
+  </td><td>CONFIRMED
+  </td></tr><tr>
+            <td>
+                Resolution
+            </td><td>WORKSFORME
+  </td><td>---
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="2">akalla
+        </td>
+        <td rowspan="2">2012-04-26 13:45:45 CEST
+        </td>
+            <td>
+                Status
+            </td><td>CONFIRMED
+  </td><td>RESOLVED
+  </td></tr><tr>
+            <td>
+                Resolution
+            </td><td>---
+  </td><td>WORKSFORME
+  </td>
+      </tr>
+  </table>
+
+  <p>
+    Back to <a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED WORKSFORME - [tracking] Lokalizacja SeaMonkey 2.0.x"
+   href="show_bug.cgi%3Fid=1652.html">bug 1652</a>
+  </p>
+</div>
+
+    <div id="footer">
+      <div class="intro"></div>
+<ul id="useful-links">
+  <li id="links-actions"><ul class="links">
+  <li><a href="index.html">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi.html">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi.html">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi.html">Search</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="http://bugs.aviary.pl/buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input type="hidden" id="no_redirect_bottom" name="no_redirect" value="0">
+    <script type="text/javascript">
+      if (history && history.replaceState) {
+        var no_redirect = document.getElementById("no_redirect_bottom");
+        no_redirect.value = 1;
+      }
+    </script>
+    <input class="txt" type="text" id="quicksearch_bottom" name="quicksearch" 
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search" 
+           id="find_bottom"></form>
+  <a href="page.cgi%3Fid=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="report.cgi.html">Reports</a></li>
+
+  <li>
+      <span class="separator">| </span>
+        <a href="request.cgi.html">Requests</a></li>
+
+
+  
+    
+      <li id="new_account_container_bottom">
+        <span class="separator">| </span>
+        <a href="createaccount.cgi.html">New&nbsp;Account</a>
+      </li>
+
+    <li id="mini_login_container_bottom">
+  <span class="separator">| </span>
+  <a id="login_link_bottom" href="http://bugs.aviary.pl/show_activity.cgi?id=1652&amp;GoAheadAndLogIn=1"
+     onclick="return show_mini_login_form('_bottom')">Log In</a>
+
+  <form action="show_activity.cgi%3Fid=1652.html" method="POST"
+        class="mini_login bz_default_hidden"
+        id="mini_login_bottom">
+    <input id="Bugzilla_login_bottom" required
+           name="Bugzilla_login" class="bz_login"
+        type="email" placeholder="Email Address">
+    <input class="bz_password" name="Bugzilla_password" type="password"
+           id="Bugzilla_password_bottom" required
+           placeholder="Password">
+    <input type="hidden" name="Bugzilla_login_token"
+           value="1469831737-DVypWmhaZ5soCVbNn_WnLUsUxxC7V6c8hrotz7SiB4A">
+    <input type="submit" name="GoAheadAndLogIn" value="Log in"
+            id="log_in_bottom">
+    <a href="show_activity.cgi%3Fid=1652.html#" onclick="return hide_mini_login_form('_bottom')">[x]</a>
+  </form>
+</li>
+
+
+  <li id="forgot_container_bottom">
+    <span class="separator">| </span>
+    <a id="forgot_link_bottom" href="http://bugs.aviary.pl/show_activity.cgi?id=1652&amp;GoAheadAndLogIn=1#forgot"
+       onclick="return show_forgot_form('_bottom')">Forgot Password</a>
+    <form action="http://bugs.aviary.pl/token.cgi" method="post" id="forgot_form_bottom"
+          class="mini_forgot bz_default_hidden">
+      <label for="login_bottom">Login:</label>
+      <input name="loginname" size="20" id="login_bottom" required
+          type="email" placeholder="Your Email Address">
+      <input id="forgot_button_bottom" value="Reset Password" type="submit">
+      <input type="hidden" name="a" value="reqpw">
+      <input type="hidden" id="token_bottom" name="token"
+             value="1469831737-SHQ63Ibi6kLPQIpdwrj1krgOHnhFV8AxtE2XZ3IVCCI">
+      <a href="show_activity.cgi%3Fid=1652.html#" onclick="return hide_forgot_form('_bottom')">[x]</a>
+    </form>
+  </li>
+</ul>
+  </li>
+
+  
+
+
+
+
+  
+</ul>
+
+      <div class="outro"></div>
+    </div>
+
+  </body>
+</html>

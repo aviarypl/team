@@ -1,0 +1,61 @@
+Index: toolkit/chrome/mozapps/update/updates.dtd
+===================================================================
+RCS file: /l10n/l10n/pl/toolkit/chrome/mozapps/update/updates.dtd,v
+retrieving revision 1.7
+diff -u -r1.7 updates.dtd
+--- toolkit/chrome/mozapps/update/updates.dtd	26 Jun 2005 00:11:28 -0000	1.7
++++ toolkit/chrome/mozapps/update/updates.dtd	27 Jun 2005 06:55:27 -0000
+@@ -10,10 +10,9 @@
+ <!ENTITY  noupdatesfound.intro            "Brak nowych aktualizacji. &brandShortName; może okresowo sprawdzać, czy dostępne są nowe aktualizacje."> 
+ <!ENTITY  updatesfound.title              "Dostępna aktualizacja">
+ 
+-<!ENTITY  forMoreInfo.label               "Aby uzyskać więcej informacji, proszę">
+-<!ENTITY  clickHere.label                 "kliknąć tutaj">
+-<!ENTITY  updateAvailable.placeholder     "To jest linia tekstu, która powinna powinna wygodnie przełamać się 
+-                                           na dwie linie w danym języku.">
++<!ENTITY  moreDetails.label               "Wiecej szczegółów &#0187;">
++<!ENTITY  moreDetails.accesskey           "g">
++<!ENTITY  clickHere.label                 "Aby uzyskać bardziej ogólne informacje o tej aktualizacji, proszę kliknąć tutaj">
+ 
+ <!ENTITY  incompatible.warning            "Ta aktualizacja spowoduje, że niektóre z rozszerzeń lub motywów 
+                                            przestaną działać, póki nie zostaną zaktualizaowane.">
+Index: toolkit/chrome/mozapps/update/updates.properties
+===================================================================
+RCS file: /l10n/l10n/pl/toolkit/chrome/mozapps/update/updates.properties,v
+retrieving revision 1.7
+diff -u -r1.7 updates.properties
+--- toolkit/chrome/mozapps/update/updates.properties	25 Jun 2005 05:22:46 -0000	1.7
++++ toolkit/chrome/mozapps/update/updates.properties	27 Jun 2005 06:55:27 -0000
+@@ -52,4 +52,13 @@
+ checker_error-403=System aktualizacji: Odmowa dost\u0119pu (403)
+ checker_error-404=System aktualizacji: Plik XML aktualizacji nie zosta\u0142 odnaleziony (404)
+ checker_error-500=System aktualizacji: Wewn\u0119trzny b\u0142\u0105d serwera (500)
+-checker_error-2152398878=System aktualizacji: Nie znaleziono serwera aktualizacji (nale\u017Cy skontaktowa\u0107 si\u0119 z administratorem)
++checker_error-2152398878=System aktualizacji: Nie znaleziono serwera aktualizacji (prosz\u0119 sprawdzi\u0107 po\u0142\u0105czenie internetowe lub skontaktowa\u0107 si\u0119 z administratorem)
++checker_error-2152398890=Serwer proxy nie zosta\u0142 odnaleziony (prosz\u0119 sprawdzi\u0107 po\u0142\u0105czenie internetowe lub skontaktowa\u0107 si\u0119 z administratorem)
++checker_error-2152398861=System aktualizacji: Po\u0142\u0105czenie zosta\u0142o odrzucone
++checker_error-2152398920=Po\u0142\u0105czenie z serwerem proxy zosta\u0142o odrzucone (prosz\u0119 skontaktowa\u0107 si\u0119 z administratorem)
++checker_error-2152398862=System aktualizacji: Przekroczono limit czasu po\u0142\u0105czenia
++checker_error-2152398864=Brak po\u0142\u0105czenia z internetem (nale\u017Cy si\u0119 po\u0142\u0105czy\u0107)
++checker_error-2152398849=Po\u0142\u0105czenie nie powiod\u0142o si\u0119 (z nieznanych przyczyn)
++checker_error-2152398868=System aktualizacji: Nie otrzymano \u017Cadnych danych (prosz\u0119 spr\u00F3bowa\u0107 ponownie)
++checker_error-2152398919=System aktualizacji: Przesy\u0142anie danych zosta\u0142o przerwane (prosz\u0119 spr\u00F3bowa\u0107 ponownie)
++checker_error-2152398867=System aktualizacji: U\u017Cyto niedozwolonego portu (prosz\u0119 skontaktowa\u0107 si\u0119 z administratorem)
+--- /dev/null	2005-06-27 09:09:25.187500000 +0200
++++ history.dtd	2005-06-27 07:31:16.718750000 +0200
+@@ -0,0 +1,14 @@
++
++<!ENTITY  history.title             "Historia aktualizacji">
++<!ENTITY  history.intro             "Zainstalowano poniższe aktualizacje:">
++<!ENTITY  closebutton.label         "Zamknij">
++                                     
++<!ENTITY  detailsButton.label       "Szczegóły">
++<!ENTITY  detailsButton.accesskey   "S">
++
++<!ENTITY  noupdates.label           "Nie zainstalowano jeszcze żadnych aktualizacji">
++
++<!ENTITY  name.header               "Nazwa aktualizacji">
++<!ENTITY  date.header               "Data instalacji">
++<!ENTITY  type.header               "Rodzaj">
++<!ENTITY  state.header              "Stan">
+

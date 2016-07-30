@@ -1,0 +1,58 @@
+=== template/pl/default/pages/fields.html.tmpl
+==================================================================
+--- template/pl/default/pages/fields.html.tmpl   (/2.18/pl-patch)   (revision 23)
++++ template/pl/default/pages/fields.html.tmpl   (/2.18/pl-trunk)   (revision 23)
+@@ -207,7 +207,7 @@
+ <b>P5</b> (najmniej ważny).
+ 
+ 
+-<h2><a name="rep_platform">System</a></h2>
++<h2><a name="rep_platform">Platforma</a></h2>
+ Pole określające platformę sprzętową na której dany [% terms.blad %] został
+ zaobserwowany. W polu tym można umieścic:
+ 
+@@ -225,7 +225,7 @@
+ <b>Uwaga:</b> Podczas wyszukiwania, wybranie opcji "Wszystkie" nie wyszukuje
+ [% terms.bledow %] przypisanych do określonego systemu. Wyszukiwane są jedynie
+ [% terms.bledy %], które zostały oznaczone jako występujące na wszystkich platformach,
+-których pole "System" jest ustawione na "Wszystkie".
++których pole "Platforma" jest ustawione na "Wszystkie".
+ 
+ <h2><a name="op_sys">OS</a></h2>
+ System operacyjny na którym dany [% terms.blad %] został zaobserwowany.
+=== template/pl/default/search/form.html.tmpl
+==================================================================
+--- template/pl/default/search/form.html.tmpl   (/2.18/pl-patch)   (revision 23)
++++ template/pl/default/search/form.html.tmpl   (/2.18/pl-trunk)   (revision 23)
+@@ -563,12 +563,12 @@
+     <td>
+       <table>
+         <tr>
+-          <th align="left"><a href="queryhelp.cgi#platform">S<u>y</u>stem</a>:</th>
++          <th align="left"><a href="queryhelp.cgi#platform">Plat<u>f</u>orma</a>:</th>
+         </tr>
+         <tr valign="top">
+           [% PROCESS select sel = { name => 'rep_platform',
+                                     size => 7,
+-                                    accesskey => 'y' } %]
++                                    accesskey => 'f' } %]
+         </tr>
+       </table>
+     </td>
+=== template/pl/default/bug/edit.html.tmpl
+==================================================================
+--- template/pl/default/bug/edit.html.tmpl   (/2.18/pl-patch)   (revision 23)
++++ template/pl/default/bug/edit.html.tmpl   (/2.18/pl-trunk)   (revision 23)
+@@ -135,9 +135,9 @@
+       <td>&nbsp;</td>
+ 
+       <td align="right">
+-        <b><u>S</u>ystem:</b>
++        <b>Plat<u>f</u>orma:</b>
+       </td>
+-      [% PROCESS select selname => "rep_platform" accesskey => "s" %]
++      [% PROCESS select selname => "rep_platform" accesskey => "f" %]
+ 
+       <td align="right">
+         <b>Zgłaszający:</b>
+

@@ -1,0 +1,72 @@
+# HG changeset patch
+# User Adrian Kalla <akalla@aviary.pl>
+# Date 1300638101 -3600
+# Node ID d59ec37bf873f58fa1ec3a892e25340d10bb6eb1
+# Parent  6f15415505d9676abd1a4800cab36f60eb641083
+Aviary.pl issue 3844 - L10n for: |Bug 639694 - Move EditModeToolbar from editorOverlay|
+
+diff --git a/editor/ui/chrome/composer/editor.dtd b/editor/ui/chrome/composer/editor.dtd
+--- a/editor/ui/chrome/composer/editor.dtd
++++ b/editor/ui/chrome/composer/editor.dtd
+@@ -62,3 +62,27 @@
+ <!-- Format menu items -->
+ <!ENTITY formatMenu.label     "Format">
+ <!ENTITY formatMenu.accesskey "F">
++
++<!-- Display Mode toolbar and View menu items -->
++<!ENTITY NormalModeTab.label      "Normalny">
++<!ENTITY NormalMode.label         "Normalny tryb edycji">
++<!ENTITY NormalMode.accesskey     "N">
++<!ENTITY NormalMode.tooltip       "Pokaż obramowanie tabeli oraz kotwice">
++<!ENTITY AllTagsModeTab.label     "Znaczniki">
++<!ENTITY AllTagsMode.label        "Pokaż znaczniki">
++<!ENTITY AllTagsMode.accesskey    "z">
++<!ENTITY AllTagsMode.tooltip      "Wyświetl ikony dla wszystkich znaczników HTML">
++<!-- LOCALIZATION NOTE: (HTMLSourceModeTab.dir, HTMLSourceModeTab.label)
++     Do NOT translate text for 'HTMLSourceModeTab.dir', use latin "ltr" if
++     you want the <html> image to left of the 'HTMLSourceModeTab.label' text,
++     or use latin "rtl" if you want this image to the right of text. You do
++     not need to include HTML in the label 'HTMLSourceModeTab.label' -->
++<!ENTITY HTMLSourceModeTab.dir    "ltr">
++<!ENTITY HTMLSourceModeTab.label  "Źródło">
++<!ENTITY HTMLSourceMode.label     "Źródło HTML">
++<!ENTITY HTMLSourceMode.accesskey "H">
++<!ENTITY HTMLSourceMode.tooltip   "Edytuj źródło HTML">
++<!ENTITY PreviewModeTab.label     "Podgląd">
++<!ENTITY PreviewMode.label        "Podgląd">
++<!ENTITY PreviewMode.accesskey    "P">
++<!ENTITY PreviewMode.tooltip      "Wyświetl jako WYSIWYG (tak jak w przeglądarce)">
+diff --git a/editor/ui/chrome/composer/editorOverlay.dtd b/editor/ui/chrome/composer/editorOverlay.dtd
+--- a/editor/ui/chrome/composer/editorOverlay.dtd
++++ b/editor/ui/chrome/composer/editorOverlay.dtd
+@@ -451,29 +451,6 @@
+ <!ENTITY alignRightButton.tooltip      "Wyrównaj tekst do prawego marginesu">
+ <!ENTITY alignJustifyButton.tooltip    "Wyrównaj tekst pomiędzy prawym a lewym marginesem">
+ 
+-<!-- Display Mode toolbar and View menu items -->
+-<!ENTITY NormalModeTab.label      "Normalny">
+-<!ENTITY NormalMode.label         "Normalny tryb edycji">
+-<!ENTITY NormalMode.accesskey     "N">
+-<!ENTITY NormalMode.tooltip       "Pokaż obramowanie tabeli oraz kotwice">
+-<!ENTITY AllTagsMode.label        "Pokaż znaczniki">
+-<!ENTITY AllTagsMode.accesskey    "z">
+-<!ENTITY AllTagsMode.tooltip      "Wyświetl ikony dla wszystkich znaczników HTML">
+-
+-<!ENTITY HTMLSourceMode.label     "Źródło HTML">
+-<!-- Toolbar has an image with "HTML" text, so don't include it in the string -->
+-<!ENTITY SourceMode.label         "Źródło">
+-<!ENTITY HTMLSourceMode.accesskey "H">
+-<!ENTITY HTMLSourceMode.tooltip   "Edytuj źródło HTML">
+-<!ENTITY PreviewMode.label        "Podgląd">
+-<!ENTITY PreviewMode.accesskey    "p">
+-<!ENTITY PreviewMode.tooltip      "Wyświetl jako WYSIWYG (tak jak w przeglądarce)">
+-
+-<!-- LOCALIZATION NOTE: Do NOT translate text for 'SourceTabDirection'
+-     Use latin "ltr" if you want the <html> image to left of the 'SourceMode.label' text defined above, or use latin "rtl" if you want this image to the right of text
+-     This is the value of the HTML 'dir' attribute -->
+-<!ENTITY SourceTabDirection "ltr">
+-
+ <!-- Structure Toolbar Context Menu items -->
+ <!ENTITY structSelect.label        "Zaznacz">
+ <!ENTITY structSelect.accesskey    "a">
+

@@ -1,0 +1,134 @@
+Index: trunk/locale/pl-PL/cascades/EdCssProps.dtd
+===================================================================
+--- trunk/locale/pl-PL/cascades/EdCssProps.dtd	(revision 9)
++++ trunk/locale/pl-PL/cascades/EdCssProps.dtd	(working copy)
+@@ -37,45 +37,45 @@
+    - ***** END LICENSE BLOCK ***** -->
+ 
+ 
+-<!ENTITY Window.title						"Arkusze Stylów CSS">
++<!ENTITY Window.title						"Edytor CSS">
+ 
+ <!ENTITY sheetsTreeColumn.label				"Arkusze i reguły">
+ <!ENTITY expertModeChecbox.label			"Tryb eksperta">
+ <!ENTITY importRuleButton.label				"@import">
+ <!ENTITY mediaRuleButton.label				"@media">
+-<!ENTITY linkedSheetButton.label			"Zewnętrzny"><!--sta-->
+-<!ENTITY styleSheetButton.label				"Wewnętrzny"><!--sta-->
+-<!ENTITY ruleButton.label					"Reguła">
+-<!ENTITY upButton.label						"Góra">
+-<!ENTITY downButton.label					"Dół">
++<!ENTITY linkedSheetButton.label			"Utwórz zewnętrzny"><!--sta-->
++<!ENTITY styleSheetButton.label				"Utwórz wewnętrzny"><!--sta-->
++<!ENTITY ruleButton.label				"Nowa reguła">
++<!ENTITY upButton.label					"W górę">
++<!ENTITY downButton.label				"W dół">
+ <!ENTITY refreshButton.label				"Odśwież">
+-<!ENTITY removeButton.label					"Usuń">
+-<!ENTITY sheetInfoTab.label					"Ogólnie">
+-<!ENTITY textTab.label						"Tekst">
+-<!ENTITY borderTab.label					"Obramowanie"> <!--sta-->
+-<!ENTITY marginsTab.label					"Marginesy">
+-<!ENTITY boxTab.label						"Blok">
+-<!ENTITY auralTab.label						"Dźwięk">
+-<!ENTITY fontFamily.label					"Rodzina kroju pisma:"><!--sta-->
++<!ENTITY removeButton.label				"Usuń">
++<!ENTITY sheetInfoTab.label				"Ogólnie">
++<!ENTITY textTab.label					"Tekst">
++<!ENTITY borderTab.label				"Obramowanie"> <!--sta-->
++<!ENTITY marginsTab.label				"Marginesy">
++<!ENTITY boxTab.label					"Blok">
++<!ENTITY auralTab.label					"Dźwięk">
++<!ENTITY fontFamily.label				"Rodzina kroju pisma:"><!--sta-->
+ <!ENTITY inheritedFontFamily.label			"dziedziczone">
+ <!ENTITY useCustomFontFamily.label			"Użyj własnego kroju:"><!--sta-->
+-<!ENTITY fontData.label						"Dane kroju"><!--sta-->
++<!ENTITY fontData.label					"Dane kroju"><!--sta-->
+ <!ENTITY exampleSentence.label				"Zażółć gęślą jaźń">
+ <!ENTITY backgroundTab.label				"Tło">
+ 
+ <!ENTITY unspecifiedValue.label				"niezdefiniowane">
+ <!ENTITY predefFontFamilyRadio.label		"zdefiniowane:">
+-<!ENTITY fontSize.label						"Rozmiar fontu:">
++<!ENTITY fontSize.label						"Rozmiar pisma:">
+ <!ENTITY lineHeight.label                   "Wysokość linii:">
+ <!ENTITY normalLineHeight.label             "normalna">
+ <!ENTITY color.label						"Kolor:">
+-<!ENTITY fontWeight.label					"Grubość pisma:"><!--sta-->
++<!ENTITY fontWeight.label					"Grubość kroju pisma:"><!--sta-->
+ <!ENTITY normalValue.label					"Normalne">
+ <!ENTITY boldValue.label					"Grube">
+ <!ENTITY bolderValue.label					"Grubsze">
+ <!ENTITY lighterValue.label					"Cieńsze">
+ <!ENTITY inheritedValue.label				"Dziedziczony">
+-<!ENTITY fontStyle.label					"Styl pisma:"><!--sta-->
++<!ENTITY fontStyle.label					"Styl kroju pisma:"><!--sta-->
+ <!ENTITY italicValue.label					"Kursywa (Italic)">
+ <!ENTITY obliqueValue.label					"Pochylone (Oblique)"><!--sta-->
+ <!ENTITY textTransform.label				"Wielkość liter:"><!--sta-->
+@@ -112,11 +112,11 @@
+ <!ENTITY backgroundColor.label				"Kolor:">
+ <!ENTITY backgroundImage.label              "Obrazek:">
+ <!ENTITY chooseFileButton.label             "Wybierz plik">
+-<!ENTITY backgroundRepeat.label             "Tytuł:">
++<!ENTITY backgroundRepeat.label             "Powtarzaj:">
+ <!ENTITY norepeatBackgroundRepeat.label     "nie powtarzaj">
+-<!ENTITY repeatxBackgroundRepeat.label      "horyzontalnie">
+-<!ENTITY repeatyBackgroundRepeat.label      "wertykalnie">
+-<!ENTITY repeatBackgroundRepeat.label       "horyzontalnie i wertykalnie">
++<!ENTITY repeatxBackgroundRepeat.label      "w poziomie">
++<!ENTITY repeatyBackgroundRepeat.label      "w pionie">
++<!ENTITY repeatBackgroundRepeat.label       "w poziomie i w pionie">
+ <!ENTITY backgroundPosition.label           "Pozycja:">
+ <!ENTITY leftXBackgroundPosition.label      "Lewo">
+ <!ENTITY centerXBackgroundPosition.label    "Środek">
+@@ -128,8 +128,8 @@
+ 
+ 
+ <!ENTITY useBorderShorthand.label           "Wszystkie cztery strony używają tego samego stylu obramowania">
+-<!ENTITY borderStyle.label                  "Styl:">
+-<!ENTITY borderWidth.label                  "Szerokość:">
++<!ENTITY borderStyle.label                  "Styl linii:">
++<!ENTITY borderWidth.label                  "Szerokość linii:">
+ <!ENTITY borderColor.label                  "Kolor:">
+ <!ENTITY topBorder.label                    "Góra:">
+ <!ENTITY leftBorder.label                   "Lewo:">
+@@ -220,9 +220,9 @@
+ <!ENTITY xloudVolume.label                  "bardzo głośno (x-loud)">
+ <!ENTITY muteVolume.label                   "Wycisz">
+ 
+-<!ENTITY speak.label                        "Mów:">
+-<!ENTITY noneSpeak.label                    "nic">
+-<!ENTITY normalSpeak.label                  "normalnie">
++<!ENTITY speak.label                        "Wymowa:">
++<!ENTITY noneSpeak.label                    "milcz">
++<!ENTITY normalSpeak.label                  "normalna">
+ <!ENTITY spelloutSpeak.label                "literuj">
+ 
+ <!ENTITY speechRate.label                   "Prędkość mówienia:">
+Index: trunk/locale/pl-PL/cascades/cascades.properties
+===================================================================
+--- trunk/locale/pl-PL/cascades/cascades.properties	(revision 9)
++++ trunk/locale/pl-PL/cascades/cascades.properties	(working copy)
+@@ -1,7 +1,7 @@
+ InternalStylesheet=Wewn\u0119trzny arkusz styl\u00f3w
+ Type=Typ:
+ Disabled=Nieaktywny:
+-DisableStylesheet=zaznacz, aby wy\u0142\u0105czyć arkusz styl\u00f3w (nie mo\u017cna zapisa\u0107)
++DisableStylesheet=zaznacz, aby wy\u0142\u0105czy\u0107 arkusz styl\u00f3w (nie mo\u017cna zapisa\u0107)
+ UserPasswdStripped=(user/passwd stripped)
+ MediaList=Lista medi\u00f3w:
+ Title=Nazwa:
+@@ -21,9 +21,9 @@
+ ElementStyle=styl dla element\u00f3w jednego typu (wprowad\u017a typ poni\u017cej)
+ SelectorStyle=styl dla element\u00f3w pasuj\u0105cych do poni\u017cszego selektora
+ CreateStyleRule=Utw\u00f3rz regu\u0142\u0119
+-NewStylesheet=Nowy arkusz styl\u00f3w
++NewStylesheet=Nowy wewn\u0019trzny arkusz styl\u00f3w
+ CreateStylesheet=Utw\u00f3rz arkusz
+-NewLinkedStylesheet=Nowy arkusz zewn\u0119trzny
++NewLinkedStylesheet=Nowy zewn\u0019trzny arkusz styl\u00f3w
+ Alternate=Alternatywny:
+ CreateAltStylesheet=zaznacz, aby utworzy\u0107 alternatywny arkusz styl\u00f3w
+ ChooseFile=Wybierz plik
+

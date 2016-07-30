@@ -1,0 +1,25 @@
+diff --git a/template/pl/default/attachment/createformcontents.html.tmpl b/template/pl/default/attachment/createformcontents.html.tmpl
+--- a/template/pl/default/attachment/createformcontents.html.tmpl
++++ b/template/pl/default/attachment/createformcontents.html.tmpl
+@@ -69,7 +69,7 @@
+ <tr class="expert_fields">
+   <th>Typ zawartości:</th>
+   <td>
+-    <em>Jeśli załącznik jest łatką zaznacz poniższe pole.</em><br>
++    <em>Jeśli załącznik jest łatką, zaznacz poniższe pole.</em><br>
+     <input type="checkbox" id="ispatch" name="ispatch" value="1"
+            onchange="setContentTypeDisabledState(this.form);">
+     <label for="ispatch">Łatka</label><br><br>
+diff --git a/template/pl/default/attachment/edit.html.tmpl b/template/pl/default/attachment/edit.html.tmpl
+--- a/template/pl/default/attachment/edit.html.tmpl
++++ b/template/pl/default/attachment/edit.html.tmpl
+@@ -223,7 +223,7 @@
+                   document.write('<iframe id="viewDiffFrame" class="bz_default_hidden"><\/iframe>');
+                 [% END %]
+                 [% IF user.id %]
+-              document.write('<button type="button" id="editButton" onclick="editAsComment(patchviewerinstalled);">Edytowanie załącznik jako komentarz<\/button>');
++              document.write('<button type="button" id="editButton" onclick="editAsComment(patchviewerinstalled);">Edytuj załącznik jako komentarz<\/button>');
+               document.write('<button type="button" id="undoEditButton" onclick="undoEditAsComment(patchviewerinstalled);" class="bz_default_hidden">Cofnij edytowanie jako komentarz<\/button>');
+               document.write('<button type="button" id="redoEditButton" onclick="redoEditAsComment(patchviewerinstalled);" class="bz_default_hidden">Przywróć edytowanie jako komentarz<\/button>');
+               var editFrame = document.getElementById('editFrame');
+

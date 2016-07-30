@@ -1,0 +1,13 @@
+diff -r e8d598cf6953 template/pl/default/admin/products/groupcontrol/updated.html.tmpl
+--- a/template/pl/default/admin/products/groupcontrol/updated.html.tmpl	Wed Nov 14 22:59:11 2012 +0100
++++ b/template/pl/default/admin/products/groupcontrol/updated.html.tmpl	Thu Nov 15 00:18:07 2012 +0100
+@@ -40,7 +40,7 @@
+ [% IF changes._group_controls.now_mandatory.size %]
+   [% FOREACH g = changes._group_controls.now_mandatory %]
+     Dodawanie [% terms.bledow %] do grupy „[% g.name FILTER html %]”, która
+-    jest ponownie obligatoryjna dla tego produktu<p>
++    staje się obligatoryjna dla tego produktu<p>
+     Dodane [% terms.bledy %]: [% g.bug_count FILTER html %]<p>
+   [% END %]
+ [% END %]
+

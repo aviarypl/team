@@ -1,0 +1,13 @@
+diff -ur bugzilla-2.17.7/Bugzilla/CGI.pm e/Bugzilla/CGI.pm
+--- bugzilla-2.17.7/Bugzilla/CGI.pm	2004-05-31 00:59:10.000000000 +0200
++++ bugzilla-2.17.7.mod/Bugzilla/CGI.pm	2004-06-18 01:12:26.000000000 +0200
+@@ -50,7 +50,7 @@
+     $self->{Bugzilla_cookie_list} = [];
+ 
+     # Make sure that we don't send any charset headers
+-    $self->charset('');
++    $self->charset('utf-8');
+ 
+     # Check for errors
+     # All of the Bugzilla code wants to do this, so do it here instead of
+

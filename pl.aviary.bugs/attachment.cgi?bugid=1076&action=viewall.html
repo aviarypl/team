@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>
+  View All Attachments for Bug 1076</title>
+
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<link href="data/assets/dfcc67d20b77e18b9d4e83fbfb3e10f8.css" rel="stylesheet" type="text/css">
+
+
+
+    
+<script type="text/javascript" src="data/assets/1b4e898422a669ab82b604a2c23edce5.js"></script>
+
+    <script type="text/javascript">
+    <!--
+        YAHOO.namespace('bugzilla');
+        YAHOO.util.Event.addListener = function (el, sType, fn, obj, overrideContext) {
+               if ( ("onpagehide" in window || YAHOO.env.ua.gecko) && sType === "unload") { sType = "pagehide"; };
+               var capture = ((sType == "focusin" || sType == "focusout") && !YAHOO.env.ua.ie) ? true : false;
+               return this._addListener(el, this._getType(sType), fn, obj, overrideContext, capture);
+         };
+        if ( "onpagehide" in window || YAHOO.env.ua.gecko) {
+            YAHOO.util.Event._simpleRemove(window, "unload", 
+                                           YAHOO.util.Event._unload);
+        }
+        
+        function unhide_language_selector() { 
+            YAHOO.util.Dom.removeClass(
+                'lang_links_container', 'bz_default_hidden'
+            ); 
+        } 
+        YAHOO.util.Event.onDOMReady(unhide_language_selector);
+
+        
+        var BUGZILLA = {
+            param: {
+                cookiepath: '\/',
+                maxusermatches: 1000
+            },
+            constant: {
+                COMMENT_COLS: 80
+            },
+            string: {
+                
+
+                attach_desc_required:
+                    "You must enter a Description for this attachment.",
+                component_required:
+                    "You must select a Component for this bug.",
+                description_required:
+                    "You must enter a Description for this bug.",
+                short_desc_required:
+                    "You must enter a Summary for this bug.",
+                version_required:
+                    "You must select a Version for this bug."
+            }
+        };
+
+    // -->
+    </script>
+<script type="text/javascript" src="data/assets/d41d8cd98f00b204e9800998ecf8427e.js"></script>
+
+    
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+                       title="Bugzilla" href="search_plugin.cgi">
+    <link rel="shortcut icon" href="images/favicon.ico">
+  </head>
+
+  <body 
+        class="bugs-aviary-pl yui-skin-sam">
+
+  <div id="header"><div id="banner">
+  </div>
+
+    <div id="titles">
+      <span id="title">Bugzilla &ndash; View All Attachments for
+  <a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED WONTFIX - Firefox.pl dla Firefoksa 2.0"
+   href="show_bug.cgi%3Fid=1076.html">Bug 1076</a></span>
+
+
+    </div>
+
+
+    <div id="common_links"><ul class="links">
+  <li><a href="index.html">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi.html">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi.html">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi.html">Search</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="http://bugs.aviary.pl/buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input type="hidden" id="no_redirect_top" name="no_redirect" value="0">
+    <script type="text/javascript">
+      if (history && history.replaceState) {
+        var no_redirect = document.getElementById("no_redirect_top");
+        no_redirect.value = 1;
+      }
+    </script>
+    <input class="txt" type="text" id="quicksearch_top" name="quicksearch" 
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search" 
+           id="find_top"></form>
+  <a href="page.cgi%3Fid=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="report.cgi.html">Reports</a></li>
+
+  <li>
+      <span class="separator">| </span>
+        <a href="request.cgi.html">Requests</a></li>
+
+
+  
+    
+      <li id="new_account_container_top">
+        <span class="separator">| </span>
+        <a href="createaccount.cgi.html">New&nbsp;Account</a>
+      </li>
+
+    <li id="mini_login_container_top">
+  <span class="separator">| </span>
+  <a id="login_link_top" href="http://bugs.aviary.pl/attachment.cgi?bugid=1076&amp;action=viewall&amp;GoAheadAndLogIn=1"
+     onclick="return show_mini_login_form('_top')">Log In</a>
+
+  <form action="attachment.cgi%3Fbugid=1076&amp;action=viewall.html" method="POST"
+        class="mini_login bz_default_hidden"
+        id="mini_login_top">
+    <input id="Bugzilla_login_top" required
+           name="Bugzilla_login" class="bz_login"
+        type="email" placeholder="Email Address">
+    <input class="bz_password" name="Bugzilla_password" type="password"
+           id="Bugzilla_password_top" required
+           placeholder="Password">
+    <input type="hidden" name="Bugzilla_login_token"
+           value="1469829399-XSx6ettYccmCJvMlMax47LCq8HxzdmE5Ydz9R3j_-Zw">
+    <input type="submit" name="GoAheadAndLogIn" value="Log in"
+            id="log_in_top">
+    <a href="attachment.cgi%3Fbugid=1076&amp;action=viewall.html#" onclick="return hide_mini_login_form('_top')">[x]</a>
+  </form>
+</li>
+
+
+  <li id="forgot_container_top">
+    <span class="separator">| </span>
+    <a id="forgot_link_top" href="http://bugs.aviary.pl/attachment.cgi?bugid=1076&amp;action=viewall&amp;GoAheadAndLogIn=1#forgot"
+       onclick="return show_forgot_form('_top')">Forgot Password</a>
+    <form action="http://bugs.aviary.pl/token.cgi" method="post" id="forgot_form_top"
+          class="mini_forgot bz_default_hidden">
+      <label for="login_top">Login:</label>
+      <input name="loginname" size="20" id="login_top" required
+          type="email" placeholder="Your Email Address">
+      <input id="forgot_button_top" value="Reset Password" type="submit">
+      <input type="hidden" name="a" value="reqpw">
+      <input type="hidden" id="token_top" name="token"
+             value="1469829399-3oyby7KVKIywbn_x8iD7Bi2BvSjcyQIpSOMy0AKBgcM">
+      <a href="attachment.cgi%3Fbugid=1076&amp;action=viewall.html#" onclick="return hide_forgot_form('_top')">[x]</a>
+    </form>
+  </li>
+</ul>
+    </div>
+  </div>
+
+  <div id="bugzilla-body">
+
+<div class="viewall_frame_container">
+  <table class="viewall_desc">
+    <tr>
+      <th colspan="6" class="bz_attach_footer">Attachment #801</th>
+    </tr>
+    <tr>
+      <td>Fragment index.html (treść w div=id&quot;main&quot;)</td>
+
+      <td>text/html
+      </td>
+
+      <td>2006-10-15 21:06:10 CEST</td>
+      <td>2.41 KB</td>
+
+      <td>
+          <i>no flags</i>
+      </td>
+
+      <td><a href="attachment.cgi%3Fid=801&amp;action=edit.html">Details</a></td>
+    </tr>
+  </table>
+
+      <textarea  class="viewall_frame" readonly="readonly"
+            rows="10"
+          cols="80">		&lt;div id=&quot;main&quot;&gt;
+			&lt;div id=&quot;zajawka&quot; class=&quot;fragment&quot;&gt;
+				&lt;h1&gt;Firefox â przeglÄdarka WWW&lt;/h1&gt;
+				&lt;p&gt;&lt;strong&gt;Firefox&lt;/strong&gt; pozwoli Ci przeglÄdaÄ strony WWW
+				szybciej, bezpieczniej i wygodniej niÅ¼ inne przeglÄdarki
+				internetowe. DoÅÄcz do ponad &lt;strong title=&quot;Å¹rÃ³dÅo: ranking.pl&quot;&gt;3&amp;nbsp;000&amp;nbsp;000&lt;/strong&gt; polskich
+				uÅ¼ytkownikÃ³w juÅ¼ dzisiaj â Firefox zachowa Twoje
+				Ulubione, ustawienia oraz pozostaÅe informacje.&lt;/p&gt;
+
+				&lt;p class=&quot;przedKoncem&quot;&gt;Nie masz nic do stracenia!&lt;/p&gt;
+			&lt;/div&gt;&lt;div class=&quot;opis_bottom&quot;&gt;&lt;/div&gt;
+
+			&lt;div class=&quot;opis fragment&quot;&gt;
+				&lt;h2&gt;Dlaczego Firefox?&lt;/h2&gt;
+				&lt;p&gt;Firefox to darmowa przeglÄdarka WWW, stanowiÄca
+				wolne oprogramowanie, dostÄpna dla systemÃ³w Windows,
+				GNU/Linux i Mac OS X. Jest maÅa i szybka, a jednoczeÅnie
+				oferuje szerokie moÅ¼liwoÅci.&lt;/p&gt;
+				
+				&lt;h3&gt;Blokada wyskakujÄcych okienek&lt;/h3&gt;
+
+				&lt;p&gt;Firefox blokuje denerwujÄce wyskakujÄce okienka (tzw. popupy). DoÅwiadczysz dziÄki temu Sieci takiej, jaka miaÅa byÄ - spokojna, wygodna i dostÄpna.&lt;/p&gt;				
+				&lt;p class=&quot;more&quot;&gt;&lt;a href=&quot;http://beta.firefox.pl/dlaczego.html#popups&quot;&gt;[ Â» wiÄcej&lt;span class=&quot;achide&quot;&gt; o blokadzie wyskakujÄcych okienek&lt;/span&gt; ]&lt;/a&gt;&lt;/p&gt;
+				
+				&lt;h3&gt;PrzeglÄdanie w kartach&lt;/h3&gt;
+				&lt;p&gt;PrzeglÄdanie w kartach sprawia, Å¼e surfowanie po Internecie staje siÄ szybsze i bardziej wydajne. 
+				Podczas czytania kaÅ¼dej strony odnoÅniki, ktÃ³re otworzyÅeÅ, ÅadujÄ siÄ w innych kartach â w tle.
+				A kiedy juÅ¼ jesteÅ gotowy, by je przeczytaÄ, one juÅ¼ na Ciebie czekajÄ.&lt;/p&gt;				
+				&lt;p class=&quot;more&quot;&gt;&lt;a href=&quot;http://beta.firefox.pl/dlaczego.html#tabbed&quot;&gt;[ Â» wiÄcej&lt;span class=&quot;achide&quot;&gt; o kartach&lt;/span&gt; ]&lt;/a&gt;&lt;/p&gt;
+
+				
+				&lt;h3&gt;Dynamiczne zakÅadki â kanaÅy RSS&lt;/h3&gt;
+				&lt;p&gt;Chcesz
+byÄ zawsze na bieÅ¼Äco i mieÄ dostÄp do najÅwieÅ¼szych wiadomoÅciach?
+KanaÅy RSS/Atom w zakÅadkach to rozwiÄzanie specjalnie dla Ciebie!&lt;/p&gt;			
+				&lt;p class=&quot;more&quot;&gt;&lt;a href=&quot;http://beta.firefox.pl/d-livemarks.html&quot;&gt;[ Â» wiÄcej&lt;span class=&quot;achide&quot;&gt; o dynamicznych zakÅadkach&lt;/span&gt; ]&lt;/a&gt;&lt;/p&gt;
+
+				&lt;h3&gt;Chcesz wiÄcej? Masz!&lt;/h3&gt;
+				&lt;p&gt;To nie wszystko - dziÄki rozszerzeniom moÅ¼esz dodaÄ do Firefoksa takie funkcje, jakich tylko potrzebujesz.&lt;/p&gt;
+				&lt;p class=&quot;more przedKoncem&quot;&gt;&lt;a href=&quot;http://beta.firefox.pl/dlaczego.html#extensions&quot;&gt;[ Â» wiÄcej&lt;span class=&quot;achide&quot;&gt; o rozszerzeniach&lt;/span&gt; ]&lt;/a&gt;&lt;/p&gt;
+				
+			&lt;/div&gt;&lt;div class=&quot;opis_bottom&quot;&gt;&lt;/div&gt;
+
+		&lt;/div&gt; &lt;!-- end main --&gt;
+</textarea>
+</div>
+<div class="viewall_frame_container">
+  <table class="viewall_desc">
+    <tr>
+      <th colspan="6" class="bz_attach_footer">Attachment #802</th>
+    </tr>
+    <tr>
+      <td>Fragment dlaczego.html (treść w div=id&quot;subMain&quot;)</td>
+
+      <td>text/html
+      </td>
+
+      <td>2006-10-15 21:09:39 CEST</td>
+      <td>6.45 KB</td>
+
+      <td>
+          <i>no flags</i>
+      </td>
+
+      <td><a href="attachment.cgi%3Fid=802&amp;action=edit.html">Details</a></td>
+    </tr>
+  </table>
+
+      <textarea  class="viewall_frame" readonly="readonly"
+            rows="10"
+          cols="80">		&lt;!-- !!! stad zaczyna sie podstrona --&gt;
+		&lt;div id=&quot;subMain&quot;&gt;
+			&lt;div id=&quot;subZajawka&quot; class=&quot;fragment&quot;&gt;
+				&lt;h1&gt;Dlaczego warto uÅ¼ywaÄ Firefoksa?&lt;/h1&gt;
+			&lt;p class=&quot;przedKoncem&quot;&gt;Jest wiele powodÃ³w, dla ktÃ³rych warto uÅ¼ywaÄ Firefoksa zamiast innych przeglÄdarek. Oto lista najwaÅ¼niejszych.&lt;/p&gt;
+			&lt;/div&gt;&lt;div class=&quot;subOpis_bottom&quot;&gt;&lt;/div&gt;
+
+			&lt;div class=&quot;subOpis fragment&quot;&gt;
+		  	&lt;h2 id=&quot;tabbed&quot;&gt;PrzeglÄdanie w kartach - surfuj szybciej!&lt;/h2&gt;
+			  &lt;p&gt;Mozilla
+Firefox sprawia, Å¼e przeglÄdanie stron WWW jest Åatwiejsze niÅ¼
+kiedykolwiek, dziÄki moÅ¼liwoÅci przeglÄdania w kartach. PrzeglÄdanie w
+kartach zmienia sposÃ³b, w jaki korzystasz z Internetu, pozwalajÄc na
+otworzenie strony w karcie bÄdÄcej w tle i czytanie jej, kiedy bÄdziesz
+gotowy.&lt;/p&gt;
+			&lt;p&gt;Å»adnych denerwujÄcych nowych okien, nie potrzeba teÅ¼ menu
+kontekstowych - strony, ktÃ³re do tej pory otwieraÅy siÄ w nowych oknach - zostanÄ domyÅlnie otwarte w nowych kartach. Otwarcie strony w nowej karcie moÅ¼na teÅ¼ wymusiÄ, dla stron, ktÃ³re do tej pory otwieraÅy siÄ w tym samym oknie. Po prostu przytrzymaj &lt;kbd&gt;Ctrl&lt;/kbd&gt; podczas klikania na odnoÅnik albo uÅ¼yj Årodkowego przycisku myszy.&lt;/p&gt;
+			  &lt;p class=&quot;forbanner&quot;&gt;&lt;img alt=&quot;PrzeglÄdanie w kartach - zrzut ekranu&quot; src=&quot;dlaczego/screen1s.png&quot; onclick=&quot;wOpen('screen1',640,595)&quot; class=&quot;clickable&quot;&gt;&lt;/p&gt;
+			  &lt;p class=&quot;przedKoncem&quot;&gt;PrzeglÄdanie
+w kartach sprawia, Å¼e surfowanie po Internecie staje siÄ szybsze i
+bardziej wydajne. MoÅ¼esz siÄ skoncentrowaÄ na czytaniu konkretnej
+strony, a nie co chwila przeÅÄczaÄ okienka. Podczas czytania kaÅ¼dej
+strony, odnoÅniki, ktÃ³re otworzyÅeÅ ÅadujÄ siÄ w innych kartach - w
+tle. Zatem kiedy jesteÅ gotowy, by je czytaÄ, one juÅ¼ na Ciebie
+czekajÄ.&lt;/p&gt;
+			&lt;p&gt;Wydaje siÄ, Å¼e to prosty pomysÅ, ale przeglÄdanie w kartach
+jest nowÄ jakoÅciÄ w przeglÄdaniu stron. Firefox daje Ci najprostszÄ i
+najbardziej intuicyjnÄ wersjÄ przeglÄdania w kartach.&lt;/p&gt;
+			&lt;/div&gt;&lt;div class=&quot;subOpis_bottom&quot;&gt;&lt;/div&gt;
+
+			&lt;div class=&quot;subOpis fragment&quot;&gt;
+		  &lt;h2 id=&quot;popups&quot;&gt;Blokada wyskakujÄcych okienek&lt;/h2&gt;
+		  &lt;p class=&quot;przedKoncem&quot;&gt;&lt;img alt=&quot;Blokada wyskakujÄcych okienek - zrzut ekranu&quot; src=&quot;dlaczego/screen3s.png&quot; style=&quot;float: right;&quot;&gt;Firefox
+blokuje denerwujÄce wyskakujÄce okienka (tzw. popupy). DoÅwiadczysz dziÄki temu Sieci
+takiej, jaka miaÅa byÄ - spokojna, wygodna i dostÄpna. NiektÃ³re strony
+wykorzystujÄ jednak wyskakujÄce okienka sensownie i przydatnie. Kiedy
+Firefox blokuje okienko, wyÅwietla w pasku statusu odpowiedniÄ ikonÄ.
+Po klikniÄciu na niÄ wyÅwietlona zostaje lista stron, ktÃ³re otwieraÅy
+wyskakujÄce okienka. DziÄki niej moÅ¼esz konkretnym witrynom zezwoliÄ na
+otwieranie nowych okien.&lt;/p&gt;
+			&lt;/div&gt;&lt;div class=&quot;subOpis_bottom&quot;&gt;&lt;/div&gt;
+
+			&lt;div class=&quot;subOpis fragment&quot;&gt;
+		  &lt;h2 id=&quot;search&quot;&gt;ZnajdÅº wszystko szybciej!&lt;/h2&gt;
+		  &lt;p class=&quot;przedKoncem&quot;&gt;&lt;img alt=&quot;Wyszukiwanie - zrzut ekranu&quot; src=&quot;dlaczego/screen4s.png&quot; onclick=&quot;wOpen('screen4',270,177)&quot; class=&quot;clickable rightimg&quot;&gt;Podczas
+surfowania wiÄkszoÅÄ czasu poÅwiÄca siÄ na wyszukiwanie rÃ³Å¼nych rzeczy.
+Dlatego Firefox ma najlepsze funkcje wyszukiwania poÅrÃ³d przeglÄdarek. &lt;kbd&gt;Ctrl&lt;/kbd&gt;+&lt;kbd&gt;K&lt;/kbd&gt;
+przenosi kursor do paska Google, w ktÃ³rym moÅ¼na podaÄ szukane sÅowa i
+wcisnÄÄ Enter, by przywoÅaÄ wyszukiwanie Google. JeÅli wyszukiwane
+sÅowo wpisane zostanie do paska adresu, Firefox wywoÅa opcjÄ
+&quot;SzczÄÅliwy traf&quot; wyszukiwarki Google (to znaczy, Å¼e automatycznie
+zostanie zaÅadowana pierwsza strona odnaleziona przez Google).&lt;/p&gt;
+			&lt;/div&gt;&lt;div class=&quot;subOpis_bottom&quot;&gt;&lt;/div&gt;
+
+			&lt;div class=&quot;subOpis fragment&quot;&gt;
+		  &lt;h2 id=&quot;toolbars&quot;&gt;Dostosowywalne paski narzÄdzi&lt;/h2&gt;
+		  &lt;p class=&quot;przedKoncem&quot;&gt;&lt;img alt=&quot;Dostosowywalne paski narzÄdzi - zrzut ekranu&quot; src=&quot;dlaczego/screen5.png&quot; class=&quot;rightimg&quot;&gt;Ustaw
+paski narzÄdzi w taki sposÃ³b, w jaki tylko chcesz. MoÅ¼esz mieÄ wÄski
+pasek tylko z tym, co najpotrzebniejsze, albo wiele paskÃ³w z wszystkimi
+moÅ¼liwymi opcjami. Paski narzÄdzi Firefoksa sÄ w peÅni dostosowywalne,
+wiÄc wyglÄdajÄ tak, jak Ty tego chcesz. Wybierz Widok, NarzÄdzia,
+Dostosuj... i po prostu przenieÅ wszystkie ikony, ktÃ³rych potrzebujesz.
+Firefox pozwala takÅ¼e tworzyÄ nowe paski narzÄdzi, a rozszerzenia
+czÄsto dodajÄ nowe pozycje do palety dostÄpnych ikon.&lt;/p&gt;
+			&lt;/div&gt;&lt;div class=&quot;subOpis_bottom&quot;&gt;&lt;/div&gt;
+
+			&lt;div class=&quot;subOpis fragment&quot;&gt;
+		  &lt;h2 id=&quot;livemarks&quot;&gt;KanaÅy RSS i Atom w zakÅadkach&lt;/h2&gt;
+		  &lt;p class=&quot;przedKoncem&quot;&gt;NajÅwieÅ¼sze informacje automatycznie pojawiajÄce siÄ w Twoich zakÅadkach dziÄki
+		  technologiom RSS i Atom. &lt;a href=&quot;http://beta.firefox.pl/d-livemarks.html&quot;&gt;WiÄcej informacji...&lt;/a&gt;&lt;/p&gt;
+ 			&lt;/div&gt;&lt;div class=&quot;subOpis_bottom&quot;&gt;&lt;/div&gt;
+
+			&lt;div class=&quot;subOpis fragment&quot;&gt;
+		  &lt;h2 id=&quot;extensions&quot;&gt;Rozszerzenia&lt;/h2&gt;
+		  &lt;p class=&quot;przedKoncem&quot;&gt;&lt;img alt=&quot;Rozszerzenia - zrzut ekranu&quot; src=&quot;dlaczego/screen6.jpg&quot; class=&quot;rightimg&quot;&gt;&lt;a href=&quot;https://addons.mozilla.org/firefox/extensions/&quot;&gt;Rozszerzenia&lt;/a&gt;
+to maÅe programy (lub wtyczki) ktÃ³re dodajÄ nowÄ funkcjonalnoÅÄ do
+Firefoksa. To moÅ¼e byÄ wszystko, od przycisku po zupeÅnie nowÄ funkcje,
+jak gesty myszy. WspaniaÅÄ rzeczÄ w przypadku rozszerzeÅ jest to, Å¼e
+pozwalajÄ one Firefoksowi pozostaÄ maÅym i czystym. KaÅ¼dy kto
+potrzebuje wiÄcej funkcji moÅ¼e pobraÄ odpowiedne rozszerzenie. Z
+podstawowÄ znajomoÅciÄ jÄzykÃ³w takich jak &lt;abbr title=&quot;Rozszerzalny JÄzyk ZnacznikÃ³w&quot;&gt;XML&lt;/abbr&gt;, &lt;abbr title=&quot;Kaskadowe Arkusze StylÃ³w&quot;&gt;CSS&lt;/abbr&gt; i JavaScript moÅ¼esz takÅ¼e z ÅatwoÅciÄ stworzyÄ wÅasne rozszerzenia.&lt;/p&gt;
+			&lt;/div&gt;&lt;div class=&quot;subOpis_bottom&quot;&gt;&lt;/div&gt;
+
+			&lt;div class=&quot;subOpis fragment&quot;&gt;
+		  &lt;h2 id=&quot;security&quot;&gt;BezpieczeÅstwo&lt;/h2&gt;
+		  &lt;p class=&quot;przedKoncem&quot;&gt;&lt;img alt=&quot;Ochrona przed oszustwem - zrzut ekranu&quot; src=&quot;dlaczego/screenX.jpg&quot; class=&quot;rightimg&quot;&gt;Firefox ma wbudowany system
+ostrzegania przed podejrzanymi stronami. NiektÃ³re strony w Internecie
+zostaÅy stworzone w celu wyÅudzenia od uÅ¼ytkownikÃ³w ich danych osobistych
+lub finansowych. MoÅ¼e to byÄ np. strona udajÄca witrynÄ Twojego banku
+internetowego. JeÅli wejdziesz na stronÄ, ktÃ³ra jest podejrzana o
+takie oszustwo, Firefox natychmiast wyÅwietli ostrzeÅ¼enie i zaproponuje
+opuszczenie strony.&lt;/p&gt;
+		&lt;p&gt;SpecjaliÅci od bezpieczeÅstwa &lt;a href=&quot;http://www.securityfocus.com/print/columnists/249&quot;&gt;uwaÅ¼ajÄ MozillÄ Firefox
+		  za przeglÄdarkÄ znacznie bezpieczniejszÄ&lt;/a&gt; niÅ¼ wiodÄca przeglÄdarka konkurencyjnego producenta. &lt;/p&gt;
+			&lt;/div&gt;&lt;div class=&quot;subOpis_bottom&quot;&gt;&lt;/div&gt;	
+			
+		&lt;/div&gt; &lt;!-- end subMain --&gt;
+
+		&lt;!-- !!! a tu podstrona sie konczy --&gt;
+</textarea>
+</div>
+<div class="viewall_frame_container">
+  <table class="viewall_desc">
+    <tr>
+      <th colspan="6" class="bz_attach_footer">Attachment #803</th>
+    </tr>
+    <tr>
+      <td>Karty</td>
+
+      <td>image/png
+      </td>
+
+      <td>2006-10-23 21:38:07 CEST</td>
+      <td>53.44 KB</td>
+
+      <td>
+          <i>no flags</i>
+      </td>
+
+      <td><a href="attachment.cgi%3Fid=803&amp;action=edit.html">Details</a></td>
+    </tr>
+  </table>
+
+      <iframe src="attachment.cgi%3Fid=803" class="viewall_frame" sandbox>
+        <b>You cannot view the attachment on this page because your browser does not support IFRAMEs.
+        <a href="attachment.cgi%3Fid=803">View the attachment on a separate page</a>.</b>
+      </iframe>
+</div>
+<div class="viewall_frame_container">
+  <table class="viewall_desc">
+    <tr>
+      <th colspan="6" class="bz_attach_footer">Attachment #804</th>
+    </tr>
+    <tr>
+      <td>Paski narzędzi</td>
+
+      <td>image/png
+      </td>
+
+      <td>2006-10-23 21:39:58 CEST</td>
+      <td>7.64 KB</td>
+
+      <td>
+          <i>no flags</i>
+      </td>
+
+      <td><a href="attachment.cgi%3Fid=804&amp;action=edit.html">Details</a></td>
+    </tr>
+  </table>
+
+      <iframe src="attachment.cgi%3Fid=804" class="viewall_frame" sandbox>
+        <b>You cannot view the attachment on this page because your browser does not support IFRAMEs.
+        <a href="attachment.cgi%3Fid=804">View the attachment on a separate page</a>.</b>
+      </iframe>
+</div>
+<div class="viewall_frame_container">
+  <table class="viewall_desc">
+    <tr>
+      <th colspan="6" class="bz_attach_footer">Attachment #805</th>
+    </tr>
+    <tr>
+      <td>Wyskakujące okienka - pasek</td>
+
+      <td>image/png
+      </td>
+
+      <td>2006-10-23 21:42:33 CEST</td>
+      <td>2.47 KB</td>
+
+      <td>
+          <i>no flags</i>
+      </td>
+
+      <td><a href="attachment.cgi%3Fid=805&amp;action=edit.html">Details</a></td>
+    </tr>
+  </table>
+
+      <iframe src="attachment.cgi%3Fid=805" class="viewall_frame" sandbox>
+        <b>You cannot view the attachment on this page because your browser does not support IFRAMEs.
+        <a href="attachment.cgi%3Fid=805">View the attachment on a separate page</a>.</b>
+      </iframe>
+</div>
+<div class="viewall_frame_container">
+  <table class="viewall_desc">
+    <tr>
+      <th colspan="6" class="bz_attach_footer">Attachment #806</th>
+    </tr>
+    <tr>
+      <td>Wyszukiwanie</td>
+
+      <td>image/png
+      </td>
+
+      <td>2006-10-23 21:45:18 CEST</td>
+      <td>5.50 KB</td>
+
+      <td>
+          <i>no flags</i>
+      </td>
+
+      <td><a href="attachment.cgi%3Fid=806&amp;action=edit.html">Details</a></td>
+    </tr>
+  </table>
+
+      <iframe src="attachment.cgi%3Fid=806" class="viewall_frame" sandbox>
+        <b>You cannot view the attachment on this page because your browser does not support IFRAMEs.
+        <a href="attachment.cgi%3Fid=806">View the attachment on a separate page</a>.</b>
+      </iframe>
+</div>
+<div class="viewall_frame_container">
+  <table class="viewall_desc">
+    <tr>
+      <th colspan="6" class="bz_attach_footer">Attachment #807</th>
+    </tr>
+    <tr>
+      <td>Rozszerzenia</td>
+
+      <td>image/png
+      </td>
+
+      <td>2006-10-23 21:49:28 CEST</td>
+      <td>1.44 KB</td>
+
+      <td>
+          <i>no flags</i>
+      </td>
+
+      <td><a href="attachment.cgi%3Fid=807&amp;action=edit.html">Details</a></td>
+    </tr>
+  </table>
+
+      <iframe src="attachment.cgi%3Fid=807" class="viewall_frame" sandbox>
+        <b>You cannot view the attachment on this page because your browser does not support IFRAMEs.
+        <a href="attachment.cgi%3Fid=807">View the attachment on a separate page</a>.</b>
+      </iframe>
+</div>
+<div class="viewall_frame_container">
+  <table class="viewall_desc">
+    <tr>
+      <th colspan="6" class="bz_attach_footer">Attachment #808</th>
+    </tr>
+    <tr>
+      <td>Ikona RSS w pasku adresu (trochę długie)</td>
+
+      <td>image/png
+      </td>
+
+      <td>2006-10-23 21:53:35 CEST</td>
+      <td>2.77 KB</td>
+
+      <td>
+          <i>no flags</i>
+      </td>
+
+      <td><a href="attachment.cgi%3Fid=808&amp;action=edit.html">Details</a></td>
+    </tr>
+  </table>
+
+      <iframe src="attachment.cgi%3Fid=808" class="viewall_frame" sandbox>
+        <b>You cannot view the attachment on this page because your browser does not support IFRAMEs.
+        <a href="attachment.cgi%3Fid=808">View the attachment on a separate page</a>.</b>
+      </iframe>
+</div>
+<div class="viewall_frame_container">
+  <table class="viewall_desc">
+    <tr>
+      <th colspan="6" class="bz_attach_footer">Attachment #809</th>
+    </tr>
+    <tr>
+      <td>Rozwinięte &quot;Aktualności&quot;</td>
+
+      <td>image/png
+      </td>
+
+      <td>2006-10-23 21:56:51 CEST</td>
+      <td>9.42 KB</td>
+
+      <td>
+          <i>no flags</i>
+      </td>
+
+      <td><a href="attachment.cgi%3Fid=809&amp;action=edit.html">Details</a></td>
+    </tr>
+  </table>
+
+      <iframe src="attachment.cgi%3Fid=809" class="viewall_frame" sandbox>
+        <b>You cannot view the attachment on this page because your browser does not support IFRAMEs.
+        <a href="attachment.cgi%3Fid=809">View the attachment on a separate page</a>.</b>
+      </iframe>
+</div>
+<div class="viewall_frame_container">
+  <table class="viewall_desc">
+    <tr>
+      <th colspan="6" class="bz_attach_footer">Attachment #810</th>
+    </tr>
+    <tr>
+      <td>Subskrybuj ten kanał za pomocą...</td>
+
+      <td>image/png
+      </td>
+
+      <td>2006-10-23 22:00:04 CEST</td>
+      <td>12.42 KB</td>
+
+      <td>
+          <i>no flags</i>
+      </td>
+
+      <td><a href="attachment.cgi%3Fid=810&amp;action=edit.html">Details</a></td>
+    </tr>
+  </table>
+
+      <iframe src="attachment.cgi%3Fid=810" class="viewall_frame" sandbox>
+        <b>You cannot view the attachment on this page because your browser does not support IFRAMEs.
+        <a href="attachment.cgi%3Fid=810">View the attachment on a separate page</a>.</b>
+      </iframe>
+</div>
+</div>
+
+    <div id="footer">
+      <div class="intro"></div>
+<ul id="useful-links">
+  <li id="links-actions"><ul class="links">
+  <li><a href="index.html">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi.html">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi.html">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi.html">Search</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="http://bugs.aviary.pl/buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input type="hidden" id="no_redirect_bottom" name="no_redirect" value="0">
+    <script type="text/javascript">
+      if (history && history.replaceState) {
+        var no_redirect = document.getElementById("no_redirect_bottom");
+        no_redirect.value = 1;
+      }
+    </script>
+    <input class="txt" type="text" id="quicksearch_bottom" name="quicksearch" 
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search" 
+           id="find_bottom"></form>
+  <a href="page.cgi%3Fid=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="report.cgi.html">Reports</a></li>
+
+  <li>
+      <span class="separator">| </span>
+        <a href="request.cgi.html">Requests</a></li>
+
+
+  
+    
+      <li id="new_account_container_bottom">
+        <span class="separator">| </span>
+        <a href="createaccount.cgi.html">New&nbsp;Account</a>
+      </li>
+
+    <li id="mini_login_container_bottom">
+  <span class="separator">| </span>
+  <a id="login_link_bottom" href="http://bugs.aviary.pl/attachment.cgi?bugid=1076&amp;action=viewall&amp;GoAheadAndLogIn=1"
+     onclick="return show_mini_login_form('_bottom')">Log In</a>
+
+  <form action="attachment.cgi%3Fbugid=1076&amp;action=viewall.html" method="POST"
+        class="mini_login bz_default_hidden"
+        id="mini_login_bottom">
+    <input id="Bugzilla_login_bottom" required
+           name="Bugzilla_login" class="bz_login"
+        type="email" placeholder="Email Address">
+    <input class="bz_password" name="Bugzilla_password" type="password"
+           id="Bugzilla_password_bottom" required
+           placeholder="Password">
+    <input type="hidden" name="Bugzilla_login_token"
+           value="1469829399-XSx6ettYccmCJvMlMax47LCq8HxzdmE5Ydz9R3j_-Zw">
+    <input type="submit" name="GoAheadAndLogIn" value="Log in"
+            id="log_in_bottom">
+    <a href="attachment.cgi%3Fbugid=1076&amp;action=viewall.html#" onclick="return hide_mini_login_form('_bottom')">[x]</a>
+  </form>
+</li>
+
+
+  <li id="forgot_container_bottom">
+    <span class="separator">| </span>
+    <a id="forgot_link_bottom" href="http://bugs.aviary.pl/attachment.cgi?bugid=1076&amp;action=viewall&amp;GoAheadAndLogIn=1#forgot"
+       onclick="return show_forgot_form('_bottom')">Forgot Password</a>
+    <form action="http://bugs.aviary.pl/token.cgi" method="post" id="forgot_form_bottom"
+          class="mini_forgot bz_default_hidden">
+      <label for="login_bottom">Login:</label>
+      <input name="loginname" size="20" id="login_bottom" required
+          type="email" placeholder="Your Email Address">
+      <input id="forgot_button_bottom" value="Reset Password" type="submit">
+      <input type="hidden" name="a" value="reqpw">
+      <input type="hidden" id="token_bottom" name="token"
+             value="1469829399-3oyby7KVKIywbn_x8iD7Bi2BvSjcyQIpSOMy0AKBgcM">
+      <a href="attachment.cgi%3Fbugid=1076&amp;action=viewall.html#" onclick="return hide_forgot_form('_bottom')">[x]</a>
+    </form>
+  </li>
+</ul>
+  </li>
+
+  
+
+
+
+
+  
+</ul>
+
+      <div class="outro"></div>
+    </div>
+
+  </body>
+</html>

@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="UTF-8"?> <!DOCTYPE html PUBLIC
+"-//W3C//DTD XHTML 1.1//EN"
+"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd"[
+<!ENTITY % brandDTD SYSTEM "chrome://global/locale/brand.dtd" >
+%brandDTD; ] >
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>&brandShortName; - Przewodnik</title>
+    <link rel="stylesheet" type="text/css" href="chrome://help/skin/helpFileLayout.css" />
+  </head>
+
+  <body>
+<table width="100%" id="navTable">
+<tr>
+<td width="72"><img src="chrome://editor/skin/icons/throbber-single.png" width="52" height="52" alt="Nvu" align="center"/></td><td align="left"><span id="topText">Centrum pomocy</span></td>
+</tr>
+</table>
+    <h1 id="nvu_tutorial">&brandShortName; - Przewodnik</h1>
+
+    <p>&brandShortName; to edytor stron WWW oparty na wolnym oprogramowaniu.
+	&brandShortName; jest edytorem typu What-You-See-Is-What-You-Get(WYSIWYG), co oznacza,
+	że stronę podczas edycji widać tak jak będzie wyświetlana przez przeglądarki.
+	Program oparty jest o Gecko - silnik wyświetlający strony przygotowany przez Fundację Mozilla.
+	&brandShortName; jest zupełnie darmowy i może być pobrany ze strony 
+	<a href="http://www.nvu.com/">http://www.nvu.com/</a>.</p>
+
+    <div class="contentsBox">W tym rozdziale:
+    <a href="#scope_of_this_tutorial">Zawartość przewodnika</a>
+    <a href="#introduction_to_the_user_interface">Interfejs użytkownika</a>
+    <a href="#starting_a_new_document">Tworzenie nowego dokumentu</a>
+    <a href="#basic_formatting_of_the_document">Podstawy formatowania tekstu</a>
+    <a href="#inserting_images_and_tables">Wstawianie obrazków i tabel</a>
+    <a href="#advanced_styles">Zaawansowane style</a>
+    <a href="#publishing_your_documents_basics">Publikacja dokumentu</a>
+    </div>
+
+    <h2 id="scope_of_this_tutorial">Zawartość przewodnika</h2>
+
+    <p>Niniejszy przewodnik przeznaczony jest dla użytkowników, którzy 
+	nie mieli wcześniej okazji pracować z edytorem stron typu WYSIWYG. 
+	Przewodnik nie opisuje tematów dotyczących języków HTML, XHTML, CSS i innych.
+	Jego celem jest szybkie wprowadzenie użytkownika do pracy z &brandShortName;.</p>
+
+    <p>Przewodnik nie obejmuje także podstaw języka HTML.
+	Zachęcamy do skorzystania z sieci Internet, dzie można znaleźć
+	wiele zasobów na ten temat.</p>
+
+    <p>W przewodniku zawarto także krótkie wprowadzenie do korzystania
+	z wbudowanego edytora stylów CSS. Więcej na temat języków HTML, CSS i 
+	innych można zaleźć na stronach <a
+    href="http://www.w3.org/">Konsorcjum W3C</a>.</p>
+
+    <!-- The approach of this tutorial is to give the most basic
+         instructions on getting major things done with Nvu. This will
+         give the user an idea as to how to achieve the objective of
+         the secion. In the end of each section a link should be
+         provided targetting corresponding section in the main Help
+         for detailed treatment of the same objective.-->
+<!--
+    <h3 id="in_this_tutorial"></h3>
+
+    <p>This tutorial first introduces you to &brandShortName;'s User
+    Interface. This is followed by a basic formatting section. Next
+    secion, tells you how to insert elements like images, tables, and
+    forms in your document. Then we have small section devoted to
+    styling your document using CSS. The document concludes with
+    instructions for publishing your document to a web server.</p>
+-->
+    <p>[ <a href="#scope_of_this_tutorial">Powrót do początku rozdziału</a> ]</p>
+
+    <h2 id="introduction_to_the_user_interface">Interfejs użytkownika</h2>
+
+    <p>Menu &brandShortName; zawiera typowe w edytorach tekstowych pozycje. 
+	Szczegółowy opis menu zawarto w dokumencie <a href="menu_reference.xhtml">Opis menu.</a>
+    &brandShortName; posiada następujące paski narzędzi:</p>
+
+    <ul>
+      <li><a href="#composition_toolbar">Pasek narzędzi edycji</a></li>
+      <li><a href="#format_toolbar">Pasek narzędzi formatowania</a></li>
+      <li><a href="#tab_browser_toolbar">Pasek paneli</a></li>
+      <li><a href="#edit_mode_toolbar">Pasek trybu edycji</a></li>
+      <li><a href="#status_toolbar">Pasek statusu</a></li>
+    </ul>
+
+    <h3 id="composition_toolbar">Pasek narzędzi edycji</h3>
+
+    <p>Pasek narzędzi edycji zawiera przyciski używane do podstawowych zadań.
+	Poniżej przedstawiono widok paska narzędzi edycji.</p>
+
+    <p><img src="images/tut_composition_tb.png" title="Pasek narzędzi edycji" width="802" height="55" alt="" /></p>
+
+    <h3 id="format_toolbar">Pasek narzędzi formatowania</h3>
+
+    <p>Pasek narzędzi formatowania może być użyty do szybkiego nadawania
+	stylów tekstowi. Dostępne przyciski pozwalają m.in. na zmianę formatu
+	akapitu, wybór czcionki, zmianę kolorów tekstu i tła, zmianę wielkości
+	tekstu. Można także szybko tworzyć listy i justować akapity. Podpowiedź 
+	dotyczącą przeznaczenia danego przycisku można uzyskać przytrzymując chwilę
+	kursor myszy nad przyciskiem.</p>
+
+    <p><img src="images/tut_formating_tb.png" title="Pasek narzędzi formatowania" width="802" height="34" alt="" /></p>
+
+    <h3 id="tab_browser_toolbar">Pasek paneli</h3>
+
+    <p>&brandShortName; pozwala na edycję wielu dokumentów w jednym oknie.
+	Każda otwarta strona znajduje się w osobnym panelu. Ikona dyskietki
+	obok tytułu panelu informuje, że dany dokument nie jest zapisany.</p>
+
+    <p><img src="images/tut_tabbrowser_tb.png" title="Tab Browser Toolbar" width="636" height="29" alt="" /></p>
+
+    <h3 id="edit_mode_toolbar">Pasek trybu edycji</h3>
+
+    <p>Pasek trybu edycji pozwala na przełączanie bieżącego widoku
+	dokumentu. Domyślny jest tryb normalny, w trybie "Znaczniki HTML"
+	&brandShortName; wyświetla symbolicznie znaczniki HTML za pomocą żółtych
+	prostokątów. Tryb "Źródło" pozwala na bezpośrednią edycję kodu HTML strony.
+	Aby przełączyć tryb edycji, wystarczy kliknąć odpowiedni przycisk.</p>
+
+    <p><img src="images/tut_editmode_tb.png" title="Edit Mode Toolbar" width="408" height="30" alt="" /></p>
+
+    <h3 id="status_toolbar">Pasek statusu</h3>
+
+    <p>Pasek statusu &brandShortName; zawiera informację o położeniu kursora w hierarchii
+	znaczników HTML. Za pomocą menu kontekstowego (dostępnego po kliknięciu prawym klawiszem myszy)
+	można w prosty sposób nadać styl elementom zawartym w danym znaczniku.</p>
+
+    <p><img src="images/tut_status_tb.png" title="Pasek statusu" width="326" height="48" alt="" /></p>
+
+    <p>[ <a href="#introduction_to_the_user_interface">Powrót do początku rozdziału</a> ]</p>
+
+    <h2 id="starting_a_new_document">Tworzenie nowego dokumentu</h2>
+
+    <p>Aby utworzyć nowy dokument wystarczy nacisnąć przycisk Nowy na
+	pasku narzędzi lub z menu programu wybrać pozycję Plik > Nowy.
+	Aby otworzyć istniejący dokument, należy skorzystać z opcji Plik > Otwórz.
+	Szczegółowe instrukcje zamieszczono w rozdziale <a
+    href="composer_help.xhtml#starting_a_new_page">Tworzenie nowej strony</a>.</p>
+
+    <p>Oprócz zwykłych dokumentów można także tworzyć szablony. Po utworzeniu szablonu
+	wystarczy tylko otworzyć go, wypełnić pola i zapisać jako osobną stronę. Dzięki szablonom
+	można zaoszczędzić czas na formatowaniu i wstawianiu powtarzalnych elementów strony.
+	Więcej informacji na temat szablonów można znaleźć w rozdziale 
+	<a href="composer_help.xhtml#working_with_templates">Szablony</a>.</p>
+
+    <p>[ <a href="#starting_a_new_document">Powrót do początku rozdziału</a> ]</p>
+
+    <h2 id="basic_formatting_of_the_document">Podstawy formatowania tekstu</h2>
+
+    <p>Na przykładzie poniższego tekstu zaprezentowane zostaną
+	podstawowe funkcje formatowania tekstu dostępne w &brandShortName;. 
+	Można skopiować poniższy tekst i pracować równolegle w programie.</p>
+
+    <h3 id="tutorial_text">Tekst źródłowy</h3>
+
+    <!-- The text for the tutorial is a general text. It was by chance
+         that I was reading a book by Jim Corbett when I was planning
+         about the text to be used for the tutorial. So I wrote a few
+         paragraphs with the information I collected from a couple of
+         books and several websites. I donot guarantee for the
+         information to be correct. So, if you want detailed
+         information about Corbett National Park, consult tourist
+         books, and the WWW. In case you want to change the text,
+         please make sure that neither the new text is not copyrighted
+         nor you should use copyrighted images. All text and images
+         used in the tutorial are supposed to be distributed under the
+         GNU GPL, and MPL license. 
+		 
+		 Polski tekst dzięki wikipedii:
+		 http://pl.wikipedia.org/wiki/S%C5%82owi%C5%84ski_Park_Narodowy
+		 -->
+
+    <p>Słowiński Park Narodowy</p>
+
+	<p>Słowiński Park Narodowy utworzony w 1967 r., jest jednym z 23 
+	parków narodowych na terenie Polski. Park jest położony w środkowej 
+	części polskiego wybrzeża, w województwie pomorskim. Obejmuje Mierzeję 
+	Łebską, Nizinę Gardeńsko-Łebską, morenę czołową z najwyższą kulminacją 
+	115 m n.p.m. na wzgórzu Rowokół oraz szereg jezior: Łebsko (7140 ha), 
+	Gardno (2468 ha), Jezioro Smołdzińskie (43 ha), Dołgie Wielkie (156 ha) 
+	i Dołgie Małe (6,3 ha). Osobliwością jezior przymorskich są okresowe 
+	wlewy wody morskiej podczas silnych sztormów.
+	</p>
+	
+	<p>Rośliny</p>
+	
+	<p>Na terenie Parku występują zbiorowiska: wydmowe, torfowe, łąkowe i 
+	leśne. Odnaleźć tu można naturalne ciągi sukcesyjne, od pionierskich 
+	roślin pojawiających się na plażach do typowych nadmorskich borów 
+	bażynowych. Pionierskim gatunkiem trawy rozpoczynającej sukcesję na 
+	plażach i pomiędzy wydmami jest piaskownica zwyczajna, za nią wchodzi 
+	większa wydmuchrzyca piaskowa, turzyce, a następnie inne krzewinki i 
+	porosty. Ostatnim etapem ekspansji roślinności jest występujący na 
+	piaskach i wydmach szarych - wydmach graniczących z plażą - bór bażynowy.
+	</p>
+	
+	<p>Zwierzęta</p>
+	
+	<p>Najważniejszymi zwierzętami Parku są ptaki. Sklasyfikowano tu około 
+	260 gatunków ptactwa z czego połowa to ptactwo wodne i błotne. Dla 
+	ochrony miejsc lęgowych na jeziorach Łebsko i Gardno utworzono ścisłe 
+	rezerwaty: Żarnowskie Lęgi, Gackie Lęgi, Klukowe Lęgi, Gardnieńskie Lęgi, 
+	i Ciemińskie Błota. Podczas jesiennych i wiosennych przelotów przelatują 
+	tędy gatunki z północy, a niektóre zimują. Na brzegach jezior gniazda 
+	swe zakładają łabędzie, mewy, kaczki, perkozy, łyski i rybitwy. Na bagnach 
+	bytują bataliony, bekasy, kuliki i żurawie. natomiast w lasach można 
+	spotkać orła bielika, rybołowa, puchacza i różne gatunki sów. 
+	W lasach gnieżdżą się również bardziej pospolite ptaki jak myszołów, 
+	sikora, kruk czy dzięcioł. 
+	</p>
+	
+  
+	<p>Fakty</p>
+
+	<p>Położenie 	woj. pomorskie</p>
+	<p>Data utworzenia 	1 stycznia 1967</p>
+	<p>Długość szlaków turystycznych 	140 km</p>
+	<p>Liczba odwiedzających rocznie 	282 tys.</p>
+	<p>Siedziba 	Smołdzino</p>
+
+    <h3>Formatowanie</h3>
+
+    <p>Na początek należy zaznaczyć poprawnie nagłówki w tekście.
+	Można to zrobić zaznaczając tekst tytułu "Słowiński Park Narodowy",
+	a następnie wybierając z menu rozwijalnego na pasku formatowania format
+	<em>Nagłówek 1</em> (domyślnie w menu tym wybrana jest opcja <em>Treść</em>).
+	Kolejnym nagłówkom (Rośliny, Zwierzęta, Fakty) należy przypisać
+	nagłówek niższego poziomu - <em>Nagłówek 2</em>.</p>
+
+    <p>Dobrą praktyką jest także oznaczanie akapitów. W tym celu należy
+	zaznaczyć tekst akapitu i z tego samego menu rozwijalnego wybrać
+	pozycję <em>Akapit</em>.</p>
+
+    <p>Ważne słowa czy fragmenty tekstu można wyróżnić stosując 
+    <strong>pogrubienie</strong>(<strong>B</strong>),
+    <em>pochylenie</em>(<strong><em>I</em></strong>) lub
+    <u>podkreślenie</u>(<strong><u>U</u></strong>) - przyciski służące
+	do tego umieszczone są na <strong>pasku narzędzi formatowania</strong>.
+	Inne opcje dostępne są w menu Format. Pomyłkowe zmiany można cofnąć
+	za pomocą polecenia w menu Edycja lub skrótem klawiaturowym Ctrl+Z.
+	Więcej informacji na temat formatowania zamieszczono w rozdziale <a
+    href="composer_help.xhtml#formatting_your_web_pages">Formatowanie stron</a>.</p>
+
+    <p>Na tym etapie tekst źródłowy może wyglądać następująco:</p>
+
+    <hr />
+
+    <div style="font-size:x-large;">Słowiński Park Narodowy</div>
+
+	<p><em>Słowiński Park Narodowy</em> utworzony w 1967 r., jest jednym z 23 
+	parków narodowych na terenie Polski. Park jest położony w środkowej 
+	części polskiego wybrzeża, w województwie pomorskim. Obejmuje <strong>Mierzeję 
+	Łebską, Nizinę Gardeńsko-Łebską</strong>, morenę czołową z najwyższą kulminacją 
+	115 m n.p.m. na wzgórzu <strong>Rowokół</strong> oraz szereg jezior: 
+	<strong>Łebsko</strong> (7140 ha), <strong>Gardno</strong> (2468 ha), 
+	<strong>Jezioro Smołdzińskie</strong> (43 ha), <strong>Dołgie Wielkie</strong> (156 ha) 
+	i <strong>Dołgie Małe</strong> (6,3 ha). Osobliwością jezior przymorskich są okresowe 
+	wlewy wody morskiej podczas silnych sztormów.
+	</p>
+
+    <div style="font-size:large;">Rośliny</div>
+
+	<p>Na terenie Parku występują zbiorowiska: wydmowe, torfowe, łąkowe i 
+	leśne. Odnaleźć tu można naturalne ciągi sukcesyjne, od pionierskich 
+	roślin pojawiających się na plażach do typowych nadmorskich borów 
+	bażynowych. Pionierskim gatunkiem trawy rozpoczynającej sukcesję na 
+	plażach i pomiędzy wydmami jest piaskownica zwyczajna, za nią wchodzi 
+	większa wydmuchrzyca piaskowa, turzyce, a następnie inne krzewinki i 
+	porosty. Ostatnim etapem ekspansji roślinności jest występujący na 
+	piaskach i wydmach szarych - wydmach graniczących z plażą - bór bażynowy.
+	</p>
+	
+    <div style="font-size:large;">Zwierzęta</div>
+
+	<p>Najważniejszymi zwierzętami Parku są ptaki. Sklasyfikowano tu około 
+	260 gatunków ptactwa z czego połowa to ptactwo wodne i błotne. Dla 
+	ochrony miejsc lęgowych na jeziorach Łebsko i Gardno utworzono ścisłe 
+	rezerwaty: Żarnowskie Lęgi, Gackie Lęgi, Klukowe Lęgi, Gardnieńskie Lęgi, 
+	i Ciemińskie Błota. Podczas jesiennych i wiosennych przelotów przelatują 
+	tędy gatunki z północy, a niektóre zimują. Na brzegach jezior gniazda 
+	swe zakładają łabędzie, mewy, kaczki, perkozy, łyski i rybitwy. Na bagnach 
+	bytują bataliony, bekasy, kuliki i żurawie. natomiast w lasach można 
+	spotkać orła bielika, rybołowa, puchacza i różne gatunki sów. 
+	W lasach gnieżdżą się również bardziej pospolite ptaki jak myszołów, 
+	sikora, kruk czy dzięcioł. 
+	</p>
+	
+	<div style="font-size:large;">Fakty</div>
+
+   	<p>Położenie 	woj. pomorskie</p>
+	<p>Data utworzenia 	1 stycznia 1967</p>
+	<p>Długość szlaków turystycznych 	140 km</p>
+	<p>Liczba odwiedzających rocznie 	282 tys.</p>
+	<p>Siedziba 	Smołdzino</p>
+    <hr />
+
+    <p>[ <a href="#basic_formatting_of_the_document">Powrót do początku rozdziału</a> ]</p>
+
+    <h2 id="inserting_images_and_tables">Wstawianie obrazków i tabel</h2>
+
+    <p>Obrazki, tabele i formularze mogą być wstawiane do dokumentu
+	za pomocą <strong>paska narzędzi edycji</strong>. 
+	Do testu przykładowego zostanie wstawiona tabela z faktami na 
+	temat paru narodowego. W tym celu na pasku narzędzi należy nacisnąć przycisk <em>Tabela</em> 
+	<img src="images/table.png" width="26" height="26" alt="" />, a następnie
+	wybrać myszą rozmiar 5 wierszy i 2 kolumn. Kliknięcie
+	na komórce w 5. wierszu i 2. kolumnie spowoduje wstawienie tabeli.</p>
+
+    <p>Aby wstawić treść do tabeli, można skorzystać z wycinania ("<tt>Ctrl+X</tt>") zaznaczonego
+	tekstu i wklejania ("<tt>Ctrl+V</tt>") go w odpowiedniej komórce tabeli. 
+	Po zmianach tabela może wyglądać następująco:</p>
+
+    <!-- Do not remove inline styles from tutorial text.
+	 This is to override the style sheet rules.-->
+
+    <table style="text-align: left; height: 301px; width: 655px; background-color: rgb(255, 255, 255);" border="1" cellpadding="2" cellspacing="2">
+      <tbody>
+	<tr>
+	  <td style="width: 186px;">Położenie</td>
+
+	  <td style="width: 451px;">Polska, woj. pomorskie</td>
+	</tr>
+	<tr>
+	  <td style="width: 186px;">Data utworzenia</td>
+	  <td style="width: 451px;">1 stycznia 1967</td>
+	</tr>
+	<tr>
+	  <td style="width: 186px;">Długość szlaków turystycznych</td>
+	  <td style="width: 451px;">140 km</td>
+	</tr>
+	<tr>
+	  <td style="width: 186px;">Liczba odwiedzających rocznie</td>
+	  <td style="width: 451px;">282 tys.</td>
+	</tr>
+
+	<tr>
+	  <td style="width: 186px;">Siedziba</td>
+	  <td style="width: 451px;">Smołdzino</td>
+	</tr>
+      </tbody>
+    </table>
+
+    <p>Właściwości tabeli (także jej fragmentów i poszczególnych komórek)
+	można zmienić np. za pomocą opcji dostępnych w menu kontekstowym
+	zaznaczonych elementów.</p>
+
+    <p>Szczegółowy opis właściwości tabel można znaleźć
+	w rozdziale <a
+    href="composer_help.xhtml#formatting_your_web_pages">Tabele</a>.</p>
+
+    <p>[ <a href="#inserting_images_and_tables">Powrót do początku rozdziału</a> ]</p>
+
+    <h2 id="advanced_styles">Zaawansowane style</h2>
+
+    <p>&brandShortName; zawiera także wbudowany edytor stylów CSS, który pozawala
+	na tworzenie zewnętrznych i wewnętrznych arkuszy stylów dla tworzonych dokumentów.
+	Szczegóły dotyczące użycia stylów nie mieszczą się w niniejszym przewodniku. 
+	Zapraszamy do <a href="composer_help.xhtml#using_style_sheets_for_your_web_pages">
+	odpowiedniego rozdziału</a> głównego systemu pomocy.</p>
+
+    <p>[ <a href="#advanced_styles">Powrót do początku rozdziału</a>
+    ]</p>
+
+    <h2 id="publishing_your_documents_basics">Publikacja dokumentu</h2>
+
+    <p>Ostatnim krokiem w przygotowaniu strony internetowej jest jej publikacja
+	na serwerze. &brandShortName; może pomóc także i w tym zadaniu. 
+	Aby wyświetlić lub ukryć okno Menedżera publikacji wystarczy nacisnąć
+	klawisz F9. Szczegółowy opis publikowania dokumentów zawiera rozdział
+	<a href="publishing_help.xhtml">publikowanie stron</a>.</p>
+
+    <p>[ <a href="#publishing_your_documents_basics">Powrót do początku rozdziału</a> ]</p>
+
+    <div class="copyrightBox"><em>19 November 2004</em></div>
+
+    <p>Copyright &copy; 2003-2004 Contributors to the Nvu
+    Help Documentation Project.</p>
+
+	<p>Polskie tłumaczenie: Copyright &copy; 2005 Mozillapl.org oraz AviaryPL.</p>
+  
+  </body>
+</html>

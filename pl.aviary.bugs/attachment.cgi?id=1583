@@ -1,0 +1,13 @@
+diff -urN a/pl/default/admin/custom_fields/edit.html.tmpl b/pl/default/admin/custom_fields/edit.html.tmpl
+--- a/pl/default/admin/custom_fields/edit.html.tmpl	2010-06-07 20:20:34.859375000 +0200
++++ b/pl/default/admin/custom_fields/edit.html.tmpl	2010-06-26 10:35:12.492499200 +0200
+@@ -97,7 +97,7 @@
+             </option>
+           [% END %]
+         </select>
+-        <label for="visibility_value_id"><strong>jest określone dla:</strong></label>
++        <label for="visibility_value_id"><strong>przyjmuje wartość:</strong></label>
+         <select name="visibility_value_id" id="visibility_value_id">
+           [% FOREACH value = field.visibility_field.legal_values %]
+             <option value="[% value.id FILTER html %]"
+

@@ -1,0 +1,39 @@
+function getOS($user_agent) {
+	$osid[] = array('Windows ME', 'windows');
+	$osid[] = array('Win 9x 4.90', 'windows');
+	$osid[] = array('Windows 2000', 'windows');
+	$osid[] = array('windows xp', 'windows');
+	$osid[] = array('windows nt', 'windows');
+	$osid[] = array('(win)([0-9]{1,2}\.[0-9x]{1,2})', 'windows');
+	$osid[] = array('(win)([0-9]{2})', 'windows');
+	$osid[] = array('(windows) ([0-9x]{2})', 'windows');
+	$osid[] = array('(winnt)([0-9]{1,2}\.[0-9]{1,2}){0,1}', 'windows');
+	$osid[] = array('(windows nt) ({0,1}([0-9]{1,2}\.[0-9]{1,2}){0,1})', 'windows NT');
+	$osid[] = array('(windows) ([0-9]{1,2}\.[0-9]{1,2})', 'windows');
+	$osid[] = array('win32', 'windows');
+	$osid[] = array('unix', 'unix');
+	$osid[] = array('PPC Mac OS X', 'macos');
+	$osid[] = array('Mac_PowerPC', 'macos');
+	$osid[] = array('mac', 'macos');
+	$osid[] = array('freebsd', 'freebsd');
+	$osid[] = array('openbsd', 'openbsd');
+	$osid[] = array('netbsd', 'netbsd');
+	$osid[] = array('(Linux) ([0-9]{1,2}\.[0-9]{1,2}\.[0-9]{1,3}(rel\.[0-9]{1,2}){0,1}-([0-9]{1,2}) i([0-9]{1})86){1}', 'linux');
+	$osid[] = array('(Linux) ([0-9]{1,2}\.[0-9]{1,2}\.[0-9]{1,3}(rel\.[0-9]{1,2}){0,1} i([0-9]{1}86)){1}', 'linux');
+	$osid[] = array('(Linux) ([0-9]{1,2}\.[0-9]{1,2}\.[0-9]{1,3}(rel\.[0-9]{1,2}){0,1})', 'linux');
+	$osid[] = array('[0-9]{1,2}\.[0-9]{1,2}\.[0-9]{1,3})', 'linux');
+	$osid[] = array('X11', 'unix');
+	$osid[] = array('go!zilla', 'windows');
+	$osid[] = array('gozilla', 'windows');
+	$osid[] = array('microsoft', 'windows');
+
+	$oscnt = count($osid);
+	$os = '';
+	for($i=0; $i<$oscnt; $i++) {
+		if(eregi($osid[$i][0], $user_agent, $version)) {
+			$os = @$osid[$i][1].' '.@$version[2];
+			break;
+		}
+	}
+	return trim($os);
+}

@@ -1,0 +1,65 @@
+diff -urN a/bugzilla3.4.4-pl/pl/default/bug/edit.html.tmpl b/bugzilla3.4.4-pl/pl/default/bug/edit.html.tmpl
+--- a/bugzilla3.4.4-pl/pl/default/bug/edit.html.tmpl	2009-11-18 15:07:59.685405200 +0100
++++ b/bugzilla3.4.4-pl/pl/default/bug/edit.html.tmpl	2009-11-30 08:19:00.496689400 +0100
+@@ -446,7 +446,7 @@
+         [% IF bug.resolution %]
+           [%+ get_resolution(bug.resolution) FILTER html %]
+           [% IF bug.dup_id %]
+-            of [% "${terms.bug} ${bug.dup_id}" FILTER bug_link(bug.dup_id) FILTER none %]
++            [%+ "${terms.bledu} ${bug.dup_id}" FILTER bug_link(bug.dup_id) FILTER none %]
+           [% END %]
+         [% END %]
+         [% IF bug.user.canedit || bug.user.isreporter %]
+diff -urN a/bugzilla3.4.4-pl/pl/default/global/user-error.html.tmpl b/bugzilla3.4.4-pl/pl/default/global/user-error.html.tmpl
+--- a/bugzilla3.4.4-pl/pl/default/global/user-error.html.tmpl	2009-11-24 18:46:27.531250000 +0100
++++ b/bugzilla3.4.4-pl/pl/default/global/user-error.html.tmpl	2009-12-01 20:07:23.625000000 +0100
+@@ -112,15 +112,15 @@
+     [% END %]
+ 
+     [% IF reason %]
+-      [% IF group %] and [% END %]
++      [% IF group %][% END %]
+       [% IF reason == "cant_bless" %]
+-        brak uprawnień do modyfikowania składu grup,
++        nie posiada uprawnień do modyfikowania członkostwa grup,
+       [% ELSIF reason == "not_visible" %]
+         zostały ustawione ograniczenia dla pewnych grup użytkowników,
+       [% END %]
+     [% END %]
+ 
+-    [% IF group || reason %] dlatego [% END %] użytkownik nie ma uprawnień do
++    [% IF group || reason %] dlatego [% END %] nie ma uprawnień do
+     [% IF action == "access" %]
+       przeglądania
+     [% ELSIF action == "add" %]
+@@ -138,7 +138,7 @@
+     [% ELSIF action == "run" %]
+       uruchamiania
+     [% ELSIF action == "schedule" %]
+-      dodawania do harmonogramu
++      dodawania zdarzeń do harmonogramu
+     [% ELSIF action == "use" %]
+       korzystania
+     [% ELSIF action == "approve" %]
+@@ -751,7 +751,7 @@
+     [% title = "Brak dostępu" %]
+     Podjęto próbę zmiany pola 
+     <strong>[% field_descs.$field FILTER html %]</strong>, lecz
+-    tylko użytkownik uprawniony do edycji powiązanych
++    tylko użytkownik uprawniony do edycji powiązanych 
+     [% terms.bledow %] może zmienić to pole.
+ 
+   [% ELSIF error == "illegal_changed_in_last_x_days" %]
+diff -urN a/bugzilla3.4.4-pl/pl/default/reports/duplicates.html.tmpl b/bugzilla3.4.4-pl/pl/default/reports/duplicates.html.tmpl
+--- a/bugzilla3.4.4-pl/pl/default/reports/duplicates.html.tmpl	2009-10-29 07:42:48.000000000 +0100
++++ b/bugzilla3.4.4-pl/pl/default/reports/duplicates.html.tmpl	2009-11-27 10:00:09.555600300 +0100
+@@ -126,7 +126,7 @@
+ 
+ <form method="post" action="buglist.cgi">
+   <input type="hidden" name="bug_id" value="[% bug_ids_string %]">
+-  <input type="hidden" name="order" value="Takie jak w poprzednim zapytaniu">
++  <input type="hidden" name="order" value="Reuse same sort as last time">
+   Wyświetl jako: <input type="submit" id="list" 
+                                 value="Lista [% terms.bledow %]">.
+   (Uwaga: kolejność może być zmieniona.)
+

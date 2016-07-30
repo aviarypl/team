@@ -1,0 +1,65 @@
+Index: pl/flock/chrome/flock/common/netError.dtd
+===================================================================
+--- pl/flock/chrome/flock/common/netError.dtd	(wersja 2966)
++++ pl/flock/chrome/flock/common/netError.dtd	(kopia robocza)
+@@ -21,44 +21,37 @@
+ <!ENTITY flock.netError.search.button  "Szukaj">
+ 
+ <!-- LOCALIZATION NOTE: The following entity is an override of an entity with the same name in: flock/mozilla/dom/locales/en-US/chrome/netError.dtd -->
+-<!ENTITY dnsNotFound.longDesc 
+-  "<p>Przeglądarka nie mogła odnaleźć serwera danego adresu.</p>
++<!ENTITY dnsNotFound.longDesc
++  "<p>Przeglądarka nie mogła odnaleźć adresu danego serwera.</p>
+       <ul>
+         <li>Może wpisany adres jest błędny? (np. <q><strong>ww</strong>.flock.com</q> zamiast <q><strong>www</strong>.flock.com</q>)</li>
+-        <li>Jesteś pewien, że taka domena istnieje? Jej rejestracja mogła stracić ważność.</li>
+-        <li>Nie możesz otworzyć też innych stron? Sprawdź ustawienia sieci i serwerów DNS.</li>
++        <li>Czy na pewno taka domena istnieje? Jej rejestracja mogła stracić ważność.</li>
++        <li>Nie możesz otworzyć również innych stron? Sprawdź ustawienia sieci i serwerów DNS.</li>
+         <li>Czy Twój komputer albo sieć są chronione zaporą ogniową lub serwerem proxy? Niepoprawne ustawienia mogą wpływać na przeglądanie stron internetowych.</li>
+       </ul>
+ ">
+ 
+ #ifdef XP_MACOSX
+-
+ <!ENTITY flock.netError.partnerSearch.instructions
+     "<h1>Włącz wyniki wyszukiwania</h1>
+-        <p>Możesz włączyć otrzymywanie error search results w:<br /><!-- FIXME error search results -->
++        <p>Możesz włączyć otrzymywanie error search results w:<br />
+         <strong>&brandShortName; > Preferencje > Wyszukiwanie wybierając „Pokaż wyszukiwanie błędów w adresach stron przy pomocy Yahoo!”</strong></p>
+-">
+-
++"><!-- FIXME error search results -->
+ #else
+-
+ #ifdef XP_WIN
+ <!ENTITY flock.netError.partnerSearch.instructions
+     "<h1>Włącz wyniki wyszukiwania</h1>
+-        <p>Możesz włączyć otrzymywanie error search results w:<br /><!-- FIXME error search results -->
+-        <strong>Narzędzia > Opceje > Wyszukiwanie  wybierając „Pokaż wyszukiwanie błędów w adresach stron przy pomocy Yahoo!”</strong></p>
+-">
+-
++        <p>Możesz włączyć otrzymywanie error search results w:<br />
++        <strong>Narzędzia > Opcje > Wyszukiwanie wybierając „Pokaż wyszukiwanie błędów w adresach stron przy pomocy Yahoo!”</strong></p>
++"><!-- FIXME error search results -->
+ #else
+-
+ <!ENTITY flock.netError.partnerSearch.instructions
+     "<h1>Włącz wyniki wyszukiwania</h1>
+-        <p>Możesz włączyć otrzymywanie error search results w:<br /><!-- FIXME error search results -->
+-        <strong>Edycja > Preferencje > Wyszukiwanie  wybierając „Pokaż wyszukiwanie błędów w adresach stron przy pomocy Yahoo!”</strong></p>
+-">
+-            
++        <p>Możesz włączyć otrzymywanie error search results w:<br />
++        <strong>Edycja > Preferencje > Wyszukiwanie wybierając „Pokaż wyszukiwanie błędów w adresach stron przy pomocy Yahoo!”</strong></p>
++"><!-- FIXME error search results -->
+ #endif
+ #endif
+ 
+-<!ENTITY flock.netError.partnerSearch.close.button  "Zamknij">
+-<!ENTITY flock.netError.partnerSearch.link          "Chcesz widzieć wyniki wyszukiwania zamiast strony z informacją o błędzie?">  
+-                                                                                                                                                      	
+\ No newline at end of file
++<!ENTITY flock.netError.partnerSearch.close.button "Zamknij">
++<!ENTITY flock.netError.partnerSearch.link         "Chcesz widzieć wyniki wyszukiwania zamiast strony z informacją o błędzie?">
+

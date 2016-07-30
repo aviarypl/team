@@ -1,0 +1,73 @@
+diff --git a/browser/chrome/browser/aboutPrivateBrowsing.dtd b/browser/chrome/browser/aboutPrivateBrowsing.dtd
+--- a/browser/chrome/browser/aboutPrivateBrowsing.dtd
++++ b/browser/chrome/browser/aboutPrivateBrowsing.dtd
+@@ -1,14 +1,14 @@
+ <!ENTITY privatebrowsingpage.tabtitle                  "Tryb prywatny">
+ 
+ <!ENTITY privatebrowsingpage.pagetitle                 "Tryb prywatny">
+ 
+ <!ENTITY privatebrowsingpage.issueDesc                 "&brandShortName; nie zapamięta historii przeglądania dla tej sesji.">
+ <!ENTITY privatebrowsingpage.longDesc                  "Żadne dane o historii przeglądania podczas tej sesji nie zostaną zapisane. Dotyczy to w szczególności: historii przeglądanych stron, historii wyszukiwania, historii pobierania plików, danych formularzy, ciasteczek oraz plików pamięci podręcznej. Należy jednak pamiętać, że wszystkie pobrane pliki i dodane zakładki zostaną zachowane.">
+ 
+-<!ENTITY privatebrowsingpage.clearRecentHistoryDesc    "Istnieje także możliwość wyczyszczenia dotychczasowej historii
+-przeglądania przed przejściem do trybu prywatnego.">
++<!ENTITY privatebrowsingpage.clearRecentHistoryDesc    "Można także wyczyścić dotychczasową historię przeglądania przed
++przejściem do trybu prywatnego.">
+ <!ENTITY privatebrowsingpage.recentHistory.label       "Wyczyść historię przeglądania">
+ <!ENTITY privatebrowsingpage.recentHistory.accesskey   "W">
+ 
+-<!ENTITY privatebrowsingpage.howToStopDesc             "Aby opuścić tryb prywatnego przeglądania, należy odznaczyć pozycję Narzędzia &gt; Tryb prywatny.">
++<!ENTITY privatebrowsingpage.howToStopDesc             "Aby opuścić tryb prywatny, należy odznaczyć pozycję Narzędzia &gt; Tryb prywatny.">
+ <!ENTITY privatebrowsingpage.footerDesc                "Udanego przeglądania!"><!-- FIXME: originally enjoy -->
+diff --git a/browser/chrome/browser/browser.properties b/browser/chrome/browser/browser.properties
+--- a/browser/chrome/browser/browser.properties
++++ b/browser/chrome/browser/browser.properties
+@@ -161,12 +161,12 @@ safebrowsing.notAnAttackButton.accessKey
+ safebrowsing.notAnAttackButton.accessKey=T
+ 
+ # Private Browsing Confirmation dialog
+ # LOCALIZATION NOTE (privateBrowsingMessage): %S will be replaced
+ # by the name of the application.
+ # LOCALIZATION NOTE (privateBrowsingYesTitle, privateBrowsingNoTitle, privateBrowsingNeverAsk):
+ # Access keys are specified by prefixing the desired letter with an ampersand.
+ privateBrowsingDialogTitle=Tryb prywatny
+-privateBrowsingMessage=Program %S zapamięta aktualnie otwarte karty, aby otworzyć jepo zakończeniu przeglądania w trybie prywatnym.
+-privateBrowsingYesTitle=&Przejdź do Trybu prywatnego
++privateBrowsingMessage=%S zapamięta aktualnie otwarte karty, aby otworzyć je po zakończeniu przeglądania w trybie prywatnym.
++privateBrowsingYesTitle=&Przejdź do trybu prywatnego
+ privateBrowsingNoTitle=&Anuluj
+-privateBrowsingNeverAsk=&Nie wyświetlaj więcej tego komunikatu
++privateBrowsingNeverAsk=&Nie wyświetlaj ponownie tego komunikatu
+diff --git a/toolkit/chrome/mozapps/downloads/downloads.properties b/toolkit/chrome/mozapps/downloads/downloads.properties
+--- a/toolkit/chrome/mozapps/downloads/downloads.properties
++++ b/toolkit/chrome/mozapps/downloads/downloads.properties
+@@ -22,22 +22,22 @@ quitCancelDownloadsAlertMsg=Jeśli skoń
+ quitCancelDownloadsAlertMsg=Jeśli skończysz teraz pracę programu, pobieranie bieżącego pliku zostanie anulowane. Czy na pewno chcesz zakończyć pracę programu?
+ quitCancelDownloadsAlertMsgMultiple=Jeśli skończysz teraz pracę programu, pobieranie wszystkich %S plików zostanie anulowane. Czy na pewno chcesz zakończyć pracę programu?
+ quitCancelDownloadsAlertMsgMac=Jeśli skończysz teraz pracę programu, pobieranie bieżącego pliku zostanie anulowane. Czy na pewno chcesz zakończyć pracę programu?
+ quitCancelDownloadsAlertMsgMacMultiple=Jeśli skończysz teraz pracę programu, pobieranie wszystkich %S plików zostanie anulowane. Czy na pewno chcesz zakończyć pracę programu?
+ offlineCancelDownloadsAlertTitle=Anulować pobieranie wszystkich plików?
+ offlineCancelDownloadsAlertMsgMultiple=Jeśli przejdziesz teraz do trybu offline, pobieranie wszystkich %S plików zostanie anulowane. Czy na pewno chcesz przejść do trybu offline?
+ offlineCancelDownloadsAlertMsg=Jeśli przejdziesz teraz do trybu offline, pobieranie bieżącego pliku zostanie anulowane. Czy na pewno chcesz przejść do trybu offline?
+ # FIXME: bap 2011, private browsing in enterPrivateBrowsingCancelDownloadsAlertMsg, enterPrivateBrowsingCancelDownloadsAlertMsgMultiple, leavePrivateBrowsingCancelDownloadsAlertMsg, leavePrivateBrowsingCancelDownloadsAlertMsgMultiple
+-enterPrivateBrowsingCancelDownloadsAlertTitle=Anulować pobieranie wszystkich plików?
+-enterPrivateBrowsingCancelDownloadsAlertMsg=Jeśli przejdziesz teraz do trybu prywatnego przeglądania, pobieranie bieżącego pliku zostanie anulowane. Czy na pewno chcesz przejść do trybu prywatnego?
+-enterPrivateBrowsingCancelDownloadsAlertMsgMultiple=Jeśli przejdziesz teraz do trybu prywatnego przeglądania, zostanie anulowane pobieranie %S plików. Czy na pewno chcesz przejść do trybu prywatnego?
+-leavePrivateBrowsingCancelDownloadsAlertTitle=Anulować pobieranie wszystkich plików?
+-leavePrivateBrowsingCancelDownloadsAlertMsg=Jeśli opuścisz teraz tryb prywatnego przeglądania, pobieranie bieżącego pliku zostanie anulowane. Czy na pewno chcesz opuścić tryb prywatny?
+-leavePrivateBrowsingCancelDownloadsAlertMsgMultiple=Jeśli opuścisz teraz tryb prywatnego przeglądania, zostanie anulowane pobieranie %S plików. Czy na pewno chcesz opuścić tryb prywatny?
++enterPrivateBrowsingCancelDownloadsAlertTitle=Czy anulować pobieranie wszystkich plików?
++enterPrivateBrowsingCancelDownloadsAlertMsg=Przejście teraz do trybu prywatnego spowoduje anulowanie pobierania bieżącego pliku. Czy na pewno do niego przejść?
++enterPrivateBrowsingCancelDownloadsAlertMsgMultiple=Przejście teraz do trybu prywatnego spowoduje anulowanie pobierania %S plików. Czy na pewno do niego przejść?
++leavePrivateBrowsingCancelDownloadsAlertTitle=Czy anulować pobieranie wszystkich plików?
++leavePrivateBrowsingCancelDownloadsAlertMsg=Opuszczenie teraz trybu prywatnego spowoduje anulowanie pobierania bieżącego pliku. Czy na pewno go opuścić?
++leavePrivateBrowsingCancelDownloadsAlertMsgMultiple=Opuszczenie teraz trybu prywatnego spowoduje anulowanie pobierania %S plików. Czy na pewno go opuścić?
+ cancelDownloadsOKText=Anuluj pobieranie 1 pliku
+ cancelDownloadsOKTextMultiple=Anuluj pobieranie %S plików
+ dontQuitButtonWin=Nie kończ
+ dontQuitButtonMac=Nie zamykaj
+ dontGoOfflineButton=Pozostań w trybie online
+ # FIXME: bap 2011, private browsing in dontEnterPrivateBrowsingButton, dontLeavePrivateBrowsingButton
+ dontEnterPrivateBrowsingButton=Nie przechodź do trybu prywatnego
+ dontLeavePrivateBrowsingButton=Pozostań w trybie prywatnym
+

@@ -1,0 +1,50 @@
+Index: products/firefox/2.0.0.8/releasenotes/index.html
+===================================================================
+--- products/firefox/2.0.0.8/releasenotes/index.html	(revision 7557)
++++ products/firefox/2.0.0.8/releasenotes/index.html	(working copy)
+@@ -127,7 +127,7 @@
+ <dt id="vista">Windows i Windows Vista</dt>
+ 	<dd>
+   	<ul class="spaced">
+-       <li>Rozszerzenie Java Console dołączone do środowiska Java SE 6.0u1 (J2SE6.0.01) nie jest kompatybilne z Firefoksem 2.0.0.8.
++       <li>Rozszerzenie Java Console, dołączone do środowiska Java SE 6.0u1 (J2SE6.0.01), nie jest kompatybilne z Firefoksem 2.0.0.8.
+           (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=364390">zgłoszenie w Bugzilli</a>). Java powinna działać prawidłowo, ale
+           pozycja &bdquo;Konsola Javy&rdquo; nie będzie dostępna w menu Narzędzia. Problem ten został poprawiony w wydaniu Java SE 6.0u2 (J2SE6.0.02),
+           dostępnym do pobrania z <a href="http://java.sun.com/javase/downloads/index.jsp">witryny Javy</a>.
+@@ -160,7 +160,7 @@
+ 	      <ul class="spaced">
+ 	      <li>W wersji 10.5 systemu (Leopard) występują problemy z działaniem niektórych wtyczek oraz rozszerzeń zawierających binarne komponenty. Oprócz tego, karty w oknie Preferencje > Zaawansowane nie są poprawnie wyświetlane.</li>
+ 	      <li>Opcja &bdquo;Zamknij inne karty&rdquo; w&nbsp;menu podręcznym karty może zakończyć się zwróceniem błędu przy otwartych więcej niż 20 kartach.</li>
+-	      <li>Niektórzy użytkownicy zgłaszali problemy z wyświetlaniem treści Macromedia Flash na Macintoshach z&nbsp;procesorami Intela. Aby obejść ten problem można usunąć wersję PowerPC wtyczki &bdquo;Flash Player Enabler.plugin&rdquo; z&nbsp;katalogu <tt>/Library/Internet Plug-Ins</tt>.</li>
++	      <li>Niektórzy użytkownicy zgłaszali problemy z wyświetlaniem treści Macromedia Flash na Macintoshach z&nbsp;procesorami Intela. Aby obejść ten problem, można usunąć wersję PowerPC wtyczki &bdquo;Flash Player Enabler.plugin&rdquo; z&nbsp;katalogu <tt>/Library/Internet Plug-Ins</tt>.</li>
+ 	      <li>Po instalacji nowej wtyczki Firefox może nadal wyświetlać informacje o&nbsp;starszej wersji wtyczki na stronie about:plugins. Jeśli tak się stanie, należy zamknąć Firefoksa i&nbsp;usunąć plik &bdquo;pluginreg.dat&rdquo; z&nbsp;<a href="http://kb.mozillazine.org/Profile_folder">folderu profilu</a> i&nbsp;ponownie uruchomić Firefoksa.</li>
+ 	      <li>Java nie działa na procesorach Intel Core pod Rosettą.</li>
+ 	      <li>Na Macintoshach z&nbsp;procesorami Intela nie ma mechanizmu Talkback (zarówno przy pracy natywnej, jak i&nbsp;pod Rosettą). W&nbsp;przypadku awarii przeglądarki uruchomić powinien się program zgłaszania awarii Apple.</li>
+@@ -170,7 +170,7 @@
+       <dd>
+ 	      <ul class="spaced"> 
+ 	      <li>Jeśli Firefox został zainstalowany w&nbsp;katalogu ze spacjami w&nbsp;nazwie, może nie być w&nbsp;stanie ustawić się jako domyślna przeglądarka. Obejściem tego problemu jest instalacja w&nbsp;katalogu bez spacji w&nbsp;nazwie.</li>
+-	      <li>Integracja z&nbsp;GNOME nie działa prawidłowo w&nbsp;dystrybucji Fedora Core 3. Użytkownicy Fedora Core 3 powinni pobrać i&nbsp;zainstalować <a href="http://download.fedora.redhat.com/pub/fedora/linux/core/2/i386/os/Fedora/RPMS/linc-1.0.3-3.1.i386.rpm">linc-1.0.3-3.1.i386.rpm</a>. Po instalacji tego pakietu RPM należy w&nbsp;katalogu, w&nbsp;którym zainstalowano Firefoksa wykonać polecenie (konieczne są uprawnienia do zapisu):
++	      <li>Integracja z&nbsp;GNOME nie działa prawidłowo w&nbsp;dystrybucji Fedora Core 3. Użytkownicy Fedora Core 3 powinni pobrać i&nbsp;zainstalować <a href="http://download.fedora.redhat.com/pub/fedora/linux/core/2/i386/os/Fedora/RPMS/linc-1.0.3-3.1.i386.rpm">linc-1.0.3-3.1.i386.rpm</a>. Po instalacji tego pakietu RPM należy w&nbsp;katalogu, w&nbsp;którym zainstalowano Firefoksa, wykonać polecenie (konieczne są uprawnienia do zapisu):
+ 	          <p>
+ 	            <code>touch .autoreg</code>
+ 	          </p>
+@@ -190,7 +190,7 @@
+           Po uruchomieniu w trybie awaryjnym zablokowane są wszystkie rozszerzenia, a&nbsp;przeglądarka korzysta z&nbsp;domyślnego motywu. Należy wyłączyć lub usunąć rozszerzenie/motyw sprawiające problemy i&nbsp;uruchomić przeglądarkę normalnie.
+         </li>
+         <li>Jeśli po odinstalowaniu rozszerzenia zainstalowanego w&nbsp;profilu użytkownika (tj. zainstalowanego ze strony WWW) zamierzamy instalować to rozszerzenie dla wszystkich profili przy pomocy flagi -install-global-extension w&nbsp;linii poleceń, należy jednorazowo uruchomić przeglądarkę ponownie, by wyczyścić bazę danych rozszerzeń ze śladów tamtego rozszerzenia przed globalną instalacją. W&nbsp;przeciwnym wypadku wpis na liście rozszerzeń może zostać uszkodzony i&nbsp;globalna instalacja może nie być możliwa.</li>
+-        <li>W razie wystąpienia niespodziewanych problemów z zakładkami, pobieraniem plików, umiejscowieniem okien, paskami narzędzi, historią lub innymi ustawieniami, zaleca się przed zgłoszeniem błędu sprawdzenie, czy problem nie występuje na nowym profilu. Aby utworzyć nowy profil, należy uruchomić Firefoksa z przełącznikiem -P w linii poleceń i wybranie przycisku &bdquo;Utwórz nowy profil...&rdquo;. Należy pojedynczo przenosić pliki ustawień (zakładki, zachowane hasła itd.), każdorazowo sprawdzając, czy problem ponownie się pojawia. Jeśli istotnie przyczyną problemu był plik danych profilu, prosimy o dołączenie go do zgłoszenia błędu.</li>
++        <li>W razie wystąpienia niespodziewanych problemów z zakładkami, pobieraniem plików, umiejscowieniem okien, paskami narzędzi, historią lub innymi ustawieniami, zaleca się przed zgłoszeniem błędu sprawdzenie, czy problem nie występuje na nowym profilu. Aby utworzyć nowy profil, należy uruchomić Firefoksa z przełącznikiem -P w linii poleceń i wybrać przycisk &bdquo;Utwórz nowy profil...&rdquo;. Należy pojedynczo przenosić pliki ustawień (zakładki, zachowane hasła itd.), każdorazowo sprawdzając, czy problem ponownie się pojawia. Jeśli istotnie przyczyną problemu był plik danych profilu, prosimy o dołączenie go do zgłoszenia błędu.</li>
+       </ul>
+ 
+ 
+@@ -200,7 +200,7 @@
+ 
+         <li>
+           Jak mogę pomóc?
+-          <p>Potrzebujemy pomocy od programistów i&nbsp;testerów, aby uczynić Firefoksa jeszcze lepszym.
++          <p>Potrzebujemy pomocy programistów i&nbsp;testerów, aby uczynić Firefoksa jeszcze lepszym.
+              Prosimy przeczytać informacje o&nbsp;wydaniu i&nbsp;zapoznać się z&nbsp;<a 
+              href="http://www.mozilla.org/support/firefox/bugs">instrukcją zgłaszania błędów</a> przed
+              zgłaszaniem błędów w serwisie <a href="https://bugzilla.mozilla.org/">Bugzilla</a>. Czekamy także
+

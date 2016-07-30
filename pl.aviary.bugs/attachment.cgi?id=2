@@ -1,0 +1,11 @@
+#!/bin/sh
+
+export MOZILLA_FIVE_HOME=/opt/firefox
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$MOZILLA_FIVE_HOME
+
+url=$1; [ -z $url ] && url=about:blank
+
+$MOZILLA_FIVE_HOME/mozilla-xremote-client openURL\($url,new-tab\) && exit 0
+
+exec $MOZILLA_FIVE_HOME/firefox $url
+

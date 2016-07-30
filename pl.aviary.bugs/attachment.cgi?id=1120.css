@@ -1,0 +1,938 @@
+/*  
+Theme Name: AviaryPL Theme
+Theme URI: http://www.aviary.pl/
+Description: Theme for the www.aviary.pl website. 
+Version: 1.5
+Author: AviaryPL Team and Nikon
+Author URI: http://www.aviary.pl/
+
+	This theme was designed by Nikon and built by the AviaryPL Team.
+	While the XHTML and CSS code is available under the GNU GPL
+	<http://www.opensource.org/licenses/gpl-license.php>,
+	use of the graphic files is restricted to the AviaryPL Team.
+
+	Parts of the code come from the Kubrick theme, which was
+	designed and built by Michael Heilemann <http://binarybonsai.com/>.
+	
+	This design contains Mozilla trademarks used under permission
+	given to AviaryPL by Mozilla Europe.
+	
+*/
+
+/* General rules */
+
+body {
+	background: #53617e url(http://bugs.aviary.pl/images/bg.jpg);
+	margin: 0;
+	padding: 0;
+	font-family: verdana, vera sans, tahoma, arial, sans-serif;
+}
+
+a img { 
+	border: 0; 
+}
+
+#content a { 
+	color: #0e3788 !important;
+	font-weight: bold;
+}
+
+a:hover {
+	color: #35435f;
+}
+
+q { quotes: '\201E' '\201D' '\00BB' '\00AB' } 
+
+p {
+	margin: 0 0 1ex 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	margin: 10px 0;
+}
+
+h1 {
+	font-size: 1.4em;
+}
+
+h2 {
+	font-size: 1.3em;
+}
+
+
+h3 {
+	font-size: 1.1em;
+	font-weight: normal;
+}
+
+h4 {
+	font-size: 1.0em;
+}
+
+h5 {
+	font-size: 0.9ex;
+}
+
+h6 {
+	font-size: 0.8ex;
+}
+
+.col1of2 h2 {
+    font-size: 1.1em;
+}
+
+.cl {
+	clear: both;
+}
+
+#container {
+    width: 100%;
+    display: block;
+    background: url(http://bugs.aviary.pl/images/bg-top.jpg) repeat-x;
+    text-align: center; /* workaround for IE bug */
+}
+
+#c0 {
+	min-width: 720px;
+	max-width: 900px;
+	padding: 0;
+	margin: 0 auto;
+	background: #fff url(http://bugs.aviary.pl/images/dots.png) repeat-y;
+}
+
+* html #c0 {
+    width: expression(document.body.clientWidth > 925 ? "900px" : "auto");
+}
+
+/* Branding */
+
+#branding {
+    width: 100%;
+    height: 139px;
+    background: #fff url(http://bugs.aviary.pl/images/gradient-top-139.png) repeat-x;
+    color: #000;
+    margin: auto;
+    text-align: left;
+}
+
+#brandL {
+    width: 9px;
+    height: 139px;
+    float: left;
+    background: #fff url(http://bugs.aviary.pl/images/top-left-134.png) no-repeat;
+}
+
+#brandR {
+    width: 289px;
+    height: 139px;
+    background: transparent url(http://bugs.aviary.pl/images/top-right-139.png) no-repeat;
+    float: right;
+}
+
+body.mozilla-thunderbird #brandR {
+    background-image: url(http://bugs.aviary.pl/images/top-right-139tb.png);
+}
+
+body.nvu #brandR {
+    background-image: url(http://bugs.aviary.pl/images/top-right-139nvu.png);
+}
+
+body.flock #brandR {
+    background-image: url(http://bugs.aviary.pl/images/top-right-139flock.png);
+}
+
+body.seamonkey #brandR {
+    background-image: url(http://bugs.aviary.pl/images/top-right-139sm.png);
+}
+
+body.mozilla-sunbird #brandR {
+    background-image: url(http://bugs.aviary.pl/images/top-right-139sb.png);
+}
+
+body.camino #brandR {
+    background-image: url(http://bugs.aviary.pl/images/top-right-139cm.png);
+}
+
+body.bugzilla #brandR {
+    background-image: url(http://bugs.aviary.pl/images/top-right-139bz.png);
+}
+
+body.gnome #brandR {
+    background-image: url(http://bugs.aviary.pl/images/top-right-139gnome.png);
+}
+
+body.opensuse #brandR, body.sle #brandR {
+    background-image: url(http://bugs.aviary.pl/images/top-right-139_blank.png);
+}
+
+#brandC {
+    padding-top: 20px;
+}
+
+#homelnk {
+	margin-left: 11px;
+	display: block;
+	overflow: hidden;
+	color: #777;
+	width: 211px;
+        height: 44px;
+	font-size: 20px;
+	text-decoration: none;
+	font-weight: bold;
+	font-variant: small-caps;
+	float: left;
+}
+
+#homelnk span {
+	background-image: url(http://bugs.aviary.pl/images/apl-solid.png);
+	display: block;
+	height: 44px;
+	width: 211px;
+	position: absolute;
+	cursor: pointer;
+}
+
+
+
+/* Sections */
+
+#menu, #content, #foot {
+	width: 100%;
+	background: #fff;
+	color: #000;
+	margin: auto;
+}
+
+#content {
+	padding-top: 2px;
+	min-height: 350px;
+}
+
+#content.twocol {
+	background: #fff url(http://bugs.aviary.pl/images/dots.png) repeat-y;
+}
+
+#foot {
+	border-top :1px dotted #777;
+	padding: 5px 0 10px 0;
+	font-size: 1.1ex;
+	text-align: center;
+	clear: both;
+}
+
+#menu {
+	border-bottom: 4px solid #fff;
+	background: #3d4b68 url(http://bugs.aviary.pl/images/menu-grad.png) repeat-x;
+	text-align: left;
+	font-size: 11px;
+	font-weight: bold;
+}
+
+
+#menu1, #menu2 {
+	dzisplay: none; /* hide from IE */
+}
+
+#menu1 {
+	display: block;
+	height: 31px;
+	width: 8px;
+	float: left;
+	background: url(http://bugs.aviary.pl/images/menu-left.png) no-repeat;
+}
+
+#menu2 {
+	display: block;
+	height: 31px;
+	width: 8px;
+	background: url(http://bugs.aviary.pl/images/menu-right.png) no-repeat;
+	float: right;
+}
+
+.col1of2 {
+	width: 225px;
+	margin-left: 4px;
+	float: left;
+	text-align: left;
+	min-height: 200px;
+ 	color: #595959;
+	font-size: 0.7em;
+	padding: 0;
+	margin: 0 0px 0 0;
+}
+
+.col1of2b {
+	background: url(http://bugs.aviary.pl/images/c-grad.png) no-repeat 4px 0;
+	padding-top: 10px; 
+	padding-left: 5px;
+}
+
+.col2of2 {
+	background: url(http://bugs.aviary.pl/images/c-grad.png) no-repeat;
+	border-left: 5px solid #fff;
+	margin-left: 227px;
+	text-align: left;
+	padding: 5px 20px 10px 20px;
+ 	color: #595959;
+	min-height: 220px;
+	font-size: 0.8em;
+}
+
+.homepg {
+    padding: 5px 20px 10px 0px;
+}
+
+.homepg h2 {
+    margin-left: 20px;
+}
+
+.homelead {
+    padding-left: 20px;
+}
+
+.col1of1 {
+	background: url(http://bugs.aviary.pl/images/c-grad.png) no-repeat;
+	margin-left: 4px;
+	margin-right: 4px;
+	padding: 10px 6px 10px 20px;
+	text-align: left;
+ 	color: #595959;
+	font-size: 0.8em;
+	min-height: 50px;
+}
+
+.ads {
+	text-align: center;
+	padding-top: 6px;
+	padding-bottom: 6px;
+}
+
+
+
+/* Navigation menu */
+
+#nav {
+	list-style-type: none;
+	margin: 0;
+	padding: 0 0 0 20px;
+}
+
+#nav li {
+	display: block;
+	float: left;
+}
+
+#nav a {
+	color: #eee; /* for IE, overriden below for good browsers */
+	text-decoration: none;
+	padding: 8px 7px;
+	margin-right: 2px;
+}
+
+#nav a:hover {
+	color: #ddd;
+}
+
+/* text shadows in menu */
+
+div > #nav {
+	padding-top: 3px;
+}
+
+#nav li > a { 	color: #595959;
+	display: block;
+	line-height: 1em;
+	color: #5c6b88; /* shadow color */
+	background-color: transparent;
+	white-space: nowrap; /* wrapping breaks the effect */
+}
+
+#nav li > a:before,
+#nav li > a:after {
+	content: attr(title); /* generated text */
+	display: block;
+}
+
+#nav li > a:before {
+	margin-bottom: -1.05em;
+	margin-left: 0.1ex;
+	color: #2d3b56; /* shadow color */
+	background-color: transparent;
+}
+
+#nav li > a:after {
+	margin-top: -1.05em;
+	margin-left: -0.1ex;
+	color: #fff; /* text color */
+	background-color: transparent;
+}
+
+
+#nav li > a:hover:after {
+	text-decoration: underline;
+	color: #fff; /* text color */
+}
+
+#nav li > a:hover {
+	color: #5c6b88; /* shadow color */
+	text-decoration: underline;
+}
+
+/* Left column */
+
+.col1of2 h2 {
+	margin: 4px 0;
+	text-align: center;
+}
+
+.col1of2 ul, .col1of2 p {
+	margin: 4px 10px 8px 10px;
+	color: #595959;
+}
+
+.col1of2 * * {
+	margin: 0;
+}
+
+
+.col1of2 h3 { font-size: 1.2em; 
+    margin: 0 10px;
+}
+
+p.more {
+	text-align: right;
+	padding-right: 13px;
+	font-size: 0.8em;
+}
+
+p.more a {
+	color: #35435f;
+	text-decoration: none;
+}
+
+p.more a:hover {
+	color: #6b758a;
+}
+
+p.more a span {
+	width: 15px;
+	height: 18px;
+	float: right;
+	display: block;
+	background: url(http://bugs.aviary.pl/images/arrow.gif) no-repeat;
+}
+
+p.more a:hover span {
+	background-position: -16px 0;
+}
+
+p.date {
+	font-size: 0.95ex;
+	padding: 0 16px 0 0;
+	margin: 0;
+	display: block;
+	float: right;
+}
+
+.col1of2 ul { /* was: #newsul */
+	list-style-type: disc;
+	/* list-style-position: inside; */
+	margin: 0;
+	padding: 0 8px 0 8px;
+}
+
+#newsul {
+	color: #0e3788;
+	margin: 25px 0 0 10px;
+	font-size: 0.9em;
+}
+
+#newsul a {
+    text-decoration: none;
+}
+
+#newsul a:hover {
+    text-decoration: underline;
+}
+
+
+.prodDesc {
+	background: url(http://bugs.aviary.pl/images/c-grad.png) no-repeat;
+	padding: 10px 0 23px 15px;
+}
+
+.prodDesc h2 {
+    margin-left: 0;
+}
+
+.fxlogo {
+	margin-left: 5px;
+	background: url(http://bugs.aviary.pl/images/logo_fx.gif) no-repeat; /* for IE */
+	width: 90px;
+	height: 90px;
+	float: left;
+}
+
+* > .fxlogo {
+	background: url(http://bugs.aviary.pl/images/logo_fx.png) no-repeat;
+}
+
+.tblogo {
+	margin-left: 5px;
+	background: url(http://bugs.aviary.pl/images/logo_tb.gif) no-repeat; /* for IE */
+	width: 90px;
+	height: 90px;
+	float: left;
+}
+
+* > .tblogo {
+	background: url(http://bugs.aviary.pl/images/logo_tb.png) no-repeat;
+}
+
+.sblogo {
+	margin-left: 5px;
+	background: url(http://bugs.aviary.pl/images/logo_sb.gif) no-repeat; 
+	width: 90px;
+	height: 90px;
+	float: left;
+}
+
+.cmlogo {
+	margin-left: 5px;
+	background: url(http://bugs.aviary.pl/images/logo_cm.gif) no-repeat; 
+	width: 90px;
+	height: 90px;
+	float: left;
+}
+
+
+.col2of2 .more, .col1of1 .more {
+	margin-top: 10px;
+}
+
+/* Accessibility information - visible to screen readers, hidden in usual browsers */
+
+.ac {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 0;
+	height: 0;
+	z-index: 100;
+	overflow: hidden;
+}
+
+/* Search form */
+
+#search {
+	float: right;
+	padding: 0;
+	margin: 0;
+	padding-top: 5px;
+	padding-right: 20px;
+}
+
+#search span { color: #fff; }
+
+#query {
+	width: 20ex;
+}
+
+
+#search input {
+	font-size: 11px;
+	border-radius: 5px;
+	-moz-border-radius: 6px;
+	border: 1px solid #eee;
+	padding: 3px 1px;
+	margin: 1px 0 0 3px;
+}
+
+#search input:focus {
+	background: rgb(250, 244, 200);
+}
+
+#sidebar ul {
+    list-style-type: none;
+}
+
+#sidebar ul ul {
+    list-style-type: circle;
+}
+
+#sidebar ul li {
+    margin-bottom: 1em;
+}
+
+#sidebar ul ul li {
+    margin-bottom: 3px;
+}
+
+#wp-meta, #wp-meta li {
+    list-style-type: none;
+    display: inline;
+    padding: 0;
+    margin: 0;
+}
+
+dt { font-weight: bold; }
+dd { margin-bottom: 1ex; }
+
+.adm-stuff {
+    font-size: 8px;
+    text-align: right;
+}
+
+#akth2 {
+    width: 155px;
+    height: 28px;
+    overflow: hidden;
+    margin: 5px auto 5px auto;
+    text-indent: -500px;
+    background: transparent url(http://bugs.aviary.pl/images/head_akt.gif) no-repeat;
+}
+
+textarea#comment {
+    width: 480px;
+}
+
+.postmetadata {
+    margin: 1em;
+    padding: 2px;
+    background: rgb(250, 244, 200);
+    border: 1px solid #eee;
+    border-left: 0;
+    border-right: 0;
+}
+
+h2 a {
+    text-decoration: none;
+}
+
+.adm-stuff {
+    float: right;
+}
+
+.adm-stuff a {
+    text-decoration: none;
+    border: 1px solid #777;
+    border-top: 1px solid #aaa;
+    border-left: 1px solid #aaa;
+    background: #def;
+    padding: 3px;
+    opacity: 0.3;
+}
+
+.adm-stuff a:hover {
+    opacity: 1.0;
+}
+
+/* ------ */
+
+ul.nav2nd {
+    background: #E0E9E9 url(http://bugs.aviary.pl/images/menu_back.gif) right repeat-y;
+    margin-bottom: 1em;
+    margin-right: 0em;
+    padding: 0;
+    margin-right: 4px;
+    margin-left: 4px;
+}
+
+ul.nav2nd:before {
+    background: transparent url(http://bugs.aviary.pl/images/menu_tr.gif) no-repeat top right;
+    border-bottom: 1px solid #ddd;
+    content: url(http://bugs.aviary.pl/images/key-point_tl.gif);
+    display: block;
+    font-size: 1px;
+    height: 9px;
+    line-height: 0.1;
+    margin: 0;
+    text-align: left;
+}
+
+ul.nav2nd:after {
+    background: transparent url(http://bugs.aviary.pl/images/menu_br.gif) scroll no-repeat bottom right;
+    border-top: 1px solid #fff;
+    content:  url(http://bugs.aviary.pl/images/key-point_bl.gif);
+    display: block;
+    font-size: 1px;
+    height: 8px;
+    line-height: 0.1;
+    margin: 0 0 0 0;
+    padding-top: 0;
+    text-align: left;
+}
+
+ul.nav2nd ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* used for un-linked menu items */
+ul.nav2nd li {
+    color: #666;
+    display: block;
+    font-weight: bold;
+    margin: 0 !important;
+    position: relative;
+}
+
+ul.nav2nd li a, ul.nav2nd li.current_page_item li a {
+    background: #EDF2F2;
+    border-bottom: 1px solid #ddd;
+    border-top: 1px solid #fff;
+    border-right: 1px solid #ddd;
+    display: block;
+    padding: 6px 10px;
+    margin: 0;
+    text-decoration: none;
+    font-weight: normal !important;
+    zoom: 1;
+}
+
+ul.nav2nd li.current_page_item a, ul.nav2nd li.current_page_item a:hover,
+ul.nav2nd li.current-cat a, ul.nav2nd li.current-cat a:hover  {
+    font-weight: bold !important;
+    /* background: #E0E9E9; */
+    background: #d0d8e0;
+}
+
+ul.nav2nd ul a {
+    font-weight: normal;
+}
+
+ul.nav2nd li li a, ul.nav2nd li.current_page_item li a {
+    padding: 4px 8px 4px 20px;
+}
+
+ul.nav2nd li.current_page_item li a {
+    padding: 4px 8px 4px 20px;
+}
+
+ul.nav2nd li a:hover, ul.nav2nd li.current_page_item li a:hover {
+    background: #E0E9E9;
+}
+
+ul.nav2nd li.current_page_item li a:hover {
+    background: #E0E9E9;
+    font-weight: normal !important;
+}
+
+.alignleft {
+    float: left;
+}
+
+.alignright {
+    float: right;
+}
+
+.navigation {
+    font-size: 0.7em;
+    margin-left: 250px;
+    margin-right: 20px;
+}
+
+.feedlink {
+    width: 16px;
+    height: 16px;
+    display: block;
+    float: right;
+    overflow: hidden;
+}
+
+.feedlink span {
+    width: 16px;
+    height: 16px;
+    background: white url(http://bugs.aviary.pl/images/rss16.png);
+    display: block;
+}
+
+.presstbl ul {
+    padding-left: 1.5em;
+    margin: 0;
+}
+
+.presstbl td {
+    vertical-align: top;
+    width: 45%;
+    padding-right: 1em;
+    font-size: 0.9em;
+}
+
+.presstbl td a {
+    font-weight: normal !important;
+    text-decoration: none;
+}
+
+.presstbl td a:hover {
+    text-decoration: underline;
+}
+
+
+.presstbl h3 {
+    border-bottom: 1px solid #ccc; 
+    padding-bottom: 2px;
+}
+
+.presstbl p.more {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+.bgdt {
+    background: rgb(250, 244, 200);
+    display: block;
+    float: left;
+    width: 2.9em;
+    font-size: 0.9em;
+    border: 1px solid rgb(227, 222, 159);
+    border-left: 0;
+    border-top: 0;
+    padding: 2px;
+    text-align: center;
+    margin-right: 6px;
+    margin-bottom: 3px;
+}
+
+.postdt {
+    background: rgb(250, 244, 200);
+    display: block;
+    float: right;
+    font-size: 0.9em;
+    border: 1px solid rgb(227, 222, 159);
+    border-left: 0;
+    border-top: 0;
+    padding: 2px;
+    text-align: center;
+    margin-left: 6px;
+    margin-bottom: 6px;
+}
+
+.presstbl .bgul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.presstbl .bgul li {
+    margin-bottom: 0.3em;
+}
+
+
+.entryh3 {
+    margin-bottom: 3px;
+    font-weight: bold;
+    font-size: 1.4em;
+}
+
+.entryh3 a {
+    text-decoration: none;
+    font-weight: normal;
+}
+
+.postinfo {
+    font-size: 0.8em;
+    margin-bottom: 1em;
+}
+
+.postinfo a {
+    text-decoration: none;
+}
+
+#nav li.current_root {
+    background: #fff url(http://bugs.aviary.pl/images/tabtr.png) top right no-repeat !important;
+    display: block;
+}
+
+#nav li.current_root a {
+    background: transparent url(http://bugs.aviary.pl/images/tabtl.png) top left no-repeat !important;
+    border-bottom: 3px solid #fff !important;
+    color: #ccc;
+}
+
+#nav li.current_root a:before {
+	color: #ccc; /* shadow color */
+}
+
+#nav li.current_root a:after {
+	color: #222; /* text color */
+}
+
+.nvg {
+    padding: 0 20px;
+    font-size: 0.8em;
+}
+
+.nvg a {
+    text-decoration: none;
+}
+
+
+#search-rep input {
+    background: rgb(250, 244, 200);
+    border: 1px solid #e9e0e0;
+}
+
+#search-rep .button {
+    border: 1px solid #666;
+    border-top: 1px solid #aaa;
+    border-left: 1px solid #aaa;
+}
+
+#search-rep label {
+    font-weight: bold;
+    padding-left: 5px;
+}
+
+#adminbar {
+    background: #c00;
+    color: #fff;
+    padding: 3px;
+    border-bottom: 2px solid #900;
+    font-size: 0.8em;
+}
+
+#adminbar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#adminbar a {
+    display: block;
+    float: left;
+    padding: 3px;
+    color: #fff;
+    text-decoration: none;
+    margin-right: 3px;
+    background: #d04545;
+}
+
+#adminbar a:hover {
+    background: #fff;
+    color: red;
+}
+
+#adminuser {
+    float: right;
+    padding: 3px;
+}
+
+.post {
+    margin-bottom: 30px;
+
+}
+
+.posthead {
+    background: #fff url(http://bugs.aviary.pl/images/ytwb.png) repeat-x;
+    display: block;
+    border-top: 1px solid rgb(227, 222, 159);
+    padding: 1px 20px;
+    margin-left: -20px;
+    margin-right: -14px;
+    margin-bottom: 1em;
+}
+
+dl {
+    margin-bottom: 2em;
+}

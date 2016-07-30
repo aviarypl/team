@@ -1,0 +1,56 @@
+Index: toolkit/chrome/mozapps/extensions/extensions.properties
+===================================================================
+RCS file: /l10n/l10n/pl/toolkit/chrome/mozapps/extensions/extensions.properties,v
+retrieving revision 1.6
+diff -u -r1.6 extensions.properties
+--- toolkit/chrome/mozapps/extensions/extensions.properties	14 Jun 2005 21:06:04 -0000	1.6
++++ toolkit/chrome/mozapps/extensions/extensions.properties	16 Jun 2005 15:24:33 -0000
+@@ -10,6 +10,7 @@
+ restartBeforeUninstallMessage=%S zostanie odinstalowany przy ponownym uruchomieniu programu %S.
+ restartBeforeInstallMessage=%S zostanie zainstalowany przy ponownym uruchomieniu programu %S.
+ restartBeforeUpgradeMessage=%S zostanie zaktualizowany przy ponownym uruchomieniu programu %S.
++incompatibleUpdateMessage=Program %S sprawdza dost\u0119pno\u015B\u0107 aktualizacji dotycz\u0105cych kompatybilno\u015Bci dla elementu %S.
+ queryUninstallExtensionMessage=Odinstalowanie %S spowoduje utrat\u0119 funkcjonalno\u015Bci, jak\u0105 ono oferuje. Odinstalowa\u0107 %S?
+ queryUninstallThemeMessage=Czy chcesz odinstalowa\u0107 %S?
+ queryUninstallTitle=Deinstalacja %S
+Index: toolkit/chrome/mozapps/update/updates.dtd
+===================================================================
+RCS file: /l10n/l10n/pl/toolkit/chrome/mozapps/update/updates.dtd,v
+retrieving revision 1.1
+diff -u -r1.1 updates.dtd
+--- toolkit/chrome/mozapps/update/updates.dtd	14 Jun 2005 21:06:04 -0000	1.1
++++ toolkit/chrome/mozapps/update/updates.dtd	16 Jun 2005 15:24:33 -0000
+@@ -32,7 +32,7 @@
+ 
+ <!ENTITY  downloading.intro               "Poniższe aktualizacje są (za)instalowane:">
+ <!ENTITY  showCompletedUpdates.label      "Pokaż stare aktualizacje na liście">
+-<!ENTITY  showCompletedUpdates.accesskey  "o">
++<!ENTITY  showCompletedUpdates.accesskey  "k">
+ 
+ <!ENTITY  details.link                    "Szczegóły">
+ <!ENTITY  pause.label                     "Wstrzymaj">
+@@ -45,3 +45,5 @@
+ 
+ <!ENTITY  errorManual.label               "Można dokonać ręcznej aktualizacji programu &brandShortName; poprzez otwarcie
+                                            tego odnośnika i pobranie najnowszej wersji:">
++
++<!ENTITY  finished.label                  "Aktualizacja zakończona">                           
+Index: toolkit/chrome/mozapps/update/updates.properties
+===================================================================
+RCS file: /l10n/l10n/pl/toolkit/chrome/mozapps/update/updates.properties,v
+retrieving revision 1.2
+diff -u -r1.2 updates.properties
+--- toolkit/chrome/mozapps/update/updates.properties	15 Jun 2005 22:21:55 -0000	1.2
++++ toolkit/chrome/mozapps/update/updates.properties	16 Jun 2005 15:24:33 -0000
+@@ -9,7 +9,9 @@
+ license404Error=Plik licencji nie m\u00f3g\u0142 zosta\u0107 znaleziony. Nale\u017cy skontaktowa\u0107 si\u0119 z dystrybutorem.
+ downloadingLicense=Pobieranie tekstu licencji...
+ statusSucceededFormat=Zainstalowano w programie: %S 
+-statusFailed=Instalacja zako\u0144czy\u0142a si\u0119 niepowodzeniem  
++statusFailed=Instalacja zako\u0144czy\u0142a si\u0119 niepowodzeniem
++pauseButtonPause=Wstrzymaj
++pauseButtonResume=Wzn\u00f3w
+ # The prefix /update2/0/ uniquely identifies the format of this URL.  If you
+ # change the format of this URL, then you MUST change the prefix (i.e.,
+ # increment 0 to 1).
+

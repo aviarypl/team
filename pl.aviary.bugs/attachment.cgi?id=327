@@ -1,0 +1,282 @@
+[%# 1.0@bugzilla.org %]
+[%# The contents of this file are subject to the Mozilla Public
+  # License Version 1.1 (the "License"); you may not use this file
+  # except in compliance with the License. You may obtain a copy of
+  # the License at http://www.mozilla.org/MPL/
+  #
+  # Software distributed under the License is distributed on an "AS
+  # IS" basis, WITHOUT WARRANTY OF ANY KIND, either express or
+  # implied. See the License for the specific language governing
+  # rights and limitations under the License.
+  #
+  # The Original Code is the Bugzilla Bug Tracking System.
+  #
+  # The Initial Developer of the Original Code is Netscape Communications
+  # Corporation. Portions created by Netscape are
+  # Copyright (C) 1998 Netscape Communications Corporation. All
+  # Rights Reserved.
+  #
+  # Contributor(s): Joel Peshkin <bugreport@peshkin.net>
+  #%]
+
+[% PROCESS global/variables.none.tmpl %]
+
+[% filt_product = product FILTER html %]
+[% PROCESS global/header.html.tmpl
+  title = "Edycja kontroli grup dla '$filt_product'"
+%]
+
+<form method="post" action="editproducts.cgi">
+  <input type="hidden" name="action" value="updategroupcontrols">
+  <input type="hidden" name="product" value="[% filt_product %]">
+
+  <table id="form" cellspacing="0" cellpadding="4" border="1">
+    <tr bgcolor="#6666ff">
+      <th>Grupa</th>
+      <th>Wpis</th>
+      <th>KontrolaCzłonków</th>
+      <th>KontrolaPozostałych</th>
+      <th>MożeEdytować</th>
+      <th>[% terms.Bledy %]</th>
+    </tr>
+    [% FOREACH group = groups %]
+      [% IF group.isactive == 0 AND group.bugcount > 0 %]
+        <tr bgcolor="#bbbbbb">
+          <td>
+            [% group.name FILTER html %]
+          </td>
+          <td align="center" colspan=4>
+            Wyłączone
+          </td>
+          <td>
+            [% group.bugcount %]
+          </td>
+        <tr>
+      [% ELSIF group.isactive != 0 %]
+        <tr>
+          <td>
+            [% group.name FILTER html %]
+          </td>
+          <td>
+            <input type=checkbox value=1 name=entry_[% group.id %]
+            [% " checked=\"checked\"" IF group.entry %]>
+          </td>
+          <td>
+            <select name="membercontrol_[% group.id %]">
+              <option value=[% const.CONTROLMAPNA %]
+                [% " selected=\"selected\""
+                  IF group.membercontrol == const.CONTROLMAPNA %]
+                >Niedostępne
+              </option>
+              <option value=[% const.CONTROLMAPSHOWN %]
+                [% " selected=\"selected\""
+                  IF group.membercontrol == const.CONTROLMAPSHOWN %]
+                >Pokazywane
+              </option>
+              <option value=[% const.CONTROLMAPDEFAULT %]
+                [% " selected=\"selected\""
+                  IF group.membercontrol == const.CONTROLMAPDEFAULT %]
+                >Domyślne
+              </option>
+              <option value=[% const.CONTROLMAPMANDATORY %]
+                [% " selected=\"selected\""
+                  IF group.membercontrol == const.CONTROLMAPMANDATORY %]
+                >Wymagane
+              </option>
+            </select>
+          </td>
+          <td>
+            <select name="othercontrol_[% group.id %]">
+              <option value=[% const.CONTROLMAPNA %]
+                [% " selected=\"selected\""
+                  IF group.othercontrol == const.CONTROLMAPNA %]
+                >Niedostępne
+              </option>
+              <option value=[% const.CONTROLMAPSHOWN %]
+                [% " selected=\"selected\""
+                  IF group.othercontrol == const.CONTROLMAPSHOWN %]
+                >Pokazywane
+              </option>
+              <option value=[% const.CONTROLMAPDEFAULT %]
+                [% " selected=\"selected\""
+                  IF group.othercontrol == const.CONTROLMAPDEFAULT %]
+                >Domyślne
+              </option>
+              <option value=[% const.CONTROLMAPMANDATORY %]
+                [% " selected=\"selected\""
+                  IF group.othercontrol == const.CONTROLMAPMANDATORY %]
+                >Wymagane
+              </option>
+            </select>
+          </td>
+          <td>
+            <input type=checkbox value=1 name=canedit_[% group.id %]
+            [% " checked=\"checked\"" IF group.canedit %]>
+          </td>
+          <td>
+            [% group.bugcount %]
+          </td>
+        </tr>
+      [% END %]
+    [% END %]
+
+  </table>
+  <br>
+  <input type=submit name="submit" value="Wyślij">
+  <br>
+</form>
+
+
+<p>
+Ustawienia te kontrolują zależności pomiędzy grupami a tym 
+produktem.
+<p>
+Jeśli dla którejś grupy zaznaczono opcję <b>Wpis</b> to 
+[% terms.bledy %] dla tego produktu, będą mogli wprowadzać jedynie użytkownicy, 
+którzy są członkami wszystkich grup z zaznaczonym wpisem.
+<p>
+Jeśli któraś z grup ma zaznaczoną opcję <b>MożeEdytować</b> produkt ten
+będzie tylko do odczytu dla użytkowników, którzy nie są członkami wszystkich
+grup z zaznaczoną opcją MożeEdytować. JEDYNIE użytkownicy, którzy są członkami
+wszystkich grup MożeEdytować będą mieli prawo do edycji. Jest to dodatkowe
+ograniczenie, które dodatkowo ogranicza co może być edytowane przez użytkownika.
+<p>
+Pola <b>KontrolaCzłonków</b> i <b>KontrolaPozostałych</b>
+określają, które [% terms.bledy %] zostaną umieszczone
+w tej grupie w zależności od następujących definicji.
+<br>
+<table border=1>
+  <tr>
+    <th>
+      KontrolaCzłonków
+    </th>
+    <th>
+      KontrolaPozostałych
+    </th>
+    <th>
+      Interpretacja
+    </th>
+  </tr>
+  <tr>
+    <td>
+      Niedostępne
+    </td>
+    <td>
+      Niedostępne
+    </td>
+    <td>
+      [% terms.Bledy %] dotyczące tego produktu nigdy nie są kojarzone z tą grupą.
+    </td>
+  </tr>
+  <tr>
+    <td>
+      Pokazywane
+    </td>
+    <td>
+      Niedostępne
+    </td>
+    <td>
+      [% terms.Bledy %] dotyczące tego produktu mogą być ograniczane do tej grupy.
+      Użytkownicy będący członkami tej grupy, będą mogli umieszczać [% terms.bledy %] w
+      tej grupie.
+    </td>
+  </tr>
+  <tr>
+    <td>
+      Pokazywane
+    </td>
+    <td>
+      Pokazywane
+    </td>
+    <td>
+      [% terms.Bledy %] dotyczące tego produktu mogą być umieszczane w tej grupie przez 
+      każdego z uprawnieniami do edycji [% terms.bledu %], nawet jeśli nie jest członkiem
+      tej grupy.
+    </td>
+  </tr>
+  <tr>
+    <td>
+      Pokazywane
+    </td>
+    <td>
+      Domyślne
+    </td>
+    <td>
+      [% terms.Bledy %] dotyczące tego produktu mogą być umieszczane w tej grupie przez
+      każdego z uprawnieniami do edycji [% terms.bledu %], nawet jeśli nie jest członkiem
+      tej grupy. [% terms.Bledy %] nie-członków będą domyślnie umieszczane w tej grupie.
+    </td>
+  </tr>
+  <tr>
+    <td>
+      Pokazywane
+    </td>
+    <td>
+      Wymagane
+    </td>
+    <td>
+      [% terms.Bledy %] mogą być ograniczone jedynie do tej grupy.
+      Użytkownicy, którzy są członkami tej grupy będą mogli umieszczać [% terms.bledy %]
+      w tej grupie. Nie-członkowie będą zmuszeni do ograniczenia [% terms.bledow %] do
+      tej grupy podczas początkowego wprowadzania [% terms.bledu %] dotyczącego tego produktu.
+    </td>
+  </tr>
+  <tr>
+    <td>
+      Domyślne
+    </td>
+    <td>
+      Niedostępne
+    </td>
+    <td>
+      [% terms.Bledy %] dotyczące tego produktu mogą być ograniczone jedynie do tej
+      grupy i są domyślnie umieszczane w tej grupie. Użytkownicy, którzy są członkami tej 
+      grupy będą mogli umieszczać [% terms.bledy %] w tej grupie.
+    </td>
+  </tr>
+  <tr>
+    <td>
+      Domyślne
+    </td>
+    <td>
+      Domyślne
+    </td>
+    <td>
+      [% terms.Bledy %]  dotyczące tego produktu mogą być ograniczone jedynie do tej
+      grupy i są domyślnie umieszczane w tej grupie. Użytkownicy, którzy są członkami tej 
+      grupy będą mogli umieszczać [% terms.bledy %] w tej grupie. Nie-członkowie będą
+      mogli ograniczyć [% terms.bledy %] do tej grupy i będzie to domyślne działanie.
+    </td>
+  </tr>
+  <tr>
+    <td>
+      Domyślne
+    </td>
+    <td>
+      Wymagane
+    </td>
+    <td>
+      [% terms.Bledy %] w tym produkcie mogą być ograniczone do tej 
+      grupy i są umieszczane domyślnie w tej grupie. Użytkownicy, którzy są członkami tej grupy
+      będą mogli umieszczać w niej [% terms.bledy %]. Pozostali użytkownicy będą zmuszeni
+      do umieszczenia [% terms.bledow %] w tej grupie podczas wprowadzania.
+    </td>
+  </tr>
+  <tr>
+    <td>
+      Wymagane
+    </td>
+    <td>
+      Wymagane
+    </td>
+    <td>
+      [% terms.Bledy %] w tym produkcie powinny być ograniczone do tej 
+      grupy. Użytkownicy nie mają żadnego wyboru.
+    </td>
+  </tr>
+</table>
+
+
+[% PROCESS global/footer.html.tmpl %]
+
+

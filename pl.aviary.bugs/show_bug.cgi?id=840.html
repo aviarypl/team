@@ -1,0 +1,1533 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>840 &ndash; Seamonkey z polonizacją zwraca błąd przy uruchamianiu - problem znika po usunięciu przed instalacją starej biblioteki gklayout.dll z C:\Program Files\Common Files\mozilla.org\GRE\ (jeśli tam taka została po poprzedniej wersji mozilli)</title>
+
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<link href="data/assets/7aa6ea67750936a0368541421bdcd5ee.css" rel="stylesheet" type="text/css">
+
+
+
+    
+<script type="text/javascript" src="data/assets/a7c2f3a028f17a9aa60f56dc9d6e732d.js"></script>
+
+    <script type="text/javascript">
+    <!--
+        YAHOO.namespace('bugzilla');
+        YAHOO.util.Event.addListener = function (el, sType, fn, obj, overrideContext) {
+               if ( ("onpagehide" in window || YAHOO.env.ua.gecko) && sType === "unload") { sType = "pagehide"; };
+               var capture = ((sType == "focusin" || sType == "focusout") && !YAHOO.env.ua.ie) ? true : false;
+               return this._addListener(el, this._getType(sType), fn, obj, overrideContext, capture);
+         };
+        if ( "onpagehide" in window || YAHOO.env.ua.gecko) {
+            YAHOO.util.Event._simpleRemove(window, "unload", 
+                                           YAHOO.util.Event._unload);
+        }
+        
+        function unhide_language_selector() { 
+            YAHOO.util.Dom.removeClass(
+                'lang_links_container', 'bz_default_hidden'
+            ); 
+        } 
+        YAHOO.util.Event.onDOMReady(unhide_language_selector);
+
+        
+        var BUGZILLA = {
+            param: {
+                cookiepath: '\/',
+                maxusermatches: 1000
+            },
+            constant: {
+                COMMENT_COLS: 80
+            },
+            string: {
+                
+
+                attach_desc_required:
+                    "You must enter a Description for this attachment.",
+                component_required:
+                    "You must select a Component for this bug.",
+                description_required:
+                    "You must enter a Description for this bug.",
+                short_desc_required:
+                    "You must enter a Summary for this bug.",
+                version_required:
+                    "You must select a Version for this bug."
+            }
+              , api_token: ''
+        };
+
+    if (history && history.replaceState) {
+      if(!document.location.href.match(/show_bug\.cgi/)) {
+        history.replaceState( null,
+                             "840 – Seamonkey z polonizacją zwraca błąd przy uruchamianiu - problem znika po usunięciu przed instalacją starej biblioteki gklayout.dll z C:\\Program Files\\Common Files\\mozilla.org\\GRE\\ (jeśli tam taka została po poprzedniej wersji mozilli)",
+                             "show_bug.cgi?id=840" );
+        document.title = "840 – Seamonkey z polonizacją zwraca błąd przy uruchamianiu - problem znika po usunięciu przed instalacją starej biblioteki gklayout.dll z C:\\Program Files\\Common Files\\mozilla.org\\GRE\\ (jeśli tam taka została po poprzedniej wersji mozilli)";
+      }
+      if (document.location.href.match(/show_bug\.cgi\?.*list_id=/)) {
+        var href = document.location.href;
+        href = href.replace(/[\?&]+list_id=(\d+|cookie)/, '');
+        history.replaceState(null, "840 – Seamonkey z polonizacją zwraca błąd przy uruchamianiu - problem znika po usunięciu przed instalacją starej biblioteki gklayout.dll z C:\\Program Files\\Common Files\\mozilla.org\\GRE\\ (jeśli tam taka została po poprzedniej wersji mozilli)", href);
+      }
+    }
+    YAHOO.util.Event.onDOMReady(function() {
+      initDirtyFieldTracking();
+
+    });
+    // -->
+    </script>
+<script type="text/javascript" src="data/assets/daf5e0fb6826e6a35280e622913f0c4a.js"></script>
+
+    
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+                       title="Bugzilla" href="search_plugin.cgi">
+    <link rel="shortcut icon" href="images/favicon.ico">
+  </head>
+
+  <body 
+        class="bugs-aviary-pl
+                 bz_bug
+                 bz_status_VERIFIED
+                 bz_product_SeaMonkey
+                 bz_component_Og&#XF3;lne
+                 bz_bug_840 yui-skin-sam">
+
+  <div id="header"><div id="banner">
+  </div>
+
+    <div id="titles">
+      <span id="title">Bugzilla &ndash; Bug&nbsp;840</span>
+
+        <span id="subtitle" class="subheader">Seamonkey z polonizacją zwraca błąd przy uruchamianiu - problem znika po usunięciu przed instalacją starej biblioteki gklayout.dll z C:\Program Files\Common Files\mozilla.org\GRE\ (jeśli tam taka została po poprzedniej wersji mozilli)</span>
+
+        <span id="information" class="header_addl_info">Last modified: 2014-08-15 11:14:49 CEST</span>
+    </div>
+
+
+    <div id="common_links"><ul class="links">
+  <li><a href="index.html">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi.html">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi.html">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi.html">Search</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="http://bugs.aviary.pl/buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input type="hidden" id="no_redirect_top" name="no_redirect" value="0">
+    <script type="text/javascript">
+      if (history && history.replaceState) {
+        var no_redirect = document.getElementById("no_redirect_top");
+        no_redirect.value = 1;
+      }
+    </script>
+    <input class="txt" type="text" id="quicksearch_top" name="quicksearch" 
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search" 
+           id="find_top"></form>
+  <a href="page.cgi%3Fid=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="report.cgi.html">Reports</a></li>
+
+  <li>
+      <span class="separator">| </span>
+        <a href="request.cgi.html">Requests</a></li>
+
+
+  <li>
+        <span class="separator">| </span>
+        <a href="https://bugzilla.readthedocs.org/en/5.0/using/understanding.html" target="_blank">Help</a>
+      </li>
+    
+      <li id="new_account_container_top">
+        <span class="separator">| </span>
+        <a href="createaccount.cgi.html">New&nbsp;Account</a>
+      </li>
+
+    <li id="mini_login_container_top">
+  <span class="separator">| </span>
+  <a id="login_link_top" href="show_bug.cgi%3Fid=840&amp;GoAheadAndLogIn=1.html"
+     onclick="return show_mini_login_form('_top')">Log In</a>
+
+  <form action="show_bug.cgi%3Fid=840.html" method="POST"
+        class="mini_login bz_default_hidden"
+        id="mini_login_top">
+    <input id="Bugzilla_login_top" required
+           name="Bugzilla_login" class="bz_login"
+        type="email" placeholder="Email Address">
+    <input class="bz_password" name="Bugzilla_password" type="password"
+           id="Bugzilla_password_top" required
+           placeholder="Password">
+    <input type="hidden" name="Bugzilla_login_token"
+           value="1469820383-fujavvgiZcR-SSHotM-oODw8k3XZAr3cGNgQL6MP6WY">
+    <input type="submit" name="GoAheadAndLogIn" value="Log in"
+            id="log_in_top">
+    <a href="show_bug.cgi%3Fid=840.html#" onclick="return hide_mini_login_form('_top')">[x]</a>
+  </form>
+</li>
+
+
+  <li id="forgot_container_top">
+    <span class="separator">| </span>
+    <a id="forgot_link_top" href="show_bug.cgi%3Fid=840&amp;GoAheadAndLogIn=1.html#forgot"
+       onclick="return show_forgot_form('_top')">Forgot Password</a>
+    <form action="http://bugs.aviary.pl/token.cgi" method="post" id="forgot_form_top"
+          class="mini_forgot bz_default_hidden">
+      <label for="login_top">Login:</label>
+      <input name="loginname" size="20" id="login_top" required
+          type="email" placeholder="Your Email Address">
+      <input id="forgot_button_top" value="Reset Password" type="submit">
+      <input type="hidden" name="a" value="reqpw">
+      <input type="hidden" id="token_top" name="token"
+             value="1469820383-e0ejiy0cwzKND5Lu5iLP2ERxyAD2kXISUbs-0dXG7tk">
+      <a href="show_bug.cgi%3Fid=840.html#" onclick="return hide_forgot_form('_top')">[x]</a>
+    </form>
+  </li>
+</ul>
+    </div>
+  </div>
+
+  <div id="bugzilla-body">
+
+
+<script type="text/javascript">
+<!--
+
+//-->
+</script>
+
+<form name="changeform" id="changeform" method="post" action="http://bugs.aviary.pl/process_bug.cgi">
+
+  <input type="hidden" name="delta_ts" value="2014-08-15 11:14:49">
+  <input type="hidden" name="id" value="840">
+  <input type="hidden" name="token" value="1469820383-N8BxD7qI3_tKs8JlDXbfxNTTJXKV99VLsAOxFmcMIR8">
+<div class="bz_short_desc_container edit_form">
+     <a href="show_bug.cgi%3Fid=840.html"><b>Bug&nbsp;840</b></a> <span id="summary_container" class="bz_default_hidden">
+      - <span id="short_desc_nonedit_display">Seamonkey z polonizacją zwraca błąd przy uruchamianiu - problem znika po usunięciu przed instalacją starej biblioteki gklayout.dll z C:\Program Files\Common Files\mozilla.org\GRE\ (jeśli tam taka została po poprzedniej wersji mozilli)</span>
+     </span>
+
+    <div id="summary_input"><span class="field_label "
+    id="field_label_short_desc">
+
+
+  <a 
+      title="The bug summary is a short sentence which succinctly describes what the bug is about."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#short_desc"
+  >Summary:</a>
+
+</span><span title="Seamonkey z polonizacją zwraca błąd przy uruchamianiu - problem znika po usunięciu przed instalacją starej biblioteki gklayout.dll z C:\Program Files\Common Files\mozilla.org\GRE\ (jeśli tam taka została po poprzedniej wersji mozilli)">Seamonkey z polonizacją zwraca błąd przy uruchamianiu - problem znika po usun...
+        </span>
+    </div>
+  </div>
+  <script type="text/javascript">
+    hideEditableField('summary_container',
+                      'summary_input',
+                      'summary_edit_action',
+                      'short_desc',
+                      'Seamonkey z polonizacją zwraca błąd przy uruchamianiu - problem znika po usunięciu przed instalacją starej biblioteki gklayout.dll z C:\\Program Files\\Common Files\\mozilla.org\\GRE\\ (jeśli tam taka została po poprzedniej wersji mozilli)' );
+  </script>
+  <table class="edit_form">
+    <tr>
+      
+      <td id="bz_show_bug_column_1" class="bz_show_bug_column">     
+        <table>
+          <tr>
+    <th class="field_label">
+      <a href="page.cgi%3Fid=fields.html#bug_status">Status</a>:
+    </th>
+    <td id="bz_field_status">
+      <span id="static_bug_status">VERIFIED
+          FIXED
+      </span>
+    </td>
+  </tr>
+<tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+<tr><th class="field_label "
+    id="field_label_alias">
+
+
+  <a 
+      title="A short, unique name assigned to a bug in order to assist with looking it up and referring to it in other places in Bugzilla."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#alias"
+  >Alias:</a>
+
+</th>
+    <td>
+        None
+    </td>
+  </tr>
+<tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+<tr><th class="field_label "
+    id="field_label_product">
+
+
+  <a 
+      title="Bugs are categorised into Products and Components. Select a Classification to narrow down this list."
+      class="field_help_link"
+      href="describecomponents.cgi.html"
+  >Product:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_product" >SeaMonkey
+
+</td>
+    </tr>
+
+    
+    <tr class="bz_default_hidden"><th class="field_label "
+    id="field_label_classification">
+
+
+  <a 
+      title="Bugs are categorised into Classifications, Products and Components. classifications is the top-level categorisation."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#classification"
+  >Classification:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_classification" >Tłumaczenia oprogramowania
+
+</td>
+    </tr>
+        
+    
+    
+    <tr><th class="field_label "
+    id="field_label_component">
+
+
+  <a 
+      title="Components are second-level categories; each belongs to a particular Product. Select a Product to narrow down this list."
+      class="field_help_link"
+      href="describecomponents.cgi%3Fproduct=SeaMonkey.html"
+  >Component:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_component" >Ogólne
+
+  (<a href="buglist.cgi%3Fcomponent=Ogólne&amp;product=SeaMonkey&amp;bug_status=__open__.html"
+      target="_blank">show other bugs</a>)
+</td>
+    </tr>
+    <tr><th class="field_label "
+    id="field_label_version">
+
+
+  <a 
+      title="The version field defines the version of the software the bug was found in."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#version"
+  >Version:</a>
+
+</th>
+<td>1.0
+  </td>
+    </tr>
+        
+    
+        
+    <tr><th class="field_label "
+    id="field_label_rep_platform">
+
+
+  <a 
+      title="The hardware platform the bug was observed on. Note: When searching, selecting the option &quot;All&quot; only finds bugs whose value for this field is literally the word &quot;All&quot;."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#rep_platform"
+  >Hardware:</a>
+
+</th>
+      <td class="field_value">Wszystkie
+        Windows
+      </td>
+    </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          
+          <tr>
+      <th class="field_label">
+        <label  accesskey="i">
+          <a href="page.cgi%3Fid=fields.html#importance"><u>I</u>mportance</a></label>:
+      </th>
+      <td>P1
+       blokujący
+      </td>
+    </tr>
+          
+          <tr><th class="field_label "
+    id="field_label_assigned_to">
+
+
+  <a 
+      title="The person in charge of resolving the bug."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#assigned_to"
+  >Assignee:</a>
+
+</th>
+      <td><span class="vcard"><span class="fn">Adrian Kalla :Adrianer</span>
+</span>
+      </td>
+    </tr>
+
+    <tr><th class="field_label "
+    id="field_label_qa_contact">
+
+
+  <a 
+      title="The person responsible for confirming this bug if it is unconfirmed, and for verifying the fix once the bug has been resolved."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#qa_contact"
+  >QA Contact:</a>
+
+</th>
+      <td><span class="vcard"><span class="fn">Marek Wawoczny</span>
+</span>
+      </td>
+    </tr>
+    <script type="text/javascript">
+      assignToDefaultOnChange(['product', 'component'],
+        'akalla\x40aviary.pl',
+        'seamonkey\x40l10n.bledy');
+    </script>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          <tr><th class="field_label "
+    id="field_label_bug_file_loc">
+
+
+  <a 
+      title="Bugs can have a URL associated with them - for example, a pointer to a web site where the problem is seen."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#bug_file_loc"
+  >URL:</a>
+
+</th>
+    <td>
+      <span id="bz_url_input_area">
+      </span>
+    </td>
+  </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+
+          
+<tr><th class="field_label "
+    id="field_label_dependson">
+
+
+  <a 
+      title="The bugs listed here must be resolved before this bug can be resolved."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#dependson"
+  >Depends on:</a>
+
+</th>
+
+  <td>
+    <span id="dependson_input_area">
+    </span>
+
+  </td>
+  </tr>
+  
+  <tr><th class="field_label "
+    id="field_label_blocked">
+
+
+  <a 
+      title="This bug must be resolved before the bugs listed in this field can be resolved."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#blocked"
+  >Blocks:</a>
+
+</th>
+
+  <td>
+    <span id="blocked_input_area">
+    </span>
+
+  </td>
+  </tr>
+          
+        </table>
+      </td>
+      <td>
+        <div class="bz_column_spacer">&nbsp;</div>
+      </td>
+      
+      <td id="bz_show_bug_column_2" class="bz_show_bug_column">
+        <table>
+        <tr>
+    <th class="field_label">
+      Reported:
+    </th>
+    <td>2006-02-14 17:35 CET by <span class="vcard"><span class="fn">Oktawian Kubacki</span>
+</span>
+    </td>
+  </tr>
+  
+  <tr>
+    <th class="field_label">
+      Modified:
+    </th>
+    <td>2014-08-15 11:14 CEST
+      (<a href="show_activity.cgi%3Fid=840.html">History</a>)
+    </td>
+  
+  </tr>
+<tr>
+      <th class="field_label">
+        <label  accesskey="a">
+          CC List:
+        </label>
+      </th>
+      <td>1 
+          user
+          <span id="cc_edit_area_showhide_container" class="bz_default_hidden">
+            (<a href="show_bug.cgi%3Fid=840.html#" id="cc_edit_area_showhide">show</a>)
+          </span>
+        <div id="cc_edit_area">
+          <br>
+            <select id="cc" multiple="multiple" size="5" >
+                <option value="splewako">splewako</option>
+            </select>
+        </div>
+          <script type="text/javascript">
+            hideEditableField( 'cc_edit_area_showhide_container', 
+                               'cc_edit_area', 
+                               'cc_edit_area_showhide', 
+                               '', 
+                               '');  
+          </script>
+      </td>
+    </tr>
+
+<tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+<tr><th class="field_label "
+    id="field_label_see_also">
+
+
+  <a 
+      title="This allows you to refer to bugs in other installations. You can enter a URL to a bug in the 'Add Bug URLs' field to note that that bug is related to this one. You can enter multiple URLs at once by separating them with whitespace. You should normally use this field to refer to bugs in other installations. For bugs in this installation, it is better to use the Depends on and Blocks fields."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#see_also"
+  >See Also:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_see_also" >
+
+</td>
+    </tr> 
+
+<tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+
+
+
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+          <hr id="bz_top_half_spacer">
+      </td>
+    </tr>
+  </table>
+
+  <table id="bz_big_form_parts">
+  <tr>
+  <td>
+
+    
+<script type="text/javascript">
+<!--
+function toggle_display(link) {
+    var table = document.getElementById("attachment_table");
+    var view_all = document.getElementById("view_all");
+    var hide_obsolete_url_parameter = "&hide_obsolete=1";
+    // Store current height for scrolling later
+    var originalHeight = table.offsetHeight;
+    var rows = YAHOO.util.Dom.getElementsByClassName(
+        'bz_tr_obsolete', 'tr', table);
+
+    for (var i = 0; i < rows.length; i++) {
+        bz_toggleClass(rows[i], 'bz_default_hidden');
+    }
+
+    if (YAHOO.util.Dom.hasClass(rows[0], 'bz_default_hidden')) {
+        link.innerHTML = "Show Obsolete";
+        view_all.href = view_all.href + hide_obsolete_url_parameter 
+    }
+    else {
+        link.innerHTML = "Hide Obsolete";
+        view_all.href = view_all.href.replace(hide_obsolete_url_parameter,"");
+    }
+
+    var newHeight = table.offsetHeight;
+    // This scrolling makes the window appear to not move at all.
+    window.scrollBy(0, newHeight - originalHeight);
+
+    return false;
+}
+//-->
+</script>
+
+<br>
+<table id="attachment_table">
+  <tr id="a0">
+    <th colspan="3" class="left">
+      Attachments
+    </th>
+  </tr>
+
+
+
+  <tr class="bz_attach_footer">
+    <td colspan="3">
+        <a href="attachment.cgi%3Fbugid=840&amp;action=enter.html">Add an attachment</a>
+        (proposed patch, testcase, etc.)
+    </td>
+  </tr>
+</table>
+<br>
+
+  </td>
+  <td>
+  </td>
+  </tr></table>
+
+  
+  <div id="comments"><script src="js/comments.js" type="text/javascript">
+</script>
+
+<script type="text/javascript">
+<!--
+  /* Adds the reply text to the 'comment' textarea */
+  function replyToComment(id, real_id, name) {
+      var prefix = "(In reply to " + name + " from comment #" + id + ")\n";
+      var replytext = "";
+        /* pre id="comment_name_N" */
+        var text_elem = document.getElementById('comment_text_'+id);
+        var text = getText(text_elem);
+        replytext = prefix + wrapReplyText(text);
+
+
+      /* <textarea id="comment"> */
+      var textarea = document.getElementById('comment');
+      if (textarea.value != replytext) {
+          textarea.value += replytext;
+      }
+
+      textarea.focus();
+  } 
+//-->
+</script>
+
+
+<!-- This auto-sizes the comments and positions the collapse/expand links 
+     to the right. -->
+<table class="bz_comment_table">
+<tr>
+<td>
+<div id="c0" class="bz_comment bz_first_comment">
+
+      <div class="bz_first_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=840.html#c0">Description</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Oktawian Kubacki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2006-02-14 17:35:27 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text"><span class="quote">&gt;Seamonkey z seamonkey.pl (czyli dodaną polonizacją) przy każdym uruchamianiu</span >
+generuje pod Win98 SE systemowy komunikat:
+
+&quot;Program wykonał nieprawidłową operację i nastąpi jego zamknięcie. (...)&quot;
+
+SEAMONKEY spowodował błąd: nieprawidłowa strona w
+module GKLAYOUT.DLL przy 0167:6029e4c8.
+Rejestry:
+EAX=00000000 CS=0167 EIP=6029e4c8 EFLGS=00010206
+EBX=01254ac8 SS=016f ESP=0065f174 EBP=0065f27c
+ECX=00000000 DS=016f ESI=0065f2b8 FS=4e57
+EDX=00000000 ES=016f EDI=00000000 GS=0000
+Bajtów w CS:EIP:
+80 7f 46 00 0f 84 02 01 00 00 83 f9 02 75 65 80 
+Stos:
+00000000 0065f464 01254ac8 0065f53c 01254ac8 00000000 00000000 00000000 40000000
+0081d490 00000001 00000000 00000000 0065f53c 00000000 00000000
+
+<span class="quote">&gt;Program Dr Watson (C:\WINDOWS) wypluwa zaś taki komunikat:</span >
+
+$ próbował użyć zmiennej wskaźnika do pustych danych.
+
+Nazwa modułu: GKLAYOUT.DLL
+Opis: $
+Wersja: 1.8.0.1: 2006013000
+Produkt: SeaMonkey
+Producent: Mozilla Foundation
+
+Nazwa aplikacji: Seamonkey.exe
+Opis: SeaMonkey
+Wersja: 1.8.0.1: 2006013000
+Produkt: SeaMonkey
+Producent: mozilla.org
+
+*----&gt; Szczegóły &lt;----*
+
+Command line: &quot;C:\Program Files\mozilla.org\SeaMonkey\seamonkey.exe&quot; 
+
+Trap 0e 0000 - Błąd niewłaściwej strony
+eax=00000000 ebx=0125d87c ecx=00000000 edx=00000000 esi=0065f2b8 edi=00000000
+eip=6029e4c8 esp=0065f174 ebp=0065f27c         -- -- -- nv up EI pl nz na PE nc
+cs=0167 ss=016f ds=016f es=016f fs=6437 gs=0000
+GKLAYOUT.DLL:.text+0x3d4c8:
+<span class="quote">&gt;0167:6029e4c8 807f4600            cmp     byte ptr [edi+46],00</span >
+
+   sel  type base     lim/bot
+   ---- ---- -------- --------
+cs 0167 r-x- 00000000 ffffffff
+ss 016f rw-e 00000000 000097a0
+ds 016f rw-e 00000000 000097a0
+es 016f rw-e 00000000 000097a0
+fs 6437 rw-- 81737d6c 00000037
+gs 0000 ----
+
+stack base:   00560000
+TIB limits:   0064f000 - 00660000
+
+-- exception record --
+
+   Exception Code: c0000005 (naruszenie dostępu)
+Exception Address: 6029e4c8 (GKLAYOUT.DLL:.text+0x3d4c8)
+   Exception Info: 00000000
+                   ffffffff
+
+GKLAYOUT.DLL:.text+0x3d4c8:
+<span class="quote">&gt;0167:6029e4c8 807f4600            cmp     byte ptr [edi+46],00</span >
+
+ 0167:6029e4a1 07                  pop     es
+ 0167:6029e4a2 0200                add     al,byte ptr [eax]
+ 0167:6029e4a4 8b4dbc              mov     ecx,dword ptr [ebp-44]
+ 0167:6029e4a7 8b45f8              mov     eax,dword ptr [ebp-08]
+ 0167:6029e4aa 8b55dc              mov     edx,dword ptr [ebp-24]
+ 0167:6029e4ad 89bd30ffffff        mov     dword ptr [ebp-000000d0],edi
+ 0167:6029e4b3 8b7df4              mov     edi,dword ptr [ebp-0c]
+ 0167:6029e4b6 898d0cffffff        mov     dword ptr [ebp-000000f4],ecx
+ 0167:6029e4bc 898510ffffff        mov     dword ptr [ebp-000000f0],eax
+ 0167:6029e4c2 899534ffffff        mov     dword ptr [ebp-000000cc],edx
+GKLAYOUT.DLL:.text+0x3d4c8:
+*0167:6029e4c8 807f4600            cmp     byte ptr [edi+46],00
+ 0167:6029e4cc 0f8402010000        jz      6029e5d4 = GKLAYOUT.DLL:.text+0x3d5d4
+ 0167:6029e4d2 83f902              cmp     ecx,+02
+ 0167:6029e4d5 7565                jnz     6029e53c = GKLAYOUT.DLL:.text+0x3d53c
+ 0167:6029e4d7 80664900            and     byte ptr [esi+49],00
+ 0167:6029e4db e9e6000000          jmp     6029e5c6 = GKLAYOUT.DLL:.text+0x3d5c6
+ 0167:6029e4e0 890e                mov     dword ptr [esi],ecx
+ 0167:6029e4e2 895604              mov     dword ptr [esi+04],edx
+ 0167:6029e4e5 894b0c              mov     dword ptr [ebx+0c],ecx
+ 0167:6029e4e8 895310              mov     dword ptr [ebx+10],edx
+ 0167:6029e4eb 897dfc              mov     dword ptr [ebp-04],edi
+
+--------------------
+
+
+-- stack summary --
+
+016f:0065f27c 0167:6029e4c8 GKLAYOUT.DLL:.text+0x3d4c8
+                            (0065f464,00809900,0065f2b8,0065f53c,
+                             0065f318,00000618,00000447,00000000)
+016f:0065f31c 0167:6029e2f5 GKLAYOUT.DLL:.text+0x3d2f5
+                            (0125d87c,00000000,0065f464,0065f388,
+                             6032c82f,0065f464,00000447,0065f494)
+016f:0065f358 0167:60326d75 GKLAYOUT.DLL:.text+0xc5d75
+                            (0065f464,0125d87c,0065f388,0065f460,
+                             0081dd3c,0125d618,00000000,00000000)
+016f:0065f3b0 0167:602bc82e GKLAYOUT.DLL:.text+0x5b82e
+                            (0065f464,0065f4c8,0065f440,00000000,
+                             0065f874,0125d618,0125d618,0125dde0)
+016f:0065f4e0 0167:602ba874 GKLAYOUT.DLL:.text+0x59874
+                            (00000000,00809900,0065f6ac,0065f53c,
+                             0065f874,00000000,0065f740,0125d618)
+016f:0065f508 0167:602af2f3 GKLAYOUT.DLL:.text+0x4e2f3
+                            (0125d618,00809900,0065f6ac,0065f53c,
+                             00000000,00000000,00000000,0065f874)
+016f:0065f718 0167:602af919 GKLAYOUT.DLL:.text+0x4e919
+                            (0125d440,00809900,0065f7f8,0065f740,
+                             0065f874,0065f900,00817680,008001d0)
+016f:0065f864 0167:6027471e GKLAYOUT.DLL:.text+0x1371e
+                            (0125d440,0081dc20,00000000,00800250,
+                             008001d0,00000000,0065f8bc,0065f8c0)
+016f:0065f914 0167:6046899d GKLAYOUT.DLL:.text+0x20799d
+                            (00000000,008001d0,0080021c,60393c0c,
+                             00000000,00818120,60539296,0080021c)
+016f:0065f95c 0167:60394b7a GKLAYOUT.DLL:.text+0x133b7a
+                            (00819df0,00000000,00000001,00000000,
+                             01236d70,00818120,00000000,0000002f)
+016f:0065f994 0167:605374ca GKPARSER.DLL:.text+0x64ca
+                            (01236d70,00000001,00819df0,01236d70,
+                             00818120,01236d70,00000000,00000001)
+016f:0065f9c4 0167:60537e9b GKPARSER.DLL:.text+0x6e9b
+                            (00819df0,804e03ef,00818120,80000000,
+                             605a8b8d,605a8ba5,611417c8,0080aa14)
+016f:0065f9fc 0167:60537111 GKPARSER.DLL:.text+0x6111
+                            (00818120,60557e20,00800b30,00000000,
+                             00818120,00800b30,61186988,60561414)
+016f:0065fa34 0167:60536b5b GKPARSER.DLL:.text+0x5b5b
+                            (00000072,00800b30,01236c10,00000000,
+                             0080021c,00000000,00800b30,00000001)
+016f:0065fa5c 0167:60542483 GKPARSER.DLL:.text+0x11483
+                            (00818060,00800b30,00809b70,0065fac0,
+                             00800b34,804e03e8,60542918,00000001)
+
+-- stack trace --
+
+016f:0065f27c 0167:6029e4c8 GKLAYOUT.DLL:.text+0x3d4c8
+                            (0065f464,00809900,0065f2b8,0065f53c,
+                             0065f318,00000618,00000447,00000000)
+ 0167:6029e4a1 07                  pop     es
+ 0167:6029e4a2 0200                add     al,byte ptr [eax]
+ 0167:6029e4a4 8b4dbc              mov     ecx,dword ptr [ebp-44]
+ 0167:6029e4a7 8b45f8              mov     eax,dword ptr [ebp-08]
+ 0167:6029e4aa 8b55dc              mov     edx,dword ptr [ebp-24]
+ 0167:6029e4ad 89bd30ffffff        mov     dword ptr [ebp-000000d0],edi
+ 0167:6029e4b3 8b7df4              mov     edi,dword ptr [ebp-0c]
+ 0167:6029e4b6 898d0cffffff        mov     dword ptr [ebp-000000f4],ecx
+ 0167:6029e4bc 898510ffffff        mov     dword ptr [ebp-000000f0],eax
+ 0167:6029e4c2 899534ffffff        mov     dword ptr [ebp-000000cc],edx
+GKLAYOUT.DLL:.text+0x3d4c8:
+*0167:6029e4c8 807f4600            cmp     byte ptr [edi+46],00
+ 0167:6029e4cc 0f8402010000        jz      6029e5d4 = GKLAYOUT.DLL:.text+0x3d5d4
+ 0167:6029e4d2 83f902              cmp     ecx,+02
+ 0167:6029e4d5 7565                jnz     6029e53c = GKLAYOUT.DLL:.text+0x3d53c
+ 0167:6029e4d7 80664900            and     byte ptr [esi+49],00
+ 0167:6029e4db e9e6000000          jmp     6029e5c6 = GKLAYOUT.DLL:.text+0x3d5c6
+ 0167:6029e4e0 890e                mov     dword ptr [esi],ecx
+ 0167:6029e4e2 895604              mov     dword ptr [esi+04],edx
+ 0167:6029e4e5 894b0c              mov     dword ptr [ebx+0c],ecx
+ 0167:6029e4e8 895310              mov     dword ptr [ebx+10],edx
+ 0167:6029e4eb 897dfc              mov     dword ptr [ebp-04],edi
+
+--------------------
+
+016f:0065f31c 0167:6029e2f5 GKLAYOUT.DLL:.text+0x3d2f5
+                            (0125d87c,00000000,0065f464,0065f388,
+                             6032c82f,0065f464,00000447,0065f494)
+ 0167:6029e2de ff75e8              push    dword ptr [ebp-18]
+ 0167:6029e2e1 50                  push    eax
+ 0167:6029e2e2 8d459c              lea     eax,[ebp-64]
+ 0167:6029e2e5 53                  push    ebx
+ 0167:6029e2e6 8b5d08              mov     ebx,dword ptr [ebp+08]
+ 0167:6029e2e9 50                  push    eax
+ 0167:6029e2ea 8bcb                mov     ecx,ebx
+ 0167:6029e2ec ff75f8              push    dword ptr [ebp-08]
+ 0167:6029e2ef 56                  push    esi
+ 0167:6029e2f0 e86e000000          call    6029e363 = GKLAYOUT.DLL:.text+0x3d363
+GKLAYOUT.DLL:.text+0x3d2f5:
+*0167:6029e2f5 85ff                test    edi,edi
+ 0167:6029e2f7 89450c              mov     dword ptr [ebp+0c],eax
+ 0167:6029e2fa 7409                jz      6029e305 = GKLAYOUT.DLL:.text+0x3d305
+ 0167:6029e2fc 8b45ac              mov     eax,dword ptr [ebp-54]
+ 0167:6029e2ff 3b07                cmp     eax,dword ptr [edi]
+ 0167:6029e301 7e02                jle     6029e305 = GKLAYOUT.DLL:.text+0x3d305
+ 0167:6029e303 8907                mov     dword ptr [edi],eax
+ 0167:6029e305 8b03                mov     eax,dword ptr [ebx]
+ 0167:6029e307 83650800            and     dword ptr [ebp+08],+00
+ 0167:6029e30b 8d4d08              lea     ecx,[ebp+08]
+ 0167:6029e30e 51                  push    ecx
+
+--------------------
+
+016f:0065f358 0167:60326d75 GKLAYOUT.DLL:.text+0xc5d75
+                            (0065f464,0125d87c,0065f388,0065f460,
+                             0081dd3c,0125d618,00000000,00000000)
+ 0167:60326d5d 56                  push    esi
+ 0167:60326d5e 57                  push    edi
+ 0167:60326d5f 8b7c240c            mov     edi,dword ptr [esp+0c]
+ 0167:60326d63 8bf1                mov     esi,ecx
+ 0167:60326d65 57                  push    edi
+ 0167:60326d66 e840f6ffff          call    603263ab = GKLAYOUT.DLL:.text+0xc53ab
+ 0167:60326d6b 8b06                mov     eax,dword ptr [esi]
+ 0167:60326d6d 57                  push    edi
+ 0167:60326d6e 56                  push    esi
+ 0167:60326d6f ff90cc010000        call    dword ptr [eax+000001cc]
+GKLAYOUT.DLL:.text+0xc5d75:
+*0167:60326d75 57                  push    edi
+ 0167:60326d76 8bce                mov     ecx,esi
+ 0167:60326d78 e837f6ffff          call    603263b4 = GKLAYOUT.DLL:.text+0xc53b4
+ 0167:60326d7d 5f                  pop     edi
+ 0167:60326d7e 33c0                xor     eax,eax
+ 0167:60326d80 5e                  pop     esi
+ 0167:60326d81 c20400              retd    0004
+ 0167:60326d84 8b4918              mov     ecx,dword ptr [ecx+18]
+ 0167:60326d87 6a07                push    +07
+ 0167:60326d89 e8aff9fcff          call    602f673d = GKLAYOUT.DLL:.text+0x9573d
+ 0167:60326d8e 33c9                xor     ecx,ecx
+
+--------------------
+
+016f:0065f3b0 0167:602bc82e GKLAYOUT.DLL:.text+0x5b82e
+                            (0065f464,0065f4c8,0065f440,00000000,
+                             0065f874,0125d618,0125d618,0125dde0)
+ 0167:602bc811 2bca                sub     ecx,edx
+ 0167:602bc813 8d3c10              lea     edi,[eax+edx]
+ 0167:602bc816 034d14              add     ecx,dword ptr [ebp+14]
+ 0167:602bc819 897ddc              mov     dword ptr [ebp-24],edi
+ 0167:602bc81c 894de4              mov     dword ptr [ebp-1c],ecx
+ 0167:602bc81f 8d45d8              lea     eax,[ebp-28]
+ 0167:602bc822 50                  push    eax
+ 0167:602bc823 ff7318              push    dword ptr [ebx+18]
+ 0167:602bc826 ff7508              push    dword ptr [ebp+08]
+ 0167:602bc829 e8b0ff0600          call    6032c7de = GKLAYOUT.DLL:.text+0xcb7de
+GKLAYOUT.DLL:.text+0x5b82e:
+*0167:602bc82e 83c40c              add     esp,+0c
+ 0167:602bc831 8b4510              mov     eax,dword ptr [ebp+10]
+ 0167:602bc834 8b4e08              mov     ecx,dword ptr [esi+08]
+ 0167:602bc837 8b760c              mov     esi,dword ptr [esi+0c]
+ 0167:602bc83a 8b5008              mov     edx,dword ptr [eax+08]
+ 0167:602bc83d 8b400c              mov     eax,dword ptr [eax+0c]
+ 0167:602bc840 3bd1                cmp     edx,ecx
+ 0167:602bc842 7504                jnz     602bc848 = GKLAYOUT.DLL:.text+0x5b848
+ 0167:602bc844 3bc6                cmp     eax,esi
+ 0167:602bc846 7444                jz      602bc88c = GKLAYOUT.DLL:.text+0x5b88c
+ 0167:602bc848 8b4508              mov     eax,dword ptr [ebp+08]
+
+--------------------
+
+016f:0065f4e0 0167:602ba874 GKLAYOUT.DLL:.text+0x59874
+                            (00000000,00809900,0065f6ac,0065f53c,
+                             0065f874,00000000,0065f740,0125d618)
+ 0167:602ba859 8d45b4              lea     eax,[ebp-4c]
+ 0167:602ba85c 50                  push    eax
+ 0167:602ba85d 8d8560ffffff        lea     eax,[ebp-000000a0]
+ 0167:602ba863 50                  push    eax
+ 0167:602ba864 8d45e8              lea     eax,[ebp-18]
+ 0167:602ba867 50                  push    eax
+ 0167:602ba868 8d4584              lea     eax,[ebp-7c]
+ 0167:602ba86b 50                  push    eax
+ 0167:602ba86c 8d4b44              lea     ecx,[ebx+44]
+ 0167:602ba86f e82f1d0000          call    602bc5a3 = GKLAYOUT.DLL:.text+0x5b5a3
+GKLAYOUT.DLL:.text+0x59874:
+*0167:602ba874 8b7510              mov     esi,dword ptr [ebp+10]
+ 0167:602ba877 8d4b34              lea     ecx,[ebx+34]
+ 0167:602ba87a 8b01                mov     eax,dword ptr [ecx]
+ 0167:602ba87c ff5034              call    dword ptr [eax+34]
+ 0167:602ba87f 8b45b0              mov     eax,dword ptr [ebp-50]
+ 0167:602ba882 8b4da8              mov     ecx,dword ptr [ebp-58]
+ 0167:602ba885 8b55ac              mov     edx,dword ptr [ebp-54]
+ 0167:602ba888 03c8                add     ecx,eax
+ 0167:602ba88a 8b45c4              mov     eax,dword ptr [ebp-3c]
+ 0167:602ba88d 8b7dcc              mov     edi,dword ptr [ebp-34]
+ 0167:602ba890 894dfc              mov     dword ptr [ebp-04],ecx
+
+--------------------
+
+016f:0065f508 0167:602af2f3 GKLAYOUT.DLL:.text+0x4e2f3
+                            (0125d618,00809900,0065f6ac,0065f53c,
+                             00000000,00000000,00000000,0065f874)
+ 0167:602af2da ff                 ?db      ff
+ 0167:602af2db ff598b              call    fword ptr [ecx-75]
+ 0167:602af2de 7d24                jge     602af304 = GKLAYOUT.DLL:.text+0x4e304
+ 0167:602af2e0 8b06                mov     eax,dword ptr [esi]
+ 0167:602af2e2 57                  push    edi
+ 0167:602af2e3 ff7514              push    dword ptr [ebp+14]
+ 0167:602af2e6 ff7510              push    dword ptr [ebp+10]
+ 0167:602af2e9 ff750c              push    dword ptr [ebp+0c]
+ 0167:602af2ec 56                  push    esi
+ 0167:602af2ed ff90b0000000        call    dword ptr [eax+000000b0]
+GKLAYOUT.DLL:.text+0x4e2f3:
+*0167:602af2f3 8bd8                mov     ebx,eax
+ 0167:602af2f5 85db                test    ebx,ebx
+ 0167:602af2f7 7826                js      602af31f = GKLAYOUT.DLL:.text+0x4e31f
+ 0167:602af2f9 8b07                mov     eax,dword ptr [edi]
+ 0167:602af2fb 83e001              and     eax,+01
+ 0167:602af2fe 84c0                test    al,al
+ 0167:602af300 751d                jnz     602af31f = GKLAYOUT.DLL:.text+0x4e31f
+ 0167:602af302 8b06                mov     eax,dword ptr [esi]
+ 0167:602af304 8bce                mov     ecx,esi
+ 0167:602af306 ff909c000000        call    dword ptr [eax+0000009c]
+ 0167:602af30c 85c0                test    eax,eax
+
+--------------------
+
+016f:0065f718 0167:602af919 GKLAYOUT.DLL:.text+0x4e919
+                            (0125d440,00809900,0065f7f8,0065f740,
+                             0065f874,0065f900,00817680,008001d0)
+ 0167:602af905 57                  push    edi
+ 0167:602af906 57                  push    edi
+ 0167:602af907 57                  push    edi
+ 0167:602af908 50                  push    eax
+ 0167:602af909 8b4d08              mov     ecx,dword ptr [ebp+08]
+ 0167:602af90c 8d4594              lea     eax,[ebp-6c]
+ 0167:602af90f 50                  push    eax
+ 0167:602af910 ff750c              push    dword ptr [ebp+0c]
+ 0167:602af913 53                  push    ebx
+ 0167:602af914 e888f9ffff          call    602af2a1 = GKLAYOUT.DLL:.text+0x4e2a1
+GKLAYOUT.DLL:.text+0x4e919:
+*0167:602af919 8b4594              mov     eax,dword ptr [ebp-6c]
+ 0167:602af91c 57                  push    edi
+ 0167:602af91d 8945f8              mov     dword ptr [ebp-08],eax
+ 0167:602af920 8b4598              mov     eax,dword ptr [ebp-68]
+ 0167:602af923 8945fc              mov     dword ptr [ebp-04],eax
+ 0167:602af926 57                  push    edi
+ 0167:602af927 8d4594              lea     eax,[ebp-6c]
+ 0167:602af92a 57                  push    edi
+ 0167:602af92b 50                  push    eax
+ 0167:602af92c 57                  push    edi
+ 0167:602af92d ff750c              push    dword ptr [ebp+0c]
+
+--------------------
+
+016f:0065f864 0167:6027471e GKLAYOUT.DLL:.text+0x1371e
+                            (0125d440,0081dc20,00000000,00800250,
+                             008001d0,00000000,0065f8bc,0065f8c0)
+ 0167:60274703 8b4508              mov     eax,dword ptr [ebp+08]
+ 0167:60274706 52                  push    edx
+ 0167:60274707 8d95dcfeffff        lea     edx,[ebp-00000124]
+ 0167:6027470d 8b08                mov     ecx,dword ptr [eax]
+ 0167:6027470f 52                  push    edx
+ 0167:60274710 8d5594              lea     edx,[ebp-6c]
+ 0167:60274713 52                  push    edx
+ 0167:60274714 ff7308              push    dword ptr [ebx+08]
+ 0167:60274717 50                  push    eax
+ 0167:60274718 ff91b0000000        call    dword ptr [ecx+000000b0]
+GKLAYOUT.DLL:.text+0x1371e:
+*0167:6027471e 8b4508              mov     eax,dword ptr [ebp+08]
+ 0167:60274721 8b4d98              mov     ecx,dword ptr [ebp-68]
+ 0167:60274724 8b5594              mov     edx,dword ptr [ebp-6c]
+ 0167:60274727 83c004              add     eax,+04
+ 0167:6027472a 8975f0              mov     dword ptr [ebp-10],esi
+ 0167:6027472d 8975f4              mov     dword ptr [ebp-0c],esi
+ 0167:60274730 895008              mov     dword ptr [eax+08],edx
+ 0167:60274733 89480c              mov     dword ptr [eax+0c],ecx
+ 0167:60274736 8b4594              mov     eax,dword ptr [ebp-6c]
+ 0167:60274739 8b7b08              mov     edi,dword ptr [ebx+08]
+ 0167:6027473c 8945f8              mov     dword ptr [ebp-08],eax
+
+--------------------
+
+016f:0065f914 0167:6046899d GKLAYOUT.DLL:.text+0x20799d
+                            (00000000,008001d0,0080021c,60393c0c,
+                             00000000,00818120,60539296,0080021c)
+ 0167:6046898a a5                  movs    dword ptr es:[edi],dword ptr ds:[esi]
+ 0167:6046898b a5                  movs    dword ptr es:[edi],dword ptr ds:[esi]
+ 0167:6046898c a5                  movs    dword ptr es:[edi],dword ptr ds:[esi]
+ 0167:6046898d a5                  movs    dword ptr es:[edi],dword ptr ds:[esi]
+ 0167:6046898e ff75e8              push    dword ptr [ebp-18]
+ 0167:60468991 8b75d4              mov     esi,dword ptr [ebp-2c]
+ 0167:60468994 ff75e4              push    dword ptr [ebp-1c]
+ 0167:60468997 8b06                mov     eax,dword ptr [esi]
+ 0167:60468999 56                  push    esi
+ 0167:6046899a ff5048              call    dword ptr [eax+48]
+GKLAYOUT.DLL:.text+0x20799d:
+*0167:6046899d ff7614              push    dword ptr [esi+14]
+ 0167:604689a0 8bcb                mov     ecx,ebx
+ 0167:604689a2 e82fffffff          call    604688d6 = GKLAYOUT.DLL:.text+0x2078d6
+ 0167:604689a7 33ff                xor     edi,edi
+ 0167:604689a9 ff45fc              inc     dword ptr [ebp-04]
+ 0167:604689ac 8b45fc              mov     eax,dword ptr [ebp-04]
+ 0167:604689af 3b45d8              cmp     eax,dword ptr [ebp-28]
+ 0167:604689b2 729e                jc      60468952 = GKLAYOUT.DLL:.text+0x207952
+ 0167:604689b4 397b1c              cmp     dword ptr [ebx+1c],edi
+ 0167:604689b7 0f8498000000        jz      60468a55 = GKLAYOUT.DLL:.text+0x207a55
+ 0167:604689bd 57                  push    edi
+
+--------------------
+
+016f:0065f95c 0167:60394b7a GKLAYOUT.DLL:.text+0x133b7a
+                            (00819df0,00000000,00000001,00000000,
+                             01236d70,00818120,00000000,0000002f)
+ 0167:60394b62 3917                cmp     dword ptr [edi],edx
+ 0167:60394b64 0f95c2              setnz   dl
+ 0167:60394b67 52                  push    edx
+ 0167:60394b68 ff503c              call    dword ptr [eax+3c]
+ 0167:60394b6b 33c0                xor     eax,eax
+ 0167:60394b6d 8bce                mov     ecx,esi
+ 0167:60394b6f 3907                cmp     dword ptr [edi],eax
+ 0167:60394b71 0f95c0              setnz   al
+ 0167:60394b74 50                  push    eax
+ 0167:60394b75 e8b63d0d00          call    60468930 = GKLAYOUT.DLL:.text+0x207930
+GKLAYOUT.DLL:.text+0x133b7a:
+*0167:60394b7a 5f                  pop     edi
+ 0167:60394b7b 5e                  pop     esi
+ 0167:60394b7c c3                  retd
+ 0167:60394b7d 83794000            cmp     dword ptr [ecx+40],+00
+ 0167:60394b81 56                  push    esi
+ 0167:60394b82 7419                jz      60394b9d = GKLAYOUT.DLL:.text+0x133b9d
+ 0167:60394b84 8db19a000000        lea     esi,[ecx+0000009a]
+ 0167:60394b8a 803e00              cmp     byte ptr [esi],00
+ 0167:60394b8d 750e                jnz     60394b9d = GKLAYOUT.DLL:.text+0x133b9d
+ 0167:60394b8f 6a01                push    +01
+ 0167:60394b91 e8dc3a0d00          call    60468672 = GKLAYOUT.DLL:.text+0x207672
+
+--------------------
+
+016f:0065f994 0167:605374ca GKPARSER.DLL:.text+0x64ca
+                            (01236d70,00000001,00819df0,01236d70,
+                             00818120,01236d70,00000000,00000001)
+ 0167:605374aa 48                  dec     eax
+ 0167:605374ab 0f8509010000        jnz     605375ba = GKPARSER.DLL:.text+0x65ba
+ 0167:605374b1 837df400            cmp     dword ptr [ebp-0c],+00
+ 0167:605374b5 8bce                mov     ecx,esi
+ 0167:605374b7 0f842b010000        jz      605375e8 = GKPARSER.DLL:.text+0x65e8
+ 0167:605374bd 6a00                push    +00
+ 0167:605374bf 6a01                push    +01
+ 0167:605374c1 53                  push    ebx
+ 0167:605374c2 ff7510              push    dword ptr [ebp+10]
+ 0167:605374c5 e81a1f0000          call    605393e4 = GKPARSER.DLL:.text+0x83e4
+GKPARSER.DLL:.text+0x64ca:
+*0167:605374ca e921010000          jmp     605375f0 = GKPARSER.DLL:.text+0x65f0
+ 0167:605374cf 837d0c00            cmp     dword ptr [ebp+0c],+00
+ 0167:605374d3 c745f801000000      mov     dword ptr [ebp-08],00000001
+ 0167:605374da 746b                jz      60537547 = GKPARSER.DLL:.text+0x6547
+ 0167:605374dc 8d3cdb              lea     edi,[ebx+ebx*8]
+ 0167:605374df c1e703              shl     edi,03
+ 0167:605374e2 8b87ac795560        mov     eax,dword ptr [edi+605579ac]
+ 0167:605374e8 85c0                test    eax,eax
+ 0167:605374ea 740f                jz      605374fb = GKPARSER.DLL:.text+0x64fb
+ 0167:605374ec 8b16                mov     edx,dword ptr [esi]
+ 0167:605374ee 50                  push    eax
+
+--------------------
+
+016f:0065f9c4 0167:60537e9b GKPARSER.DLL:.text+0x6e9b
+                            (00819df0,804e03ef,00818120,80000000,
+                             605a8b8d,605a8ba5,611417c8,0080aa14)
+ 0167:60537e7f 740c                jz      60537e8d = GKPARSER.DLL:.text+0x6e8d
+ 0167:60537e81 ff7508              push    dword ptr [ebp+08]
+ 0167:60537e84 8bce                mov     ecx,esi
+ 0167:60537e86 e8991a0000          call    60539924 = GKPARSER.DLL:.text+0x8924
+ 0167:60537e8b eb0e                jmp     60537e9b = GKPARSER.DLL:.text+0x6e9b
+ 0167:60537e8d ff7508              push    dword ptr [ebp+08]
+ 0167:60537e90 8bce                mov     ecx,esi
+ 0167:60537e92 ff75fc              push    dword ptr [ebp-04]
+ 0167:60537e95 57                  push    edi
+ 0167:60537e96 e850f5ffff          call    605373eb = GKPARSER.DLL:.text+0x63eb
+GKPARSER.DLL:.text+0x6e9b:
+*0167:60537e9b 8bd8                mov     ebx,eax
+ 0167:60537e9d 85db                test    ebx,ebx
+ 0167:60537e9f 750d                jnz     60537eae = GKPARSER.DLL:.text+0x6eae
+ 0167:60537ea1 ff75fc              push    dword ptr [ebp-04]
+ 0167:60537ea4 8bce                mov     ecx,esi
+ 0167:60537ea6 ff7508              push    dword ptr [ebp+08]
+ 0167:60537ea9 e819f4ffff          call    605372c7 = GKPARSER.DLL:.text+0x62c7
+ 0167:60537eae 81fbf9034e80        cmp     ebx,804e03f9
+ 0167:60537eb4 7502                jnz     60537eb8 = GKPARSER.DLL:.text+0x6eb8
+ 0167:60537eb6 33db                xor     ebx,ebx
+ 0167:60537eb8 8b4d08              mov     ecx,dword ptr [ebp+08]
+
+--------------------
+
+016f:0065f9fc 0167:60537111 GKPARSER.DLL:.text+0x6111
+                            (00818120,60557e20,00800b30,00000000,
+                             00818120,00800b30,61186988,60561414)
+ 0167:605370f0 8b4510              mov     eax,dword ptr [ebp+10]
+ 0167:605370f3 898680000000        mov     dword ptr [esi+00000080],eax
+ 0167:605370f9 8b45f8              mov     eax,dword ptr [ebp-08]
+ 0167:605370fc 48                  dec     eax
+ 0167:605370fd 83f80b              cmp     eax,+0b
+ 0167:60537100 774e                ja      60537150 = GKPARSER.DLL:.text+0x6150
+ 0167:60537102 ff248597715360      jmp     dword ptr [eax*4+60537197]
+ 0167:60537109 53                  push    ebx
+ 0167:6053710a 8bce                mov     ecx,esi
+ 0167:6053710c e8ba0b0000          call    60537ccb = GKPARSER.DLL:.text+0x6ccb
+GKPARSER.DLL:.text+0x6111:
+*0167:60537111 eb3a                jmp     6053714d = GKPARSER.DLL:.text+0x614d
+ 0167:60537113 53                  push    ebx
+ 0167:60537114 8bce                mov     ecx,esi
+ 0167:60537116 e8c30d0000          call    60537ede = GKPARSER.DLL:.text+0x6ede
+ 0167:6053711b eb30                jmp     6053714d = GKPARSER.DLL:.text+0x614d
+ 0167:6053711d 53                  push    ebx
+ 0167:6053711e 8bce                mov     ecx,esi
+ 0167:60537120 e8f8140000          call    6053861d = GKPARSER.DLL:.text+0x761d
+ 0167:60537125 eb26                jmp     6053714d = GKPARSER.DLL:.text+0x614d
+ 0167:60537127 53                  push    ebx
+ 0167:60537128 8bce                mov     ecx,esi
+
+--------------------
+
+016f:0065fa34 0167:60536b5b GKPARSER.DLL:.text+0x5b5b
+                            (00000072,00800b30,01236c10,00000000,
+                             0080021c,00000000,00800b30,00000001)
+ 0167:60536b47 50                  push    eax
+ 0167:60536b48 8b08                mov     ecx,dword ptr [eax]
+ 0167:60536b4a ff5120              call    dword ptr [ecx+20]
+ 0167:60536b4d 85c0                test    eax,eax
+ 0167:60536b4f 7459                jz      60536baa = GKPARSER.DLL:.text+0x5baa
+ 0167:60536b51 ff750c              push    dword ptr [ebp+0c]
+ 0167:60536b54 8b0e                mov     ecx,dword ptr [esi]
+ 0167:60536b56 50                  push    eax
+ 0167:60536b57 56                  push    esi
+ 0167:60536b58 ff5124              call    dword ptr [ecx+24]
+GKPARSER.DLL:.text+0x5b5b:
+*0167:60536b5b 8945fc              mov     dword ptr [ebp-04],eax
+ 0167:60536b5e 8b4670              mov     eax,dword ptr [esi+70]
+ 0167:60536b61 50                  push    eax
+ 0167:60536b62 8b08                mov     ecx,dword ptr [eax]
+ 0167:60536b64 ff5178              call    dword ptr [ecx+78]
+ 0167:60536b67 3bc7                cmp     eax,edi
+ 0167:60536b69 752c                jnz     60536b97 = GKPARSER.DLL:.text+0x5b97
+ 0167:60536b6b 8b8e80000000        mov     ecx,dword ptr [esi+00000080]
+ 0167:60536b71 e879ae0000          call    605419ef = GKPARSER.DLL:.text+0x109ef
+ 0167:60536b76 85c0                test    eax,eax
+ 0167:60536b78 741d                jz      60536b97 = GKPARSER.DLL:.text+0x5b97
+
+--------------------
+
+016f:0065fa5c 0167:60542483 GKPARSER.DLL:.text+0x11483
+                            (00818060,00800b30,00809b70,0065fac0,
+                             00800b34,804e03e8,60542918,00000001)
+ 0167:6054246f 85ff                test    edi,edi
+ 0167:60542471 74e7                jz      6054245a = GKPARSER.DLL:.text+0x1145a
+ 0167:60542473 8b4618              mov     eax,dword ptr [esi+18]
+ 0167:60542476 8b0f                mov     ecx,dword ptr [edi]
+ 0167:60542478 50                  push    eax
+ 0167:60542479 6a00                push    +00
+ 0167:6054247b ff7508              push    dword ptr [ebp+08]
+ 0167:6054247e 56                  push    esi
+ 0167:6054247f 57                  push    edi
+ 0167:60542480 ff5120              call    dword ptr [ecx+20]
+GKPARSER.DLL:.text+0x11483:
+*0167:60542483 ebd3                jmp     60542458 = GKPARSER.DLL:.text+0x11458
+ 0167:60542485 55                  push    ebp
+ 0167:60542486 8bec                mov     ebp,esp
+ 0167:60542488 83ec58              sub     esp,+58
+ 0167:6054248b 53                  push    ebx
+ 0167:6054248c 56                  push    esi
+ 0167:6054248d 8b7508              mov     esi,dword ptr [ebp+08]
+ 0167:60542490 57                  push    edi
+ 0167:60542491 33ff                xor     edi,edi
+ 0167:60542493 8b4610              mov     eax,dword ptr [esi+10]
+ 0167:60542496 3bc7                cmp     eax,edi
+
+--------------------
+
+
+-- stack dump --
+
+<span class="quote">&gt;Podobnie ten sam program w wersji niespolszczonej z mozilla.org/projects/seamonkey/</span >
+po zainstalowaniu seamonkey-1.0.pl-PL.langpack.xpi z seamonkey.pl i ponownym
+uruchomieniu
+wypluwa podobny (różni się paroma wartościami) komunikat (przed dodaniem działa
+poprawnie):
+
+SEAMONKEY spowodował błąd: nieprawidłowa strona w
+module GKLAYOUT.DLL przy 0167:6029e4c8.
+Rejestry:
+EAX=00000000 CS=0167 EIP=6029e4c8 EFLGS=00010206
+EBX=0125dc80 SS=016f ESP=0065f174 EBP=0065f27c
+ECX=00000000 DS=016f ESI=0065f2b8 FS=8ae7
+EDX=00000000 ES=016f EDI=00000000 GS=0000
+Bajtów w CS:EIP:
+80 7f 46 00 0f 84 02 01 00 00 83 f9 02 75 65 80 
+Stos:
+00000000 0065f464 0125dc80 0065f53c 0125dc80 00000000 00000000 00000000 40000000
+0081dc20 00000001 00000000 00000000 0065f53c 00000000 00000000
+
+
+PS. Mea maxima culpa. Podobny bubel wyskakiwał mi przy wersji beta i alfa.</pre>
+    </div>
+
+    <div id="c1" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=840.html#c1">Comment 1</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Artwi</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2006-04-18 22:40:58 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Potwierdzam w całej rozciągłości. To samo dotyczy zarówno wersji 1.0 jak i 1.0.1
+na Windows 98
+SE. Mam to samo, tylko cyferki przy numerach stron inne. Wersja angielska
+działa, polska nie, angielska po zainstalowaniu polskiej lokalizacji przestaje
+działać.</pre>
+    </div>
+
+    <div id="c2" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=840.html#c2">Comment 2</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Adrian Kalla :Adrianer</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2006-04-29 16:22:29 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">naprawione w SeaMonkey 1.0.1 pl-PL FINAL
+(przy aktualizacji z SM 1.0 PL może być konieczne usunięcie chrome.rdf w
+katalogu chrome programu i profilu)</pre>
+    </div>
+
+    <div id="c3" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=840.html#c3">Comment 3</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2010-05-17 14:48:13 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">krowujacy -&gt; normalny (filtruj po: massmail )</pre>
+    </div>
+
+    <div id="c4" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=840.html#c4">Comment 4</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2010-05-18 12:27:07 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">ponowna zmiana, przywracam wage &quot;blokujacy&quot; (filtrowac po slowie: mass-o-mail)</pre>
+    </div>
+
+
+  
+
+</td>
+<td>
+</td>
+</tr></table>
+  </div>
+
+    <hr><div id="add_comment" class="bz_section_additional_comments">
+      <table>
+        <tr>
+          <td>
+            <fieldset>
+              <legend>Note</legend>
+              You need to
+              <a href="show_bug.cgi%3Fid=840&amp;GoAheadAndLogIn=1.html">log in</a>
+              before you can comment on or make changes to this bug.
+            </fieldset>
+          </td>
+        </tr> 
+      </table>
+  </div>        
+
+</form>
+
+<hr>
+<ul class="related_actions">
+    <li><a href="show_bug.cgi%3Fformat=multiple&amp;id=840.html">Format For Printing</a></li>
+    <li>&nbsp;-&nbsp;<a href="show_bug.cgi%3Fctype=xml&amp;id=840">XML</a></li>
+    <li>&nbsp;-&nbsp;<a href="enter_bug.cgi%3Fcloned_bug_id=840.html">Clone This Bug</a></li>
+    
+    <li>&nbsp;-&nbsp;<a href="show_bug.cgi%3Fid=840.html#">Top of page </a></li>
+    </ul>
+
+<br>
+</div>
+
+    <div id="footer">
+      <div class="intro"></div>
+<ul id="useful-links">
+  <li id="links-actions"><ul class="links">
+  <li><a href="index.html">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi.html">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi.html">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi.html">Search</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="http://bugs.aviary.pl/buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input type="hidden" id="no_redirect_bottom" name="no_redirect" value="0">
+    <script type="text/javascript">
+      if (history && history.replaceState) {
+        var no_redirect = document.getElementById("no_redirect_bottom");
+        no_redirect.value = 1;
+      }
+    </script>
+    <input class="txt" type="text" id="quicksearch_bottom" name="quicksearch" 
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search" 
+           id="find_bottom"></form>
+  <a href="page.cgi%3Fid=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="report.cgi.html">Reports</a></li>
+
+  <li>
+      <span class="separator">| </span>
+        <a href="request.cgi.html">Requests</a></li>
+
+
+  <li>
+        <span class="separator">| </span>
+        <a href="https://bugzilla.readthedocs.org/en/5.0/using/understanding.html" target="_blank">Help</a>
+      </li>
+    
+      <li id="new_account_container_bottom">
+        <span class="separator">| </span>
+        <a href="createaccount.cgi.html">New&nbsp;Account</a>
+      </li>
+
+    <li id="mini_login_container_bottom">
+  <span class="separator">| </span>
+  <a id="login_link_bottom" href="show_bug.cgi%3Fid=840&amp;GoAheadAndLogIn=1.html"
+     onclick="return show_mini_login_form('_bottom')">Log In</a>
+
+  <form action="show_bug.cgi%3Fid=840.html" method="POST"
+        class="mini_login bz_default_hidden"
+        id="mini_login_bottom">
+    <input id="Bugzilla_login_bottom" required
+           name="Bugzilla_login" class="bz_login"
+        type="email" placeholder="Email Address">
+    <input class="bz_password" name="Bugzilla_password" type="password"
+           id="Bugzilla_password_bottom" required
+           placeholder="Password">
+    <input type="hidden" name="Bugzilla_login_token"
+           value="1469820383-fujavvgiZcR-SSHotM-oODw8k3XZAr3cGNgQL6MP6WY">
+    <input type="submit" name="GoAheadAndLogIn" value="Log in"
+            id="log_in_bottom">
+    <a href="show_bug.cgi%3Fid=840.html#" onclick="return hide_mini_login_form('_bottom')">[x]</a>
+  </form>
+</li>
+
+
+  <li id="forgot_container_bottom">
+    <span class="separator">| </span>
+    <a id="forgot_link_bottom" href="show_bug.cgi%3Fid=840&amp;GoAheadAndLogIn=1.html#forgot"
+       onclick="return show_forgot_form('_bottom')">Forgot Password</a>
+    <form action="http://bugs.aviary.pl/token.cgi" method="post" id="forgot_form_bottom"
+          class="mini_forgot bz_default_hidden">
+      <label for="login_bottom">Login:</label>
+      <input name="loginname" size="20" id="login_bottom" required
+          type="email" placeholder="Your Email Address">
+      <input id="forgot_button_bottom" value="Reset Password" type="submit">
+      <input type="hidden" name="a" value="reqpw">
+      <input type="hidden" id="token_bottom" name="token"
+             value="1469820383-e0ejiy0cwzKND5Lu5iLP2ERxyAD2kXISUbs-0dXG7tk">
+      <a href="show_bug.cgi%3Fid=840.html#" onclick="return hide_forgot_form('_bottom')">[x]</a>
+    </form>
+  </li>
+</ul>
+  </li>
+
+  
+
+
+
+
+  
+</ul>
+
+      <div class="outro"></div>
+    </div>
+
+  </body>
+</html>

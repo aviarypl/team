@@ -1,0 +1,69 @@
+diff --git a/editor/ui/composer/content/editorOverlay.xul b/editor/ui/composer/content/editorOverlay.xul
+--- a/editor/ui/composer/content/editorOverlay.xul
++++ b/editor/ui/composer/content/editorOverlay.xul
+@@ -508,17 +508,17 @@
+                     oncommand="UpdateTOC()"/>
+           <menuitem id="removeTOCMenuitem"
+                     label="&removeTOC.label;"
+                     accesskey="&removeTOC.accesskey;"
+                     oncommand="RemoveTOC()"/>
+         </menupopup>
+       </menu>
+       <menuseparator id="insertMenuSeparator"/>
+-      <menuitem id="insertBreakAll" accesskey="&insertBreakAllCmd.accesskey;"   observes="cmd_insertBreakAll"   label="&insertBreakAllCmd.label;"/>
++      <menuitem id="insertBreakAll" accesskey="&insertBreakAll2Cmd.accesskey;"   observes="cmd_insertBreakAll"   label="&insertBreakAll2Cmd.label;"/>
+     </menupopup>
+   </menu>
+ 
+   <!-- Insert menu for PlainText editor -->
+   <menu id="insertMenuPlainText"
+         label="&insertMenu.label;"
+         accesskey="&insertMenu.accesskey;">
+     <menupopup id="insertMenuPlainTextPopup">
+diff --git a/editor/ui/locales/en-US/chrome/composer/editorOverlay.dtd b/editor/ui/locales/en-US/chrome/composer/editorOverlay.dtd
+--- a/editor/ui/locales/en-US/chrome/composer/editorOverlay.dtd
++++ b/editor/ui/locales/en-US/chrome/composer/editorOverlay.dtd
+@@ -131,18 +131,18 @@
+ <!ENTITY insertHLineCmd.label "Horizontal Line">
+ <!ENTITY insertHLineCmd.accesskey "o">
+ <!ENTITY insertTableCmd.label "Table…">
+ <!ENTITY insertTableCmd.accesskey "T">
+ <!ENTITY insertHTMLCmd.label "HTML…">
+ <!ENTITY insertHTMLCmd.accesskey "H">
+ <!ENTITY insertCharsCmd.label "Characters and Symbols…">
+ <!ENTITY insertCharsCmd.accesskey "C">
+-<!ENTITY insertBreakAllCmd.label "Break Below Image(s)">
+-<!ENTITY insertBreakAllCmd.accesskey "k">
++<!ENTITY insertBreakAll2Cmd.label "Line break">
++<!ENTITY insertBreakAll2Cmd.accesskey "k">
+ 
+ <!-- Used just in context popup. -->
+ <!ENTITY spellCheckNoSuggestions.label "(No Suggestions Found)">
+ <!ENTITY spellCheckIgnoreWord.label "Ignore Word">
+ <!ENTITY spellCheckIgnoreWord.accesskey "I">
+ <!ENTITY spellCheckAddToDictionary.label "Add to Dictionary">
+ <!ENTITY spellCheckAddToDictionary.accesskey "n">
+ <!ENTITY createLinkCmd.label "Create Link…">
+diff --git a/mail/components/compose/content/editorOverlay.xul b/mail/components/compose/content/editorOverlay.xul
+--- a/mail/components/compose/content/editorOverlay.xul
++++ b/mail/components/compose/content/editorOverlay.xul
+@@ -338,17 +338,17 @@
+                     oncommand="UpdateTOC()"/>
+           <menuitem id="removeTOCMenuitem"
+                     label="&removeTOC.label;"
+                     accesskey="&removeTOC.accesskey;"
+                     oncommand="RemoveTOC()"/>
+         </menupopup>
+       </menu>
+       <menuseparator id="insertMenuSeparator"/>
+-      <menuitem id="insertBreakAll" accesskey="&insertBreakAllCmd.accesskey;"   observes="cmd_insertBreakAll"   label="&insertBreakAllCmd.label;"/>
++      <menuitem id="insertBreakAll" accesskey="&insertBreakAll2Cmd.accesskey;"   observes="cmd_insertBreakAll"   label="&insertBreakAll2Cmd.label;"/>
+     </menupopup>
+   </menu>
+ 
+   <!-- Format Menu -->
+   <menupopup id="formatMenuPopup" onpopupshowing="EditorInitFormatMenu()">
+     <!-- Font face submenu -->
+     <menu id="fontFaceMenu" label="&fontfaceMenu.label;" accesskey="&fontfaceMenu.accesskey;" 
+           position="1">
+

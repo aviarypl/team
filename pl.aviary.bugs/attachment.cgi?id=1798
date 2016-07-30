@@ -1,0 +1,178 @@
+<!-- <!DOCTYPE appendix PUBLIC "-//OASIS//DTD DocBook V4.1//EN"> -->
+<appendix id="install-perlmodules-manual">
+  <title>RÍczna instalacja modu≥Ûw Perl</title>
+  
+  <section id="modules-manual-instructions">
+    <title>Instrukcja</title>
+    <para>
+      Poniøsza instrukcja omawia rÍcznπ instalacjÍ modu≥Ûw Perl.
+      Aby kontynuowaÊ naleøy, korzystajπc z podanych odnoúnikÛw do archiwum CPAN, pobraÊ poszczegÛlne modu≥y,
+      a nastÍpnie wykonaÊ jako root poniøsze polecenia:
+    </para>
+
+    <para>  
+      <screen><prompt>bash#</prompt> tar -xzvf &lt;modu≥&gt;.tar.gz
+<prompt>bash#</prompt> cd &lt;modu≥&gt;
+<prompt>bash#</prompt> perl Makefile.PL
+<prompt>bash#</prompt> make
+<prompt>bash#</prompt> make test
+<prompt>bash#</prompt> make install</screen>
+    </para>
+    <note>
+      <para>
+		Aby skompilowaÊ kody ürÛd≥owe w systemie Windows naleøy
+		pobraÊ program make. Moøna uøyÊ takøe narzÍdzia <command>nmake</command>,
+		ktÛre dostarczane jest z pakietem Microsoft Visual C++. Opcjonalnie
+		moøna skorzystaÊ z napisanego wy≥πcznie w Perlu programu <command>dmake</command>, 
+		ktÛry jest dostÍpny w repozytorium CPAN.
+      </para>
+      <para>
+		Jak opisano w <xref linkend="modules-manual-download" />, jednakøe wiÍkszoúÊ
+		pakietÛw jest dostÍpnych w repozytorium ActiveState lub theory58S.
+		Zalecana jest instalacja za pomocπ graficznego narzÍdzia ppm dostÍpnego 
+		w ramach pakietu ActiveState oraz dodanie theory58S do listy repozytoriÛw.
+      </para>
+    </note>
+  </section>
+    
+  <section id="modules-manual-download">
+    <title>èrÛd≥a instalacji</title>
+    
+    <note>
+      <para>
+	    Uruchomienie Bugzilli na systemie Windows wymaga uøycia ActiveState
+		Perl w wersji 5.8.1 lub wyøszej. Wiele modu≥Ûw jest dostÍpnych 
+		w ramach podstawowej dystrybucji ActiveState Perl.
+		W przypadku korzystania z Perl w wersji 5.8.x dodatkowe modu≥y mogπ zostaÊ pobrane ze strony
+		<ulink url="http://theoryx5.uwinnipeg.ca/ppms/" />. Dla wersji 5.10.x
+		sπ one dostÍpne pod adresem <ulink url="http://cpan.uwinnipeg.ca/PPMPackages/10xx/" />.
+      </para>
+    </note>
+
+    <para>
+      CGI:
+      <literallayout>
+        Archiwum CPAN: <ulink url="http://search.cpan.org/dist/CGI.pm/"/>
+        Dokumentacja: <ulink url="http://perldoc.perl.org/CGI.html"/>
+      </literallayout>
+    </para>
+
+    <para>
+      Data-Dumper:
+      <literallayout>
+        Archiwum CPAN: <ulink url="http://search.cpan.org/dist/Data-Dumper/"/>
+        Dokumentacja: <ulink url="http://search.cpan.org/dist/Data-Dumper/Dumper.pm"/>
+      </literallayout>
+    </para>
+    
+    <para>
+      Date::Format (czÍúÊ pakietu TimeDate):
+      <literallayout>
+        Archiwum CPAN: <ulink url="http://search.cpan.org/dist/TimeDate/"/>
+        Dokumentacja: <ulink url="http://search.cpan.org/dist/TimeDate/lib/Date/Format.pm"/>
+      </literallayout>
+    </para>
+
+    <para>
+      DBI:
+      <literallayout>
+        Archiwum CPAN: <ulink url="http://search.cpan.org/dist/DBI/"/>
+        Dokumentacja: <ulink url="http://dbi.perl.org/docs/"/>
+      </literallayout>
+    </para>
+
+    <para>
+      DBD::mysql:
+      <literallayout>
+        Archiwum CPAN: <ulink url="http://search.cpan.org/dist/DBD-mysql/"/>
+        Dokumentacja: <ulink url="http://search.cpan.org/dist/DBD-mysql/lib/DBD/mysql.pm"/>
+      </literallayout>
+    </para>
+
+    <para>
+      DBD::Pg:
+      <literallayout>
+        Archiwum CPAN: <ulink url="http://search.cpan.org/dist/DBD-Pg/"/>
+        Dokumentacja: <ulink url="http://search.cpan.org/dist/DBD-Pg/Pg.pm"/>
+      </literallayout>
+    </para>
+
+    <para>
+      Template-Toolkit:
+      <literallayout>
+        Archiwum CPAN: <ulink url="http://search.cpan.org/dist/Template-Toolkit/"/>
+        Dokumentacja: <ulink url="http://www.template-toolkit.org/docs.html"/>
+      </literallayout>
+    </para>
+
+    <para>
+      GD:
+      <literallayout>
+        Archiwum CPAN: <ulink url="http://search.cpan.org/dist/GD/"/>
+        Dokumentacja: <ulink url="http://search.cpan.org/dist/GD/GD.pm"/>
+      </literallayout>
+    </para>
+
+    <para>
+      Template::Plugin::GD:
+      <literallayout>
+       Archiwum CPAN: <ulink url="http://search.cpan.org/dist/Template-GD/" />
+       Dokumentacja: <ulink url="http://www.template-toolkit.org/docs/aqua/Modules/index.html" />
+      </literallayout>
+    </para>
+
+    <para>
+      MIME::Parser (czÍúÊ pakietu MIME-tools):
+      <literallayout>
+        Archiwum CPAN: <ulink url="http://search.cpan.org/dist/MIME-tools/"/>
+        Dokumentacja: <ulink url="http://search.cpan.org/dist/MIME-tools/lib/MIME/Parser.pm"/>
+      </literallayout>
+    </para>
+
+  </section>
+
+  <section id="modules-manual-optional">
+    <title>Modu≥y opcjonalne</title>
+
+    <para>
+      Chart::Lines:
+      <literallayout>
+        Archiwum CPAN: <ulink url="http://search.cpan.org/dist/Chart/"/>
+        Dokumentacja: <ulink url="http://search.cpan.org/dist/Chart/Chart.pod"/>
+      </literallayout>
+    </para>
+
+     <para>
+      GD::Graph:
+      <literallayout>
+        Archiwum CPAN: <ulink url="http://search.cpan.org/dist/GDGraph/"/>
+        Dokumentacja: <ulink url="http://search.cpan.org/dist/GDGraph/Graph.pm"/>
+      </literallayout>
+    </para>
+
+    <para>
+      GD::Text::Align (czÍúÊ pakietu GD::Text::Util):
+      <literallayout>
+        Archiwum CPAN: <ulink url="http://search.cpan.org/dist/GDTextUtil/"/>
+        Dokumentacja: <ulink url="http://search.cpan.org/dist/GDTextUtil/Text/Align.pm"/>
+      </literallayout>
+    </para>
+
+   <para>
+      XML::Twig:
+      <literallayout>
+        Archiwum CPAN: <ulink url="http://search.cpan.org/dist/XML-Twig/"/>
+        Dokumentacja: <ulink url="http://standards.ieee.org/resources/spasystem/twig/twig_stable.html"/>
+      </literallayout>
+    </para>
+
+    <para>
+      PatchReader:
+      <literallayout>
+        Archiwum CPAN: <ulink url="http://search.cpan.org/author/JKEISER/PatchReader/"/>
+        Dokumentacja: <ulink url="http://www.johnkeiser.com/mozilla/Patch_Viewer.html"/>
+      </literallayout>
+    </para>
+   </section>
+</appendix>
+

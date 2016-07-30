@@ -1,0 +1,59 @@
+Index: toolkit/chrome/mozapps/extensions/extensions.properties
+===================================================================
+RCS file: /l10n/l10n/pl/toolkit/chrome/mozapps/extensions/extensions.properties,v
+retrieving revision 1.31
+diff -u -r1.31 extensions.properties
+--- toolkit/chrome/mozapps/extensions/extensions.properties	30 Apr 2007 09:38:19 -0000	1.31
++++ toolkit/chrome/mozapps/extensions/extensions.properties	26 Jun 2007 10:22:24 -0000
+@@ -19,17 +19,17 @@
+ droppedInWarning=W katalogu rozszerzeń znaleziono następujące elementy. Czy chcesz je zainstalować?
+ 
+ uninstallButton=Odinstaluj
+-disableButton=Zablokuj
++disableButton=Wyłącz
+ cancelButton=Anuluj
+ restartButton=Uruchom ponownie %S
+ laterButton=Później
+ moreInfoText=Więcej informacji
+ uninstallTitle=Deinstalacja %S
+-uninstallWarnDependMsg=Dodatek %S jest wymagany przez przynajmnej jeden inny dodatek. Po jego usunięciu poniższe elementy zostaną zablokowane:
++uninstallWarnDependMsg=Dodatek %S jest wymagany przez przynajmnej jeden inny dodatek. Po jego usunięciu poniższe elementy zostaną wyłączone:
+ uninstallQueryMessage=Czy chcesz odinstalować %S?
+-disableTitle=Zablokuj %S
+-disableWarningDependMessage=Jeśli rozszerzenie %S zostanie zablokowane, zablokowane zostaną również poniższe elementy, które wymagają tego rozszerzenia:
+-disableQueryMessage=Czy chcesz zablokować %S?
++disableTitle=Wyłącz %S
++disableWarningDependMessage=Jeśli rozszerzenie %S zostanie wyłączone, wyłączone zostaną również poniższe elementy, które wymagają tego rozszerzenia:
++disableQueryMessage=Czy chcesz wyłączyć %S?
+ 
+ extensions.update.url=https://addons.mozilla.org/update/VersionCheck.php?reqVersion=%REQ_VERSION%&id=%ITEM_ID%&version=%ITEM_VERSION%&maxAppVersion=%ITEM_MAXAPPVERSION%&status=%ITEM_STATUS%&appID=%APP_ID%&appVersion=%APP_VERSION%&appOS=%APP_OS%&appABI=%APP_ABI%
+ extensions.getMoreExtensionsURL=http://%LOCALE%.add-ons.mozilla.com/%LOCALE%/%APP%/%VERSION%/extensions/
+@@ -60,9 +60,9 @@
+ incompatibleMessageNoApp=Element %S %S nie mógł zostać zainstalowany, ponieważ nie jest kompatybilny z programem %S.
+ incompatibleOlder=wersją 0.8 lub starszą.
+ incompatibleThemeName=ten motyw
+-incompatibleExtension=Zablokowane - niekompatybilne z programem %S %S
++incompatibleExtension=Wyłączone - niekompatybilne z programem %S %S
+ incompatibleAddonMsg=Niekompatybilny z %S %S
+-blocklistedDisabled=Zablokowane z przyczyn bezpieczeństwa
++blocklistedDisabled=Wyłączone z przyczyn bezpieczeństwa
+ 
+ invalidGUIDMessage=Element "%S" nie mógł być zainstalowany z powodu błędu w jego pliku instalacyjnym. ("%S" nie jest prawidłowym GUID). Poinformuj o tym problemie autora tego elementu.
+ invalidVersionMessage=Nie udało się zainstalować elementu "%S", ponieważ informacja o jego wersji ("%S") jest niepoprawna. Proszę skontaktować się z autorem w sprawie tego problemu.
+Index: toolkit/chrome/mozapps/extensions/update.dtd
+===================================================================
+RCS file: /l10n/l10n/pl/toolkit/chrome/mozapps/extensions/update.dtd,v
+retrieving revision 1.15
+diff -u -r1.15 update.dtd
+--- toolkit/chrome/mozapps/extensions/update.dtd	16 Nov 2006 16:30:50 -0000	1.15
++++ toolkit/chrome/mozapps/extensions/update.dtd	26 Jun 2007 10:22:24 -0000
+@@ -7,7 +7,7 @@
+ 
+ <!ENTITY  mismatch.win.title              "Niekompatybilne dodatki">
+ <!ENTITY  mismatch.top.label              "Następujące dodatki są niezgodne z tą wersją programu
+-                                           &brandShortName; i zostały zablokowane:">
++                                           &brandShortName; i zostały wyłączone:">
+ <!ENTITY  mismatch.bottom.label           "&brandShortName; może sprawdzić, czy są dostępne kompatybilne
+                                            wersje tych dodatków.">
+ 
+

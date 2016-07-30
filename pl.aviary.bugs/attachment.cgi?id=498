@@ -1,0 +1,74 @@
+Index: toolkit/chrome/mozapps/update/updates.dtd
+===================================================================
+RCS file: /l10n/l10n/pl/toolkit/chrome/mozapps/update/updates.dtd,v
+retrieving revision 1.4
+diff -u -r1.4 updates.dtd
+--- toolkit/chrome/mozapps/update/updates.dtd	20 Jun 2005 19:21:32 -0000	1.4
++++ toolkit/chrome/mozapps/update/updates.dtd	23 Jun 2005 08:53:03 -0000
+@@ -8,7 +8,7 @@
+ 
+ <!ENTITY  noupdatesfound.title            "Nie znaleziono żadnych aktualizacji">
+ <!ENTITY  noupdatesfound.intro            "Brak nowych aktualizacji. &brandShortName; może okresowo sprawdzać, czy dostępne są nowe aktualizacje."> 
+-<!ENTITY  updatesfound.title              "Dostępne aktualizacje">
++<!ENTITY  updatesfound.title              "Dostępna aktualizacja">
+ 
+ <!ENTITY  forMoreInfo.label               "Aby uzyskać więcej informacji, proszę">
+ <!ENTITY  clickHere.label                 "kliknąć tutaj">
+@@ -25,8 +25,7 @@
+ <!ENTITY  download.label                  "Pobierz i Zainstaluj &#0187;">
+ <!ENTITY  download.accesskey              "o">
+ 
+-<!ENTITY  upgrade.evangelism              "Aktualizacja programu &brandShortName; przez naciśnięcie Pobierz i Zainstaluj &#0187;
+-                                           jest wysoce zalecana.">
++<!ENTITY  upgrade.evangelism              "Aktualizacja programu &brandShortName; jest wysoce zalecana.">
+ 
+ <!ENTITY  license.title                   "Warunki licencji">
+ <!ENTITY  license.intro                   "Aby zainstalować aktualizację należy zaakceptować warunki licencji. Proszę przeczytać uważnie:">
+@@ -54,3 +53,10 @@
+ 
+ <!ENTITY  finished.title                  "Aktualizacja została pobrana">
+ <!ENTITY  finished.intro                  "Proces pobierania i sprawdzenia integralności aktualizacji zakończył się powodzeniem. Aby aktualizacja mogła zostać zainstalowana, wymagane jest ponowne uruchomienie programu &brandShortName;.">
++
++<!ENTITY  finishedBackground.title        "Aktualizacja gotowa do zainstalowania">
++<!ENTITY  finishedBackground.intro        "Program &brandShortName; zakończył pobieranie ważnej aktualizacji i musi zostać uruchomiony ponownie, aby aktualizacja mogła zostać zainstalowana.">
++
++<!ENTITY  finishedBackground.name         "Aktualizacja:">
++<!ENTITY  finishedBackground.instruction1 'Kliknięcie na przycisk "Uruchom ponownie teraz" spowoduje zamknięcie wszystkich okien programu &brandShortName; i instalację aktualizacji.'>
++<!ENTITY  finishedBackground.instruction2 'Aby kontynuować korzystanie z programu, należy kliknąć na przycisk "Później". Aktualizacja zostanie zainstalowana przy następnym uruchomieniu programu &brandShortName;.'>
+Index: toolkit/chrome/mozapps/update/updates.properties
+===================================================================
+RCS file: /l10n/l10n/pl/toolkit/chrome/mozapps/update/updates.properties,v
+retrieving revision 1.5
+diff -u -r1.5 updates.properties
+--- toolkit/chrome/mozapps/update/updates.properties	20 Jun 2005 19:21:32 -0000	1.5
++++ toolkit/chrome/mozapps/update/updates.properties	23 Jun 2005 08:53:03 -0000
+@@ -6,6 +6,7 @@
+ verificationError=Program %S nie m\u00f3g\u0142 potwierdzi\u0107 integralno\u015bci pakietu aktualizacyjnego
+ errorsPageHeader=Aktualizacja nieudana
+ IAgreeLabel=Zgadzam si\u0119
++IDoNotAgreeLabel=Nie zgadzam si\u0119
+ license404Error=Plik licencji nie m\u00f3g\u0142 zosta\u0107 znaleziony. Nale\u017cy skontaktowa\u0107 si\u0119 z dystrybutorem.
+ downloadingLicense=Pobieranie tekstu licencji...
+ statusSucceededFormat=Zainstalowano w programie: %S 
+@@ -29,8 +30,10 @@
+ statusFormatUnknownMB=#1 MB
+ pausedStatus=Pobrano %S
+ remain=pozosta\u0142o
+-unknownFilesize=nieznany rozmiar pliku
+-statusFormat=#1 z pr\u0119dko\u015Bci\u0105 #2 KB/sec; #3 #4
++unknownFilesize=nieznany rozmiar pliku
++rateFormatKBSec=#1 KB/s
++rateFormatMBSec=#1 MB/s
++statusFormat=#1 z pr\u0119dko\u015Bci\u0105 2#; #3 #4
+ longTimeFormat=#1:#2:#3
+ shortTimeFormat=#2:#3
+ downloadingPrefix=Pobieranie elementu %S...
+@@ -40,3 +43,7 @@
+ laterButton=P\u00f3\u017Aniej
+ restartLaterTitle=Aktualizacja oprogramowania
+ restartLaterMessage=Pobrana aktualizacja zostanie zainstalowana przy nast\u0119pnym uruchomieniu programu %S.
++
++resumePausedAfterCloseTitle=Aktualizacja oprogramowania
++resumePausedAfterCloseMessage=Pobieranie aktualizacji zosta\u0142o wstrzymane. Kontynuowa\u0107 pobieranie w tle?
++updateReadyToInstallHeader=Element %S gotowy do zainstalowania
+

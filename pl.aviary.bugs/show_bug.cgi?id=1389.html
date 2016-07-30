@@ -1,0 +1,2317 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>1389 &ndash; &quot;Smart Bookmarks&quot;</title>
+
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<link href="data/assets/7aa6ea67750936a0368541421bdcd5ee.css" rel="stylesheet" type="text/css">
+
+
+
+    
+<script type="text/javascript" src="data/assets/a7c2f3a028f17a9aa60f56dc9d6e732d.js"></script>
+
+    <script type="text/javascript">
+    <!--
+        YAHOO.namespace('bugzilla');
+        YAHOO.util.Event.addListener = function (el, sType, fn, obj, overrideContext) {
+               if ( ("onpagehide" in window || YAHOO.env.ua.gecko) && sType === "unload") { sType = "pagehide"; };
+               var capture = ((sType == "focusin" || sType == "focusout") && !YAHOO.env.ua.ie) ? true : false;
+               return this._addListener(el, this._getType(sType), fn, obj, overrideContext, capture);
+         };
+        if ( "onpagehide" in window || YAHOO.env.ua.gecko) {
+            YAHOO.util.Event._simpleRemove(window, "unload", 
+                                           YAHOO.util.Event._unload);
+        }
+        
+        function unhide_language_selector() { 
+            YAHOO.util.Dom.removeClass(
+                'lang_links_container', 'bz_default_hidden'
+            ); 
+        } 
+        YAHOO.util.Event.onDOMReady(unhide_language_selector);
+
+        
+        var BUGZILLA = {
+            param: {
+                cookiepath: '\/',
+                maxusermatches: 1000
+            },
+            constant: {
+                COMMENT_COLS: 80
+            },
+            string: {
+                
+
+                attach_desc_required:
+                    "You must enter a Description for this attachment.",
+                component_required:
+                    "You must select a Component for this bug.",
+                description_required:
+                    "You must enter a Description for this bug.",
+                short_desc_required:
+                    "You must enter a Summary for this bug.",
+                version_required:
+                    "You must select a Version for this bug."
+            }
+              , api_token: ''
+        };
+
+    if (history && history.replaceState) {
+      if(!document.location.href.match(/show_bug\.cgi/)) {
+        history.replaceState( null,
+                             "1389 – \"Smart Bookmarks\"",
+                             "show_bug.cgi?id=1389" );
+        document.title = "1389 – \"Smart Bookmarks\"";
+      }
+      if (document.location.href.match(/show_bug\.cgi\?.*list_id=/)) {
+        var href = document.location.href;
+        href = href.replace(/[\?&]+list_id=(\d+|cookie)/, '');
+        history.replaceState(null, "1389 – \"Smart Bookmarks\"", href);
+      }
+    }
+    YAHOO.util.Event.onDOMReady(function() {
+      initDirtyFieldTracking();
+
+    });
+    // -->
+    </script>
+<script type="text/javascript" src="data/assets/daf5e0fb6826e6a35280e622913f0c4a.js"></script>
+
+    
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+                       title="Bugzilla" href="search_plugin.cgi">
+    <link rel="shortcut icon" href="images/favicon.ico">
+  </head>
+
+  <body 
+        class="bugs-aviary-pl
+                 bz_bug
+                 bz_status_VERIFIED
+                 bz_product_Firefox
+                 bz_component_Og&#XF3;lne
+                 bz_bug_1389 yui-skin-sam">
+
+  <div id="header"><div id="banner">
+  </div>
+
+    <div id="titles">
+      <span id="title">Bugzilla &ndash; Bug&nbsp;1389</span>
+
+        <span id="subtitle" class="subheader">&quot;Smart Bookmarks&quot;</span>
+
+        <span id="information" class="header_addl_info">Last modified: 2009-01-02 03:23:30 CET</span>
+    </div>
+
+
+    <div id="common_links"><ul class="links">
+  <li><a href="index.html">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi.html">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi.html">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi.html">Search</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="http://bugs.aviary.pl/buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input type="hidden" id="no_redirect_top" name="no_redirect" value="0">
+    <script type="text/javascript">
+      if (history && history.replaceState) {
+        var no_redirect = document.getElementById("no_redirect_top");
+        no_redirect.value = 1;
+      }
+    </script>
+    <input class="txt" type="text" id="quicksearch_top" name="quicksearch" 
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search" 
+           id="find_top"></form>
+  <a href="page.cgi%3Fid=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="report.cgi.html">Reports</a></li>
+
+  <li>
+      <span class="separator">| </span>
+        <a href="request.cgi.html">Requests</a></li>
+
+
+  <li>
+        <span class="separator">| </span>
+        <a href="https://bugzilla.readthedocs.org/en/5.0/using/understanding.html" target="_blank">Help</a>
+      </li>
+    
+      <li id="new_account_container_top">
+        <span class="separator">| </span>
+        <a href="createaccount.cgi.html">New&nbsp;Account</a>
+      </li>
+
+    <li id="mini_login_container_top">
+  <span class="separator">| </span>
+  <a id="login_link_top" href="show_bug.cgi%3Fid=1389&amp;GoAheadAndLogIn=1.html"
+     onclick="return show_mini_login_form('_top')">Log In</a>
+
+  <form action="show_bug.cgi%3Fid=1389.html" method="POST"
+        class="mini_login bz_default_hidden"
+        id="mini_login_top">
+    <input id="Bugzilla_login_top" required
+           name="Bugzilla_login" class="bz_login"
+        type="email" placeholder="Email Address">
+    <input class="bz_password" name="Bugzilla_password" type="password"
+           id="Bugzilla_password_top" required
+           placeholder="Password">
+    <input type="hidden" name="Bugzilla_login_token"
+           value="1469820773-6vYVhuCn3k9Sv4YP-90yf_dAajkeVfc0cNi_HVBYg8Y">
+    <input type="submit" name="GoAheadAndLogIn" value="Log in"
+            id="log_in_top">
+    <a href="show_bug.cgi%3Fid=1389.html#" onclick="return hide_mini_login_form('_top')">[x]</a>
+  </form>
+</li>
+
+
+  <li id="forgot_container_top">
+    <span class="separator">| </span>
+    <a id="forgot_link_top" href="show_bug.cgi%3Fid=1389&amp;GoAheadAndLogIn=1.html#forgot"
+       onclick="return show_forgot_form('_top')">Forgot Password</a>
+    <form action="http://bugs.aviary.pl/token.cgi" method="post" id="forgot_form_top"
+          class="mini_forgot bz_default_hidden">
+      <label for="login_top">Login:</label>
+      <input name="loginname" size="20" id="login_top" required
+          type="email" placeholder="Your Email Address">
+      <input id="forgot_button_top" value="Reset Password" type="submit">
+      <input type="hidden" name="a" value="reqpw">
+      <input type="hidden" id="token_top" name="token"
+             value="1469820773-4pjSOvGRcGsaXHj1rU0sTPIOMTDcVgQxPN6D2d2Pbi8">
+      <a href="show_bug.cgi%3Fid=1389.html#" onclick="return hide_forgot_form('_top')">[x]</a>
+    </form>
+  </li>
+</ul>
+    </div>
+  </div>
+
+  <div id="bugzilla-body">
+
+
+<script type="text/javascript">
+<!--
+
+//-->
+</script>
+
+<form name="changeform" id="changeform" method="post" action="http://bugs.aviary.pl/process_bug.cgi">
+
+  <input type="hidden" name="delta_ts" value="2009-01-02 03:23:30">
+  <input type="hidden" name="id" value="1389">
+  <input type="hidden" name="token" value="1469820773-3mN1AlGF6KPRdHARbMhdykIfEy98Keyu6Heh7xqc-3s">
+<div class="bz_short_desc_container edit_form">
+     <a href="show_bug.cgi%3Fid=1389.html"><b>Bug&nbsp;1389</b></a> <span id="summary_container" class="bz_default_hidden">
+      - <span id="short_desc_nonedit_display">&quot;Smart Bookmarks&quot;</span>
+     </span>
+
+    <div id="summary_input"><span class="field_label "
+    id="field_label_short_desc">
+
+
+  <a 
+      title="The bug summary is a short sentence which succinctly describes what the bug is about."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#short_desc"
+  >Summary:</a>
+
+</span>&quot;Smart Bookmarks&quot;
+    </div>
+  </div>
+  <script type="text/javascript">
+    hideEditableField('summary_container',
+                      'summary_input',
+                      'summary_edit_action',
+                      'short_desc',
+                      '\"Smart Bookmarks\"' );
+  </script>
+  <table class="edit_form">
+    <tr>
+      
+      <td id="bz_show_bug_column_1" class="bz_show_bug_column">     
+        <table>
+          <tr>
+    <th class="field_label">
+      <a href="page.cgi%3Fid=fields.html#bug_status">Status</a>:
+    </th>
+    <td id="bz_field_status">
+      <span id="static_bug_status">VERIFIED
+          WONTFIX
+      </span>
+    </td>
+  </tr>
+<tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+<tr><th class="field_label "
+    id="field_label_alias">
+
+
+  <a 
+      title="A short, unique name assigned to a bug in order to assist with looking it up and referring to it in other places in Bugzilla."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#alias"
+  >Alias:</a>
+
+</th>
+    <td>
+        None
+    </td>
+  </tr>
+<tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+<tr><th class="field_label "
+    id="field_label_product">
+
+
+  <a 
+      title="Bugs are categorised into Products and Components. Select a Classification to narrow down this list."
+      class="field_help_link"
+      href="describecomponents.cgi.html"
+  >Product:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_product" >Firefox
+
+</td>
+    </tr>
+
+    
+    <tr class="bz_default_hidden"><th class="field_label "
+    id="field_label_classification">
+
+
+  <a 
+      title="Bugs are categorised into Classifications, Products and Components. classifications is the top-level categorisation."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#classification"
+  >Classification:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_classification" >Tłumaczenia oprogramowania
+
+</td>
+    </tr>
+        
+    
+    
+    <tr><th class="field_label "
+    id="field_label_component">
+
+
+  <a 
+      title="Components are second-level categories; each belongs to a particular Product. Select a Product to narrow down this list."
+      class="field_help_link"
+      href="describecomponents.cgi%3Fproduct=Firefox.html"
+  >Component:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_component" >Ogólne
+
+  (<a href="buglist.cgi%3Fcomponent=Ogólne&amp;product=Firefox&amp;bug_status=__open__.html"
+      target="_blank">show other bugs</a>)
+</td>
+    </tr>
+    <tr><th class="field_label "
+    id="field_label_version">
+
+
+  <a 
+      title="The version field defines the version of the software the bug was found in."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#version"
+  >Version:</a>
+
+</th>
+<td>nieokreślona
+  </td>
+    </tr>
+        
+    
+        
+    <tr><th class="field_label "
+    id="field_label_rep_platform">
+
+
+  <a 
+      title="The hardware platform the bug was observed on. Note: When searching, selecting the option &quot;All&quot; only finds bugs whose value for this field is literally the word &quot;All&quot;."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#rep_platform"
+  >Hardware:</a>
+
+</th>
+      <td class="field_value">Wszystkie
+        Wszystkie
+      </td>
+    </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          
+          <tr>
+      <th class="field_label">
+        <label  accesskey="i">
+          <a href="page.cgi%3Fid=fields.html#importance"><u>I</u>mportance</a></label>:
+      </th>
+      <td>P5
+       normalny
+      </td>
+    </tr>
+          
+          <tr><th class="field_label "
+    id="field_label_assigned_to">
+
+
+  <a 
+      title="The person in charge of resolving the bug."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#assigned_to"
+  >Assignee:</a>
+
+</th>
+      <td><span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+      </td>
+    </tr>
+
+    <tr><th class="field_label "
+    id="field_label_qa_contact">
+
+
+  <a 
+      title="The person responsible for confirming this bug if it is unconfirmed, and for verifying the fix once the bug has been resolved."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#qa_contact"
+  >QA Contact:</a>
+
+</th>
+      <td><span class="vcard">firefox
+</span>
+      </td>
+    </tr>
+    <script type="text/javascript">
+      assignToDefaultOnChange(['product', 'component'],
+        'splewako\x40aviary.pl',
+        'firefox\x40l10n.bledy');
+    </script>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          <tr><th class="field_label "
+    id="field_label_bug_file_loc">
+
+
+  <a 
+      title="Bugs can have a URL associated with them - for example, a pointer to a web site where the problem is seen."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#bug_file_loc"
+  >URL:</a>
+
+</th>
+    <td>
+      <span id="bz_url_input_area">
+      </span>
+    </td>
+  </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+
+          
+<tr><th class="field_label "
+    id="field_label_dependson">
+
+
+  <a 
+      title="The bugs listed here must be resolved before this bug can be resolved."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#dependson"
+  >Depends on:</a>
+
+</th>
+
+  <td>
+    <span id="dependson_input_area">
+    </span>
+
+  </td>
+  </tr>
+  
+  <tr><th class="field_label "
+    id="field_label_blocked">
+
+
+  <a 
+      title="This bug must be resolved before the bugs listed in this field can be resolved."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#blocked"
+  >Blocks:</a>
+
+</th>
+
+  <td>
+    <span id="blocked_input_area">
+    </span>
+<a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - [tracking] Lokalizacja Firefoksa 3.0"
+   href="show_bug.cgi%3Fid=1040.html">1040</a> 
+  </td>
+  </tr>
+
+    <tr>
+      <th>&nbsp;</th>
+
+      <td id="show_dependency_tree_or_graph">
+        Show dependency <a href="showdependencytree.cgi%3Fid=1389&amp;hide_resolved=1.html">tree</a>
+
+          /&nbsp;<a href="showdependencygraph.cgi%3Fid=1389.html">graph</a>
+      </td>
+    </tr>
+          
+        </table>
+      </td>
+      <td>
+        <div class="bz_column_spacer">&nbsp;</div>
+      </td>
+      
+      <td id="bz_show_bug_column_2" class="bz_show_bug_column">
+        <table>
+        <tr>
+    <th class="field_label">
+      Reported:
+    </th>
+    <td>2007-12-08 11:44 CET by <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+    </td>
+  </tr>
+  
+  <tr>
+    <th class="field_label">
+      Modified:
+    </th>
+    <td>2009-01-02 03:23 CET
+      (<a href="show_activity.cgi%3Fid=1389.html">History</a>)
+    </td>
+  
+  </tr>
+<tr>
+      <th class="field_label">
+        <label  accesskey="a">
+          CC List:
+        </label>
+      </th>
+      <td>7 
+          users
+          <span id="cc_edit_area_showhide_container" class="bz_default_hidden">
+            (<a href="show_bug.cgi%3Fid=1389.html#" id="cc_edit_area_showhide">show</a>)
+          </span>
+        <div id="cc_edit_area">
+          <br>
+            <select id="cc" multiple="multiple" size="5" >
+                <option value="bpiec">bpiec</option>
+                <option value="gandalf">gandalf</option>
+                <option value="hubert+bap">hubert+bap</option>
+                <option value="lemiel">lemiel</option>
+                <option value="smalolepszy">smalolepszy</option>
+                <option value="splewako">splewako</option>
+                <option value="w.kapusta">w.kapusta</option>
+            </select>
+        </div>
+          <script type="text/javascript">
+            hideEditableField( 'cc_edit_area_showhide_container', 
+                               'cc_edit_area', 
+                               'cc_edit_area_showhide', 
+                               '', 
+                               '');  
+          </script>
+      </td>
+    </tr>
+
+<tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+<tr><th class="field_label "
+    id="field_label_see_also">
+
+
+  <a 
+      title="This allows you to refer to bugs in other installations. You can enter a URL to a bug in the 'Add Bug URLs' field to note that that bug is related to this one. You can enter multiple URLs at once by separating them with whitespace. You should normally use this field to refer to bugs in other installations. For bugs in this installation, it is better to use the Depends on and Blocks fields."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#see_also"
+  >See Also:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_see_also" >
+
+</td>
+    </tr> 
+
+<tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+
+
+
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+          <hr id="bz_top_half_spacer">
+      </td>
+    </tr>
+  </table>
+
+  <table id="bz_big_form_parts">
+  <tr>
+  <td>
+
+    
+<script type="text/javascript">
+<!--
+function toggle_display(link) {
+    var table = document.getElementById("attachment_table");
+    var view_all = document.getElementById("view_all");
+    var hide_obsolete_url_parameter = "&hide_obsolete=1";
+    // Store current height for scrolling later
+    var originalHeight = table.offsetHeight;
+    var rows = YAHOO.util.Dom.getElementsByClassName(
+        'bz_tr_obsolete', 'tr', table);
+
+    for (var i = 0; i < rows.length; i++) {
+        bz_toggleClass(rows[i], 'bz_default_hidden');
+    }
+
+    if (YAHOO.util.Dom.hasClass(rows[0], 'bz_default_hidden')) {
+        link.innerHTML = "Show Obsolete";
+        view_all.href = view_all.href + hide_obsolete_url_parameter 
+    }
+    else {
+        link.innerHTML = "Hide Obsolete";
+        view_all.href = view_all.href.replace(hide_obsolete_url_parameter,"");
+    }
+
+    var newHeight = table.offsetHeight;
+    // This scrolling makes the window appear to not move at all.
+    window.scrollBy(0, newHeight - originalHeight);
+
+    return false;
+}
+//-->
+</script>
+
+<br>
+<table id="attachment_table">
+  <tr id="a0">
+    <th colspan="3" class="left">
+      Attachments
+    </th>
+  </tr>
+
+
+      <tr id="a1" class="bz_contenttype_image_png">
+        <td>
+            <a href="attachment.cgi%3Fid=983"
+               title="View the content of the attachment">
+          <b>os x</b></a>
+
+          <span class="bz_attach_extra_info">
+              (124.10 KB,
+                image/png)
+
+            <br>
+            <a href="show_bug.cgi%3Fid=1389.html#attach_983"
+               title="Go to the comment associated with the attachment">2008-03-30 06:11 CEST</a>,
+
+            <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+          </span>
+        </td>
+
+          <td class="bz_attach_flags">
+              <i>no flags</i>
+          </td>
+
+        <td>
+          <a href="attachment.cgi%3Fid=983&amp;action=edit.html">Details</a>
+        </td>
+      </tr>
+      <tr id="a2" class="bz_contenttype_image_png">
+        <td>
+            <a href="attachment.cgi%3Fid=985"
+               title="View the content of the attachment">
+          <b>windows</b></a>
+
+          <span class="bz_attach_extra_info">
+              (11.16 KB,
+                image/png)
+
+            <br>
+            <a href="show_bug.cgi%3Fid=1389.html#attach_985"
+               title="Go to the comment associated with the attachment">2008-03-31 05:10 CEST</a>,
+
+            <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+          </span>
+        </td>
+
+          <td class="bz_attach_flags">
+              <i>no flags</i>
+          </td>
+
+        <td>
+          <a href="attachment.cgi%3Fid=985&amp;action=edit.html">Details</a>
+        </td>
+      </tr>
+      <tr id="a3" class="bz_contenttype_image_png">
+        <td>
+            <a href="attachment.cgi%3Fid=1009"
+               title="View the content of the attachment">
+          <b>Propozycja: &quot;Ostatnio…&quot;</b></a>
+
+          <span class="bz_attach_extra_info">
+              (21.33 KB,
+                image/png)
+
+            <br>
+            <a href="show_bug.cgi%3Fid=1389.html#attach_1009"
+               title="Go to the comment associated with the attachment">2008-04-06 12:58 CEST</a>,
+
+            <span class="vcard"><span class="fn">Staś Małolepszy :stas</span>
+</span>
+          </span>
+        </td>
+
+          <td class="bz_attach_flags">
+              <i>no flags</i>
+          </td>
+
+        <td>
+          <a href="attachment.cgi%3Fid=1009&amp;action=edit.html">Details</a>
+        </td>
+      </tr>
+
+  <tr class="bz_attach_footer">
+    <td colspan="3">
+        <span class="bz_attach_view_hide">
+            <a id="view_all" href="attachment.cgi%3Fbugid=1389&amp;action=viewall.html">View All</a>
+        </span>
+        <a href="attachment.cgi%3Fbugid=1389&amp;action=enter.html">Add an attachment</a>
+        (proposed patch, testcase, etc.)
+    </td>
+  </tr>
+</table>
+<br>
+
+  </td>
+  <td>
+  </td>
+  </tr></table>
+
+  
+  <div id="comments"><script src="js/comments.js" type="text/javascript">
+</script>
+
+<script type="text/javascript">
+<!--
+  /* Adds the reply text to the 'comment' textarea */
+  function replyToComment(id, real_id, name) {
+      var prefix = "(In reply to " + name + " from comment #" + id + ")\n";
+      var replytext = "";
+        /* pre id="comment_name_N" */
+        var text_elem = document.getElementById('comment_text_'+id);
+        var text = getText(text_elem);
+        replytext = prefix + wrapReplyText(text);
+
+
+      /* <textarea id="comment"> */
+      var textarea = document.getElementById('comment');
+      if (textarea.value != replytext) {
+          textarea.value += replytext;
+      }
+
+      textarea.focus();
+  } 
+//-->
+</script>
+
+
+<!-- This auto-sizes the comments and positions the collapse/expand links 
+     to the right. -->
+<table class="bz_comment_table">
+<tr>
+<td>
+<div id="c0" class="bz_comment bz_first_comment">
+
+      <div class="bz_first_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1389.html#c0">Description</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2007-12-08 11:44:17 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Potrzebujemy KRÓTKIEGO tłumaczenia określenia &quot;Smart Bookmarks&quot;. Obecnie mamy &quot;Inteligentne zakładki&quot;, co niestety jest przycinane do &quot;Inteligentne zakła...&quot; w pasku zakładek.
+
+Folder ten zawiera pseudofoldery &quot;Najczęściej odwiedzane&quot; i &quot;Ostatnio dodane&quot; z linkami do odpowiednich zakładek i stron z historii.
+
+Ten sam problem mają inne lokalizacje...
+<a href="http://groups.google.pl/group/mozilla.dev.l10n/browse_thread/thread/8eb2cc4bb21e9080#c8cb5ab0cf6469ce">http://groups.google.pl/group/mozilla.dev.l10n/browse_thread/thread/8eb2cc4bb21e9080#c8cb5ab0cf6469ce</a></pre>
+    </div>
+
+    <div id="c1" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1389.html#c1">Comment 1</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Staś Małolepszy :stas</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2007-12-08 15:13:36 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Metazakładki?</pre>
+    </div>
+
+    <div id="c2" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1389.html#c2">Comment 2</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Wojciech Kapusta</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2007-12-10 12:34:17 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Dosłownie &quot;Smart Bookmarks&quot; mogłoby znaczyć &quot;Sprytne zakładki&quot;. To jednak chyba nie brzmi zbyt dobrze, jak na produkt biznesowy; chyba prędzej nadawałoby się do Flocka.
+
+Pomyślę jeszcze.
+</pre>
+    </div>
+
+    <div id="c3" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1389.html#c3">Comment 3</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2007-12-10 13:26:22 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Nie podoba mi sie ani Inteligentne ani Sprytne. (ani Smart ;)) jakos implikuje samoswiadomosc komputera, a tego nie trawie.
+
+Anyway. W zaistnialej sytuacji uwazam, ze Sprytne zakladki jest tak samo dobre jak Inteligentne, a brzmi jakos &quot;przyjazniej&quot;.</pre>
+    </div>
+
+    <div id="c4" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1389.html#c4">Comment 4</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2007-12-11 15:07:45 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Dodam, że tłumaczenie nie musi być w ogóle dosłowne (a w tym przypadku jest to nawet explicite dozwolone przez Mozillę i zalecane w przypadku braku krótkich i sensownych tłumaczeń dosłownych).
+</pre>
+    </div>
+
+    <div id="c5" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1389.html#c5">Comment 5</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Bartosz Piec</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2007-12-11 15:09:21 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Metazakładki nie wydają mi się zrozumiałe dla użytkownika.</pre>
+    </div>
+
+    <div id="c6" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1389.html#c6">Comment 6</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Staś Małolepszy :stas</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2007-12-26 05:18:59 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">A co się w ogóle stało z &quot;miejscami&quot;, w których było więcej takich smartfolderów (m.in. był podział na strony z gwiazdką i bez niej)? W nowych profilach już tego nie ma. Czy używamy gdzieś słowa &quot;miejsca&quot; oprócz &quot;organizator miejsc&quot; (=bookmark manager)?
+
+Nie proponuję od razu, żeby użyć &quot;miejsca&quot;, ale możemy pomyśleć w tę stronę. To może być coś związanego ze słowami &quot;popularne&quot;, &quot;częste&quot;, &quot;często używane&quot;, &quot;wygodne&quot; (zamiast &quot;inteligentne&quot;). Nie mam jeszcze koknretnej propozycji.</pre>
+    </div>
+
+    <div id="c7" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1389.html#c7">Comment 7</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2007-12-26 07:27:04 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(w odpowiedzi na komentarz #6)
+<span class="quote">&gt; A co się w ogóle stało z &quot;miejscami&quot;, w których było więcej takich
+&gt; smartfolderów (m.in. był podział na strony z gwiazdką i bez niej)? W nowych
+&gt; profilach już tego nie ma. Czy używamy gdzieś słowa &quot;miejsca&quot; oprócz
+&gt; &quot;organizator miejsc&quot; (=bookmark manager)?</span >
+
+Nigdzie nie ma &quot;miejsc&quot;; w tym - nie ma już też &quot;organizatora miejsc&quot; - tylko &quot;Biblioteka&quot;. </pre>
+    </div>
+
+    <div id="c8" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1389.html#c8">Comment 8</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-01-06 04:08:27 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Inne pomysły o długości &lt;= 18 znaków?</pre>
+    </div>
+
+    <div id="c9" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1389.html#c9">Comment 9</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Staś Małolepszy :stas</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-01-06 07:44:00 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">A co gdybyśmy z premedytacją użyli trzykropka i nazwali ten folder &quot;Ostatnio ...&quot;?
+
+Wady:
+- najczesciej odwiedzane nie pasuja do &quot;ostatnio&quot;
+- w przyszlosci, wiecej elementow moze nie pasowac; nie jest to wiec rozszerzalne.
+
+Zalety:
+- &quot;Ostatnio&quot; implikuje dynamizm tych folderow. Jest to imo bardziej intyicyjne dla moich Rodzicow niz proby tlumaczenia &quot;smart&quot;.
+
+
+Ewentulanie zastanawiam sie nad stworzeniem slowa &quot;smart&quot; (smarty w l.mn.) i wypromowaniem go.
+</pre>
+    </div>
+
+    <div id="c10" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1389.html#c10">Comment 10</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Stefan Plewako :stef</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-03-29 10:55:45 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Wybrane zakładki? Zróbmy coś z tym, fx3 już niedługo..</pre>
+    </div>
+
+    <div id="c11" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1389.html#c11">Comment 11</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-03-29 11:30:41 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(w odpowiedzi na komentarz #10)
+<span class="quote">&gt; Wybrane zakładki? </span >
+
+A patrzyłeś w ten folder? Tam są: najczęściej odwiedzane, ostatnio dodane zakładki i ostatnio dodane etykiety (&quot;tagi&quot;)... Power user ma też możliwość tworzenia tam własnych zapytań do bazy danych zakładek...
+
+Więc w jaki sposób &quot;wybrane&quot;?</pre>
+    </div>
+
+    <div id="c12" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1389.html#c12">Comment 12</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Stefan Plewako :stef</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-03-29 11:41:14 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(w odpowiedzi na komentarz #11)
+<span class="quote">&gt; Więc w jaki sposób &quot;wybrane&quot;?</span >
+
+Automatyczny oraz sugerujący, że to nie cała zawartość biblioteki.
+(mi się to wydaje lepsze niż intelispytne ale to tylko propozycja)
+</pre>
+    </div>
+
+    <div id="c13" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1389.html#c13">Comment 13</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-03-30 05:57:13 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Mogę zobaczyć zrzuty ekranu?</pre>
+    </div>
+
+    <div id="c14" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1389.html#c14">Comment 14</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-03-30 06:11:36 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Created <span class=""><a href="attachment.cgi%3Fid=983" name="attach_983" title="os x">attachment 983</a> <a href="attachment.cgi%3Fid=983&amp;action=edit.html" title="os x">[details]</a></span>
+os x
+
+Zrzut z OS X, którego przede wszystkim dotyczy problem, pod Windows i Linuksem napis nie jest ucinany...</pre>
+    </div>
+
+    <div id="c15" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1389.html#c15">Comment 15</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-03-30 06:19:40 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(w odpowiedzi na komentarz #14)
+<span class="quote">&gt; Created an attachment (id=983) [details]
+&gt; os x
+&gt; 
+&gt; Zrzut z OS X, którego przede wszystkim dotyczy problem, pod Windows i Linuksem
+&gt; napis nie jest ucinany...</span >
+
+Hmmm... Widzisz to codziennie, więc pytanie do Ciebie: drażni Cię to?
+
+</pre>
+    </div>
+
+    <div id="c16" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1389.html#c16">Comment 16</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Stefan Plewako :stef</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-03-30 08:49:03 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(w odpowiedzi na komentarz #15)
+<span class="quote">&gt; (w odpowiedzi na komentarz #14)
+&gt; &gt; Zrzut z OS X, którego przede wszystkim dotyczy problem, pod Windows i Linuksem
+&gt; &gt; napis nie jest ucinany...
+&gt; 
+&gt; Hmmm... Widzisz to codziennie, więc pytanie do Ciebie: drażni Cię to?</span >
+
+Pod moim Linuksem jest przycięty a owo przycięcie i tak nie jest największym problemem..</pre>
+    </div>
+
+    <div id="c17" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1389.html#c17">Comment 17</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-03-31 05:10:07 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Created <span class=""><a href="attachment.cgi%3Fid=985" name="attach_985" title="windows">attachment 985</a> <a href="attachment.cgi%3Fid=985&amp;action=edit.html" title="windows">[details]</a></span>
+windows
+
+W Windows jest OK...</pre>
+    </div>
+
+    <div id="c18" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1389.html#c18">Comment 18</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Staś Małolepszy :stas</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-03-31 15:28:12 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Ja powtórzę propozycje z komentarza 9: &quot;Ostatnio...&quot;.
+
+Inny pomysł: &quot;Wg kryteriów&quot;.</pre>
+    </div>
+
+    <div id="c19" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1389.html#c19">Comment 19</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-04-02 13:56:25 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Co robią inni... Może to nam da jakieś pomysły? :)
+
+/fr/browser/chrome/browser/places/places.properties,
+
+    * line 94 -- smartBookmarksFolderTitle=Classeur
+
+/gu-IN/browser/chrome/browser/places/places.properties,
+
+    * line 99 -- smartBookmarksFolderTitle=ચપળ બુકમાર્કો
+
+/mk/browser/chrome/browser/places/places.properties,
+
+    * line 70 -- smartBookmarksFolderTitle = Згодни врски
+
+/ga-IE/browser/chrome/browser/places/places.properties,
+
+    * line 93 -- smartBookmarksFolderTitle=Leabharmharcanna Cliste
+
+/zu/browser/chrome/browser/places/places.properties,
+
+    * line 93 -- smartBookmarksFolderTitle=Smart Bookmarks
+
+/de/browser/chrome/browser/places/places.properties,
+
+    * line 93 -- smartBookmarksFolderTitle=Intelligente Lesezeichen
+
+/ko/browser/chrome/browser/places/places.properties,
+
+    * line 71 -- smartBookmarksFolderTitle=스마트 북마크
+
+/sq/browser/chrome/browser/places/places.properties,
+
+    * line 6 -- smartBookmarksFolderTitle=Faqerojtës të Mençur
+
+/eu/browser/chrome/browser/places/places.properties,
+
+    * line 93 -- smartBookmarksFolderTitle=Artxibadorea
+
+/sk/browser/chrome/browser/places/places.properties,
+
+    * line 93 -- smartBookmarksFolderTitle=Rýchle záložky
+
+/af/browser/chrome/browser/places/places.properties,
+
+    * line 93 -- smartBookmarksFolderTitle=Slim boekmerke
+
+/nl/browser/chrome/browser/places/places.properties,
+
+    * line 93 -- smartBookmarksFolderTitle=Slimme bladwijzers
+
+/el/browser/chrome/browser/places/places.properties,
+
+    * line 107 -- smartBookmarksFolderTitle=Έξυπνοι σελιδοδείκτες
+
+/en-ZA/browser/chrome/browser/places/places.properties,
+
+    * line 93 -- smartBookmarksFolderTitle=Smart Bookmarks
+
+/tr/browser/chrome/browser/places/places.properties,
+
+    * line 102 -- smartBookmarksFolderTitle=Akıllı Yer İmleri
+
+/mn/browser/chrome/browser/places/places.properties,
+
+    * line 93 -- smartBookmarksFolderTitle=Ухаалаг хаягнууд
+
+/en-GB/browser/chrome/browser/places/places.properties,
+
+    * line 93 -- smartBookmarksFolderTitle=Smart Bookmarks
+
+/ca/browser/chrome/browser/places/places.properties,
+
+    * line 93 -- smartBookmarksFolderTitle=Adreces d'interès inteŀligents
+
+/ja-JP-mac/browser/chrome/browser/places/places.properties,
+
+    * line 93 -- smartBookmarksFolderTitle = スマートブックマーク
+
+/cs/browser/chrome/browser/places/places.properties,
+
+    * line 93 -- smartBookmarksFolderTitle=Chytré záložky
+
+/pl/browser/chrome/browser/places/places.properties,
+
+    * line 94 -- smartBookmarksFolderTitle=Inteligentne zakładki
+
+/da/browser/chrome/browser/places/places.properties,
+
+    * line 93 -- smartBookmarksFolderTitle=Intelligente bogmærker
+
+/ka/browser/chrome/browser/places/places.properties,
+
+    * line 93 -- smartBookmarksFolderTitle=\u10e1\u10ee\u10d0\u10e0\u10e2\u10d8 \u10e1\u10d0\u10dc\u10d8\u10e8\u10dc\u10d4\u10d4\u10d1\u10d8
+
+/uk/browser/chrome/browser/places/places.properties,
+
+    * line 94 -- smartBookmarksFolderTitle=Тямущі Закладки
+
+/he/browser/chrome/browser/places/places.properties,
+
+    * line 83 -- smartBookmarksFolderTitle=סמניות חכמות
+
+/pt-PT/browser/chrome/browser/places/places.properties,
+
+    * line 97 -- smartBookmarksFolderTitle=Marcadores Espertos
+
+/hu/browser/chrome/browser/places/places.properties,
+
+    * line 93 -- smartBookmarksFolderTitle=Intelligens könyvjelzők
+
+/ta/browser/chrome/browser/places/places.properties,
+
+    * line 101 -- smartBookmarksFolderTitle=Smart Bookmarks
+
+/be/browser/chrome/browser/places/places.properties,
+
+    * line 70 -- smartBookmarksFolderTitle = Зграбныя закладкі
+
+/id/browser/chrome/browser/places/places.properties,
+
+    * line 70 -- smartBookmarksFolderTitle = Bookmark Pintar
+
+/nb-NO/browser/chrome/browser/places/places.properties,
+
+    * line 93 -- smartBookmarksFolderTitle=Smarte bokmerker
+
+/zh-TW/browser/chrome/browser/places/places.properties,
+
+    * line 93 -- smartBookmarksFolderTitle=智慧書籤夾
+
+/es-ES/browser/chrome/browser/places/places.properties,
+
+    * line 70 -- smartBookmarksFolderTitle = Marcadores rápidos
+
+/zh-CN/browser/chrome/browser/places/places.properties,
+
+    * line 70 -- smartBookmarksFolderTitle = 智能书签
+
+/ku/browser/chrome/browser/places/places.properties,
+
+    * line 102 -- smartBookmarksFolderTitle=Smart Bookmarks
+
+/es-AR/browser/chrome/browser/places/places.properties,
+
+    * line 93 -- smartBookmarksFolderTitle=Marcadores inteligentes
+
+/ro/browser/chrome/browser/places/places.properties,
+
+    * line 93 -- smartBookmarksFolderTitle=Locuri
+
+/ar/browser/chrome/browser/places/places.properties,
+
+    * line 93 -- smartBookmarksFolderTitle=العلامات الذكيّة
+
+/ja/browser/chrome/browser/places/places.properties,
+
+    * line 93 -- smartBookmarksFolderTitle = スマートブックマーク
+
+/nn-NO/browser/chrome/browser/places/places.properties,
+
+    * line 93 -- smartBookmarksFolderTitle=Smarte bokmerke
+
+/pt-BR/browser/chrome/browser/places/places.properties,
+
+    * line 93 -- smartBookmarksFolderTitle=Favoritos inteligentes
+
+/pa-IN/browser/chrome/browser/places/places.properties,
+
+    * line 93 -- smartBookmarksFolderTitle=ਸਮਾਰਟ ਬੁੱਕਮਾਰਕ
+
+/ru/browser/chrome/browser/places/places.properties,
+
+    * line 70 -- smartBookmarksFolderTitle = Умные закладки
+
+/sr/browser/chrome/browser/places/places.properties,
+
+    * line 93 -- smartBookmarksFolderTitle=Паметне забелешке
+
+/lt/browser/chrome/browser/places/places.properties,
+
+    * line 125 -- smartBookmarksFolderTitle=Adresų filtrai
+
+/fy-NL/browser/chrome/browser/places/places.properties,
+
+    * line 93 -- smartBookmarksFolderTitle=T\u00FBke Bl\u00EAdwizers
+
+/fi/browser/chrome/browser/places/places.properties,
+
+    * line 93 -- smartBookmarksFolderTitle=Älykkäät kirjanmerkit
+
+/it/browser/chrome/browser/places/places.properties,
+
+    * line 70 -- smartBookmarksFolderTitle = Segnalibri smart
+
+/sv-SE/browser/chrome/browser/places/places.properties,
+
+    * line 93 -- smartBookmarksFolderTitle=Smarta bokmärken</pre>
+    </div>
+
+    <div id="c20" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1389.html#c20">Comment 20</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Staś Małolepszy :stas</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-04-06 12:58:47 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Created <span class=""><a href="attachment.cgi%3Fid=1009" name="attach_1009" title="Propozycja: &quot;Ostatnio…&quot;">attachment 1009</a> <a href="attachment.cgi%3Fid=1009&amp;action=edit.html" title="Propozycja: &quot;Ostatnio…&quot;">[details]</a></span>
+Propozycja: &quot;Ostatnio…&quot;
+
+Przykład wizualny. Co myślicie?</pre>
+    </div>
+
+    <div id="c21" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1389.html#c21">Comment 21</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-04-06 13:22:13 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(w odpowiedzi na komentarz #20)
+<span class="quote">&gt; Created an attachment (id=1009) [details]
+&gt; Propozycja: &quot;Ostatnio…&quot;
+&gt; 
+&gt; Przykład wizualny. Co myślicie?</span >
+
+Że &quot;najczęściej&quot; to nie jest &quot;ostatnio&quot;, a poza tym mogę do tego folderu wrzucić inne smart bookmarks, które nijak się bedą miały do &quot;najczęściej&quot; czy &quot;ostatnio&quot; (w rodzaju: &quot;zakładki, których URL ma jako trzeci parametr httpowego GET-a słowo 'dupa'&quot;). ;-)
+</pre>
+    </div>
+
+    <div id="c22" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1389.html#c22">Comment 22</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Staś Małolepszy :stas</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-04-06 13:40:29 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(w odpowiedzi na komentarz #21)
+<span class="quote">&gt; (w odpowiedzi na komentarz #20)
+&gt; &gt; Created an attachment (id=1009) [details] [details]
+&gt; &gt; Propozycja: &quot;Ostatnio…&quot;
+&gt; &gt; 
+&gt; &gt; Przykład wizualny. Co myślicie?
+&gt; 
+&gt; Że &quot;najczęściej&quot; to nie jest &quot;ostatnio&quot;, </span >
+
+To prawda, pisałem o tym dużo wyżej. Ale rzecz w tym, że mnie to jakoś nie razi, mam wrażenie, że najcześciej i ostatnio to mniej wiecej te same kategorie myslenia.
+
+Oczywiscie traktuje ten argument jako wazny.
+
+
+<span class="quote">&gt; a poza tym mogę do tego folderu
+&gt; wrzucić inne smart bookmarks, które nijak się bedą miały do
+&gt; &quot;najczęściej&quot; czy &quot;ostatnio&quot; (w rodzaju: &quot;zakładki, których URL ma jako
+&gt; trzeci parametr httpowego GET-a słowo 'dupa'&quot;). ;-)</span >
+
+No to fakt :-) Ale jesli umiem takie rzeczy robic, to czy nie zmienie sobie sam tej nazwy, jesli bedzie mi przeszkadzala?
+
+&quot;Ostatnio&quot; to moja próba myslenia w innym kierunku. Potrzebujemy chyba jeszcze wiecej propozycji.
+</pre>
+    </div>
+
+    <div id="c23" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1389.html#c23">Comment 23</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-04-06 14:00:33 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Inaczej. Czemu służą te zakładki? 
+
+Dwóm celom. Zwykłemu użytkownikowi udostępniamy w ten sposób takie funkcje jak &quot;najczęściej&quot; czy &quot;ostatnio odwiedzane&quot; strony. Pałerużytkownikowi sugerujemy, że jeśli chce i potrafi, to może zadać inne zapytania do bazy Places. Angielskie określenie &quot;Smart Bookmarks&quot; jest o tyle dobre, że łączy oba te znaczenia. 
+
+Tak więc, jeśli nie znajdziemy nic, co miałoby podobny przekaz, jakoś przeżyję ten wielokropek przy &quot;Inteligentnych zakładkach&quot; pod Mac OS X - bo 90% użytkowników Firefoksa (windowsiarze) będą mieli właściwe tłumaczenie, które im się na szczęście zmieści. Nie zmiesci się niektórym linuksiarzom i wszystkim makówkarzom... (punkt przycięcia zależy od czcionki, a nie bezpośrednio od długości stringa)
+</pre>
+    </div>
+
+    <div id="c24" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1389.html#c24">Comment 24</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Staś Małolepszy :stas</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-04-06 14:15:05 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Ok, przekonuje mnie to.
+
+Pozostaje pytanie, czy inteligentne sa zakladki, czy moze foldery, w ktorych te zakladki sie wyswietlaja? </pre>
+    </div>
+
+    <div id="c25" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1389.html#c25">Comment 25</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Stefan Plewako :stef</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-04-06 14:23:16 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(w odpowiedzi na komentarz #24)
+<span class="quote">&gt; Ok, przekonuje mnie to.
+&gt; 
+&gt; Pozostaje pytanie, czy inteligentne sa zakladki, czy moze foldery, w ktorych te
+&gt; zakladki sie wyswietlaja? </span >
+
+Za każdym razem gdy widzę 'Inteligentne zakładki' to czuję się głupio.
+Swoją drogą w tb mamy już foldery wyszukiwania - może dałoby się tutaj zastosować coś analogicznego?</pre>
+    </div>
+
+    <div id="c26" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1389.html#c26">Comment 26</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Rafał Likus</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-04-06 14:30:01 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Odwiedzane strony?
+Chociaż to głupie.</pre>
+    </div>
+
+    <div id="c27" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1389.html#c27">Comment 27</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Bartosz Piec</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-04-06 14:36:57 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">A &quot;Zakładki...&quot; (z wielokropkiem) nie byłoby dobre?</pre>
+    </div>
+
+    <div id="c28" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1389.html#c28">Comment 28</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-04-06 14:46:15 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(w odpowiedzi na komentarz #27)
+<span class="quote">&gt; A &quot;Zakładki...&quot; (z wielokropkiem) nie byłoby dobre?</span >
+
+- Kliknij 'Zakładki'!
+- Które?
+- Hę?
+- No, te z wielokropkiem czy te bez?!
+
+</pre>
+    </div>
+
+    <div id="c29" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1389.html#c29">Comment 29</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-04-07 16:30:16 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Chyba WONTFIX, ale może zdarzy się cud? :P</pre>
+    </div>
+
+    <div id="c30" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1389.html#c30">Comment 30</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-04-08 12:03:24 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">wontfix</pre>
+    </div>
+
+    <div id="c31" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1389.html#c31">Comment 31</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Wojciech Kapusta</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-04-09 07:04:58 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Myślę, że możemy jeszcze na zjeździe zorganizować szybką a intensywną burzę mózgów.
+
+&quot;Marcadores inteligentes&quot;
+&quot;Intelligente Lesezeichen&quot;
+&quot;Leabharmharcanna Cliste&quot;
+- to wszystko jest nawet dłuższe niż &quot;Inteligentne zakładki&quot;. Por. &quot;Adreces d'interès intelligents&quot;. Szkoda, że nie wyświetla się etykietka nad tym skrótem.
+
+
+Tych windzianych &quot;folderów&quot; jest już i tak za dużo (patrz GWO i podane tam odnośniki).
+
+Bogusia zainteresowała się francuskim &quot;Classeur&quot; - znaczy to &quot;klaser&quot; albo &quot;segregator&quot;.
+
+</pre>
+    </div>
+
+    <div id="c32" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1389.html#c32">Comment 32</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-04-09 07:12:26 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(w odpowiedzi na komentarz #31)
+<span class="quote">&gt; Myślę, że możemy jeszcze na zjeździe zorganizować szybką a intensywną
+&gt; burzę mózgów.</span >
+
+...i bezcelową. Jutro o godzinie 23:59 czasu obowiązującego na Dzikim Zachodzie (czyli w piątek rano czasu świata cywilizowanego) jest totalny freeze kodu i lokalizacji.
+</pre>
+    </div>
+
+    <div id="c33" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1389.html#c33">Comment 33</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-04-09 11:06:24 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Hehe, problem sam się rozwiązał: &quot;smart bookmarks&quot; już nie ma. :)
+<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=421483">https://bugzilla.mozilla.org/show_bug.cgi?id=421483</a> ;-)
+
+Zamiast nich są &quot;Często odwiedzane&quot; (skróciłem z &quot;Najczęściej&quot;), które nam się ładnie wszędzie mieszczą. :)
+</pre>
+    </div>
+
+    <div id="c34" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1389.html#c34">Comment 34</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Wojciech Kapusta</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-04-09 11:26:25 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">A potem niektórzy mają pretensje, że korektę robi się na 3 dni przed premierą...
+
+</pre>
+    </div>
+
+    <div id="c35" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=1389.html#c35">Comment 35</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Stefan Plewako :stef</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-04-09 14:18:20 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(w odpowiedzi na komentarz #33)
+<span class="quote">&gt; Hehe, problem sam się rozwiązał: &quot;smart bookmarks&quot; już nie ma. :)</span >
+(...)
+<span class="quote">&gt; Zamiast nich są &quot;Często odwiedzane&quot; (skróciłem z &quot;Najczęściej&quot;), które
+&gt; nam się ładnie wszędzie mieszczą. :)</span >
+
+Uff. :)</pre>
+    </div>
+
+
+  
+
+</td>
+<td>
+</td>
+</tr></table>
+  </div>
+
+    <hr><div id="add_comment" class="bz_section_additional_comments">
+      <table>
+        <tr>
+          <td>
+            <fieldset>
+              <legend>Note</legend>
+              You need to
+              <a href="show_bug.cgi%3Fid=1389&amp;GoAheadAndLogIn=1.html">log in</a>
+              before you can comment on or make changes to this bug.
+            </fieldset>
+          </td>
+        </tr> 
+      </table>
+  </div>        
+
+</form>
+
+<hr>
+<ul class="related_actions">
+    <li><a href="show_bug.cgi%3Fformat=multiple&amp;id=1389.html">Format For Printing</a></li>
+    <li>&nbsp;-&nbsp;<a href="show_bug.cgi%3Fctype=xml&amp;id=1389">XML</a></li>
+    <li>&nbsp;-&nbsp;<a href="enter_bug.cgi%3Fcloned_bug_id=1389.html">Clone This Bug</a></li>
+    
+    <li>&nbsp;-&nbsp;<a href="show_bug.cgi%3Fid=1389.html#">Top of page </a></li>
+    </ul>
+
+<br>
+</div>
+
+    <div id="footer">
+      <div class="intro"></div>
+<ul id="useful-links">
+  <li id="links-actions"><ul class="links">
+  <li><a href="index.html">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi.html">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi.html">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi.html">Search</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="http://bugs.aviary.pl/buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input type="hidden" id="no_redirect_bottom" name="no_redirect" value="0">
+    <script type="text/javascript">
+      if (history && history.replaceState) {
+        var no_redirect = document.getElementById("no_redirect_bottom");
+        no_redirect.value = 1;
+      }
+    </script>
+    <input class="txt" type="text" id="quicksearch_bottom" name="quicksearch" 
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search" 
+           id="find_bottom"></form>
+  <a href="page.cgi%3Fid=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="report.cgi.html">Reports</a></li>
+
+  <li>
+      <span class="separator">| </span>
+        <a href="request.cgi.html">Requests</a></li>
+
+
+  <li>
+        <span class="separator">| </span>
+        <a href="https://bugzilla.readthedocs.org/en/5.0/using/understanding.html" target="_blank">Help</a>
+      </li>
+    
+      <li id="new_account_container_bottom">
+        <span class="separator">| </span>
+        <a href="createaccount.cgi.html">New&nbsp;Account</a>
+      </li>
+
+    <li id="mini_login_container_bottom">
+  <span class="separator">| </span>
+  <a id="login_link_bottom" href="show_bug.cgi%3Fid=1389&amp;GoAheadAndLogIn=1.html"
+     onclick="return show_mini_login_form('_bottom')">Log In</a>
+
+  <form action="show_bug.cgi%3Fid=1389.html" method="POST"
+        class="mini_login bz_default_hidden"
+        id="mini_login_bottom">
+    <input id="Bugzilla_login_bottom" required
+           name="Bugzilla_login" class="bz_login"
+        type="email" placeholder="Email Address">
+    <input class="bz_password" name="Bugzilla_password" type="password"
+           id="Bugzilla_password_bottom" required
+           placeholder="Password">
+    <input type="hidden" name="Bugzilla_login_token"
+           value="1469820773-6vYVhuCn3k9Sv4YP-90yf_dAajkeVfc0cNi_HVBYg8Y">
+    <input type="submit" name="GoAheadAndLogIn" value="Log in"
+            id="log_in_bottom">
+    <a href="show_bug.cgi%3Fid=1389.html#" onclick="return hide_mini_login_form('_bottom')">[x]</a>
+  </form>
+</li>
+
+
+  <li id="forgot_container_bottom">
+    <span class="separator">| </span>
+    <a id="forgot_link_bottom" href="show_bug.cgi%3Fid=1389&amp;GoAheadAndLogIn=1.html#forgot"
+       onclick="return show_forgot_form('_bottom')">Forgot Password</a>
+    <form action="http://bugs.aviary.pl/token.cgi" method="post" id="forgot_form_bottom"
+          class="mini_forgot bz_default_hidden">
+      <label for="login_bottom">Login:</label>
+      <input name="loginname" size="20" id="login_bottom" required
+          type="email" placeholder="Your Email Address">
+      <input id="forgot_button_bottom" value="Reset Password" type="submit">
+      <input type="hidden" name="a" value="reqpw">
+      <input type="hidden" id="token_bottom" name="token"
+             value="1469820773-4pjSOvGRcGsaXHj1rU0sTPIOMTDcVgQxPN6D2d2Pbi8">
+      <a href="show_bug.cgi%3Fid=1389.html#" onclick="return hide_forgot_form('_bottom')">[x]</a>
+    </form>
+  </li>
+</ul>
+  </li>
+
+  
+
+
+
+
+  
+</ul>
+
+      <div class="outro"></div>
+    </div>
+
+  </body>
+</html>

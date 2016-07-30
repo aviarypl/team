@@ -1,0 +1,29 @@
+diff -ur 9/pl/default/account/email/change-new.txt.tmpl 10/pl/default/account/email/change-new.txt.tmpl
+--- 9/pl/default/account/email/change-new.txt.tmpl	2004-06-03 10:34:38.000000000 +0200
++++ 10/pl/default/account/email/change-new.txt.tmpl	2004-06-18 11:35:24.000000000 +0200
+@@ -41,4 +41,4 @@
+ [%+ Param('urlbase') %]token.cgi?a=cxlem&t=[% token FILTER url_quote %]
+ 
+ W przypadku braku jakiejkolwiek reakcji, prośba wygaśnie po [%+ max_token_age %]
+-dniach (konkretnie [%+ time2str("%H:%M on the %o of %B, %Y", expiration_ts) %]).
++dniach (konkretnie [%+ time2str("%Y-%m-%d %H:%M", expiration_ts) %]).
+diff -ur 9/pl/default/account/email/change-old.txt.tmpl 10/pl/default/account/email/change-old.txt.tmpl
+--- 9/pl/default/account/email/change-old.txt.tmpl	2004-06-03 10:35:26.000000000 +0200
++++ 10/pl/default/account/email/change-old.txt.tmpl	2004-06-18 11:35:17.000000000 +0200
+@@ -46,4 +46,4 @@
+ 
+ Jeśli nie odwiedzisz odnośnika, oraz z [%+ newemailaddress %] zostanie wysłane
+ potwierdzenie prośby, zmiana adresu na trwałe zajdzie za [%+ max_token_age %] dni (dokładnie
+-[%+ time2str("%H:%M on the %o of %B, %Y", expiration_ts) %]).
++[%+ time2str("%Y-%m-%d %H:%M", expiration_ts) %]).
+diff -ur 9/pl/default/account/password/forgotten-password.txt.tmpl 10/pl/default/account/password/forgotten-password.txt.tmpl
+--- 9/pl/default/account/password/forgotten-password.txt.tmpl	2004-06-01 15:50:55.000000000 +0200
++++ 10/pl/default/account/password/forgotten-password.txt.tmpl	2004-06-18 11:35:42.000000000 +0200
+@@ -39,5 +39,5 @@
+ [%+ Param('urlbase') %]token.cgi?a=cxlpw&t=[% token FILTER url_quote %]
+ 
+ W przypadku braku jakiejkolwiek reakcji, żądanie wygaśnie automatycznie po [%+ max_token_age +%]
+-dniach (dokładnie [%+ time2str("%H:%M on the %o of %B, %Y", expiration_ts) -%]) lub w chwili 
++dniach (dokładnie [%+ time2str("%Y-%m-%d %H:%M", expiration_ts) -%]) lub w chwili 
+ ponownego zalogowania się na Twoje konto.
+

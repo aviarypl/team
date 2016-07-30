@@ -1,0 +1,621 @@
+=== account/prefs/footer.html.tmpl
+==================================================================
+--- account/prefs/footer.html.tmpl   (/2.18/pl-patch/template/pl/default)   (revision 57)
++++ account/prefs/footer.html.tmpl   (/2.18/pl-trunk/template/pl/default)   (revision 57)
+@@ -33,7 +33,7 @@
+     <th align="right">Odnośnik do 'Moje [% terms.Bledy %]':</th>
+     <td>
+       <select name="mybugslink">
+-        <option value="1">Powinien być widoczy w stopce każdej strony</option>
++        <option value="1">Powinien być widoczny w stopce każdej strony</option>
+         <option value="0"
+           [% " selected" IF NOT mybugslink %]>Nie powinien być widoczny
+         </option>
+=== account/auth/login.html.tmpl
+==================================================================
+--- account/auth/login.html.tmpl   (/2.18/pl-patch/template/pl/default)   (revision 57)
++++ account/auth/login.html.tmpl   (/2.18/pl-trunk/template/pl/default)   (revision 57)
+@@ -34,7 +34,7 @@
+ %]
+ 
+ <p>
+-  Do poprawnego działania, wymagany jest prawidłowy identyfikator użytkownika i hasło.
++  Do poprawnego działania wymagany jest prawidłowy identyfikator użytkownika i hasło.
+ </p>
+ 
+ <form action="[% target FILTER html %]" method="POST">
+@@ -104,16 +104,16 @@
+ 
+   [% IF Param("createemailregexp") %]
+     <p>
+-      Jeśli nie posiadasz konta w [% terms.Bugzilli %], możesz
++      Jeśli nie posiadasz konta [% terms.Bugzilli %], możesz
+       <a href="createaccount.cgi">utworzyć nowe konto</a>.
+     </p>
+   [% END %]
+ 
+   <form method="get" action="token.cgi">
+     <input type="hidden" name="a" value="reqpw">
+-    Jeśli posiadasz już konto, lecz zapomniałeś hasła, możesz
+-    wysłać  prośbę o zmianę hasła (podaj nazwę konta w poniższym
+-    polu i kliknij na przycisk).<br>
++    Jeśli posiadasz już konto, do którego zapomniałeś hasła, możesz
++    wysłać  prośbę o zmianę hasła (wpisz identyfikator użytkownika
++    i kliknij na przycisk).<br>
+     <input size="35" name="loginname">
+     <input type="submit" value="Wyślij prośbę">
+   </form>
+=== account/password/forgotten-password.txt.tmpl
+==================================================================
+--- account/password/forgotten-password.txt.tmpl   (/2.18/pl-patch/template/pl/default)   (revision 57)
++++ account/password/forgotten-password.txt.tmpl   (/2.18/pl-trunk/template/pl/default)   (revision 57)
+@@ -25,6 +25,7 @@
+ From: bugzilla-admin-daemon
+ To: [% emailaddress %]
+ Subject: Żądanie zmiany hasła [% terms.Bugzilli %]
++MIME-Version: 1.0
+ Content-Type: text/plain; charset=UTF-8
+ Content-Transfer-Encoding: 8bit
+ 
+=== account/email/change-new.txt.tmpl
+==================================================================
+--- account/email/change-new.txt.tmpl   (/2.18/pl-patch/template/pl/default)   (revision 57)
++++ account/email/change-new.txt.tmpl   (/2.18/pl-trunk/template/pl/default)   (revision 57)
+@@ -25,6 +25,7 @@
+ From: bugzilla-admin-daemon
+ To: [% emailaddress %]
+ Subject: Żądanie zmiany adresu e-mail [% terms.Bugzilli %]
++MIME-Version: 1.0
+ Content-Type: text/plain; charset=UTF-8
+ Content-Transfer-Encoding: 8bit
+ 
+=== account/email/change-old.txt.tmpl
+==================================================================
+--- account/email/change-old.txt.tmpl   (/2.18/pl-patch/template/pl/default)   (revision 57)
++++ account/email/change-old.txt.tmpl   (/2.18/pl-trunk/template/pl/default)   (revision 57)
+@@ -30,6 +30,7 @@
+ From: bugzilla-admin-daemon
+ To: [% emailaddress %]
+ Subject: Żądanie zmiany adresu e-mail [% terms.Bugzilli %]
++MIME-Version: 1.0
+ Content-Type: text/plain; charset=UTF-8
+ Content-Transfer-Encoding: 8bit
+ Importance: High
+=== account/cancel-token.txt.tmpl
+==================================================================
+--- account/cancel-token.txt.tmpl   (/2.18/pl-patch/template/pl/default)   (revision 57)
++++ account/cancel-token.txt.tmpl   (/2.18/pl-trunk/template/pl/default)   (revision 57)
+@@ -25,6 +25,7 @@
+ From: bugzilla-admin-daemon
+ To: [% emailaddress %]
+ Subject: [% PROCESS subject %]
++MIME-Version: 1.0
+ Content-Type: text/plain; charset=UTF-8
+ Content-Transfer-Encoding: 8bit
+ 
+=== reports/create-chart.html.tmpl
+==================================================================
+--- reports/create-chart.html.tmpl   (/2.18/pl-patch/template/pl/default)   (revision 57)
++++ reports/create-chart.html.tmpl   (/2.18/pl-trunk/template/pl/default)   (revision 57)
+@@ -65,7 +65,8 @@
+     [% IF NOT category OR category.size == 0 %]
+       <tr>
+         <td>
+-          <i>Nie istnieje żaden zbiór danych, lub żaden nie jest dostępny dla Ciebie.</i>
++          <i>Nie istnieje żaden zbiór danych, lub nie posiadasz uprawnień do
++            korzystania z żadnego.</i>
+         </td>
+       </tr>
+     [% ELSE %]
+@@ -132,7 +133,7 @@
+     subcatSelected();
+   </script>
+ 
+-  <h3>List Of Data Sets To Plot</h3>
++  <h3>Lista zbiorów danych do wykreślenia</h3>
+ 
+   [% IF chart.lines.size > 0 %]
+     <table cellspacing="2" cellpadding="2">
+@@ -254,7 +255,7 @@
+       </tr>
+     </table>
+   [% ELSE %]
+-  <p><i>None</i></p>
++  <p><i>Brak</i></p>
+   [% END %]  
+ </form>
+ 
+=== reports/menu.html.tmpl
+==================================================================
+--- reports/menu.html.tmpl   (/2.18/pl-patch/template/pl/default)   (revision 57)
++++ reports/menu.html.tmpl   (/2.18/pl-trunk/template/pl/default)   (revision 57)
+@@ -35,24 +35,24 @@
+   sposobów.
+ </p>
+ 
+-<h2>Obecny stan</h2>
++<h2>Aktualny stan</h2>
+ 
+ <ul>
+   <li>
+-    <strong><a href="query.cgi">Wyszukaj</a></strong> -
+-    zbiór [% terms.bledow %].
++    <strong><a href="query.cgi">Wyszukiwanie</a></strong> - 
++    szukanie [% terms.bledow %] spełniająych dane kryteria.
+   </li>
+   <li>
+     <strong>
+       <a href="query.cgi?format=report-table">Raporty tabelaryczne</a>
+     </strong> -
+-    tabele z liczbą [% terms.bledow %], 1, 2 lub 3 wymiarowe, jako HTML lub CSV.
++    tabele z liczbą [% terms.bledow %]. 1, 2 lub 3 wymiarowe, jako HTML lub CSV.
+   </li>
+   <li>
+     <strong>
+       <a href="query.cgi?format=report-graph">Raporty graficzne</a>
+     </strong> -
+-    Wykresy liniowe, słupkowe i tortowe.
++    wykresy liniowe, słupkowe i tortowe.
+   </li>
+ </ul>
+ 
+@@ -60,14 +60,15 @@
+ 
+ <ul>
+   <li>
+-    <strong><a href="reports.cgi">Stare wykresy</a></strong> - 
++    <strong><a href="reports.cgi">Stare typy wykresów</a></strong> - 
+     wyświetla status i/lub metodę rozwiązania [% terms.bledow %]
+-    w czasie, dla każdego produktu w bazie danych.
++    w czasie, dla każdego produktu z bazy danych.
+   </li>
+   [% IF UserInGroup(Param("chartgroup")) %]
+     <li>
+-      <strong><a href="chart.cgi">Nowe wykresy</a></strong> - 
+-      wyświetla wykresy dowolnego wyszukiwania w czasie. Znacznie potężniejsze.
++      <strong><a href="chart.cgi">Nowe typy wykresy</a></strong> - 
++      wyświetla wykresy dla wyników dowolnego wyszukiwania w czasie.
++      Znacznie potężniejsze od swojego prekursora.
+     </li>
+   [% END %]
+ </ul>
+=== reports/edit-series.html.tmpl
+==================================================================
+--- reports/edit-series.html.tmpl   (/2.18/pl-patch/template/pl/default)   (revision 57)
++++ reports/edit-series.html.tmpl   (/2.18/pl-trunk/template/pl/default)   (revision 57)
+@@ -53,7 +53,7 @@
+     <a href="mailto:[% creator.email FILTER html %]">
+     [% creator.email FILTER html %]</a>
+   [% ELSE %]
+-    (automatycznie utworzone przez [% terms.Bugzille %])
++    (automatycznie utworzona przez [% terms.Bugzille %])
+   [% END %]
+ </p>
+ 
+=== pages/bug-writing.html.tmpl
+==================================================================
+--- pages/bug-writing.html.tmpl   (/2.18/pl-patch/template/pl/default)   (revision 57)
++++ pages/bug-writing.html.tmpl   (/2.18/pl-trunk/template/pl/default)   (revision 57)
+@@ -36,8 +36,8 @@
+ 
+   <p>Ten dokument ma pomóc nowicjuszom i średnio-zaawansowanym
+   użytkownikom [% terms.Bugzilli %] w tworzeniu wartościowych raportów o 
+-  [% terms.bledach %]. Nie wszystkie uwagi zawarte w tym dokumencie mogą
+-  być adekwatne dla twojego projektu.</p>
++  [% terms.bledach %]. Nie wszystkie uwagi zawarte w tym dokumencie muszą
++  być adekwatne dla tego projektu.</p>
+ </blockquote>
+ 
+ <h3>W jaki sposób pisać wartościowe raporty o [% terms.bledach %]</h3>
+@@ -52,12 +52,12 @@
+     raportami [% terms.bledow %] nie jest w stanie samemu potwierdzić
+     istnienia danego [% terms.bledu %], istnieje duża szansa że taki
+     raport zostanie oznaczony jako "WORKSFORME" lub "INVALID" i osoba ta
+-    przejdzie do kolejnego [% terms.bledu %]. Każdy szczegoł może być
+-    wartościowy.<br>
++    przejdzie do kolejnego [% terms.bledu %]. Każdy szczegół może być
++    ważny.<br>
+     <br>
+     </li>
+ 
+-    <li><b>Specific.</b> Im szybciej programista będzie w stanie określić
++    <li><b>Wyrazistość.</b> Im szybciej programista będzie w stanie określić
+     zasięg występowania [% terms.bledu %], tym szybciej będzie w stanie
+     go rozwiązać (jeśli programista lub osoba testujące będzie zmuszony
+     odcyfrowywać [% terms.blad %], prawdopodobnie więcej czasu spędzi ona
+@@ -84,7 +84,7 @@
+ 
+     <p>Wygląda na to, że błąd występuje przy wyświetleniu banera Foo znajdującego
+     się na samej górze strony. Popracowałem nad tą stroną i zauważyłem że
+-    ten błąd występuje do czasu usunięcia atrybutu "border=0":</p>
++    ten błąd występuje do czasu usunięcia atrybutu "border=0" z</p>
+ 
+     <p><tt>&lt;IMG SRC="http://www.foo.com/images/topics/topicfoos.gif"
+     width="34" height="44" border="0" alt="News"&gt;</tt></p>
+@@ -170,7 +170,7 @@
+     w tym [% terms.bledzie %]?</b><br>
+      Podaj listę osób która, twoim zdaniem, powinna otrzymywać powiadomienia o
+     wszystkich zmianach tego raportu [% terms.bledu %]. Możesz podać dowolną liczbę
+-    adresów e-mail, oddzielonych spacją lub przecinkiem, osób które mają konto w 
++    adresów e-mail osób, oddzielonych spacją lub przecinkiem, które mają konto w 
+     [% terms.Bugzilli %].</p>
+   </blockquote>
+ 
+@@ -181,7 +181,7 @@
+     około 60 znakach?</b><br>
+      Dobre podsumowanie powinno <b>szybko i jednoznacznie opisywać [% terms.blad %]</b>.
+     W przeciwnym przypadku programista nie będzie w stanie jednoznacznie zidentyfikować
+-    Twojego [% terms.bledy %], co może sprawić, że zostanie on niezauważony podczas
++    Twojego [% terms.bledu %], co może sprawić, że zostanie on niezauważony podczas
+     przeglądania 10 stronicowej listy [% terms.bledow %].<br>
+     <br>
+      Przykładem dobrego podsumowania może być "<tt>Instalacja PCMCIA nie udała się na
+@@ -210,7 +210,7 @@
+ 
+       <blockquote>
+ <pre>
+-1) Włącz dowolną stronę (ja użyłem jednej z przykładowych stron dołączanych do programu,
++1) Włącz dowolną stronę (ja użyłem jednej z przykładowych stron dołączanych do programu:
+   resource:/res/samples/test0.html).
+ 
+ 2) Zaznacz stronę używając myszki (Przyciskając przycisk myszki nad dowolnym elementem
+@@ -222,7 +222,7 @@
+ 
+       <blockquote>
+ <pre>
+-Program wyłączył się z błędem. Poniżej zamieszczam zawartość stosu z MacsBug.
++Program wyłączył się z błędem. Poniżej zamieszczam zrzut stosu z MacsBug.
+ </pre>
+       </blockquote>
+ 
+@@ -237,7 +237,7 @@
+       </blockquote>
+ 
+       <p><b>Wersja i platforma:</b> Wersja oraz platforma na której zaobserwowano 
+-      [% terms.blad %] in.</p>
++      [% terms.blad %].</p>
+ 
+       <blockquote>
+ <pre>
+@@ -246,8 +246,8 @@
+       </blockquote>
+ 
+       <p><b>Dodatkowe wersje i platformy:</b> Inne wersje i platformy które testowano
+-      na występowanie tego błędu, oraz ich wyniki (jeśli taki test ma sens to również
+-      wyniki z innych programów).</p>
++      na występowanie tego [% terms.bledu %], oraz ich wyniki (jeśli taki test ma sens
++      to również wyniki z innych programów).</p>
+ 
+       <blockquote>
+ <pre>
+@@ -307,7 +307,7 @@
+     przejrzenia.</b> Osoby czytające raporty o [% terms.bledach %] często potrzebują
+     dotrzeć do określonej części opisu [% terms.bledu %]. Jeśli instalacja 
+     [% terms.Bugzilli %] którą używasz zawiera narzędzie ułatwiające zgłaszanie 
+-    [% terms.bledow %], użyj go.</p>
++    [% terms.bledow %] - użyj go.</p>
+ 
+     <p><b>Przedkładaj wyrazistość nad elokwencje.</b> Nikt nie będzie śmiał się
+     z zabawnego tytułu Twojego reportu, gdy o 3 nad ranem będzie starał przypomnieć
+@@ -320,13 +320,13 @@
+     [% terms.bledy %] mogą być bardziej ważnie niż reszta i tym samym prawidłowe
+     ustalenie priorytetu dla raportu może być niemożliwe.</p>
+ 
+-    <p><b>Zaden [% terms.blad %] nie jest na tyle trywialny, aby go nie zgłosić.</b>
++    <p><b>Żaden [% terms.blad %] nie jest na tyle trywialny, aby go nie zgłosić.</b>
+     Rzeczywiste występowanie niektórych [% terms.bledow %], np. używanie zwolnionej
+-    pamięci, można zauważyć tylko przeglądając kod źródłowy -- objawy tego typu 
+-    [% terms.bledu %] są widoczne jako awaria programu przez zwykłego użytkownika.
++    pamięci, można zauważyć tylko przeglądając kod źródłowy - objawy tego typu 
++    [% terms.bledu %] przez zwykłego użytkownika są widoczne jako awaria programu.
+     Niektóre klasy błędów ujawniają się w niezwykle trywialny sposób, więc zgłoszenia
+-    nawet dla tak trywialnych przypadków, może pomóc w wyeliminowaniu rzeczywistych,
+-    nie tak całkiem prostych błędów.<br>
++    nawet dla takich przypadków, może pomóc w wyeliminowaniu rzeczywistych, nie tak 
++    całkiem prostych [% terms.bledow %].<br>
+     </p>
+   </blockquote>
+ 
+@@ -340,7 +340,7 @@
+     lub setek innych</p>
+ 
+     <p>Ogólne podsumowanie jak <tt>problem z instalacją</tt> wymusza na każdej osobie
+-    zainteresowanej błędami w instalatorze stratę czasu na przejrzenie całego raportu,
++    zainteresowanej błędami w instalatorze stratę czasu na przejrzenie całego raportu
+     żeby zobaczyć czy [% terms.blad %] ten, w rzeczywistości mieści się w obrębie
+     zainteresowań danej osoby.</p>
+ 
+=== global/messages.html.tmpl
+==================================================================
+--- global/messages.html.tmpl   (/2.18/pl-patch/template/pl/default)   (revision 57)
++++ global/messages.html.tmpl   (/2.18/pl-trunk/template/pl/default)   (revision 57)
+@@ -128,10 +128,10 @@
+     </p>
+     
+   [% ELSIF message_tag == "flag_type_deactivated" %]
+-    [% title = "Deaktywacja flagi" %]
++    [% title = "Dezaktywacja flagi" %]
+     <p>
+       Flaga typu <em>[% flag_type.name FILTER html %]</em> 
+-      została zdeaktywowana.
++      została dezaktywowana.
+       <a href="editflagtypes.cgi">Wróć do panelu flag.</a>
+     </p>
+     
+=== global/field-descs.none.tmpl
+==================================================================
+--- global/field-descs.none.tmpl   (/2.18/pl-patch/template/pl/default)   (revision 57)
++++ global/field-descs.none.tmpl   (/2.18/pl-trunk/template/pl/default)   (revision 57)
+@@ -33,14 +33,14 @@
+                    "bug_status"           => "Status",
+                    "changeddate"          => "Data ostatniej zmiany",
+                    "cc"                   => "Obserwatorzy",
+-                   "cclist_accessible"    => "Lista obserwatorów dostępna?",
++                   "cclist_accessible"    => "Lista obserwatorów jest dostępna?",
+                    "component_id"         => "Identyfikator komponentu",
+                    "component"            => "Komponent",
+                    "creation_ts"          => "Data utworzenia $terms.bledu",
+                    "delta_ts"             => "Czas ostatniej zmiany",
+                    "dependson"            => "Zeleży od",
+                    "dup_id"               => "Duplikat",
+-                   "estimated_time"       => "Orgi. oszac.",
++                   "estimated_time"       => "Orygi. oszac.",
+                    "everconfirmed"        => "Potwierdźony?",
+                    "groupset"             => "Zbiór grup",
+                    "keywords"             => "Słowo kluczowe",
+=== search/boolean-charts.html.tmpl
+==================================================================
+--- search/boolean-charts.html.tmpl   (/2.18/pl-patch/template/pl/default)   (revision 57)
++++ search/boolean-charts.html.tmpl   (/2.18/pl-trunk/template/pl/default)   (revision 57)
+@@ -91,7 +91,7 @@
+ 
+   <p>
+     <strong>      
+-      Zaawansowane zapytanie przy wykorzystaniu wyrażeń boolowskich:
++      Zaawansowane zapytanie przy wykorzystaniu wyrażeń logicznych:
+     </strong>
+   </p>
+ 
+@@ -155,7 +155,7 @@
+         <input type="submit" value="Oraz" 
+                name="cmd-add[% "${chartnum}-${newand}-0" %]" [% jsmagic %]> 
+         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+-        <input type="submit" value="Dodaj inne wyrażenie boolowskie" 
++        <input type="submit" value="Dodaj inne wyrażenie logiczne" 
+                name="cmd-add[% newchart %]-0-0" [% jsmagic %]>
+         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       </td>
+=== search/form.html.tmpl
+==================================================================
+--- search/form.html.tmpl   (/2.18/pl-patch/template/pl/default)   (revision 57)
++++ search/form.html.tmpl   (/2.18/pl-trunk/template/pl/default)   (revision 57)
+@@ -597,7 +597,7 @@
+       <fieldset>
+         <legend>
+           <strong>
+-            <a href="queryhelp.cgi#peopleinvolved">E-mail</a> oraz numery
++            <a href="queryhelp.cgi#peopleinvolved">E-mail</a> oraz numery [% terms.bledow %]
+           </strong>
+         </legend>
+ 
+=== search/search-advanced.html.tmpl
+==================================================================
+--- search/search-advanced.html.tmpl   (/2.18/pl-patch/template/pl/default)   (revision 57)
++++ search/search-advanced.html.tmpl   (/2.18/pl-trunk/template/pl/default)   (revision 57)
+@@ -49,7 +49,7 @@
+ 
+ [% PROCESS search/tabs.html.tmpl %]
+ 
+-[% button_name = "Search" %]
++[% button_name = "Szukaj" %]
+ 
+ [%# The decent help requires Javascript %]
+ [% IF NOT help %]
+=== search/knob.html.tmpl
+==================================================================
+--- search/knob.html.tmpl   (/2.18/pl-patch/template/pl/default)   (revision 57)
++++ search/knob.html.tmpl   (/2.18/pl-trunk/template/pl/default)   (revision 57)
+@@ -36,9 +36,9 @@
+ [% ordersdesc = {
+    "Reuse same sort as last time" => "Użyj tego samego porządku sortowania co ostatnio",
+    "Bug Number"   => "Numer $terms.bledu",
+-   "Importance"   => "Ważność $terms.bledu",
++   "Importance"   => "Waga $terms.bledu",
+    "Assignee"     => "Osoby do której przypisano $terms.blad",
+-   "Last Changed" => "Daty ostatniej zmiany" } %]
++   "Last Changed" => "Data ostatniej zmiany" } %]
+ 
+ <input type="hidden" name="cmdtype" value="doit">
+ 
+=== search/search-help.html.tmpl
+==================================================================
+--- search/search-help.html.tmpl   (/2.18/pl-patch/template/pl/default)   (revision 57)
++++ search/search-help.html.tmpl   (/2.18/pl-trunk/template/pl/default)   (revision 57)
+@@ -29,7 +29,7 @@
+   html => "$terms.Bledy są podzielone pomiędzy produkty i komponenty.
+            <br>Produkt jest najwyższym poziomem podziału." },   
+ { id => "component", 
+-  html => "Komponent to drugopoziomowa kategoria podziału $terms.bledow; każda należy do<br>
++  html => "Komponent jest drugim poziomom podziału $terms.bledow; każdy należy do<br>
+            określonego produktu. Wybierz produkt, aby ograniczyć zawartość tej listy" },   
+ { id => "version", 
+   html => "Pole wersji definiuje wersje oprogramowania, dla którego został<br>
+@@ -53,24 +53,24 @@
+ { id => "status_whiteboard_type", 
+   html => "Wybór sposobu wyszukiwania tekstu w tablicy" },   
+ { id => "keywords", 
+-  html => "Do $terms.bledu można dodać słowo kluczowe, z przygotowanej listy.<br>
++  html => "Dla $terms.bledu, z przygotowanej listy, można przypisać słowa kluczowe.<br>
+            Mogą one służyć do grupowania lub oznaczania." },   
+ { id => "keywords_type", 
+   html => "Wybór sposobu wyszukiwania słów kluczowych" },   
+ { id => "bug_status", 
+-  html => "$terms.Blad może być w jednym z tych statusów." },   
++  html => "Lista statusów w których może być szukany $terms.blad." },   
+ { id => "resolution", 
+   html => "Jeśli $terms.blad został rozwiązany, jedna z tych metod rozwiązania musi zostać<br>
+            określona dla takiego ${terms.bledu}." },   
+ { id => "bug_severity", 
+-  html => "Jak ważny jest $terms.blad, lub czy jest to rozszerzenie." },   
++  html => "Jak ważny jest $terms.blad, lub czy jest to tylko propozycja." },   
+ { id => "priority", 
+   html => "Osoba odpowiedzialna za $terms.blad może, przy pomocy tego pola<br>
+            określić priorytet danego ${terms.bledu}." },   
+ { id => "rep_platform", 
+-  html => "Platforma sprzętowa na której został zaobserwowany ten ${terms.blad}." },   
++  html => "Platforma sprzętowa na której został zaobserwowany ${terms.blad}." },   
+ { id => "op_sys", 
+-  html => "System operacyjny na którym został zaobserwowany ten ${terms.blad}." },   
++  html => "System operacyjny na którym został zaobserwowany ${terms.blad}." },   
+ { id => "email1", 
+   html => "Do każdego $terms.bledu są przypisane osoby w różnych rolach.<br>
+            W tym miejscu możesz wyszukać terms.bledy dla których dane<br>
+=== list/edit-multiple.html.tmpl
+==================================================================
+--- list/edit-multiple.html.tmpl   (/2.18/pl-patch/template/pl/default)   (revision 57)
++++ list/edit-multiple.html.tmpl   (/2.18/pl-trunk/template/pl/default)   (revision 57)
+@@ -229,8 +229,8 @@
+   </table>
+ 
+   [% IF foundinactive %]
+-    <font size="-1">(Uwaga: [% terms.bledy %] zamiast zostać dodane do [% FILTER inactive %]nieaktywnej
+-    grupy[% END %], mogą zostać usunięte.)</font><br>
++    <font size="-1">(Uwaga: [% terms.bledy %] zamiast zostać dodane do 
++    [% FILTER inactive %]nieaktywnej grupy[% END %], mogą zostać usunięte.)</font><br>
+   [% END %]
+ 
+ [% END %]
+=== bug/votes/delete-all.html.tmpl
+==================================================================
+--- bug/votes/delete-all.html.tmpl   (/2.18/pl-patch/template/pl/default)   (revision 57)
++++ bug/votes/delete-all.html.tmpl   (/2.18/pl-trunk/template/pl/default)   (revision 57)
+@@ -31,7 +31,7 @@
+ 
+ <p>
+   Chcesz usunąć wszystkie głosy jakie oddałeś na [% terms.bledy %]. Czy jesteś
+-  pewien że chce to uczynić?
++  pewien że chcesz to uczynić?
+ </p>
+ 
+ <form action="votes.cgi" method="post">
+=== bug/create/create.html.tmpl
+==================================================================
+--- bug/create/create.html.tmpl   (/2.18/pl-patch/template/pl/default)   (revision 57)
++++ bug/create/create.html.tmpl   (/2.18/pl-trunk/template/pl/default)   (revision 57)
+@@ -25,7 +25,7 @@
+ 
+ [% PROCESS global/header.html.tmpl
+   title = "Tworzenie raportu o błędzie"
+-  h2 = "Tutaj możesz dodać nowy raport o błędzie do Bugzilli."
++  h2 = "Tutaj możesz dodać nowy raport o błędzie do $terms.Bugzilli."
+   onload="set_assign_to();"
+ %]
+ [% USE Bugzilla %]
+@@ -296,7 +296,7 @@
+         </strong>
+       <br>
+       <font size="-1">
+-        (Nie zaznaczaj żadnej grupy, aby uczynić ten [% terms.blad %] publicznym.)
++        (Nie zaznaczaj żadnej grupy, aby uczynić [% terms.blad %] publicznym.)
+       </font>
+       <br>
+       <br>
+=== bug/create/make-template.html.tmpl
+==================================================================
+--- bug/create/make-template.html.tmpl   (/2.18/pl-patch/template/pl/default)   (revision 57)
++++ bug/create/make-template.html.tmpl   (/2.18/pl-trunk/template/pl/default)   (revision 57)
+@@ -27,9 +27,9 @@
+ %]
+ 
+ <p>
+-Jeśli dodasz do zakładek <a href="enter_bug.cgi?[% url FILTER html %]">ten odnośnik</a>,
+-użycie tej zakładki przeniesie Cię do formularza zgłaszania nowego [% terms.bledu %],
+-z polami wypełnionymi wartościami które wpisałeś przed chwilą.
++<a href="enter_bug.cgi?[% url FILTER html %]">Ten odnośnik</a> może zostać użyty do
++utworzenia zakładki, której użycie przeniesie Cię do formularza zgłaszania [% terms.bledu %]
++z polami wypełnionymi wartościami, które wpisałeś przed chwilą.
+ </p>
+ 
+ [% PROCESS global/footer.html.tmpl %]
+=== bug/show-multiple.html.tmpl
+==================================================================
+--- bug/show-multiple.html.tmpl   (/2.18/pl-patch/template/pl/default)   (revision 57)
++++ bug/show-multiple.html.tmpl   (/2.18/pl-trunk/template/pl/default)   (revision 57)
+@@ -129,7 +129,7 @@
+     [% IF use_keywords %]
+       <tr>
+         <td colspan="4">
+-          <b>Słowa kluczowe: </b>&nbsp;[% bug.keywords FILTER html %]
++          <b>Słowa kluczowe:</b>&nbsp;[% bug.keywords FILTER html %]
+         </td>
+       </tr>
+     [% END %]
+@@ -161,7 +161,7 @@
+           <b>Ukończone %:</b>&nbsp;
+           [% PROCESS calculatepercentage act=bug.actual_time
+                                          rem=bug.remaining_time %]&nbsp;
+-          <b>Zysk</b>&nbsp;
++          <b>Zysk:</b>&nbsp;
+           [% PROCESS formattimeunit
+                      time_unit=bug.estimated_time - (bug.actual_time + bug.remaining_time) %]
+           &nbsp;
+=== bug/activity/table.html.tmpl
+==================================================================
+--- bug/activity/table.html.tmpl   (/2.18/pl-patch/template/pl/default)   (revision 57)
++++ bug/activity/table.html.tmpl   (/2.18/pl-trunk/template/pl/default)   (revision 57)
+@@ -39,8 +39,9 @@
+ 
+ [% IF incomplete_data %]
+   <p>
+-    W <a href="http://www.bugzilla.org/">[% terms.Bugzilli %]</a> istniał błąd, który powodował utratę danych na temat zmian, w
+-    przypadku gdy [% terms.blad %] zawierał dużą liczbę zależności lub obserwatorów.
++    W <a href="http://www.bugzilla.org/">[% terms.Bugzilli %]</a> istniał błąd, który
++    powodował utratę danych na temat zmian, w przypadku gdy [% terms.blad %] zawierał
++    dużą liczbę zależności lub obserwatorów.
+     Ten błąd został już naprawiony, jednakże część historii tego [% terms.bledu %] nie
+     była możliwa do odzyskania. Przed zmianami które nie mogły zostać odtworzone, zostanie
+     wstawiony symbol '?'.
+=== bug/process/confirm-duplicate.html.tmpl
+==================================================================
+--- bug/process/confirm-duplicate.html.tmpl   (/2.18/pl-patch/template/pl/default)   (revision 57)
++++ bug/process/confirm-duplicate.html.tmpl   (/2.18/pl-trunk/template/pl/default)   (revision 57)
+@@ -36,8 +36,8 @@
+ 
+ <p>
+   Osoba zgłaszająca [% terms.blad %] jako duplikat,
+-  jest domyślnie dodawana do listy obserwatorów orginalnego [% terms.bledu %].
+-  Uprawnienia [%+ terms.bledu +%] #[% original_bug_id %] (orginalnego) nie
++  jest domyślnie dodawana do listy obserwatorów oryginalnego [% terms.bledu %].
++  Uprawnienia [%+ terms.bledu +%] #[% original_bug_id %] (oryginalnego) nie
+   pozwalają jednak, na obserwowanie błedu przez zgłaszającego.
+ </p>
+ 
+@@ -49,7 +49,7 @@
+   [% ELSE %]
+     może spowodować w przyszłości,
+   [% END %]
+-  na zezwolenie mu/jej dostępu do przeglądanie tego [% terms.bledu %].</b>
++  na zezwolenie mu/jej dostępu do przeglądania tego [% terms.bledu %].</b>
+   Czy chcesz to uczynić?
+ </p>
+ 
+=== bug/process/verify-new-product.html.tmpl
+==================================================================
+--- bug/process/verify-new-product.html.tmpl   (/2.18/pl-patch/template/pl/default)   (revision 57)
++++ bug/process/verify-new-product.html.tmpl   (/2.18/pl-trunk/template/pl/default)   (revision 57)
+@@ -52,12 +52,12 @@
+   [% IF use_target_milestone %]
+     Przenosisz [% terms.blad %](y) do produktu
+     <b>[% form.product FILTER html %]</b>,
+-    tym samym, wersja, komponent, docelowa wersja [% terms.bledu %]
++    tym samym wersja, komponent, docelowa wersja [% terms.bledu %]
+     przestają być prawidłowe. Proszę teraz uaktualnić te pola:
+   [% ELSE %]
+     Przenosisz [% terms.blad %](y) do produktu
+     <b>[% form.product FILTER html %]</b>,
+-    tym samym, wersja i komponent [% terms.bledu %] przestają być
++    tym samym wersja i komponent [% terms.bledu %] przestają być
+     prawidłowe. Proszę teraz uaktualnić te pola:
+   [% END %]
+   <p>
+

@@ -1,0 +1,349 @@
+? fixhardcoded.diff
+Index: editor/ui/chrome/composer/editor.properties
+===================================================================
+RCS file: /l10n/l10n/pl/editor/ui/chrome/composer/editor.properties,v
+retrieving revision 1.2
+diff -u -r1.2 editor.properties
+--- editor/ui/chrome/composer/editor.properties	25 May 2005 13:16:01 -0000	1.2
++++ editor/ui/chrome/composer/editor.properties	29 May 2005 21:08:50 -0000
+@@ -31,7 +31,7 @@
+ LoadingDone=Zako\u0144czono wczytywanie strony
+ InputError=B\u0142\u0105d
+ Alert=Ostrze\u017Cenie
+-CantEditFramesetMsg=Thunderbird nie mo\u017Ce edytowa\u0107 zestaw\u00F3w ramek lub stron WWW zawieraj\u0105cych ramki typu <iframe>. W przypadku zestaw\u00F3w ramek nale\u017Cy oddzielnie edytowa\u0107 poszczeg\u00F3lne ramki. W przypadku stron WWW z ramkami typu iframes, nale\u017Cy zachowa\u0107 kopi\u0119 Strony i nast\u0119pnie usun\u0105\u0107 znacznik <iframe>.
++CantEditFramesetMsg=Ten program nie mo\u017Ce edytowa\u0107 zestaw\u00F3w ramek lub stron WWW zawieraj\u0105cych p\u0142ywaj\u0105ce ramki. W przypadku zestaw\u00F3w ramek nale\u017Cy oddzielnie edytowa\u0107 poszczeg\u00F3lne ramki. W przypadku stron WWW z p\u0142ywaj\u0105cymi ramkami nale\u017Cy zachowa\u0107 kopi\u0119 Strony i nast\u0119pnie usun\u0105\u0107 znacznik <iframe>.
+ CantEditMimeTypeMsg=Ten typ strony nie mo\u017Ce by\u0107 poddany edycji.
+ CantEditDocumentMsg=Ta strona nie mo\u017Ce by\u0107 edytowana z nieznanych przyczyn.
+ HTMLFiles=Pliki HTML
+@@ -176,7 +176,7 @@
+ SaveImageAs=Zapisz obrazek (%NAME%)...
+ NoSeparatorCharacter=Wprowad\u017A pojedynczy znak, kt\u00F3ry zostanie u\u017Cyty do dzielenia tekstu na kolumny
+ DictDownldConfirmTit=Pobierz S\u0142owniki
+-DictDownldConfirmMsg=Bie\u017C\u0105ce okno Mozilli Thunderbird zostanie zamkni\u0119te, a po\u0142\u0105czenie zostanie przekierowane do serwera z modu\u0142em sprawdzania pisowni.
++DictDownldConfirmMsg=Bie\u017C\u0105ce okno programu %brand% zostanie zamkni\u0119te, a po\u0142\u0105czenie zostanie przekierowane do serwera z modu\u0142em sprawdzania pisowni.
+ NoHeadTag=Kod \u017Ar\u00F3d\u0142owy nie mo\u017Ce zosta\u0107 z powrotem przekonwertowany w edytowany dokument, poniewa\u017C brakuje wymaganego znacznika <head>. Nale\u017Cy doda\u0107 znacznik <head>.
+ NoBodyTag=Kod \u017Ar\u00F3d\u0142owy nie mo\u017Ce zosta\u0107 z powrotem przekonwertowany w edytowany dokument, poniewa\u017C brakuje wymaganego znacznika <body>. Nale\u017Cy doda\u0107 znacznik <body>.
+ NoLinksToCheck=Brak element\u00F3w z odno\u015Bnikami do sprawdzenia
+Index: editor/ui/chrome/dialogs/EdConvertToTable.dtd
+===================================================================
+RCS file: /l10n/l10n/pl/editor/ui/chrome/dialogs/EdConvertToTable.dtd,v
+retrieving revision 1.2
+diff -u -r1.2 EdConvertToTable.dtd
+--- editor/ui/chrome/dialogs/EdConvertToTable.dtd	25 May 2005 13:16:01 -0000	1.2
++++ editor/ui/chrome/dialogs/EdConvertToTable.dtd	29 May 2005 21:16:15 -0000
+@@ -40,7 +40,7 @@
+ 
+ <!-- Window title -->
+ <!ENTITY windowTitle.label "Konwertuj do tabeli">
+-<!ENTITY instructions1.label   "Thunderbird utworzy nowy wiersz tabeli dla każdego zaznaczonego akapitu.">
++<!ENTITY instructions1.label   "Dla każdego zaznaczonego akapitu zostanie utworzony nowy wiersz tabeli.">
+ <!ENTITY instructions2.label   "Wybierz znak używany do podziału zaznaczenia na kolumny:">
+ <!ENTITY commaRadio.label      "Przecinek">
+ <!ENTITY spaceRadio.label      "Odstęp">
+Index: mail/chrome/messenger/aboutDialog.dtd
+===================================================================
+RCS file: /l10n/l10n/pl/mail/chrome/messenger/aboutDialog.dtd,v
+retrieving revision 1.2
+diff -u -r1.2 aboutDialog.dtd
+--- mail/chrome/messenger/aboutDialog.dtd	25 May 2005 13:16:01 -0000	1.2
++++ mail/chrome/messenger/aboutDialog.dtd	27 May 2005 08:13:05 -0000
+@@ -1,5 +1,5 @@
+-<!ENTITY aboutDialog.title "O Mozilli Thunderbird">
++<!ENTITY aboutDialog.title "O programie &brandShortName;">
+ <!ENTITY credits           "Twórcy">
+-<!ENTITY aboutLink         "&lt; O Mozilli Thunderbird">
++<!ENTITY aboutLink         "&lt; O programie &brandShortName;">
+ <!ENTITY aboutVersion      "wersja">
+ <!ENTITY copyrightText     "&#169;1998-2005 Współtwórcy. Wszelkie prawa zastrzeżone. Mozilla Thunderbird oraz wszelkie znaki graficzne Thunderbirda są znakami handlowymi Fundacji Mozilla.  Wszelkie prawa zastrzeżone.">
+\ No newline at end of file
+Index: mail/chrome/messenger/am-advanced.dtd
+===================================================================
+RCS file: /l10n/l10n/pl/mail/chrome/messenger/am-advanced.dtd,v
+retrieving revision 1.2
+diff -u -r1.2 am-advanced.dtd
+--- mail/chrome/messenger/am-advanced.dtd	25 May 2005 13:16:01 -0000	1.2
++++ mail/chrome/messenger/am-advanced.dtd	29 May 2005 21:26:14 -0000
+@@ -4,7 +4,7 @@
+ <!ENTITY smtpServer.label "Konfiguracja serwera poczty wychodzącej (SMTP)">
+ 
+ <!-- LOCALIZATION NOTE (smtpDesc.label): do not translate "SMTP" in below line -->
+-<!ENTITY smtpDesc.label "Jeśli zajdzie taka potrzeba, Thunderbirda można skonfigurować w taki sposób, aby każde z kont korzystało z osobnego serwera poczty wychodzącej (SMTP). Ten ekran służy do dodawania, usuwania lub edycji ustawień serwerów. Aby przypisać serwer poczty wychodzącej danemu kontu, należy przejść do ekranu konfiguracji tego konta.">
++<!ENTITY smtpDesc.label "Jeśli zajdzie taka potrzeba, każde konto można skonfigurować w taki sposób, aby korzystało z osobnego serwera poczty wychodzącej (SMTP). Ten ekran służy do dodawania, usuwania lub edycji ustawień serwerów. Aby przypisać serwer poczty wychodzącej danemu kontu, należy przejść do ekranu konfiguracji tego konta.">
+ 
+ <!ENTITY smtpListAdd.label  "Dodaj...">
+ <!ENTITY smtpListAdd.accesskey  "d">
+Index: mail/chrome/messenger/am-smime.properties
+===================================================================
+RCS file: /l10n/l10n/pl/mail/chrome/messenger/am-smime.properties,v
+retrieving revision 1.2
+diff -u -r1.2 am-smime.properties
+--- mail/chrome/messenger/am-smime.properties	25 May 2005 13:16:01 -0000	1.2
++++ mail/chrome/messenger/am-smime.properties	29 May 2005 22:07:54 -0000
+@@ -1,9 +1,9 @@
+-NoSenderSigningCert=Wybrano opcj\u0119 podpisania tej wiadomo\u015Bci, jednak\u017Ce aplikacja nie mo\u017Ce znale\u017A\u0107 certyfikatu podpisuj\u0105cego okre\u015Blonego w Konfiguracji kont Mozilla Thunderbird lub certyfikat ten straci\u0142 wa\u017Cno\u015B\u0107.
+-NoSenderEncryptionCert=Wybrano opcj\u0119 zaszyfrowania tej wiadomo\u015Bci, jednak\u017Ce aplikacja nie mo\u017Ce znale\u017A\u0107 certyfikatu szyfruj\u0105cego okre\u015Blonego w Konfiguracji kont Mozilla Thunderbird lub certyfikat ten straci\u0142 wa\u017Cno\u015B\u0107.
+-MissingRecipientEncryptionCert=Wybrano opcj\u0119 zaszyfrowania tej wiadomo\u015Bci, jednak\u017Ce aplikacja nie mo\u017Ce znale\u017A\u0107 certyfikatu szyfruj\u0105cego dla %S.
+-SignNoSenderEncryptionCert=Wybrano opcj\u0119 podpisania tej wiadomo\u015Bci, jednak\u017Ce aplikacja nie mo\u017Ce znale\u017A\u0107 certyfikatu szyfruj\u0105cego, kt\u00F3ry ma zosta\u0107 do\u0142\u0105czony do tej wiadomo\u015Bci lub certyfikat ten straci\u0142 wa\u017Cno\u015B\u0107.
+-ErrorCanNotEncrypt=Zaszyfrowanie wiadomo\u015Bci by\u0142o niemo\u017Cliwe. Nale\u017Cy sprawdzi\u0107, czy dost\u0119pne s\u0105 wa\u017Cne certyfikaty dla ka\u017Cdego adresata oraz czy certyfikaty okre\u015Blone w Konfiguracji kont Mozilli Thunderbird dla tego konta, s\u0105 wa\u017Cne oraz figuruj\u0105 na li\u015Bcie certyfikat\u00F3w godnych zaufania.
+-ErrorCanNotSign=Cyfrowe podpisanie wiadomo\u015Bci by\u0142o niemo\u017Cliwe. Nale\u017Cy sprawdzi\u0107, czy certyfikaty okre\u015Blone w Konfiguracji kont Mozilli Thunderbird dla tego konta, s\u0105 wa\u017Cne oraz figuruj\u0105 na li\u015Bcie certyfikat\u00F3w godnych zaufania.
++NoSenderSigningCert=Wybrano opcj\u0119 podpisania tej wiadomo\u015Bci, jednak\u017Ce nie znaleziono certyfikatu podpisuj\u0105cego okre\u015Blonego w Konfiguracji kont lub certyfikat ten straci\u0142 wa\u017Cno\u015B\u0107.
++NoSenderEncryptionCert=Wybrano opcj\u0119 zaszyfrowania tej wiadomo\u015Bci, jednak\u017Ce nie znaleziono certyfikatu szyfruj\u0105cego okre\u015Blonego w Konfiguracji kont lub certyfikat ten straci\u0142 wa\u017Cno\u015B\u0107.
++MissingRecipientEncryptionCert=Wybrano opcj\u0119 zaszyfrowania tej wiadomo\u015Bci, jednak\u017Ce nie mo\u017Cna znale\u017A\u0107 certyfikatu szyfruj\u0105cego dla %S.
++SignNoSenderEncryptionCert=Wybrano opcj\u0119 podpisania tej wiadomo\u015Bci, jednak\u017Ce nie mo\u017Cna znale\u017A\u0107 certyfikatu szyfruj\u0105cego, kt\u00F3ry mia\u0142by zosta\u0107 do\u0142\u0105czony do tej wiadomo\u015Bci lub certyfikat ten straci\u0142 wa\u017Cno\u015B\u0107.
++ErrorCanNotEncrypt=Zaszyfrowanie wiadomo\u015Bci by\u0142o niemo\u017Cliwe. Nale\u017Cy sprawdzi\u0107, czy dost\u0119pne s\u0105 wa\u017Cne certyfikaty dla ka\u017Cdego odbiorcy. Nale\u017Cy r\u00F3wnie\u017C upewni\u0107 si\u0119, czy certyfikaty dla tego konta, okre\u015Blone w Konfiguracji kont s\u0105 wa\u017Cne i czy figuruj\u0105 na li\u015Bcie certyfikat\u00F3w godnych zaufania.
++ErrorCanNotSign=Cyfrowe podpisanie wiadomo\u015Bci by\u0142o niemo\u017Cliwe. Nale\u017Cy upewni\u0107 si\u0119, czy certyfikaty dla tego konta, okre\u015Blone w Konfiguracji kont s\u0105 wa\u017Cne i czy figuruj\u0105 na li\u015Bcie certyfikat\u00F3w godnych zaufania.
+ prefPanel-smime=Zabezpieczenia
+ NoSigningCert=W Mened\u017Cerze certyfikat\u00F3w nie odnaleziono \u017Cadnego wa\u017Cnego certyfikatu, kt\u00F3ry mo\u017Ce zosta\u0107 u\u017Cyty do cyfrowego podpisywania wysy\u0142anych wiadomo\u015Bci.
+ NoEncryptionCert=W Mened\u017Cerze certyfikat\u00F3w nie odnaleziono \u017Cadnego wa\u017Cnego certyfikatu, kt\u00F3ry mo\u017Ce zosta\u0107 u\u017Cyty przez inne osoby przy wysy\u0142aniu szyfrowanych wiadomo\u015Bci do u\u017Cytkownika tego konta.
+Index: mail/chrome/messenger/importDialog.dtd
+===================================================================
+RCS file: /l10n/l10n/pl/mail/chrome/messenger/importDialog.dtd,v
+retrieving revision 1.2
+diff -u -r1.2 importDialog.dtd
+--- mail/chrome/messenger/importDialog.dtd	25 May 2005 13:16:01 -0000	1.2
++++ mail/chrome/messenger/importDialog.dtd	27 May 2005 07:38:54 -0000
+@@ -52,8 +52,8 @@
+ <!ENTITY importDialog.settingsTitle "Ustawienia">
+ <!ENTITY importTitle.label "Kreator importu poczty">
+ <!ENTITY importDesc.label "Kreator umożliwia import poczty, książek adresowych oraz ustawień z innych programów.">
+-<!ENTITY importDescription.label "Za pomocą Kreatora importu możliwe jest przeprowadzenie automatycznej konwersji danych z innych popularnych programów pocztowych do Mozilli Thunderbird. W tym celu należy wybrać rodzaj importowanych danych, a następnie nacisnąć Dalej.">
+-<!ENTITY importDescription2.label "Po zakończeniu importu wszystkie dane będą dostępne bezpośrednio w Mozilli Thunderbird lub książce adresowej.">
++<!ENTITY importDescription.label "Za pomocą Kreatora importu możliwe jest przeprowadzenie automatycznej konwersji danych z innych popularnych programów pocztowych do programu &brandShortName;. W tym celu należy wybrać rodzaj importowanych danych, a następnie nacisnąć Dalej.">
++<!ENTITY importDescription2.label "Po zakończeniu importu wszystkie dane będą dostępne bezpośrednio w programie &brandShortName; lub książce adresowej.">
+ <!ENTITY selectDescription.label "Wybierz program, z którego będą importowane dane:">
+ <!ENTITY back.label "&lt; Wstecz">
+ <!ENTITY forward.label "Dalej &gt;">
+Index: mail/chrome/messenger/junkMail.dtd
+===================================================================
+RCS file: /l10n/l10n/pl/mail/chrome/messenger/junkMail.dtd,v
+retrieving revision 1.2
+diff -u -r1.2 junkMail.dtd
+--- mail/chrome/messenger/junkMail.dtd	25 May 2005 13:16:01 -0000	1.2
++++ mail/chrome/messenger/junkMail.dtd	27 May 2005 07:39:39 -0000
+@@ -1,5 +1,5 @@
+ <!ENTITY window.title "Filtr niechcianej poczty">
+-<!ENTITY mainDescription.label "Jedną z istotnych zalet Mozilli Thunderbird jest bardzo precyzyjny mechanizm rozpoznawania niechcianych wiadomości (niezamawiane reklamy, spam, itp.), pracujący w oparciu o jedną z metod rachunku prawdopodobieństwa. Poniższe ustawienia umożliwiają konfigurację filtru niechcianych wiadomości.">
++<!ENTITY mainDescription.label "Jedną z istotnych zalet programu &brandShortName; jest bardzo precyzyjny mechanizm rozpoznawania niechcianych wiadomości (niezamawiane reklamy, spam, itp.), pracujący w oparciu o jedną z metod rachunku prawdopodobieństwa. Poniższe ustawienia umożliwiają konfigurację filtru niechcianych wiadomości.">
+ 
+ <!-- Tab titles -->
+ <!ENTITY settingsTab.label "Ustawienia">
+Index: mail/chrome/messenger/messenger.dtd
+===================================================================
+RCS file: /l10n/l10n/pl/mail/chrome/messenger/messenger.dtd,v
+retrieving revision 1.2
+diff -u -r1.2 messenger.dtd
+--- mail/chrome/messenger/messenger.dtd	25 May 2005 13:16:01 -0000	1.2
++++ mail/chrome/messenger/messenger.dtd	27 May 2005 09:30:12 -0000
+@@ -414,10 +414,10 @@
+ <!ENTITY helpMenu.accesskey "c">
+ <!ENTITY releaseCmd.label "Informacje o wersji programu">
+ <!ENTITY releaseCmd.accesskey "I">
+-<!ENTITY hintsAndTips.label "Pomoc Mozilli Thunderbird">
++<!ENTITY hintsAndTips.label "Pomoc programu &brandFullName;">
+ <!ENTITY hintsAndTips.accesskey "P">
+ <!ENTITY hintsAndTipsMac.commandkey "?">
+-<!ENTITY aboutCmd.label "O Mozilli Thunderbird">
++<!ENTITY aboutCmd.label "O programie &brandFullName;">
+ <!ENTITY aboutCmd.accesskey "O">
+ 
+ <!-- Mail Toolbar -->
+@@ -596,7 +596,7 @@
+ <!ENTITY junkInfoButton.label "Dlaczego?">
+ 
+ <!-- Remote Content Bar -->
+-<!ENTITY remoteContentMessage.label "W celu ochrony prywatności, &brandShortName; zablokował w tej wiadomości wyświetlanie obrazków pochodzących z innych serwerów.">
++<!ENTITY remoteContentMessage.label "W celu ochrony prywatności, program &brandShortName; zablokował w tej wiadomości wyświetlanie obrazków pochodzących z innych serwerów.">
+ <!ENTITY loadRemoteContentButton.label "Pokaż obrazki">
+ 
+ <!-- Phshing Bar -->
+Index: mail/chrome/messenger/messenger.properties
+===================================================================
+RCS file: /l10n/l10n/pl/mail/chrome/messenger/messenger.properties,v
+retrieving revision 1.2
+diff -u -r1.2 messenger.properties
+--- mail/chrome/messenger/messenger.properties	25 May 2005 13:16:01 -0000	1.2
++++ mail/chrome/messenger/messenger.properties	27 May 2005 07:44:39 -0000
+@@ -98,11 +98,11 @@
+ compactFolderWriteFailed=Uporz\u0105dkowanie folderu "%S" by\u0142o niemo\u017Cliwe, poniewa\u017C operacja zapisywania danych w folderze nie powiod\u0142a si\u0119. Nale\u017Cy upewni\u0107 si\u0119, \u017Ce dost\u0119pna jest wystarczaj\u0105ca ilo\u015B\u0107 miejsca na dysku oraz, \u017Ce posiadane s\u0105 wymagane prawa zapisu do systemu plik\u00F3w, a nast\u0119pnie spr\u00F3bowa\u0107 ponownie.
+ filterFolderWriteFailed=Pasuj\u0105ce do filtru wiadomo\u015Bci nie mog\u0105 zosta\u0107 zapisane do folderu "%S" poniewa\u017C operacja zapisu w folderze nie powiod\u0142a si\u0119. Sprawd\u017A, czy jest dost\u0119pna wystarczaj\u0105ca ilo\u015B\u0107 miejsca na dysku oraz, czy posiadane s\u0105 wymagane prawa zapisu do systemu plik\u00F3w, a nast\u0119pnie spr\u00F3buj ponownie.
+ copyMsgWriteFailed=Wiadomo\u015Bci nie zosta\u0142y przeniesione lub skopiowane do folderu "%S" poniewa\u017C operacja zapisywania danych w folderze nie powiod\u0142a si\u0119. Aby zwolni\u0107 wi\u0119cej miejsca na dysku, nale\u017Cy z menu Plik wybra\u0107 Opr\u00F3\u017Cnij kosz, a nast\u0119pnie Porz\u0105dkuj foldery. Po wykonaniu tych czynno\u015Bci mo\u017Cna spr\u00F3bowa\u0107 ponownie.
+-cantMoveMsgWOBodyOffline=Podczas pracy w trybie offline przenoszenie lub kopiowanie wiadomo\u015Bci, kt\u00F3re nie zosta\u0142y uprzednio pobrane jest niedost\u0119pne. Aby przej\u015B\u0107 do trybu online, nale\u017Cy w oknie Mozilli Thunderbird otworzy\u0107 menu Plik, wybra\u0107 Offline, a nast\u0119pnie wskaza\u0107 Pracuj w trybie online.
++cantMoveMsgWOBodyOffline=Podczas pracy w trybie offline przenoszenie lub kopiowanie wiadomo\u015Bci, kt\u00F3re nie zosta\u0142y uprzednio pobrane jest niedost\u0119pne. Aby przej\u015B\u0107 do trybu online, nale\u017Cy w oknie g\u0142\u00F3wnym programu otworzy\u0107 menu Plik, wybra\u0107 Offline, a nast\u0119pnie wskaza\u0107 Pracuj w trybie online.
+ operationFailedFolderBusy=Wykonanie operacji nie powiod\u0142o si\u0119, poniewa\u017C inny proces ma dost\u0119p do folderu. Nale\u017Cy poczeka\u0107 na zako\u0144czenie dzia\u0142ania tego procesu, a nast\u0119pnie spr\u00F3bowa\u0107 ponownie.
+ folderRenameFailed=Nazwa folderu nie mo\u017Ce zosta\u0107 zmieniona. Prawdopodobnie folder jest ponownie analizowany lub nowa nazwa nie jest prawid\u0142ow\u0105 nazw\u0105 folderu.
+ verboseFolderFormat=%1$S konta %2$S
+-filterFolderTruncateFailed=Podczas przenoszenia wiadomo\u015Bci za pomoc\u0105 filtru z foldera Otrzyname do foldera "%1$S" wyst\u0105pi\u0142 b\u0142\u0105d porz\u0105dkowania pliku wiadomo\u015Bci. W celu poprawnego wy\u015Bwietlania wiadomo\u015Bci mo\u017Ce by\u0107 konieczne zamkni\u0119cie Mozilli Thunderbird i usuni\u0119cie pliku Inbox.msf.
++filterFolderTruncateFailed=Podczas przenoszenia wiadomo\u015Bci za pomoc\u0105 filtru z foldera Otrzyname do foldera "%1$S" wyst\u0105pi\u0142 b\u0142\u0105d porz\u0105dkowania pliku wiadomo\u015Bci. W celu poprawnego wy\u015Bwietlania wiadomo\u015Bci mo\u017Ce by\u0107 konieczne zamkni\u0119cie programu %2$S i usuni\u0119cie pliku Inbox.msf.
+ 
+ defaultServerTag=(Domy\u015Blny)
+ useDefaultServer=U\u017Cyj domy\u015Blnego serwera
+Index: mail/chrome/messenger/addressbook/abMainWindow.dtd
+===================================================================
+RCS file: /l10n/l10n/pl/mail/chrome/messenger/addressbook/abMainWindow.dtd,v
+retrieving revision 1.2
+diff -u -r1.2 abMainWindow.dtd
+--- mail/chrome/messenger/addressbook/abMainWindow.dtd	25 May 2005 13:16:02 -0000	1.2
++++ mail/chrome/messenger/addressbook/abMainWindow.dtd	27 May 2005 08:09:27 -0000
+@@ -129,10 +129,10 @@
+ <!ENTITY helpMenu.accesskey "c">
+ <!ENTITY releaseCmd.label "Informacje o wersji programu">
+ <!ENTITY releaseCmd.accesskey "I">
+-<!ENTITY hintsAndTips.label "Pomoc Mozilli Thunderbird">
++<!ENTITY hintsAndTips.label "Pomoc programu &brandShortName;">
+ <!ENTITY hintsAndTips.accesskey "P">
+ <!ENTITY hintsAndTipsMac.commandkey "?">
+-<!ENTITY aboutCmd.label "O Mozilli Thunderbird">
++<!ENTITY aboutCmd.label "O programie &brandShortName;">
+ <!ENTITY aboutCmd.accesskey "O">
+ 
+ <!-- Address Book Toolbar and Context Menus --> 
+Index: mail/chrome/messenger/messengercompose/composeMsgs.properties
+===================================================================
+RCS file: /l10n/l10n/pl/mail/chrome/messenger/messengercompose/composeMsgs.properties,v
+retrieving revision 1.2
+diff -u -r1.2 composeMsgs.properties
+--- mail/chrome/messenger/messengercompose/composeMsgs.properties	25 May 2005 13:16:02 -0000	1.2
++++ mail/chrome/messenger/messengercompose/composeMsgs.properties	27 May 2005 08:55:41 -0000
+@@ -44,10 +44,10 @@
+ 12507=Nie mo\u017Cna wys\u0142a\u0107 artyku\u0142u do r\u00F3\u017Cnych serwer\u00F3w grup dyskusyjnych. Spr\u00F3buj ponownie.
+ 12508=Przygotowywanie wiadomo\u015Bci... Zako\u0144czono
+ 12509=Przygotowywanie wiadomo\u015Bci...
+-12510=Nie okre\u015Blono nadawcy. Wprowad\u017A sw\u00F3j adres e-mail w Konfiguracji kont Mozilli Thunderbird.
++12510=Nie okre\u015Blono nadawcy. Wprowad\u017A sw\u00F3j adres e-mail w Konfiguracji kont programu.
+ 12511=Nie okre\u015Blono \u017Cadnego adresata. W linii Do: wprowad\u017A adresata lub w linii Grupa dyskusyjna: wprowad\u017A nazw\u0119 grupy dyskusyjnej.
+ 12512=B\u0142\u0105d zapisu pliku tymczasowego.
+-12513=Podczas wysy\u0142ania wiadomo\u015Bci wyst\u0105pi\u0142 b\u0142\u0105d: po\u0142\u0105czenie z serwerem SMTP %S by\u0142o niemo\u017Cliwe. Serwer mo\u017Ce by\u0107 wy\u0142\u0105czony lub mo\u017Ce by\u0107 \u017Ale skonfigurowany. Nale\u017Cy sprawdzi\u0107 poprawno\u015B\u0107 ustawie\u0144 serwera poczty wychodz\u0105cej w Konfiguracji kont Mozilli Thunderbird, a nast\u0119pnie spr\u00F3bowa\u0107 ponownie.
++12513=Podczas wysy\u0142ania wiadomo\u015Bci wyst\u0105pi\u0142 b\u0142\u0105d: po\u0142\u0105czenie z serwerem SMTP %S by\u0142o niemo\u017Cliwe. Serwer mo\u017Ce by\u0107 wy\u0142\u0105czony lub mo\u017Ce by\u0107 \u017Ale skonfigurowany. Nale\u017Cy sprawdzi\u0107 poprawno\u015B\u0107 ustawie\u0144 serwera poczty wychodz\u0105cej w Konfiguracji kont, a nast\u0119pnie spr\u00F3bowa\u0107 ponownie.
+ 12514=Podczas wysy\u0142ania poczty wyst\u0105pi\u0142 b\u0142\u0105d. Odpowied\u017A serwera: %s. Sprawd\u017A poprawno\u015B\u0107 wprowadzonego adresu e-mail w Konfiguracji kont, a nast\u0119pnie pon\u00F3w pr\u00F3b\u0119.
+ 12515=Podczas wysy\u0142ania poczty wyst\u0105pi\u0142 b\u0142\u0105d. Odpowied\u017A serwera: %s. Sprawd\u017A adresat\u00F3w wiadomo\u015Bci, a nast\u0119pnie pon\u00F3w pr\u00F3b\u0119.
+ 12516=Podczas wysy\u0142ania wiadomo\u015Bci wyst\u0105pi\u0142 b\u0142\u0105d serwera poczty wychodz\u0105cej SMTP. Otrzymana odpowied\u017A serwera: %s.
+@@ -94,10 +94,10 @@
+ 12559=B\u0142\u0105d zapisywania szablonu
+ 12560=Operacja wysy\u0142ania artyku\u0142u do grupy dyskusyjnej zako\u0144czy\u0142a si\u0119 pomy\u015Blnie, jednak\u017Ce wiadomo\u015B\u0107 nie zosta\u0142a wys\u0142ana do innych adresat\u00F3w.
+ 12561=Czy powr\u00F3ci\u0107 do okna tworzenia wiadomo\u015Bci?
+-12562=Zweryfikuj konfiguracj\u0119 konta Mozilli Thunderbird i pon\u00F3w pr\u00F3b\u0119.
++12562=Zweryfikuj konfiguracj\u0119 konta i pon\u00F3w pr\u00F3b\u0119.
+ 12563=B\u0142\u0105d odczytu pliku.
+ 12564=Zgodnie z \u017Cyczeniem autora, odpowiedzi na t\u0119 wiadomo\u015B\u0107 zostan\u0105 przes\u0142ane tylko do autora. Je\u017Celi wysy\u0142ana odpowied\u017A ma zosta\u0107 pos\u0142ana r\u00F3wnie\u017C na forum grupy dyskusyjnej, nale\u017Cy doda\u0107 nowy wiersz w polu adresowym, wybra\u0107 Grupa dyskusyjna z listy adresat\u00F3w, a nast\u0119pnie wpisa\u0107 adres grupy w pole po prawej stronie.
+-12565=Wysy\u0142anie wiadomo\u015Bci nie powiod\u0142o si\u0119, poniewa\u017C po\u0142\u0105czenie z serwerem poczty wychodz\u0105cej SMTP %S by\u0142o niemo\u017Cliwe. Serwer mo\u017Ce by\u0107 niedost\u0119pny lub mo\u017Ce odrzuca\u0107 po\u0142\u0105czenia. Nale\u017Cy sprawdzi\u0107 poprawno\u015B\u0107 ustawie\u0144 serwera poczty wychodz\u0105cej w Konfiguracji kont Mozilli Thunderbird, a nast\u0119pnie spr\u00F3bowa\u0107 ponownie lub skontaktowa\u0107 si\u0119 z administratorem sieci.
++12565=Wysy\u0142anie wiadomo\u015Bci nie powiod\u0142o si\u0119, poniewa\u017C po\u0142\u0105czenie z serwerem poczty wychodz\u0105cej SMTP %S by\u0142o niemo\u017Cliwe. Serwer mo\u017Ce by\u0107 niedost\u0119pny lub mo\u017Ce odrzuca\u0107 po\u0142\u0105czenia. Nale\u017Cy sprawdzi\u0107 poprawno\u015B\u0107 ustawie\u0144 serwera poczty wychodz\u0105cej w Konfiguracji kont, a nast\u0119pnie spr\u00F3bowa\u0107 ponownie lub skontaktowa\u0107 si\u0119 z administratorem sieci.
+ 12566=undisclosed-recipients
+ 12567=Rozmiar wysy\u0142anej wiadomo\u015Bci przekracza rozmiar przestrzeni dyskowej udost\u0119pnionej dla plik\u00F3w tymczasowych na serwerze. Wiadomo\u015B\u0107 nie zosta\u0142a wys\u0142ana, nale\u017Cy zmniejszy\u0107 rozmiar wiadomo\u015Bci, a nast\u0119pnie spr\u00F3bowa\u0107 ponownie. Otrzymana odpowied\u017A serwera: %s.
+ 12568=Rozmiar wysy\u0142anej wiadomo\u015Bci przekracza ca\u0142kowity rozmiar przestrzeni dyskowej (%d bajt\u00F3w) udost\u0119pnionej na serwerze. Wiadomo\u015B\u0107 nie zosta\u0142a wys\u0142ana, nale\u017Cy zmniejszy\u0107 rozmiar wiadomo\u015Bci, a nast\u0119pnie spr\u00F3bowa\u0107 ponownie.
+Index: mail/chrome/messenger/messengercompose/messengercompose.dtd
+===================================================================
+RCS file: /l10n/l10n/pl/mail/chrome/messenger/messengercompose/messengercompose.dtd,v
+retrieving revision 1.2
+diff -u -r1.2 messengercompose.dtd
+--- mail/chrome/messenger/messengercompose/messengercompose.dtd	25 May 2005 13:16:02 -0000	1.2
++++ mail/chrome/messenger/messengercompose/messengercompose.dtd	27 May 2005 08:08:14 -0000
+@@ -188,10 +188,10 @@
+ <!ENTITY helpMenu.accesskey "c">
+ <!ENTITY releaseCmd.label "Informacje o wersji programu">
+ <!ENTITY releaseCmd.accesskey "I">
+-<!ENTITY hintsAndTips.label "Pomoc Mozilli Thunderbird">
++<!ENTITY hintsAndTips.label "Pomoc programu &brandShortName;">
+ <!ENTITY hintsAndTips.accesskey "P">
+ <!ENTITY hintsAndTipsMac.commandkey "?">
+-<!ENTITY aboutCmd.label "O Mozilli Thunderbird">
++<!ENTITY aboutCmd.label "O programie &brandShortName;">
+ <!ENTITY aboutCmd.accesskey "O">
+ <!ENTITY sendButton.label "Wyślij">
+ 
+Index: mail/chrome/messenger/preferences/advanced.dtd
+===================================================================
+RCS file: /l10n/l10n/pl/mail/chrome/messenger/preferences/advanced.dtd,v
+retrieving revision 1.2
+diff -u -r1.2 advanced.dtd
+--- mail/chrome/messenger/preferences/advanced.dtd	25 May 2005 13:16:02 -0000	1.2
++++ mail/chrome/messenger/preferences/advanced.dtd	27 May 2005 07:48:50 -0000
+@@ -32,7 +32,7 @@
+ 
+ <!-- Update -->
+ <!ENTITY softwareupdateinfo.label       "Okresowo sprawdzaj dostępność aktualizacji dla:">
+-<!ENTITY enableSmartUpdate.label        "Thunderbirda">
++<!ENTITY enableSmartUpdate.label        "programu &brandShortName;">
+ <!ENTITY enableSmartUpdate.accesskey    "T">
+ <!ENTITY enableExtensionUpdate.label    "Moich rozszerzeń i motywów">
+ <!ENTITY enableExtensionUpdate.accesskey "M">
+Index: mail/chrome/messenger/preferences/display.dtd
+===================================================================
+RCS file: /l10n/l10n/pl/mail/chrome/messenger/preferences/display.dtd,v
+retrieving revision 1.2
+diff -u -r1.2 display.dtd
+--- mail/chrome/messenger/preferences/display.dtd	25 May 2005 13:16:02 -0000	1.2
++++ mail/chrome/messenger/preferences/display.dtd	27 May 2005 08:06:03 -0000
+@@ -46,7 +46,7 @@
+ <!ENTITY restoreDefaults.accesskey  "P">
+ 
+ <!-- Fonts -->
+-<!ENTITY fontsDescription.label       "Ustawienia czcionek używanych przez Thunderbirda">
++<!ENTITY fontsDescription.label       "Ustawienia czcionek używanych przez program &brandShortName;">
+ <!ENTITY fontsCaption.label      "Czcionki">
+ <!ENTITY fontOptions.accesskey   "C">
+ <!ENTITY fontOptions.label       "Czcionki...">
+Index: mail/chrome/messenger/preferences/general.dtd
+===================================================================
+RCS file: /l10n/l10n/pl/mail/chrome/messenger/preferences/general.dtd,v
+retrieving revision 1.2
+diff -u -r1.2 general.dtd
+--- mail/chrome/messenger/preferences/general.dtd	25 May 2005 13:16:02 -0000	1.2
++++ mail/chrome/messenger/preferences/general.dtd	27 May 2005 08:06:31 -0000
+@@ -9,7 +9,7 @@
+ <!ENTITY checkNow.label                    "Sprawdź teraz">
+ <!ENTITY checkMailNow.accesskey            "S">
+ <!ENTITY checkNewsNow.accesskey            "w">
+-<!ENTITY whenStartingCheck.label           "Podczas uruchamiania &brandShortName; powinień sprawdzać, czy jest domyślną aplikacją dla:">
++<!ENTITY whenStartingCheck.label           "Podczas uruchamiania program &brandShortName; powinień sprawdzać, czy jest domyślną aplikacją dla:">
+ <!ENTITY mailApplication.label             "Poczty">
+ <!ENTITY checkDefaultMail.accesskey        "P">
+ <!ENTITY newsApplication.label             "Grup dyskusyjnych">
+@@ -19,8 +19,8 @@
+ <!ENTITY selectWindowLayout.label         "Proszę wybrać preferowany układ okien programu.">
+ <!ENTITY selectWindowLayout.accesskey     "u">
+ 
+-<!ENTITY messengerStartPage.label         "Strona startowa Thunderbirda">
+-<!ENTITY enableStartPage.label            "Po uruchomieniu Thunderbirda wyświetl poniższą stronę startową w oknie wiadomości:">
++<!ENTITY messengerStartPage.label         "Strona startowa programu &brandShortName;">
++<!ENTITY enableStartPage.label            "Po uruchomieniu programu wyświetl poniższą stronę startową w oknie wiadomości:">
+ <!ENTITY enableStartPage.accesskey        "w">
+ <!ENTITY location.label                   "Adres:">
+ <!ENTITY location.accesskey               "A">
+Index: mail/chrome/messenger/preferences/preferences.dtd
+===================================================================
+RCS file: /l10n/l10n/pl/mail/chrome/messenger/preferences/preferences.dtd,v
+retrieving revision 1.2
+diff -u -r1.2 preferences.dtd
+--- mail/chrome/messenger/preferences/preferences.dtd	25 May 2005 13:16:02 -0000	1.2
++++ mail/chrome/messenger/preferences/preferences.dtd	27 May 2005 07:50:01 -0000
+@@ -1,6 +1,6 @@
+ 
+ <!ENTITY  prefWindow.titleWin     "Opcje">
+-<!ENTITY  prefWindow.titleGNOME   "Preferencje Thunderbirda">
++<!ENTITY  prefWindow.titleGNOME   "Preferencje programu &brandShortName;">
+ <!ENTITY  prefWindow.styleWin     "width: 46em; height: 38em;">
+ <!ENTITY  prefWindow.styleMac     "width: 53em; height: 40em;">
+ <!ENTITY  prefWindow.styleUnix    "width: 53em; height: 40em;">
+Index: mail/chrome/navigator/navigator.properties
+===================================================================
+RCS file: /l10n/l10n/pl/mail/chrome/navigator/navigator.properties,v
+retrieving revision 1.2
+diff -u -r1.2 navigator.properties
+--- mail/chrome/navigator/navigator.properties	25 May 2005 13:16:02 -0000	1.2
++++ mail/chrome/navigator/navigator.properties	29 May 2005 22:33:27 -0000
+@@ -48,12 +48,12 @@
+ linkHREFLabel=Adres:
+ nothingAvailable=(Niczego nie znaleziono)
+ oldthemetitle=Uwaga: Niezgodny motyw
+-oldTheme=Wybrany motyw zosta\u0142 zaprojektowany dla poprzedniej wersji Mozilli Thunderbird i nie b\u0119dzie poprawnie dzia\u0142a\u0142 w obecnie u\u017Cywanej wersji programu. Nale\u017Cy pobra\u0107 i zainstalowa\u0107 zaktualizowan\u0105 wersj\u0119 motywu. Naci\u015Bnij przycisk \"OK\", aby odinstalowa\u0107 motyw.
++oldTheme=Wybrany motyw zosta\u0142 zaprojektowany dla poprzedniej wersji programu %brand% i nie b\u0119dzie poprawnie dzia\u0142a\u0142 w obecnie u\u017Cywanej wersji. Nale\u017Cy pobra\u0107 i zainstalowa\u0107 zaktualizowan\u0105 wersj\u0119 motywu. Aby odinstalowa\u0107 nieaktualny motyw, nale\u017Cy przycisn\u0105\u0107 \"OK\".
+ noPopupControl=kontrolowanie wyskakuj\u0105cych okien przegl\u0105darki pochodz\u0105cych z tej witryny jest niemo\u017Cliwe
+ wallpaperConfirmTitle=Ustaw jako tapet\u0119
+ wallpaperConfirmButton=Ustaw tapet\u0119
+ wallpaperConfirmMsg=Ustawi\u0107 ten obraz jako tapet\u0119 pulpitu?
+-switchskins=Nowy motyw zostanie u\u017Cyty po ponownym uruchomieniu Mozilli Thunderbird.
++switchskins=Nowy motyw zostanie u\u017Cyty po ponownym uruchomieniu programu %S.
+ switchskinstitle=Zastosuj motyw
+ showskinsdescription=true
+ tabs.closeTab=Zamknij panel
+

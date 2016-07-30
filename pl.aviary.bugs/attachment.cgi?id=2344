@@ -1,0 +1,143 @@
+diff --git a/apps/email/email.properties b/apps/email/email.properties
+--- a/apps/email/email.properties
++++ b/apps/email/email.properties
+@@ -41,6 +41,7 @@
+ 
+ setup-manual-socket=Typ połączenia
+ setup-manual-socket-ssl=SSL
++setup-manual-socket-starttls=STARTTLS
+ 
+ setup-manual-hostname.placeholder=Adres serwera
+ setup-manual-port.placeholder=Numer portu
+@@ -57,6 +58,15 @@
+ setup-gmail-imap-message=Należy włączyć IMAP w ustawieniach konta Gmail
+ setup-gmail-imap-retry=Ponów
+ 
++# In the account picker card, where the user can select which account to view
++# in the app, it shows when each account was last synchronized.
++fld-account-picker-last-sync=Ostatnia synchronizacja:
++
++# Label in the "Server settings" sub-section of acccount settings for going
++# to a settings card that shows user name and password used to connect to
++# the mail server.
++settings-account-userpass=Nazwa użytkownika i hasło
++
+ settings-main-header=Ustawienia
+ settings-done=Gotowe
+ settings-account-section=Konta
+@@ -66,6 +76,36 @@
+ settings-account-delete-cancel=Anuluj
+ settings-account-delete-confirm=Usuń
+ 
++# For account settings screen, there are sections of settings, and each
++#section has a header. One is Account, which shows general information
++# about the account, like the name.
++settings-sub-header-account=Konto
++
++# Label in the "Account" sub-section of acccount settings that shows the
++# human name, not the email address, for the account.
++settings-account-name=Twoje imię
++
++# Label in the "Account" sub-section of acccount settings for the checkbox
++# that enables getting phone notifications when new inbox email is found
++# via periodic sync with the mail server.
++settings-account-display-notifications=Wyświetl powiadomienia o nowych wiadomościach
++
++# For account settings screen, there are sections of settings, and each
++# section has a header. One is Data, which deals with sync intervals and
++# time windows for the data that is fetched.
++settings-sub-header-data=Dane
++
++# Label in the "Data" sub-section of acccount settings for the select box
++# that allows choosing how often to check the server for new messages in
++# the inbox. The possible select box options are listed in the
++# settings-check-every-* properties.
++settings-account-check-mail=Pobierz nowe wiadomości
++
++# For account settings screen, there are sections of settings, and each
++# section has a header. One is "Server settings", which deals with the
++# name/password and server addresses.
++settings-sub-header-server=Ustawienia serwera
++
+ settings-about-section=O …
+ settings-general-section=Ogólne ustawienia
+ settings-check-mail=Sprawdzaj pocztę
+@@ -73,18 +113,31 @@
+ settings-download-attachments=Pobieraj załączniki
+ settings-notify-mail=Powiadamiaj o nowych wiadomościach
+ 
+-settings-check-3min=Co 3 minuty
+-settings-check-5min=Co 5 minut
+-settings-check-10min=Co 10 minut
+-settings-check-15min=Co 15 minut
+-settings-check-30min=Co 30 minut
+-settings-check-60min=Co 60 minut
+-settings-check-manual=Ręcznie
++# How often to check the mail server for new mail messages for the inbox.
++# "Manually" means, do not automatically connect on a periodic sync interval.
++# User will manually click the refresh button to check for new messages.
++settings-check-every-3min=Co 3 minuty
++settings-check-every-5min=Co 5 minut
++settings-check-every-10min=Co 10 minut
++settings-check-every-15min=Co 15 minut
++settings-check-every-30min=Co 30 minut
++settings-check-every-60min=Co godzinę
++settings-check-every-manual=Ręcznie
++
++# Dynamically added sync interval checks. These are only added via special
++# debug/development tools, and are always in seconds. Otherwise, just
++# the settings-check-every-* options are visible.
++settings-check-dynamic={[ plural(n) ]}
++settings-check-dynamic[zero]  = sekund
++settings-check-dynamic[one]   = {{ n }} sekunda
++settings-check-dynamic[two]   = {{ n }} sekundy
++settings-check-dynamic[few]   = {{ n }} sekundy
++settings-check-dynamic[many]  = {{ n }} sekund
++settings-check-dynamic[other] =
+ 
+ settings-default-account=Domyślne konto
+ settings-account-type=Typ konta
+ settings-account-credentials=Dane konta
+-settings-account-synchronize=Synchronizuj
+ settings-activesync-label=Ustawienia ActiveSync
+ settings-imap-label=Ustawienia IMAP
+ settings-smtp-label=Ustawienia SMTP
+@@ -95,6 +148,10 @@
+ settings-save=Zapisz
+ settings-password-empty=Pole hasła nie powinno być puste!
+ 
++# How much email to sync, in smallest unit of days, from the server. Only
++# valid for ActiveSync mail servers, not shown for other mail server types
++# like IMAP.
++settings-account-synchronize-window=Dni do synchronizacji
+ settings-synchronize-auto=Automatycznie
+ settings-synchronize-one-day=ostatni dzień
+ settings-synchronize-three-days=ostatnie 3 dni
+@@ -205,6 +262,11 @@
+ message-contact-menu-reply=Odpowiedz
+ message-contact-menu-new=Wyślij nową wiadomość
+ 
++message-reply-menu-reply=Odpowiedz
++message-reply-menu-reply-all=Odp. wszystkim
++message-reply-menu-forward=Przekaż
++message-reply-menu-cancel=Anuluj
++
+ folder-list-header=Foldery
+ account-last-synced-label=Ostatnia synchronizacja:
+ account-never-synced=nigdy
+@@ -277,3 +339,14 @@
+ new-emails[few]={{n}} nowe wiadomości
+ new-emails[many]={{n}} nowych wiadomości
+ new-emails[other]=
++
++# new-emails-notify is used when a system notification is generatef during
++# a periodic background sync with the server. Since this goes to the system's
++# notification area and the user could have more than one account configured
++# with the email app, this notification includes the email address.
++new-emails-notify={[ plural(n) ]}
++new-emails-notify[one]=1 nowa wiadomość - {{ accountName }}
++new-emails-notify[two]={{ n }} nowe wiadomości - {{ accountName }}
++new-emails-notify[few]={{ n }} nowe wiadomości - {{ accountName }}
++new-emails-notify[many]={{ n }} nowych wiadomości - {{ accountName }}
++new-emails-notify[other]=
+

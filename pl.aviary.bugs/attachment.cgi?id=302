@@ -1,0 +1,218 @@
+Index: configure
+===================================================================
+RCS file: /cvsroot/mozilla/configure,v
+retrieving revision 1.1304.2.5.2.16
+diff -u -8 -p -r1.1304.2.5.2.16 configure
+--- configure	31 Oct 2004 07:17:58 -0000	1.1304.2.5.2.16
++++ configure	13 Dec 2004 11:04:08 -0000
+@@ -11611,18 +11611,18 @@ if test "$MOZ_PHOENIX"; then
+ #define MOZ_PHOENIX 1
+ EOF
+ 
+    MOZ_XUL_APP=1
+    cat >> confdefs.h <<\EOF
+ #define MOZ_XUL_APP 1
+ EOF
+ 
+-   MOZ_APP_NAME=firefox
+-   MOZ_APP_DISPLAYNAME=Firefox
++   MOZ_APP_NAME=vesta
++   MOZ_APP_DISPLAYNAME=Vesta
+    MOZ_APP_VERSION=`cat $topsrcdir/browser/config/version.txt`
+ fi
+ 
+ 
+ 
+ if test "$MOZ_THUNDERBIRD"; then
+    cat >> confdefs.h <<\EOF
+ #define MOZ_THUNDERBIRD 1
+Index: configure.in
+===================================================================
+RCS file: /cvsroot/mozilla/configure.in,v
+retrieving revision 1.1335.2.6.2.18
+diff -u -8 -p -r1.1335.2.6.2.18 configure.in
+--- configure.in	31 Oct 2004 07:17:58 -0000	1.1335.2.6.2.18
++++ configure.in	13 Dec 2004 11:04:23 -0000
+@@ -3382,18 +3382,18 @@ AC_SUBST(MOZ_DISTRIBUTION_ID)
+ dnl ========================================================
+ dnl = Phoenix
+ dnl ========================================================
+ MOZ_XUL_APP=
+ if test "$MOZ_PHOENIX"; then
+    AC_DEFINE(MOZ_PHOENIX)
+    MOZ_XUL_APP=1
+    AC_DEFINE(MOZ_XUL_APP)
+-   MOZ_APP_NAME=firefox
+-   MOZ_APP_DISPLAYNAME=Firefox
++   MOZ_APP_NAME=vesta
++   MOZ_APP_DISPLAYNAME=Vesta
+    MOZ_APP_VERSION=`cat $topsrcdir/browser/config/version.txt`
+ fi
+ 
+ AC_SUBST(MOZ_PHOENIX)
+ 
+ dnl ========================================================
+ dnl = Thunderbird
+ dnl ========================================================
+Index: browser/app/Makefile.in
+===================================================================
+RCS file: /cvsroot/mozilla/browser/app/Makefile.in,v
+retrieving revision 1.52.2.2.2.19
+diff -u -8 -p -r1.52.2.2.2.19 Makefile.in
+--- browser/app/Makefile.in	7 Nov 2004 00:33:34 -0000	1.52.2.2.2.19
++++ browser/app/Makefile.in	13 Dec 2004 11:04:25 -0000
+@@ -44,19 +44,19 @@ VPATH		= @srcdir@
+ 
+ include $(DEPTH)/config/autoconf.mk
+ 
+ DIRS		= profile/extensions
+ 
+ PREF_JS_EXPORTS = $(srcdir)/profile/firefox.js
+ 
+ ifeq ($(USE_SHORT_LIBNAME), 1)
+-PROGRAM = firefox$(BIN_SUFFIX)
++PROGRAM = vesta$(BIN_SUFFIX)
+ else
+-PROGRAM = firefox-bin$(BIN_SUFFIX)
++PROGRAM = vesta-bin$(BIN_SUFFIX)
+ endif
+ 
+ REQUIRES = \
+ 	appshell \
+ 	string \
+ 	xpcom \
+ 	xulapp \
+ 	$(NULL)
+@@ -206,29 +206,29 @@ $(EXE_DEF_FILE):
+ 	@echo 	WinSetProperty			= PMMERGE.5452 >>$(EXE_DEF_FILE)
+ 
+ LDFLAGS += -Zlinker /NOE
+ endif
+ endif
+ 
+ ifneq (,$(filter-out OS2 WINNT,$(OS_ARCH)))
+ 
+-firefox:: mozilla.in Makefile.in Makefile $(DEPTH)/config/autoconf.mk
++vesta:: mozilla.in Makefile.in Makefile $(DEPTH)/config/autoconf.mk
+ 	cat $< | sed -e "s|%MOZAPPDIR%|$(mozappdir)|" \
+-                -e "s|%MOZ_USER_DIR%|.mozilla/firefox|" \
++                -e "s|%MOZ_USER_DIR%|.vesta|" \
+ 		-e "s|%MREDIR%|$(mredir)|" > $@
+ 	chmod +x $@
+ 
+-libs:: firefox
++libs:: vesta
+ 	$(INSTALL) $< $(DIST)/bin
+ 
+-install:: firefox
++install:: vesta
+ 	$(SYSINSTALL) $< $(DESTDIR)$(bindir)
+ 
+-GARBAGE += firefox
++GARBAGE += vesta
+ GARBAGE += $(addprefix $(DIST)/bin/defaults/pref/, firefox.js)
+ 
+ endif
+ 
+ ifneq (,$(filter gtk gtk2,$(MOZ_WIDGET_TOOLKIT)))
+ 
+ ICON_FILES	= \
+ 		$(DIST)/branding/mozicon50.xpm \
+@@ -278,17 +278,17 @@ ifeq ($(OS_ARCH),OS2)
+ endif
+ endif
+ 
+ libs::
+ 	touch $(DIST)/bin/.autoreg
+ 
+ ifneq (,$(filter mac cocoa,$(MOZ_WIDGET_TOOLKIT)))
+ 
+-APP_NAME = Firefox
++APP_NAME = Vesta
+ 
+ AB_CD = $(MOZ_UI_LOCALE)
+ 
+ AB := $(firstword $(subst -, ,$(AB_CD)))
+ 
+ clean clobber repackage::
+ 	rm -rf $(DIST)/$(APP_NAME).app
+ 
+Index: browser/installer/Makefile.in
+===================================================================
+RCS file: /cvsroot/mozilla/browser/installer/Makefile.in,v
+retrieving revision 1.6.4.5
+diff -u -8 -p -r1.6.4.5 Makefile.in
+--- browser/installer/Makefile.in	14 Oct 2004 18:12:23 -0000	1.6.4.5
++++ browser/installer/Makefile.in	13 Dec 2004 11:04:46 -0000
+@@ -39,17 +39,17 @@
+ DEPTH		= ../..
+ topsrcdir	= @top_srcdir@
+ srcdir		= @srcdir@
+ VPATH		= @srcdir@
+ 
+ include $(DEPTH)/config/autoconf.mk
+ 
+ NO_PKG_FILES = \
+-	firefox-config \
++	vesta-config \
+ 	regchrome* \
+ 	regxpcom* \
+ 	xpcshell* \
+ 	xpidl* \
+ 	xpt_dump* \
+ 	xpt_link* \
+ 	$(NULL)
+ 
+Index: browser/locales/Makefile.in
+===================================================================
+RCS file: /cvsroot/mozilla/browser/locales/Makefile.in,v
+retrieving revision 1.1.2.24
+diff -u -8 -p -r1.1.2.24 Makefile.in
+--- browser/locales/Makefile.in	22 Oct 2004 16:47:44 -0000	1.1.2.24
++++ browser/locales/Makefile.in	13 Dec 2004 11:04:46 -0000
+@@ -123,17 +123,17 @@ jar-%: %
+ 		  "$(DEFINES) $(ACDEFINES)"
+ 
+ xpi-%: %
+ 	@$(MAKE) -C ../../toolkit/locales jar-$*
+ 	@$(MAKE) jar-$*
+ 	@$(RM) -rf $(DIST)/install/xpi-$*
+ 	@$(INSTALL) $(DIST)/bin/chrome/$*.jar $(DIST)/install/xpi-$*/chrome
+ 	@$(PERL) $(topsrcdir)/config/preprocessor.pl $(DEFINES) $(ACDEFINES) -I$(topsrcdir)/toolkit/locales/$*/defines.inc -I$(srcdir)/$*/defines.inc $(srcdir)/generic/install.rdf > $(DIST)/install/xpi-$*/install.rdf
+-	@cd $(DIST)/install/xpi-$*; $(ZIP) -r9D ../firefox-$(MOZ_APP_VERSION).$*.langpack.xpi install.rdf chrome
++	@cd $(DIST)/install/xpi-$*; $(ZIP) -r9D ../vesta-$(MOZ_APP_VERSION).$*.langpack.xpi install.rdf chrome
+ 
+ clean-l10n:
+ 	@$(RM) $(DIST)/bin/defaults/pref/firefox-l10n.js
+ 	@$(RM) -r $(DIST)/bin/searchplugins
+ 	@find $(DIST)/bin/chrome -name "??-??.jar" -o -name "???-??.jar" -o -name "??-???.jar" -o -name "??-??" -o -name "???-??" -o -name "??-???" | xargs $(RM) -r dummy
+ 	@$(PERL) -pi -e '$$_ = "" if m~^locale,install,url,jar:resource:/chrome/[a-z]{2,3}-[A-Z]{2,3}\.jar~' $(DIST)/bin/chrome/installed-chrome.txt
+ 
+ installers-%: % clean-l10n
+Index: xpinstall/packager/Makefile.in
+===================================================================
+RCS file: /cvsroot/mozilla/xpinstall/packager/Makefile.in,v
+retrieving revision 1.49.6.7
+diff -u -8 -p -r1.49.6.7 Makefile.in
+--- xpinstall/packager/Makefile.in	22 Oct 2004 15:52:33 -0000	1.49.6.7
++++ xpinstall/packager/Makefile.in	13 Dec 2004 11:06:13 -0000
+@@ -249,17 +249,17 @@ endif # DMG
+ 			! -name "*.jar" \
+ 			! -name "*.dat" \
+ 			! -name "*.tbl" \
+ 			! -name "*.src" \
+ 			! -name "*.reg" \
+ 			$(PLATFORM_EXCLUDE_LIST) \
+ 			-exec $(STRIP) $(STRIP_FLAGS) {} >/dev/null 2>&1 \;
+ 	$(SIGN_NSS)
+-ifeq (,$(filter mozilla firefox,$(MOZ_PKG_APPNAME)))
++ifeq (,$(filter mozilla vesta,$(MOZ_PKG_APPNAME)))
+ 	@echo "Creating start script $(MOZ_PKG_APPNAME)..."
+ 	cd $(DIST)/$(MOZ_PKG_APPNAME); if [ -f mozilla ]; then cp mozilla $(MOZ_PKG_APPNAME); fi
+ endif
+ ifdef NO_PKG_FILES
+ 	@echo "Removing unpackaged files..."
+ ifeq ($(MOZ_PKG_FORMAT),DMG)
+ 	cd $(DIST)/$(MOZ_PKG_APPNAME)/$(_APPNAME)/Contents/MacOS; rm -rf $(NO_PKG_FILES)
+ else
+

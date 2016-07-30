@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Changes made to bug 623</title>
+
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<link href="data/assets/2f5735cf3abd04bddc8e363a8613a9f5.css" rel="stylesheet" type="text/css">
+
+
+
+    
+<script type="text/javascript" src="data/assets/1b4e898422a669ab82b604a2c23edce5.js"></script>
+
+    <script type="text/javascript">
+    <!--
+        YAHOO.namespace('bugzilla');
+        YAHOO.util.Event.addListener = function (el, sType, fn, obj, overrideContext) {
+               if ( ("onpagehide" in window || YAHOO.env.ua.gecko) && sType === "unload") { sType = "pagehide"; };
+               var capture = ((sType == "focusin" || sType == "focusout") && !YAHOO.env.ua.ie) ? true : false;
+               return this._addListener(el, this._getType(sType), fn, obj, overrideContext, capture);
+         };
+        if ( "onpagehide" in window || YAHOO.env.ua.gecko) {
+            YAHOO.util.Event._simpleRemove(window, "unload", 
+                                           YAHOO.util.Event._unload);
+        }
+        
+        function unhide_language_selector() { 
+            YAHOO.util.Dom.removeClass(
+                'lang_links_container', 'bz_default_hidden'
+            ); 
+        } 
+        YAHOO.util.Event.onDOMReady(unhide_language_selector);
+
+        
+        var BUGZILLA = {
+            param: {
+                cookiepath: '\/',
+                maxusermatches: 1000
+            },
+            constant: {
+                COMMENT_COLS: 80
+            },
+            string: {
+                
+
+                attach_desc_required:
+                    "You must enter a Description for this attachment.",
+                component_required:
+                    "You must select a Component for this bug.",
+                description_required:
+                    "You must enter a Description for this bug.",
+                short_desc_required:
+                    "You must enter a Summary for this bug.",
+                version_required:
+                    "You must select a Version for this bug."
+            }
+        };
+
+    // -->
+    </script>
+<script type="text/javascript" src="data/assets/d41d8cd98f00b204e9800998ecf8427e.js"></script>
+
+    
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+                       title="Bugzilla" href="search_plugin.cgi">
+    <link rel="shortcut icon" href="images/favicon.ico">
+  </head>
+
+  <body 
+        class="bugs-aviary-pl yui-skin-sam">
+
+  <div id="header"><div id="banner">
+  </div>
+
+    <div id="titles">
+      <span id="title">Bugzilla &ndash; Activity log for bug 623: [tracking] Lokalizacja Firefoksa 2.0</span>
+
+
+    </div>
+
+
+    <div id="common_links"><ul class="links">
+  <li><a href="index.html">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi.html">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi.html">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi.html">Search</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="http://bugs.aviary.pl/buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input type="hidden" id="no_redirect_top" name="no_redirect" value="0">
+    <script type="text/javascript">
+      if (history && history.replaceState) {
+        var no_redirect = document.getElementById("no_redirect_top");
+        no_redirect.value = 1;
+      }
+    </script>
+    <input class="txt" type="text" id="quicksearch_top" name="quicksearch" 
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search" 
+           id="find_top"></form>
+  <a href="page.cgi%3Fid=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="report.cgi.html">Reports</a></li>
+
+  <li>
+      <span class="separator">| </span>
+        <a href="request.cgi.html">Requests</a></li>
+
+
+  
+    
+      <li id="new_account_container_top">
+        <span class="separator">| </span>
+        <a href="createaccount.cgi.html">New&nbsp;Account</a>
+      </li>
+
+    <li id="mini_login_container_top">
+  <span class="separator">| </span>
+  <a id="login_link_top" href="http://bugs.aviary.pl/show_activity.cgi?id=623&amp;GoAheadAndLogIn=1"
+     onclick="return show_mini_login_form('_top')">Log In</a>
+
+  <form action="show_activity.cgi%3Fid=623.html" method="POST"
+        class="mini_login bz_default_hidden"
+        id="mini_login_top">
+    <input id="Bugzilla_login_top" required
+           name="Bugzilla_login" class="bz_login"
+        type="email" placeholder="Email Address">
+    <input class="bz_password" name="Bugzilla_password" type="password"
+           id="Bugzilla_password_top" required
+           placeholder="Password">
+    <input type="hidden" name="Bugzilla_login_token"
+           value="1469827283-JuYIF_87Gz4C4NaPb-KOxBb86mcT97twvFhwVjxvGM4">
+    <input type="submit" name="GoAheadAndLogIn" value="Log in"
+            id="log_in_top">
+    <a href="show_activity.cgi%3Fid=623.html#" onclick="return hide_mini_login_form('_top')">[x]</a>
+  </form>
+</li>
+
+
+  <li id="forgot_container_top">
+    <span class="separator">| </span>
+    <a id="forgot_link_top" href="http://bugs.aviary.pl/show_activity.cgi?id=623&amp;GoAheadAndLogIn=1#forgot"
+       onclick="return show_forgot_form('_top')">Forgot Password</a>
+    <form action="http://bugs.aviary.pl/token.cgi" method="post" id="forgot_form_top"
+          class="mini_forgot bz_default_hidden">
+      <label for="login_top">Login:</label>
+      <input name="loginname" size="20" id="login_top" required
+          type="email" placeholder="Your Email Address">
+      <input id="forgot_button_top" value="Reset Password" type="submit">
+      <input type="hidden" name="a" value="reqpw">
+      <input type="hidden" id="token_top" name="token"
+             value="1469827283-r8JksPxgw0shWsmDZxNVcXEmTOsoNNeLiydbLsbgshM">
+      <a href="show_activity.cgi%3Fid=623.html#" onclick="return hide_forgot_form('_top')">[x]</a>
+    </form>
+  </li>
+</ul>
+    </div>
+  </div>
+
+  <div id="bugzilla-body">
+
+<p>
+  Back to <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - [tracking] Lokalizacja Firefoksa 2.0"
+   href="show_bug.cgi%3Fid=623.html">bug 623</a>
+</p>
+<table id="bug_activity">
+    <tr class="column_header">
+      <th>Who</th>
+      <th>When</th>
+      <th>What</th>
+      <th>Removed</th>
+      <th>Added</th>
+    </tr>
+
+      <tr>
+        <td rowspan="1">marcoos+bugs
+        </td>
+        <td rowspan="1">2005-09-18 23:46:14 CEST
+        </td>
+            <td>
+                URL
+            </td><td>
+  </td><td>http://www.mozilla.org/projects/firefox/roadmap.html
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2005-09-19 10:20:56 CEST
+        </td>
+            <td>
+                CC
+            </td><td>
+  </td><td>hubert.gajewski
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">marcoos+bugs
+        </td>
+        <td rowspan="1">2005-10-26 00:47:43 CEST
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - W helpie zamiast zwykłych spacji po spójnikach powinny być &quot;twarde&quot;"
+   href="show_bug.cgi%3Fid=723.html">723</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">marcoos+bugs
+        </td>
+        <td rowspan="1">2005-10-28 16:50:21 CEST
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED TRANSFERRED - Reporter: polityka prywatności nie przetłumaczona"
+   href="show_bug.cgi%3Fid=685.html">685</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">marcoos+bugs
+        </td>
+        <td rowspan="1">2005-10-28 17:35:57 CEST
+        </td>
+            <td>
+                Depends on
+            </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - W helpie zamiast zwykłych spacji po spójnikach powinny być &quot;twarde&quot;"
+   href="show_bug.cgi%3Fid=723.html">723</a>
+  </td><td>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">marcoos+bugs
+        </td>
+        <td rowspan="1">2005-10-29 00:02:58 CEST
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Poprawki do helpa - plik customization.xhtml"
+   href="show_bug.cgi%3Fid=765.html">765</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">marcoos+bugs
+        </td>
+        <td rowspan="1">2005-11-05 15:29:32 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Reporter: okno zgłoszenia / Rodzaj problemu"
+   href="show_bug.cgi%3Fid=686.html">686</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">marcoos+bugs
+        </td>
+        <td rowspan="1">2005-11-13 19:44:31 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Błąd gramatyczny w Pomocy - dot. słowa &quot;panel&quot;"
+   href="show_bug.cgi%3Fid=794.html">794</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2005-11-19 02:07:07 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - nie uwierzytelnione &gt; nieuwierzytelnione"
+   href="show_bug.cgi%3Fid=798.html">798</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">marcoos+bugs
+        </td>
+        <td rowspan="1">2006-01-04 14:28:50 CET
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Inne sformulowanie &quot;serwer odpowiada za wolno&quot;"
+   href="show_bug.cgi%3Fid=823.html">823</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">marcoos+bugs
+        </td>
+        <td rowspan="1">2006-08-20 01:03:35 CEST
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Korekta helpa przed wydaniem Firefox 2.0"
+   href="show_bug.cgi%3Fid=904.html">904</a>, <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Webowe czytniki RSS w Firefoksie"
+   href="show_bug.cgi%3Fid=912.html">912</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">marcoos+bugs
+        </td>
+        <td rowspan="1">2006-08-20 01:04:39 CEST
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Poprawki do czerwcowych zmian w l10n/pl"
+   href="show_bug.cgi%3Fid=915.html">915</a>, <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Błedy językowe w sekcji wyboru czytnika RSS"
+   href="show_bug.cgi%3Fid=917.html">917</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">marcoos+bugs
+        </td>
+        <td rowspan="1">2006-08-20 01:05:53 CEST
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Widok/Kodowanie znaków, Opcje/Kodowanie znaków - zmiana rodzaju?"
+   href="show_bug.cgi%3Fid=146.html">146</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">marcoos+bugs
+        </td>
+        <td rowspan="1">2006-08-20 01:06:47 CEST
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Spójne tłumaczenie dla &quot;Security Devices&quot;"
+   href="show_bug.cgi%3Fid=820.html">820</a>, <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Pozbyć się \uXXXX z *.properties"
+   href="show_bug.cgi%3Fid=916.html">916</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">marcoos+bugs
+        </td>
+        <td rowspan="1">2006-08-31 10:45:31 CEST
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Brak odmiany w podsumowaniu zawartości folderów zakładek"
+   href="show_bug.cgi%3Fid=924.html">924</a>, <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Firefox nie pozwolił żądać zainstalowania oprogramowania ..."
+   href="show_bug.cgi%3Fid=925.html">925</a>, <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Okno &quot;Uprawnione witryny - Instalacja dodatkow&quot;"
+   href="show_bug.cgi%3Fid=926.html">926</a>, <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Zainstaluj teraz - czy to jest potrzebne?"
+   href="show_bug.cgi%3Fid=927.html">927</a>, <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Informacja po zainstalowaniu dodatku"
+   href="show_bug.cgi%3Fid=928.html">928</a>, <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED INVALID - Informacja po zainstalowaniu rozszerzenia"
+   href="show_bug.cgi%3Fid=929.html">929</a>, <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Komunikaty konsoli błędów"
+   href="show_bug.cgi%3Fid=930.html">930</a>, <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Poprawki w README.txt w katalogu głównym programu"
+   href="show_bug.cgi%3Fid=931.html">931</a>, <a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED INVALID - Inspektor DOM - Wybierz element poprzez kliknięcie"
+   href="show_bug.cgi%3Fid=932.html">932</a>, <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Tytuł okna &quot;Pokaż informacje o stronie&quot;"
+   href="show_bug.cgi%3Fid=933.html">933</a>, <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Okno &quot;Pokaż informacje o stronie&quot;, zakł. &quot;Media&quot;, poz. &quot;Wymiary&quot;"
+   href="show_bug.cgi%3Fid=934.html">934</a>, <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Opcja w oknie &quot;Czyszczenie prywatnych danych&quot;"
+   href="show_bug.cgi%3Fid=935.html">935</a>, <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Przycisk &quot;Wyczysc teraz prywatne dane&quot;"
+   href="show_bug.cgi%3Fid=936.html">936</a>, <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Preferencje (Opcje) - Główne"
+   href="show_bug.cgi%3Fid=937.html">937</a>, <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Preferencje (Opcje) - Uruchamianie"
+   href="show_bug.cgi%3Fid=938.html">938</a>, <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Informacje w oknie &quot;Ustaw jako stronę domową&quot;"
+   href="show_bug.cgi%3Fid=939.html">939</a>, <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED INVALID - Niespójność nazw okien Wyjątków (Preferencje - Treść)"
+   href="show_bug.cgi%3Fid=940.html">940</a>, <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Informacje w oknie &quot;Wyjątki - Obrazki&quot; (Preferencje - Treść)"
+   href="show_bug.cgi%3Fid=941.html">941</a>, <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Preferencje (Opcje) - Treść - Typy plików"
+   href="show_bug.cgi%3Fid=942.html">942</a>, <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED INVALID - Tytuł okna &quot;Czynności pobierania&quot; (Preferencje - Treść - Typy plków - Zarządzaj)"
+   href="show_bug.cgi%3Fid=943.html">943</a>, <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED INVALID - &quot;Zapisz na komputerze&quot; - Preferencje (Opcje)"
+   href="show_bug.cgi%3Fid=944.html">944</a>, <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Tytuł okna &quot;Zmień czynność&quot;"
+   href="show_bug.cgi%3Fid=945.html">945</a>, <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Kiedy kliknę... Preferencje (Opcje) - Kanały"
+   href="show_bug.cgi%3Fid=946.html">946</a>, <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Ładowanie..."
+   href="show_bug.cgi%3Fid=947.html">947</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">marcoos+bugs
+        </td>
+        <td rowspan="1">2006-08-31 16:24:58 CEST
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - about:plugins, tytuł karty &quot;O Wtyczkach&quot;"
+   href="show_bug.cgi%3Fid=969.html">969</a>, <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED INVALID - about:plugins, brak odnośnika do MozillaPL"
+   href="show_bug.cgi%3Fid=970.html">970</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">marcoos+bugs
+        </td>
+        <td rowspan="1">2006-08-31 16:31:56 CEST
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED INVALID - about:plugins, nieprzetłumaczona informacja o Default plugin"
+   href="show_bug.cgi%3Fid=968.html">968</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">gandalf
+        </td>
+        <td rowspan="1">2006-08-31 16:40:52 CEST
+        </td>
+            <td>
+                CC
+            </td><td>
+  </td><td>gandalf
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">cleriic
+        </td>
+        <td rowspan="1">2006-09-01 10:00:40 CEST
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED DUPLICATE - Okno &quot;Czyszczenie prywatnych danych&quot;"
+   href="show_bug.cgi%3Fid=980.html">980</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">marcoos+bugs
+        </td>
+        <td rowspan="1">2006-09-01 10:16:39 CEST
+        </td>
+            <td>
+                Depends on
+            </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED DUPLICATE - Okno &quot;Czyszczenie prywatnych danych&quot;"
+   href="show_bug.cgi%3Fid=980.html">980</a>
+  </td><td>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">cleriic
+        </td>
+        <td rowspan="1">2006-09-01 11:37:52 CEST
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Menedżer zakładek -&gt; Widok [opcje sortowania] i opis kolumn"
+   href="show_bug.cgi%3Fid=981.html">981</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">marcoos+bugs
+        </td>
+        <td rowspan="1">2006-09-08 14:19:58 CEST
+        </td>
+            <td>
+                Depends on
+            </td><td><a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED INVALID - Inspektor DOM - Wybierz element poprzez kliknięcie"
+   href="show_bug.cgi%3Fid=932.html">932</a>
+  </td><td>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">marcoos+bugs
+        </td>
+        <td rowspan="1">2006-09-11 18:59:21 CEST
+        </td>
+            <td>
+                Priority
+            </td><td>P2
+  </td><td>P1
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">marcoos+bugs
+        </td>
+        <td rowspan="1">2006-09-12 01:56:24 CEST
+        </td>
+            <td>
+                Target Milestone
+            </td><td>Nieokreślona
+  </td><td>Firefox-2.0
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">marcoos+bugs
+        </td>
+        <td rowspan="1">2006-09-12 16:54:47 CEST
+        </td>
+            <td>
+                Depends on
+            </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Widok/Kodowanie znaków, Opcje/Kodowanie znaków - zmiana rodzaju?"
+   href="show_bug.cgi%3Fid=146.html">146</a>
+  </td><td>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">marcoos+bugs
+        </td>
+        <td rowspan="1">2006-09-12 17:23:56 CEST
+        </td>
+            <td>
+                Depends on
+            </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Pozbyć się \uXXXX z *.properties"
+   href="show_bug.cgi%3Fid=916.html">916</a>
+  </td><td>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2006-09-12 23:02:00 CEST
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Zmienić &quot;Wprowadź główne hasło dla %S&quot;"
+   href="show_bug.cgi%3Fid=1021.html">1021</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">marcoos+bugs
+        </td>
+        <td rowspan="1">2006-09-15 13:53:06 CEST
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Skrócić tekst o rozmiarze cache'a"
+   href="show_bug.cgi%3Fid=1025.html">1025</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">marcoos+bugs
+        </td>
+        <td rowspan="1">2006-09-15 21:31:15 CEST
+        </td>
+            <td>
+                Flags
+            </td><td>
+  </td><td>blocking-aviary-2.0+
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">marcoos+bugs
+        </td>
+        <td rowspan="1">2006-09-15 21:44:13 CEST
+        </td>
+            <td>
+                Depends on
+            </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED TRANSFERRED - Reporter: polityka prywatności nie przetłumaczona"
+   href="show_bug.cgi%3Fid=685.html">685</a>
+  </td><td>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">marcoos+bugs
+        </td>
+        <td rowspan="1">2006-09-15 21:45:04 CEST
+        </td>
+            <td>
+                Depends on
+            </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Reporter: okno zgłoszenia / Rodzaj problemu"
+   href="show_bug.cgi%3Fid=686.html">686</a>
+  </td><td>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">marcoos+bugs
+        </td>
+        <td rowspan="1">2006-09-17 18:42:40 CEST
+        </td>
+            <td>
+                Status
+            </td><td>CONFIRMED
+  </td><td>IN_PROGRESS
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2006-09-17 23:40:49 CEST
+        </td>
+            <td>
+                Depends on
+            </td><td>
+  </td><td><a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Poprawki last minute do Firefoksa 2.0"
+   href="show_bug.cgi%3Fid=1036.html">1036</a>
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="2">marcoos+bugs
+        </td>
+        <td rowspan="2">2006-09-18 18:05:29 CEST
+        </td>
+            <td>
+                Status
+            </td><td>IN_PROGRESS
+  </td><td>RESOLVED
+  </td></tr><tr>
+            <td>
+                Resolution
+            </td><td>---
+  </td><td>FIXED
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="1">hubert+bap
+        </td>
+        <td rowspan="1">2008-07-13 12:47:39 CEST
+        </td>
+            <td>
+                Status
+            </td><td>RESOLVED
+  </td><td>VERIFIED
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="4">hubert+bap
+        </td>
+        <td rowspan="4">2009-01-01 14:13:07 CET
+        </td>
+            <td>
+                Component
+            </td><td>Firefox
+  </td><td>Ogólne
+  </td></tr><tr>
+            <td>
+                Version
+            </td><td>Firefox-2.0
+  </td><td>2.0
+  </td></tr><tr>
+            <td>
+                Product
+            </td><td>Lokalizacje Aviary.pl
+  </td><td>Firefox
+  </td></tr><tr>
+            <td>
+                Target Milestone
+            </td><td>Firefox-2.0
+  </td><td>---
+  </td>
+      </tr>
+  </table>
+
+  <p>
+    Back to <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - [tracking] Lokalizacja Firefoksa 2.0"
+   href="show_bug.cgi%3Fid=623.html">bug 623</a>
+  </p>
+</div>
+
+    <div id="footer">
+      <div class="intro"></div>
+<ul id="useful-links">
+  <li id="links-actions"><ul class="links">
+  <li><a href="index.html">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi.html">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi.html">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi.html">Search</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="http://bugs.aviary.pl/buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input type="hidden" id="no_redirect_bottom" name="no_redirect" value="0">
+    <script type="text/javascript">
+      if (history && history.replaceState) {
+        var no_redirect = document.getElementById("no_redirect_bottom");
+        no_redirect.value = 1;
+      }
+    </script>
+    <input class="txt" type="text" id="quicksearch_bottom" name="quicksearch" 
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search" 
+           id="find_bottom"></form>
+  <a href="page.cgi%3Fid=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="report.cgi.html">Reports</a></li>
+
+  <li>
+      <span class="separator">| </span>
+        <a href="request.cgi.html">Requests</a></li>
+
+
+  
+    
+      <li id="new_account_container_bottom">
+        <span class="separator">| </span>
+        <a href="createaccount.cgi.html">New&nbsp;Account</a>
+      </li>
+
+    <li id="mini_login_container_bottom">
+  <span class="separator">| </span>
+  <a id="login_link_bottom" href="http://bugs.aviary.pl/show_activity.cgi?id=623&amp;GoAheadAndLogIn=1"
+     onclick="return show_mini_login_form('_bottom')">Log In</a>
+
+  <form action="show_activity.cgi%3Fid=623.html" method="POST"
+        class="mini_login bz_default_hidden"
+        id="mini_login_bottom">
+    <input id="Bugzilla_login_bottom" required
+           name="Bugzilla_login" class="bz_login"
+        type="email" placeholder="Email Address">
+    <input class="bz_password" name="Bugzilla_password" type="password"
+           id="Bugzilla_password_bottom" required
+           placeholder="Password">
+    <input type="hidden" name="Bugzilla_login_token"
+           value="1469827283-JuYIF_87Gz4C4NaPb-KOxBb86mcT97twvFhwVjxvGM4">
+    <input type="submit" name="GoAheadAndLogIn" value="Log in"
+            id="log_in_bottom">
+    <a href="show_activity.cgi%3Fid=623.html#" onclick="return hide_mini_login_form('_bottom')">[x]</a>
+  </form>
+</li>
+
+
+  <li id="forgot_container_bottom">
+    <span class="separator">| </span>
+    <a id="forgot_link_bottom" href="http://bugs.aviary.pl/show_activity.cgi?id=623&amp;GoAheadAndLogIn=1#forgot"
+       onclick="return show_forgot_form('_bottom')">Forgot Password</a>
+    <form action="http://bugs.aviary.pl/token.cgi" method="post" id="forgot_form_bottom"
+          class="mini_forgot bz_default_hidden">
+      <label for="login_bottom">Login:</label>
+      <input name="loginname" size="20" id="login_bottom" required
+          type="email" placeholder="Your Email Address">
+      <input id="forgot_button_bottom" value="Reset Password" type="submit">
+      <input type="hidden" name="a" value="reqpw">
+      <input type="hidden" id="token_bottom" name="token"
+             value="1469827283-r8JksPxgw0shWsmDZxNVcXEmTOsoNNeLiydbLsbgshM">
+      <a href="show_activity.cgi%3Fid=623.html#" onclick="return hide_forgot_form('_bottom')">[x]</a>
+    </form>
+  </li>
+</ul>
+  </li>
+
+  
+
+
+
+
+  
+</ul>
+
+      <div class="outro"></div>
+    </div>
+
+  </body>
+</html>

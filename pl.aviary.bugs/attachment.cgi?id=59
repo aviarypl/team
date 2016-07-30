@@ -1,0 +1,465 @@
+diff -ru list/change-columns.html.tmpl list2/change-columns.html.tmpl
+--- list/change-columns.html.tmpl	2004-06-01 23:39:03.000000000 +0200
++++ list2/change-columns.html.tmpl	2004-06-01 15:16:00.000000000 +0200
+@@ -26,16 +26,16 @@
+ %]
+ 
+ <p>
+-  Wybierz kolumny, które chcesz by były wyświetlane w liście [% terms.bledow %]. Ta
+-  funkcjonalność wymaga ciasteczek do poprawnego działania.
++  Wybierz kolumny, które powinny pojawić się na liście [% terms.bledow %]. 
++  Funkcja ta wymaga do działania włączonych plików cookie.
+ </p>
+ 
+ [% PROCESS "global/field-descs.none.tmpl" %]
+-[% field_descs.short_short_desc     = "Podsumowanie (początkowe 60 znaków)" %]
++[% field_descs.short_short_desc     = "Podsumowanie (pierwsze 60 znaków)" %]
+ [% field_descs.short_desc           = "Pełne podsumowanie" %]
+-[% field_descs.assigned_to_realname = "Imię i nazwisko przypisanej osoby" %]
+-[% field_descs.reporter_realname    = "Imię i nazwisko zgłaszającego" %]
+-[% field_descs.qa_contact_realname  = "Imię i nazwisko kontaktu QA" %]
++[% field_descs.assigned_to_realname = "Dane właściciela" %]
++[% field_descs.reporter_realname    = "Dane zgłaszającego" %]
++[% field_descs.qa_contact_realname  = "Dane kontaktu QA" %]
+ 
+ <form action="colchange.cgi">
+   <input type="hidden" name="rememberedquery" value="[% buffer FILTER html %]">
+@@ -59,7 +59,7 @@
+     <input id="splitheader" type="radio" name="splitheader" value="1"
+       [% "checked='checked'" IF splitheader %]>
+     <label for="splitheader">
+-      Nagłówki schodkowe (lista powinna zostać wyświetlona bardziej zwięźle)
++      Skondensowane nagłówki
+     </label>
+   </p>
+ 
+@@ -71,7 +71,7 @@
+ <form action="colchange.cgi">
+   <input type="hidden" name="rememberedquery" value="[% buffer FILTER html %]">
+   <input type="hidden" name="resetit" value="1">
+-  <input type="submit" value="Przywróć domyślne wartości">
++  <input type="submit" value="Przywróć domyślne ustawienia [% terms.Bugzilli %]">
+ </form>
+ 
+ [% PROCESS global/footer.html.tmpl %]
+diff -ru list/edit-multiple.html.tmpl list2/edit-multiple.html.tmpl
+--- list/edit-multiple.html.tmpl	2004-06-01 23:42:31.000000000 +0200
++++ list2/edit-multiple.html.tmpl	2004-06-01 15:16:00.000000000 +0200
+@@ -40,12 +40,12 @@
+ <hr>
+ 
+ <p><font size="-1">
+-  Aby zmienić równocześnie wiele [% terms.bledow %]:
++  Aby zmienić jednocześnie wiele [% terms.bledow %]:
+   <ol>
+-    <li>Wybierz z powyższej listy [% terms.bledy %] które chcesz zmienić.</li>
+-    <li>Dokonaj swoich zmian w polach poniższego formularza. Jeśli zmiany te
+-        wymagają dodatkowego komentarza, umieść go w odpowiednim polu.</li>
+-    <li>Naciśnij guzik <em>Zatwierdź</em>.</li>
++    <li>Zaznacz powyżej [% terms.bledy %], które chcesz zmienić.</li>
++    <li>Dokonaj zmian w poniższych polach. Jeśli zmiana wymaga wyjaśnienia, 
++        umieść je w polu komentarzy.</li>
++    <li>Kliknij przycisk <em>Wykonaj</em>.</li>
+   </ol>
+ </font></p>
+ 
+@@ -90,7 +90,7 @@
+   </tr>
+   <tr>
+ 
+-    <th><label for="component">Komponent:</label></th>
++    <th><label for="component">Składnik:</label></th>
+     <td>
+       [% PROCESS selectmenu menuname = "component"
+                             menuitems = components %]
+@@ -98,7 +98,7 @@
+ 
+     <th>
+       <label for="bug_severity">
+-        <a href="bug_status.html#severity">Waga [% terms.bledu %]</a>:
++        <a href="bug_status.html#severity">Waga błędu</a>:
+       </label>
+     </th>
+     <td>
+@@ -109,7 +109,7 @@
+   </tr>
+   <tr>
+ 
+-    <th><label for="target_milestone">Docelowa wersja:</label></th>
++    <th><label for="target_milestone">Docelowe wydanie:</label></th>
+     <td colspan="3">
+       [% PROCESS selectmenu menuname = "target_milestone"
+                             menuitems = targetmilestones %]
+@@ -119,14 +119,14 @@
+ 
+   [% IF UserInGroup(Param("timetrackinggroup")) %]
+     <tr>
+-      <th><label for="estimated_time">Szacunkowa liczba godzin:</label></th>
++      <th><label for="estimated_time">Szacowane godziny:</label></th>
+       <td>
+         <input id="estimated_time"
+                name="estimated_time"
+                value="[% dontchange FILTER html %]"
+                size="6">
+       </td>
+-      <th><label for="remaining_time">Pozostałych godzin:</label></th>
++      <th><label for="remaining_time">Pozostałe godziny:</label></th>
+       <td>
+         <input id="remaining_time"
+                name="remaining_time"
+@@ -150,12 +150,12 @@
+ 
+   <tr>
+ 
+-    <th><label for="masscc">Obserwatorzy:</label></th>
++    <th><label for="masscc">Lista CC:</label></th>
+     <td colspan="3">
+       <input id="masscc" name="masscc" size="32">
+       <select name="ccaction">
+-        <option value="add">Dodaj do listy</option>
+-        <option value="remove">Usuń z listy</option>
++        <option value="add">Dodaj do listy CC</option>
++        <option value="remove">Usuń z listy CC</option>
+       </select>
+     </td>
+ 
+@@ -172,9 +172,9 @@
+       <td colspan="3">
+         <input id="keywords" name="keywords" size="32">
+         <select name="keywordaction">
+-          <option value="add">Dodaj</option>
+-          <option value="delete">Usuń</option>
+-          <option value="makeexact">Zastąp tą listą</option>
++          <option value="add">Dodaj te słowa kluczowe</option>
++          <option value="delete">Usuń te słowa kluczowe</option>
++          <option value="makeexact">Użyj tej listy jako słów kluczowych</option>
+         </select>
+       </td>
+ 
+@@ -185,15 +185,15 @@
+ 
+ <input type="hidden" name="multiupdate" value="Y">
+ 
+-<label for="comment"><b>Dodatkowy komentarz:</b></label><br>
++<label for="comment"><b>Dodatkowe komentarze:</b></label><br>
+ <textarea id="comment" name="comment" rows="5" cols="80" wrap="hard"></textarea><br>
+ 
+ [% IF groups.size > 0 %]
+ 
+-  <b>Grupy:</b><br>
++  <b>Grupa:</b><br>
+   <table border="1">
+     <tr>
+-      <th>Nie<br>zmieniaj<br>ograniczeń<br>tej grupy</td>
++      <th>Nie zmieniaj<br>ograniczeń<br>tej grupy</td>
+       <th>Usuń<br>[% terms.bledy %]<br>z tej<br>grupy</td>
+       <th>Dodaj<br>[% terms.bledy %]<br>do tej<br>grupy</td>
+       <th>Nazwa grupy:</td>
+@@ -230,8 +230,8 @@
+   </table>
+ 
+   [% IF foundinactive %]
+-    <font size="-1">(Uwaga: [% terms.Bledy %] zamiast zostać dodane do <strike>nieaktywnej
+-    grupy</strike>, mogą zostać usunięte.)</font><br>
++    <font size="-1">(Uwaga: Nie można dodawać [% terms.bledow %] do <strike>nieaktywnych
++    grup</strike> a jedynie usuwać.)</font><br>
+   [% END %]
+ 
+ [% END %]
+@@ -253,19 +253,19 @@
+ [% knum = knum + 1 %]
+ <input id="knob-accept" type="radio" name="knob" value="accept">
+ <label for="knob-accept">
+-  Przypisz [% terms.bledy %] (zmień status na <b>ASSIGNED</b>)
++  Zaakceptuj [% terms.bledy %] (zmień status na <b>ASSIGNED</b>)
+ </label><br>
+ 
+ [%# If all the bugs being changed are open, allow the user to close them. %]
+ [% IF !bugstatuses.containsany(closedstates) %]
+   [% knum = knum + 1 %]
+   <input id="knob-clearresolution" type="radio" name="knob" value="clearresolution">
+-  <label for="knob-clearresolution">Wyczyść rozwiązania</label><br>
++  <label for="knob-clearresolution">Wyczyść rozwiązanie</label><br>
+ 
+   [% knum = knum + 1 %]
+   <input id="knob-resolve" type="radio" name="knob" value="resolve">
+   <label for="knob-resolve">
+-    Rozwiąż [% terms.bledy %], ustawiając tekst <a href="bug_status.html">rozwiązania</a> na
++    Rozwiąż [% terms.bledy %], zmieniając <a href="bug_status.html">rozwiązanie</a> na
+   </label>
+   <select name="resolution" onchange="document.forms.changeform.knob[[% knum %]].checked=true">
+     [% FOREACH resolution = resolutions %]
+@@ -282,7 +282,7 @@
+ [% IF !bugstatuses.containsany(openstates) %]
+   [% knum = knum + 1 %]
+   <input id="knob-reopen" type="radio" name="knob" value="reopen">
+-  <label for="knob-reopen">Otwórz powtórnie [% terms.bledy %]</label><br>
++  <label for="knob-reopen">Otwórz ponownie [% terms.bledy %]</label><br>
+ [% END %]
+ 
+ [% IF bugstatuses.size == 1 %]
+@@ -300,7 +300,7 @@
+ [% knum = knum + 1 %]
+ <input id="knob-reassign" type="radio" name="knob" value="reassign">
+ <label for="knob-reassign"><a href="bug_status.html#assigned_to">
+-  Przypisz</a> [% terms.bledy %] do
++  Przepisz</a> [% terms.bledy %] do
+ </label>
+ <input name="assigned_to"
+        value="[% user.login FILTER html %]"
+@@ -313,10 +313,10 @@
+        name="knob"
+        value="reassignbycomponent">
+ <label for="knob-reassignbycomponent">
+-  Przypisz [% terms.bledy %] do właściciela lub kontaktu QA wybranego komponentu
++  Przepisz [% terms.bledy %] do właściciela zaznaczonego składnika
+ </label><br>
+ 
+-<input type="submit" value="Zatwierdź">
++<input type="submit" value="Wykonaj">
+ 
+ [% IF ismover %]
+   <input type="submit" name="action" value="[% Param('move-button-text') %]">
+diff -ru list/list.html.tmpl list2/list.html.tmpl
+--- list/list.html.tmpl	2004-06-01 09:04:13.000000000 +0200
++++ list2/list.html.tmpl	2004-06-01 15:16:00.000000000 +0200
+@@ -50,14 +50,14 @@
+ %]
+ 
+ <div align="center">
+-  <b>[% time2str("%a %b %e %T %Z %Y", currenttime) %]</b><br>
++  <b>[% time2str("%a, %Y-%m-%d %T", currenttime) %]</b><br>
+ 
+   [% IF debug %]
+     <p>[% query FILTER html %]</p>
+   [% END %]
+ 
+   [% IF Param('enablequips') != 'off' %]
+-    [% DEFAULT quip = "$terms.Bugzilla może w tym miejscu wyświetlać losową sentencje, lecz do tej pory, żadna nie została zdefiniowana." %]
++    [% DEFAULT quip = "$terms.Bugzilla chciałaby umieścić tu poradę, ale nikt żadnej nie dodał." %]
+     <a href="quips.cgi"><i>[% quip FILTER html %]</i></a>
+   [% END %]
+ 
+@@ -65,8 +65,8 @@
+ 
+ [% IF toolong %]
+   <h2>
+-    Ta lista jest bardzo duża, przyciski Następny/Poprzedni/Pierwszy/Ostatni nie
+-     zostaną wyświetlone na stronach [% terms.bledow %].
++    Ta lista jest zbyt długa dla małego rozumku [% terms.Bugzilli %]; przyciski
++    Następny/Poprzedni/Pierwszy/Ostatni nie będą wyświetlane dla poszczególnych [% terms.bledow %].
+   </h2>
+ [% END %]
+ 
+@@ -77,12 +77,7 @@
+ [%############################################################################%]
+ 
+ [% IF bugs.size > 9 %]
+-  Znaleziono [% bugs.size %] 
+-  [%+ IF bugs.size % 100 > 20 && bugs.size % 10 > 1 && bugs.size % 10 < 5 %]
+-    [%+ terms.bledy %].
+-  [% ELSE %]
+-    [%+ terms.bledow %].
+-  [% END %]
++  Liczba znalezionych [%+ terms.bledow %]: [% bugs.size %].
+ [% END %]
+ 
+ [%############################################################################%]
+@@ -108,10 +103,8 @@
+   [% terms.zeroSearchResults %].
+ [% ELSIF bugs.size == 1 %]
+   Znaleziono jeden [% terms.blad %].
+-[% ELSIF (bugs.size % 100 < 10 || bugs.size % 100 > 20) && bugs.size % 10 > 1 && bugs.size % 10 < 5 %]
+-  Znaleziono [% bugs.size %] [%+ terms.bledy %].
+ [% ELSE %]
+-  Znaleziono [% bugs.size %] [%+ terms.bledow %].
++  Liczba znalezionych [%+ terms.bledow %]: [% bugs.size %].
+ [% END %]
+ 
+ <br>
+@@ -152,13 +145,13 @@
+         [% IF bugs.size > 1 && caneditbugs && !dotweak %]
+           <a href="buglist.cgi?[% urlquerypart FILTER html %]
+             [%- "&order=$qorder" FILTER html IF order %]&amp;tweak=1"
+-            >Zmień&nbsp;wiele&nbsp;[% terms.bledow %]</a>
++            >Zmień&nbsp;wiele&nbsp;[% terms.bledow %]&nbsp;jednocześnie</a>
+           |
+         [% END %]
+ 
+         [% IF bugowners %]
+           <a href="mailto:
+-            [% bugowners FILTER html %]">Wyślij&nbsp;wiadomość&nbsp;do&nbsp;właściciela&nbsp;[% terms.bledu %]</a> |
++            [% bugowners FILTER html %]">Wyślij&nbsp;wiadomości&nbsp;do&nbsp;właścicieli&nbsp;[% terms.bledow %]</a> |
+         [% END %]
+       </td>
+     [% END %]
+@@ -171,14 +164,15 @@
+       <td valign="middle" nowrap="nowrap">
+         |
+         <a href="buglist.cgi?cmdtype=dorem&amp;remaction=forget&amp;namedcmd=
+-                [% searchname FILTER url_quote %]">Usuń&nbsp;zapytanie&nbsp;'
++                [% searchname FILTER url_quote %]">Zapomnij&nbsp;zapytanie&nbsp;'
+                 [% searchname FILTER html %]'</a>
+       </td>
+     [% ELSE %]
+-      <td> | </td>
++      <td>&nbsp;</td>
++      
+       <td valign="middle">
+         <form method="get" action="buglist.cgi">
+-          <input type="submit" value="Zapamiętaj"> jako 
++          <input type="submit" value="Zapamiętaj zapytanie"> jako 
+           <input type="hidden" name="newquery" 
+                  value="[% urlquerypart FILTER html %]">
+           <input type="hidden" name="cmdtype" value="doit">
+diff -ru list/quips.html.tmpl list2/quips.html.tmpl
+--- list/quips.html.tmpl	2004-06-01 08:56:58.000000000 +0200
++++ list2/quips.html.tmpl	2004-06-01 15:16:00.000000000 +0200
+@@ -29,16 +29,16 @@
+ [% PROCESS global/variables.none.tmpl %]
+ 
+ [% PROCESS global/header.html.tmpl
+-           title = "Sentencje $terms.Bugzilli"
+-           h1 = "Dodaj coś od siebie"
++           title = "System porad $terms.Bugzilli"
++           h1 = "Dodaj własny błyskotliwy nagłówek"
+  %]
+ 
+ [% IF added_quip %]
+   <p>
+     <font color="red">
+-      Twoja sentencja '<tt>[% added_quip FILTER html %]</tt>' została dodana.
++      Twoja porada '<tt>[% added_quip FILTER html %]</tt>' została dodana.
+       [% IF Param("enablequips") == "approved" AND !user.groups.admin %]
+-        Będzie ona używana, od chwili jej zatwierdzenia.
++        Zostanie ona wykorzystana po jej zatwierdzeniu.
+       [% END %]
+     </font>
+   </p>
+@@ -47,22 +47,21 @@
+ [% IF deleted_quip %]
+   <p>
+     <font color="red">
+-      Sentencja '<tt>[% deleted_quip FILTER html %]</tt>' została usunięta.
++      Porada '<tt>[% deleted_quip FILTER html %]</tt>' została usunięta.
+     </font>
+   </p>
+ [% END %]
+ 
+ [% IF approved or unapproved %]
+-  <p>[% approved.size %] sentencji zatwierdzonych, [% unapproved.size %] niezatwierdzonych</p>
++  <p>Liczba zatwierdzonych porad: [% approved.size %], liczba niezatwierdzonych: [% unapproved.size %]</p>
+ [% END %]
+ 
+ <p>
+-  [% terms.Bugzilla %] wyświetla losowo wybraną sentencje, na każdej stronie z
+-  listą [% terms.bladow %], zbiór sentencji może zostać rozszerzona przez Ciebie.
+-  Wpisz coś ciekawego, zabawnego lub nudnego (prosimy jednak bez rzeczy brzydkich
+-  lub obscenicznych) i kliknij na przycisk.
++  [% terms.Bugzilla %] wybierze losową poradę jako nagłówek każdej listy [% terms.bledow %]. 
++  Listę porad można powiększyć. Wpisz coś błyskotliwego, zabawnego lub nudnego
++  (ale nie obscenicznego ani obraźliwego!) i kliknij przycisk.
+   [% IF Param("enablequips") == "approved" AND !user.groups.admin %]
+-    Twoja sentencja musi zostać zatwierdźona, zanim zostanie użyta po raz pierwszy.
++    Twoja porada musi zostać zatwierdzona zanim zostanie użyta.
+   [% END %]
+ </p>
+ 
+@@ -70,14 +69,14 @@
+   <input type="hidden" name="action" value="add">
+   <input size="80" name="quip">
+   <p>
+-    <input type="submit" value="Dodaj sentencję">
++    <input type="submit" value="Dodaj tę poradę">
+   </p>
+ </form>
+ 
+ [% IF show_quips %]
+   [% IF !UserInGroup('admin') %]
+     <h2>
+-      Istniejące sentencje:
++      Istniejące porady:
+     </h2>
+     <ul>
+       [% FOREACH quipid = quipids %]
+@@ -86,20 +85,19 @@
+       [% END %]
+     </ul>
+   [% ELSE %]
+-    <h2>Edytuj istniejące sentencje:</h2>
++    <h2>Edytuj istniejące porady:</h2>
+     <p>
+-      <strong>Uwaga:</strong> wyświetlane będą wyłącznie sentencje, które zostały uprzednio
+-      zaakceptowane. Jeśli enablequips jest ustawione na <q>on</q>, nowe sentencje
+-      będą akceptowane automatycznie.
++      <strong>Uwaga:</strong> Jedynie zatwierdzona porady będą wyświetlane.
++      Jeśli zmienna enablequips ma wartość <q>on</q>, wprowadzone porady są automatycznie zatwierdzane.
+     </p>
+     <form name="editform" method="post" action="quips.cgi">
+-      <input type="hidden" name="action" value="approve">
++      <input type="hidden" name="action" value="zatwierdź">
+       <table border="1">
+         <thead><tr>
+-          <th>Sentencja</th>
++          <th>Porada</th>
+           <th>Autor</th>
+-          <th>Akcja</th>
+-          <th>Zatwierdzona</th>
++          <th>Działanie</th>
++          <th>Zatwierdzone</th>
+         </tr></thead><tbody>
+         [% FOREACH quipid = quipids %]
+           <tr>
+@@ -138,16 +136,16 @@
+                       +'value="Zaznacz wszystkie" onclick="SetCheckboxes(true);">');
+         //--></script>
+ 
+-      <input type="submit" value="Zatwierdź">
++      <input type="submit" value="Zaktualizuj">
+     </form>
+     <br>
+   [% END %]
+ [% ELSE %]
+   <p>
+-    Ci którzy lubią mądrość w dużej ilości mogą
+-    <a href="quips.cgi?action=show">obejrzeć
++    Ci, którzy lubią wiedzę w większych dawkach, mogą
++    <a href="quips.cgi?action=show">wyświetlić
+     [% IF UserInGroup('admin') %]
+-      lub edytować
++      i edytować
+     [% END %]
+     całą listę</a>.
+   </p>
+diff -ru list/table.html.tmpl list2/table.html.tmpl
+--- list/table.html.tmpl	2004-05-31 01:59:08.000000000 +0200
++++ list2/table.html.tmpl	2004-06-01 15:16:00.000000000 +0200
+@@ -40,9 +40,9 @@
+ 
+ [% abbrev = 
+   {
+-    "bug_severity"         => { maxlength => 3 , title => "Wag" } , 
++   "bug_severity"         => { maxlength => 3 , title => "Waga" } , 
+     "priority"             => { maxlength => 3 , title => "Pri" } , 
+-    "rep_platform"         => { maxlength => 3 , title => "Pla" } , 
++    "rep_platform"         => { maxlength => 3 , title => "Plt" } , 
+     "bug_status"           => { maxlength => 4 } , 
+     "assigned_to"          => { maxlength => 30 , ellipsis => "..." } , 
+     "assigned_to_realname" => { maxlength => 20 , ellipsis => "..." } , 
+@@ -53,12 +53,12 @@
+     "resolution"        => { maxlength => 4 } , 
+     "short_desc"        => { wrap => 1 } ,
+     "short_short_desc"  => { maxlength => 60 , ellipsis => "..." , wrap => 1 } ,
+-    "status_whiteboard" => { title => "Tablica" , wrap => 1 } , 
+-    "component"         => { maxlength => 8 , title => "Komp" } , 
++    "status_whiteboard" => { title => "PodsumowanieStatusu" , wrap => 1 } , 
++    "component"         => { maxlength => 8 , title => "Skł" } , 
+     "product"           => { maxlength => 8 } , 
+     "version"           => { maxlength => 5 , title => "Wers" } , 
+     "op_sys"            => { maxlength => 4 } , 
+-    "target_milestone"  => { title => "WerDoc" } , 
++    "target_milestone"  => { title => "Cel" } , 
+     "percentage_complete" => { format_value => "%d %%" } , 
+   }
+ %]
+

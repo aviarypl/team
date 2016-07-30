@@ -1,0 +1,59 @@
+diff --git a/opt/venus/planet/config.py b/opt/venus/planet/config.py
+index b8fb23d..c58700e 100644
+--- a/opt/venus/planet/config.py
++++ b/opt/venus/planet/config.py
+@@ -97,6 +97,7 @@ def __init__():
+     define_planet('log_level', "WARNING")
+     define_planet('log_format', "%(levelname)s:%(name)s:%(message)s")
+     define_planet('date_format', "%B %d, %Y %I:%M %p")
++    define_planet('date_format_q_index', '')
+     define_planet('new_date_format', "%B %d, %Y")
+     define_planet('generator', 'Venus')
+     define_planet('generator_uri', 'http://intertwingly.net/code/venus/')
+@@ -112,6 +113,7 @@ def __init__():
+     define_planet_int('feed_timeout', 20)
+     define_planet_int('cache_keep_entries', 10)
+ 
++    define_planet_list('date_format_q')
+     define_planet_list('template_files')
+     define_planet_list('bill_of_materials')
+     define_planet_list('template_directories', '.')
+diff --git a/opt/venus/planet/shell/tmpl.py b/opt/venus/planet/shell/tmpl.py
+index 5ec7ca9..715639b 100644
+--- a/opt/venus/planet/shell/tmpl.py
++++ b/opt/venus/planet/shell/tmpl.py
+@@ -56,10 +56,12 @@ def Plain(value):
+     return str(stripHtml(value))
+ 
+ def PlanetDate(value):
+-    return time.strftime(config.date_format(), value)
++    q = int(time.strftime(config.date_format_q_index(), value))
++    return time.strftime(config.date_format(), value).replace("%q", config.date_format_q()[q])
+ 
+ def NewDate(value):
+-    return time.strftime(config.new_date_format(), value)
++    q = int(time.strftime(config.date_format_q_index(), value))
++    return time.strftime(config.new_date_format(), value).replace("%q", config.date_format_q()[q])
+ 
+ def Rfc822(value):
+     return time.strftime("%a, %d %b %Y %H:%M:%S +0000", value)
+diff --git a/org.mozillapl.planet.conf/config.ini b/org.mozillapl.planet.conf/config.ini
+index d508ea7..638f299 100644
+--- a/org.mozillapl.planet.conf/config.ini
++++ b/org.mozillapl.planet.conf/config.ini
+@@ -14,10 +14,12 @@ template_files=/aviary/org.mozillapl.planet.conf/index.html.tmpl /aviary/org.moz
+ 
+ activity_threshold=365
+ cache_keep_entries=25
+-date_format=%e %B %Y, %H:%M
++date_format=%e %q %Y, %H:%M
++date_format_q=0 stycznia lutego marca kwietnia maja czerwca lipca sierpnia września października listopada grudnia
++date_format_q_index=%m
+ filter=aviary|bugzill|firefo|gecko|lightning|mozill|seamonkey|thunderbir|ecmascript
+ items_per_page=100
+-new_date_format=%e %B %Y
++new_date_format=%e %q %Y
+ 
+ # blogi
+ 
+

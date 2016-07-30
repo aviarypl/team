@@ -1,0 +1,80 @@
+diff --git a/toolkit/chrome/mozapps/extensions/blocklist.dtd b/toolkit/chrome/mozapps/extensions/blocklist.dtd
+new file mode 100644
+--- /dev/null
++++ b/toolkit/chrome/mozapps/extensions/blocklist.dtd
+@@ -0,0 +1,10 @@
++<!ENTITY blocklist.title "Dodatki potencjalnie powodujące problemy">
++<!ENTITY blocklist.style "width: 45em; height: 30em">
++<!ENTITY blocklist.summary "Program &brandShortName; ustalił, że następujące dodatki są znane z powodowania problemów związanych ze stabilnością lub bezpieczeństwem:">
++<!ENTITY blocklist.softblocked "Ze względów bezpieczeństwa zalecane jest ponowne uruchomienie programu z wyłączonymi wymienionymi dodatkami">
++<!ENTITY blocklist.hardblocked "Istnieje wysokie ryzko iż wymienione dodatki spowodują problemy ze stabilonością bądź bezpieczeństwem wobec czego zostały zablokowane, jednak konieczne jest ponowne uruchomienie programu dla ich całkowitego wyłączenia.">
++<!ENTITY blocklist.softandhard "Dodatki dla którtch istnieje wysokie ryzyko wystąpienia problemów ze stabilnością lub bezpieczeństwem zostały zablokowane. Dla pozostałych ryzyko jest mniejsze, jednakże ich wyłączenie jest róownież zalecane (wyłączenie dodatków i ponowne uruchomienie programu).">
++<!ENTITY blocklist.moreinfo "Więcej informacji">
++
++<!ENTITY blocklist.accept.label "Uruchom ponownie program &brandShortName;">
++<!ENTITY blocklist.accept.accesskey "U"
+diff --git a/toolkit/chrome/mozapps/extensions/extensions.dtd b/toolkit/chrome/mozapps/extensions/extensions.dtd
+--- a/toolkit/chrome/mozapps/extensions/extensions.dtd
++++ b/toolkit/chrome/mozapps/extensions/extensions.dtd
+@@ -107,16 +107,17 @@
+ <!ENTITY includeUpdate.label              "Dołącz tę aktualizację"><!-- fuzzy -->
+ <!ENTITY includeUpdate.accesskey          "D">
+ <!ENTITY includeUpdate.tooltip            "Dołącz ten dodatek podczas instalowania aktualizacji"><!-- fuzzy -->
+ 
+ <!-- Status Messsages -->
+ <!ENTITY insecureUpdate.label             "Nie dostarcza bezpiecznych aktualizacji.">
+ <!ENTITY needsDependencies.label          "Wymaga dodatkowych elementów.">
+ <!ENTITY blocklisted.label                "Wyłączony z przyczyn bezpieczeństwa.">
++<!ENTITY softBlocklisted.label            "Może powodować problemy ze stabilnością lub bezpieczeństem.">
+ <!ENTITY toBeDisabled.label               "Zostanie wyłączony przy ponownym uruchomieniu programu &brandShortName;.">
+ <!ENTITY toBeEnabled.label                "Zostanie włączony przy ponownym uruchomieniu programu &brandShortName;.">
+ <!ENTITY toBeInstalled.label              "Zostanie zainstalowany przy ponownym uruchomieniu programu &brandShortName;.">
+ <!ENTITY toBeUninstalled.label            "Zostanie odinstalowany przy ponownym uruchomieniu programu &brandShortName;.">
+ <!ENTITY toBeUpdated.label                "Zostanie zaktualizowany przy ponownym uruchomieniu programu &brandShortName;.">
+ 
+ <!ENTITY getExtensions.label              "Pobierz rozszerzenia">
+ <!ENTITY getThemes.label                  "Pobierz motywy">
+@@ -163,8 +164,11 @@
+ <!ENTITY installFailure.label             "Instalacja nie powiodła się.">
+ 
+ <!ENTITY progressStatus.label             "Sprawdzanie dostępności aktualizacji">
+ 
+ <!ENTITY eula.title                       "Umowa licencyjna użytkownika">
+ <!ENTITY eula.width                       "560px">
+ <!ENTITY eula.height                      "400px">
+ <!ENTITY eula.accept                      "Akceptuję, zainstaluj…">
++
++<!ENTITY blocklist.blocked.label          "Zablokowany">
++<!ENTITY blocklist.checkbox.label         "Wyłącz">
+diff --git a/toolkit/chrome/mozapps/extensions/extensions.properties b/toolkit/chrome/mozapps/extensions/extensions.properties
+--- a/toolkit/chrome/mozapps/extensions/extensions.properties
++++ b/toolkit/chrome/mozapps/extensions/extensions.properties
+@@ -54,21 +54,22 @@ incompatibleExtension=Wyłączone - niek
+ incompatibleExtension=Wyłączone - niekompatybilne z programem %S %S
+ incompatibleAddonMsg=Niekompatybilny z %S %S
+ insecureUpdateMessage=Dodatek "%S" nie zostanie zainstalowany, ponieważ nie dostarcza bezpiecznych aktualizacji.
+ 
+ invalidGUIDMessage=Element "%S" nie mógł być zainstalowany z powodu błędu w jego pliku instalacyjnym. ("%S" nie jest prawidłowym GUID). Poinformuj o tym problemie autora tego elementu.
+ invalidVersionMessage=Nie udało się zainstalować elementu "%S", ponieważ informacja o jego wersji ("%S") jest niepoprawna. Proszę skontaktować się z autorem w sprawie tego problemu.
+ incompatiblePlatformMessage=Element "%S" nie mógł zostać zainstalowany, ponieważ nie jest kompatybilny z architekturą programu %S (%S). Proszę skontaktować się z autorem tego elementu.
+ 
+-blocklistedInstallTitle=To rozszerzenie nie jest bezpieczne
+-blocklistedInstallMsg=Rozszerzenie %S jest niebezpieczne i nie może zostać zainstalowane
+-blocklistNotifyTitle2=Dodatki mogą stwarzać problemy
+-blocklistNotifyMsg2=Program %S ustalił, że poniższe dodatki mogą być niestabilne lub niebezpieczne.
+-blocklistRestartMsg2=Należy uruchomić program %S ponownie, aby te dodatki mogły zostać wyłączone.
++blocklistedInstallTitle2=Ten dodatek jest niebezpieczny
++blocklistedInstallMsg2=Jest wysoce prawodopodobne, że dodatek %S będzie powodował problemy ze stabilnością lub bezpieczeństwem i nie może zostać zainstalowany.
++softBlockedInstallTitle=Ten dodatek może być niebezpieczny
++softBlockedInstallMsg=Dodatek %S może powodować problemy ze stabilnością lub bezpieczeństwem, jego instalacja jest odradzana.
++softBlockedInstallAcceptLabel=Zainstaluj mimo to
++softBlockedInstallAcceptKey=Z
+ 
+ missingFileTitle=Brak pliku
+ missingFileMessage=Program %S nie mógł załadować tego elementu, ponieważ brakuje pliku %S.
+ 
+ malformedMessage=Program %S nie mógł zainstalować tego elementu, ponieważ "%S" (dołączony do elementu) jest uszkodzony. Proszę skontaktować się z autorem w sprawie tego problemu.
+ malformedTitle=Uszkodzony plik
+ 
+ malformedRegistrationTitle=Rejestracja Chrome nie powiodła się.
+

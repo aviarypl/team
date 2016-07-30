@@ -1,0 +1,60 @@
+Index: l10n/pl/browser/chrome/help/cookies.xhtml
+===================================================================
+RCS file: /l10n/l10n/pl/browser/chrome/help/cookies.xhtml,v
+retrieving revision 1.4.2.2
+diff -u -r1.4.2.2 cookies.xhtml
+--- l10n/pl/browser/chrome/help/cookies.xhtml	28 Oct 2005 15:32:03 -0000	1.4.2.2
++++ l10n/pl/browser/chrome/help/cookies.xhtml	29 Oct 2005 18:59:27 -0000
+@@ -44,7 +44,7 @@
+ <p>Ciasteczka tworzone są podczas przeglądania stron internetowych. Na żądanie witryny przeglądarka może utworzyć i&nbsp;zapisać na komputerze użytkownika jedno lub więcej ciasteczek z&nbsp;danymi, przekazanymi przez witrynę. Gdy użytkownik ponownie odwiedza dane strony, na żądanie witryny przeglądarka odsyła ciasteczka, które zostały przez nią utworzone. Pozwala to na zaprezentowanie użytkownikowi informacji dostosowanych do jego potrzeb lub zgodnie z&nbsp;uprzednio wybranymi przez niego ustawieniami.</p>
+ 
+ 
+-<p>Należy jednak zauważyć, że witryna będzie miała dostęp wyłącznie do danych:<ol><li>świadomie przekazanych jej przez użytkownika oraz</li><li>utworzonych przez siebie.</li></ol> To znaczy, witryna nie otrzyma informacji o&nbsp;adresie e-mail użytkownika, dopóki nie zostanie on świadomie przez użytkownika udostępniony, nawet jeżeli ten adres e-mail został zapisany w&nbsp;innym pliku na komputerze użytkownika. Dodatkowo, adres e-mail (lub dowolne inne dane) zapisane w&nbsp;ciasteczku utworzonym przez jedną witrynę, nie będzie udostępniany żadnej innej witrynie, która go nie utworzyła.
++<p>Należy jednak zauważyć, że witryna będzie miała dostęp wyłącznie do danych:<ol><li>Świadomie przekazanych jej przez użytkownika.</li><li>Utworzonych przez siebie.</li></ol> To znaczy, że witryna nie otrzyma informacji o&nbsp;adresie e-mail użytkownika, dopóki nie zostanie on świadomie przez użytkownika udostępniony, nawet jeżeli ten adres e-mail został zapisany w&nbsp;innym pliku na komputerze użytkownika. Dodatkowo, adres e-mail (lub dowolne inne dane) zapisane w&nbsp;ciasteczku utworzonym przez jedną witrynę, nie będzie udostępniany żadnej innej witrynie, która go nie utworzyła.
+ <br />Za pomocą mechanizmu ciasteczek witryna nie uzyskuje również dostępu do żadnych innych informacji przechowywanych na komputerze użytkownika.</p>
+ 
+ 
+@@ -62,9 +62,9 @@
+ użytkownik może nakazać przeglądarce &brandShortName; usuwać ciasteczka podczas zamykania 
+ programu. Aby to zrobić, należy:</p>
+ <ol>
+-  <li>Wybrać &pref.menuPath;</li>
++  <li>Wybrać &pref.menuPath;.</li>
+   <li>Wybrać panel <em>Prywatność</em>, a&nbsp;następnie przejść do karty <em>Ciasteczka</em>.</li>
+-  <li>Zaznaczyć opcję <q>aż zamknę program &brandShortName;</q> z&nbsp;pola wyboru <q>Przechowuj ciasteczka</q></li>
++  <li>Zaznaczyć opcję <q>aż zamknę program &brandShortName;</q> z&nbsp;pola wyboru <q>Przechowuj ciasteczka</q>.</li>
+ </ol>
+ 
+ <p>Aby zezwolić zaufanym witrynom przechowywać ciasteczka permanentnie (np. aby umożliwić
+@@ -141,17 +141,17 @@
+ należy użyć, jeśli nie ufa się danej witrynie lub podejrzewa ją o&nbsp;naruszanie prywatności.</dd>
+   <dt>Zastosuj wobec wszystkich ciasteczek z&nbsp;tej witryny</dt>
+   <dd>Jeśli &brandShortName; ma zapamiętać decyzję użytkownika dotyczącą ciasteczek z&nbsp;danej
+-witryny i&nbsp;nie pytać go o&nbsp;to ponownie, należy zaznaczyć to pole. Strona zostanie dodana do listy wyjątków w&nbsp;oknie <a href="#cookies_exceptions"><q>Ciasteczka &ndash; Wyjątki</q></a>,
++witryny i&nbsp;nie pytać go o&nbsp;to ponownie, należy zaznaczyć to pole. Strona zostanie dodana do listy wyjątków w&nbsp;oknie <a href="#cookies_exceptions"><q>Wyjątki &ndash; Ciasteczka</q></a>,
+ gdzie w&nbsp;razie potrzeby można później zmienić tą decyzję.</dd>
+ </dl>
+ 
+-<h2 id="cookies_exceptions">Okno <q>Ciasteczka &ndash; Wyjątki</q></h2>
++<h2 id="cookies_exceptions">Okno <q>Wyjątki &ndash; Ciasteczka</q></h2>
+ 
+-<p>Aby wyświetlić to okno, należy kliknąć przycisk <em>Wyjątki</em> na karcie <em>Ciasteczka</em> panelu <span class="noWin">preferencji</span><span class="win">opcji</span> <em>Prywatność</em>. W&nbsp;tym miejscu można ustalić wyjątki od ogólnych zasad obsługi ciasteczek &ndash; można danej witrynie zabronić lub zezwolić na ustawianie ciasteczek, albo zezwolić na przechowywanie ich tylko do chwili zamknięcia programu &brandShortName;.</p>
++<p>Aby wyświetlić to okno, należy kliknąć przycisk <em>Wyjątki</em> na karcie <em>Ciasteczka</em> panelu <span class="noWin">preferencji</span><span class="win">opcji</span> <em>Prywatność</em>. W&nbsp;tym miejscu można ustalić wyjątki od ogólnych zasad obsługi ciasteczek &ndash; można danej witrynie zabronić lub zezwolić na ustawianie ciasteczek &ndash; albo zezwolić na przechowywanie ich tylko do chwili zamknięcia programu &brandShortName;.</p>
+ 
+ <p>Aby dodać daną witrynę do tej listy, wystarczy wpisać jej nazwę domenową w&nbsp;pole
+ <em>Adres witryny</em>. Następnie należy kliknąć przycisk <em>Blokuj</em> &ndash; by
+-program &brandShortName; zawsze odrzucał ciasteczka z&nbsp;tej witryny, <em>Zezwól</em> &ndash; by przyjmował wszystkie ciasteczka z&nbsp;tej witryny, albo <em>Zezwól na czas sesji</em>
++program &brandShortName; zawsze odrzucał ciasteczka z&nbsp;tej witryny, <em>Zezwól</em> &ndash; by przyjmował wszystkie ciasteczka z&nbsp;tej witryny &ndash; albo <em>Zezwól na czas sesji</em>
+ by zezwolić na ciasteczka z&nbsp;tej witryny, ale usunąć je przy zamykaniu przeglądarki.</p>
+ 
+ <p>Aby usunąć witrynę z&nbsp;tej listy, należy ją zaznaczyć i&nbsp;kliknąć przycisk
+@@ -170,7 +170,7 @@
+ <p>Aby usunąć ciasteczko z&nbsp;listy, należy je zaznaczyć i&nbsp;kliknąć przycisk <em>Usuń ciasteczko</em>. Aby usunąć wszystkie ciasteczka danej witryny, należy zaznaczyć nazwę witryny i&nbsp;kliknąć
+ przyciski <em>Usuń ciasteczko(-a)</em>. Aby usunąć ciasteczka wszystkich witryn, należy
+ kliknąć przycisk <em>Usuń wszystkie ciasteczka</em> (ten sam efekt można uzyskać
+-klikając przycisk <em>Clear Cookies Now</em> w&nbsp;karcie preferencji  
++klikając przycisk <em>Wyczyść ciasteczka teraz</em> w&nbsp;karcie <span class="win">opcji</span><span class="noWin">preferencji</span>
+   <a href="prefs.xhtml#privacy_cookies"><em>Ciasteczka</em></a> w&nbsp;panelu
+   <em>Prywatność</em> okna <q>&pref.pluralCaps;</q>).</p>
+ 
+

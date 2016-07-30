@@ -1,0 +1,59 @@
+Index: trunk/locale/editor/editor.properties
+===================================================================
+--- trunk/locale/editor/editor.properties	(revision 10)
++++ trunk/locale/editor/editor.properties	(working copy)
+@@ -42,7 +42,7 @@
+ LoadingDone=Zako\u0144czono wczytywanie strony
+ InputError=B\u0142\u0105d
+ Alert=Ostrze\u017cenie
+-CantEditFramesetMsg=Kompozytor Stron nie mo\u017ce edytowa\u0107 zestaw\u00f3w ramek lub stron WWW zawieraj\u0105cych ramki typu <iframe>. W przypadku zestaw\u00f3w ramek nale\u017cy oddzielnie edytowa\u0107 poszczeg\u00f3lne ramki. W przypadku stron WWW z ramkami typu iframes, nale\u017cy zachowa\u0107 kopi\u0119 Strony i nast\u0119pnie usun\u0105\u0107 znacznik <iframe>.
++CantEditFramesetMsg=Kompozytor Stron nie mo\u017ce edytowa\u0107 zestaw\u00f3w ramek lub stron WWW zawieraj\u0105cych ramki typu <iframe>. W przypadku zestaw\u00f3w ramek nale\u017cy oddzielnie edytowa\u0107 poszczeg\u00f3lne ramki. W przypadku stron WWW z ramkami typu iframes, nale\u017cy zachowa\u0107 kopi\u0119 strony i nast\u0119pnie usun\u0105\u0107 znacznik <iframe>.
+ CantEditMimeTypeMsg=Ten typ strony nie mo\u017ce by\u0107 poddany edycji.
+ CantEditDocumentMsg=Ta strona nie mo\u017ce by\u0107 edytowana z nieznanych przyczyn.
+ CanEditOnlyHTMLDocuments=To nie jest dokument HTML
+@@ -55,7 +55,7 @@
+ BeforeValidate=przed sprawdzeniem poprawno\u015bci kodu
+ # LOCALIZATION NOTE (SaveFilePrompt, PublishPrompt): Don't translate %title% and %reason% (this is the reason for asking user to close, such as "before closing")
+ SaveFilePrompt=Czy zapisa\u0107 zmiany w pliku "%title%" %reason%?
+-PublishPrompt=Czy zachowa\u0107 zmiany w dokumencie "%title%" %reason%? 
++PublishPrompt=Czy zachowa\u0107 zmiany w dokumencie "%title%" %reason%?
+ SaveFileFailed=Zapisywanie pliku nie powiod\u0142o si\u0119!
+ 
+ # Publishing error strings:
+@@ -64,7 +64,7 @@
+ SubdirDoesNotExist=Podkatalog "%dir%" nie istnieje na tej witrynie lub nazwa pliku "%file%" zosta\u0142a ju\u017c u\u017cyta w innym podkatalogu.
+ FilenameIsSubdir=Nazwa pliku "%file%" zosta\u0142a ju\u017c u\u017cyta w innym podkatalogu.
+ ServerNotAvailable=W chwili obecnej serwer jest niedost\u0119pny. Nale\u017cy sprawdzi\u0107 po\u0142\u0105czenie, a nast\u0119pnie spr\u00f3bowa\u0107 ponownie.
+-Offline=W chwili obecnej Mozilla pracuje w trybie offline. Nale\u017cy klikn\u0105\u0107 ikon\u0119 po\u0142\u0105czenia w prawym dolnym rogu, aby przej\u015b\u0107 do trybu online.
++Offline=W chwili obecnej NVU pracuje w trybie offline. Nale\u017cy klikn\u0105\u0107 ikon\u0119 po\u0142\u0105czenia w prawym dolnym rogu, aby przej\u015b\u0107 do trybu online.
+ DiskFull=Zapisanie pliku "%file%" nie by\u0142o mo\u017cliwe z powodu braku miejsca na dysku.
+ NameTooLong=Nazwa pliku lub podkatalogu jest za d\u0142uga.
+ AccessDenied=Brak uprawnie\u0144 wymaganych do publikowania plik\u00f3w na tej witrynie.
+@@ -90,7 +90,7 @@
+ CancelPublishTitle=Anulowanie publikacji witryny
+ CancelPublishMessage=Anulowanie trwaj\u0105cego procesu publikowania witryny mo\u017ce spowodowa\u0107, \u017ce nie wszystkie pliki zostan\u0105 przes\u0142ane poprawnie. Czy na pewno anulowa\u0107 publikowanie plik\u00f3w?
+ CancelPublishContinue=Kontynuuj
+-AttributesFor=Bie\u017c\u0105ce atrybuty dla: 
++AttributesFor=Bie\u017c\u0105ce atrybuty dla:
+ MissingImageError=Wprowad\u017a lub wybierz nazw\u0119 istniej\u0105cego obrazka w formacie gif, jpg lub png.
+ EmptyHREFError=Wybierz adres aby utworzy\u0107 nowy odno\u015bnik.
+ LinkText=Tekst odno\u015bnika
+@@ -162,7 +162,7 @@
+ MissingSiteNameError=Wprowad\u017a nazw\u0119 publikowanej witryny
+ MissingPublishUrlError=Wprowad\u017a adres, pod kt\u00f3rym zostanie zapisana publikowana strona.
+ MissingPublishFilename=Wprowad\u017a nazw\u0119 pliku bie\u017c\u0105cej strony.
+-MissingPublishSiteError=Dane wymagane do opublikowania witryny nie zosta\u0142y wprowadzone. Mozilla wy\u015bwietli panel Ustawienia, w kt\u00f3rym nale\u017cy wprowadzi\u0107 dane niezb\u0119dne do publikacji tej witryny.
++MissingPublishSiteError=Dane wymagane do opublikowania witryny nie zosta\u0142y wprowadzone. NVU wy\u015bwietli panel Ustawienia, w kt\u00f3rym nale\u017cy wprowadzi\u0107 dane niezb\u0119dne do publikacji tej witryny.
+ DuplicateSiteNameError="%name%" ju\u017c istnieje. Nale\u017cy wprowadzi\u0107 inn\u0105 nazw\u0119 witryny.
+ AdvancedProperties=Zaawansowane w\u0142a\u015bciwo\u015bci...
+ AdvancedEditForCellMsg=Okno dialogowe Zaawansowanej edycji jest niedost\u0119pne, w przypadku gdy zaznaczono wi\u0119cej ni\u017c jedn\u0105 kom\u00f3rk\u0119.
+@@ -201,7 +201,7 @@
+ RevalidateAccessKey=w
+ 
+ DictDownldConfirmTit=Pobierz S\u0142owniki
+-DictDownldConfirmMsg=Bie\u017c\u0105ce okno Mozilli zostanie zamkni\u0119te, a po\u0142\u0105czenie zostanie przekierowane do serwera z modu\u0142em sprawdzania pisowni.
++DictDownldConfirmMsg=Bie\u017c\u0105ce okno NVU zostanie zamkni\u0119te, a po\u0142\u0105czenie zostanie przekierowane do serwera z modu\u0142em sprawdzania pisowni.
+ NoHeadTag=Kod \u017ar\u00f3d\u0142owy nie mo\u017ce zosta\u0107 z powrotem przekonwertowany w edytowany dokument, poniewa\u017c brakuje wymaganego znacznika <head>. Nale\u017cy doda\u0107 znacznik <head>.
+ NoBodyTag=Kod \u017ar\u00f3d\u0142owy nie mo\u017ce zosta\u0107 z powrotem przekonwertowany w edytowany dokument, poniewa\u017c brakuje wymaganego znacznika <body>. Nale\u017cy doda\u0107 znacznik <body>.
+ NoLinksToCheck=Brak element\u00f3w z odno\u015bnikami do sprawdzenia
+

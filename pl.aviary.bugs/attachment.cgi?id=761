@@ -1,0 +1,1322 @@
+Index: cookies.xhtml
+===================================================================
+RCS file: /l10n/l10n/pl/browser/chrome/help/cookies.xhtml,v
+retrieving revision 1.4.2.5
+diff -u -r1.4.2.5 cookies.xhtml
+--- cookies.xhtml	10 Sep 2006 15:09:33 -0000	1.4.2.5
++++ cookies.xhtml	13 Sep 2006 21:10:32 -0000
+@@ -62,13 +62,12 @@
+ użytkownik może nakazać przeglądarce &brandShortName; usuwać ciasteczka podczas zamykania 
+ programu. Aby to zrobić, należy:</p>
+ <ol>
+-  <li>Wybrać &pref.menuPath;.</li>
+-  <li>Wybrać panel <em>Prywatność</em>, a&nbsp;następnie przejść do karty <em>Ciasteczka</em>.</li>
+-  <li>Zaznaczyć opcję <q>aż zamknę program &brandShortName;</q> z&nbsp;pola wyboru <q>Przechowuj ciasteczka</q>.</li>
++  <li>Wybrać &pref.menuPath; i&nbsp;otworzyć panel <em>Prywatność</em>.</li>
++  <li>Wybrać opcję <q>do zamknięcia programu &brandShortName;</q> z&nbsp;listy <q>Przechowuj:</q>.</li>
+ </ol>
+ 
+ <p>Aby zezwolić zaufanym witrynom przechowywać ciasteczka permanentnie (np. aby umożliwić
+-automatyczne logowanie do danej witryny), należy kliknąć przycisk <a href="#cookies_exceptions"><em>Wyjątki</em></a>, wprowadzić adres witryny i&nbsp;kliknąć
++automatyczne logowanie do danej witryny), należy kliknąć przycisk <a href="#cookies_exceptions"><em>Wyjątki...</em></a>, wprowadzić adres witryny i&nbsp;kliknąć
+ <em>Zezwól</em>.</p>
+ 
+ <h3 id="all_the_settings">Wszystkie ustawienia</h3> 
+@@ -77,42 +76,14 @@
+   &brandShortName;:</p> 
+ 
+ <dl>
+-  <dt>Zezwól witrynom na ustawianie ciasteczek</dt>
+-  <dd><p>Wyłączenie tej opcji uniemożliwi przechowywanie ciasteczek na komputerze użytkownika. Należy jednak zauważyć, że niektóre witryny mogą nie działać poprawnie w&nbsp;przypadku, gdy możliwość akceptacji ciasteczek zostanie wyłączona. Aby mimo wyłączenia obsługi ciasteczek zezwolić konkretnym witrynom na ich używanie, należy kliknąć przycisk <a href="#cookies_exceptions"><em>Wyjątki</em></a>, wprowadzić adres witryny i&nbsp;kliknąć
++  <dt>Akceptuj ciasteczka</dt>
++  <dd><p>Wyłączenie tej opcji uniemożliwi przechowywanie ciasteczek na komputerze użytkownika. Należy jednak zauważyć, że niektóre witryny mogą nie działać poprawnie w&nbsp;przypadku, gdy możliwość akceptacji ciasteczek zostanie wyłączona. Aby mimo wyłączenia obsługi ciasteczek zezwolić konkretnym witrynom na ich używanie, należy kliknąć przycisk <a href="#cookies_exceptions"><em>Wyjątki...</em></a>, wprowadzić adres witryny i&nbsp;kliknąć
+ <em>Zezwól</em> lub <em>Zezwól na czas sesji</em>.</p></dd>
+-  <dt>wyłącznie z&nbsp;pierwotnego serwera</dt>
+-  <dd>
+-  	<p>Mechanizm obsługi ciasteczek został tak skonstruowany, aby dane zawarte w&nbsp;ciasteczku utworzonym przez daną witrynę były ponownie udostępniane wyłącznie tej samej witrynie (serwerowi). Przeglądarka nie udostępnia ciasteczek witynie, która ich nie utworzyła. Dzięki temu ciasteczka umożliwiają analizę infromacji o&nbsp;preferencjach i&nbsp;zachowaniach użytkownika wyłącznie w&nbsp;obrębie danej witryny i&nbsp;nie umożliwiają dostępu do innych danych lub utworzonych przez inne strony znajdujące się na innych serwerach.</p>
+-
+-	<p>Wielokrotnie jednak zdarza się, że dana witryna - A, z&nbsp;którą nawiązano bezpośrednie połączenie
+-	udostępnia treści (reklamy, dane, obrazki, informacje itp), przechowywane na
+-	innej witrynie - B. W&nbsp;takim przypadku, przy domyślnych ustawieniach przeglądarki, witryna B
+-	również dysponuje możliwością tworzenia i&nbsp;przechowywania ciasteczek, nawet pomimo tego, że
+-	użytkownik nie odwiedził jej bezpośrednio.</p>
+-
+-	<p>Niekiedy zamiast zewnętrznych treści wykorzystywane są niewidoczne obrazki, które mają
+-	bardzo niewielkie rozmiary lub są przezroczyste. W&nbsp;takim przypadku pobieranie tych
+-	obrazków również umożliwia tworzenia i&nbsp;późniejsze odczytywanie ciasteczek przez
+-	zewnętrzne witryny. Taki sposób łączenia ciasteczek z&nbsp;niewidocznymi obrazkami jest
+-	często określany mianem internetowych pluskiew (ang. web bugs lub beacons).</p>
+-
+-	<p>Za pomocą tego mechanizmu witryny mają możliwość gromadzenia i&nbsp;analizy zachowań,
+-	preferencji i&nbsp;innych danych dotyczących użytkownika w&nbsp;obrębie szerszej grupy witryn.
+-	Na przykład firma posiadająca szereg witryn z&nbsp;różnymi towarami i&nbsp;usługami mogłaby
+-	w ten sposób centralnie analizować preferencje użytkownika, zamiast korzystać z
+-	ciasteczek tworzonych na poszczególnych witrynach.</p>
+-
+-	<p>Zaznaczenie tej opcji spowoduje, że przeglądarka odrzuci żądania tworzenia i&nbsp;odczytywania
+-	ciasteczek pochodzące witryn, z&nbsp;którymi nie nawiązano połączenia bezpośrednio.</p>
+-  </dd>
+-  <dt>chyba że usunąłem ciasteczka ustawione przez tę witrynę</dt>
+-  <dd><p>&brandShortName; nie pozwoli na ustawianie ciasteczek przez witryny,
+-których ciasteczka zostały usunięte z&nbsp;listy w&nbsp;oknie <em>Pokaż ciasteczka</em>, podczas gdy to pole jest zaznaczone.</p></dd>  <!-- XXXmarcoos Noż cholera, nie mogę... Czy my naprawdę musimy nie używać "ty"? -->
+-  <dt>Przechowuj ciasteczka:</dt>
++  <dt>Przechowuj:</dt>
+   <dd>
+   <ul>
+-  	<li><strong>aż wygasną</strong> &ndash; w&nbsp;przypadku zaznaczenia tej opcji, ciasteczko zostanie usunięte, gdy tylko minie termin jego wygaśnięcia.</li>
+-  	<li><strong>do końca sesji</strong> &ndash; w&nbsp;przypadku zaznaczenia tej opcji wszystkie ciasteczka zostaną usunięte podczas kolejnego uruchomienia
++  	<li><strong>aż wygasną</strong> &ndash; w&nbsp;przypadku zaznaczenia tej opcji, ciasteczko zostanie usunięte, gdy tylko minie termin jego wygaśnięcia, ustalony przez daną witrynę.</li>
++  	<li><strong>do zamknięcia programu &brandShortName;</strong> &ndash; w&nbsp;przypadku zaznaczenia tej opcji wszystkie ciasteczka zostaną usunięte podczas kolejnego uruchomienia
+ 	przeglądarki. Witryny, które wymagają włączenia mechanizmu obsługi ciasteczek, będą działały poprawnie,
+ 	jednak po ponownym uruchomieniu przeglądarki wszystkie witryny będą traktować użytkownika
+ 	tak, jakby odwiedzał je po raz pierwszy.</li>
+@@ -125,7 +96,7 @@
+ 
+ <h2 id="accepting_and_blocking_cookies">Akceptowanie i&nbsp;blokowanie ciasteczek</h2>
+ 
+-<p>Jeżeli użytkownik wybrał <q>pytaj za każdym razem</q> w&nbsp;polu <q>Przechowuj ciasteczka</q>, to przy każdym żądaniu utworzenia nowego ciasteczka przez witrynę, przeglądarka wyświetli okno dialogowe, za pomocą którego możliwe będzie zaakceptowanie lub odrzucenie ciasteczka z&nbsp;następującymi opcjami:</p>
++<p>Jeżeli użytkownik wybrał <q>pytaj za każdym razem</q> w&nbsp;polu <q>Przechowuj</q>, to przy każdym żądaniu utworzenia nowego ciasteczka przez witrynę, przeglądarka wyświetli okno dialogowe, za pomocą którego możliwe będzie zaakceptowanie lub odrzucenie ciasteczka z&nbsp;następującymi opcjami:</p>
+ 
+ <dl>
+   <dt>Zezwól</dt>
+@@ -147,7 +118,7 @@
+ 
+ <h2 id="cookies_exceptions">Okno <q>Wyjątki &ndash; Ciasteczka</q></h2>
+ 
+-<p>Aby wyświetlić to okno, należy kliknąć przycisk <em>Wyjątki</em> na karcie <em>Ciasteczka</em> panelu <span class="noWin">preferencji</span><span class="win">opcji</span> <em>Prywatność</em>. W&nbsp;tym miejscu można ustalić wyjątki od ogólnych zasad obsługi ciasteczek &ndash; można danej witrynie zabronić lub zezwolić na ustawianie ciasteczek &ndash; albo zezwolić na przechowywanie ich tylko do chwili zamknięcia programu &brandShortName;.</p>
++<p>Aby wyświetlić to okno, należy kliknąć przycisk <em>Wyjątki...</em> na karcie <em>Ciasteczka</em> panelu <span class="noWin">preferencji</span><span class="win">opcji</span> <em>Prywatność</em>. W&nbsp;tym miejscu można ustalić wyjątki od ogólnych zasad obsługi ciasteczek &ndash; można danej witrynie zabronić lub zezwolić na ustawianie ciasteczek &ndash; albo zezwolić na przechowywanie ich tylko do chwili zamknięcia programu &brandShortName;.</p>
+ 
+ <p>Aby dodać daną witrynę do tej listy, wystarczy wpisać jej nazwę domenową w&nbsp;pole
+ <em>Adres witryny</em>. Następnie należy kliknąć przycisk <em>Zablokuj</em> &ndash; by
+@@ -169,12 +140,9 @@
+ 
+ <p>Aby usunąć ciasteczko z&nbsp;listy, należy je zaznaczyć i&nbsp;kliknąć przycisk <em>Usuń ciasteczko</em>. Aby usunąć wszystkie ciasteczka danej witryny, należy zaznaczyć nazwę witryny i&nbsp;kliknąć
+ przyciski <em>Usuń ciasteczko(-a)</em>. Aby usunąć ciasteczka wszystkich witryn, należy
+-kliknąć przycisk <em>Usuń wszystkie ciasteczka</em> (ten sam efekt można uzyskać
+-klikając przycisk <em>Wyczyść ciasteczka teraz</em> w&nbsp;karcie <span class="win">opcji</span><span class="noWin">preferencji</span>
+-  <a href="prefs.xhtml#privacy_cookies"><em>Ciasteczka</em></a> w&nbsp;panelu
+-  <em>Prywatność</em> okna <q>&pref.pluralCaps;</q>).</p>
++kliknąć przycisk <em>Usuń wszystkie ciasteczka</em>.</p>
+ 
+-<div class="contentsBox"><em>7 lipca 2005</em></div>
++<div class="contentsBox"><em>13 września 2006</em></div>
+ 
+ <p>Copyright &copy; 2003-2006 Contributors to the Mozilla Help Viewer Project.</p>
+ </body>
+Index: download_manager.xhtml
+===================================================================
+RCS file: /l10n/l10n/pl/browser/chrome/help/download_manager.xhtml,v
+retrieving revision 1.5.2.6
+diff -u -r1.5.2.6 download_manager.xhtml
+--- download_manager.xhtml	3 Feb 2006 21:01:25 -0000	1.5.2.6
++++ download_manager.xhtml	13 Sep 2006 21:10:32 -0000
+@@ -66,9 +66,9 @@
+ 
+ <h2 id="download_manager_options">&pref.pluralCaps; Menedżera pobierania plików</h2>
+ 
+-<p>Aby przejrzeć opcje Menedżera pobierania plików, należy otworzyć panel <em>Pobieranie</em> w&nbsp;ogólnym oknie opcji (&pref.menuPath;). Więcej informacji na temat różnych opcji można znaleźć w&nbsp;rozdziale <q><a href="prefs.xhtml#downloads_options">&pref.pluralCaps;</a></q>.</p>
++<p>Aby przejrzeć opcje Menedżera pobierania plików, należy przejść do sekcji <em>Pobieranie</em> w&nbsp;paneli <em>Główne</em> okna <em>&pref.pluralCaps;</em>. Więcej informacji na temat różnych opcji można znaleźć w&nbsp;rozdziale <q><a href="prefs.xhtml#downloads">&pref.pluralCaps;</a></q>.</p>
+ 
+-<div class="contentsBox"><em>3 lutego 2006</em></div>
++<div class="contentsBox"><em>12 września 2006</em></div>
+ <p>Copyright &copy; 2003-2006 Contributors to the Mozilla Help Viewer Project.</p>
+ 
+ </body>
+Index: menu_reference.xhtml
+===================================================================
+RCS file: /l10n/l10n/pl/browser/chrome/help/menu_reference.xhtml,v
+retrieving revision 1.10.2.21
+diff -u -r1.10.2.21 menu_reference.xhtml
+--- menu_reference.xhtml	12 Sep 2006 19:38:29 -0000	1.10.2.21
++++ menu_reference.xhtml	13 Sep 2006 21:10:32 -0000
+@@ -216,7 +216,7 @@
+ 
+   <h3 id="home">Strona startowa</h3>
+   <p>Wyświetla stronę startową. Polecenie działa tak samo jak naciśnięcie przycisku <em>Strona startowa</em> na pasku narzędzi nawigacyjnych. 
+-  Chcąc zmienić stronę startową należy wybrać &pref.menuPath;<span class="menuPath"> &gt; Ogólne</span>, a&nbsp;następnie nacisnąć jeden z&nbsp;przycisków: <em>Użyj bieżącej strony</em> (jeśli akurat otwartych jest kilka kart, można mieć kilka stron startowych), <em>Użyj zakładki...</em> (pozwala na wybór strony lub kilku stron z&nbsp;zakładek), <em>Użyj pustej strony</em> lub wreszcie samemu wpisać nowy adres strony startowej.</p>
++  Chcąc zmienić stronę startową należy wybrać &pref.menuPath; i&nbsp;przejść do panelu <em>Główne</em>, a&nbsp;następnie nacisnąć jeden z&nbsp;przycisków: <em>Użyj bieżącej strony</em> (jeśli akurat otwartych jest kilka kart, można mieć kilka stron startowych), <em>Użyj zakładki...</em> (pozwala na wybór strony lub kilku stron z&nbsp;zakładek), <em>Użyj pustej strony</em> lub po prostu wpisać nowy adres strony startowej.</p>
+ 
+   <h3 id="closed_tabs">Ostatnio zamknięte karty</h3>
+   
+@@ -344,7 +344,7 @@
+   skrócona listą twórców.</p>
+ </div>
+ 
+-<div class="contentsBox"><em>29 sierpnia 2006</em></div>
++<div class="contentsBox"><em>13 września 2006</em></div>
+ <p>Copyright &copy; 2003-2006 Contributors to the Mozilla Help Viewer Project.</p>
+ </body>
+ </html>
+Index: popup.xhtml
+===================================================================
+RCS file: /l10n/l10n/pl/browser/chrome/help/popup.xhtml,v
+retrieving revision 1.5.2.5
+diff -u -r1.5.2.5 popup.xhtml
+--- popup.xhtml	10 Apr 2006 17:16:39 -0000	1.5.2.5
++++ popup.xhtml	13 Sep 2006 21:10:32 -0000
+@@ -53,28 +53,24 @@
+ 
+ <h2 id="popup_blocker_preferences">&pref.pluralCaps; mechanizmu blokowania wyskakujących okien</h2>
+ 
+-<div>Niniejszy podrozdział opisuje korzystanie z&nbsp;mechanizmu blokowania wyskakujących okien w&nbsp;przeglądarce &brandShortName;. Aby wyświetlić ustawienia mechanizmu blokowania wyskakujących okien z&nbsp;należy:
+-<ol>
+-  <li>Wybrać z&nbsp;menu &pref.menuPath;.</li>
+-  <li>Wybrać kategorię <em>Treść</em>.</li>
+-  <li>Nacisnąć przycisk <em>Uprawnione witryny</em>.</li>
+-</ol>
+-Za pomocą wyświetlonego okna dialogowego użytkownik może:
++<p>&pref.pluralCaps; mechanizmu blokowania wyskakujących okien znajdują się w <a href="prefs.xhtml#content_options">panelu Treść</a> okna &pref.menuPath;.</p>
++
++<p>W panelu tym dostępne są następujące &pref.plural; dotyczące ciasteczek:</p>
++
+ <ul>
+-  <li><strong>zablokować wyskakujące okna</strong>,</li>
+-  <li><strong>odblokować witryny</strong>: modyfikować listę witryn, którym zezwala się na wyświetlanie wyskakujących okien (dalej zwaną listą witryn uprzywilejowanych).
++  <li><strong>Zablokuj wyskakujące okna</strong>: odznaczenie tego pola spowoduje wyłączenie blokady wyskakujących okienek.</li>
++  <li><strong>Wyjątki</strong>: to okno zawiera listę witryn, którym zezwala się na wyświetlanie wyskakujących okien (dalej zwaną listą witryn uprawnionych).
+   <ul>
+-    <li><strong>Dodaj witrynę</strong>: przycisk pozwala dodać witrynę do listy uprzywilejowanych.</li>
+-    <li><strong>Usuń witrynę</strong>: przycisk pozwala usunąć zaznaczoną witrynę z&nbsp;listy uprzywilejowanych.</li>
+-    <li><strong>Usuń wszystkie witryny</strong>: przycisk pozwala usunąć wszystkie witryny z&nbsp;listy witryn uprzywilejowanych.</li>
++    <li><strong>Zezwól</strong>: przycisk pozwala dodać witrynę do listy uprawnionych. Adres dodawanej witryny należy wprowadzić w polu <em>Adres witryny</em>.</li>
++    <li><strong>Usuń witrynę</strong>: przycisk pozwala usunąć zaznaczoną witrynę z&nbsp;listy uprawnionych.</li>
++    <li><strong>Usuń wszystkie witryny</strong>: przycisk pozwala usunąć wszystkie witryny z&nbsp;listy uprawnionych.</li>
+   </ul>
+   </li>
+ </ul>
+-</div>
+ 
+ <p><strong>Uwaga</strong>: blokowanie wyskakujących okien nie zawsze działa i&nbsp;może przeszkadzać w&nbsp;korzystaniu z&nbsp;niektórych witryn. Więcej informacji o&nbsp;blokowaniu wyskakujących okien można uzyskać w&nbsp;części <a href="#what_are_popups">Czym są wyskakujące okna</a>.</p>
+ 
+-<div class="contentsBox"><em>14 maja 2005</em></div>
++<div class="contentsBox"><em>13 września 2006</em></div>
+ <p>Copyright &copy; 2003-2006 Contributors to the Mozilla Help Viewer Project.</p>
+ </body>
+ </html>
+Index: prefs.xhtml
+===================================================================
+RCS file: /l10n/l10n/pl/browser/chrome/help/prefs.xhtml,v
+retrieving revision 1.9.2.24
+diff -u -r1.9.2.24 prefs.xhtml
+--- prefs.xhtml	10 Sep 2006 06:32:44 -0000	1.9.2.24
++++ prefs.xhtml	13 Sep 2006 21:10:33 -0000
+@@ -9,12 +9,14 @@
+ Contributors:
+   David Tenser <tenser@comhem.se> (original author)
+   Steffen Wilberg <steffen.wilberg@web.de>
++  Ryan Flint <rflint@dslr.net>
++  Jeff Walden <jwalden+code@mit.edu>
+   Stanisław Małolepszy <staszyna@aviary.pl> (Polish translation for Firefox 1.0)
+-  Marek Stępień <marcoos@aviary.pl> (updates to Polish translation for Firefox 1.1)
++  Marek Stępień <marcoos@aviary.pl> (updates to Polish translation for Firefox 1.5 and 2.0)
+ -->
+ <html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+-	<title>&pref.pluralCaps; przeglądarki &brandShortName;</title>
++	<title>Opcje przeglądarki &brandFullName;</title>
+ 	<link rel="stylesheet" type="text/css" href="chrome://help/skin/helpFileLayout.css"/>
+ </head>
+ 
+@@ -23,13 +25,14 @@
+ <h1>&pref.pluralCaps; przeglądarki &brandShortName;</h1>
+ <div>Niniejszy dokument ma na celu wyjaśnienie znaczenia poszczególnych <span class="win">opcji</span><span class="noWin">preferencji</span> przeglądarki &brandShortName;.</div>
+ 
+-<div class="contentsBox">W&nbsp;tym rozdziale opisano następujące sekcje okna &pref.pluralCaps;:
++<div class="contentsBox">W&nbsp;tym rozdziale opisano następujące panele okna &pref.pluralCaps;:
+   <ul>
+-    <li><a href="#general_options">Ogólne</a></li>
+-    <li><a href="#privacy_options">Prywatność</a></li>
+-    <li><a href="#content_options">Treść</a></li>
++    <li><a href="#main_options">Główne</a></li>
+     <li><a href="#tabs_options">Karty</a></li>
+-    <li><a href="#downloads_options">Pobieranie</a></li>
++    <li><a href="#content_options">Treść</a></li>
++    <li><a href="#feeds_options">Kanały</a></li>
++    <li><a href="#privacy_options">Prywatność</a></li>
++    <li><a href="#security_options">Bezpieczeństwo</a></li>
+     <li><a href="#advanced_options">Zaawansowane</a></li>
+     
+   </ul>
+@@ -37,192 +40,153 @@
+ 
+ <p>Okno <span class="win">opcji</span><span class="noWin">preferencji</span> dostępne jest po wybraniu z&nbsp;menu &pref.menuPath;.</p>
+ 
+-<h2 id="general_options">&pref.pluralCaps;: Ogólne</h2>
+-	<p>Panel dostępny jest po kliknięciu ikony Ogólne w&nbsp;lewej cześci okna <span class="win">opcji</span><span class="noWin">preferencji</span>.</p>
+-	
+-	<h3 id="home_page">Strona startowa</h3>
+-	<p>W&nbsp;tym miejscu można określić witrynę (lub grupę witryn w&nbsp;kartach), które zostaną
+-	otwarte natychmiast po uruchomieniu przeglądarki &brandShortName;. Adres wybranej witryny
+-	można wpisać pole <em>Adres</em>.</p>
+-	
+-	<p>Aby ustawić aktualnie wyświetlaną witrynę jako stronę startową, należy nacisnąć przycisk
+-	<em>Użyj bieżącej strony</em>. W&nbsp;przypadku, gdy otwartych jest więcej kart, przycisk ten
+-	spowoduje ustawienie <strong>grupy kart jako strony startowej</strong>.</p>
+-
+-	<p>Aby ustawić jako stronę startową jedną z&nbsp;zakładek, należy nacisnąć przycisk 
+-	<em>Użyj zakładki...</em> Z&nbsp;listy zakładek można wybrać także cały folder. W&nbsp;takim przypadku
+-	każda zakładka z&nbsp;folderu zostanie otwarta w&nbsp;osobnej karcie.</p>
+-
+-	<p>Aby nie otwierać żadnej strony po uruchomieniu przeglądarki, należy skorzystać z&nbsp;przycisku
+-	<em>Użyj pustej strony</em>.</p>
+- 
+-    <h3 id="default_browser">Domyślna przeglądarka</h3>
+-    <p>Aby ustawić przeglądarkę &brandShortName; jako domyślną
+-	przeglądarkę systemu, należy nacisnąć przycisk <em>Ustaw jako domyślną przeglądarkę</em>.
+-	Domyślna przeglądarka używana jest automatycznie do otwierania adresów internetowych, plików HTML
+-	i innych popularnych formatów plików.</p>
+-
+-	<p>Aby program &brandShortName; sprawdzał przy uruchamianiu, czy jest domyślną przeglądarką, należy zaznaczyć opcję <em>Program &brandShortName; podczas uruchamiania powinien
+-sprawdzać, czy jest domyślną przeglądarką</em>.</p>
+-
+-    <h3 id="connection_settings">Ustawienia połączenia</h3>
+-    <p>Gdy komputer użytkownika wymaga połączenia do Internetu za pośrednictwem
+-	serwera proxy, konieczne może być odpowiednie skonfigurowanie przeglądarki.
+-	Serwer proxy jest pośrednikiem pomiędzy komputerem użytkownika, a&nbsp;siecią Internet.
+-	Przechwytuje wszystkie żądania i&nbsp;sprawdza, czy może dane żądanie spełnić,
+-	korzystając z&nbsp;własnej pamięci podręcznej. Serwery proxy stosowane są do
+-	zwiększenia wydajności działania sieci, filtrowania żądań i&nbsp;zwiększenia
+-	bezpieczeństwa. Często są też częścią firmowej zapory sieciowej (<abbr title="po angielsku">ang.</abbr> <q lang="en">firewall</q>).</p>
++<h2 id="main_options">&pref.pluralCaps;: Główne</h2>
+ 
+-	<p>Aby skonfigurować serwer proxy, należy nacisnąć przycisk <em>Ustawienia połączenia</em>.</p>
+ 
+-    <strong>Okno Ustawienia połączenia</strong>
+-	
+-    <dl>
+-      <dt>Bezpośrednie połączenie z&nbsp;Internetem</dt>
+-      <dd>Opcja domyślna. Należy wybrać ją w&nbsp;przypadku niekorzystania z&nbsp;serwera proxy.</dd>
+-
+-      <dt>Automatycznie wykryj ustawienia serwerów proxy dla tej sieci</dt>
+-      <dd>Tę opcję należy zaznaczyć, jeśli &brandShortName; ma automatycznie wykryć
+-	ustawienia serwerów proxy dla sieci użytkownika.</dd>
++  <h3 id="startup">Uruchamianie</h3>
++  <p>Po uruchomieniu przeglądarki &brandShortName; wyświetlana jest domyślnie <a 
++  href="glossary.xhtml#home_page">strona startowa</a>. Może to być często
++  odwiedzana witryna, wyszukiwarka albo strona konta pocztowego &ndash; wybór
++  należy do użytkownika. W&nbsp;tej sekcji <span class="win">Opcji</span><span class="noWin">Preferencji</span>
++  można zmienić stronę startową na inną stronę lub na zestaw kilku stron 
++  w&nbsp;osobnych kartach.</p>
++
++  <p><em>Po uruchomieniu programu &brandShortName; </em><br/>
++    Domyślnie po uruchomieniu programu &brandShortName; otwierana jest strona
++    startowa (określona w polu tekstowym <em>Strona startowa</em> tuż pod
++    listą wyboru), co odpowiada opcji <em>wyświetl stronę startową</em>.
++    Można także nakazać wyświetlenie pustej strony (choćby po to, by
++    nie tracić czasu na pobieranie tej strony z&nbsp;Internetu), wybierając
++    opcję <em>wyświetl pustą stronę</em>.</p>
++
++  <p>Istnieje również możliwość, by program &brandShortName; ponownie otwierał
++    okna i&nbsp;karty, które były otwarte w&nbsp;momencie ostatniego zakończenia pracy
++    z&nbsp;przeglądarką. Funkcja ta pozwala szybko wrócić do poprzedniego
++    zestawu stron, przydaje się więc w&nbsp;sytuacji, gdy konieczne było ponowne
++    uruchomienie programu &brandShortName; lub całego systemu operacyjnego.
++    Aby skorzystać z&nbsp;tej możliwości, należy wybrać opcję <em>wyświetl okna
++    i&nbsp;karty z&nbsp;poprzedniej sesji</em>.</p>
++
++  <p><em>Strona startowa</em><br/>
++    Jeśli użytkownik wybrał, by program &brandShortName; po uruchomieniu
++    wyświetlał stronę startową, można podać jej adres w&nbsp;tym miejscu, albo
++    skorzystać z&nbsp;przycisków dostępnych pod polem tekstowym:</p>
+ 
+-      <dt>Ręczna konfiguracja serwerów proxy</dt>
+-      <dd>W&nbsp;przypadku wyboru tej opcji należy wypełnić pola adresu serwera i&nbsp;numeru portu
+-	  dla żądanych protokołów. (Informacje te można uzyskać od administratora sieci).<br/>
+-	  W&nbsp;polu <em>Nie używaj proxy dla</em> można wpisać adresy serwerów, z&nbsp;którymi połączenia
+-	  odbywać się będą z&nbsp;pominięciem ustawionych wyżej proxy.</dd>
+-
+-      <dt>Adres URL dla automatycznej konfiguracji</dt>
+-      <dd>Opcję tą należy wybrać w&nbsp;przypadku możliwości automatycznej konfiguracji serwerów 
+-	  proxy (należy podać adres URL pliku .PAC). Aby pobrać ustawienia, należy nacisnąć przycisk
+-	  <em>Odśwież</em>.
+-</dd>
+-    </dl>
+-
+-  <h2 id="privacy_options">&pref.pluralCaps;: Prywatność</h2>
+-
+-  <p>Panel <em>Prywatność</em> zawiera opcje związane z&nbsp;prywatnymi informacjami dotyczącymi użytkownika. Podczas 
+-  przeglądania Internetu program &brandShortName; zbiera różne informacje, takie jak np. lista
+-  odwiedzonych witryn.</p>
+-  <p>Za pomocą przycisków <em>Wyczyść</em> można usunąć informacje z&nbsp;wybranych kart,
+-z wyjątkiem karty <q>Hasła</q>. Aby usunąć wszystkie hasła, należy kliknąć przycisk
+-<em>Przeglądaj hasła</em>, a&nbsp;następnie <em>Usuń wszystkie</em> w&nbsp;oknie Menedżera haseł.</p>
+-
+-  <h3 id="clear_private_data">Ustawienia usuwania prywatnych danych</h3>
+-  <p>&brandShortName; pozwala na szybkie wyczyszczenie konkretnych lub wszystkich
+-	 elementów prywatności &ndash; wystarczy nacisnąć
+-    &accelKey;+&shiftKey;+<kbd>Del</kbd> lub wybrać z&nbsp;menu pozycję <span class="menuPath">
+-    Narzędzia &gt; Wyczyść prywatne dane...</span> Można także nakazać programowi
+-	&brandShortName; czyszczenie danych przy wyłączaniu programu. &pref.pluralCaps;
+-	z tym związane znajdują się w&nbsp;oknie <em>Usuwanie prywatnych danych</em>.</p>
+-
+-  <h3 id="privacy_history">Historia</h3>
+-  <p>W&nbsp;tym miejscu można określić jak długo przeglądarka &brandShortName; będzie przechowywać adresy
+-  odwiedzonych przez użytkownika witryn internetowych. Domyślna wartość to 9 dni.</p>
+-
+-  <h3 id="privacy_saved_forms">Dane formularzy</h3>
+-  <p>Przeglądarka &brandShortName; umożliwia zachowywanie informacji wpisywanych do formularzy w&nbsp;witrynach
+-  internetowych i&nbsp;paska wyszukiwania. Pozwala to na szybsze wypełnienie tychże formularzy podczas ponownej 
+-  wizyty w&nbsp;witrynie.<br/> Opcja <em>Pamiętaj dane wprowadzane w&nbsp;formularzach oraz w&nbsp;pasku
+-  wyszukiwania</em> pozwala włączyć lub wyłączyć zapamiętywanie wprowadzonych informacji.</p>
+-
+-  <h3 id="privacy_passwords">Hasła</h3>
+-    <p><em>Pamiętaj hasła</em><br/>
+-
+-      &brandShortName; może bezpiecznie przechowywać hasła wprowadzone w&nbsp;formularzach,
+-	dzięki czemu logowanie do witryn staje się prostsze. Należy odznaczyć to pole,
+-	jeśli &brandShortName; ma nie zapamiętywać haseł.</p>
+-
+-    <p id="set_change_master_password"><em>Ustaw/Zmień hasło główne...</em><br/>
+-      &brandShortName; może chronić prywatne dane, takie jak zapisane hasła
+-	i certyfikaty. Jeśli utworzone zostanie hasło główne, &brandShortName;
+-	poprosi o&nbsp;wprowadzenie go przy pierwszej witrynie wymagającej chronionych
+-	informacji i&nbsp;zapamięta je do momentu zakończenia programu. Hasło główne można ustawić
+-	lub zmienić, klikając ten przycisk.</p>
+-
+-    <p id="remove_master_password"><em>Usuń hasło główne...</em><br/>
+-	Aby usunąć główne hasło, należy kliknąć ten przycisk. &brandShortName;
+-	zażąda wprowadzenia głównego hasła przed jego usunięciem.</p>
+-
+-    <p><em>Przeglądaj hasła</em><br/>
+-	Aby zarządzać zachowanymi hasłami (a&nbsp;także aby je usuwać), należy kliknąć
+-	przycisk <em>Przeglądaj hasła</em>.</p>
++  <ul>
++    <li>Przycisk <em>Użyj bieżącej strony</em> ustawia jako stronę startową
++      aktualnie wyświetlaną stronę (lub strony, jeśli otwartych jest wiele kart)</li>
++    <li>Przycisk <em>Użyj zakładki</em> ustawia jako stronę startową wybraną
++      zakładkę (albo, jeśli użytkownik wybierze folder, wszystkie zakładki
++      z tego folderu)</li>
++    <li>Przycisk <em>Przywróć domyślną</em> ustawia stronę startową na domyślną
++      stronę startową programu &brandShortName;</li>
++  </ul>
+   
+-  <h3 id="privacy_download_history">Historia pobierania</h3>
+-  <p>Menedżer pobierania plików (dostępny z&nbsp;menu <span class="menuPath">Narzędzia > Pobieranie plików</span> lub
+-  skrót klawiaturowy <span class="noUnix">&accelKey;+<kbd>J</kbd></span><span class="unix">&accelKey;+<kbd>Y</kbd></span> lub poprzez kliknięcie przycisku <em>Przeglądaj historię pobierania</em>)
+-  przechowuje informacje o&nbsp;pobranych z&nbsp;Internetu plikach. Opcje Menedżera są dostępne w&nbsp;<a href="#downloads_options"><strong>panelu Pobieranie</strong></a>.
+-  </p>
+-
+-    <p><em>Usuń pliki z&nbsp;Menedżera pobieranych plików</em><br/>
+-	W&nbsp;tym miejscu można zdecydować, czy lista ostatnio pobieranych plików
+-	jest opróżniana <em>ręcznie</em> (przez użytkownika), <em>po pomyślnym
+-	zakończeniu pobierania</em> czy <em>przy wyjściu z&nbsp;programu &brandShortName;</em></p>
++  <h3 id="downloads">Pobieranie</h3>
+ 
+-    <p>Aby ręcznie opróżnić listę, należy kliknąć przycisk <em>Wyczyść teraz
+-historię pobierania</em> albo przycisk <em>Wyczyść</em> w&nbsp;Menedżerze pobieranych plików.</p>
++  <p>Ta sekcja zawiera &pref.plural; określające sposób, w&nbsp;jaki
++  &brandShortName; ma pobierać pliki.</p>
+ 
+-  <h3 id="privacy_cookies">Ciasteczka</h3>
+-  <p>Ciasteczko (ang. cookie) to plik w&nbsp;komputerze użytkownika utworzony przez witrynę 
+-	internetową. Plik ten zawiera informacje, które wykorzystywane są podczas przeglądania
+-	danej witryny (np. ustawienia użytkownika).</p>
++  <p><em>Wyświetl menedżera pobierania podczas pobierania plików</em><br/>
++    Jeśli to pole jest zaznaczone, program &brandShortName; będzie otwierał
++    okno <a href="download_manager.xhtml">Pobieranie plików</a> przy rozpoczęciu
++    pobierania każdego pliku.</p>
++
++  <p><em>Zamknij go, gdy wszystkie pliki zostaną już pobrane</em><br/>
++    Jeśli to pole jest zaznaczone, po ukończeniu pobierania wszystkich plików
++    program &brandShortName; będzie zamykał okno <em>Pobieranie plików</em>.</p>
++
++  <p><em id="download_folder">Pobierane pliki zapisuj do</em><br/>
++    Domyślnie pobierane pliki zapisywane są automatycznie na Pulpicie,
++    co uwalnia od konieczności ręcznego wskazywania położenia każdego
++    pobieranego pliku. Zamiast Pulpitu można wybrać inny folder,
++    naciskając przycisk <em>Przeglądaj</em>.</p>
++
++  <p><em>Pytaj, gdzie zapisać każdy plik</em><br/>
++    Jeśli to pole jest zaznaczone, program &brandShortName; będzie pytał
++    o&nbsp;docelowe położenie każdego pobieranego pliku (zamiast zapisywać go
++    w&nbsp;domyślnym położeniu ustalonym powyżej).</p>
++
++  <h3 id="system_defaults">Ustawienia systemowe</h3>
++  <p><em>Przy uruchomieniu sprawdzaj, czy &brandShortName; jest domyślną przeglądarką</em><br/>
++    Jeśli to pole jest zaznaczone, program &brandShortName; będzie przy
++    każdym uruchomieniu sprawdzał, czy jest domyślną przeglądarką. Dzięki temu
++    przeglądarka &brandShortName; będzie używana za każdym razem, gdy jakakolwiek
++    aplikacja próbuje otworzyć stronę internetową. Sprawdzenia tego można
++    także dokonać od razu z&nbsp;poziomu okna <span class="win">opcji</span><span class="noWin">preferencji</span>,
++    naciskając przycisk <em>Sprawdź teraz</em>.</p>
++
++  <h2 id="tabs_options">&pref.pluralCaps;: Karty</h2>
++<p><em>Nowe strony powinny być otwierane:</em><br/>
++  Ta &pref.singular; decyduje, czy odnośniki otwierane z&nbsp;innych aplikacji
++  lub odnośniki z&nbsp;innych stron żądające otwarcia nowego okna otwierane są
++  <em>w&nbsp;nowym oknie</em> czy <em>w&nbsp;nowej karcie</em> w&nbsp;ostatnio aktywnym
++  oknie.</p>
++
++<p><strong>Uwaga:</strong> Jeśli wybrana zostanie opcja <em>w&nbsp;nowej karcie</em>,
++  &brandShortName; zignoruje to ustawienie i&nbsp;otworzy nowe okno, jeśli autor
++  strony nadał nowemu oknu konkretne wymiary, ponieważ niektóre strony
++  można prawidłowo wyświetlić tylko przy konkretnych wymiarach okna.</p>
+   
+-  <p><em>Zezwól stronom na ustawianie ciasteczek</em><br/>
+-  Obsługa ciasteczek jest domyślnie włączona. By ją wyłączyć, należy odznaczyć tę opcję. Należy jednak pamiętać, że niektóre witryny mogą nie działać poprawnie, gdy obsługa ciasteczek jest wyłączona.</p>
+-
+-  <p>By otworzyć Menedżer ciasteczek, należy nacisnąć przycisk <em>Pokaż ciasteczka</em>.</p>
+-
+-  <p>Opcje związane z&nbsp;obsługą ciasteczek opisano szerzej w&nbsp;rozdziale <a href="cookies.xhtml">
+-	  Zarządzanie ciasteczkami</a>.</p>
+-
+-  <h3 id="privacy_cache">Pamięć podręczna</h3>
+-  <p>W&nbsp;celu przyspieszenia wczytywania odwiedzonych stron przeglądarka &brandShortName; przechowuje 
+-  ich fragmenty w&nbsp;specjalnym katalogu na dysku twardym. W&nbsp;polu tekstowym można określić ilość miejsca
+-  na dysku przeznaczonego na pamięć podręczną.
+-  </p>
++<p><em>Ostrzegaj przed zamknięciem wielu kart</em><br/>
++  Jeśli użytkownik spróbuje zamknąć okno zawierające wiele kart, &brandShortName;
++  wyświetli okno z&nbsp;pytaniem o&nbsp;potwierdzenie. Dzięki temu można uniknąć
++  przypadkowego zamknięcia całego okna, kiedy zamierzeniem było zamknięcie
++  tylko danej karty. Odznaczenie tego pola spowoduje, że &brandShortName;
++  nie wyświetli pytania o&nbsp;potwierdzenie i&nbsp;automatycznie zamknie dane
++  okno.</p>
++
++<p><em>Ostrzegaj, jeśli otwarcie wielu kart może spowolnić program
++  &brandShortName;</em><br/>
++  Przy próbie otwarciu bardzo dużej liczby kart jednocześnie, &brandShortName;
++  wyświetli okno z&nbsp;pytaniem o&nbsp;potwierdzenie. Dzięki temu można uniknąć
++  przypadkowego spowolnienia działania systemu podczas ładowania stron.
++  Odznaczenie tego pola spowoduje, że przeglądarka nie będzie pytać
++  o&nbsp;potwierdzenie.</p>
++  
++<p><em>Zawsze wyświetlaj pasek kart</em><br/>
++  Jeśli oglądana jest tylko jedna strona, &brandShortName; nie wyświetla
++  paska kart. Zaznaczene tego pola spowoduje, że pasek kart będzie wyświetlany
++  zawsze, nawet wtedy, gdy w&nbsp;oknie przeglądarki otwarta jest tylko jedna
++  strona.</p>
++
++<p><em>Po otwarciu odnośnika w&nbsp;nowej karcie przechodź do niej automatycznie</em><br/>
++  Po kliknięciu odnośnika środkowym przyciskiem myszy (albo kliknięciu
++  lewym przyciskiem przy wciśniętym klawiszu &accelKey;), strona zostanie
++  otwarta w&nbsp;nowej karcie. Zaznaczenie tego pola spowoduje, że przeglądarka
++  automatycznie uaktywni nowo otwartą kartę.</p>
+ 
+   <h2 id="content_options">&pref.pluralCaps;: Treść</h2>
+-
+-  <p>Panel Przeglądanie zawiera ustawienie związane z&nbsp;blokadą wyskakujących okienek, obsługą
+-  apletów języka Java, skryptów JavaScript i&nbsp;pobieraniem obrazków na stronach.</p>
+-  
+   <p><em>Zablokuj wyskakujące okna</em><br/>Przeglądarka &brandShortName; domyślne blokuje 
+-  wyświetlanie wyskakujących okienek podczas otwierania stron. Zmiana tej opcji spowoduje
+-wyłączenie blokady wyskakujących okienek.</p>
+-
+-  <p>Przeglądarka &brandShortName; posiada specjalną listę witryn uprawnionych
+-  do otwierania wyskakujących okienek. Aby odblokować wyświetlanie wyskakujących okienek dla danej witryny, należy kliknąć przycisk <em>Uprawnione witryny</em>, a&nbsp;w&nbsp;nowym oknie nacisnąć przycisk <em>Dodaj witrynę...</em> i&nbsp;następnie wprowadzić jej adres.</p>
+-
+-  <p>Aby usunąć witrynę z&nbsp;listy uprawnionych do wyświetlania wyskakującyh okienek, należy 
+-  zaznaczyć jej adres na&nbsp;liście, a&nbsp;następnie nacisnąć przycisk <em>Usuń witrynę</em>.<br/>
+-  Do usunięcia wszystkich witryn z&nbsp;listy służy przycisk <em>Usuń wszystkie witryny</em>.</p>
+-
+-  <p><em>Ostrzegaj, kiedy witryny próbują instalować rozszerzenia lub motywy</em><br/>
+-    &brandShortName; zawsze żąda potwierdzenia instalacji rozszerzeń i&nbsp;motywów. Jeśli nieznana
+-    witryna próbuje dokonać instalacji rozszerzenia lub motywu, &brandShortName;
+-    wyświetla na pasku informacyjnym odpowiednie ostrzeżenie, blokując jednocześnie
+-    wyświetlenie okna z&nbsp;prośbą o&nbsp;potwierdzenie instalacji. Żeby zezwolić konkretnym witrynom
+-    na instalowanie rozszerzeń i&nbsp;motywów, należy je dodać do listy witryn mogących instalować
+-    oprogramowanie. Aby to zrobić, należy kliknąć przycisk <em>Wyjątki</em>, podać adres
+-    witryny i&nbsp;kliknąć przycisk <em>Zezwól</em>.
+-    Odznaczenie tego pola spowoduje wyłączenie ostrzeżenia na wszystkich witrynach.</p>
++  wyświetlanie wyskakujących okienek przez oglądane strony. Zmiana tej opcji spowoduje
++  wyłączenie blokady wyskakujących okienek.</p>
+ 
+-  <p><em>Pobieraj obrazki</em><br/>Włącza/wyłącza pobieranie i&nbsp;wyświetlanie grafiki na witrynach internetowych. Naciskając przycisk <em>Wyjątki...</em>, można wyświetlić okno, które pozwala wyłączyć pobieranie obrazków z&nbsp;konkretnych serwerów.</p>
+-
+-  <p>Okno Zarządzaj obrazkami zawiera listę serwerów, z&nbsp;których obrazki nie są pobierane.
+-  Aby zablokować pobieranie obrazków z&nbsp;serwera (np. reklam), należy podczas przeglądania strony kliknąć prawym klawiszem myszy na danym obrazku i&nbsp;z&nbsp;menu kontekstowego wybrać pozycję <em>Blokuj obrazki z&nbsp;&lt;nazwa serwera&gt;</em>. Aby odblokować dany serwer, należy zaznaczyć go w&nbsp;liście w&nbsp;oknie Zarządzaj obrazkami i&nbsp;wybrać przycisk <em>Usuń witrynę</em>. Aby odblokować wszystkie serwery, należy nacisnąć przycisk <em>Usuń wszystkie witryny</em>.</p>
++  <p>Niektóre witryny korzystają z&nbsp;wyskakujących okienek w&nbsp;sposób 
++  nieuciążliwy. Można więc zezwolić im na otwieranie takich okienek
++  mimo blokady. Aby to zrobić, należy nacisnąć przycisk <em>Wyjątki...</em>,
++  wprowadzić adres strony i&nbsp;wybrać <em>Zezwól</em>. Aby usunąć witrynę
++  z&nbsp;listy, należy ją zaznaczyć i&nbsp;nacisnąć <em>Usuń witrynę</em>. Aby całkowicie
++  wyczyścić listę, należy nacisnąć <em>Usuń wszystkie witryny</em>.</p>
++ 
++  <p><em>Pobieraj obrazki automatycznie</em><br/>
++  &brandShortName; domyślnie wyświetla obrazki na stronach. Odznaczenie tej opcji
++  spowoduje, że obrazki nie będą wczytywane.</p>
++
++  <p>Przycisk <em>Wyjątki...</em> pozwala ustalić, które strony mają wyświetlać
++  obrazki lub ich nie wyświetlać &ndash; niezależnie od ustawienia powyżej
++  omówionego pola. Po naciśnięciu tego przycisku pojawi się okno z&nbsp;listą
++  wyjątków. Można wprowadzić adres strony i&nbsp;wybrać <em>Zezwól</em>, by pozwolić
++  na wyświetlanie obrazków, albo <em>Zablokuj</em>, by zablokować obrazki.</p>
++
++  <p><em>Włącz obsługę języka JavaScript</em><br/>
++  JavaScript to język skryptowy szeroko stosowany w&nbsp;celu zwiększenia
++  interaktywności stron internetowych. Pozwala jednak także na pewne
++  denerwujące zachowania. Aby całkowicie wyłączyć JavaScript, należy
++  zaznaczyć to pole. Całkowite wyłączenie JavaScriptu może jednak
++  spowodować, że część witryn nie będzie działać prawidłowo. Aby
++  szczegółowo ustalić, jakie operacje mogą wykonywać skrypty w języku
++  JavaScript, należy nacisnąć przycisk  <em>Zaawansowane</em>.</p>
+     
+-  
+-  <p><em>Włącz obsługę języka Java</em><br/>Java to popularny język programowanie stworzony w&nbsp;firmie
+-    Sun Microsystems. Ten sam program (aplet) napisany w&nbsp;Javie może zostać uruchomiony na różnych
+-	typach komputerów. Aplety Javy wykorzystywane są do wzbogacenia witryn internetowych. Aby wyłączyć
+-	Javę należy odznaczyć niniejszą opcję. Uwaga: aby programy w&nbsp;Javie działały, należy pobrać i&nbsp;zainstalować
+-	wirtualną maszynę Javy.</p>
+-
+-  <p><em>Włącz obsługę języka JavaScript</em><br/>JavaScript to język skryptowy wykonywany
+-  przez przeglądarkę internetową. Jest on powszechnie używany  w&nbsp;witrynach internetowych. 
+-  Wyłączenie JavaScriptu może spowodować problemy z&nbsp;działaniem niektórych witryn.</p>
+-
+   <h4 id="advanced_javascript">Zaawansowane ustawienia JavaScriptu</h4>
+ 
+   <p><em>Zezwól skryptom na:</em></p>
+@@ -244,218 +208,443 @@
+ 
+     <dt>zmianę tekstu wyświetlanego na pasku stanu</dt>
+     <dd>Odznaczenie tego pola uniemożliwi skryptom manipulowanie tekstem wyświetlanym na pasku stanu
+-(w&nbsp;tym denerwujących technik, jak przesuwanie i&nbsp;migotanie tego tekstu jak i&nbsp;ukrywanie adresów URL).</dd>
++    (w&nbsp;tym denerwujących technik, jak przesuwanie i&nbsp;migotanie tego tekstu, czy ukrywanie 
++    adresów odnośników).</dd>
+   </dl>
+ 
++  <p><em>Włącz obsługę języka Java</em><br/>
++    Java to język programowania szeroko stosowany w&nbsp;Internecie. Program
++    w&nbsp;Javie może działać na wielu różnych komputerach, dzięki czemu
++    programiści nie muszą tworzyć osobnych wersji na każdy rodzaj
++    komputera. Odznaczenie tego pola spowoduje zablokowanie apletów
++    Javy w&nbsp;przeglądarce &brandShortName;. Należy pamiętać, że do
++    działania apletów Javy konieczna jest instalacja wtyczki Javy.</p>
++
+   <h3 id="fonts_and_colors">Czcionki i&nbsp;kolory</h3>
+ 
+     <p><em>Domyślna czcionka</em> i&nbsp;<em>Rozmiar</em><br/>
+ 
+ 	Zazwyczaj strony wyświetlane są przy użyciu czcionki o&nbsp;kroju i&nbsp;rozmiarze podanym w&nbsp;
+ 	tym miejscu. Niektóre strony mogą jednak stosować własne czcionki, o&nbsp;ile
+-	nie zostanie im to zabronione w&nbsp;oknie zaawansowanych ustawień czcionek, opisanym
+-	poniżej.</p>
++	nie zostanie im to zabronione w&nbsp;oknie <em>Czcionki</em>, opisanym
++	poniżej. Aby wyświetlić okno <em>Czcionki</em>, pozwalające na modyfikację
++        czcionki domyślnej i&nbsp;innych czcionek stosowanych w&nbsp;programie &brandShortName;,
++        należy kliknąć przycisk <em>Zaawansowane...</em></p>
+ 
+-    <p>Aby wyświetlić okno zaawansowanych ustawień czcionek, należy kliknąć przycisk
+- <em>Zaawansowane...</em></p>
++	<h4 id="fonts_dialog">Okno &bdquo;Czcionki&rdquo;</h4>
+ 
+-	<h4>Okno zaawansowanych ustawień czcionek</h4>
++    <p>Aby zmienić ustawienia czcionek należy:</p>
+ 
+-    <p>W&nbsp;górnej części okna można ustawić czcionki dla stron w&nbsp;poszczególnych stronach kodowych.
+-		Strony, których autorzy nie zdefiniowali czcionek, wyświetlane będą za pomocą wybranej  
+-		domyślnej czcionki. Aby zmienić domyślną czcionkę należy:</p>
+     <ol>
+-      <li>Wybrać region czcionek z&nbsp;listy rozwijalnej <em>Czcionki</em></li>
+-      <li>Wybrać typ czcionki proporcjonalnej. Może to być czcionka szeryfowa (np. &quot;Times New Roman&quot;)
+-		  lub bezszeryfowa (np. &quot;Arial&quot;). Następnie należy wybrać rozmiar tekstu wyświetlanego
+-		  czcionką proporcjonalną.</li>
+-      <li>Wybrać czcionki: szeryfową, bezszeryfową i&nbsp;o&nbsp;stałej szerokości.</li>
++      <li>Wybrać region czcionek z&nbsp;listy rozwijalnej <em>Czcionki</em> (dla 
++      języka polskiego i&nbsp;innych języków środkowoeuropejskich: <em>Środkowoeuropejskie</em>,
++      dla języków nieobecnych na liście: <em>Użytkownika</em>)</li>
++      <li>Wybrać typ czcionki proporcjonalnej. Może to być czcionka szeryfowa 
++      (np. &quot;Times New Roman&quot;) lub bezszeryfowa (np. &quot;Arial&quot;). 
++      Następnie należy wybrać rozmiar tekstu wyświetlanego czcionką proporcjonalną.</li>
++      <li>Ustawić czcionki: szeryfową, bezszeryfową i&nbsp;o&nbsp;stałej szerokości.</li>
+     </ol>
+ 
+-    <p>Możliwe jest także określenie minimalnego rozmiaru wyświetlanej czcionki. Może to być
+-	przydatne w&nbsp;przypadku przeglądania witryn używających małych, nieczytelnych czcionek.</p>
+-
+-<p>    <em>Pozwól stronom stosować inne czcionki niż ustawione tutaj</em><br/>
+-	  Domyślnie przeglądarka &brandShortName; stosuje czcionki określone przez autora przeglądanej
+-	  strony. Aby zawsze używać domyślnych czcionek, należy odznaczyć powyższą opcję.</p>
+-
+-	<p><em>Kodowanie znaków</em><br />
+-	Kodowanie znaków ustawione w&nbsp;tym miejscu będzie stosowane na każdej stronie, która
+-	nie poda, którego kodowania używa.</p>
++    <p>Możliwe jest także określenie minimalnego rozmiaru wyświetlanych czcionek.
++    Może to być przydatne w&nbsp;przypadku przeglądania witryn używających małych,
++    nieczytelnych czcionek.</p>
++
++    <p><em>Pozwól stronom stosować inne czcionki niż ustawione tutaj</em><br/>
++    Domyślnie przeglądarka &brandShortName; stosuje czcionki określone przez autora przeglądanej
++    strony. Aby zawsze używać domyślnych czcionek, należy odznaczyć powyższą opcję.</p>
++
++    <p><em>Kodowanie znaków</em><br />
++    Kodowanie znaków ustawione w&nbsp;tym miejscu będzie stosowane na każdej stronie, która
++    nie określi, którego kodowania używa.</p>
+ 
+-	<h4>Okno <q>Kolory</q></h4>
++    <h4 id="colors_dialog">Okno &bdquo;Kolory&rdquo;</h4>
+ 
+     <p><strong>Tekst i&nbsp;tło</strong><br/>
+-	W&nbsp;tym miejscu można określić domyślny kolor tekstu i&nbsp;tła dla stron internetowych. Ustawione
+-	wartości zostaną użyte, gdy przeglądana strona nie posiada własnych ustawień kolorów tekstu i&nbsp;tła.
+-    Aby zmienić kolor, należy nacisnąć próbkę koloru.
+-      Aby użyć domyślnych ustawień kolorów systemu operacyjnego, należy zaznaczyć opcję
+-	  <em>Użyj ustawień systemowych</em>.</p>
++    W&nbsp;tym miejscu można określić domyślny kolor tekstu i&nbsp;tła dla stron internetowych. Ustawione
++    wartości zostaną użyte, gdy przeglądana strona nie posiada własnych ustawień kolorów tekstu i&nbsp;tła.
++    Aby zmienić kolor, należy wybrać próbkę koloru.
++    Aby użyć domyślnych ustawień kolorów systemu operacyjnego, należy zaznaczyć opcję
++    <em>Użyj ustawień systemowych</em>.</p>
++
++    <p><em>Użyj kolorów systemowych</em><br/>
++    Zaznaczenie tego pola spowoduje, że przeglądarka będzie używać kolorów
++    zdefiniowanych w systemie operacyjnym zamiast tych wybranych powyżej.</p>
+ 
+     <p><strong>Kolory odnośników</strong><br/>
+-	W&nbsp;tej sekcji można określić domyślne kolory dla odnośników. Aby zmienić kolor, należy nacisnąć 
+-	próbkę koloru.</p>
++    W&nbsp;tej sekcji można określić domyślne kolory dla odnośników. Aby zmienić kolor, należy wybrać 
++    próbkę koloru.</p>
+ 
+     <p><em>Podkreślaj odnośniki</em><br/>
+-	  Domyślnie przeglądarka &brandShortName; podkreśla wszystkie odnośniki.
+-	  Aby wyłączyć podkreślanie, należy odznaczyć powyższą opcję. <strong>Uwaga:</strong> ustawienie to nie działa w&nbsp;przypadku stron stosujących własne 
+-	  arkusze stylów.</p>
++    Domyślnie przeglądarka &brandShortName; podkreśla wszystkie odnośniki.
++    Aby wyłączyć podkreślanie, należy odznaczyć powyższą opcję. <strong>Uwaga:</strong> ustawienie to
++    nie działa w&nbsp;przypadku stron stosujących własne 
++    arkusze stylów.</p>
+ 
+     <p><em>Pozwól stronom stosować inne kolory niż ustawione tutaj</em><br/>
+ 	  Domyślnie przeglądarka &brandShortName; stosuje kolory określone przez autora przeglądanej
+ 	  strony. Aby zawsze używać domyślnych kolorów, należy odznaczyć powyższą opcję.</p>
+ 
++  <h3 id="file_types">Typy plików</h3>
++  <p>Okno &bdquo;Czynności pobierania&rdquo;, które można otworzyć naciskając
++    przycisk <em>Zarządzaj...</em> zawiera listę typów pobranych plików.
++    Można tam określić, co &brandShortName; ma zrobić po wybraniu odnośnika
++    do pliku danego typu. Aby to zrobić, należy wybrać typ pliku i&nbsp;nacisnąć
++    przycisk <em>Zmień czynność</em>.</p>
++
++  <p>Otwarte zostanie okno &bdquo;Zmiana czynności&rdquo;, w&nbsp;którym można
++    ustawić, czy plik danego typu ma być otwierany przez domyślną aplikację,
++    otwierany przez konkretną aplikację, zapisany na dysk lub wyświetlony
++    za pomocą zainstalowanej wtyczki. Na przykład, jeśli użytkownik często
++    ogląda pliki multimedialne ze stron internetowych, może ustawić, by
++    program &brandShortName; zawsze otwierał takie pliki w odpowiednim
++    odtwarzaczu, zamiast pytać, gdzie taki plik ma zapisać.</p>
+ 
++  <ul>
++    <li><em>Otwórz je w&nbsp;domyślnej aplikacji:</em><br/>
++      Wybranie tej opcji spowoduje, że pliki danego typu otwierane będą
++      w&nbsp;domyślnej aplikacji dla tego typu plików (wybranej 
++      w&nbsp;ustawieniach systemu operacyjnego).</li>
++    <li><em>Otwórz je w&nbsp;następującej aplikacji:</em><br/>
++      Wybranie tej opcji spowoduje, że pliki danego typu otwierane będą
++      w&nbsp;aplikacji wybranej przez użytkownika. Wyświetlone zostanie
++      nowe okno, w&nbsp;którym będzie można wskazać tę aplikację.</li>
++    <li><em>Zapisz je na komputerze:</em><br/>
++      Wybranie tej opcji spowoduje, że pliki danego typu będą zapisywane
++      na dysk (automatycznie, jeśli użytkownik zaznaczył pole <em>Pobierane
++      pliki zapisuj do:</em> w&nbsp;panelu <em>Główne</em>).</li>
++    <li><em>Użyj następującej wtyczki:</em><br/>
++      Wybranie tej opcji spowoduje, że pliki danego typu będą obsługiwane
++      przez odpowiednią wtyczkę.</li>
++  </ul>
++
++<h2 id="feeds_options">&pref.pluralCaps;: Kanały</h2>
++
++<p>Kanały to specjalnie sformatowane dokumenty, zawierające podsumowania treści
++  witryn. Przykładowo, kanał może zawierać nagłówki najnowszych informacji
++  z&nbsp;witryny informacyjnej, albo tytuły wpisów z&nbsp;bloga. Treść kanałów
++  można oglądać w przeglądarce &brandShortName;, utworzyć opartą o&nbsp;nie
++  dynamiczną zakładkę albo dodać je do czytnika kanałów zainstalowanego na
++  komputerze lub działającego w Internecie. &pref.pluralCaps; w tym panelu
++  określają, jaką czynność ma wykonać przeglądarka po otwarciu kanału.</p>
++
++<p><em>Wyświetl podgląd kanału i&nbsp;zapytaj, którego czytnika użyć</em><br/>
++  Jeśli w&nbsp;programie &brandShortName; otwarty zostanie kanał, wyświetli on
++  podgląd jego treści. Jeśli ta opcja jest zaznaczona, użytkownik zawsze
++  może zdecydować, w&nbsp;jaki sposób chce subskrybować kanał &ndash; służą
++  do tego opcje w górnej części strony podglądu.</p>
++    
++<p><em>Subskrybuj za pomocą</em><br/>
++  Można automatycznie pomijać stronę podglądu i&nbsp;od razu otwierać dany kanał
++  bezpośrednio w&nbsp;czytniku wybranym z&nbsp;listy dostępnych czytników.
++  Aby wybrać czytnik spośród aplikacji zainstalowanych na komputerze, należy
++  nacisnąć przycisk <em>Wybierz program</em>. Można także nakazać
++  dokonywanie subskrypcji kanałów za pomocą dynamicznych zakładek.
++  Aby wybrać metodę subskrypcji, należy ją wybrać z&nbsp;listy.</p>
++
++<h2 id="privacy_options">&pref.pluralCaps;: Prywatność</h2>
++
++  <h3 id="privacy_history">Historia</h3>
++
++  <p><em>Pamiętaj strony odwiedzone w ciągu ostatnich ... dni</em><br/>
++    W tym polu można określić, jak długo &brandShortName; ma pamiętać
++    odwiedzone strony. Domyślna wartość to 9&nbsp;dni.</p>
++      
++  <p><em>Pamiętaj dane wprowadzone w formularzach i&nbsp;pasku wyszukiwania</em><br/>
++    Kiedy użytkownik wprowadza dane do formularzy lub paska wyszukiwania
++    w programie &brandShortName;, informacje te są zapamiętywane, dzięki
++    czemu przeglądarka może później dawać użytkownikowi podpowiedzi. Aby
++    tego nie robiła, należy odznaczyć to pole.</p>
++      
++  <p><em>Pamiętaj pobrane pliki</em><br/>
++    Ta opcja określa, czy poprzednio pobierane pliki mają
++    być widoczne w oknie &bdquo;Pobieranie plików&rdquo;. Okno to
++    (dostępne z&nbsp;menu <span class="menuPath">Narzędzia</span> lub przez naciśnięcie <span
++    class="noUnix">&accelKey;+<kbd>J</kbd></span><span
++    class="unix">&accelKey;+<kbd>Y</kbd></span>) wyświetla listę ostatnio pobranych
++    plików. &pref.pluralCaps; pobierania dostępne są w&nbsp;panelu <a
++    href="#main_options"><em>Główne</em></a>.</p>
+ 
+-<h2 id="tabs_options">&pref.pluralCaps;: Karty</h2>
+-  <p><em>Odnośniki mające otwierać nowe okna otwieraj:</em><br/>
+-  Ta opcja decyduje, czy odnośniki otwarte z innych aplikacji oraz
+-  odnośniki ze stron internetowych żądające otwarcia nowego okna,
+-  mają być otwierane <em>w nowych oknach</em> czy <em>w nowych
+-  kartach w ostatnim aktywnym oknie</em>.
++  <h3 id="privacy_cookies">Ciasteczka</h3>
++  <p>Ciasteczko to mała informacja zapisana na komputerze przez witrynę WWW,
++    mogąca zawierać np. preferencje użytkownika związane z&nbsp;tą witryną.</p>
++
++  <p><em>Akceptuj ciasteczka</em><br/>
++    Domyślnie obsługa ciasteczek jest włączona. Aby ją wyłączyć, należy
++    odznaczyć tę opcję. Należy jednak pamiętać, że niektóre witryny
++    mogą funkcjonować nieprawidłowo, jeśli ciasteczka są zablokowane.
+   </p>
++      
++  <p><em>Przechowuj:</em></p>
+ 
+-  <p><strong>Uwaga:</strong> jeśli użytkownik zdecydował, by otwierać odnośniki
+-  w nowych kartach, &brandShortName; zignoruje to ustawienie i otworzy nowe okno,
+-  jeśli autor strony nakazał otwarcie okna o konkretnych wymiarach (w przeciwnym
+-  wypadku strona mogłaby zostać wyświetlona niepoprawnie).</p>
+-
+-  <p><em>Ukryj pasek kart, jeżeli otwarta jest tylko jedna karta</em><br/>
+-	Jeśli w&nbsp;oknie programu &brandShortName; wyświetlana jest tylko jedna strona,
+-	pasek kart domyślnie nie jest wyświetlany. Odznacz to pole, jeśli chcesz, by pasek
+-	kart był zawsze wyświetlany.</p>
+-
+-  <p><em>Przenoś nowo otwarte karty na pierwszy plan</em><br/>
+-	Kiedy odnośnik zostanie kliknięty środkowym przyciskiem myszy (lub lewym,
+-	jeśli użytkownik przytrzyma przycisk &accelKey;), odnośniki zostaną otwarte
+-	w&nbsp;nowej karcie. Domyślnie taka karta zostanie wczytana w&nbsp;tle. Zaznacz to pole,
+-	jeśli chcesz, by nowo otwarta karta była natychmiast przenoszona na pierwszy plan.</p>
+-
+-  <p><em>Ostrzegaj przed zamknięciem wielu kart</em><br/>
+-	Podczas zamykania okna zawierającego wiele kart &brandShortName; poprosi
+-	o&nbsp;potwierdzenie. Dzięki temu unika się sytuacji, w&nbsp;której przez przypadek
+-	zamknięte zostało całe okno, kiedy użytkownik chciał zamknąć tylko daną kartę.
+-	Odznacz to pole, by to ostrzeżenie się nie pojawiało i&nbsp;program &brandShortName;
+-	zamykał okno automatycznie, nawet jeśli otwarte jest wiele kart.</p>
+-
+-  <h2 id="downloads_options">&pref.pluralCaps;: Pobieranie</h2>
+-
+-  <p>Panel zawiera opcje związane z&nbsp;pobieraniem i&nbsp;obsługą różnych typów plików (np. aplikacje,
+-  pliki skompresowanie, czy też pliki multimedialne)</p>
+-
+-  <h3 id="download_folder">Folder pobranych plików</h3>
+-
+-  <p><em>Pytaj gdzie zapisać każdy plik</em><br/>Ustawienie domyślnie włączone. Przeglądarka &brandShortName;
+-    wyświetli okno dialogowe pozwalające określić miejsce zapisu pobieranego pliku.</p>
+-
+-  <p><em>Zapisz wszystkie pliki do tego folderu</em><br/>Z&nbsp;listy rozwijalnej można wybrać folder, w&nbsp;którym zapisywane będą wszystkie pobierane pliki. Pytanie o&nbsp;miejsce zapisu nie będzie wyświetlane. Wybierając pozycję <em>Przeglądaj...</em> można wybrać dowolny katalog.</p>
+-
+-  <h3 id="download_manager">Menedżer pobierania plików</h3>
+-    <p><em>Wyświetl menedżera wraz z&nbsp;rozpoczęciem pobierania</em><br/>
+-      W&nbsp;tym miejscu można zdecydować, czy menedżer ma być otwierany automatycznie,
+-	kiedy tylko rozpocznie się proces pobierania pliku.</p>
+-
+-    <p><em>Zamknij menedżera, kiedy wszystkie plikki zostaną pobrane</em><br/>
+-	W&nbsp;tym miejscu można zdecydować, czy menedżera ma być automatycznie zamykany,
+-	kiedy wszystkie pliki zostaną pobrane.</p>
+-
+-  <h3 id="download_actions">Czynności pobierania</h3>
+-
+-    <p>Okno <q>Czynności pobierania</q>, które można otworzyć klikając przycisk
+-	<em>Wyświetl i&nbsp;edytuj czynności</em> zawiera listę typów plików pobranych
+-	przez użytkownika. Aby zmienić domyślną czynność wykonywaną po pobraniu pliku, należy zaznaczyć żądany typ pliku na liście, a&nbsp;następnie nacisnąć przycisk <em>Zmień czynność...</em></p>
+-
+-  <p>W&nbsp;wyświetlonym oknie można określić czy plik ma być otwarty przez domyślną aplikację, otwarty przez aplikację wskazaną przez użytkownika, zapisany na dysku czy też wyświetlony przy użyciu zainstalowanej wtyczki. Przykładowo, dla plików muzycznych można wybrać odtwarzanie zamiast wyświetlania pytań dotyczących zapisywania na dysku.</p>
+-
+-    <ul>
+-    <li><em>Otwórz plik za pomocą domyślej aplikacji:</em><br/>
+-		Zaznaczenie tej opcji powoduje automatyczne otwarcie pliku w&nbsp;domyślnej dla niego aplikacji (określonej przez system operacyjny).</li>
+-    <li><em>Otwórz plik za pomocą:</em><br/>Zaznaczenie tej opcji pozwala wybrać dowolną aplikację, która
+-	będzie automatycznie wywoływana po pobraniu danego typu pliku. Po wybraniu tej opcji zostanie wyświetlone okno wyboru pliku aplikacji.</li>
+-    <li><em>Zapisz na dysk</em><br/>
+-	Wybranie tej opcji spowoduje automatyczne zapisywanie pobieranych plików na dysku. Gdy opcja <em>Zapisuj wszystkie pliki w&nbsp;katalogu:</em> jest włączona, pytanie o&nbsp;miejsce zapisu nie będzie wyświetlane.</li>
+-
+-      <li><em>Użyj tej wtyczki:</em><br/>
+-        Zaznaczenie tego pola sprawi, że pliki tego typu zostaną obsłużone przez wtyczkę.</li>
+-    </ul>
++  <ul>
++    <li><em>aż wygasną</em><br/>
++      To domyślne zachowanie. Pozwala to witrynom na określenie, jak długo
++      ciasteczka mają być przechowywane przez przeglądarkę. Umożliwia to
++      witrynom zapamiętywanie preferencji i&nbsp;nazwy użytkownika pomiędzy
++      sesjami przeglądarki.</li>
++    <li><em>do zamknięcia programu &brandShortName;</em><br/>
++      Po zaznaczeniu tej opcji &brandShortName; będzie usuwać wszystkie
++      ciasteczka w&nbsp;momencie zamknięcia przeglądarki.</li>
++    <li><em>pytaj za każdym razem</em><br/>
++      Po zaznaczeniu tej opcji &brandShortName; będzie pytać użytkownika
++      o&nbsp;to, jak długo ma przechowywać ciasteczko (albo czy ma je
++      odrzucić) przy każdej próbie przesłania ciasteczek przez witryny.</li>
++  </ul>
+ 
+-  <p>Aby usunąć domyślną akcję dla danego typu pliku, należy zaznaczyć plik w&nbsp;liście i&nbsp;przycisnąć przycisk <em>Usuń czynność</em>.</p>
++  <p>Aby ustalić, które strony mogą, a&nbsp;które nie mogą przesyłać ciasteczek,
++  należy nacisnąć przycisk <em>Wyjątki</em>.</p>
++      
++  <p>Aby otworzyć menedżera ciasteczek, należy nacisnąć <em>Wyświetl ciasteczka...</em>.</p>
++
++  <p>Szczegółowe informacje na temat ciasteczek i&nbsp;konkretnych opcji z&nbsp;nimi
++    związanych można znaleźć w&nbsp;rozdziale <a href="cookies.xhtml">Zarządzanie ciasteczkami</a>.</p>
++      
++  <h3 id="private_data">Prywatne dane</h3>
++  <p><em>Zawsze czyść prywatne dane przy zamykaniu programu &brandShortName;</em><br/>
++    Można nakazać przeglądarce &brandShortName; czyszczenie prywatnych danych
++    przy jej zamykaniu. Aby szczegółowo ustalić, które dane powinny być
++    czyszczone, należy nacisnąć przycisk <em>Ustawienia</em>.</p>
++    
++  <p><em>Poproś o potwierdzenie przed czyszczeniem prywatnych danych</em><br/>
++    Po zaznaczeniu tego pola, program &brandShortName; będzie zawsze prosił
++    o&nbsp;potwierdzenie przed dokonaniem automatycznego czyszczenia prywatnych
++    danych określonych w&nbsp;<em>Ustawieniach</em>.</p>
++  
++  <p>Aby wyczyścić prywatne dane od razu, należy nacisnąć przycisk
++    <em>Wyczyść teraz</em>.  Aby wyczyścić prywatne dane bez otwierania okna
++    &pref.pluralCaps;, należy albo nacisnąć &accelKey;+&shiftKey;+<kbd>Del</kbd>,
++    albo z&nbsp;menu wybrać <span class="menuPath">Narzędzia &gt; Wyczyść prywatne dane...</span>.</p>
++
++<h2 id="security_options">&pref.pluralCaps;: Bezpieczeństwo</h2>
++
++<p><em>Ostrzegaj, kiedy witryny próbują instalować dodatki</em><br/>
++  &brandShortName; zawsze prosi o&nbsp;potwierdzenie instalacji dodatków.
++  Aby zabezpieczyć użytkownika przed niepożądanymi prośbami o&nbsp;instalację
++  dodatków, mogącymi prowadzić do przypadkowego ich zainstalowania,
++  &brandShortName; ostrzega, kiedy witryna próbuje wyświetlić prośbę o&nbsp;potwierdzenie
++  i&nbsp;blokuje ją. Aby zezwolić konkretnej witrynie na instalację oprogramowania,
++  należy nacisnąć przycisk <em>Wyjątki...</em>, wprowadzić adres witryny
++  i&nbsp;kliknąć <em>Zezwól</em>. Odznaczenie tego pola spowoduje wyłączenie
++  tego ostrzeżenia dla wszystkich witryn.</p>
++   
++<p><em>Informuj, jeśli oglądana witryna może być próbą oszustwa</em><br/>
++  Zaznaczenie tego pola spowoduje, że &brandShortName; będzie sprawdzać,
++  czy odwiedzana witryna może stanowić próbę oszustwa i&nbsp;wyłudzenia danych
++  osobowych (określane to jest często jako <em>phishing</em>).</p>
++
++<p><em>Sprawdzaj obecność na liście podejrzanych witryn</em><br/>
++  Po zaznaczeniu tego pola przeglądarka &brandShortName; będzie porównywała
++  adres aktualnie odwiedzanej witryny z na bieżąco aktualizowaną listą
++  przechowywaną na komputerze użytkownika. Żadne dane dotyczące odwiedzanych
++  witryn nie będą przekazywane stronom trzecim podczas przeglądania.
++  Jako że techniki phishingu i&nbsp;strony je stosujące często ulegają zmianie,
++  ta metoda zabezpieczenia może nie być równie skuteczna, jak opisana niżej,
++  związana z&nbsp;odpytywaniem dostawcy usługi zabezpieczenia przed phishingiem
++  na temat każdej witryny.</p>
++
++<p><em>Sprawdzaj odpytując ... na temat każdej odwiedzanej witryny</em><br/>
++  Po zaznaczeniu tego pola przeglądarka &brandShortName; będzie przesyłać
++  szyfrowanym połączeniem adresy odwiedzanych witryn do wskazanego dostawcy
++  usług zabezpieczenia przed phishingiem, w&nbsp;celu zweryfikowania ich tożsamości.
++  Metoda ta oferuje największą skuteczność, ale informacje takie jak adres IP
++  i&nbsp;wersja przeglądarki mogą zostać przesłane i&nbsp;zapisane przez dostawcę.
++  Po wybraniu tej opcji użytkownik zostanie poproszony o zapoznanie się
++  z polityką prywatności wybranego dostawcy. Zgoda na warunki polityki
++  prywatności jest konieczna do włączenia tego zabezpieczenia.</p>
++      
++  <h3 id="security_passwords">Hasła</h3>
++  <p><em>Pamiętaj hasła do witryn</em><br/>
++    &brandShortName; może bezpiecznie zapisywać hasła wprowadzane
++    w formularzach w witrynach internetowych, ułatwiając kolejne
++    logowania do nich. Odznaczenie tego pola spowoduje, że program &brandShortName;
++    nie będzie zapamiętywał haseł użytkownika.</p>
++    
++    <p>Nawet po zaznaczeniu tego pola, przeglądarka będzie odpytywać użytkownika,
++    czy chce zapisać hasło do danej witryny przy pierwszej wizycie na niej.
++    Po wybraniu <em>Nigdy dla tej witryny</em> zostanie ona dodana do listy
++    wyjątków. Aby przejrzeć tę listę lub usunąć z&nbsp;niej dane witryny, należy
++    nacisnąć przycisk <em>Wyjątki</em>.</p>
++
++  <p id="set_change_master_password"><em>Używaj hasła głównego</em><br/>
++    &brandShortName; może chronić dane użytkownika, takie jak zapisane
++    hasła i&nbsp;certyfikaty, szyfrując je przy użyciu <a
++    href="glossary.xhtml#master_password">hasła głównego</a>. Po utworzeniu
++    hasła głównego, przy każdym uruchomieniu przeglądarki &brandShortName;
++    będzie ona prosić o&nbsp;wprowadzenie hasła głównego przy pierwszej sytuacji
++    wymagającej dostępu do zapisanego hasła lub certyfikatu. 
++    Hasło główne można ustawić, zmienić lub usunąć zaznaczając lub odznaczając
++    to pole, lub naciskając przycisk <em>Zmień hasło główne</em>. Jeśli hasło
++    główne jest już ustawione, konieczne będzie jego podanie przy próbie
++    zmiany lub usunięcia.</p>
++
++  <p><em>Wyświetl hasła...</em><br/>
++    Aby przejrzeć i&nbsp;ewentualnie usunąć konkretne zapisane hasła, należy
++    nacisnąć przycisk <em>Wyświetl hasła</em>.</p>
++
++  <h3 id="warning_messages">Ostrzeżenia</h3>
++  <p>Naciśnięcie przycisku <em>Ustawienia...</em> wyświetli okno pozwalające
++    skonfigurować ostrzeżenia bezpieczeństwa wyświetlane przez program 
++    &brandShortName; podczas przeglądania Internetu.</p>
++   
++    <h4>Okno &bdquo;Ostrzeżenia bezpieczeństwa&rdquo;</h4>
++    <p><em>Wyświetlaj ostrzeżenie przy:</em></p>
++    <dl>
++      <dt>otwieraniu szyfrowanej strony</dt>
++      <dd>Jeśli to pole jest zaznaczone, program &brandShortName; będzie powiadamiał
++        użytkownika o&nbsp;przejściu na szyfrowaną stronę.</dd>
++
++      <dt>otwieraniu strony o&nbsp;niskim stopniu szyfrowania</dt>
++      <dd>Jeśli to pole jest zaznaczone, program &brandShortName; będzie ostrzegał
++        przed wejściem na stronę używającą niskiego stopnia szyfrowania.</dd>
++
++      <dt>przechodzeniu ze strony szyfrowanej do nieszyfrowanej</dt>
++      <dd>Jeśli to pole jest zaznaczone, program &brandShortName; będzie ostrzegał
++        przed przejściem ze strony szyfrowanej do nieszyfrowanej, niezależnie od
++        tego, czy przejście to nastąpiło w&nbsp;wyniku kliknięcia odnośnika na szyfrowanej
++        stronie, otwarcia zakładki czy wpisania nowego adresu w&nbsp;pasku adresu.</dd>
++
++      <dt>przesyłaniu niezaszyfrowanych danych formularzy</dt>
++      <dd>Jeśli to pole jest zaznaczone, program &brandShortName; będzie ostrzegał
++        przed przesłaniem danych z&nbsp;formularza, który nie jest szyfrowany.</dd>
++  
++      <dt>otwieraniu szyfrowanej strony zawierającej niezaszyfrowane informacje</dt>
++      <dd>Jeśli to pole jest zaznaczone, program &brandShortName; będzie ostrzegał,
++        jeśli oglądana strona zawiera zarówno treści szyfrowane jak i&nbsp;nieszyfrowane.
++        Jeśli szyfrowana strona zawiera nieszyfrowane dane, użytkownik powinien
++        zweryfikować jej tożsamość przed przesyłaniem istotnych danych.</dd>
++    </dl>
++ 
+ 
+   <h2 id="advanced_options">&pref.pluralCaps;: Zaawansowane</h2>
+-  <p>Panel ten zawiera rzadziej używane opcje, które mogą być jednak przydatne w&nbsp;szczególnych przypadkach.</p>
+ 
+-  <h3 id="advanced_general">Karta <q>Ogólne</q></h3>
++  <p>Panel ten zawiera rzadziej używane opcje, które mogą być przydatne w&nbsp;szczególnych przypadkach.</p>
++
++  <h3 id="advanced_general">Karta &bdquo;Ogólne&rdquo;</h3>
+   <h4 id="accessibility">Dostępność</h4>
+ 
+-  <p><em>Pozwól na zaznaczanie tekstu przy użyciu klawiatury</em><br/>
+-	Opcja ta decyduje, czy wewnątrz dokumentu wyświetlany jest ruchomy kursor,
+-	dzięki któremu można zaznaczać tekst przy użyciu klawiatury.
+-
+- Niektóre urządzenia wspomagające dla osób niepełnosprawnych, takie jak czytniki i&nbsp;lupy ekranowe używają kursora, aby określić, którą część ekranu przeczytać lub powiększyć. Włączenie tej opcji pozwala lepiej skorzystać ze wspomnianych urządzeń. Tryb ten można włączać/wyłączać klawiszem <kbd>F7</kbd>.</p>
+-
+-  <p><em>Rozpocznij wyszukiwanie podczas wprowadzania tekstu</em><br/>
+-Jeśli ta opcja jest zaznaczona, &brandShortName; będzie można wyszukiwać tekstu na danej stronie
+-po prostu wpisując go z&nbsp;klawiatury. Podczas wpisywania szukanego wyrażenia u&nbsp;dołu okna przeglądarki automatycznie pojawi się Pasek wyszukiwania, który będzie wyświetlał informacje o&nbsp;wynikach szukania. </p>
++    <p><em>Zawsze używaj klawiszy kursora do nawigacji po stronach</em><br/>
++      Jeśli ta opcja jest zaznaczona, program &brandShortName; będzie na stronach WWW
++      wyświetlać kursor, pozwalający na zaznaczanie tekstu z klawiatury.
++      Tryb ten można przełączać klawiszem <kbd>F7</kbd>.</p>
++
++    <p><em>Rozpocznij wyszukiwanie podczas wprowadzania tekstu</em><br/>
++      Jeśli ta opcja jest zaznaczona, &brandShortName; będzie można wyszukiwać 
++      tekstu na danej stronie po prostu wpisując go z&nbsp;klawiatury. Podczas 
++      wpisywania szukanego wyrażenia u&nbsp;dołu okna przeglądarki automatycznie 
++      pojawi się Pasek wyszukiwania, który będzie wyświetlał informacje 
++      o&nbsp;wynikach wyszukiwania. </p>
+ 
+   <h4 id="browsing">Przeglądanie</h4>
+-
+-  <p><em>Dostosuj rozmiar dużych obrazków do okna przeglądarki</em><br/>
+-	Zaznaczenie tej opcji powoduje automatyczne zmiejszenie obrazków, które nie mieszczą się
+-	w oknie przeglądarki, co pozwala zobaczyć je w&nbsp;całości. Aby zobaczyć obraz w&nbsp;pełnych
+-	rozmiarach należy kliknąć na nim myszą (kursor przybiera kształt lupy).</p>
+-
+-  <p><em>Włącz obsługę automatycznego przewijania dokumentów</em><br/>Płynne przewijanie pozwala przewijać 
+-  stronę, poprzez przytrzymanie środkowego przycisku myszki oraz przesuwaniu jej w&nbsp;górę i&nbsp;w&nbsp;dół.
+-  </p>
+-
+-  <p><em>Włącz płynne przewijanie</em><br/>Płynne przewijanie jest na razie w&nbsp;eksperymentalną funkcją w&nbsp;przeglądarce &brandShortName;, choć może być ono bardzo pomocne dla osób, które czytają bardzo długie strony. Zwykle po naciśnięciu klawisza <kbd>Page Down</kbd> strona przesuwa się o&nbsp;cały ekran, gdy włączone jest płynne przewijanie, strona przesunie się płynnie, dzięki czemu użytkownik może zobaczyć o&nbsp;ile się przesunęła. Funkcja ta znacznie ułatwia wznawianie czytania od miejsca, w&nbsp;którym je przerwano.</p>
++  
++    <p><em>Używaj automatycznego przewijania</em><br/>
++      Automatyczne przewijanie pozwala przewijać stronę, poprzez przytrzymanie środkowego 
++      przycisku myszy (zwykle kółka przewijania) oraz przesuwaniu jej w&nbsp;górę 
++      lub w&nbsp;dół. Niektórzy uważają tę funkcję za niewygodną, więc można ją
++      w&nbsp;tym miejscu wyłączyć, odznaczając to pole.</p>
++
++    <p><em>Używaj płynnego przewijania</em><br/>
++      Płynne przewijanie może być bardzo pomocne dla osób, które czytają długie strony.
++      Zwykle po naciśnięciu klawisza <kbd>Page Down</kbd> strona przesuwa się o&nbsp;cały
++      ekran; gdy włączone jest płynne przewijanie, strona przesunie się płynnie, dzięki 
++      czemu użytkownik może zobaczyć o&nbsp;ile się przesunęła. Funkcja ta znacznie 
++      ułatwia wznawianie czytania od miejsca, w&nbsp;którym je przerwano.</p>
++
++    <p><em>Sprawdź pisownię podczas wprowadzania tekstu</em><br/>
++      Jeśli ta opcja jest zaznaczona, program &brandShortName; będzie sprawdzał
++      poprawność pisowni i&nbsp;sugerował poprawki podczas wypełniania formularzy.
++      Polska wersja Firefoksa zawiera polski słownik poprawnej pisowni, ale
++      w&nbsp;przypadku innych języków konieczna będzie instalacja dodatkowych
++      słowników. Aby pobrać słownik, należy <span class="noMac">kliknąć prawym 
++      przyciskiem myszy</span><span class="mac">trzymając wciśnięty klawisz &ctrlKey;
++      kliknąć</span> na dowolne pole tekstowe, włączyć sprawdzanie pisowni i&nbsp;z&nbsp;menu
++      podręcznego wybrać <span class="menuPath">Języki &gt; Dodaj słowniki</span>.</p>
+ 
+     <h4 id="languages">Języki</h4>
+ 
+-      <p>Niektóre strony udostępniane są w&nbsp;więcej niż jednej wersji językowej.
+-Aby ustalić preferowane języki, należy kliknąć przycisk <em>Edytuj języki...</em>.</p>
++    <p>Niektóre strony udostępniane są w&nbsp;więcej niż jednej wersji językowej.
++      Aby ustalić preferowane języki, należy kliknąć przycisk <em>Wybierz...</em>.</p>
++
++    <p><strong>Okno dialogowe &bdquo;Języki&rdquo;:</strong><br/>
++      Aby dodać język, należy nacisnąć <em>Wybierz język do dodania...</em>, wybrać
++      dany język i&nbsp;kliknąć przycisk <em>Dodaj</em>. Aby usunąć język z&nbsp;listy,
++      należy zaznaczyć go i&nbsp;kliknąć przycisk <em>Usuń</em>.</p>
++
++    <p>Jeśli strona jest udostępniana w&nbsp;kilku z&nbsp;ustawionych w&nbsp;tym miejscu języków,
++      zostanie wyświetlona wersja w&nbsp;języku znajdującym się na wyższym miejscu na liście.
++      Kolejność języków można ustalić zaznaczając dany język i&nbsp;klikając jeden z&nbsp;przycisków
++      <em>W&nbsp;górę</em> lub <em>W&nbsp;dół</em>.</p>
++
++  <h3 id="advanced_network">Karta &bdquo;Sieć&rdquo;</h3>
++    <h4 id="connection_settings">Połączenia</h4>
++    <p>Dostawcy usług internetowych lub firmy mogą udostępniać lub wymagać
++      łączenia się przez serwer proxy (zwany też serwerem pośredniczącym).
++      Serwer proxy działa jako pośrednik między komputerem a&nbsp;siecią Internet.
++      Przechwytuje wszystkie żądania, by spawdzić, czy może je wypełnić
++      korzystając ze swojej pamięci podręcznej. Serwery proxy wykorzystywane są
++      do zwiększenia wydajności, odfiltrowania żądań i&nbsp;ukrycia wewnętrznych
++      komputerów przed dostępem z&nbsp;zewnątrz, w&nbsp;celu zwiększenia bezpieczeństwa.
++      Serwery proxy częto są częścią korporacyjnych zapór sieciowych.</p>
+ 
+-      <p><strong>Okno dialogowe <q>Języki</q>:</strong><br/>
++    <h4>Okno &bdquo;Ustawienia połączenia&rdquo;</h4>
++    <dl>
++      <dt>Bezpośrednie połączenie z&nbsp;Internetem</dt>
++      <dd>To domyślne ustawienie, które powinno być zaznaczone, jeśli użytkownik
++        nie zamierza korzystać z serwera proxy.</dd>
+ 
+-	Aby dodać język, należy nacisnąć <em>Wybierz język do dodania...</em>, wybrać
+-	dany język i&nbsp;kliknąć przycisk <em>Dodaj</em>. Aby usunąć język z&nbsp;listy,
+-	należy zaznaczyć go i&nbsp;kliknąć przycisk <em>Usuń</em>.</p>
++      <dt>Automatycznie wykryj ustawienia serwerów proxy dla tej sieci</dt>
++      <dd>Opcję tę należy wybrać, jeśli &brandShortName; ma automatycznie
++        wykryć wszystkie ustawienia proxy dla używanej sieci.</dd>
+ 
+-      <p>Jeśli strona jest udostępniana w&nbsp;kilku z&nbsp;ustawionych w&nbsp;tym miejscu języków,
+-	zostanie wyświetlona wersja w&nbsp;języku znajdującym się na wyższym miejscu na liście.
+-Kolejność języków można ustalić zaznaczając dany język i&nbsp;klikając jeden z&nbsp;przycisków
+-        <em>W&nbsp;górę</em> lub <em>W&nbsp;dół</em>.</p>
++      <dt>Ręczna konfiguracja serwerów proxy</dt>
++      <dd>Opcję tę należy wybrać, jeśli użytkownik nie posiada adresu URL dla
++        automatycznej konfiguracji serwera proxy. Należy się skontaktować 
++        z&nbsp;administratorem sieci i&nbsp;poprosić go o&nbsp;nazwy i&nbsp;numery 
++        portów serwerów proxy dla każdej z&nbsp;usług sieciowych i&nbsp;wprowadzić te
++        informacje we&nbsp;właściwe pola w tym oknie.</dd>
++
++      <dt>Adres URL automatycznej konfiguracji</dt>
++      <dd>Jeśli istnieje plik automatycznej konfiguracji serwerów proxy,
++        należy w tym miejscu wprowadzić jego adres URL. Należy się skontaktować
++        z&nbsp;administratorem sieci i&nbsp;poprosić go o&nbsp;adres takiego
++        pliku. Aby wczytać ustawienia, należy nacisnąć przycisk <em>Odśwież</em>.</dd>
++    </dl>
++    
++    <h4 id="advanced_cache">Pamięć podręczna</h4>
++    <p>Wyświetlane strony są zwykle przechowywane w specjalnym folderze pamięci
++      podręcznej, umożliwiając szybszy dostęp do nich przy następnej wizycie.
++      W tym miejscu można określić ilość przestrzeni dyskowej, która ma być
++      wykorzystana jako pamięć podręczna.</p>
+ 
+-  <h3 id="advanced_update">Karta <q>Aktualizacja</q></h3>
++  <h3 id="advanced_update">Karta &bdquo;Aktualizacja&rdquo;</h3>
+ 
+     <p>&brandShortName; może sprawdzać, czy pojawiły się nowe wersje zainstalowanych
+-rozszerzeń, motywów lub samego programu &brandShortName;.</p>
++      dodatków lub samego programu &brandShortName;.</p>
+ 
+     <p><em>Automatycznie sprawdzaj, czy są dostępne aktualizacje dla</em><br/>
+         Domyślnie &brandShortName; automatycznie sprawdza, czy są dostępne aktualizacje
+-        dla samej przeglądarki jak również dla zainstalowanych rozszerzeń, motywów i&nbsp;wyszukiwarek, dzięki
++        dla samej przeglądarki jak również dla zainstalowanych dodatków i&nbsp;wyszukiwarek, dzięki
+         czemu użytkownik zawsze wie, czy ma najnowsze wersje. Sprawdzanie to można wyłączyć
+         odznaczając odpowiednie pole przy tej opcji.</p>
+ 
+-    <p><em>Kiedy zostaną znalezione aktualizacje dla programu &brandShortName;,</em></p>
++    <p><em>Kiedy zostaną znalezione aktualizacje dla programu &brandShortName;:</em></p>
+ 
+     <dl>
+-       <dt>zapytaj mnie, co robić</dt>
++       <dt>zapytaj, co robić</dt>
+        <dd>Domyślnie aktualizacje dla programu &brandShortName; są zazwyczaj instalowane automatycznie.
+            Należy zaznaczyć to pole, aby samodzielnie decydować, kiedy
+            i&nbsp;jak mają być zainstalowane kolejne aktualizacje.</dd>
+        <dt>automatycznie pobierz i&nbsp;zainstaluj aktualizacje</dt>
+        <dd>Kiedy to pole jest zaznaczone, aktualizacje dla programu &brandShortName;
+            będą pobierane automatycznie i&nbsp;instalowane przy kolejnym uruchomieniu
+-           przeglądarki. Opcja <em>ostrzeż mnie, jeśli aktualizacja spowoduje zablokowanie rozszerzeń lub motywów</em>
++           przeglądarki. Opcja <em>ostrzeż, jeśli aktualizacja spowoduje zablokowanie dodatków</em>
+            pozwala ustalić, czy użytkownik ma być poinformowany o&nbsp;instalowaniu
+            aktualizacji, która wymagałaby zablokowania niezgodnego rozszerzenia lub motywu
+            (np. z&nbsp;powodu braku nowej, zgodnej wersji). W&nbsp;takiej sytuacji użytkownik będzie
+-           mógł zrezygnować z&nbsp;instalacji aktualizacji, kosztem usprawnień w&nbsp;niej zawartych.</dd>
+-      <dd>Jeśli wszystkie rozszerzenia i&nbsp;motywy są zgodne albo mogą być zaktualizowane
+-          do zgodnej wersji, aktualizacja programu &brandShortName; zostanie zainstalowana.
+-          Przy ponownym uruchomieniu użytkownik zostanie poproszony o&nbsp;zainstalowanie
+-          wymaganych aktualizacji dla rozszerzeń i&nbsp;motywów, aby można ich było nadal używać.</dd>
++           mógł zrezygnować z&nbsp;instalacji aktualizacji, kosztem usprawnień w&nbsp;niej zawartych.<br/><br/>
++           Jeśli wszystkie rozszerzenia i&nbsp;motywy są zgodne albo mogą zostać zaktualizowane
++           do zgodnej wersji, aktualizacja programu &brandShortName; zostanie zainstalowana.
++           Przy ponownym uruchomieniu użytkownik zostanie poproszony o&nbsp;zainstalowanie
++           wymaganych aktualizacji dla rozszerzeń i&nbsp;motywów, aby można ich było nadal używać.</dd>
+     </dl>
+ 
+     <p><em>Wyświetl historię aktualizacji</em><br />
+@@ -466,67 +655,54 @@
+ 	należy być zalogowanym jako <span class="win">administrator</span><span class="noWin">użytkownik root</span>
+ 	lub jako użytkownik, który pierwotnie zainstalował przeglądarkę.</p>
+ 
+-  <h3 id="advanced_security">Karta <q>Bezpieczeństwo</q></h3>
++  <h3 id="advanced_encryption">Karta &bdquo;Szyfrowanie&rdquo;</h3>
+ 
+     <h4 id="protocols">Protokoły</h4>
+ 
+-  <p><em>Włącz obsługę SSL 3.0</em><br/>Określa, czy informacje poufne maja być wysyłane i&nbsp;odbierane poprzez protokół SSL3 (Secured Sockets Layer, Level 3). To standardowy protokół dla transmisji bezpiecznych. Wyłączenie jego obsługi może uniemożliwić korzystanie z niektórych witryn.</p>
+-  <p><em>Włącz obsługę TLS 1.0</em><br/>Określa, czy informacje poufne maja być wysyłane i&nbsp;odbierane poprzez protokół TLS (Transport Layer Security, otwarty protokół dla transmisji bezpiecznych, podobny do SSL 3.0. Wyłączenie jego obsługi może uniemożliwić korzystanie z niektórych witryn.</p>
+-
+-    <h4 id="warnings">Ostrzeżenia</h4>
++    <p><em>Włącz obsługę SSL 3.0</em><br/>
++      Określa, czy informacje poufne maja być wysyłane i&nbsp;odbierane poprzez protokół
++      SSL3 (Secured Sockets Layer, Level 3). To standardowy protokół dla transmisji 
++      bezpiecznych. Wyłączenie jego obsługi może uniemożliwić korzystanie z niektórych witryn.</p>
++
++    <p><em>Włącz obsługę TLS 1.0</em><br/>
++      Określa, czy informacje poufne maja być wysyłane i&nbsp;odbierane poprzez protokół
++      TLS (Transport Layer Security), otwarty protokół dla transmisji bezpiecznych, podobny 
++      do SSL 3.0. Wyłączenie jego obsługi może uniemożliwić korzystanie z niektórych witryn.</p>
+ 
+-  <p><em>Skonfiguruj ostrzeżenia bezpieczeństwa</em><br/>
+-  Kliknięcie tego przycisku spowoduje wyświetlenie okna, w którym
+-  można będzie skonfigurować ostrzeżenia bezpieczeństwa wyświetlane
+-  przez program &brandShortName; podczas przeglądania stron.</p>
+-  
+     <h4 id="certificates">Certyfikaty</h4>
+ 
+-  <p>Certyfikaty służą do szyfrowania połączeń
+-z&nbsp;<a href="glossary.xhtml#secure_site">bezpiecznymi witrynami</a>.</p>
++  <p>Certyfikaty służą do szyfrowania i deszyfrowania połączeń
++    z&nbsp;<a href="glossary.xhtml#secure_site">bezpiecznymi witrynami</a>.</p>
+ 
+   <p><em>Kiedy witryna wymaga certyfikatu</em><br/>
+-	Gdy witryna żąda bezpieczniego połączenia, przeglądarka &brandShortName; 
+-	automatycznie użyje odpowiedniego certyfikatu. Aby ręcznie wybrać certyfikat
+-	dla każdego bezpiecznego połączenia, należy zaznaczyć opcję "Pytaj za każdym razem".</p>
++    Gdy witryna żąda bezpieczniego połączenia, przeglądarka &brandShortName; 
++    automatycznie użyje odpowiedniego certyfikatu. Aby ręcznie wybrać certyfikat
++    dla każdego bezpiecznego połączenia, należy zaznaczyć opcję "Pytaj za każdym razem".</p>
+ 
+   <p><em>Wyświetl certyfikaty</em><br/>
+-	Aby przejrzeć, zaimportować lub usunąć certyfikat, należy nacisnąć
+-	przycisk <em>Wyświetl certyfikaty</em>.</p>
++    Aby przejrzeć, zaimportować lub usunąć certyfikat, należy nacisnąć
++    przycisk <em>Wyświetl certyfikaty</em>.</p>
+ 
+-  <p><em>Listy CRL</em><br/>
+-  Przeglądarka &brandShortName; może używać list odwołania certyfikatów (CRL - z&nbsp;ang. <em>Certificate Revocation Lists</em>) do zapewnienia aktualności certyfikatów. Aby dodać nowe lub wyświetlić informacje o&nbsp;dostepnych listach odwołania certyfikatów, należy nacisnąć przycisk <em>Listy CRL</em>.</p>
++  <p><em>Listy odwołania</em><br/>
++    Przeglądarka &brandShortName; może używać list odwołania certyfikatów (CRL - z&nbsp;ang.
++    <em>Certificate Revocation Lists</em>) do zapewnienia aktualności certyfikatów. Aby 
++    zarządzać dostępnymi listami odwołania certyfikatów, należy nacisnąć przycisk 
++    <em>Listy odwołania</em>.</p>
+ 
+   <p><em>Weryfikacja</em><br/>
+-  Protokół OCSP (Online Certificate Status Protocol) służy do weryfikacji certyfikatu podczas każdego jego użycia. Przeglądarka &brandShortName; nie używa domyślnie protokołu OCSP, lecz użytkownik może ją włączyć.</p>
++    &brandShortName; może używać protokołu OCSP (Online Certificate Status Protocol)
++    do weryfikacji certyfikatów przy każdym ich wyświetleniu lub użyciu.
++    Domyślnie &brandShortName; nie używa OCSP, ale można to zmienić w&nbsp;
++    tym miejscu. Najprawdopodobniej trzeba to zrobić tylko, jeśli wymagają
++    tego warunki połączenia z Internetem.</p>
+ 
+   <p><em>Urządzenia zabezpieczające</em><br/>
+-	Urządzenia zabezpieczające służą do szyfrowania połączeń oraz przechowywania
+-	certyfikatów i&nbsp;haseł. Aby skorzystać z&nbsp;innego niż wbudowane w&nbsp;przeglądarkę
+-	&brandShortName; urządzenia zabezpieczającego lub zmienić hasło główne dla
+-	urządzenia, należy nacisnąć przycisk <em>Menedżer urządzeń zabezpieczających</em>.</p>
+-
+-  <h3 id="advanced_safebrowsing">Zabezpieczenie przed phishingiem</h3>
+-    <p><em>Sprawdzaj, czy oglądana strona może być oszustwem</em><br/>
+-	  Należy zaznaczyć tę opcję, jeśli program &brandShortName; ma sprawdzać, czy
+-	  oglądana strona może stanowić próbę oszustwa i wyłudzenia danych osobistych.</p>
+-	  
+-    <p><em>używając lokalnie przechowywanej listy</em><br/>
+-	  Ta opcja oznacza, że program &brandShortName; będzie sprawdzał obecność
+-	  danej witryny na liście niebezpiecznych stron przechowywanej lokalnie
+-	  na tym komputerze. Żadne dane nie będą przesyłane do osób trzecich.
+-	  Ponieważ metody i witryny stosowane przez oszustów zmieniają się często, 
+-	  ten sposób zabezpieczenia może nie być równie skuteczny, jak przy
+-	  komunikowaniu się z zewnętrznym dostawcą danych.</p>
+-
+-    <p><em>odpytując</em><br/>
+-	  Ta opcja oznacza, że program &brandShortName; będzie przesyłał 
+-	  szyfrowanym kanałem informacje o aktualnie oglądanej witrynie do wskazanego
+-	  dostawcy danych, w celu potwierdzenia jej tożsamości. Ta metoda stanowi
+-	  skuteczniejsze zabezpieczenie, ale należy zapoznać się z polityką prywatności
+-	  danego dostawcy przed zaznaczeniem tej opcji.</p>
+-	
+-<div class="contentsBox"><em>29 czerwca 2006</em></div>
++    Urządzenia zabezpieczające służą do szyfrowania połączeń oraz przechowywania
++    certyfikatów i&nbsp;haseł. Aby skorzystać z&nbsp;innego niż wbudowane w&nbsp;przeglądarkę
++    &brandShortName; urządzenia zabezpieczającego lub zmienić hasło główne dla
++    urządzenia, należy nacisnąć przycisk <em>Urządzenia zabezpieczające</em>.</p>
++
++<div class="contentsBox"><em>13 września 2006</em></div>
+ <p>Copyright &copy; 2003-2006 Contributors to the Mozilla Help Viewer Project.</p>
+ </body>
+ </html>
+Index: tabbed_browsing.xhtml
+===================================================================
+RCS file: /l10n/l10n/pl/browser/chrome/help/tabbed_browsing.xhtml,v
+retrieving revision 1.5.2.7
+diff -u -r1.5.2.7 tabbed_browsing.xhtml
+--- tabbed_browsing.xhtml	8 Sep 2006 13:58:46 -0000	1.5.2.7
++++ tabbed_browsing.xhtml	13 Sep 2006 21:10:33 -0000
+@@ -109,7 +109,7 @@
+ 
+   <dd>Możliwe jest ustawienie kilku kart jako strony startowej.
+   W&nbsp;tym celu należy otworzyć wszystkie żądane witryny w&nbsp;kartach, z&nbsp;menu wybrać &pref.menuPath;,
+-  następnie otworzyć dział <em>Ogólne</em> i&nbsp;w&nbsp;częsci <em>Strona startowa</em> nacisnąć przycisk 
++  następnie otworzyć panel <a href="prefs.xhtml#main_options"><em>Główne</em></a> i&nbsp;w&nbsp;częsci <em>Strona startowa</em> nacisnąć przycisk 
+   <em>Użyj bieżących stron</em>. Od tej chwili po naciśnięciu przycisku "Strona startowa" na pasku narzędzi
+   otwarta zostanie grupa kart z&nbsp;ulubionymi witrynami użytkownika.</dd>
+ 
+@@ -124,7 +124,7 @@
+ 
+   </dl>
+ 
+-<div class="contentsBox"><em>10 sierpnia 2006</em></div>
++<div class="contentsBox"><em>13 września 2006</em></div>
+ <p>Copyright &copy; 2003-2006 Contributors to the Mozilla Help Viewer Project.</p>
+ </body>
+ </html>
+Index: using_firebird.xhtml
+===================================================================
+RCS file: /l10n/l10n/pl/browser/chrome/help/using_firebird.xhtml,v
+retrieving revision 1.8.2.19
+diff -u -r1.8.2.19 using_firebird.xhtml
+--- using_firebird.xhtml	11 Sep 2006 23:37:40 -0000	1.8.2.19
++++ using_firebird.xhtml	13 Sep 2006 21:10:34 -0000
+@@ -129,7 +129,7 @@
+ 
+ <p>Wyszukiwanie informacji w&nbsp;Internecie sprowadza się do wpisania
+ szukanego hasła do pola na pasku narzędzi wyszukiwania.<br/>
+-<img src="images/searchbar.png" alt="" width="226" height="28"
++<img src="images/searchbar.png" alt="" width="262" height="28"
+      /></p>
+ 
+ <p>Przykładowo, aby wyszukać informacje na temat Mozilli w&nbsp;Polsce, należy:</p>
+@@ -442,8 +442,8 @@
+ można ustawić w&nbsp;oknie <em>Czynności pobierania</em>. Aby otworzyć to okno, należy wybrać
+ &pref.menuPath;, przejść do panelu <em>Treść</em> i&nbsp;kliknąć przycisk <em>Zarządzaj</em> w&nbsp;sekcji
+ <em>Typy plików</em>. Można zmienić domyślną czynność dla każdego typu pliku albo ją usunąć. Więcej
+-na ten temat można znaleźć w&nbsp;rozdziale <a href="prefs.xhtml#download_actions">&pref.pluralCaps;:
+- Pobieranie</a>.</p>
++na ten temat można znaleźć w&nbsp;rozdziale <a href="prefs.xhtml#file_types">&pref.pluralCaps;:
++ Typy plików</a>.</p>
+ 
+ <p>Kiedy użytkownik kliknie na odnośnik do pliku, którego &brandShortName; nie potrafi obsłużyć,
+ zostanie wyświetlone okno <em>Otwieranie</em>, w&nbsp;którym użytkownik może wybrać spośród trzech możliwości:</p>
+@@ -493,7 +493,7 @@
+ <p>Aby pobrać aktualną wersję strony, należy nacisnąć przycisk <em>Odśwież</em> na pasku narzędzi. Przeglądarka pobierze oglądaną witrynę ponownie:</p>
+ 
+ 
+-<div class="contentsBox"><em>11 września 2006</em></div>
++<div class="contentsBox"><em>13 września 2006</em></div>
+ <p>Copyright &copy; 2003-2006 Contributors to the Mozilla Help Viewer Project.</p>
+ </body>
+ </html>
+

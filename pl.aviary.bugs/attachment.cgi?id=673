@@ -1,0 +1,69 @@
+Index: mail/chrome/messenger/preferences/privacy.dtd
+===================================================================
+RCS file: /l10n/l10n/pl/mail/chrome/messenger/preferences/privacy.dtd,v
+retrieving revision 1.3.2.2
+diff -u -r1.3.2.2 privacy.dtd
+--- mail/chrome/messenger/preferences/privacy.dtd	12 Sep 2005 21:03:27 -0000	1.3.2.2
++++ mail/chrome/messenger/preferences/privacy.dtd	29 Oct 2005 18:15:15 -0000
+@@ -30,10 +30,10 @@
+ 
+ <!-- Security -->
+ <!ENTITY certificates.label             "Certyfikaty">
+-<!ENTITY certificatesInfo.label         "Zarządzaj certyfikatami i ich weryfikacją, listą CRL oraz urządzeniami bezpieczeństwa.">
++<!ENTITY certificatesInfo.label         "Zarządzaj certyfikatami, ich weryfikacją, listami unieważnionych certyfikatów (CRL) oraz urządzeniami bezpieczeństwa.">
+ <!ENTITY viewCertificates.label         "Wyświetl certyfikaty">
+ <!ENTITY viewCertificates.accesskey     "i">
+-<!ENTITY viewCRLs.label                 "Lista CRL">
++<!ENTITY viewCRLs.label                 "Listy CRL">
+ <!ENTITY viewCRLs.accesskey             "t">
+ <!ENTITY viewOCSP.label                 "Weryfikacja">
+ <!ENTITY viewOCSP.accesskey             "f">
+Index: security/manager/chrome/pippki/pippki.properties
+===================================================================
+RCS file: /l10n/l10n/pl/security/manager/chrome/pippki/pippki.properties,v
+retrieving revision 1.2.2.2
+diff -u -r1.2.2.2 pippki.properties
+--- security/manager/chrome/pippki/pippki.properties	21 Oct 2005 12:52:21 -0000	1.2.2.2
++++ security/manager/chrome/pippki/pippki.properties	29 Oct 2005 18:15:15 -0000
+@@ -191,7 +191,7 @@
+ crlAutoupdateOk=OK
+ crlAutoupdateFailed=Nieudana
+ crlImportNewCRLTitle=Zaimportuj list\u0119 uniewa\u017Cnionych certyfikat\u00F3w
+-crlImportNewCRLLabel=Importuj CRL z:
++crlImportNewCRLLabel=Importuj list\u0119 CRL z:
+ 
+ #Import certificate(s) file dialog
+ importEmailCertPrompt=Wybierz pliki zawieraj\u0105ce certyfikat(y) e-mail innych os\u00F3b, kt\u00F3re maj\u0105 zosta\u0107 zaimportowane
+Index: security/manager/chrome/pippki/pref-validation.dtd
+===================================================================
+RCS file: /l10n/l10n/pl/security/manager/chrome/pippki/pref-validation.dtd,v
+retrieving revision 1.1
+diff -u -r1.1 pref-validation.dtd
+--- security/manager/chrome/pippki/pref-validation.dtd	16 Apr 2005 17:24:42 -0000	1.1
++++ security/manager/chrome/pippki/pref-validation.dtd	29 Oct 2005 18:15:15 -0000
+@@ -17,15 +17,18 @@
+    - Rights Reserved.
+    - 
+    - Contributor(s):
+-   - David P. Drinan (ddrinan@netscape.com)
++   -    David P. Drinan (ddrinan@netscape.com)
++   -    Marek Wawoczny <gmbh@mozillapl.org> (Polish translation)
++   -    Piotr Bartecki <pbartecki@mozillapl.org> (Polish translation)
++   -    Piotr Komoda <gorky@civ.pl> (Polish translation)
+   -->
+ 
+ <!ENTITY validation.title "Weryfikacja" >
+-<!ENTITY validation.crl.label "Lista unieważnionych certyfikatów CRL" >
+-<!ENTITY validation.crl.description "Kliknij poniżej, aby zarządzać listą unieważnionych certyfikatów CRL, przechowywaną w bazie certyfikatów, za pomocą Menedżera CRL." >
+-<!ENTITY validation.managecrls.button "Menedżer CRL..." >
+-<!ENTITY validation.managecrls.accesskey "M" >
+-<!ENTITY validation.crlmanager.label "Menedżer CRL" >
++<!ENTITY validation.crl.label "Listy unieważnionych certyfikatów (CRL)" >
++<!ENTITY validation.crl.description "Zarządzaj listami unieważnionych certyfikatów (CRL), którę są przechowywane w Twojej bazie certyfikatów." >
++<!ENTITY validation.managecrls.button "Listy CRL..." >
++<!ENTITY validation.managecrls.accesskey "t" >
++<!ENTITY validation.crlmanager.label "Zarządzaj listami unieważnionych certyfikatów (CRL)" >
+ <!ENTITY validation.crlname.label "Nazwa" >
+ <!ENTITY validation.crllastupdate.label "Ostatnia aktualizacja" >
+ <!ENTITY validation.crlnextupdate.label "Następna aktualizacja" >
+

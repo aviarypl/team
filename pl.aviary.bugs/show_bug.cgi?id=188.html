@@ -1,0 +1,2808 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>188 &ndash; Lokalizacja Firefoksa 1.0 PR 1 (&quot;0.10&quot;)</title>
+
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<link href="data/assets/7aa6ea67750936a0368541421bdcd5ee.css" rel="stylesheet" type="text/css">
+
+
+
+    
+<script type="text/javascript" src="data/assets/a7c2f3a028f17a9aa60f56dc9d6e732d.js"></script>
+
+    <script type="text/javascript">
+    <!--
+        YAHOO.namespace('bugzilla');
+        YAHOO.util.Event.addListener = function (el, sType, fn, obj, overrideContext) {
+               if ( ("onpagehide" in window || YAHOO.env.ua.gecko) && sType === "unload") { sType = "pagehide"; };
+               var capture = ((sType == "focusin" || sType == "focusout") && !YAHOO.env.ua.ie) ? true : false;
+               return this._addListener(el, this._getType(sType), fn, obj, overrideContext, capture);
+         };
+        if ( "onpagehide" in window || YAHOO.env.ua.gecko) {
+            YAHOO.util.Event._simpleRemove(window, "unload", 
+                                           YAHOO.util.Event._unload);
+        }
+        
+        function unhide_language_selector() { 
+            YAHOO.util.Dom.removeClass(
+                'lang_links_container', 'bz_default_hidden'
+            ); 
+        } 
+        YAHOO.util.Event.onDOMReady(unhide_language_selector);
+
+        
+        var BUGZILLA = {
+            param: {
+                cookiepath: '\/',
+                maxusermatches: 1000
+            },
+            constant: {
+                COMMENT_COLS: 80
+            },
+            string: {
+                
+
+                attach_desc_required:
+                    "You must enter a Description for this attachment.",
+                component_required:
+                    "You must select a Component for this bug.",
+                description_required:
+                    "You must enter a Description for this bug.",
+                short_desc_required:
+                    "You must enter a Summary for this bug.",
+                version_required:
+                    "You must select a Version for this bug."
+            }
+              , api_token: ''
+        };
+
+    if (history && history.replaceState) {
+      if(!document.location.href.match(/show_bug\.cgi/)) {
+        history.replaceState( null,
+                             "188 – Lokalizacja Firefoksa 1.0 PR 1 (\"0.10\")",
+                             "show_bug.cgi?id=188" );
+        document.title = "188 – Lokalizacja Firefoksa 1.0 PR 1 (\"0.10\")";
+      }
+      if (document.location.href.match(/show_bug\.cgi\?.*list_id=/)) {
+        var href = document.location.href;
+        href = href.replace(/[\?&]+list_id=(\d+|cookie)/, '');
+        history.replaceState(null, "188 – Lokalizacja Firefoksa 1.0 PR 1 (\"0.10\")", href);
+      }
+    }
+    YAHOO.util.Event.onDOMReady(function() {
+      initDirtyFieldTracking();
+
+    });
+    // -->
+    </script>
+<script type="text/javascript" src="data/assets/daf5e0fb6826e6a35280e622913f0c4a.js"></script>
+
+    
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+                       title="Bugzilla" href="search_plugin.cgi">
+    <link rel="shortcut icon" href="images/favicon.ico">
+  </head>
+
+  <body 
+        class="bugs-aviary-pl
+                 bz_bug
+                 bz_status_VERIFIED
+                 bz_product_Firefox
+                 bz_component_Og&#XF3;lne
+                 bz_bug_188 yui-skin-sam">
+
+  <div id="header"><div id="banner">
+  </div>
+
+    <div id="titles">
+      <span id="title">Bugzilla &ndash; Bug&nbsp;188</span>
+
+        <span id="subtitle" class="subheader">Lokalizacja Firefoksa 1.0 PR 1 (&quot;0.10&quot;)</span>
+
+        <span id="information" class="header_addl_info">Last modified: 2009-01-02 03:22:24 CET</span>
+    </div>
+
+
+    <div id="common_links"><ul class="links">
+  <li><a href="index.html">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi.html">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi.html">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi.html">Search</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="http://bugs.aviary.pl/buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input type="hidden" id="no_redirect_top" name="no_redirect" value="0">
+    <script type="text/javascript">
+      if (history && history.replaceState) {
+        var no_redirect = document.getElementById("no_redirect_top");
+        no_redirect.value = 1;
+      }
+    </script>
+    <input class="txt" type="text" id="quicksearch_top" name="quicksearch" 
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search" 
+           id="find_top"></form>
+  <a href="page.cgi%3Fid=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="report.cgi.html">Reports</a></li>
+
+  <li>
+      <span class="separator">| </span>
+        <a href="request.cgi.html">Requests</a></li>
+
+
+  <li>
+        <span class="separator">| </span>
+        <a href="https://bugzilla.readthedocs.org/en/5.0/using/understanding.html" target="_blank">Help</a>
+      </li>
+    
+      <li id="new_account_container_top">
+        <span class="separator">| </span>
+        <a href="createaccount.cgi.html">New&nbsp;Account</a>
+      </li>
+
+    <li id="mini_login_container_top">
+  <span class="separator">| </span>
+  <a id="login_link_top" href="show_bug.cgi%3Fid=188&amp;GoAheadAndLogIn=1.html"
+     onclick="return show_mini_login_form('_top')">Log In</a>
+
+  <form action="show_bug.cgi%3Fid=188.html" method="POST"
+        class="mini_login bz_default_hidden"
+        id="mini_login_top">
+    <input id="Bugzilla_login_top" required
+           name="Bugzilla_login" class="bz_login"
+        type="email" placeholder="Email Address">
+    <input class="bz_password" name="Bugzilla_password" type="password"
+           id="Bugzilla_password_top" required
+           placeholder="Password">
+    <input type="hidden" name="Bugzilla_login_token"
+           value="1469819920-5nWGvhpqffLu2nbSBmYWdWKLwEruSNxG9O3H60Y2-TE">
+    <input type="submit" name="GoAheadAndLogIn" value="Log in"
+            id="log_in_top">
+    <a href="show_bug.cgi%3Fid=188.html#" onclick="return hide_mini_login_form('_top')">[x]</a>
+  </form>
+</li>
+
+
+  <li id="forgot_container_top">
+    <span class="separator">| </span>
+    <a id="forgot_link_top" href="show_bug.cgi%3Fid=188&amp;GoAheadAndLogIn=1.html#forgot"
+       onclick="return show_forgot_form('_top')">Forgot Password</a>
+    <form action="http://bugs.aviary.pl/token.cgi" method="post" id="forgot_form_top"
+          class="mini_forgot bz_default_hidden">
+      <label for="login_top">Login:</label>
+      <input name="loginname" size="20" id="login_top" required
+          type="email" placeholder="Your Email Address">
+      <input id="forgot_button_top" value="Reset Password" type="submit">
+      <input type="hidden" name="a" value="reqpw">
+      <input type="hidden" id="token_top" name="token"
+             value="1469819920-8WB8S2XvrLKCOe16anbbSMJfRz2beWu-ZwKIej1B_Ks">
+      <a href="show_bug.cgi%3Fid=188.html#" onclick="return hide_forgot_form('_top')">[x]</a>
+    </form>
+  </li>
+</ul>
+    </div>
+  </div>
+
+  <div id="bugzilla-body">
+
+
+<script type="text/javascript">
+<!--
+
+//-->
+</script>
+
+<form name="changeform" id="changeform" method="post" action="http://bugs.aviary.pl/process_bug.cgi">
+
+  <input type="hidden" name="delta_ts" value="2009-01-02 03:22:24">
+  <input type="hidden" name="id" value="188">
+  <input type="hidden" name="token" value="1469819920-fLcr3VJi7S-6cCT8iNZcWfkdSzq_4_A-TvQghxOYhv4">
+<div class="bz_short_desc_container edit_form">
+     <a href="show_bug.cgi%3Fid=188.html"><b>Bug&nbsp;188</b></a> <span id="summary_container" class="bz_default_hidden">
+      - <span id="short_desc_nonedit_display">Lokalizacja Firefoksa 1.0 PR 1 (&quot;0.10&quot;)</span>
+     </span>
+
+    <div id="summary_input"><span class="field_label "
+    id="field_label_short_desc">
+
+
+  <a 
+      title="The bug summary is a short sentence which succinctly describes what the bug is about."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#short_desc"
+  >Summary:</a>
+
+</span>Lokalizacja Firefoksa 1.0 PR 1 (&quot;0.10&quot;)
+    </div>
+  </div>
+  <script type="text/javascript">
+    hideEditableField('summary_container',
+                      'summary_input',
+                      'summary_edit_action',
+                      'short_desc',
+                      'Lokalizacja Firefoksa 1.0 PR 1 (\"0.10\")' );
+  </script>
+  <table class="edit_form">
+    <tr>
+      
+      <td id="bz_show_bug_column_1" class="bz_show_bug_column">     
+        <table>
+          <tr>
+    <th class="field_label">
+      <a href="page.cgi%3Fid=fields.html#bug_status">Status</a>:
+    </th>
+    <td id="bz_field_status">
+      <span id="static_bug_status">VERIFIED
+          FIXED
+      </span>
+    </td>
+  </tr>
+<tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+<tr><th class="field_label "
+    id="field_label_alias">
+
+
+  <a 
+      title="A short, unique name assigned to a bug in order to assist with looking it up and referring to it in other places in Bugzilla."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#alias"
+  >Alias:</a>
+
+</th>
+    <td>
+        None
+    </td>
+  </tr>
+<tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+<tr><th class="field_label "
+    id="field_label_product">
+
+
+  <a 
+      title="Bugs are categorised into Products and Components. Select a Classification to narrow down this list."
+      class="field_help_link"
+      href="describecomponents.cgi.html"
+  >Product:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_product" >Firefox
+
+</td>
+    </tr>
+
+    
+    <tr class="bz_default_hidden"><th class="field_label "
+    id="field_label_classification">
+
+
+  <a 
+      title="Bugs are categorised into Classifications, Products and Components. classifications is the top-level categorisation."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#classification"
+  >Classification:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_classification" >Tłumaczenia oprogramowania
+
+</td>
+    </tr>
+        
+    
+    
+    <tr><th class="field_label "
+    id="field_label_component">
+
+
+  <a 
+      title="Components are second-level categories; each belongs to a particular Product. Select a Product to narrow down this list."
+      class="field_help_link"
+      href="describecomponents.cgi%3Fproduct=Firefox.html"
+  >Component:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_component" >Ogólne
+
+  (<a href="buglist.cgi%3Fcomponent=Ogólne&amp;product=Firefox&amp;bug_status=__open__.html"
+      target="_blank">show other bugs</a>)
+</td>
+    </tr>
+    <tr><th class="field_label "
+    id="field_label_version">
+
+
+  <a 
+      title="The version field defines the version of the software the bug was found in."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#version"
+  >Version:</a>
+
+</th>
+<td>nieokreślona
+  </td>
+    </tr>
+        
+    
+        
+    <tr><th class="field_label "
+    id="field_label_rep_platform">
+
+
+  <a 
+      title="The hardware platform the bug was observed on. Note: When searching, selecting the option &quot;All&quot; only finds bugs whose value for this field is literally the word &quot;All&quot;."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#rep_platform"
+  >Hardware:</a>
+
+</th>
+      <td class="field_value">Wszystkie
+        Wszystkie
+      </td>
+    </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          
+          <tr>
+      <th class="field_label">
+        <label  accesskey="i">
+          <a href="page.cgi%3Fid=fields.html#importance"><u>I</u>mportance</a></label>:
+      </th>
+      <td>P3
+       trywialny
+      </td>
+    </tr>
+          
+          <tr><th class="field_label "
+    id="field_label_assigned_to">
+
+
+  <a 
+      title="The person in charge of resolving the bug."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#assigned_to"
+  >Assignee:</a>
+
+</th>
+      <td><span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+      </td>
+    </tr>
+
+    <tr><th class="field_label "
+    id="field_label_qa_contact">
+
+
+  <a 
+      title="The person responsible for confirming this bug if it is unconfirmed, and for verifying the fix once the bug has been resolved."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#qa_contact"
+  >QA Contact:</a>
+
+</th>
+      <td><span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+      </td>
+    </tr>
+    <script type="text/javascript">
+      assignToDefaultOnChange(['product', 'component'],
+        'splewako\x40aviary.pl',
+        'firefox\x40l10n.bledy');
+    </script>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          <tr><th class="field_label "
+    id="field_label_bug_file_loc">
+
+
+  <a 
+      title="Bugs can have a URL associated with them - for example, a pointer to a web site where the problem is seen."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#bug_file_loc"
+  >URL:</a>
+
+</th>
+    <td>
+      <span id="bz_url_input_area">
+      </span>
+    </td>
+  </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+
+          
+<tr><th class="field_label "
+    id="field_label_dependson">
+
+
+  <a 
+      title="The bugs listed here must be resolved before this bug can be resolved."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#dependson"
+  >Depends on:</a>
+
+</th>
+
+  <td>
+    <span id="dependson_input_area">
+    </span>
+<a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - tlumaczenie readme.txt i license.txt w katalogu glownym"
+   href="show_bug.cgi%3Fid=59.html">59</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Tlumaczenie MPL1.1html i NPL1.1.html"
+   href="show_bug.cgi%3Fid=60.html">60</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - &quot;Schematy wyglądu&quot; - może to zmienimy?"
+   href="show_bug.cgi%3Fid=96.html">96</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Nieprzetlumaczony Talkback"
+   href="show_bug.cgi%3Fid=126.html">126</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Czy chcesz aby stał się nią?"
+   href="show_bug.cgi%3Fid=132.html">132</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Opcje/Prywatność"
+   href="show_bug.cgi%3Fid=134.html">134</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED INVALID - po skorzystaniu z lang-packa w UA-stringu jest dalej en-US"
+   href="show_bug.cgi%3Fid=150.html">150</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Odinstalowywanie rozszerzeń"
+   href="show_bug.cgi%3Fid=168.html">168</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - zły klawisz skrótu (Opcje &gt; Języki)"
+   href="show_bug.cgi%3Fid=185.html">185</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Narzędzia/Informacje o stronie/Zabezpieczenia"
+   href="show_bug.cgi%3Fid=192.html">192</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Edycja/Preferencje/Prywatność/Hasła/Ustaw główne hasło -opis"
+   href="show_bug.cgi%3Fid=194.html">194</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Nowy zestaw zakładek"
+   href="show_bug.cgi%3Fid=196.html">196</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Zaawansowane-Certyfikaty pozostała Mozilla"
+   href="show_bug.cgi%3Fid=201.html">201</a> <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Wersja CVS lokalizacji Firefoksa"
+   href="show_bug.cgi%3Fid=203.html">203</a> 
+  </td>
+  </tr>
+  
+  <tr><th class="field_label "
+    id="field_label_blocked">
+
+
+  <a 
+      title="This bug must be resolved before the bugs listed in this field can be resolved."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#blocked"
+  >Blocks:</a>
+
+</th>
+
+  <td>
+    <span id="blocked_input_area">
+    </span>
+
+  </td>
+  </tr>
+
+    <tr>
+      <th>&nbsp;</th>
+
+      <td id="show_dependency_tree_or_graph">
+        Show dependency <a href="showdependencytree.cgi%3Fid=188&amp;hide_resolved=1.html">tree</a>
+
+          /&nbsp;<a href="showdependencygraph.cgi%3Fid=188.html">graph</a>
+      </td>
+    </tr>
+          
+        </table>
+      </td>
+      <td>
+        <div class="bz_column_spacer">&nbsp;</div>
+      </td>
+      
+      <td id="bz_show_bug_column_2" class="bz_show_bug_column">
+        <table>
+        <tr>
+    <th class="field_label">
+      Reported:
+    </th>
+    <td>2004-09-11 18:47 CEST by <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+    </td>
+  </tr>
+  
+  <tr>
+    <th class="field_label">
+      Modified:
+    </th>
+    <td>2009-01-02 03:22 CET
+      (<a href="show_activity.cgi%3Fid=188.html">History</a>)
+    </td>
+  
+  </tr>
+<tr>
+      <th class="field_label">
+        <label  accesskey="a">
+          CC List:
+        </label>
+      </th>
+      <td>6 
+          users
+          <span id="cc_edit_area_showhide_container" class="bz_default_hidden">
+            (<a href="show_bug.cgi%3Fid=188.html#" id="cc_edit_area_showhide">show</a>)
+          </span>
+        <div id="cc_edit_area">
+          <br>
+            <select id="cc" multiple="multiple" size="5" >
+                <option value="cleriic">cleriic</option>
+                <option value="heidi">heidi</option>
+                <option value="lenrock">lenrock</option>
+                <option value="ludwik">ludwik</option>
+                <option value="mwawoczny">mwawoczny</option>
+                <option value="pitreck">pitreck</option>
+            </select>
+        </div>
+          <script type="text/javascript">
+            hideEditableField( 'cc_edit_area_showhide_container', 
+                               'cc_edit_area', 
+                               'cc_edit_area_showhide', 
+                               '', 
+                               '');  
+          </script>
+      </td>
+    </tr>
+
+<tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+<tr><th class="field_label "
+    id="field_label_see_also">
+
+
+  <a 
+      title="This allows you to refer to bugs in other installations. You can enter a URL to a bug in the 'Add Bug URLs' field to note that that bug is related to this one. You can enter multiple URLs at once by separating them with whitespace. You should normally use this field to refer to bugs in other installations. For bugs in this installation, it is better to use the Depends on and Blocks fields."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#see_also"
+  >See Also:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_see_also" >
+
+</td>
+    </tr> 
+
+<tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+
+
+
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+          <hr id="bz_top_half_spacer">
+      </td>
+    </tr>
+  </table>
+
+  <table id="bz_big_form_parts">
+  <tr>
+  <td>
+
+    
+<script type="text/javascript">
+<!--
+function toggle_display(link) {
+    var table = document.getElementById("attachment_table");
+    var view_all = document.getElementById("view_all");
+    var hide_obsolete_url_parameter = "&hide_obsolete=1";
+    // Store current height for scrolling later
+    var originalHeight = table.offsetHeight;
+    var rows = YAHOO.util.Dom.getElementsByClassName(
+        'bz_tr_obsolete', 'tr', table);
+
+    for (var i = 0; i < rows.length; i++) {
+        bz_toggleClass(rows[i], 'bz_default_hidden');
+    }
+
+    if (YAHOO.util.Dom.hasClass(rows[0], 'bz_default_hidden')) {
+        link.innerHTML = "Show Obsolete";
+        view_all.href = view_all.href + hide_obsolete_url_parameter 
+    }
+    else {
+        link.innerHTML = "Hide Obsolete";
+        view_all.href = view_all.href.replace(hide_obsolete_url_parameter,"");
+    }
+
+    var newHeight = table.offsetHeight;
+    // This scrolling makes the window appear to not move at all.
+    window.scrollBy(0, newHeight - originalHeight);
+
+    return false;
+}
+//-->
+</script>
+
+<br>
+<table id="attachment_table">
+  <tr id="a0">
+    <th colspan="3" class="left">
+      Attachments
+    </th>
+  </tr>
+
+
+      <tr id="a1" class="bz_contenttype_application_x-java-archive">
+        <td>
+            <a href="attachment.cgi%3Fid=119"
+               title="View the content of the attachment">
+          <b>pl-PL.jar - wersja robocza</b></a>
+
+          <span class="bz_attach_extra_info">
+              (143.61 KB,
+                application/x-java-archive)
+
+            <br>
+            <a href="show_bug.cgi%3Fid=188.html#attach_119"
+               title="Go to the comment associated with the attachment">2004-09-14 11:17 CEST</a>,
+
+            <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+          </span>
+        </td>
+
+          <td class="bz_attach_flags">
+              <i>no flags</i>
+          </td>
+
+        <td>
+          <a href="attachment.cgi%3Fid=119&amp;action=edit.html">Details</a>
+        </td>
+      </tr>
+      <tr id="a2" class="bz_contenttype_application_x-java-archive">
+        <td>
+            <a href="attachment.cgi%3Fid=120"
+               title="View the content of the attachment">
+          <b>pl-inspector.jar - lokalizacja Inspektora DOM</b></a>
+
+          <span class="bz_attach_extra_info">
+              (14.46 KB,
+                application/x-java-archive)
+
+            <br>
+            <a href="show_bug.cgi%3Fid=188.html#attach_120"
+               title="Go to the comment associated with the attachment">2004-09-15 11:40 CEST</a>,
+
+            <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+          </span>
+        </td>
+
+          <td class="bz_attach_flags">
+              <i>no flags</i>
+          </td>
+
+        <td>
+          <a href="attachment.cgi%3Fid=120&amp;action=edit.html">Details</a>
+        </td>
+      </tr>
+      <tr id="a3" class="bz_contenttype_application_octet-stream">
+        <td>
+            <a href="attachment.cgi%3Fid=125"
+               title="View the content of the attachment">
+          <b>pl-PL.jar</b></a>
+
+          <span class="bz_attach_extra_info">
+              (143.73 KB,
+                application/octet-stream)
+
+            <br>
+            <a href="show_bug.cgi%3Fid=188.html#attach_125"
+               title="Go to the comment associated with the attachment">2004-09-19 23:32 CEST</a>,
+
+            <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+          </span>
+        </td>
+
+          <td class="bz_attach_flags">
+              <i>no flags</i>
+          </td>
+
+        <td>
+          <a href="attachment.cgi%3Fid=125&amp;action=edit.html">Details</a>
+        </td>
+      </tr>
+
+  <tr class="bz_attach_footer">
+    <td colspan="3">
+        <span class="bz_attach_view_hide">
+            <a id="view_all" href="attachment.cgi%3Fbugid=188&amp;action=viewall.html">View All</a>
+        </span>
+        <a href="attachment.cgi%3Fbugid=188&amp;action=enter.html">Add an attachment</a>
+        (proposed patch, testcase, etc.)
+    </td>
+  </tr>
+</table>
+<br>
+
+  </td>
+  <td>
+  </td>
+  </tr></table>
+
+  
+  <div id="comments"><script src="js/comments.js" type="text/javascript">
+</script>
+
+<script type="text/javascript">
+<!--
+  /* Adds the reply text to the 'comment' textarea */
+  function replyToComment(id, real_id, name) {
+      var prefix = "(In reply to " + name + " from comment #" + id + ")\n";
+      var replytext = "";
+        /* pre id="comment_name_N" */
+        var text_elem = document.getElementById('comment_text_'+id);
+        var text = getText(text_elem);
+        replytext = prefix + wrapReplyText(text);
+
+
+      /* <textarea id="comment"> */
+      var textarea = document.getElementById('comment');
+      if (textarea.value != replytext) {
+          textarea.value += replytext;
+      }
+
+      textarea.focus();
+  } 
+//-->
+</script>
+
+
+<!-- This auto-sizes the comments and positions the collapse/expand links 
+     to the right. -->
+<table class="bz_comment_table">
+<tr>
+<td>
+<div id="c0" class="bz_comment bz_first_comment">
+
+      <div class="bz_first_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=188.html#c0">Description</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-09-11 18:47:24 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Zbliża się wydanie 1.0 PR 1. Tak więc trzeba się wziąć do roboty. :-)</pre>
+    </div>
+
+    <div id="c1" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=188.html#c1">Comment 1</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-09-12 18:24:45 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Uwaga: zmieniła się struktura plików lokalizacyjnych i regionalnych. Od tej pory
+nie ma już xx-&lt;platforma&gt;.jar i XX.jar, wszystko siedzi w jednym xx-XX.jar:
+
+en-US_jar # ls locale/ -1
+browser
+browser-region
+cookie
+global
+global-platform
+global-region
+mozapps
+necko
+passwordmgr
+pipnss
+pippki
+
+Będzie więc nieco roboty z poskładaniem tego do kupy.
+
+Jutro lub pojutrze postaram się przygotować odpowiednie diffy.</pre>
+    </div>
+
+    <div id="c2" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=188.html#c2">Comment 2</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Piotr Komoda</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-09-12 23:43:41 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Zamiast brac sie za zawartosc en-US.jar z wydania PR lub jego wersji RC,
+powinnismy od razu przerzucic sie na lokalizacje na poziomie zrodel.
+Na <a href="http://www.mozilla.org/projects/firefox/l10n/using-cvs.html">http://www.mozilla.org/projects/firefox/l10n/using-cvs.html</a>
+znajduje sie skrypt w perlu, ktory przerabia pliki jezykowe firefoksa 0.9.x do
+struktury plikow w CVS, z tego latwo mozna zrobic diffa i wziasc sie za
+tlumaczenie...</pre>
+    </div>
+
+    <div id="c3" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=188.html#c3">Comment 3</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-09-14 01:40:23 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Pitreck: za późno. Już mam prawie całe poskładane i potłumaczone ręcznie, został
+tylko katalog &quot;global&quot;. :-)</pre>
+    </div>
+
+    <div id="c4" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=188.html#c4">Comment 4</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-09-14 01:47:28 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Aha. Co myślicie o tłumaczeniu &quot;Livemark/Livebookmark&quot; -&gt; &quot;Przekaz RSS&quot;?
+
+Moja polska nazwa jest może mniej &quot;cool&quot;, ale co zrobić, przecież nie żadne
+&quot;Żywozakładki&quot;, &quot;Zakładki na żywo&quot; itp...</pre>
+    </div>
+
+    <div id="c5" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=188.html#c5">Comment 5</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Piotr Komoda</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-09-14 02:41:57 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(W odpowiedzi na komentarz #3)
+<span class="quote">&gt; Już mam prawie całe poskładane i potłumaczone ręcznie, został tylko katalog 
+&gt; &quot;global&quot;. :-)</span >
+
+No ladnie :D
+
+(W odpowiedzi na komentarz #4)
+<span class="quote">&gt; Aha. Co myślicie o tłumaczeniu &quot;Livemark/Livebookmark&quot; -&gt; &quot;Przekaz RSS&quot;?</span >
+
+Page has na feeds for Live Bookmark -&gt; Witryna nie posiada podajników dla
+przekazu/przekaźnika RSS ? :/
+Jakos nie bardzo mi sie to widzi, chociaz sam nie mam lepszego pomyslu. Jesli
+nic nie wymyslimy do (powiedzmy) 24h od premiery PR, a reszta tlumaczenia bedzie
+gotowa, to radzil bym uzyc tego &quot;Przekazu&quot; i opublikowac wydanie. Najwyzej
+pozniej bedziemy to najwyzej zmieniac. 
+
+Pytanie: staramy sie o wrzucenie tego do CVSa, oraz o zbudowanie finalnych wydan
+przez m.o, czy tez to jeszcze wydanie budujemy sami i podsylamy na sf.net?
+Bo jesli wysylamy, to juz teraz powinnysmy zaczac to zalatwiac.</pre>
+    </div>
+
+    <div id="c6" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=188.html#c6">Comment 6</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Piotr Pielach</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-09-14 09:39:58 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(W odpowiedzi na komentarz #4)
+<span class="quote">&gt; Aha. Co myślicie o tłumaczeniu &quot;Livemark/Livebookmark&quot; -&gt; &quot;Przekaz RSS&quot;?</span >
+
+Witam :)
+
+Myślę, że nie ma co wyważać otwartych drzwi. Wprawdzie RSS to &quot;młody&quot; wynalazek,
+ale już doczekał się polskiego określenia.
+Dlatego proponuję użyć: &quot;Kanały RSS&quot;
+
+<a href="http://tinyurl.com/5jum8">http://tinyurl.com/5jum8</a></pre>
+    </div>
+
+    <div id="c7" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=188.html#c7">Comment 7</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Piotr Pielach</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-09-14 09:42:47 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(W odpowiedzi na komentarz #5)
+<span class="quote">&gt; Page has na feeds for Live Bookmark</span >
+
+Np.
+- Witryna nie zawiera Kanałów RSS.
+</pre>
+    </div>
+
+    <div id="c8" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=188.html#c8">Comment 8</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-09-14 11:17:53 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Created <span class=""><a href="attachment.cgi%3Fid=119" name="attach_119" title="pl-PL.jar - wersja robocza">attachment 119</a> <a href="attachment.cgi%3Fid=119&amp;action=edit.html" title="pl-PL.jar - wersja robocza">[details]</a></span>
+pl-PL.jar - wersja robocza
+
+pl-PL.jar
+
+Plik NIE zawiera: tłumaczenia Inspektora DOM (musi być osobne) i Helpa
+(również musi być osobne).
+
+Problemy:
+1) mozapps/update/update.properties - wstawiłem pl-PL.rdf, ale to pewnie nie
+istnieje (en-US.rdf jest w oryginale)
+2) browser.propetties: livemarkSubscribeTo=Subscribe to '%S'... -
+nieprzetłumaczone (nie miałem pomysłu)
+3) wspomniane wcześniej &quot;przekazy rss&quot;.
+
+Uwaga: nieprzetestowane zupełnie.
+
+Uwaga 2: format jest taki, jak en-US.jar z 0.10rc z 11 września (czyli
+nie-CVSowy)</pre>
+    </div>
+
+    <div id="c9" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=188.html#c9">Comment 9</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-09-14 11:19:44 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(W odpowiedzi na komentarz #5)
+<span class="quote">&gt; Page has na feeds for Live Bookmark -&gt; Witryna nie posiada podajników dla
+&gt; przekazu/przekaźnika RSS ? :/</span >
+
+Jest tak: &quot;Strona nie posiada przekazów RSS&quot;.
+(page=strona, site=witryna)
+
+<span class="quote">&gt; Pytanie: staramy sie o wrzucenie tego do CVSa, oraz o zbudowanie finalnych wydan
+&gt; przez m.o,</span >
+
+Byłoby miło.
+</pre>
+    </div>
+
+    <div id="c10" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=188.html#c10">Comment 10</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-09-15 11:40:09 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Created <span class=""><a href="attachment.cgi%3Fid=120" name="attach_120" title="pl-inspector.jar - lokalizacja Inspektora DOM">attachment 120</a> <a href="attachment.cgi%3Fid=120&amp;action=edit.html" title="pl-inspector.jar - lokalizacja Inspektora DOM">[details]</a></span>
+pl-inspector.jar - lokalizacja Inspektora DOM
+
+Lokalizacja inspektora. Inspektor z 0.10 jest taki sam jak w 0.9.3, żadnych
+zmian nie ma także w lokalizacji.</pre>
+    </div>
+
+    <div id="c11" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=188.html#c11">Comment 11</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Kornel &quot;lenrock&quot; Misiejuk</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-09-15 13:13:12 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Puki jestem w domu czyli do 19 września , mogę poskładać wersje win (installer i
+zip) . Ale na razie jak rozumiem jest wersja robocza . </pre>
+    </div>
+
+    <div id="c12" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=188.html#c12">Comment 12</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-09-15 20:54:27 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(W odpowiedzi na komentarz #11)
+<span class="quote">&gt; Puki jestem w domu czyli do 19 września , mogę poskładać wersje win (installer i
+&gt; zip) . Ale na razie jak rozumiem jest wersja robocza . </span >
+
+Ta wersja jest &quot;robocza&quot; w tym sensie, że trzeba się zdecydować, co zrobimy z
+tymi  3 rzeczami w <a href="show_bug.cgi%3Fid=188.html#c8">comment 8</a>.
+
+No i trzeba wziąć pod uwagę, co z Helpem, czy dajemy angielski, czy uda się go
+spolszczyć (był jakiś wątek na forum mozillapl.org o tym, nie mam teraz linka
+pod ręką).</pre>
+    </div>
+
+    <div id="c13" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=188.html#c13">Comment 13</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Piotr Komoda</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-09-16 00:55:06 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(W odpowiedzi na komentarz #6)
+<span class="quote">&gt; Myślę, że nie ma co wyważać otwartych drzwi. Wprawdzie RSS to &quot;młody&quot; wynalazek,
+&gt; ale już doczekał się polskiego określenia.
+&gt; Dlatego proponuję użyć: &quot;Kanały RSS&quot;</span >
+
+Hmm, czyli RSS Feeds to Kanały RSS. 
+Ja tlumaczac Thunderbirda napotkalem na problem z tlumaczeniem RSS Feed, ale w
+slownikach podlinkowanych na wiki znalazlem tlumacznie &quot;podajnik&quot; i takiego
+uzylem. W tlumaczeniu Tb 0.8 jest wiec &quot;Podajnik RSS&quot;.
+
+(W odpowiedzi na komentarz #8)
+<span class="quote">&gt; 1) mozapps/update/update.properties - wstawiłem pl-PL.rdf, ale to pewnie 
+&gt; nie istnieje (en-US.rdf jest w oryginale)</span >
+
+Tez mialem z tym dylemat w przypadku Tb, ale zostawilem en-US. pl-PL na serv nie
+istnieje, ale zapewne bedzie istnial, gdy tylko nasze pliki jezykowe znajda sie
+w CVSie, a my przetlumaczymy owego rdfa.  
+
+<span class="quote">&gt; 2) browser.propetties: livemarkSubscribeTo=Subscribe to '%S'... -
+&gt; nieprzetłumaczone (nie miałem pomysłu)</span >
+
+Subskrybuj '%S'...
+
+(W odpowiedzi na komentarz #9)
+<span class="quote">&gt;&gt; Pytanie: staramy sie o wrzucenie tego do CVSa, oraz o zbudowanie 
+&gt;&gt; finalnych wydan przez m.o
+&gt; Byłoby miło.</span >
+
+Ok, ale to bedzie wymagalo przerobienia plikow do skruktury CVS oraz modyfikacji
+zakladek i osobistego paska narzedzi. Pozatym samo zalatwienie tego wrzutu
+troche mi zajmie, wiec radzil bym nie czekac na to, tylko od razu zbudowac
+wydania testowe (zip dla win i wersje nieinstalacyjna dla lin) i dac o tym info
+na forum. 
+
+Notka: abym wogole mogl zaczac cos zalatwiac najpierw potrzebne mi sa pliki
+przystosowane do sktuktury CVS.
+
+(W odpowiedzi na komentarz #12)
+<span class="quote">&gt; No i trzeba wziąć pod uwagę, co z Helpem, czy dajemy angielski, czy uda 
+&gt; się go spolszczyć </span >
+
+Ja bym zostawil angielski, nie ma co opozniac premiery. A z polskim postarajmy
+sie na 1.0 Final wyrobic.
+
+<span class="quote">&gt; (był jakiś wątek na forum mozillapl.org o tym, nie mam teraz linka pod ręką).</span >
+
+<a href="http://mozillapl.org/forum/ftopic8338.html">http://mozillapl.org/forum/ftopic8338.html</a></pre>
+    </div>
+
+    <div id="c14" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=188.html#c14">Comment 14</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-09-17 20:33:38 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(W odpowiedzi na komentarz #13)
+<span class="quote">&gt; Ja tlumaczac Thunderbirda napotkalem na problem z tlumaczeniem RSS Feed, ale w
+&gt; slownikach podlinkowanych na wiki znalazlem tlumacznie &quot;podajnik&quot; i takiego
+&gt; uzylem. W tlumaczeniu Tb 0.8 jest wiec &quot;Podajnik RSS&quot;.</span >
+
+&quot;Kanał&quot; brzmi lepiej niż &quot;Podajnik&quot;, ale jak tam chcecie. :)
+
+<span class="quote">&gt; Subskrybuj '%S'...</span >
+
+No właśnie. Nie cierpię słowa &quot;subskrybuj&quot;. :)
+ 
+<span class="quote">&gt; tylko od razu zbudowac
+&gt; wydania testowe (zip dla win i wersje nieinstalacyjna dla lin) i dac o tym info
+&gt; na forum. </span >
+
+Jacyś chętni?
+ </pre>
+    </div>
+
+    <div id="c15" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=188.html#c15">Comment 15</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Kornel &quot;lenrock&quot; Misiejuk</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-09-18 13:22:56 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Zbudowałem wersje dla Win isntaller i zwykły zip :
+  <a href="http://www.cyber.spawarka.com/Fx0.10PL.exe">http://www.cyber.spawarka.com/Fx0.10PL.exe</a>
+  <a href="http://www.cyber.spawarka.com/Fx0.10PL.zip">http://www.cyber.spawarka.com/Fx0.10PL.zip</a>
+na razie help jest w wersji en-US
+
+Błędy:
+- adres &quot;about:&quot; jest błędny , about:plugins i buildconfig działa 
+- domyślna strona domowa nie istnieje (jest ona takze podana w configu isntalatora)
+- w configu instalatora doszły opcje lokalizacji ftp'ów do net-installera, na
+razie jest domyślnie &quot;North America&quot;
+
+</pre>
+    </div>
+
+    <div id="c16" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=188.html#c16">Comment 16</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Kornel &quot;lenrock&quot; Misiejuk</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-09-18 13:32:00 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">jeszcze odkryłem 2 niedziałające odnośniki . 
+Z Pomoc&gt;O Mozilli Firebird&gt;Twórcy
+z Narzędzia&gt;Informacje o Stronie 
+</pre>
+    </div>
+
+    <div id="c17" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=188.html#c17">Comment 17</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-09-18 21:02:07 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">No panowie, szybciutko, pospieszmy sie. Jesli potrzebujecie pomocy z jakims
+buildem to prosze o info, pomoge. Ale zrobmy to do poniedzialku, ok?</pre>
+    </div>
+
+    <div id="c18" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=188.html#c18">Comment 18</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Piotr Chyliński</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-09-18 21:40:54 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">A ja polecam się jeżeli jest do zrobienia wersja macowa.</pre>
+    </div>
+
+    <div id="c19" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=188.html#c19">Comment 19</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-09-19 03:39:13 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">-&gt; <a href="mailto:lenrock&#64;gmail.com">lenrock&#64;gmail.com</a>
+
+Lenrock: mow co i jak, ja moge zrobic oba linuksy, Piotr Maca. Windowsy juz
+chyba masz, tak? Jesli to sa finale to daj znac my sie wezmiemy do roboty...</pre>
+    </div>
+
+    <div id="c20" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=188.html#c20">Comment 20</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-09-19 04:26:11 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">ok. mam chwile, wzialem sie za linuksowa wersje.
+Znalazlem kilka bledow i poprawie je.
+
+Zostaja dwie kwestie podstawowe:
+
+1) Nowe zakladki. Te ktore sa sa nieaktualne (update.mozilla.org? livemarks?)
+2) Help. Uwazam, ze jest niezbedny do PR.
+
+za jakies 20 minut wystawie gotowa wersje linuksowa i liste zmian w stosunku do
+zipa windows od Lenrocka</pre>
+    </div>
+
+    <div id="c21" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=188.html#c21">Comment 21</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-09-19 06:29:56 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">na beta.firefox.pl wrzucilem 1.0PR tar.gz dla Linuksa.
+
+Lista zmian:
+
+ - help, inspector, embed: en-US -&gt; pl-PL
+     help wzialem z forum, inspektor zostal, przetlumaczylem embed
+ - poprawilem license.dtd i okienko o stronie (lenrock, chyba masz jakis blad w
+edytorze tekstowym, zle koduje znaki...)
+ - global-region/brand.dtd poprawilem adres
+ - skrocilem tooltipy back i forward o nawiasy z tekstem o strzalkach. Nie bawmy
+sie w kreatywnosc, gdyby mial byc taki tekst, bylby w angielskiej
+ - zmienilem klawisz funkcyjny Pomoc-&gt;Pomoz promowac ze wzgledu na Pomoc-&gt;Spis
+tematow
+ - mozaps/update/update.prop - przywrocilem en-US.rdf na razie
+ - przetlumaczylem subsrybuj  - sorry marcoos, nie ma lepszego chyba :/
+ - skrocilem straszliwie dlugi opis w oknie preferencji, prywatnosc
+
+TODO
+ - firefox/README do przetlumaczenia
+ - firefox/LICENSE do skopiowania z 0.9.2
+ - okno 'dostosuj' ma chyba za dlugi tytul.
+ - alert 'wprowadzane dane sa niezabezpieczone' jest za dlugi. chyba nalezy
+skrocic..
+ - temat net installera.
+
+pytania/spostrzezenia/sugestie
+
+ - global/brand.dtd - co to jest releaseURL ?
+ - panowie, koniec linii _zawsze_ unixowy. Teraz zrobil sie balagan i bedzie
+trzeba to poprawic przed wrzuceniem do CVSa...
+
+-------------------------
+
+Jesli nie macie zastrzezen to mysle, ze mozna na bazie tego robic juz finalne
+wersje po rozwiazaniu spraw opisanych w TODO.</pre>
+    </div>
+
+    <div id="c22" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=188.html#c22">Comment 22</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-09-19 07:12:20 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">brrr... troche sie nazbieralo... proponuje przy okazji zajac sie tymi bledami :)</pre>
+    </div>
+
+    <div id="c23" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=188.html#c23">Comment 23</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-09-19 07:12:48 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">CC Marek</pre>
+    </div>
+
+    <div id="c24" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=188.html#c24">Comment 24</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Kornel &quot;lenrock&quot; Misiejuk</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-09-19 11:34:57 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Powprowadzałem poprawki do wersji win :
+- dodałem pl-PL.jar oraz help.jar z buildu Gandalfa (poprawiło to 3 błędy złych
+adresów (&quot;about:&quot; &quot;O Mozilli Firefox&gt;Twórcy&quot; i &quot;Narzędzia&gt; informacje o stronie&quot;)
+- dodałem bookmarks.html z buildu Gandalfa + wzbogaciłem go o zakładkę dla &quot;Bazy
+rozszerzeń po polsku&quot;  
+- zmieniłem w defaults/pref/firefox.js &quot;pref(&quot;general.useragent.locale&quot;,
+&quot;en-US&quot;);&quot; na odpowiedznie pl-PL (Gandalf też to ominąłeś)
+- dodałem Licence po polsku 
+Adresy do ściągnięcia:
+  <a href="http://www.cyber.spawarka.com/Fx0.10PL.exe">http://www.cyber.spawarka.com/Fx0.10PL.exe</a>
+  <a href="http://www.cyber.spawarka.com/Fx0.10PL.zip">http://www.cyber.spawarka.com/Fx0.10PL.zip</a>
+i do sprawdzenia <a href="http://www.cyber.spawarka.com/wersje-win.md5">http://www.cyber.spawarka.com/wersje-win.md5</a>
+
+Do dodania:
+-Czekam na ostateczne pl-PL.jar i help.jar. 
+-Proponuje napisać własne README ponieważ w aktulalnym pomoc dla isntalacji
+przeglądarki internetowej znajduje się na stronie internetowej , przecież to
+czysta głupota , czymodwiedzić tą stronę przed instalacją przeglądarki ? 
+-Oraz trzeba ustalić czy domyslna strona domowa dla Fx0.10 to 
+<a href="http://www.firefox.pl/start/0.1">http://www.firefox.pl/start/0.1</a> czy .../start/1.0  albo .../start/1.0PR i
+ogólnie trzeba ją stworzyć.
+
+
+</pre>
+    </div>
+
+    <div id="c25" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=188.html#c25">Comment 25</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Ludwik Trammer</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-09-19 11:52:48 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Osobiście relacjonując swoim znajomym nowy system obsługi RSS w Firefoksie
+nazwałem go &quot;dynamicznymi zakładkami&quot;, jeszcze nawet nie wiedząc, że w wersji
+orginalnej to &quot;livebookmark&quot;. Także moim zdaniem &quot;dynamiczne zakładki&quot; nie tylko
+są w miare dosłownym tłumaczeniem &quot;livebookmarks&quot;, ale także dość nieźle oddają
+działanie.
+A &quot;RSS feeds&quot; są oczywiście wszedzie znane pod nazwą &quot;kanały RSS&quot;.</pre>
+    </div>
+
+    <div id="c26" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=188.html#c26">Comment 26</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-09-19 15:58:58 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Ok.
+
+Kolo 20:00 wrzuce wersje z poprawkami wszystkich bledow oznaczonych jako depends
+on poza <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Ujednolicić tooltips, zbadać rozłożenie accesskeys"
+   href="show_bug.cgi%3Fid=90.html">bug 90</a>. Jesli nikt nie ma na to czasu, to nie wejdzie to do 1.0PR, bo ja
+nie dam rady.
+
+Ludwik: co do Dynamicznych Zakladek. Mila nazwa, ale dosc dluga... Jesli bysmy
+chceli z niej skorzystac, mamy dwa stringi z ta nazwa w calym browserze:
+
+Add Live Bookmark for this page's feed
+Page has no feeds for Live Bookmark
+
+tlumaczenie aktualne:
+
+Dodaj kanał RSS tej strony do zakładek
+Strona nie posiada kanałów RSS
+
+Jak chcialbys zeby to brzmialo?</pre>
+    </div>
+
+    <div id="c27" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=188.html#c27">Comment 27</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Ludwik Trammer</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-09-19 16:15:13 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text"><span class="quote">&gt; Jak chcialbys zeby to brzmialo?</span >
+
+&quot;Add Live Bookmark for this page's feed&quot; = &quot;Dodaj dynamiczną zakładkę z kanałem
+RSS tej strony&quot;
+
+&quot;Page has no feeds for Live Bookmark&quot; = &quot;Strona nie posiada [kanałów] RSS dla
+dynamicznych zakładek&quot;
+
+Masz rację. Wycofuję się. Za długie. Problem może być tylko jeśli to będzie
+rozwijane i w pewnym momencie trzeba będzie zrezygnować z taktyki pomijania tej
+nazwy.</pre>
+    </div>
+
+    <div id="c28" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=188.html#c28">Comment 28</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Piotr Komoda</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-09-19 22:12:14 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Dwie sprawy:
+1) Nawet jesli zbudujemy i opublikujemy to sami, tym samym lamiac postanowienia
+polityki ochrony znakow towarowych uzywanych w lokalizacjach, to mimo wszystko
+dobrze by bylo dostosowac w tym wydaniu zakladki, osobisty pasek narzedzi oraz
+silniki wyszukiwania do wymogow tejze polityki. Kto czytal ten dokument wie o co
+chodzi. Moje propozycje zamiennikow dla silnkow:
+*Google -&gt;  Google.pl
+*Dictionary.com  -&gt; PWN
+*eBay -&gt; Allegro.pl
+*Yachoo -&gt; yy wlasnie, tu nie jestem zdecydowany
+
+2) Jestem przeciwny pracom nad tlumaczeniem w takiej konspiracji, ja bym to dal
+na forum jako [48h]. No chyba, ze waszym zdaniem takie testy tylko opozniaja
+sprawe i wolicie wychwytywac bledy lokalizacji po jej premierze... </pre>
+    </div>
+
+    <div id="c29" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=188.html#c29">Comment 29</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-09-19 22:21:29 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">releaseURL to strona z informacjami o wydaniu (czyli coś w rodzaju &quot;1.0 PR
+Release Notes&quot;). Powinna wskazywać albo stronę oryginalną (bez zmian w stosunku
+do en-US), albo przetłumaczoną na nasz język.
+
+</pre>
+    </div>
+
+    <div id="c30" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=188.html#c30">Comment 30</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Kornel &quot;lenrock&quot; Misiejuk</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-09-19 22:51:20 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Ok ja wyjeżdzam jutro tym samym już się żegnam na 2 tyg. Niestety już nie mogę
+pomagać przy wydaniu wersji 1.0PR . Ktoś będzie musiał za mnie wprowadzać
+poprawki do wydań win , ale lwia część roboty jest już wykonana więc powinno to
+trwać chwilę. 
+Pitreck&gt; ja dałem zestaw wyszukiwarek z 0.9.2pl-PL czyli jest tam ich z 10 w tym
+polskie google , wikipedia , PWN , WP , Onet , hoga , interia itp. </pre>
+    </div>
+
+    <div id="c31" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=188.html#c31">Comment 31</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-09-19 22:54:24 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Pitreck: zadnej konspiracji nie ma! Po prostu prace trwaja na bz, tu mam bledy,
+uwagi, itp. dot. wydania. Jestesmy juz i tak BARDZO opoznieni w stosunku do
+swiata (tydzien?) i jesli zaczniemy teraz sie bawic w setki poprawek, to nie
+wydamy tego przez nastepny. :/
+
+Marcoos: zrobisz taka przetlumaczona?</pre>
+    </div>
+
+    <div id="c32" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=188.html#c32">Comment 32</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-09-19 22:55:39 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Pitreck: wskaz mi prosze, w ktorym miejscu dokument nakazuje tworzenie
+lokalizacji przez CVS? Wydaje mi sie, ze sie myslisz... mozemy tworzac ja tak
+jak dotychczas, choc oczywiscie dobrze byloby sie dostosowac jak najszybciej.</pre>
+    </div>
+
+    <div id="c33" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=188.html#c33">Comment 33</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-09-19 23:14:30 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">ok. pitreck ma wyraznie racje. Dawno mnie nie bylo :(
+Proponuje nie wydawac nic samodzielnie, zamiast tego przystosowac tlumaczenie do
+CVSa. <a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Trademark Policy for Localization Projects a sprawa polska"
+   href="show_bug.cgi%3Fid=181.html">Bug 181</a>.
+
+Proponuje jutro, o 22:00 na jabber.org na kanale #mozillapl zorganizowac
+spotkanie osob zainteresowanych w celu wylonienia grupy zajmujacej sie
+komunikacja z mozilla foundation i uploadem CVSa. 
+
+Do tego czasu dokoncze help (<a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Tlumaczenie helpa do Fx 1.0"
+   href="show_bug.cgi%3Fid=92.html">bug 92</a>) i talkback (<a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED WONTFIX - Nieprzetlumaczony Talkback"
+   href="show_bug.cgi%3Fid=126.html">bug 126</a>) - reszta bledow z
+listy juz poprawiona i dostosuje to do wersji CVS (<a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Trademark Policy for Localization Projects a sprawa polska"
+   href="show_bug.cgi%3Fid=181.html">bug 181</a>). </pre>
+    </div>
+
+    <div id="c34" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=188.html#c34">Comment 34</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-09-19 23:32:55 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Created <span class=""><a href="attachment.cgi%3Fid=125" name="attach_125" title="pl-PL.jar">attachment 125</a> <a href="attachment.cgi%3Fid=125&amp;action=edit.html" title="pl-PL.jar">[details]</a></span>
+pl-PL.jar
+
+koncowy pl-PL.jar. Wszystkie poprawki naniesione. Mam nadzieje, ze juz zadnych
+zmian nie bedzie trzeba wprowadzic.</pre>
+    </div>
+
+    <div id="c35" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=188.html#c35">Comment 35</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Piotr Komoda</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-09-19 23:39:11 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(W odpowiedzi na komentarz #31)
+Wybacz Gandalf, nie chcialem wyjsc na impertynenta, poprostu nie podoba mi sie
+zwiekszanie predkosci prac kosztem jakosci samej lokalizacji. Ten dzien czy dwa
+wiecej chyba nas nie zbawi, juz zalatwianie wszystkiego z Mozilla.org wiecej
+zajmie, a przynajmniej bedziemy mieli gwarancje jakosci produktu, czego swoja
+droga wymaga od nad &quot;polityka&quot;. Pozatym nic nie stoi na przeszkodzie, by
+opublikowac wydanie testowe, a samemu w ramach tego buga robic swoje. Ale fakt
+faktem, moglem swoje niezadowolenie zakomunikowac w delikatniejszy sposob.
+Przepraszam, jesli poczules sie tym dotkniety.
+
+--
+Jeszcze odnosnie readme.txt, ja w przypadku Tb umiescilem tlumaczenie
+oryginalnego pliku + cos od siebie: 
+
+Informacje dotycące instalacji, korzystania z programu oraz jego
+konfiguracji, a także lista znanych błędów wydania dostępne są
+na: <a href="http://getthunderbird.com/releases/">http://getthunderbird.com/releases/</a>
+
+Powższa strona zawiera także informacje odnośnie radzenia sobie z 
+problemami, które użytkownicy mogą  napotkać podczas użytkowania
+programu.
+
+                     ..::Dodatkowe informacje::..
+ Polska strona Mozilli Thunderbird:    <a href="http://www.thunderbird.pl/">http://www.thunderbird.pl/</a>
+ Polskie centrum Mozilli:              <a href="http://www.mozillaPL.org/">http://www.mozillaPL.org/</a>
+ Polskie forum pomocy użytkownikom:    <a href="http://mozillaPL.org/forum/">http://mozillaPL.org/forum/</a></pre>
+    </div>
+
+    <div id="c36" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=188.html#c36">Comment 36</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-09-20 14:08:20 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">na beta.firefox.pl wrzucilem ostatnia wersje. Brakuje glossary do helpa (<a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Tlumaczenie helpa do Fx 1.0"
+   href="show_bug.cgi%3Fid=92.html">bug
+92</a>). Reszta to juz chyba finalne 1.0PR.
+
+Moja propozycja: zrobmy XPI sami (wypuscmy na beta.firefox.pl) zeby ludzie mieli
+cokolwiek, a rownolegle przygotowujmy sie do ataku na CVS (<a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Wersja CVS lokalizacji Firefoksa"
+   href="show_bug.cgi%3Fid=203.html">bug 203</a>)</pre>
+    </div>
+
+    <div id="c37" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=188.html#c37">Comment 37</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Piotr Komoda</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-09-20 14:21:48 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(W odpowiedzi na komentarz #36)
+<span class="quote">&gt; Moja propozycja: zrobmy XPI sami (wypuscmy na beta.firefox.pl) zeby ludzie mieli
+&gt; cokolwiek, a rownolegle przygotowujmy sie do ataku na CVS (<a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - Wersja CVS lokalizacji Firefoksa"
+   href="show_bug.cgi%3Fid=203.html">bug 203</a>)</span >
+
+Jestem za, ale ja bym dodal jeszcze zipka dla windows oraz wersje nie
+instalacyjna dla linuksa,  bedzie to na pewno ulatwienie dla testerow. Jesli
+zajdzie taka koniecznosc, moge oba wydania zbudowac sam majac do dyspozycji
+pliki jezykowe, helpa oraz zaktualizowany profil (glownie chodzi o zakladki i
+osobisty pasek narzedzi). Byle tylko oddany do testow nie zostal sam .xpi :)</pre>
+    </div>
+
+    <div id="c38" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=188.html#c38">Comment 38</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-09-25 00:30:19 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Jakieś postępy? We wtorek miną 2 tygodnie od wydania Fx 0.10...
+</pre>
+    </div>
+
+    <div id="c39" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=188.html#c39">Comment 39</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-09-25 14:15:50 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Czekamy na dostep do CVSa.</pre>
+    </div>
+
+    <div id="c40" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=188.html#c40">Comment 40</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-10-10 23:34:19 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Ok, zostały oficjalnie wydane Win/ZIP, Win/Inst i Linux/TGZ.
+
+Co z instalatorem dla Linuksa i wersją dla Mac OS X? 
+
+Aha, Mac OS X można w razie czego (pół-legalnie i z kiepską szybkością) odpalić
+na pecetach przy użyciu tego: <a href="http://pearpc.sourceforge.net/">http://pearpc.sourceforge.net/</a></pre>
+    </div>
+
+    <div id="c41" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=188.html#c41">Comment 41</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Piotr Komoda</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-10-10 23:41:40 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text"><span class="quote">&gt; Aha, Mac OS X można w razie czego (pół-legalnie i z kiepską szybkością) odpalić
+&gt; na pecetach przy użyciu tego: <a href="http://pearpc.sourceforge.net/">http://pearpc.sourceforge.net/</a></span >
+
+Tylko przydalo by sie miec jeszcze samego OSa :)
+A instalator dla Linuksa jest w drodze...</pre>
+    </div>
+
+    <div id="c42" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=188.html#c42">Comment 42</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Piotr Chyliński</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-10-11 01:39:20 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(W odpowiedzi na komentarz #40)
+ 
+<span class="quote">&gt; Co z instalatorem dla Linuksa i wersją dla Mac OS X? </span >
+
+Wersja dla Mac OS X powinna być gotowa w ciągu dwóch dni - byłem poza miastem, ale już mam 
+wszystkie pliki i teraz została kwestia montażu.</pre>
+    </div>
+
+    <div id="c43" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=188.html#c43">Comment 43</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-10-11 02:15:42 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">instalator gotowy. Czekamy na Macowa wersje :D</pre>
+    </div>
+
+    <div id="c44" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=188.html#c44">Comment 44</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Piotr Chyliński</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-10-12 23:43:44 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(W odpowiedzi na komentarz #43)
+<span class="quote">&gt; instalator gotowy. Czekamy na Macowa wersje :D</span >
+
+Pod adresem &lt;<a href="http://homepage.mac.com/heidi17/Firefox10PR.dmg.gz">http://homepage.mac.com/heidi17/Firefox10PR.dmg.gz</a>&gt; 
+znajduje się wersja macowa.</pre>
+    </div>
+
+    <div id="c45" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=188.html#c45">Comment 45</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-10-13 02:59:00 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Dzieki Heidi :)
+
+Panowie, dziekuje za wspolnie odwalony, kawal dobrej (i potrzebnej!) roboty :D
+
+finally fixed.</pre>
+    </div>
+
+    <div id="c46" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=188.html#c46">Comment 46</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2004-10-22 18:03:20 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">VERIFIED (masowa weryfikacja starych bugów)</pre>
+    </div>
+
+    <div id="c47" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=188.html#c47">Comment 47</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-02-03 20:45:00 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">mass prio/severity change. Przepraszam za spam :(</pre>
+    </div>
+
+    <div id="c48" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=188.html#c48">Comment 48</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2005-03-18 19:30:20 CET
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Masówka. Likwidacja produktu &quot;Firefox pl-PL&quot;, bugi przenoszone do produktu
+Lokalizacja, komponent Firefox.</pre>
+    </div>
+
+
+  
+
+</td>
+<td>
+</td>
+</tr></table>
+  </div>
+
+    <hr><div id="add_comment" class="bz_section_additional_comments">
+      <table>
+        <tr>
+          <td>
+            <fieldset>
+              <legend>Note</legend>
+              You need to
+              <a href="show_bug.cgi%3Fid=188&amp;GoAheadAndLogIn=1.html">log in</a>
+              before you can comment on or make changes to this bug.
+            </fieldset>
+          </td>
+        </tr> 
+      </table>
+  </div>        
+
+</form>
+
+<hr>
+<ul class="related_actions">
+    <li><a href="show_bug.cgi%3Fformat=multiple&amp;id=188.html">Format For Printing</a></li>
+    <li>&nbsp;-&nbsp;<a href="show_bug.cgi%3Fctype=xml&amp;id=188">XML</a></li>
+    <li>&nbsp;-&nbsp;<a href="enter_bug.cgi%3Fcloned_bug_id=188.html">Clone This Bug</a></li>
+    
+    <li>&nbsp;-&nbsp;<a href="show_bug.cgi%3Fid=188.html#">Top of page </a></li>
+    </ul>
+
+<br>
+</div>
+
+    <div id="footer">
+      <div class="intro"></div>
+<ul id="useful-links">
+  <li id="links-actions"><ul class="links">
+  <li><a href="index.html">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi.html">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi.html">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi.html">Search</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="http://bugs.aviary.pl/buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input type="hidden" id="no_redirect_bottom" name="no_redirect" value="0">
+    <script type="text/javascript">
+      if (history && history.replaceState) {
+        var no_redirect = document.getElementById("no_redirect_bottom");
+        no_redirect.value = 1;
+      }
+    </script>
+    <input class="txt" type="text" id="quicksearch_bottom" name="quicksearch" 
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search" 
+           id="find_bottom"></form>
+  <a href="page.cgi%3Fid=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="report.cgi.html">Reports</a></li>
+
+  <li>
+      <span class="separator">| </span>
+        <a href="request.cgi.html">Requests</a></li>
+
+
+  <li>
+        <span class="separator">| </span>
+        <a href="https://bugzilla.readthedocs.org/en/5.0/using/understanding.html" target="_blank">Help</a>
+      </li>
+    
+      <li id="new_account_container_bottom">
+        <span class="separator">| </span>
+        <a href="createaccount.cgi.html">New&nbsp;Account</a>
+      </li>
+
+    <li id="mini_login_container_bottom">
+  <span class="separator">| </span>
+  <a id="login_link_bottom" href="show_bug.cgi%3Fid=188&amp;GoAheadAndLogIn=1.html"
+     onclick="return show_mini_login_form('_bottom')">Log In</a>
+
+  <form action="show_bug.cgi%3Fid=188.html" method="POST"
+        class="mini_login bz_default_hidden"
+        id="mini_login_bottom">
+    <input id="Bugzilla_login_bottom" required
+           name="Bugzilla_login" class="bz_login"
+        type="email" placeholder="Email Address">
+    <input class="bz_password" name="Bugzilla_password" type="password"
+           id="Bugzilla_password_bottom" required
+           placeholder="Password">
+    <input type="hidden" name="Bugzilla_login_token"
+           value="1469819920-5nWGvhpqffLu2nbSBmYWdWKLwEruSNxG9O3H60Y2-TE">
+    <input type="submit" name="GoAheadAndLogIn" value="Log in"
+            id="log_in_bottom">
+    <a href="show_bug.cgi%3Fid=188.html#" onclick="return hide_mini_login_form('_bottom')">[x]</a>
+  </form>
+</li>
+
+
+  <li id="forgot_container_bottom">
+    <span class="separator">| </span>
+    <a id="forgot_link_bottom" href="show_bug.cgi%3Fid=188&amp;GoAheadAndLogIn=1.html#forgot"
+       onclick="return show_forgot_form('_bottom')">Forgot Password</a>
+    <form action="http://bugs.aviary.pl/token.cgi" method="post" id="forgot_form_bottom"
+          class="mini_forgot bz_default_hidden">
+      <label for="login_bottom">Login:</label>
+      <input name="loginname" size="20" id="login_bottom" required
+          type="email" placeholder="Your Email Address">
+      <input id="forgot_button_bottom" value="Reset Password" type="submit">
+      <input type="hidden" name="a" value="reqpw">
+      <input type="hidden" id="token_bottom" name="token"
+             value="1469819920-8WB8S2XvrLKCOe16anbbSMJfRz2beWu-ZwKIej1B_Ks">
+      <a href="show_bug.cgi%3Fid=188.html#" onclick="return hide_forgot_form('_bottom')">[x]</a>
+    </form>
+  </li>
+</ul>
+  </li>
+
+  
+
+
+
+
+  
+</ul>
+
+      <div class="outro"></div>
+    </div>
+
+  </body>
+</html>

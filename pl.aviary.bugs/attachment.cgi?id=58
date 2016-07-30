@@ -1,0 +1,152 @@
+diff -ru 7/pl/default/account/password/forgotten-password.txt.tmpl 8/pl/default/account/password/forgotten-password.txt.tmpl
+--- 7/pl/default/account/password/forgotten-password.txt.tmpl	2004-05-30 22:31:49.000000000 +0200
++++ 8/pl/default/account/password/forgotten-password.txt.tmpl	2004-06-01 15:50:55.000000000 +0200
+@@ -28,7 +28,7 @@
+ Content-Type: text/plain; charset=UTF-8
+ Content-Transfer-Encoding: 8bit
+ 
+-Poprosiłeś (lub ktoś podający się za ciebie) o zmianę hasła
++Poprosiłeś (lub ktoś podający się za Ciebie) o zmianę hasła
+ [%+ terms.Bugzilli %]. Aby zatwierdzić zmianę, odwiedź poniższy odnośnik:
+ 
+ [%+ Param('urlbase') %]token.cgi?a=cfmpw&t=[% token FILTER url_quote %]
+diff -ru 7/pl/default/global/field-descs.none.tmpl 8/pl/default/global/field-descs.none.tmpl
+--- 7/pl/default/global/field-descs.none.tmpl	2004-05-30 23:13:34.000000000 +0200
++++ 8/pl/default/global/field-descs.none.tmpl	2004-06-01 09:37:22.000000000 +0200
+@@ -50,7 +50,7 @@
+                    "product"              => "Produkt",
+                    "qa_contact"           => "Kontakt QA",
+                    "remaining_time"       => "Pozostało godzin",
+-                   "rep_platform"         => "System",
++                   "rep_platform"         => "Platforma",
+                    "reporter"             => "Zgłaszający",
+                    "reporter_accessible"  => "Dostępne dla zgłaszającego?",
+                    "resolution"           => "Rozwiązanie",
+diff -ru 7/pl/default/global/messages.html.tmpl 8/pl/default/global/messages.html.tmpl
+--- 7/pl/default/global/messages.html.tmpl	2004-05-30 13:02:35.000000000 +0200
++++ 8/pl/default/global/messages.html.tmpl	2004-06-01 15:49:30.000000000 +0200
+@@ -34,7 +34,7 @@
+ 
+   [% ELSIF message_tag == "buglist_load_named_query" %]
+     [% title = BLOCK %]
+-      Wczytuję twoje zapytanie <code>[% namedcmd FILTER html %]</code>
++      Wczytuję Twoje zapytanie <code>[% namedcmd FILTER html %]</code>
+     [% END %]
+     [% link  = "Kliknij tutaj jeśli strona nie została wyświetlona automatycznie." %]
+ 
+@@ -60,7 +60,7 @@
+ 
+   [% ELSIF message_tag == "change_columns" %]
+     [% title = "Zmiana kolumn" %]
+-    Wysyłam powtórnie twoje zapytanie z nowymi kolumnami...
++    Wysyłam powtórnie Twoje zapytanie z nowymi kolumnami...
+     Kliknij <a href="[% redirect_url FILTER html %]">tutaj</a>
+     jeśli strona nie wczyta się automatycznie.
+ 
+diff -ru 7/pl/default/global/user-error.html.tmpl 8/pl/default/global/user-error.html.tmpl
+--- 7/pl/default/global/user-error.html.tmpl	2004-05-30 23:16:14.000000000 +0200
++++ 8/pl/default/global/user-error.html.tmpl	2004-06-01 15:49:38.000000000 +0200
+@@ -428,7 +428,7 @@
+   [% ELSIF error == "missing_content_type" %]
+     [% title = "Brakujące określenie typu zawartości" %]
+      Poprosiłeś [% terms.Bugzille %] o automatyczne wykrycie typu zawartości załącznika,
+-     lecz twoja przeglądarka nie wysłała typu zawartości podczas przysyłania pliku.
++     lecz Twoja przeglądarka nie wysłała typu zawartości podczas przysyłania pliku.
+      Musisz podać typ zawartości ręcznie.
+                 
+   [% ELSIF error == "missing_content_type_method" %]
+diff -ru 7/pl/default/list/change-columns.html.tmpl 8/pl/default/list/change-columns.html.tmpl
+--- 7/pl/default/list/change-columns.html.tmpl	2004-06-01 08:23:26.000000000 +0200
++++ 8/pl/default/list/change-columns.html.tmpl	2004-06-01 23:39:03.000000000 +0200
+@@ -26,7 +26,7 @@
+ %]
+ 
+ <p>
+-  Wybierz kolumny, które chcesz by były wyświetlane w liście [% terms.bledow %]. A
++  Wybierz kolumny, które chcesz by były wyświetlane w liście [% terms.bledow %]. Ta
+   funkcjonalność wymaga ciasteczek do poprawnego działania.
+ </p>
+ 
+diff -ru 7/pl/default/list/edit-multiple.html.tmpl 8/pl/default/list/edit-multiple.html.tmpl
+--- 7/pl/default/list/edit-multiple.html.tmpl	2004-06-01 08:49:52.000000000 +0200
++++ 8/pl/default/list/edit-multiple.html.tmpl	2004-06-01 23:42:31.000000000 +0200
+@@ -138,7 +138,7 @@
+ 
+   [% IF Param("useqacontact") %]
+     <tr>
+-      <th><label for="qa_contact">Kontak QA:</label></th>
++      <th><label for="qa_contact">Kontakt QA:</label></th>
+       <td colspan="3">
+         <input id="qa_contact"
+                name="qa_contact"
+@@ -190,12 +190,12 @@
+ 
+ [% IF groups.size > 0 %]
+ 
+-  <b>Grupowanie:</b><br>
++  <b>Grupy:</b><br>
+   <table border="1">
+     <tr>
+       <th>Nie<br>zmieniaj<br>ograniczeń<br>tej grupy</td>
+-      <th>Usuń<br>[% terms.blad %]<br>z tej<br>grupy</td>
+-      <th>Dodaj<br>[% terms.blad %]<br>do tej<br>grupy</td>
++      <th>Usuń<br>[% terms.bledy %]<br>z tej<br>grupy</td>
++      <th>Dodaj<br>[% terms.bledy %]<br>do tej<br>grupy</td>
+       <th>Nazwa grupy:</td>
+     </tr>
+ 
+@@ -246,7 +246,7 @@
+   [% knum = knum + 1 %]
+   <input id="knob-confirm" type="radio" name="knob" value="confirm">
+   <label for="knob-confirm">
+-    Zatwierdź [% terms.bledy %] (zmień status na <b>NEW</b>)
++    Potwierdź [% terms.bledy %] (zmień status na <b>NEW</b>)
+   </label><br>
+ [% END %]
+ 
+@@ -313,7 +313,7 @@
+        name="knob"
+        value="reassignbycomponent">
+ <label for="knob-reassignbycomponent">
+-  Przepisz [% terms.bledy %] do właściciela lub kontaktu QA wybranego komponentu
++  Przypisz [% terms.bledy %] do właściciela lub kontaktu QA wybranego komponentu
+ </label><br>
+ 
+ <input type="submit" value="Zatwierdź">
+diff -ru 7/pl/default/list/server-push.html.tmpl 8/pl/default/list/server-push.html.tmpl
+--- 7/pl/default/list/server-push.html.tmpl	2004-05-31 01:57:03.000000000 +0200
++++ 8/pl/default/list/server-push.html.tmpl	2004-06-01 15:49:17.000000000 +0200
+@@ -28,7 +28,7 @@
+ 
+ <html>
+   <head>
+-    <title>[% terms.Bugzilla %] przetwarza twoje zapytanie</title>
++    <title>[% terms.Bugzilla %] przetwarza Twoje zapytanie</title>
+   </head>
+   <body>
+     <h1 style="margin-top: 20%; text-align: center;">Proszę czekać...</h1>
+diff -ru 7/pl/default/reports/create-chart.html.tmpl 8/pl/default/reports/create-chart.html.tmpl
+--- 7/pl/default/reports/create-chart.html.tmpl	2004-05-30 15:58:34.000000000 +0200
++++ 8/pl/default/reports/create-chart.html.tmpl	2004-06-01 15:50:27.000000000 +0200
+@@ -65,7 +65,7 @@
+       Uwaga: ten system tworzenia wykresów jest w fazie beta testów.
+       Oznacza to, że przechowywanie danych lub zdefiniowanych zbiorów danych
+       nie jest gwarantowana. Proszę tworzyć raporty o [% terms.bledach %],
+-      które znajdziesz lub o rozszerzeniach, które wydają ci się ciekawe.
++      które znajdziesz lub o rozszerzeniach, które wydają Ci się ciekawe.
+     </span>
+   </p>
+   
+diff -ru 7/pl/default/reports/duplicates.html.tmpl 8/pl/default/reports/duplicates.html.tmpl
+--- 7/pl/default/reports/duplicates.html.tmpl	2004-05-30 17:19:52.000000000 +0200
++++ 8/pl/default/reports/duplicates.html.tmpl	2004-06-01 15:49:09.000000000 +0200
+@@ -153,7 +153,7 @@
+ 
+   <ul>
+     <li>Kliknij na numerze [% terms.bledu %], aby przekona� si� czy raport
+-      [% terms.bledu %] odnosi sie do twojego problemu i ewentualnie dodaj
++      [% terms.bledu %] odnosi sie do Twojego problemu i ewentualnie dodaj
+       komentarz, je�li posiadasz dodatkowe informacje o [% terms.bledzie %].
+     </li>
+   </ul>
+

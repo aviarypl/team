@@ -1,0 +1,19 @@
+diff -urN a/pl/default/global/confirm-action.html.tmpl b/pl/default/global/confirm-action.html.tmpl
+--- a/pl/default/global/confirm-action.html.tmpl	2010-06-04 00:02:22.783059100 +0200
++++ b/pl/default/global/confirm-action.html.tmpl	2010-06-22 19:43:01.796875000 +0200
+@@ -31,10 +31,10 @@
+ 
+ <div class="throw_error">
+   [% IF reason == "expired_token" %]
+-    Twoje zmiany zostały odrzucone, ponieważ przed ich wysłaniem do
+-    [% script_name FILTER html %] został przekroczony limit czasu
+-    [% constants.MAX_TOKEN_AGE FILTER html %] dni. Być może twoja strona była
+-    wyświetlona bardzo długo lub poprzednie zmiany zostały przypadkowo ponownie wysłane.
++    Twoje zmiany zostały odrzucone, ponieważ przed ich wysłaniem 
++    do [% script_name FILTER html %] został przekroczony limit 
++    czasu [% constants.MAX_TOKEN_AGE FILTER html %] dni. Być może twoja strona była 
++    wyświetlana bardzo długo lub poprzednie zmiany zostały przypadkowo ponownie wysłane.
+ 
+   [% ELSIF reason == "missing_token" %]
+     Wygląda na to, że trafiłeś/trafiłaś tutaj z nieprawidłowej strony.
+

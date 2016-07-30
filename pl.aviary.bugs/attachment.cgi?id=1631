@@ -1,0 +1,200 @@
+diff --git a/template/pl/default/admin/custom_fields/create.html.tmpl b/template/pl/default/admin/custom_fields/create.html.tmpl
+--- a/template/pl/default/admin/custom_fields/create.html.tmpl
++++ b/template/pl/default/admin/custom_fields/create.html.tmpl
+@@ -42,7 +42,7 @@
+ <p>
+   Dodatkowe pola mogą znacznie skomplikować interfejs [% terms.Bugzilli %]. 
+   Wielu początkujących administratorów [% terms.Bugzilli %] dodaje zbyt wiele 
+-  pól, co z kolei powoduje, że użytkownicy narzekają na zbyt skomplikowany 
++  pól, co z kolei powoduje narzekanie użytkowników na zbyt skomplikowany 
+   interfejs. Proszę dokładnie przemyśleć celowość dodawanego pola. Prawdopodobnie 
+   [% terms.Bugzilla %] zawiera już poszukiwaną funkcję, która nie jest skonfigurowana 
+   albo włączona.
+@@ -113,11 +113,11 @@
+         <input type="text" id="reverse_desc" name="reverse_desc" value="" size="40" disabled="disabled">
+         <br/>
+         Powyższy opis będzie określać listę [% terms.bledow %], które są powiązane 
+-		z polem [% field_types.${constants.FIELD_TYPE_BUG_ID} FILTER html %].
+-        Przykładowo jeśli pole zostanie opisane jako "Jest duplikatem",
+-		to opis współzależności powinien zostać określony jako 
+-        "Duplikaty tego [% terms.bledu %]".
+-        Pozostaw puste aby wyłączyć wyświetlanie listy.
++        z polem [% field_types.${constants.FIELD_TYPE_BUG_ID} FILTER html %].
++        Przykładowo jeśli pole zostanie opisane jako „Jest duplikatem”,
++        to opis współzależności powinien zostać określony jako 
++        „Duplikaty tego [% terms.bledu %]”.
++        Pozostaw puste, aby wyłączyć wyświetlanie listy.
+       </td>
+       <th>
+         <label for="visibility_field_id">Pole wyświetlane tylko, gdy:</label>
+diff --git a/template/pl/default/admin/custom_fields/edit.html.tmpl b/template/pl/default/admin/custom_fields/edit.html.tmpl
+--- a/template/pl/default/admin/custom_fields/edit.html.tmpl
++++ b/template/pl/default/admin/custom_fields/edit.html.tmpl
+@@ -96,11 +96,11 @@
+                  value="[% field.reverse_desc FILTER html %]">
+           <br/>
+           Powyższy opis będzie określać listę [% terms.bledow %], które są powiązane 
+-	      z polem [% field_types.${constants.FIELD_TYPE_BUG_ID} FILTER html %].
+-          Przykładowo jeśli pole zostanie opisane jako "Jest duplikatem",
+-		  to opis współzależności powinien zostać określony jako 
+-          "Duplikaty tego [% terms.bledu %]".
+-          Pozostaw puste aby wyłączyć wyświetlanie listy.
++          z polem [% field_types.${constants.FIELD_TYPE_BUG_ID} FILTER html %].
++          Przykładowo jeśli pole zostanie opisane jako „Jest duplikatem”,
++          to opis współzależności powinien zostać określony jako 
++          „Duplikaty tego [% terms.bledu %]”.
++          Pozostaw puste, aby wyłączyć wyświetlanie listy.
+         </td>
+       [% ELSE %]
+         <td colspan="2">&nbsp;</td>
+diff --git a/template/pl/default/admin/fieldvalues/confirm-delete.html.tmpl b/template/pl/default/admin/fieldvalues/confirm-delete.html.tmpl
+--- a/template/pl/default/admin/fieldvalues/confirm-delete.html.tmpl
++++ b/template/pl/default/admin/fieldvalues/confirm-delete.html.tmpl
+@@ -92,7 +92,7 @@
+         [% ELSE %]
+           Występuje 1 [% terms.blad %] z tą wartością.
+         [% END %]
+-        Musisz zmienić wartość pola
++        Należy zmienić wartość pola
+           <a title="Lista [% terms.bledow %], gdzie
+ 	„[%- field.description FILTER html %]” ma wartość
+ 	„[%- value.name FILTER html %]”"
+diff --git a/template/pl/default/admin/flag-type/edit.html.tmpl b/template/pl/default/admin/flag-type/edit.html.tmpl
+--- a/template/pl/default/admin/flag-type/edit.html.tmpl
++++ b/template/pl/default/admin/flag-type/edit.html.tmpl
+@@ -171,7 +171,7 @@
+     <tr>
+       <th>Lista obserwatorów:</th>
+       <td>
+-        Jeśli flaga jest flagą pytającą tutaj można określić, kto dostanie e-mailem kopię informacji
++        Jeśli flaga jest flagą pytającą, tutaj można określić kto dostanie e-mailem kopię informacji
+         o jej umieszczeniu. Jest to rozdzielona przecinkami lista pełnych adresów e-mail,
+         które nie muszą być loginami [% terms.Bugzilli %].
+         [% IF Param('emailsuffix') %]
+diff --git a/template/pl/default/admin/groups/delete.html.tmpl b/template/pl/default/admin/groups/delete.html.tmpl
+--- a/template/pl/default/admin/groups/delete.html.tmpl
++++ b/template/pl/default/admin/groups/delete.html.tmpl
+@@ -129,7 +129,7 @@
+           ([% active.join(', ') FILTER html %])
+           [% IF hidden %]
+             <strong>Ostrzeżenie: Ten produkt jest obecnie ukryty.
+-            Usunięcie grupy spowoduje upublicznienie tego produktu.
++            Usunięcie grupy spowoduje jego upublicznienie.
+             </strong>
+           [% END %]</li>
+       [% END %]
+diff --git a/template/pl/default/admin/groups/edit.html.tmpl b/template/pl/default/admin/groups/edit.html.tmpl
+--- a/template/pl/default/admin/groups/edit.html.tmpl
++++ b/template/pl/default/admin/groups/edit.html.tmpl
+@@ -207,7 +207,7 @@
+     <input type="text" size="20" name="regexp">
+     <input type="submit" value="Usuń">
+ 
+-    <p>Jeśli pole pozostanie puste wszyscy użytkownicy zostaną usunięci 
++    <p>Jeśli pole pozostanie puste, wszyscy użytkownicy zostaną usunięci 
+       z tej grupy.</p>
+ 
+     <input type="hidden" name="action" value="confirm_remove">
+diff --git a/template/pl/default/admin/params/advanced.html.tmpl b/template/pl/default/admin/params/advanced.html.tmpl
+--- a/template/pl/default/admin/params/advanced.html.tmpl
++++ b/template/pl/default/admin/params/advanced.html.tmpl
+@@ -33,7 +33,7 @@
+   wraz z odpowiedziami HTTP. Zwiększa to bezpieczeństwo połączeń SSL
+   SSL poprzez wymuszenie na przeglądarce korzystania tylko z zabezpieczonych połączeń
+   z daną domeną i nie akceptowanie nieprawidłowego certyfikatu.
+-  Funkcja ta powinna być używana tylko wóczas, gdy parametr <code>ssl_redirect</code> jest włączony, 
++  Funkcja ta powinna być używana tylko wówczas, gdy parametr <code>ssl_redirect</code> jest włączony, 
+   [%+ terms.Bugzilla %] jest jedynym uruchomionym serwisem w danej domenie
+   (np. <code>urlbase</code> ma postać
+   <code>http://bugzilla.domena.com/</code>) oraz nie jest planowane wyłączenie parametru
+@@ -50,7 +50,7 @@
+       include_subdomains – wysyłanie nagłówków Strict-Transport-Security jest
+       włączone, ale wraz z flagą <code>includeSubDomains</code>, która będzie powodowała
+       zmianę zabezpieczeń dla wszystkich subdomen. Jest to szczególnie przydatne w
+-      połączeniu z parametrem <code>attachment_base</code>, który jest obecny,
++      połączeniu z parametrem <code>attachment_base</code>, który jest obecny
+       jako subdomena głównej domeny [% terms.Bugzilli %].
+     </li>
+   </ul>
+@@ -67,7 +67,7 @@
+   inbound_proxies =>
+     "Jeśli ruch przychodzący do $terms.Bugzilli odbywa się przez proxy,"
+     _ " $terms.Bugzilla rozpoznaje adres IP każdego użytkownika jako adres"
+-    _ " proxy. Jeśli w tym parametrze zostaną wprowadzone, oddzielone"
++    _ " proxy. Jeśli w tym parametrze zostaną wprowadzone oddzielone"
+     _ " przecinkami adresy IP, każdy nagłówek <code>X-Forwarded-For</code>"
+     _ " wysłany z tych IP będzie traktowany jako zaufany, a wartość tego"
+     _ " nagłówka używana jako adres IP użytkownika.",
+diff --git a/template/pl/default/admin/params/attachment.html.tmpl b/template/pl/default/admin/params/attachment.html.tmpl
+--- a/template/pl/default/admin/params/attachment.html.tmpl
++++ b/template/pl/default/admin/params/attachment.html.tmpl
+@@ -70,7 +70,7 @@
+ 
+   maxattachmentsize => "Maksymalny rozmiar załączników (w kilobajtach). " _
+                        "$terms.Bugzilla nie zaakceptuje załączników większych niż " _
+-                       "podana tutaj wartość. Aby wyłączyć akceptowanie załączników  " _
++                       "podana tutaj wartość. Aby wyłączyć akceptowanie załączników,  " _
+                        "należy ustawić wartość 0.",
+ 
+   maxlocalattachment => "Maksymalny rozmiar załączników określanych jako „duży plik” (w megabajtach), " _
+diff --git a/template/pl/default/admin/params/patchviewer.html.tmpl b/template/pl/default/admin/params/patchviewer.html.tmpl
+--- a/template/pl/default/admin/params/patchviewer.html.tmpl
++++ b/template/pl/default/admin/params/patchviewer.html.tmpl
+@@ -50,8 +50,8 @@
+                 "zawierającego informacje o repozytorium CVS. " _
+                 "Przeglądarka łatek użyje tych danych do tworzenia odnośników do " _
+                 "<code>bonsai blame</code> dla każdego fragmentu łatki. Do tego adresu zostanie dodany " _
+-                "<code>/cvsblame.cgi?…</code>. W razie wątpliwości proszę pozostawić wartość pustą.",
++                "<code>/cvsblame.cgi?…</code>. W razie wątpliwości, należy pozostawić wartość pustą.",
+ 
+   lxr_url => "Adres URL serwera <a href=\"http://sourceforge.net/projects/lxr\">LXR</a>, " _
+              "który indeksuje repozytorium CVS. Przeglądarka łatek użyje tych danych " _
+              "do tworzenia odnośników do LXR dla każdego pliku w łatce. " _
+@@ -54,11 +54,11 @@
+ 
+   lxr_url => "Adres URL serwera <a href=\"http://sourceforge.net/projects/lxr\">LXR</a>, " _
+              "który indeksuje repozytorium CVS. Przeglądarka łatek użyje tych danych " _
+              "do tworzenia odnośników do LXR dla każdego pliku w łatce. " _
+-             "W razie wątpliwości proszę pozostawić wartość pustą.",
++             "W razie wątpliwości, należy pozostawić wartość pustą.",
+ 
+   lxr_root => "Niektóre instalacje LXR nie indeksują repozytorium CVS od głównego katalogu – " _
+               "np. LXR <a href=\"http://lxr.mozilla.org/mozilla\">Mozilli</a> " _
+               "rozpoczyna indeksowanie od katalogu <code>mozilla/</code>. Oznacza to, że " _
+               "adresy URL są relatywne do tej ścieżki. " _
+               "Jeśli wystąpi taka sytuacja, należy wpisać tutaj indeksowany katalog. " _
+@@ -59,8 +59,8 @@
+ 
+   lxr_root => "Niektóre instalacje LXR nie indeksują repozytorium CVS od głównego katalogu – " _
+               "np. LXR <a href=\"http://lxr.mozilla.org/mozilla\">Mozilli</a> " _
+               "rozpoczyna indeksowanie od katalogu <code>mozilla/</code>. Oznacza to, że " _
+               "adresy URL są relatywne do tej ścieżki. " _
+               "Jeśli wystąpi taka sytuacja, należy wpisać tutaj indeksowany katalog. " _
+-              "W razie wątpliwości proszę pozostawić wartość pustą." }
++              "W razie wątpliwości, należy pozostawić wartość pustą." }
+ %]
+diff --git a/template/pl/default/admin/sanitycheck/list.html.tmpl b/template/pl/default/admin/sanitycheck/list.html.tmpl
+--- a/template/pl/default/admin/sanitycheck/list.html.tmpl
++++ b/template/pl/default/admin/sanitycheck/list.html.tmpl
+@@ -32,7 +32,7 @@
+   <p>
+     Błędy, jeśli są, będą <span class="alert">w ten sposób wyróżnione</span>. W zależności
+     od znalezionych błędów, odnośniki będą wyświetlane w sposób ułatwiający naprawę tych
+-    błędów. Po dokonaniu naprawy skrypt zostanie automatycznie, ponownie uruchomiony.
++    błędów. Po dokonaniu naprawy, skrypt zostanie automatycznie ponownie uruchomiony.
+     Powtórne wykonanie skryptu może zająć więcej czasu niż za pierwszym razem.
+   </p>
+ </div>
+diff --git a/template/pl/default/admin/workflow/edit.html.tmpl b/template/pl/default/admin/workflow/edit.html.tmpl
+--- a/template/pl/default/admin/workflow/edit.html.tmpl
++++ b/template/pl/default/admin/workflow/edit.html.tmpl
+@@ -38,7 +38,7 @@
+ <p>
+   Na tej stronie można określić dozwolone zmiany statusu w cyklu życia [% terms.bledu %].
+   Aby zapewnić kompatybilność ze starszymi wersjami [% terms.Bugzilli %], ponowne otwarcie 
+-  [% terms.bledu %] – jeśli cykl zmian na to zezwala – spowoduje wyświetlenie tylko jedego
++  [% terms.bledu %] – jeśli cykl zmian na to zezwala – spowoduje wyświetlenie tylko jednego
+   statusu: [% display_value("bug_status", "UNCONFIRMED") FILTER html %] lub [%+ display_value("bug_status", "REOPENED") FILTER html %].
+   Decyzja, który status zostanie wyświetlony zależy od tego, czy [% terms.blad %] był kiedykolwiek
+   potwierdzany, czy nie. Dobrym rozwiązaniem jest zezwolić na zmianę obu statusów i
+

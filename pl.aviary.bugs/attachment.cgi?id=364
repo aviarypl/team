@@ -1,0 +1,581 @@
+=== create-guided.html.tmpl
+==================================================================
+--- create-guided.html.tmpl  (revision 8)
++++ create-guided.html.tmpl  (local)
+@@ -30,17 +30,17 @@
+ [% cgi = Bugzilla.cgi %]
+ 
+ [% PROCESS global/header.html.tmpl
+-   title = "Enter $terms.ABug"
++   title = "Utwórz nowy raport o $terms.bledzie"
+    onload = "PutDescription()"
+  %]
+ 
+ <p>
+   <font color="red">
+-    This is a template used on mozilla.org - it, along with the
+-    comment-guided.txt.tmpl template, are included as a demo of what it's
+-    possible to do with custom templates in general, and custom [% terms.bug %]
+-    entry templates in particular. You will need to alter the text of this
+-    template if you want to use it on your [% terms.Bugzilla %] installation.
++    Ten wzorzec formularza, wraz z comment-guided.txt.tmpl, jest używany przez
++    mozilla.org. Został on umieszczony wyłącznie jako przykład tego co może
++    zostać osiągnięte przy użyciu własnych wzorców, a zwłaszcza własnych wzorców
++    wprowadzania nowych raportów o [% terms.bledach %]. Prawdopodobnie będziesz
++    zmuszony dostosować go do swoich potrzeb, we własnej instalacji [% terms.Bugzilli %].
+   </font>
+ </p>
+ 
+@@ -73,12 +73,11 @@
+                padding: 2px">
+     <font color="#990000">
+       <b>
+-        Note: This is a tool for reporting [% terms.bugs %] in software from
+-        mozilla.org. Use Netscape's
+-        <a href="http://help.netscape.com/forms/bug-client.html">[% terms.bug %]
+-        reporting form</a> to report [% terms.bugs %] with Netscape products
+-        like Navigator 4.x. Netscape products have a blue and black N in the 
+-        top right hand corner.
++        To narzędzie służy do zgłaszania [% terms.bledow %] w produktach
++        mozilla.org. Dla produktów Netscape użyj tego
++        <a href="http://help.netscape.com/forms/bug-client.html">formularza
++        zgłaszania [% terms.bledow %]</a> Produkty Netscape mają czarno-niebieską
++        literę N w prawym górnym narożniku okna.
+       </b>
+     </font>
+   </div>
+@@ -91,50 +90,51 @@
+               padding: 2px">
+     <font color="#990000">
+       <b>
+-        You are using Netscape [% matches.0 %].
+-        Report [% terms.bugs %] with this browser to the
++        Używasz Netscape [% matches.0 %].
++        [% terms.Bledy %] dotyczące tej przeglądarki możesz zgłosić w
+         <a href="http://home.netscape.com/browsers/[% matches.0 %]/feedback/index.html">
+          Netscape [% matches.0 %] Feedback Center.</a>
+       </b>
+     </font>
+-    This form is only for reporting [% terms.bugs %] in the Mozilla web browser
+-    and other products from mozilla.org. To report [% terms.abug %] you find 
+-    in Netscape [% matches.0 %] with this form, you must reproduce it first in 
+-    a recent build of
+-    <a href="http://ftp.mozilla.org/pub/mozilla.org/mozilla/nightly/latest/">Mozilla</a>,
+-    <a href="http://ftp.mozilla.org/pub/mozilla.org/firefox/nightly/latest-trunk/">Firefox</a> or
+-    <a href="http://ftp.mozilla.org/pub/mozilla.org/camino/nightly/latest/">Camino</a>
+-    to make sure the problem hasn't been fixed already.
++    Ten formularz służy wyłącznie do zgłaszania [% terms.bledow %] w przeglądarce
++    Mozilli oraz w innych produktach oferowanych przez mozilla.org. Aby w tym
++    formularzu zgłosić [% terms.blad %] który znalazłeś w Netscape [% matches.0 %],
++    musisz najpierw sprawdzić czy występuje on w którejś z aktualnych wersji
++    <a href="http://ftp.mozilla.org/pub/mozilla.org/mozilla/nightly/latest/">Mozilli</a>,
++    <a href="http://ftp.mozilla.org/pub/mozilla.org/firefox/nightly/latest-trunk/">Firefoxa</a> lub
++    <a href="http://ftp.mozilla.org/pub/mozilla.org/camino/nightly/latest/">Camino</a>.
+   </div>
+ [% END %]
+ 
+ <p>
+-  This form prompts you for the information required to
+-  file a good [% terms.bug %] report (or enhancement request.)
+-  It may seem lengthy, but developers need all this information
+-  to understand and reproduce the [% terms.bug %], which is the first step towards
+-  fixing it. Please note that <strong>we do not accept [% terms.bug %] reports by
+-  email</strong> - please do not email developers or mozilla.org staff
+-  with [% terms.bug %] reports. <font color="red">Also, please do not
+-  file [% terms.bugs %] on browser/email software older than two weeks - first,
+-  download a newer build of
+-  <a href="http://ftp.mozilla.org/pub/mozilla.org/mozilla/nightly/latest/">Mozilla</a>,
+-  <a href="http://ftp.mozilla.org/pub/mozilla.org/firefox/nightly/latest-trunk/">Firefox</a>,
++  Ten formularz zbiera informacje wymagane do stworzenia wartościowego
++  raportu o [% terms.bledzie %] (lub propozycji). Być może jest on nieco długi,
++  lecz zawiera on wszystkie informacje wymagane przez programistę by zrozumieć
++  [% terms.blad %] i sprawdzić jego występowanie, które to kroki są zawsze wymagane przy
++  naprawie [% terms.bledu %]. Proszę zauważyć że <strong>raporty o [% terms.bledach %]
++  nie są przyjmowane poprzez pocztę elektroniczną</strong> - prosimy nie wysyłać listów
++  do programistów i członków mozilla.org z raportami o [% terms.bledach %].
++  <font color="red">Prosimy również, o niezgłaszanie [% terms.bledow %] o
++  przeglądarce/programie pocztowym starszym niż dwa tygodnie - najpierw ściągnij
++  nową wersję
++  <a href="http://ftp.mozilla.org/pub/mozilla.org/mozilla/nightly/latest/">Mozilli</a>,
++  <a href="http://ftp.mozilla.org/pub/mozilla.org/firefox/nightly/latest-trunk/">Firefoxa</a>,
+   <a href="http://ftp.mozilla.org/pub/mozilla.org/camino/nightly/latest/">Camino</a>
+-  or  
+-  <a href="http://ftp.mozilla.org/pub/mozilla.org/thunderbird/nightly/">Thunderbird</a>
+-  and check that the problem is still present.
++  lub  
++  <a href="http://ftp.mozilla.org/pub/mozilla.org/thunderbird/nightly/">Thunderbirda</a>
++  i sprawdź czy problem nadal występuje.
+   </font>
+ </p>
+ 
+ <a name="step1"></a>
+-<h3>Step 1 - search for your [% terms.bug %]</h3>
++<h3>Krok 1. - poszukaj swojego [% terms.bledu %]</h3>
+ 
+ <p>
+-  Please see if your [% terms.bug %] has already been reported.
+-  <font color="red">Please don't skip this step.</font>
+-  50% of the [% terms.bugs %] filed in
+-  [%+ terms.Bugzilla %] are duplicates, and this wastes a lot of our QA engineers' time.
++  Proszę sprawdzić czy Twój [% terms.blad %] nie został już zgłoszony wcześniej.
++  <font color="red">Prosimy o niepomijanie tego kroku.</font>
++  Około 50% wszystkich raportów o [% terms.bledach %] zgłoszonych w 
++  [%+ terms.Bugzilli %] to duplikaty istniejących już raportów.
++  Fakt ten w znacznym stopniu marnuje czas osób odpowiedzialnych za QA.
+ </p>
+ 
+ [%# Stop NS 4.x and all v.3 browsers from getting <iframe> code %]
+@@ -142,19 +142,19 @@
+          AND NOT cgi.user_agent("compatible"))
+        OR (cgi.user_agent("Mozilla/[123]")) %]
+   <p>
+-    Visit the <a href="duplicates.cgi">most-frequently-reported [% terms.bugs %] page</a>
+-    and see if your [% terms.bug %] is there. If not, go to the
+-    <a href="query.cgi?format=modern">search page</a>
+-    and search [% terms.Bugzilla %] by entering two or
+-    three of the main words having to do with your [% terms.bug %] in the top box.
+-    For example: <tt><b>pop3 mail</b></tt> or <tt><b>copy paste</b></tt>.
++    Odwiedź <a href="duplicates.cgi">stronę najczęściej zgłaszanych [% terms.bledow %]</a>
++    i sprawdź czy nie ma tam Twojego [% terms.bledu %]. Jeśli go nie znajdziesz, przejdź do
++    <a href="query.cgi?format=modern">strony wyszukiwania</a> i poszukaj w 
++    [% terms.Bugzilli %], istniejącego raportu, wpisując dwa lub trzy słowa opisujące
++    Twój [% terms.blad %]. Przykładowo może to być: <tt><b>pop3 mail</b></tt>
++    lub <tt><b>kopiuj wklej</b></tt>.
+   </p>
+ [% ELSE %]
+   <p>
+-    Check the list of most-frequently-reported [% terms.bugs %] below.
+-    If your [% terms.bug %] isn't there, search [% terms.Bugzilla %] by entering two or
+-    three of the main words having to do with your [% terms.bug %] in this box.
+-    For example: <tt><b>pop3 mail</b></tt> or <tt><b>copy paste</b></tt>.
++    Sprawdź poniższą listę zawierająca najczęściej zgłaszane [% terms.bledy %].
++    Jeśli nie znajdziesz tam opisu swojego problemu, spróbuj wpisać w poniższe
++    okienko dwa lub trzy słowa opisujące Twój [% terms.blad %]. Przykładowo
++    może to być: <tt><b>pop3 mail</b></tt> lub <tt><b>kopiuj wklej</b></tt>.
+   </p>
+ 
+   <form action="buglist.cgi" method="get" target="somebugs">
+@@ -163,7 +163,7 @@
+     <input type="hidden" name="bug_status" value="__open__">
+     <input type="hidden" name="product" value="[% product FILTER html %]">
+     <input type="text" name="content" size="40">
+-    <input type="submit" value="Search">
++    <input type="submit" value="Szukaj">
+   </form>
+ 
+   <iframe name="somebugs" width="100%" height="80%"
+@@ -173,32 +173,35 @@
+ [% END %]
+ 
+ <p>
+-  Look through the search results. If you get the
+-  <tt><b>Zarro Boogs</b></tt> message, [% terms.Bugzilla %] found no [% terms.bugs %] that
+-  match. Check for typos, or add fewer or different keywords.
++  Przejrzyj wyniki wyszukiwania. Jeśli otrzymasz
++  <tt><b>Nie znaleziono błędów</b></tt>, [% terms.Bugzilla %] nie znalazła
++  [% terms.bledow %] pasujących do Twojego zapytania.
++  Sprawdź czy nie zrobiłeś jakiejś literówki, lub spróbuj z innymi słowami.
+ </p>
+ 
+ <p>
+-  If you find [% terms.abug %] that looks the same as yours, you can add
+-  useful comments to that [% terms.bug %], but please don't open a new one.
+-  Please don't add comments like "please fix this [% terms.bug %]" - this
+-  tends to annoy engineers and slow, rather than speed, the fixing of it.
++  Jeśli znalazłeś [% terms.blad %] który wygląda tak jak Twój, możesz
++  dodać do niego komentarz, lecz nie twórz nowego raportu. Prosimy również
++  o niedodawanie komentarzy takich jak "naprawcie ten [% terms.blad %]" -
++  to może tylko spowodować że osóby odpowiedzialne za ten ten [% terms.blad %] 
++  zdenerwują i zwykle zamiast przyśpieszyć, zwalnia to tempo naprawy.
+ </p>
+ 
+ <p>
+-  If you find [% terms.bugs %] similar to yours, read them and note which component
+-  they are in. You should file your [% terms.bug %] in that same component.
++  Jeśli znalazłeś [% terms.blad %] podobny do Twojego, przeczytaj go i zanotuj
++  komponent dla którego go zgłoszono. Powinieneś swój [% terms.blad %] dodać
++  do tego samego komponentu.
+ </p>
+ 
+ 
+ <a name="step2"></a>
+-<h3>Step 2 - give information</h3>
++<h3>Krok 2. - podawanie informacji</h3>
+ 
+ <p>
+-  If you're pretty certain that your [% terms.bug %] isn't in there already, then
+-  please try to complete this form as accurately as you
+-  can. The more you can tell us, the better our chance of being able
+-  to understand and reproduce your [% terms.bug %].
++  Jeśli jesteś w pełni przeświadczony że Twojego [% terms.bladu %] nie zgłoszono
++  wcześniej, wypełnij ten formularz tak szczegółowo jak to tylko możliwe. Im więcej
++  informacji przekażesz, tym większa szansa że zostanie on zrozumiany i uda się
++  sprawdzić jego występowania zainteresowanym osobom.
+ </p>
+ 
+ <form method="post" action="post_bug.cgi">
+@@ -213,7 +216,7 @@
+ 
+   <tr bgcolor="[% tablecolour %]">
+     <td align="right" valign="middle">
+-      <b>Product</b>
++      <b>Produkt</b>
+     </td>
+     <td valign="top">
+       <input type="hidden" name="product" value="[% product FILTER html %]">
+@@ -223,16 +226,17 @@
+ 
+   <tr>
+     <td align="right" valign="middle">
+-      <b>Component</b>
++      <b>Komponent</b>
+     </td>
+     <td valign="top">
+       <p>
+-        The area where the problem occurs.
+-        To pick the right component, you could use the same one as
+-        similar [% terms.bugs %] you found in your search, or read the full list of
++        Określa obszar występowania problemu.
++        Aby wybrać poprawny komponent, użyj tego, który był
++        używany przez podobne [% terms.bledy %] uzyskane w wyniku
++        wyszukiwania, lub przejrzyj pełną listę 
+         <a href="describecomponents.cgi?product=
+-            [% product FILTER url_quote %]">component
+-        descriptions</a> if you need more help.
++            [% product FILTER url_quote %]">dostępnych komponentów</a>
++        jeśli potrzebujesz dodatkowych informacji.
+       </p>
+ 
+       <table border="0" cellpadding="0" cellspacing="0">
+@@ -254,7 +258,7 @@
+                 <script type="text/javascript" language="JavaScript">
+                   if ((document.getElementById) && (document.body.innerHTML)) {
+                     document.write("\
+-                    Select a component to see its description here.");
++                    Wybierz komponent żeby zobaczyć jego opis.");
+                   }
+                 </script>
+               </div>
+@@ -270,7 +274,7 @@
+ 
+   <tr bgcolor="[% tablecolour %]">
+     <td align="right" valign="middle">
+-      <b>Hardware Platform</b>
++      <b>Platforma sprzętowa</b>
+     </td>
+     <td valign="top">
+       [% PROCESS select sel = 'rep_platform' %]
+@@ -283,7 +287,7 @@
+ 
+   <tr>
+     <td align="right" valign="middle">
+-      <b>Operating System</b>
++      <b>System operacyjny</b>
+     </td>
+     <td valign="top">
+       [% PROCESS select sel = 'op_sys' %]
+@@ -295,18 +299,17 @@
+ 
+   <tr bgcolor="[% tablecolour %]">
+     <td align="right" valign="middle">
+-      <b>Build Identifier<br>(User Agent)</b>
++      <b>Identyfikator wersji przeglądarki<br>(User Agent)</b>
+     </td>
+     <td valign="top">
+       <p>
+-        If reporting [% terms.abug %] in Mozilla,
+-        this is the line beginning <tt>"Mozilla/5.0"</tt> in
+-        <tt>Help | About Mozilla</tt>.
+-        It identifies exactly the version of Mozilla you were using.
+-        If you are using the problem copy of Mozilla, this will be
+-        filled in correctly for you already.
+-        If Mozilla won't start, just enter the URL of the directory you
+-        downloaded it from.
++        Jeśli zgłaszasz [% terms.blad %] w Mozilli,
++        ta linia zaczynająca się od <tt>"Mozilla/5.0"</tt> jest identyczna z
++        tym co jest wyświetlane w <tt>Pomoc | O Mozilli</tt>.
++        Jednoznacznie identyfikuje ona wersję Mozilli używaną przez Ciebie.
++        Jeśli zaobserwowałeś problem na tej konkretnej kopii Mozilli, informacja ta
++        jest poprawna i nie musisz jej zmieniać. Jeśli sprawiająca problemy Mozilla nie
++        uruchamia się, wpisz tutaj URL z którego ją ściągnąłeś.
+       </p>
+       <input type="text" size="80" name="buildid" value="[% buildid %]">
+     </td>
+@@ -318,12 +321,12 @@
+     </td>
+     <td valign="top">
+       <p>
+-        URL that demonstrates the problem you are seeing (optional.)
+-        <b>IMPORTANT</b>: If you are filing [% terms.abug %] about a broken web page,
+-        please read the
++        URL strony która pokazuje problem (opcjonalne).
++        <b>UWAGA</b>: Jeśli zgłaszasz [% terms.blad %] dotyczący wadliwego działania
++        jakiejś strony, proszę zapoznać się z 
+         <a href="http://www.mozilla.org/docs/web-developer/faq.html">Mozilla
+-        Web Developer FAQ</a>, which explains how we handle old or
+-        badly-coded web pages.
++        Web Developer FAQ</a>, który wyjaśnia jak radzić sobie ze starymi i źle
++        napisanymi stronami.
+       </p>
+       <input type="text" size="80" name="bug_file_loc" value="http://">
+    </td>
+@@ -331,21 +334,22 @@
+ 
+   <tr bgcolor="[% tablecolour %]">
+     <td align="right" valign="middle">
+-      <b>Summary</b>
++      <b>Podsumowanie</b>
+     </td>
+     <td valign="top">
+       <p>
+-        A sentence which summarises the problem.
+-        Please be descriptive and use lots of keywords.
++        Krótki tekst wyjaśniający problem.
++        Powinien być opisowy i zawierać sporą ilości słów kluczowych.
+       </p>
+       <p>
+         <tt>
+-          <font color="#990000">Bad example</font>: mail crashed
++          <font color="#990000">Zły przykład</font>: program pocztowy nawalił
+         </tt>
+         <br>
+         <tt>
+-          <font color="#009900">Good example</font>:
+-          crash if I close the mail window while checking for new POP mail
++          <font color="#009900">Dobry przykład</font>:
++          crash podczas zamykania okno programu pocztowego gdy jest
++          sprawdzana poczta przy użyciu POP3
+         </tt>
+       </p>
+       <input type="text" size="80" name="short_desc" id="short_desc">
+@@ -354,24 +358,25 @@
+ 
+   <tr>
+     <td align="right" valign="middle">
+-      <b>Details</b>
++      <b>Detale</b>
+     </td>
+     <td valign="top">
+       <p>
+-        Expand on the Summary. Please be
+-        as specific as possible about what is wrong.
++        Dodatkowe informacje do tego co zawarto w podsumowaniu. Powinny być tak
++        szczegółowe jak to tylko możliwe.
+       </p>
+       <p>
+         <tt>
+-          <font color="#990000">Bad example</font>: This page looks wrong in
+-          Mozilla. Other browsers display it correctly. You suck!
++          <font color="#990000">Zły przykład</font>: Ta strona wygląda strasznie
++          w Mozilli. Inne przeglądarki wyświetlają ją prawidłowo!
+         </tt>
+         <br>
+         <tt>
+-          <font color="#009900">Good example</font>: In the
+-          page at http://www.foo.com/, text in the first column should be
+-          fully justified -- text should be aligned with both the left and
+-          right margins. In Mozilla, the text is only left-justified.
++          <font color="#009900">Good example</font>: Na pierwszej stronie
++          http://www.foo.com/, tekst w pierwszej kolumnie powinien być
++          w pełni wyjustowany -- tekst powinien przylegać i do lewej jak i
++          prawej krawędzi. W Mozilli tekst jest przyciągany wyłącznie do
++          lewej krawędzi.
+         </tt>
+       </p>
+       <textarea rows="6" cols="80" name="comment"
+@@ -381,24 +386,24 @@
+ 
+   <tr bgcolor="[% tablecolour %]">
+     <td align="right" valign="middle">
+-      <b>Reproducibility</b>
++      <b>Powtarzalność</b>
+     </td>
+     <td valign="top">
+       <p>
+-        How often can you reproduce the problem?
++        Jak często udaje Ci się powtórzyć ten błąd?
+       </p>
+       <select name="reproducible">
+-        <option name="AlwaysReproducible" value="Always">
+-          Every time.
++        <option name="AlwaysReproducible" value="Zawsze">
++          Za każdym razem.
+         </option>
+-        <option name="Sometimes" value="Sometimes">
+-          Sometimes, but not always.
++        <option name="Sometimes" value="Czasami">
++          Czasami, lecz nie zawsze.
+         </option>
+-        <option name="DidntTry" value="Didn't try">
+-          Haven't tried to reproduce it.
++        <option name="DidntTry" value="Nie próbowałem">
++          Nie próbowałem powtórzyć.
+         </option>
+-        <option name="NotReproducible" value="Couldn't Reproduce">
+-          Tried, but couldn't reproduce it.
++        <option name="NotReproducible" value="Nie udało się powtórzyć">
++          Próbowałem powtórzyć lecz nie udało się.
+         </option>
+       </select>
+     </td>
+@@ -406,12 +411,12 @@
+ 
+   <tr>
+     <td align="right" valign="middle">
+-      <b>Steps to Reproduce</b>
++      <b>Kroki aby powtórzyć</b>
+     </td>
+     <td valign="top">
+       <p>
+-        Describe how to reproduce the problem, step by
+-        step. Include any special setup steps.
++        Opisz tutaj w jaki kroki należy wykonać, aby powtórzyć ten problem.
++        Podaj również wszelkie przygotowawcze czynności.
+       </p>
+ <textarea rows="4" cols="80" name="reproduce_steps" wrap="hard">
+ 1.
+@@ -423,11 +428,11 @@
+ 
+   <tr bgcolor="[% tablecolour %]">
+     <td valign="middle" align="right">
+-      <b>Actual Results</b>
++      <b>Otrzymany rezultat</b>
+     </td>
+     <td valign="top">
+       <p>
+-        What happened after you performed the steps above?
++        Co uzyskałeś po wykonaniu powyższych czynności?
+       </p>
+       <textarea rows="4" cols="80" name="actual_results"
+                 wrap="hard"></textarea>
+@@ -436,11 +441,11 @@
+ 
+   <tr>
+     <td valign="middle" align="right">
+-      <b>Expected Results</b>
++      <b>Oczekiwane rezultaty</b>
+     </td>
+     <td valign="top">
+       <p>
+-        What should the software have done instead?
++        Co powinieneś otrzymać w wyniku tych czynności?
+       </p>
+       <textarea rows="4" cols="80" name="expected_results"
+                 wrap="hard"></textarea>
+@@ -449,26 +454,24 @@
+ 
+   <tr bgcolor="[% tablecolour %]">
+     <td valign="middle" align="right">
+-      <b>Additional Information</b>
++      <b>Dodatkowe informacje</b>
+     </td>
+     <td valign="top">
+       <p>
+-        Add any additional information you feel may be
+-        relevant to this [% terms.bug %], such as the <b>theme</b> you were
+-        using (does the [% terms.bug %] still occur
+-        with the default theme?), a <b>Talkback crash ID</b>, or special
+-        information about <b>your computer's configuration</b>. Any information
+-        longer than a few lines, such as a <b>stack trace</b> or <b>HTML
+-        testcase</b>, should be added
+-        using the "Create a new Attachment" link on the [% terms.bug %], after
+-        it is filed. If you believe that it's relevant, please also include
+-        your build configuration, obtained by typing <tt>about:buildconfig</tt>
+-        into your URL bar.
++        Umieść tutaj wszelkie dodatkowe dane, które Twoim zdaniem są związane
++        z zaobserwowanym [% terms.bledem %], przykładowo może to być używany
++        <b>motym</b> (czy [% terms.blad %] występuje z domyślnym motywem?),
++        <b>identyfikator awarii Talkbacka</b>, lub specjalne informacje na
++        temat <b>konfiguracji Twojego komputera</b>. Wszelkie informacje dłuższe
++        niż kilka linii, takie jak <b>zrzut stosu</b> lub <b>przykład w HTMLu</b>,
++        powinien zostać dodany przy użyciu odnośnika "Utwórz nowy załącznik" ze
++        strony [% terms.bledu %], już po wypełnieniu raportu. Jeśli uważasz że 
++        informacje o opcjach użytych przy budowie Twojego pakietu są istotne,
++        możesz je dodać używając danych pochodzących ze strony <tt>about:buildconfig</tt>.
+         <br>
+         <br>
+-        If you are reporting a crash, note the module in
+-        which the software crashed (e.g., <tt>Application Violation in
+-        gkhtml.dll</tt>).
++        Jeśli raportujesz awarię krytyczną, staraj się podać moduł w którym się to
++        zdarzyło (np. <tt>Application Violation w gkhtml.dll</tt>).
+       </p>
+       <textarea rows="8" cols="80" name="additional_info"
+                 wrap="hard"></textarea>
+@@ -477,37 +480,37 @@
+ 
+   <tr>
+     <td valign="middle" align="right">
+-      <b>Severity</b>
++      <b>Waga [% terms.bledu %]</b>
+     </td>
+     <td valign="top">
+       <p>
+-        How serious the problem is. Also, if your [% terms.bug %] is a request for a new
+-        feature or enhancement, say so here.
++        Określa jak poważny jest ten problem. Jednocześnie jeśli Twój raport jest
++        prośbą o dodatkową funkcjonalność zaznacz to.
+       </p>
+       <select name="bug_severity">
+         <option name="blocker" value="blocker">
+-          Blocker: This [% terms.bug %] prevents Mozilla developers from 
+-          testing or developing the software.
++          Blokujący: Ten [% terms.blad %] przeszkadza skutecznie w  testowaniu lub
++          programowaniu Mozilli.
+         </option>
+         <option name="critical" value="critical">
+-          Critical: The software crashes, hangs, or causes you to
+-          lose data.
++          Krytyczny: Krytyczna awaria, zawieszenie programu lub inny problem prowadzący
++          do utraty danych.
+         </option>
+         <option name="major" value="major">
+-          Major: A major feature is broken.
++          Ważny: Braki w poważnej funkcjonalności.
+         </option>
+         <option name="normal" value="normal" selected="selected">
+-          Normal: It's [% terms.abug %] that should be fixed.
++          Normalny: [% terms.Blad %] który powinien być naprawiony.
+         </option>
+         <option name="minor" value="minor">
+-          Minor: Minor loss of function, and there's an easy workaround.
++          Drobny: Pomniejsze braki funkcjonalności, lub takie na dla których istnieją
++          łatwe sposoby ominięcia.
+         </option>
+         <option name="trivial" value="trivial">
+-          Trivial: A cosmetic problem, such as a misspelled word or
+-          misaligned text.
++          Trywialne: Kosmetyczne problemy, takie jak literówka lub źle ułożony tekst.
+         </option>
+         <option name="enhancement" value="enhancement">
+-          Enhancement: Request for new feature or enhancement.
++          Propozycja: Prośba o nową funkcjonalność.
+         </option>
+       </select>
+     </td>
+@@ -516,19 +519,19 @@
+ 
+ 
+ <a name="step3"></a>
+-<h3>Step 3 - submit the [% terms.bug %]</h3>
++<h3>Krok 3. - wysyłanie raportu o [% terms.bledzie %]</h3>
+ 
+ <p>
+-  <input type="submit" value="    Submit [% terms.Bug %] Report    "
++  <input type="submit" value="    Wyślij raport o [% terms.bledzie %]    "
+    onclick="if (this.form.comment.value == '')
+-   { alert('Please enter some details about this [% terms.bug %].');
++   { alert('Proszę podać trochę informacji o swoim [% terms.bledzie %].');
+      this.form.comment.focus();
+      return false; } return true;">
+ </p>
+ 
+ <p>
+-  That's it! Thanks very much. You'll be notified by email about any
+-  progress that is made on fixing your [% terms.bug %].
++  To wszystko! Dziękujemy bardzo. Zostaniesz poinformowany o wszelkich postępach
++  przy rozwiązywania tego [% terms.bledu %] przy użyciu poczty elektronicznej.
+ </p>
+ 
+     </form>
+

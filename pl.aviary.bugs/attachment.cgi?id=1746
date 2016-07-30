@@ -1,0 +1,978 @@
+diff --git a/browser/chrome/browser/syncBrand.dtd b/browser/chrome/browser/syncBrand.dtd
+--- a/browser/chrome/browser/syncBrand.dtd
++++ b/browser/chrome/browser/syncBrand.dtd
+@@ -1,2 +1,2 @@
+-<!ENTITY syncBrand.shortName.label  "Sync">
+-<!ENTITY syncBrand.fullName.label   "Firefox Sync">
++<!ENTITY syncBrand.shortName.label  "synchronizacji">
++<!ENTITY syncBrand.fullName.label   "Usługa synchronizacji">
+diff --git a/browser/chrome/browser/syncGenericChange.properties b/browser/chrome/browser/syncGenericChange.properties
+--- a/browser/chrome/browser/syncGenericChange.properties
++++ b/browser/chrome/browser/syncGenericChange.properties
+@@ -1,7 +1,7 @@
+ # LOCALIZATION NOTE (change.password.title): This (and associated change.password/passphrase) are used when the user elects to change their password.
+ change.password.title = Zmiana hasła
+ change.password.acceptButton = Zmień hasło
+-change.password.status.active = Zmiana hasła, proszę czekać…
++change.password.status.active  = Trwa zmiana hasła, proszę czekać…
+ change.password.status.success = Hasło zostało zmienione.
+ change.password.status.error = Wystąpił błąd podczas zmiany hasła.
+ 
+@@ -5,6 +5,6 @@
+ change.password.status.success = Hasło zostało zmienione.
+ change.password.status.error = Wystąpił błąd podczas zmiany hasła.
+ 
+-change.password2.introText = Hasło musi mieć przynajmniej 8 znaków. Nie może być takie samo, jak nazwa użytkownika ani klucz Sync.
+-change.password.warningText = Uwaga: po zmianie hasła wszystkie inne urządzenia nie będą mogły połączyć się z tym kontem.
++change.password2.introText = Hasło musi mieć przynajmniej 8 znaków. Nie może być takie samo, jak nazwa użytkownika ani klucz synchronizacji.
++change.password.warningText = Uwaga! Po zmianie hasła wszystkie inne urządzenia nie będą mogły połączyć się z tym kontem.
+ 
+@@ -10,3 +10,3 @@
+ 
+-change.synckey.title = Zmiana klucza Sync
++change.synckey.title = Zmiana klucza synchronizacji
+ change.synckey.acceptButton = Zmień klucz
+@@ -12,8 +12,8 @@
+ change.synckey.acceptButton = Zmień klucz
+-change.synckey.label = Zmiana klucza i przesyłanie danych lokalnych, proszę czekać…
+-change.synckey2.error = Podczas operacji zmiany klucza wystąpił błąd!
+-change.synckey2.success = Klucz został zmieniony!
++change.synckey.label = Zmiana klucza synchronizacji i przesyłanie danych lokalnych, proszę czekać…
++change.synckey2.error = Podczas operacji zmiany klucza synchronizacji wystąpił błąd!
++change.synckey2.success = Klucz synchronizacji został zmieniony!
+ 
+ change.synckey.introText = Firefox dba o twoją prywatność
+ change.synckey.introText2 = Aby zapewnić całkowitą prywatność, wszystkie dane są przed przesłaniem szyfrowane. Klucz do odszyfrowania danych nie jest przesyłany.
+ # LOCALIZATION NOTE (change.synckey2.warningText) "Sync" should match &syncBrand.shortName.label; from syncBrand.dtd
+@@ -16,6 +16,6 @@
+ 
+ change.synckey.introText = Firefox dba o twoją prywatność
+ change.synckey.introText2 = Aby zapewnić całkowitą prywatność, wszystkie dane są przed przesłaniem szyfrowane. Klucz do odszyfrowania danych nie jest przesyłany.
+ # LOCALIZATION NOTE (change.synckey2.warningText) "Sync" should match &syncBrand.shortName.label; from syncBrand.dtd
+-change.synckey2.warningText = Uwaga: zmiana klucza spowoduje usunięcie wszystkich danych zapisanych na serwerze Sync i wysłanie nowych danych zabezpieczonych tym kluczem. Wszystkie twoje inne urządzenia nie będą synchronizowane, dopóki na danym urządzeniu nie zostanie wprowadzony nowy klucz.
++change.synckey2.warningText = Uwaga! Zmiana klucza spowoduje usunięcie wszystkich danych zapisanych na serwerze synchronizacji i wysłanie nowych danych zabezpieczonych tym kluczem. Wszystkie twoje inne urządzenia nie będą synchronizowane, dopóki na danym urządzeniu nie zostanie wprowadzony nowy klucz synchronizacji.
+ 
+@@ -21,5 +21,5 @@
+ 
+-new.synckey.label = Twój klucz
++new.synckey.label = Twój klucz synchronizacji
+ 
+ # LOCALIZATION NOTE (new.password.title): This (and associated new.password/passphrase) are used on a second computer when it detects that your password or passphrase has been changed on a different device.
+ new.password.title            = Aktualizacja hasła
+@@ -29,7 +29,7 @@
+ new.password.acceptButton     = Aktualizuj hasło
+ new.password.status.incorrect = Hasło jest nieprawidłowe. Ponów próbę.
+ 
+-new.synckey.title          = Aktualizacja klucza Sync
+-new.synckey2.introText       = Twój klucz został zmieniony za pomocą innego urządzenia. Podaj aktualny klucz.
+-new.synckey.acceptButton     = Aktualizuj klucz
+-new.synckey.status.incorrect = Klucz jest nieprawidłowy. Ponów probę.
++new.synckey.title            = Aktualizacja klucza synchronizacji
++new.synckey.introText        = Twój klucz synchronizacji został zmieniony za pomocą innego urządzenia. Podaj aktualny klucz.
++new.synckey.acceptButton     = Aktualizuj klucz synchronizacji
++new.synckey.status.incorrect = Klucz synchronizacji jest nieprawidłowy. Ponów probę.
+diff --git a/browser/chrome/browser/syncKey.dtd b/browser/chrome/browser/syncKey.dtd
+--- a/browser/chrome/browser/syncKey.dtd
++++ b/browser/chrome/browser/syncKey.dtd
+@@ -1,3 +1,3 @@
+-<!ENTITY syncKey.page.title               "Twój klucz  &syncBrand.fullName.label;">
+-<!ENTITY syncKey.page.description         "Ten klucz jest używany do rozszyfrowywania danych na twoim koncie &syncBrand.fullName.label;. Za każdym razem, gdy będziesz konfigurować &syncBrand.fullName.label; na innym urządzeniu trzeba będzie go podać.">
++<!ENTITY syncKey.page.title               "Twój klucz  &syncBrand.shortName.label;">
++<!ENTITY syncKey.page.description         "Klucz ten używany jest do odszyfrowania danych z twojego konta &syncBrand.fullName.label;. Za każdym razem, konfigurując konto &syncBrand.shortName.label; na innym urządzeniu trzeba będzie go podać.">
+ <!ENTITY syncKey.keepItSecret.heading     "Zachowaj go w tajemnicy!">
+@@ -3,6 +3,6 @@
+ <!ENTITY syncKey.keepItSecret.heading     "Zachowaj go w tajemnicy!">
+-<!ENTITY syncKey.keepItSecret.description "Twoje konto &syncBrand.fullName.label; jest zaszyfrowane, chroniąc twoją prywatność. Bez tego klucza rozszyfrowanie danych zajęłoby lata. Jesteś jedyną osobą, która zna ten klucz. Oznacza to, że tylko ty masz dostęp do danych na swoim koncie &syncBrand.fullName.label;.">
++<!ENTITY syncKey.keepItSecret.description "Konto &syncBrand.shortName.label; jest zaszyfrowane, chroniąc twoją prywatność. Bez tego klucza odszyfrowanie danych zajęłoby lata. Jesteś jedyną osobą, która zna ten klucz. Oznacza to, że tylko ty masz dostęp do danych na swoim koncie &syncBrand.shortName.label;.">
+ <!ENTITY syncKey.keepItSafe.heading       "Chroń go!">
+ <!ENTITY syncKey.keepItSafe1.description  "Nie zgub tego klucza.">
+ <!ENTITY syncKey.keepItSafe2.description  " Nie przechowujemy kopii twojego klucza (wówczas nie byłby poufny!) - ">
+ <!ENTITY syncKey.keepItSafe3.description  "nie możemy zatem pomóc ci go odzyskać,">
+@@ -5,7 +5,8 @@
+ <!ENTITY syncKey.keepItSafe.heading       "Chroń go!">
+ <!ENTITY syncKey.keepItSafe1.description  "Nie zgub tego klucza.">
+ <!ENTITY syncKey.keepItSafe2.description  " Nie przechowujemy kopii twojego klucza (wówczas nie byłby poufny!) - ">
+ <!ENTITY syncKey.keepItSafe3.description  "nie możemy zatem pomóc ci go odzyskać,">
+-<!ENTITY syncKey.keepItSafe4.description  " jeśli go zagubisz. Będziesz go potrzebować przy każdej próbie podłączenia nowego urządzenia do &syncBrand.fullName.label;.">
+-<!ENTITY syncKey.findOutMore1.label       "Więcej na temat usługi &syncBrand.fullName.label; i ochrony prywatności można znaleźć na stronie ">
++<!ENTITY syncKey.keepItSafe4.description  " jeśli go zagubisz. Będzie on potrzebny przy każdej próbie podłączenia nowego urządzenia do konta &syncBrand.shortName.label;.">
++
++<!ENTITY syncKey.findOutMore1.label       "Więcej na temat usługi &syncBrand.shortName.label; i ochrony prywatności można znaleźć na stronie ">
+ <!ENTITY syncKey.findOutMore2.label       ".">
+@@ -11,4 +12,4 @@
+ <!ENTITY syncKey.findOutMore2.label       ".">
+-<!ENTITY syncKey.footer1.label            "Zasady korzystania z usługi &syncBrand.fullName.label; są dostępne na stronie ">
++<!ENTITY syncKey.footer1.label            "Zasady korzystania z usługi &syncBrand.shortName.label; są dostępne na stronie ">
+ <!ENTITY syncKey.footer2.label            ". Zasady zachowania prywatności są dostępne na stronie ">
+ <!ENTITY syncKey.footer3.label            ".">
+diff --git a/browser/chrome/browser/syncSetup.dtd b/browser/chrome/browser/syncSetup.dtd
+--- a/browser/chrome/browser/syncSetup.dtd
++++ b/browser/chrome/browser/syncSetup.dtd
+@@ -1,4 +1,4 @@
+-<!ENTITY accountSetupTitle.label    "Konfiguracja usługi &syncBrand.fullName.label;">
++<!ENTITY accountSetupTitle.label    "Konfiguracja usługi &syncBrand.shortName.label;">
+ 
+ <!-- First page of the wizard -->
+ 
+@@ -2,5 +2,5 @@
+ 
+ <!-- First page of the wizard -->
+ 
+-<!ENTITY setup.pickSetupType.description "Witamy! Jeśli nie masz jeszcze konta &syncBrand.fullName.label;, konieczne będzie utworzenie nowego.">
++<!ENTITY setup.pickSetupType.description "Witamy! Jeśli nie masz jeszcze konta &syncBrand.shortName.label;, konieczne będzie utworzenie nowego.">
+ <!ENTITY button.createNewAccount.label "Utwórz nowe konto">
+@@ -6,4 +6,4 @@
+ <!ENTITY button.createNewAccount.label "Utwórz nowe konto">
+-<!ENTITY setup.haveAccount.label "Mam już konto &syncBrand.fullName.label;">
++<!ENTITY setup.haveAccount.label         "Mam już konto &syncBrand.shortName.label;">
+ <!ENTITY button.connect.label    "Połącz">
+ 
+@@ -8,8 +8,8 @@
+ <!ENTITY button.connect.label    "Połącz">
+ 
+-<!ENTITY setup.choicePage.title.label     "Czy korzystasz już z usługi &syncBrand.fullName.label;?">
++<!ENTITY setup.choicePage.title.label    "Czy korzystasz już z usługi &syncBrand.shortName.label;?">
+ <!ENTITY setup.choicePage.new.label       "Korzystam z usługi &syncBrand.shortName.label; po raz pierwszy">
+ <!ENTITY setup.choicePage.existing.label  "Korzystam już z usługi &syncBrand.shortName.label; na innym urządzeniu">
+ 
+ <!-- New Account AND Existing Account -->
+ <!ENTITY server.label               "Serwer">
+@@ -11,11 +11,11 @@
+ <!ENTITY setup.choicePage.new.label       "Korzystam z usługi &syncBrand.shortName.label; po raz pierwszy">
+ <!ENTITY setup.choicePage.existing.label  "Korzystam już z usługi &syncBrand.shortName.label; na innym urządzeniu">
+ 
+ <!-- New Account AND Existing Account -->
+ <!ENTITY server.label               "Serwer">
+-<!ENTITY serverType.main.label      "Serwer &syncBrand.fullName.label;">
++<!ENTITY serverType.main.label      "Serwer &syncBrand.shortName.label;">
+ <!ENTITY serverType.custom2.label   "Użyj innego serwera…">
+ <!ENTITY signIn.account2.label      "Konto">
+ <!ENTITY signIn.account2.accesskey  "K">
+ <!ENTITY signIn.password.label      "Hasło">
+ <!ENTITY signIn.password.accesskey  "H">
+@@ -17,10 +17,10 @@
+ <!ENTITY serverType.custom2.label   "Użyj innego serwera…">
+ <!ENTITY signIn.account2.label      "Konto">
+ <!ENTITY signIn.account2.accesskey  "K">
+ <!ENTITY signIn.password.label      "Hasło">
+ <!ENTITY signIn.password.accesskey  "H">
+-<!ENTITY signIn.syncKey.label       "Klucz Sync">
+-<!ENTITY signIn.syncKey.accesskey   "u">
++<!ENTITY signIn.syncKey.label       "Klucz &syncBrand.shortName.label;">
++<!ENTITY signIn.syncKey.accesskey   "S">
+ 
+ <!-- New Account Page 1: Basic Account Info -->
+ <!ENTITY setup.newAccountDetailsPage.title.label "Szczegóły konta">
+@@ -40,5 +40,5 @@
+ 
+ <!-- New Account Page 2: Sync Key -->
+ <!ENTITY setup.newSyncKeyPage.title.label "&brandShortName; dba o twoją prywatność">
+-<!ENTITY setup.newSyncKeyPage.description.label "Aby zapewnić całkowitą prywatność, wszystkie dane przed przesłaniem są szyfrowane. Klucz Sync, niezbędny do odszyfrowania danych, nie jest przesyłany.">
++<!ENTITY setup.newSyncKeyPage.description.label "Aby zapewnić całkowitą prywatność, wszystkie dane przed przesłaniem są szyfrowane. Klucz synchronizacji, niezbędny do odszyfrowania danych, nie jest przesyłany.">
+ <!ENTITY syncKeyEntry.label        "Twój klucz">
+@@ -44,4 +44,3 @@
+ <!ENTITY syncKeyEntry.label        "Twój klucz">
+-<!ENTITY syncKeyEntry.label        "Twój klucz Sync">
+ <!ENTITY syncKeyEntry.accesskey    "k">
+ <!ENTITY syncKeyGenerate.label     "Wygeneruj">
+@@ -46,4 +45,4 @@
+ <!ENTITY syncKeyEntry.accesskey    "k">
+ <!ENTITY syncKeyGenerate.label     "Wygeneruj">
+-<!ENTITY syncKeyBackup.description "Klucz jest niezbędny, by uzyskać dostęp do usługi &syncBrand.fullName.label; na innych urządzeniach. Utwórz kopię zapasową klucza. W razie jego utraty nie będziemy w stanie pomóc ci go odzyskać.">
++<!ENTITY syncKeyBackup.description "Klucz jest niezbędny, by uzyskać dostęp do usługi &syncBrand.shortName.label; na innych urządzeniach. Utwórz kopię zapasową klucza. W razie jego utraty nie będziemy w stanie pomóc ci go odzyskać.">
+ 
+@@ -49,6 +48,6 @@
+ 
+-<!ENTITY button.syncKeyBackup.print.label     "Wydrukuj…">
+-<!ENTITY button.syncKeyBackup.print.accesskey "d">
++<!ENTITY button.syncKeyBackup.print.label     "Drukuj…">
++<!ENTITY button.syncKeyBackup.print.accesskey "D">
+ <!ENTITY button.syncKeyBackup.save.label      "Zapisz…">
+ <!ENTITY button.syncKeyBackup.save.accesskey  "Z">
+ 
+@@ -58,6 +57,5 @@
+ <!ENTITY addDevice.title.label              "Dodaj urządzenie">
+ <!ENTITY addDevice.showMeHow.label          "Pokaż jak to zrobić">
+ <!ENTITY addDevice.dontHaveDevice.label     "Nie mam tego urządzenia przy sobie">
+-<!ENTITY addDevice.setup.description.label  "Aby aktywować, przejdź do opcji &syncBrand.shortName.label; na innym urządzeniu i wybierz &#x0022;Dodaj urządzenie&#x0022;.">
+-
++<!ENTITY addDevice.setup.description.label  "Aby aktywować urządzenie, przejdź do ustawień &syncBrand.shortName.label; na innym urządzeniu i wybierz „Dodaj urządzenie”.">
+ <!ENTITY addDevice.setup.enterCode.label    "Następnie wprowadź ten kod:">
+@@ -63,5 +61,5 @@
+ <!ENTITY addDevice.setup.enterCode.label    "Następnie wprowadź ten kod:">
+-<!ENTITY addDevice.dialog.description.label "Aby aktywować nowe urządzenie, przejdź na nim do opcji  &syncBrand.shortName.label; i wybierz &#x0022;Połącz.&#x0022;">
++<!ENTITY addDevice.dialog.description.label "Aby aktywować nowe urządzenie, przejdź na nim do ustawień &syncBrand.shortName.label; i wybierz „Połącz.”">
+ <!ENTITY addDevice.dialog.enterCode.label   "Wprowadź kod dostarczony przez to urządzenie:">
+ <!ENTITY addDevice.dialog.tryAgain.label    "Ponów próbę.">
+ <!ENTITY addDevice.dialog.successful.label  "Urządzenie zostało dodane. Początkowa synchronizacja może potrwać kilka minut i ukończy się w tle.">
+@@ -65,8 +63,8 @@
+ <!ENTITY addDevice.dialog.enterCode.label   "Wprowadź kod dostarczony przez to urządzenie:">
+ <!ENTITY addDevice.dialog.tryAgain.label    "Ponów próbę.">
+ <!ENTITY addDevice.dialog.successful.label  "Urządzenie zostało dodane. Początkowa synchronizacja może potrwać kilka minut i ukończy się w tle.">
+-<!ENTITY addDevice.dialog.syncKey.label     "Aby aktywować urządzenie, potrzebujesz swojego klucza Sync. Wydrukuj go lub zapisz i zabierz ze sobą.">
++<!ENTITY addDevice.dialog.syncKey.label     "Aby aktywować urządzenie, potrzebujesz swojego klucza synchronizacji. Wydrukuj go lub zapisz i zabierz ze sobą.">
+ <!ENTITY addDevice.dialog.connected.label   "Urządzenie połączone">
+ 
+ <!-- Existing Account Page 2: Manual Login -->
+ <!ENTITY setup.signInPage.title.label "Zaloguj">
+@@ -69,8 +67,8 @@
+ <!ENTITY addDevice.dialog.connected.label   "Urządzenie połączone">
+ 
+ <!-- Existing Account Page 2: Manual Login -->
+ <!ENTITY setup.signInPage.title.label "Zaloguj">
+-<!ENTITY existingSyncKey.description "Aby uzyskać kopię klucza Sync, przejdź do opcji &syncBrand.shortName.label; na danym urządzeniu i wybierz &#x0022;Mój klucz Sync&#x0022; w sekcji &#x0022;Zarządzaj kontem&#x0022;.">
++<!ENTITY existingSyncKey.description  "Aby uzyskać kopię klucza synchronizacji, przejdź do opcji &syncBrand.shortName.label; na swoim innym urządzeniu i po naciśnięciu przycisku „Zarządzaj kontem” wybierz „Mój klucz synchronizaji”.">
+ <!ENTITY verifying.label              "Weryfikowanie…">
+ <!ENTITY resetPassword.label          "Resetuj hasło">
+ <!ENTITY resetSyncKey.label           "Zagubiono urządzenie">
+@@ -78,7 +76,7 @@
+ <!-- Sync Options -->
+ <!ENTITY setup.optionsPage.title      "Opcje synchronizacji">
+ <!ENTITY syncComputerName.label       "Nazwa urządzenia:">
+-<!ENTITY syncComputerName.accesskey   "k">
++<!ENTITY syncComputerName.accesskey   "U">
+ 
+ <!ENTITY syncMy.label                   "Synchronizuj:">
+ <!ENTITY engine.bookmarks.label         "zakładki">
+@@ -99,10 +97,10 @@
+ 
+ <!-- Confirm Merge Options -->
+ <!ENTITY setup.optionsConfirmPage.title "Potwierdzenie">
+-<!ENTITY confirm.merge.label    "&syncBrand.fullName.label; dołączy wszystkie dane przeglądarki z tego urządzenia do danych na twoim koncie Sync.">
+-<!ENTITY confirm.client2.label          "Uwaga: z tego urządzenia zostaną usunięte następujące dane programu &brandShortName;:">
+-<!ENTITY confirm.client.moreinfo.label  "&brandShortName; skopiuje twoje dane z konta &syncBrand.fullName.label; na to urządzenie.">
+-<!ENTITY confirm.server2.label          "Uwaga: dane na następujących urządzeniach zostaną zastąpione danymi lokalnymi:">
++<!ENTITY confirm.merge.label    "Wszystkie dane przeglądarki z tego urządzenia zostaną dołączone do danych na koncie &syncBrand.shortName.label;.">
++<!ENTITY confirm.client2.label          "Ostrzeżenie! Na tym urządzeniu zostaną usunięte następujące dane programu &brandShortName;:">
++<!ENTITY confirm.client.moreinfo.label  "Twoje dane konta &syncBrand.shortName.label; zostaną skopiowane na to urządzenie.">
++<!ENTITY confirm.server2.label          "Uwaga! Dane na następujących urządzeniach zostaną zastąpione danymi lokalnymi:">
+ 
+ <!-- New & Existing Account: Setup Complete -->
+ <!ENTITY setup.successPage.title "Konfiguracja zakończona">
+@@ -106,5 +104,5 @@
+ 
+ <!-- New & Existing Account: Setup Complete -->
+ <!ENTITY setup.successPage.title "Konfiguracja zakończona">
+-<!ENTITY changeOptions.label "Możesz zmienić to ustawienie wybierając Opcje synchronizacji poniżej.">
++<!ENTITY changeOptions.label "Możesz zmienić to ustawienie, naciskając znajdujący się poniżej przycisk Opcje synchronizacji.">
+ <!ENTITY continueUsing.label "Możesz teraz kontynuować korzystanie z programu &brandShortName;.">
+diff --git a/browser/chrome/browser/syncSetup.properties b/browser/chrome/browser/syncSetup.properties
+--- a/browser/chrome/browser/syncSetup.properties
++++ b/browser/chrome/browser/syncSetup.properties
+@@ -29,5 +29,5 @@
+ # #1 is the number of passwords (was %S for a short while, use #1 instead, even if both work)
+ passwordsCount.label        = #1 hasło;#1 hasła;#1 haseł
+ 
+-save.synckey.title = Zapisz klucz Sync
++save.synckey.title = Zapisz klucz synchronizacji
+ 
+@@ -33,3 +33,3 @@
+ 
+-newAccount.action.label = Firefox Sync jest teraz skonfigurowany, by automatycznie synchronizować wszystkie dane przeglądarki.
++newAccount.action.label = Usługa synchronizacji jest teraz skonfigurowana, by automatycznie synchronizować wszystkie dane przeglądarki.
+ newAccount.change.label = Możesz dokładnie określić, co ma być synchronizowane, naciskając znajdujący się poniżej przycisk Opcje synchronizacji.
+@@ -35,7 +35,7 @@
+ newAccount.change.label = Możesz dokładnie określić, co ma być synchronizowane, naciskając znajdujący się poniżej przycisk Opcje synchronizacji.
+-resetClient.change.label = Firefox Sync dołączy teraz wszystkie dane przeglądarki z tego urządzenia do twojego konta Sync.
+-wipeClient.change.label = Firefox Sync zastąpi teraz wszystkie dane przeglądarki na tym urządzeniu danymi z twojego konta Sync.
+-wipeRemote.change.label = Firefox Sync zastąpi teraz wszystkie dane przeglądarki na twoim koncie Sync danymi z tego urządzenia.
++resetClient.change.label = Wszystkie dane przeglądarki z tego urządzenia zostaną dołączone do twojego konta synchronizacji.
++wipeClient.change.label = Wszystkie dane przeglądarki na tym urządzeniu zostaną zastąpione danymi z twojego konta synchronizacji.
++wipeRemote.change.label = Wszystkie dane przeglądarki na twoim koncie synchronizacji zostaną zastąpione danymi z tego urządzenia.
+ existingAccount.change.label = Możesz zmienić to ustawienie, naciskając znajdujący się poniżej przycisk Opcje synchronizacji.
+ 
+ # Several other strings are used (via Weave.Status.login), but they come from
+@@ -39,4 +39,4 @@
+ existingAccount.change.label = Możesz zmienić to ustawienie, naciskając znajdujący się poniżej przycisk Opcje synchronizacji.
+ 
+ # Several other strings are used (via Weave.Status.login), but they come from
+-#  /services/sync
++#  /services/sync */
+diff --git a/browser/chrome/browser/preferences/sync.dtd b/browser/chrome/browser/preferences/sync.dtd
+--- a/browser/chrome/browser/preferences/sync.dtd
++++ b/browser/chrome/browser/preferences/sync.dtd
+@@ -1,3 +1,3 @@
+ <!-- The page shown when not logged in... -->
+-<!ENTITY setupButton.label          "Konfiguruj usługę &syncBrand.fullName.label;">
++<!ENTITY setupButton.label          "Konfiguruj usługę &syncBrand.shortName.label;">
+ <!ENTITY setupButton.accesskey      "K">
+@@ -3,5 +3,7 @@
+ <!ENTITY setupButton.accesskey      "K">
+-<!ENTITY weaveDesc.label            "&syncBrand.fullName.label; umożliwia dostęp do twojej historii przeglądania, zakładek, haseł i otwartych kart z poziomu każdego twojego urządzenia.">
++<!ENTITY weaveDesc.label            "&syncBrand.shortName.label; umożliwia dostęp do twojej historii przeglądania, zakładek, haseł i otwartych kart z poziomu każdego twojego urządzenia.">
++
++<!-- The page shown when logged in... -->
+ 
+ <!-- Login error feedback -->
+ <!ENTITY updatePass.label             "Aktualizuj">
+@@ -10,5 +12,5 @@
+ <!-- Manage Account -->
+ <!ENTITY manageAccount.label          "Zarządzaj kontem">
+ <!ENTITY manageAccount.accesskey      "r">
+-<!ENTITY viewQuota.label              "Wyświetl limity">
++<!ENTITY viewQuota.label              "Wyświetl zajętość konta">
+ <!ENTITY changePassword.label         "Zmień hasło">
+@@ -14,5 +16,5 @@
+ <!ENTITY changePassword.label         "Zmień hasło">
+-<!ENTITY mySyncKey.label              "Mój klucz Sync">
++<!ENTITY mySyncKey.label              "Mój klucz synchronizacji">
+ <!ENTITY resetSync.label              "Resetuj synchronizację">
+ <!ENTITY addDevice.label              "Dodaj urządzenie">
+ 
+@@ -16,7 +18,7 @@
+ <!ENTITY resetSync.label              "Resetuj synchronizację">
+ <!ENTITY addDevice.label              "Dodaj urządzenie">
+ 
+-<!ENTITY syncMy.label                   "Synchronizuj moje:">
++<!ENTITY syncMy.label                   "Synchronizuj:">
+ <!ENTITY engine.bookmarks.label         "zakładki">
+ <!ENTITY engine.bookmarks.accesskey     "z">
+ <!ENTITY engine.tabs.label              "karty">
+@@ -28,6 +30,6 @@
+ <!ENTITY engine.prefs.label             "ustawienia">
+ <!ENTITY engine.prefs.accesskey         "u">
+ 
+-<!-- Sync Settings -->
++<!-- Device Settings -->
+ <!ENTITY syncComputerName.label       "Nazwa komputera:">
+ <!ENTITY syncComputerName.accesskey   "N">
+@@ -32,5 +34,5 @@
+ <!ENTITY syncComputerName.label       "Nazwa komputera:">
+ <!ENTITY syncComputerName.accesskey   "N">
+-<!ENTITY deactivateDevice.label       "Zdezaktywuj to urządzenie">
++<!ENTITY deactivateDevice.label       "Dezaktywuj to urządzenie">
+ 
+ <!-- Footer stuff -->
+@@ -35,4 +37,4 @@
+ 
+ <!-- Footer stuff -->
+-<!ENTITY prefs.tosLink.label        "Warunki korzystania z usługi">
++<!ENTITY prefs.tosLink.label        "Zasady korzystania z usługi">
+ <!ENTITY prefs.ppLink.label         "Polityka prywatności">
+diff --git a/browser/chrome/browser/browser.dtd b/browser/chrome/browser/browser.dtd
+--- a/browser/chrome/browser/browser.dtd
++++ b/browser/chrome/browser/browser.dtd
+@@ -1,4 +1,4 @@
+ <!-- LOCALIZATION NOTE : FILE This file contains the browser main menu items -->
+-<!-- LOCALIZATION NOTE : FILE Do not translate commandkeys -->
++<!-- LOCALIZATION NOTE : FILE Do not translate commandkeys --> 
+ 
+ <!-- LOCALIZATION NOTE (mainWindow.title): DONT_TRANSLATE -->
+@@ -3,4 +3,4 @@
+ 
+ <!-- LOCALIZATION NOTE (mainWindow.title): DONT_TRANSLATE -->
+-<!ENTITY mainWindow.title "&brandFullName;" >
++<!ENTITY mainWindow.title "&brandFullName;">
+ <!-- LOCALIZATION NOTE (mainWindow.titlemodifier) : DONT_TRANSLATE -->
+@@ -6,3 +6,3 @@
+ <!-- LOCALIZATION NOTE (mainWindow.titlemodifier) : DONT_TRANSLATE -->
+-<!ENTITY mainWindow.titlemodifier "&brandFullName;" >
++<!ENTITY mainWindow.titlemodifier "&brandFullName;">
+ <!-- LOCALIZATION NOTE (mainWindow.titlemodifiermenuseparator): DONT_TRANSLATE -->
+@@ -8,6 +8,5 @@
+ <!-- LOCALIZATION NOTE (mainWindow.titlemodifiermenuseparator): DONT_TRANSLATE -->
+-<!ENTITY mainWindow.titlemodifiermenuseparator " - " >
+-
++<!ENTITY mainWindow.titlemodifiermenuseparator " - ">
+ <!-- LOCALIZATION NOTE (mainWindow.titlePrivateBrowsingSuffix): This will be appended to the window's title
+                                                                 inside the private browsing mode -->
+ <!ENTITY mainWindow.titlePrivateBrowsingSuffix "(tryb prywatny)">
+@@ -29,7 +28,6 @@
+ <!ENTITY  pinAppTab.accesskey                "n">
+ <!ENTITY  unpinAppTab.label                  "Odepnij kartę">
+ <!ENTITY  unpinAppTab.accesskey              "n">
+-
+ <!ENTITY moveToGroup.label                   "Przenieś do grupy">
+ <!ENTITY moveToGroup.accesskey               "e">
+ <!ENTITY moveToNewGroup.label                "Nowa grupa">
+@@ -98,14 +96,6 @@
+ <!ENTITY closeWindow.label "Zamknij okno" >
+ <!ENTITY closeWindow.accesskey "m">
+ 
+-<!ENTITY findOnCmd.label "Znajdź na tej stronie…" >
+-<!ENTITY findOnCmd.accesskey "Z" >
+-<!ENTITY findOnCmd.commandkey "f" >
+-<!ENTITY findAgainCmd.label "Znajdź następne" >
+-<!ENTITY findAgainCmd.accesskey "n" >
+-<!ENTITY findAgainCmd.commandkey "g" >
+-<!ENTITY findAgainCmd.commandkey2 "VK_F3" >
+-
+ <!ENTITY bookmarksMenu.label "Zakładki" >
+ <!ENTITY bookmarksMenu.accesskey "Z" >
+ <!ENTITY bookmarkThisPageCmd.label "Dodaj zakładkę…" >
+@@ -113,7 +103,7 @@
+ <!ENTITY subscribeToPageMenupopup.label "Subskrybuj tę stronę">
+ <!ENTITY subscribeToPageMenuitem.label "Subskrybuj tę stronę…">
+ <!ENTITY addCurPagesCmd.label "Dodaj zakładki do wszystkich kart…">
+-<!ENTITY showAllBookmarks2.label "Wyświetl wszystkie zakładki">
++<!ENTITY showAllBookmarks2.label "Wyświetl wszystkie zakładki…">
+ <!ENTITY bookmarkAllCmd.label "Dodaj zakładki do wszystkich kart…">
+ <!ENTITY bookmarksToolbarChevron.tooltip "Wyświetl więcej zakładek">
+ 
+@@ -117,15 +107,15 @@
+ <!ENTITY bookmarkAllCmd.label "Dodaj zakładki do wszystkich kart…">
+ <!ENTITY bookmarksToolbarChevron.tooltip "Wyświetl więcej zakładek">
+ 
+-<!ENTITY backCmd.label "Wstecz" >
+-<!ENTITY backCmd.accesskey "W" >
+-<!ENTITY backButton.tooltip "Przejdź do poprzedniej strony" >
+-<!ENTITY forwardCmd.label "Do przodu" >
+-<!ENTITY forwardCmd.accesskey "P" >
+-<!ENTITY forwardButton.tooltip "Przejdź do następnej strony" >
+-<!ENTITY reloadCmd.label "Odśwież" >
+-<!ENTITY reloadCmd.accesskey "O" >
+-<!ENTITY reloadButton.tooltip "Odśwież bieżącą stronę" >
+-<!ENTITY stopCmd.label "Zatrzymaj" >
+-<!ENTITY stopCmd.accesskey "Z" >
++<!ENTITY backCmd.label                "Wstecz">
++<!ENTITY backCmd.accesskey            "W">
++<!ENTITY backButton.tooltip           "Przejdź do poprzedniej strony">
++<!ENTITY forwardCmd.label             "Do przodu">
++<!ENTITY forwardCmd.accesskey         "P">
++<!ENTITY forwardButton.tooltip        "Przejdź do następnej strony">
++<!ENTITY reloadCmd.label              "Odśwież">
++<!ENTITY reloadCmd.accesskey          "O">
++<!ENTITY reloadButton.tooltip         "Odśwież bieżącą stronę">
++<!ENTITY stopCmd.label                "Zatrzymaj">
++<!ENTITY stopCmd.accesskey            "Z">
+ <!ENTITY stopCmd.macCommandKey        ".">
+@@ -131,7 +121,7 @@
+ <!ENTITY stopCmd.macCommandKey        ".">
+-<!ENTITY stopButton.tooltip "Zatrzymaj wczytywanie bieżącej strony" >
+-<!ENTITY goEndCap.tooltip "Przejdź do strony o podanym adresie" >
+-<!ENTITY printButton.label "Drukuj" >
+-<!ENTITY printButton.tooltip "Drukuj bieżącą stronę" >
++<!ENTITY stopButton.tooltip           "Zatrzymaj wczytywanie bieżącej strony">
++<!ENTITY goEndCap.tooltip             "Przejdź do strony o podanym adresie">
++<!ENTITY printButton.label            "Drukuj">
++<!ENTITY printButton.tooltip          "Drukuj bieżącą stronę">
+ 
+ <!ENTITY backForwardItem.title        "Wstecz/Do przodu">
+@@ -136,9 +126,9 @@
+ 
+ <!ENTITY backForwardItem.title        "Wstecz/Do przodu">
+-<!ENTITY locationItem.title "Adres" >
+-<!ENTITY searchItem.title "Znajdź" >
+-<!ENTITY throbberItem.title "Wskaźnik aktywności" >
+-<!ENTITY bookmarksItem.title "Zakładki" >
++<!ENTITY locationItem.title           "Adres">
++<!ENTITY searchItem.title             "Znajdź">
++<!ENTITY throbberItem.title           "Wskaźnik aktywności">
++<!ENTITY bookmarksItem.title          "Zakładki">
+ 
+ <!-- Toolbar items -->
+ <!ENTITY appMenuButton.label          "Menu">
+@@ -217,6 +207,7 @@
+   -  titlebar: object.objectPanelTitle. -->
+ <!ENTITY inspectObjectButton.label       "Obiekt">
+ <!ENTITY inspectObjectButton.accesskey   "O">
++
+ <!ENTITY fileMenu.label "Plik" >
+ <!ENTITY fileMenu.accesskey "P" >
+ <!ENTITY newNavigatorCmd.label "Nowe okno" >
+@@ -246,11 +237,11 @@
+ <!ENTITY selectAllCmd.label "Zaznacz wszystko" >
+ <!ENTITY selectAllCmd.key "A" >
+ <!ENTITY selectAllCmd.accesskey "a" >
+-<!ENTITY preferencesCmd2.label "Opcje">
+-<!ENTITY preferencesCmd2.accesskey "O">
++<!ENTITY preferencesCmd2.label "Opcje…" >
++<!ENTITY preferencesCmd2.accesskey "O" >
+ <!ENTITY preferencesCmdUnix.label       "Preferencje">
+ <!ENTITY preferencesCmdUnix.accesskey   "r">
+ 
+ <!ENTITY clearRecentHistory.label     "Wyczyść historię przeglądania…">
+ <!ENTITY clearRecentHistory.accesskey "W">
+ 
+@@ -251,9 +242,10 @@
+ <!ENTITY preferencesCmdUnix.label       "Preferencje">
+ <!ENTITY preferencesCmdUnix.accesskey   "r">
+ 
+ <!ENTITY clearRecentHistory.label     "Wyczyść historię przeglądania…">
+ <!ENTITY clearRecentHistory.accesskey "W">
+ 
++<!-- LOCALIZATION NOTE : These two strings can share an access key beause they never appear together on the menu -->
+ <!ENTITY privateBrowsingCmd.start.label         "Przejdź do trybu prywatnego">
+ <!ENTITY privateBrowsingCmd.start.accesskey     "e">
+ <!ENTITY privateBrowsingCmd.stop.label          "Opuść tryb prywatny">
+@@ -305,11 +297,11 @@
+  
+    Search Command Key Logic works like this:
+    
+-   Unix: Ctrl+J (0.8, 0.9 support)
+-         Ctrl+K (cross platform binding)
+-   Mac:  Ctrl+K (cross platform binding)
+-   Win:  Ctrl+K (cross platform binding)
+-         Ctrl+E (IE compat) 
++  Unix: Ctrl+J (0.8, 0.9 support)
++        Ctrl+K (cross platform binding)
++  Mac:  Cmd+K (cross platform binding)
++        Cmd+Opt+F (platform convention)
++  Win:  Ctrl+K (cross platform binding)
+  
+    We support Ctrl+K on all platforms now and advertise it in the menu since it is
+    our standard - it is a "safe" choice since it is near no harmful keys like "W" as
+@@ -318,8 +310,6 @@
+    is a fundamental keybinding and we are maintaining a XP binding so that it is easy
+    for people to switch to Linux.
+ 
+-  Do *not* tamper with these values without talking to ben@mozilla.org
+-   
+--->
++ -->
+ <!ENTITY searchFocus.commandkey       "k">
+ <!ENTITY searchFocusUnix.commandkey   "j">
+@@ -324,5 +314,6 @@
+ <!ENTITY searchFocus.commandkey       "k">
+ <!ENTITY searchFocusUnix.commandkey   "j">
++
+ <!ENTITY tabView.commandkey           "e">
+ 
+ <!ENTITY openLinkCmdInTab.label "Otwórz odnośnik w nowej karcie" >
+@@ -342,6 +333,8 @@
+ <!ENTITY reloadFrameCmd.accesskey "O" >
+ <!ENTITY viewPartialSourceForSelectionCmd.label "Pokaż źródło zaznaczenia" >
+ <!ENTITY viewPartialSourceForMathMLCmd.label "Pokaż źródło MathML" >
++<!-- LOCALIZATION NOTE (viewPartialSourceCmd.accesskey): This accesskey is used for both 
++         viewPartialSourceForSelectionCmd.label and viewPartialSourceForMathMLCmd.label -->
+ <!ENTITY viewPartialSourceCmd.accesskey "d" >
+ <!ENTITY viewPageSourceCmd.label "Pokaż źródło strony" >
+ <!ENTITY viewPageSourceCmd.accesskey "y" >
+@@ -373,6 +366,7 @@
+ <!ENTITY sendPageCmd.accesskey "n" >
+ <!ENTITY savePageCmd.label "Zapisz stronę jako…" >
+ <!ENTITY savePageCmd.accesskey "p" >
++<!-- alternate for content area context menu -->
+ <!ENTITY savePageCmd.accesskey2 "s" >
+ <!ENTITY savePageCmd.commandkey "s" >
+ <!ENTITY saveFrameCmd.label "Zapisz ramkę jako…" >
+@@ -426,7 +420,8 @@
+ <!ENTITY videoFullScreen.label       "Tryb pełnoekranowy">
+ <!ENTITY videoFullScreen.accesskey   "T">
+ 
++
+ <!-- LOCALIZATION NOTE :
+ fullZoomEnlargeCmd.commandkey3, fullZoomReduceCmd.commandkey2 and 
+ fullZoomResetCmd.commandkey2 are alternative acceleration keys for zoom.
+ If shift key is needed with your locale popular keyboard for them,
+@@ -429,9 +424,8 @@
+ <!-- LOCALIZATION NOTE :
+ fullZoomEnlargeCmd.commandkey3, fullZoomReduceCmd.commandkey2 and 
+ fullZoomResetCmd.commandkey2 are alternative acceleration keys for zoom.
+ If shift key is needed with your locale popular keyboard for them,
+-you can use these alternative items. Otherwise, their values should be empty.
+--->
++you can use these alternative items. Otherwise, their values should be empty.  -->
+ 
+ <!ENTITY fullZoomEnlargeCmd.label       "Powiększ">
+ <!ENTITY fullZoomEnlargeCmd.accesskey   "w">
+@@ -490,8 +484,9 @@
+ <!ENTITY pageReportIcon.tooltip            "Zmień ustawienia blokady wyskakujących okien dla tej strony">
+ 
+ <!ENTITY allowPopups.accesskey "w">
+-
+-<!-- Windows: Opcje, Linux/Mac: Preferencje -->
++<!-- On Windows we use the term "Options" to describe settings, but
++     on Linux and Mac OS X we use "Preferences" - carry that distinction
++     over into this string, which is used in the "popup blocked" info bar . -->
+ <!ENTITY editPopupSettingsUnix.label "Edytuj preferencje wyskakujących okien…">
+ <!ENTITY editPopupSettings.label "Edytuj opcje blokady wyskakujących okien…">
+ <!ENTITY editPopupSettings.accesskey "E">
+@@ -503,6 +498,14 @@
+ <!ENTITY bidiSwitchTextDirectionItem.accesskey    "t">
+ <!ENTITY bidiSwitchTextDirectionItem.commandkey   "X">
+ 
++<!ENTITY findOnCmd.label "Znajdź na tej stronie…" >
++<!ENTITY findOnCmd.accesskey "Z" >
++<!ENTITY findOnCmd.commandkey "f" >
++<!ENTITY findAgainCmd.label "Znajdź następne" >
++<!ENTITY findAgainCmd.accesskey "n" >
++<!ENTITY findAgainCmd.commandkey "g" >
++<!ENTITY findAgainCmd.commandkey2 "VK_F3" >
++
+ <!ENTITY spellAddDictionaries.label "Dodaj słowniki…">
+ <!ENTITY spellAddDictionaries.accesskey "o">
+ 
+@@ -530,7 +533,6 @@
+ <!ENTITY downloadMonitor2.tooltip "Kliknij, aby otworzyć okno pobierania plików">
+ 
+ <!ENTITY allTabs.filter.emptyText "Szukaj kart">
+-
+ <!-- Name for the tabs toolbar as spoken by screen readers.
+      The word "toolbar" is appended automatically and should not be contained below! -->
+ <!ENTITY tabsToolbar.label "Karty przeglądarki">
+@@ -538,7 +540,7 @@
+ <!-- LOCALIZATION NOTE (syncTabsMenu.label): This appears in the history menu -->
+ <!ENTITY syncTabsMenu.label     "Karty z innych komputerów">
+ 
+-<!ENTITY syncBrand.shortName.label  "Sync">
++<!ENTITY syncBrand.shortName.label  "Synchronizacja">
+ 
+ <!ENTITY syncSetup.label              "Skonfiguruj usługę &syncBrand.shortName.label;…">
+ <!ENTITY syncSetup.accesskey          "Y">
+@@ -547,3 +549,4 @@
+ <!ENTITY syncToolbarButton.label      "Synchronizuj">
+ 
+ <!ENTITY addonBarCloseButton.tooltip  "Zamknij pasek dodatków">
++<!ENTITY toggleAddonBarCmd.key        "/">
+diff --git a/browser/chrome/browser/preferences/preferences.properties b/browser/chrome/browser/preferences/preferences.properties
+--- a/browser/chrome/browser/preferences/preferences.properties
++++ b/browser/chrome/browser/preferences/preferences.properties
+@@ -1,10 +1,9 @@
+ #### Security
+ 
+-# LOCALIZATION NOTE: phishBefore and phishAfter use %S to represent the name of
+-#                    the provider whose privacy policy must be accepted (for
+-#                    enabling check-every-page-as-I-load-it phishing
+-#                    protection).
+-phishBeforeText=Wybranie tej opcji spowoduje, że adresy odwiedzanych witryn będą wysyłane do serwisu %S. Aby kontynuować, należy przeczytać i zaakceptować poniższe warunki korzystania z usługi:
++# LOCALIZATION NOTE: phishBefore uses %S to represent the name of the provider
++#                    whose privacy policy must be accepted (for enabling
++#                    check-every-page-as-I-load-it phishing protection).
++phishBeforeText=Selecting this option will send the address of web pages you are viewing to %S. To continue, please review and accept the following terms of service.
+ 
+ #### Fonts
+ 
+@@ -8,6 +7,6 @@
+ 
+ #### Fonts
+ 
+-labelDefaultFont=Domyślna (%S)
++labelDefaultFont=Default (%S)
+ 
+ #### Permissions Manager
+@@ -12,11 +11,3 @@
+ 
+ #### Permissions Manager
+-cookiepermissionstext=Możesz określić zasady akceptacji ciasteczek. Podaj dokładny adres witryny, której uprawnienia chcesz zmodyfikować, a następnie naciśnij Zezwól, Zablokuj lub Zezwól na czas sesji.
+-cookiepermissionstitle=Wyjątki - Ciasteczka
+-addonspermissionstext=Możesz zdecydować, które witryny mogą instalować dodatki. Podaj dokładny adres witryny, której chcesz na to zezwolić, i naciśnij Zezwól.
+-addons_permissions_title=Uprawnione witryny - Instalacja dodatków
+-popuppermissionstext=Możesz zdecydować, które witryny mogą otwierać wyskakujące okna. Podaj dokładny adres witryny, której chcesz na to zezwolić, i naciśnij Zezwól.
+-popuppermissionstitle=Uprawnione witryny - Wyskakujące okna
+-imagepermissionstext=Możesz zdecydować, którym witrynom zezwolić na wyświetlanie obrazków. Podaj dokładny adres witryny i naciśnij Zablokuj lub Zezwól.
+-imagepermissionstitle=Wyjątki - Wyświetlanie obrazków
+ 
+@@ -22,6 +13,14 @@
+ 
+-invalidURI=Podaj poprawną nazwę hosta
+-invalidURITitle=Wprowadzono niepoprawną nazwę hosta
++cookiepermissionstext=You can specify which web sites are always or never allowed to use cookies.  Type the exact address of the site you want to manage and then click Block, Allow for Session, or Allow.
++cookiepermissionstitle=Exceptions - Cookies
++addonspermissionstext=You can specify which web sites are allowed to install add-ons. Type the exact address of the site you want to allow and then click Allow.
++addons_permissions_title=Allowed Sites - Add-ons Installation
++popuppermissionstext=You can specify which web sites are allowed to open pop-up windows. Type the exact address of the site you want to allow and then click Allow.
++popuppermissionstitle=Allowed Sites - Pop-ups
++imagepermissionstext=You can specify which web sites are allowed to load images. Type the exact address of the site you want to manage and then click Block or Allow.
++imagepermissionstitle=Exceptions - Images
++invalidURI=Please enter a valid hostname
++invalidURITitle=Invalid Hostname Entered
+ 
+ #### Master Password
+ 
+@@ -25,8 +24,8 @@
+ 
+ #### Master Password
+ 
+-pw_change2empty_in_fips_mode=Program pracuje obecnie w trybie FIPS. Tryb FIPS wymaga niepustego hasła głównego.
+-pw_change_failed_title=Zmiana hasła się nie powiodła.
++pw_change2empty_in_fips_mode=You are currently in FIPS mode. FIPS requires a non-empty Master Password.
++pw_change_failed_title=Password Change Failed
+ 
+ #### Fonts
+ 
+@@ -40,12 +39,9 @@
+ 
+ #### Downloads
+ 
+-desktopFolderName=Pulpit
+-# FIXME: en-US: downloadsFolderName=Downloads
+-# Wg http://windowshelp.microsoft.com/Windows/pl-pl/help/b8f62a7d-381a-4253-a52e-04883e076bbe1045.mspx
+-# w Viście PL mamy "Pobieranie", co jest dość niefajne, ale cóż…
+-downloadsFolderName=Pobieranie
+-chooseDownloadFolderTitle=Wybór folderu dla pobieranych plików
++desktopFolderName=Desktop
++downloadsFolderName=Downloads
++chooseDownloadFolderTitle=Choose Download Folder:
+ 
+ #### Applications
+ 
+@@ -49,7 +45,7 @@
+ 
+ #### Applications
+ 
+-fileEnding=plik %S
+-saveFile=Zapisz plik
++fileEnding=%S file
++saveFile=Save File
+ 
+ # LOCALIZATION NOTE (useApp, useDefault): %S = Application name
+@@ -54,6 +50,5 @@
+ 
+ # LOCALIZATION NOTE (useApp, useDefault): %S = Application name
+-useApp=Użyj aplikacji %S
+-useDefault=Użyj aplikacji %S (domyślnej)
+-useOtherApp=Użyj innej aplikacji…
++useApp=Use %S
++useDefault=Use %S (default)
+ 
+@@ -59,6 +54,7 @@
+ 
+-fpTitleChooseApp=Wybierz aplikację pomocniczą
+-manageApp=Szczegóły aplikacji…
+-webFeed=Kanał informacyjny
+-videoPodcastFeed=Podcast wideo
++useOtherApp=Use other…
++fpTitleChooseApp=Select Helper Application
++manageApp=Application Details…
++webFeed=Web Feed
++videoPodcastFeed=Video Podcast
+ audioPodcastFeed=Podcast
+@@ -64,6 +60,6 @@
+ audioPodcastFeed=Podcast
+-alwaysAsk=Zawsze pytaj
++alwaysAsk=Always ask
+ 
+ # LOCALIZATION NOTE (usePluginIn):
+ # %1$S = plugin name (for example "QuickTime Plugin-in 7.2")
+ # %2$S = brandShortName from brand.properties (for example "Minefield")
+@@ -66,7 +62,7 @@
+ 
+ # LOCALIZATION NOTE (usePluginIn):
+ # %1$S = plugin name (for example "QuickTime Plugin-in 7.2")
+ # %2$S = brandShortName from brand.properties (for example "Minefield")
+-usePluginIn=Wtyczka %S (w programie %S)
++usePluginIn=Use %S (in %S)
+ 
+ # LOCALIZATION NOTE (previewInApp, addLiveBookmarksInApp): %S = brandShortName
+@@ -71,10 +67,10 @@
+ 
+ # LOCALIZATION NOTE (previewInApp, addLiveBookmarksInApp): %S = brandShortName
+-previewInApp=Podgląd w programie %S
+-addLiveBookmarksInApp=Dodaj dynamiczną zakładkę w programie %S
++previewInApp=Preview in %S
++addLiveBookmarksInApp=Add Live Bookmarks in %S
+ 
+ # LOCALIZATION NOTE (typeDescriptionWithType):
+ # %1$S = type description (for example "Portable Document Format")
+ # %2$S = type (for example "application/pdf")
+ typeDescriptionWithType=%S (%S)
+ 
+@@ -75,9 +71,10 @@
+ 
+ # LOCALIZATION NOTE (typeDescriptionWithType):
+ # %1$S = type description (for example "Portable Document Format")
+ # %2$S = type (for example "application/pdf")
+ typeDescriptionWithType=%S (%S)
+ 
++
+ #### Cookie Viewer
+ 
+ hostColon=Host:
+@@ -81,17 +78,15 @@
+ #### Cookie Viewer
+ 
+ hostColon=Host:
+-domainColon=Domena:
+-forSecureOnly=Tylko szyfrowane połączenia
+-forAnyConnection=Dowolny rodzaj połączenia
+-expireAtEndOfSession=Pod koniec sesji
+-
+-can=Zezwól
+-canSession=Zezwól na czas sesji
+-cannot=Zablokuj
+-
+-noCookieSelected=<nie zaznaczono ciasteczka>
+-cookiesAll=Następujące ciasteczka są przechowywane na tym komputerze:
+-cookiesFiltered=Następujące ciasteczka odpowiadają zapytaniu:
++domainColon=Domain:
++forSecureOnly=Encrypted connections only
++forAnyConnection=Any type of connection
++expireAtEndOfSession=At end of session
++can=Allow
++canSession=Allow for Session
++cannot=Block
++noCookieSelected=<no cookie selected>
++cookiesAll=The following cookies are stored on your computer:
++cookiesFiltered=The following cookies match your search:
+ 
+ #### Offline apps
+@@ -96,11 +91,8 @@
+ 
+ #### Offline apps
+-offlineAppRemoveTitle=Usuń dane witryn trybu offline
+-offlineAppRemovePrompt=Po usunięciu tych danych witryna %S nie będzie dostępna w trybie offline. Czy na pewno usunąć tę witrynę trybu offline?
+-offlineAppRemoveConfirm=Usuń dane trybu offline
+-
+-offlinepermissionstext=Poniższym witrynom nie wolno przechowywać danych dla trybu offline:
+-offlinepermissionstitle=Dane trybu offline
++offlineAppRemoveTitle=Remove offline website data
++offlineAppRemovePrompt=After removing this data, %S will not be available offline.  Are you sure you want to remove this offline website?
++offlineAppRemoveConfirm=Remove offline data
+ 
+ # LOCALIZATION NOTE: The next string is for the disk usage of the
+ # offline application
+@@ -109,8 +101,11 @@
+ #   %2$S = unit of measure (bytes, KB, MB, ...)
+ offlineAppUsage=%1$S %2$S
+ 
++offlinepermissionstext=The following websites are not allowed to store data for offline use:
++offlinepermissionstitle=Offline Data
++
+ ####Preferences::Advanced::Network
+ #LOCALIZATION NOTE: The next string is for the disk usage of the http cache.
+ #   e.g., "Your cache is currently using 200 MB"
+ #   %1$S = size
+ #   %2$S = unit (MB, KB, etc.)
+@@ -112,7 +107,7 @@
+ ####Preferences::Advanced::Network
+ #LOCALIZATION NOTE: The next string is for the disk usage of the http cache.
+ #   e.g., "Your cache is currently using 200 MB"
+ #   %1$S = size
+ #   %2$S = unit (MB, KB, etc.)
+-actualCacheSize=Pamięć podręczna zajmuje obecnie %1$S %2$S przestrzeni dyskowej
++actualCacheSize=Your cache is currently using %1$S %2$S of disk space
+ 
+@@ -118,5 +113,4 @@
+ 
+-#### Syncing
+-stopUsingAccount.title=Czy przestać używać tego konta?
+-differentAccount.label=Spowoduje to zresetowanie wszystkich informacji i ustawień konta Sync.
+-differentAccountConfirm.label=Resetuj wszystkie informacje
++stopUsingAccount.title=Do you want to stop using this account?
++differentAccount.label=This will reset all of your Sync account information and preferences.
++differentAccountConfirm.label=Reset All Information
+diff --git a/services/sync/errors.properties b/services/sync/errors.properties
+--- a/services/sync/errors.properties
++++ b/services/sync/errors.properties
+@@ -1,6 +1,6 @@
+ error.login.reason.network    = Nie można połączyć się z serwerem
+-error.login.reason.synckey    = Nieprawidłowy klucz Sync
++error.login.reason.synckey    = Nieprawidłowy klucz synchronizacji
+ # error.login.reason.password is deprecated.
+ error.login.reason.password   = Nieprawidłowa nazwa użytkownika lub hasło
+ error.login.reason.account    = Nieprawidłowa nazwa konta lub hasło
+ error.login.reason.no_password= Brak zapisanego hasła
+@@ -3,9 +3,9 @@
+ # error.login.reason.password is deprecated.
+ error.login.reason.password   = Nieprawidłowa nazwa użytkownika lub hasło
+ error.login.reason.account    = Nieprawidłowa nazwa konta lub hasło
+ error.login.reason.no_password= Brak zapisanego hasła
+-error.login.reason.no_synckey = Brak zapisanego klucza Sync
+-error.login.reason.server       = Nieprawidłowa konfiguracja serwera
++error.login.reason.no_synckey = Brak zapisanego klucza synchronizacji
++error.login.reason.server     = Nieprawidłowa konfiguracja serwera
+ 
+ error.sync.failed_partial     = Nie można zsynchronizować typów danych
+ 
+@@ -9,7 +9,7 @@
+ 
+ error.sync.failed_partial     = Nie można zsynchronizować typów danych
+ 
+-invalid-captcha = Niewłaściwe słowa. Spróbuj ponownie.
++invalid-captcha = Niewłaściwe słowa. Ponów próbę.
+ weak-password   = Użyj hasła o większej sile
+ 
+ # this is the fallback, if we hit an error we didn't bother to localize
+@@ -13,7 +13,7 @@
+ weak-password   = Użyj hasła o większej sile
+ 
+ # this is the fallback, if we hit an error we didn't bother to localize
+-error.reason.unknown          = Nieznany błąd
++error.reason.unknown           = Nieznany błąd
+ 
+ change.synckey.sameAsSyncKey    = Nowy klucz nie może być taki sam, jak aktualny
+ change.synckey.sameAsPassword   = Klucz nie może być taki sam, jak hasło
+@@ -21,9 +21,9 @@
+ change.synckey.sameAsEmail      = Klucz nie może być taki sam, jak adres e-mail użytkownika
+ change.synckey.tooShort         = Podany klucz jest za krótki
+ 
+-change.password.pwSameAsSyncKey      = Hasło nie może być takie samo, jak klucz
+-change.password.pwSameAsPassword     = Nowe hasło nie może być takie samo, jak aktualne hasło
+-change.password.pwSameAsUsername     = Hasło nie może być takie samo, jak nazwa użytkownika
+-change.password.pwSameAsEmail        = Hasło nie może być takie samo, jak twój adres e-mail
+-change.password.mismatch             = Podane hasła różnią się
+-change.password.tooShort             = Podane hasło jest za krótkie
++change.password.pwSameAsSyncKey  = Hasło nie może być takie samo, jak klucz
++change.password.pwSameAsPassword = Nowe hasło nie może być takie samo, jak aktualne hasło
++change.password.pwSameAsUsername = Hasło nie może być takie samo, jak nazwa użytkownika
++change.password.pwSameAsEmail    = Hasło nie może być takie samo, jak twój adress e-mail
++change.password.mismatch         = Podane hasła różnią się
++change.password.tooShort         = Podane hasło jest za krótkie
+diff --git a/services/sync/sync.properties b/services/sync/sync.properties
+--- a/services/sync/sync.properties
++++ b/services/sync/sync.properties
+@@ -3,6 +3,6 @@
+ 
+ # %S is the date and time at which the last sync successfully completed
+ lastSync.label = Ostatnia aktualizacja: %S
+-lastSyncInProgress.label = Ostatnia aktualizacja. Pobieranie danych…
++lastSyncInProgress.label = Ostatnia aktualizacja – pobieranie danych…
+ 
+ # %S is the username logged in
+@@ -7,4 +7,4 @@
+ 
+ # %S is the username logged in
+-connected.label = Połączono: %S
++connected.label    = Połączono: %S
+ disconnected.label = Rozłączono
+@@ -10,3 +10,3 @@
+ disconnected.label = Rozłączono
+-connecting.label = Łączenie…
++connecting.label   = Łączenie…
+ 
+@@ -12,5 +12,5 @@
+ 
+-mobile.label = Zakładki mobilne
++mobile.label = Zakładki urządzenia przenośnego
+ 
+ remote.pending.label = Synchronizowanie zdalnych kart…
+ remote.missing.label = Zsynchronizuj swoje inne urządzenia ponownie, by uzyskać dostęp do ich kart
+@@ -14,7 +14,7 @@
+ 
+ remote.pending.label = Synchronizowanie zdalnych kart…
+ remote.missing.label = Zsynchronizuj swoje inne urządzenia ponownie, by uzyskać dostęp do ich kart
+-remote.opened.label = Wszystkie zdalne karty są już otwarte
++remote.opened.label  = Wszystkie zdalne karty są już otwarte
+ remote.notification.label = Po synchronizacji będą dostępne ostatnio używane karty komputera stacjonarnego
+ 
+ error.login.title = Błąd logowania
+@@ -18,8 +18,8 @@
+ remote.notification.label = Po synchronizacji będą dostępne ostatnio używane karty komputera stacjonarnego
+ 
+ error.login.title = Błąd logowania
+-error.login.description = W trakcie łączenia z „%1$S” Sync napotkał błąd. Spróbuj ponownie.
++error.login.description = W trakcie łączenia z „%1$S” napotkano błąd. Spróbuj ponownie.
+ error.login.prefs.label = Ustawienia…
+ error.login.prefs.accesskey = U
+ # should decide if we're going to show this
+ error.logout.title = Błąd podczas wylogowania
+@@ -22,6 +22,6 @@
+ error.login.prefs.label = Ustawienia…
+ error.login.prefs.accesskey = U
+ # should decide if we're going to show this
+ error.logout.title = Błąd podczas wylogowania
+-error.logout.description = W trakcie łączenia Sync napotkał błąd. Prawdopodobnie wszystko jest w porządku i nie musisz podejmować żadnego działania.
++error.logout.description = W trakcie łączenia napotkano błąd. Prawdopodobnie wszystko jest w porządku i nie musisz podejmować żadnego działania.
+ error.sync.title = Błąd podczas synchronizacji
+@@ -27,6 +27,6 @@
+ error.sync.title = Błąd podczas synchronizacji
+-error.sync.description = W trakcie synchronizacji Sync napotkał błąd: %1$S i automatycznie podejmie ponowną próbę synchronizacji.
+-error.sync.no_node_found = Serwer Sync jest w tej chwili zajęty, ale nie musisz nic robić. Synchronizacja danych rozpocznie się, gdy tylko będzie to możliwe!
++error.sync.description = W trakcie synchronizacji napotkano błąd: %1$S. Zostanie automatycznie podjęta ponowna próba synchronizacji.
++error.sync.no_node_found = Serwer synchronizacji jest w tej chwili zajęty, ale nie musisz nic robić. Synchronizacja danych rozpocznie się, gdy tylko będzie to możliwe!
+ error.sync.no_node_found.title = Opóźnienie synchronizacji
+ error.sync.serverStatusButton.label = Stan serwera
+ error.sync.serverStatusButton.accesskey = n
+@@ -30,8 +30,8 @@
+ error.sync.no_node_found.title = Opóźnienie synchronizacji
+ error.sync.serverStatusButton.label = Stan serwera
+ error.sync.serverStatusButton.accesskey = n
+-error.sync.needUpdate.description = Aby kontynuować synchronizowanie danych, musisz zaktualizować Firefox Sync.
+-error.sync.needUpdate.label = Aktualizuj Firefox Sync
++error.sync.needUpdate.description = Aby kontynuować synchronizację danych, musisz zaktualizować usługę synchronizacji.
++error.sync.needUpdate.label = Aktualizuj usługę synchronizacji
+ error.sync.needUpdate.accesskey = A
+ error.sync.tryAgainButton.label = Synchronizuj teraz
+ error.sync.tryAgainButton.accesskey = S
+

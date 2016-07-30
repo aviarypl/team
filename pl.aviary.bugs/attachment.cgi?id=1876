@@ -1,0 +1,129 @@
+<!-- <!DOCTYPE appendix PUBLIC "-//OASIS//DTD DocBook V4.1//EN"> -->
+<appendix id="patches" xreflabel="Useful Patches and Utilities for Bugzilla">
+  <title>Katalog Contrib</title>
+
+  <para>
+    W katalogu
+    <filename class="directory">$BUGZILLA_ROOT/contrib/</filename>
+    znajduj¹ siê nieoficjalne dodatki do Bugzilli. Zosta³y one opisane w tym rozdziale.
+  </para>
+
+  <section id="cmdline">
+    <title>Interfejs wyszukiwania z linii poleceñ</title>
+
+    <para>
+	  W katalogu <filename class="directory">contrib/cmdline</filename>
+	  znajduje siê zestaw programów Uniksowych s³u¿¹cych do wykonywania zapytañ
+	  do bazy Bugzilli z linii poleceñ. Sk³ada siê on z trzech plików -
+      <filename>query.conf</filename>,
+      <filename>buglist</filename> oraz <filename>bugs</filename>.
+    </para>
+
+    <warning>
+      <para>
+	    Pliki te zosta³y udostêpnione przed dodaniem obs³ugi szablonów wprowadzonej
+		w Bugzilli 2.16 i od tamtej pory nie by³y aktualizowane.
+      </para>
+    </warning>
+    
+    <para>
+	  <filename>query.conf</filename> zawiera opcje, które s¹ przyporz¹dkowane
+      do odpowiednich pól oraz rodzajów porównywania. Modyfikacja pliku jest
+	  u³atwiona poprzez to, ¿e opcje s¹ umieszczone w cudzys³owie
+      i ³atwo je wyszukaæ za pomoc¹ polecenia grep. Komentarze (#) s¹ pomijane, dlatego nale¿y zwróciæ szczególn¹ uwagê, aby nie wy³¹czyæ w ten sposób dostêpnych <quote>opcji</quote>.
+    </para>
+
+    <para>
+      <filename>buglist</filename> jest to skrypt pow³oki shell, który wysy³a zapytanie do
+      instalacji Bugzilli i zapisuje stronê HTML z wynikami na standardowe wyjœcie.
+      Obs³uguje zarówno skrócone opcje wyszukiwania (np. <quote>-Afoo</quote>
+      lub <quote>-Rbar</quote>) jak i d³ugie (np.
+      <quote>--assignedto=foo</quote> lub <quote>--reporter=bar</quote>).
+      Jeœli pierwszym znakiem polecenia nie bêdzie znak <quote>-</quote> to polecenie
+      jest traktowane jako poprzedzone opcj¹ <quote>--default=</quote>.
+    </para>
+
+    <para>
+      Lista kolumn pobierana jest ze zmiennej œrodowiskowej COLUMNLIST.
+      Jest to odpowiednik polecenia <quote>Zmieñ kolumny</quote> dostêpnego
+      na liœcie b³êdów wyœwietlonej przez stronê buglist.cgi. Jeœli korzystano ju¿
+      z Bugzilli, nale¿y wyszukaæ w ciasteczku poleceniem grep wpis COLUMNLIST aby sprawdziæ
+      aktualne ustawienia parametru COLUMNLIST.
+    </para>
+
+    <para>
+      <filename>bugs</filename> jest to skrypt pow³oki shell, który wywo³uje skrypt
+      <filename>buglist</filename> i zapisuje numery b³êdów z zwróconych wyników
+      wyszukiwania. Dodanie prefiksu
+      <quote>http://bugzilla.mozilla.org/buglist.cgi?bug_id=</quote>
+      zamieni listê wyników w gotowe odnoœniki do poszczególnych b³êdów.
+	  Policzenie iloœci wystêpuj¹cych b³êdów jest doœæ proste. Wystarczy
+	  przekierowaæ wyjœcie polecenia do <command>sed -e 's/,/ /g' | wc | awk '{printf $2 "\n"}'</command>
+    </para>
+
+    <para>
+      Akkana Peck donosi, ¿e bardzo dobre rezultaty mo¿na osi¹gn¹æ przekierowuj¹c
+	  wyjœcie skryptu <filename>buglist</filename> do polecenia 
+      <command>w3m -T text/html -dump</command>
+    </para>
+
+  </section>
+
+  <section id="cmdline-bugmail">
+    <title>Narzêdzie lini poleceñ 'Send Unsent Bug-mail'</title>
+
+    <para>
+      W katalogu <filename class="directory">contrib</filename> mo¿na znaleŸæ 
+      skrypt <filename>sendunsentbugmail.pl</filename>. Jego zadaniem
+      jest wys³anie oczekuj¹cych powiadomieñ b³êdów, które z ró¿nych powodów 
+	  nie zosta³y do tej pory wys³ane.
+    </para>
+
+    <para>
+      Aby wykonaæ to zadanie, skrypt <filename>sendunsentbugmail.pl</filename> wykorzystuje
+      ten sam mechanizm dzia³ania co strona <filename>sanitycheck.cgi</filename>:
+      skanowana jest ca³a baza danych w poszukiwaniu b³êdów, które zosta³y zmodyfikowane
+	  ponad 30 minut temu, ale nie istnieje zapis, ¿e powiadomienia b³êdów zosta³y wys³ane 
+	  do w³aœciwych osób. Po skompletowaniu listy, wiadomoœci s¹ wysy³ane zgodnie
+	  z ustawieniami poczty adresatów.
+    </para>
+
+    <para>
+      Podczas pracy skrypt wyœwietla numer przetwarzanego b³êdu, a po jej zakoñczeniu
+	  podsumowanie iloœci wys³anych wiadomoœci oraz liczby osób, do których
+	  powiadomienia nie zosta³y wys³ane (nazwy u¿ytkowników nie s¹ zapisywane
+	  czy wyœwietlane). Jeœli skrypt po uruchomieniu nie wyœwietla ¿adnych informacji, to oznacza 
+	  to, ¿e nie wykryto niewys³anych wiadomoœci.
+    </para>
+
+    <para>
+      <emphasis>Uruchomienie</emphasis>: przenieœ skrypt sendunsentbugmail.pl
+      do g³ównego katalogu, sprawdŸ czy posiada prawo wykonywania i uruchom z wiersza
+      poleceñ (lub za pomoc¹ crona) bez podawania parametrów.
+    </para>
+  </section>
+
+</appendix>
+
+<!-- Keep this comment at the end of the file
+Local variables:
+mode: sgml
+sgml-always-quote-attributes:t
+sgml-auto-insert-required-elements:t
+sgml-balanced-tag-edit:t
+sgml-exposed-tags:nil
+sgml-general-insert-case:lower
+sgml-indent-data:t
+sgml-indent-step:2
+sgml-local-catalogs:nil
+sgml-local-ecat-files:nil
+sgml-minimize-attributes:nil
+sgml-namecase-general:t
+sgml-omittag:t
+sgml-parent-document:("Bugzilla-Guide.xml" "book" "chapter")
+sgml-shorttag:t
+sgml-tag-region-if-active:t
+End:
+-->
+
+

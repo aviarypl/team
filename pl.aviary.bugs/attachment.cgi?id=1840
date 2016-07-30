@@ -1,0 +1,18 @@
+diff -r 900e89f6dfc2 template/pl/default/bug/show-multiple.html.tmpl
+--- a/template/pl/default/bug/show-multiple.html.tmpl	Tue May 10 10:07:05 2011 +0200
++++ b/template/pl/default/bug/show-multiple.html.tmpl	Wed May 11 20:02:49 2011 +0200
+@@ -54,5 +54,5 @@
+ [% ELSE %]
+   <p>
+-    Lepsze wyniki można uzyskać podając numery [% terms.bledow %].
++    Lepsze wyniki można uzyskać, podając numery [% terms.bledow %].
+   </p>
+ [% END %]
+@@ -82,5 +82,5 @@
+         [% IF bug.error == "InvalidBugId" %]
+           Numer „[% bug.bug_id FILTER html %]” nie jest prawidłowym numerem [% terms.bledu %]
+-          [%- IF Param("usebugaliases") %], ani znanym aliasem [% terms.bledu %][% END %].
++          [%- IF Param("usebugaliases") %] ani znanym aliasem [% terms.bledu %][% END %].
+         [% ELSIF bug.error == "NotPermitted" %]
+           Nie masz uprawnień do oglądania tego [% terms.bledu %].
+

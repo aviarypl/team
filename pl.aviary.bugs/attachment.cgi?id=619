@@ -1,0 +1,91 @@
+Index: browser/chrome/browser/preferences/privacy.dtd
+===================================================================
+RCS file: /l10n/l10n/pl/browser/chrome/browser/preferences/privacy.dtd,v
+retrieving revision 1.9.2.5
+diff -u -r1.9.2.5 privacy.dtd
+--- browser/chrome/browser/preferences/privacy.dtd	3 Oct 2005 10:12:49 -0000	1.9.2.5
++++ browser/chrome/browser/preferences/privacy.dtd	17 Oct 2005 15:04:23 -0000
+@@ -10,7 +10,7 @@
+ <!ENTITY  rememberPages.label         "Pamiętaj strony odwiedzone w ciągu ostatnich">
+ <!ENTITY  rememberPages.accesskey     "m">
+ <!ENTITY  rememberDays.label          "dni.">
+-<!ENTITY  clearHistory.label          "Wyczyść historię teraz">
++<!ENTITY  clearHistory.label          "Wyczyść teraz historię">
+ <!ENTITY  clearHistory.accesskey      "c">
+ 
+ <!ENTITY  itemFormData.label          "Dane formularzy">
+@@ -32,7 +32,7 @@
+ <!ENTITY  viewPasswords.label         "Przeglądaj hasła">
+ <!ENTITY  viewPasswords.accesskey     "h">
+ 
+-<!ENTITY  itemDownloads.label         "Historia pobrań">
++<!ENTITY  itemDownloads.label         "Historia pobierania">
+ <!ENTITY  downloadManager.intro       "Okno Menedżera pobieranych plików przechowuje listę ostatnio pobieranych plików.">
+ <!ENTITY  downloadsRetentionPolicy.label      
+                                       "Usuń pliki z Menedżera pobieranych plików:">
+@@ -43,9 +43,9 @@
+ <!ENTITY  downloadsRemoveExit.label   "przy wyjściu z programu &brandShortName;">
+ <!ENTITY  downloadsRemoveManually.label       
+                                       "ręcznie">
+-<!ENTITY  viewDownloads.label         "Przeglądaj historię pobrań">
++<!ENTITY  viewDownloads.label         "Przeglądaj historię pobierania">
+ <!ENTITY  viewDownloads.accesskey     "o">
+-<!ENTITY  clearDownloads.label        "Wyczyść teraz historię pobrań">
++<!ENTITY  clearDownloads.label        "Wyczyść teraz historię pobierania">
+ <!ENTITY  clearDownloads.accesskey    "i">
+ 
+ <!ENTITY  itemCookies.label           "Ciasteczka">
+@@ -58,7 +58,7 @@
+ <!ENTITY  enableCookiesForOriginating.accesskey
+                                       "w">
+ <!ENTITY  enableCookiesNotRemoved.label     
+-                                      "chyba że usunąłem ciasteczka ustawione przez tę witrynę">
++                                      "chyba że usunięto ciasteczka ustawione przez tę witrynę">
+ <!ENTITY  enableCookiesNotRemoved.accesskey "s">
+ 
+ <!ENTITY  keepCookies.label           "Przechowuj ciasteczka:">
+Index: browser/chrome/help/firebird-toc.rdf
+===================================================================
+RCS file: /l10n/l10n/pl/browser/chrome/help/firebird-toc.rdf,v
+retrieving revision 1.12.2.7
+diff -u -r1.12.2.7 firebird-toc.rdf
+--- browser/chrome/help/firebird-toc.rdf	3 Oct 2005 20:16:10 -0000	1.12.2.7
++++ browser/chrome/help/firebird-toc.rdf	17 Oct 2005 15:04:24 -0000
+@@ -411,7 +411,7 @@
+         <rdf:li> <rdf:Description ID="prefs-history" nc:name="Historia" nc:link="prefs.xhtml#privacy_history"/> </rdf:li>
+         <rdf:li> <rdf:Description ID="prefs-saved-forms" nc:name="Dane formularzy" nc:link="prefs.xhtml#privacy_saved_forms"/> </rdf:li>
+         <rdf:li> <rdf:Description ID="prefs-passwords" nc:name="Hasła" nc:link="prefs.xhtml#privacy_passwords"/> </rdf:li>
+-        <rdf:li> <rdf:Description ID="prefs-download-history" nc:name="Historia pobrań" nc:link="prefs.xhtml#privacy_download_history"/> </rdf:li>
++        <rdf:li> <rdf:Description ID="prefs-download-history" nc:name="Historia pobierania" nc:link="prefs.xhtml#privacy_download_history"/> </rdf:li>
+         <rdf:li> <rdf:Description ID="prefs-cookies" nc:name="Ciasteczka" nc:link="prefs.xhtml#privacy_cookies"/> </rdf:li>
+         <rdf:li> <rdf:Description ID="prefs-cache" nc:name="Pamięć podręczna" nc:link="prefs.xhtml#privacy_cache"/> </rdf:li>
+         <rdf:li> <rdf:Description ID="prefs-sanitize" nc:name="Ustawienia usuwania prywatnych danych" nc:link="prefs.xhtml#sanitize"/> </rdf:li>
+Index: browser/chrome/help/prefs.xhtml
+===================================================================
+RCS file: /l10n/l10n/pl/browser/chrome/help/prefs.xhtml,v
+retrieving revision 1.9.2.6
+diff -u -r1.9.2.6 prefs.xhtml
+--- browser/chrome/help/prefs.xhtml	13 Oct 2005 15:18:44 -0000	1.9.2.6
++++ browser/chrome/help/prefs.xhtml	17 Oct 2005 15:04:25 -0000
+@@ -150,9 +150,9 @@
+ 	Aby zarządzać zachowanymi hasłami (a także aby je usuwać), należy kliknąć
+ 	przycisk <em>Przeglądaj hasła</em>.</p>
+   
+-  <h3 id="privacy_download_history">Historia pobrań</h3>
++  <h3 id="privacy_download_history">Historia pobierania</h3>
+   <p>Menedżer pobierania plików (dostępny z menu <span class="menuPath">Narzędzia > Pobieranie plików</span> lub
+-  skrót klawiaturowy <span class="noUnix">&accelKey;+<kbd>J</kbd></span><span class="unix">&accelKey;+<kbd>Y</kbd></span> lub poprzez kliknięcie przycisku <em>Przeglądaj historię pobrań</em>)
++  skrót klawiaturowy <span class="noUnix">&accelKey;+<kbd>J</kbd></span><span class="unix">&accelKey;+<kbd>Y</kbd></span> lub poprzez kliknięcie przycisku <em>Przeglądaj historię pobierania</em>)
+   przechowuje informacje o pobranych z Internetu plikach. Opcje Menedżera są dostępne w <a href="#downloads_options"><strong>panelu Pobieranie</strong></a>.
+   </p>
+ 
+@@ -162,7 +162,7 @@
+ 	zakończeniu pobierania</em> czy <em>przy wyjściu z programu &brandShortName;</em></p>
+ 
+     <p>Aby ręcznie opróżnić listę, należy kliknąć przycisk <em>Wyczyść teraz
+-historię pobrań</em> albo przycisk <em>Wyczyść</em> w Menedżerze pobieranych plików.</p>
++historię pobierania</em> albo przycisk <em>Wyczyść</em> w Menedżerze pobieranych plików.</p>
+ 
+   <h3 id="cookies">Ciasteczka</h3>
+   <p>Ciasteczko (ang. cookie) to plik w komputerze użytkownika utworzony przez witrynę 
+

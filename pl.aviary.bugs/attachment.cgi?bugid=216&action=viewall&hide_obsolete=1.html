@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>
+  View All Attachments for Bug 216</title>
+
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<link href="data/assets/dfcc67d20b77e18b9d4e83fbfb3e10f8.css" rel="stylesheet" type="text/css">
+
+
+
+    
+<script type="text/javascript" src="data/assets/1b4e898422a669ab82b604a2c23edce5.js"></script>
+
+    <script type="text/javascript">
+    <!--
+        YAHOO.namespace('bugzilla');
+        YAHOO.util.Event.addListener = function (el, sType, fn, obj, overrideContext) {
+               if ( ("onpagehide" in window || YAHOO.env.ua.gecko) && sType === "unload") { sType = "pagehide"; };
+               var capture = ((sType == "focusin" || sType == "focusout") && !YAHOO.env.ua.ie) ? true : false;
+               return this._addListener(el, this._getType(sType), fn, obj, overrideContext, capture);
+         };
+        if ( "onpagehide" in window || YAHOO.env.ua.gecko) {
+            YAHOO.util.Event._simpleRemove(window, "unload", 
+                                           YAHOO.util.Event._unload);
+        }
+        
+        function unhide_language_selector() { 
+            YAHOO.util.Dom.removeClass(
+                'lang_links_container', 'bz_default_hidden'
+            ); 
+        } 
+        YAHOO.util.Event.onDOMReady(unhide_language_selector);
+
+        
+        var BUGZILLA = {
+            param: {
+                cookiepath: '\/',
+                maxusermatches: 1000
+            },
+            constant: {
+                COMMENT_COLS: 80
+            },
+            string: {
+                
+
+                attach_desc_required:
+                    "You must enter a Description for this attachment.",
+                component_required:
+                    "You must select a Component for this bug.",
+                description_required:
+                    "You must enter a Description for this bug.",
+                short_desc_required:
+                    "You must enter a Summary for this bug.",
+                version_required:
+                    "You must select a Version for this bug."
+            }
+        };
+
+    // -->
+    </script>
+<script type="text/javascript" src="data/assets/d41d8cd98f00b204e9800998ecf8427e.js"></script>
+
+    
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+                       title="Bugzilla" href="search_plugin.cgi">
+    <link rel="shortcut icon" href="images/favicon.ico">
+  </head>
+
+  <body 
+        class="bugs-aviary-pl yui-skin-sam">
+
+  <div id="header"><div id="banner">
+  </div>
+
+    <div id="titles">
+      <span id="title">Bugzilla &ndash; View All Attachments for
+  <a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - Tłumaczenie Bugzilli 2.18"
+   href="show_bug.cgi%3Fid=216.html">Bug 216</a></span>
+
+
+    </div>
+
+
+    <div id="common_links"><ul class="links">
+  <li><a href="index.html">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi.html">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi.html">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi.html">Search</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="http://bugs.aviary.pl/buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input type="hidden" id="no_redirect_top" name="no_redirect" value="0">
+    <script type="text/javascript">
+      if (history && history.replaceState) {
+        var no_redirect = document.getElementById("no_redirect_top");
+        no_redirect.value = 1;
+      }
+    </script>
+    <input class="txt" type="text" id="quicksearch_top" name="quicksearch" 
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search" 
+           id="find_top"></form>
+  <a href="page.cgi%3Fid=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="report.cgi.html">Reports</a></li>
+
+  <li>
+      <span class="separator">| </span>
+        <a href="request.cgi.html">Requests</a></li>
+
+
+  
+    
+      <li id="new_account_container_top">
+        <span class="separator">| </span>
+        <a href="createaccount.cgi.html">New&nbsp;Account</a>
+      </li>
+
+    <li id="mini_login_container_top">
+  <span class="separator">| </span>
+  <a id="login_link_top" href="http://bugs.aviary.pl/attachment.cgi?bugid=216&amp;action=viewall&amp;hide_obsolete=1&amp;GoAheadAndLogIn=1"
+     onclick="return show_mini_login_form('_top')">Log In</a>
+
+  <form action="attachment.cgi%3Fbugid=216&amp;action=viewall&amp;hide_obsolete=1.html" method="POST"
+        class="mini_login bz_default_hidden"
+        id="mini_login_top">
+    <input id="Bugzilla_login_top" required
+           name="Bugzilla_login" class="bz_login"
+        type="email" placeholder="Email Address">
+    <input class="bz_password" name="Bugzilla_password" type="password"
+           id="Bugzilla_password_top" required
+           placeholder="Password">
+    <input type="hidden" name="Bugzilla_login_token"
+           value="1469825044-7R_Q1Xhfq8ieqyjhQnF-a_tOZOpS9t_riuoAqt_3w-U">
+    <input type="submit" name="GoAheadAndLogIn" value="Log in"
+            id="log_in_top">
+    <a href="attachment.cgi%3Fbugid=216&amp;action=viewall&amp;hide_obsolete=1.html#" onclick="return hide_mini_login_form('_top')">[x]</a>
+  </form>
+</li>
+
+
+  <li id="forgot_container_top">
+    <span class="separator">| </span>
+    <a id="forgot_link_top" href="http://bugs.aviary.pl/attachment.cgi?bugid=216&amp;action=viewall&amp;hide_obsolete=1&amp;GoAheadAndLogIn=1#forgot"
+       onclick="return show_forgot_form('_top')">Forgot Password</a>
+    <form action="http://bugs.aviary.pl/token.cgi" method="post" id="forgot_form_top"
+          class="mini_forgot bz_default_hidden">
+      <label for="login_top">Login:</label>
+      <input name="loginname" size="20" id="login_top" required
+          type="email" placeholder="Your Email Address">
+      <input id="forgot_button_top" value="Reset Password" type="submit">
+      <input type="hidden" name="a" value="reqpw">
+      <input type="hidden" id="token_top" name="token"
+             value="1469825044-jRvfM3bzLbwkZyuDuC6npsbP1kCNoxx0w9ez-S6eA6I">
+      <a href="attachment.cgi%3Fbugid=216&amp;action=viewall&amp;hide_obsolete=1.html#" onclick="return hide_forgot_form('_top')">[x]</a>
+    </form>
+  </li>
+</ul>
+    </div>
+  </div>
+
+  <div id="bugzilla-body">
+  <div id="hidden_obsolete_message">
+    Obsolete attachments are hidden. To view all attachments (including obsolete) 
+    <a href="http://bugs.aviary.pl/attachment.cgi?bugid=216&amp;action=viewall">click here</a>.
+  </div>
+
+<div class="viewall_frame_container">
+  <table class="viewall_desc">
+    <tr>
+      <th colspan="6" class="bz_attach_footer">Attachment #138</th>
+    </tr>
+    <tr>
+      <td>Kolejne uaktualnienie tłumaczenia</td>
+
+      <td>
+          <i>patch</i>
+      </td>
+
+      <td>2004-10-09 20:49:19 CEST</td>
+      <td>5.91 KB</td>
+
+      <td>
+          <i>no flags</i>
+      </td>
+
+      <td><a href="attachment.cgi%3Fid=138&amp;action=edit.html">Details</a></td>
+    </tr>
+  </table>
+
+      <iframe src="attachment.cgi%3Fid=138" class="viewall_frame" sandbox>
+        <b>You cannot view the attachment on this page because your browser does not support IFRAMEs.
+        <a href="attachment.cgi%3Fid=138">View the attachment on a separate page</a>.</b>
+      </iframe>
+</div>
+<div class="viewall_frame_container">
+  <table class="viewall_desc">
+    <tr>
+      <th colspan="6" class="bz_attach_footer">Attachment #139</th>
+    </tr>
+    <tr>
+      <td>tłumaczenie pages/voting.html.tmpl</td>
+
+      <td>
+          <i>patch</i>
+      </td>
+
+      <td>2004-10-10 20:31:28 CEST</td>
+      <td>4.00 KB</td>
+
+      <td>
+          <i>no flags</i>
+      </td>
+
+      <td><a href="attachment.cgi%3Fid=139&amp;action=edit.html">Details</a></td>
+    </tr>
+  </table>
+
+      <iframe src="attachment.cgi%3Fid=139" class="viewall_frame" sandbox>
+        <b>You cannot view the attachment on this page because your browser does not support IFRAMEs.
+        <a href="attachment.cgi%3Fid=139">View the attachment on a separate page</a>.</b>
+      </iframe>
+</div>
+<div class="viewall_frame_container">
+  <table class="viewall_desc">
+    <tr>
+      <th colspan="6" class="bz_attach_footer">Attachment #142</th>
+    </tr>
+    <tr>
+      <td>Tłoumaczenie pages/fields.html.tmpl</td>
+
+      <td>
+          <i>patch</i>
+      </td>
+
+      <td>2004-10-11 17:09:20 CEST</td>
+      <td>14.63 KB</td>
+
+      <td>
+          <i>no flags</i>
+      </td>
+
+      <td><a href="attachment.cgi%3Fid=142&amp;action=edit.html">Details</a></td>
+    </tr>
+  </table>
+
+      <iframe src="attachment.cgi%3Fid=142" class="viewall_frame" sandbox>
+        <b>You cannot view the attachment on this page because your browser does not support IFRAMEs.
+        <a href="attachment.cgi%3Fid=142">View the attachment on a separate page</a>.</b>
+      </iframe>
+</div>
+<div class="viewall_frame_container">
+  <table class="viewall_desc">
+    <tr>
+      <th colspan="6" class="bz_attach_footer">Attachment #143</th>
+    </tr>
+    <tr>
+      <td>Łatka zamieniająca System na Platforma</td>
+
+      <td>
+          <i>patch</i>
+      </td>
+
+      <td>2004-10-11 17:12:14 CEST</td>
+      <td>2.43 KB</td>
+
+      <td>
+          <i>no flags</i>
+      </td>
+
+      <td><a href="attachment.cgi%3Fid=143&amp;action=edit.html">Details</a></td>
+    </tr>
+  </table>
+
+      <iframe src="attachment.cgi%3Fid=143" class="viewall_frame" sandbox>
+        <b>You cannot view the attachment on this page because your browser does not support IFRAMEs.
+        <a href="attachment.cgi%3Fid=143">View the attachment on a separate page</a>.</b>
+      </iframe>
+</div>
+<div class="viewall_frame_container">
+  <table class="viewall_desc">
+    <tr>
+      <th colspan="6" class="bz_attach_footer">Attachment #193</th>
+    </tr>
+    <tr>
+      <td>Zmiany przyniesione przez 2.18rc3</td>
+
+      <td>
+          <i>patch</i>
+      </td>
+
+      <td>2004-10-28 01:35:19 CEST</td>
+      <td>32.83 KB</td>
+
+      <td>
+          <i>no flags</i>
+      </td>
+
+      <td><a href="attachment.cgi%3Fid=193&amp;action=edit.html">Details</a></td>
+    </tr>
+  </table>
+
+      <iframe src="attachment.cgi%3Fid=193" class="viewall_frame" sandbox>
+        <b>You cannot view the attachment on this page because your browser does not support IFRAMEs.
+        <a href="attachment.cgi%3Fid=193">View the attachment on a separate page</a>.</b>
+      </iframe>
+</div>
+<div class="viewall_frame_container">
+  <table class="viewall_desc">
+    <tr>
+      <th colspan="6" class="bz_attach_footer">Attachment #304</th>
+    </tr>
+    <tr>
+      <td>Uaktualnienie tłumaczenia do CVSowej wersji 2.18 z dnia 28.12.04</td>
+
+      <td>
+          <i>patch</i>
+      </td>
+
+      <td>2005-01-04 19:45:39 CET</td>
+      <td>45.33 KB</td>
+
+      <td>
+          <i>no flags</i>
+      </td>
+
+      <td><a href="attachment.cgi%3Fid=304&amp;action=edit.html">Details</a></td>
+    </tr>
+  </table>
+
+      <iframe src="attachment.cgi%3Fid=304" class="viewall_frame" sandbox>
+        <b>You cannot view the attachment on this page because your browser does not support IFRAMEs.
+        <a href="attachment.cgi%3Fid=304">View the attachment on a separate page</a>.</b>
+      </iframe>
+</div>
+<div class="viewall_frame_container">
+  <table class="viewall_desc">
+    <tr>
+      <th colspan="6" class="bz_attach_footer">Attachment #305</th>
+    </tr>
+    <tr>
+      <td>Mniej wiecej połowa tłumaczenia &quot;Bug Writing Guidelines&quot;</td>
+
+      <td>
+          <i>patch</i>
+      </td>
+
+      <td>2005-01-04 19:47:00 CET</td>
+      <td>13.44 KB</td>
+
+      <td>
+          <i>no flags</i>
+      </td>
+
+      <td><a href="attachment.cgi%3Fid=305&amp;action=edit.html">Details</a></td>
+    </tr>
+  </table>
+
+      <iframe src="attachment.cgi%3Fid=305" class="viewall_frame" sandbox>
+        <b>You cannot view the attachment on this page because your browser does not support IFRAMEs.
+        <a href="attachment.cgi%3Fid=305">View the attachment on a separate page</a>.</b>
+      </iframe>
+</div>
+<div class="viewall_frame_container">
+  <table class="viewall_desc">
+    <tr>
+      <th colspan="6" class="bz_attach_footer">Attachment #306</th>
+    </tr>
+    <tr>
+      <td>Tłumacznie wag błędów, platform uzywanych na stronach wyszukiwania i listach błędów</td>
+
+      <td>
+          <i>patch</i>
+      </td>
+
+      <td>2005-01-04 19:49:27 CET</td>
+      <td>4.75 KB</td>
+
+      <td>
+          <i>no flags</i>
+      </td>
+
+      <td><a href="attachment.cgi%3Fid=306&amp;action=edit.html">Details</a></td>
+    </tr>
+  </table>
+
+      <iframe src="attachment.cgi%3Fid=306" class="viewall_frame" sandbox>
+        <b>You cannot view the attachment on this page because your browser does not support IFRAMEs.
+        <a href="attachment.cgi%3Fid=306">View the attachment on a separate page</a>.</b>
+      </iframe>
+</div>
+<div class="viewall_frame_container">
+  <table class="viewall_desc">
+    <tr>
+      <th colspan="6" class="bz_attach_footer">Attachment #309</th>
+    </tr>
+    <tr>
+      <td>Uaktualnienie tlumaczenie do oficjalnego 2.18</td>
+
+      <td>
+          <i>patch</i>
+      </td>
+
+      <td>2005-01-31 19:14:21 CET</td>
+      <td>25.23 KB</td>
+
+      <td>
+          <i>no flags</i>
+      </td>
+
+      <td><a href="attachment.cgi%3Fid=309&amp;action=edit.html">Details</a></td>
+    </tr>
+  </table>
+
+      <iframe src="attachment.cgi%3Fid=309" class="viewall_frame" sandbox>
+        <b>You cannot view the attachment on this page because your browser does not support IFRAMEs.
+        <a href="attachment.cgi%3Fid=309">View the attachment on a separate page</a>.</b>
+      </iframe>
+</div>
+<div class="viewall_frame_container">
+  <table class="viewall_desc">
+    <tr>
+      <th colspan="6" class="bz_attach_footer">Attachment #313</th>
+    </tr>
+    <tr>
+      <td>Drobne poprawki</td>
+
+      <td>
+          <i>patch</i>
+      </td>
+
+      <td>2005-02-07 23:03:37 CET</td>
+      <td>1.00 KB</td>
+
+      <td>
+          <i>no flags</i>
+      </td>
+
+      <td><a href="attachment.cgi%3Fid=313&amp;action=edit.html">Details</a></td>
+    </tr>
+  </table>
+
+      <iframe src="attachment.cgi%3Fid=313" class="viewall_frame" sandbox>
+        <b>You cannot view the attachment on this page because your browser does not support IFRAMEs.
+        <a href="attachment.cgi%3Fid=313">View the attachment on a separate page</a>.</b>
+      </iframe>
+</div>
+<div class="viewall_frame_container">
+  <table class="viewall_desc">
+    <tr>
+      <th colspan="6" class="bz_attach_footer">Attachment #314</th>
+    </tr>
+    <tr>
+      <td>Łatka usuwająca zlepianie błąd/blędzie/itd. z poprzedzającymi wyrazami.</td>
+
+      <td>
+          <i>patch</i>
+      </td>
+
+      <td>2005-02-07 23:35:05 CET</td>
+      <td>11.33 KB</td>
+
+      <td>
+          <i>no flags</i>
+      </td>
+
+      <td><a href="attachment.cgi%3Fid=314&amp;action=edit.html">Details</a></td>
+    </tr>
+  </table>
+
+      <iframe src="attachment.cgi%3Fid=314" class="viewall_frame" sandbox>
+        <b>You cannot view the attachment on this page because your browser does not support IFRAMEs.
+        <a href="attachment.cgi%3Fid=314">View the attachment on a separate page</a>.</b>
+      </iframe>
+</div>
+<div class="viewall_frame_container">
+  <table class="viewall_desc">
+    <tr>
+      <th colspan="6" class="bz_attach_footer">Attachment #316</th>
+    </tr>
+    <tr>
+      <td>Łatka zmieniająca kodowanie dla dwóch plików z latin2 na utf8 v.2</td>
+
+      <td>
+          <i>patch</i>
+      </td>
+
+      <td>2005-02-07 23:54:15 CET</td>
+      <td>6.87 KB</td>
+
+      <td>
+          <i>no flags</i>
+      </td>
+
+      <td><a href="attachment.cgi%3Fid=316&amp;action=edit.html">Details</a></td>
+    </tr>
+  </table>
+
+      <iframe src="attachment.cgi%3Fid=316" class="viewall_frame" sandbox>
+        <b>You cannot view the attachment on this page because your browser does not support IFRAMEs.
+        <a href="attachment.cgi%3Fid=316">View the attachment on a separate page</a>.</b>
+      </iframe>
+</div>
+<div class="viewall_frame_container">
+  <table class="viewall_desc">
+    <tr>
+      <th colspan="6" class="bz_attach_footer">Attachment #317</th>
+    </tr>
+    <tr>
+      <td>Dalsze poprawki</td>
+
+      <td>
+          <i>patch</i>
+      </td>
+
+      <td>2005-02-08 17:41:40 CET</td>
+      <td>27.75 KB</td>
+
+      <td>
+          <i>no flags</i>
+      </td>
+
+      <td><a href="attachment.cgi%3Fid=317&amp;action=edit.html">Details</a></td>
+    </tr>
+  </table>
+
+      <iframe src="attachment.cgi%3Fid=317" class="viewall_frame" sandbox>
+        <b>You cannot view the attachment on this page because your browser does not support IFRAMEs.
+        <a href="attachment.cgi%3Fid=317">View the attachment on a separate page</a>.</b>
+      </iframe>
+</div>
+<div class="viewall_frame_container">
+  <table class="viewall_desc">
+    <tr>
+      <th colspan="6" class="bz_attach_footer">Attachment #320</th>
+    </tr>
+    <tr>
+      <td>Poprawiony plik README</td>
+
+      <td>text/plain
+      </td>
+
+      <td>2005-02-09 19:07:01 CET</td>
+      <td>1.82 KB</td>
+
+      <td>
+          <i>no flags</i>
+      </td>
+
+      <td><a href="attachment.cgi%3Fid=320&amp;action=edit.html">Details</a></td>
+    </tr>
+  </table>
+
+      <iframe src="attachment.cgi%3Fid=320" class="viewall_frame" sandbox>
+        <b>You cannot view the attachment on this page because your browser does not support IFRAMEs.
+        <a href="attachment.cgi%3Fid=320">View the attachment on a separate page</a>.</b>
+      </iframe>
+</div>
+<div class="viewall_frame_container">
+  <table class="viewall_desc">
+    <tr>
+      <th colspan="6" class="bz_attach_footer">Attachment #321</th>
+    </tr>
+    <tr>
+      <td>Oficjalna paczka z tłumaczeniem.</td>
+
+      <td>application/octet-stream
+      </td>
+
+      <td>2005-02-09 19:09:47 CET</td>
+      <td>129.19 KB</td>
+
+      <td>
+          <i>no flags</i>
+      </td>
+
+      <td><a href="attachment.cgi%3Fid=321&amp;action=edit.html">Details</a></td>
+    </tr>
+  </table>
+
+    <p><b>
+      Attachment cannot be viewed because its MIME type is not text/*, image/*, or application/vnd.mozilla.*.
+      <a href="attachment.cgi%3Fid=321">Download the attachment instead</a>.
+    </b></p>
+</div>
+<div class="viewall_frame_container">
+  <table class="viewall_desc">
+    <tr>
+      <th colspan="6" class="bz_attach_footer">Attachment #323</th>
+    </tr>
+    <tr>
+      <td>Moje poprawki do załączkia 322.</td>
+
+      <td>
+          <i>patch</i>
+      </td>
+
+      <td>2005-02-11 18:34:41 CET</td>
+      <td>6.82 KB</td>
+
+      <td>
+          <i>no flags</i>
+      </td>
+
+      <td><a href="attachment.cgi%3Fid=323&amp;action=edit.html">Details</a></td>
+    </tr>
+  </table>
+
+      <iframe src="attachment.cgi%3Fid=323" class="viewall_frame" sandbox>
+        <b>You cannot view the attachment on this page because your browser does not support IFRAMEs.
+        <a href="attachment.cgi%3Fid=323">View the attachment on a separate page</a>.</b>
+      </iframe>
+</div>
+<div class="viewall_frame_container">
+  <table class="viewall_desc">
+    <tr>
+      <th colspan="6" class="bz_attach_footer">Attachment #324</th>
+    </tr>
+    <tr>
+      <td>Przeniesienie funkcji odmien do pliku globalnego pliku.</td>
+
+      <td>
+          <i>patch</i>
+      </td>
+
+      <td>2005-02-11 18:39:57 CET</td>
+      <td>1.04 KB</td>
+
+      <td>
+          <i>no flags</i>
+      </td>
+
+      <td><a href="attachment.cgi%3Fid=324&amp;action=edit.html">Details</a></td>
+    </tr>
+  </table>
+
+      <iframe src="attachment.cgi%3Fid=324" class="viewall_frame" sandbox>
+        <b>You cannot view the attachment on this page because your browser does not support IFRAMEs.
+        <a href="attachment.cgi%3Fid=324">View the attachment on a separate page</a>.</b>
+      </iframe>
+</div>
+<div class="viewall_frame_container">
+  <table class="viewall_desc">
+    <tr>
+      <th colspan="6" class="bz_attach_footer">Attachment #326</th>
+    </tr>
+    <tr>
+      <td>Poprawki do 324</td>
+
+      <td>
+          <i>patch</i>
+      </td>
+
+      <td>2005-02-15 00:49:18 CET</td>
+      <td>5.58 KB</td>
+
+      <td>
+          <i>no flags</i>
+      </td>
+
+      <td><a href="attachment.cgi%3Fid=326&amp;action=edit.html">Details</a></td>
+    </tr>
+  </table>
+
+      <iframe src="attachment.cgi%3Fid=326" class="viewall_frame" sandbox>
+        <b>You cannot view the attachment on this page because your browser does not support IFRAMEs.
+        <a href="attachment.cgi%3Fid=326">View the attachment on a separate page</a>.</b>
+      </iframe>
+</div>
+<div class="viewall_frame_container">
+  <table class="viewall_desc">
+    <tr>
+      <th colspan="6" class="bz_attach_footer">Attachment #328</th>
+    </tr>
+    <tr>
+      <td>Poprawa kilku literówek i nieprzetłumaczonych słów.</td>
+
+      <td>
+          <i>patch</i>
+      </td>
+
+      <td>2005-02-15 19:50:30 CET</td>
+      <td>2.73 KB</td>
+
+      <td>
+          <i>no flags</i>
+      </td>
+
+      <td><a href="attachment.cgi%3Fid=328&amp;action=edit.html">Details</a></td>
+    </tr>
+  </table>
+
+      <iframe src="attachment.cgi%3Fid=328" class="viewall_frame" sandbox>
+        <b>You cannot view the attachment on this page because your browser does not support IFRAMEs.
+        <a href="attachment.cgi%3Fid=328">View the attachment on a separate page</a>.</b>
+      </iframe>
+</div>
+<div class="viewall_frame_container">
+  <table class="viewall_desc">
+    <tr>
+      <th colspan="6" class="bz_attach_footer">Attachment #329</th>
+    </tr>
+    <tr>
+      <td>Ta łatka załatwia (???) sprawę kodowania tematów.</td>
+
+      <td>
+          <i>patch</i>
+      </td>
+
+      <td>2005-02-15 23:08:35 CET</td>
+      <td>7.36 KB</td>
+
+      <td>
+          <i>no flags</i>
+      </td>
+
+      <td><a href="attachment.cgi%3Fid=329&amp;action=edit.html">Details</a></td>
+    </tr>
+  </table>
+
+      <iframe src="attachment.cgi%3Fid=329" class="viewall_frame" sandbox>
+        <b>You cannot view the attachment on this page because your browser does not support IFRAMEs.
+        <a href="attachment.cgi%3Fid=329">View the attachment on a separate page</a>.</b>
+      </iframe>
+</div>
+<div class="viewall_frame_container">
+  <table class="viewall_desc">
+    <tr>
+      <th colspan="6" class="bz_attach_footer">Attachment #339</th>
+    </tr>
+    <tr>
+      <td>kilka poprawek do modułu admin i jedna do default\flag\list.html.tmpl</td>
+
+      <td>application/zip
+      </td>
+
+      <td>2005-03-06 18:16:08 CET</td>
+      <td>11.86 KB</td>
+
+      <td>roman:
+            review?
+              (prefiks)
+      </td>
+
+      <td><a href="attachment.cgi%3Fid=339&amp;action=edit.html">Details</a></td>
+    </tr>
+  </table>
+
+    <p><b>
+      Attachment cannot be viewed because its MIME type is not text/*, image/*, or application/vnd.mozilla.*.
+      <a href="attachment.cgi%3Fid=339">Download the attachment instead</a>.
+    </b></p>
+</div>
+<div class="viewall_frame_container">
+  <table class="viewall_desc">
+    <tr>
+      <th colspan="6" class="bz_attach_footer">Attachment #351</th>
+    </tr>
+    <tr>
+      <td>Drobna literówka.</td>
+
+      <td>
+          <i>patch</i>
+      </td>
+
+      <td>2005-03-14 18:27:12 CET</td>
+      <td>531 bytes</td>
+
+      <td>
+          <i>no flags</i>
+      </td>
+
+      <td><a href="attachment.cgi%3Fid=351&amp;action=edit.html">Details</a></td>
+    </tr>
+  </table>
+
+      <iframe src="attachment.cgi%3Fid=351" class="viewall_frame" sandbox>
+        <b>You cannot view the attachment on this page because your browser does not support IFRAMEs.
+        <a href="attachment.cgi%3Fid=351">View the attachment on a separate page</a>.</b>
+      </iframe>
+</div>
+<div class="viewall_frame_container">
+  <table class="viewall_desc">
+    <tr>
+      <th colspan="6" class="bz_attach_footer">Attachment #363</th>
+    </tr>
+    <tr>
+      <td>Najnowsza ladka modyfikujące pliki spoze template/</td>
+
+      <td>
+          <i>patch</i>
+      </td>
+
+      <td>2005-03-19 21:11:07 CET</td>
+      <td>12.70 KB</td>
+
+      <td>
+          <i>no flags</i>
+      </td>
+
+      <td><a href="attachment.cgi%3Fid=363&amp;action=edit.html">Details</a></td>
+    </tr>
+  </table>
+
+      <iframe src="attachment.cgi%3Fid=363" class="viewall_frame" sandbox>
+        <b>You cannot view the attachment on this page because your browser does not support IFRAMEs.
+        <a href="attachment.cgi%3Fid=363">View the attachment on a separate page</a>.</b>
+      </iframe>
+</div>
+<div class="viewall_frame_container">
+  <table class="viewall_desc">
+    <tr>
+      <th colspan="6" class="bz_attach_footer">Attachment #364</th>
+    </tr>
+    <tr>
+      <td>Tłumaczenie create-guided.html.tmpl</td>
+
+      <td>
+          <i>patch</i>
+      </td>
+
+      <td>2005-03-22 23:40:18 CET</td>
+      <td>25.43 KB</td>
+
+      <td>
+          <i>no flags</i>
+      </td>
+
+      <td><a href="attachment.cgi%3Fid=364&amp;action=edit.html">Details</a></td>
+    </tr>
+  </table>
+
+      <iframe src="attachment.cgi%3Fid=364" class="viewall_frame" sandbox>
+        <b>You cannot view the attachment on this page because your browser does not support IFRAMEs.
+        <a href="attachment.cgi%3Fid=364">View the attachment on a separate page</a>.</b>
+      </iframe>
+</div>
+</div>
+
+    <div id="footer">
+      <div class="intro"></div>
+<ul id="useful-links">
+  <li id="links-actions"><ul class="links">
+  <li><a href="index.html">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi.html">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi.html">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi.html">Search</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="http://bugs.aviary.pl/buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input type="hidden" id="no_redirect_bottom" name="no_redirect" value="0">
+    <script type="text/javascript">
+      if (history && history.replaceState) {
+        var no_redirect = document.getElementById("no_redirect_bottom");
+        no_redirect.value = 1;
+      }
+    </script>
+    <input class="txt" type="text" id="quicksearch_bottom" name="quicksearch" 
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search" 
+           id="find_bottom"></form>
+  <a href="page.cgi%3Fid=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="report.cgi.html">Reports</a></li>
+
+  <li>
+      <span class="separator">| </span>
+        <a href="request.cgi.html">Requests</a></li>
+
+
+  
+    
+      <li id="new_account_container_bottom">
+        <span class="separator">| </span>
+        <a href="createaccount.cgi.html">New&nbsp;Account</a>
+      </li>
+
+    <li id="mini_login_container_bottom">
+  <span class="separator">| </span>
+  <a id="login_link_bottom" href="http://bugs.aviary.pl/attachment.cgi?bugid=216&amp;action=viewall&amp;hide_obsolete=1&amp;GoAheadAndLogIn=1"
+     onclick="return show_mini_login_form('_bottom')">Log In</a>
+
+  <form action="attachment.cgi%3Fbugid=216&amp;action=viewall&amp;hide_obsolete=1.html" method="POST"
+        class="mini_login bz_default_hidden"
+        id="mini_login_bottom">
+    <input id="Bugzilla_login_bottom" required
+           name="Bugzilla_login" class="bz_login"
+        type="email" placeholder="Email Address">
+    <input class="bz_password" name="Bugzilla_password" type="password"
+           id="Bugzilla_password_bottom" required
+           placeholder="Password">
+    <input type="hidden" name="Bugzilla_login_token"
+           value="1469825044-7R_Q1Xhfq8ieqyjhQnF-a_tOZOpS9t_riuoAqt_3w-U">
+    <input type="submit" name="GoAheadAndLogIn" value="Log in"
+            id="log_in_bottom">
+    <a href="attachment.cgi%3Fbugid=216&amp;action=viewall&amp;hide_obsolete=1.html#" onclick="return hide_mini_login_form('_bottom')">[x]</a>
+  </form>
+</li>
+
+
+  <li id="forgot_container_bottom">
+    <span class="separator">| </span>
+    <a id="forgot_link_bottom" href="http://bugs.aviary.pl/attachment.cgi?bugid=216&amp;action=viewall&amp;hide_obsolete=1&amp;GoAheadAndLogIn=1#forgot"
+       onclick="return show_forgot_form('_bottom')">Forgot Password</a>
+    <form action="http://bugs.aviary.pl/token.cgi" method="post" id="forgot_form_bottom"
+          class="mini_forgot bz_default_hidden">
+      <label for="login_bottom">Login:</label>
+      <input name="loginname" size="20" id="login_bottom" required
+          type="email" placeholder="Your Email Address">
+      <input id="forgot_button_bottom" value="Reset Password" type="submit">
+      <input type="hidden" name="a" value="reqpw">
+      <input type="hidden" id="token_bottom" name="token"
+             value="1469825044-jRvfM3bzLbwkZyuDuC6npsbP1kCNoxx0w9ez-S6eA6I">
+      <a href="attachment.cgi%3Fbugid=216&amp;action=viewall&amp;hide_obsolete=1.html#" onclick="return hide_forgot_form('_bottom')">[x]</a>
+    </form>
+  </li>
+</ul>
+  </li>
+
+  
+
+
+
+
+  
+</ul>
+
+      <div class="outro"></div>
+    </div>
+
+  </body>
+</html>

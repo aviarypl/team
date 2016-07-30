@@ -1,0 +1,13 @@
+diff -r e8d598cf6953 template/pl/default/bug/summarize-time.html.tmpl
+--- a/template/pl/default/bug/summarize-time.html.tmpl	Wed Nov 14 22:59:11 2012 +0100
++++ b/template/pl/default/bug/summarize-time.html.tmpl	Wed Nov 14 23:44:16 2012 +0100
+@@ -24,7 +24,7 @@
+     [% title = title _ "dla " %]
+     [% header = "$terms.bledu nr $ids.0" FILTER bug_link(ids.0) FILTER none %]
+     [% header = title _ header _ " (i $terms.bledow go blokujących)" %]
+-    [% title = title _ "$terms.Blad nr $ids.0" %]
++    [% title = title _ "$terms.Bledu nr $ids.0" %]
+ [% ELSE %]
+     [% title = title _ "(wybrane ${terms.bledy}: $ids.size)" %]
+     [% header = title %]
+

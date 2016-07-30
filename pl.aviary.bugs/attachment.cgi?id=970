@@ -1,0 +1,239 @@
+Index: l10n/pl/browser/chrome/browser/preferences/fonts.dtd
+===================================================================
+RCS file: /l10n/l10n/pl/browser/chrome/browser/preferences/fonts.dtd,v
+retrieving revision 1.18
+diff -u -8 -r1.18 fonts.dtd
+--- l10n/pl/browser/chrome/browser/preferences/fonts.dtd	30 Dec 2007 21:08:34 -0000	1.18
++++ l10n/pl/browser/chrome/browser/preferences/fonts.dtd	22 Mar 2008 17:54:01 -0000
+@@ -57,11 +57,11 @@
+ <!-- default font type -->
+ <!ENTITY  useDefaultFontSerif.label               "Szeryfowa">
+ <!ENTITY  useDefaultFontSansSerif.label           "Bezszeryfowa">
+ 
+ <!ENTITY  allowPagesToUse.label                   "Pozwól stronom stosować inne czcionki niż ustawione tutaj">
+ 
+ <!ENTITY  allowPagesToUse.accesskey               "i">
+ 
+-<!ENTITY languages.customize.Charset.grouplabel         "Kodowanie znaków">
+-<!ENTITY languages.customize.DefaultCharset.label       "Domyślne kodowanie znaków:">
++<!ENTITY languages.customize.Charset.grouplabel         "Zestaw znaków">
++<!ENTITY languages.customize.DefaultCharset.label       "Domyślny zestaw znaków:">
+ <!ENTITY languages.customize.DefaultCharset.accesskey   "k">
+Index: l10n/pl/browser/chrome/help/firebird-toc.rdf
+===================================================================
+RCS file: /l10n/l10n/pl/browser/chrome/help/firebird-toc.rdf,v
+retrieving revision 1.53
+diff -u -8 -r1.53 firebird-toc.rdf
+--- l10n/pl/browser/chrome/help/firebird-toc.rdf	16 Feb 2008 21:15:33 -0000	1.53
++++ l10n/pl/browser/chrome/help/firebird-toc.rdf	22 Mar 2008 17:54:03 -0000
+@@ -295,17 +295,17 @@
+       <rdf:Seq>
+         <rdf:li> <rdf:Description ID="menu-view-toolbars" nc:name="Paski narzędzi" nc:link="menu_reference.xhtml#toolbars"/> </rdf:li>
+         <rdf:li> <rdf:Description ID="menu-view-status-bar" nc:name="Pasek stanu" nc:link="menu_reference.xhtml#status_bar"/> </rdf:li>
+         <rdf:li> <rdf:Description ID="menu-view-sidebar" nc:name="Panel boczny" nc:link="menu_reference.xhtml#sidebar"/> </rdf:li>
+         <rdf:li> <rdf:Description ID="menu-view-stop" nc:name="Zatrzymaj" nc:link="menu_reference.xhtml#stop"/> </rdf:li>
+         <rdf:li> <rdf:Description ID="menu-view-reload" nc:name="Odśwież" nc:link="menu_reference.xhtml#reload"/> </rdf:li>
+         <rdf:li> <rdf:Description ID="menu-view-text-size" nc:name="Rozmiar tekstu" nc:link="menu_reference.xhtml#text_size"/> </rdf:li>
+         <rdf:li> <rdf:Description ID="menu-view-page-style" nc:name="Styl strony" nc:link="menu_reference.xhtml#page_style"/> </rdf:li>
+-		<rdf:li> <rdf:Description ID="menu-view-character-encoding" nc:name="Kodowanie znaków" nc:link="menu_reference.xhtml#character_encoding"/> </rdf:li>
++		<rdf:li> <rdf:Description ID="menu-view-character-encoding" nc:name="Zestaw znaków" nc:link="menu_reference.xhtml#character_encoding"/> </rdf:li>
+         <rdf:li> <rdf:Description ID="menu-view-page-source" nc:name="Źródło strony" nc:link="menu_reference.xhtml#page_source"/> </rdf:li>
+         <rdf:li> <rdf:Description ID="menu-view-full-screen" nc:name="Tryb pełnoekranowy" nc:link="menu_reference.xhtml#full_screen" nc:platform="win unix os2" /> </rdf:li>
+       </rdf:Seq>
+     </nc:subheadings>
+   </rdf:Description>
+ 
+   <rdf:Description about="#menu-view-toolbars">
+     <nc:subheadings>
+Index: l10n/pl/browser/chrome/help/menu_reference.xhtml
+===================================================================
+RCS file: /l10n/l10n/pl/browser/chrome/help/menu_reference.xhtml,v
+retrieving revision 1.46
+diff -u -8 -r1.46 menu_reference.xhtml
+--- l10n/pl/browser/chrome/help/menu_reference.xhtml	16 Jan 2008 21:02:24 -0000	1.46
++++ l10n/pl/browser/chrome/help/menu_reference.xhtml	22 Mar 2008 17:54:03 -0000
+@@ -189,18 +189,18 @@
+     <h4 id="basic_page_style">Styl podstawowy</h4>
+     <p>Wyświetla stronę w&nbsp;stylu, który autor strony zdefiniował jako podstawowy.</p>   
+ 
+     <h4 id="alternate_style"></h4>
+     <p>Jeśli autor strony dołączył także inne style, &brandShortName; wyświetli ich listę umożliwiając wybór dowolnego z&nbsp;nich.</p>
+   
+   
+   
+-  <h3 id="character_encoding">Kodowanie znaków</h3>
+-  <p>Pozwala samodzielnie wybrać sposób kodowania znaków dla strony, na przykład w&nbsp;przypadku błędnego wyświetlania niektórych znaków.</p>
++  <h3 id="character_encoding">Zestaw znaków</h3>
++  <p>Pozwala samodzielnie wybrać zestaw znaków dla strony, na przykład w&nbsp;przypadku błędnego wyświetlania niektórych znaków.</p>
+ 
+   <h3 id="page_source">Źródło strony</h3>
+   <p>Wyświetla kod źródłowy bieżącej strony.</p>
+ 
+ <div class="noMac">
+   <h3 id="full_screen">Tryb pełnoekranowy</h3>
+   <p>Powiększa okno przeglądarki na cały ekran. Jeżeli pasek narzędzi nawigacyjnych jest ukryty (a&nbsp;z&nbsp;nim przyciski <em>Minimalizuj, Przywróć</em>...), okno można pomniejszyć do poprzednich rozmiarów naciskając <kbd>F11</kbd>.</p>
+ </div>
+Index: l10n/pl/browser/chrome/help/prefs.xhtml
+===================================================================
+RCS file: /l10n/l10n/pl/browser/chrome/help/prefs.xhtml,v
+retrieving revision 1.48
+diff -u -8 -r1.48 prefs.xhtml
+--- l10n/pl/browser/chrome/help/prefs.xhtml	8 Mar 2008 23:15:11 -0000	1.48
++++ l10n/pl/browser/chrome/help/prefs.xhtml	22 Mar 2008 17:54:04 -0000
+@@ -259,19 +259,19 @@
+     <p>Możliwe jest także określenie minimalnego rozmiaru wyświetlanych czcionek.
+     Może to być przydatne w&nbsp;przypadku przeglądania witryn używających małych,
+     nieczytelnych czcionek.</p>
+ 
+     <p><em>Pozwól stronom stosować inne czcionki niż ustawione tutaj</em><br/>
+     Domyślnie przeglądarka &brandShortName; stosuje czcionki określone przez autora przeglądanej
+     strony. Aby zawsze używać domyślnych czcionek, należy odznaczyć powyższą opcję.</p>
+ 
+-    <p><em>Kodowanie znaków</em><br />
+-    Kodowanie znaków ustawione w&nbsp;tym miejscu będzie stosowane na każdej stronie, która
+-    nie określi, którego kodowania używa.</p>
++    <p><em>Zestaw znaków</em><br />
++    Zestaw znaków ustawiony w&nbsp;tym miejscu będzie stosowany na każdej stronie, która
++    nie określi, jakiego kodowania znaków używa.</p>
+ 
+     <h4 id="colors_dialog">Okno &bdquo;Kolory&rdquo;</h4>
+ 
+     <p><strong>Tekst i&nbsp;tło</strong><br/>
+     W&nbsp;tym miejscu można określić domyślny kolor tekstu i&nbsp;tła dla stron internetowych. Ustawione
+     wartości zostaną użyte, gdy przeglądana strona nie posiada własnych ustawień kolorów tekstu i&nbsp;tła.
+     Aby zmienić kolor, należy wybrać próbkę koloru.
+     Aby użyć domyślnych ustawień kolorów systemu operacyjnego, należy zaznaczyć opcję
+Index: l10n/pl/dom/chrome/charsetTitles.properties
+===================================================================
+RCS file: /l10n/l10n/pl/dom/chrome/charsetTitles.properties,v
+retrieving revision 1.8
+diff -u -8 -r1.8 charsetTitles.properties
+--- l10n/pl/dom/chrome/charsetTitles.properties	3 Aug 2006 14:19:16 -0000	1.8
++++ l10n/pl/dom/chrome/charsetTitles.properties	22 Mar 2008 17:54:05 -0000
+@@ -68,59 +68,59 @@
+ utf-16le.title = Unicode (UTF-16 Little Endian)
+ utf-16be.title = Unicode (UTF-16 Big Endian)
+ utf-32le.title = Unicode (UTF-32 Little Endian)
+ utf-32be.title = Unicode (UTF-32 Big Endian)
+ iso-8859-5.title=Cyrylica (ISO-8859-5)
+ iso-ir-111.title=Cyrylica (ISO-IR-111)
+ windows-1251.title=Cyrylica (Windows-1251)
+ x-mac-cyrillic.title=Cyrylica (MacCyrillic)
+-x-mac-ukrainian.title=Cyrylica/Ukraiński (MacUkrainian)
++x-mac-ukrainian.title=Cyrylica ukraińska (MacUkrainian)
+ koi8-r.title=Cyrylica (KOI8-R)
+-koi8-u.title=Cyrylica/Ukraiński (KOI8-U)
++koi8-u.title=Cyrylica ukraińska (KOI8-U)
+ iso-8859-7.title=Grecki (ISO-8859-7)
+ windows-1253.title=Grecki (Windows-1253)
+ x-mac-greek.title=Grecki (MacGreek)
+ windows-1258.title=Wietnamski (Windows-1258)
+ x-viet-tcvn5712.title=Wietnamski (TCVN)
+ viscii.title=Wietnamski (VISCII)
+ x-viet-vps.title=Wietnamski (VPS)
+ geostd8.title=Gruziński (GEOSTD8)
+ tis-620.title=Tajski (TIS-620)
+ iso-8859-11.title=Tajski (ISO-8859-11)
+ windows-874.title=Tajski (Windows-874)
+ ibm874.title=Tajski (IBM-874)
+-armscii-8.title=Armeński (ARMSCII-8)
++armscii-8.title=Ormiański (ARMSCII-8)
+ iso-8859-6.title=Arabski (ISO-8859-6)
+ iso-8859-6-i.title=Arabski (ISO-8859-6-I)
+ iso-8859-6-e.title=Arabski (ISO-8859-6-E)
+-iso-8859-8.title=Hebrajski wizualny (ISO-8859-8)
++iso-8859-8.title=Hebrajski - porządek wizualny (ISO-8859-8)
+ iso-8859-8-i.title=Hebrajski (ISO-8859-8-I)
+ iso-8859-8-e.title=Hebrajski (ISO-8859-8-E)
+ windows-1255.title=Hebrajski (Windows-1255)
+ windows-1256.title=Arabski (Windows-1256)
+ x-user-defined.title=Użytkownika
+-ibm866.title=Cyrylica/Rosyjski (CP-866)
++ibm866.title=Cyrylica rosyjska (CP-866)
+ ibm850.title=Zachodni (IBM-850)
+ ibm852.title=Środkowoeuropejski (IBM-852)
+ ibm855.title=Cyrylica (IBM-855)
+ ibm857.title=Turecki (IBM-857)
+ ibm862.title=Hebrajski (IBM-862)
+ ibm864.title=Arabski (IBM-864)
+ ibm864i.title=Arabski (IBM-864-I)
+ gb18030.title=Chiński uproszczony (GB18030)
+ x-mac-arabic.title=Arabski (MacArabic)
+ x-iso-8859-6-8-x.title=Arabski (ISO-8859-6.8x)
+ x-iso-8859-6-16.title=Arabski (ISO-8859-6.16)
+ x-mac-farsi.title=Perski (MacFarsi)
+ x-mac-hebrew.title=Hebrajski (MacHebrew)
+ x-mac-devanagari.title=Hinduski (MacDevanagari)
+ x-mac-gujarati.title=Gudżarati (MacGujarati)
+ x-mac-gurmukhi.title=Gurmukhi (MacGurmukhi)
+-x-sun-unicode-india-0.title=Hindi (SunDevanagari)
++x-sun-unicode-india-0.title=Hinduski (SunDevanagari)
+ 
+ chardet.off.title=(Wyłączony)
+ chardet.universal_charset_detector.title=Uniwersalny
+ chardet.ja_parallel_state_machine.title=Japoński
+ chardet.ko_parallel_state_machine.title=Koreański
+ chardet.zhtw_parallel_state_machine.title=Chiński tradycyjny
+ chardet.zhcn_parallel_state_machine.title=Chiński uproszczony
+ chardet.zh_parallel_state_machine.title=Chiński
+Index: l10n/pl/toolkit/chrome/global/charsetOverlay.dtd
+===================================================================
+RCS file: /l10n/l10n/pl/toolkit/chrome/global/charsetOverlay.dtd,v
+retrieving revision 1.5
+diff -u -8 -r1.5 charsetOverlay.dtd
+--- l10n/pl/toolkit/chrome/global/charsetOverlay.dtd	28 Oct 2005 20:05:45 -0000	1.5
++++ l10n/pl/toolkit/chrome/global/charsetOverlay.dtd	22 Mar 2008 17:54:06 -0000
+@@ -1,9 +1,9 @@
+-<!ENTITY charsetMenu.label "Kodowanie znaków" >
++<!ENTITY charsetMenu.label "Zestaw znaków" >
+ <!ENTITY charsetMenu.accesskey "K" >
+ <!ENTITY charsetMenuAutodet.label "Wybór automatyczny" >
+ <!ENTITY charsetMenuAutodet.accesskey "a" >
+ <!ENTITY charsetMenuMore.label "Więcej" >
+ <!ENTITY charsetMenuMore.accesskey "W" >
+ <!ENTITY charsetMenuMore1.label "Zachodnioeuropejski" >
+ <!ENTITY charsetMenuMore1.accesskey "Z" >
+ <!ENTITY charsetMenuMore2.label "Wschodnioeuropejski" >
+@@ -11,10 +11,10 @@
+ <!ENTITY charsetMenuMore3.label "Wschodnioazjatycki" >
+ <!ENTITY charsetMenuMore3.accesskey "A" >
+ <!ENTITY charsetMenuMore4.label "Południowoazjatycki" >
+ <!ENTITY charsetMenuMore4.accesskey "P" >
+ <!ENTITY charsetMenuMore5.label "Bliskowschodni" >
+ <!ENTITY charsetMenuMore5.accesskey "B" >
+ <!ENTITY charsetMenuUnicode.label       "Unicode">
+ <!ENTITY charsetMenuUnicode.accesskey       "U">
+-<!ENTITY charsetCustomize.label "Dostosuj listę..." >
++<!ENTITY charsetCustomize.label "Dostosuj listę…" >
+ <!ENTITY charsetCustomize.accesskey "D" >
+Index: l10n/pl/toolkit/chrome/global/customizeCharset.dtd
+===================================================================
+RCS file: /l10n/l10n/pl/toolkit/chrome/global/customizeCharset.dtd,v
+retrieving revision 1.4
+diff -u -8 -r1.4 customizeCharset.dtd
+--- l10n/pl/toolkit/chrome/global/customizeCharset.dtd	21 Apr 2006 22:19:40 -0000	1.4
++++ l10n/pl/toolkit/chrome/global/customizeCharset.dtd	22 Mar 2008 17:54:06 -0000
+@@ -36,19 +36,19 @@
+    - use your version of this file under the terms of the MPL, indicate your
+    - decision by deleting the provisions above and replace them with the notice
+    - and other provisions required by the LGPL or the GPL. If you do not delete
+    - the provisions above, a recipient may use your version of this file under
+    - the terms of any one of the MPL, the GPL or the LGPL.
+    -
+    - ***** END LICENSE BLOCK ***** -->
+ 
+-<!ENTITY title.label "Ustawienia kodowania znaków" >
+-<!ENTITY current.label "Używane kodowania znaków" >
++<!ENTITY title.label "Ustawienia zestawu znaków" >
++<!ENTITY current.label "Używane zestawy znaków" >
+ <!ENTITY remove.label "Usuń" >
+ <!ENTITY remove.accessKey "U">
+-<!ENTITY additional.label "Dostępne kodowania znaków" >
++<!ENTITY additional.label "Dostępne zestawy znaków" >
+ <!ENTITY add.label "Dodaj" >
+ <!ENTITY add.accessKey    "o">  
+ <!ENTITY moveUp.label     "W górę">                                            
+ <!ENTITY moveUp.accessKey "g">                                                  
+ <!ENTITY moveDown.label   "W dół">                                          
+ <!ENTITY moveDown.accessKey "d">                                                
+

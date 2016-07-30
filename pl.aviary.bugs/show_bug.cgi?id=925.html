@@ -1,0 +1,1923 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>925 &ndash; Firefox nie pozwolił żądać zainstalowania oprogramowania ...</title>
+
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<link href="data/assets/7aa6ea67750936a0368541421bdcd5ee.css" rel="stylesheet" type="text/css">
+
+
+
+    
+<script type="text/javascript" src="data/assets/a7c2f3a028f17a9aa60f56dc9d6e732d.js"></script>
+
+    <script type="text/javascript">
+    <!--
+        YAHOO.namespace('bugzilla');
+        YAHOO.util.Event.addListener = function (el, sType, fn, obj, overrideContext) {
+               if ( ("onpagehide" in window || YAHOO.env.ua.gecko) && sType === "unload") { sType = "pagehide"; };
+               var capture = ((sType == "focusin" || sType == "focusout") && !YAHOO.env.ua.ie) ? true : false;
+               return this._addListener(el, this._getType(sType), fn, obj, overrideContext, capture);
+         };
+        if ( "onpagehide" in window || YAHOO.env.ua.gecko) {
+            YAHOO.util.Event._simpleRemove(window, "unload", 
+                                           YAHOO.util.Event._unload);
+        }
+        
+        function unhide_language_selector() { 
+            YAHOO.util.Dom.removeClass(
+                'lang_links_container', 'bz_default_hidden'
+            ); 
+        } 
+        YAHOO.util.Event.onDOMReady(unhide_language_selector);
+
+        
+        var BUGZILLA = {
+            param: {
+                cookiepath: '\/',
+                maxusermatches: 1000
+            },
+            constant: {
+                COMMENT_COLS: 80
+            },
+            string: {
+                
+
+                attach_desc_required:
+                    "You must enter a Description for this attachment.",
+                component_required:
+                    "You must select a Component for this bug.",
+                description_required:
+                    "You must enter a Description for this bug.",
+                short_desc_required:
+                    "You must enter a Summary for this bug.",
+                version_required:
+                    "You must select a Version for this bug."
+            }
+              , api_token: ''
+        };
+
+    if (history && history.replaceState) {
+      if(!document.location.href.match(/show_bug\.cgi/)) {
+        history.replaceState( null,
+                             "925 – Firefox nie pozwolił żądać zainstalowania oprogramowania ...",
+                             "show_bug.cgi?id=925" );
+        document.title = "925 – Firefox nie pozwolił żądać zainstalowania oprogramowania ...";
+      }
+      if (document.location.href.match(/show_bug\.cgi\?.*list_id=/)) {
+        var href = document.location.href;
+        href = href.replace(/[\?&]+list_id=(\d+|cookie)/, '');
+        history.replaceState(null, "925 – Firefox nie pozwolił żądać zainstalowania oprogramowania ...", href);
+      }
+    }
+    YAHOO.util.Event.onDOMReady(function() {
+      initDirtyFieldTracking();
+
+    });
+    // -->
+    </script>
+<script type="text/javascript" src="data/assets/daf5e0fb6826e6a35280e622913f0c4a.js"></script>
+
+    
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+                       title="Bugzilla" href="search_plugin.cgi">
+    <link rel="shortcut icon" href="images/favicon.ico">
+  </head>
+
+  <body 
+        class="bugs-aviary-pl
+                 bz_bug
+                 bz_status_VERIFIED
+                 bz_product_Toolkit
+                 bz_component_inne
+                 bz_bug_925 yui-skin-sam">
+
+  <div id="header"><div id="banner">
+  </div>
+
+    <div id="titles">
+      <span id="title">Bugzilla &ndash; Bug&nbsp;925</span>
+
+        <span id="subtitle" class="subheader">Firefox nie pozwolił żądać zainstalowania oprogramowania ...</span>
+
+        <span id="information" class="header_addl_info">Last modified: 2014-08-15 11:14:41 CEST</span>
+    </div>
+
+
+    <div id="common_links"><ul class="links">
+  <li><a href="index.html">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi.html">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi.html">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi.html">Search</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="http://bugs.aviary.pl/buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input type="hidden" id="no_redirect_top" name="no_redirect" value="0">
+    <script type="text/javascript">
+      if (history && history.replaceState) {
+        var no_redirect = document.getElementById("no_redirect_top");
+        no_redirect.value = 1;
+      }
+    </script>
+    <input class="txt" type="text" id="quicksearch_top" name="quicksearch" 
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search" 
+           id="find_top"></form>
+  <a href="page.cgi%3Fid=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="report.cgi.html">Reports</a></li>
+
+  <li>
+      <span class="separator">| </span>
+        <a href="request.cgi.html">Requests</a></li>
+
+
+  <li>
+        <span class="separator">| </span>
+        <a href="https://bugzilla.readthedocs.org/en/5.0/using/understanding.html" target="_blank">Help</a>
+      </li>
+    
+      <li id="new_account_container_top">
+        <span class="separator">| </span>
+        <a href="createaccount.cgi.html">New&nbsp;Account</a>
+      </li>
+
+    <li id="mini_login_container_top">
+  <span class="separator">| </span>
+  <a id="login_link_top" href="show_bug.cgi%3Fid=925&amp;GoAheadAndLogIn=1.html"
+     onclick="return show_mini_login_form('_top')">Log In</a>
+
+  <form action="show_bug.cgi%3Fid=925.html" method="POST"
+        class="mini_login bz_default_hidden"
+        id="mini_login_top">
+    <input id="Bugzilla_login_top" required
+           name="Bugzilla_login" class="bz_login"
+        type="email" placeholder="Email Address">
+    <input class="bz_password" name="Bugzilla_password" type="password"
+           id="Bugzilla_password_top" required
+           placeholder="Password">
+    <input type="hidden" name="Bugzilla_login_token"
+           value="1469820443-8bEkPx7geg5ImGrLoKLKfdmi44X1arHlr1RldotDTAk">
+    <input type="submit" name="GoAheadAndLogIn" value="Log in"
+            id="log_in_top">
+    <a href="show_bug.cgi%3Fid=925.html#" onclick="return hide_mini_login_form('_top')">[x]</a>
+  </form>
+</li>
+
+
+  <li id="forgot_container_top">
+    <span class="separator">| </span>
+    <a id="forgot_link_top" href="show_bug.cgi%3Fid=925&amp;GoAheadAndLogIn=1.html#forgot"
+       onclick="return show_forgot_form('_top')">Forgot Password</a>
+    <form action="http://bugs.aviary.pl/token.cgi" method="post" id="forgot_form_top"
+          class="mini_forgot bz_default_hidden">
+      <label for="login_top">Login:</label>
+      <input name="loginname" size="20" id="login_top" required
+          type="email" placeholder="Your Email Address">
+      <input id="forgot_button_top" value="Reset Password" type="submit">
+      <input type="hidden" name="a" value="reqpw">
+      <input type="hidden" id="token_top" name="token"
+             value="1469820443-9LAwzEJ-XMOe2Kh3tl5sowYXAL6DBEFWCmmi644vzF0">
+      <a href="show_bug.cgi%3Fid=925.html#" onclick="return hide_forgot_form('_top')">[x]</a>
+    </form>
+  </li>
+</ul>
+    </div>
+  </div>
+
+  <div id="bugzilla-body">
+
+
+<script type="text/javascript">
+<!--
+
+//-->
+</script>
+
+<form name="changeform" id="changeform" method="post" action="http://bugs.aviary.pl/process_bug.cgi">
+
+  <input type="hidden" name="delta_ts" value="2014-08-15 11:14:41">
+  <input type="hidden" name="id" value="925">
+  <input type="hidden" name="token" value="1469820443-M_RV8vL-x_cSIXVw9XRlEiNe4Hehv-rY74ijx2gcyn0">
+<div class="bz_short_desc_container edit_form">
+     <a href="show_bug.cgi%3Fid=925.html"><b>Bug&nbsp;925</b></a> <span id="summary_container" class="bz_default_hidden">
+      - <span id="short_desc_nonedit_display">Firefox nie pozwolił żądać zainstalowania oprogramowania ...</span>
+     </span>
+
+    <div id="summary_input"><span class="field_label "
+    id="field_label_short_desc">
+
+
+  <a 
+      title="The bug summary is a short sentence which succinctly describes what the bug is about."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#short_desc"
+  >Summary:</a>
+
+</span>Firefox nie pozwolił żądać zainstalowania oprogramowania ...
+    </div>
+  </div>
+  <script type="text/javascript">
+    hideEditableField('summary_container',
+                      'summary_input',
+                      'summary_edit_action',
+                      'short_desc',
+                      'Firefox nie pozwolił żądać zainstalowania oprogramowania ...' );
+  </script>
+  <table class="edit_form">
+    <tr>
+      
+      <td id="bz_show_bug_column_1" class="bz_show_bug_column">     
+        <table>
+          <tr>
+    <th class="field_label">
+      <a href="page.cgi%3Fid=fields.html#bug_status">Status</a>:
+    </th>
+    <td id="bz_field_status">
+      <span id="static_bug_status">VERIFIED
+          FIXED
+      </span>
+    </td>
+  </tr>
+<tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+<tr><th class="field_label "
+    id="field_label_alias">
+
+
+  <a 
+      title="A short, unique name assigned to a bug in order to assist with looking it up and referring to it in other places in Bugzilla."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#alias"
+  >Alias:</a>
+
+</th>
+    <td>
+        None
+    </td>
+  </tr>
+<tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+<tr><th class="field_label "
+    id="field_label_product">
+
+
+  <a 
+      title="Bugs are categorised into Products and Components. Select a Classification to narrow down this list."
+      class="field_help_link"
+      href="describecomponents.cgi.html"
+  >Product:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_product" >Toolkit
+
+</td>
+    </tr>
+
+    
+    <tr class="bz_default_hidden"><th class="field_label "
+    id="field_label_classification">
+
+
+  <a 
+      title="Bugs are categorised into Classifications, Products and Components. classifications is the top-level categorisation."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#classification"
+  >Classification:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_classification" >Tłumaczenia oprogramowania
+
+</td>
+    </tr>
+        
+    
+    
+    <tr><th class="field_label "
+    id="field_label_component">
+
+
+  <a 
+      title="Components are second-level categories; each belongs to a particular Product. Select a Product to narrow down this list."
+      class="field_help_link"
+      href="describecomponents.cgi%3Fproduct=Toolkit.html"
+  >Component:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_component" >inne
+
+  (<a href="buglist.cgi%3Fcomponent=inne&amp;product=Toolkit&amp;bug_status=__open__.html"
+      target="_blank">show other bugs</a>)
+</td>
+    </tr>
+    <tr><th class="field_label "
+    id="field_label_version">
+
+
+  <a 
+      title="The version field defines the version of the software the bug was found in."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#version"
+  >Version:</a>
+
+</th>
+<td>nieokreślona
+  </td>
+    </tr>
+        
+    
+        
+    <tr><th class="field_label "
+    id="field_label_rep_platform">
+
+
+  <a 
+      title="The hardware platform the bug was observed on. Note: When searching, selecting the option &quot;All&quot; only finds bugs whose value for this field is literally the word &quot;All&quot;."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#rep_platform"
+  >Hardware:</a>
+
+</th>
+      <td class="field_value">Wszystkie
+        Wszystkie
+      </td>
+    </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          
+          <tr>
+      <th class="field_label">
+        <label  accesskey="i">
+          <a href="page.cgi%3Fid=fields.html#importance"><u>I</u>mportance</a></label>:
+      </th>
+      <td>P1
+       trywialny
+      </td>
+    </tr>
+          
+          <tr><th class="field_label "
+    id="field_label_assigned_to">
+
+
+  <a 
+      title="The person in charge of resolving the bug."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#assigned_to"
+  >Assignee:</a>
+
+</th>
+      <td><span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+      </td>
+    </tr>
+
+    <tr><th class="field_label "
+    id="field_label_qa_contact">
+
+
+  <a 
+      title="The person responsible for confirming this bug if it is unconfirmed, and for verifying the fix once the bug has been resolved."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#qa_contact"
+  >QA Contact:</a>
+
+</th>
+      <td><span class="vcard"><span class="fn">Staś Małolepszy :stas</span>
+</span>
+      </td>
+    </tr>
+    <script type="text/javascript">
+      assignToDefaultOnChange(['product', 'component'],
+        'splewako\x40aviary.pl',
+        'toolkit\x40l10n.bledy');
+    </script>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          <tr><th class="field_label "
+    id="field_label_bug_file_loc">
+
+
+  <a 
+      title="Bugs can have a URL associated with them - for example, a pointer to a web site where the problem is seen."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#bug_file_loc"
+  >URL:</a>
+
+</th>
+    <td>
+      <span id="bz_url_input_area">
+      </span>
+    </td>
+  </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+
+          
+<tr><th class="field_label "
+    id="field_label_dependson">
+
+
+  <a 
+      title="The bugs listed here must be resolved before this bug can be resolved."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#dependson"
+  >Depends on:</a>
+
+</th>
+
+  <td>
+    <span id="dependson_input_area">
+    </span>
+
+  </td>
+  </tr>
+  
+  <tr><th class="field_label "
+    id="field_label_blocked">
+
+
+  <a 
+      title="This bug must be resolved before the bugs listed in this field can be resolved."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#blocked"
+  >Blocks:</a>
+
+</th>
+
+  <td>
+    <span id="blocked_input_area">
+    </span>
+<a class="bz_bug_link 
+          bz_status_VERIFIED  bz_closed"
+   title="VERIFIED FIXED - [tracking] Lokalizacja Firefoksa 2.0"
+   href="show_bug.cgi%3Fid=623.html">623</a> 
+  </td>
+  </tr>
+
+    <tr>
+      <th>&nbsp;</th>
+
+      <td id="show_dependency_tree_or_graph">
+        Show dependency <a href="showdependencytree.cgi%3Fid=925&amp;hide_resolved=1.html">tree</a>
+
+          /&nbsp;<a href="showdependencygraph.cgi%3Fid=925.html">graph</a>
+      </td>
+    </tr>
+          
+        </table>
+      </td>
+      <td>
+        <div class="bz_column_spacer">&nbsp;</div>
+      </td>
+      
+      <td id="bz_show_bug_column_2" class="bz_show_bug_column">
+        <table>
+        <tr>
+    <th class="field_label">
+      Reported:
+    </th>
+    <td>2006-08-30 20:25 CEST by <span class="vcard"><span class="fn">Wojciech Kapusta</span>
+</span>
+    </td>
+  </tr>
+  
+  <tr>
+    <th class="field_label">
+      Modified:
+    </th>
+    <td>2014-08-15 11:14 CEST
+      (<a href="show_activity.cgi%3Fid=925.html">History</a>)
+    </td>
+  
+  </tr>
+<tr>
+      <th class="field_label">
+        <label  accesskey="a">
+          CC List:
+        </label>
+      </th>
+      <td>8 
+          users
+          <span id="cc_edit_area_showhide_container" class="bz_default_hidden">
+            (<a href="show_bug.cgi%3Fid=925.html#" id="cc_edit_area_showhide">show</a>)
+          </span>
+        <div id="cc_edit_area">
+          <br>
+            <select id="cc" multiple="multiple" size="5" >
+                <option value="bpiec">bpiec</option>
+                <option value="cleriic">cleriic</option>
+                <option value="gandalf">gandalf</option>
+                <option value="hubert+bap">hubert+bap</option>
+                <option value="mwawoczny">mwawoczny</option>
+                <option value="pitreck">pitreck</option>
+                <option value="prefiks">prefiks</option>
+                <option value="w.kapusta">w.kapusta</option>
+            </select>
+        </div>
+          <script type="text/javascript">
+            hideEditableField( 'cc_edit_area_showhide_container', 
+                               'cc_edit_area', 
+                               'cc_edit_area_showhide', 
+                               '', 
+                               '');  
+          </script>
+      </td>
+    </tr>
+
+<tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+<tr><th class="field_label "
+    id="field_label_see_also">
+
+
+  <a 
+      title="This allows you to refer to bugs in other installations. You can enter a URL to a bug in the 'Add Bug URLs' field to note that that bug is related to this one. You can enter multiple URLs at once by separating them with whitespace. You should normally use this field to refer to bugs in other installations. For bugs in this installation, it is better to use the Depends on and Blocks fields."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#see_also"
+  >See Also:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_see_also" >
+
+</td>
+    </tr> 
+
+<tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+
+
+
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+          <hr id="bz_top_half_spacer">
+      </td>
+    </tr>
+  </table>
+
+  <table id="bz_big_form_parts">
+  <tr>
+  <td>
+
+    
+<script type="text/javascript">
+<!--
+function toggle_display(link) {
+    var table = document.getElementById("attachment_table");
+    var view_all = document.getElementById("view_all");
+    var hide_obsolete_url_parameter = "&hide_obsolete=1";
+    // Store current height for scrolling later
+    var originalHeight = table.offsetHeight;
+    var rows = YAHOO.util.Dom.getElementsByClassName(
+        'bz_tr_obsolete', 'tr', table);
+
+    for (var i = 0; i < rows.length; i++) {
+        bz_toggleClass(rows[i], 'bz_default_hidden');
+    }
+
+    if (YAHOO.util.Dom.hasClass(rows[0], 'bz_default_hidden')) {
+        link.innerHTML = "Show Obsolete";
+        view_all.href = view_all.href + hide_obsolete_url_parameter 
+    }
+    else {
+        link.innerHTML = "Hide Obsolete";
+        view_all.href = view_all.href.replace(hide_obsolete_url_parameter,"");
+    }
+
+    var newHeight = table.offsetHeight;
+    // This scrolling makes the window appear to not move at all.
+    window.scrollBy(0, newHeight - originalHeight);
+
+    return false;
+}
+//-->
+</script>
+
+<br>
+<table id="attachment_table">
+  <tr id="a0">
+    <th colspan="3" class="left">
+      Attachments
+    </th>
+  </tr>
+
+
+
+  <tr class="bz_attach_footer">
+    <td colspan="3">
+        <a href="attachment.cgi%3Fbugid=925&amp;action=enter.html">Add an attachment</a>
+        (proposed patch, testcase, etc.)
+    </td>
+  </tr>
+</table>
+<br>
+
+  </td>
+  <td>
+  </td>
+  </tr></table>
+
+  
+  <div id="comments"><script src="js/comments.js" type="text/javascript">
+</script>
+
+<script type="text/javascript">
+<!--
+  /* Adds the reply text to the 'comment' textarea */
+  function replyToComment(id, real_id, name) {
+      var prefix = "(In reply to " + name + " from comment #" + id + ")\n";
+      var replytext = "";
+        /* pre id="comment_name_N" */
+        var text_elem = document.getElementById('comment_text_'+id);
+        var text = getText(text_elem);
+        replytext = prefix + wrapReplyText(text);
+
+
+      /* <textarea id="comment"> */
+      var textarea = document.getElementById('comment');
+      if (textarea.value != replytext) {
+          textarea.value += replytext;
+      }
+
+      textarea.focus();
+  } 
+//-->
+</script>
+
+
+<!-- This auto-sizes the comments and positions the collapse/expand links 
+     to the right. -->
+<table class="bz_comment_table">
+<tr>
+<td>
+<div id="c0" class="bz_comment bz_first_comment">
+
+      <div class="bz_first_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=925.html#c0">Description</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Wojciech Kapusta</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2006-08-30 20:25:53 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Informacja: Program Firefox nie pozwolił tej witrynie (www.bugs.org) żądać
+zainstalowania oprogramowania na tym komputerze.
+
+1. Nielogiczne - witryna może sobie żądać do woli i Firefox tak czy owak nie ma
+na to wpływu.
+2. Programów się nie instaluje NA tylko W komputerze. Na komputerze można sobie
+postawić kawę (piwo, śniadanie, portret B. Gatesa itp.).
+3. Nie podoba mi się styl.
+
+Proponuję krótko i zwięźle:
+&quot;Program Firefox nie zezwolił tej witrynie (www.bugs.org) na instalację
+oprogramowania.&quot;</pre>
+    </div>
+
+    <div id="c1" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=925.html#c1">Comment 1</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2006-09-07 15:36:40 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Zob. <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=308060">https://bugzilla.mozilla.org/show_bug.cgi?id=308060</a>
+
+Skłaniam się ku invalid...</pre>
+    </div>
+
+    <div id="c2" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=925.html#c2">Comment 2</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Wojciech Kapusta</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2006-09-07 16:28:52 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Zdecydowanie mądre tam rzeczy piszą, jednak nie mnie zabierać głos w sprawach
+języka angielskiego.
+
+Rzecz wygląda tak: witryna chce zainstalować oprogramowanie. Firefox jej nie
+pozwala. Natomiast na to, czy witryna będzie chciała je instalować czy nie -
+czyli na to chcenie (żądanie) - Firefox raczej wpływu nie ma. Na to wpływ mają
+autorzy strony, zamieszczając odpowiednie zasoby, albo my, chcąc otworzyć w
+Firefoksie jakiś plik. Stąd moja wizja, że Firefox pozwala albo nie instalować,
+ale na żądanie jako takie nie ma on wpływu.
+
+Chyba że mechanizm ten jest bardziej skomplikowany i kompletnie nie rozumiem tej
+procedury?
+</pre>
+    </div>
+
+    <div id="c3" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=925.html#c3">Comment 3</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2006-09-09 19:56:38 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Wojciech:
+Firefox pozwala na żądanie zainstalowania oprogramowania: wyświetla się okno
+instalacji z tekstem &quot;Zażądano instalacji (...)&quot; (użytkownik decyduje, czy
+instalować, czy nie)
+Firefox nie pozwala na żądanie: nie wyświetla się okno instalacji
+
+Co do &quot;na/w komputerze&quot;:
+<a href="http://slowniki.pwn.pl/poradnia/lista.php?id=6606">http://slowniki.pwn.pl/poradnia/lista.php?id=6606</a>
+<a href="http://slowniki.pwn.pl/poradnia/lista.php?id=67">http://slowniki.pwn.pl/poradnia/lista.php?id=67</a>
+
+<span class="quote">&gt; &quot;Program Firefox nie zezwolił tej witrynie (www.bugs.org) na instalację</span >
+oprogramowania.&quot;
+
+Tak było, ale jest to niezgodne z stanem faktycznym. To użytkownik podejmuje
+decyzję o instalacji, nie Firefox.
+
+Jeśli nikt nie ma pomysłu na ładniejsze (niż obecne) i zgodne z rzeczywistością
+określenie - to dla mnie WONTFIX.</pre>
+    </div>
+
+    <div id="c4" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=925.html#c4">Comment 4</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2006-09-09 20:05:04 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">... a raczej INVALID :-)</pre>
+    </div>
+
+    <div id="c5" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=925.html#c5">Comment 5</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2006-09-10 00:29:32 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">-&gt; toolkit</pre>
+    </div>
+
+    <div id="c6" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=925.html#c6">Comment 6</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Wojciech Kapusta</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2006-09-11 12:10:18 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text"><span class="quote">&gt; Co do &quot;na/w komputerze&quot;:
+&gt; <a href="http://slowniki.pwn.pl/poradnia/lista.php?id=6606">http://slowniki.pwn.pl/poradnia/lista.php?id=6606</a>
+&gt; <a href="http://slowniki.pwn.pl/poradnia/lista.php?id=67">http://slowniki.pwn.pl/poradnia/lista.php?id=67</a></span >
+
+Pięknie, ale się z tym nie zgodzę. Zresztą sam autor tych porad stwierdza:
+&quot;Zasadniczo przy komputerze lub z komputerem, potocznie na komputerze.&quot;, co
+oznacza, że określenie 'na komputerze' jest potoczne, do tego skrajnie
+bezsensowne (popatrzcie sami, bez uprzedzeń: informatyk pracuje na
+komputerze???). W drugiej poradzie autor stwierdza: &quot;To zależy, co chciałaby
+Pani zrobić. Jeśli zrobić znaczy np. 'wymienić jakąś część', to w komputerze, a
+jeśli 'napisać tekst', to na komputerze, podobnie jak na maszynie (do pisania).&quot;
+W naszym przypadku mamy właśnie to 'zrobienie', czyli instalację.
+
+Zrobicie jak chcecie. Ja w każdym razie zgłaszam VOTUM SEPARATUM.</pre>
+    </div>
+
+    <div id="c7" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=925.html#c7">Comment 7</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2006-09-11 12:12:08 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">No coz, dla mnie ten zwrot jest absurdalny. Czy jest wiecej miejsc gdzie Firefox
+mi na cos pozwala albo mi czegos nie pozwala?
+
+Akt pozwalania, dla mnie, kojarzy sie bezposrednio z posiadaniem woli.
+
+Angielskie &quot;App prevented X&quot; to zupelnie co innego niz polskie &quot;nie pozwolil&quot;.
+
+Takze &quot;zadac&quot; wydaje mi sie byc zbyt... mocne. Ostre, uzytkownicy nie lubieja
+jak w komputerze cos zada albo zabrania. (zabrania to jeszcze, firewall moze
+zabronic czegos dla ich bezpieczenstwa).
+
+No i, to co napisal wojciech. Nie mozna zabronic komus zadac. Mozna nie zgodzic
+sie na zadania... To brzmi jak &quot;zabraniam Ci chciec&quot;.
+
+Propozycja: Firefox zablokowal próbę instalacji oprogramowania
+
+<span class="quote">&gt; Tak było, ale jest to niezgodne z stanem faktycznym. To użytkownik podejmuje</span >
+decyzję o instalacji, nie Firefox.
+
+Hmm, no nie. Z tego co napisales wynika:
+<span class="quote">&gt; Firefox nie pozwala na żądanie: nie wyświetla się okno instalacji</span >
+
+Skoro nie wyswietla sie okno, to user nie decyduje per case, prawda?</pre>
+    </div>
+
+    <div id="c8" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=925.html#c8">Comment 8</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2006-09-11 13:33:28 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text"><span class="quote">&gt; Propozycja: Firefox zablokowal próbę instalacji oprogramowania</span >
+
+Nie próbę, tylko okno z prośbą o zgodę na instalację oprogramowania.</pre>
+    </div>
+
+    <div id="c9" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=925.html#c9">Comment 9</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2006-09-11 15:33:59 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Czyli probe. Okno pojawia sie gdy skrypt *probuje* cos zainstalowac. Skoro okno
+sie nie pojawia, to dlatego, ze zamiast zapytac usera, aplikacja zablokowala ta
+probe bez  pytania go.
+
+Tak rozumiem to co sie tam dzieje.</pre>
+    </div>
+
+    <div id="c10" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=925.html#c10">Comment 10</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Staś Małolepszy :stas</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2006-09-12 02:21:01 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Przybliżony strzał w kierunku, w którym zacząłem myśleć:
+
+(Ze względów bezpieczeństwa/czegokolwiek,) okno z prośbą o zgodą na
+zainstalowanie oprogramowania z witryny %s nie zostało wyświetlone.
+
+Jutro sprobuję to jakoś wygładzić.
+
+BTW. Czy w poczatkowej wersji polskiej nie powinno być &quot;Przeglądarka Firefox nie
+pozwoliła...&quot;?</pre>
+    </div>
+
+    <div id="c11" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=925.html#c11">Comment 11</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Staś Małolepszy :stas</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2006-09-12 09:03:28 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">MP:
+Ze względów bezpieczeństwa okno z prośbą o zgodę użytkownika na zainstalowanie
+oprogramowania z witryny %S nie zostało wyświetlone.
+
+Zastanawiam się, czy &quot;użytkownika&quot; jest potrzebne oraz czy zamiast &quot;nie zostało
+wyświetlone&quot; nie byłoby lepsze &quot;zostało zablokowane&quot;.</pre>
+    </div>
+
+    <div id="c12" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=925.html#c12">Comment 12</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Wojciech Kapusta</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2006-09-12 12:00:53 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">
+<span class="quote">&gt; Ze względów bezpieczeństwa okno z prośbą o zgodę na zainstalowanie
+&gt; oprogramowania z witryny %S nie zostało wyświetlone.</span >
+
+Faktycznie, bez użytkownika jest dobrze , ale chyba jeszcze lepiej:
+
+<span class="quote">&gt; Ze względów bezpieczeństwa okno z prośbą o zgodę na zainstalowanie
+&gt; oprogramowania z witryny %S zostało zablokowane.</span >
+
+A co powiecie na taką propozycję:
+
+&quot;Ze względów bezpieczeństwa program Firefox zablokował okno z prośbą o zgodę na
+zainstalowanie oprogramowania z witryny %S.&quot;
+
+</pre>
+    </div>
+
+    <div id="c13" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=925.html#c13">Comment 13</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Staś Małolepszy :stas</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2006-09-12 13:29:36 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(W odpowiedzi na komentarz #12)
+
+<span class="quote">&gt; &quot;Ze względów bezpieczeństwa program Firefox zablokował okno z prośbą o zgodę na
+&gt; zainstalowanie oprogramowania z witryny %S.&quot;</span >
+
+Wiem, I'm being paranoid, ale właśnie spojrzałem na to zdanie i zobaczyłem
+Firefoksa, który zablokował z prośbą jakies okno. 
+
+Jestem za:
+
+Ze względów bezpieczeństwa okno z prośbą o zgodę na zainstalowanie
+oprogramowania z witryny %S nie zostało wyświetlone.
+
+</pre>
+    </div>
+
+    <div id="c14" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=925.html#c14">Comment 14</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Wojciech Kapusta</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2006-09-12 14:17:23 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Racja. Napiszmy więc: &quot;Ze względów bezpieczeństwa okno z prośbą o zgodę na
+zainstalowanie
+oprogramowania z witryny %S zostało zablokowane.&quot;
+
+Uzasadnienie:
+Niewyświetlenie okna może mieć różne przyczyny. 'Zablokowanie' określa wyraźnie,
+że Firefox je zablokował, bo mu się z podanych względów nie podobało.</pre>
+    </div>
+
+    <div id="c15" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=925.html#c15">Comment 15</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2006-09-12 14:52:29 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Już wolę wersję Gandalfa. Pamiętajcie, że to się powinno mieścić w jednej linii
+w 1024x768 (a miło by było, gdyby też w 800x600).
+
+</pre>
+    </div>
+
+    <div id="c16" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=925.html#c16">Comment 16</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2006-09-12 14:54:37 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">... nie mówiąc o tym, że dodajecie jakieś rzeczy, których nie ma w oryginale.
+Jakie &quot;względy bezpieczeństwa&quot;?</pre>
+    </div>
+
+    <div id="c17" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=925.html#c17">Comment 17</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Zbigniew Braniecki</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2006-09-12 15:54:56 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Moim zdaniem wersja gandalfa jest lepsza (a co... wszyscy moi rozmowcy co chwila
+pisza, ze zgadzaja sie sami ze soba, a ja nie moge?)</pre>
+    </div>
+
+    <div id="c18" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=925.html#c18">Comment 18</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2006-09-12 18:27:53 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">W innych językach:
+
+de: xpinstallPromptWarning=%S hat diese Website (%S) daran gehindert, Sie zu
+fragen, ob Software auf Ihrem Computer installiert werden soll.
+
+en-US: xpinstallPromptWarning=%S prevented this site (%S) from asking you to
+install software on your computer.
+</pre>
+    </div>
+
+    <div id="c19" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=925.html#c19">Comment 19</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Staś Małolepszy :stas</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2006-09-12 18:43:24 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Wersja Gandalfa jest OK, ale w sumie po całej tej dyskusji, którą mamy powyżej,
+wybrać wersję, która tak naprawdę mówi najmniej i też nie do końca prawdę, to
+chyba szkoda :-)
+
+W obronie względów bezpieczeństwa powiem, że nie ma tego w wersji angielskiej,
+bo chłopaki nie umieli tego powiedzieć:
+
+- &quot;what we need to be saying is &quot;To protect your
+sanity, Firefox prevented this site (www.securityfocus.com) from prompting you
+to install software on your computer.&quot; The second change is easy, but I'm not
+quite sure how to put &quot;To protect your sanity&quot; in just a few words.&quot;
+
+- &quot;When in doubt, take it out. There's just no way four words can express &quot;Because
+it's possible for a site to throw up the modal XPInstall prompt, and to detect
+if you cancel and throw it up again, %S prevented...&quot;&quot;
+
+Nie rozumiem wersji niemieckiej, ale francuska jest dokładnym tłumaczeniem
+wersji Gandalfa:
+
+%S a empêché ce site (%S) d'installer un logiciel sur votre ordinateur.
+(%S uniemożliwił tej stronie instalację oprogramowania na twoim komputerze)
+
+Zgaduję, że w ten sposób pomagam zatwierdzić wersję Gandalfa - w porządku, nie
+mówię, że jest zła, szukałem jednak czegoś, co będzie bardziej odpowiadało
+rzeczywistości - zgodnie z zarzutem opisanym na bugzilli:
+
+&quot;We get lots of duplicate invalid reports of the XPInstall blocked message
+reporting the wrong site, because we are telling users the wrong thing: the
+purpose of the whitelist is to stop sites from annoying users by throwing up a
+modal install dialog, not to keep them from having to decide whether to trust
+the site actually serving the XPI.&quot;
+(<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=308060">https://bugzilla.mozilla.org/show_bug.cgi?id=308060</a>)
+
+Co do długości tekstu, to chyba moglibyśmy go złamać w połowie, gdyby wybrany
+był faktycznie za długi?</pre>
+    </div>
+
+    <div id="c20" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=925.html#c20">Comment 20</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2006-09-12 18:50:55 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(W odpowiedzi na komentarz #19)
+<span class="quote">&gt; - &quot;When in doubt, take it out. There's just no way four words can express &quot;Because
+&gt; it's possible for a site to throw up the modal XPInstall prompt, and to detect
+&gt; if you cancel and throw it up again, %S prevented...&quot;&quot;
+&gt; 
+&gt; Nie rozumiem wersji niemieckiej, ale francuska jest dokładnym tłumaczeniem
+&gt; wersji Gandalfa:</span >
+
+Niemiecka jest dosłownym tłumaczeniem en-US, wrzuciłem ją tu głównie dla
+Wojciecha. :)
+ 
+<span class="quote">&gt; %S a empêché ce site (%S) d'installer un logiciel sur votre ordinateur.
+&gt; (%S uniemożliwił tej stronie instalację oprogramowania na twoim komputerze)</span >
+
+Nie ma tu nic o &quot;oknie&quot;, &quot;próbie&quot;, &quot;proszeniu&quot;, tylko wprost o instalacji. To
+pasuje do en-US *sprzed* poprawki buga, o którym mówisz... 
+ 
+<span class="quote">&gt; Co do długości tekstu, to chyba moglibyśmy go złamać w połowie, gdyby wybrany
+&gt; był faktycznie za długi?</span >
+
+On się złamie sam, ale nie wygląda to ładnie. Poza tym użytkownicy nie czytają
+długich komunikatów.
+
+</pre>
+    </div>
+
+    <div id="c21" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=925.html#c21">Comment 21</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Bartosz Piec</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2006-09-12 19:19:12 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(W odpowiedzi na komentarz #16)
+<span class="quote">&gt; ... nie mówiąc o tym, że dodajecie jakieś rzeczy, których nie ma w oryginale.
+&gt; Jakie &quot;względy bezpieczeństwa&quot;?</span >
+
+Nadal uważam, że to jest lokalizacja, a nie tłumaczenie.
+
+I w pełni zgadzam się ze Staszyną - wersja z &quot;bezpieczeństwem&quot; lepiej oddaje to,
+co autorzy _chcieli_ powiedzieć.</pre>
+    </div>
+
+    <div id="c22" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=925.html#c22">Comment 22</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2006-09-12 20:15:31 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">A może:
+Program Firefox nie pozwolił tej witrynie (www.bugs.org) prosić o
+zainstalowanie oprogramowania na tym komputerze.
+
+Ewentualnie:
+Program Firefox nie pozwolił tej witrynie (www.bugs.org) wyświetić pytania o
+instalację oprogramowania na tym komputerze.</pre>
+    </div>
+
+    <div id="c23" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=925.html#c23">Comment 23</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2006-09-12 20:48:39 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(W odpowiedzi na komentarz #22)
+<span class="quote">&gt; Program Firefox nie pozwolił tej witrynie (www.bugs.org) wyświetić pytania o
+&gt; instalację oprogramowania na tym komputerze.</span >
+
+To mi pasuje.
+</pre>
+    </div>
+
+    <div id="c24" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=925.html#c24">Comment 24</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Staś Małolepszy :stas</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2006-09-13 02:10:27 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text"><span class="quote">&gt; &gt; Program Firefox nie pozwolił tej witrynie (www.bugs.org) wyświetić pytania o
+&gt; &gt; instalację oprogramowania na tym komputerze.</span >
+
+Na wypadek, gdybyś kopiował, uważaj na literówkę w &quot;wyświetlić&quot;.
+
+</pre>
+    </div>
+
+    <div id="c25" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=925.html#c25">Comment 25</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Wawoczny</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2006-09-13 20:51:23 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Tak się przyglądam dyskusji, moim zdaniem wersja &quot;Ze względów bezpieczeństwa
+okno z prośbą o zgodę na zainstalowanie
+oprogramowania z witryny %S nie zostało wyświetlone/zostało zablokowane&quot; jest
+najlepsza, a przede wszystkim czytelna i jasna...
+
+PS. Powtarzam się, to ma być lokalizacja, a nie tłumaczenie kropka w kropkę,
+naszym zadaniem jest oddać sens oryginalnego zdania ;)</pre>
+    </div>
+
+    <div id="c26" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=925.html#c26">Comment 26</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2006-09-15 21:16:15 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">(W odpowiedzi na komentarz #16)
+<span class="quote">&gt; ... nie mówiąc o tym, że dodajecie jakieś rzeczy, których nie ma w oryginale.
+&gt; Jakie &quot;względy bezpieczeństwa&quot;?</span >
+
+To może dodam, że zdadzam się z tym.
+
+Lokalizacja może i nie jest dokładnym tłumaczeniem - sam zaproponowałem już
+kilka drobnych odstępstw - ale to &quot;Ze względów bezpieczeństwa&quot; uważam za przesadę.
+
+</pre>
+    </div>
+
+    <div id="c27" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=925.html#c27">Comment 27</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Marek Stępień</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2006-09-16 23:10:16 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Po dyskusji na #aviarypl:
+
+-xpinstallPromptWarning=Program %S nie pozwolił tej witrynie (%S) żądać
+zainstalowania oprogramowania na tym komputerze.
++xpinstallPromptWarning=Program %S nie pozwolił tej witrynie (%S) zapytać o
+zgodę na instalację oprogramowania.
+
+Poprawione w gałęzi 1.8 i w trunk.</pre>
+    </div>
+
+    <div id="c28" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=925.html#c28">Comment 28</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Hubert Gajewski</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2008-07-13 01:54:04 CEST
+        </span>
+
+      </div>
+
+
+
+
+<pre class="bz_comment_text">Verified (Mozilla/5.0 (X11; U; Linux i686; pl-PL; rv:1.9) Gecko/2008061015 Firefox/3.0)</pre>
+    </div>
+
+
+  
+
+</td>
+<td>
+</td>
+</tr></table>
+  </div>
+
+    <hr><div id="add_comment" class="bz_section_additional_comments">
+      <table>
+        <tr>
+          <td>
+            <fieldset>
+              <legend>Note</legend>
+              You need to
+              <a href="show_bug.cgi%3Fid=925&amp;GoAheadAndLogIn=1.html">log in</a>
+              before you can comment on or make changes to this bug.
+            </fieldset>
+          </td>
+        </tr> 
+      </table>
+  </div>        
+
+</form>
+
+<hr>
+<ul class="related_actions">
+    <li><a href="show_bug.cgi%3Fformat=multiple&amp;id=925.html">Format For Printing</a></li>
+    <li>&nbsp;-&nbsp;<a href="show_bug.cgi%3Fctype=xml&amp;id=925">XML</a></li>
+    <li>&nbsp;-&nbsp;<a href="enter_bug.cgi%3Fcloned_bug_id=925.html">Clone This Bug</a></li>
+    
+    <li>&nbsp;-&nbsp;<a href="show_bug.cgi%3Fid=925.html#">Top of page </a></li>
+    </ul>
+
+<br>
+</div>
+
+    <div id="footer">
+      <div class="intro"></div>
+<ul id="useful-links">
+  <li id="links-actions"><ul class="links">
+  <li><a href="index.html">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi.html">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi.html">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi.html">Search</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="http://bugs.aviary.pl/buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input type="hidden" id="no_redirect_bottom" name="no_redirect" value="0">
+    <script type="text/javascript">
+      if (history && history.replaceState) {
+        var no_redirect = document.getElementById("no_redirect_bottom");
+        no_redirect.value = 1;
+      }
+    </script>
+    <input class="txt" type="text" id="quicksearch_bottom" name="quicksearch" 
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search" 
+           id="find_bottom"></form>
+  <a href="page.cgi%3Fid=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="report.cgi.html">Reports</a></li>
+
+  <li>
+      <span class="separator">| </span>
+        <a href="request.cgi.html">Requests</a></li>
+
+
+  <li>
+        <span class="separator">| </span>
+        <a href="https://bugzilla.readthedocs.org/en/5.0/using/understanding.html" target="_blank">Help</a>
+      </li>
+    
+      <li id="new_account_container_bottom">
+        <span class="separator">| </span>
+        <a href="createaccount.cgi.html">New&nbsp;Account</a>
+      </li>
+
+    <li id="mini_login_container_bottom">
+  <span class="separator">| </span>
+  <a id="login_link_bottom" href="show_bug.cgi%3Fid=925&amp;GoAheadAndLogIn=1.html"
+     onclick="return show_mini_login_form('_bottom')">Log In</a>
+
+  <form action="show_bug.cgi%3Fid=925.html" method="POST"
+        class="mini_login bz_default_hidden"
+        id="mini_login_bottom">
+    <input id="Bugzilla_login_bottom" required
+           name="Bugzilla_login" class="bz_login"
+        type="email" placeholder="Email Address">
+    <input class="bz_password" name="Bugzilla_password" type="password"
+           id="Bugzilla_password_bottom" required
+           placeholder="Password">
+    <input type="hidden" name="Bugzilla_login_token"
+           value="1469820443-8bEkPx7geg5ImGrLoKLKfdmi44X1arHlr1RldotDTAk">
+    <input type="submit" name="GoAheadAndLogIn" value="Log in"
+            id="log_in_bottom">
+    <a href="show_bug.cgi%3Fid=925.html#" onclick="return hide_mini_login_form('_bottom')">[x]</a>
+  </form>
+</li>
+
+
+  <li id="forgot_container_bottom">
+    <span class="separator">| </span>
+    <a id="forgot_link_bottom" href="show_bug.cgi%3Fid=925&amp;GoAheadAndLogIn=1.html#forgot"
+       onclick="return show_forgot_form('_bottom')">Forgot Password</a>
+    <form action="http://bugs.aviary.pl/token.cgi" method="post" id="forgot_form_bottom"
+          class="mini_forgot bz_default_hidden">
+      <label for="login_bottom">Login:</label>
+      <input name="loginname" size="20" id="login_bottom" required
+          type="email" placeholder="Your Email Address">
+      <input id="forgot_button_bottom" value="Reset Password" type="submit">
+      <input type="hidden" name="a" value="reqpw">
+      <input type="hidden" id="token_bottom" name="token"
+             value="1469820443-9LAwzEJ-XMOe2Kh3tl5sowYXAL6DBEFWCmmi644vzF0">
+      <a href="show_bug.cgi%3Fid=925.html#" onclick="return hide_forgot_form('_bottom')">[x]</a>
+    </form>
+  </li>
+</ul>
+  </li>
+
+  
+
+
+
+
+  
+</ul>
+
+      <div class="outro"></div>
+    </div>
+
+  </body>
+</html>

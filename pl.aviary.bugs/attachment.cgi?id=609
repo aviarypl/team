@@ -1,0 +1,80 @@
+Index: mail/chrome/messenger/addressbook/abCardOverlay.dtd
+===================================================================
+RCS file: /l10n/l10n/pl/mail/chrome/messenger/addressbook/abCardOverlay.dtd,v
+retrieving revision 1.2
+diff -u -r1.2 abCardOverlay.dtd
+--- mail/chrome/messenger/addressbook/abCardOverlay.dtd	25 May 2005 13:16:02 -0000	1.2
++++ mail/chrome/messenger/addressbook/abCardOverlay.dtd	12 Oct 2005 17:25:00 -0000
+@@ -80,7 +80,7 @@
+ <!ENTITY CellularNumber.label "Telefon komórkowy:">
+ <!ENTITY CellularNumber.accesskey "m">
+ <!ENTITY Address.tab "Adres">
+-<!ENTITY Home.box "Domowy">
++<!ENTITY Home.box "Domowy (aby mapa działała, zamiast nazwy Państwa wprowadź jego kod)">
+ <!ENTITY HomeAddress.label "Adres:">
+ <!ENTITY HomeAddress2.label "">
+ <!ENTITY HomeCity.label "Miasto:">
+@@ -88,7 +88,7 @@
+ <!ENTITY HomeZipCode.label "Kod pocztowy:">
+ <!ENTITY HomeCountry.label "Państwo:">
+ <!ENTITY HomeWebPage.label "Prywatna strona WWW:">
+-<!ENTITY Work.box "Służbowy">
++<!ENTITY Work.box "Służbowy (aby mapa działała, zamiast nazwy Państwa wprowadź jego kod)">
+ <!ENTITY JobTitle.label "Stanowisko:">
+ <!ENTITY Department.label "Dział:">
+ <!ENTITY Company.label "Firma/Organizacja:">
+Index: mail/chrome/messenger/addressbook/abNewCardDialog.dtd
+===================================================================
+RCS file: /l10n/l10n/pl/mail/chrome/messenger/addressbook/abNewCardDialog.dtd,v
+retrieving revision 1.3
+diff -u -r1.3 abNewCardDialog.dtd
+--- mail/chrome/messenger/addressbook/abNewCardDialog.dtd	8 Jun 2005 14:32:50 -0000	1.3
++++ mail/chrome/messenger/addressbook/abNewCardDialog.dtd	12 Oct 2005 17:25:00 -0000
+@@ -40,7 +40,7 @@
+ <!ENTITY CellularNumber.label "Telefon komórkowy:">
+ <!ENTITY CellularNumber.accesskey "K">
+ <!ENTITY Address.tab "Adres">
+-<!ENTITY Home.box "Domowy">
++<!ENTITY Home.box "Domowy (aby mapa działała, zamiast nazwy Państwa wprowadź jego kod)">
+ <!ENTITY HomeAddress.label "Adres:">
+ <!ENTITY HomeAddress2.label "">
+ <!ENTITY HomeCity.label "Miasto:">
+@@ -48,7 +48,7 @@
+ <!ENTITY HomeZipCode.label "Kod pocztowy:">
+ <!ENTITY HomeCountry.label "Państwo:">
+ <!ENTITY HomeWebPage.label "Prywatna strona WWW:">
+-<!ENTITY Work.box "Służbowy">
++<!ENTITY Work.box "Służbowy (aby mapa działała, zamiast nazwy Państwa wprowadź jego kod)">
+ <!ENTITY JobTitle.label "Stanowisko:">
+ <!ENTITY Department.label "Dział:">
+ <!ENTITY Company.label "Firma/Organizacja:">
+Index: mail/chrome/messenger-region/region.properties
+===================================================================
+RCS file: /l10n/l10n/pl/mail/chrome/messenger-region/region.properties,v
+retrieving revision 1.3.2.2
+diff -u -r1.3.2.2 region.properties
+--- mail/chrome/messenger-region/region.properties	11 Oct 2005 02:15:26 -0000	1.3.2.2
++++ mail/chrome/messenger-region/region.properties	12 Oct 2005 17:25:02 -0000
+@@ -1,8 +1,20 @@
++#
++# messenger.properties
++# mailnews.js
+ mailnews.start_page.url=chrome://messenger/content/start.xhtml
+ releaseNotesURL=http://www.thunderbird.pl/conowego.html
+ mailnews.hints_and_tips.url=http://www.mozilla.org/support/thunderbird/
+ messenger.throbber.url=http://www.thunderbird.pl/
+-mail.addr_book.mapit_url.format=http://www.mapquest.com/maps/map.adp?country=@CO&address=@A1%20@A2&city=@CI&state=@ST&zipcode=@ZI
++# To make mapit buttons to disappear in the addressbook, specify empty string.  For example:
++# mail.addr_book.mapit_url.format=
++# The format for "mail.addr_book.mapit_url.format" is:
++# @A1 == address, part 1
++# @A2 == address, part 2
++# @CI == city
++# @ST == state
++# @ZI == zip code
++# @CO == country
++mail.addr_book.mapit_url.format=http://www.maporama.com/share/map.asp?COUNTRYCODE=@CO&_XgoGCAddress=@A1%20@A2&Zip=@ZI&State=@ST&_XgoGCTownName=@CI&LANGUAGE=Pl&SEARCH_ADDRESS=submit
+ # This is the fallback URL for release notes. Do not change this
+ # unless you are providing localized release notes!                
+ app.update.url.details=http://www.mozilla.org/products/thunderbird/releases/
+

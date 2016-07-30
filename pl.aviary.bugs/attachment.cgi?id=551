@@ -1,0 +1,600 @@
+Index: security/manager/chrome/pipnss/security.properties
+===================================================================
+RCS file: /l10n/l10n/pl/security/manager/chrome/pipnss/security.properties,v
+retrieving revision 1.1
+diff -u -r1.1 security.properties
+--- security/manager/chrome/pipnss/security.properties	16 Apr 2005 17:24:42 -0000	1.1
++++ security/manager/chrome/pipnss/security.properties	19 Jul 2005 05:28:34 -0000
+@@ -23,11 +23,11 @@
+ # newlines. These are used to lay out the dialog.
+ 
+ Title=Zabezpieczenia
+-MixedContentMessage=Za\u017c\u0105dano po\u0142\u0105czenia szyfrowanego ze stron\u0105, kt\u00f3ra zawiera elementy niezaszyfrowane. Prawdopodobie\u0144stwo odczytania niekt\u00f3rych wy\u015bwietlanych oraz wprowadzanych informacji na tej stronie przez osoby trzecie jest du\u017ce.
+-LeaveSecureMessage=Po\u0142\u0105czenie szyfrowane z t\u0105 stron\u0105 zostanie zako\u0144czone. Od tej chwili \u017cadne wysy\u0142ane ani odbierane dane nie b\u0119d\u0105 wi\u0119cej szyfrowane. Prawdopodobie\u0144stwo odczytania przesy\u0142anych danych przez osoby trzecie jest du\u017ce.
++MixedContentMessage=Za\u017C\u0105dano po\u0142\u0105czenia szyfrowanego ze stron\u0105, kt\u00F3ra zawiera elementy niezaszyfrowane. Istnieje niebezpiecze\u0144stwo odczytania niekt\u00F3rych wy\u015Bwietlanych oraz wprowadzanych informacji na tej stronie przez osoby trzecie.
++LeaveSecureMessage=Po\u0142\u0105czenie szyfrowane z t\u0105 stron\u0105 zostanie zako\u0144czone. Od tej chwili \u017cadne wysy\u0142ane ani odbierane dane nie b\u0119d\u0105 wi\u0119cej szyfrowane. Istnieje niebezpiecze\u0144stwo odczytania przesy\u0142anych danych przez osoby trzecie.
+ EnterSecureMessage=Za\u017c\u0105dano po\u0142\u0105czenia szyfrowanego ze stron\u0105, kt\u00f3rej to\u017csamo\u015b\u0107 zosta\u0142a sprawdzona i potwierdzona. Prawdopodobie\u0144stwo odczytania wy\u015bwietlanych oraz wprowadzanych informacji na tej stronie przez osoby trzecie jest znikome.
+-WeakSecureMessage=Za\u017c\u0105dano po\u0142\u0105czenia ze stron\u0105, kt\u00f3ra u\u017cywa niskiego poziomu szyfrowania. To\u017csamo\u015b\u0107 strony zosta\u0142a sprawdzona i potwierdzona, jednak\u017ce prawdopodobie\u0144stwo odczytania wy\u015bwietlanych i wprowadzanych informacji jest du\u017ce.
+-PostToInsecureFromSecureMessage=Pomimo tego, \u017ce bie\u017c\u0105ce po\u0142\u0105czenie jest szyfrowane, wszystkie wprowadzone dane zostan\u0105 przes\u0142ane przez po\u0142\u0105czenie nieszyfrowane, dlatego prawdopodobie\u0144stwo ich odczytania przez osoby trzecie jest du\u017ce.##Czy na pewno kontynuowa\u0107 wysy\u0142anie wprowadzonych danych?##
++WeakSecureMessage=Za\u017c\u0105dano po\u0142\u0105czenia ze stron\u0105, kt\u00f3ra u\u017cywa niskiego poziomu szyfrowania. To\u017csamo\u015b\u0107 strony zosta\u0142a sprawdzona i potwierdzona, jednak\u017ce istnieje niebezpiecze\u0144stwo odczytania wy\u015bwietlanych i wprowadzanych informacji na tej stronie przez osoby trzecie.
++PostToInsecureFromSecureMessage=Pomimo tego, \u017ce bie\u017c\u0105ce po\u0142\u0105czenie jest szyfrowane, wszystkie wprowadzone dane zostan\u0105 przes\u0142ane przez po\u0142\u0105czenie nieszyfrowane, dlatego istnieje niebezpiecze\u0144stwo ich odczytania przez osoby trzecie.##Czy na pewno kontynuowa\u0107 wysy\u0142anie wprowadzonych danych?##
+ PostToInsecureFromInsecureMessage=Wprowadzone dane nie zostan\u0105 zaszyfrowane przed przes\u0142aniem i mog\u0105 zosta\u0107 odczytane przez osoby trzecie podczas transmisji.##Czy na pewno kontynuowa\u0107 wysy\u0142anie danych?##
+ MixedContentShowAgain=Zawsze ostrzegaj przed nawi\u0105zaniem po\u0142\u0105czenia szyfrowanego ze stron\u0105 zawieraj\u0105c\u0105 elementy niezaszyfrowane.
+ LeaveSecureShowAgain=Zawsze ostrzegaj przed zako\u0144czeniem po\u0142\u0105czenia szyfrowanego.
+Index: security/manager/chrome/pippki/pippki.dtd
+===================================================================
+RCS file: /l10n/l10n/pl/security/manager/chrome/pippki/pippki.dtd,v
+retrieving revision 1.1
+diff -u -r1.1 pippki.dtd
+--- security/manager/chrome/pippki/pippki.dtd	16 Apr 2005 17:24:42 -0000	1.1
++++ security/manager/chrome/pippki/pippki.dtd	19 Jul 2005 05:28:34 -0000
+@@ -43,11 +43,11 @@
+ <!ENTITY pref.security.general.rHeader "Ustawienia zabezpieczeń" >
+ <!ENTITY pref.security.general.header "Ustawienia zabezpieczeń" >
+ <!ENTITY pref.security.general.level.title "Poziom zabezpieczenia" >
+-<!ENTITY pref.security.general.paranoid.label "Użyj paranoidalnych ustawień zabezpieczeń" >
++<!ENTITY pref.security.general.paranoid.label "Użyj najwyższego poziomu zabezpieczeń" >
+ <!ENTITY pref.security.general.certificates.title "Certyfikaty" >
+ <!ENTITY pref.security.general.manageCert.label "Menedżer certyfikatów" >
+ <!ENTITY downloadCert.title "Pobieranie certyfikatu" >
+-<!ENTITY downloadCert.message1 "Otrzymano prośbę o dołączenia nowego Ośrodka Certyfikującego do listy zaufanych ośrodków." >
++<!ENTITY downloadCert.message1 "Otrzymano prośbę o dołączenie nowego Ośrodka Certyfikującego do listy zaufanych ośrodków." >
+ <!ENTITY downloadCert.trustSSL "Zaufaj temu CA przy identyfikacji witryn internetowych." >
+ <!ENTITY downloadCert.trustEmail "Zaufaj temu CA przy identyfikacji użytkowników poczty." >
+ <!ENTITY downloadCert.trustObjSign "Zaufaj temu CA przy identyfikacji twórców oprogramowania." >
+@@ -77,12 +77,12 @@
+ <!ENTITY pkcs12.setpassword.reminder "Ważne: Jeżeli hasło zabezpieczające kopię certyfikatu zostanie utracone, późniejsze odtworzenie certyfikatu będzie niemożliwe. Zaleca się zachowanie hasła w bezpiecznym miejscu." >
+ <!ENTITY pkcs12.getpassword.title "Proszę podać hasło" >
+ <!ENTITY pkcs12.getpassword.message "Wprowadź hasło, które będzie użyte przy szyfrowaniu kopii bezpieczeństwa tego certyfikatu." >
+-<!ENTITY chooseToken.title "Dialog wyboru tokenu" >
++<!ENTITY chooseToken.title "Wybór tokenu" >
+ <!ENTITY chooseToken.message1 "Należy wybrać token." >
+ <!ENTITY escrowWarn.title "Kopia klucza szyfrującego" >
+ <!ENTITY escrowWarn.message1 "Ważne: Ten urząd certyfikujący zaleca utworzenie kopii twojego prywatnego klucza szyfrującego." >
+-<!ENTITY escrowWarn.benefit1 "Zaletą tego jest, że w przypadku utraty dostępu do prywatnego klucza szyfrującego możliwe jest uzyskanie jego kopii z ośrodka certyfikującego" >
+-<!ENTITY escrowWarn.message2 "Jednakże należy mieć na uwadze, że Twój prywatny klucz szyfrujący będzie przechowywany przez urząd certyfikujący i może zostać wykorzystany do czytania zaszyfrowanej przy użyciu klucza poczty lub dokumentów bez twojej zgody." >
++<!ENTITY escrowWarn.benefit1 "Zaletą tego rozwiązania jest to, że w przypadku utraty dostępu do prywatnego klucza szyfrującego możliwe będzie uzyskanie jego kopii z ośrodka certyfikującego" >
++<!ENTITY escrowWarn.message2 "Jednakże należy mieć na uwadze, że Twój prywatny klucz szyfrujący będąc przechowywanym przez urząd certyfikujący może zostać wykorzystany do czytania zaszyfrowanej przy użyciu tego klucza poczty lub dokumentów bez twojej zgody." >
+ <!ENTITY serverCrlNextupdate.message "W celu uzyskania dalszych informacji należy skontaktować się z administratorem sieci." >
+ <!ENTITY createCertInfo.title "Generowanie prywatnego klucza" >
+ <!ENTITY createCertInfo.msg1 "Trwa generowanie klucza... Może to potrwać kilka minut...." >
+Index: toolkit/chrome/global/languageNames.properties
+===================================================================
+RCS file: /l10n/l10n/pl/toolkit/chrome/global/languageNames.properties,v
+retrieving revision 1.2
+diff -u -r1.2 languageNames.properties
+--- toolkit/chrome/global/languageNames.properties	30 Apr 2005 07:15:21 -0000	1.2
++++ toolkit/chrome/global/languageNames.properties	19 Jul 2005 05:28:34 -0000
+@@ -59,7 +59,7 @@
+ hi=Hindi hindi
+ ho=Hiri Motu
+ hr=Chorwacki
+-hsb = Górnołużycki
++hsb=G\u00f3rno\u0142u\u017cycki
+ ht=Haita\u0144ski
+ hu=W\u0119gierski
+ hy=Arme\u0144ski
+@@ -163,7 +163,7 @@
+ tg=Tad\u017cydzki
+ th=Tajski
+ ti=Tigrinya 
+-tig = Tigre  
++tig=Tigre  
+ tk=Turkme\u0144ski
+ tl=Tagalog tagalski
+ tlh=Klingo\u0144ski
+Index: toolkit/chrome/global-region/builtinURLs.rdf
+===================================================================
+RCS file: /l10n/l10n/pl/toolkit/chrome/global-region/builtinURLs.rdf,v
+retrieving revision 1.1
+diff -u -r1.1 builtinURLs.rdf
+--- toolkit/chrome/global-region/builtinURLs.rdf	16 Apr 2005 17:33:10 -0000	1.1
++++ toolkit/chrome/global-region/builtinURLs.rdf	19 Jul 2005 05:28:36 -0000
+@@ -50,7 +50,7 @@
+ 
+   <RDF:Description about='urn:clienturl:composer:spellcheckers'>
+     <NC:title>Spellcheckers</NC:title>
+-    <NC:content>http://dictionaries.mozdev.org/installation.html</NC:content>
++    <NC:content>http://www.mozilla.org/products/thunderbird/dictionaries.html</NC:content>
+   </RDF:Description>
+ 
+ </RDF:RDF>
+Index: toolkit/chrome/mozapps/extensions/extensions.dtd
+===================================================================
+RCS file: /l10n/l10n/pl/toolkit/chrome/mozapps/extensions/extensions.dtd,v
+retrieving revision 1.4
+diff -u -r1.4 extensions.dtd
+--- toolkit/chrome/mozapps/extensions/extensions.dtd	14 Jun 2005 21:06:04 -0000	1.4
++++ toolkit/chrome/mozapps/extensions/extensions.dtd	19 Jul 2005 05:28:36 -0000
+@@ -51,9 +51,9 @@
+ <!ENTITY homepage.tooltip                 "Strona domowa">
+ 
+ <!ENTITY getMoreExtensions.label          "Pobierz więcej rozszerzeń">
+-<!ENTITY getMoreExtensions.tooltip        "Pobierz więcej rozszerzeń z update.mozilla.org">
++<!ENTITY getMoreExtensions.tooltip        "Pobierz więcej rozszerzeń z addons.mozilla.org">
+ <!ENTITY getMoreThemes.label              "Pobierz więcej motywów">
+-<!ENTITY getMoreThemes.tooltip            "Pobierz więcej motywów z update.mozilla.org">
++<!ENTITY getMoreThemes.tooltip            "Pobierz więcej motywów z addons.mozilla.org">
+ 
+ <!ENTITY previewNoThemeSelected.label     "Nie wybrano motywu">
+ <!ENTITY previewNoPreviewImage.label      "Ten motyw nie posiada obrazka podglądu">
+Index: toolkit/chrome/mozapps/extensions/extensions.properties
+===================================================================
+RCS file: /l10n/l10n/pl/toolkit/chrome/mozapps/extensions/extensions.properties,v
+retrieving revision 1.8
+diff -u -r1.8 extensions.properties
+--- toolkit/chrome/mozapps/extensions/extensions.properties	15 Jul 2005 11:10:39 -0000	1.8
++++ toolkit/chrome/mozapps/extensions/extensions.properties	19 Jul 2005 05:28:36 -0000
+@@ -4,22 +4,21 @@
+ aboutExtension=O %S...
+ restartBeforeEnableTitle=W\u0142\u0105cz rozszerzenie
+ restartBeforeDisableTitle=Wy\u0142\u0105cz rozszerzenie
+-restartBeforeEnableMessage=%S zostanie w\u0142\u0105czony po ponownym uruchomieniu programu %S.
+-restartBeforeDisableMessage=%S zostanie wy\u0142\u0105czony po ponownym uruchomieniu programu %S.
++restartBeforeEnableMessage=Rozszerzenie %S zostanie w\u0142\u0105czone po ponownym uruchomieniu programu %S.
++restartBeforeDisableMessage=Rozszerzenie %S zostanie wy\u0142\u0105czone po ponownym uruchomieniu programu %S.
+ restartBeforeUninstallTitle=Odinstaluj
+-restartBeforeUninstallMessage=%S zostanie odinstalowany przy ponownym uruchomieniu programu %S.
+-restartBeforeInstallMessage=%S zostanie zainstalowany przy ponownym uruchomieniu programu %S.
+-restartBeforeUpgradeMessage=%S zostanie zaktualizowany przy ponownym uruchomieniu programu %S.
+-incompatibleUpdateMessage=Program %S sprawdza dost\u0119pno\u015B\u0107
+-aktualizacji dotycz\u0105cych kompatybilno\u015Bci dla elementu %S.
+-queryUninstallExtensionMessage=Odinstalowanie %S spowoduje utrat\u0119 funkcjonalno\u015Bci, jak\u0105 ono oferuje. Odinstalowa\u0107 %S?
++restartBeforeUninstallMessage=Element %S zostanie odinstalowany przy ponownym uruchomieniu programu %S.
++restartBeforeInstallMessage=Element %S zostanie zainstalowany przy ponownym uruchomieniu programu %S.
++restartBeforeUpgradeMessage=Element %S zostanie zaktualizowany przy ponownym uruchomieniu programu %S.
++incompatibleUpdateMessage=Program %S sprawdza dost\u0119pno\u015B\u0107 aktualizacji dotycz\u0105cych kompatybilno\u015Bci dla elementu %S.
++queryUninstallExtensionMessage=Odinstalowanie rozszerzenia %S spowoduje utrat\u0119 funkcjonalno\u015Bci, jak\u0105 ono oferuje. Odinstalowa\u0107 %S?
+ queryUninstallThemeMessage=Czy chcesz odinstalowa\u0107 %S?
+ queryUninstallTitle=Deinstalacja %S
+ installSuccess=Instalacja zako\u0144czona powodzeniem.
+ installWaiting=Oczekiwanie...
+ installInstalling=Instalowanie...
+ droppedInWarning=W katalogu rozszerze\u0144 znaleziono nast\u0119puj\u0105ce elementy. Czy chcesz je zainstalowa\u0107?
+-disabledBySafeMode=%S jest zablokowany przez tryb awaryjny.
++disabledBySafeMode=Element %S jest zablokowany przez tryb awaryjny.
+ 
+ extensions.update.url=https://addons.mozilla.org/update/VersionCheck.php?reqVersion=%REQ_VERSION%&id=%ITEM_ID%&version=%ITEM_VERSION%&maxAppVersion=%ITEM_MAXAPPVERSION%&appID=%APP_ID%&appVersion=%APP_VERSION%&appOS=%APP_OS%&appABI=%APP_ABI%
+ extensions.getMoreExtensionsURL=https://update.mozilla.org/extensions/?application=%APPID%
+@@ -29,9 +28,9 @@
+ extensionsTitle=Rozszerzenia
+ 
+ 
+-globalItemList=Podane poni\u017cej pozycje s\u0105 dost\u0119pne dla wszystkich u\u017cytkownik\u00f3w. \nMo\u017cesz uruchmi\u0107 Firefoksa z opcj\u0105 -lock-item "{GUID}", aby zablokowa\u0107 u\u017cytkownikom mo\u017cliwo\u015b\u0107 odinstalowania lub wy\u0142\u0105czenia pozycji. Aby odblokowa\u0107 j\u0105, uruchom Firefoksa z opcj\u0105 -unlock-item "{GUID}"
++globalItemList=Podane poni\u017cej elementy s\u0105 dost\u0119pne dla wszystkich u\u017cytkownik\u00f3w. \nMo\u017cesz uruchmi\u0107 program z opcj\u0105 -lock-item "{GUID}", aby zablokowa\u0107 u\u017cytkownikom mo\u017cliwo\u015b\u0107 odinstalowania lub wy\u0142\u0105czenia element\u00f3w. Aby odblokowa\u0107 j\u0105, uruchom program z opcj\u0105 -unlock-item "{GUID}"
+ globalItemListExtensions=\n\nRozszerzenia dost\u0119pne globalnie:\n==============================\n\n
+-globalItemListThemes=\n\nSk\u00f3rki dost\u0119pne globalnie:\n==========================\n\n
++globalItemListThemes=\n\nMotywy dost\u0119pne globalnie:\n==========================\n\n
+ 
+ statusFormatKBKB=#1 z #2 KB
+ statusFormatKBMB=#1 KB z #2 MB
+@@ -43,26 +42,26 @@
+ type-32=Pakiet wielu rozszerze\u0144
+ type-4=Motyw
+ type-2=Rozszerzenie
+-incompatibleTitle=Niekompatybilne %S
+-incompatibleMsg=%S %S nie m\u00f3g\u0142 zosta\u0107 zainstalowany poniewa\u017c nie jest on kompatybilny z programem %S %S. (%S %S mo\u017ce pracowa\u0107 tylko z programem %S w wersjach od %S do %S).
+-incompatibleMsgSingleAppVersion=%S %S nie m\u00f3g\u0142 zosta\u0107 zainstalowany poniewa\u017c nie jest on kompatybilny z programem %S %S (%S %S pracowa\u0107 tylko z programem %S w wersji %S).
+-incompatibleMessageNoApp=%S %S nie m\u00f3g\u0142 zosta\u0107 zainstalowany poniewa\u017c nie jest on kompatybilny z %S.
++incompatibleTitle=Niekompatybilny element: %S
++incompatibleMsg=Element %S %S nie m\u00f3g\u0142 zosta\u0107 zainstalowany, poniewa\u017c nie jest kompatybilny z programem %S %S. (%S %S mo\u017ce pracowa\u0107 tylko z programem %S w wersjach od %S do %S).
++incompatibleMsgSingleAppVersion=Element %S %S nie m\u00f3g\u0142 zosta\u0107 zainstalowany, poniewa\u017c nie jest kompatybilny z programem %S %S (%S %S mo\u017ce pracowa\u0107 tylko z programem %S w wersji %S).
++incompatibleMessageNoApp=Element %S %S nie m\u00f3g\u0142 zosta\u0107 zainstalowany, poniewa\u017c nie jest kompatybilny z programem %S.
+ incompatibleOlder=wersj\u0105 0.8 lub starsz\u0105.
+ incompatibleThemeName=ten motyw
+-incompatibleExtension=Zablokowane - niekompatybilne z %S %S
+-invalidGUIDMessage="%S" nie m\u00f3g\u0142 by\u0107 zainstalowany z powodu b\u0142\u0119du w jego manife\u015bcie instalacji. ("%S" nie jest prawid\u0142owym GUID). Poinformuj o tym problemie autora tego elementu.
+-invalidVersionMessage=%S nie m\u00f3g\u0142 zainstalowa\u0107 "%S" poniewa\u017c informacja o jego wersji ("%S") jest niepoprawna. Prosz\u0119 skontaktowa\u0107 si\u0119 z autorem w sprawie tego problemu.
+-incompatiblePlatformMessage=Element "%S" nie m\u00f3g\u0142 zosta\u0107 zainstalowany poniewa\u017c nie jest kompatybilny z architektur\u0105 programu %S (%S). Prosz\u0119 skontaktowa\u0107 si\u0119 z autorem tego elementu.
++incompatibleExtension=Zablokowane - niekompatybilne z programem %S %S
++invalidGUIDMessage=Element "%S" nie m\u00f3g\u0142 by\u0107 zainstalowany z powodu b\u0142\u0119du w jego pliku instalacyjnym. ("%S" nie jest prawid\u0142owym GUID). Poinformuj o tym problemie autora tego elementu.
++invalidVersionMessage=Program %S nie m\u00f3g\u0142 zainstalowa\u0107 elementu "%S", poniewa\u017c informacja o jego wersji ("%S") jest niepoprawna. Prosz\u0119 skontaktowa\u0107 si\u0119 z autorem w sprawie tego problemu.
++incompatiblePlatformMessage=Element "%S" nie m\u00f3g\u0142 zosta\u0107 zainstalowany, poniewa\u017c nie jest kompatybilny z architektur\u0105 programu %S (%S). Prosz\u0119 skontaktowa\u0107 si\u0119 z autorem tego elementu.
+ 
+ missingFileTitle=Brak pliku
+-missingFileMessage=%S nie m\u00f3g\u0142 za\u0142adowa\u0107 tego elementu poniewa\u017c brakuje pliku %S.
+-missingFileConsoleMessage=Nie uda\u0142o si\u0119 zainstalowa\u0107 elementu z %S poniewa\u017c:  %S nie zosta\u0142 dostarczony na g\u0142\u00f3wnym poziomie pliku jar/xpi.
++missingFileMessage=Program %S nie m\u00f3g\u0142 za\u0142adowa\u0107 tego elementu, poniewa\u017c brakuje pliku %S.
++missingFileConsoleMessage=Nie uda\u0142o si\u0119 zainstalowa\u0107 elementu z %S, poniewa\u017c nie znaleziono %S na g\u0142\u00F3wnym poziomie pliku jar/xpi.
+ 
+-malformedMessage=%S nie m\u00f3g\u0142 zainstalowa\u0107  tej pozycji poniewa\u017c "%S" (do\u0142\u0105czony do pozycji) jest uszkodzony. Prosz\u0119 skontaktowa\u0107 si\u0119 z autorem w sprawie tego problemu.
++malformedMessage=Program %S nie m\u00f3g\u0142 zainstalowa\u0107 tego elementu, poniewa\u017c "%S" (do\u0142\u0105czony do elementu) jest uszkodzony. Prosz\u0119 skontaktowa\u0107 si\u0119 z autorem w sprawie tego problemu.
+ malformedTitle=Uszkodzony plik
+ 
+ malformedRegistrationTitle=Rejestracja Chrome nie powiod\u0142a si\u0119.
+-malformedRegistrationMessage=%S nie m\u00f3g\u0142 zainstalowa\u0107 tej pozycji z powodu b\u0142\u0119du podczas rejestracji Chrome. Prosz\u0119 powiadomi\u0107 autora o tym problemie lub klikn\u0105\u0107 "Wy\u015bwietl szczeg\u00f3\u0142y" by uzyska\u0107 wi\u0119cej informacji.
++malformedRegistrationMessage=Program %S nie m\u00f3g\u0142 zainstalowa\u0107 tego elementu z powodu b\u0142\u0119du podczas rejestracji Chrome. Prosz\u0119 powiadomi\u0107 autora o tym problemie lub klikn\u0105\u0107 "Wy\u015bwietl szczeg\u00f3\u0142y" by uzyska\u0107 wi\u0119cej informacji.
+ 
+ invalidFileExtTitle=Nieprawid\u0142owe rozszerzenie nazwy pliku
+ invalidFileExtMessage=Nie uda\u0142o si\u0119 zainstalowa\u0107 elementu "%S" z powodu nieprawid\u0142owego rozszerzenia nazwy pliku (%S nie jest rozszerzeniem nazwy pliku, jak\u0105 mo\u017ce mie\u0107 %S). Prosz\u0119 powiadomi\u0107 autora elementu o tym problemie.
+@@ -85,3 +84,15 @@
+ cmdInstallTooltipTheme=Zainstaluj motyw
+ 
+ dssSwitchAfterRestart=Uruchom ponownie %S by wykorzysta\u0107.
++
++# Default window size for extensions manager and themes manager
++# Size in Pixel (e.g. '460')
++extensionsManagerWidth=462
++extensionsManagerHeight=300
++themesManagerWidth=560
++themesManagerHeight=380
++
++# The left column in themes manager
++# Size in em (e.g. '20em')
++# Note: here is the unit 'em' necessary
++themesManagerLeftColumn=20em
+Index: toolkit/chrome/mozapps/extensions/mismatch.dtd
+===================================================================
+RCS file: /l10n/l10n/pl/toolkit/chrome/mozapps/extensions/mismatch.dtd,v
+retrieving revision 1.1
+diff -u -r1.1 mismatch.dtd
+--- toolkit/chrome/mozapps/extensions/mismatch.dtd	16 Apr 2005 17:33:10 -0000	1.1
++++ toolkit/chrome/mozapps/extensions/mismatch.dtd	19 Jul 2005 05:28:36 -0000
+@@ -1,4 +1,4 @@
+-<!ENTITY  mismatch.title         "Niekompatybilne komponenty">
+-<!ENTITY  intro1.label           "Poniższe komponenty są niezgodne z nową wersją programu &brandShortName;, która właśnie została zainstalowana:">
++<!ENTITY  mismatch.title         "Niekompatybilne rozszerzenia">
++<!ENTITY  intro1.label           "Poniższe rozszerzenia są niezgodne z nową wersją programu &brandShortName;, która właśnie została zainstalowana:">
+ <!ENTITY  intro2.label           "Zostały one wyłączone do czasu zainstalowania kompatybilnych wersji.">
+-<!ENTITY  intro3.label           "&brandShortName; może sprawdzić, czy są już dostępne, i zainstalować nowe kompatybilne wersje tych komponentów.">
++<!ENTITY  intro3.label           "&brandShortName; może sprawdzić czy są już dostępne nowe kompatybilne wersje tych rozszerzeń, a następnie je zainstalować.">
+\ No newline at end of file
+Index: toolkit/chrome/mozapps/extensions/update.dtd
+===================================================================
+RCS file: /l10n/l10n/pl/toolkit/chrome/mozapps/extensions/update.dtd,v
+retrieving revision 1.2
+diff -u -r1.2 update.dtd
+--- toolkit/chrome/mozapps/extensions/update.dtd	14 Jun 2005 21:06:04 -0000	1.2
++++ toolkit/chrome/mozapps/extensions/update.dtd	19 Jul 2005 05:28:36 -0000
+@@ -4,7 +4,7 @@
+ <!ENTITY  mismatch.intro1.label           "Poniższe komponenty są niezgodne z nową wersją 
+                                            programu &brandShortName;, która właśnie została zainstalowana:">
+ <!ENTITY  mismatch.intro2.label           "Zostały one wyłączone do czasu zainstalowania kompatybilnych wersji.">
+-<!ENTITY  mismatch.intro3.label           "&brandShortName; może sprawdzić, czy są już dostępne, i zainstalować nowe kompatybilne wersje tych komponentów.">
++<!ENTITY  mismatch.intro3.label           "&brandShortName; może sprawdzić czy są już dostępne nowe kompatybilne wersje tych komponentów, a następnie je zainstalować.">
+ 
+ <!ENTITY  checking.title                  "Sprawdzanie aktualizacji">
+ <!ENTITY  checking.intro.label            "&brandShortName; sprawdza, czy są dostępne aktualizacje...">
+@@ -34,7 +34,7 @@
+ 
+ <!ENTITY  found.components.label                "Następujące komponenty i wtyczki są dostępne:">
+ 
+-<!ENTITY  found.components.info                 "Instalacja tych komponentów może uprzyjemnić korzystanie z przeglądarki.">
++<!ENTITY  found.components.info                 "Instalacja tych komponentów może uprzyjemnić korzystanie z programu.">
+ 
+ <!ENTITY  found.addons.label                    "Dostępne są następujące aktualizacje dla już zainstalowanych rozszerzeń i motywów">
+ 
+Index: toolkit/chrome/mozapps/extensions/update.properties
+===================================================================
+RCS file: /l10n/l10n/pl/toolkit/chrome/mozapps/extensions/update.properties,v
+retrieving revision 1.1
+diff -u -r1.1 update.properties
+--- toolkit/chrome/mozapps/extensions/update.properties	14 Jun 2005 21:06:04 -0000	1.1
++++ toolkit/chrome/mozapps/extensions/update.properties	19 Jul 2005 05:28:36 -0000
+@@ -24,9 +24,9 @@
+ 
+ versionUpdateComplete=Aktualizacja zestawienia kompatybilno\u015bci wersji zako\u0144czona
+ 
+-updatesAvailableTooltip-0=Aktualizacja dost\u0119pna
+-updatesAvailableTooltip-1=Aktualizacje dost\u0119pne
+-updatesAvailableTooltip-2=Krytyczne aktualizacje dost\u0119pne
++updatesAvailableTooltip-0=Aktualizacja jest dost\u0119pna
++updatesAvailableTooltip-1=Aktualizacje s\u0105 dost\u0119pne
++updatesAvailableTooltip-2=Dost\u0119pne s\u0105 krytyczne aktualizacje
+ 
+ updatesCheckForUpdatesTooltip=Prosz\u0119 klikn\u0105\u0107 dwukrotnie tutaj, aby sprawdzi\u0107 dost\u0119pno\u015b\u0107 aktualizacji
+ 
+@@ -40,10 +40,10 @@
+ updateTypeLangPacks=Paczki j\u0119zykowe (%S)
+ 
+ foundAppLabel=Program %S %S jest dost\u0119pny. Instalacja aktualizacji jest bardzo zalecana.
+-foundAppFeatures=Nowe funkcjonalno\u015bci w programie %S %S:
++foundAppFeatures=Nowe mo\u017Cliwo\u015Bci programu %S %S:
+ foundAppInfoLink=Wi\u0119cej informacji na temat programu %S %S ...
+ foundInstructions=Nale\u017cy wybra\u0107 aktualizacje, kt\u00f3re maj\u0105 zosta\u0107 zainstalowane i wybra\u0107 przycisk Instaluj, aby rozpocz\u0105\u0107 instalacj\u0119.
+-foundInstructionsAppComps=Nale\u017cy wybra\u0107 aktualizacje, kt\u00f3re maj\u0105 zosta\u0107 zainstalowane oraz wybra\u0107 przycisk Dalej, aby kontynuowa\u0107.
++foundInstructionsAppComps=Nale\u017cy wybra\u0107 aktualizacje, kt\u00f3re maj\u0105 zosta\u0107 zainstalowane, a nast\u0119pnie wybra\u0107 przycisk Dalej, aby kontynuowa\u0107.
+ 
+ appupdateperformedtitle=Wymagane ponowne uruchomienie
+ appupdateperformedmessage=Program %S zosta\u0142 zaktualizowany w trakcie tej sesji. Prosz\u0119 uruchomi\u0107 ponownie program %S przed rozpocz\u0119ciem innych aktualizacji.
+Index: toolkit/chrome/mozapps/plugins/plugins.dtd
+===================================================================
+RCS file: /l10n/l10n/pl/toolkit/chrome/mozapps/plugins/plugins.dtd,v
+retrieving revision 1.2
+diff -u -r1.2 plugins.dtd
+--- toolkit/chrome/mozapps/plugins/plugins.dtd	11 Jun 2005 12:27:24 -0000	1.2
++++ toolkit/chrome/mozapps/plugins/plugins.dtd	19 Jul 2005 05:28:36 -0000
+@@ -8,7 +8,7 @@
+ <!ENTITY pluginWizard.availablePluginsPage.continueMsg.label "Kliknij Dalej by zainstalować te wtyczki.">
+ <!ENTITY pluginWizard.availablePluginsPage.installerUI       "Niektóre wtyczki mogą potrzebować dodatkowych informacji podczas instalowania.">
+ 
+-<!ENTITY pluginWizard.licensePage.title                      "Licencje wtyczki">
++<!ENTITY pluginWizard.licensePage.title                      "Licencja wtyczki">
+ <!ENTITY pluginWizard.licensePage.accept.label               "Zgadzam się.">
+ <!ENTITY pluginWizard.licensePage.deny.label                 "Nie zgadzam się (wtyczka nie zostanie zainstalowana).">
+ 
+@@ -17,5 +17,5 @@
+ 
+ <!ENTITY pluginWizard.finalPage.description.label            "Program &brandShortName; zakończył instalowanie brakujących wtyczek:">
+ 
+-<!ENTITY pluginWizard.finalPage.moreInfo.label               "Dowiedz się więcej o Wtyczkach lub ręcznie wyszukaj brakujące.">
++<!ENTITY pluginWizard.finalPage.moreInfo.label               "Dowiedz się więcej o wtyczkach lub ręcznie wyszukaj brakujące.">
+ <!ENTITY pluginWizard.finalPage.restart.label                "Aby wtyczka została uruchomiona, niezbędny jest restart programu &brandShortName;.">
+Index: toolkit/chrome/mozapps/plugins/plugins.properties
+===================================================================
+RCS file: /l10n/l10n/pl/toolkit/chrome/mozapps/plugins/plugins.properties,v
+retrieving revision 1.2
+diff -u -r1.2 plugins.properties
+--- toolkit/chrome/mozapps/plugins/plugins.properties	16 Jun 2005 19:43:05 -0000	1.2
++++ toolkit/chrome/mozapps/plugins/plugins.properties	19 Jul 2005 05:28:36 -0000
+@@ -1,4 +1,4 @@
+-pluginLicenseAgreement.label=By zainstalowa\u0107 %S, musisz zaakceptowa\u0107 poni\u017csze warunki:
++pluginLicenseAgreement.label=Aby zainstalowa\u0107 %S, musisz zaakceptowa\u0107 poni\u017csze warunki:
+ 
+ pluginInstallation.download.start=Pobieranie %S...
+ pluginInstallation.download.finish=Pobieranie %S uko\u0144czone.
+@@ -12,7 +12,7 @@
+ pluginInstallationSummary.success=Zainstalowano
+ pluginInstallationSummary.failed=B\u0142\u0105d
+ pluginInstallationSummary.licenseNotAccepted=Nie zaakceptowano licencji
+-pluginInstallationSummary.notAvailable=Niedostępne
++pluginInstallationSummary.notAvailable=Niedost\u0119pne
+ pluginInstallationSummary.manualInstall.label=Instalacja r\u0119czna
+ pluginInstallationSummary.manualInstall.tooltip=Zainstaluj wtyczk\u0119 r\u0119cznie.
+ 
+@@ -20,4 +20,4 @@
+ pluginInstallation.noPluginsInstalled=Nie zainstalowano \u017cadnej wtyczki.
+ pluginInstallation.unknownPlugin=Nieznana wtyczka
+  
+-missingPlugin.label=Naciśnij, aby pobrać wtyczkę
++missingPlugin.label=Naci\u015Bnij, aby pobra\u0107 wtyczk\u0119
+Index: toolkit/chrome/mozapps/preferences/changemp.dtd
+===================================================================
+RCS file: /l10n/l10n/pl/toolkit/chrome/mozapps/preferences/changemp.dtd,v
+retrieving revision 1.1
+diff -u -r1.1 changemp.dtd
+--- toolkit/chrome/mozapps/preferences/changemp.dtd	16 Apr 2005 17:33:10 -0000	1.1
++++ toolkit/chrome/mozapps/preferences/changemp.dtd	19 Jul 2005 05:28:36 -0000
+@@ -6,5 +6,4 @@
+ <!ENTITY setPassword.meter.label           "Miernik jakości hasła">
+ <!ENTITY setPassword.meter.loading         "Ładowanie">
+ <!ENTITY masterPasswordDescription.label   "Hasło główne jest stosowane do ochrony prywatnych informacji, takich jak hasła do witryn. Jeśli utworzysz hasło główne, będziesz proszony o podanie go raz w każdej sesji, kiedy &brandShortName; będzie potrzebować danych chronionych tym hasłem.">
+-<!ENTITY masterPasswordWarning.label       "Hasło główne należy zapamiętać. Jeśli zapomnisz hasła głównego,
+-nie będziesz mieć dostępu do żadnych informacji chronionych tym hasłem.">
++<!ENTITY masterPasswordWarning.label       "Hasło główne należy zapamiętać. Jeśli go zapomnisz, nie będziesz mieć dostępu do żadnych informacji chronionych tym hasłem.">
+Index: toolkit/chrome/mozapps/preferences/ocsp.dtd
+===================================================================
+RCS file: /l10n/l10n/pl/toolkit/chrome/mozapps/preferences/ocsp.dtd,v
+retrieving revision 1.3
+diff -u -r1.3 ocsp.dtd
+--- toolkit/chrome/mozapps/preferences/ocsp.dtd	23 May 2005 08:25:06 -0000	1.3
++++ toolkit/chrome/mozapps/preferences/ocsp.dtd	19 Jul 2005 05:28:36 -0000
+@@ -4,7 +4,7 @@
+ <!ENTITY validation.ocsp.description  "&brandShortName; może używać protokołu weryfikacji stanu certyfikatu (OCSP) do sprawdzania certyfikatów. &brandShortName; może korzystać z jednego z poniższych ustawień OCSP:">
+ <!ENTITY disableOCSP.label            "Nie używaj OCSP do weryfikacji certyfikatów">
+ <!ENTITY certOCSP.label               "Użyj OCSP do weryfikacji wyłącznie tych certyfikatów, które zawierają adres URL usługi OCSP">
+-<!ENTITY proxyOCSP.label              "Uzyj OCSP do weryfikacji wszystkich certyfikatów, używając tego adresu URL i urzędu weryfikującego:">
++<!ENTITY proxyOCSP.label              "Uzyj OCSP do weryfikacji wszystkich certyfikatów, korzystając z poniższego adresu URL i urzędu weryfikującego:">
+ 
+ <!ENTITY serviceURL.label             "Adres URL usługi:">
+ <!ENTITY serviceURL.accesskey         "s">
+Index: toolkit/chrome/mozapps/profile/createProfileWizard.dtd
+===================================================================
+RCS file: /l10n/l10n/pl/toolkit/chrome/mozapps/profile/createProfileWizard.dtd,v
+retrieving revision 1.1
+diff -u -r1.1 createProfileWizard.dtd
+--- toolkit/chrome/mozapps/profile/createProfileWizard.dtd	16 Apr 2005 17:33:10 -0000	1.1
++++ toolkit/chrome/mozapps/profile/createProfileWizard.dtd	19 Jul 2005 05:28:36 -0000
+@@ -4,7 +4,7 @@
+ <!-- First wizard page -->
+ <!ENTITY profileCreationExplanation_1.text  "&brandShortName; przechowuje informacje o Twoich ustawieniach i preferencjach w Twoim prywatnym profilu.">
+ <!ENTITY profileCreationExplanation_2.text  "Jeżeli dzielisz tę kopię programu &brandShortName; z innymi użytkownikami, możesz używać profili, aby odseparować dane użytkowników. Aby tego dokonać, każdy użytkownik powinien posiadać własny profil.">
+-<!ENTITY profileCreationExplanation_3.text  "Jeżeli jesteś jedyną osobą korzystającą z tej kopii programu &brandShortName;, musisz posiadać przynajmniej jeden profil. Jeśli chcesz, możesz stworzyć kilka profili dla siebie samego, aby trzymać w nich różne zestawy ustawień i preferencji. Na przykład, możesz chcieć posiadać osobne profile służbowy i prywatny.">
++<!ENTITY profileCreationExplanation_3.text  "Jeżeli jesteś jedyną osobą korzystającą z tej kopii programu &brandShortName;, musisz posiadać przynajmniej jeden profil. Jeśli chcesz, możesz stworzyć kilka profili dla siebie samego, aby trzymać w nich różne zestawy ustawień i preferencji. Na przykład, możesz chcieć posiadać osobne profile: służbowy i prywatny.">
+ <!ENTITY profileCreationExplanation_4.text  "Aby rozpocząć tworzenie swojego profilu, naciśnij przycisk Dalej.">
+ 
+ <!-- Second wizard page -->
+Index: toolkit/chrome/mozapps/profile/profileSelection.dtd
+===================================================================
+RCS file: /l10n/l10n/pl/toolkit/chrome/mozapps/profile/profileSelection.dtd,v
+retrieving revision 1.1
+diff -u -r1.1 profileSelection.dtd
+--- toolkit/chrome/mozapps/profile/profileSelection.dtd	16 Apr 2005 17:33:10 -0000	1.1
++++ toolkit/chrome/mozapps/profile/profileSelection.dtd	19 Jul 2005 05:28:36 -0000
+@@ -40,7 +40,7 @@
+ <!ENTITY            deleteButton.accesskey "U">
+ 
+ <!-- manager entities -->
+-<!ENTITY            pmDescription.label    "&brandShortName; przechowuje informacje o twoich ustawieniach, preferencjach, w Twoim katalogu profilu.">
++<!ENTITY            pmDescription.label    "&brandShortName; przechowuje informacje o Twoich ustawieniach i preferencjach w Twoim katalogu profilu.">
+ 
+ <!ENTITY            offlineState.label    "Pracuj w trybie offline">
+ <!ENTITY            offlineState.accesskey "P">
+Index: toolkit/chrome/mozapps/profile/profileSelection.properties
+===================================================================
+RCS file: /l10n/l10n/pl/toolkit/chrome/mozapps/profile/profileSelection.properties,v
+retrieving revision 1.1
+diff -u -r1.1 profileSelection.properties
+--- toolkit/chrome/mozapps/profile/profileSelection.properties	16 Apr 2005 17:33:10 -0000	1.1
++++ toolkit/chrome/mozapps/profile/profileSelection.properties	19 Jul 2005 05:28:36 -0000
+@@ -6,7 +6,7 @@
+ profileTooltip=Profile: '%S' - \u015Acie\u017Cka: '%S'
+ 
+ pleaseSelectTitle=Wybierz profil
+-pleaseSelect=Aby rozpocz\u0105\u0107 prac\u0119 z programem %S, nale\u017Cy wybra\u0107 istniej\u0105cy profil, lub utworzy\u0107 nowy.
++pleaseSelect=Aby rozpocz\u0105\u0107 prac\u0119 z programem %S, nale\u017Cy wybra\u0107 istniej\u0105cy profil lub utworzy\u0107 nowy.
+ 
+ profileLockedTitle=Profil w u\u017Cyciu
+ profileLocked2=%S nie mo\u017Ce u\u017Cy\u0107 profilu "%S", poniewa\u017C profil ten jest u\u017Cywany przez inn\u0105 aplikacj\u0119.\n\nAby kontynuowa\u0107, zamknij dzia\u0142aj\u0105c\u0105 instancj\u0119 %S lub wybierz inny profil.
+@@ -18,7 +18,7 @@
+ profileNameInvalid="%S" nie jest dozwolon\u0105 nazw\u0105 dla profilu.
+ 
+ chooseFolder=Wybierz katalog profilu
+-profileNameEmpty=Nazwa profilu musi zawiera\u0107 co najmniej jeden znak.
++profileNameEmpty=Nazwa profilu musi sk\u0142ada\u0107 si\u0119 przynajmniej z jednego znaku.
+ invalidChar=Znak "%S" nie mo\u017Ce zosta\u0107 u\u017Cyty w nazwie profilu. Nale\u017Cy wprowadzi\u0107 inn\u0105 nazw\u0119.
+ 
+ deleteTitle=Usu\u0144 profil
+Index: toolkit/chrome/mozapps/update/errors.dtd
+===================================================================
+RCS file: /l10n/l10n/pl/toolkit/chrome/mozapps/update/errors.dtd,v
+retrieving revision 1.1
+diff -u -r1.1 errors.dtd
+--- toolkit/chrome/mozapps/update/errors.dtd	16 Apr 2005 17:33:10 -0000	1.1
++++ toolkit/chrome/mozapps/update/errors.dtd	19 Jul 2005 05:28:36 -0000
+@@ -1,3 +1,2 @@
+ <!ENTITY  errors.title                "Błędy">
+-<!ENTITY  errors.intro.title          "Następujące komponenty nie mogły zostać zainstalowane z powodu wystąpienia błędów (plik nie mógł zostać pobrany, jest uszkodzony, lub z innego powodu).">
+-
++<!ENTITY  errors.intro.title          "Następujące komponenty nie mogły zostać zainstalowane z powodu wystąpienia błędów (plik nie mógł zostać pobrany, jest uszkodzony lub z innego powodu).">
+Index: toolkit/chrome/mozapps/update/incompatible.dtd
+===================================================================
+RCS file: /l10n/l10n/pl/toolkit/chrome/mozapps/update/incompatible.dtd,v
+retrieving revision 1.1
+diff -u -r1.1 incompatible.dtd
+--- toolkit/chrome/mozapps/update/incompatible.dtd	14 Jun 2005 21:06:04 -0000	1.1
++++ toolkit/chrome/mozapps/update/incompatible.dtd	19 Jul 2005 05:28:36 -0000
+@@ -5,7 +5,7 @@
+ <!ENTITY  incompatible.update       "Program &brandShortName; będzie okresowo sprawdzał, czy są dostępne ich aktualizacje, 
+                                      na wypadek gdyby pojawiła się wersja kompatybilna.">
+ <!ENTITY  incompatible.suffix       "Aktualizacje programu &brandShortName; zawierają ważne poprawki bezpieczeństwa.
+-                                     W celu zachowania bezpieczeństwa bardzo zalecana jest aktualizacja programu &brandShortName;, 
++                                     W celu zachowania bezpieczeństwa zaleca się aktualizację programu &brandShortName;, 
+                                      nawet gdyby niektóre z rozszerzeń i motywów miały stać się niekompatybilne.">
+ 
+ <!ENTITY  closebutton.label         "Zamknij">
+Index: toolkit/chrome/mozapps/update/update.properties
+===================================================================
+RCS file: /l10n/l10n/pl/toolkit/chrome/mozapps/update/update.properties,v
+retrieving revision 1.1
+diff -u -r1.1 update.properties
+--- toolkit/chrome/mozapps/update/update.properties	16 Apr 2005 17:33:10 -0000	1.1
++++ toolkit/chrome/mozapps/update/update.properties	19 Jul 2005 05:28:36 -0000
+@@ -12,27 +12,27 @@
+ app.update.url=https://update.mozilla.org/update/firefox/pl-PL.rdf
+ 
+ updatesAvailableTitle=Dost\u0119pne s\u0105 nowe aktualizacje
+-updatesAvailableText=Kliknij tutaj, aby zobaczy\u0107 ich liste
++updatesAvailableText=Kliknij tutaj, aby zobaczy\u0107 ich list\u0119
+ 
+ checkingPrefix=Poszukiwanie aktualizacji dla %S ...
+ downloadingPrefix=Pobieranie: %S
+ installingPrefix=Instalowanie: %S
+ closeButton=Zamknij
+ 
+-installErrorDescription=Nast\u0119puj\u0105ce komponenty nie mog\u0142y zosta\u0107 zainstalowane z powodu wyst\u0105pienia b\u0142\u0119d\u00F3w (plik nie m\u00F3g\u0142 zosta\u0107 pobrany, zosta\u0142 uszkodzony, lub z innego powodu).
+-checkingErrorDescription=%S nie m\u00F3g\u0142 sprawdzi\u0107, czy dost\u0119pne s\u0105 aktualizacje poni\u017cszych komponent\u00F3w (serwer aktualizacji nie odpowiedzia\u0142 na \u017C\u0105danie lub us\u0142uga aktualizacji nie zosta\u0142a odnaleziona). 
++installErrorDescription=Nast\u0119puj\u0105ce komponenty nie mog\u0142y zosta\u0107 zainstalowane z powodu wyst\u0105pienia b\u0142\u0119d\u00F3w (plik nie m\u00F3g\u0142 zosta\u0107 pobrany, zosta\u0142 uszkodzony lub z innego powodu).
++checkingErrorDescription=Program %S nie m\u00F3g\u0142 sprawdzi\u0107, czy dost\u0119pne s\u0105 aktualizacje poni\u017cszych komponent\u00F3w (serwer aktualizacji nie odpowiedzia\u0142 na \u017C\u0105danie lub us\u0142uga aktualizacji nie zosta\u0142a odnaleziona). 
+ installErrorItemFormat=%S (%S)
+ 
+-versionUpdateComplete=Aktualizacja zestawienia kompatybilności wersji zakończona
++versionUpdateComplete=Aktualizacja zestawienia kompatybilno\u015Bci wersji zako\u0144czona
+ 
+ updatesAvailableTooltip-0=Aktualizacje s\u0105 dost\u0119pne
+ updatesAvailableTooltip-1=Aktualizacje s\u0105 dost\u0119pne
+-updatesAvailableTooltip-2=Aktualizacje krytyczne s\u0105 dost\u0119pne
++updatesAvailableTooltip-2=Dost\u0119pne s\u0105 krytyczne aktualizacje
+ 
+-updatesCheckForUpdatesTooltip=Dwukliknij tutaj by sprawdzi\u0107 dost\u0119pno\u015b\u0107 aktualizacji
++updatesCheckForUpdatesTooltip=Kliknij tutaj dwukrotnie, aby sprawdzi\u0107 dost\u0119pno\u015B\u0107 aktualizacji
+  
+-installTextNoFurtherActions=Wybierz, kt\u00f3re chcesz zainstalowa\u0107 i kliknij 'Zainstaluj teraz'.
+-installTextFurtherCations=Wybierz, kt\u00f3re chcesz zainstalowa\u0107 i kliknij Dalej, by kontynuowa\u0107.
++installTextNoFurtherActions=Wybierz te, kt\u00f3re chcesz zainstalowa\u0107 i kliknij 'Zainstaluj teraz'.
++installTextFurtherCations=Wybierz te, kt\u00f3re chcesz zainstalowa\u0107 i kliknij Dalej, aby kontynuowa\u0107.
+ 
+ 
+ appNameAndVersionFormat=%S %S
+@@ -41,15 +41,15 @@
+ updateTypeExtensions=Rozszerzenia i motywy (%S)
+ updateTypeLangPacks=Pakiety j\u0119zykowe (%S)
+  
+-foundAppLabel=%S %S jest dost\u0119pna. Zaleca si\u0119 jak najszybsze zainstalowanie tej aktualizacji.
++foundAppLabel=Program %S %S jest dost\u0119pny. Zaleca si\u0119 jak najszybsze zainstalowanie tej aktualizacji.
+ 
+ foundAppFeatures=Mo\u017cliwo\u015bci %S %S:
+ foundAppInfoLink=Wi\u0119cej informacji na temat %S %S ...
+-foundInstructions=Wybierz, kt\u00f3re chcesz zainstalowa\u0107 i kliknij 'Zainstaluj teraz'
+-foundInstructionsAppComps=Wybierz, kt\u00f3re chcesz zainstalowa\u0107 i klknij Dalej, by kontynuowa\u0107.
++foundInstructions=Wybierz te, kt\u00f3re chcesz zainstalowa\u0107 i kliknij 'Zainstaluj teraz'
++foundInstructionsAppComps=Wybierz te, kt\u00f3re chcesz zainstalowa\u0107 i kliknij Dalej, by kontynuowa\u0107.
+ 
+ appupdateperformedtitle=Wymagane jest ponowne uruchomienie
+-appupdateperformedmessage=%S zosta\u0142 zaktualizowany podczas tej sesji. Prosz\u0119 uruchomi\u0107 ponownie program %S przed dokonywaniem kolejnych aktualizacji.
++appupdateperformedmessage=Program %S zosta\u0142 zaktualizowany podczas tej sesji. Prosz\u0119 uruchomi\u0107 ponownie program %S przed dokonaniem kolejnych aktualizacji.
+  
+ updatesdisabledtitle=Aktualizacja zablokowana
+ updatesdisabledmessage=Mo\u017cliwo\u015b\u0107 aktualizacji zosta\u0142a zablokowana przez administratora systemu.
+Index: toolkit/chrome/mozapps/update/updates.dtd
+===================================================================
+RCS file: /l10n/l10n/pl/toolkit/chrome/mozapps/update/updates.dtd,v
+retrieving revision 1.10
+diff -u -r1.10 updates.dtd
+--- toolkit/chrome/mozapps/update/updates.dtd	30 Jun 2005 10:39:06 -0000	1.10
++++ toolkit/chrome/mozapps/update/updates.dtd	19 Jul 2005 05:28:36 -0000
+@@ -14,8 +14,7 @@
+ <!ENTITY  moreDetails.accesskey           "g">
+ <!ENTITY  clickHere.label                 "Aby uzyskać bardziej ogólne informacje o tej aktualizacji, proszę kliknąć tutaj">
+ 
+-<!ENTITY  incompatible.warning            "Ta aktualizacja spowoduje, że niektóre z rozszerzeń lub motywów 
+-                                           przestaną działać, póki nie zostaną zaktualizaowane.">
++<!ENTITY  incompatible.warning            "Ta aktualizacja spowoduje, że niektóre z rozszerzeń lub motywów przestaną działać, dopóki nie zostaną zaktualizaowane.">
+ <!ENTITY  listIncompatible.label          "Pokaż listę">
+ <!ENTITY  listIncompatible.accesskey      "P">
+ 
+@@ -51,14 +50,14 @@
+ <!ENTITY  errorpatching.intro             "Aktualizacja poszczególnych plików nie mogła zostać przeprowadzona. Nastąpi próba aktualizacji poprzez pobranie całego programu.">
+ 
+ <!ENTITY  finished.title                  "Aktualizacja została pobrana">
+-<!ENTITY  finished.intro                  "Proces pobierania i sprawdzenia integralności aktualizacji zakończył się powodzeniem. Aby aktualizacja mogła zostać zainstalowana, wymagane jest ponowne uruchomienie programu &brandShortName;.">
++<!ENTITY  finished.intro                  "Proces pobierania i sprawdzenia integralności aktualizacji zakończył się powodzeniem. Aby aktualizacja mogła zostać zainstalowana, należy ponownie uruchomić program &brandShortName;.">
+ 
+ <!ENTITY  finishedBackground.title        "Aktualizacja gotowa do zainstalowania">
+ <!ENTITY  finishedBackground.intro        "Program &brandShortName; zakończył pobieranie ważnej aktualizacji i musi zostać uruchomiony ponownie, aby aktualizacja mogła zostać zainstalowana.">
+ 
+ <!ENTITY  finishedBackground.name         "Aktualizacja:">
+ <!ENTITY  finishedBackground.instruction1 'Kliknięcie na przycisk "Uruchom ponownie teraz" spowoduje zamknięcie wszystkich okien programu &brandShortName; i instalację aktualizacji.'>
+-<!ENTITY  finishedBackground.instruction2 'Aby kontynuować korzystanie z programu, należy kliknąć na przycisk "Później". Aktualizacja zostanie zainstalowana przy następnym uruchomieniu programu &brandShortName;.'>
++<!ENTITY  finishedBackground.instruction2 'Aby nie przerywać pracy z programem, należy kliknąć na przycisk "Później". Aktualizacja zostanie zainstalowana przy następnym uruchomieniu programu &brandShortName;.'>
+ <!ENTITY  installed.title                 "Aktualizacja zainstalowana">  
+ <!ENTITY  installed.intro                 "Instalacja aktualizacji zakończyła się powodzeniem.">
+ <!ENTITY  whatsnew.label                  "Spis najważniejszych zmian..."> 
+Index: toolkit/chrome/mozapps/update/updates.properties
+===================================================================
+RCS file: /l10n/l10n/pl/toolkit/chrome/mozapps/update/updates.properties,v
+retrieving revision 1.10
+diff -u -r1.10 updates.properties
+--- toolkit/chrome/mozapps/update/updates.properties	30 Jun 2005 10:39:06 -0000	1.10
++++ toolkit/chrome/mozapps/update/updates.properties	19 Jul 2005 05:28:36 -0000
+@@ -7,7 +7,7 @@
+ errorsPageHeader=Aktualizacja nieudana
+ IAgreeLabel=Zgadzam si\u0119
+ IDoNotAgreeLabel=Nie zgadzam si\u0119
+-license404Error=Plik licencji nie m\u00f3g\u0142 zosta\u0107 znaleziony. Nale\u017cy skontaktowa\u0107 si\u0119 z dystrybutorem.
++license404Error=Plik licencji nie zosta\u0142 znaleziony. Nale\u017cy skontaktowa\u0107 si\u0119 z dystrybutorem.
+ downloadingLicense=Pobieranie tekstu licencji...
+ statusSucceededFormat=Zainstalowano w programie: %S 
+ statusFailed=Instalacja zako\u0144czy\u0142a si\u0119 niepowodzeniem
+@@ -68,4 +68,4 @@
+ checker_error-verification_failed=Nie uda\u0142o si\u0119 potwierdzi\u0107 integralno\u015Bci aktualizacji (prosz\u0119 skontaktowa\u0107 si\u0119 z administratorem)
+ 
+ installSuccess=Instalacja aktualizacji zako\u0144czy\u0142a si\u0119 powodzeniem.
+-patchApplyFailure=Aktualizacja nie mog\u0142a zosta\u0107 zainstalowana (aplikacja poprawki nie powiod\u0142a si\u0119)
++patchApplyFailure=Aktualizacja nie mog\u0142a zosta\u0107 zainstalowana (zastosowanie poprawki nie powiod\u0142o si\u0119)
+Index: toolkit/chrome/mozapps/xpinstall/xpinstallConfirm.properties
+===================================================================
+RCS file: /l10n/l10n/pl/toolkit/chrome/mozapps/xpinstall/xpinstallConfirm.properties,v
+retrieving revision 1.2
+diff -u -r1.2 xpinstallConfirm.properties
+--- toolkit/chrome/mozapps/xpinstall/xpinstallConfirm.properties	15 Jun 2005 22:21:55 -0000	1.2
++++ toolkit/chrome/mozapps/xpinstall/xpinstallConfirm.properties	19 Jul 2005 05:28:36 -0000
+@@ -3,6 +3,6 @@
+ itemWarningIntroSingle=Czy na pewno zainstalowa\u0107 dodatkowe oprogramowanie:
+ installButtonDisabledLabel=Zainstaluj (%S)
+ installButtonLabel=Zainstaluj teraz
+-installComplete=Zako\u0144czono instalacj\u0119. Nowe oprogramowanie b\u0119dzie w pe\u0142ni funkcjonalne po ponownym uruchomieniu przegl\u0105darki.
++installComplete=Zako\u0144czono instalacj\u0119. Nowe oprogramowanie b\u0119dzie w pe\u0142ni funkcjonalne po ponownym uruchomieniu programu.
+ installCompleteTitle=Instalacja zako\u0144czona
+ error-203=Wyst\u0105pi\u0142 b\u0142\u0105d podczas instalacji elementu
+

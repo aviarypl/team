@@ -1,0 +1,351 @@
+=== template/pl/default/attachment/create.html.tmpl
+==================================================================
+--- template/pl/default/attachment/create.html.tmpl   (/2.18/pl-patch)   (revision 54)
++++ template/pl/default/attachment/create.html.tmpl   (/2.18/pl-trunk)   (revision 54)
+@@ -142,7 +142,7 @@
+     <tr>
+       <th>Komentarz:</th>
+       <td>
+-        <em>(opcjonalne) Dodaj komentarz do tego załącznika do listy komentarzy
++        <em>(opcjonalne) Dodaj komentarz do tego załącznika do listy komentarzy 
+           [% terms.bledu %].</em><br>
+         <textarea wrap="soft" name="comment" rows="6" cols="80"></textarea>
+       </td>
+=== template/pl/default/attachment/diff-header.html.tmpl
+==================================================================
+--- template/pl/default/attachment/diff-header.html.tmpl   (/2.18/pl-patch)   (revision 54)
++++ template/pl/default/attachment/diff-header.html.tmpl   (/2.18/pl-trunk)   (revision 54)
+@@ -305,7 +305,7 @@
+   niewłaściwych miejscach.
+   [% END %]
+   [% IF warning == "interdiff2" %]
+-  wyświetlany diagram różnic pomiędzy dwiema łatkami może być, z powodu niedoskonałości
++  wyświetlany diagram różnic pomiędzy dwiema łatkami może być, z powodu niedoskonałości 
+   [% terms.Bugzilli %], wyświetlany niepoprawnie w przypadku porównywania łatek stworzonych
+   dla różnych wersji plików.
+   [% END %]
+=== template/pl/default/reports/duplicates-simple.html.tmpl
+==================================================================
+--- template/pl/default/reports/duplicates-simple.html.tmpl   (/2.18/pl-patch)   (revision 54)
++++ template/pl/default/reports/duplicates-simple.html.tmpl   (/2.18/pl-trunk)   (revision 54)
+@@ -28,9 +28,9 @@
+ <html>
+ 
+   [% IF product %]
+-    [% title = "Najcz�ciej zg�aszane $terms.bl�dy dla $product" %]
++    [% title = "Najczęściej zgłaszane $terms.bledy dla $product" %]
+   [% ELSE %]
+-    [% title = "Najcz�ciej zg�aszane $terms.bledy" %]
++    [% title = "Najczęściej zgłaszane $terms.bledy" %]
+   [% END%]
+ 
+   <head>
+=== template/pl/default/reports/duplicates.html.tmpl
+==================================================================
+--- template/pl/default/reports/duplicates.html.tmpl   (/2.18/pl-patch)   (revision 54)
++++ template/pl/default/reports/duplicates.html.tmpl   (/2.18/pl-trunk)   (revision 54)
+@@ -36,9 +36,9 @@
+ [% PROCESS global/variables.none.tmpl %]
+ 
+ [% IF query_products.size %]
+-  [% title = "Najcz�ciej zg�aszane $terms.bledy dla ${query_products.join(', ')}" %]
++  [% title = "Najczęściej zgłaszane $terms.bledy dla ${query_products.join(', ')}" %]
+ [% ELSE %]
+-  [% title = "Najcz�ciej zg�aszane $terms.bledy" %]
++  [% title = "Najczęściej zgłaszane $terms.bledy" %]
+ [% END%]
+ 
+ [% PROCESS global/header.html.tmpl
+@@ -48,7 +48,7 @@
+ <p>
+   <a href="#explanation">Co to za dane?</a>
+   <br>
+-  <a href="#params">Zmie� parametry</a>
++  <a href="#params">Zmień parametry</a>
+ </p>
+ 
+ [% PROCESS "reports/duplicates-table.html.tmpl" %]
+@@ -57,7 +57,7 @@
+ 
+ [% bug_ids_string = vis_bug_ids.join(',') %]
+ 
+-<h3><a name="params">Zmiana parametr�w</a></h3>
++<h3><a name="params">Zmiana parametrów</a></h3>
+ 
+ <form method="get" action="duplicates.cgi">
+   <input type="hidden" name="sortby" value="[% sortby FILTER html %]">
+@@ -70,16 +70,16 @@
+         <input type="radio" name="sortvisible" id="entirelist" value="0"
+           [% "checked" IF NOT sortvisible %]>
+         <label for="entirelist">
+-          ca�� list�
++          całą listą
+         </label>
+         <br>
+         <input type="radio" name="sortvisible" id="visiblelist" value="1"
+           [% "checked" IF sortvisible %]>
+         <label for="visiblelist">
+-          obecnie widoczn� list�
++          obecnie widoczną listą
+         </label>
+       </td>
+-      <td rowspan="4" valign="top">Ogranicz do produkt�w:</td>
++      <td rowspan="4" valign="top">Ogranicz do produktów:</td>
+       <td rowspan="4" valign="top">
+         <select name="product" size="5" multiple="multiple">
+           [% FOREACH p = products %]
+@@ -108,7 +108,7 @@
+     <tr>
+       <td>
+         <label for="openonly">
+-          Wy��cznie otwarte [% terms.bledy %]:
++          Wyłącznie otwarte [% terms.bledy %]:
+         </label>
+       </td>
+       <td>
+@@ -119,55 +119,55 @@
+ 
+   </table>
+ 
+-  <input type="submit" value="Zmie�">
++  <input type="submit" value="Zmień">
+ </form>
+ 
+ <form method="post" action="buglist.cgi">
+   <input type="hidden" name="bug_id" value="[% bug_ids_string %]">
+   <input type="hidden" name="order" value="Reuse same sort as last time">
+-  Lub wy�wietl to jako <input type="submit" value="list� [% terms.bledow %]">.
+-  (Uwaga: porz�dek sortowania mo�e nie by� taki sam.)
++  Lub wyświetl to jako <input type="submit" value="listę [% terms.bledow %]">.
++  (Uwaga: porządek sortowania może nie być taki sam.)
+ </form>
+ 
+ <hr>
+ 
+ <b>
+-  <a name="explanation">Co to jest "Najcz�ciej zg�aszane [% terms.bledy %]"?</a>
++  <a name="explanation">Co to jest "Najczęściej zgłaszane [% terms.bledy %]"?</a>
+ </b>
+ 
+ <blockquote>
+-  Na stronie najcz�ciej zg�aszanych [% terms.bledow %] wy�wietlana jest lista
+-  otwartych [% terms.bledow %], kt�re s� najcz�ciej zg�aszane. Jest ona generowana
+-  codziennie z zawarto�ci bazy danych [% terms.Bugzilli %], poprzez
+-  zliczanie liczby bezpo�rednich i po�rednich duplikat�w [% terms.bledow %].
+-  Ta informacja tworzona jest aby ograniczy� do minimum liczb� duplikat�w
+-  [% terms.bledow %] zg�aszanych poprzez [% terms.Bugzille %]. Pozwala to
+-  oszcz�dzi� czas os�b odpowiedzialnych za QA.
++  Na stronie najczęściej zgłaszanych [% terms.bledow %] wyświetlana jest lista
++  otwartych [% terms.bledow %], które są najczęściej zgłaszane. Jest ona generowana
++  codziennie z zawartości bazy danych [% terms.Bugzilli %], poprzez
++  zliczanie liczby bezpośrednich i pośrednich duplikatów [% terms.bledow %].
++  Ta informacja tworzona jest aby ograniczyć do minimum liczbę duplikatów 
++  [% terms.bledow %] zgłaszanych poprzez [% terms.Bugzille %]. Pozwala to
++  oszczędzić czas osób odpowiedzialnych za QA.
+ </blockquote>
+ 
+-<b>Jak u�ywa� tej listy?</b>
++<b>Jak używać tej listy?</b>
+ 
+ <ul>
+-  <li>Przejrzyj list� najcz�ciej zg�aszanych [% terms.bledow %].</li>
+-  <li>Je�li Tw�j problem pojawi� si� na li�cie:</li>
++  <li>Przejrzyj listę najczęściej zgłaszanych [% terms.bledow %].</li>
++  <li>Jeśli Twój problem pojawił się na liście:</li>
+ 
+   <ul>
+-    <li>Kliknij na numerze [% terms.bledu %], aby przekona� si� czy raport
++    <li>Kliknij na numerze [% terms.bledu %], aby przekonać się czy raport 
+       [% terms.bledu %] odnosi sie do Twojego problemu i ewentualnie dodaj
+-      komentarz, je�li posiadasz dodatkowe informacje o [% terms.bledzie %].
++      komentarz, jeśli posiadasz dodatkowe informacje o [% terms.bledzie %].
+     </li>
+   </ul>
+ 
+-  <li>Je�li Tw�j problem nie zosta� wy�wietlony na li�cie:</li>
++  <li>Jeśli Twój problem nie został wyświetlony na liście:</li>
+ 
+   <ul>
+-    <li><a href="query.cgi">Spr�buj znale�� podobny raport o [% terms.bledzie %]</a>,
+-        kt�ry zosta� zg�oszony przez kogo� innego.</li>
+-    <li>Je�li znalaz�e� raport o [% terms.bledzie %] w [% terms.Bugzilli %] odpowiadaj�cy
+-        Twojemu problemowi mo�esz doda� komentarz z nowymi lub dodatkowymi
++    <li><a href="query.cgi">Spróbuj znaleźć podobny raport o [% terms.bledzie %]</a>,
++        który został zgłoszony przez kogoś innego.</li>
++    <li>Jeśli znalazłeś raport o [% terms.bledzie %] w [% terms.Bugzilli %] odpowiadający
++        Twojemu problemowi możesz dodać komentarz z nowymi lub dodatkowymi
+         informacjami.</li>
+-    <li>Je�li nie znalaz�e� opisu swojego problemu w [% terms.Bugzilli %],
+-        <a href="enter_bug.cgi">zg�o� nowy [% terms.blad %]</a>.</li>
++    <li>Jeśli nie znalazłeś opisu swojego problemu w [% terms.Bugzilli %],
++        <a href="enter_bug.cgi">zgłoś nowy [% terms.blad %]</a>.</li>
+   </ul>
+ </ul>
+ 
+=== template/pl/default/pages/fields.html.tmpl
+==================================================================
+--- template/pl/default/pages/fields.html.tmpl   (/2.18/pl-patch)   (revision 54)
++++ template/pl/default/pages/fields.html.tmpl   (/2.18/pl-trunk)   (revision 54)
+@@ -169,7 +169,7 @@
+           <b>DUPLICATE</b> (duplikat)
+         </dt>
+         <dd>
+-          Raport [% terms.bledu %] jest duplikatem istniejącego raportu. Oznaczenie
++          Raport [% terms.bledu %] jest duplikatem istniejącego raportu. Oznaczenie 
+           [% terms.bledu %] jako duplikatu wymaga podanie numeru [% terms.bledu %] którego
+           duplikatem jest ten [% terms.blad %]. Informacja o duplikacie zostanie umieszczona
+           jako komentarz do prawidłowego [% terms.bledu %].
+=== template/pl/default/pages/bug-writing.html.tmpl
+==================================================================
+--- template/pl/default/pages/bug-writing.html.tmpl   (/2.18/pl-patch)   (revision 54)
++++ template/pl/default/pages/bug-writing.html.tmpl   (/2.18/pl-trunk)   (revision 54)
+@@ -35,7 +35,7 @@
+   [% terms.bledu %] przez programistę.</p>
+ 
+   <p>Ten dokument ma pomóc nowicjuszom i średnio-zaawansowanym
+-  użytkownikom [% terms.Bugzilli %] w tworzeniu wartościowych raportów o
++  użytkownikom [% terms.Bugzilli %] w tworzeniu wartościowych raportów o 
+   [% terms.bledach %]. Nie wszystkie uwagi zawarte w tym dokumencie mogą
+   być adekwatne dla twojego projektu.</p>
+ </blockquote>
+@@ -133,14 +133,14 @@
+      (jeśli dostępne)</p>
+ 
+     <p><b>Komponent: W którym komponencie istnieje ten [% terms.blad %]?</b><br>
+-    [% terms.Bugzilla %] wymaga wyboru komponentu podczas procesu zgłaszania
++    [% terms.Bugzilla %] wymaga wyboru komponentu podczas procesu zgłaszania 
+     [% terms.bledu %] (nie jesteś pewien który wybrać? Kliknij na odnośniku Komponent.
+     Spowoduje to wyświetlenie opisu dla każdego komponentu, co, być może, pomoże Ci
+     wybrać ten właściwy).</p>
+ 
+     <p><b>OS: Na jakim systemie operacyjnym znalazłeś [% terms.blad %]?</b>
+     (np. Linux, Windows 2000, Mac OS 9.)<br>
+-    Jeśli wiesz że ten problem występuje na każdym systemie operacyjnym, wybierz 'Wszytkie'. 
++    Jeśli wiesz że ten problem występuje na każdym systemie operacyjnym, wybierz 'Wszystkie'. 
+     W przeciwnym wypadku wybierz OS na którym udało Ci się zlokalizować [% terms.blad %],
+     lub 'Inny' jeśli Twojego systemu operacyjnego nie ma na liście.</p>
+   </blockquote>
+@@ -149,7 +149,7 @@
+ 
+   <blockquote>
+     <p><b>Waga błędu: w jakim stopniu poważny jest dany [% terms.blad %]?</b><br>
+-     Wartością domyślną pola jest 'normalny'. Jeśli nie jesteś pewny jaką wagę przypisać
++     Wartością domyślną pola jest 'normalny'. Jeśli nie jesteś pewny jaką wagę przypisać 
+      [% terms.bledowi %], kliknij na donośniku Waga błędu. Zostanie wyświetlona strona na
+      której opisane są poszczególne wagi błędów.<br>
+     </p>
+@@ -161,7 +161,7 @@
+     <p><b>Przypisany do: Która osoba jest odpowiedzialna za rozwiązanie 
+     [% terms.bledu %]?</b><br>
+     [% terms.Bugzilla %] automatycznie przypisze [% terms.blad %] osobie, która
+-    została ustawiona jako domyślna dla danego komponentu. Jeśli chcesz przypisać
++    została ustawiona jako domyślna dla danego komponentu. Jeśli chcesz przypisać 
+     [% terms.blad %] innej osobie, wpisz jej adres e-mail w tym polu (aby zobaczyć
+     kto jest osobą domyślnie przypisaną do danego komponentu, kliknij na odnośniku
+     Komponent).</p>
+@@ -236,7 +236,7 @@
+ </pre>
+       </blockquote>
+ 
+-      <p><b>Wersja i platforma:</b> Wersja oraz platforma na której zaobserwowano
++      <p><b>Wersja i platforma:</b> Wersja oraz platforma na której zaobserwowano 
+       [% terms.blad %] in.</p>
+ 
+       <blockquote>
+@@ -303,10 +303,10 @@
+   <p><b><a name="tips"></a> 1. Ogólne porady</b></p>
+ 
+   <blockquote>
+-    <p><b>Uzywaj formalnej struktury, dzięki temu twoje raporty będą łatwe do
++    <p><b>Używaj formalnej struktury, dzięki temu twoje raporty będą łatwe do
+     przejrzenia.</b> Osoby czytające raporty o [% terms.bledach %] często potrzebują
+-    dotrzeć do określonej części opisu [% terms.bledu %]. Jeśli instalacja
+-    [% terms.Bugzilli %] którą używasz zawiera narzędzie ułatwiające zgłaszanie
++    dotrzeć do określonej części opisu [% terms.bledu %]. Jeśli instalacja 
++    [% terms.Bugzilli %] którą używasz zawiera narzędzie ułatwiające zgłaszanie 
+     [% terms.bledow %], użyj go.</p>
+ 
+     <p><b>Przedkładaj wyrazistość nad elokwencje.</b> Nikt nie będzie śmiał się
+@@ -316,13 +316,13 @@
+     <p><b>Jeden [% terms.blad %] na jeden raport.</b> Zwykle zupełnie inne osoby
+     naprawiają, weryfikują i ustalają priorytety dla [% terms.bledow %]. Jeśli w
+     jednym raporcie zawrzesz kilka [% terms.bledow %], prawdopodobnie odpowiednie
+-    osoby nie dowiedzą sie odpowiednio szybko o Twoim raporcie. Dodatkowo niektóre
++    osoby nie dowiedzą sie odpowiednio szybko o Twoim raporcie. Dodatkowo niektóre 
+     [% terms.bledy %] mogą być bardziej ważnie niż reszta i tym samym prawidłowe
+     ustalenie priorytetu dla raportu może być niemożliwe.</p>
+ 
+     <p><b>Zaden [% terms.blad %] nie jest na tyle trywialny, aby go nie zgłosić.</b>
+     Rzeczywiste występowanie niektórych [% terms.bledow %], np. używanie zwolnionej
+-    pamięci, można zauważyć tylko przeglądając kod źródłowy -- objawy tego typu
++    pamięci, można zauważyć tylko przeglądając kod źródłowy -- objawy tego typu 
+     [% terms.bledu %] są widoczne jako awaria programu przez zwykłego użytkownika.
+     Niektóre klasy błędów ujawniają się w niezwykle trywialny sposób, więc zgłoszenia
+     nawet dla tak trywialnych przypadków, może pomóc w wyeliminowaniu rzeczywistych,
+=== template/pl/default/global/user-error.html.tmpl
+==================================================================
+--- template/pl/default/global/user-error.html.tmpl   (/2.18/pl-patch)   (revision 54)
++++ template/pl/default/global/user-error.html.tmpl   (/2.18/pl-trunk)   (revision 54)
+@@ -148,7 +148,7 @@
+ 
+   [% ELSIF error == "dependency_loop_multi" %]
+     [% title = "Pętla w zależnościach" %]
+-    Jeśli te zmiany ([% both FILTER none %]) zostaną zatwierdzone, ten
++    Jeśli te zmiany ([% both FILTER none %]) zostaną zatwierdzone, ten 
+     [% terms.blad %](y) wystąpi zarówno w części "zależy od" jak i "blokuje"
+     drzewa zależności. 
+     Spowoduje to powstanie pętli w zależnościach, których istnienie jest 
+@@ -419,7 +419,7 @@
+   [% ELSIF error == "milestone_required" %]
+     [% title = "Wymagana docelowa wersja" %]
+     Przypisując [% terms.blad %] #[%+ bug_id FILTER html %] dla siebie, musisz
+-    ustawić wersję docelową. Przypisanie błędu wymaga pewnego oszacowania czasu poprawienia
++    ustawić wersję docelową. Przypisanie błędu wymaga pewnego oszacowania czasu poprawienia 
+     [% terms.bledu %].
+ 
+   [% ELSIF error == "misarranged_dates" %]
+@@ -484,7 +484,7 @@
+                 
+   [% ELSIF error == "need_component" %]
+     [% title = "Wymagana nazwa komponentu" %]
+-    Musisz podać nazwę komponentu, aby możliwe było określenia właściciela tego
++    Musisz podać nazwę komponentu, aby możliwe było określenia właściciela tego 
+     [% terms.bledu %].
+ 
+   [% ELSIF error == "need_numeric_value" %]
+@@ -498,7 +498,7 @@
+ 
+   [% ELSIF error == "need_product" %]
+     [% title = "Wymagana nazwa produktu" %]
+-    Musisz podać nazwę produktu, aby możliwe było określenia właściciela tego
++    Musisz podać nazwę produktu, aby możliwe było określenia właściciela tego 
+     [% terms.bledu %].
+ 
+    [% ELSIF error == "need_quip" %]
+=== template/pl/default/bug/edit.html.tmpl
+==================================================================
+--- template/pl/default/bug/edit.html.tmpl   (/2.18/pl-patch)   (revision 54)
++++ template/pl/default/bug/edit.html.tmpl   (/2.18/pl-trunk)   (revision 54)
+@@ -508,7 +508,7 @@
+           [% IF (Param('useqacontact')) %]
+              lub osoby które są kontaktem QA
+           [% END %]
+-          zawsze mogę widzieć ten [% terms.blad %]. Ustawienia z tej sekcji są aktywne tylko jeśli
++          zawsze mogę widzieć ten [% terms.blad %]. Ustawienia z tej sekcji są aktywne tylko jeśli 
+           [% terms.blad %] jest ograniczony do przynajmniej jednej grupy.)
+         </small>
+       </p>
+
+Property changes on: template/pl
+___________________________________________________________________
+Name: svk:merge
+ -b4e29093-00e6-0310-94f3-b32f86d51dda:/2.18/pl-trunk/template/pl:48
+
+
+Property changes on: 
+___________________________________________________________________
+Name: svk:merge
+ -b4e29093-00e6-0310-94f3-b32f86d51dda:/2.18/pl-trunk:51
+  b4e29093-00e6-0310-94f3-b32f86d51dda:/2.18/trunk:45
+
+

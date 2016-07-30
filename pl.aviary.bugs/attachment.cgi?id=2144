@@ -1,0 +1,36 @@
+/**
+ * Displays stand-up meetings attendance (by default for the last 6 months)
+ * User: Hubert Gajewski <hubert@hubertgajewski.com>, Aviary.pl
+ * Date: 22.05.2012
+ * Time: 01:22
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+package standup
+
+import java.text.SimpleDateFormat
+
+if (args.length == 0) {
+    // Setting today's date minus 6 months
+    Calendar cal = Calendar.getInstance()
+    cal.set(Calendar.MONTH, (cal.get(Calendar.MONTH) - 6))
+    args = [new SimpleDateFormat("yyyy-MM-dd").format(cal.getTime()).toString()]
+}
+println("Preparing stand-up meetings attendance report (data since " + args[0] + ")")
+standUpsList = StandUp.getStandUpsList("http://wiki.aviary.pl/Kategoria:Stand-up".toURL(), args[0])
+attendees = StandUp.getStandUpAttendees(standUpsList)
+println("Attendees: " + attendees)
+attendance = StandUp.countAttendance(attendees)
+println("Attendance: " + attendance)
+println("Stand-up meetings number: " + standUpsList.size())

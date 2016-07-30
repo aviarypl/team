@@ -1,0 +1,66 @@
+#!/bin/bash
+
+#
+#  utf8tohex v. 0.2
+#
+#  (C) 2005 Hubert Gajewski http://hubertgajewski.com
+#
+#  Zamienia polskie znaki diaktrytyczne kodowane jako UTF-8
+#  do postaci heksadecymalnej.
+#
+
+if [ -z $1 ]
+then
+	echo "Podaj plik wejściowy (i opcjonalnie - wyjściowy). Składnia:"
+	echo "$./utf8tohex plikwe plikwy"
+
+elif [ -f $1 ]
+then
+	if [ -z $2 ]
+	then
+		cat $1 | sed -e s/ą/'\\u0105'/g \
+        	-e s/ć/'\\u0107'/g \
+	        -e s/ę/'\\u0119'/g \
+        	-e s/ł/'\\u0142'/g \
+	        -e s/ń/'\\u0144'/g \
+        	-e s/ó/'\\u00f3'/g \
+	        -e s/ś/'\\u015b'/g \
+        	-e s/ź/'\\u017a'/g \
+	        -e s/ż/'\\u017c'/g \
+        	-e s/Ą/'\\u0104'/g \
+	        -e s/Ć/'\\u0106'/g \
+        	-e s/Ę/'\\u0118'/g \
+	        -e s/Ł/'\\u0141'/g \
+        	-e s/Ń/'\\u0143'/g \
+	        -e s/Ó/'\\u00d3'/g \
+        	-e s/Ś/'\\u015a'/g \
+	        -e s/Ź/'\\u0179'/g \
+        	-e s/Ż/'\\u017b'/g \
+		> $1
+
+	else
+		cat $1 | sed -e s/ą/'\\u0105'/g \
+		-e s/ć/'\\u0107'/g \
+		-e s/ę/'\\u0119'/g \
+		-e s/ł/'\\u0142'/g \
+		-e s/ń/'\\u0144'/g \
+		-e s/ó/'\\u00f3'/g \
+		-e s/ś/'\\u015b'/g \
+		-e s/ź/'\\u017a'/g \
+		-e s/ż/'\\u017c'/g \
+		-e s/Ą/'\\u0104'/g \
+		-e s/Ć/'\\u0106'/g \
+		-e s/Ę/'\\u0118'/g \
+		-e s/Ł/'\\u0141'/g \
+		-e s/Ń/'\\u0143'/g \
+		-e s/Ó/'\\u00d3'/g \
+		-e s/Ś/'\\u015a'/g \
+		-e s/Ź/'\\u0179'/g \
+		-e s/Ż/'\\u017b'/g \
+		> $2
+	fi
+	
+else
+	echo "Plik $1 nie istnieje!";
+fi
+

@@ -1,0 +1,2327 @@
+diff -r ./EN0.8/US/browser-region/contents.rdf ./EN0.9/US/browser-region/contents.rdf
+25c25,26
+< 	chrome:localeVersion="1.1b"/>
+---
+> 	chrome:localeVersion="0.9.9"/>
+> 
+diff -r ./EN0.8/US/browser-region/region.properties ./EN0.9/US/browser-region/region.properties
+4,5d3
+< 
+< # XXXben we shouldn't be relying on Netscape for all this junk anymore. 
+15c13
+< # all.js
+---
+> # firefox.js
+18,21c16
+< browser.search.defaulturl=http://www.google.com/search?lr=&ie=UTF-8&oe=UTF-8&q=
+< 
+< wallet.Server=http://www.mozilla.org/wallet/tables/
+< wallet.Samples=http://www.mozilla.org/wallet/samples/
+---
+> browser.search.defaulturl=http://www.google.com/search?lr=&sourceid=mozilla-search&ie=UTF-8&oe=UTF-8&q=
+27c22
+< defaultSearchURL=http://www.google.com/search?hl=en&lr=&ie=UTF-8&oe=UTF-8&q=
+---
+> defaultSearchURL=http://www.google.com/search?hl=en&sourceid=mozilla-search&lr=&ie=UTF-8&oe=UTF-8&q=
+Only in ./EN0.8/US: communicator-region
+diff -r ./EN0.8/US/global-region/contents.rdf ./EN0.9/US/global-region/contents.rdf
+16c16
+<         chrome:localeVersion="1.6"
+---
+>         chrome:localeVersion="1.8a"
+28c28
+< 	chrome:localeVersion="1.6"/>
+---
+> 	chrome:localeVersion="1.8a"/>
+Only in ./EN0.8/US: navigator-region
+diff -r ./EN0.8/en-US/autoconfig/autoconfig.properties ./EN0.9/en-US/autoconfig/autoconfig.properties
+5a6,8
+> 
+> emailPromptTitle = Email Address
+> emailPromptMsg = Enter your email address
+diff -r ./EN0.8/en-US/autoconfig/contents.rdf ./EN0.9/en-US/autoconfig/contents.rdf
+22c22
+< 	chrome:localeVersion="1.6"/>
+---
+> 	chrome:localeVersion="1.8a"/>
+diff -r ./EN0.8/en-US/browser/aboutDialog.dtd ./EN0.9/en-US/browser/aboutDialog.dtd
+1c1
+< <!ENTITY aboutDialog.title      "About &brandShortName;">
+---
+> <!ENTITY aboutDialog.title      "About &brandFullName;">
+3c3
+< <!ENTITY aboutLink              "&lt; About &brandShortName;">
+---
+> <!ENTITY aboutLink              "&lt; About &brandFullName;">
+6c6
+<                                  Firefox logos are trademarks of The Mozilla Foundation.  All rights 
+---
+>                                  Firefox logos are trademarks of the Mozilla Foundation.  All rights 
+8c8
+<                                  Charlton Group. ">
+\ No newline at end of file
+---
+>                                  Charlton Company.">
+diff -r ./EN0.8/en-US/browser/bookmarks/addBookmark.dtd ./EN0.9/en-US/browser/bookmarks/addBookmark.dtd
+4c4,6
+< <!ENTITY name.accesskey             "n">
+---
+> <!ENTITY name.accesskey             "N">
+> <!ENTITY keyword.label              "Keyword:">
+> <!ENTITY keyword.accesskey          "K">
+6c8
+< <!ENTITY url.accesskey              "l">
+---
+> <!ENTITY url.accesskey              "L">
+8c10
+< <!ENTITY button.createin.accesskey  "c">
+---
+> <!ENTITY button.createin.accesskey  "C">
+25c27
+< <!ENTITY newFolder.label         "New Folder">
+---
+> <!ENTITY newFolder.label         "New Folder...">
+diff -r ./EN0.8/en-US/browser/browser.dtd ./EN0.9/en-US/browser/browser.dtd
+27a28,29
+> <!ENTITY import.label "Import...">
+> <!ENTITY import.accesskey "I">
+63,64c65,66
+< <!ENTITY addCurPageAsCmd.label "Add to Bookmarks...">
+< <!ENTITY addCurPageAsCmd.accesskey "A">
+---
+> <!ENTITY addCurPageAsCmd.label "Bookmark This Page...">
+> <!ENTITY addCurPageAsCmd.accesskey "B">
+107a110,113
+> <!ENTITY keywordfield.label           "Add a Keyword for this Search...">
+> <!ENTITY keywordfield.accesskey       "K">
+> <!ENTITY search.label                 "Web Search">
+> <!ENTITY search.accesskey             "S">
+109c115
+< <!ENTITY downloads.tooltip            "Displays the progress of ongoing downloads">
+---
+> <!ENTITY downloads.tooltip            "Display the progress of ongoing downloads">
+111c117,123
+< <!ENTITY downloads.commandkey         "e">
+---
+> <!ENTITY downloads.commandkey         "y">
+> <!ENTITY extensions.label             "Extensions - TESTING ONLY">
+> <!ENTITY extensions.tooltip           "Show and Manage installed Extensions">
+> <!ENTITY extensions.accesskey         "E">
+> <!ENTITY themes.label                 "Themes">
+> <!ENTITY themes.tooltip               "Change the Theme">
+> <!ENTITY themes.accesskey             "T">
+115d126
+< 
+117c128
+< <!ENTITY javaScriptConsoleCmd.accesskey "S">
+---
+> <!ENTITY javaScriptConsoleCmd.accesskey "C">
+215c226
+< <!ENTITY setWallpaperCmd.label        "Set As Wallpaper">
+---
+> <!ENTITY setWallpaperCmd.label        "Set As Wallpaper...">
+230c241
+< <!ENTITY saveLinkCmd.label            "Save Link to Disk...">
+---
+> <!ENTITY saveLinkCmd.label            "Save Link As...">
+241a253,255
+> <!ENTITY copyImageContentsCmd.label   "Copy Image">
+> <!ENTITY copyImageContentsCmd.accesskey  "y"> 
+> <!ENTITY blockImageCmd.accesskey       "g">
+248c262
+< <!ENTITY search.accesskey             "W">
+---
+> <!ENTITY search.accesskey             "S">
+261c275
+< <!ENTITY bookmarksButton.tooltip        "Displays your bookmarks">
+---
+> <!ENTITY bookmarksButton.tooltip        "Display your bookmarks">
+264c278
+< <!ENTITY historyButton.tooltip          "Displays pages you've viewed recently">
+---
+> <!ENTITY historyButton.tooltip          "Display pages you've viewed recently">
+266,267c280,294
+< <!ENTITY newTabButton.tooltip           "Opens a new tab">
+< <!ENTITY newWindowButton.tooltip        "Opens a new window">
+---
+> <!ENTITY mailButton.label                 "Mail">
+> <!ENTITY mailButton.tooltip               "Read and Send Mail">
+> <!ENTITY mailButton.readMail.label        "Read Mail">
+> <!ENTITY mailButton.readMail.accesskey    "M">
+> <!ENTITY mailButton.newMessage.label      "New Message...">
+> <!ENTITY mailButton.newMessage.accesskey  "w">
+> <!ENTITY mailButton.sendLink.label        "Send Link...">
+> <!ENTITY mailButton.sendLink.accesskey    "L">
+> <!ENTITY mailButton.readNews.label        "Read News">
+> <!ENTITY mailButton.readNews.accesskey    "N">
+> <!ENTITY sendMessage.commandkey           "m">
+> 
+> <!ENTITY newTabButton.tooltip           "Open a new tab">
+> <!ENTITY newWindowButton.tooltip        "Open a new window">
+> <!ENTITY sidebarCloseButton.tooltip     "Close sidebar">
+273c300
+< <!ENTITY findOnSearchBarCmd.label       "Find in this Page">
+---
+> <!ENTITY findOnSearchBarCmd.label       "Find in This Page">
+287c314
+< <!ENTITY minimizeWindow.label "Minimize Window">
+---
+> <!ENTITY minimizeWindow.label "Minimize">
+289c316
+< <!ENTITY zoomWindow.label "Zoom Window">
+---
+> <!ENTITY zoomWindow.label "Zoom">
+diff -r ./EN0.8/en-US/browser/browser.properties ./EN0.9/en-US/browser/browser.properties
+27c27
+< searchText=Web Search for "%S"
+---
+> searchText=Search Web for "%S"
+49a50,62
+> 
+> # setWallpaper confirmation dialog
+> wallpaperConfirmTitle = Set Wallpaper
+> wallpaperConfirmMsg   = Do you want to set this image as your desktop wallpaper?
+> 
+> tabs.closeWarningTitle=Confirm close
+> tabs.closeWarning=This Browser window has %S tabs open. Do you want to close it and all its tabs?
+> tabs.closeButton=Close all tabs
+> tabs.closeWarningPromptMe=Warn me when closing multiple tabs
+> 
+> mailUnreadTooltip=Read Mail and News (%S new messages)
+> mailUnreadMenuitem=Read Mail (%S new)
+> 
+diff -r ./EN0.8/en-US/browser/contentAreaCommands.properties ./EN0.9/en-US/browser/contentAreaCommands.properties
+3c3
+< searchText=Web Search for "%S"
+---
+> searchText=Search Web for "%S"
+21a22,25
+> 
+> unknownDescriptionFilesFilter=%S File
+> unknownDescriptionFilesPluralFilter=%S Files
+> 
+diff -r ./EN0.8/en-US/browser/cookieviewer/CookieViewer.dtd ./EN0.9/en-US/browser/cookieviewer/CookieViewer.dtd
+2,3d1
+< <!ENTITY     tab.cookiesonsystem.label      "Stored Cookies">
+< <!ENTITY     tab.bannedservers.label        "Cookie Sites">
+7d4
+< <!ENTITY     treehead.cookiestatus.label    "Status"> 
+16c13
+< <!ENTITY     props.secure.label             "Server Secure:">
+---
+> <!ENTITY     props.secure.label             "Send For:">
+18d14
+< <!ENTITY     props.policy.label             "Policy:"> 
+20c16
+< <!ENTITY     window.title                   "Cookie Manager">
+---
+> <!ENTITY     window.title                   "Stored Cookies">
+diff -r ./EN0.8/en-US/browser/cookieviewer/CookieViewer.properties ./EN0.9/en-US/browser/cookieviewer/CookieViewer.properties
+2,3d1
+< domain=Domain for which this cookie applies:
+< host=Server which set the cookie:
+6,7c4,5
+< yes=yes
+< no=no
+---
+> forSecureOnly=Encrypted connections only
+> forAnyConnection=Any type of connection
+9,17c7
+< accepted=accepted
+< downgraded=session
+< flagged=flagged
+< policyUnstated = no policy about storing identifiable information
+< policyNoConsent = stores identifiable information without any user consent
+< policyImplicitConsent = stores identifiable information unless user opts out
+< policyExplicitConsent = stores identifiable information if user opts in
+< policyNoIICollected = does not store identifiable information
+< close=Close
+---
+> 
+diff -r ./EN0.8/en-US/browser/credits.html ./EN0.9/en-US/browser/credits.html
+37c37
+<         height: 350px;
+---
+>         height: 285px;
+78,82d77
+<       
+<       body {
+<         background-color: #FFFFFF;
+<         overflow: hidden;
+<       }
+140,141d134
+<         <br>  
+<         <br>  
+156,157d148
+<         <br>  
+<         <br>  
+178a170
+>             Glenn Johnson<br>
+184a177
+>             Igor Pavlov, 7-Zip<br>
+197c190,198
+<         
+---
+> 
+> <!-- LOCALIZERS: Add your translation credits here!
+>         <div class="creditsGroup">
+>           <h3>Translators</h3>
+>           <div class="credit">
+>             Translator Name<br>
+>           </div>
+>         </div>
+> -->         
+324,328c325,328
+<           Firefox and the Firefox logos are trademarks of The Mozilla 
+<           Foundation.  All rights reserved. Some trademark rights used under 
+<           license from The Charlton Group. You are not granted any rights or 
+<           licenses to the trademarks of the Mozilla Foundation or any party, 
+<           including without limitation the Firefox name or logo.</p>
+---
+>           Mozilla Firefox&trade; and the Firefox logo are trademarks of the Mozilla 
+>           Foundation. You are not granted rights or licenses to the trademarks 
+>           of the Mozilla Foundation or any party, including without limitation the
+>           Firefox name or logo.</p>
+Only in ./EN0.9/en-US/browser: migration
+diff -r ./EN0.8/en-US/browser/openLocation.dtd ./EN0.9/en-US/browser/openLocation.dtd
+5,9c5,7
+< <!ENTITY newWindow.label "New Navigator window">
+< <!ENTITY newTab.label "New Navigator tab">
+< <!ENTITY topWindow.label "Current Navigator window">
+< <!ENTITY editNewWindow.label "New Composer window">
+< <!ENTITY cancel.label "Cancel">
+---
+> <!ENTITY newWindow.label "New Window">
+> <!ENTITY newTab.label "New Tab">
+> <!ENTITY topWindow.label "Current Window">
+12a11
+> <!ENTITY openBtn.label "Open">
+\ No newline at end of file
+diff -r ./EN0.8/en-US/browser/openLocation.properties ./EN0.9/en-US/browser/openLocation.properties
+1d0
+< openButtonLabel=Open
+diff -r ./EN0.8/en-US/browser/pageInfo.dtd ./EN0.9/en-US/browser/pageInfo.dtd
+1a2,6
+> <!ENTITY  preface               "Info for: "> 
+> 
+> <!ENTITY  title                 "Page Info"> 
+> <!ENTITY  description           "Information about the current page"> 
+> <!ENTITY  helpButton            "Help">
+3a9,10
+> 
+> <!ENTITY  unknown               "Unknown">
+7d13
+< <!ENTITY  generalAccesskey      "g">
+24d29
+< <!ENTITY  formsAccesskey        "f">
+38d42
+< <!ENTITY  linksAccesskey        "l">
+43a48
+> <!ENTITY  linkAccessKey         "Access Key">
+46d50
+< <!ENTITY  mediaAccesskey        "i">
+66d69
+< <!ENTITY  framesAccesskey       "r">
+diff -r ./EN0.8/en-US/browser/pref/pref-advanced.dtd ./EN0.9/en-US/browser/pref/pref-advanced.dtd
+86a87,102
+> 
+> <!-- Software Update -->
+> <!ENTITY browsing.label                   "Browsing">
+> <!ENTITY softwareupdate.label             "Software Update">
+> <!ENTITY enableSoftwareUpdate.label       "Allow web sites to install software">
+> <!ENTITY enableSoftwareUpdate.accesskey   "i">
+> <!ENTITY softwareupdateinfo.label         "Periodically check for updates to:">
+> <!ENTITY enableSmartUpdate.label          "&brandShortName;">
+> <!ENTITY enableSmartUpdate.accesskey      "F">
+> <!ENTITY enableExtensionUpdate.label      "My Extensions">
+> <!ENTITY enableExtensionUpdate.accesskey  "y">
+> <!ENTITY enableAutoInstall.label          "Automatically download and install updates to Extensions.">
+> <!ENTITY enableAutoInstall.accesskey      "d">
+> <!ENTITY checkNow.label                   "Check Now">
+> <!ENTITY checkNow.accesskey               "N">
+> 
+diff -r ./EN0.8/en-US/browser/pref/pref-advancedscripts.dtd ./EN0.9/en-US/browser/pref/pref-advancedscripts.dtd
+8a9
+> <!ENTITY allowControlContextMenu.label   "Disable or replace context menus">
+diff -r ./EN0.8/en-US/browser/pref/pref-navigator.dtd ./EN0.9/en-US/browser/pref/pref-navigator.dtd
+31a32,38
+> 
+> 
+> <!ENTITY checkForDefault.label              "&brandShortName; should check to see if it is the default browser when starting.">
+> <!ENTITY checkForDefault.accesskey          "d">
+> <!ENTITY checkNow.label                     "Check Now">
+> <!ENTITY checkNow.accesskey                 "N">
+> 
+diff -r ./EN0.8/en-US/browser/pref/pref-privacy.dtd ./EN0.9/en-US/browser/pref/pref-privacy.dtd
+55a56,59
+> <!ENTITY acceptNormally.label              "Accept cookies normally">
+> <!ENTITY acceptForSession.label            "Accept for current session only">
+> <!ENTITY askAboutCookies.label             "Ask for each cookie">
+> 
+diff -r ./EN0.8/en-US/browser/pref/prefutilities.properties ./EN0.9/en-US/browser/pref/prefutilities.properties
+35,40d34
+< invalidDirPopupTitle=Error Creating %s
+< invalidDirPopup=The directory %S does not exist.  Do you wish to create it?
+< downloadDirTitle=Select Download Directory
+< invalidDir=Unable to create directory %S.  This is not a valid directory name.
+< blankDir=You did not specify a download directory.
+< 
+Only in ./EN0.9/en-US/browser: setWallpaper.dtd
+Only in ./EN0.9/en-US/browser: shellservice.properties
+Only in ./EN0.8/en-US/communicator: aboutPopups.dtd
+Only in ./EN0.8/en-US/communicator: askViewZoom.dtd
+Only in ./EN0.8/en-US/communicator: contentAreaCommands.dtd
+Only in ./EN0.8/en-US/communicator: contentAreaCommands.properties
+diff -r ./EN0.8/en-US/communicator/contents.rdf ./EN0.9/en-US/communicator/contents.rdf
+22c22
+< 	chrome:localeVersion="1.6"/>
+---
+>        chrome:localeVersion="1.8a"/>
+Only in ./EN0.8/en-US/communicator: directory
+diff -r ./EN0.8/en-US/communicator/dom/dom.properties ./EN0.9/en-US/communicator/dom/dom.properties
+2c2,4
+< WindowCloseBlockedWarning=Scripts may not close windows that were not opened by script.
+---
+> WindowCloseBlockedWarning=Scripts may not close windows that were not opened by script.
+> OnBeforeUnloadPreMessage=Are you sure you want to navigate away from this page?
+> OnBeforeUnloadPostMessage=Press OK to continue, or Cancel to stay on the current page.
+Only in ./EN0.8/en-US/communicator: history
+diff -r ./EN0.8/en-US/communicator/layout/HtmlForm.properties ./EN0.9/en-US/communicator/layout/HtmlForm.properties
+1,9c1,12
+< # The contents of this file are subject to the Netscape Public
+< # License Version 1.1 (the "License"); you may not use this file
+< # except in compliance with the License. You may obtain a copy of
+< # the License at http://www.mozilla.org/NPL/
+< #
+< # Software distributed under the License is distributed on an "AS
+< # IS" basis, WITHOUT WARRANTY OF ANY KIND, either express or
+< # implied. See the License for the specific language governing
+< # rights and limitations under the License.
+---
+> # ***** BEGIN LICENSE BLOCK *****
+> # Version: MPL 1.1/GPL 2.0/LGPL 2.1
+> #
+> # The contents of this file are subject to the Mozilla Public License Version
+> # 1.1 (the "License"); you may not use this file except in compliance with
+> # the License. You may obtain a copy of the License at
+> # http://www.mozilla.org/MPL/
+> #
+> # Software distributed under the License is distributed on an "AS IS" basis,
+> # WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+> # for the specific language governing rights and limitations under the
+> # License.
+13,16c16,33
+< # The Initial Developer of the Original Code is Netscape
+< # Communications Corporation. Portions created by Netscape are
+< # Copyright (C) 1998 Netscape Communications Corporation. All
+< # Rights Reserved.
+---
+> # The Initial Developer of the Original Code is
+> # Netscape Communications Corporation.
+> # Portions created by the Initial Developer are Copyright (C) 1998
+> # the Initial Developer. All Rights Reserved.
+> #
+> # Contributor(s):
+> #
+> # Alternatively, the contents of this file may be used under the terms of
+> # either of the GNU General Public License Version 2 or later (the "GPL"),
+> # or the GNU Lesser General Public License Version 2.1 or later (the "LGPL"),
+> # in which case the provisions of the GPL or the LGPL are applicable instead
+> # of those above. If you wish to allow use of your version of this file only
+> # under the terms of either the GPL or the LGPL, and not to allow others to
+> # use your version of this file under the terms of the MPL, indicate your
+> # decision by deleting the provisions above and replace them with the notice
+> # and other provisions required by the GPL or the LGPL. If you do not delete
+> # the provisions above, a recipient may use your version of this file under
+> # the terms of any one of the MPL, the GPL or the LGPL.
+18c35
+< # Contributor(s): 
+---
+> # ***** END LICENSE BLOCK *****
+diff -r ./EN0.8/en-US/communicator/layout/MediaDocument.properties ./EN0.9/en-US/communicator/layout/MediaDocument.properties
+1,9c1,12
+< # The contents of this file are subject to the Netscape Public
+< # License Version 1.1 (the "License"); you may not use this file
+< # except in compliance with the License. You may obtain a copy of
+< # the License at http://www.mozilla.org/NPL/
+< #
+< # Software distributed under the License is distributed on an "AS
+< # IS" basis, WITHOUT WARRANTY OF ANY KIND, either express or
+< # implied. See the License for the specific language governing
+< # rights and limitations under the License.
+---
+> # ***** BEGIN LICENSE BLOCK *****
+> # Version: MPL 1.1/GPL 2.0/LGPL 2.1
+> #
+> # The contents of this file are subject to the Mozilla Public License Version
+> # 1.1 (the "License"); you may not use this file except in compliance with
+> # the License. You may obtain a copy of the License at
+> # http://www.mozilla.org/MPL/
+> #
+> # Software distributed under the License is distributed on an "AS IS" basis,
+> # WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+> # for the specific language governing rights and limitations under the
+> # License.
+13,16c16,19
+< # The Initial Developer of the Original Code is Netscape
+< # Communications Corporation. Portions created by Netscape are
+< # Copyright (C) 1998 Netscape Communications Corporation. All
+< # Rights Reserved.
+---
+> # The Initial Developer of the Original Code is
+> # Netscape Communications Corporation.
+> # Portions created by the Initial Developer are Copyright (C) 1998
+> # the Initial Developer. All Rights Reserved.
+21a25,38
+> #
+> # Alternatively, the contents of this file may be used under the terms of
+> # either of the GNU General Public License Version 2 or later (the "GPL"),
+> # or the GNU Lesser General Public License Version 2.1 or later (the "LGPL"),
+> # in which case the provisions of the GPL or the LGPL are applicable instead
+> # of those above. If you wish to allow use of your version of this file only
+> # under the terms of either the GPL or the LGPL, and not to allow others to
+> # use your version of this file under the terms of the MPL, indicate your
+> # decision by deleting the provisions above and replace them with the notice
+> # and other provisions required by the GPL or the LGPL. If you do not delete
+> # the provisions above, a recipient may use your version of this file under
+> # the terms of any one of the MPL, the GPL or the LGPL.
+> #
+> # ***** END LICENSE BLOCK *****
+diff -r ./EN0.8/en-US/communicator/layout/xmlparser.properties ./EN0.9/en-US/communicator/layout/xmlparser.properties
+1,9c1,12
+< # The contents of this file are subject to the Netscape Public
+< # License Version 1.1 (the "License"); you may not use this file
+< # except in compliance with the License. You may obtain a copy of
+< # the License at http://www.mozilla.org/NPL/
+< #
+< # Software distributed under the License is distributed on an "AS
+< # IS" basis, WITHOUT WARRANTY OF ANY KIND, either express or
+< # implied. See the License for the specific language governing
+< # rights and limitations under the License.
+---
+> # ***** BEGIN LICENSE BLOCK *****
+> # Version: MPL 1.1/GPL 2.0/LGPL 2.1
+> #
+> # The contents of this file are subject to the Mozilla Public License Version
+> # 1.1 (the "License"); you may not use this file except in compliance with
+> # the License. You may obtain a copy of the License at
+> # http://www.mozilla.org/MPL/
+> #
+> # Software distributed under the License is distributed on an "AS IS" basis,
+> # WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+> # for the specific language governing rights and limitations under the
+> # License.
+13,16c16,21
+< # The Initial Developer of the Original Code is Netscape
+< # Communications Corporation. Portions created by Netscape are
+< # Copyright (C) 2001 Netscape Communications Corporation. All
+< # Rights Reserved.
+---
+> # The Initial Developer of the Original Code is
+> # Netscape Communications Corporation.
+> # Portions created by the Initial Developer are Copyright (C) 2001
+> # the Initial Developer. All Rights Reserved.
+> #
+> # Contributor(s):
+18c23,33
+< # Contributor(s): 
+---
+> # Alternatively, the contents of this file may be used under the terms of
+> # either of the GNU General Public License Version 2 or later (the "GPL"),
+> # or the GNU Lesser General Public License Version 2.1 or later (the "LGPL"),
+> # in which case the provisions of the GPL or the LGPL are applicable instead
+> # of those above. If you wish to allow use of your version of this file only
+> # under the terms of either the GPL or the LGPL, and not to allow others to
+> # use your version of this file under the terms of the MPL, indicate your
+> # decision by deleting the provisions above and replace them with the notice
+> # and other provisions required by the GPL or the LGPL. If you do not delete
+> # the provisions above, a recipient may use your version of this file under
+> # the terms of any one of the MPL, the GPL or the LGPL.
+19a35
+> # ***** END LICENSE BLOCK *****
+diff -r ./EN0.8/en-US/communicator/layout/xslt.properties ./EN0.9/en-US/communicator/layout/xslt.properties
+14c14
+< # The Original Code is TransforMiiX XSLT Processor.
+---
+> # The Original Code is TransforMiiX XSLT processor code.
+22c22
+< #   Peter Van der Beken <peterv@netscape.com>
+---
+> #   Peter Van der Beken <peterv@propagandism.org>
+Only in ./EN0.8/en-US/communicator: openLocation.dtd
+Only in ./EN0.8/en-US/communicator: openLocation.properties
+Only in ./EN0.8/en-US/communicator: plugins.properties
+Only in ./EN0.8/en-US/communicator: popupManager.dtd
+Only in ./EN0.8/en-US/communicator: popupManager.properties
+Only in ./EN0.8/en-US/communicator: pref
+Only in ./EN0.8/en-US/communicator: printPreview.dtd
+Only in ./EN0.8/en-US/communicator/profile: confirmMigration.dtd
+diff -r ./EN0.8/en-US/communicator/profile/profileSelection.dtd ./EN0.9/en-US/communicator/profile/profileSelection.dtd
+4,24c4,39
+<   The contents of this file are subject to the Netscape Public
+<   License Version 1.1 (the "License"); you may not use this file
+<   except in compliance with the License. You may obtain a copy of
+<   the License at http://www.mozilla.org/NPL/
+<  
+<   Software distributed under the License is distributed on an "AS
+<   IS" basis, WITHOUT WARRANTY OF ANY KIND, either express or
+<   implied. See the License for the specific language governing
+<   rights and limitations under the License.
+<  
+<   The Original Code is mozilla.org code.
+<  
+<   The Initial Developer of the Original Code is Netscape
+<   Communications Corporation.  Portions created by Netscape are
+<   Copyright (C) 1998 Netscape Communications Corporation. All
+<   Rights Reserved.
+<  
+<   Contributor(s): 
+<     Ben Goodger (28/10/99)
+<   
+< -->
+---
+>  ***** BEGIN LICENSE BLOCK *****
+>  Version: MPL 1.1/GPL 2.0/LGPL 2.1
+> 
+>  The contents of this file are subject to the Mozilla Public License Version
+>  1.1 (the "License"); you may not use this file except in compliance with
+>  the License. You may obtain a copy of the License at
+>  http://www.mozilla.org/MPL/
+> 
+>  Software distributed under the License is distributed on an "AS IS" basis,
+>  WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+>  for the specific language governing rights and limitations under the
+>  License.
+> 
+>  The Original Code is mozilla.org code.
+> 
+>  The Initial Developer of the Original Code is
+>  Netscape Communications Corporation.
+>  Portions created by the Initial Developer are Copyright (C) 1998
+>  the Initial Developer. All Rights Reserved.
+> 
+>  Contributor(s):
+>    Ben Goodger (28/10/99)
+> 
+>  Alternatively, the contents of this file may be used under the terms of
+>  either of the GNU General Public License Version 2 or later (the "GPL"),
+>  or the GNU Lesser General Public License Version 2.1 or later (the "LGPL"),
+>  in which case the provisions of the GPL or the LGPL are applicable instead
+>  of those above. If you wish to allow use of your version of this file only
+>  under the terms of either the GPL or the LGPL, and not to allow others to
+>  use your version of this file under the terms of the MPL, indicate your
+>  decision by deleting the provisions above and replace them with the notice
+>  and other provisions required by the GPL or the LGPL. If you do not delete
+>  the provisions above, a recipient may use your version of this file under
+>  the terms of any one of the MPL, the GPL or the LGPL.
+> 
+>  ***** END LICENSE BLOCK ***** -->
+Only in ./EN0.8/en-US/communicator: search
+diff -r ./EN0.8/en-US/communicator/security/caps.properties ./EN0.9/en-US/communicator/security/caps.properties
+1,9c1,12
+< # The contents of this file are subject to the Netscape Public
+< # License Version 1.1 (the "License"); you may not use this file
+< # except in compliance with the License. You may obtain a copy of
+< # the License at http://www.mozilla.org/NPL/
+< #
+< # Software distributed under the License is distributed on an "AS
+< # IS" basis, WITHOUT WARRANTY OF ANY KIND, either express or
+< # implied. See the License for the specific language governing
+< # rights and limitations under the License.
+---
+> # ***** BEGIN LICENSE BLOCK *****
+> # Version: MPL 1.1/GPL 2.0/LGPL 2.1
+> #
+> # The contents of this file are subject to the Mozilla Public License Version
+> # 1.1 (the "License"); you may not use this file except in compliance with
+> # the License. You may obtain a copy of the License at
+> # http://www.mozilla.org/MPL/
+> #
+> # Software distributed under the License is distributed on an "AS IS" basis,
+> # WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+> # for the specific language governing rights and limitations under the
+> # License.
+13,16c16,19
+< # The Initial Developer of the Original Code is Netscape
+< # Communications Corporation. Portions created by Netscape are
+< # Copyright (C) 2000 Netscape Communications Corporation. All
+< # Rights Reserved.
+---
+> # The Initial Developer of the Original Code is
+> # Netscape Communications Corporation.
+> # Portions created by the Initial Developer are Copyright (C) 2000
+> # the Initial Developer. All Rights Reserved.
+19,20c22,35
+< # Mitch Stoltz <mstoltz@netscape.com>
+< # Christopher A. Aillon <christopher@aillon.com>
+---
+> #   Mitch Stoltz <mstoltz@netscape.com>
+> #   Christopher A. Aillon <christopher@aillon.com>
+> #
+> # Alternatively, the contents of this file may be used under the terms of
+> # either of the GNU General Public License Version 2 or later (the "GPL"),
+> # or the GNU Lesser General Public License Version 2.1 or later (the "LGPL"),
+> # in which case the provisions of the GPL or the LGPL are applicable instead
+> # of those above. If you wish to allow use of your version of this file only
+> # under the terms of either the GPL or the LGPL, and not to allow others to
+> # use your version of this file under the terms of the MPL, indicate your
+> # decision by deleting the provisions above and replace them with the notice
+> # and other provisions required by the GPL or the LGPL. If you do not delete
+> # the provisions above, a recipient may use your version of this file under
+> # the terms of any one of the MPL, the GPL or the LGPL.
+21a37
+> # ***** END LICENSE BLOCK *****
+diff -r ./EN0.8/en-US/communicator/security.properties ./EN0.9/en-US/communicator/security.properties
+2,10c2,13
+< # The contents of this file are subject to the Netscape Public
+< # License Version 1.1 (the "License"); you may not use this file
+< # except in compliance with the License. You may obtain a copy of
+< # the License at http://www.mozilla.org/NPL/
+< #
+< # Software distributed under the License is distributed on an "AS
+< # IS" basis, WITHOUT WARRANTY OF ANY KIND, either express or
+< # implied. See the License for the specific language governing
+< # rights and limitations under the License.
+---
+> # ***** BEGIN LICENSE BLOCK *****
+> # Version: MPL 1.1/GPL 2.0/LGPL 2.1
+> #
+> # The contents of this file are subject to the Mozilla Public License Version
+> # 1.1 (the "License"); you may not use this file except in compliance with
+> # the License. You may obtain a copy of the License at
+> # http://www.mozilla.org/MPL/
+> #
+> # Software distributed under the License is distributed on an "AS IS" basis,
+> # WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+> # for the specific language governing rights and limitations under the
+> # License.
+14,23c17,37
+< # The Initial Developer of the Original Code is Netscape
+< # Communications Corporation.  Portions created by Netscape are
+< # Copyright (C) 1998 Netscape Communications Corporation. All
+< # Rights Reserved.
+< #
+< # Contributor(s): 
+< # Sean Cotter <cotter@netscape.com>
+< # 
+< # Note: Hash characters in the strings will be replaced by
+< # newlines. These are used to lay out the dialog.
+---
+> # The Initial Developer of the Original Code is
+> # Netscape Communications Corporation.
+> # Portions created by the Initial Developer are Copyright (C) 1998
+> # the Initial Developer. All Rights Reserved.
+> #
+> # Contributor(s):
+> #   Sean Cotter <cotter@netscape.com>
+> #
+> # Alternatively, the contents of this file may be used under the terms of
+> # either the GNU General Public License Version 2 or later (the "GPL"), or
+> # the GNU Lesser General Public License Version 2.1 or later (the "LGPL"),
+> # in which case the provisions of the GPL or the LGPL are applicable instead
+> # of those above. If you wish to allow use of your version of this file only
+> # under the terms of either the GPL or the LGPL, and not to allow others to
+> # use your version of this file under the terms of the MPL, indicate your
+> # decision by deleting the provisions above and replace them with the notice
+> # and other provisions required by the GPL or the LGPL. If you do not delete
+> # the provisions above, a recipient may use your version of this file under
+> # the terms of any one of the MPL, the GPL or the LGPL.
+> #
+> # ***** END LICENSE BLOCK *****
+Only in ./EN0.8/en-US/communicator: sidebar
+Only in ./EN0.8/en-US/communicator: tasksOverlay.dtd
+Only in ./EN0.8/en-US/communicator: update-notifications.properties
+Only in ./EN0.8/en-US/communicator: utilityOverlay.dtd
+Only in ./EN0.8/en-US/communicator: utilityOverlay.properties
+Only in ./EN0.8/en-US/communicator: viewZoomOverlay.dtd
+Only in ./EN0.8/en-US/communicator: viewZoomOverlay.properties
+Only in ./EN0.8/en-US/communicator/xpinstall: institems.dtd
+diff -r ./EN0.8/en-US/communicator/xpinstall/xpinstall.properties ./EN0.9/en-US/communicator/xpinstall/xpinstall.properties
+1,4c1,7
+< # The contents of this file are subject to the Netscape Public License
+< # Version 1.1 (the "License"); you may not use this file except in
+< # compliance with the License. You may obtain a copy of the License at
+< # http://www.mozilla.org/NPL/
+---
+> # ***** BEGIN LICENSE BLOCK *****
+> # Version: MPL 1.1/GPL 2.0/LGPL 2.1
+> #
+> # The contents of this file are subject to the Mozilla Public License Version
+> # 1.1 (the "License"); you may not use this file except in compliance with
+> # the License. You may obtain a copy of the License at
+> # http://www.mozilla.org/MPL/
+11,20c14,15
+< # The Original Code is Mozilla Communicator client code, released March
+< # 31, 1998.
+< #
+< # The Initial Developer of the Original Code is Netscape Communications
+< # Corporation. Portions created by Netscape are Copyright (C) 1998-1999
+< # Netscape Communications Corporation. All Rights Reserved.
+< #
+< # Contributors:
+< #     Samir Gehani <sgehani@netscape.com>
+< #     Daniel Veditz <dveditz@netscape.com>
+---
+> # The Original Code is Mozilla Communicator client code, released
+> # March 31, 1998.
+22c17,36
+< # String resources for xpinstall user interface dialogs
+---
+> # The Initial Developer of the Original Code is
+> # Netscape Communications Corporation.
+> # Portions created by the Initial Developer are Copyright (C) 1998-1999
+> # the Initial Developer. All Rights Reserved.
+> #
+> # Contributor(s):
+> #   Samir Gehani <sgehani@netscape.com>
+> #   Daniel Veditz <dveditz@netscape.com>
+> #
+> # Alternatively, the contents of this file may be used under the terms of
+> # either of the GNU General Public License Version 2 or later (the "GPL"),
+> # or the GNU Lesser General Public License Version 2.1 or later (the "LGPL"),
+> # in which case the provisions of the GPL or the LGPL are applicable instead
+> # of those above. If you wish to allow use of your version of this file only
+> # under the terms of either the GPL or the LGPL, and not to allow others to
+> # use your version of this file under the terms of the MPL, indicate your
+> # decision by deleting the provisions above and replace them with the notice
+> # and other provisions required by the GPL or the LGPL. If you do not delete
+> # the provisions above, a recipient may use your version of this file under
+> # the terms of any one of the MPL, the GPL or the LGPL.
+23a38
+> # ***** END LICENSE BLOCK *****
+Only in ./EN0.8/en-US/communicator/xpinstall: xpistatus.dtd
+Only in ./EN0.8/en-US: communicator-platform
+diff -r ./EN0.8/en-US/cookie/contents.rdf ./EN0.9/en-US/cookie/contents.rdf
+25c25
+< 	chrome:localeVersion="1.6"/>
+---
+> 	chrome:localeVersion="1.8a"/>
+diff -r ./EN0.8/en-US/cookie/cookie.properties ./EN0.9/en-US/cookie/cookie.properties
+1,9c1,12
+< # The contents of this file are subject to the Netscape Public
+< # License Version 1.1 (the "License"); you may not use this file
+< # except in compliance with the License. You may obtain a copy of
+< # the License at http://www.mozilla.org/NPL/
+< #
+< # Software distributed under the License is distributed on an "AS
+< # IS" basis, WITHOUT WARRANTY OF ANY KIND, either express or
+< # implied. See the License for the specific language governing
+< # rights and limitations under the License.
+---
+> # ***** BEGIN LICENSE BLOCK *****
+> # Version: MPL 1.1/GPL 2.0/LGPL 2.1
+> #
+> # The contents of this file are subject to the Mozilla Public License Version
+> # 1.1 (the "License"); you may not use this file except in compliance with
+> # the License. You may obtain a copy of the License at
+> # http://www.mozilla.org/MPL/
+> #
+> # Software distributed under the License is distributed on an "AS IS" basis,
+> # WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+> # for the specific language governing rights and limitations under the
+> # License.
+13,16c16,21
+< # The Initial Developer of the Original Code is Netscape
+< # Communications Corporation. Portions created by Netscape are
+< # Copyright (C) 1998 Netscape Communications Corporation. All
+< # Rights Reserved.
+---
+> # The Initial Developer of the Original Code is
+> # Netscape Communications Corporation.
+> # Portions created by the Initial Developer are Copyright (C) 1998
+> # the Initial Developer. All Rights Reserved.
+> #
+> # Contributor(s):
+18c23,33
+< # Contributor(s): 
+---
+> # Alternatively, the contents of this file may be used under the terms of
+> # either the GNU General Public License Version 2 or later (the "GPL"), or
+> # the GNU Lesser General Public License Version 2.1 or later (the "LGPL"),
+> # in which case the provisions of the GPL or the LGPL are applicable instead
+> # of those above. If you wish to allow use of your version of this file only
+> # under the terms of either the GPL or the LGPL, and not to allow others to
+> # use your version of this file under the terms of the MPL, indicate your
+> # decision by deleting the provisions above and replace them with the notice
+> # and other provisions required by the GPL or the LGPL. If you do not delete
+> # the provisions above, a recipient may use your version of this file under
+> # the terms of any one of the MPL, the GPL or the LGPL.
+19a35
+> # ***** END LICENSE BLOCK *****
+diff -r ./EN0.8/en-US/cookie/cookieAcceptDialog.dtd ./EN0.9/en-US/cookie/cookieAcceptDialog.dtd
+6c6
+< <!ENTITY     props.secure.label             "Server Secure:">
+---
+> <!ENTITY     props.secure.label             "Send For:">
+11a12,13
+> <!ENTITY     button.session.label           "Allow for Session">
+> <!ENTITY     button.session.accesskey       "S">
+15c17
+< <!ENTITY     dialog.title                   "Confirm">
+---
+> <!ENTITY     dialog.title                   "Confirm setting cookie">
+17a20
+> 
+diff -r ./EN0.8/en-US/cookie/cookieAcceptDialog.properties ./EN0.9/en-US/cookie/cookieAcceptDialog.properties
+3,4c3,4
+< yes=yes
+< no=no
+---
+> forSecureOnly=Encrypted connections only
+> forAnyConnection=Any type of connection
+diff -r ./EN0.8/en-US/cookie/cookieNavigatorOverlay.dtd ./EN0.9/en-US/cookie/cookieNavigatorOverlay.dtd
+8c8,11
+< <!ENTITY cookieAllowCookiesMsg.label "Cookies from this site will not be blocked">
+---
+> <!ENTITY cookieAllowCookiesMsg.label "Cookies from this site will always be allowed.">
+> <!ENTITY cookieAllowSessionCookiesCmd.label "Allow Session Cookies from this Site">
+> <!ENTITY cookieAllowSessionCookiesCmd.accesskey "S">
+> <!ENTITY cookieAllowSessionCookiesMsg.label "This site will be able to set cookies for the current session only.">
+11c14
+< <!ENTITY cookieCookiesDefaultMsg.label "Cookies from this site will be accepted or rejected based on default settings">
+---
+> <!ENTITY cookieCookiesDefaultMsg.label "Cookies from this site will be accepted or rejected based on default settings.">
+14c17
+< <!ENTITY cookieBlockCookiesMsg.label "Cookies from this site will always be rejected">
+---
+> <!ENTITY cookieBlockCookiesMsg.label "Cookies from this site will always be rejected.">
+21c24
+< <!ENTITY cookieAllowImagesMsg.label "Images from this site will always be downloaded">
+---
+> <!ENTITY cookieAllowImagesMsg.label "Images from this site will always be downloaded.">
+24c27
+< <!ENTITY cookieImagesDefaultMsg.label "Images from this site will be downloaded based on default settings">
+---
+> <!ENTITY cookieImagesDefaultMsg.label "Images from this site will be downloaded based on default settings.">
+27c30
+< <!ENTITY cookieBlockImagesMsg.label "Images from this site will never be downloaded">
+---
+> <!ENTITY cookieBlockImagesMsg.label "Images from this site will never be downloaded.">
+diff -r ./EN0.8/en-US/cookie/p3p.dtd ./EN0.9/en-US/cookie/p3p.dtd
+4a5,7
+>    - ***** BEGIN LICENSE BLOCK *****
+>    - Version: MPL 1.1/GPL 2.0/LGPL 2.1
+>    -
+19,20c22,23
+<    - Portions created by Netscape Communications Corp are Copyright (C) 2001
+<    - Netscape Communications Corp. All Rights Reserved.
+---
+>    - Portions created by the Initial Developer are Copyright (C) 2001
+>    - the Initial Developer. All Rights Reserved.
+32c35
+<    - and other provisions required by the LGPL or the GPL. If you do not delete
+---
+>    - and other provisions required by the GPL or the LGPL. If you do not delete
+36c39
+< -->
+---
+>    - ***** END LICENSE BLOCK ***** -->
+71,72c74,75
+< <!ENTITY  p3pDialogMessage1.label    "A web site you have visited has set a cookie and triggered the cookie notification icon shown here, as required by your privacy settings.">
+< <!ENTITY  p3pDialogMessage2.label    "A cookie is a small bit of information stored on your computer by some web sites.  Use the Cookie Manager to manage your cookies and view their privacy status.">
+---
+> <!ENTITY  p3pDialogMessage1.label    "A website you have visited has set a cookie and triggered the cookie notification icon shown here, as required by your privacy settings.">
+> <!ENTITY  p3pDialogMessage2.label    "A cookie is a small bit of information stored on your computer by some websites.  Use the Cookie Manager to manage your cookies and view their privacy status.">
+diff -r ./EN0.8/en-US/cookie/pref-cookies.dtd ./EN0.9/en-US/cookie/pref-cookies.dtd
+7c7
+< <!ENTITY accAllCookiesRadio.label       "Enable all cookies">
+---
+> <!ENTITY accAllCookiesRadio.label       "Allow all cookies">
+10c10
+< <!ENTITY accOrgCookiesRadio.label       "Enable cookies for the originating web site only">
+---
+> <!ENTITY accOrgCookiesRadio.label       "Allow cookies for the originating website only">
+13c13
+< <!ENTITY accP3PCookiesRadio.label       "Enable cookies based on privacy settings">
+---
+> <!ENTITY accP3PCookiesRadio.label       "Allow cookies based on privacy settings">
+16,17c16,17
+< <!ENTITY disableCookies.label           "Disable cookies">
+< <!ENTITY disableCookies.accesskey       "D">
+---
+> <!ENTITY disableCookies.label           "Block cookies">
+> <!ENTITY disableCookies.accesskey       "B">
+19c19,31
+< <!ENTITY warnAboutCookies.label         "Ask me before storing a cookie">
+---
+> <!ENTITY cookieLifetimePolicy.label     "Cookie Lifetime Policy">
+> 
+> <!ENTITY acceptNormally.label           "Accept cookies normally">
+> <!ENTITY acceptNormally.accesskey       "n">
+> 
+> <!ENTITY acceptForSession.label         "Accept for current session only">
+> <!ENTITY acceptForSession.accesskey     "s">
+> 
+> <!ENTITY acceptforNDays.label           "Accept cookies for">
+> <!ENTITY acceptforNDays.accesskey       "f">
+> <!ENTITY days.label                     "days">
+> 
+> <!ENTITY warnAboutCookies.label         "Ask for each cookie">
+20a33,34
+> <!ENTITY forCurrentSession.label        "except for session cookies">
+> <!ENTITY forCurrentSession.accesskey    "e">
+22c36,37
+< <!ENTITY cookieDetails                  "Cookies are small pieces of information that some web sites ask to store on (and later retrieve from) your computer.">
+---
+> <!ENTITY manageCookies.label            "Manage Cookies and Sites">
+> <!ENTITY manageCookiesDescription.label "Allows you to view and manage stored cookies and per-site settings for accepting and rejecting cookies. Per-site settings will override the settings above.">
+24c39
+< <!ENTITY viewCookies.label              "Manage Stored Cookies">
+---
+> <!ENTITY viewCookies.label              "Cookie Manager">
+29,34d43
+< <!ENTITY limitLifetime.label            "Limit maximum lifetime of cookies to:">
+< <!ENTITY limitLifetime.accesskey        "L">
+< <!ENTITY current.label                  "current session">
+< <!ENTITY current.accesskey              "r">
+< <!ENTITY days.label                     "days">
+< <!ENTITY days.accesskey                 "y">
+diff -r ./EN0.8/en-US/cookie/pref-popups.dtd ./EN0.9/en-US/cookie/pref-popups.dtd
+24c24
+< <!ENTITY popupNote.description          "Note: Blocking all popups may prevent important features of some web sites from working, such as login windows for banks and shopping sites. For details of how to allow specific sites to use popups while blocking all others, click Help. Even if blocked, sites may use other methods to show popups.">
+---
+> <!ENTITY popupNote.description          "Note: Blocking all popups may prevent important features of some websites from working, such as login windows for banks and shopping sites. For details of how to allow specific sites to use popups while blocking all others, click Help. Even if blocked, sites may use other methods to show popups.">
+diff -r ./EN0.8/en-US/global/about.xhtml ./EN0.9/en-US/global/about.xhtml
+82c82
+< <li>Copyright &copy; 1998-2002 by <a href="about:credits">Contributors</a> to 
+---
+> <li>Copyright &copy; 1998-2004 by <a href="about:credits">Contributors</a> to 
+diff -r ./EN0.8/en-US/global/appstrings.properties ./EN0.9/en-US/global/appstrings.properties
+1,9c1,12
+< # The contents of this file are subject to the Netscape Public
+< # License Version 1.1 (the "License"); you may not use this file
+< # except in compliance with the License. You may obtain a copy of
+< # the License at http://www.mozilla.org/NPL/
+< #
+< # Software distributed under the License is distributed on an "AS
+< # IS" basis, WITHOUT WARRANTY OF ANY KIND, either express or
+< # implied. See the License for the specific language governing
+< # rights and limitations under the License.
+---
+> # ***** BEGIN LICENSE BLOCK *****
+> # Version: MPL 1.1/GPL 2.0/LGPL 2.1
+> #
+> # The contents of this file are subject to the Mozilla Public License Version
+> # 1.1 (the "License"); you may not use this file except in compliance with
+> # the License. You may obtain a copy of the License at
+> # http://www.mozilla.org/MPL/
+> #
+> # Software distributed under the License is distributed on an "AS IS" basis,
+> # WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+> # for the specific language governing rights and limitations under the
+> # License.
+13,16c16,33
+< # The Initial Developer of the Original Code is Netscape
+< # Communications Corporation. Portions created by Netscape are
+< # Copyright (C) 1998 Netscape Communications Corporation. All
+< # Rights Reserved.
+---
+> # The Initial Developer of the Original Code is
+> # Netscape Communications Corporation.
+> # Portions created by the Initial Developer are Copyright (C) 1998
+> # the Initial Developer. All Rights Reserved.
+> #
+> # Contributor(s):
+> #
+> # Alternatively, the contents of this file may be used under the terms of
+> # either of the GNU General Public License Version 2 or later (the "GPL"),
+> # or the GNU Lesser General Public License Version 2.1 or later (the "LGPL"),
+> # in which case the provisions of the GPL or the LGPL are applicable instead
+> # of those above. If you wish to allow use of your version of this file only
+> # under the terms of either the GPL or the LGPL, and not to allow others to
+> # use your version of this file under the terms of the MPL, indicate your
+> # decision by deleting the provisions above and replace them with the notice
+> # and other provisions required by the GPL or the LGPL. If you do not delete
+> # the provisions above, a recipient may use your version of this file under
+> # the terms of any one of the MPL, the GPL or the LGPL.
+18c35
+< # Contributor(s): 
+---
+> # ***** END LICENSE BLOCK *****
+diff -r ./EN0.8/en-US/global/brand.dtd ./EN0.9/en-US/global/brand.dtd
+1c1
+< <!ENTITY  lang.version          "1.6">
+---
+> <!ENTITY  lang.version          "1.7a">
+4c4
+< <!ENTITY  version               "0.8">
+---
+> <!ENTITY  version               "0.8.0+">
+diff -r ./EN0.8/en-US/global/build.dtd ./EN0.9/en-US/global/build.dtd
+1c1
+< <!ENTITY  buildId.label               "Build ID: 2004020717">
+---
+> <!ENTITY  buildId.label               "Build ID: 2004060507">
+diff -r ./EN0.8/en-US/global/charset.dtd ./EN0.9/en-US/global/charset.dtd
+1c1
+< <!ENTITY charsetMenu.label        "Character Coding">
+---
+> <!ENTITY charsetMenu.label        "Character Encoding">
+16c16,18
+< <!ENTITY charsetMenuMore5.accesskey       "m">
+---
+> <!ENTITY charsetMenuMore5.accesskey       "M">
+> <!ENTITY charsetMenuUnicode.label       "Unicode">
+> <!ENTITY charsetMenuUnicode.accesskey       "U">
+diff -r ./EN0.8/en-US/global/charsetOverlay.dtd ./EN0.9/en-US/global/charsetOverlay.dtd
+2c2
+< <!ENTITY charsetMenu.label				"Character Coding">
+---
+> <!ENTITY charsetMenu.label				"Character Encoding">
+17c17,19
+< <!ENTITY charsetMenuMore5.accesskey				"m">
+---
+> <!ENTITY charsetMenuMore5.accesskey				"M">
+> <!ENTITY charsetMenuUnicode.label				"Unicode">
+> <!ENTITY charsetMenuUnicode.accesskey				"U">
+diff -r ./EN0.8/en-US/global/charsetTitles.properties ./EN0.9/en-US/global/charsetTitles.properties
+65a66,70
+> utf-16.title = Unicode (UTF-16)
+> utf-16le.title = Unicode (UTF-16 Little Endian)
+> utf-16be.title = Unicode (UTF-16 Big Endian)
+> utf-32le.title = Unicode (UTF-32 Little Endian)
+> utf-32be.title = Unicode (UTF-32 Big Endian)
+diff -r ./EN0.8/en-US/global/contents.rdf ./EN0.9/en-US/global/contents.rdf
+15c15
+<         chrome:localeVersion="1.6"
+---
+>         chrome:localeVersion="1.8a"
+27c27
+< 	chrome:localeVersion="1.6"/>
+---
+> 	chrome:localeVersion="1.8a"/>
+diff -r ./EN0.8/en-US/global/customizeCharset.dtd ./EN0.9/en-US/global/customizeCharset.dtd
+2,4c2,4
+< <!ENTITY title.label      "Customize Character Coding">
+< <!ENTITY left.header      "Character Coding">
+< <!ENTITY current.label    "Active Character Codings:">
+---
+> <!ENTITY title.label      "Customize Character Encoding">
+> <!ENTITY left.header      "Character Encoding">
+> <!ENTITY current.label    "Active Character Encodings:">
+6c6
+< <!ENTITY additional.label "Available Character Codings:">
+---
+> <!ENTITY additional.label "Available Character Encodings:">
+Only in ./EN0.8/en-US/global: downloadProgress.properties
+diff -r ./EN0.8/en-US/global/global-strres.properties ./EN0.9/en-US/global/global-strres.properties
+1,9c1,12
+< # The contents of this file are subject to the Mozilla Public
+< # License Version 1.1 (the "License"); you may not use this file
+< # except in compliance with the License. You may obtain a copy of
+< # the License at http://www.mozilla.org/MPL/
+< #
+< # Software distributed under the License is distributed on an "AS
+< # IS" basis, WITHOUT WARRANTY OF ANY KIND, either express or
+< # implied. See the License for the specific language governing
+< # rights and limitations under the License.
+---
+> # ***** BEGIN LICENSE BLOCK *****
+> # Version: MPL 1.1/GPL 2.0/LGPL 2.1
+> #
+> # The contents of this file are subject to the Mozilla Public License Version
+> # 1.1 (the "License"); you may not use this file except in compliance with
+> # the License. You may obtain a copy of the License at
+> # http://www.mozilla.org/MPL/
+> #
+> # Software distributed under the License is distributed on an "AS IS" basis,
+> # WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+> # for the specific language governing rights and limitations under the
+> # License.
+13,15c16,33
+< # The Initial Developer of the Original Code is The Mozilla Foundation.
+< # Portions created by the Foundation are Copyright (C) 1998-2003
+< # The Mozilla Foundation. All Rights Reserved.
+---
+> # The Initial Developer of the Original Code is
+> # The Mozilla Foundation.
+> # Portions created by the Initial Developer are Copyright (C) 1998-2003
+> # the Initial Developer. All Rights Reserved.
+> #
+> # Contributor(s):
+> #
+> # Alternatively, the contents of this file may be used under the terms of
+> # either of the GNU General Public License Version 2 or later (the "GPL"),
+> # or the GNU Lesser General Public License Version 2.1 or later (the "LGPL"),
+> # in which case the provisions of the GPL or the LGPL are applicable instead
+> # of those above. If you wish to allow use of your version of this file only
+> # under the terms of either the GPL or the LGPL, and not to allow others to
+> # use your version of this file under the terms of the MPL, indicate your
+> # decision by deleting the provisions above and replace them with the notice
+> # and other provisions required by the GPL or the LGPL. If you do not delete
+> # the provisions above, a recipient may use your version of this file under
+> # the terms of any one of the MPL, the GPL or the LGPL.
+17c35
+< # Contributor(s): 
+---
+> # ***** END LICENSE BLOCK *****
+diff -r ./EN0.8/en-US/global/history/history.properties ./EN0.9/en-US/global/history/history.properties
+13c13
+< load-js-data-url-error=For security reasons, javascript or data urls cannot be loaded from the history window or sidebar.
+\ No newline at end of file
+---
+> load-js-data-url-error=For security reasons, javascript or data urls cannot be loaded from the history window or sidebar.
+diff -r ./EN0.8/en-US/global/intl.properties ./EN0.9/en-US/global/intl.properties
+2a3,7
+> # Localization Note: Cases of charset names must be preserved. If you're 
+> # adding charsets to your localized version, please refer to 
+> # intl/uconv/src/charsetalias.properties file for the list of canonical 
+> # charset names and use canonical names exactly as listed there.
+> # Also note that "UTF-8" should always be included in intl.charsetmenu.browser.static
+6,11c11,18
+< intl.charsetmenu.browser.static=iso-8859-1
+< intl.charsetmenu.browser.more1=iso-8859-1, iso-8859-15, ibm850, x-mac-roman, windows-1252, iso-8859-14, iso-8859-7, x-mac-greek, windows-1253, x-mac-icelandic, iso-8859-10, iso-8859-3
+< intl.charsetmenu.browser.more2=iso-8859-4, iso-8859-13, windows-1257, ibm852, iso-8859-2, x-mac-ce, windows-1250, x-mac-croatian, ibm855, iso-8859-5, iso-ir-111, koi8-r, x-mac-cyrillic, windows-1251, ibm866, koi8-u, x-mac-ukrainian, iso-8859-16, x-mac-romanian
+< intl.charsetmenu.browser.more3=gb2312, x-gbk, gb18030, hz-gb-2312, iso-2022-cn, big5, big5-hkscs, x-euc-tw, euc-jp, iso-2022-jp, shift_jis, euc-kr, x-windows-949, x-johab, iso-2022-kr
+< intl.charsetmenu.browser.more4=armscii-8, geostd8, tis-620, iso-8859-11, windows-874, ibm857, iso-8859-9, x-mac-turkish, windows-1254, x-viet-tcvn5712, viscii, x-viet-vps, windows-1258, x-mac-devanagari, x-mac-gujarati, x-mac-gurmukhi
+< intl.charsetmenu.browser.more5=iso-8859-6, windows-1256, ibm864, x-mac-arabic, x-mac-farsi, iso-8859-8-i, windows-1255, iso-8859-8, ibm862, x-mac-hebrew
+---
+> intl.charsetmenu.browser.static=ISO-8859-1, UTF-8
+> intl.charsetmenu.browser.more1=ISO-8859-1, ISO-8859-15, IBM850, x-mac-roman, windows-1252, ISO-8859-14, ISO-8859-7, x-mac-greek, windows-1253, x-mac-icelandic, ISO-8859-10, ISO-8859-3
+> intl.charsetmenu.browser.more2=ISO-8859-4, ISO-8859-13, windows-1257, IBM852, ISO-8859-2, x-mac-ce, windows-1250, x-mac-croatian, IBM855, ISO-8859-5, ISO-IR-111, KOI8-R, x-mac-cyrillic, windows-1251, IBM866, KOI8-U, x-mac-ukrainian, ISO-8859-16, x-mac-romanian
+> intl.charsetmenu.browser.more3=GB2312, x-gbk, gb18030, HZ-GB-2312, ISO-2022-CN, Big5, Big5-HKSCS, x-euc-tw, EUC-JP, ISO-2022-JP, Shift_JIS, EUC-KR, x-windows-949, x-johab, ISO-2022-KR
+> intl.charsetmenu.browser.more4=armscii-8, GEOSTD8, TIS-620, ISO-8859-11, windows-874, IBM857, ISO-8859-9, x-mac-turkish, windows-1254, x-viet-tcvn5712, VISCII, x-viet-vps, windows-1258, x-mac-devanagari, x-mac-gujarati, x-mac-gurmukhi
+> intl.charsetmenu.browser.more5=ISO-8859-6, windows-1256, IBM864, x-mac-arabic, x-mac-farsi, ISO-8859-8-I, windows-1255, ISO-8859-8, IBM862, x-mac-hebrew
+> # Localization Note: Never change the following entry.
+> intl.charsetmenu.browser.unicode=UTF-8, UTF-16LE, UTF-16BE, UTF-32LE, UTF-32BE, UTF-7
+17,18d23
+< wallet.Server=http://www.mozilla.org/wallet/tables/
+< wallet.Samples=http://www.mozilla.org/wallet/samples/
+diff -r ./EN0.8/en-US/global/languageNames.properties ./EN0.9/en-US/global/languageNames.properties
+61a62
+> hsb = Upper Sorbian
+Only in ./EN0.8/en-US/global: ldapAutoCompErrs.properties
+diff -r ./EN0.8/en-US/global/printdialog.properties ./EN0.9/en-US/global/printdialog.properties
+1,9c1,2
+< # The contents of this file are subject to the Netscape Public
+< # License Version 1.1 (the License); you may not use this file
+< # except in compliance with the License. You may obtain a copy of
+< # the License at http://www.mozilla.org/NPL/
+< #
+< # Software distributed under the License is distributed on an AS
+< # IS basis, WITHOUT WARRANTY OF ANY KIND, either express or
+< # implied. See the License for the specific language governing
+< # rights and limitations under the License.
+---
+> # ***** BEGIN LICENSE BLOCK *****
+> # Version: MPL 1.1/GPL 2.0/LGPL 2.1
+11,18c4,12
+< # The Original Code is mozilla.org code.
+< #
+< # The Initial Developer of the Original Code is Netscape
+< # Communications Corporation. Portions created by Netscape are
+< # Copyright (C) 1998 Netscape Communications Corporation. All
+< # Rights Reserved.
+< #
+< # Contributor(s): 
+---
+> # The contents of this file are subject to the Mozilla Public License Version
+> # 1.1 (the "License"); you may not use this file except in compliance with
+> # the License. You may obtain a copy of the License at
+> # http://www.mozilla.org/MPL/
+> #
+> # Software distributed under the License is distributed on an "AS IS" basis,
+> # WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+> # for the specific language governing rights and limitations under the
+> # License.
+20,23c14
+< #-----------------------------------------------------------
+< # Note: IMPORTANT!
+< #
+< # Set "extend" to false to get the native platform dialog
+---
+> # The Original Code is mozilla.org code.
+25,27c16,33
+< # Set "extend" to true to have the native dialog extended with
+< #   the "Print Frames" Frame group box
+< #-----------------------------------------------------------
+---
+> # The Initial Developer of the Original Code is
+> # Netscape Communications Corporation.
+> # Portions created by the Initial Developer are Copyright (C) 1998
+> # the Initial Developer. All Rights Reserved.
+> #
+> # Contributor(s):
+> #
+> # Alternatively, the contents of this file may be used under the terms of
+> # either of the GNU General Public License Version 2 or later (the "GPL"),
+> # or the GNU Lesser General Public License Version 2.1 or later (the "LGPL"),
+> # in which case the provisions of the GPL or the LGPL are applicable instead
+> # of those above. If you wish to allow use of your version of this file only
+> # under the terms of either the GPL or the LGPL, and not to allow others to
+> # use your version of this file under the terms of the MPL, indicate your
+> # decision by deleting the provisions above and replace them with the notice
+> # and other provisions required by the GPL or the LGPL. If you do not delete
+> # the provisions above, a recipient may use your version of this file under
+> # the terms of any one of the MPL, the GPL or the LGPL.
+28a35
+> # ***** END LICENSE BLOCK *****
+diff -r ./EN0.8/en-US/global/printing.properties ./EN0.9/en-US/global/printing.properties
+1,9c1,12
+< # The contents of this file are subject to the Netscape Public
+< # License Version 1.1 (the "License"); you may not use this file
+< # except in compliance with the License. You may obtain a copy of
+< # the License at http://www.mozilla.org/NPL/
+< #
+< # Software distributed under the License is distributed on an "AS
+< # IS" basis, WITHOUT WARRANTY OF ANY KIND, either express or
+< # implied. See the License for the specific language governing
+< # rights and limitations under the License.
+---
+> # ***** BEGIN LICENSE BLOCK *****
+> # Version: MPL 1.1/GPL 2.0/LGPL 2.1
+> #
+> # The contents of this file are subject to the Mozilla Public License Version
+> # 1.1 (the "License"); you may not use this file except in compliance with
+> # the License. You may obtain a copy of the License at
+> # http://www.mozilla.org/MPL/
+> #
+> # Software distributed under the License is distributed on an "AS IS" basis,
+> # WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+> # for the specific language governing rights and limitations under the
+> # License.
+13,16c16,19
+< # The Initial Developer of the Original Code is Netscape
+< # Communications Corporation. Portions created by Netscape are
+< # Copyright (C) 1998 Netscape Communications Corporation. All
+< # Rights Reserved.
+---
+> # The Initial Developer of the Original Code is
+> # Netscape Communications Corporation.
+> # Portions created by the Initial Developer are Copyright (C) 1998
+> # the Initial Developer. All Rights Reserved.
+20a24,36
+> # Alternatively, the contents of this file may be used under the terms of
+> # either of the GNU General Public License Version 2 or later (the "GPL"),
+> # or the GNU Lesser General Public License Version 2.1 or later (the "LGPL"),
+> # in which case the provisions of the GPL or the LGPL are applicable instead
+> # of those above. If you wish to allow use of your version of this file only
+> # under the terms of either the GPL or the LGPL, and not to allow others to
+> # use your version of this file under the terms of the MPL, indicate your
+> # decision by deleting the provisions above and replace them with the notice
+> # and other provisions required by the GPL or the LGPL. If you do not delete
+> # the provisions above, a recipient may use your version of this file under
+> # the terms of any one of the MPL, the GPL or the LGPL.
+> #
+> # ***** END LICENSE BLOCK *****
+88c104
+< NS_ERROR_GFX_PRINTER_XPRINT_NO_XPRINT_SERVERS_FOUND=There was a problem printing. No Xprint server(s) could be found.\nCheck whether the XPSERVERLIST environment variable contains any valid Xprint servers.
+---
+> NS_ERROR_GFX_PRINTER_XPRINT_NO_XPRINT_SERVERS_FOUND=There was a problem printing. No Xprint server(s) could be found.\nCheck whether the XPSERVERLIST environment variable contains any valid Xprint servers.\nFor further information see http://xprint.mozdev.org/ or http://www.mozilla.org/projects/xprint/
+89a106,109
+> NS_ERROR_GFX_PRINTER_DOC_IS_BUSY=The browser cannot print the document while it is being loaded.
+> NS_ERROR_GFX_PRINTING_NOT_IMPLEMENTED=Printing is not implemented.
+> NS_ERROR_GFX_COULD_NOT_LOAD_PRINT_MODULE=The requested print module cannot be loaded.
+> 
+Only in ./EN0.9/en-US/global: tree.dtd
+Only in ./EN0.9/en-US/global: typeaheadfind.properties
+diff -r ./EN0.8/en-US/global/viewSource.dtd ./EN0.9/en-US/global/viewSource.dtd
+4c4
+< <!ENTITY mainWindow.title "&brandShortName;"> 
+---
+> <!ENTITY mainWindow.title "&brandFullName;">
+6c6
+< <!ENTITY mainWindow.titlemodifier "&brandShortName;"> 
+---
+> <!ENTITY mainWindow.titlemodifier "&brandFullName;">
+26a27,31
+> <!ENTITY textEnlarge.commandkey "+">
+> <!ENTITY textEnlarge.commandkey2 "="> <!-- + is above this key on many keyboards -->
+> <!ENTITY textReduce.commandkey "-">
+> <!ENTITY textReset.commandkey "0">
+> 
+36a42,45
+> <!ENTITY menu_textEnlarge.label "Increase Text Size">
+> <!ENTITY menu_textEnlarge.accesskey "I">
+> <!ENTITY menu_textReduce.label "Decrease Text Size">
+> <!ENTITY menu_textReduce.accesskey "D">
+Only in ./EN0.9/en-US/global: xbl.properties
+diff -r ./EN0.8/en-US/global-platform/accessible.properties ./EN0.9/en-US/global-platform/accessible.properties
+11a12
+> activate=       Activate
+diff -r ./EN0.8/en-US/global-platform/contents.rdf ./EN0.9/en-US/global-platform/contents.rdf
+23c23
+< 	           chrome:localeVersion="1.6"/>
+---
+> 	           chrome:localeVersion="1.8a"/>
+diff -r ./EN0.8/en-US/mozapps/contents.rdf ./EN0.9/en-US/mozapps/contents.rdf
+21c21
+<      chrome:localeVersion="1.6"/>
+---
+>      chrome:localeVersion="1.8a"/>
+diff -r ./EN0.8/en-US/mozapps/downloads/downloads.dtd ./EN0.9/en-US/mozapps/downloads/downloads.dtd
+1,11d0
+< <!ENTITY name.label                       "Name">
+< <!ENTITY progress.label                   "Progress">
+< <!ENTITY status.label                     "Status">
+< <!ENTITY timeremaining.label              "Time Remaining">
+< <!ENTITY transferred.label                "Transferred">
+< <!ENTITY transferrate.label               "Speed">
+< <!ENTITY timeelapsed.label                "Time Elapsed">
+< <!ENTITY status.label                     "Status">
+< <!--<!ENTITY progresstext.label           "&#37;">-->
+< <!ENTITY source.label                     "Source">
+< 
+13d1
+< <!ENTITY cancel.label                     "Cancel">
+15,22d2
+< <!ENTITY launch.label                     "Launch">
+< <!ENTITY divider.label                    "-">
+< <!ENTITY show.label                       "Show">
+< <!ENTITY open.label                       "Open">
+< <!ENTITY retry.label                      "Retry">
+< <!ENTITY remove.label                     "Remove">
+< <!ENTITY pause.label                      "Pause">
+< <!ENTITY resume.label                     "Resume">
+36,40c16,17
+< <!ENTITY cmd.show.label                   "Show">
+< <!ENTITY cmd.show.accesskey               "S">
+< <!ENTITY cmd.show.tooltipWin              "Show this file in Explorer">
+< <!ENTITY cmd.show.tooltipMac              "Show this file in Finder">
+< <!ENTITY cmd.show.tooltipUnix             "Show this file in a browser window">
+---
+> <!ENTITY cmd.show.label                   "Open Containing Folder">
+> <!ENTITY cmd.show.accesskey               "F">
+diff -r ./EN0.8/en-US/mozapps/downloads/unknownContentType.dtd ./EN0.9/en-US/mozapps/downloads/unknownContentType.dtd
+16a17
+> <!ENTITY  settingsChangeMac.label     "Settings can be changed in the Downloads section of &brandShortName;, Preferences.">
+Only in ./EN0.9/en-US/mozapps: extensions
+Only in ./EN0.9/en-US/mozapps: update
+diff -r ./EN0.8/en-US/mozapps/xpinstall/xpinstallConfirm.properties ./EN0.9/en-US/mozapps/xpinstall/xpinstallConfirm.properties
+4a5
+> installButtonDisabledLabel=Install (%S)
+Only in ./EN0.8/en-US: navigator
+Only in ./EN0.8/en-US: navigator-platform
+diff -r ./EN0.8/en-US/necko/contents.rdf ./EN0.9/en-US/necko/contents.rdf
+22c22
+< 	chrome:localeVersion="1.6"/>
+---
+> 	chrome:localeVersion="1.8a"/>
+diff -r ./EN0.8/en-US/necko/necko.properties ./EN0.9/en-US/necko/necko.properties
+1,9c1,12
+< # The contents of this file are subject to the Netscape Public
+< # License Version 1.1 (the "License"); you may not use this file
+< # except in compliance with the License. You may obtain a copy of
+< # the License at http://www.mozilla.org/NPL/
+< #
+< # Software distributed under the License is distributed on an "AS
+< # IS" basis, WITHOUT WARRANTY OF ANY KIND, either express or
+< # implied. See the License for the specific language governing
+< # rights and limitations under the License.
+---
+> # ***** BEGIN LICENSE BLOCK *****
+> # Version: MPL 1.1/GPL 2.0/LGPL 2.1
+> #
+> # The contents of this file are subject to the Mozilla Public License Version
+> # 1.1 (the "License"); you may not use this file except in compliance with
+> # the License. You may obtain a copy of the License at
+> # http://www.mozilla.org/MPL/
+> #
+> # Software distributed under the License is distributed on an "AS IS" basis,
+> # WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+> # for the specific language governing rights and limitations under the
+> # License.
+13,16c16,19
+< # The Initial Developer of the Original Code is Netscape
+< # Communications Corporation. Portions created by Netscape are
+< # Copyright (C) 1998 Netscape Communications Corporation. All
+< # Rights Reserved.
+---
+> # The Initial Developer of the Original Code is
+> # Netscape Communications Corporation.
+> # Portions created by the Initial Developer are Copyright (C) 1998
+> # the Initial Developer. All Rights Reserved.
+18c21
+< # Contributor(s): 
+---
+> # Contributor(s):
+20c23,35
+< # downloadHeadersTitlePrefix=Download headers for:
+---
+> # Alternatively, the contents of this file may be used under the terms of
+> # either the GNU General Public License Version 2 or later (the "GPL"), or
+> # the GNU Lesser General Public License Version 2.1 or later (the "LGPL"),
+> # in which case the provisions of the GPL or the LGPL are applicable instead
+> # of those above. If you wish to allow use of your version of this file only
+> # under the terms of either the GPL or the LGPL, and not to allow others to
+> # use your version of this file under the terms of the MPL, indicate your
+> # decision by deleting the provisions above and replace them with the notice
+> # and other provisions required by the GPL or the LGPL. If you do not delete
+> # the provisions above, a recipient may use your version of this file under
+> # the terms of any one of the MPL, the GPL or the LGPL.
+> #
+> # ***** END LICENSE BLOCK *****
+59a75,79
+> 
+> PhishingAuth=You are about to visit \"%1$S.\" This site may be attempting to trick you into thinking you are visiting a different site. Use extreme caution.
+> PhishingAuthAccept=I understand and will be very careful
+> SuperfluousAuth=You are about to log into the site \"%1$S\" with the username \"%2$S,\" but the website does not require authentication. This may be an attempt to trick you.\n\nIs \"%1$S\" the site you want to visit?
+> AutomaticAuth=You are about to log into the site \"%1$S\" with the username \"%2$S.\"
+diff -r ./EN0.8/en-US/necko/redirect_loop.dtd ./EN0.9/en-US/necko/redirect_loop.dtd
+1,19c1,36
+< <!--
+< The contents of this file are subject to the Netscape Public
+< License Version 1.1 (the "License"); you may not use this file
+< except in compliance with the License. You may obtain a copy of
+< the License at http://www.mozilla.org/NPL/
+< 
+< Software distributed under the License is distributed on an "AS
+< IS" basis, WITHOUT WARRANTY OF ANY KIND, either express or
+< implied. See the License for the specific language governing
+< rights and limitations under the License.
+< 
+< The Original Code is Mozilla Communicator client code, released
+< March 31, 1998.
+< 
+< The Initial Developer of the Original Code is Netscape
+< Communications Corporation. Portions created by Netscape are
+<  Copyright (C) 1998-1999 Netscape Communications Corporation. All
+< Rights Reserved.
+< --> 
+---
+> <!-- ***** BEGIN LICENSE BLOCK *****
+>  Version: MPL 1.1/GPL 2.0/LGPL 2.1
+> 
+>  The contents of this file are subject to the Mozilla Public License Version
+>  1.1 (the "License"); you may not use this file except in compliance with
+>  the License. You may obtain a copy of the License at
+>  http://www.mozilla.org/MPL/
+> 
+>  Software distributed under the License is distributed on an "AS IS" basis,
+>  WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+>  for the specific language governing rights and limitations under the
+>  License.
+> 
+>  The Original Code is Mozilla Communicator client code, released
+>  March 31, 1998.
+> 
+>  The Initial Developer of the Original Code is
+>  Netscape Communications Corporation.
+>  Portions created by the Initial Developer are Copyright (C) 1998-1999
+>  the Initial Developer. All Rights Reserved.
+> 
+>  Contributor(s):
+> 
+>  Alternatively, the contents of this file may be used under the terms of
+>  either the GNU General Public License Version 2 or later (the "GPL"), or
+>  the GNU Lesser General Public License Version 2.1 or later (the "LGPL"),
+>  in which case the provisions of the GPL or the LGPL are applicable instead
+>  of those above. If you wish to allow use of your version of this file only
+>  under the terms of either the GPL or the LGPL, and not to allow others to
+>  use your version of this file under the terms of the MPL, indicate your
+>  decision by deleting the provisions above and replace them with the notice
+>  and other provisions required by the GPL or the LGPL. If you do not delete
+>  the provisions above, a recipient may use your version of this file under
+>  the terms of any one of the MPL, the GPL or the LGPL.
+> 
+>  ***** END LICENSE BLOCK ***** -->
+Only in ./EN0.8/en-US: p3p
+diff -r ./EN0.8/en-US/passwordmgr/contents.rdf ./EN0.9/en-US/passwordmgr/contents.rdf
+25c25
+< 	chrome:localeVersion="1.6"/>
+---
+> 	chrome:localeVersion="1.8a"/>
+diff -r ./EN0.8/en-US/pipnss/contents.rdf ./EN0.9/en-US/pipnss/contents.rdf
+25c25
+< 	chrome:localeVersion="1.6"/>
+---
+> 	chrome:localeVersion="1.8a"/>
+diff -r ./EN0.8/en-US/pipnss/pipnss.properties ./EN0.9/en-US/pipnss/pipnss.properties
+2,10c2,13
+< # The contents of this file are subject to the Netscape Public
+< # License Version 1.1 (the "License"); you may not use this file
+< # except in compliance with the License. You may obtain a copy of
+< # the License at http://www.mozilla.org/NPL/
+< #
+< # Software distributed under the License is distributed on an "AS
+< # IS" basis, WITHOUT WARRANTY OF ANY KIND, either express or
+< # implied. See the License for the specific language governing
+< # rights and limitations under the License.
+---
+> # ***** BEGIN LICENSE BLOCK *****
+> # Version: MPL 1.1/GPL 2.0/LGPL 2.1
+> #
+> # The contents of this file are subject to the Mozilla Public License Version
+> # 1.1 (the "License"); you may not use this file except in compliance with
+> # the License. You may obtain a copy of the License at
+> # http://www.mozilla.org/MPL/
+> #
+> # Software distributed under the License is distributed on an "AS IS" basis,
+> # WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+> # for the specific language governing rights and limitations under the
+> # License.
+14,17c17,20
+< # The Initial Developer of the Original Code is Netscape
+< # Communications Corporation.  Portions created by Netscape are
+< # Copyright (C) 1998 Netscape Communications Corporation. All
+< # Rights Reserved.
+---
+> # The Initial Developer of the Original Code is
+> # Netscape Communications Corporation.
+> # Portions created by the Initial Developer are Copyright (C) 1998
+> # the Initial Developer. All Rights Reserved.
+20,23c23,40
+< #    Javier Delgadillo <javi@netscape.com>
+< #    Brian Ryner <bryner@brianryner.com>
+< #    Terry Hayes <thayes@netscape.com> 
+< # 
+---
+> #   Javier Delgadillo <javi@netscape.com>
+> #   Brian Ryner <bryner@brianryner.com>
+> #   Terry Hayes <thayes@netscape.com>
+> #   John Gardiner Myers <jgmyers@speakeasy.net>
+> #
+> # Alternatively, the contents of this file may be used under the terms of
+> # either the GNU General Public License Version 2 or later (the "GPL"), or
+> # the GNU Lesser General Public License Version 2.1 or later (the "LGPL"),
+> # in which case the provisions of the GPL or the LGPL are applicable instead
+> # of those above. If you wish to allow use of your version of this file only
+> # under the terms of either the GPL or the LGPL, and not to allow others to
+> # use your version of this file under the terms of the MPL, indicate your
+> # decision by deleting the provisions above and replace them with the notice
+> # and other provisions required by the GPL or the LGPL. If you do not delete
+> # the provisions above, a recipient may use your version of this file under
+> # the terms of any one of the MPL, the GPL or the LGPL.
+> #
+> # ***** END LICENSE BLOCK *****
+75d91
+< LowGrade= 512 (Low Grade)
+88a105,107
+> CertDumpSHA256WithRSA=PKCS #1 SHA-256 With RSA Encryption
+> CertDumpSHA384WithRSA=PKCS #1 SHA-384 With RSA Encryption
+> CertDumpSHA512WithRSA=PKCS #1 SHA-512 With RSA Encryption
+117a137,148
+> CertDumpNSCertExtBaseUrl=Netscape Certificate Extension Base URL
+> CertDumpNSCertExtRevocationUrl=Netscape Certificate Revocation URL
+> CertDumpNSCertExtCARevocationUrl=Netscape Certificate Authority Revocation URL
+> CertDumpNSCertExtCertRenewalUrl=Netscape Certificate Renewal URL
+> CertDumpNSCertExtCAPolicyUrl=Netscape Certificate Authority Policy URL
+> CertDumpNSCertExtSslServerName=Netscape Certificate SSL Server Name
+> CertDumpNSCertExtComment=Netscape Certificate Comment
+> CertDumpNSCertExtLostPasswordUrl=Netscape Lost Password URL
+> CertDumpNSCertExtCertRenewalTime=NetscapeCertificate Renewal Time
+> CertDumpNetscapeAolScreenname=AOL Screenname
+> CertDumpSubjectDirectoryAttr=Certificate Subject Directory Attributes
+> CertDumpSubjectKeyID=Certificate Subject Key ID
+118a150,157
+> CertDumpSubjectAltName=Certificate Subject Alt Name
+> CertDumpIssuerAltName=Certificate Issuer Alt Name
+> CertDumpBasicConstraints=Certificate Basic Constraints
+> CertDumpNameConstraints=Certificate Name Constraints
+> CertDumpCrlDistPoints=CRL Distribution Points
+> CertDumpCertPolicies=Certificate Policies
+> CertDumpPolicyMappings=Certificate Policy Mappings
+> CertDumpPolicyConstraints=Certificate Policy Constraints
+119a159,163
+> CertDumpExtKeyUsage=Extended Key Usage
+> CertDumpAuthInfoAccess=Authority Information Access
+> CertDumpAnsiX9DsaSignature=ANSI X9.57 DSA Signature
+> CertDumpAnsiX9DsaSignatureWithSha1=ANSI X9.57 DSA Signature with SHA1 Digest
+> CertDumpAnsiX962ECDsaSignatureWithSha1=ANSI X9.62 ECDSA Signature with SHA1
+188c232
+< HostReusedIssuerSerial=You have received an invalid certificate.  It contains the same issuer name and serial number as another certificate that you are already using. Please contact the server administrator or email correspondent from which this invalid certificate came, and urge them to get a valid certificate.
+---
+> HostReusedIssuerSerial=You have received an invalid certificate.  Please contact the server administrator or email correspondent and give them the following information:\n\nYour certificate contains the same serial number as another certificate issued by the certificate authority.  Please get a new certificate containing a unique serial number.
+218a263
+> CertInfoStoredIn=Stored in:
+239a285,286
+> CertNoNickname=(no nickname)
+> CertNoEmailAddress=(no email address)
+diff -r ./EN0.8/en-US/pippki/PageInfoOverlay.dtd ./EN0.9/en-US/pippki/PageInfoOverlay.dtd
+1,11c1,13
+< <!-- 
+<    - The contents of this file are subject to the Mozilla Public
+<    - License Version 1.1 (the "License"); you may not use this file
+<    - except in compliance with the License. You may obtain a copy of
+<    - the License at http://www.mozilla.org/MPL/
+<    - 
+<    - Software distributed under the License is distributed on an "AS
+<    - IS" basis, WITHOUT WARRANTY OF ANY KIND, either express or
+<    - implied. See the License for the specific language governing
+<    - rights and limitations under the License.
+<    - 
+---
+> <!-- ***** BEGIN LICENSE BLOCK *****
+>    - Version: MPL 1.1/GPL 2.0/LGPL 2.1
+>    -
+>    - The contents of this file are subject to the Mozilla Public License Version
+>    - 1.1 (the "License"); you may not use this file except in compliance with
+>    - the License. You may obtain a copy of the License at
+>    - http://www.mozilla.org/MPL/
+>    -
+>    - Software distributed under the License is distributed on an "AS IS" basis,
+>    - WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+>    - for the specific language governing rights and limitations under the
+>    - License.
+>    -
+13,18c15,20
+<    - 
+<    - The Initial Developer of the Original Code is Netscape
+<    - Communications Corp.  Portions created by Netscape are
+<    - Copyright (C) 2001 Netscape Communications Corp.  All
+<    - Rights Reserved.
+<    - 
+---
+>    -
+>    - The Initial Developer of the Original Code is
+>    - Netscape Communications Corp.
+>    - Portions created by the Initial Developer are Copyright (C) 2001
+>    - the Initial Developer. All Rights Reserved.
+>    -
+21c23,36
+<   -->
+---
+>    -
+>    - Alternatively, the contents of this file may be used under the terms of
+>    - either the GNU General Public License Version 2 or later (the "GPL"), or
+>    - the GNU Lesser General Public License Version 2.1 or later (the "LGPL"),
+>    - in which case the provisions of the GPL or the LGPL are applicable instead
+>    - of those above. If you wish to allow use of your version of this file only
+>    - under the terms of either the GPL or the LGPL, and not to allow others to
+>    - use your version of this file under the terms of the MPL, indicate your
+>    - decision by deleting the provisions above and replace them with the notice
+>    - and other provisions required by the GPL or the LGPL. If you do not delete
+>    - the provisions above, a recipient may use your version of this file under
+>    - the terms of any one of the MPL, the GPL or the LGPL.
+>    -
+>    - ***** END LICENSE BLOCK ***** -->
+diff -r ./EN0.8/en-US/pippki/PrefOverlay.dtd ./EN0.9/en-US/pippki/PrefOverlay.dtd
+1,11c1,13
+< <!-- 
+<    - The contents of this file are subject to the Mozilla Public
+<    - License Version 1.1 (the "License"); you may not use this file
+<    - except in compliance with the License. You may obtain a copy of
+<    - the License at http://www.mozilla.org/MPL/
+<    - 
+<    - Software distributed under the License is distributed on an "AS
+<    - IS" basis, WITHOUT WARRANTY OF ANY KIND, either express or
+<    - implied. See the License for the specific language governing
+<    - rights and limitations under the License.
+<    - 
+---
+> <!-- ***** BEGIN LICENSE BLOCK *****
+>    - Version: MPL 1.1/GPL 2.0/LGPL 2.1
+>    -
+>    - The contents of this file are subject to the Mozilla Public License Version
+>    - 1.1 (the "License"); you may not use this file except in compliance with
+>    - the License. You may obtain a copy of the License at
+>    - http://www.mozilla.org/MPL/
+>    -
+>    - Software distributed under the License is distributed on an "AS IS" basis,
+>    - WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+>    - for the specific language governing rights and limitations under the
+>    - License.
+>    -
+13,18c15,20
+<    - 
+<    - The Initial Developer of the Original Code is Netscape
+<    - Communications Corp.  Portions created by Netscape are
+<    - Copyright (C) 2001 Netscape Communications Corp.  All
+<    - Rights Reserved.
+<    - 
+---
+>    -
+>    - The Initial Developer of the Original Code is
+>    - Netscape Communications Corp.
+>    - Portions created by the Initial Developer are Copyright (C) 2001
+>    - the Initial Developer. All Rights Reserved.
+>    -
+22c24,37
+<   -->
+---
+>    -
+>    - Alternatively, the contents of this file may be used under the terms of
+>    - either the GNU General Public License Version 2 or later (the "GPL"), or
+>    - the GNU Lesser General Public License Version 2.1 or later (the "LGPL"),
+>    - in which case the provisions of the GPL or the LGPL are applicable instead
+>    - of those above. If you wish to allow use of your version of this file only
+>    - under the terms of either the GPL or the LGPL, and not to allow others to
+>    - use your version of this file under the terms of the MPL, indicate your
+>    - decision by deleting the provisions above and replace them with the notice
+>    - and other provisions required by the GPL or the LGPL. If you do not delete
+>    - the provisions above, a recipient may use your version of this file under
+>    - the terms of any one of the MPL, the GPL or the LGPL.
+>    -
+>    - ***** END LICENSE BLOCK ***** -->
+diff -r ./EN0.8/en-US/pippki/certManager.dtd ./EN0.9/en-US/pippki/certManager.dtd
+1,11c1,13
+< <!-- 
+<    - The contents of this file are subject to the Mozilla Public
+<    - License Version 1.1 (the "License"); you may not use this file
+<    - except in compliance with the License. You may obtain a copy of
+<    - the License at http://www.mozilla.org/MPL/
+<    - 
+<    - Software distributed under the License is distributed on an "AS
+<    - IS" basis, WITHOUT WARRANTY OF ANY KIND, either express or
+<    - implied. See the License for the specific language governing
+<    - rights and limitations under the License.
+<    - 
+---
+> <!-- ***** BEGIN LICENSE BLOCK *****
+>    - Version: MPL 1.1/GPL 2.0/LGPL 2.1
+>    -
+>    - The contents of this file are subject to the Mozilla Public License Version
+>    - 1.1 (the "License"); you may not use this file except in compliance with
+>    - the License. You may obtain a copy of the License at
+>    - http://www.mozilla.org/MPL/
+>    -
+>    - Software distributed under the License is distributed on an "AS IS" basis,
+>    - WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+>    - for the specific language governing rights and limitations under the
+>    - License.
+>    -
+13,18c15,20
+<    - 
+<    - The Initial Developer of the Original Code is Netscape
+<    - Communications Corp.  Portions created by Netscape are
+<    - Copyright (C) 2001 Netscape Communications Corp.  All
+<    - Rights Reserved.
+<    - 
+---
+>    -
+>    - The Initial Developer of the Original Code is
+>    - Netscape Communications Corp.
+>    - Portions created by the Initial Developer are Copyright (C) 2001
+>    - the Initial Developer. All Rights Reserved.
+>    -
+21c23,36
+<   -->
+---
+>    -
+>    - Alternatively, the contents of this file may be used under the terms of
+>    - either the GNU General Public License Version 2 or later (the "GPL"), or
+>    - the GNU Lesser General Public License Version 2.1 or later (the "LGPL"),
+>    - in which case the provisions of the GPL or the LGPL are applicable instead
+>    - of those above. If you wish to allow use of your version of this file only
+>    - under the terms of either the GPL or the LGPL, and not to allow others to
+>    - use your version of this file under the terms of the MPL, indicate your
+>    - decision by deleting the provisions above and replace them with the notice
+>    - and other provisions required by the GPL or the LGPL. If you do not delete
+>    - the provisions above, a recipient may use your version of this file under
+>    - the terms of any one of the MPL, the GPL or the LGPL.
+>    -
+>    - ***** END LICENSE BLOCK ***** -->
+diff -r ./EN0.8/en-US/pippki/deviceManager.dtd ./EN0.9/en-US/pippki/deviceManager.dtd
+1,11c1,13
+< <!-- 
+<    - The contents of this file are subject to the Mozilla Public
+<    - License Version 1.1 (the "License"); you may not use this file
+<    - except in compliance with the License. You may obtain a copy of
+<    - the License at http://www.mozilla.org/MPL/
+<    - 
+<    - Software distributed under the License is distributed on an "AS
+<    - IS" basis, WITHOUT WARRANTY OF ANY KIND, either express or
+<    - implied. See the License for the specific language governing
+<    - rights and limitations under the License.
+<    - 
+---
+> <!-- ***** BEGIN LICENSE BLOCK *****
+>    - Version: MPL 1.1/GPL 2.0/LGPL 2.1
+>    -
+>    - The contents of this file are subject to the Mozilla Public License Version
+>    - 1.1 (the "License"); you may not use this file except in compliance with
+>    - the License. You may obtain a copy of the License at
+>    - http://www.mozilla.org/MPL/
+>    -
+>    - Software distributed under the License is distributed on an "AS IS" basis,
+>    - WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+>    - for the specific language governing rights and limitations under the
+>    - License.
+>    -
+13,18c15,20
+<    - 
+<    - The Initial Developer of the Original Code is Netscape
+<    - Communications Corp.  Portions created by Netscape are
+<    - Copyright (C) 2001 Netscape Communications Corp.  All
+<    - Rights Reserved.
+<    - 
+---
+>    -
+>    - The Initial Developer of the Original Code is
+>    - Netscape Communications Corp.
+>    - Portions created by the Initial Developer are Copyright (C) 2001
+>    - the Initial Developer. All Rights Reserved.
+>    -
+21c23,36
+<   -->
+---
+>    -
+>    - Alternatively, the contents of this file may be used under the terms of
+>    - either the GNU General Public License Version 2 or later (the "GPL"), or
+>    - the GNU Lesser General Public License Version 2.1 or later (the "LGPL"),
+>    - in which case the provisions of the GPL or the LGPL are applicable instead
+>    - of those above. If you wish to allow use of your version of this file only
+>    - under the terms of either the GPL or the LGPL, and not to allow others to
+>    - use your version of this file under the terms of the MPL, indicate your
+>    - decision by deleting the provisions above and replace them with the notice
+>    - and other provisions required by the GPL or the LGPL. If you do not delete
+>    - the provisions above, a recipient may use your version of this file under
+>    - the terms of any one of the MPL, the GPL or the LGPL.
+>    -
+>    - ***** END LICENSE BLOCK ***** -->
+diff -r ./EN0.8/en-US/pippki/newserver.dtd ./EN0.9/en-US/pippki/newserver.dtd
+1,12c1,20
+< <!-- 
+<    - The contents of this file are subject to the Mozilla Public
+<    - License Version 1.1 (the "License"); you may not use this file
+<    - except in compliance with the License. You may obtain a copy of
+<    - the License at http://www.mozilla.org/MPL/
+<    - 
+<    - Software distributed under the License is distributed on an "AS
+<    - IS" basis, WITHOUT WARRANTY OF ANY KIND, either express or
+<    - implied. See the License for the specific language governing
+<    - rights and limitations under the License.
+<    - 
+<    - 
+---
+> <!-- ***** BEGIN LICENSE BLOCK *****
+>    - Version: MPL 1.1/GPL 2.0/LGPL 2.1
+>    -
+>    - The contents of this file are subject to the Mozilla Public License Version
+>    - 1.1 (the "License"); you may not use this file except in compliance with
+>    - the License. You may obtain a copy of the License at
+>    - http://www.mozilla.org/MPL/
+>    -
+>    - Software distributed under the License is distributed on an "AS IS" basis,
+>    - WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+>    - for the specific language governing rights and limitations under the
+>    - License.
+>    -
+>    - The Original Code is mozilla.org Code.
+>    -
+>    - The Initial Developer of the Original Code is
+>    - Netscape Communications Corporation.
+>    - Portions created by the Initial Developer are Copyright (C) 2001
+>    - the Initial Developer. All Rights Reserved.
+>    -
+14,16c22,37
+<    -  Javier Delgadillo <javi@netscape.com>
+<    -  Bob Lord <lord@netscape.com>
+<   --> 
+---
+>    -   Javier Delgadillo <javi@netscape.com>
+>    -   Bob Lord <lord@netscape.com>
+>    -
+>    - Alternatively, the contents of this file may be used under the terms of
+>    - either the GNU General Public License Version 2 or later (the "GPL"), or
+>    - the GNU Lesser General Public License Version 2.1 or later (the "LGPL"),
+>    - in which case the provisions of the GPL or the LGPL are applicable instead
+>    - of those above. If you wish to allow use of your version of this file only
+>    - under the terms of either the GPL or the LGPL, and not to allow others to
+>    - use your version of this file under the terms of the MPL, indicate your
+>    - decision by deleting the provisions above and replace them with the notice
+>    - and other provisions required by the GPL or the LGPL. If you do not delete
+>    - the provisions above, a recipient may use your version of this file under
+>    - the terms of any one of the MPL, the GPL or the LGPL.
+>    -
+>    - ***** END LICENSE BLOCK ***** -->
+diff -r ./EN0.8/en-US/pippki/newserver.properties ./EN0.9/en-US/pippki/newserver.properties
+2,10c2,13
+< # The contents of this file are subject to the Netscape Public
+< # License Version 1.1 (the "License"); you may not use this file
+< # except in compliance with the License. You may obtain a copy of
+< # the License at http://www.mozilla.org/NPL/
+< #
+< # Software distributed under the License is distributed on an "AS
+< # IS" basis, WITHOUT WARRANTY OF ANY KIND, either express or
+< # implied. See the License for the specific language governing
+< # rights and limitations under the License.
+---
+> # ***** BEGIN LICENSE BLOCK *****
+> # Version: MPL 1.1/GPL 2.0/LGPL 2.1
+> #
+> # The contents of this file are subject to the Mozilla Public License Version
+> # 1.1 (the "License"); you may not use this file except in compliance with
+> # the License. You may obtain a copy of the License at
+> # http://www.mozilla.org/MPL/
+> #
+> # Software distributed under the License is distributed on an "AS IS" basis,
+> # WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+> # for the specific language governing rights and limitations under the
+> # License.
+14,17c17,20
+< # The Initial Developer of the Original Code is Netscape
+< # Communications Corporation.  Portions created by Netscape are
+< # Copyright (C) 1998 Netscape Communications Corporation. All
+< # Rights Reserved.
+---
+> # The Initial Developer of the Original Code is
+> # Netscape Communications Corporation.
+> # Portions created by the Initial Developer are Copyright (C) 1998
+> # the Initial Developer. All Rights Reserved.
+20,21c23,36
+< #  Javier Delgadillo <javi@netscape.com>
+< #  Bob Lord <lord@netscape.com>
+---
+> #   Javier Delgadillo <javi@netscape.com>
+> #   Bob Lord <lord@netscape.com>
+> #
+> # Alternatively, the contents of this file may be used under the terms of
+> # either the GNU General Public License Version 2 or later (the "GPL"), or
+> # the GNU Lesser General Public License Version 2.1 or later (the "LGPL"),
+> # in which case the provisions of the GPL or the LGPL are applicable instead
+> # of those above. If you wish to allow use of your version of this file only
+> # under the terms of either the GPL or the LGPL, and not to allow others to
+> # use your version of this file under the terms of the MPL, indicate your
+> # decision by deleting the provisions above and replace them with the notice
+> # and other provisions required by the GPL or the LGPL. If you do not delete
+> # the provisions above, a recipient may use your version of this file under
+> # the terms of any one of the MPL, the GPL or the LGPL.
+22a38
+> # ***** END LICENSE BLOCK *****
+diff -r ./EN0.8/en-US/pippki/pippki.dtd ./EN0.9/en-US/pippki/pippki.dtd
+1,11c1,13
+< <!-- 
+<    - The contents of this file are subject to the Mozilla Public
+<    - License Version 1.1 (the "License"); you may not use this file
+<    - except in compliance with the License. You may obtain a copy of
+<    - the License at http://www.mozilla.org/MPL/
+<    - 
+<    - Software distributed under the License is distributed on an "AS
+<    - IS" basis, WITHOUT WARRANTY OF ANY KIND, either express or
+<    - implied. See the License for the specific language governing
+<    - rights and limitations under the License.
+<    - 
+---
+> <!-- ***** BEGIN LICENSE BLOCK *****
+>    - Version: MPL 1.1/GPL 2.0/LGPL 2.1
+>    -
+>    - The contents of this file are subject to the Mozilla Public License Version
+>    - 1.1 (the "License"); you may not use this file except in compliance with
+>    - the License. You may obtain a copy of the License at
+>    - http://www.mozilla.org/MPL/
+>    -
+>    - Software distributed under the License is distributed on an "AS IS" basis,
+>    - WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+>    - for the specific language governing rights and limitations under the
+>    - License.
+>    -
+13,18c15,20
+<    - 
+<    - The Initial Developer of the Original Code is Netscape
+<    - Communications Corp.  Portions created by Netscape are
+<    - Copyright (C) 2001 Netscape Communications Corp.  All
+<    - Rights Reserved.
+<    - 
+---
+>    -
+>    - The Initial Developer of the Original Code is
+>    - Netscape Communications Corp.
+>    - Portions created by the Initial Developer are Copyright (C) 2001
+>    - the Initial Developer. All Rights Reserved.
+>    -
+21c23,36
+<   -->
+---
+>    -
+>    - Alternatively, the contents of this file may be used under the terms of
+>    - either the GNU General Public License Version 2 or later (the "GPL"), or
+>    - the GNU Lesser General Public License Version 2.1 or later (the "LGPL"),
+>    - in which case the provisions of the GPL or the LGPL are applicable instead
+>    - of those above. If you wish to allow use of your version of this file only
+>    - under the terms of either the GPL or the LGPL, and not to allow others to
+>    - use your version of this file under the terms of the MPL, indicate your
+>    - decision by deleting the provisions above and replace them with the notice
+>    - and other provisions required by the GPL or the LGPL. If you do not delete
+>    - the provisions above, a recipient may use your version of this file under
+>    - the terms of any one of the MPL, the GPL or the LGPL.
+>    -
+>    - ***** END LICENSE BLOCK ***** -->
+117a133,137
+> 
+> <!-- Form Signing confirmation prompt -->
+> <!ENTITY formSigning.title "Text Signing Request">
+> <!ENTITY formSigning.cert "Signing Certificate">
+> <!ENTITY formSigning.confirmPassword "To confirm you agree to sign this text message using your selected certificate, please confirm by entering the master password:">
+diff -r ./EN0.8/en-US/pippki/pippki.properties ./EN0.9/en-US/pippki/pippki.properties
+2,10c2,13
+< # The contents of this file are subject to the Mozilla Public
+< # License Version 1.1 (the "License"); you may not use this file
+< # except in compliance with the License. You may obtain a copy of
+< # the License at http://www.mozilla.org/MPL/
+< #
+< # Software distributed under the License is distributed on an "AS
+< # IS" basis, WITHOUT WARRANTY OF ANY KIND, either express or
+< # implied. See the License for the specific language governing
+< # rights and limitations under the License.
+---
+> # ***** BEGIN LICENSE BLOCK *****
+> # Version: MPL 1.1/GPL 2.0/LGPL 2.1
+> #
+> # The contents of this file are subject to the Mozilla Public License Version
+> # 1.1 (the "License"); you may not use this file except in compliance with
+> # the License. You may obtain a copy of the License at
+> # http://www.mozilla.org/MPL/
+> #
+> # Software distributed under the License is distributed on an "AS IS" basis,
+> # WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+> # for the specific language governing rights and limitations under the
+> # License.
+14,17c17,22
+< # The Initial Developer of the Original Code is Netscape
+< # Communications Corporation.  Portions created by Netscape are
+< # Copyright (C) 1998 Netscape Communications Corporation. All
+< # Rights Reserved.
+---
+> # The Initial Developer of the Original Code is
+> # Netscape Communications Corporation.
+> # Portions created by the Initial Developer are Copyright (C) 1998
+> # the Initial Developer. All Rights Reserved.
+> #
+> # Contributor(s):
+19,20c24,36
+< # Contributor(s): 
+< # 
+---
+> # Alternatively, the contents of this file may be used under the terms of
+> # either the GNU General Public License Version 2 or later (the "GPL"), or
+> # the GNU Lesser General Public License Version 2.1 or later (the "LGPL"),
+> # in which case the provisions of the GPL or the LGPL are applicable instead
+> # of those above. If you wish to allow use of your version of this file only
+> # under the terms of either the GPL or the LGPL, and not to allow others to
+> # use your version of this file under the terms of the MPL, indicate your
+> # decision by deleting the provisions above and replace them with the notice
+> # and other provisions required by the GPL or the LGPL. If you do not delete
+> # the provisions above, a recipient may use your version of this file under
+> # the terms of any one of the MPL, the GPL or the LGPL.
+> #
+> # ***** END LICENSE BLOCK *****
+177a194,196
+> 
+> # Form Signing confirmation prompt
+> formSigningIntro=The site '%S' has requested that you sign the following text message:
+diff -r ./EN0.8/en-US/pippki/pref-masterpass.dtd ./EN0.9/en-US/pippki/pref-masterpass.dtd
+1,11c1,13
+< <!-- 
+<    - The contents of this file are subject to the Mozilla Public
+<    - License Version 1.1 (the "License"); you may not use this file
+<    - except in compliance with the License. You may obtain a copy of
+<    - the License at http://www.mozilla.org/MPL/
+<    - 
+<    - Software distributed under the License is distributed on an "AS
+<    - IS" basis, WITHOUT WARRANTY OF ANY KIND, either express or
+<    - implied. See the License for the specific language governing
+<    - rights and limitations under the License.
+<    - 
+---
+> <!-- ***** BEGIN LICENSE BLOCK *****
+>    - Version: MPL 1.1/GPL 2.0/LGPL 2.1
+>    -
+>    - The contents of this file are subject to the Mozilla Public License Version
+>    - 1.1 (the "License"); you may not use this file except in compliance with
+>    - the License. You may obtain a copy of the License at
+>    - http://www.mozilla.org/MPL/
+>    -
+>    - Software distributed under the License is distributed on an "AS IS" basis,
+>    - WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+>    - for the specific language governing rights and limitations under the
+>    - License.
+>    -
+13,18c15,20
+<    - 
+<    - The Initial Developer of the Original Code is Netscape
+<    - Communications Corp.  Portions created by Netscape are
+<    - Copyright (C) 2001 Netscape Communications Corp.  All
+<    - Rights Reserved.
+<    - 
+---
+>    -
+>    - The Initial Developer of the Original Code is
+>    - Netscape Communications Corp.
+>    - Portions created by the Initial Developer are Copyright (C) 2001
+>    - the Initial Developer. All Rights Reserved.
+>    -
+22c24,37
+<   -->
+---
+>    -
+>    - Alternatively, the contents of this file may be used under the terms of
+>    - either the GNU General Public License Version 2 or later (the "GPL"), or
+>    - the GNU Lesser General Public License Version 2.1 or later (the "LGPL"),
+>    - in which case the provisions of the GPL or the LGPL are applicable instead
+>    - of those above. If you wish to allow use of your version of this file only
+>    - under the terms of either the GPL or the LGPL, and not to allow others to
+>    - use your version of this file under the terms of the MPL, indicate your
+>    - decision by deleting the provisions above and replace them with the notice
+>    - and other provisions required by the GPL or the LGPL. If you do not delete
+>    - the provisions above, a recipient may use your version of this file under
+>    - the terms of any one of the MPL, the GPL or the LGPL.
+>    -
+>    - ***** END LICENSE BLOCK ***** -->
+diff -r ./EN0.8/en-US/pippki/pref-security.dtd ./EN0.9/en-US/pippki/pref-security.dtd
+1,11c1,13
+< <!-- 
+<    - The contents of this file are subject to the Mozilla Public
+<    - License Version 1.1 (the "License"); you may not use this file
+<    - except in compliance with the License. You may obtain a copy of
+<    - the License at http://www.mozilla.org/MPL/
+<    - 
+<    - Software distributed under the License is distributed on an "AS
+<    - IS" basis, WITHOUT WARRANTY OF ANY KIND, either express or
+<    - implied. See the License for the specific language governing
+<    - rights and limitations under the License.
+<    - 
+---
+> <!-- ***** BEGIN LICENSE BLOCK *****
+>    - Version: MPL 1.1/GPL 2.0/LGPL 2.1
+>    -
+>    - The contents of this file are subject to the Mozilla Public License Version
+>    - 1.1 (the "License"); you may not use this file except in compliance with
+>    - the License. You may obtain a copy of the License at
+>    - http://www.mozilla.org/MPL/
+>    -
+>    - Software distributed under the License is distributed on an "AS IS" basis,
+>    - WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+>    - for the specific language governing rights and limitations under the
+>    - License.
+>    -
+13,18c15,20
+<    - 
+<    - The Initial Developer of the Original Code is Netscape
+<    - Communications Corp.  Portions created by Netscape are
+<    - Copyright (C) 2001 Netscape Communications Corp.  All
+<    - Rights Reserved.
+<    - 
+---
+>    -
+>    - The Initial Developer of the Original Code is
+>    - Netscape Communications Corp.
+>    - Portions created by the Initial Developer are Copyright (C) 2001
+>    - the Initial Developer. All Rights Reserved.
+>    -
+22c24,37
+<   -->
+---
+>    -
+>    - Alternatively, the contents of this file may be used under the terms of
+>    - either the GNU General Public License Version 2 or later (the "GPL"), or
+>    - the GNU Lesser General Public License Version 2.1 or later (the "LGPL"),
+>    - in which case the provisions of the GPL or the LGPL are applicable instead
+>    - of those above. If you wish to allow use of your version of this file only
+>    - under the terms of either the GPL or the LGPL, and not to allow others to
+>    - use your version of this file under the terms of the MPL, indicate your
+>    - decision by deleting the provisions above and replace them with the notice
+>    - and other provisions required by the GPL or the LGPL. If you do not delete
+>    - the provisions above, a recipient may use your version of this file under
+>    - the terms of any one of the MPL, the GPL or the LGPL.
+>    -
+>    - ***** END LICENSE BLOCK ***** -->
+diff -r ./EN0.8/en-US/pippki/pref-ssl.dtd ./EN0.9/en-US/pippki/pref-ssl.dtd
+1,11c1,13
+< <!-- 
+<    - The contents of this file are subject to the Mozilla Public
+<    - License Version 1.1 (the "License"); you may not use this file
+<    - except in compliance with the License. You may obtain a copy of
+<    - the License at http://www.mozilla.org/MPL/
+<    - 
+<    - Software distributed under the License is distributed on an "AS
+<    - IS" basis, WITHOUT WARRANTY OF ANY KIND, either express or
+<    - implied. See the License for the specific language governing
+<    - rights and limitations under the License.
+<    - 
+---
+> <!-- ***** BEGIN LICENSE BLOCK *****
+>    - Version: MPL 1.1/GPL 2.0/LGPL 2.1
+>    -
+>    - The contents of this file are subject to the Mozilla Public License Version
+>    - 1.1 (the "License"); you may not use this file except in compliance with
+>    - the License. You may obtain a copy of the License at
+>    - http://www.mozilla.org/MPL/
+>    -
+>    - Software distributed under the License is distributed on an "AS IS" basis,
+>    - WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+>    - for the specific language governing rights and limitations under the
+>    - License.
+>    -
+13,18c15,20
+<    - 
+<    - The Initial Developer of the Original Code is Netscape
+<    - Communications Corp.  Portions created by Netscape are
+<    - Copyright (C) 2001 Netscape Communications Corp.  All
+<    - Rights Reserved.
+<    - 
+---
+>    -
+>    - The Initial Developer of the Original Code is
+>    - Netscape Communications Corp.
+>    - Portions created by the Initial Developer are Copyright (C) 2001
+>    - the Initial Developer. All Rights Reserved.
+>    -
+22c24,37
+<   -->
+---
+>    -
+>    - Alternatively, the contents of this file may be used under the terms of
+>    - either the GNU General Public License Version 2 or later (the "GPL"), or
+>    - the GNU Lesser General Public License Version 2.1 or later (the "LGPL"),
+>    - in which case the provisions of the GPL or the LGPL are applicable instead
+>    - of those above. If you wish to allow use of your version of this file only
+>    - under the terms of either the GPL or the LGPL, and not to allow others to
+>    - use your version of this file under the terms of the MPL, indicate your
+>    - decision by deleting the provisions above and replace them with the notice
+>    - and other provisions required by the GPL or the LGPL. If you do not delete
+>    - the provisions above, a recipient may use your version of this file under
+>    - the terms of any one of the MPL, the GPL or the LGPL.
+>    -
+>    - ***** END LICENSE BLOCK ***** -->
+diff -r ./EN0.8/en-US/pippki/pref-validation.dtd ./EN0.9/en-US/pippki/pref-validation.dtd
+1,11c1,13
+< <!-- 
+<    - The contents of this file are subject to the Mozilla Public
+<    - License Version 1.1 (the "License"); you may not use this file
+<    - except in compliance with the License. You may obtain a copy of
+<    - the License at http://www.mozilla.org/MPL/
+<    - 
+<    - Software distributed under the License is distributed on an "AS
+<    - IS" basis, WITHOUT WARRANTY OF ANY KIND, either express or
+<    - implied. See the License for the specific language governing
+<    - rights and limitations under the License.
+<    - 
+---
+> <!-- ***** BEGIN LICENSE BLOCK *****
+>    - Version: MPL 1.1/GPL 2.0/LGPL 2.1
+>    -
+>    - The contents of this file are subject to the Mozilla Public License Version
+>    - 1.1 (the "License"); you may not use this file except in compliance with
+>    - the License. You may obtain a copy of the License at
+>    - http://www.mozilla.org/MPL/
+>    -
+>    - Software distributed under the License is distributed on an "AS IS" basis,
+>    - WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+>    - for the specific language governing rights and limitations under the
+>    - License.
+>    -
+13,18c15,20
+<    - 
+<    - The Initial Developer of the Original Code is Netscape
+<    - Communications Corp.  Portions created by Netscape are
+<    - Copyright (C) 2001 Netscape Communications Corp.  All
+<    - Rights Reserved.
+<    - 
+---
+>    -
+>    - The Initial Developer of the Original Code is
+>    - Netscape Communications Corp.
+>    - Portions created by the Initial Developer are Copyright (C) 2001
+>    - the Initial Developer. All Rights Reserved.
+>    -
+20,21c22,36
+<    - David P. Drinan (ddrinan@netscape.com)
+<   -->
+---
+>    -   David P. Drinan (ddrinan@netscape.com)
+>    -
+>    - Alternatively, the contents of this file may be used under the terms of
+>    - either the GNU General Public License Version 2 or later (the "GPL"), or
+>    - the GNU Lesser General Public License Version 2.1 or later (the "LGPL"),
+>    - in which case the provisions of the GPL or the LGPL are applicable instead
+>    - of those above. If you wish to allow use of your version of this file only
+>    - under the terms of either the GPL or the LGPL, and not to allow others to
+>    - use your version of this file under the terms of the MPL, indicate your
+>    - decision by deleting the provisions above and replace them with the notice
+>    - and other provisions required by the GPL or the LGPL. If you do not delete
+>    - the provisions above, a recipient may use your version of this file under
+>    - the terms of any one of the MPL, the GPL or the LGPL.
+>    -
+>    - ***** END LICENSE BLOCK ***** -->
+

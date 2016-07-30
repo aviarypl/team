@@ -1,0 +1,1471 @@
+diff --git a/browser/chrome/browser-region/region.properties b/browser/chrome/browser-region/region.properties
+--- a/browser/chrome/browser-region/region.properties
++++ b/browser/chrome/browser-region/region.properties
+@@ -3,27 +3,27 @@ browser.search.defaultenginename=Google
+ 
+ # Search engine order (order displayed in the search bar dropdown)s
+ browser.search.order.1=Google
+ 
+ # These are the default web service based feed readers
+ browser.contentHandlers.types.0.title=Startowy.com
+ browser.contentHandlers.types.0.uri=http://www.startowy.com/dodajrss.html?zrodlo=%s
+ browser.contentHandlers.types.1.title=Netvibes
+-browser.contentHandlers.types.1.uri=http://www.netvibes.com/subscribe.php?url=%s  
++browser.contentHandlers.types.1.uri=http://www.netvibes.com/subscribe.php?url=%s
+ browser.contentHandlers.types.2.title=Google
+ browser.contentHandlers.types.2.uri=http://fusion.google.com/add?feedurl=%s
+ 
+ # Keyword URL (for location bar searches)
+ keyword.URL=http://www.google.com/search?ie=UTF-8&oe=UTF-8&sourceid=navclient&gfns=1&q=
+ 
+ # increment this number when anything gets changed in the list below.  This will
+-# cause Firefox to re-read these prefs and inject any new handlers into the 
++# cause Firefox to re-read these prefs and inject any new handlers into the
+ # profile database.  Note that "new" is defined as "has a different URL"; this
+-# means that it's not possible to update the name of existing handler, so 
++# means that it's not possible to update the name of existing handler, so
+ # don't make any spelling errors here.
+ gecko.handlerService.defaultHandlersVersion=4
+ 
+ # The default set of protocol handlers for webcal:
+ gecko.handlerService.schemes.webcal.0.name=30 Boxes
+ gecko.handlerService.schemes.webcal.0.uriTemplate=http://30boxes.com/external/widget?refer=ff&url=%s
+ 
+ # The default set of protocol handlers for mailto:
+diff --git a/browser/chrome/browser/aboutDialog.dtd b/browser/chrome/browser/aboutDialog.dtd
+--- a/browser/chrome/browser/aboutDialog.dtd
++++ b/browser/chrome/browser/aboutDialog.dtd
+@@ -1,13 +1,13 @@
+ <!ENTITY aboutDialog.title          "O programie &brandFullName;">
+ <!ENTITY copyright                  "Twórcy">
+ <!ENTITY copyright.accesskey        "T">
+ <!ENTITY copyrightGNOME.accesskey   "T">
+ <!ENTITY aboutLink                  "&lt; O programie &brandShortName;">
+ <!ENTITY aboutLink.accesskey        "O">
+ <!ENTITY aboutVersion               "wersja">
+-<!ENTITY closeCmdGNOME.label        "Zamknij">  
++<!ENTITY closeCmdGNOME.label        "Zamknij">
+ <!ENTITY closeCmdGNOME.accesskey    "Z">
+ <!ENTITY copyrightInfo1             "&#169;1998-2009 Współtwórcy. Wszelkie prawa zastrzeżone. (">
+ <!ENTITY licenseLink                "about:license">
+ <!ENTITY licenseLinkText            "Informacje o licencji">
+-<!ENTITY copyrightInfo2             ").">
+\ No newline at end of file
++<!ENTITY copyrightInfo2             ").">
+diff --git a/browser/chrome/browser/baseMenuOverlay.dtd b/browser/chrome/browser/baseMenuOverlay.dtd
+--- a/browser/chrome/browser/baseMenuOverlay.dtd
++++ b/browser/chrome/browser/baseMenuOverlay.dtd
+@@ -14,26 +14,26 @@
+ <!ENTITY aboutCmd.accesskey       "O">
+ <!ENTITY helpContents.label       "Spis tematów">
+ <!ENTITY helpContents.accesskey   "S">
+ <!ENTITY helpContentsMac.label    "Pomoc programu &brandShortName;">
+ <!ENTITY helpForIEUsers.label     "Dla użytkowników Internet Explorera">
+ <!ENTITY helpForIEUsers.accesskey "I">
+ <!ENTITY openHelp.commandkey      "VK_F1">
+ <!-- LOCALIZATION NOTE openHelpMac.commandkey and openHelpMac.modifiers
+-                       are all the necessary keys to hit OS X's open-help 
++                       are all the necessary keys to hit OS X's open-help
+                        keyboard (visible) shortcut (that's Cmd+? for most locales) -->
+ <!ENTITY openHelpMac.commandkey           "/">
+ <!ENTITY openHelpMac.modifiers            "accel,shift">
+ <!ENTITY openHelpMac.frontendCommandkey   "?">
+ <!ENTITY openHelpMac.frontendModifiers    "accel">
+ 
+ <!ENTITY helpReleaseNotes.accesskey     "I">
+ <!ENTITY helpReleaseNotes.label         "Informacje o wydaniu">
+-<!ENTITY updateCmd.accesskey            "a"> 
++<!ENTITY updateCmd.accesskey            "a">
+ <!ENTITY updateCmd.label                "Sprawdź dostępność aktualizacji…">
+ 
+ <!ENTITY preferencesCmdMac.label        "Preferencje…">
+ <!ENTITY preferencesCmdMac.commandkey   ",">
+ <!ENTITY preferencesCmdMac.modifiers    "accel">
+ 
+ <!ENTITY servicesMenuMac.label          "Usługi">
+ 
+diff --git a/browser/chrome/browser/browser.dtd b/browser/chrome/browser/browser.dtd
+--- a/browser/chrome/browser/browser.dtd
++++ b/browser/chrome/browser/browser.dtd
+@@ -198,36 +198,36 @@
+ <!ENTITY historyHomeCmd.label "Strona startowa">
+ <!ENTITY showAllHistoryCmd2.label "Wyświetl całą historię">
+ <!ENTITY showAllHistoryCmd.commandkey "H">
+ 
+ <!ENTITY openCmd.commandkey "l" >
+ <!ENTITY urlbar.emptyText             "Szukaj w zakładkach i historii">
+ <!ENTITY urlbar.accesskey "d" >
+ 
+-<!-- 
++<!--
+    Comment duplicated from browser-sets.inc:
+- 
++
+    Search Command Key Logic works like this:
+-   
++
+    Unix: Ctrl+J (0.8, 0.9 support)
+          Ctrl+K (cross platform binding)
+    Mac:  Ctrl+K (cross platform binding)
+    Win:  Ctrl+K (cross platform binding)
+-         Ctrl+E (IE compat) 
+- 
++         Ctrl+E (IE compat)
++
+    We support Ctrl+K on all platforms now and advertise it in the menu since it is
+    our standard - it is a "safe" choice since it is near no harmful keys like "W" as
+    "E" is. People mourning the loss of Ctrl+K for emacs compat can switch their GTK
+    system setting to use emacs emulation, and we should respect it. Focus-Search-Box
+    is a fundamental keybinding and we are maintaining a XP binding so that it is easy
+    for people to switch to Linux.
+ 
+   Do *not* tamper with these values without talking to ben@mozilla.org
+-   
++
+ -->
+ <!ENTITY searchFocus.commandkey       "k">
+ <!ENTITY searchFocus.commandkey2      "e">
+ <!ENTITY searchFocusUnix.commandkey   "j">
+ 
+ <!ENTITY openLinkCmd.label "Otwórz odnośnik w nowym oknie" >
+ <!ENTITY openLinkCmd.accesskey "n" >
+ <!ENTITY openLinkCmdInTab.label "Otwórz odnośnik w nowej karcie" >
+diff --git a/browser/chrome/browser/browser.properties b/browser/chrome/browser/browser.properties
+--- a/browser/chrome/browser/browser.properties
++++ b/browser/chrome/browser/browser.properties
+@@ -119,18 +119,18 @@ identity.identified.title_with_country=%
+ identity.encrypted=Połączenie z tą witryną jest szyfrowane, uniemożliwiając podsłuchiwanie.
+ identity.unencrypted=Połączenie z tą witryną nie jest szyfrowane.
+ 
+ identity.unknown.tooltip=Ta witryna nie dostarcza informacji o swej tożsamości.
+ identity.ownerUnknown2=(nieznany)
+ 
+ # Downloads Monitor Panel
+ # LOCALIZATION NOTE (activeDownloads, pausedDownloads): Semi-colon list of plural
+-# forms. See: http://developer.mozilla.org/en/docs/Localization_and_Plurals 
+-# #1 number of downloads; #2 time left 
++# forms. See: http://developer.mozilla.org/en/docs/Localization_and_Plurals
++# #1 number of downloads; #2 time left
+ # examples: One active download (2 minutes remaining); 11 paused downloads
+ activeDownloads=Trwa pobieranie jednego pliku. #2;Trwa pobieranie #1 plików. #2;Trwa pobieranie #1 plików. #2
+ pausedDownloads=Wstrzymane pobieranie jednego pliku;Wstrzymane pobieranie #1 plików;Wstrzymane pobieranie #1 plików
+ 
+ # Edit Bookmark UI
+ editBookmarkPanel.pageBookmarkedTitle=Dodano zakładkę do strony
+ editBookmarkPanel.pageBookmarkedDescription=%S zapamięta tę stronę.
+ editBookmarkPanel.bookmarkedRemovedTitle=Zakładka usunięta
+diff --git a/browser/chrome/browser/engineManager.dtd b/browser/chrome/browser/engineManager.dtd
+--- a/browser/chrome/browser/engineManager.dtd
++++ b/browser/chrome/browser/engineManager.dtd
+@@ -1,13 +1,13 @@
+ <!ENTITY  engineManager.title       "Menedżer listy wyszukiwarek">
+ <!ENTITY  engineManager.style       "min-width: 36em;">
+ <!ENTITY  engineManager.intro       "Zainstalowane są następujące wyszukiwarki:">
+ 
+- 
++
+ <!ENTITY  columnLabel.name          "Nazwa">
+ <!ENTITY  columnLabel.keyword       "Słowo kluczowe">
+ 
+ <!-- Buttons -->
+ <!ENTITY  up.label                  "W górę">
+ <!ENTITY  up.accesskey              "g">
+ <!ENTITY  dn.label                  "W dół">
+ <!ENTITY  dn.accesskey              "d">
+diff --git a/browser/chrome/browser/feeds/subscribe.properties b/browser/chrome/browser/feeds/subscribe.properties
+--- a/browser/chrome/browser/feeds/subscribe.properties
++++ b/browser/chrome/browser/feeds/subscribe.properties
+@@ -1,14 +1,14 @@
+ linkTitleTextFormat=Przejdź do %S
+ 
+-addHandler=Czy dodać "%S" (%S) jako czytnik kanałów?                                           
++addHandler=Czy dodać "%S" (%S) jako czytnik kanałów?
+ addHandlerAddButton=Dodaj czytnik kanałów
+ addHandlerAddButtonAccesskey=D
+-handlerRegistered="%S" jest już zarejestrowany jako czytnik kanałów                   
++handlerRegistered="%S" jest już zarejestrowany jako czytnik kanałów
+ liveBookmarks=Dynamiczne zakładki
+ subscribeNow=Subskrybuj
+ chooseApplicationMenuItem=Wybierz program…
+ chooseApplicationDialogTitle=Wybierz program
+ alwaysUse=Zawsze używaj %S do subskrypcji kanałów
+ mediaLabel=Pliki mediów
+ 
+ # LOCALIZATION NOTE: The next string is for the size of the enclosed media.
+@@ -20,24 +20,24 @@ enclosureSizeText=%1$S %2$S
+ bytes=bajtów
+ kilobyte=KB
+ megabyte=MB
+ gigabyte=GB
+ 
+ # LOCALIZATION NOTE: The next three strings explains to the user what they're
+ # doing.
+ #   e.g. alwaysUseForVideoPodcasts : "Always use Miro to subscribe to video podcasts.
+-#   %S = application to use (Miro, iTunes, ...)                                 
++#   %S = application to use (Miro, iTunes, ...)
+ alwaysUseForFeeds=Zawsze używaj %S do subskrypcji kanałów.
+ alwaysUseForAudioPodcasts=Zawsze używaj %S do subskrypcji podcastów.
+ alwaysUseForVideoPodcasts=Zawsze używaj %S do subskrypcji podcastów wideo.
+ 
+-subscribeFeedUsing=Subskrybuj ten kanał za pomocą 
+-subscribeAudioPodcastUsing=Subskrybuj ten podcast za pomocą 
+-subscribeVideoPodcastUsing=Subskrybuj ten podcast wideo za pomocą 
++subscribeFeedUsing=Subskrybuj ten kanał za pomocą
++subscribeAudioPodcastUsing=Subskrybuj ten podcast za pomocą
++subscribeVideoPodcastUsing=Subskrybuj ten podcast wideo za pomocą
+ 
+ feedSubscriptionFeed1=To jest kanał informacyjny ze stale zmieniającą się zawartością tej witryny.
+ feedSubscriptionAudioPodcast1=To jest podcast ze stale zmieniającą się zawartością tej witryny.
+ feedSubscriptionVideoPodcast1=To jest podcast wideo ze stale zmieniającą się zawartością tej witryny.
+ 
+ feedSubscriptionFeed2=Można subskrybować ten kanał informacyjny, by być na bieżąco z aktualizacjami treści tej witryny.
+ feedSubscriptionAudioPodcast2=Można subskrybować ten podcast, by być na bieżąco z aktualizacjami treści tej witryny.
+ feedSubscriptionVideoPodcast2=Można subskrybować ten podcast wideo, by być na bieżąco z aktualizacjami treści tej witryny.
+diff --git a/browser/chrome/browser/migration/migration.properties b/browser/chrome/browser/migration/migration.properties
+--- a/browser/chrome/browser/migration/migration.properties
++++ b/browser/chrome/browser/migration/migration.properties
+@@ -25,25 +25,25 @@ importedOperaHotlistTitle=Z Opery
+ importedOperaSearchUrls=Wyszukiwarki (z Opery)
+ 
+ # Import Sources
+ 1_ie=Opcje internetowe
+ 1_opera=Preferencje
+ 1_dogbert=Preferencje
+ 1_seamonkey=Preferencje
+ 1_phoenix=Preferencje
+-1_safari=Preferencje  
++1_safari=Preferencje
+ 1_macie=Preferencje
+ 
+ 2_ie=Ciasteczka
+ 2_opera=Ciasteczka
+ 2_dogbert=Ciasteczka
+ 2_seamonkey=Ciasteczka
+ 2_phoenix=Ciasteczka
+-2_safari=Ciasteczka 
++2_safari=Ciasteczka
+ 2_macie=Ciasteczka
+ 
+ 4_ie=Historia
+ 4_opera=Historia
+ 4_dogbert=Historia
+ 4_seamonkey=Historia
+ 4_phoenix=Historia
+ 4_safari=Historia
+diff --git a/browser/chrome/browser/places/places.properties b/browser/chrome/browser/places/places.properties
+--- a/browser/chrome/browser/places/places.properties
++++ b/browser/chrome/browser/places/places.properties
+@@ -28,18 +28,18 @@ bookmarksRestoreFilterName=JSON
+ bookmarksRestoreFilterExtension=*.json
+ 
+ bookmarksRestoreFormatError=Nieobsługiwany typ pliku.
+ bookmarksRestoreParseError=Nie udało się przetworzyć pliku kopii zapasowej.
+ 
+ bookmarksLivemarkLoading=Pobieranie dynamicznej zakładki…
+ bookmarksLivemarkFailed=Pobieranie dynamicznej zakładki nie powiodło się.
+ 
+-headerTextPrefix1=Wyświetlanie 
+-headerTextPrefix2=Wyniki wyszukiwania dla 
++headerTextPrefix1=Wyświetlanie
++headerTextPrefix2=Wyniki wyszukiwania dla
+ headerTextPrefix3=Wyszukiwanie zaawansowane
+ 
+ lessCriteria.label=-
+ moreCriteria.label=+
+ 
+ menuOpenLivemarkOrigin.label=Otwórz "%S"
+ 
+ defaultGroupOnLabel=Grupuj wg witryny
+@@ -101,28 +101,28 @@ detailsPane.oneItem=Jeden element
+ detailsPane.multipleItems=%S elementów
+ 
+ smartBookmarksFolderTitle=Inteligentne zakładki
+ mostVisitedTitle=Często odwiedzane
+ recentlyBookmarkedTitle=Ostatnio dodane
+ recentTagsTitle=Ostatnio używane etykiety
+ 
+ OrganizerQueryHistory=Historia
+-OrganizerQueryDownloads=Pobrane pliki                                               
++OrganizerQueryDownloads=Pobrane pliki
+ OrganizerQueryAllBookmarks=Wszystkie zakładki
+ 
+ # LOCALIZATION NOTE (tagResultLabel) :
+ # This is what we use to form the label (for screen readers)
+ # for url bar autocomplete results of type "tag"
+-# See createResultLabel() in urlbarBindings.xml 
++# See createResultLabel() in urlbarBindings.xml
+ tagResultLabel=Etykieta
+ # LOCALIZATION NOTE (bookmarkResultLabel) :
+ # This is what we use to form the label (for screen readers)
+ # for url bar autocomplete results of type "bookmark"
+-# See createResultLabel() in urlbarBindings.xml 
++# See createResultLabel() in urlbarBindings.xml
+ bookmarkResultLabel=Zakładka
+ 
+ # LOCALIZATION NOTE (lockPrompt.text)
+ # %S will be replaced with the application name.
+ lockPrompt.title=Błąd podczas uruchamiania przeglądarki
+ lockPrompt.text=System zakładek i historii nie będzie działał, ponieważ jeden z plików programu %S jest używany przez inną aplikację. Niektóre programy związane z bezpieczeństwem mogą powodować ten problem.
+ lockPromptInfoButton.label=Więcej informacji
+ lockPromptInfoButton.accessKey=W
+diff --git a/browser/chrome/browser/preferences/cookies.dtd b/browser/chrome/browser/preferences/cookies.dtd
+--- a/browser/chrome/browser/preferences/cookies.dtd
++++ b/browser/chrome/browser/preferences/cookies.dtd
+@@ -1,13 +1,13 @@
+ <!ENTITY window.width                       "36em">
+ 
+ <!ENTITY     cookiesonsystem.label          "Na tym komputerze przechowywane są następujące ciasteczka:">
+ <!ENTITY     cookiename.label               "Nazwa ciasteczka">
+-<!ENTITY     cookiedomain.label             "Witryna"> 
++<!ENTITY     cookiedomain.label             "Witryna">
+ <!ENTITY     button.removecookie.label      "Usuń ciasteczko">
+ <!ENTITY     button.removecookie.accesskey  "U">
+ <!ENTITY     button.removeallcookies.label  "Usuń wszystkie ciasteczka">
+ <!ENTITY     button.removeallcookies.accesskey "w">
+ 
+ <!ENTITY     props.name.label               "Nazwa:">
+ <!ENTITY     props.value.label              "Zawartość:">
+ <!ENTITY     props.domain.label             "Host:">
+diff --git a/browser/chrome/browser/preferences/fonts.dtd b/browser/chrome/browser/preferences/fonts.dtd
+--- a/browser/chrome/browser/preferences/fonts.dtd
++++ b/browser/chrome/browser/preferences/fonts.dtd
+@@ -42,17 +42,17 @@
+ <!ENTITY  font.langGroup.bengali                  "Bengalskie">
+ <!ENTITY  font.langGroup.canadian                 "Ujednolicony sylabariusz kanadyjski">
+ <!ENTITY  font.langGroup.ethiopic                 "Etiopskie">
+ <!ENTITY  font.langGroup.georgian                 "Gruzińskie">
+ <!ENTITY  font.langGroup.gujarati                 "Gudżarati">
+ <!ENTITY  font.langGroup.gurmukhi                 "Gurmukhi">
+ <!ENTITY  font.langGroup.khmer                    "Khmerskie">
+ <!ENTITY  font.langGroup.malayalam                "Malajalam">
+-<!ENTITY  font.langGroup.oriya                    "Orija">                      
++<!ENTITY  font.langGroup.oriya                    "Orija">
+ <!ENTITY  font.langGroup.telugu                   "Telugu">
+ <!ENTITY  font.langGroup.kannada                  "Kannada">
+ <!ENTITY  font.langGroup.sinhala                  "Syngaleskie">
+ 
+ <!-- Minimum font size -->
+ <!ENTITY minSize.label 		"Minimalny rozmiar czcionki:" >
+ <!ENTITY minSize.accesskey 	"m" >
+ <!ENTITY minSize.none 		"Brak" >
+diff --git a/browser/chrome/browser/preferences/permissions.dtd b/browser/chrome/browser/preferences/permissions.dtd
+--- a/browser/chrome/browser/preferences/permissions.dtd
++++ b/browser/chrome/browser/preferences/permissions.dtd
+@@ -9,14 +9,14 @@
+ <!ENTITY removeallpermissions.accesskey "w">
+ <!ENTITY address.label                "Adres witryny:">
+ <!ENTITY address.accesskey            "A">
+ <!ENTITY block.label                  "Zablokuj">
+ <!ENTITY block.accesskey              "b">
+ <!ENTITY session.label                "Zezwól na czas sesji">
+ <!ENTITY session.accesskey            "s">
+ <!ENTITY allow.label                  "Zezwól">
+-<!ENTITY allow.accesskey              "z">  
++<!ENTITY allow.accesskey              "z">
+ <!ENTITY windowClose.key              "w">
+ 
+ <!ENTITY button.close.label           "Zamknij">
+ <!ENTITY button.close.accesskey       "k">
+ 
+diff --git a/browser/chrome/browser/preferences/privacy.dtd b/browser/chrome/browser/preferences/privacy.dtd
+--- a/browser/chrome/browser/preferences/privacy.dtd
++++ b/browser/chrome/browser/preferences/privacy.dtd
+@@ -6,17 +6,17 @@
+ <!ENTITY  locbar.both.label             "historii i zakładkach">
+ <!ENTITY  locbar.history.label          "historii">
+ <!ENTITY  locbar.bookmarks.label        "zakładkach">
+ <!ENTITY  locbar.nothing.label          "nie podpowiadaj">
+ 
+ <!-- LOCALIZATION NOTE:
+   The entities rememberDaysBefore.label and rememberDaysAfter2.label appear on a single
+   line in preferences as follows:
+- 
++
+   &rememberDaysBefore.label  [ textbox for number of days ]   &rememberDaysAfter2.label;
+ -->
+ 
+ <!ENTITY  rememberDaysBefore.label          "Przechowuj historię przez co najmniej">
+ <!ENTITY  rememberDaysBefore.accesskey      "s">
+ <!ENTITY  rememberDaysAfter2.label          "dni">
+ 
+ <!ENTITY  rememberForms.label           "Pamiętaj dane wprowadzone w formularzach i pasku wyszukiwania">
+diff --git a/browser/chrome/browser/sanitize.dtd b/browser/chrome/browser/sanitize.dtd
+--- a/browser/chrome/browser/sanitize.dtd
++++ b/browser/chrome/browser/sanitize.dtd
+@@ -17,19 +17,19 @@
+ <!ENTITY historySection.label         "Historia">
+ <!ENTITY dataSection.label            "Dane">
+ 
+ <!ENTITY itemVisitedPages.label       "historię przeglądanych stron">
+ <!ENTITY itemVisitedPages.accesskey   "h">
+ <!ENTITY itemFormSearchEntries.label  "dane formularzy i historię wyszukiwania">
+ <!ENTITY itemFormSearchEntries.accesskey "f">
+ <!ENTITY itemPasswords.label          "zapamiętane hasła">
+-<!ENTITY itemPasswords.accesskey      "z">     
++<!ENTITY itemPasswords.accesskey      "z">
+ <!ENTITY itemCookies.label            "ciasteczka">
+-<!ENTITY itemCookies.accesskey        "c">  
++<!ENTITY itemCookies.accesskey        "c">
+ <!ENTITY itemWebCache.label           "pamięć podręczną"><!-- fuzzy, było "Web Cache" -->
+ <!ENTITY itemWebCache.accesskey       "p">
+ <!ENTITY itemOfflineApps.label        "dane witryn trybu offline">
+ <!ENTITY itemOfflineApps.accesskey    "d">
+ <!ENTITY itemDownloadList.label       "listę pobieranych plików">
+ <!ENTITY itemDownloadList.accesskey   "b">
+ <!ENTITY itemActiveLogins.label       "aktywne zalogowania">
+ <!ENTITY itemActiveLogins.accesskey   "a">
+diff --git a/browser/chrome/browser/shellservice.properties b/browser/chrome/browser/shellservice.properties
+--- a/browser/chrome/browser/shellservice.properties
++++ b/browser/chrome/browser/shellservice.properties
+@@ -1,9 +1,9 @@
+-optionsLabel=&Opcje %S 
++optionsLabel=&Opcje %S
+ safeModeLabel=%S - &Tryb awaryjny
+ setDefaultBrowserTitle=Domyślna przeglądarka
+ setDefaultBrowserMessage=Czy chcesz, aby program %S stał się domyślną przeglądarką?
+ setDefaultBrowserDontAsk=Sprawdzaj przy każdym uruchomieniu programu %S.
+ alreadyDefaultBrowser=%S już jest domyślną przeglądarką.
+ desktopBackgroundLeafNameWin=Tapeta pulpitu.bmp
+ DesktopBackgroundDownloading=Zapisywanie obrazka…
+-DesktopBackgroundSet=Ustaw tapetę pulpitu 
++DesktopBackgroundSet=Ustaw tapetę pulpitu
+diff --git a/browser/chrome/overrides/netError.dtd b/browser/chrome/overrides/netError.dtd
+--- a/browser/chrome/overrides/netError.dtd
++++ b/browser/chrome/overrides/netError.dtd
+@@ -142,17 +142,17 @@ autentyczności otrzymanych danych.</p>
+ </ul>
+ ">
+ 
+ <!ENTITY malwareBlocked.title "Witryna podejrzewana o dokonywanie ataków!">
+ <!ENTITY malwareBlocked.longDesc "
+ <p>Tego rodzaju witryny mogą próbować instalować oprogramowanie wykradające poufne dane, używające komputera do pośredniczenia w atakach lub uszkadzające system.</p>
+ <p>Właściciele witryn, które zostały błędnie uznane za podejrzane, mogą <a href='http://www.stopbadware.org/home/reviewinfo'>poprosić o ponowne ich sprawdzenie</a>.</p>">
+ 
+-<!ENTITY phishingBlocked.title "Prawdopodobne oszustwo!">                        
++<!ENTITY phishingBlocked.title "Prawdopodobne oszustwo!">
+ <!ENTITY phishingBlocked.longDesc "
+ <p>Wprowadzanie jakichkolwiek informacji osobistych na tej stronie może skutkować
+ kradzieżą tożsamości lub inną malwersacją.</p>
+ <p>Tego rodzaju fałszerstwa określa się mianem phishingu. Atak ten polega na utworzeniu
+ przez przestępców podrobionej strony lub wiadomości udającej źródło godne zaufania.
+ </p>
+ ">
+ 
+diff --git a/browser/profile/chrome/userChrome-example.css b/browser/profile/chrome/userChrome-example.css
+--- a/browser/profile/chrome/userChrome-example.css
++++ b/browser/profile/chrome/userChrome-example.css
+@@ -38,9 +38,9 @@
+  * #urlbar {
+  *    font-family: monospace !important;
+  * }
+  */
+ 
+ /*
+  * For more examples see http://www.mozilla.org/unix/customizing.html
+  */
+- 
++
+diff --git a/browser/profile/chrome/userContent-example.css b/browser/profile/chrome/userContent-example.css
+--- a/browser/profile/chrome/userContent-example.css
++++ b/browser/profile/chrome/userContent-example.css
+@@ -23,13 +23,13 @@
+  */
+ 
+ /*
+  * example: turn off "marquee" element
+  *
+  * marquee { -moz-binding: none; }
+  *
+  */
+- 
+-/* 
++
++/*
+  * For more examples see http://www.mozilla.org/unix/customizing.html
+  */
+ 
+diff --git a/dom/chrome/appstrings.properties b/dom/chrome/appstrings.properties
+--- a/dom/chrome/appstrings.properties
++++ b/dom/chrome/appstrings.properties
+@@ -50,17 +50,17 @@ resendButton.label=Prześlij ponownie
+ 
+ unknownSocketType=Ten dokument nie może zostać wyświetlony, dopóki nie zostanie zainstalowany Menedżer zabezpieczeń (PSM). Pobierz i zainstaluj Menedżer zabezpieczeń (PSM) i spróbuj ponownie, lub skontaktuj się z administratorem systemu.
+ netReset=Dokument nie zawiera żadnych danych.
+ netOffline=Wybrany dokument nie może zostać wyświetlony podczas pracy w trybie offline. Należy przełączyć się w tryb online, odznaczając opcję Pracuj w trybie offline, w menu Plik, a następnie spróbować ponownie.
+ isprinting=Strona nie może zostać zmieniona podczas wydruku, lub kiedy włączony jest podgląd wydruku.
+ deniedPortAccess=Dostęp do portu o podanym numerze został zablokowany z przyczyn bezpieczeństwa.
+ proxyResolveFailure=Odnalezienie serwera proxy było niemożliwe. Sprawdź poprawność ustawień serwerów proxy, a następnie spróbuj ponownie.
+ proxyConnectFailure=Połączenie zostało odrzucone podczas próby kontaktu z serwerem proxy. Sprawdź poprawność ustawień serwerów proxy, a następnie spróbuj ponownie.
+-contentEncodingError=Otwierana strona nie może zostać wyświetlona, ponieważ używa nieprawidłowych lub nieobsługiwanych metod kompresji. 
++contentEncodingError=Otwierana strona nie może zostać wyświetlona, ponieważ używa nieprawidłowych lub nieobsługiwanych metod kompresji.
+ unsafeContentType=Otwierana strona nie może zostać wyświetlona, ponieważ umieszczona jest w pliku, którego otwarcie może nie być bezpieczne. Prosimy poinformować właścicieli witryny o tym problemie.
+ externalProtocolTitle=Próba otwarcia zewnętrznego protokołu
+ externalProtocolPrompt=Aby obsłużyć odnośnik %1$S: musi zostać uruchomiona zewnętrzna aplikacja.\n\n\nZażądany odnośnik:\n\n%2$S\n\nAplikacja: %3$S\n\n\nJeśli to żądanie pojawiło się niespodziewanie, może to być próba wykorzystania błędu w aplikacji zewnętrznej. W razie jakichkolwiek wątpliwości anuluj to żądanie.\n
+ #LOCALIZATION NOTE (externalProtocolUnknown): The following string is shown if the application name can't be determined
+ externalProtocolUnknown=<Nieznana>
+ externalProtocolChkMsg=Zapamiętaj mój wybór dla wszystkich odnośników tego rodzaju.
+ externalProtocolLaunchBtn=Uruchom aplikację
+ malwareBlocked=Witryna %S została zgłoszona jako witryna stanowiąca zagrożenie i została zablokowana zgodnie z ustawieniami bezpieczeństwa.
+diff --git a/dom/chrome/charsetTitles.properties b/dom/chrome/charsetTitles.properties
+--- a/dom/chrome/charsetTitles.properties
++++ b/dom/chrome/charsetTitles.properties
+@@ -11,25 +11,25 @@
+ ##
+ ## The Original Code is mozilla.org code.
+ ##
+ ## The Initial Developer of the Original Code is Netscape
+ ## Communications Corporation.  Portions created by Netscape are
+ ## Copyright (C) 1999 Netscape Communications Corporation. All
+ ## Rights Reserved.
+ ##
+-## Contributor(s): 
++## Contributor(s):
+ ##    Marek Stepien <marcoos@aviary.pl> (parts of Polish l10n)
+ 
+ ## Rule of this file:
+ ## 1. key should always be in lower case ascii so we can do case insensitive
+ ##    comparison in the code faster.
+ 
+ ## Format of this file:
+-## charset_name.title = a_title  -  specifies the human readable title for 
++## charset_name.title = a_title  -  specifies the human readable title for
+ ## this charset
+ 
+ us-ascii.title=Angielski (US-ASCII)
+ iso-8859-1.title=Zachodni (ISO-8859-1)
+ iso-8859-2.title=Środkowoeuropejski (ISO-8859-2)
+ iso-8859-3.title=Południowoeuropejski (ISO-8859-3)
+ iso-8859-4.title=Bałtycki (ISO-8859-4)
+ iso-8859-9.title=Turecki (ISO-8859-9)
+diff --git a/dom/chrome/layout/xbl.properties b/dom/chrome/layout/xbl.properties
+--- a/dom/chrome/layout/xbl.properties
++++ b/dom/chrome/layout/xbl.properties
+@@ -30,15 +30,15 @@
+ # decision by deleting the provisions above and replace them with the notice
+ # and other provisions required by the GPL or the LGPL. If you do not delete
+ # the provisions above, a recipient may use your version of this file under
+ # the terms of any one of the MPL, the GPL or the LGPL.
+ #
+ # ***** END LICENSE BLOCK *****
+ 
+ UnexpectedElement=Nieoczekiwany element <%1$S>.
+-# LOCALIZATION NOTE: do not localize key="%S" modifiers="%S"                    
+-GTK2Conflict=Zdarzenie naciśnięcia klawisza jest niedostępne na GTK2: key="%S" modifiers="%S"           
++# LOCALIZATION NOTE: do not localize key="%S" modifiers="%S"
++GTK2Conflict=Zdarzenie naciśnięcia klawisza jest niedostępne na GTK2: key="%S" modifiers="%S"
+ WinConflict=Zdarzenie naciśnięcia klawisza jest niedostępne przy niektórych układach klawiatury: key="%S" modifiers="%S"
+ TooDeepBindingRecursion=Wiązanie XBL "%S" jest już używane przez zbyt wiele elementów nadrzędnych; w celu uniknięcia nieskończonej rekurencji, nie zostanie ono nałożone.
+ CircularExtendsBinding=Rozszerzanie wiązania XBL "%S" o "%S" spowodowałoby, że wiązanie to rozszerzałoby samo siebie.
+ CommandNotInChrome=Stosowanie <handler command="…"> nie jest dozwolone poza chrome.
+ InvalidExtendsBinding=Rozszerzanie "%S" jest niewłaściwe. Nie należy rozszerzać nazw znaczników.
+diff --git a/dom/chrome/layout/xul.properties b/dom/chrome/layout/xul.properties
+--- a/dom/chrome/layout/xul.properties
++++ b/dom/chrome/layout/xul.properties
+@@ -14,17 +14,17 @@
+ # The Original Code is xul.properties.
+ #
+ # The Initial Developer of the Original Code is Boris Zbarsky
+ # <bzbarsky@mit.edu>.  Portions created by the Initial Developer are Copyright
+ # (C) 2004.  All Rights Reserved.
+ #
+ # Contributor(s):
+ #   L. David Baron <dbaron@dbaron.org>, Mozilla Corporation
+-#   Marek Stępień <mstepien@aviary.pl> (Polish l10n)	
++#   Marek Stępień <mstepien@aviary.pl> (Polish l10n)
+ #
+ # Alternatively, the contents of this file may be used under the terms of
+ # either the GNU General Public License Version 2 or later (the "GPL"), or
+ # the GNU Lesser General Public License Version 2.1 or later (the "LGPL"),
+ # in which case the provisions of the GPL or the LGPL are applicable instead
+ # of those above. If you wish to allow use of your version of this file only
+ # under the terms of either the GPL or the LGPL, and not to allow others to
+ # use your version of this file under the terms of the MPL, indicate your
+diff --git a/dom/chrome/netError.dtd b/dom/chrome/netError.dtd
+--- a/dom/chrome/netError.dtd
++++ b/dom/chrome/netError.dtd
+@@ -69,17 +69,17 @@ autentyczności otrzymanych danych.</p><
+ </ul>
+ ">
+ 
+ <!ENTITY malwareBlocked.title "Witryna podejrzewana o dokonywanie ataków!">
+ <!ENTITY malwareBlocked.longDesc "
+ <p>Tego rodzaju witryny mogą próbować instalować oprogramowanie wykradające poufne dane, używające komputera do pośredniczenia w atakach lub uszkadzające system.</p>
+ <p>Właściciele witryn, które zostały błędnie uznane za podejrzane, mogą <a href='http://www.stopbadware.org/home/reviewinfo'>poprosić o ponowne ich sprawdzenie</a>.</p>">
+ 
+-<!ENTITY phishingBlocked.title "Prawdopodobne oszustwo!">                        
++<!ENTITY phishingBlocked.title "Prawdopodobne oszustwo!">
+ <!ENTITY phishingBlocked.longDesc "
+ <p>Wprowadzanie jakichkolwiek informacji osobistych na tej stronie może skutkować
+ kradzieżą tożsamości lub inną malwersacją.</p>
+ <p>Tego rodzaju fałszerstwa określa się mianem phishingu. Atak ten polega na utworzeniu
+ przez przestępców podrobionej strony lub wiadomości udającej źródło godne zaufania.
+ </p>
+ ">
+ 
+diff --git a/dom/chrome/nsWebBrowserPersist.properties b/dom/chrome/nsWebBrowserPersist.properties
+--- a/dom/chrome/nsWebBrowserPersist.properties
++++ b/dom/chrome/nsWebBrowserPersist.properties
+@@ -15,17 +15,17 @@
+ #
+ # The Initial Developer of the Original Code is
+ # Netscape Communications Corp.
+ # Portions created by the Initial Developer are Copyright (C) 2002
+ # the Initial Developer. All Rights Reserved.
+ #
+ # Contributor(s):
+ #   Bill Law  <law@netscape.com>
+-#   Zbigniew Braniecki <gandalf@aviary.pl> (Polish translation) 
++#   Zbigniew Braniecki <gandalf@aviary.pl> (Polish translation)
+ #   Marek Stepien <marcoos@aviary.pl> (Polish translation)
+ #
+ # Alternatively, the contents of this file may be used under the terms of
+ # either the GNU General Public License Version 2 or later (the "GPL"), or
+ # the GNU Lesser General Public License Version 2.1 or later (the "LGPL"),
+ # in which case the provisions of the GPL or the LGPL are applicable instead
+ # of those above. If you wish to allow use of your version of this file only
+ # under the terms of either the GPL or the LGPL, and not to allow others to
+diff --git a/dom/chrome/security/caps.properties b/dom/chrome/security/caps.properties
+--- a/dom/chrome/security/caps.properties
++++ b/dom/chrome/security/caps.properties
+@@ -22,18 +22,18 @@
+ #
+ 
+ Yes=Zezwól
+ No=Zabroń
+ Titleline=Zabezpieczenia internetowe
+ CheckMessage=Zapamiętaj tę decyzję
+ EnableCapabilityQuery=Skrypt z "%S" zażądał rozszerzonych i niebezpiecznych dla Twojego komputera i danych uprawnień:\n\n%S\n\nUdziel żądanych uprawnień tylko w przypadku, gdy jesteś pewien, że to źródło jest wolne od wirusów i innych niebezpieczeństw.
+ 
+-# LOCALIZATION NOTE: Due to bug 315288, use only Western European characters in: 
+-# EnableCapabilityDenied, GetPropertyDenied, SetPropertyDenied, CallMethodDenied 
++# LOCALIZATION NOTE: Due to bug 315288, use only Western European characters in:
++# EnableCapabilityDenied, GetPropertyDenied, SetPropertyDenied, CallMethodDenied
+ # and CreateWrapperDenied.
+ 
+ EnableCapabilityDenied=Skrypt z "%S" nie otrzymal uprawnien %S.
+ CheckLoadURIError=Błąd naruszenia bezpieczeństwa: Treść zawarta pod adresem %S nie może zostać wczytana lub powiązana z %S.
+ CheckSameOriginError=Błąd naruszenia bezpieczeństwa: Treść zawarta pod adresem %S nie może wczytać danych z %S.
+ GetPropertyDeniedOrigins = Witrynie <%S> nie udzielono uprawnien do odczytania wlasciwosci %S.%S na <%S>.
+ SetPropertyDeniedOrigins = Witrynie <%S> nie udzielono uprawnien do ustawienia wlasciwosci %S.%S na <%S>.
+ CallMethodDeniedOrigins = Witrynie <%S> nie udzielono uprawnien do wywolania metody %S.%S na <%S>.
+diff --git a/extensions/reporter/chrome/reportWizard.properties b/extensions/reporter/chrome/reportWizard.properties
+--- a/extensions/reporter/chrome/reportWizard.properties
++++ b/extensions/reporter/chrome/reportWizard.properties
+@@ -1,9 +1,9 @@
+-submitReport=Wyślij zgłoszenie                                                   
++submitReport=Wyślij zgłoszenie
+ submitReport.accesskey=z
+ 
+ sendingReport=Wysyłanie zgłoszenia…
+ reportSent=Zgłoszenie zostało wysłane
+ 
+ finishError=Błąd podczas wysyłania zgłoszenia
+ 
+ successfullyCreatedReport=Udało się przesłać zgłoszenie
+diff --git a/extensions/reporter/chrome/reporterOverlay.properties b/extensions/reporter/chrome/reporterOverlay.properties
+--- a/extensions/reporter/chrome/reporterOverlay.properties
++++ b/extensions/reporter/chrome/reporterOverlay.properties
+@@ -1,1 +1,1 @@
+-# Script accessible strings for the browser integration overlay go here. 
++# Script accessible strings for the browser integration overlay go here.
+diff --git a/extensions/venkman/chrome/venkman.properties b/extensions/venkman/chrome/venkman.properties
+--- a/extensions/venkman/chrome/venkman.properties
++++ b/extensions/venkman/chrome/venkman.properties
+@@ -54,17 +54,17 @@
+ # my.message4 = "A sphincter says, "what?""
+ #  Both of these produce the phrase ``A sphincter says "what?"''
+ #
+ 
+ # character set to convert unicode messages to before writing them to a
+ # profile report, or generated help text.
+ msg.report.charset=utf-8
+ msg.locale.version=0.9.87.3
+-msn.bad.locale=Bieżąca wersja Venkmana poprawnie współpracuje z lokalizacją "%1$S", jednak w tej chwili używana jest lokalizacja: "%2$S". Może to być przyczyną występowania błędów. Należy powrócić do domyślnej wersji językowej SeaMonkey lub zainstalować nową wersję pakietu językowego. 
++msn.bad.locale=Bieżąca wersja Venkmana poprawnie współpracuje z lokalizacją "%1$S", jednak w tej chwili używana jest lokalizacja: "%2$S". Może to być przyczyną występowania błędów. Należy powrócić do domyślnej wersji językowej SeaMonkey lub zainstalować nową wersję pakietu językowego.
+ 
+ msg.release.url=http://www.mozilla.org/projects/seamonkey/releases/
+ 
+ ## exception descriptions ##
+ err.notimplemented=Nie zaimplementowano
+ err.required.param=Brak wymaganego parametru %1$S
+ err.invalid.param=Niewłaściwa wartość dla parametru %1$S (%2$S)
+ # 1 url, 2 fileName, 3 lineNumber, 4 reason
+@@ -593,17 +593,17 @@ cmd.debug-instance-off.params=<script-in
+ cmd.debug-instance-off.help=Włącz debugowanie wszystkich funkcji zawartych w egzemplarzu skryptu <egzemplarz-skryptu>.
+ 
+ cmd.debug-instance.label=&Zmień ustawienia debugowania zawartych funkcji
+ cmd.debug-instance.params=<toggle> <script-instance> [<...>]
+ cmd.debug-instance.help=Włącza lub wyłącza debugowanie wszystkich funkcji zawartych w egzemplarzu skryptu <script-instance>. Jeżeli debugowanie jest wyłączone Venkman *nie* zostanie zatrzymany po dotarciu do zablokowanych skryptów. <toggle> może przyjąć wartości: |true|, |on|, |yes|, lub |1|, aby włączyć opcję; lub |false|, |off|, |no|, lub |0|, aby wyłączyć opcję; lub |toggle|, aby zmienić bieżący stan opcji na przeciwny. Jeżeli <toggle> nie został określony, zostanie wyświetlony aktualny stan opcji.
+ 
+ cmd.debug-transient.label=Nie debuguj skryptów Eval/Ti&meout
+ cmd.debug-transient.params=<toggle> <url> [<...>]
+-cmd.debug-transient.help=Włącza lub wyłącza debugowanie skryptów zawierających niestałe funkcje (takie jak setTimeout() lub eval()) powiązanych z url <url>. <toggle> może przyjąć wartości: |true|, |on|, |yes|, lub |1|, aby włączyć opcję; lub |false|, |off|, |no|, lub |0|, aby wyłączyć opcję; lub |toggle|, aby zmienić bieżący stan opcji. 
++cmd.debug-transient.help=Włącza lub wyłącza debugowanie skryptów zawierających niestałe funkcje (takie jak setTimeout() lub eval()) powiązanych z url <url>. <toggle> może przyjąć wartości: |true|, |on|, |yes|, lub |1|, aby włączyć opcję; lub |false|, |off|, |no|, lub |0|, aby wyłączyć opcję; lub |toggle|, aby zmienić bieżący stan opcji.
+ 
+ cmd.dumpprofile.label=Zrzuć dane o charakterystyce programu
+ cmd.dumpprofile.params=[<file-name>]
+ 
+ cmd.dumptree.params=<tree> [<depth>]
+ 
+ cmd.emode.params=[<mode>]
+ cmd.emode.help=Określa zachowanie się debuggera po napotkaniu błędu. Komenda |emode ignore| ignoruje wszystkie błędy, |emode trace| wyświetla dziennik błędu w konsoli, a |emode break| zatrzymuje program gdy wystąpi błąd. Polecenie |emode| bez parametru wyświetla bieżący tryb błędów. Polecenie |emode| określa zachowanie dla niezłapanych wyjątków. Aby określić akcję po przechwyceniu wyjątku, należy użyć komendy |tmode|.
+@@ -683,17 +683,17 @@ cmd.find-url.params=<url> [<range-start>
+ cmd.find-url.help=Wyświetla zawartość pliku o podanym <url> w oknie Podglądu kodu źródłowego. Kod źródłowy zawarty pomiędzy parametrami <range-start> a <range-end> zostanie podświetlony. Jeżeli podany zostanie parametr <details>, stanie się on automatycznie obiektem, reprezentującym szczegółowe dane na temat pochodzenia obiektu <url>. Jeżeli podany zostanie parametr <target-line>, widok zostanie przewinięty do podanego numeru linii, w przeciwnym wypadku widok zostanie przewinięty do linii określonej przez <range-start>.
+ 
+ cmd.find-url-soft.label=&Niewymuszony fokus URL
+ cmd.find-url-soft.params=<url> [<range-start> [<range-end> [<details> [<target-line>]]]]
+ cmd.find-url-soft.help=Działanie funkcji jest identyczne jak funkcji |find-url|, z wyjątkiem tego, że widok nie jest przewijany, jeżeli wiersz docelowy <target-line> jest już widoczny.
+ 
+ cmd.finish.label=W&yjdź
+ cmd.finish.key=shift VK_F11
+-cmd.finish.tip=Zakończ debugowanie bieżącej funkcji 
++cmd.finish.tip=Zakończ debugowanie bieżącej funkcji
+ cmd.finish.help=Wykonuj, aż zostanie zwrócona bieżąca ramka stosu.
+ 
+ cmd.focus-input.key=VK_ESCAPE
+ cmd.focus-input.help=Ustawia fokus na polu tekstowym konsoli.
+ 
+ cmd.frame.label=Ustaw &bieżącą ramkę
+ cmd.frame.params=[<frame-index>]
+ cmd.frame.help=Ustawia bieżącą ramkę na ramkę określoną numerem <frame-index> oraz wyświetla podsumowanie bieżącej ramki. Jeżeli <frame-index> nie został podany, zostanie wyświetlone podsumowanie bieżącej ramki. Użyj komendy where aby wyświetlić listę ramek i numerów.
+@@ -832,17 +832,17 @@ cmd.session-css.help=Zmienia plik styló
+ cmd.session-css-default.label=&Domyślne ustawienia przeglądarki
+ cmd.session-css-dark.label=&Ciemne tło/jasny tekst
+ cmd.session-css-light.label=&Jasne tło/ciemny tekst
+ 
+ cmd.set-eval-obj.label=Ustaw jako obiekt &wykonywania
+ cmd.set-eval-obj.params=<jsd-value>
+ cmd.set-eval-obj.help=Ustawia bieżący "wykonywany obiekt", który będzie wykonywany przez komendę |eval|. Obiekt, który zostanie określony przez <jsd-value>, zostanie obiektem określanym przez zmienną |this| i zmienne globalne będą rozwiązywane relatywnie w stosunku do obiektu nadrzędnego <jsd-value>.
+ 
+-cmd.scan-source.label=&Przeszukaj w poszukiwaniu komentarzy 
++cmd.scan-source.label=&Przeszukaj w poszukiwaniu komentarzy
+ cmd.scan-source.params=<script-instance>
+ cmd.scan-source.help=Przeszukuje cały kod źródłowy pliku w poszukiwaniu komentarzy w formacie //@JSD_DYREKTYWA. Domyślnie rozpoznawane są następujące dyrektywy: //@JSD_LOG, //@JSD_BREAK, oraz //@JSD_EVAL. Dyrektywa JSD_LOG wykonuje dowolny następujący po niej skrypt, wyświetlając rezultat w oknie Widoku sesji. Dyrektywa JSD_BREAK ustawia warunkowy punkt przerwań w następnej wykonywalnej linii kodu. Dyrektywa JSD_EVAL wykonuje dowolny następujący po niej skrypt, jednak wynik nie jest logowany i nie są ustawiane punkty przerwań. Możliwe jest dodawanie innych dyrektyw za pomocą zewnętrznych wtyczek.
+ 
+ cmd.scope.help=Wyświetla właściwości najwyżej położonego obiektu w zakresie łańcucha dla bieżącej ramki.
+ 
+ cmd.toggle-forcescriptload.label=Wymuś odgadywanie nazw &funkcji
+ 
+ cmd.toggle-functions.label=Dołącz &funkcje
+@@ -907,24 +907,24 @@ cmd.tm-trace.label=Ś&ledź wyjątki
+ 
+ cmd.toggle-scripts-search-box.help=Pokazuje lub ukrywa opcje wyszukiwania widoku Wczytane skrypty.
+ 
+ cmd.toggle-float.params=<view-id>
+ cmd.toggle-float.help=Jeżeli widok określony przez parametr <view-id> był wyświetlony w głównym oknie lub nie był wyświetlony w ogóle, zostanie wyświetlony w oddzielnym oknie. Jeżeli widok <view-id> jest już wczytany w oddzielnym oknie, zostanie włączony z powrotem do głównego okna debugera.
+ 
+ cmd.toggle-pprint.label=Ła&dny wydruk
+ cmd.toggle-pprint.key=accel P
+-cmd.toggle-pprint.tip=Włącz/Wyłącz formatowanie 
++cmd.toggle-pprint.tip=Włącz/Wyłącz formatowanie
+ cmd.toggle-pprint.help=Włącza lub wyłącza funkcję formatowania kodu Ładny wydruk.
+ 
+ cmd.toggle-save-layout.label=Zachowaj &bieżący układ przy wyjściu
+ cmd.toggle-save-layout.help=Bieżący układ okien i widoków zostanie zachowany przed zamknięciem debugera Venkman, jeżeli ta opcja będzie zaznaczona.
+ 
+ cmd.toggle-save-settings.label=Zapisz ustawienia punktów przerwań/obserwatorów przy w&yjściu
+-cmd.toggle-save-settings.help=Jeżeli ta opcja będzie zaznaczona to ustawienia punktów przerwań/obserwatorów zostaną zapisane podczas zamykania Venkmana i ponownie otwarte podczas startu. 
++cmd.toggle-save-settings.help=Jeżeli ta opcja będzie zaznaczona to ustawienia punktów przerwań/obserwatorów zostaną zapisane podczas zamykania Venkmana i ponownie otwarte podczas startu.
+ 
+ cmd.toggle-pref.params=<pref-name>
+ cmd.toggle-pref.help=Przełącza wartość preferencji typu boolean określonej przez parametr <pref-name>.
+ 
+ cmd.toggle-view.params=<view-id>
+ cmd.toggle-view.help=Ukrywa widok określony przez parametr <view-id> jeżeli jest on widoczny. W innym przypadku, widok zostanie wyświetlony, zachowując swoje ostatnie położenie.
+ 
+ cmd.toggle-chrome.label=Wyklu&cz pliki przeglądarki
+diff --git a/netwerk/necko.properties b/netwerk/necko.properties
+--- a/netwerk/necko.properties
++++ b/netwerk/necko.properties
+@@ -53,16 +53,16 @@ 28=Zakończono transakcję FTP
+ UnsupportedFTPServer=Obecnie serwer FTP %1$S nie jest obsługiwany.
+ RepostFormData=Wyświetlana strona zostanie przekierowana pod inny adres. Czy wysłać ponownie wprowadzone dane formularza używając nowego adresu?
+ DirTitle=Indeks %1$S
+ DirGoUp=Do katalogu wyższego poziomu
+ ShowHidden=Wyświetl obiekty ukryte
+ DirColName=Nazwa
+ DirColSize=Rozmiar
+ DirColMTime=Ostatnia modyfikacja
+-DirFileLabel=Plik: 
++DirFileLabel=Plik:
+ 
+ GopherPromptTitle=Znajdź
+ GopherPromptText=Wprowadź wyszukiwany termin:
+ PhishingAuth=Nastąpiła próba otwarcia strony "%1$S". Strona ta może próbować oszukiwać użytkowników poprzez podszywanie się pod inną stronę (np. banku czy sklepu internetowego). Należy zachować ostrożność..
+ PhishingAuthAccept=Rozumiem, zachowam ostrożność
+ SuperfluousAuth=Nastąpiła próba zalogowania na stronę "%1$S" przy pomocy nazwy użytkownika "%2$S", ale strona nie wymaga identyfikacji. To może być podstęp.\n\nCzy adres "%1$S" jest tym, który zamierzano odwiedzić?
+ AutomaticAuth=Nastąpiła próba zalogowania na stronę "%1$S" przy pomocy nazwy użytkownika "%2$S".
+diff --git a/security/manager/chrome/pipnss/nsserrors.properties b/security/manager/chrome/pipnss/nsserrors.properties
+--- a/security/manager/chrome/pipnss/nsserrors.properties
++++ b/security/manager/chrome/pipnss/nsserrors.properties
+@@ -152,17 +152,17 @@ SEC_ERROR_NO_RECIPIENT_CERTS_QUERY=Nieza
+ SEC_ERROR_NOT_A_RECIPIENT=Nie można odszyfrować: użytkownik nie jest odbiorcą, albo nie znaleziono pasującego certyfikatu i klucza prywatnego.
+ SEC_ERROR_PKCS7_KEYALG_MISMATCH=Nie można odszyfrować: algorytm szyfrowania klucza nie pasuje do certyfikatu użytkownika.
+ SEC_ERROR_PKCS7_BAD_SIGNATURE=Weryfikacja podpisu zakończona niepowodzeniem: nie znaleziono podpisującego, znaleziono zbyt wielu podpisujących albo napotkano nieprawidłowe lub uszkodzone dane.
+ SEC_ERROR_UNSUPPORTED_KEYALG=Nieobsługiwany lub nieznany algorytm klucza.
+ SEC_ERROR_DECRYPTION_DISALLOWED=Nie można odszyfrować: zaszyfrowano przy użyciu niedozwolonego algorytmu lub rozmiaru klucza.
+ XP_SEC_FORTEZZA_BAD_CARD=Karta Fortezza nie została poprawnie zainicjalizowana. Należy ją usunąć i zwrócić do wystawcy.
+ XP_SEC_FORTEZZA_NO_CARD=Nie odnaleziono kart Fortezza
+ XP_SEC_FORTEZZA_NONE_SELECTED=Nie wybrano karty Fortezza
+-XP_SEC_FORTEZZA_MORE_INFO=Należy wybrać tożsamość, by uzyskać więcej informacji na temat 
++XP_SEC_FORTEZZA_MORE_INFO=Należy wybrać tożsamość, by uzyskać więcej informacji na temat
+ XP_SEC_FORTEZZA_PERSON_NOT_FOUND=Tożsamość nie została odnaleziona
+ XP_SEC_FORTEZZA_NO_MORE_INFO=Nie ma więcej informacji na temat tej tożsamości
+ XP_SEC_FORTEZZA_BAD_PIN=Nieprawidłowy PIN
+ XP_SEC_FORTEZZA_PERSON_ERROR=Nie można zainicjalizować tożsamości Fortezza.
+ SEC_ERROR_NO_KRL=Dla certyfikatu tej witryny nie odnaleziono żadnych KRL.
+ SEC_ERROR_KRL_EXPIRED=KRL dla certyfikatu tej witryny utraciła ważność.
+ SEC_ERROR_KRL_BAD_SIGNATURE=KRL dla certyfikatu tej witryny zawiera nieprawidłowy podpis.
+ SEC_ERROR_REVOKED_KEY=Klucz dla certyfikatu tej witryny został odwołany.
+diff --git a/security/manager/chrome/pipnss/pipnss.properties b/security/manager/chrome/pipnss/pipnss.properties
+--- a/security/manager/chrome/pipnss/pipnss.properties
++++ b/security/manager/chrome/pipnss/pipnss.properties
+@@ -14,17 +14,17 @@
+ # The Initial Developer of the Original Code is Netscape
+ # Communications Corporation.  Portions created by Netscape are
+ # Copyright (C) 1998 Netscape Communications Corporation. All
+ # Rights Reserved.
+ #
+ # Contributor(s):
+ #    Javier Delgadillo <javi@netscape.com>
+ #    Brian Ryner <bryner@brianryner.com>
+-#    Terry Hayes <thayes@netscape.com> 
++#    Terry Hayes <thayes@netscape.com>
+ #    John Gardiner Myers <jgmyers@speakeasy.net>
+ #    Marek Wawoczny <gmbh@mozillapl.org> (Polish translation)
+ #    Piotr Bartecki <pbartecki@mozillapl.org> (Polish translation)
+ #    Piotr Komoda <gorky@civ.pl> (Polish translation)
+ #    Marek Stepien <marcoos@aviary.pl> (Polish translation)
+ #
+ # Alternatively, the contents of this file may be used under the terms of
+ # either the GNU General Public License Version 2 or later (the "GPL"), or
+@@ -104,17 +104,17 @@ CertDumpAVADC=DC
+ CertDumpValidity=Ważność
+ CertDumpNotBefore=Nieważny przed
+ CertDumpNotAfter=Nieważny po
+ CertDumpSPKI=Informacje o kluczu publicznym
+ CertDumpSPKIAlg=Algorytm klucza publicznego
+ CertDumpAlgID=Identyfikator algorytmu
+ CertDumpParams=Parametry algorytmu
+ CertDumpRSAEncr=PKCS #1 Szyfrowanie RSA
+-CertDumpRSATemplate=Modulo (bitów: %S):\n%S\nWykładnik (bitów: %S):\n%S 
++CertDumpRSATemplate=Modulo (bitów: %S):\n%S\nWykładnik (bitów: %S):\n%S
+ CertDumpECTemplate=Rozmiar klucza: %S bits\nDługość porządku punktu bazowego: %S bitów\nWartość publiczna:\n%S
+ CertDumpIssuerUniqueID=Unikalny ID wystawcy
+ CertDumpSubjPubKey=Klucz publiczny
+ CertDumpSubjectUniqueID=Unikalny ID
+ CertDumpExtensions=Rozszerzenia
+ CertDumpCertType=Typ certyfikatu Netscape
+ CertDumpNSCertExtBaseUrl=Podstawowy URL rozszerzeń firmy Netscape
+ CertDumpNSCertExtRevocationUrl=URL unieważnienia certyfikatu firmy Netscape
+@@ -135,17 +135,17 @@ CertDumpBasicConstraints=Podstawowe ogra
+ CertDumpNameConstraints=Ograniczenia nazwy certyfikatu
+ CertDumpCrlDistPoints=Punkty dystrybucji CRL
+ CertDumpCertPolicies=Zasady certyfikatu
+ CertDumpPolicyMappings=Odwzorowania zasad certyfikatu
+ CertDumpPolicyConstraints=Ograniczenia zasad certyfikatu
+ CertDumpAuthKeyID=Identyfikator klucza organ certyfikacji
+ CertDumpExtKeyUsage=Rozszerzone użycie klucza
+ CertDumpAuthInfoAccess=Dostęp do informacji o organach certyfikacji
+-CertDumpAnsiX9DsaSignature=Sygnatura ANSI X9.57 DSA 
++CertDumpAnsiX9DsaSignature=Sygnatura ANSI X9.57 DSA
+ CertDumpAnsiX9DsaSignatureWithSha1=Sygnatura ANSI X9.57 DSA z SHA1 Digest
+ CertDumpAnsiX962ECDsaSignatureWithSha1=Sygnatura ANSI X9.62 ECDSA z SHA11
+ CertDumpCertTypeEmail=E-mail
+ CertDumpEmailCA=Organ certyfikacji adresów e-mail
+ CertDumpKUSign=Podpisywanie
+ CertDumpKUNonRep=Niezaprzeczalność
+ CertDumpKUEnc=Szyfrowanie klucza
+ CertDumpKUDEnc=Szyfrowanie danych
+@@ -350,17 +350,17 @@ CertInfoStoredIn=Przechowywany w:
+ P12DefaultNickname=Zaimportowany certyfikat
+ CrlImportFailure1x=Nie można zaimportować listy unieważnionych certyfikatów (CRL).
+ CrlImportFailureExpired=Dostępna jest nowsza wersja tej listy unieważnionych certyfikatów (CRL).
+ CrlImportFailureBadSignature=Lista CRL ma nieprawidłową sygnaturę.
+ CrlImportFailureInvalid=Nowa lista CRL ma nieprawidłowy format.
+ CrlImportFailureOld=Nowa lista CRL jest starsza niż bieżąca.
+ CrlImportFailureNotYetValid=Lista CRL nie jest jeszcze ważna. Należy sprawdzić, czy zegar systemowy jest ustawiony poprawnie.
+ CrlImportFailureNetworkProblem=Pobranie listy CRL nie powiodło się z powodu problemów z siecią.
+-CrlImportFailureReasonUnknown=Wystąpił błąd podczas importowania listy CRL do lokalnej bazy. Kod błędu: 
++CrlImportFailureReasonUnknown=Wystąpił błąd podczas importowania listy CRL do lokalnej bazy. Kod błędu:
+ CrlImportFailure2=W celu uzyskania dalszych informacji należy skontaktować się z administratorem sieci.
+ NSSInitProblemX=Nie można zainicjować komponentu zabezpieczeń. Najbardziej prawdopodobną przyczyną błędu jest problem z plikami w katalogu z Twoim profilem programu. Należy sprawdzić, czy ten katalog nie jest chroniony przed zapisem/odczytem oraz czy dysk, na którym znajduje się ten katalog, nie jest zapełniony lub jest bliski zapełnienia. Zaleca się zamknięcie programu oraz naprawienie błędu. Konsekwencją kontynuowania bieżącej sesji programu może być nieprawidłowe zachowanie podczas korzystania z funkcji związanych z zabezpieczeniami.
+ ProfileSwitchSocketsStillActive=Zmiana profilu nie może zostać zakończona z powodu wewnętrznego błędu. Dane nawiązanego szyfrowanego połączenia nie zostały poprawnie usunięte.
+ ProfileSwitchCryptoUIActive=Zmiana profilu jest chwili obecnej niemożliwa. Należy zakończyć operację, która wymaga udziału użytkownika w jednym lub kilku otwartych oknach.
+ VerifyExpired=<Stracił ważność>
+ VerifyRevoked=<Odwołany>
+ VerifyNotTrusted=<Nie jest zaufany>
+ VerifyIssuerNotTrusted=<Wydawca certyfikatu nie jest na liście zaufanych wydawców>
+diff --git a/security/manager/chrome/pipnss/security.properties b/security/manager/chrome/pipnss/security.properties
+--- a/security/manager/chrome/pipnss/security.properties
++++ b/security/manager/chrome/pipnss/security.properties
+@@ -11,19 +11,19 @@
+ #
+ # The Original Code is mozilla.org code.
+ #
+ # The Initial Developer of the Original Code is Netscape
+ # Communications Corporation.  Portions created by Netscape are
+ # Copyright (C) 1998 Netscape Communications Corporation. All
+ # Rights Reserved.
+ #
+-# Contributor(s): 
++# Contributor(s):
+ # Sean Cotter <cotter@netscape.com>
+-# 
++#
+ # Note: Hash characters in the strings will be replaced by
+ # newlines. These are used to lay out the dialog.
+ 
+ Title=Zabezpieczenia
+ MixedContentMessage=Zażądano połączenia szyfrowanego ze stroną, która zawiera elementy niezaszyfrowane. Prawdopodobieństwo odczytania przesyłanych danych przez osoby trzecie jest duże.
+ LeaveSecureMessage=Połączenie szyfrowane z tą stroną zostanie zakończone. Od tej chwili żadne wysyłane ani odbierane dane nie będą więcej szyfrowane. Istnieje niebezpieczeństwo odczytania przesyłanych danych przez osoby trzecie.
+ EnterSecureMessage=Zażądano połączenia szyfrowanego ze stroną, której tożsamość została sprawdzona i potwierdzona. Prawdopodobieństwo odczytania wyświetlanych oraz wprowadzanych informacji na tej stronie przez osoby trzecie jest znikome.
+ WeakSecureMessage=Zażądano połączenia ze stroną, która używa niskiego poziomu szyfrowania. Tożsamość strony została sprawdzona i potwierdzona, jednakże prawdopodobieństwo odczytania wyświetlanych i wprowadzanych informacji jest duże.
+diff --git a/security/manager/chrome/pippki/pippki.dtd b/security/manager/chrome/pippki/pippki.dtd
+--- a/security/manager/chrome/pippki/pippki.dtd
++++ b/security/manager/chrome/pippki/pippki.dtd
+@@ -1,34 +1,34 @@
+-<!-- 
++<!--
+    - The contents of this file are subject to the Mozilla Public
+    - License Version 1.1 (the "License"); you may not use this file
+    - except in compliance with the License. You may obtain a copy of
+    - the License at http://www.mozilla.org/MPL/
+-   - 
++   -
+    - Software distributed under the License is distributed on an "AS
+    - IS" basis, WITHOUT WARRANTY OF ANY KIND, either express or
+    - implied. See the License for the specific language governing
+    - rights and limitations under the License.
+-   - 
++   -
+    - The Original Code is mozilla.org code.
+-   - 
++   -
+    - The Initial Developer of the Original Code is Netscape
+    - Communications Corp.  Portions created by Netscape are
+    - Copyright (C) 2001 Netscape Communications Corp.  All
+    - Rights Reserved.
+-   - 
++   -
+    - Contributor(s):
+    -   Terry Hayes <thayes@netscape.com>
+    -   Marek Wawoczny <gmbh@mozillapl.org> (Polish translation)
+-   -   Piotr Bartecki <pbartecki@mozillapl.org> (Polish translation) 
++   -   Piotr Bartecki <pbartecki@mozillapl.org> (Polish translation)
+    -   Piotr Komoda <gorky@civ.pl> (Polish translation)
+    -   Marek Stepien <marcoos@aviary.pl> (Polish translation)
+   -->
+-  
++
+ <!ENTITY setPassword.title "Zmień hasło główne" >
+ <!ENTITY setPassword.tokenName.label "Urządzenie zabezpieczające" >
+ <!ENTITY setPassword.oldPassword.label "Bieżące hasło:" >
+ <!ENTITY setPassword.newPassword.label "Nowe hasło:" >
+ <!ENTITY setPassword.reenterPassword.label "Nowe hasło (ponownie):" >
+ <!ENTITY setPassword.meter.label "Miernik jakości hasła" >
+ <!ENTITY setPassword.meter.loading "Wczytywanie" >
+ <!ENTITY resetPasswordButtonLabel "Zresetuj">
+diff --git a/security/manager/chrome/pippki/pippki.properties b/security/manager/chrome/pippki/pippki.properties
+--- a/security/manager/chrome/pippki/pippki.properties
++++ b/security/manager/chrome/pippki/pippki.properties
+@@ -14,22 +14,22 @@
+ #
+ # The Original Code is mozilla.org code.
+ #
+ # The Initial Developer of the Original Code is Netscape
+ # Communications Corporation.  Portions created by Netscape are
+ # Copyright (C) 1998 Netscape Communications Corporation. All
+ # Rights Reserved.
+ #
+-# Contributor(s): 
++# Contributor(s):
+ #    Marek Wawoczny <gmbh@mozillapl.org> (Polish translation)
+ #    Piotr Bartecki <pbartecki@mozillapl.org> (Polish translation)
+ #    Piotr Komoda <gorky@civ.pl> (Polish translation)
+ #    Marek Stepien <marcoos@aviary.pl> (Polish translation)
+-# 
++#
+ # Alternatively, the contents of this file may be used under the terms of
+ # either the GNU General Public License Version 2 or later (the "GPL"), or
+ # the GNU Lesser General Public License Version 2.1 or later (the "LGPL"),
+ # in which case the provisions of the GPL or the LGPL are applicable instead
+ # of those above. If you wish to allow use of your version of this file only
+ # under the terms of either the GPL or the LGPL, and not to allow others to
+ # use your version of this file under the terms of the MPL, indicate your
+ # decision by deleting the provisions above and replace them with the notice
+@@ -47,17 +47,17 @@ CertPassPrompt=Wprowadź hasło Menedże
+ newCAMessage1=Czy zakwalifikować "%S" jako źródło godne zaufania w następujących przypadkach?
+ unnamedCA=Organ certyfikacji (bez nazwy)
+ 
+ #For editing cert trust
+ editTrustWindowTitle=Edytuj ustawienia zaufania certyfikatu
+ editTrustCA=Certyfikat "%S" reprezentuje organ certyfikacji.
+ editTrustSSL=Certyfikat "%S" był wydany przez:
+ editTrustEmail=Certyfikat "%S" został wydany przez:
+-issuerNotTrusted=Ponieważ organ certyfikacji, który wystawił ten certyfikat ,nie jest na liście zaufanych organów, autentyczność tego certyfikatu zostanie zakwalifikowana jako niegodna zaufania, o ile nie zostanie stwierdzone inaczej. 
++issuerNotTrusted=Ponieważ organ certyfikacji, który wystawił ten certyfikat ,nie jest na liście zaufanych organów, autentyczność tego certyfikatu zostanie zakwalifikowana jako niegodna zaufania, o ile nie zostanie stwierdzone inaczej.
+ issuerTrusted=Ponieważ organ certyfikacji, który wystawił ten certyfikat, jest godny zaufania, autentyczność tego certyfikatu zostanie również zakwalifikowana jako godna zaufania, o ile nie zostanie stwierdzone inaczej.
+ issuerNotKnown=Ponieważ organ certyfikacji, który wystawił ten certyfikat, jest nieznany, autentyczność tego certyfikatu zostanie zakwalifikowana jako niegodna zaufania, o ile nie zostanie stwierdzone inaczej.
+ issuerCertNotFound=Znalezienie certyfikatu tego organu certyfikacji było niemożliwe
+ 
+ #For Deleting Certificates
+ deleteSslCertConfirm3=Czy na pewno usunąć te wyjątki dotyczące certyfikatów serwerów?
+ deleteSslCertImpact3=Jeżeli wyjątek dotyczący certyfikatu serwera zostanie usunięty, przywrócone zostaną zwykłe procedury bezpieczeństwa dla tego serwera, w tym wymóg stosowania przez niego poprawnego certyfikatu.
+ deleteSslCertTitle3=Usuń wyjątek dotyczący certyfikatu serwera
+@@ -113,17 +113,17 @@ pageInfo_Privacy_Strong1=Oglądana stron
+ pageInfo_Privacy_Strong2=Szyfrowanie danych poważnie utrudnia niepowołanym osobom dostęp do informacji przesyłanych pomiędzy komputerami. Dzięki temu prawdopodobieństwo odczytania przez osobę nieuprawnioną danych przesyłanych w sieci jest bardzo niskie.
+ pageInfo_WeakEncryption=Połączenie szyfrowane: niski poziom szyfrowania (%S %S-bitowe)
+ pageInfo_Privacy_Weak1=Pobierana strona WWW z witryny %S używa niskiego poziomu szyfrowania przy przesyłaniu danych.
+ pageInfo_Privacy_Weak2=Niski poziom szyfrowania danych może pozwolić na dostęp do przesyłanych informacji niepowołanym osobom.
+ pageInfo_MixedContent=Połączenie częściowo szyfrowane
+ pageInfo_Privacy_Mixed1=Niektóre części obecnie wyświetlanej strony nie zostały zaszyfrowane przed przesłaniem przez Internet.
+ 
+ #Cert Viewer
+-certDetails=Podgląd certyfikatu: 
++certDetails=Podgląd certyfikatu:
+ notPresent=<Nie jest częścią certyfikatu>
+ unknownIssuer=<Nieznany wystawca>
+ 
+ escrowFinalMessage=Należy nacisnąć OK wyłącznie, jeśli "%S" należy do zaufanych organów przechowujących prywatne klucze szyfrujące.
+ 
+ #Token Manager
+ password_not_set=(nie ustawione)
+ failed_pw_change=Nie można zmienić hasła głównego.
+diff --git a/toolkit/chrome/global-platform/unix/platformKeys.properties b/toolkit/chrome/global-platform/unix/platformKeys.properties
+--- a/toolkit/chrome/global-platform/unix/platformKeys.properties
++++ b/toolkit/chrome/global-platform/unix/platformKeys.properties
+@@ -9,10 +9,10 @@ VK_SHIFT=Shift
+ VK_META=Meta
+ 
+ #the alt key
+ VK_ALT=Alt
+ 
+ #the control key
+ VK_CONTROL=Ctrl
+ 
+-#the separator character used between modifiers 
++#the separator character used between modifiers
+ MODIFIER_SEPARATOR=+
+diff --git a/toolkit/chrome/global-platform/win/platformKeys.properties b/toolkit/chrome/global-platform/win/platformKeys.properties
+--- a/toolkit/chrome/global-platform/win/platformKeys.properties
++++ b/toolkit/chrome/global-platform/win/platformKeys.properties
+@@ -9,10 +9,10 @@ VK_SHIFT=Shift
+ VK_META=Meta
+ 
+ #the alt key
+ VK_ALT=Alt
+ 
+ #the control key
+ VK_CONTROL=Ctrl
+ 
+-#the separator character used between modifiers 
++#the separator character used between modifiers
+ MODIFIER_SEPARATOR=+
+diff --git a/toolkit/chrome/global/config.dtd b/toolkit/chrome/global/config.dtd
+--- a/toolkit/chrome/global/config.dtd
++++ b/toolkit/chrome/global/config.dtd
+@@ -15,32 +15,32 @@
+     -
+     - The Initial Developer of the Original Code is
+     - Netscape Communications Corporation.
+     - Portions created by the Initial Developer are Copyright (C) 2002
+     - the Initial Developer. All Rights Reserved.
+     -
+     - Contributor(s):
+     -   Marek Stępień <marcoos@aviary.pl> (Polish localization)
+-    -   Zbigniew Braniecki <gandalf@aviary.pl> (Polish localization)             
++    -   Zbigniew Braniecki <gandalf@aviary.pl> (Polish localization)
+     -
+     - Alternatively, the contents of this file may be used under the terms of
+     - either the GNU General Public License Version 2 or later (the "GPL"), or
+     - the GNU Lesser General Public License Version 2.1 or later (the "LGPL"),
+     - in which case the provisions of the GPL or the LGPL are applicable instead
+     - of those above. If you wish to allow use of your version of this file only
+     - under the terms of either the GPL or the LGPL, and not to allow others to
+     - use your version of this file under the terms of the MPL, indicate your
+     - decision by deleting the provisions above and replace them with the notice
+     - and other provisions required by the GPL or the LGPL. If you do not delete
+     - the provisions above, a recipient may use your version of this file under
+     - the terms of any one of the MPL, the GPL or the LGPL.
+     -
+     - ***** END LICENSE BLOCK ***** -->
+- 
++
+ <!ENTITY window.title "about:config">
+ 
+ <!-- about:config warning page -->
+ <!ENTITY aboutWarningTitle.label    "Grozi utratą gwarancji!">
+ <!ENTITY aboutWarningText.label     "Modyfikacja tych ustawień może spowodować problemy, takie jak utrata stabilności i wydajności programu oraz zagrożenia bezpieczeństwa. Należy kontynuować tylko wtedy, gdy ma się pewność tego, co się robi.">
+ <!ENTITY aboutWarningButton.label   "Zachowam ostrożność, obiecuję!">
+ <!ENTITY aboutWarningCheckbox.label "Wyświetl to ostrzeżenie następnym razem">
+ 
+@@ -54,18 +54,18 @@
+ <!ENTITY typeColumn.label "Typ" >
+ <!ENTITY valueColumn.label "Wartość" >
+ 
+ <!-- Tooltips -->
+ <!ENTITY prefColumnHeader.tooltip "Kliknij, aby posortować" >
+ <!ENTITY columnChooser.tooltip "Kliknij, aby wybrać kolumny, które zostaną wyświetlone" >
+ 
+ <!-- Context Menu -->
+-<!ENTITY copyPref.key "C">                                                      
+-<!ENTITY copyPref.label "Kopiuj">                                                 
++<!ENTITY copyPref.key "C">
++<!ENTITY copyPref.label "Kopiuj">
+ <!ENTITY copyPref.accesskey "K">
+ <!ENTITY copyName.label "Kopiuj nazwę" >
+ <!ENTITY copyName.accesskey "n" >
+ <!ENTITY copyValue.label "Kopiuj wartość" >
+ <!ENTITY copyValue.accesskey "w" >
+ <!ENTITY modify.label "Modyfikuj" >
+ <!ENTITY modify.accesskey "M" >
+ <!ENTITY toggle.label "Przełącz">
+diff --git a/toolkit/chrome/global/customizeCharset.dtd b/toolkit/chrome/global/customizeCharset.dtd
+--- a/toolkit/chrome/global/customizeCharset.dtd
++++ b/toolkit/chrome/global/customizeCharset.dtd
+@@ -42,13 +42,13 @@
+    - ***** END LICENSE BLOCK ***** -->
+ 
+ <!ENTITY title.label "Ustawienia zestawu znaków" >
+ <!ENTITY current.label "Używane zestawy znaków" >
+ <!ENTITY remove.label "Usuń" >
+ <!ENTITY remove.accessKey "U">
+ <!ENTITY additional.label "Dostępne zestawy znaków" >
+ <!ENTITY add.label "Dodaj" >
+-<!ENTITY add.accessKey    "o">  
+-<!ENTITY moveUp.label     "W górę">                                            
+-<!ENTITY moveUp.accessKey "g">                                                  
+-<!ENTITY moveDown.label   "W dół">                                          
+-<!ENTITY moveDown.accessKey "d">                                                
++<!ENTITY add.accessKey    "o">
++<!ENTITY moveUp.label     "W górę">
++<!ENTITY moveUp.accessKey "g">
++<!ENTITY moveDown.label   "W dół">
++<!ENTITY moveDown.accessKey "d">
+diff --git a/toolkit/chrome/global/downloadProgress.properties b/toolkit/chrome/global/downloadProgress.properties
+--- a/toolkit/chrome/global/downloadProgress.properties
++++ b/toolkit/chrome/global/downloadProgress.properties
+@@ -1,17 +1,17 @@
+-# LOCALIZATION NOTE (BadPluginTitle): 
++# LOCALIZATION NOTE (BadPluginTitle):
+ #
+ #    This dialog is displayed when plugin throws unhandled exception
+ BadPluginTitle=Wtyczka wykonała niedozwoloną operację
+ 
+-# LOCALIZATION NOTE (BadPluginMessage): 
++# LOCALIZATION NOTE (BadPluginMessage):
+ #
+ #    This is the message for the BadPlugin dialog.
+ #
+ BadPluginMessage=Wtyczka wykonała niedozwoloną operację. Zaleca się ponowne uruchomienie programu %S.
+ 
+-# LOCALIZATION NOTE (BadPluginCheckboxMessage): 
++# LOCALIZATION NOTE (BadPluginCheckboxMessage):
+ #
+ #    This message tells the user that if they check this checkbox, they
+ #    will never see this dialog again.
+ #
+ BadPluginCheckboxMessage=Nie pokazuj więcej tego okna w aktualnej sesji.
+diff --git a/toolkit/chrome/global/findbar.dtd b/toolkit/chrome/global/findbar.dtd
+--- a/toolkit/chrome/global/findbar.dtd
++++ b/toolkit/chrome/global/findbar.dtd
+@@ -1,17 +1,17 @@
+ <!-- LOCALIZATION NOTE : FILE This file contains the entities needed to -->
+-<!-- LOCALIZATION NOTE : FILE use the Find Bar. --> 
++<!-- LOCALIZATION NOTE : FILE use the Find Bar. -->
+ 
+ <!-- entities split out from browser.dtd -->
+ 
+ <!ENTITY next.label "Następne">
+-<!ENTITY next.accesskey "N"> 
++<!ENTITY next.accesskey "N">
+ <!ENTITY next.tooltip "Znajdź następne wystąpienie ostatnio szukanej frazy">
+ <!ENTITY previous.label "Poprzednie">
+-<!ENTITY previous.accesskey "P">   
++<!ENTITY previous.accesskey "P">
+ <!ENTITY previous.tooltip "Znajdź poprzednie wystąpienie ostatnio szukanej frazy">
+ <!ENTITY findCloseButton.tooltip "Zamknij pasek wyszukiwania">
+ <!ENTITY highlight.label "Podświetl"> <!-- Better: "Podświetl wszystkie" but it's too long. -->
+-<!ENTITY highlight.accesskey "w"> 
++<!ENTITY highlight.accesskey "w">
+ <!ENTITY highlight.tooltiptext "Podświetl wszystkie wystąpienia szukanej frazy">
+ <!ENTITY caseSensitiveCheckbox.label "Rozróżniaj wielkość liter">
+ <!ENTITY caseSensitiveCheckbox.accesskey "R">
+diff --git a/toolkit/chrome/global/intl.css b/toolkit/chrome/global/intl.css
+--- a/toolkit/chrome/global/intl.css
++++ b/toolkit/chrome/global/intl.css
+@@ -1,8 +1,8 @@
+ /*
+- * This file contains all localizable skin settings such as 
++ * This file contains all localizable skin settings such as
+  *   font, layout, and geometry
+  */
+-window { 
++window {
+   font: 3mm tahoma,arial,helvetica,sans-serif;
+ }
+ 
+diff --git a/toolkit/chrome/global/intl.properties b/toolkit/chrome/global/intl.properties
+--- a/toolkit/chrome/global/intl.properties
++++ b/toolkit/chrome/global/intl.properties
+@@ -16,19 +16,19 @@ pluralRule=9
+ 
+ # Localization Note: font.language.group controls the initial setting of the
+ # language drop-down in the fonts pref panel. Set it to the value of one of the
+ # menuitems in the "selectLangs" menulist in
+ # browser/components/preferences/fonts.xul
+ 
+ font.language.group=x-central-euro
+ 
+-# Localization Note: Add the code for your language at the front of this entry, 
+-# leaving "en-us, en" for fallback. It's recommended to use the same form, e.g. 
+-# "ja-jp, ja, en-us, en"                                                        
++# Localization Note: Add the code for your language at the front of this entry,
++# leaving "en-us, en" for fallback. It's recommended to use the same form, e.g.
++# "ja-jp, ja, en-us, en"
+ 
+ intl.accept_languages=pl, en-us, en
+ intl.charsetmenu.browser.static=iso-8859-2, UTF-8
+ intl.charsetmenu.browser.more1=iso-8859-1, iso-8859-15, ibm850, x-mac-roman, windows-1252, iso-8859-14, iso-8859-7, x-mac-greek, windows-1253, x-mac-icelandic, iso-8859-10, iso-8859-3
+ intl.charsetmenu.browser.more2=iso-8859-4, iso-8859-13, windows-1257, ibm852, iso-8859-2, x-mac-ce, windows-1250, x-mac-croatian, ibm855, iso-8859-5, iso-ir-111, koi8-r, x-mac-cyrillic, windows-1251, ibm866, koi8-u, x-mac-ukrainian, iso-8859-16, x-mac-romanian
+ intl.charsetmenu.browser.more3=gb2312, x-gbk, gb18030, hz-gb-2312, iso-2022-cn, big5, big5-hkscs, x-euc-tw, euc-jp, iso-2022-jp, shift_jis, euc-kr, x-windows-949, x-johab, iso-2022-kr
+ intl.charsetmenu.browser.more4=armscii-8, geostd8, tis-620, iso-8859-11, windows-874, ibm857, iso-8859-9, x-mac-turkish, windows-1254, x-viet-tcvn5712, viscii, x-viet-vps, windows-1258, x-mac-devanagari, x-mac-gujarati, x-mac-gurmukhi
+ intl.charsetmenu.browser.more5=iso-8859-6, windows-1256, ibm864, x-mac-arabic, x-mac-farsi, iso-8859-8-i, windows-1255, iso-8859-8, ibm862, x-mac-hebrew
+@@ -37,11 +37,11 @@ intl.charsetmenu.browser.more5=iso-8859-
+ intl.charsetmenu.browser.unicode=UTF-8, UTF-16LE, UTF-16BE, UTF-32, UTF-32LE, UTF-32BE
+ 
+ intl.charset.default=ISO-8859-2
+ intl.charset.detector=
+ intl.charsetmenu.mailedit=ISO-8859-1, ISO-8859-15, ISO-8859-6, armscii-8, geostd8, ISO-8859-13, ISO-8859-14, ISO-8859-2, GB2312, GB18030, Big5, KOI8-R, windows-1251, KOI8-U, ISO-8859-7, ISO-8859-8-I, windows-1255, ISO-2022-JP, EUC-KR, ISO-8859-10, ISO-8859-3, TIS-620, ISO-8859-9, UTF-8, VISCII
+ 
+ # valid intl.menuitems.appendedacceskeys are: true or false, <empty string> (missing or empty preference equals false)
+ intl.menuitems.alwaysappendaccesskeys=
+-                                                                                
++
+ # valid intl.menuitems.insertseparatorbeforeaccesskeys are: true or false, <empty string> (missing or empty preference equals false)
+-intl.menuitems.insertseparatorbeforeaccesskeys=true                             
++intl.menuitems.insertseparatorbeforeaccesskeys=true
+diff --git a/toolkit/chrome/global/languageNames.properties b/toolkit/chrome/global/languageNames.properties
+--- a/toolkit/chrome/global/languageNames.properties
++++ b/toolkit/chrome/global/languageNames.properties
+@@ -158,18 +158,18 @@ ss=Suazi
+ st=Sotho południowy
+ su=Sundański
+ sv=Szwedzki
+ sw=Suahili
+ ta=Tamilski
+ te=Telugu
+ tg=Tadżycki
+ th=Tajski
+-ti=Tigrinia 
+-tig=Tigre  
++ti=Tigrinia
++tig=Tigre
+ tk=Turkmeński
+ tl=Tagalski
+ tlh=Klingoński
+ tn=Tswana
+ to=Tongański
+ tr=Turecki
+ ts=Tsonga
+ tt=Tatarski
+diff --git a/toolkit/chrome/global/notification.dtd b/toolkit/chrome/global/notification.dtd
+--- a/toolkit/chrome/global/notification.dtd
++++ b/toolkit/chrome/global/notification.dtd
+@@ -1,1 +1,1 @@
+-<!ENTITY closeNotification.tooltip "Zamknij tę wiadomość"> 
++<!ENTITY closeNotification.tooltip "Zamknij tę wiadomość">
+diff --git a/toolkit/chrome/global/viewSource.dtd b/toolkit/chrome/global/viewSource.dtd
+--- a/toolkit/chrome/global/viewSource.dtd
++++ b/toolkit/chrome/global/viewSource.dtd
+@@ -1,13 +1,13 @@
+ <!-- extracted from content/viewSource.xul -->
+ 
+-<!-- LOCALIZATION NOTE (mainWindow.title) : DONT_TRANSLATE --> 
++<!-- LOCALIZATION NOTE (mainWindow.title) : DONT_TRANSLATE -->
+ <!ENTITY mainWindow.title "&brandFullName;" >
+-<!-- LOCALIZATION NOTE (mainWindow.titlemodifier) : DONT_TRANSLATE --> 
++<!-- LOCALIZATION NOTE (mainWindow.titlemodifier) : DONT_TRANSLATE -->
+ <!ENTITY mainWindow.titlemodifier "&brandFullName;" >
+ <!-- LOCALIZATION NOTE (mainWindow.titlemodifierseparator) : DONT_TRANSLATE -->
+ <!ENTITY mainWindow.titlemodifierseparator " - " >
+ <!ENTITY mainWindow.preface "Źródło: " >
+ 
+ <!ENTITY fileMenu.label "Plik" >
+ <!ENTITY fileMenu.accesskey "P" >
+ <!ENTITY savePageCmd.label "Zapisz stronę jako…" >
+diff --git a/toolkit/chrome/mozapps/extensions/extensions.dtd b/toolkit/chrome/mozapps/extensions/extensions.dtd
+--- a/toolkit/chrome/mozapps/extensions/extensions.dtd
++++ b/toolkit/chrome/mozapps/extensions/extensions.dtd
+@@ -1,15 +1,15 @@
+ <!ENTITY addons.title                 	  "Dodatki">
+ 
+ <!-- Default window size for the addon manager in pixels -->
+ <!ENTITY em.width                         "540">
+ <!ENTITY em.height                        "380">
+ 
+-<!-- View labels -->                                                            
++<!-- View labels -->
+ <!ENTITY search.label                     "Pobierz dodatki">
+ <!ENTITY extensions.label                 "Rozszerzenia">
+ <!ENTITY themes.label                     "Motywy">
+ <!ENTITY locales.label                    "Języki">
+ <!ENTITY plugins.label                    "Wtyczki">
+ <!ENTITY update.label                     "Aktualizacje">
+ <!ENTITY install.label                    "Instalacja">
+ 
+@@ -90,17 +90,17 @@
+ <!-- The selected add-on's cancel action button label -->
+ <!ENTITY cancel.label                     "Anuluj">
+ <!ENTITY cancel.accesskey                 "A">
+ <!ENTITY cancelInstall.label              "Anuluj">
+ <!ENTITY cancelInstall.accesskey          "A">
+ <!ENTITY cancelUpgrade.label              "Anuluj">
+ <!ENTITY cancelUpgrade.accesskey          "A">
+ 
+-<!-- Only displayed in the selected Add-on's context menu -->                   
++<!-- Only displayed in the selected Add-on's context menu -->
+ <!ENTITY cmd.homepage.label               "Odwiedź stronę domową">
+ <!ENTITY cmd.homepage.accesskey           "s">
+ <!ENTITY cmd.about2.label                 "O tym dodatku">
+ <!ENTITY cmd.about.accesskey              "O">
+ <!ENTITY cmd.checkUpdate.label            "Znajdź aktualizację">
+ <!ENTITY cmd.checkUpdate.accesskey        "Z">
+ <!ENTITY cmd.includeUpdate.label          "Dołącz aktualizację"><!-- fuzzy -->
+ <!ENTITY cmd.includeUpdate.accesskey      "D">
+@@ -155,17 +155,17 @@
+ <!ENTITY infoUpdateInfoError.label        "Podczas pobierania informacji na temat tej aktualizacji wystąpił błąd.">
+ 
+ <!ENTITY updateSuccess.label              "Aktualizacja zakończona powodzeniem.">
+ <!ENTITY installSuccess.label             "Instalacja zakończona powodzeniem.">
+ <!ENTITY installSuccessRestart.label      "Uruchom program ponownie, by dokończyć instalację.">
+ <!ENTITY updateSuccessRestart.label       "Uruchom program ponownie, by dokończyć aktualizację.">
+ <!ENTITY installWaiting.label             "Oczekiwanie…">
+ <!ENTITY installIncompatibleUpdate.label  "Sprawdzanie kompatybilności…">
+-<!ENTITY installFinishing.label           "Instalowanie…">                      
++<!ENTITY installFinishing.label           "Instalowanie…">
+ <!ENTITY installFailure.label             "Instalacja nie powiodła się.">
+ 
+ <!ENTITY progressStatus.label             "Sprawdzanie dostępności aktualizacji">
+ 
+ <!ENTITY eula.title                       "Umowa licencyjna użytkownika">
+ <!ENTITY eula.width                       "560px">
+ <!ENTITY eula.height                      "400px">
+ <!ENTITY eula.accept                      "Akceptuję, zainstaluj…">
+diff --git a/toolkit/chrome/mozapps/help/help.dtd b/toolkit/chrome/mozapps/help/help.dtd
+--- a/toolkit/chrome/mozapps/help/help.dtd
++++ b/toolkit/chrome/mozapps/help/help.dtd
+@@ -1,14 +1,14 @@
+ <!ENTITY printCmd.commandkey            "p">
+ 
+ <!ENTITY findOnCmd.commandkey           "F">
+ <!ENTITY findAgainCmd.commandkey        "G">
+ <!ENTITY findAgainCmd.commandkey2       "VK_F3">
+-  
++
+ <!ENTITY backButton.label               "Wstecz">
+ <!ENTITY backButton.accesskey           "t">
+ <!ENTITY backButton.tooltip             "Przejdź do poprzedniej strony">
+ <!ENTITY forwardButton.label            "Do przodu">
+ <!ENTITY forwardButton.accesskey        "D">
+ <!ENTITY forwardButton.tooltip          "Przejdź do następnej strony">
+ <!ENTITY copyCmd.label                  "Kopiuj">
+ <!ENTITY copyCmd.accesskey              "K">
+@@ -21,17 +21,17 @@
+ <!ENTITY printButton.label              "Drukuj">
+ <!ENTITY printButton.tooltip            "Drukuj bieżącą stronę">
+ <!ENTITY closeWindow.commandkey         "W">
+ 
+ <!ENTITY search.emptytext               "Szukaj">
+ <!ENTITY searchHeader.label             "Wyniki wyszukiwania">
+ <!ENTITY toctab.label                   "Spis treści">
+ <!ENTITY toctab.accesskey               "S">
+-  
++
+ <!-- LOCALIZATION NOTE :
+ fullZoomEnlargeCmd.commandkey3, fullZoomReduceCmd.commandkey2 and
+ fullZoomResetCmd.commandkey2 are alternative acceleration keys for zoom.
+ If shift key is needed with your locale popular keyboard for them,
+ you can use these alternative items. Otherwise, their values should be empty.  -->
+ 
+ <!ENTITY fullZoomReduceCmd.commandkey   "-">
+ <!ENTITY fullZoomReduceCmd.commandkey2  "">
+diff --git a/toolkit/chrome/mozapps/profile/profileSelection.dtd b/toolkit/chrome/mozapps/profile/profileSelection.dtd
+--- a/toolkit/chrome/mozapps/profile/profileSelection.dtd
++++ b/toolkit/chrome/mozapps/profile/profileSelection.dtd
+@@ -1,31 +1,31 @@
+ <!-- -*- Mode: SGML; indent-tabs-mode: nil; -*- -->
+ <!--
+ 
+   The contents of this file are subject to the Netscape Public
+   License Version 1.1 (the "License"); you may not use this file
+   except in compliance with the License. You may obtain a copy of
+   the License at http://www.mozilla.org/NPL/
+- 
++
+   Software distributed under the License is distributed on an "AS
+   IS" basis, WITHOUT WARRANTY OF ANY KIND, either express or
+   implied. See the License for the specific language governing
+   rights and limitations under the License.
+- 
++
+   The Original Code is mozilla.org code.
+- 
++
+   The Initial Developer of the Original Code is Netscape
+   Communications Corporation.  Portions created by Netscape are
+   Copyright (C) 1998 Netscape Communications Corporation. All
+   Rights Reserved.
+- 
+-  Contributor(s): 
++
++  Contributor(s):
+     Ben Goodger (28/10/99)
+-  
++
+ -->
+ 
+ <!ENTITY            windowtitle.label      "&brandShortName; - Wybierz profil użytkownika">
+ 
+ <!ENTITY            profilename.label      "Nazwa profilu:">
+ 
+ <!ENTITY            start.label            "Uruchom program &brandShortName;">
+ <!ENTITY            exit.label             "Zakończ">
+diff --git a/toolkit/chrome/mozapps/profile/profileSelection.properties b/toolkit/chrome/mozapps/profile/profileSelection.properties
+--- a/toolkit/chrome/mozapps/profile/profileSelection.properties
++++ b/toolkit/chrome/mozapps/profile/profileSelection.properties
+@@ -1,9 +1,9 @@
+-# LOCALIZATION NOTE: Do not translate <html:br/> 
++# LOCALIZATION NOTE: Do not translate <html:br/>
+ 
+ restartTitle=Zamknij program %S
+ restartMessageNoUnlocker=Program %S został już uruchomiony, ale nie odpowiada. Aby otworzyć nowe okno, należy najpierw zakończyć istniejący proces programu %S lub uruchomić ponownie system.
+ restartMessageUnlocker=Program %S został już uruchomiony, ale nie odpowiada. Aby otworzyć nowe okno, należy najpierw zakończyć stary proces programu %S.
+ restartMessageNoUnlockerMac=Kopia programu %S jest już otwarta. Tylko jedna kopia programu %S może być otwarta jednocześnie.
+ restartMessageUnlockerMac=Kopia programu %S jest już otwarta. Działająca kopia programu %S zostanie zakończona, aby otworzyć tę kopię.
+ 
+ profileTooltip=Profile: '%S' - Ścieżka: '%S'
+diff --git a/toolkit/crashreporter/crashreporter.ini b/toolkit/crashreporter/crashreporter.ini
+--- a/toolkit/crashreporter/crashreporter.ini
++++ b/toolkit/crashreporter/crashreporter.ini
+@@ -17,17 +17,17 @@ CrashReporterSorry=Przepraszamy!
+ CrashReporterDescriptionText2=Program %s uległ awarii w wyniku błędu.\n\nAby pomóc nam zdiagnozować i naprawić ten problem, można przesłać zgłoszenie awarii.
+ CrashReporterDefault=To narzędzie jest uruchamiane po wystąpieniu awarii w celu zgłoszenia problemu twórcom programu. Nie powinno być uruchamiane bezpośrednio.
+ Details=Szczegóły…
+ ViewReportTitle=Zawartość zgłoszenia
+ CommentGrayText=Dodaj komentarz (komentarze są dostępne publicznie)
+ ExtraReportInfo=Zgłoszenie to zawiera ponadto informacje na temat stanu programu w momencie wystąpienia awarii.
+ # LOCALIZATION NOTE (CheckSendReport): The %s is replaced with the vendor name.
+ CheckSendReport=Prześlij zgłoszenie awarii do firmy %s
+-CheckIncludeURL=Dołącz do zgłoszenia adres odwiedzanej strony 
++CheckIncludeURL=Dołącz do zgłoszenia adres odwiedzanej strony
+ CheckSendEmail=Powiadom, gdy dostępne będzie więcej informacji
+ EmailGrayText=Wprowadź tutaj adres e-mail
+ ReportPreSubmit2=Zgłoszenie awarii zostanie przesłane przed zakończeniem lub ponownym uruchomieniem.
+ ReportDuringSubmit2=Przesyłanie zgłoszenia…
+ ReportSubmitSuccess=Zgłoszenie zostało przesłane.
+ ReportSubmitFailed=Podczas przesyłania zgłoszenia wystąpił błąd.
+ ReportResubmit=Ponowne przesyłanie zgłoszeń, których poprzednio nie udało się wysłać…
+ # LOCALIZATION NOTE (Quit2): The %s is replaced with the product name.
+

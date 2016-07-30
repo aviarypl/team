@@ -1,0 +1,996 @@
+Index: browser/chrome/browser/browser.dtd
+===================================================================
+RCS file: /l10n/l10n/pl/browser/chrome/browser/browser.dtd,v
+retrieving revision 1.5
+diff -u -r1.5 browser.dtd
+--- browser/chrome/browser/browser.dtd	23 Jun 2005 09:30:42 -0000	1.5
++++ browser/chrome/browser/browser.dtd	17 Jul 2005 15:17:34 -0000
+@@ -12,8 +12,8 @@
+ 
+ <!ENTITY nothingAvailable.label "(Niczego nie znaleziono)" >
+ 
+-<!ENTITY tabCmd.label "Nowy panel" >
+-<!ENTITY tabCmd.accesskey "P" >
++<!ENTITY tabCmd.label "Nowa karta" >
++<!ENTITY tabCmd.accesskey "k" >
+ <!ENTITY tabCmd.commandkey "t" >
+ <!ENTITY openLocationCmd.label "Otwórz adres...">
+ <!ENTITY openLocationCmd.accesskey "a">
+@@ -23,7 +23,7 @@
+ <!ENTITY printSetupCmd.label "Ustawienia strony..." >
+ <!ENTITY printSetupCmd.accesskey "U" >
+ <!ENTITY printPreviewCmd.label "Podgląd wydruku" >
+-<!ENTITY printPreviewCmd.accesskey "P" >
++<!ENTITY printPreviewCmd.accesskey "g" >
+ <!ENTITY printCmd.label "Drukuj..." >
+ <!ENTITY printCmd.accesskey "D" >
+ <!ENTITY printCmd.commandkey "p" >
+@@ -225,14 +225,14 @@
+ 
+ <!ENTITY openLinkCmd.label "Otwórz odnośnik w nowym oknie" >
+ <!ENTITY openLinkCmd.accesskey "n" >
+-<!ENTITY openLinkCmdInTab.label "Otwórz odnośnik w nowym panelu" >
+-<!ENTITY openLinkCmdInTab.accesskey "l" >
++<!ENTITY openLinkCmdInTab.label "Otwórz odnośnik w nowej karcie" >
++<!ENTITY openLinkCmdInTab.accesskey "j" >
+ <!ENTITY openLinkInWindowCmd.label "Otwórz" >
+ <!ENTITY openLinkInWindowCmd.accesskey "O" >
+ <!ENTITY openFrameCmd.label "Otwórz ramkę w nowym oknie" >
+ <!ENTITY openFrameCmd.accesskey "n" >
+-<!ENTITY openFrameCmdInTab.label "Otwórz ramkę w nowym panelu" >
+-<!ENTITY openFrameCmdInTab.accesskey "l" >
++<!ENTITY openFrameCmdInTab.label "Otwórz ramkę w nowej karcie" >
++<!ENTITY openFrameCmdInTab.accesskey "j" >
+ <!ENTITY showOnlyThisFrameCmd.label "Pokaż tylko tę ramkę" >
+ <!ENTITY showOnlyThisFrameCmd.accesskey "r" >
+ <!ENTITY reloadCmd.commandkey "r" >
+@@ -262,7 +262,7 @@
+ <!ENTITY bookmarkFrameCmd.label "Dodaj ramkę do zakładek..." >
+ <!ENTITY bookmarkFrameCmd.accesskey "D" >
+ <!ENTITY sendPageCmd.label "Wyślij odnośnik..." >
+-<!ENTITY sendPageCmd.accesskey "k" >
++<!ENTITY sendPageCmd.accesskey "l" >
+ <!ENTITY savePageCmd.label "Zapisz stronę jako..." >
+ <!ENTITY savePageCmd.accesskey "a" >
+ <!ENTITY savePageCmd.commandkey "s" >
+@@ -318,7 +318,7 @@
+ <!ENTITY mailButton.readNews.accesskey     "G">
+ <!ENTITY sendMessage.commandkey            "m">
+ 
+-<!ENTITY newTabButton.tooltip "Otwórz nowy panel" >
++<!ENTITY newTabButton.tooltip "Otwórz nową kartę" >
+ <!ENTITY newWindowButton.tooltip "Otwórz nowe okno" >
+ <!ENTITY sidebarCloseButton.tooltip     "Zamknij panel sidebar">
+ 
+Index: browser/chrome/browser/browser.properties
+===================================================================
+RCS file: /l10n/l10n/pl/browser/chrome/browser/browser.properties,v
+retrieving revision 1.7
+diff -u -r1.7 browser.properties
+--- browser/chrome/browser/browser.properties	15 Jul 2005 08:23:22 -0000	1.7
++++ browser/chrome/browser/browser.properties	17 Jul 2005 15:17:34 -0000
+@@ -7,8 +7,8 @@
+ droponbookmarksbutton=Upu\u015b\u0107 odno\u015bnik, aby go doda\u0107 do Zak\u0142adek
+ dropondownloadsbutton=Upu\u015b\u0107 odno\u015bnik lub plik, aby go pobra\u0107
+ dropongobutton=pu\u015b\u0107 odno\u015bnik lub plik, aby go otworzy\u0107
+-droponnewtabbutton=Upu\u015b\u0107 odno\u015bnik lub plik, aby go otworzy\u0107 w nowym panelu
+-droponnewwindowbutton=Upu\u015b\u0107 odno\u015bnik lub plik, aby go otworzy\u0107 w nowym oknie
++droponnewtabbutton=Upu\u015b\u0107 odno\u015bnik lub plik, aby otworzy\u0107 go w nowej karcie
++droponnewwindowbutton=Upu\u015b\u0107 odno\u015bnik lub plik, aby otworzy\u0107 go w nowym oknie
+ droponhomebutton=Upu\u015b\u0107 odno\u015bnik lub plik, aby zamieni\u0107 bie\u017c\u0105c\u0105 stron\u0119 domow\u0105
+ droponhometitle=Ustaw jako stron\u0119 domow\u0105
+ droponhomemsg=Czy wybrany dokument ma zosta\u0107 now\u0105 stron\u0105 domow\u0105?
+@@ -34,9 +34,9 @@
+ webPanels=Panele Sidebar
+ 
+ tabs.closeWarningTitle=Potwierdzenie zamkni\u0119cia
+-tabs.closeWarning=To okno przegl\u0105darki posiada %S otwartych paneli. Czy na pewno chcesz zamkn\u0105\u0107 to okno oraz jego panele?
+-tabs.closeButton=Zamknij wszystkie panele
+-tabs.closeWarningPromptMe=Pytaj o potwierdzenie przy zamykaniu wielu paneli
++tabs.closeWarning=To okno przegl\u0105darki posiada %S otwartych kart. Czy na pewno chcesz zamkn\u0105\u0107 to okno oraz jego karty?
++tabs.closeButton=Zamknij wszystkie karty
++tabs.closeWarningPromptMe=Pytaj o potwierdzenie przy zamykaniu wielu kart
+ 
+ mailUnreadTooltip=Czytaj poczt\u0119 i grupy dyskusyjne (%S nowych wiadomo\u015bci)
+ mailUnreadMenuitem=Czytaj poczt\u0119 (%S nowych wiadomo\u015bci)
+Index: browser/chrome/browser/openLocation.dtd
+===================================================================
+RCS file: /l10n/l10n/pl/browser/chrome/browser/openLocation.dtd,v
+retrieving revision 1.1
+diff -u -r1.1 openLocation.dtd
+--- browser/chrome/browser/openLocation.dtd	16 Apr 2005 17:11:36 -0000	1.1
++++ browser/chrome/browser/openLocation.dtd	17 Jul 2005 15:17:34 -0000
+@@ -1,7 +1,7 @@
+ <!ENTITY enter.label "Wprowadź adres internetowy (URL) strony WWW, pliku lub zasobu, który ma zostać otworzony:" >
+ <!ENTITY chooseFile.label "Wybierz plik..." >
+ <!ENTITY newWindow.label "Nowe okno" >
+-<!ENTITY newTab.label "Nowy panel" >
++<!ENTITY newTab.label "Nowa karta" >
+ <!ENTITY topWindow.label "Bieżące okno" >
+ <!ENTITY caption.label "Otwórz adres internetowy" >
+ <!ENTITY openWhere.label "W którym oknie otworzyć:" >
+Index: browser/chrome/browser/bookmarks/addBookmark.dtd
+===================================================================
+RCS file: /l10n/l10n/pl/browser/chrome/browser/bookmarks/addBookmark.dtd,v
+retrieving revision 1.2
+diff -u -r1.2 addBookmark.dtd
+--- browser/chrome/browser/bookmarks/addBookmark.dtd	18 Jun 2005 00:25:56 -0000	1.2
++++ browser/chrome/browser/bookmarks/addBookmark.dtd	17 Jul 2005 15:17:34 -0000
+@@ -22,6 +22,6 @@
+ 
+ <!ENTITY expanderDown.tooltip 	"Pokaż drzewo folderów zakładek" >
+ <!ENTITY expanderUp.tooltip 	"Ukryj drzewo folderów zakładek" >
+-<!ENTITY addGroup.label 	"Dodaj otwarte panele jako folder" >
++<!ENTITY addGroup.label 	"Dodaj otwarte karty jako folder" >
+ <!ENTITY addGroup.accesskey 	"o" >
+ <!ENTITY acceptButton.label 	"Dodaj" >
+Index: browser/chrome/browser/bookmarks/bookmarks.dtd
+===================================================================
+RCS file: /l10n/l10n/pl/browser/chrome/browser/bookmarks/bookmarks.dtd,v
+retrieving revision 1.2
+diff -u -r1.2 bookmarks.dtd
+--- browser/chrome/browser/bookmarks/bookmarks.dtd	21 Jun 2005 09:01:25 -0000	1.2
++++ browser/chrome/browser/bookmarks/bookmarks.dtd	17 Jul 2005 15:17:34 -0000
+@@ -67,4 +67,4 @@
+ <!ENTITY search.accesskey "S" >
+ 
+ <!ENTITY selectBookmark.title "Ustaw jako stronę domową" >
+-<!ENTITY selectBookmark.label "Wybierz zakładkę strony, która zostanie ustawiona jako nowa strona domowa. Jeżeli zostanie wybrany folder, to zakładki w nim zawarte zostaną otwarte w odrębnych panelach." >
++<!ENTITY selectBookmark.label "Wybierz zakładkę strony, która zostanie ustawiona jako nowa strona domowa. Jeżeli zostanie wybrany folder, to zakładki w nim zawarte zostaną otwarte w odrębnych kartach." >
+Index: browser/chrome/browser/bookmarks/bookmarks.properties
+===================================================================
+RCS file: /l10n/l10n/pl/browser/chrome/browser/bookmarks/bookmarks.properties,v
+retrieving revision 1.3
+diff -u -r1.3 bookmarks.properties
+--- browser/chrome/browser/bookmarks/bookmarks.properties	21 Jun 2005 09:01:25 -0000	1.3
++++ browser/chrome/browser/bookmarks/bookmarks.properties	17 Jul 2005 15:17:34 -0000
+@@ -5,7 +5,7 @@
+ cmd_bm_expandfolder_accesskey = R
+ cmd_bm_collapsefolder=Zwi\u0144
+ cmd_bm_collapsefolder_accesskey = Z
+-cmd_bm_openfolder=Otw\u00f3rz w panelach
++cmd_bm_openfolder=Otw\u00f3rz w kartach
+ cmd_bm_openfolder_accesskey=h
+ cmd_bm_managefolder=Zarz\u0105dzaj folderem
+ cmd_bm_managefolder_accesskey = d
+@@ -79,7 +79,7 @@
+ 
+ cmd_bm_openinnewwindow=Otw\u00f3rz w nowym oknie
+ cmd_bm_openinnewwindow_accesskey = n
+-cmd_bm_openinnewtab=Otw\u00f3rz w nowym panelu
++cmd_bm_openinnewtab=Otw\u00f3rz w nowej karcie
+ cmd_bm_openinnewtab_accesskey = w
+ cmd_bm_newfolder=Nowy folder...
+ cmd_bm_newfolder_accesskey = f
+Index: browser/chrome/browser/history/history.dtd
+===================================================================
+RCS file: /l10n/l10n/pl/browser/chrome/browser/history/history.dtd,v
+retrieving revision 1.1
+diff -u -r1.1 history.dtd
+--- browser/chrome/browser/history/history.dtd	16 Apr 2005 16:58:18 -0000	1.1
++++ browser/chrome/browser/history/history.dtd	17 Jul 2005 15:17:48 -0000
+@@ -18,7 +18,7 @@
+ <!ENTITY byDayAndSite.accesskey "t" >
+ <!ENTITY openLinkInWindow.label "Otwórz" >
+ <!ENTITY openLinkInWindow.accesskey "O" >
+-<!ENTITY openInNewTab.label "Otwórz w nowym panelu" >
++<!ENTITY openInNewTab.label "Otwórz w nowej karcie" >
+ <!ENTITY openInNewTab.accesskey "T" >
+ <!ENTITY openInNewWindow.label "Otwórz w nowym oknie" >
+ <!ENTITY openInNewWindow.accesskey "W" >
+Index: browser/chrome/browser/preferences/tabs.dtd
+===================================================================
+RCS file: /l10n/l10n/pl/browser/chrome/browser/preferences/tabs.dtd,v
+retrieving revision 1.1
+diff -u -r1.1 tabs.dtd
+--- browser/chrome/browser/preferences/tabs.dtd	16 Apr 2005 17:11:36 -0000	1.1
++++ browser/chrome/browser/preferences/tabs.dtd	17 Jul 2005 15:17:50 -0000
+@@ -1,14 +1,14 @@
+ 
+-<!ENTITY tabsTab.label                  "Panele">
++<!ENTITY tabsTab.label                  "Karty">
+ <!ENTITY openExternalLinksIn.label      "Otwieraj odnośniki z innych aplikacji:">
+ <!ENTITY newWindow.label                "w nowym oknie">
+-<!ENTITY newTabInRecentWindow.label     "w nowym panelu w ostatnim aktywnym oknie">
+-<!ENTITY recentWindowOrTab.label        "ostatnio aktywnym panelu/oknie">
++<!ENTITY newTabInRecentWindow.label     "w nowej karcie w ostatnim aktywnym oknie">
++<!ENTITY recentWindowOrTab.label        "ostatnio aktywnej karcie lub oknie">
+ <!ENTITY forceNewWindowLinks.label      "Wymuś, by odnośniki otwierające nowe okna otwierały je:">
+-<!ENTITY sameTabOrWindow.label          "w panelu/oknie, w którym znajduje się dany odnośnik">
+-<!ENTITY newTab.label                   "w nowym panelu">
+-<!ENTITY hideTabBar.label               "Ukryj pasek paneli, jeżeli otwarty jest tylko jeden panel">
+-<!ENTITY loadInBackground.label         "Przenoś nowo otwarte panele na pierwszy plan">
+-<!ENTITY loadBookmarksInBackground.label  "Przenoś na pierwszy plan panele otwarte z Zakładek lub Historii">
+-<!ENTITY warnOnClose.label              "Ostrzegaj przed zamknięciem wielu paneli">
++<!ENTITY sameTabOrWindow.label          "w karcie lub oknie, w którym znajduje się dany odnośnik">
++<!ENTITY newTab.label                   "w nowej karcie">
++<!ENTITY hideTabBar.label               "Ukryj pasek kart, jeżeli otwarta jest tylko jedna karta">
++<!ENTITY loadInBackground.label         "Przenoś nowo otwarte karty na pierwszy plan">
++<!ENTITY loadBookmarksInBackground.label  "Przenoś na pierwszy plan karty otwarte z Zakładek lub Historii">
++<!ENTITY warnOnClose.label              "Ostrzegaj przed zamknięciem wielu kart">
+ 
+Index: browser/chrome/help/firebird-index1.rdf
+===================================================================
+RCS file: /l10n/l10n/pl/browser/chrome/help/firebird-index1.rdf,v
+retrieving revision 1.3
+diff -u -r1.3 firebird-index1.rdf
+--- browser/chrome/help/firebird-index1.rdf	7 Jul 2005 21:59:24 -0000	1.3
++++ browser/chrome/help/firebird-index1.rdf	17 Jul 2005 15:17:53 -0000
+@@ -84,7 +84,7 @@
+                 <rdf:li><rdf:Description ID="browsing:forward" nc:name="przejście do przodu" nc:link="using_firebird.xhtml#retracing_your_steps"/></rdf:li>
+                 <rdf:li><rdf:Description ID="browsing:stopping" nc:name="zatrzymywanie" nc:link="using_firebird.xhtml#stopping_and_reloading"/></rdf:li>
+                 <rdf:li><rdf:Description ID="browsing:reloading" nc:name="odświeżanie" nc:link="using_firebird.xhtml#stopping_and_reloading"/></rdf:li>
+-                <rdf:li><rdf:Description ID="browsing:tabbed-browsing" nc:name="przeglądanie w panelach" nc:link="tabbed_browsing.xhtml"/></rdf:li>
++                <rdf:li><rdf:Description ID="browsing:tabbed-browsing" nc:name="przeglądanie w kartach" nc:link="tabbed_browsing.xhtml"/></rdf:li>
+             </rdf:Seq>
+         </nc:subheadings>
+     </rdf:Description>
+@@ -113,7 +113,7 @@
+             <rdf:Seq>              
+                 <rdf:li><rdf:Description ID="customize:themes" nc:name="motywy" nc:link="customization.xhtml#themes"/></rdf:li>
+                 <rdf:li><rdf:Description ID="customize:toolbars" nc:name="paski narzędzi" nc:link="customization.xhtml#how_do_i_customize_the_toolbars"/></rdf:li>
+-				<rdf:li><rdf:Description ID="customize:tabbed-browsing" nc:name="przeglądanie w panelach" nc:link="tabbed_browsing.xhtml#customizing"/></rdf:li>
++				<rdf:li><rdf:Description ID="customize:tabbed-browsing" nc:name="przeglądanie w kartach" nc:link="tabbed_browsing.xhtml#customizing"/></rdf:li>
+                 <rdf:li><rdf:Description ID="customize:extensions" nc:name="rozszerzenia" nc:link="customization.xhtml#extensions"/></rdf:li>
+             </rdf:Seq>
+         </nc:subheadings>
+@@ -349,7 +349,7 @@
+ 				<rdf:li><rdf:Description ID="browsing" nc:name="przeglądanie" nc:link="using_firebird.xhtml#navigating_web_pages"/></rdf:li>
+ 				<rdf:li><rdf:Description ID="web-features-options" nc:name="przeglądanie, opcje" nc:link="prefs.xhtml#web_features_options"/></rdf:li>
+ 				<rdf:li><rdf:Description ID="navigating-web-pages" nc:name="przeglądanie stron" nc:link="using_firebird.xhtml#navigating_web_pages"/></rdf:li>
+-				<rdf:li><rdf:Description ID="tabbed-browsing" nc:name="przeglądanie w panelach" nc:link="tabbed_browsing.xhtml"/></rdf:li>
++				<rdf:li><rdf:Description ID="tabbed-browsing" nc:name="przeglądanie w kartach" nc:link="tabbed_browsing.xhtml"/></rdf:li>
+                 <rdf:li><rdf:Description ID="default-browser" nc:name="przeglądarka, domyślna" nc:link="using_firebird.xhtml#making_firebird_your_default_browser"/></rdf:li>
+                 <rdf:li><rdf:Description ID="privacy-options" nc:name="prywatność" nc:link="prefs.xhtml#privacy_options"/></rdf:li>
+             </rdf:Seq>
+@@ -449,14 +449,14 @@
+   <rdf:Description about="#tabbed-browsing">
+       <nc:subheadings>
+           <rdf:Seq>
+-              <rdf:li><rdf:Description ID="tabbed-browsing-creating-loading-tabs" nc:name="otwieranie paneli" nc:link="tabbed_browsing.xhtml#creating_loading_tabs"/></rdf:li>
++              <rdf:li><rdf:Description ID="tabbed-browsing-creating-loading-tabs" nc:name="otwieranie kart" nc:link="tabbed_browsing.xhtml#creating_loading_tabs"/></rdf:li>
+ 	      <rdf:li><rdf:Description ID="tabbed-browsing-moving-tabs" 
+-nc:name="przenoszenie paneli wewnątrz okna" nc:link="tabbed_browsing.xhtml#moving_tabs"/></rdf:li>
++nc:name="przenoszenie kart wewnątrz okna" nc:link="tabbed_browsing.xhtml#moving_tabs"/></rdf:li>
+               <rdf:li><rdf:Description ID="tabbed-browsing-closing-tabs"
+-nc:name="zamykanie paneli" nc:link="tabbed_browsing.xhtml#closing_tabs"/></rdf:li>
++nc:name="zamykanie kart" nc:link="tabbed_browsing.xhtml#closing_tabs"/></rdf:li>
+               <rdf:li><rdf:Description ID="tabbed-browsing-customizing" nc:name="dostosowywanie" nc:link="tabbed_browsing.xhtml#customizing"/></rdf:li>
+ 		<rdf:li><rdf:Description ID="tabbed-browsing-prefs" nc:name="ustawienia
+-paneli" nc:link="prefs.xhtml#tabs_options"/></rdf:li>
++kart" nc:link="prefs.xhtml#tabs_options"/></rdf:li>
+ 
+             </rdf:Seq>
+       </nc:subheadings>
+@@ -486,7 +486,7 @@
+                 <nc:subheadings>
+                 <rdf:Seq>
+                 <rdf:li> <rdf:Description ID="using:sidebar" nc:name="sidebar" nc:link="using_firebird.xhtml#using_the_sidebar"/> </rdf:li>
+-                <rdf:li> <rdf:Description ID="using:tabbed-browsing" nc:name="panele" nc:link="tabbed_browsing.xhtml"/> </rdf:li>
++                <rdf:li> <rdf:Description ID="using:tabbed-browsing" nc:name="karty" nc:link="tabbed_browsing.xhtml"/> </rdf:li>
+                 <rdf:li> <rdf:Description ID="using:print-preview" nc:name="podgląd wydruku" nc:link="using_firebird.xhtml#using_print_preview"/> </rdf:li>
+ 				<rdf:li> <rdf:Description ID="using:page-setup" nc:name="ustawienia wydruku" nc:link="using_firebird.xhtml#using_page_setup"/> </rdf:li>
+                 </rdf:Seq>
+Index: browser/chrome/help/firebird-toc.rdf
+===================================================================
+RCS file: /l10n/l10n/pl/browser/chrome/help/firebird-toc.rdf,v
+retrieving revision 1.6
+diff -u -r1.6 firebird-toc.rdf
+--- browser/chrome/help/firebird-toc.rdf	11 Jul 2005 08:08:19 -0000	1.6
++++ browser/chrome/help/firebird-toc.rdf	17 Jul 2005 15:18:04 -0000
+@@ -18,7 +18,7 @@
+         <rdf:li> <rdf:Description ID="prefs" nc:name="Opcje przeglądarki" nc:link="prefs.xhtml"/> </rdf:li>
+         <rdf:li> <rdf:Description ID="popup-blocker" nc:name="Kontrola wyskakujących okien" nc:link="popup.xhtml"/> </rdf:li>
+         <rdf:li> <rdf:Description ID="cookies" nc:name="Zarządzanie ciasteczkami" nc:link="cookies.xhtml"/> </rdf:li>
+-        <rdf:li> <rdf:Description ID="tabbed-browsing" nc:name="Przeglądanie w panelach" nc:link="tabbed_browsing.xhtml"/> </rdf:li>
++        <rdf:li> <rdf:Description ID="tabbed-browsing" nc:name="Przeglądanie w kartach" nc:link="tabbed_browsing.xhtml"/> </rdf:li>
+         <rdf:li> <rdf:Description ID="firebird-keyboard-shortcuts" nc:name="Skróty klawiaturowe" nc:link="shortcuts.xhtml"/> </rdf:li>
+         <rdf:li> <rdf:Description ID="firebird-mouse-shortcuts" nc:name="Skróty myszy" nc:link="mouse_shortcuts.xhtml"/> </rdf:li>
+         <rdf:li> <rdf:Description ID="menu" nc:name="Opis menu przeglądarki" nc:link="menu_reference.xhtml"/> </rdf:li>
+@@ -56,7 +56,7 @@
+         <rdf:li><rdf:Description ID="using-firebird-clicking-a-link" nc:name="Odnośniki" nc:link="using_firebird.xhtml#clicking_a_link"/> </rdf:li>
+         <rdf:li><rdf:Description ID="using-firebird-retracing-your-steps" nc:name="Powrót do poprzednio wyświetlonych stron" nc:link="using_firebird.xhtml#retracing_your_steps"/> </rdf:li>
+         <rdf:li><rdf:Description ID="using-firebird-stopping-and-reloading" nc:name="Zatrzymywanie ładowania i odświeżanie witryn" nc:link="using_firebird.xhtml#stopping_and_reloading"/> </rdf:li>
+-        <rdf:li><rdf:Description ID="using-firebird-tabbed-browsing" nc:name="Przeglądanie w panelach" nc:link="using_firebird.xhtml#tabbed_browsing"/> </rdf:li>
++        <rdf:li><rdf:Description ID="using-firebird-tabbed-browsing" nc:name="Przeglądanie w kartach" nc:link="using_firebird.xhtml#tabbed_browsing"/> </rdf:li>
+         <rdf:li><rdf:Description ID="using-firebird-sidebar" nc:name="Korzystanie z sidebaru" nc:link="using_firebird.xhtml#using_the_Sidebar"/> </rdf:li>
+         <rdf:li><rdf:Description ID="using-firebird-copying-saving-and-printing-pages" nc:name="Kopiowanie, zapisywanie i drukowanie stron" nc:link="using_firebird.xhtml#copying_saving_and_printng_pages"/> </rdf:li>
+       </rdf:Seq>
+@@ -163,10 +163,10 @@
+   <rdf:Description about="#tabbed-browsing">
+     <nc:subheadings>
+       <rdf:Seq>
+-        <rdf:li> <rdf:Description ID="tabbed-browsing-creating-loading-tabs" nc:name="Tworzenie nowych paneli" nc:link="tabbed_browsing.xhtml#creating_loading_tabs"/> </rdf:li>
+-        <rdf:li> <rdf:Description ID="tabbed-browsing-moving-tabs" nc:name="Przenoszenie paneli wewnątrz okna" nc:link="tabbed_browsing.xhtml#moving_tabs"/> </rdf:li>
+-        <rdf:li> <rdf:Description ID="tabbed-browsing-closing-tabs" nc:name="Zamykanie paneli" nc:link="tabbed_browsing.xhtml#closing_tabs"/> </rdf:li>
+-        <rdf:li> <rdf:Description ID="tabbed-browsing-customizing" nc:name="Ustawienia dotyczące przeglądania w panelach" nc:link="tabbed_browsing.xhtml#customizing"/> </rdf:li>
++        <rdf:li> <rdf:Description ID="tabbed-browsing-creating-loading-tabs" nc:name="Tworzenie nowych kart" nc:link="tabbed_browsing.xhtml#creating_loading_tabs"/> </rdf:li>
++        <rdf:li> <rdf:Description ID="tabbed-browsing-moving-tabs" nc:name="Przenoszenie kart wewnątrz okna" nc:link="tabbed_browsing.xhtml#moving_tabs"/> </rdf:li>
++        <rdf:li> <rdf:Description ID="tabbed-browsing-closing-tabs" nc:name="Zamykanie kart" nc:link="tabbed_browsing.xhtml#closing_tabs"/> </rdf:li>
++        <rdf:li> <rdf:Description ID="tabbed-browsing-customizing" nc:name="Ustawienia dotyczące przeglądania w kartach" nc:link="tabbed_browsing.xhtml#customizing"/> </rdf:li>
+         <rdf:li> <rdf:Description ID="tabbed-browsing-tips-tricks" nc:name="Porady" nc:link="tabbed_browsing.xhtml#tips_tricks"/> </rdf:li>
+        </rdf:Seq>
+     </nc:subheadings>
+@@ -178,7 +178,7 @@
+         <rdf:li> <rdf:Description ID="prefs-general" nc:name="Ogólne" nc:link="prefs.xhtml#general_options"/> </rdf:li>
+         <rdf:li> <rdf:Description ID="prefs-privacy" nc:name="Prywatność" nc:link="prefs.xhtml#privacy_options"/> </rdf:li>
+         <rdf:li> <rdf:Description ID="prefs-content" nc:name="Treść" nc:link="prefs.xhtml#content_options"/> </rdf:li>
+-        <rdf:li> <rdf:Description ID="prefs-tabs"    nc:name="Panele"    nc:link="prefs.xhtml#tabs_options"/> </rdf:li>
++        <rdf:li> <rdf:Description ID="prefs-tabs"    nc:name="Karty"    nc:link="prefs.xhtml#tabs_options"/> </rdf:li>
+         <rdf:li> <rdf:Description ID="prefs-downloads" nc:name="Pobieranie plików" nc:link="prefs.xhtml#downloads_options"/> </rdf:li>
+         <rdf:li> <rdf:Description ID="prefs-advanced" nc:name="Zaawansowane" nc:link="prefs.xhtml#advanced_options"/> </rdf:li>
+       </rdf:Seq>
+@@ -268,10 +268,10 @@
+     <nc:subheadings>
+       <rdf:Seq>
+         <rdf:li> <rdf:Description ID="menu-file-new-window" nc:name="Nowe okno" nc:link="menu_reference.xhtml#new_window"/> </rdf:li>
+-        <rdf:li> <rdf:Description ID="menu-file-new-tab" nc:name="Nowy panel" nc:link="menu_reference.xhtml#new_tab"/> </rdf:li>
++        <rdf:li> <rdf:Description ID="menu-file-new-tab" nc:name="Nowa karta" nc:link="menu_reference.xhtml#new_tab"/> </rdf:li>
+         <rdf:li> <rdf:Description ID="menu-file-open-location" nc:name="Otwórz adres..." nc:link="menu_reference.xhtml#open_location"/> </rdf:li>
+         <rdf:li> <rdf:Description ID="menu-file-open-file" nc:name="Otwórz plik..." nc:link="menu_reference.xhtml#open_file"/> </rdf:li>
+-        <rdf:li> <rdf:Description ID="menu-file-close-tab" nc:name="Zamknij panel" nc:link="menu_reference.xhtml#close_tab"/> </rdf:li>
++        <rdf:li> <rdf:Description ID="menu-file-close-tab" nc:name="Zamknij kartę" nc:link="menu_reference.xhtml#close_tab"/> </rdf:li>
+         <rdf:li> <rdf:Description ID="menu-file-close" nc:name="Zamknij (Okno)" nc:link="menu_reference.xhtml#close"/> </rdf:li>
+         <rdf:li> <rdf:Description ID="menu-file-save-page-as" nc:name="Zapisz stronę jako..." nc:link="menu_reference.xhtml#save_page_as"/> </rdf:li>
+         <rdf:li> <rdf:Description ID="menu-file-send-page" nc:name="Wyślij odnośnik..." nc:link="menu_reference.xhtml#send_page"/> </rdf:li>
+Index: browser/chrome/help/forieusers.xhtml
+===================================================================
+RCS file: /l10n/l10n/pl/browser/chrome/help/forieusers.xhtml,v
+retrieving revision 1.3
+diff -u -r1.3 forieusers.xhtml
+--- browser/chrome/help/forieusers.xhtml	4 Jul 2005 09:42:58 -0000	1.3
++++ browser/chrome/help/forieusers.xhtml	17 Jul 2005 15:18:06 -0000
+@@ -85,12 +85,11 @@
+ <strong>ponownie odkryć Sieć</strong>. Poniżej wymienione zostały najważniejsze możliwości, które nie 
+ są dostępne w Internet Explorerze:</p>
+ <ul>
+-  <li><strong>Przeglądanie w panelach</strong>: Jedną z najbardziej cenionych przez nowych
++  <li><strong>Przeglądanie w kartach</strong>: Jedną z najbardziej cenionych przez nowych
+   użytkowników funkcji jest możliwość przeglądania wielu stron jednocześnie w tym samym 
+-  oknie przeglądarki. Wszystko to dzięki temu, że dowolną stronę można otworzyć w osobnym
+-  panelu, który posiada całą funkcjonalność nowego okna przeglądarki, lecz nie powiela jego wad. To dzięki panelom w przeglądrce &brandShortName; stroną domową może być dowolna liczba stron,
+-  zatem połączenie z kilkoma ulubionymi serwisami sprowadza się do naciśnięcia jednego przycisku.<br />Więcej informacji mozna znaleźć w <a
+-    href="tabbed_browsing.xhtml">rozdziale o przeglądaniu w panelach</a>.
++  oknie przeglądarki. Wszystko to dzięki temu, że dowolną stronę można otworzyć w osobnej
++  karcie, która posiada całą funkcjonalność nowego okna przeglądarki, lecz nie powiela jego wad. To dzięki kartom w przeglądrce &brandShortName; stroną domową może być dowolna liczba stron,  zatem połączenie z kilkoma ulubionymi serwisami sprowadza się do naciśnięcia jednego przycisku.<br />Więcej informacji mozna znaleźć w <a
++    href="tabbed_browsing.xhtml">rozdziale o przeglądaniu w kartach</a>.
+     </li>
+  
+ 
+Index: browser/chrome/help/menu_reference.xhtml
+===================================================================
+RCS file: /l10n/l10n/pl/browser/chrome/help/menu_reference.xhtml,v
+retrieving revision 1.6
+diff -u -r1.6 menu_reference.xhtml
+--- browser/chrome/help/menu_reference.xhtml	7 Jul 2005 21:59:25 -0000	1.6
++++ browser/chrome/help/menu_reference.xhtml	17 Jul 2005 15:18:15 -0000
+@@ -43,7 +43,7 @@
+ <p>Wyświetla okno <a href="prefs.xhtml">&pref.pluralCaps;</a>, w którym użytkownik może zmienić ustawienia przeglądarki &brandShortName;.</p>
+ 
+     <h3 id="quit_mac">Skończ &brandShortName;</h3>
+-<p>Zamyka wszystkie okna przeglądarki &brandShortName;, przerywa pobieranie plików. Aby zapobiec przypadkowemu zamknięciu, gdy otwartych jest kilka paneli lub okien, wyświetlona zostanie prośba o potwierdzenie. Prośbę o potwierdzenie można wyłączyć &ndash; wystarczy odznaczyć pole <em>Warn when closing multiple tabs</em> na karcie <em>Panele</em> w oknie &pref.menuPath;. Jeśli trwa pobieranie plików, &brandShortName; również ostrzeże użytkownika przed przypadkowym zamknięciem programu.</p>
++<p>Zamyka wszystkie okna przeglądarki &brandShortName;, przerywa pobieranie plików. Aby zapobiec przypadkowemu zamknięciu, gdy otwartych jest kilka kart lub okien, wyświetlona zostanie prośba o potwierdzenie. Prośbę o potwierdzenie można wyłączyć &ndash; wystarczy odznaczyć pole <em>Ostrzegaj przed zamknięciem wielu kart</em> na karcie <em>Karty</em> w oknie &pref.menuPath;. Jeśli trwa pobieranie plików, &brandShortName; również ostrzeże użytkownika przed przypadkowym zamknięciem programu.</p>
+ 
+ 
+ </div>
+@@ -53,8 +53,8 @@
+   <h3 id="new_window">Nowe okno</h3>
+   <p>Otwiera nowe okno przeglądarki &brandShortName; i wczytuje do niego stronę domową.</p>
+ 
+-  <h3 id="new_tab">Nowy panel</h3>
+-  <p>Otwiera nowy (pusty) panel w aktywnym oknie przeglądarki &brandShortName;.</p>
++  <h3 id="new_tab">Nowa karta</h3>
++  <p>Otwiera nową (pustą) kartę w aktywnym oknie przeglądarki &brandShortName;.</p>
+ 
+  <h3 id="open_location">Otwórz adres...</h3>
+   <p>Przenosi kursor do paska adresu, gdzie można wpisać adres witryny do odwiedzenia.</p>
+@@ -62,8 +62,8 @@
+  <h3 id="open_file">Otwórz plik...</h3>
+   <p>Wczytuje do aktywnego okna plik znajdujący się na dysku lokalnym lub w sieci lokalnej. Użytkownik wskazuje plik w oknie dialogowym Otwórz plik. Przeglądarka &brandShortName; pozwala na przeglądanie plików HTML, XML, graficznych i tekstowych.</p>
+ 
+-  <h3 id="close_tab">Zamknij panel</h3>
+-  <p>Zamyka aktywny panel &mdash; aktywny staje się panel położony na prawo od niego. Polecenie to jest widoczne tylko wtedy, gdy otwarty jest przynajmniej jeden panel przeglądarki.</p>
++  <h3 id="close_tab">Zamknij kartę</h3>
++  <p>Zamyka aktywną kartę &mdash; aktywna staje się karta położona na prawo od niej. Polecenie to jest widoczne tylko wtedy, gdy otwarta jest przynajmniej jedna karta przeglądarki.</p>
+ 
+    <h3 id="close">Zamknij okno</h3>
+    <p>Zamyka aktywne okno przeglądarki.</p>
+@@ -91,7 +91,7 @@
+ 
+ <div class="noMac">    
+ <h3 id="exit">Zakończ</h3>
+-<p>Zamyka wszystkie okna przeglądarki &brandShortName;, przerywa pobieranie plików. Aby zapobiec przypadkowemu zamknięciu, gdy otwartych jest kilka paneli lub okien, wyświetlona zostanie prośba o potwierdzenie. Prośbę o potwierdzenie można wyłączyć &ndash; wystarczy odznaczyć pole <em>Warn when closing multiple tabs</em> na karcie <em>Panele</em> w oknie &pref.menuPath;. Jeśli trwa pobieranie plików, &brandShortName; również ostrzeże użytkownika przed przypadkowym zamknięciem programu.</p>
++<p>Zamyka wszystkie okna przeglądarki &brandShortName;, przerywa pobieranie plików. Aby zapobiec przypadkowemu zamknięciu, gdy otwartych jest kilka kart lub okien, wyświetlona zostanie prośba o potwierdzenie. Prośbę o potwierdzenie można wyłączyć &ndash; wystarczy odznaczyć pole <em>Ostrzegaj przed zamknięciem wielu kart</em> w panelu <em>Karty</em> w oknie &pref.menuPath;. Jeśli trwa pobieranie plików, &brandShortName; również ostrzeże użytkownika przed przypadkowym zamknięciem programu.</p>
+ </div>
+ 
+ 
+@@ -210,7 +210,7 @@
+ 
+   <h3 id="home">Strona domowa</h3>
+   <p>Wyświetla stronę domową. Polecenie działa tak samo jak naciśnięcie przycisku <em>Strona domowa</em> na pasku narzędzi nawigacyjnych. 
+-  Chcąc zmienić stronę domową należy wybrać &pref.menuPath;<span class="menuPath"> &gt; Ogólne</span>, a następnie nacisnąć jeden z przycisków: <em>Użyj bieżącej strony</em> (jeśli akurat otwartych jest kilka paneli, można mieć kilka stron domowych), <em>Użyj zakładki...</em> (pozwala na wybór strony lub kilku stron z zakładek), <em>Użyj pustej strony</em> lub wreszcie samemu wpisać nowy adres strony domowej.</p>
++  Chcąc zmienić stronę domową należy wybrać &pref.menuPath;<span class="menuPath"> &gt; Ogólne</span>, a następnie nacisnąć jeden z przycisków: <em>Użyj bieżącej strony</em> (jeśli akurat otwartych jest kilka kart, można mieć kilka stron domowych), <em>Użyj zakładki...</em> (pozwala na wybór strony lub kilku stron z zakładek), <em>Użyj pustej strony</em> lub wreszcie samemu wpisać nowy adres strony domowej.</p>
+ 
+   <h3 id="go_history">Historia</h3>
+     <p>Wyświetla Sidebar Historii z listą ostatnio odwiedzanych stron. By określić jak długo przeglądarka ma pamiętać odwiedzane strony należy wybrać: &pref.menuPath;<span class="menuPath"> &gt; Prywatność</span>, a następnie przejść do karty <em>Historia</em> i określić liczbę dni.</p>
+@@ -221,7 +221,7 @@
+ 
+   <h3 id="add_to_bookmarks">Dodaj do zakładek...</h3>
+   <p>Pozwala dodać bieżącą stronę do zakładek. W oknie dialogowym można podać nazwę zakładki i folder, w którym ma zostać zapisana - w razie potrzeby można utworzyć nowy folder.
+-  Jako zakładkę zapisać można również grupę aktualnie otwartych paneli.</p>
++  Jako zakładkę zapisać można również grupę aktualnie otwartych kart.</p>
+ 
+ 
+   <h3 id="manage_bookmarks">Zarządzaj zakładkami...</h3>
+Index: browser/chrome/help/mouse_shortcuts.xhtml
+===================================================================
+RCS file: /l10n/l10n/pl/browser/chrome/help/mouse_shortcuts.xhtml,v
+retrieving revision 1.3
+diff -u -r1.3 mouse_shortcuts.xhtml
+--- browser/chrome/help/mouse_shortcuts.xhtml	4 Jul 2005 09:42:58 -0000	1.3
++++ browser/chrome/help/mouse_shortcuts.xhtml	17 Jul 2005 15:18:15 -0000
+@@ -38,10 +38,10 @@
+       <td>&nbsp;</td>
+     </tr>
+     <tr>
+-      <td>Otwórz nowy panel</td>
+-      <td>Podwójne kliknięcie na pasku paneli</td>
++      <td>Otwórz nową kartę</td>
++      <td>Podwójne kliknięcie na pasku kart</td>
+       <td>&nbsp;</td>
+-      <td>Podwójne kliknięcie na pasku paneli</td>
++      <td>Podwójne kliknięcie na pasku kart</td>
+     </tr>
+     <tr>
+       <td>Otwórz odnośnik w nowym oknie</td>
+@@ -50,20 +50,20 @@
+       <td>&nbsp;</td>
+     </tr>
+     <tr>
+-      <td>Otwórz odnośnik w nowym panelu (w tle)</td>
++      <td>Otwórz odnośnik w nowej karcie (w tle)</td>
+       <td>&accelKey;+Lewy przycisk myszy<br/>Środkowy przycisk myszy</td>
+       <td>&nbsp;</td>
+       <td>&accelKey;+&shiftKey;+Lewy przycisk myszyk<br/>Środkowy przycisk myszy</td>
+     </tr>
+     <tr>
+-      <td>Otwórz odnośnik w nowym panelu (i przejdź do niego)</td>
++      <td>Otwórz odnośnik w nowej karcie (i przejdź do niej)</td>
+       <td>&shiftKey;+&accelKey;+Lewy przycisk myszy<br/>&shiftKey;Środkowy przycisk myszy</td>
+       <td>&nbsp;</td>
+       <td>&shiftKey;+Lewy przycisk myszy</td>
+     </tr>
+     <tr class="unix">
+       <td>Przejdź do adresu ze schowka</td>
+-      <td>Kliknięcie środkowym przyciskiem myszy na panelu</td>
++      <td>Kliknięcie środkowym przyciskiem myszy na karcie</td>
+       <td>&nbsp;</td>
+       <td>&nbsp;</td>
+     </tr>
+@@ -87,8 +87,8 @@
+       <td>&nbsp;</td>
+     </tr>
+     <tr>
+-      <td>Zamknij panel</td>
+-      <td>Kliknięcie środkowym przyciskiem myszy na panelu</td>
++      <td>Zamknij kartę</td>
++      <td>Kliknięcie środkowym przyciskiem myszy na karcie</td>
+       <td>&nbsp;</td>
+       <td>&shiftKey;+Lewy przycisk myszy</td>
+     </tr>
+Index: browser/chrome/help/prefs.xhtml
+===================================================================
+RCS file: /l10n/l10n/pl/browser/chrome/help/prefs.xhtml,v
+retrieving revision 1.5
+diff -u -r1.5 prefs.xhtml
+--- browser/chrome/help/prefs.xhtml	7 Jul 2005 21:59:25 -0000	1.5
++++ browser/chrome/help/prefs.xhtml	17 Jul 2005 15:18:27 -0000
+@@ -28,7 +28,7 @@
+     <li><a href="#general_options">Ogólne</a></li>
+     <li><a href="#privacy_options">Prywatność</a></li>
+     <li><a href="#content_options">Treść</a></li>
+-    <li><a href="#tabs_options">Panele</a></li>
++    <li><a href="#tabs_options">Karty</a></li>
+     <li><a href="#downloads_options">Pobieranie</a></li>
+     <li><a href="#advanced_options">Zaawansowane</a></li>
+     
+@@ -41,17 +41,17 @@
+ 	<p>Panel dostępny jest po kliknięciu ikony Ogólne w lewej cześci okna opcji.</p>
+ 	
+ 	<h3 id="home_page">Strona domowa</h3>
+-	<p>W tym miejscu można określić witrynę (lub grupę witryn w panelach), które zostaną
++	<p>W tym miejscu można określić witrynę (lub grupę witryn w kartach), które zostaną
+ 	otwarte natychmiast po uruchomieniu przeglądarki &brandShortName;. Adres wybranej witryny
+ 	można wpisać pole <em>Adres</em>.</p>
+ 	
+ 	<p>Aby ustawić aktualnie wyświetlaną witrynę jako stronę domową, należy nacisnąć przycisk
+-	<em>Użyj bieżącej strony</em>. W przypadku, gdy otwartych jest więcej paneli, przycisk ten
+-	spowoduje ustawienie <strong>grupy paneli jako strony domowej</strong>.</p>
++	<em>Użyj bieżącej strony</em>. W przypadku, gdy otwartych jest więcej kart, przycisk ten
++	spowoduje ustawienie <strong>grupy kart jako strony domowej</strong>.</p>
+ 
+ 	<p>Aby ustawić jako stronę domową jedną z zakładek, należy nacisnąć przycisk 
+ 	<em>Użyj zakładki...</em>. Z listy zakładek można wybrać także cały folder. W takim przypadku
+-	każda zakładka z folderu zostanie otwarta w osobnym panelu.</p>
++	każda zakładka z folderu zostanie otwarta w osobnej karcie.</p>
+ 
+ 	<p>Aby nie otwierać żadnej strony po uruchomieniu przeglądarki, należy skorzystać z przycisku
+ 	<em>Użyj pustej strony</em>.</p>
+@@ -116,7 +116,7 @@
+ 	&brandShortName; czyszczenie danych przy wyłączaniu programu. &pref.pluralCaps;
+ 	z tym związane znajdują się w oknie <em>Sanitize &brandShortName;...</em>.</p>
+ 
+-  <p>Aby wyświetlić ustawienia dotyczące konkretnych elementów związanych z prywatnością, należy kliknąć na danym panelu.</p>
++  <p>Aby wyświetlić ustawienia dotyczące konkretnych elementów związanych z prywatnością, należy kliknąć na danej karcie.</p>
+ 
+   <h3 id="history">Historia</h3>
+   <p>W tym miejscu można określić jak długo przeglądarka &brandShortName; będzie przechowywać adresy
+@@ -296,37 +296,37 @@
+ 
+ 
+ 
+-<h2 id="tabs_options">&pref.pluralCaps;: Panele</h2>
++<h2 id="tabs_options">&pref.pluralCaps;: Karty</h2>
+   <p><em>Otwieraj odnośniki z innych aplikacji w:</em><br/>
+ 	Kiedy inne aplikacje próbują otworzyć stronę internetową, &brandShortName;
+-	otwiera ją w ostatnio wyświetlanym panelu lub oknie. Można zmienić to zachowanie
++	otwiera ją w ostatnio wyświetlanej karcie lub oknie. Można zmienić to zachowanie
+ 	korzystając z tego ustawienia.</p>
+ 
+   <p><em>Wymuś, by odnośniki otwierające nowe okna otwierały je:</em><br/>
+     &brandShortName; otwiera odnośniki w nowych oknach, jeśli tego żąda dana strona.
+-	Jeśli użytkownik korzysta z paneli, takie zachowanie może być niewygodne.
++	Jeśli użytkownik korzysta z kart, takie zachowanie może być niewygodne.
+ 	Można sprawić, żeby program &brandShortName; otwierał takie odnośniki
+-	w inny sposób &ndash; w nowym panelu lub w panelu/oknie, w którym znajduje się
++	w inny sposób &ndash; w nowej karcie lub w oknie/karcie, w którym(-ej) znajduje się
+ 	dany odnośnik. W tym miejscu można ustalić, co &brandShortName; ma robić
+ 	w takiej sytuacji.</p>
+ 
+-  <p><em>Ukryj pasek paneli, jeżeli otwarty jest tylko jeden panel</em><br/>
++  <p><em>Ukryj pasek kart, jeżeli otwarta jest tylko jedna karta</em><br/>
+ 	Jeśli w oknie programu &brandShortName; wyświetlana jest tylko jedna strona,
+-	pasek paneli domyślnie nie jest wyświetlany. Odznacz to pole, jeśli chcesz, by pasek
+-	paneli był zawsze wyświetlany.</p>
++	pasek kart domyślnie nie jest wyświetlany. Odznacz to pole, jeśli chcesz, by pasek
++	kart był zawsze wyświetlany.</p>
+ 
+-  <p><em>Przenoś nowo otwarte panele na pierwszy plan</em><br/>
++  <p><em>Przenoś nowo otwarte karty na pierwszy plan</em><br/>
+ 	Kiedy odnośnik zostanie kliknięty środkowym przyciskiem myszy (lub lewym,
+-	kiedy użytkownik przytrzyma przycisk &accelKey;), odnośniki zostaną otwarte
+-	w nowym panelu. Domyślnie taki panel zostanie załadowany w tle. Zaznacz to pole,
+-	jeśli chcesz, by nowo otwarty panel był natychmiast przenoszony na pierwszy plan.</p>
++	jeśli użytkownik przytrzyma przycisk &accelKey;), odnośniki zostaną otwarte
++	w nowej karcie. Domyślnie taka karta zostanie załadowana w tle. Zaznacz to pole,
++	jeśli chcesz, by nowo otwarta karta była natychmiast przenoszona na pierwszy plan.</p>
+ 
+-  <p><em>Ostrzegaj przed zamknięciem wielu paneli</em><br/>
+-	Podczas zamykania okna zawierającego wiele paneli &brandShortName; poprosi
++  <p><em>Ostrzegaj przed zamknięciem wielu kart</em><br/>
++	Podczas zamykania okna zawierającego wiele kart &brandShortName; poprosi
+ 	o potwierdzenie. Dzięki temu unika się sytuacji, w której przez przypadek
+-	zamknięte zostało całe okno, kiedy użytkownik chciał zamknąć tylko dany panel.
+-	Odznacz to pole by to ostrzeżenie się nie pojawiało i program &brandShortName;
+-	zamykał okno automatycznie, nawet jeśli otwarte jest wiele paneli.</p>
++	zamknięte zostało całe okno, kiedy użytkownik chciał zamknąć tylko daną kartę.
++	Odznacz to pole, by to ostrzeżenie się nie pojawiało i program &brandShortName;
++	zamykał okno automatycznie, nawet jeśli otwarte jest wiele kart.</p>
+ 
+   <h2 id="downloads_options">&pref.pluralCaps;: Pobieranie</h2>
+ 
+Index: browser/chrome/help/shortcuts.xhtml
+===================================================================
+RCS file: /l10n/l10n/pl/browser/chrome/help/shortcuts.xhtml,v
+retrieving revision 1.7
+diff -u -r1.7 shortcuts.xhtml
+--- browser/chrome/help/shortcuts.xhtml	7 Jul 2005 21:59:25 -0000	1.7
++++ browser/chrome/help/shortcuts.xhtml	17 Jul 2005 15:18:34 -0000
+@@ -337,10 +337,10 @@
+   </tbody>
+   <tbody id="windows_tabs">
+     <tr>
+-      <th colspan="4">Okna i panele</th>
++      <th colspan="4">Okna i karty</th>
+     </tr>
+     <tr>
+-      <td>Zamknij panel</td>
++      <td>Zamknij kartę</td>
+ 
+       <td>&accelKey;+<kbd>W</kbd>
+         <span class="noMac"><br/>&ctrlKey;+<kbd>F4</kbd></span></td>
+@@ -365,7 +365,7 @@
+     -->
+     <tr>
+ 
+-      <td>Przenieś panel w lewo (kiedy panel jest zaznaczony)</td>
++      <td>Przenieś kartę w lewo (kiedy karta jest zaznaczona)</td>
+       <td>&accelKey;+<kbd>Strzałka w lewo</kbd><br/>
+           &accelKey;+<kbd>Up Arrow</kbd></td>
+       <td>&nbsp;</td>
+@@ -373,7 +373,7 @@
+     </tr>
+ 
+     <tr>
+-      <td>Przenieś panel w prawo (kiedy panel jest zaznaczony)</td>
++      <td>Przenieś kartę w prawo (kiedy karta jest zaznaczona)</td>
+       <td>&accelKey;+<kbd>Strzałka w prawo</kbd><br/>
+           &accelKey;+<kbd>Down Arrow</kbd></td>
+       <td>&nbsp;</td>
+@@ -381,21 +381,21 @@
+ 
+     </tr>
+     <tr>
+-      <td>Przenieś panel na początek (kiedy panel jest zaznaczony)</td>
++      <td>Przenieś kartę na początek (kiedy karta jest zaznaczona)</td>
+       <td>&accelKey;+<kbd>Home</kbd></td>
+       <td>&nbsp;</td>
+       <td>&nbsp;</td>
+     </tr>
+ 
+     <tr>
+-      <td>Przenieś panel na koniec (kiedy panel jest zaznaczony)</td>
++      <td>Przenieś kartę na koniec (kiedy karta jest zaznaczona)</td>
+       <td>&accelKey;+<kbd>End</kbd></td>
+       <td>&nbsp;</td>
+       <td>&nbsp;</td>
+     </tr>
+     <tr>
+ 
+-      <td>Nowy panel</td>
++      <td>Nowa karta</td>
+       <td>&accelKey;+<kbd>T</kbd></td>
+       <td>&nbsp;</td>
+       <td>&accelKey;+&altKey;+<kbd>N</kbd></td>
+@@ -409,7 +409,7 @@
+     </tr>
+ 
+     <tr>
+-      <td>Następny panel</td>
++      <td>Następna karta</td>
+       <td><span class="noMac">&ctrlKey;+<kbd>Tab</kbd></span>
+         <span class="mac">&accelKey;+&altKey;+Strzałka w prawo</span><br/>
+         &ctrlKey;+<kbd>Page Down</kbd></td>
+@@ -423,14 +423,14 @@
+         <kbd>2</kbd></td>
+     </tr>
+     <tr>
+-      <td>Otwórz adres w nowym panelu</td>
++      <td>Otwórz adres w nowej karcie</td>
+       <td>&altKey;+&enterKey;</td>
+       <td>&nbsp;</td>
+       <td>&shiftKey;+&enterKey;</td>
+ 
+     </tr>
+     <tr>
+-      <td>Poprzedni panel</td>
++      <td>Poprzednia karta</td>
+       <td><span class="noMac">&ctrlKey;+&shiftKey;+<kbd>Tab</kbd></span>
+         <span class="mac">&accelKey;+&altKey;+Strzałka w lewo</span><br/>
+         &ctrlKey;+<kbd>Page Up</kbd></td>
+@@ -444,7 +444,7 @@
+         <kbd>I</kbd></td>
+     </tr>
+     <tr>
+-      <td>Wybierz panel (1 do 9)</td>
++      <td>Wybierz kartę (od 1 do 9)</td>
+       <td><span class="noUnix">&accelKey;</span><span
+         class="unix">&altKey;</span>+(<kbd>1</kbd> to <kbd>9</kbd>)</td>
+ 
+Index: browser/chrome/help/tabbed_browsing.xhtml
+===================================================================
+RCS file: /l10n/l10n/pl/browser/chrome/help/tabbed_browsing.xhtml,v
+retrieving revision 1.4
+diff -u -r1.4 tabbed_browsing.xhtml
+--- browser/chrome/help/tabbed_browsing.xhtml	4 Jul 2005 09:42:58 -0000	1.4
++++ browser/chrome/help/tabbed_browsing.xhtml	17 Jul 2005 15:18:37 -0000
+@@ -13,114 +13,112 @@
+ -->
+ <html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+-	<title>Przeglądanie w panelach</title>
++	<title>Przeglądanie w kartach</title>
+ 	<link rel="stylesheet" type="text/css" href="chrome://help/skin/helpFileLayout.css"/>
+ </head>
+ 
+ <body>
+-<h1>Przeglądanie stron w panelach</h1>
++<h1>Przeglądanie stron w kartach</h1>
+ 
+-<p>Przeglądanie w panelach pozwala otwierać wiele stron internetowych w jednym oknie.
+-Odnośniki otwierane w nowych panelach ładują się w tle, podczas przeglądania innych stron.
+-Korzystanie z przeglądania w panelach jest opcjonalne, ale znacznie ułatwia przeglądanie stron WWW.</p>
++<p>Przeglądanie w kartach pozwala otwierać wiele stron internetowych w jednym oknie.
++Odnośniki otwierane w nowych kartach ładują się w tle podczas przeglądania innych stron.
++Korzystanie z przeglądania w kartach jest opcjonalne, ale znacznie ułatwia przeglądanie stron WWW.</p>
+ 
+ <div class="contentsBox">W tym rozdziale:
+   <ul>
+-    <li><a href="#creating_loading_tabs">Tworzenie nowych paneli</a></li>
+-    <li><a href="#moving_tabs">Przenoszenie paneli wewnątrz okna</a></li>
+-    <li><a href="#closing_tabs">Zamykanie paneli</a></li>
+-    <li><a href="#customizing">Ustawienia dotyczące przeglądania w panelach</a></li>
++    <li><a href="#creating_loading_tabs">Tworzenie nowych kart</a></li>
++    <li><a href="#moving_tabs">Przenoszenie kart wewnątrz okna</a></li>
++    <li><a href="#closing_tabs">Zamykanie kart</a></li>
++    <li><a href="#customizing">Ustawienia dotyczące przeglądania w kartach</a></li>
+     <li><a href="#tips_tricks">Porady</a></li>
+   </ul>
+ </div>
+ 
+-  <h2 id="creating_loading_tabs">Otwieranie nowych paneli</h2>
++  <h2 id="creating_loading_tabs">Otwieranie nowych kart</h2>
+ 
+-  <p>Aby otworzyć nowy panel, należy: 
++  <p>Aby otworzyć nową kartę, należy wykonać jedną z poniższych czynności: 
+   <ul>
+-	<li>nacisnąć klawisze &accelKey;+<kbd>T</kbd>, lub</li>
+-	<li>wybrać z menu: <span class="menuPath">Plik &gt; Nowy panel</span>, lub</li>
+-	<li>kliknąć dwukrotnie lewym klawiszem myszy w obrębie paska paneli.</li>
++	<li>nacisnąć klawisze &accelKey;+<kbd>T</kbd></li>
++	<li>wybrać z menu: <span class="menuPath">Plik &gt; Nowa karta</span></li>
++	<li>kliknąć dwukrotnie lewym klawiszem myszy w obrębie paska kart.</li>
+   </ul>
+   </p>
+ 
+-  <p>Aby otworzyć odnośnik w nowym panelu, należy:</p>
++  <p>Aby otworzyć odnośnik w nowej karcie, należy wykonać jedną z poniższych czynności:</p>
+ 
+   <ul>
+     <li>kliknąć odnośnik środkowym klawiszem myszy (w większości myszy z rolkami rolka działa
+-	także jako przycisk) lub</li>
+-    <li>przeciągnąć odnośnik na puste miesjce w obrębie paska paneli (gdy otwarta jest tylko jedna strona, pasek paneli
+-	może być niewidoczny; opcje opowiadające za widoczność paska paneli opisano w części <a
+-      href="#customizing">Ustawienia dotyczące paneli</a>), lub</li>
+-    <li>przeciągnąć odnośnik na nazwę otwartego już panelu, lub</li>
++	także jako przycisk)</li>
++    <li>przeciągnąć odnośnik na puste miejsce w obrębie paska kart (gdy otwarta jest tylko jedna strona, pasek kart może być niewidoczny; opcje odpowiadające za widoczność paska kart opisano w części <a
++      href="#customizing">Ustawienia dotyczące kart</a>)</li>
++    <li>przeciągnąć odnośnik na nazwę otwartej już karty</li>
+     <li><span class="noMac">kliknąć prawym klawiszem myszy</span><span
+       class="mac">trzymając wciśnięty klawisz &accelKey;, kliknąć</span> odnośnik i z menu kontekstowego wybrać:
+-	  <span class="menuPath">Otwórz odnośnik w nowym panelu</span>.</li>
++	  <span class="menuPath">Otwórz odnośnik w nowej karcie</span>.</li>
+   </ul>
+ 
+-<p>Aby otworzyć w nowym panelu adres URL wpisany w pasku adresu, po wprowadzeniu go
++<p>Aby otworzyć w nowej karcie adres URL wpisany w pasku adresu, po wprowadzeniu go
+ do tego paska należy nacisnąć klawisze &altKey;+&enterKey;.</p>
+ 
+-  <h2 id="moving_tabs">Przenoszenie paneli wewnątrz okna</h2>
+-  <p>Panele wyświetlane są w kolejności, w jakiej zostały otwarte, co nie zawsze musi być pożądane. Aby przenieść panel w inne miejsce w oknie programu &brandShortName;, po prostu wystarczy przeciągnąć je używając myszy. Podczas przeciągania panelu &brandShortName; wyświetla mały wskaźnik pokazujący miejsce, do którego panel zostanie przeciągnięty. Można także użyć <a href="#keyboard_shortcuts">skrótów klawiaturowych</a> do przenoszenia panelu wewnątrz okna.</p>
++  <h2 id="moving_tabs">Przenoszenie kart wewnątrz okna</h2>
++  <p>Karty wyświetlane są w kolejności, w jakiej zostały otwarte, co nie zawsze musi być pożądane. Aby przenieść kartę w inne miejsce w oknie programu &brandShortName;, po prostu wystarczy przeciągnąć ją używając myszy. Podczas przeciągania karty &brandShortName; wyświetla mały wskaźnik pokazujący miejsce, do którego karta zostanie przeciągnięta. Można także użyć <a href="#keyboard_shortcuts">skrótów klawiaturowych</a> do przenoszenia karty wewnątrz okna.</p>
+ 
+-  <h2 id="closing_tabs">Zamykanie paneli</h2>
++  <h2 id="closing_tabs">Zamykanie kart</h2>
+ 
+-  <p>Aby zamknąć bieżący panel, należy:
++  <p>Aby zamknąć bieżącą kartę, należy wykonać jedną z poniższych czynności:
+   <ul>
+-	<li>Nacisnąć klawisze &accelKey;+<kbd>W</kbd>, lub</li>
+-	<li>nacisnąć myszą przycisk zamykania panelu (po prawej strone paska paneli), lub</li>
+-    <li>kliknąć środkowym klawiszem myszy nazwę panelu, lub</li> 
+-	<li>z menu głównego wybrać <span class="menuPath">Plik &gt; Zamknij panel</span>.</li>
++	<li>nacisnąć klawisze &accelKey;+<kbd>W</kbd>,</li>
++	<li>nacisnąć myszą przycisk zamykania karty (po prawej stronie paska kart),</li>
++    	<li>kliknąć środkowym klawiszem myszy nazwę karty,</li> 
++	<li>z menu głównego wybrać <span class="menuPath">Plik &gt; Zamknij kartę</span>.</li>
+   </ul>
+   </p>
+ 
+-  <p>Aby pozostawić otwarty tylko jeden panel (zamknąć wszystkie inne), należy 
+-  <span class="noMac">kliknąć prawym klawiszem myszy</span><span class="mac">nacisnąć klawisz &accelKey;
+-  i jednocześnie kliknąć myszą</span> na nazwie wybranego panelu i z menu kontekstowego wybrać 
+-  <span class="menuPath">Zamknij inne panele</span>.</p>
++  <p>Aby pozostawić otwartą tylko jedną kartę (zamknąć wszystkie inne), należy 
++  <span class="noMac">kliknąć prawym klawiszem myszy</span><span class="mac">trzymając klawisz &accelKey;, kliknąć myszą</span> na nazwie wybranej karty i z menu kontekstowego wybrać 
++  <span class="menuPath">Zamknij inne karty</span>.</p>
+ 
+-<h2 id="customizing">Ustawienia dotyczące paneli</h2>
++<h2 id="customizing">Ustawienia dotyczące kart</h2>
+ 
+-  <p>Aby zmienić ustawienia przeglądania w panelach, należy wybrać z menu pozycję &pref.menuPath; i otworzyć kartę <a href="prefs.xhtml#tabs_options"><em>Panele</em></a>.</p>
++  <p>Aby zmienić ustawienia przeglądania w kartach, należy wybrać z menu pozycję &pref.menuPath; i otworzyć panel <a href="prefs.xhtml#tabs_options"><em>Karty</em></a>.</p>
+ 
+   <h2 id="tips_tricks">Porady</h2>
+ 
+ <dl>
+-  <dt>Przeglądanie w panelach a zakładki</dt>
+-  <dd>Możliwe jest dodanie do zakładek całej grupy paneli. 
+-  Aby dodać do zakładek grupę paneli, należy:</dd>
++  <dt>Przeglądanie w kartach a zakładki</dt>
++  <dd>Możliwe jest dodanie do zakładek całej grupy kart. 
++  Aby dodać do zakładek grupę kart, należy:</dd>
+   <dd>
+   <ol>
+-    <li>Nacisnącz klawisze &accelKey;+<kbd>D</kbd> lub z menu programu wybrać <span class="menuPath">Zakładki
++    <li>Nacisnąć klawisze &accelKey;+<kbd>D</kbd> lub z menu programu wybrać <span class="menuPath">Zakładki
+       &gt; Dodaj do zakładek</span>.</li>
+-    <li>Zaznaczyć opcję <em>Dodaj otwarte panele jako folder</em>, aby zachować wszystkie otwarte panele
++    <li>Zaznaczyć opcję <em>Dodaj otwarte karty jako folder</em>, aby zachować wszystkie otwarte karty
+ 	w jednym folderze w zakładkach.</li>
+-    <li>Aby otworzyć zakładki w panelach, należy otworzyć folder zakładek i wybrać opcję 
+-	<span class="menuPath">Otwórz w panelach</span>.  Można także kliknąć środkowym klawiszem myszy
+-	na folderze zakładek. <strong>Uwaga</strong>: Zakładki zostaną otwarte w istniejących panelach (nie w nowych).</li>
++    <li>Aby otworzyć zakładki w kartach, należy otworzyć folder zakładek i wybrać opcję 
++	<span class="menuPath">Otwórz w kartach</span>.  Można także kliknąć środkowym klawiszem myszy
++	na folderze zakładek. <strong>Uwaga</strong>: Zakładki zostaną otwarte w istniejących kartach (nie w nowych).</li>
+   </ol></dd>
+ 
+-  <dt>Grupa paneli jako strona domowa</dt>
++  <dt>Grupa kart jako strona domowa</dt>
+ 
+-  <dd>Możliwe jest ustawienie kilku paneli jako strony domowej (startowej).
+-  W tym celu należy otworzyć wszystkie żądane witryny w panelach, z menu wybrać &pref.menuPath;,
++  <dd>Możliwe jest ustawienie kilku kart jako strony domowej (startowej).
++  W tym celu należy otworzyć wszystkie żądane witryny w kartach, z menu wybrać &pref.menuPath;,
+   następnie otworzyć dział <em>Ogólne</em> i w częsci <em>Strona domowa</em> nacisnąć przycisk 
+   <em>Użyj bieżących stron</em>. Od tej chwili po naciśnięciu przycisku "Strona domowa" na pasku narzędzi
+-  otwarta zostanie grupa paneli z ulubionymi witrynami użytkownika.</dd>
++  otwarta zostanie grupa kart z ulubionymi witrynami użytkownika.</dd>
+ 
+-  <dt>Przycisk <q>Nowy panel</q> na pasku narzędzi</dt>
+-  <dd>Do paska narzędzi przeglądarki można dodać przycisk otwierający nowy panel.
++  <dt>Przycisk <q>Nowa karta</q> na pasku narzędzi</dt>
++  <dd>Do paska narzędzi przeglądarki można dodać przycisk otwierający nową kartę.
+ 	Więcej informacji na ten temat znajduje się w rozdziale 
+       <a href="customization.xhtml#rearranging_toolbar_items">o dostosowywaniu pasków narzędzi</a>.</dd>
+   
+   <dt>Skróty klawiaturowe</dt>
+-  <dd>W programie &brandShortName; przeglądanie w panelach można obsługiwać także korzystając z szeregu skrótów klawiaturowych, opisanych w rozdziale
++  <dd>W programie &brandShortName; przeglądanie w kartach można obsługiwać także korzystając z szeregu skrótów klawiaturowych, opisanych w rozdziale
+ <a href="shortcuts.xhtml#windows_tabs">Skróty klawiaturowe</a>.</dd>
+ 
+   </dl>
+ 
+-<div class="contentsBox"><em>4 lipca 2005</em></div>
++<div class="contentsBox"><em>16 lipca 2005</em></div>
+ <p>Copyright &copy; 2003-2005 Contributors to the Mozilla Help Viewer Project.</p>
+ </body>
+ </html>
+Index: browser/chrome/help/using_firebird.xhtml
+===================================================================
+RCS file: /l10n/l10n/pl/browser/chrome/help/using_firebird.xhtml,v
+retrieving revision 1.7
+diff -u -r1.7 using_firebird.xhtml
+--- browser/chrome/help/using_firebird.xhtml	7 Jul 2005 22:13:36 -0000	1.7
++++ browser/chrome/help/using_firebird.xhtml	17 Jul 2005 15:18:49 -0000
+@@ -106,15 +106,15 @@
+ nacisnąć przycisk <em>Odśwież</em> na pasku narzędzi lub nacisnąć klawisze 
+ &accelKey;+&shiftKey;+<kbd>R</kbd>.</p>
+ 
+-<h3 id="tabbed_browsing">Przeglądanie w panelach</h3>
+-<p>Przeglądanie w panelach pozwala na szybsze i łatwiejsze przeglądanie
++<h3 id="tabbed_browsing">Przeglądanie w kartach</h3>
++<p>Przeglądanie w kartach pozwala na szybsze i łatwiejsze przeglądanie
+ kilku stron w jednym czasie.</p>
+ 
+-<p>W jednym oknie przeglądarki &brandShortName; można otworzyć wiele paneli,
+-z których każdy zawiera stronę internetową. Nie potrzeba już otwierać wielu
++<p>W jednym oknie przeglądarki &brandShortName; można otworzyć wiele kart,
++z których każda zawiera stronę internetową. Nie potrzeba już otwierać wielu
+ okien przeglądarki, nie trzeba także szukać właściwego okna na pasku zadań.</p>
+ 
+-<p>Więcej informacji mona znaleźć w <a href="tabbed_browsing.xhtml">rozdziale o przeglądaniu w panelach</a>.</p>
++<p>Więcej informacji mona znaleźć w <a href="tabbed_browsing.xhtml">rozdziale o przeglądaniu w kartach</a>.</p>
+ 
+ <h3 id="using_the_sidebar">Korzystanie z sidebaru</h3>
+ <p>Sidebar to fragment okna przeglądarki (po lewej stronie), w którym można
+@@ -157,7 +157,7 @@
+ 	pozycję "Znajdź w Internecie [zaznaczony tekst]".</li>
+ </ol>
+ 
+-<p>Wyniki wyszukiwania zostaną otwarte w nowym panelu lub nowym oknie przeglądarki &brandShortName;.</p>
++<p>Wyniki wyszukiwania zostaną otwarte w nowej karcie lub nowym oknie przeglądarki &brandShortName;.</p>
+ 
+ <h3 id="searching_within_a_page">Szukanie tekstu na stronie</h3>
+ 
+Index: mail/chrome/communicator/contentAreaCommands.dtd
+===================================================================
+RCS file: /l10n/l10n/pl/mail/chrome/communicator/contentAreaCommands.dtd,v
+retrieving revision 1.2
+diff -u -r1.2 contentAreaCommands.dtd
+--- mail/chrome/communicator/contentAreaCommands.dtd	25 May 2005 13:16:01 -0000	1.2
++++ mail/chrome/communicator/contentAreaCommands.dtd	17 Jul 2005 15:18:51 -0000
+@@ -4,14 +4,14 @@
+ <!ENTITY popupWindowAllowCmd.accesskey "">
+ <!ENTITY openLinkCmd.label "Otwórz odnośnik w nowym oknie">
+ <!ENTITY openLinkCmd.accesskey "n">
+-<!ENTITY openLinkCmdInTab.label "Otwórz odnośnik w nowym panelu">
+-<!ENTITY openLinkCmdInTab.accesskey "l">
++<!ENTITY openLinkCmdInTab.label "Otwórz odnośnik w nowej karcie">
++<!ENTITY openLinkCmdInTab.accesskey "j">
+ <!ENTITY openLinkInWindowCmd.label "Otwórz">
+ <!ENTITY openLinkInWindowCmd.accesskey "O">
+ <!ENTITY openFrameCmd.label "Otwórz ramkę w nowym oknie">
+ <!ENTITY openFrameCmd.accesskey "n">
+-<!ENTITY openFrameCmdInTab.label "Otwórz ramkę w nowym panelu">
+-<!ENTITY openFrameCmdInTab.accesskey "l">
++<!ENTITY openFrameCmdInTab.label "Otwórz ramkę w nowej karcie">
++<!ENTITY openFrameCmdInTab.accesskey "j">
+ <!ENTITY showOnlyThisFrameCmd.label "Pokaż tylko tę ramkę">
+ <!ENTITY showOnlyThisFrameCmd.accesskey "r">
+ <!ENTITY addToBookmarksCmd.label "Dodaj tę stronę do zakładek">
+Index: mail/chrome/navigator/navigator.properties
+===================================================================
+RCS file: /l10n/l10n/pl/mail/chrome/navigator/navigator.properties,v
+retrieving revision 1.3
+diff -u -r1.3 navigator.properties
+--- mail/chrome/navigator/navigator.properties	31 May 2005 15:58:11 -0000	1.3
++++ mail/chrome/navigator/navigator.properties	17 Jul 2005 15:18:57 -0000
+@@ -56,13 +56,13 @@
+ switchskins=Nowy motyw zostanie u\u017Cyty po ponownym uruchomieniu programu %S.
+ switchskinstitle=Zastosuj motyw
+ showskinsdescription=true
+-tabs.closeTab=Zamknij panel
++tabs.closeTab=Zamknij kart\u0119
+ tabs.close=Zamknij
+ tabs.closeWarningTitle=Ostrze\u017Cenie
+-tabs.closeWarning=Bie\u017C\u0105ce okno przegl\u0105daki zawiera wi\u0119cej ni\u017C jeden otwarty panel (%S). Czy na pewno zamkn\u0105\u0107 to okno przegl\u0105darki i wszystkie otwarte panele?
+-tabs.closeButton=Zamknij wszystkie panele
+-tabs.closeWarningPromptMe=Ostrzegaj przy zamykaniu okna zawieraj\u0105cego wiele paneli
+-tabs.historyItem=Grupa paneli
++tabs.closeWarning=Bie\u017C\u0105ce okno przegl\u0105daki zawiera wi\u0119cej ni\u017C jedn\u0105 otwart\u0105 kart\u0119 (%S). Czy na pewno zamkn\u0105\u0107 to okno przegl\u0105darki i wszystkie otwarte karty?
++tabs.closeButton=Zamknij wszystkie karty
++tabs.closeWarningPromptMe=Ostrzegaj przy zamykaniu okna zawieraj\u0105cego wiele kart
++tabs.historyItem=Grupa kart
+ searchFor=Szukaj w %S "%S"
+ switchJVMTitle=Wybierz wersj\u0119 \u015Brodowiska Java
+ switchJVMFailed=Zmiana wersji \u015Brodowiska Java nie powiod\u0142a si\u0119
+Index: toolkit/chrome/global/tabbrowser.dtd
+===================================================================
+RCS file: /l10n/l10n/pl/toolkit/chrome/global/tabbrowser.dtd,v
+retrieving revision 1.1
+diff -u -r1.1 tabbrowser.dtd
+--- toolkit/chrome/global/tabbrowser.dtd	16 Apr 2005 17:33:10 -0000	1.1
++++ toolkit/chrome/global/tabbrowser.dtd	17 Jul 2005 15:19:00 -0000
+@@ -1,12 +1,12 @@
+ <!ENTITY untitledTab "(Bez nazwy)" >
+-<!ENTITY newTab.label "Nowy panel" >
++<!ENTITY newTab.label "Nowa karta" >
+ <!ENTITY newTab.accesskey "N" >
+-<!ENTITY closeTab.label "Zamknij panel" >
++<!ENTITY closeTab.label "Zamknij kartę" >
+ <!ENTITY closeTab.accesskey "Z" >
+ <!ENTITY closeOtherTabs.accesskey "i" >
+-<!ENTITY closeOtherTabs.label "Zamknij inne panele" >
+-<!ENTITY reloadAllTabs.label "Odśwież wszystkie panele" >
++<!ENTITY closeOtherTabs.label "Zamknij inne karty" >
++<!ENTITY reloadAllTabs.label "Odśwież wszystkie karty" >
+ <!ENTITY reloadAllTabs.accesskey "w" >
+-<!ENTITY reloadTab.label "Odśwież panel" >
++<!ENTITY reloadTab.label "Odśwież kartę" >
+ <!ENTITY reloadTab.accesskey "p" >
+-<!ENTITY newTabButton.tooltip "Otwórz nowy panel" >
++<!ENTITY newTabButton.tooltip "Otwórz nową kartę" >
+Index: toolkit/chrome/global/tabbrowser.properties
+===================================================================
+RCS file: /l10n/l10n/pl/toolkit/chrome/global/tabbrowser.properties,v
+retrieving revision 1.2
+diff -u -r1.2 tabbrowser.properties
+--- toolkit/chrome/global/tabbrowser.properties	27 Apr 2005 17:46:35 -0000	1.2
++++ toolkit/chrome/global/tabbrowser.properties	17 Jul 2005 15:19:00 -0000
+@@ -1,6 +1,6 @@
+ tabs.loading=\u0141adowanie...
+ tabs.untitled=(Bez nazwy)
+-tabs.closeTab=Zamknij panel
++tabs.closeTab=Zamknij kart\u0119
+ tabs.close=Zamknij
+ browsewithcaret.checkMsg=Nie pytaj ponownie.
+ browsewithcaret.checkWindowTitle=Przegl\u0105danie z u\u017cyciem kursora
+@@ -8,8 +8,8 @@
+ browsewithcaret.checkButtonLabel=Tak
+ 
+ tabs.closeWarningTitle=Potwierd\u017a zamkni\u0119cie
+-tabs.closeWarningOne=Zamierzasz zamkn\u0105\u0107 %S otwarty panel. Czy jeste\u015b pewien, \u017ce chcesz kontynuowa\u0107?
+-tabs.closeWarningMultiple=Zamierzasz zamkn\u0105\u0107 %S otwartych paneli. Czy jeste\u015b pewien, \u017ce chcesz kontynuowa\u0107?
+-tabs.closeButtonOne=Zamknij panel
+-tabs.closeButtonMultiple=Zamknij panele
+-tabs.closeWarningPromptMe=Ostrzegaj mnie przed zamkni\u0119ciem wielu paneli
++tabs.closeWarningOne=Zamierzasz zamkn\u0105\u0107 %S otwart\u0105 kart\u0119. Czy jeste\u015b pewien, \u017ce chcesz kontynuowa\u0107?
++tabs.closeWarningMultiple=Zamierzasz zamkn\u0105\u0107 %S otwartych kart. Czy jeste\u015b pewien, \u017ce chcesz kontynuowa\u0107?
++tabs.closeButtonOne=Zamknij kart\u0119
++tabs.closeButtonMultiple=Zamknij karty
++tabs.closeWarningPromptMe=Ostrzegaj mnie przed zamkni\u0119ciem wielu kart
+

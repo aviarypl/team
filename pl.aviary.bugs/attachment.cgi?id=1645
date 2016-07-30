@@ -1,0 +1,24 @@
+diff --git a/extensions/Voting/template/pl/default/hook/admin/products/edit-common-rows.html.tmpl b/extensions/Voting/template/pl/default/hook/admin/products/edit-common-rows.html.tmpl
+--- a/extensions/Voting/template/pl/default/hook/admin/products/edit-common-rows.html.tmpl
++++ b/extensions/Voting/template/pl/default/hook/admin/products/edit-common-rows.html.tmpl
+@@ -46,8 +46,8 @@
+ <tr id="votes_to_confirm_container"
+     [%- ' class="bz_default_hidden"' IF !product.allows_unconfirmed %]>
+   <th align="right">
+-    Automatycznie potwierdź [% terms.bledy %] jeśli osiągną następującą liczbę głosów:
++    Automatycznie potwierdzaj [% terms.bledy %] jeśli osiągną następującą liczbę głosów:
+   </th>
+   <td>
+     <input size="3" maxlength="5" name="votestoconfirm" id="votestoconfirm"
+            value="[% product.votestoconfirm FILTER html %]">
+@@ -50,8 +50,8 @@
+   </th>
+   <td>
+     <input size="3" maxlength="5" name="votestoconfirm" id="votestoconfirm"
+            value="[% product.votestoconfirm FILTER html %]">
+-    <br>(Wartość 0 tego parametru spowoduje wyłączenie automatycznego potwierdzania [% terms.bledow %]
++    <br>(Wartość 0 spowoduje wyłączenie automatycznego potwierdzania [% terms.bledow %]
+     przez głosowanie.)
+     <script type="text/javascript">
+         YAHOO.util.Event.addListener('allows_unconfirmed', 'change',
+

@@ -1,0 +1,363 @@
+diff --git a/browser/chrome/browser/browser.properties b/browser/chrome/browser/browser.properties
+--- a/browser/chrome/browser/browser.properties
++++ b/browser/chrome/browser/browser.properties
+@@ -1,15 +1,15 @@
+ nv_timeout=Przekroczono limit czasu
+ openFile=Otwórz plik
+ 
+ droponhometitle=Ustaw jako stronę startową
+ droponhomemsg=Czy wybrany dokument ma zostać nową stroną startową?
+ 
+-contextMenuSearchText=Szukaj w %S: "%S"
++contextMenuSearchText=Szukaj w %S: „%S”
+ contextMenuSearchText.accesskey=S
+ 
+ # bookmark dialog strings
+ bookmarkAllTabsDefault=[Nazwa folderu]
+ 
+ xpinstallPromptWarning=Program %S nie pozwolił tej witrynie (%S) zapytać o zgodę na instalację oprogramowania.
+ xpinstallPromptAllowButton=Zezwól
+ # Accessibility Note:
+@@ -83,17 +83,17 @@
+ popupWarningButtonUnix=Preferencje
+ popupWarningButtonUnix.accesskey=P
+ 
+ popupAllow=Pozwól %S otwierać wyskakujące okna
+ popupBlock=Blokuj wyskakujące okna z %S
+ 
+ popupWarningDontShowFromMessage=Nie pokazuj tej wiadomości, kiedy wyskakujące okna są blokowane
+ popupWarningDontShowFromLocationbar=Nie pokazuj paska informacyjnego, kiedy wyskakujące okna są blokowane
+-popupShowPopupPrefix=Wyświetl "%S"
++popupShowPopupPrefix=Wyświetl „%S”
+ 
+ # missing plugin installer
+ missingpluginsMessage.title=Aby wyświetlić pełną zawartość tej strony, potrzebne są dodatkowe wtyczki.
+ missingpluginsMessage.button.label=Zainstaluj brakujące wtyczki…
+ missingpluginsMessage.button.accesskey=i
+ outdatedpluginsMessage.title=Niektóre wtyczki używane przez tę stronę są nieaktualne.
+ outdatedpluginsMessage.updateButton.label=Zaktualizuj wtyczki…
+ outdatedpluginsMessage.updateButton.accesskey=Z
+@@ -149,17 +149,17 @@
+ update.restart.applyButton.label=Zastosuj aktualizację
+ update.restart.applyButton.accesskey=Z
+ update.openUpdateUI.upgradeButton.label=Aktualizuj teraz…
+ update.openUpdateUI.upgradeButton.accesskey=A
+ update.restart.upgradeButton.label=Aktualizuj teraz
+ update.restart.upgradeButton.accesskey=A
+ 
+ # RSS Pretty Print
+-feedShowFeedNew=Subskrybuj "%S"…
++feedShowFeedNew=Subskrybuj „%S”…
+ 
+ menuOpenAllInTabs.label=Otwórz wszystkie w kartach
+ 
+ # History menu
+ menuRestoreAllTabs.label=Przywróć wszystkie karty
+ 
+ # LOCALIZATION NOTE (menuRestoreAllWindows, menuUndoCloseWindowLabel, menuUndoCloseWindowSingleTabLabel):
+ # see bug 394759
+@@ -337,9 +337,9 @@
+ # LOCALIZATION NOTE (telemetryOptOutPrompt): %1$S and %3$S will be replaced by
+ # brandFullName, and %2$S by the value of the toolkit.telemetry.server_owner preference.
+ telemetryOptOutPrompt = %1$S przesyła informacje o wydajności, sprzęcie, wykorzystaniu funkcji i modyfikacjach przeglądarki do organizacji %2$S w celu ulepszenia programu %3$S.
+ 
+ # Webapps notification popup
+ webapps.install = Zainstaluj
+ webapps.install.accesskey = Z
+ #LOCALIZATION NOTE (webapps.requestInstall) %1$S is the web app name, %2$S is the site from which the web app is installed
+-webapps.requestInstall = Czy zainstalować aplikację "%1$S" z tej strony (%2$S)?
++webapps.requestInstall = Czy zainstalować aplikację „%1$S” z tej strony (%2$S)?
+diff --git a/browser/chrome/browser/devtools/gcli.properties b/browser/chrome/browser/devtools/gcli.properties
+--- a/browser/chrome/browser/devtools/gcli.properties
++++ b/browser/chrome/browser/devtools/gcli.properties
+@@ -38,17 +38,17 @@
+ # for JavaScript commands, however there are times when the scope of what
+ # we're completing against can't be used. This error message is displayed when
+ # this happens.
+ jstypeParseScope=Utracono zasięg
+ 
+ # LOCALIZATION NOTE (jstypeParseMissing): When the command line is doing
+ # JavaScript completion, sometimes the property to be completed does not
+ # exist. This error message is displayed when this happens.
+-jstypeParseMissing=Nie można odnaleźć własności '%S'
++jstypeParseMissing=Nie można odnaleźć własności „%S”
+ 
+ # LOCALIZATION NOTE (jstypeBeginSyntax): When the command line is doing
+ # JavaScript completion using invalid JavaScript, this error message is
+ # displayed.
+ jstypeBeginSyntax=Błąd składni
+ 
+ # LOCALIZATION NOTE (jstypeBeginUnterm): When the command line is doing
+ # JavaScript completion using a string that is not properly terminated, this
+@@ -57,32 +57,32 @@
+ 
+ # LOCALIZATION NOTE (jstypeParseError): If the system for providing JavaScript
+ # completions encounters and error it displays this.
+ jstypeParseError=Błąd
+ 
+ # LOCALIZATION NOTE (typesNumberNan): When the command line is passed a
+ # number, however the input string is not a valid number, this error message
+ # is displayed.
+-typesNumberNan=Nie można skonwertować "%S" do liczby.
++typesNumberNan=Nie można skonwertować „%S” do liczby.
+ 
+ # LOCALIZATION NOTE (typesNumberMax): When the command line is passed a
+ # number, but the number is bigger than the largest allowed number, this error
+ # message is displayed.
+ typesNumberMax=%1$S to więcej niż dozwolone maksimum: %2$S.
+ 
+ # LOCALIZATION NOTE (typesNumberMin): When the command line is passed a
+ # number, but the number is lower than the smallest allowed number, this error
+ # message is displayed.
+ typesNumberMin=%1$S to mniej niż dozwolone minimum: %2$S.
+ 
+ # LOCALIZATION NOTE (typesSelectionNomatch): When the command line is passed
+ # an option with a limited number of correct values, but the passed value is
+ # not one of them, this error message is displayed.
+-typesSelectionNomatch=Nie można użyć '%S'.
++typesSelectionNomatch=Nie można użyć „%S”.
+ 
+ # LOCALIZATION NOTE (nodeParseSyntax): When the command line is expecting a
+ # CSS query string, however the passed string is not valid, this error message
+ # is displayed.
+ nodeParseSyntax=Błąd składni w zapytaniu CSS
+ 
+ # LOCALIZATION NOTE (nodeParseMultiple): When the command line is expecting a
+ # CSS string that matches a single node, but more than one node matches, this
+diff --git a/browser/chrome/browser/downloads/downloads.properties b/browser/chrome/browser/downloads/downloads.properties
+--- a/browser/chrome/browser/downloads/downloads.properties
++++ b/browser/chrome/browser/downloads/downloads.properties
+@@ -62,11 +62,11 @@
+ # that we use a wider space after the separator when it is followed by a number,
+ # just to avoid visually confusing it with with a minus sign with some fonts.
+ # If you use a different separator, this might not be necessary.  However, there
+ # is usually no need to change the separator or the order of the substitutions,
+ # even for right-to-left languages, unless the defaults are not suitable.
+ statusSeparator=%1$S \u2014 %2$S
+ statusSeparatorBeforeNumber=%1$S \u2014  %2$S
+ 
+-fileExecutableSecurityWarning="%S" jest plikiem wykonywalnym. Pliki wykonywalne mogą zawierać wirusy lub inny niebezpieczny kod, który mógłby uszkodzić komputer. Zachowaj ostrożność przy otwieraniu tego pliku. Czy na pewno uruchomić "%S"?
++fileExecutableSecurityWarning=„%S” jest plikiem wykonywalnym. Pliki wykonywalne mogą zawierać wirusy lub inny niebezpieczny kod, który mógłby uszkodzić komputer. Zachowaj ostrożność przy otwieraniu tego pliku. Czy na pewno uruchomić „%S”?
+ fileExecutableSecurityWarningTitle=Otworzyć plik wykonywalny?
+ fileExecutableSecurityWarningDontAsk=Nie pytaj ponownie
+diff --git a/browser/chrome/browser/engineManager.properties b/browser/chrome/browser/engineManager.properties
+--- a/browser/chrome/browser/engineManager.properties
++++ b/browser/chrome/browser/engineManager.properties
+@@ -1,6 +1,6 @@
+ editTitle=Zmień słowo kluczowe
+-editMsg=Wprowadź nowe słowo kluczowe dla wyszukiwarki "%S":
++editMsg=Wprowadź nowe słowo kluczowe dla wyszukiwarki „%S”:
+ duplicateTitle=Słowo kluczowe już istnieje
+ 
+ duplicateEngineMsg=Wybrano słowo kluczowe używane obecnie przez wyszukiwarkę %S. Należy wybrać inne.
+ duplicateBookmarkMsg=Wybrano słowo kluczowe używane obecnie przez zakładkę. Należy wybrać inne.
+diff --git a/browser/chrome/browser/feeds/subscribe.properties b/browser/chrome/browser/feeds/subscribe.properties
+--- a/browser/chrome/browser/feeds/subscribe.properties
++++ b/browser/chrome/browser/feeds/subscribe.properties
+@@ -1,14 +1,14 @@
+ linkTitleTextFormat=Przejdź do %S
+ 
+-addHandler=Czy dodać "%S" (%S) jako czytnik kanałów?                                           
++addHandler=Czy dodać „%S” (%S) jako czytnik kanałów?
+ addHandlerAddButton=Dodaj czytnik kanałów
+ addHandlerAddButtonAccesskey=D
+-handlerRegistered="%S" jest już zarejestrowany jako czytnik kanałów                   
++handlerRegistered=„%S” jest już zarejestrowany jako czytnik kanałów
+ liveBookmarks=Dynamiczne zakładki
+ subscribeNow=Subskrybuj
+ chooseApplicationMenuItem=Wybierz program…
+ chooseApplicationDialogTitle=Wybierz program
+ alwaysUse=Zawsze używaj %S do subskrypcji kanałów
+ mediaLabel=Pliki mediów
+ 
+ # LOCALIZATION NOTE: The next string is for the size of the enclosed media.
+diff --git a/browser/chrome/browser/places/bookmarkProperties.properties b/browser/chrome/browser/places/bookmarkProperties.properties
+--- a/browser/chrome/browser/places/bookmarkProperties.properties
++++ b/browser/chrome/browser/places/bookmarkProperties.properties
+@@ -4,15 +4,15 @@
+ dialogAcceptLabelAddMulti=Dodaj zakładki
+ 
+ dialogAcceptLabelEdit=Zapisz
+ dialogTitleAddBookmark=Nowa zakładka
+ dialogTitleAddLivemark=Subskrybuj za pomocą dynamicznej zakładki
+ dialogTitleAddFolder=Nowy folder
+ dialogTitleAddMulti=Nowe zakładki
+ 
+-dialogTitleEdit=Właściwości "%S"
++dialogTitleEdit=Właściwości „%S”
+ 
+ bookmarkAllTabsDefault=[Nazwa folderu]
+ newFolderDefault=Nowy folder
+ newBookmarkDefault=Nowa zakładka
+ newLivemarkDefault=Nowa dynamiczna zakładka
+ 
+diff --git a/browser/chrome/browser/places/places.properties b/browser/chrome/browser/places/places.properties
+--- a/browser/chrome/browser/places/places.properties
++++ b/browser/chrome/browser/places/places.properties
+@@ -13,19 +13,19 @@
+ bookmarksRestoreFilterExtension=*.json
+ 
+ bookmarksRestoreFormatError=Nieobsługiwany typ pliku.
+ bookmarksRestoreParseError=Nie udało się przetworzyć pliku kopii zapasowej.
+ 
+ bookmarksLivemarkLoading=Pobieranie dynamicznej zakładki…
+ bookmarksLivemarkFailed=Pobieranie dynamicznej zakładki się nie powiodło.
+ 
+-menuOpenLivemarkOrigin.label=Otwórz "%S"
++menuOpenLivemarkOrigin.label=Otwórz „%S”
+ 
+-sortByName=Sortuj '%S' według nazw
++sortByName=Sortuj „%S” według nazw
+ sortByNameGeneric=Sortuj według nazw
+ view.sortBy.name.label=Sortuj według nazw
+ view.sortBy.name.accesskey=n
+ view.sortBy.url.label=Sortuj według adresu
+ view.sortBy.url.accesskey=a
+ view.sortBy.date.label=Sortuj według daty odwiedzin
+ view.sortBy.date.accesskey=d
+ view.sortBy.visitCount.label=Sortuj według liczby wizyt
+@@ -38,19 +38,19 @@
+ view.sortBy.dateAdded.accesskey=n
+ view.sortBy.lastModified.label=Sortuj według daty ostatniej modyfikacji
+ view.sortBy.lastModified.accesskey=m
+ view.sortBy.tags.label=Sortuj według etykiet
+ view.sortBy.tags.accesskey=e
+ 
+ searchBookmarks=Szukaj w zakładkach
+ searchHistory=Szukaj w historii
+-searchCurrentDefault=Szukaj w "%S"
++searchCurrentDefault=Szukaj w „%S”
+ searchDownloads=Szukaj w pobranych plikach
+-findInPrefix=Znajdź w "%S"…
++findInPrefix=Znajdź w „%S”…
+ 
+ tabs.openWarningTitle=Potwierdź otwarcie
+ tabs.openWarningMultipleBranded=Zażądano otwarcia %S kart jednocześnie. Może to spowodować spowolnienie pracy programu %S podczas wczytywania stron. Czy na pewno kontynuować?
+ tabs.openButtonMultiple=Otwórz karty
+ tabs.openWarningPromptMeBranded=Ostrzegaj, kiedy próba otwarcia zbyt wielu kart może spowolnić program %S
+ 
+ SelectImport=Importuj plik zakładek
+ EnterExport=Eksportuj plik zakładek
+diff --git a/browser/chrome/browser/search.properties b/browser/chrome/browser/search.properties
+--- a/browser/chrome/browser/search.properties
++++ b/browser/chrome/browser/search.properties
+@@ -5,9 +5,9 @@
+ cmd_pasteAndSearch=Wklej i szukaj
+ 
+ cmd_clearHistory=Wyczyść historię wyszukiwania
+ cmd_clearHistory_accesskey=W
+ 
+ cmd_showSuggestions=Wyświetlaj podpowiedzi
+ cmd_showSuggestions_accesskey=p
+ 
+-cmd_addFoundEngine=Dodaj "%S"
++cmd_addFoundEngine=Dodaj „%S”
+diff --git a/browser/chrome/overrides/appstrings.properties b/browser/chrome/overrides/appstrings.properties
+--- a/browser/chrome/overrides/appstrings.properties
++++ b/browser/chrome/overrides/appstrings.properties
+@@ -33,17 +33,17 @@
+ # the provisions above, a recipient may use your version of this file under
+ # the terms of any one of the MPL, the GPL or the LGPL.
+ #
+ # ***** END LICENSE BLOCK *****
+ 
+ malformedURI=Adres URL jest nieprawidłowy i nie może zostać wczytany.
+ fileNotFound=Firefox nie może odnaleźć pliku %S.
+ dnsNotFound=Firefox nie może odnaleźć serwera %S.
+-protocolNotFound=Firefox nie jest w stanie otworzyć tego adresu, ponieważ protokół "%S" nie jest przypisany do żadnego programu.
++protocolNotFound=Firefox nie jest w stanie otworzyć tego adresu, ponieważ protokół „%S” nie jest przypisany do żadnego programu.
+ connectionFailure=Firefox nie może nawiązać połączenia z serwerem %S.
+ netInterrupt=Połączenie z %S zostało przerwane podczas wczytywania strony.
+ netTimeout=Serwer %S zbyt długo nie odpowiada.
+ redirectLoop=Firefox wykrył, że serwer przekierowuje żądanie tego zasobu w sposób uniemożliwiający jego ukończenie.
+ 
+ # LOCALIZATION NOTE (confirmRepost): In this item, don't translate "%S"
+ confirmRepostPrompt=Aby wyświetlić tę stronę, %S musi ponownie przesłać dane, które spowodują powtórzenie zadań wykonanych wcześniej (takich jak przeszukiwanie czy potwierdzenie zlecenia).
+ resendButton.label=Prześlij ponownie
+@@ -63,9 +63,9 @@
+ #LOCALIZATION NOTE (externalProtocolUnknown): The following string is shown if the application name can't be determined
+ externalProtocolUnknown=<Nieznana>
+ externalProtocolChkMsg=Zapamiętaj mój wybór dla wszystkich odnośników tego rodzaju.
+ externalProtocolLaunchBtn=Uruchom aplikację
+ malwareBlocked=Witryna %S została zgłoszona jako witryna stanowiąca zagrożenie i została zablokowana zgodnie z ustawieniami bezpieczeństwa.
+ phishingBlocked=Witryna %S została zgłoszona jako przypadek oszustwa mającego na celu wyłudzenie danych osobowych i informacji finansowych.
+ cspFrameAncestorBlocked=Ta strona posiada politykę bezpieczeństwa treści, która nie pozwala na osadzenie jej w taki sposób.
+ corruptedContentError=Strona, którą próbujesz obejrzeć, nie może być wyświetlona, ponieważ wykryto błąd w transmisji danych.
+-remoteXUL=Ta strona wykorzystuje niewspieraną technologię, która nie jest już dostępna domyślnie w Firefoksie.
+\ No newline at end of file
++remoteXUL=Ta strona wykorzystuje niewspieraną technologię, która nie jest już dostępna domyślnie w Firefoksie.
+diff --git a/browser/installer/override.properties b/browser/installer/override.properties
+--- a/browser/installer/override.properties
++++ b/browser/installer/override.properties
+@@ -78,18 +78,18 @@
+ DirText=Program $BrandFullNameDA zostanie zainstalowany w poniższym folderze. Aby zainstalować go w innym, naciśnij Przeglądaj i wskaż odpowiedni folder. $_CLICK
+ DirSubText=Folder docelowy
+ # I wanted DirBrowseText to be short (marcoos)
+ DirBrowseText=Wybierz folder dla instalacji programu $BrandFullNameDA:
+ SpaceAvailable="Dostępne miejsce: "
+ SpaceRequired="Wymagane miejsce: "
+ UninstallingText=Program $BrandFullNameDA zostanie odinstalowany z poniższego folderu. $_CLICK
+ UninstallingSubText=Dezinstalacja z:
+-FileError=Błąd podczas otwierania pliku do zapisu: \r\n\r\n$0\r\n\r\nNaciśnij "Przerwij", by zakończyć instalację,\r\n"Ponów próbę", by spróbować ponownie,\r\nalbo "Zignoruj", by pominąć ten plik.
+-FileError_NoIgnore=Błąd podczas otwierania pliku do zapisu: \r\n\r\n$0\r\n\r\nNaciśnij "Ponów próbę", by spróbować ponownie,\r\nlub "Anuluj", by zakończyć instalację.
++FileError=Błąd podczas otwierania pliku do zapisu: \r\n\r\n$0\r\n\r\nNaciśnij „Przerwij”, by zakończyć instalację,\r\n„Ponów próbę”, by spróbować ponownie,\r\nalbo „Zignoruj”, by pominąć ten plik.
++FileError_NoIgnore=Błąd podczas otwierania pliku do zapisu: \r\n\r\n$0\r\n\r\nNaciśnij „Ponów próbę”, by spróbować ponownie,\r\nlub „Anuluj”, by zakończyć instalację.
+ CantWrite="Nie można zapisać: "
+ CopyFailed=Kopiowanie się nie powiodło
+ CopyTo="Kopiuj do "
+ Registering="Rejestrowanie: "
+ Unregistering="Wyrejestrowywanie: "
+ SymbolNotFound="Nie można odnaleźć symbolu: "
+ CouldNotLoad="Nie udało się wczytać: "
+ CreateFolder="Utwórz folder: "
+diff --git a/dom/chrome/dom/dom.properties b/dom/chrome/dom/dom.properties
+--- a/dom/chrome/dom/dom.properties
++++ b/dom/chrome/dom/dom.properties
+@@ -120,17 +120,17 @@
+ nsIJSONEncodeDeprecatedWarning=Metoda nsIJSON.encode jest przestarzała. Należy korzystać z JSON.stringify.
+ nsIDOMWindowInternalWarning=Interfejs nsIDOMWindowInternal jest przestarzały. Należy korzystać z nsIDOMWindow.
+ InputEncodingWarning=Własność inputEncoding jest przestarzała.
+ # LOCALIZATION NOTE: Do not translate "MozBeforePaint" and "mozRequestAnimationFrame"
+ MozBeforePaintWarning=Zdarzenia MozBeforePaint nie są już obsługiwane. Do mozRequestAnimationFrame musi być przekazany argument callback niebędący wartością null.
+ FullScreenDeniedDisabled=Żądanie przejścia w tryb pełnoekranowy zostało odrzucone, ponieważ API trybu pełnoekranowego zostało wyłączone w ustawieniach użytkownika.
+ FullScreenDeniedFocusedPlugin=Żądanie przejścia w tryb pełnoekranowy zostało odrzucone, ponieważ wtyczka działająca w trybie okna ma fokus.
+ FullScreenDeniedHidden=Żądanie przejścia w tryb pełnoekranowy zostało odrzucone, ponieważ dokument nie jest już widoczny.
+-FullScreenDeniedIframeDisallowed=Żądanie przejścia w tryb pełnoekranowy zostało odrzucone, ponieważ przynajmniej jedna z ramek otaczających dokument nie posiada atrybutu "mozallowfullscreen".
++FullScreenDeniedIframeDisallowed=Żądanie przejścia w tryb pełnoekranowy zostało odrzucone, ponieważ przynajmniej jedna z ramek otaczających dokument nie posiada atrybutu „mozallowfullscreen”.
+ FullScreenDeniedNotInputDriven=Żądanie przejścia w tryb pełnoekranowy zostało odrzucone, ponieważ metoda Element.mozRequestFullScreen() nie została wywołana z wnętrza krótko działającej procedury obsługi zdarzeń generowanych przez użytkownika.
+ FullScreenDeniedNotInDocument=Żądanie przejścia w tryb pełnoekranowy zostało odrzucone, ponieważ element żądający nie znajduje się już w swoim dokumencie.
+ FullScreenDeniedMovedDocument=Żądanie przejścia w tryb pełnoekranowy zostało odrzucone, ponieważ element żądający został przeniesiony między dokumentami.
+ FullScreenDeniedLostWindow=Żądanie przejścia w tryb pełnoekranowy zostało odrzucone, ponieważ okno już nie istnieje.
+ FullScreenDeniedSubDocFullScreen=Żądanie przejścia w tryb pełnoekranowy zostało odrzucone, ponieważ poddokument dokumentu żądającego jest już w trybie pełnoekranowym.
+ FullScreenDeniedNotDescendant=Żądanie przejścia w tryb pełnoekranowy zostało odrzucone, ponieważ żądający element nie jest elementem potomnym elementu aktualnie będącego w trybie pełnoekranowym.
+ FullScreenDeniedNotFocusedTab=Żądanie przejścia w tryb pełnoekranowy zostało odrzucone, ponieważ żądający element nie znajduje się w karcie mającej aktualnie fokus.
+ RemovedFullScreenElement=Tryb pełnoekranowy został wyłączony, ponieważ element pełnoekranowy został usunięty z dokumentu.
+@@ -138,24 +138,24 @@
+ HTMLMultipartXHRWarning=Przetwarzanie HTML w XMLHttpRequest nie jest obsługiwane dla odpowiedzi wieloczęściowych.
+ HTMLSyncXHRWarning=Przetwarzanie HTML w XMLHttpRequest nie jest obsługiwane w trybie synchronicznym.
+ InvalidRedirectChannelWarning=Nie udało się przekierować do %S, ponieważ kanał nie implementuje nsIWritablePropertyBag2.
+ ResponseTypeSyncXHRWarning=Atrybut responseType obiektu XMLHttpRequest nie jest już obsługiwany w trybie synchronicznym w kontekście okna.
+ WithCredentialsSyncXHRWarning=Atrybut withCredentials obiektu XMLHttpRequest nie jest już obsługiwany w trybie synchronicznym w kontekście okna.
+ TimeoutSyncXHRWarning=Atrybut timeout obiektu XMLHttpRequest nie jest obsługiwany w trybie synchronicznym w kontekście okna.
+ JSONCharsetWarning=Nastąpiła próba zadeklarowania innego kodowania niż UTF-8 dla treści JSON odbieranej przez XMLHttpRequest. Przy dekodowaniu JSON obsługiwane jest tylko kodowanie UTF-8.
+ MediaLoadExhaustedCandidates=Żaden z potencjalnych zasobów multimedialnych nie mógł zostać wczytany. Wczytywanie multimediów wstrzymane.
+-MediaLoadSourceMissingSrc=Element <source> nie posiada atrybutu "src". Treść multimedialna nie została wczytana.
++MediaLoadSourceMissingSrc=Element <source> nie posiada atrybutu „src”. Treść multimedialna nie została wczytana.
+ # LOCALIZATION NOTE: %1$S is the Http error code the server returned (e.g. 404, 500, etc), %2$S is the URL of the media resource which failed to load.
+ MediaLoadHttpError=Wczytywanie zakończyło się błędem HTTP %1$S. Treść multimedialna %2$S nie została wczytana.
+ # LOCALIZATION NOTE: %S is the URL of the media resource which failed to load.
+ MediaLoadInvalidURI=Nieprawidłowy adres URI. Treść multimedialna %S nie została wczytana.
+ # LOCALIZATION NOTE: %1$S is the media resource's format/codec type (basically equivalent to the file type, e.g. MP4,AVI,WMV,MOV etc), %2$S is the URL of the media resource which failed to load.
+-MediaLoadUnsupportedType=Podany typ (atrybut "type") formatu "%1$S" nie jest obsługiwany. Treść multimedialna %2$S nie została wczytana.
++MediaLoadUnsupportedType=Podany typ (atrybut „type”) formatu „%1$S” nie jest obsługiwany. Treść multimedialna %2$S nie została wczytana.
+ # LOCALIZATION NOTE: %1$S is the MIME type HTTP header being sent by the web server, %2$S is the URL of the media resource which failed to load.
+-MediaLoadUnsupportedMimeType=Rodzaj treści HTTP (nagłówek "Content-Type") zasobu "%1$S" nie jest obsługiwany. Treść multimedialna %2$S nie została wczytana.
++MediaLoadUnsupportedMimeType=Rodzaj treści HTTP (nagłówek „Content-Type”) zasobu „%1$S” nie jest obsługiwany. Treść multimedialna %2$S nie została wczytana.
+ # LOCALIZATION NOTE: %S is the URL of the media resource which failed to load because of error in decoding.
+ MediaLoadDecodeError=Nie udało się zdekodować zasobu multimedialnego %S.
+ # LOCALIZATION NOTE: Do not translate "MozBlobBuilder" and "Blob"
+ MozBlobBuilderWarning=Stosowanie MozBlobBuildera jest przestarzałe. Należy korzystać z konstruktora Blob.
+ # LOCALIZATION NOTE: Do not translate "DOMException", "code" and "name"
+ DOMExceptionCodeWarning=Stosowanie atrybutu code wyjątku DOMException jest przestarzałe. Należy korzystać z name.
+ 
+

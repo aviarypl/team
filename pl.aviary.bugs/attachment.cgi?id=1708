@@ -1,0 +1,123 @@
+diff --git a/suite/chrome/branding/aboutRights.dtd b/suite/chrome/branding/aboutRights.dtd
+--- a/suite/chrome/branding/aboutRights.dtd
++++ b/suite/chrome/branding/aboutRights.dtd
+@@ -1,3 +1,2 @@
+-<!-- LOCALIZATION NOTE This file is very similar to the one in Firefox from browser/locales/en-US/chrome/browser/aboutRights.dtd so you can use that file as a starting point -->
+ <!-- rights.locale-direction instead of the usual local.dir entity, so RTL can skip translating page. -->
+ <!ENTITY rights.locale-direction "ltr">
+@@ -2,8 +1,8 @@
+ <!-- rights.locale-direction instead of the usual local.dir entity, so RTL can skip translating page. -->
+ <!ENTITY rights.locale-direction "ltr">
+-<!ENTITY rights.pagetitle "about:rights">
+-<!ENTITY rights.intro-header "O prawach użytkownika">
+-<!ENTITY rights.intro "&brandFullName; to wolne oprogramowanie open source, stworzone przez społeczność tysięcy ludzi z całego świata. Jest kilka rzeczy, o których użytkownik powinien wiedzieć:">
++<!ENTITY rights.pagetitle       "about:rights">
++<!ENTITY rights.intro-header    "Informacje o twoich prawach">
++<!ENTITY rights.intro "&brandFullName; to wolne oprogramowanie o otwartym kodzie źródłowym stworzone przez społeczność tysięcy ludzi z całego świata. Jest kilka kwestii, o których należy wiedzieć:">
+ 
+ <!-- Note on pointa / pointb / pointc form:
+      These points each have an embedded link in the HTML, so each point is
+@@ -13,5 +12,5 @@
+ 
+      Also note the leading/trailing whitespace in strings here, which is
+      deliberate for formatting around the embedded links. -->
+-<!ENTITY rights.intro-point1a "Program &brandShortName; został udostępniony użytkownikowi na warunkach licencji ">
++<!ENTITY rights.intro-point1a "Program &brandShortName; jest udostępniony na zasadach licencji ">
+ <!ENTITY rights.intro-point1b "Mozilla Public License">
+@@ -17,3 +16,3 @@
+ <!ENTITY rights.intro-point1b "Mozilla Public License">
+-<!ENTITY rights.intro-point1c ". Oznacza to, że użytkownik ma prawo używać, kopiować i rozpowszechniać program &brandShortName;. Może on też modyfikować kod źródłowy programu &brandShortName;, by dostosować go do swoich potrzeb. Licencja MPL (Mozilla Public License) daje użytkownikowi także prawo do rozpowszechniania zmodyfikowanych wersji.">
++<!ENTITY rights.intro-point1c ". Oznacza to, że można go używać, kopiować i rozpowszechniać. Można także modyfikować kod źródłowy programu &brandShortName;, by dostosować go do swoich potrzeb. Licencja MPL (Mozilla Public License) daje także prawo do rozpowszechniania zmodyfikowanych wersji.">
+ 
+@@ -19,6 +18,6 @@
+ 
+-<!ENTITY rights.intro-point2a "Mozilla nie przyznaje użytkownikowi żadnych praw do znaków towarowych i logotypów Mozilla i SeaMonkey. Dodatkowe informacje dotyczące znaków towarowych można znaleźć ">
+-<!ENTITY rights.intro-point2b "w tym miejscu">
++<!ENTITY rights.intro-point2a "Mozilla nie udziela żadnych praw do znaków towarowych oraz logo Mozilla i Firefox. Więcej informacji na ten temat można znaleźć ">
++<!ENTITY rights.intro-point2b "tutaj">
+ <!ENTITY rights.intro-point2c ".">
+ 
+ <!-- point 3 text for official branded builds -->
+@@ -22,7 +21,7 @@
+ <!ENTITY rights.intro-point2c ".">
+ 
+ <!-- point 3 text for official branded builds -->
+-<!ENTITY rights.intro-point3a "Informacje dotyczące zasad ochrony prywatności związanych z produktami &vendorShortName; można znaleźć ">
+-<!ENTITY rights.intro-point3b "w tym miejscu">
++<!ENTITY rights.intro-point3a "Zasady ochrony prywatności stosowane dla produktów &vendorShortName; można znaleźć ">
++<!ENTITY rights.intro-point3b "tutaj">
+ <!ENTITY rights.intro-point3c ".">
+ 
+@@ -27,3 +26,6 @@
+ <!ENTITY rights.intro-point3c ".">
+ 
++<!-- point 3 text for unbranded builds -->
++<!ENTITY rights.intro-point3-unbranded "W tym miejscu powinny zostać wymienione wszelkie mające zastosowanie dla tego produktu zasady ochrony prywatności.">
++
+ <!-- point 4 text for official branded builds -->
+@@ -29,5 +31,5 @@
+ <!-- point 4 text for official branded builds -->
+-<!ENTITY rights.intro-point4a "Niektóre funkcje programu &brandShortName;, jak np. system aktualizacji dodatków, korzystają z usług informacyjnych WWW, jednakże nie możemy zagwarantować ich stuprocentowej dokładności ani bezbłędności. Szczegółowe informacje, w tym opis wyłączenia tych funkcji, można znaleźć w ">
+-<!ENTITY rights.intro-point4b "warunkach korzystania z tych usług">
++<!ENTITY rights.intro-point4a "Niektóre funkcje programu &brandShortName; umożliwiają korzystanie z internetowych usług informacyjnych, jednakże nie możemy zagwarantować ich stuprocentowej dokładności ani bezbłędności. Szczegółowe informacje, w tym opis wyłączenia tych usług, można znaleźć w ">
++<!ENTITY rights.intro-point4b "zasadach korzystania z usług">
+ <!ENTITY rights.intro-point4c ".">
+ 
+@@ -32,9 +34,14 @@
+ <!ENTITY rights.intro-point4c ".">
+ 
+-<!ENTITY rights.webservices-header "Usługi WWW powiązane z programem &brandFullName;">
++<!-- point 4 text for unbranded builds -->
++<!ENTITY rights.intro-point4a-unbranded "Jeśli ten produkt zawiera usługi internetowe, wszelkie mające zastosowanie dla tych serwisów zasady korzystania z nich, powinny być zawarte w sekcji ">
++<!ENTITY rights.intro-point4b-unbranded "Usługi internetowe">
++<!ENTITY rights.intro-point4c-unbranded ".">
++
++<!ENTITY rights.webservices-header "Internetowe usługi informacyjne programu &brandFullName;">
+ 
+ <!-- Note that this paragraph references a couple of entities from
+      preferences/security.dtd, so that we can refer to text the user sees in
+      the UI, without this page being forgotten every time those strings are
+      updated.  -->
+ <!-- intro paragraph for branded builds -->
+@@ -35,12 +42,10 @@
+ 
+ <!-- Note that this paragraph references a couple of entities from
+      preferences/security.dtd, so that we can refer to text the user sees in
+      the UI, without this page being forgotten every time those strings are
+      updated.  -->
+ <!-- intro paragraph for branded builds -->
+-<!ENTITY rights.webservices-a "&brandFullName; korzysta z usług informacyjnych dotyczących witryn WWW (&bdquo;Usług&rdquo;), takich jak usługa aktualizacji dodatków, udostępnianych użytkownikom niniejszej binarnej wersji programu &brandShortName; na warunkach przedstawionych poniżej. Jeśli użytkownik nie chce korzystać z Usług lub nie akceptuje poniższych warunków, może wyłączyć usługę aktualizacji dodatków wchodząc do preferencji programu, przechodząc do sekcji ">
+-<!ENTITY rights.webservices-b "Zaawansowane">
+-<!ENTITY rights.webservices-c ", a następnie ">
+-<!ENTITY rights.webservices-d "Instalacja">
+-<!ENTITY rights.webservices-e " i odznaczając opcję &quot;Automatycznie sprawdzaj, czy są dostępne aktualizacje dla:&quot;.">
++<!ENTITY rights.webservices-a "Program &brandFullName; wykorzystuje w tej wersji niektóre internetowe usługi informacyjne, zwane dalej „usługami”, takie jak „Bezpieczne przeglądanie” i udostępnia je na zasadach przedstawionych poniżej. Jeśli nie chcesz korzystać z usług lub nie akceptujesz poniższych zasad, możesz wyłączyć usługę „Bezpieczne przeglądanie”, otwierając ustawienia programu, wybierając panel ">
++<!ENTITY rights.webservices-b "Bezpieczeństwo">
++<!ENTITY rights.webservices-c " i odznaczając elementy „&blockAttackSites.label;” i „&blockWebForgeries.label;”">
+ 
+@@ -46,9 +51,4 @@
+ 
+-<!-- points 1-6 text for branded builds -->
+-<!ENTITY rights.webservices-term1 "&vendorShortName; może przerwać lub zmienić funkcjonowanie Usług według własnego uznania.">
+-<!ENTITY rights.webservices-term2 "&vendorShortName; może przerwać lub zmienić funkcjonowanie Usług według własnego uznania.">
+-<!ENTITY rights.webservices-term3 "Usługi dostarczane są &bdquo;w stanie, w jakim są&rdquo;. &vendorShortName;, jej współpracownicy, licencjodawcy i dystrybutorzy zrzekają się jakichkolwiek gwarancji, wyraźnych i dorozumianych, w tym - bez ograniczeń: gwarancji, że Usługi są jakości handlowej i że są odpowiednie do konkretnych potrzeb użytkownika. Użytkownik ponosi całkowite ryzyko w kwestii wyboru Usług dla swoich celów, jak też co do ich jakości i wydajności. Niektóre jurysdykcje nie zezwalają na takie wyłączenie lub ograniczenie domniemanych gwarancji, tak więc to zrzeczenie może użytkownika nie dotyczyć.">
+-<!ENTITY rights.webservices-term4 "Usługi dostarczane są „w stanie, w jakim są”. &vendorShortName;, jej współpracownicy, licencjodawcy i dystrybutorzy zrzekają się jakichkolwiek gwarancji, wyraźnych i dorozumianych, w tym - bez ograniczeń: gwarancji, że Usługi są jakości handlowej i że są odpowiednie do konkretnych potrzeb użytkownika. Użytkownik ponosi całkowite ryzyko w kwestii wyboru Usług dla swoich celów, jak też co do ich jakości i wydajności. Niektóre jurysdykcje nie zezwalają na takie wyłączenie lub ograniczenie domniemanych gwarancji, tak więc to zrzeczenie może użytkownika nie dotyczyć.">
+-<!ENTITY rights.webservices-term5 "Z wyjątkiem wymogów prawnych, &vendorShortName;, jej współpracownicy, licencjobiorcy ani dystrybutorzy nie ponoszą odpowiedzialności za jakiekolwiek szkody - niebezpośrednie, specjalne, przypadkowe, wynikające, karne ani moralne, wynikłe z lub w jakikolwiek sposób powiązane z korzystaniem z programu &brandShortName; i Usług. Kolektywna odpowiedzialność zgodnie z tymi warunkami nie przekroczy 500 (pięciuset) dolarów amerykańskich. Niektóre jurysdykcje nie zezwalają na takie wyłączenie lub ograniczenie odpowiedzialności za szkody, tak więc to zrzeczenie i ograniczenie może użytkownika nie dotyczyć.">
+-<!ENTITY rights.webservices-term6 "&vendorShortName; może co jakiś czas aktualizować niniejsze warunki. Warunki te nie mogą być zmieniane ani anulowane, o ile &vendorShortName; nie wyrazi pisemnej zgody.">
++<!-- intro paragraph for unbranded builds -->
++<!ENTITY rights.webservices-unbranded "W tym miejscu powinien znaleźć się opis zawartych w tym produkcie usług internetowych wraz z instrukcją, jak w pewnych sytuacjach je wyłączyć.">
+ 
+@@ -54,1 +54,12 @@
+ 
++<!-- point 1 text for unbranded builds -->
++<!ENTITY rights.webservices-term1-unbranded "W tym miejscu powinny zostać wymienione wszelkie mające zastosowanie dla tego produktu zasady korzystania z usługi.">
++
++<!-- points 1-7 text for branded builds -->
++<!ENTITY rights.webservices-term1 "Dostawca oprogramowania (&vendorShortName;) może przerwać lub zmienić funkcjonowanie usług według własnego uznania">
++<!ENTITY rights.webservices-term2 "Dostawca oprogramowania (&vendorShortName;) może przerwać lub zmienić funkcjonowanie usług według własnego uznania.">
++<!ENTITY rights.webservices-term3 "Możesz korzystać z tych usług za pomocą wersji programu &brandShortName;, w której zostały one zaimplementowane i masz wszelkie prawa niezbędne do tego. Dostawca oprogramowania (&vendorShortName;) i jego licencjodawcy zastrzegają sobie wszelkie inne prawa związane z usługami. Zasady te nie mają na celu ograniczenia żadnych praw gwarantowanych w ramach licencji dla oprogramowania o otwartym kodzie źródłowym mających zastosowanie do programu &brandShortName;, jak i analogicznych wersji jego kodu źródłowego.">
++<!ENTITY rights.webservices-term4 "Usługi dostarczane są w stanie, „w jakim są”. Dostawca oprogramowania (&vendorShortName;), jego współpracownicy, licencjodawcy i dystrybutorzy nie udzielają żadnych gwarancji, zarówno wyraźnych, jak i domniemanych, że usługi te spełniają twoje oczekiwania. Ponosisz zatem całkowite ryzyko w kwestii wyboru usług odpowiednich dla twoich celów, jak też w kwestii ich jakości i wydajności. Niektóre systemy prawne nie zezwalają na takie wyłączenie lub ograniczenie domniemanych gwarancji, tak więc to zaprzeczenie może cię nie dotyczyć.">
++<!ENTITY rights.webservices-term5 "Z wyjątkiem  wymogów prawnych, dostawca oprogramowania (&vendorShortName;), jego współpracownicy, licencjodawcy ani dystrybutorzy nie ponoszą odpowiedzialności za żadne szkody - pośrednie, wyjątkowe, przypadkowe, będące skutkiem czegoś, karne, czy wyjątkowe szkody wynikłe z lub w jakikolwiek sposób powiązane z korzystaniem z programu &brandShortName; i usług. Zgodnie z tymi zasadami łączna odpowiedzialność nie może przekroczyć wartości 500 (pięciuset) dolarów amerykańskich. Niektóre systemy prawne nie zezwalają na takie wyłączenie lub ograniczenie niektórych szkód, tak więc to wyłączenie lub ograniczenie może cię nie dotyczyć.">
++<!ENTITY rights.webservices-term6 "Dostawca oprogramowania (&vendorShortName;), może co jakiś czas aktualizować niniejsze zasady. Zasady te nie mogą być zmieniane ani anulowane, o ile &vendorShortName; nie wyrazi na to pisemnej zgody.">
++<!ENTITY rights.webservices-term7 "Niniejsze zasady, z wyłączeniem konfliktu postanowień prawnych, podlegają regulacjom prawnym stanu Kalifornia (Stany Zjednoczone Ameryki). Jeśli jakakolwiek część niniejszych zasad zostanie uznana za nieważną lub niewykonalną, pozostałe części pozostają w mocy. W przypadku różnic między przetłumaczoną wersją niniejszych zasad a oryginalną angielską wersją językową, obowiązujące są postanowienia angielskiej wersji językowej.">
+

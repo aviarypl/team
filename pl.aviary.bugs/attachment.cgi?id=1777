@@ -1,0 +1,64 @@
+diff --git a/editor/ui/chrome/composer/editor.dtd b/editor/ui/chrome/composer/editor.dtd
+--- a/editor/ui/chrome/composer/editor.dtd
++++ b/editor/ui/chrome/composer/editor.dtd
+@@ -41,16 +41,19 @@
+ 
+ <!-- Window title -->
+ <!-- LOCALIZATION NOTE  (editorWindow.titlemodifier): DONT_TRANSLATE -->
+ <!ENTITY editorWindow.titlemodifier "Kompozytor Stron">
+ <!ENTITY editorWindow.titlemodifiermenuseparator " - ">
+ 
+ <!-- Menu items:  the . means that the menu item isn't implemented yet -->
+ 
++<!-- Toolbar-only items -->
++<!ENTITY compositionToolbar.tooltip "Pasek narzędzi edycyjnych">
++
+ <!-- View menu items -->
+ <!ENTITY viewMenu.label                  "Widok">
+ <!ENTITY viewMenu.accesskey              "W">
+ <!ENTITY compositionToolbarCmd.label     "Pasek narzędzi edycji">
+ <!ENTITY compositionToolbarCmd.accesskey "k">
+ <!ENTITY formattingToolbarCmd.label      "Pasek narzędzi formatowania">
+ <!ENTITY formattingToolbarCmd.accesskey  "r">
+ <!ENTITY editmodeToolbarCmd.label        "Pasek trybu edycji">
+diff --git a/editor/ui/chrome/composer/editorOverlay.dtd b/editor/ui/chrome/composer/editorOverlay.dtd
+--- a/editor/ui/chrome/composer/editorOverlay.dtd
++++ b/editor/ui/chrome/composer/editorOverlay.dtd
+@@ -400,17 +400,16 @@
+ <!ENTITY tableSplitCell.accesskey  "d">
+ <!ENTITY convertToTable.label      "Utwórz tabelę z zaznaczenia">
+ <!ENTITY convertToTable.accesskey  "b">
+ <!ENTITY tableProperties.label     "Właściwości tabeli…">
+ <!ENTITY tableProperties.accesskey "t">
+ 
+ <!-- Toolbar-only items -->
+ <!ENTITY menuBar.tooltip               "Pasek menu">
+-<!ENTITY compositionToolbar.tooltip    "Pasek narzędzi edycyjnych">
+ <!ENTITY formatToolbar.tooltip         "Pasek narzędzi formatowania">
+ <!ENTITY newToolbarCmd.tooltip         "Utwórz nową stronę Kompozytora Stron">
+ <!ENTITY openToolbarCmd.label          "Otwórz">
+ <!ENTITY openToolbarCmd.tooltip        "Otwórz lokalny plik">
+ <!ENTITY saveToolbarCmd.tooltip        "Zapisz plik na lokalnym dysku">
+ <!ENTITY publishToolbarCmd.tooltip     "Prześlij plik na zdalny serwer">
+ <!ENTITY previewToolbarCmd.label       "Podgląd">
+ <!ENTITY previewToolbarCmd.tooltip     "Otwórz bieżącą stronę w nowym oknie przeglądarki">
+@@ -445,17 +444,17 @@
+ <!ENTITY numberListToolbarCmd.tooltip  "Zastosuj albo usuń styl numerowania">
+ <!ENTITY outdentToolbarCmd.tooltip     "Wcięcie tekstu (przesuń w lewo)">
+ <!ENTITY indentToolbarCmd.tooltip      "Wcięcie tekstu (przesuń w prawo)">
+ <!ENTITY AlignPopupButton.tooltip      "Wybierz wyrównanie tekstu">
+ <!ENTITY InsertPopupButton.tooltip     "Wstaw odnośnik, kotwicę, obrazek, linię poziomą lub tabelę">
+ <!ENTITY alignLeftButton.tooltip       "Wyrównaj tekst do lewego marginesu">
+ <!ENTITY alignCenterButton.tooltip     "Wyrównaj tekst do środka">
+ <!ENTITY alignRightButton.tooltip      "Wyrównaj tekst do prawego marginesu">
+-<!ENTITY alignjustifyButton.tooltip    "Wyrównaj tekst pomiędzy prawym a lewym marginesem">
++<!ENTITY alignJustifyButton.tooltip    "Wyrównaj tekst pomiędzy prawym a lewym marginesem">
+ 
+ <!-- Display Mode toolbar and View menu items -->
+ <!ENTITY NormalModeTab.label      "Normalny">
+ <!ENTITY NormalMode.label         "Normalny tryb edycji">
+ <!ENTITY NormalMode.accesskey     "N">
+ <!ENTITY NormalMode.tooltip       "Pokaż obramowanie tabeli oraz kotwice">
+ <!ENTITY AllTagsMode.label        "Pokaż znaczniki">
+ <!ENTITY AllTagsMode.accesskey    "z">
+

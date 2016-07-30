@@ -1,0 +1,145 @@
+Index: chrome/global/customizeCharset.dtd
+===================================================================
+RCS file: /l10n/l10n/pl/toolkit/chrome/global/customizeCharset.dtd,v
+retrieving revision 1.1
+diff -u -r1.1 customizeCharset.dtd
+--- chrome/global/customizeCharset.dtd	16 Apr 2005 17:33:09 -0000	1.1
++++ chrome/global/customizeCharset.dtd	28 Jul 2005 20:53:56 -0000
+@@ -2,5 +2,11 @@
+ <!ENTITY left.header "Kodowanie znaków" >
+ <!ENTITY current.label "Używane zestawy znaków" >
+ <!ENTITY remove.label "Usuń" >
++<!ENTITY remove.accessKey "U">
+ <!ENTITY additional.label "Dostępne zestawy znaków" >
+ <!ENTITY add.label "Dodaj" >
++<!ENTITY add.accessKey    "o">  
++<!ENTITY moveUp.label     "W górę">                                            
++<!ENTITY moveUp.accessKey "g">                                                  
++<!ENTITY moveDown.label   "W dół">                                          
++<!ENTITY moveDown.accessKey "d">                                                
+Index: chrome/mozapps/extensions/extensions.dtd
+===================================================================
+RCS file: /l10n/l10n/pl/toolkit/chrome/mozapps/extensions/extensions.dtd,v
+retrieving revision 1.5
+diff -u -r1.5 extensions.dtd
+--- chrome/mozapps/extensions/extensions.dtd	19 Jul 2005 08:50:04 -0000	1.5
++++ chrome/mozapps/extensions/extensions.dtd	28 Jul 2005 20:53:57 -0000
+@@ -8,9 +8,9 @@
+ <!ENTITY cmd.uninstall.label              "Odinstaluj">
+ <!ENTITY cmd.uninstall.tooltip            "Odinstalowuje wybrane rozszerzenie">
+ <!ENTITY cmd.uninstall.accesskey          "i">
+-<!ENTITY cmd.update.label                 "Aktualizuj">
++<!ENTITY cmd.update.label                 "Znajdź aktualizacje">
+ <!ENTITY cmd.update.accesskey             "u">
+-<!ENTITY cmd.update.tooltip               "Sprawdza, czy dostępne są nowsze wersje zainstalowanych rozszerzeń">
++<!ENTITY cmd.update.tooltip               "Szuka aktualizacji dla zainstalowanych rozszerzeń">
+ <!ENTITY cmd.useTheme.label               "Zastosuj">
+ <!ENTITY cmd.useTheme.accesskey           "S">
+ <!ENTITY cmd.useTheme.tooltip             "Zmienia motyw programu &brandShortName;.">
+@@ -50,6 +50,8 @@
+ <!ENTITY about.tooltip                    "O rozszerzeniu">
+ <!ENTITY homepage.tooltip                 "Strona domowa">
+ 
++<!ENTITY installNow.label                  "Aktualizuj teraz">  
++
+ <!ENTITY getMoreExtensions.label          "Pobierz więcej rozszerzeń">
+ <!ENTITY getMoreExtensions.tooltip        "Pobierz więcej rozszerzeń z addons.mozilla.org">
+ <!ENTITY getMoreThemes.label              "Pobierz więcej motywów">
+Index: chrome/mozapps/extensions/extensions.properties
+===================================================================
+RCS file: /l10n/l10n/pl/toolkit/chrome/mozapps/extensions/extensions.properties,v
+retrieving revision 1.10
+diff -u -r1.10 extensions.properties
+--- chrome/mozapps/extensions/extensions.properties	19 Jul 2005 21:19:41 -0000	1.10
++++ chrome/mozapps/extensions/extensions.properties	28 Jul 2005 20:53:57 -0000
+@@ -1,7 +1,16 @@
+ aboutWindowTitle=O %S
+ aboutWindowCloseButton=Zamknij
+ aboutWindowVersionString=wersja %S
+-aboutExtension=O %S...
++aboutExtension=%S - informacje
++updatingMessage=Poszukiwanie aktualizacji dla elementu %S...                                    
++updateAvailableMessage=Dost\u0119pna jest nowa wersja elementu %S (%S). 
++updateCompatibilityMessage=Aktualizacja kompatybilno\u015bci zosta\u0142a zastosowana dla elementu %S.
++updateNoUpdateMessage=Nie znaleziono \u017cadnych aktualizacji dla elementu %S.
++updateErrorMessage=Podczas poszukiwania aktualizacji dla elementu %S wyst\u0105pi\u0142 b\u0142\u0105d.
++updateDisabledMessage=Aktualizacje dla elementu %S zosta\u0142y zablokowane.
++updateAppManagedMessage=Aktualizacje elementu %S s\u0105 przeprowadzane wraz z aktualizacjami programu %S.
++updateReadOnlyMessage=Aktualizacja nieobs\u0142ugiwana (miejsce instalacji jest tylko do odczytu).     
++updateNotManagedMessage=Aktualizacja nieobs\u0142ugiwana (miejsce instalacji nie jest zarz\u0105dzane przez %S).
+ restartBeforeEnableTitle=W\u0142\u0105cz rozszerzenie
+ restartBeforeDisableTitle=Wy\u0142\u0105cz rozszerzenie
+ restartBeforeEnableMessage=Rozszerzenie %S zostanie w\u0142\u0105czone po ponownym uruchomieniu programu %S.
+@@ -83,7 +92,9 @@
+ cmdUpdateTooltipTheme=Sprawdza dost\u0119pno\u015b\u0107 aktualizacji dla Twoich motyw\u00f3w
+ cmdInstallTooltipTheme=Zainstaluj motyw
+ 
+-dssSwitchAfterRestart=Uruchom ponownie %S by wykorzysta\u0107.
++dssSwitchAfterRestart=Aby korzysta\u0107 z elementu %s, uruchom program %S ponownie.
++updateFailedMsg=Aktualizacja tego elementu nie powiod\u0142a si\u0119.
++updateDisabledMsg=Aktualizacja tego elementu zosta\u0142a zablokowana.
+ 
+ # Default window size for extensions manager and themes manager
+ # Size in Pixel (e.g. '460')
+@@ -96,3 +107,10 @@
+ # Size in em (e.g. '20em')
+ # Note: here is the unit 'em' necessary
+ themesManagerLeftColumn=20em
++
++updatesAvailableMessage1=Program %S odnalaz\u0142 aktualizacje dla nast\u0119puj\u0105cych element\u00f3w:               
++updatesAvailableMessage2=Naci\u015bnij przycisk "Zainstaluj teraz", by pobra\u0107 i zainstalowa\u0107 aktualizacje.
++updatesAvailableAccept=Zainstaluj teraz
++updatesAvailableCancel=P\u00f3\u017aniej                                         
++updatesAvailableTitle=Odnaleziono aktualizacje
++itemFormat=%S %S (Nowa wersja: %S)
+Index: chrome/mozapps/extensions/update.dtd
+===================================================================
+RCS file: /l10n/l10n/pl/toolkit/chrome/mozapps/extensions/update.dtd,v
+retrieving revision 1.3
+diff -u -r1.3 update.dtd
+--- chrome/mozapps/extensions/update.dtd	19 Jul 2005 08:50:04 -0000	1.3
++++ chrome/mozapps/extensions/update.dtd	28 Jul 2005 20:53:58 -0000
+@@ -75,8 +75,6 @@
+ <!ENTITY  resolveMaxVersion.title         "Sprawdzanie dostępności kompatybilnych rozszerzeń i motywów...">
+ <!ENTITY  resolveMaxVersion.intro1.label  "&brandShortName; sprawdza dostępność aktualizacji kompatybilnościowych dla zainstalowanych rozszerzeń i motywów...">
+ 
+-<!ENTITY  restart.title                   "Aktualizacja zakończona">
+-<!ENTITY  restart.updated.label           "W celu dokończenia procesu aktualizacji, wymagane jest ponowne uruchomienie programu.">
+-
+-<!ENTITY  resetHomepage.label             "Użyj strony startowej programu &brandShortName; jako strony domowej">
+-<!ENTITY  resetHomepage.accesskey         "U">
++<!ENTITY  versioninfo.title               "Aktualizacje kompatybilności">
++<!ENTITY  versioninfo.intro               "Poszukiwanie aktualizacji kompatybilności dla zainstalowanych rozszerzeń...">
++ 84
+Index: chrome/mozapps/preferences/update.dtd
+===================================================================
+RCS file: /l10n/l10n/pl/toolkit/chrome/mozapps/preferences/update.dtd,v
+retrieving revision 1.1
+diff -u -r1.1 update.dtd
+--- chrome/mozapps/preferences/update.dtd	30 Jun 2005 10:39:06 -0000	1.1
++++ chrome/mozapps/preferences/update.dtd	28 Jul 2005 20:53:58 -0000
+@@ -1,6 +1,6 @@
+ <!ENTITY update.title                   "Automatyczna aktualizacja">
+ <!ENTITY window.width                   "32em">
+-<!ENTITY window.height                  "27em">
++<!ENTITY window.height                  "29em">
+ 
+ <!ENTITY update.intro                   "Automatycznie pobieraj i instaluj:">
+ 
+Index: chrome/mozapps/update/updates.dtd
+===================================================================
+RCS file: /l10n/l10n/pl/toolkit/chrome/mozapps/update/updates.dtd,v
+retrieving revision 1.12
+diff -u -r1.12 updates.dtd
+--- chrome/mozapps/update/updates.dtd	19 Jul 2005 21:19:41 -0000	1.12
++++ chrome/mozapps/update/updates.dtd	28 Jul 2005 20:53:59 -0000
+@@ -12,7 +12,7 @@
+ 
+ <!ENTITY  moreDetails.label               "Wiecej szczegółów &#0187;">
+ <!ENTITY  moreDetails.accesskey           "g">
+-<!ENTITY  clickHere.label                 "Szczegółowe informacje o tej aktualizacji dostępne są tutaj">
++<!ENTITY  clickHere.label                 "Wyświetl więcej informacji o tej aktualizacji...">
+ 
+ <!ENTITY  incompatible.warning            "Ta aktualizacja spowoduje, że niektóre z rozszerzeń lub motywów przestaną działać, dopóki nie zostaną zaktualizaowane.">
+ <!ENTITY  listIncompatible.label          "Pokaż listę">
+
