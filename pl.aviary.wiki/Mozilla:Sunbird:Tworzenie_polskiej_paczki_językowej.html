@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="pl" dir="ltr" class="client-nojs">
+<head>
+<meta charset="UTF-8" />
+<title>Mozilla:Sunbird:Tworzenie polskiej paczki językowej – Aviary.pl wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":!1,"wgNamespaceNumber":0,"wgPageName":"Mozilla:Sunbird:Tworzenie_polskiej_paczki_językowej","wgTitle":"Mozilla:Sunbird:Tworzenie polskiej paczki językowej","wgCurRevisionId":13521,"wgRevisionId":13521,"wgArticleId":1757,"wgIsArticle":!0,"wgIsRedirect":!1,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Nasze lokalizacje","Mozilla","Mozilla Sunbird","Mozilla Calendar Project"],"wgBreakFrames":!1,"wgPageContentLanguage":"pl","wgPageContentModel":"wikitext","wgSeparatorTransformTable":[",\t."," \t,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","styczeń","luty","marzec","kwiecień","maj","czerwiec","lipiec","sierpień","wrzesień","październik","listopad","grudzień"],"wgMonthNamesShort":["","sty","lut","mar","kwi","maj","cze","lip","sie","wrz","paź","lis","gru"],"wgRelevantPageName":"Mozilla:Sunbird:Tworzenie_polskiej_paczki_językowej",
+"wgRelevantArticleId":1757,"wgIsProbablyEditable":!1,"wgRestrictionEdit":[],"wgRestrictionMove":[]});mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"pl"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","skins.vector.js"]);
+} );</script>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=pl&amp;modules=mediawiki.legacy.commonPrint,shared|mediawiki.sectionAnchor|mediawiki.skinning.interface|skins.vector.styles&amp;only=styles&amp;skin=vector.css" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}</style>
+<script async="" src="load.php%3Fdebug=false&amp;lang=pl&amp;modules=startup&amp;only=scripts&amp;skin=vector"></script>
+<meta name="generator" content="MediaWiki 1.26.3" />
+<link rel="shortcut icon" href="http://static.aviary.pl/a.64t.png" />
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="Aviary.pl wiki (pl)" />
+<link rel="EditURI" type="application/rsd+xml" href="api.php%3Faction=rsd" />
+<link rel="copyright" href="http://www.gnu.org/copyleft/fdl.html" />
+<link rel="alternate" type="application/atom+xml" title="Kanał Atom Aviary.pl wiki" href="index.php%3Ftitle=Specjalna:Ostatnie_zmiany&amp;feed=atom" />
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/Vector/csshover.min.htc")}</style><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Mozilla_Sunbird_Tworzenie_polskiej_paczki_językowej skin-vector action-view">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+						<div class="mw-indicators">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="pl">Mozilla:Sunbird:Tworzenie polskiej paczki językowej</h1>
+									<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">Z Aviary.pl wiki</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Skocz do:					<a href="Mozilla:Sunbird:Tworzenie_polskiej_paczki_językowej.html#mw-head">nawigacja</a>, 					<a href="Mozilla:Sunbird:Tworzenie_polskiej_paczki_językowej.html#p-search">szukaj</a>
+				</div>
+				<div id="mw-content-text" lang="pl" dir="ltr" class="mw-content-ltr"><h2><span class="mw-headline" id="Prosty_skrypt_tworz.C4.85cy_polsk.C4.85_paczk.C4.99_j.C4.99zykow.C4.85">Prosty skrypt tworzący polską paczkę językową</span></h2>
+<p>Tworzymy plik build_sunbird_langpack_pl z zawartością:
+</p>
+<pre>#!/bin/bash
+cvs -d&#160;:pserver:anonymous:anonymous@cvs-mirror.mozilla.org:/cvsroot login
+cvs -d&#160;:pserver:anonymous@cvs-mirror.mozilla.org:/cvsroot co mozilla/client.mk mozilla/calendar/sunbird/config/mozconfig
+cd mozilla
+echo '. $topsrcdir/calendar/sunbird/config/mozconfig' &gt; .mozconfig
+echo mk_add_options MOZ_CO_LOCALES=pl &gt;&gt; .mozconfig
+pwd &gt; .mozconfig_pwd
+export MOZCONFIG=`tail .mozconfig_pwd`
+make -f client.mk checkout
+./configure
+rm -rf .mozconfig_pwd
+cd config
+make
+cd ../calendar/locales
+make langpack-pl
+cd ../../dist/install/
+ls -l | grep pl.langpack.xpi
+</pre>
+<p>Dodajemy mu prawa wykonywania:
+</p>
+<pre>chmod u+x build_sunbird_langpack_pl
+</pre>
+<p>Uruchamiamy:
+</p>
+<pre>./build_sunbird_langpack_pl
+</pre>
+<p>I po chwili mamy gotową polską paczkę do Sunbirda (wersja trunk)
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20160731233526
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.006 seconds
+Real time usage: 0.006 seconds
+Preprocessor visited node count: 2/1000000
+Preprocessor generated node count: 8/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 - -total
+-->
+
+<!-- Saved in parser cache with key aviarypl_wiki-wiki_:pcache:idhash:1757-0!*!*!*!*!*!* and timestamp 20160731233526 and revision id 13521
+ -->
+</div>					<div class="printfooter">
+						Źródło: „<a dir="ltr" href="http://wiki.aviary.pl/index.php?title=Mozilla:Sunbird:Tworzenie_polskiej_paczki_językowej&amp;oldid=13521">http://wiki.aviary.pl/index.php?title=Mozilla:Sunbird:Tworzenie_polskiej_paczki_językowej&amp;oldid=13521</a>”					</div>
+				<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="http://wiki.aviary.pl/Specjalna:Kategorie" title="Specjalna:Kategorie">Kategorie</a>: <ul><li><a href="Kategoria:Nasze_lokalizacje.html" title="Kategoria:Nasze lokalizacje">Nasze lokalizacje</a></li><li><a href="Kategoria:Mozilla.html" title="Kategoria:Mozilla">Mozilla</a></li><li><a href="Kategoria:Mozilla_Sunbird.html" title="Kategoria:Mozilla Sunbird">Mozilla Sunbird</a></li><li><a href="Kategoria:Mozilla_Calendar_Project.html" title="Kategoria:Mozilla Calendar Project">Mozilla Calendar Project</a></li></ul></div></div>				<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Menu nawigacyjne</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Narzędzia osobiste</h3>
+						<ul>
+							<li id="pt-anonuserpage"><a href="Użytkownik:.html" class="new" title="Strona użytkownika dla adresu IP, spod którego edytujesz [.]" accesskey="."></a></li><li id="pt-anontalk"><a href="Dyskusja_użytkownika:.html" class="new" title="Dyskusja użytkownika dla adresu IP, spod którego edytujesz [n]" accesskey="n">Dyskusja tego IP</a></li><li id="pt-login"><a href="http://wiki.aviary.pl/index.php?title=Specjalna:Zaloguj&amp;returnto=Mozilla%3ASunbird%3ATworzenie+polskiej+paczki+j%C4%99zykowej" title="Zachęcamy do zalogowania się, choć nie jest to obowiązkowe. [o]" accesskey="o">Zaloguj się</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Przestrzenie nazw</h3>
+						<ul>
+															<li  id="ca-nstab-main" class="selected"><span><a href="Mozilla:Sunbird:Tworzenie_polskiej_paczki_językowej.html"  title="Zobacz stronę treści [c]" accesskey="c">Strona</a></span></li>
+															<li  id="ca-talk" class="new"><span><a href="http://wiki.aviary.pl/index.php?title=Dyskusja:Mozilla:Sunbird:Tworzenie_polskiej_paczki_j%C4%99zykowej&amp;action=edit&amp;redlink=1"  title="Dyskusja o zawartości tej strony [t]" accesskey="t" rel="discussion">Dyskusja</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label">
+							<span>Warianty</span><a href="Mozilla:Sunbird:Tworzenie_polskiej_paczki_językowej.html#"></a>
+						</h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Wyświetleń</h3>
+						<ul>
+															<li id="ca-view" class="selected"><span><a href="Mozilla:Sunbird:Tworzenie_polskiej_paczki_językowej.html" >Czytaj</a></span></li>
+															<li id="ca-viewsource"><span><a href="http://wiki.aviary.pl/index.php?title=Mozilla:Sunbird:Tworzenie_polskiej_paczki_j%C4%99zykowej&amp;action=edit"  title="Ta strona jest zabezpieczona. Możesz zobaczyć tekst źródłowy. [e]" accesskey="e">Tekst źródłowy</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="http://wiki.aviary.pl/index.php?title=Mozilla:Sunbird:Tworzenie_polskiej_paczki_j%C4%99zykowej&amp;action=history"  title="Starsze wersje tej strony. [h]" accesskey="h">Wyświetl historię</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label"><span>Więcej</span><a href="Mozilla:Sunbird:Tworzenie_polskiej_paczki_językowej.html#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Szukaj</label>
+						</h3>
+
+						<form action="http://wiki.aviary.pl/index.php" id="searchform">
+							<div>
+							<input type="search" name="search" placeholder="Szukaj" title="Przeszukaj Aviary.pl wiki [f]" accesskey="f" id="searchInput" /><input type="hidden" value="Specjalna:Szukaj" name="title" /><input type="submit" name="fulltext" value="Szukaj" title="Szukaj wprowadzonego tekstu w treści stron" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Przejdź" title="Przejdź do strony o dokładnie takim tytule, o ile istnieje" id="searchButton" class="searchButton" />							</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Strona_główna.html"  title="Strona główna"></a></div>
+						<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+			<h3 id='p-navigation-label'>Nawigacja</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-mainpage-description"><a href="Strona_główna.html" title="Przejdź na stronę główną [z]" accesskey="z">Strona główna</a></li><li id="n-recentchanges"><a href="http://wiki.aviary.pl/Specjalna:Ostatnie_zmiany" title="Lista ostatnich zmian na Aviary.pl wiki. [r]" accesskey="r">Ostatnie zmiany</a></li><li id="n-randompage"><a href="Specjalna:Losowa_strona.html" title="Załaduj losową stronę [x]" accesskey="x">Losowa strona</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="Tutaj możesz się dowiedzieć wielu rzeczy.">Pomoc</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+			<h3 id='p-tb-label'>Narzędzia</h3>
+
+			<div class="body">
+									<ul>
+						<li id="t-whatlinkshere"><a href="http://wiki.aviary.pl/Specjalna:Linkuj%C4%85ce/Mozilla:Sunbird:Tworzenie_polskiej_paczki_j%C4%99zykowej" title="Pokaż listę wszystkich stron linkujących do tej strony [j]" accesskey="j">Linkujące</a></li><li id="t-recentchangeslinked"><a href="http://wiki.aviary.pl/Specjalna:Zmiany_w_linkowanych/Mozilla:Sunbird:Tworzenie_polskiej_paczki_j%C4%99zykowej" title="Ostatnie zmiany w stronach, do których ta strona linkuje [k]" accesskey="k">Zmiany w linkowanych</a></li><li id="t-specialpages"><a href="Specjalna:Strony_specjalne.html" title="Lista wszystkich specjalnych stron [q]" accesskey="q">Strony specjalne</a></li><li id="t-print"><a href="http://wiki.aviary.pl/index.php?title=Mozilla:Sunbird:Tworzenie_polskiej_paczki_j%C4%99zykowej&amp;printable=yes" rel="alternate" title="Wersja do wydruku [p]" accesskey="p">Wersja do druku</a></li><li id="t-permalink"><a href="http://wiki.aviary.pl/index.php?title=Mozilla:Sunbird:Tworzenie_polskiej_paczki_j%C4%99zykowej&amp;oldid=13521" title="Stały link do tej wersji strony">Link do tej wersji</a></li><li id="t-info"><a href="http://wiki.aviary.pl/index.php?title=Mozilla:Sunbird:Tworzenie_polskiej_paczki_j%C4%99zykowej&amp;action=info" title="Więcej informacji na temat tej strony">Informacje o tej stronie</a></li>					</ul>
+							</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> Tę stronę ostatnio zmodyfikowano o 20:57, 21 lut 2011.</li>
+											<li id="footer-info-copyright">Treść udostępniana na licencji <a class="external" rel="nofollow" href="http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 lub późniejsza</a>, jeśli nie podano inaczej.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="http://wiki.aviary.pl/Projekt:Zasady_zachowania_poufno%C5%9Bci" title="Projekt:Zasady zachowania poufności">Zasady zachowania poufności</a></li>
+											<li id="footer-places-about"><a href="http://wiki.aviary.pl/Projekt:O_Aviary.pl_wiki" title="Projekt:O Aviary.pl wiki">O Aviary.pl wiki</a></li>
+											<li id="footer-places-disclaimer"><a href="http://wiki.aviary.pl/Projekt:Informacje_prawne" title="Projekt:Informacje prawne">Informacje prawne</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-copyrightico">
+							<a href="http://www.gnu.org/copyleft/fdl.html"><img src="resources/assets/licenses/gnu-fdl.png" alt="GNU Free Documentation License 1.3 lub późniejsza" width="88" height="31" /></a>						</li>
+											<li id="footer-poweredbyico">
+							<a href="http://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31" /></a>						</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"]);
+} );</script><script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.config.set({"wgBackendResponseTime":444});
+} );</script>
+	</body>
+</html>
